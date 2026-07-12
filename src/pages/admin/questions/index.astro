@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { db } from '../../../services/db';
+import ReadListPreview from '../../../components/ReadListPreview.astro';
 
 export const prerender = false;
 
@@ -75,7 +76,9 @@ const qTypeNames: Record<string, string> = {
   'true_false': 'Đúng / Sai',
   'msq': 'Đúng / Sai (THPT)',
   'sa': 'Trả lời ngắn',
-  'tl': 'Tự luận'
+  'tl': 'Tự luận',
+  'read': 'Đọc hiểu',
+  'list': 'Kỹ năng nghe'
 };
 ---
 
@@ -177,10 +180,25 @@ const qTypeNames: Record<string, string> = {
                     <input type="checkbox" name="qIds" value={q.id} class="q-checkbox rounded text-blue-600 focus:ring-blue-500 h-4.5 w-4.5 cursor-pointer" />
                   </td>
                   <!-- Content Preview -->
-                  <td class="py-4 pr-3 max-w-xs md:max-w-md">
-                    <p class="font-bold text-gray-900 dark:text-white truncate">{q.content.replace(/\$/g, '')}</p>
+                  <td class="py-4 pr-3 max-w-xs md:max-w-md align-top">
+                    {q.type === 'read' || q.type === 'list' ? (
+                      <details class="group">
+                        <summary class="cursor-pointer list-none">
+                          <p class="font-bold text-gray-900 dark:text-white truncate">{q.content.replace(/\$/g, '')}</p>
+                          <span class="text-[10px] font-semibold text-indigo-500 dark:text-indigo-400">Xem chi tiết ▾</span>
+                        </summary>
+                        <div class="mt-2">
+                          <ReadListPreview question={q} />
+                        </div>
+                      </details>
+                    ) : (
+                      <p class="font-bold text-gray-900 dark:text-white truncate">{q.content.replace(/\$/g, '')}</p>
+                    )}
                     <span class="text-xs text-gray-450 dark:text-slate-500 mt-1 block">
-                      {q.answers.length} phương án trả lời • Đáp án đúng: {q.answers.filter(a => a.is_correct).map((_, i) => String.fromCharCode(65 + q.answers.findIndex(ans => ans.id === _.id))).join(', ')}
+                      {q.type === 'read' || q.type === 'list'
+                        ? `${q.metadata?.questions?.length || 0} câu hỏi con`
+                        : `${q.answers.length} phương án trả lời • Đáp án đúng: ${q.answers.filter(a => a.is_correct).map((_, i) => String.fromCharCode(65 + q.answers.findIndex(ans => ans.id === _.id))).join(', ')}`
+                      }
                     </span>
                   </td>
                   

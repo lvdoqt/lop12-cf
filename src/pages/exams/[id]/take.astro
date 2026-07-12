@@ -42,6 +42,7 @@ const bySection = {
   msq: allQuestions.filter(q => q.type === 'msq'),
   sa: allQuestions.filter(q => q.type === 'sa'),
   tl: allQuestions.filter(q => q.type === 'tl'),
+  readlist: allQuestions.filter(q => q.type === 'read' || q.type === 'list'),
 };
 
 const prng = mulberry32(uuidToSeed(attempt.id));
@@ -51,9 +52,10 @@ const shuffled = {
   msq: shuffleArrayWithPRNG(bySection.msq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   sa: shuffleArrayWithPRNG(bySection.sa, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   tl: shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  readlist: shuffleArrayWithPRNG(bySection.readlist, prng),
 };
 
-const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled.tl];
+const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled.tl, ...shuffled.readlist];
 
 console.log(`[take] exam=${exam.id} slug=${exam.slug} questions=${questions.length}`);
 

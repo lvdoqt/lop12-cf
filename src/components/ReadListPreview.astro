@@ -1,0 +1,62 @@
+---
+interface Props {
+  question: any;
+}
+const { question } = Astro.props;
+const type = question?.type;
+const subQuestions: any[] = question?.metadata?.questions || [];
+const audioUrl = question?.metadata?.audio_url;
+const passage = question?.content || '';
+const letters = ['A', 'B', 'C', 'D'];
+---
+
+{(type === 'read' || type === 'list') && subQuestions.length > 0 && (
+  <div class="readlist-preview rounded-xl border border-indigo-100 dark:border-indigo-900/30 bg-indigo-50/40 dark:bg-indigo-950/10 p-3 space-y-2.5">
+    <div class="flex items-center gap-2 flex-wrap">
+      <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-300">
+        {type === 'read' ? 'Đoạn đọc hiểu' : 'Đoạn nghe'}
+      </span>
+      <span class="text-[10px] text-slate-400 dark:text-slate-500 font-semibold">{subQuestions.length} câu hỏi con</span>
+      {audioUrl && (
+        <span class="text-[10px] text-slate-400 dark:text-slate-500 font-semibold">🔊 có audio</span>
+      )}
+    </div>
+
+    <div class="text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed bg-white/60 dark:bg-slate-900/40 rounded-lg p-2.5">
+      {passage}
+    </div>
+
+    {audioUrl && (
+      <audio controls preload="none" class="w-full h-9">
+        <source src={audioUrl} />
+      </audio>
+    )}
+
+    <ol class="space-y-3">
+      {subQuestions.map((sq, i) => (
+        <li class="border-t border-indigo-100/70 dark:border-indigo-900/20 pt-2.5 first:border-t-0 first:pt-0">
+          <p class="text-sm font-semibold text-gray-900 dark:text-white leading-snug">
+            <span class="text-indigo-500 dark:text-indigo-400 mr-1">{i + 1}.</span>{sq.question}
+          </p>
+          <ul class="mt-1 space-y-0.5 text-sm">
+            {letters.map((l) => {
+              const text = sq['option_' + l.toLowerCase()] || '';
+              const isCorrect = (sq.correct_option || '').toUpperCase().trim() === l;
+              return (
+                <li class={isCorrect ? 'text-emerald-600 dark:text-emerald-400 font-semibold' : 'text-slate-600 dark:text-slate-300'}>
+                  <span class="inline-block w-4 font-bold">{l}.</span>{text}
+                  {isCorrect && <span class="ml-1">✓</span>}
+                </li>
+              );
+            })}
+          </ul>
+          {sq.explanation && (
+            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 bg-white/70 dark:bg-slate-800/50 rounded-lg px-2 py-1 leading-relaxed">
+              <span class="font-bold">💡 Giải thích:</span> {sq.explanation}
+            </p>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+)}

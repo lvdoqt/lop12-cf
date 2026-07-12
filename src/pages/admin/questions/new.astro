@@ -52,6 +52,36 @@ if (Astro.request.method === 'POST') {
           if (q.option_d) answers.push({ content: q.option_d, is_correct: correctStr.includes('D') });
         }
 
+        // Dạng đọc hiểu / nghe: lưu câu hỏi con vào metadata.questions
+        if (type === 'read' || type === 'list') {
+          const metaQuestions = Array.isArray(q.metadata?.questions) ? q.metadata.questions : [];
+          if (metaQuestions.length === 0) {
+            throw new Error('Câu hỏi dạng read/list thiếu metadata.questions.');
+          }
+          const mappedQuestions = metaQuestions.map((sq: any) => ({
+            question: sq.question || sq.content || '',
+            option_a: sq.option_a || '',
+            option_b: sq.option_b || '',
+            option_c: sq.option_c || '',
+            option_d: sq.option_d || '',
+            correct_option: (sq.correct_option || '').toUpperCase(),
+            ...(sq.explanation ? { explanation: sq.explanation } : {})
+          }));
+          const audioUrl = q.metadata?.audio_url ? q.metadata.audio_url : undefined;
+          await db.createQuestion({
+            subject_id,
+            content,
+            explanation: q.explanation || null,
+            difficulty: q.difficulty_level || q.difficulty || 'medium',
+            type: type as any,
+            answer: null,
+            created_by: user.id,
+            metadata: { questions: mappedQuestions, ...(audioUrl ? { audio_url: audioUrl } : {}) }
+          }, []);
+          importCount++;
+          continue;
+        }
+
         if (answers.length === 0 && type !== 'sa' && type !== 'tl') {
           throw new Error('Câu hỏi thiếu các phương án trả lời.');
         }
@@ -83,16 +113,50 @@ if (Astro.request.method === 'POST') {
       const content = formData.get('content') as string;
       const explanation = formData.get('explanation') as string;
       const difficulty = formData.get('difficulty') as 'easy' | 'medium' | 'hard';
-      const type = formData.get('type') as 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa';
+      const type = formData.get('type') as string;
 
-      const answers: { content: string, is_correct: boolean }[] = [];
+      const answers: { content: string; is_correct: boolean }[] = [];
       const saCorrect = formData.get('sa_correct') as string;
 
-      if (type === 'true_false') {
+      let metadata: any = undefined;
+
+      if (type === 'read' || type === 'list') {
+        // Dạng đọc hiểu / nghe: câu hỏi cha chứa đoạn văn (content) và danh sách
+        // câu hỏi con (metadata.questions). Không có phương án ở cấp cha.
+        const subQuestions: any[] = [];
+        for (let i = 0; i < 100; i++) {
+          const qText = formData.get(`sub_q_${i}_question`) as string;
+          if (!qText || !qText.trim()) continue;
+          const optA = formData.get(`sub_q_${i}_opt_A`) as string;
+          const optB = formData.get(`sub_q_${i}_opt_B`) as string;
+          const optC = formData.get(`sub_q_${i}_opt_C`) as string;
+          const optD = formData.get(`sub_q_${i}_opt_D`) as string;
+          const correct = (formData.get(`sub_q_${i}_correct`) as string || '').toUpperCase();
+          const subExp = (formData.get(`sub_q_${i}_explanation`) as string || '').trim();
+          if (!optA?.trim() || !optB?.trim() || !optC?.trim() || !optD?.trim() || !correct) {
+            throw new Error(`Câu hỏi con #${i + 1} cần nhập đủ 4 phương án A, B, C, D và chọn đáp án đúng.`);
+          }
+          subQuestions.push({
+            question: qText.trim(),
+            option_a: optA.trim(),
+            option_b: optB.trim(),
+            option_c: optC.trim(),
+            option_d: optD.trim(),
+            correct_option: correct,
+            ...(subExp ? { explanation: subExp } : {})
+          });
+        }
+        if (subQuestions.length === 0) {
+          throw new Error('Câu hỏi dạng Đọc hiểu / Nghe cần ít nhất 1 câu hỏi con.');
+        }
+        const audioUrl = type === 'list' ? ((formData.get('audio_url') as string || '').trim() || undefined) : undefined;
+        metadata = { questions: subQuestions, ...(audioUrl ? { audio_url: audioUrl } : {}) };
+      } else if (type === 'true_false') {
         const correctVal = formData.get('tf_correct') as string;
         answers.push({ content: 'Đúng', is_correct: correctVal === 'A' });
         answers.push({ content: 'Sai', is_correct: correctVal === 'B' });
       } else if (type === 'sa') {
+        // câu hỏi trả lời ngắn: không có phương án
       } else {
         const optA = formData.get('opt_A') as string;
         const isCorrectA = formData.has('correct_A');
@@ -114,7 +178,7 @@ if (Astro.request.method === 'POST') {
       }
 
       const correctCount = answers.filter(a => a.is_correct).length;
-      if (type !== 'sa' && type !== 'msq') {
+      if (type !== 'sa' && type !== 'msq' && type !== 'read' && type !== 'list') {
         if (correctCount === 0) {
           throw new Error('Cậu hãy đánh dấu ít nhất 1 phương án là đáp án đúng.');
         }
@@ -136,9 +200,10 @@ if (Astro.request.method === 'POST') {
         content,
         explanation: explanation || null,
         difficulty,
-        type,
+        type: type as any,
         answer: type === 'sa' ? saCorrect : null,
-        created_by: user.id
+        created_by: user.id,
+        ...(metadata ? { metadata } : {})
       }, answers);
 
       return Astro.redirect('/admin/questions');
@@ -283,6 +348,8 @@ const subjects = await db.getSubjects();
               <option value="msq">Đúng / Sai (THPT 2025)</option>
               <option value="sa">Trả lời ngắn</option>
               <option value="true_false">Đúng / Sai (Đơn)</option>
+              <option value="read">Đọc hiểu (Reading)</option>
+              <option value="list">Kỹ năng nghe (Listening)</option>
             </select>
           </div>
 
@@ -412,6 +479,83 @@ const subjects = await db.getSubjects();
               />
             </div>
           </div>
+
+          <!-- Read / Listen sub-questions (Hidden by default, shown when type === read | list) -->
+          <div id="subq-container" class="space-y-4 hidden">
+            <p class="text-xs text-gray-400 dark:text-slate-500">Nhập đoạn văn / hướng dẫn ở <strong>Nội dung câu hỏi</strong> phía trên, sau đó thêm các câu hỏi con tương ứng bên dưới.</p>
+
+            <div id="audio-url-row" class="hidden">
+              <label for="audio_url" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Link audio (dành cho dạng nghe)</label>
+              <input
+                type="url"
+                name="audio_url"
+                id="audio_url"
+                placeholder="https://.../audio.mp3"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100"
+              />
+            </div>
+
+            <div class="flex items-center justify-between">
+              <h4 class="text-sm font-bold text-gray-900 dark:text-white">Danh sách câu hỏi con</h4>
+              <button
+                type="button"
+                id="btn-add-subq"
+                class="px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-xs font-bold transition"
+              >
+                + Thêm câu hỏi con
+              </button>
+            </div>
+
+            <div id="subq-list" class="space-y-3"></div>
+          </div>
+
+          <!-- Template cho một câu hỏi con (clone bằng JS) -->
+          <template id="subq-template">
+            <div class="subq-item border border-gray-200 dark:border-slate-800 rounded-xl p-4 space-y-3 bg-gray-50/50 dark:bg-slate-800/30">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-gray-600 dark:text-slate-300 uppercase tracking-wider">Câu hỏi con #<span class="subq-num">1</span></span>
+                <button type="button" class="remove-subq text-rose-500 hover:text-rose-600 text-sm font-bold">✕ Bỏ</button>
+              </div>
+              <input
+                type="text"
+                data-name="sub_q___IDX___question"
+                required
+                placeholder="Nội dung câu hỏi con..."
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100"
+              />
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex items-center space-x-2">
+                  <span class="w-7 h-7 shrink-0 rounded-lg bg-gray-150 dark:bg-slate-800 text-gray-700 dark:text-slate-350 flex items-center justify-center font-bold text-xs">A</span>
+                  <input type="text" data-name="sub_q___IDX___opt_A" required placeholder="Phương án A..." class="flex-1 px-3 py-2 rounded-lg border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100" />
+                </div>
+                <div class="flex items-center space-x-2">
+                  <span class="w-7 h-7 shrink-0 rounded-lg bg-gray-150 dark:bg-slate-800 text-gray-700 dark:text-slate-350 flex items-center justify-center font-bold text-xs">B</span>
+                  <input type="text" data-name="sub_q___IDX___opt_B" required placeholder="Phương án B..." class="flex-1 px-3 py-2 rounded-lg border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100" />
+                </div>
+                <div class="flex items-center space-x-2">
+                  <span class="w-7 h-7 shrink-0 rounded-lg bg-gray-150 dark:bg-slate-800 text-gray-700 dark:text-slate-350 flex items-center justify-center font-bold text-xs">C</span>
+                  <input type="text" data-name="sub_q___IDX___opt_C" required placeholder="Phương án C..." class="flex-1 px-3 py-2 rounded-lg border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100" />
+                </div>
+                <div class="flex items-center space-x-2">
+                  <span class="w-7 h-7 shrink-0 rounded-lg bg-gray-150 dark:bg-slate-800 text-gray-700 dark:text-slate-350 flex items-center justify-center font-bold text-xs">D</span>
+                  <input type="text" data-name="sub_q___IDX___opt_D" required placeholder="Phương án D..." class="flex-1 px-3 py-2 rounded-lg border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100" />
+                </div>
+              </div>
+              <div class="flex items-center gap-4 flex-wrap">
+                <span class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Đáp án đúng:</span>
+                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" data-name="sub_q___IDX___correct" value="A" required class="h-4 w-4 text-blue-600 focus:ring-blue-500" /><span class="text-sm">A</span></label>
+                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" data-name="sub_q___IDX___correct" value="B" class="h-4 w-4 text-blue-600 focus:ring-blue-500" /><span class="text-sm">B</span></label>
+                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" data-name="sub_q___IDX___correct" value="C" class="h-4 w-4 text-blue-600 focus:ring-blue-500" /><span class="text-sm">C</span></label>
+                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" data-name="sub_q___IDX___correct" value="D" class="h-4 w-4 text-blue-600 focus:ring-blue-500" /><span class="text-sm">D</span></label>
+              </div>
+              <textarea
+                data-name="sub_q___IDX___explanation"
+                rows="2"
+                placeholder="Giải thích cho câu hỏi con này (tùy chọn)..."
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100"
+              ></textarea>
+            </div>
+          </template>
         </div>
 
         <!-- Explanation solution -->
@@ -453,25 +597,72 @@ const subjects = await db.getSubjects();
   const choicesContainer = document.getElementById('choices-container');
   const tfContainer = document.getElementById('tf-container');
   const saContainer = document.getElementById('sa-container');
+  const subqContainer = document.getElementById('subq-container');
+  const audioUrlRow = document.getElementById('audio-url-row');
+  const subqList = document.getElementById('subq-list');
+  const btnAddSubq = document.getElementById('btn-add-subq');
+  const subqTemplate = document.getElementById('subq-template') as HTMLTemplateElement | null;
 
-  if (typeSelect && choicesContainer && tfContainer && saContainer) {
+  // Gán lại name (theo thứ tự) và số thứ tự cho các câu hỏi con
+  function renumberSubQuestions() {
+    if (!subqList) return;
+    const items = subqList.querySelectorAll('.subq-item');
+    items.forEach((item, idx) => {
+      item.querySelectorAll<HTMLElement>('[data-name]').forEach(el => {
+        const base = el.dataset.name || '';
+        el.setAttribute('name', base.replace(/___IDX___/g, String(idx)));
+      });
+      const numEl = item.querySelector('.subq-num');
+      if (numEl) numEl.textContent = String(idx + 1);
+    });
+  }
+
+  function addSubQuestion() {
+    if (!subqTemplate || !subqList) return;
+    const node = subqTemplate.content.cloneNode(true) as DocumentFragment;
+    const item = node.querySelector('.subq-item');
+    if (item) {
+      const removeBtn = item.querySelector('.remove-subq');
+      removeBtn?.addEventListener('click', () => {
+        item.remove();
+        renumberSubQuestions();
+      });
+    }
+    subqList.appendChild(node);
+    renumberSubQuestions();
+  }
+
+  if (btnAddSubq) {
+    btnAddSubq.addEventListener('click', addSubQuestion);
+  }
+
+  if (typeSelect && choicesContainer && tfContainer && saContainer && subqContainer) {
     typeSelect.addEventListener('change', () => {
       const val = typeSelect.value;
 
       choicesContainer.classList.add('hidden');
       tfContainer.classList.add('hidden');
       saContainer.classList.add('hidden');
+      subqContainer.classList.add('hidden');
+      if (audioUrlRow) audioUrlRow.classList.add('hidden');
 
       document.querySelectorAll('#choices-container input[type="text"]').forEach(input => {
         input.removeAttribute('required');
       });
       document.getElementById('sa_correct')?.removeAttribute('required');
+      // Vô hiệu hóa các input câu hỏi con khi không dùng (tránh lỗi validate)
+      if (subqList) subqList.querySelectorAll('input').forEach(i => i.setAttribute('disabled', 'true'));
 
       if (val === 'true_false') {
         tfContainer.classList.remove('hidden');
       } else if (val === 'sa') {
         saContainer.classList.remove('hidden');
         document.getElementById('sa_correct')?.setAttribute('required', 'true');
+      } else if (val === 'read' || val === 'list') {
+        subqContainer.classList.remove('hidden');
+        if (val === 'list' && audioUrlRow) audioUrlRow.classList.remove('hidden');
+        if (subqList) subqList.querySelectorAll('input').forEach(i => i.removeAttribute('disabled'));
+        if (subqList && subqList.children.length === 0) addSubQuestion();
       } else {
         choicesContainer.classList.remove('hidden');
         document.querySelectorAll('#choices-container input[type="text"]').forEach(input => {

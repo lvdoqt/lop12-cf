@@ -575,7 +575,8 @@ export const db = {
       explanation: question.explanation,
       subject_id: question.subject_id,
       grade: '12',
-      ...(question.created_by ? { created_by: question.created_by } : {})
+      ...(question.created_by ? { created_by: question.created_by } : {}),
+      ...(question.metadata || {})
     };
 
     // Default de_id to 'bank' for templates

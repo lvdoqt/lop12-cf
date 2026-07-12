@@ -38,7 +38,7 @@ export interface Question {
     chapter?: string;
     difficulty?: 'easy' | 'medium' | 'hard';
     dang_toan?: string;
-    type?: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl';
+    type?: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list';
     explanation?: string | null;
     subject_id?: string;
     [key: string]: any;
@@ -50,7 +50,7 @@ export interface Question {
   subject_id: string;
   explanation: string | null;
   difficulty: 'easy' | 'medium' | 'hard';
-  type: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl';
+  type: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list';
   created_by?: string | null;
 }
 

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../../layouts/Layout.astro';
 import QuestionCard from '../../../../components/QuestionCard.astro';
+import ReadListQuestion from '../../../../components/ReadListQuestion';
 import { db } from '../../../../services/db';
 import { uuidToSeed, mulberry32, shuffleArrayWithPRNG } from '../../../../lib/random';
 
@@ -33,6 +34,7 @@ const bySection = {
   msq: allQuestions.filter(q => q.type === 'msq'),
   sa: allQuestions.filter(q => q.type === 'sa'),
   tl: allQuestions.filter(q => q.type === 'tl'),
+  readlist: allQuestions.filter(q => q.type === 'read' || q.type === 'list'),
 };
 
 const prng = mulberry32(uuidToSeed(attempt.id));
@@ -42,14 +44,16 @@ const shuffled = {
   msq: shuffleArrayWithPRNG(bySection.msq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   sa: shuffleArrayWithPRNG(bySection.sa, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   tl: shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  readlist: shuffleArrayWithPRNG(bySection.readlist, prng),
 };
 
-const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled.tl].map((q, idx) => ({ ...q, globalIndex: idx + 1 }));
+const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled.tl, ...shuffled.readlist].map((q, idx) => ({ ...q, globalIndex: idx + 1 }));
 
 const mcqQuestions = questions.filter(q => MCQ_TYPES.includes(q.type));
 const msqQuestions = questions.filter(q => q.type === 'msq');
 const saQuestions = questions.filter(q => q.type === 'sa');
 const tlQuestions = questions.filter(q => q.type === 'tl');
+const readlistQuestions = questions.filter(q => q.type === 'read' || q.type === 'list');
 
 // 1. Calculate time spent
 const timeSpentMs = attempt.finished_at 
@@ -61,7 +65,24 @@ const timeSpentStr = timeSpentMin > 0 ? `${timeSpentMin} phút ${timeSpentSec} g
 
 // 2. Calculate correct answers count
 let correctCount = 0;
+let totalCount = 0;
 questions.forEach(q => {
+  if (q.type === 'read' || q.type === 'list') {
+    const subs = (q.metadata && (q.metadata as any).questions) || [];
+    totalCount += subs.length;
+    const submitted = attempt.answers_submitted?.[q.id];
+    if (submitted && typeof submitted === 'object' && !Array.isArray(submitted)) {
+      subs.forEach((sq: any, i: number) => {
+        const sel = (submitted as Record<string, string>)[String(i)];
+        if (sel && String(sel).toUpperCase() === String(sq.correct_option || '').toUpperCase()) {
+          correctCount++;
+        }
+      });
+    }
+    return;
+  }
+
+  totalCount += 1;
   const submitted = attempt.answers_submitted?.[q.id];
   const correctAnswers = q.answers.filter(a => a.is_correct).map(a => a.id);
   
@@ -178,7 +199,7 @@ if (score < 5.0) {
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
       <div class="bg-white border border-gray-250 dark:bg-slate-900 dark:border-slate-800/80 p-5 rounded-2xl shadow-sm text-center">
         <p class="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Số câu đúng</p>
-        <p class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mt-2 font-mono">{correctCount} / {questions.length} câu</p>
+        <p class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mt-2 font-mono">{correctCount} / {totalCount} câu</p>
       </div>
       <div class="bg-white border border-gray-250 dark:bg-slate-900 dark:border-slate-800/80 p-5 rounded-2xl shadow-sm text-center">
         <p class="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Thời gian làm bài</p>
@@ -186,7 +207,7 @@ if (score < 5.0) {
       </div>
       <div class="bg-white border border-gray-250 dark:bg-slate-900 dark:border-slate-800/80 p-5 rounded-2xl shadow-sm text-center">
         <p class="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Độ chính xác</p>
-        <p class="text-xl font-bold text-blue-600 dark:text-blue-400 mt-2 font-mono">{Math.round((correctCount / questions.length) * 100)}%</p>
+        <p class="text-xl font-bold text-blue-600 dark:text-blue-400 mt-2 font-mono">{Math.round((correctCount / totalCount) * 100)}%</p>
       </div>
     </div>
 
@@ -239,6 +260,21 @@ if (score < 5.0) {
               const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
               return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
             })}
+          </div>
+        )}
+
+        {readlistQuestions.length > 0 && (
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">Phần V. Kỹ năng đọc hiểu & nghe</h3>
+            {readlistQuestions.map(question => (
+              <ReadListQuestion
+                client:load
+                question={question}
+                index={question.globalIndex}
+                mode="review"
+                selectedAnswers={attempt.answers_submitted?.[question.id] || {}}
+              />
+            ))}
           </div>
         )}
       </div>

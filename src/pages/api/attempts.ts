@@ -24,13 +24,30 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     let correctCount = 0;
-    const totalCount = examQuestions.length;
+    let totalCount = 0;
 
     // 3. Grade each question
     examQuestions.forEach(q => {
       const submitted = answers[q.id]; // Can be string, string[], or Record/string for msq/sa
+
+      // Read / Listen: each sub-question counts individually
+      if (q.type === 'read' || q.type === 'list') {
+        const subs = (q.metadata && (q.metadata as any).questions) || [];
+        totalCount += subs.length;
+        if (submitted && typeof submitted === 'object' && !Array.isArray(submitted)) {
+          subs.forEach((sq: any, i: number) => {
+            const sel = (submitted as Record<string, string>)[String(i)];
+            if (sel && String(sel).toUpperCase() === String(sq.correct_option || '').toUpperCase()) {
+              correctCount++;
+            }
+          });
+        }
+        return;
+      }
+
       const correctAnswers = q.answers.filter(a => a.is_correct).map(a => a.id);
-      
+      totalCount += 1;
+
       if (!submitted) {
         return; // Left blank
       }

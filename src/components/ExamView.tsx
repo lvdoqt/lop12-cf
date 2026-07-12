@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import QuestionCard from './QuestionCard';
+import ReadListQuestion from './ReadListQuestion';
 import type { Question, Answer } from '../types';
 
 interface ExamViewProps {
@@ -61,6 +62,16 @@ const SECTION_COLORS = {
     label: 'Câu tự luận',
     icon: 'M4 6h16M4 12h16M4 18h7',
   },
+  readlist: {
+    bg: 'from-indigo-500 to-purple-600',
+    light: 'bg-indigo-50 dark:bg-indigo-950/20',
+    border: 'border-indigo-200 dark:border-indigo-900/40',
+    text: 'text-indigo-700 dark:text-indigo-300',
+    badge: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300',
+    nav: 'bg-indigo-500',
+    label: 'Kỹ năng đọc hiểu & nghe',
+    icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
+  },
 } as const;
 
 type SectionKey = keyof typeof SECTION_COLORS;
@@ -78,6 +89,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       if (q.type === 'msq') section = 'msq';
       else if (q.type === 'sa') section = 'sa';
       else if (q.type === 'tl') section = 'tl';
+      else if (q.type === 'read' || q.type === 'list') section = 'readlist';
       return { ...q, globalIndex: i + 1, section };
     });
     return {
@@ -85,6 +97,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       msq: withIndex.filter(q => q.type === 'msq'),
       sa: withIndex.filter(q => q.type === 'sa'),
       tl: withIndex.filter(q => q.type === 'tl'),
+      readlist: withIndex.filter(q => q.type === 'read' || q.type === 'list'),
       all: withIndex,
     };
   }, [questions]);
@@ -93,7 +106,37 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
     setAnswers(prev => ({ ...prev, [questionId]: value }));
   }, []);
 
-  const answeredCount = Object.keys(answers).length;
+  const handleReadListAnswer = useCallback((parentId: string, subIndex: number, letter: string) => {
+    setAnswers(prev => {
+      const prevMap = prev[parentId] && typeof prev[parentId] === 'object' && !Array.isArray(prev[parentId])
+        ? (prev[parentId] as Record<string, string>)
+        : {};
+      return { ...prev, [parentId]: { ...prevMap, [subIndex]: letter } };
+    });
+  }, []);
+
+  // Total / answered sub-items (read/list count each sub-question)
+  const { totalItems, answeredItems } = useMemo(() => {
+    let total = 0;
+    let answered = 0;
+    questions.forEach(q => {
+      if (q.type === 'read' || q.type === 'list') {
+        const n = (q.metadata as any)?.questions?.length || 0;
+        total += n;
+        const m = answers[q.id];
+        if (m && typeof m === 'object' && !Array.isArray(m)) {
+          answered += Object.keys(m as object).length;
+        }
+      } else {
+        total += 1;
+        const a = answers[q.id];
+        if (a !== undefined && !(Array.isArray(a) && (a as any[]).length === 0)) {
+          answered += 1;
+        }
+      }
+    });
+    return { totalItems: total, answeredItems: answered };
+  }, [questions, answers]);
 
   const handleSubmitRef = useRef<() => void>(null!);
   const handleSubmit = useCallback(async (auto = false) => {
@@ -201,7 +244,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
           <div className="hidden sm:flex items-center gap-3 ml-4 shrink-0">
             <div className="bg-white/15 rounded-xl px-4 py-2 text-center">
               <div className="text-xs font-semibold text-white/70">Đã làm</div>
-              <div className="text-lg font-black">{answeredCount}/{questions.length}</div>
+              <div className="text-lg font-black">{answeredItems}/{totalItems}</div>
             </div>
           </div>
         </div>
@@ -223,11 +266,12 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
             ['msq', 'Phần II'] as const,
             ['sa', 'Phần III'] as const,
             ['tl', 'Phần IV'] as const,
+            ['readlist', 'Phần V'] as const,
           ] as const).map(([key, label]) => {
             const items = classified[key];
             if (items.length === 0) return null;
             const color = SECTION_COLORS[key];
-            const sectionNum = key === 'mcq' ? 'I' : key === 'msq' ? 'II' : key === 'sa' ? 'III' : 'IV';
+            const sectionNum = key === 'mcq' ? 'I' : key === 'msq' ? 'II' : key === 'sa' ? 'III' : key === 'tl' ? 'IV' : 'V';
             return (
               <div key={key} className="space-y-4">
                 <div className={`rounded-2xl overflow-hidden border ${color.border}`}>
@@ -247,17 +291,28 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
                   </div>
                 </div>
                 <div className="space-y-4">
-                  {items.map(q => (
-                    <QuestionCard
-                      key={q.id}
-                      question={q}
-                      index={q.globalIndex}
-                      mode="take"
-                      selectedAnswer={answers[q.id]}
-                      onAnswer={handleAnswer}
-                      sectionKey={q.section}
-                    />
-                  ))}
+                  {items.map(q =>
+                    key === 'readlist' ? (
+                      <ReadListQuestion
+                        key={q.id}
+                        question={q}
+                        index={q.globalIndex}
+                        mode="take"
+                        selectedAnswers={(answers[q.id] as Record<string, string>) || undefined}
+                        onAnswer={handleReadListAnswer}
+                      />
+                    ) : (
+                      <QuestionCard
+                        key={q.id}
+                        question={q}
+                        index={q.globalIndex}
+                        mode="take"
+                        selectedAnswer={answers[q.id]}
+                        onAnswer={handleAnswer}
+                        sectionKey={q.section === 'readlist' ? 'mcq' : q.section}
+                      />
+                    )
+                  )}
                 </div>
               </div>
             );
@@ -292,7 +347,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
               />
             </div>
             <p className="text-[10px] text-gray-400 dark:text-slate-500 mt-2 font-medium">
-              {answeredCount}/{questions.length} câu đã làm
+              {answeredItems}/{totalItems} câu đã làm
             </p>
           </div>
 
@@ -301,8 +356,11 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
             <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-4">Mục lục câu hỏi</h3>
             <div className="grid grid-cols-5 gap-2">
               {classified.all.map(q => {
-                const answered = answers[q.id] !== undefined;
+                const isReadList = q.type === 'read' || q.type === 'list';
                 const isMsq = q.type === 'msq';
+                const answered = isReadList
+                  ? !!(answers[q.id] && typeof answers[q.id] === 'object' && !Array.isArray(answers[q.id]) && Object.keys(answers[q.id] as object).length > 0)
+                  : answers[q.id] !== undefined;
                 const isPartial = isMsq && typeof answers[q.id] === 'object' && Object.keys(answers[q.id] as object).length > 0;
                 const sectionColor = SECTION_COLORS[q.section];
 
@@ -346,6 +404,12 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
                 <span className="flex items-center gap-1">
                   <span className="w-3 h-3 rounded bg-emerald-500" />
                   Phần IV
+                </span>
+              )}
+              {classified.readlist.length > 0 && (
+                <span className="flex items-center gap-1">
+                  <span className="w-3 h-3 rounded bg-indigo-500" />
+                  Phần V
                 </span>
               )}
               <span className="flex items-center gap-1">
@@ -398,11 +462,11 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
               </div>
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Xác nhận nộp bài</h3>
               <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">
-                Bạn đã làm <strong className="text-gray-700 dark:text-slate-300">{answeredCount}/{questions.length}</strong> câu.
+                Bạn đã làm <strong className="text-gray-700 dark:text-slate-300">{answeredItems}/{totalItems}</strong> câu.
               </p>
-              {answeredCount < questions.length && (
+              {answeredItems < totalItems && (
                 <p className="text-xs text-amber-600 dark:text-amber-400 font-semibold mb-4">
-                  Còn {questions.length - answeredCount} câu chưa được trả lời!
+                  Còn {totalItems - answeredItems} câu chưa được trả lời!
                 </p>
               )}
               <p className="text-sm text-gray-500 dark:text-slate-400 mb-6">
