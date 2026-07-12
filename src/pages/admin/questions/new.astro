@@ -535,7 +535,7 @@ const subjects = await db.getSubjects();
   if (btnSample && jsonData) {
     btnSample.addEventListener('click', async () => {
       try {
-        const res = await fetch('/sample-questions.json');
+        const res = await fetch(import.meta.env.BASE_URL + '/sample-questions.json');
         const text = await res.text();
         jsonData.value = text;
         jsonData.dispatchEvent(new Event('input'));

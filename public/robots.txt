@@ -4,29 +4,29 @@
 User-agent: *
 
 # Trang công khai — cho phép lập chỉ mục
-Allow: /
-Allow: /subjects
-Allow: /lessons
-Allow: /about
-Allow: /guide
-Allow: /contact
-Allow: /privacy
-Allow: /sitemap
+Allow: /lms/
+Allow: /lms/subjects
+Allow: /lms/lessons
+Allow: /lms/about
+Allow: /lms/guide
+Allow: /lms/contact
+Allow: /lms/privacy
+Allow: /lms/sitemap
 
 # Trang riêng tư — không lập chỉ mục
-Disallow: /admin
-Disallow: /dashboard
-Disallow: /profile
-Disallow: /api/
-Disallow: /login
-Disallow: /register
-Disallow: /forgot-password
-Disallow: /reset-password
-Disallow: /ai-chat
+Disallow: /lms/admin
+Disallow: /lms/dashboard
+Disallow: /lms/profile
+Disallow: /lms/api/
+Disallow: /lms/login
+Disallow: /lms/register
+Disallow: /lms/forgot-password
+Disallow: /lms/reset-password
+Disallow: /lms/ai-chat
 
 # Không crawl trang thi (để tránh crawl session)
-Disallow: /exams/*/take
-Disallow: /exams/*/result
+Disallow: /lms/exams/*/take
+Disallow: /lms/exams/*/result
 
 # Sitemap XML
-Sitemap: https://lms.lop12.com/sitemap.xml
+Sitemap: https://lms.lop12.com/lms/sitemap.xml

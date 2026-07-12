@@ -1,0 +1,111 @@
+{
+  "title": "Câu hỏi json to bank quiz - Toán 12 & Tiếng Anh 12",
+  "questions": [
+    {
+      "type": "mcq",
+      "question": "Tìm đạo hàm của hàm số $f(x) = x^3 - 3x^2 + 2x - 1$",
+      "option_a": "$f'(x) = 3x^2 - 6x + 2$",
+      "option_b": "$f'(x) = x^3 - 3x^2 + 2$",
+      "option_c": "$f'(x) = 3x^2 - 6x + 1$",
+      "option_d": "$f'(x) = 3x^2 - 3x + 2$",
+      "correct_option": "A",
+      "explanation": "Áp dụng quy tắc đạo hàm: $(x^n)' = nx^{n-1}$ và $(c)' = 0$. Ta có:\\n$f'(x) = 3x^2 - 6x + 2$",
+      "difficulty_level": "easy",
+      "is_dynamic": false
+    },
+    {
+      "type": "msq",
+      "question": "Cho hàm số $f(x) = x^3 - 3x^2 + 2$. Những khẳng định nào sau đây đúng?",
+      "option_a": "Hàm số có đạo hàm $f'(x) = 3x^2 - 6x$",
+      "option_b": "Hàm số nghịch biến trên $(0; 2)$",
+      "option_c": "Hàm số có cực đại tại $x = 0$",
+      "option_d": "Hàm số có cực tiểu tại $x = 2$",
+      "correct_option": "A,C",
+      "explanation": "Kiểm tra từng khẳng định:\\nA) $f'(x) = 3x^2 - 6x$ ✓\\nB) $f'(x) = 3x(x-2) < 0$ khi $x \\in (0;2)$ ✓\\nC) $f'(0) = 0$ và $f''(0) = -6 < 0$ nên $x = 0$ là cực đại ✓\\nD) $f'(2) = 0$ và $f''(2) = 6 > 0$ nên $x = 2$ là cực tiểu ✓",
+      "difficulty_level": "hard",
+      "is_dynamic": false
+    },
+    {
+      "type": "sa",
+      "question": "Tính giá trị đạo hàm của hàm số $f(x) = x^2 + 4x - 3$ tại điểm $x = 2$",
+      "correct_option": "8",
+      "explanation": "Ta có $f'(x) = 2x + 4$\\nTại $x = 2$: $f'(2) = 2 \\cdot 2 + 4 = 4 + 4 = 8$",
+      "difficulty_level": "medium",
+      "is_dynamic": false
+    },
+    {
+      "type": "tl",
+      "question": "Câu hỏi tự luận",
+      "correct_option": "",
+      "explanation": "Lời giải nếu có",
+      "difficulty_level": "medium",
+      "is_dynamic": false
+    },
+    {
+      "type": "read",
+      "content": "Climate change is one of the most pressing issues of our time. Rising temperatures, caused primarily by the burning of fossil fuels, are leading to more extreme weather events, sea level rise, and disruption of ecosystems. Scientists warn that without significant reductions in greenhouse gas emissions, the consequences could be irreversible.",
+      "difficulty_level": "medium",
+      "is_dynamic": false,
+      "metadata": {
+        "questions": [
+          {
+            "question": "According to the passage, what is the primary cause of rising temperatures?",
+            "option_a": "Deforestation and land use changes",
+            "option_b": "The burning of fossil fuels",
+            "option_c": "Ocean currents and natural cycles",
+            "option_d": "Industrial waste and pollution",
+            "correct_option": "B",
+            "explanation": "The passage explicitly states: 'Rising temperatures, caused primarily by the burning of fossil fuels...'"
+          },
+          {
+            "question": "What is NOT mentioned in the passage as a consequence of climate change?",
+            "option_a": "Extreme weather events",
+            "option_b": "Sea level rise",
+            "option_c": "Acid rain",
+            "option_d": "Disruption of ecosystems",
+            "correct_option": "C",
+            "explanation": "The passage mentions extreme weather events, sea level rise, and disruption of ecosystems, but does not mention acid rain."
+          },
+          {
+            "question": "What do scientists warn about greenhouse gas emissions?",
+            "option_a": "They will naturally decrease over time.",
+            "option_b": "Without significant reductions, consequences could be irreversible.",
+            "option_c": "They are not the main driver of global warming.",
+            "option_d": "They have already reached a safe level.",
+            "correct_option": "B",
+            "explanation": "The last sentence states: 'Scientists warn that without significant reductions in greenhouse gas emissions, the consequences could be irreversible.'"
+          }
+        ]
+      }
+    },
+    {
+      "type": "list",
+      "content": "Listen to a conversation between two students, Tom and Alice, talking about their weekend plans. Then answer the questions.",
+      "difficulty_level": "medium",
+      "is_dynamic": false,
+      "metadata": {
+        "audio_url": "/audio/sample-listening.mp3",
+        "questions": [
+          {
+            "question": "Where does Tom suggest they should go on Saturday?",
+            "option_a": "The cinema",
+            "option_b": "The park",
+            "option_c": "The shopping mall",
+            "option_d": "The library",
+            "correct_option": "A",
+            "explanation": "Tom says: 'How about we catch a film on Saturday?' which points to the cinema."
+          },
+          {
+            "question": "What time do they agree to meet?",
+            "option_a": "2:00 PM",
+            "option_b": "3:30 PM",
+            "option_c": "5:00 PM",
+            "option_d": "6:30 PM",
+            "correct_option": "B",
+            "explanation": "Alice suggests meeting at half past three, and Tom agrees."
+          }
+        ]
+      }
+    }
+  ]
+}

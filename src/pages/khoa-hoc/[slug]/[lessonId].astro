@@ -177,7 +177,7 @@ const ytId = currentLesson.video_url ? getYouTubeId(currentLesson.video_url) : n
       completeBtn.innerHTML = 'Đang xử lý...';
       
       try {
-        const res = await fetch('/api/courses/progress', {
+        const res = await fetch(import.meta.env.BASE_URL + '/api/courses/progress', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ lessonId })

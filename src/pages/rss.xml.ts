@@ -3,6 +3,7 @@ import { db } from '../services/db';
 
 export const GET: APIRoute = async ({ request }) => {
   const origin = new URL(request.url).origin;
+  const base = import.meta.env.BASE_URL; // '/lms'
 
   // Escape ký tự đặc biệt XML
   const escapeXml = (text: string): string =>
@@ -27,7 +28,7 @@ export const GET: APIRoute = async ({ request }) => {
 >
   <channel>
     <title>Lớp 12 LMS - Bí kíp học tập &amp; Tin tức Giáo dục</title>
-    <link>${origin}</link>
+    <link>${origin}${base}</link>
     <description>Cập nhật nhanh các thông báo tuyển sinh, cấu trúc đề thi tham khảo THPT và phương pháp giải nhanh trắc nghiệm đạt điểm cao.</description>
     <language>vi</language>
     <managingEditor>admin@lop12.vn (Lớp 12 LMS)</managingEditor>
@@ -35,11 +36,11 @@ export const GET: APIRoute = async ({ request }) => {
     <lastBuildDate>${buildDate}</lastBuildDate>
     <ttl>60</ttl>
     <image>
-      <url>${origin}/favicon.svg</url>
+      <url>${origin}${base}/favicon.svg</url>
       <title>Lớp 12 LMS</title>
-      <link>${origin}</link>
+      <link>${origin}${base}</link>
     </image>
-    <atom:link href="${origin}/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="${origin}${base}/rss.xml" rel="self" type="application/rss+xml"/>
   </channel>
 </rss>`;
 

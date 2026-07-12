@@ -42,29 +42,30 @@ const activeSidebar = showSidebar && user !== null;
 
 // Canonical URL — dùng URL hiện tại nếu không được override
 const siteUrl = 'https://lms.lop12.com';
+const base = import.meta.env.BASE_URL; // '/lms'
 const canonicalUrl = canonical
-  ? (canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`)
+  ? (canonical.startsWith('http') ? canonical : `${siteUrl}${base}${canonical}`)
   : `${siteUrl}${Astro.url.pathname}`;
 
 const fullTitle = `${title} | Lớp 12 LMS`;
-const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${base}${ogImage}`;
 
 // Chuẩn bị JSON-LD schemas
 const schemas: object[] = [];
 
 // WebSite schema — chỉ ở trang chủ
-if (Astro.url.pathname === '/') {
+if (Astro.url.pathname === base || Astro.url.pathname === base + '/') {
   schemas.push({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Lớp 12 LMS',
-    url: siteUrl,
+    url: siteUrl + base,
     description,
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: `${siteUrl}/ly-thuyet?q={search_term_string}`,
+        urlTemplate: `${siteUrl}${base}/ly-thuyet?q={search_term_string}`,
       },
       'query-input': 'required name=search_term_string',
     },
@@ -81,13 +82,13 @@ if (breadcrumbs && breadcrumbs.length > 0) {
         '@type': 'ListItem',
         position: 1,
         name: 'Trang chủ',
-        item: siteUrl,
+        item: siteUrl + base,
       },
       ...breadcrumbs.map((bc, i) => ({
         '@type': 'ListItem',
         position: i + 2,
         name: bc.name,
-        item: bc.url.startsWith('http') ? bc.url : `${siteUrl}${bc.url}`,
+        item: bc.url.startsWith('http') ? bc.url : `${siteUrl}${base}${bc.url}`,
       })),
     ],
   });

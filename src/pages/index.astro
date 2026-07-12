@@ -100,7 +100,7 @@ const subjectRows = [
 >
   <script is:inline>
     if (document.cookie.indexOf('mock-user-id') !== -1 || document.cookie.indexOf('sb-access-token') !== -1) {
-      window.location.href = '/dashboard';
+      window.location.href = import.meta.env.BASE_URL + '/dashboard';
     }
   </script>
 

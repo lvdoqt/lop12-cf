@@ -1,6 +1,7 @@
 ---
 const user = Astro.locals.user;
-const pathname = new URL(Astro.request.url).pathname;
+const base = import.meta.env.BASE_URL;
+const pathname = new URL(Astro.request.url).pathname.replace(base, '') || '/';
 
 const menuItems = [
   { href: '/dashboard', label: 'Bảng điều khiển', icon: 'dashboard' },
@@ -118,7 +119,7 @@ const menuItems = [
   if (logoutBtn) {
     logoutBtn.addEventListener('click', async () => {
       try {
-        const response = await fetch('/api/auth/session', {
+        const response = await fetch(import.meta.env.BASE_URL + '/api/auth/session', {
           method: 'DELETE'
         });
         if (response.ok) {
@@ -128,7 +129,7 @@ const menuItems = [
             // @ts-ignore
             await window.supabase.auth.signOut();
           }
-          window.location.href = '/login';
+          window.location.href = import.meta.env.BASE_URL + '/login';
         }
       } catch (err) {
         console.error('Error logging out:', err);

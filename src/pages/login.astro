@@ -273,12 +273,12 @@ export const prerender = false;
       if (role === 'teacher') userId = 'mock-user-teacher';
       if (role === 'admin') userId = 'mock-user-admin';
       try {
-        const res = await fetch('/api/auth/session', {
+        const res = await fetch(import.meta.env.BASE_URL + '/api/auth/session', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ mockUserId: userId })
         });
-        if (res.ok) window.location.href = '/dashboard';
+        if (res.ok) window.location.href = import.meta.env.BASE_URL + '/dashboard';
         else showError('Không thể thiết lập phiên đăng nhập.');
       } catch {
         showError('Lỗi kết nối máy chủ.');
@@ -308,12 +308,12 @@ export const prerender = false;
 
       if (isMockMode) {
         try {
-          const res = await fetch('/api/auth/session', {
+          const res = await fetch(import.meta.env.BASE_URL + '/api/auth/session', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ mockUserId: 'mock-user-student' })
           });
-          if (res.ok) { showSuccess('Đăng nhập thành công! Đang chuyển hướng...'); setTimeout(() => window.location.href = '/dashboard', 800); }
+          if (res.ok) { showSuccess('Đăng nhập thành công! Đang chuyển hướng...'); setTimeout(() => window.location.href = import.meta.env.BASE_URL + '/dashboard', 800); }
         } catch { showError('Lỗi đăng nhập.'); }
         finally { setLoading(false); }
         return;
@@ -329,7 +329,7 @@ export const prerender = false;
         }
 
         if (data?.session) {
-          const sessionRes = await fetch('/api/auth/session', {
+          const sessionRes = await fetch(import.meta.env.BASE_URL + '/api/auth/session', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -340,7 +340,7 @@ export const prerender = false;
 
           if (sessionRes.ok) {
             showSuccess('✅ Đăng nhập thành công! Đang chuyển hướng...');
-            setTimeout(() => window.location.href = '/dashboard', 800);
+            setTimeout(() => window.location.href = import.meta.env.BASE_URL + '/dashboard', 800);
           } else {
             showError('Lỗi thiết lập phiên đăng nhập.');
             setLoading(false);

@@ -16,6 +16,7 @@ const STATIC_PAGES = [
 export const GET: APIRoute = async ({ request }) => {
   // Lấy base URL từ request header hoặc dùng mặc định
   const origin = new URL(request.url).origin;
+  const base = import.meta.env.BASE_URL; // '/lms'
 
   // Lấy dữ liệu động song song
   const [subjects, exams, lessonEntries] = await Promise.all([
@@ -33,7 +34,7 @@ export const GET: APIRoute = async ({ request }) => {
   for (const page of STATIC_PAGES) {
     urls.push(`
   <url>
-    <loc>${origin}${page.url}</loc>
+    <loc>${origin}${base}${page.url}</loc>
     <lastmod>${now}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
@@ -44,7 +45,7 @@ export const GET: APIRoute = async ({ request }) => {
   for (const subject of subjects) {
     urls.push(`
   <url>
-    <loc>${origin}/ly-thuyet/${subject.slug}</loc>
+    <loc>${origin}${base}/ly-thuyet/${subject.slug}</loc>
     <lastmod>${now}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
@@ -59,7 +60,7 @@ export const GET: APIRoute = async ({ request }) => {
       : now;
     urls.push(`
   <url>
-    <loc>${origin}/${entry.data.subject}/${slug}</loc>
+    <loc>${origin}${base}/${entry.data.subject}/${slug}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -73,7 +74,7 @@ export const GET: APIRoute = async ({ request }) => {
       : now;
     urls.push(`
   <url>
-    <loc>${origin}/exams/${exam.id}</loc>
+    <loc>${origin}${base}/exams/${exam.id}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>

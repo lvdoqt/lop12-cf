@@ -106,14 +106,14 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
     }
 
     try {
-      const res = await fetch('/api/attempts', {
+      const res = await fetch(import.meta.env.BASE_URL + '/api/attempts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ attemptId: attempt.id, answers }),
       });
 
       if (res.ok) {
-        window.location.href = `/exams/${exam.slug}/result/${attempt.id}`;
+        window.location.href = `${import.meta.env.BASE_URL}/exams/${exam.slug}/result/${attempt.id}`;
       } else {
         const data = await res.json().catch(() => null);
         setError(data?.message || 'Có lỗi xảy ra khi nộp bài. Vui lòng thử lại.');
