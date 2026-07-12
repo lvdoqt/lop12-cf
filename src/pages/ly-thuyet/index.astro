@@ -1,0 +1,156 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { db } from '../../services/db';
+
+const subjects = await db.getSubjects();
+const lessons  = await getCollection('lessons');
+const exams    = await db.getExams();
+
+const getStats = (subjectId: string, subjectSlug: string) => ({
+  lessonsCount: lessons.filter(l => l.data.subject === subjectSlug).length,
+  examsCount:   exams.filter(e => e.subject_id === subjectId).length,
+});
+
+type SubjectMeta = { icon: string; desc: string; image: string; borderHover: string; textAccent: string };
+const subjectMetas: Record<string, SubjectMeta> = {
+  'toan-12':     { icon: '📐', desc: 'Hàm số, Tích phân, Hình học Oxyz, Số phức...',       image: '/images/subjects/math.png',        borderHover: 'hover:border-blue-400   dark:hover:border-blue-600',   textAccent: 'text-blue-600   dark:text-blue-400'   },
+  'vat-ly-12':   { icon: '⚡', desc: 'Dao động cơ, Sóng cơ, Điện xoay chiều, Quang...',    image: '/images/subjects/physics.png',     borderHover: 'hover:border-purple-400  dark:hover:border-purple-600',  textAccent: 'text-purple-600 dark:text-purple-400' },
+  'hoa-hoc-12':  { icon: '🧪', desc: 'Este, Lipit, Amin, Polime, Đại cương kim loại...',   image: '/images/subjects/chemistry.png',   borderHover: 'hover:border-emerald-400 dark:hover:border-emerald-600', textAccent: 'text-emerald-600 dark:text-emerald-400' },
+  'sinh-hoc-12': { icon: '🧬', desc: 'Di truyền học, Tiến hóa, Sinh thái, Sinh quyển...',  image: '/images/subjects/biology.png',     borderHover: 'hover:border-teal-400   dark:hover:border-teal-600',   textAccent: 'text-teal-600   dark:text-teal-400'   },
+  'ngu-van-12':  { icon: '📖', desc: 'Đọc hiểu văn bản, Nghị luận xã hội & văn học...',    image: '/images/subjects/literature.png',  borderHover: 'hover:border-rose-400    dark:hover:border-rose-600',    textAccent: 'text-rose-600   dark:text-rose-400'   },
+  'lich-su-12':  { icon: '🏛️', desc: 'Lịch sử Việt Nam, Thế giới hiện đại, Cách mạng...', image: '/images/subjects/history.png',     borderHover: 'hover:border-orange-400  dark:hover:border-orange-600',  textAccent: 'text-orange-600 dark:text-orange-400' },
+  'dia-ly-12':   { icon: '🌏', desc: 'Địa lý tự nhiên, Kinh tế vùng, Dân số, Biển đảo...', image: '/images/subjects/geography.png',   borderHover: 'hover:border-cyan-400    dark:hover:border-cyan-600',    textAccent: 'text-cyan-600   dark:text-cyan-400'   },
+  'ktpl-12':     { icon: '⚖️', desc: 'Kinh tế vi mô, Pháp luật, Quyền công dân VN...',    image: '/images/subjects/ktpl.png',        borderHover: 'hover:border-yellow-400  dark:hover:border-yellow-600',  textAccent: 'text-yellow-600 dark:text-yellow-400' },
+  'tieng-anh-12':{ icon: '🇬🇧', desc: 'Ngữ pháp, Phát âm, Từ vựng chủ đề, Đọc hiểu...',  image: '/images/subjects/english.png',     borderHover: 'hover:border-amber-400   dark:hover:border-amber-600',   textAccent: 'text-amber-600  dark:text-amber-400'  },
+  'tin-hoc-12':  { icon: '💻', desc: 'Lập trình Python, CSDL, Mạng máy tính, CNTT...',    image: '/images/subjects/informatics.png', borderHover: 'hover:border-violet-400  dark:hover:border-violet-600',  textAccent: 'text-violet-600 dark:text-violet-400' },
+  'cong-nghe-12':{ icon: '⚙️', desc: 'Điện tử, Cơ khí, Thiết kế kỹ thuật, Tự động...',   image: '/images/subjects/technology.png',  borderHover: 'hover:border-slate-400   dark:hover:border-slate-500',   textAccent: 'text-slate-600  dark:text-slate-400'  },
+};
+
+const subjectRows = [
+  { label: '🔬 Khoa học Tự nhiên',     slugs: ['toan-12','vat-ly-12','hoa-hoc-12','sinh-hoc-12'] },
+  { label: '📚 Khoa học Xã hội',       slugs: ['ngu-van-12','lich-su-12','dia-ly-12','ktpl-12'] },
+  { label: '🌐 Ngoại ngữ & Kỹ thuật',  slugs: ['tieng-anh-12','tin-hoc-12','cong-nghe-12'] },
+];
+---
+
+<Layout title="Môn học Lớp 12">
+  <div class="space-y-8">
+
+    <!-- Page header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+      <div>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-ink dark:text-[#E8E0D0] tracking-tight font-serif">
+          Môn học Lớp 12
+        </h1>
+        <p class="text-sm text-[#8A7E72] dark:text-[#8A8A9E] mt-1">
+          11 môn học đầy đủ — lý thuyết chuẩn cấu trúc, video bài giảng và đề thi trắc nghiệm online.
+        </p>
+      </div>
+      <!-- Quick stats badge -->
+      <div class="flex items-center gap-3 text-xs font-semibold shrink-0">
+        <span class="px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/30">
+          {subjects.length} môn học
+        </span>
+        <span class="px-3 py-1.5 rounded-full bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 border border-amber-100 dark:border-amber-900/30">
+          {lessons.length} bài giảng
+        </span>
+        <span class="px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30">
+          {exams.length} đề thi
+        </span>
+      </div>
+    </div>
+
+    <!-- Grouped rows -->
+    {subjectRows.map(row => {
+      const rowSubjects = subjects
+        .filter(s => row.slugs.includes(s.slug))
+        .sort((a, b) => row.slugs.indexOf(a.slug) - row.slugs.indexOf(b.slug));
+
+      return (
+        <div class="space-y-4">
+          <!-- Row divider label -->
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest whitespace-nowrap">
+              {row.label}
+            </span>
+            <div class="flex-1 h-px bg-gradient-to-r from-slate-200 dark:from-slate-700 to-transparent"></div>
+          </div>
+
+          <!-- Card grid: 4 cols on md+, 2 on sm, 1 on xs -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+            {rowSubjects.map(subject => {
+              const meta: SubjectMeta = subjectMetas[subject.slug] || {
+                icon: '📚', desc: 'Tài liệu ôn tập và đề thi trắc nghiệm.',
+                image: '/images/subjects/math.png',
+                borderHover: 'hover:border-blue-400',
+                textAccent: 'text-blue-600 dark:text-blue-400',
+              };
+              const stats = getStats(subject.id, subject.slug);
+
+              return (
+                <a
+                  href={`/ly-thuyet/${subject.slug}`}
+                  class={`bg-white dark:bg-[#22223A]/90 border border-slate-200/60 dark:border-slate-800/40 rounded-2xl flex flex-col overflow-hidden
+                         hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 group relative ${meta.borderHover}`}
+                >
+                  <!-- Shimmer line -->
+                  <div class="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-blue-500/40 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+
+                  <!-- Cover image -->
+                  <div class="relative w-full h-36 overflow-hidden bg-slate-100 dark:bg-[#1E1E38]">
+                    <img
+                      src={meta.image}
+                      alt={subject.name}
+                      class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-600"
+                      loading="lazy"
+                    />
+                    <!-- Overlay gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/15 to-transparent"></div>
+                    <!-- Emoji badge -->
+                    <div class="absolute bottom-2.5 left-3.5 flex items-center justify-center w-9 h-9 rounded-xl bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/25">
+                      <span class="text-xl filter drop-shadow-sm">{meta.icon}</span>
+                    </div>
+                    <!-- "Chi tiết →" link hint -->
+                    <span class="absolute top-3 right-3 text-[10px] font-bold text-white/70 group-hover:text-white/95 transition-colors tracking-wider uppercase">
+                      Chi tiết →
+                    </span>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div class="space-y-1.5">
+                      <h2 class={`text-base font-bold text-ink dark:text-[#E8E0D0] font-serif leading-tight group-hover:${meta.textAccent} transition-colors`}>
+                        {subject.name}
+                      </h2>
+                      <p class="text-xs text-[#8A7E72] dark:text-[#8A8A9E] line-clamp-2 leading-relaxed">
+                        {meta.desc}
+                      </p>
+                    </div>
+
+                    <!-- Stats row -->
+                    <div class="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-[11px] font-semibold text-[#A89888] dark:text-[#6A6A8A] uppercase tracking-wider">
+                      <span class="flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        {stats.lessonsCount} bài học
+                      </span>
+                      <span class="flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                        </svg>
+                        {stats.examsCount} đề thi
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      );
+    })}
+
+  </div>
+</Layout>

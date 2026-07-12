@@ -1,0 +1,33 @@
+{
+  "name": "teal-conjunction",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.15.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/patch-wrangler.mjs",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/cloudflare": "^13.7.0",
+    "@astrojs/mdx": "^6.0.3",
+    "@astrojs/node": "^10.1.4",
+    "@astrojs/react": "^5.0.7",
+    "@supabase/supabase-js": "^2.107.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.4.6",
+    "chart.js": "^4.5.1",
+    "marked": "^18.0.5",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
+  }
+}

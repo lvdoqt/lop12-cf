@@ -1,0 +1,366 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { isMockMode } from '../lib/supabase';
+
+export const prerender = false;
+---
+
+<Layout title="Đăng nhập" showSidebar={false}>
+  <style>
+    .auth-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .dark .auth-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+    }
+    .auth-bg {
+      background: radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.07) 0%, transparent 60%),
+                  radial-gradient(ellipse at 60% 90%, rgba(139, 92, 246, 0.05) 0%, transparent 60%);
+    }
+    .dark .auth-bg {
+      background: radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
+                  radial-gradient(ellipse at 60% 90%, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+    }
+    .input-field {
+      background: rgba(248, 250, 252, 0.7);
+      border: 1.5px solid rgba(203, 213, 225, 0.8);
+      transition: all 0.2s ease;
+    }
+    .dark .input-field {
+      background: rgba(30, 41, 59, 0.6);
+      border-color: rgba(51, 65, 85, 0.8);
+      color: #e2e8f0;
+    }
+    .input-field:focus {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+      outline: none;
+    }
+    .dark .input-field:focus {
+      background: rgba(30, 41, 59, 0.9);
+      border-color: #818cf8;
+      box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #818cf8 0%, #6366f1 50%, #4f46e5 100%);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+      transform: translateY(-1px);
+    }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:disabled { opacity: 0.6; transform: none; cursor: not-allowed; }
+
+
+    .error-shake {
+      animation: shake 0.4s ease-in-out;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-6px); }
+      40% { transform: translateX(6px); }
+      60% { transform: translateX(-4px); }
+      80% { transform: translateX(4px); }
+    }
+    .fade-in {
+      animation: fadeIn 0.3s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .logo-icon {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    }
+    .pass-toggle {
+      color: #94a3b8;
+      transition: color 0.2s;
+    }
+    .pass-toggle:hover { color: #6366f1; }
+    .dark .pass-toggle:hover { color: #818cf8; }
+  </style>
+
+  <div class="auth-bg min-h-[calc(100vh-12rem)] flex items-center justify-center py-8 px-4 sm:px-6">
+    <div class="auth-card max-w-md w-full rounded-3xl shadow-2xl shadow-indigo-500/10 p-8 md:p-10 space-y-7">
+
+      <!-- Header -->
+      <div class="text-center space-y-3">
+        <a href="/" class="inline-flex items-center gap-3 mb-1 group">
+          <div class="logo-icon w-10 h-10 rounded-xl flex items-center justify-center font-extrabold text-white text-lg tracking-tight">L</div>
+          <span class="text-xl font-bold text-slate-800 dark:text-white tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">LỚP 12 LMS</span>
+        </a>
+        <div>
+          <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Chào mừng trở lại 👋</h1>
+          <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400">
+            Chưa có tài khoản?
+            <a href="/register" class="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 ml-1 transition-colors">Đăng ký ngay →</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Error Alert -->
+      <div id="error-alert" class="hidden fade-in p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/40 flex items-start gap-3">
+        <svg class="w-5 h-5 text-rose-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p id="error-text" class="text-sm font-medium text-rose-700 dark:text-rose-400"></p>
+      </div>
+
+      <!-- Success Alert -->
+      <div id="success-alert" class="hidden fade-in p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/40 flex items-start gap-3">
+        <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p id="success-text" class="text-sm font-medium text-emerald-700 dark:text-emerald-400"></p>
+      </div>
+
+
+      <!-- Login Form -->
+      <form id="login-form" class="space-y-4" novalidate>
+        <!-- Email -->
+        <div class="space-y-1.5">
+          <label for="email" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Địa chỉ Email</label>
+          <div class="relative">
+            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400">
+              <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </span>
+            <input id="email" name="email" type="email" required autocomplete="email"
+              placeholder="ten@gmail.com"
+              class="input-field w-full pl-10 pr-4 py-3 rounded-xl text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400" />
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between">
+            <label for="password" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Mật khẩu</label>
+            <a href="/forgot-password" class="text-xs font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors">Quên mật khẩu?</a>
+          </div>
+          <div class="relative">
+            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400">
+              <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </span>
+            <input id="password" name="password" type="password" required autocomplete="current-password"
+              placeholder="••••••••"
+              class="input-field w-full pl-10 pr-12 py-3 rounded-xl text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400" />
+            <button type="button" id="toggle-password"
+              class="pass-toggle absolute right-3.5 top-1/2 -translate-y-1/2 p-0.5"
+              aria-label="Hiện/ẩn mật khẩu">
+              <svg id="eye-icon" class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submit-btn"
+          class="btn-primary w-full text-white font-bold py-3.5 px-5 rounded-2xl text-sm flex items-center justify-center gap-2 mt-2">
+          <span id="btn-text">Đăng nhập</span>
+          <svg id="btn-spinner" class="hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="white" stroke-width="4"></circle>
+            <path class="opacity-75" fill="white" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Footer note -->
+      <p class="text-center text-xs text-slate-400 dark:text-slate-500 pt-2">
+        Bằng cách đăng nhập, bạn đồng ý với
+        <a href="/privacy" class="underline underline-offset-2 hover:text-indigo-500 transition-colors">Chính sách bảo mật</a>
+        của chúng tôi.
+      </p>
+
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // @ts-ignore
+  import { supabase, isMockMode } from '../lib/supabase';
+
+  const loginForm = document.getElementById('login-form') as HTMLFormElement | null;
+  const errorAlert = document.getElementById('error-alert');
+  const errorText = document.getElementById('error-text');
+  const successAlert = document.getElementById('success-alert');
+  const successText = document.getElementById('success-text');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const btnText = document.getElementById('btn-text');
+  const btnSpinner = document.getElementById('btn-spinner');
+  const togglePassword = document.getElementById('toggle-password');
+  const passwordInput = document.getElementById('password') as HTMLInputElement | null;
+  const eyeIcon = document.getElementById('eye-icon');
+
+  // Vietnamese error message map
+  const errorMessages: Record<string, string> = {
+    'Invalid login credentials': '❌ Email hoặc mật khẩu không đúng. Vui lòng kiểm tra lại.',
+    'Email not confirmed': '📧 Email chưa được xác nhận. Hãy kiểm tra hộp thư của bạn.',
+    'Too many requests': '⏳ Quá nhiều lần thử. Vui lòng chờ vài phút rồi thử lại.',
+    'User not found': '👤 Không tìm thấy tài khoản với email này.',
+    'Invalid email': '📧 Địa chỉ email không hợp lệ.',
+    'signup_disabled': '🚫 Đăng ký tạm thời bị tắt. Vui lòng liên hệ quản trị viên.',
+    'over_email_send_rate_limit': '⏳ Bạn đã gửi quá nhiều yêu cầu. Vui lòng thử lại sau.',
+  };
+
+  function getViMessage(raw: string): string {
+    for (const [key, msg] of Object.entries(errorMessages)) {
+      if (raw.toLowerCase().includes(key.toLowerCase())) return msg;
+    }
+    return `❌ ${raw}`;
+  }
+
+  function showError(message: string) {
+    if (successAlert) successAlert.classList.add('hidden');
+    if (errorAlert && errorText) {
+      errorText.textContent = getViMessage(message);
+      errorAlert.classList.remove('hidden');
+      errorAlert.classList.add('error-shake');
+      setTimeout(() => errorAlert.classList.remove('error-shake'), 500);
+    }
+  }
+
+  function showSuccess(message: string) {
+    if (errorAlert) errorAlert.classList.add('hidden');
+    if (successAlert && successText) {
+      successText.textContent = message;
+      successAlert.classList.remove('hidden');
+    }
+  }
+
+  function hideAlerts() {
+    errorAlert?.classList.add('hidden');
+    successAlert?.classList.add('hidden');
+  }
+
+  function setLoading(loading: boolean) {
+    if (submitBtn) submitBtn.disabled = loading;
+    if (btnText) btnText.textContent = loading ? 'Đang đăng nhập...' : 'Đăng nhập';
+    btnSpinner?.classList.toggle('hidden', !loading);
+  }
+
+  // Toggle password visibility
+  if (togglePassword && passwordInput && eyeIcon) {
+    togglePassword.addEventListener('click', () => {
+      const isHidden = passwordInput.type === 'password';
+      passwordInput.type = isHidden ? 'text' : 'password';
+      eyeIcon.innerHTML = isHidden
+        ? `<path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/>`
+        : `<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`;
+    });
+  }
+
+  // Mock login buttons
+  document.querySelectorAll('.mock-login-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const role = btn.getAttribute('data-mock-role');
+      let userId = 'mock-user-student';
+      if (role === 'teacher') userId = 'mock-user-teacher';
+      if (role === 'admin') userId = 'mock-user-admin';
+      try {
+        const res = await fetch('/api/auth/session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mockUserId: userId })
+        });
+        if (res.ok) window.location.href = '/dashboard';
+        else showError('Không thể thiết lập phiên đăng nhập.');
+      } catch {
+        showError('Lỗi kết nối máy chủ.');
+      }
+    });
+  });
+
+  // Main login form
+  if (loginForm && submitBtn) {
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hideAlerts();
+
+      const formData = new FormData(loginForm);
+      const email = (formData.get('email') as string)?.trim();
+      const password = formData.get('password') as string;
+
+      // Client-side validation
+      if (!email) { showError('Vui lòng nhập địa chỉ email.'); return; }
+      if (!password) { showError('Vui lòng nhập mật khẩu.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('Địa chỉ email không hợp lệ.');
+        return;
+      }
+
+      setLoading(true);
+
+      if (isMockMode) {
+        try {
+          const res = await fetch('/api/auth/session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ mockUserId: 'mock-user-student' })
+          });
+          if (res.ok) { showSuccess('Đăng nhập thành công! Đang chuyển hướng...'); setTimeout(() => window.location.href = '/dashboard', 800); }
+        } catch { showError('Lỗi đăng nhập.'); }
+        finally { setLoading(false); }
+        return;
+      }
+
+      try {
+        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+        if (error) {
+          showError(error.message);
+          setLoading(false);
+          return;
+        }
+
+        if (data?.session) {
+          const sessionRes = await fetch('/api/auth/session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              access_token: data.session.access_token,
+              refresh_token: data.session.refresh_token
+            })
+          });
+
+          if (sessionRes.ok) {
+            showSuccess('✅ Đăng nhập thành công! Đang chuyển hướng...');
+            setTimeout(() => window.location.href = '/dashboard', 800);
+          } else {
+            showError('Lỗi thiết lập phiên đăng nhập.');
+            setLoading(false);
+          }
+        }
+      } catch (err: any) {
+        showError(err.message || 'Đã xảy ra lỗi ngoài ý muốn.');
+        setLoading(false);
+      }
+    });
+  }
+
+
+  // Check URL params for errors
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('error')) {
+    const errDesc = params.get('error_description') || '';
+    showError(errDesc || `Lỗi xác thực: ${params.get('error')}`);
+  }
+  if (params.get('message') === 'logout') {
+    showSuccess('👋 Bạn đã đăng xuất thành công.');
+  }
+</script>

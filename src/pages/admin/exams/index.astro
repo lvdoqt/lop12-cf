@@ -1,0 +1,271 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { db } from '../../../services/db';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'admin' && user.role !== 'teacher')) {
+  return Astro.redirect('/dashboard');
+}
+
+const isAdmin = user.role === 'admin';
+
+let successMsg = '';
+let errMsg = '';
+
+// Handle Delete Exam (POST)
+if (Astro.request.method === 'POST') {
+  try {
+    const formData = await Astro.request.formData();
+    const action = formData.get('action') as string;
+
+    if (action === 'delete') {
+      const examId = formData.get('examId') as string;
+      if (examId) {
+        await db.deleteExam(examId);
+        successMsg = 'Đã xóa đề thi khỏi hệ thống thành công!';
+      }
+    }
+  } catch (err: any) {
+    errMsg = err.message || 'Lỗi xóa đề thi.';
+  }
+}
+
+// URL filter
+const url       = new URL(Astro.request.url);
+const filterSub = url.searchParams.get('mon')  || '';
+const filterType= url.searchParams.get('loai') || '';
+
+// Teacher only sees their own exams, admin sees all
+const exams    = await db.getExams(undefined, !isAdmin ? user.id : undefined);
+const subjects = await db.getSubjects();
+const examCounts = await db.getExamQuestionCounts(exams.map(e => e.id));
+
+const filteredExams = exams.filter(exam => {
+  const matchSub  = !filterSub  || exam.subject_id === filterSub;
+  const matchType = !filterType || exam.exam_type  === filterType;
+  return matchSub && matchType;
+});
+
+const examTypeMeta: Record<string, { label: string; badge: string }> = {
+  '15m':       { label: 'KT 15 phút',  badge: 'bg-sky-50    text-sky-600    dark:bg-sky-900/20    dark:text-sky-400    border-sky-100    dark:border-sky-900/30' },
+  '45m':       { label: 'KT 1 tiết',   badge: 'bg-amber-50  text-amber-600  dark:bg-amber-900/20  dark:text-amber-400  border-amber-100  dark:border-amber-900/30' },
+  'semester':  { label: 'Học kỳ',       badge: 'bg-violet-50 text-violet-600 dark:bg-violet-900/20 dark:text-violet-400 border-violet-100 dark:border-violet-900/30' },
+  'mock_thpt': { label: 'Thi thử THPT', badge: 'bg-rose-50   text-rose-600   dark:bg-rose-900/20   dark:text-rose-400   border-rose-100   dark:border-rose-900/30' },
+};
+
+// Stats per type
+const typeCounts = Object.keys(examTypeMeta).map(t => ({
+  type: t,
+  count: exams.filter(e => e.exam_type === t).length,
+  ...examTypeMeta[t]
+}));
+---
+
+<Layout title="Quản lý Đề thi">
+  <div class="space-y-6">
+
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <a href="/admin" class="inline-flex items-center text-xs font-bold text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors uppercase tracking-wider mb-2">
+          <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Trang quản trị
+        </a>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-ink dark:text-[#E8E0D0] tracking-tight font-serif">
+          Quản lý Đề thi
+        </h1>
+        <p class="text-sm text-[#8A7E72] dark:text-[#8A8A9E] mt-1">
+          Tạo, chỉnh sửa và quản lý toàn bộ đề thi trắc nghiệm trên hệ thống.
+        </p>
+      </div>
+
+      <div class="flex gap-3 shrink-0">
+        <a
+          href="/de-thi"
+          target="_blank"
+          class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+          Xem trang học sinh
+        </a>
+        <a
+          href="/admin/exams/new"
+          class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow shadow-blue-500/15 transition"
+        >
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+          </svg>
+          Tạo đề thi mới
+        </a>
+      </div>
+    </div>
+
+    <!-- Alerts -->
+    {successMsg && (
+      <div class="p-4 rounded-xl bg-emerald-50 text-emerald-700 text-sm font-semibold border border-emerald-100 dark:bg-emerald-950/20 dark:text-emerald-400 dark:border-emerald-900/35 flex items-center gap-2">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        {successMsg}
+      </div>
+    )}
+    {errMsg && (
+      <div class="p-4 rounded-xl bg-rose-50 text-rose-600 text-sm font-semibold border border-rose-100 dark:bg-rose-950/20 dark:text-rose-400 dark:border-rose-900/35">
+        {errMsg}
+      </div>
+    )}
+
+    <!-- Quick stats by type -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      {typeCounts.map(t => (
+        <a
+          href={`/admin/exams?loai=${t.type}${filterSub ? '&mon='+filterSub : ''}`}
+          class={`flex flex-col items-center justify-center p-4 rounded-2xl border text-center cursor-pointer hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 ${t.badge} ${filterType === t.type ? 'ring-2 ring-offset-2 ring-blue-500' : ''}`}
+        >
+          <span class="text-2xl font-extrabold">{t.count}</span>
+          <span class="text-xs font-semibold mt-0.5 opacity-80">{t.label}</span>
+        </a>
+      ))}
+    </div>
+
+    <!-- Filter bar -->
+    <form method="GET" action="/admin/exams" class="flex flex-wrap gap-3 items-center">
+      <select
+        name="mon"
+        onchange="this.form.submit()"
+        class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm text-ink dark:text-[#E8E0D0] focus:outline-none focus:border-blue-400 transition-colors cursor-pointer"
+      >
+        <option value="">Tất cả môn học</option>
+        {subjects.map(s => (
+          <option value={s.id} selected={filterSub === s.id}>{s.name}</option>
+        ))}
+      </select>
+
+      <select
+        name="loai"
+        onchange="this.form.submit()"
+        class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm text-ink dark:text-[#E8E0D0] focus:outline-none focus:border-blue-400 transition-colors cursor-pointer"
+      >
+        <option value="">Tất cả loại đề</option>
+        {Object.entries(examTypeMeta).map(([val, m]) => (
+          <option value={val} selected={filterType === val}>{m.label}</option>
+        ))}
+      </select>
+
+      {(filterSub || filterType) && (
+        <a href="/admin/exams" class="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 underline transition-colors">
+          Xóa bộ lọc
+        </a>
+      )}
+
+      <span class="ml-auto text-xs text-slate-400 dark:text-slate-500 font-medium">
+        {filteredExams.length} / {exams.length} đề thi
+      </span>
+    </form>
+
+    <!-- Exam table -->
+    <div class="bg-white dark:bg-[#22223A]/60 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl overflow-hidden shadow-sm">
+      {filteredExams.length === 0 ? (
+        <div class="text-center py-16 space-y-3">
+          <div class="text-4xl">📋</div>
+          <p class="text-base font-bold text-ink dark:text-[#E8E0D0]">Chưa có đề thi nào</p>
+          <p class="text-sm text-[#8A7E72] dark:text-[#8A8A9E]">
+            {(filterSub || filterType) ? 'Không có đề thi phù hợp với bộ lọc này.' : 'Bấm "Tạo đề thi mới" để bắt đầu!'}
+          </p>
+          {!filterSub && !filterType && (
+            <a href="/admin/exams/new" class="inline-flex items-center gap-1.5 px-5 py-2.5 mt-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow shadow-blue-500/15 transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              Tạo đề thi mới
+            </a>
+          )}
+        </div>
+      ) : (
+        <div class="overflow-x-auto">
+          <table class="min-w-full">
+            <thead class="bg-slate-50/80 dark:bg-slate-800/30">
+              <tr class="text-left text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                <th class="px-6 py-3">Đề thi</th>
+                <th class="px-4 py-3">Môn học</th>
+                <th class="px-4 py-3">Loại đề</th>
+                <th class="px-4 py-3 text-center">Số câu</th>
+                <th class="px-4 py-3">Thời gian</th>
+                <th class="px-4 py-3">Bảo mật</th>
+                <th class="px-4 py-3 text-right">Hành động</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60">
+              {filteredExams.map(exam => {
+                const typeMeta = examTypeMeta[exam.exam_type] || examTypeMeta['mock_thpt'];
+                return (
+                  <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/20 transition-colors text-sm">
+                    <td class="px-6 py-4">
+                      <span class="font-bold text-ink dark:text-[#E8E0D0] line-clamp-1 max-w-xs block">
+                        {exam.title}
+                      </span>
+                    </td>
+                    <td class="px-4 py-4">
+                      <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                        {exam.subject?.name || '—'}
+                      </span>
+                    </td>
+                    <td class="px-4 py-4">
+                      <span class={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold border ${typeMeta.badge}`}>
+                        {typeMeta.label}
+                      </span>
+                    </td>
+                    <td class="px-4 py-4 text-center">
+                      <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 font-bold text-xs">
+                        {examCounts[exam.id] || 0}
+                      </span>
+                    </td>
+                    <td class="px-4 py-4 font-mono text-xs font-semibold text-[#8A7E72] dark:text-[#8A8A9E]">
+                      {exam.duration} phút
+                    </td>
+                    <td class="px-4 py-4">
+                      {exam.password ? (
+                        <span class="inline-flex items-center gap-1 text-xs font-semibold text-amber-600 dark:text-amber-400">
+                          🔒 Có mật khẩu
+                        </span>
+                      ) : (
+                        <span class="text-xs text-slate-400">—</span>
+                      )}
+                    </td>
+                    <td class="px-4 py-4 text-right">
+                      <div class="flex items-center justify-end gap-3">
+                        <a
+                          href={`/exams/${exam.slug || exam.id}`}
+                          target="_blank"
+                          class="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
+                        >
+                          Xem
+                        </a>
+                        <a
+                          href={`/admin/exams/edit/${exam.id}`}
+                          class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline"
+                        >
+                          Sửa
+                        </a>
+                        <form method="POST" class="inline" onsubmit="return confirm('Xóa đề thi này? Hành động không thể hoàn tác.')">
+                          <input type="hidden" name="action" value="delete"/>
+                          <input type="hidden" name="examId" value={exam.id}/>
+                          <button type="submit" class="text-xs font-bold text-rose-500 hover:underline bg-transparent border-none cursor-pointer">
+                            Xóa
+                          </button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+
+  </div>
+</Layout>

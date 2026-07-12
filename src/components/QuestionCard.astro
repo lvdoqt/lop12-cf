@@ -1,0 +1,449 @@
+---
+import { marked } from 'marked';
+import type { Question, Answer } from '../types';
+
+interface Props {
+  question: Question & { answers: Answer[] };
+  index: number;
+  mode?: 'take' | 'review';
+  selectedAnswers?: string[]; // Array of selected answer IDs
+}
+
+const { question, index, mode = 'take', selectedAnswers = [] } = Astro.props;
+
+const parseMarkdownWithMath = (text: string = '', isInline = false) => {
+  if (!text) return '';
+  const mathBlocks: string[] = [];
+  let idx = 0;
+  const mathRegex = /(\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\$[^$\n]*?\$)/g;
+  
+  const textWithoutMath = text.replace(mathRegex, (match) => {
+    mathBlocks.push(match);
+    return `@@MATH_BLOCK_${idx++}@@`;
+  });
+
+  let html = (isInline ? marked.parseInline(textWithoutMath) : marked.parse(textWithoutMath)) as string;
+
+  mathBlocks.forEach((block, i) => {
+    html = html.replace(`@@MATH_BLOCK_${i}@@`, block);
+  });
+
+  return html;
+};
+---
+
+<div class="bg-white border border-gray-250 dark:bg-slate-900 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm mb-6 transition-colors duration-200">
+  <!-- Header: Question Number and Difficulty -->
+  <div class="flex items-center justify-between mb-4">
+    <span class="inline-flex items-center px-3 py-1 rounded-xl text-xs font-bold bg-gray-100 text-gray-700 dark:bg-slate-800 dark:text-slate-300">
+      Câu {index}
+    </span>
+    
+    <div class="flex items-center space-x-2">
+      <!-- Question Type -->
+      <span class="text-xs font-semibold text-gray-400 dark:text-slate-500">
+        {question.type === 'single_choice' 
+          ? 'Trắc nghiệm đơn' 
+          : question.type === 'multiple_choice' 
+            ? 'Nhiều lựa chọn' 
+            : question.type === 'msq'
+              ? 'Đúng / Sai'
+              : question.type === 'sa'
+                ? 'Trả lời ngắn'
+                : question.type === 'tl'
+                  ? 'Tự luận'
+                  : 'Đúng / Sai đơn'}
+      </span>
+      
+      <!-- Difficulty Badge -->
+      <span class={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-extrabold uppercase ${
+        question.difficulty === 'easy' 
+          ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400' 
+          : question.difficulty === 'medium' 
+            ? 'bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400' 
+            : 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400'
+      }`}>
+        {question.difficulty === 'easy' ? 'Dễ' : question.difficulty === 'medium' ? 'Trung bình' : 'Khó'}
+      </span>
+    </div>
+  </div>
+
+  <!-- Question Content -->
+  <div 
+    class="text-base md:text-lg font-semibold text-gray-800 dark:text-slate-100 mb-6 leading-relaxed whitespace-pre-wrap select-none question-text [&_img]:max-w-full [&_img]:rounded-lg [&_img]:mx-auto [&_img]:my-3 [&_p]:inline"
+    set:html={parseMarkdownWithMath(question.content || '', false)}
+  />
+
+  <!-- Standard Options Container (single_choice, multiple_choice, true_false) -->
+  {question.type !== 'msq' && question.type !== 'sa' && question.type !== 'tl' && (
+    <div class="space-y-3">
+      {question.answers.map((answer, optIdx) => {
+        const optionLetter = String.fromCharCode(65 + optIdx); // A, B, C, D...
+        const isSelected = selectedAnswers.includes(answer.id);
+        const isCorrect = answer.is_correct;
+        
+        let optionStyle = 'border-gray-250 dark:border-slate-800/80 hover:bg-gray-50 dark:hover:bg-slate-800/40 text-gray-700 dark:text-slate-300 cursor-pointer';
+        let iconMarkup = null;
+
+        if (mode === 'take') {
+          if (isSelected) {
+            optionStyle = 'border-blue-500 bg-blue-50/50 dark:border-blue-500 dark:bg-blue-950/20 text-blue-700 dark:text-blue-400 cursor-pointer';
+          }
+        } else if (mode === 'review') {
+          if (isCorrect) {
+            optionStyle = 'border-emerald-500 bg-emerald-50/60 dark:border-emerald-500/50 dark:bg-emerald-950/20 text-emerald-700 dark:text-emerald-400';
+            iconMarkup = (
+              <span class="text-emerald-600 dark:text-emerald-400 ml-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            );
+          } else if (isSelected && !isCorrect) {
+            optionStyle = 'border-rose-500 bg-rose-50/60 dark:border-rose-500/50 dark:bg-rose-950/20 text-rose-700 dark:text-rose-400';
+            iconMarkup = (
+              <span class="text-rose-600 dark:text-rose-400 ml-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 00-1.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            );
+          }
+        }
+
+        return (
+          <div
+            data-question-id={question.id}
+            data-answer-id={answer.id}
+            data-type={question.type}
+            class={`flex items-center p-4 rounded-xl border-2 transition-all duration-150 select-none ${optionStyle} option-item`}
+          >
+            <div class={`w-6 h-6 rounded-lg mr-3 flex items-center justify-center font-bold text-xs transition-colors border ${
+              isSelected 
+                ? 'bg-blue-600 border-blue-600 text-white' 
+                : 'bg-gray-100 border-gray-300 text-gray-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400'
+            }`}>
+              {optionLetter}
+            </div>
+            
+            <div class="text-sm md:text-base font-medium flex-1 [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1" set:html={parseMarkdownWithMath(answer.content || '', true)} />
+
+            {iconMarkup}
+          </div>
+        );
+      })}
+    </div>
+  )}
+
+  <!-- Đúng / Sai Options Container (msq) -->
+  {question.type === 'msq' && (
+    <div class="space-y-4">
+      {question.answers.map((answer, optIdx) => {
+        const optionLetter = String.fromCharCode(65 + optIdx); // A, B, C, D
+        const submittedObj = selectedAnswers[0] || {};
+        const currentSelection = submittedObj[answer.id]; // "Đúng", "Sai", or undefined
+        const correctChoice = answer.is_correct ? 'Đúng' : 'Sai';
+        const isOptionCorrect = currentSelection === correctChoice;
+        
+        let statusStyle = 'border-gray-200 dark:border-slate-800/80 bg-white dark:bg-slate-900';
+        let selectionText = currentSelection || '(Bỏ trống)';
+        
+        if (mode === 'review') {
+          if (isOptionCorrect) {
+            statusStyle = 'border-emerald-500 bg-emerald-50/20 dark:bg-emerald-950/10 text-emerald-700 dark:text-emerald-400';
+          } else {
+            statusStyle = 'border-rose-500 bg-rose-50/20 dark:bg-rose-950/10 text-rose-700 dark:text-rose-400';
+          }
+        }
+        
+        return (
+          <div class={`flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border transition-all gap-3 ${statusStyle}`}>
+            <div class="flex items-start flex-1 min-w-0">
+              <span class="w-6 h-6 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-450 flex items-center justify-center font-bold text-xs mr-3 shrink-0">{optionLetter}</span>
+              <div class="text-sm md:text-base font-medium text-gray-700 dark:text-slate-300 leading-relaxed [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1" set:html={parseMarkdownWithMath(answer.content || '', true)} />
+            </div>
+            
+            <div class="flex items-center gap-3 shrink-0 self-end sm:self-center">
+              {mode === 'take' ? (
+                <div class="flex items-center gap-2">
+                  <button
+                    type="button"
+                    data-msq-button="Đúng"
+                    data-question-id={question.id}
+                    data-answer-id={answer.id}
+                    data-option-letter={optionLetter}
+                    class={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all border ${
+                      currentSelection === 'Đúng'
+                        ? 'bg-blue-600 border-blue-600 text-white'
+                        : 'bg-gray-50 border-gray-200 text-gray-600 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-750'
+                    }`}
+                  >
+                    Đúng
+                  </button>
+                  <button
+                    type="button"
+                    data-msq-button="Sai"
+                    data-question-id={question.id}
+                    data-answer-id={answer.id}
+                    data-option-letter={optionLetter}
+                    class={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all border ${
+                      currentSelection === 'Sai'
+                        ? 'bg-blue-600 border-blue-600 text-white'
+                        : 'bg-gray-50 border-gray-200 text-gray-600 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-750'
+                    }`}
+                  >
+                    Sai
+                  </button>
+                </div>
+              ) : (
+                <div class="flex flex-wrap items-center gap-2 text-xs font-semibold">
+                  <span class="text-gray-400 dark:text-slate-500">Cậu chọn:</span>
+                  <span class={`px-2.5 py-1 rounded-lg border font-bold ${
+                    currentSelection === 'Đúng'
+                      ? 'bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-950/20 dark:border-blue-900 dark:text-blue-400'
+                      : currentSelection === 'Sai'
+                        ? 'bg-gray-50 border-gray-200 text-gray-700 dark:bg-slate-850 dark:border-slate-800 dark:text-slate-400'
+                        : 'bg-rose-50 border-rose-200 text-rose-700 dark:bg-rose-950/20 dark:border-rose-900 dark:text-rose-400'
+                  }`}>
+                    {selectionText}
+                  </span>
+                  
+                  <span class="text-gray-400 dark:text-slate-500 ml-1">Đáp án:</span>
+                  <span class="px-2.5 py-1 rounded-lg border font-bold bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-emerald-950/20 dark:border-emerald-900 dark:text-emerald-400">
+                    {correctChoice}
+                  </span>
+
+                  {isOptionCorrect ? (
+                    <span class="text-emerald-600 dark:text-emerald-400 ml-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                  ) : (
+                    <span class="text-rose-600 dark:text-rose-400 ml-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 00-1.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  )}
+
+  <!-- Short Answer Container (sa) -->
+  {question.type === 'sa' && (
+    <div class="space-y-4">
+      {mode === 'take' ? (
+        <input
+          type="text"
+          data-question-id={question.id}
+          data-type="sa"
+          placeholder="Nhập câu trả lời của cậu..."
+          class="sa-input w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100 transition-colors"
+          value={selectedAnswers[0] || ''}
+        />
+      ) : (
+        <div class="space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <span class="text-sm font-semibold text-gray-500 dark:text-slate-400">Cậu đã điền:</span>
+            <div class={`px-4 py-2.5 rounded-xl border-2 font-bold text-sm flex items-center gap-2 ${
+              (() => {
+                const submitted = selectedAnswers[0] || '';
+                const correct = question.answer || '';
+                const normSub = submitted.trim().toLowerCase().replace(/\s+/g, ' ').replace(',', '.');
+                const normCorr = correct.trim().toLowerCase().replace(/\s+/g, ' ').replace(',', '.');
+                const isCorrect = normSub === normCorr || (!isNaN(Number(normSub)) && !isNaN(Number(normCorr)) && Number(normSub) === Number(normCorr));
+                
+                return isCorrect 
+                  ? 'border-emerald-500 bg-emerald-50/20 dark:bg-emerald-950/10 text-emerald-700 dark:text-emerald-400'
+                  : 'border-rose-500 bg-rose-50/20 dark:bg-rose-950/10 text-rose-700 dark:text-rose-400';
+              })()
+            }`}>
+              {selectedAnswers[0] || '(Bỏ trống)'}
+              {(() => {
+                const submitted = selectedAnswers[0] || '';
+                const correct = question.answer || '';
+                const normSub = submitted.trim().toLowerCase().replace(/\s+/g, ' ').replace(',', '.');
+                const normCorr = correct.trim().toLowerCase().replace(/\s+/g, ' ').replace(',', '.');
+                const isCorrect = normSub === normCorr || (!isNaN(Number(normSub)) && !isNaN(Number(normCorr)) && Number(normSub) === Number(normCorr));
+                
+                return isCorrect ? '✓ Đúng' : '✗ Sai';
+              })()}
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-3 text-sm">
+            <span class="font-semibold text-gray-500 dark:text-slate-400">Đáp án chính xác:</span>
+            <span class="font-black text-emerald-600 dark:text-emerald-400">{question.answer}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+
+  <!-- Essay / Tự luận Container (tl) -->
+  {question.type === 'tl' && (
+    <div class="space-y-4 mt-4">
+      {mode === 'take' ? (
+        <textarea
+          data-question-id={question.id}
+          data-type="tl"
+          placeholder="Nhập bài làm / lời giải của cậu vào đây..."
+          class="tl-textarea w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100 transition-colors min-h-[150px] resize-y"
+        >{selectedAnswers[0] || ''}</textarea>
+      ) : (
+        <div class="space-y-3">
+          <div class="flex flex-col gap-2">
+            <span class="text-sm font-semibold text-gray-500 dark:text-slate-400">Bài làm của cậu:</span>
+            <div class="p-4 rounded-xl border bg-gray-50 dark:bg-slate-800/50 dark:border-slate-800 text-gray-800 dark:text-slate-200 whitespace-pre-wrap min-h-[100px]">
+              {selectedAnswers[0] || '(Bỏ trống)'}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+
+  <!-- Review Mode: Show Explanation -->
+  {mode === 'review' && question.explanation && (
+    <div class="mt-6 p-4 rounded-xl bg-blue-50/40 border border-blue-100/30 dark:bg-slate-900/60 dark:border-slate-800/80">
+      <h4 class="text-sm font-bold text-blue-600 dark:text-blue-400 flex items-center mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4.5 w-4.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+        Lời giải chi tiết:
+      </h4>
+      <div 
+        class="text-sm text-gray-600 dark:text-slate-300 leading-relaxed whitespace-pre-wrap [&_img]:max-w-full [&_img]:rounded-lg [&_img]:mx-auto [&_img]:my-3 [&_p]:inline"
+        set:html={parseMarkdownWithMath(question.explanation || '', false)}
+      />
+    </div>
+  )}
+</div>
+
+<script>
+  const setupInteractions = () => {
+    // 1. Standard MCQ items
+    const options = document.querySelectorAll('.option-item');
+    options.forEach(opt => {
+      opt.addEventListener('click', () => {
+        const qId = opt.getAttribute('data-question-id');
+        const aId = opt.getAttribute('data-answer-id');
+        const qType = opt.getAttribute('data-type');
+        
+        if (!qId || !aId) return;
+
+        const event = new CustomEvent('answer-selected', {
+          detail: { questionId: qId, answerId: aId, type: qType }
+        });
+        document.dispatchEvent(event);
+
+        if (qType === 'single_choice' || qType === 'true_false') {
+          document.querySelectorAll(`.option-item[data-question-id="${qId}"]`).forEach(sibling => {
+            sibling.classList.remove('border-blue-500', 'bg-blue-50/50', 'dark:border-blue-500', 'dark:bg-blue-950/20', 'text-blue-700', 'dark:text-blue-400');
+            const letter = sibling.querySelector('.w-6');
+            if (letter) {
+              letter.classList.remove('bg-blue-600', 'border-blue-600', 'text-white');
+              letter.classList.add('bg-gray-100', 'border-gray-300', 'text-gray-500', 'dark:bg-slate-800', 'dark:border-slate-700', 'dark:text-slate-400');
+            }
+          });
+        }
+        
+        if (qType === 'multiple_choice') {
+          const isSelected = opt.classList.toggle('border-blue-500');
+          opt.classList.toggle('bg-blue-50/50', isSelected);
+          opt.classList.toggle('dark:border-blue-500', isSelected);
+          opt.classList.toggle('dark:bg-blue-950/20', isSelected);
+          opt.classList.toggle('text-blue-700', isSelected);
+          opt.classList.toggle('dark:text-blue-400', isSelected);
+
+          const letter = opt.querySelector('.w-6');
+          if (letter) {
+            letter.classList.toggle('bg-blue-600', isSelected);
+            letter.classList.toggle('border-blue-600', isSelected);
+            letter.classList.toggle('text-white', isSelected);
+            letter.classList.toggle('bg-gray-100', !isSelected);
+            letter.classList.toggle('border-gray-300', !isSelected);
+            letter.classList.toggle('text-gray-500', !isSelected);
+          }
+        } else {
+          opt.classList.add('border-blue-500', 'bg-blue-50/50', 'dark:border-blue-500', 'dark:bg-blue-950/20', 'text-blue-700', 'dark:text-blue-400');
+          const letter = opt.querySelector('.w-6');
+          if (letter) {
+            letter.classList.remove('bg-gray-100', 'border-gray-300', 'text-gray-500', 'dark:bg-slate-800', 'dark:border-slate-700', 'dark:text-slate-400');
+            letter.classList.add('bg-blue-600', 'border-blue-600', 'text-white');
+          }
+        }
+      });
+    });
+
+    // 2. Short Answer (sa) inputs
+    const saInputs = document.querySelectorAll('.sa-input');
+    saInputs.forEach(input => {
+      input.addEventListener('input', (e) => {
+        const qId = input.getAttribute('data-question-id');
+        const qType = input.getAttribute('data-type');
+        const val = (e.target as HTMLInputElement).value;
+        if (!qId) return;
+
+        const event = new CustomEvent('answer-selected', {
+          detail: { questionId: qId, answerText: val, type: qType }
+        });
+        document.dispatchEvent(event);
+      });
+    });
+
+    // 2.5 Essay (tl) textareas
+    const tlTextareas = document.querySelectorAll('.tl-textarea');
+    tlTextareas.forEach(textarea => {
+      textarea.addEventListener('input', (e) => {
+        const qId = textarea.getAttribute('data-question-id');
+        const qType = textarea.getAttribute('data-type');
+        const val = (e.target as HTMLTextAreaElement).value;
+        if (!qId) return;
+
+        const event = new CustomEvent('answer-selected', {
+          detail: { questionId: qId, answerText: val, type: qType }
+        });
+        document.dispatchEvent(event);
+      });
+    });
+
+    // 3. Đúng/Sai (msq) buttons
+    const msqButtons = document.querySelectorAll('[data-msq-button]');
+    msqButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const qId = btn.getAttribute('data-question-id');
+        const aId = btn.getAttribute('data-answer-id');
+        const choice = btn.getAttribute('data-msq-button'); // "Đúng" or "Sai"
+        if (!qId || !aId || !choice) return;
+
+        // Dispatch selection
+        const event = new CustomEvent('answer-selected', {
+          detail: { questionId: qId, answerId: aId, choice, type: 'msq' }
+        });
+        document.dispatchEvent(event);
+
+        // Update active styles on the two buttons for this answer
+        const siblingChoice = choice === 'Đúng' ? 'Sai' : 'Đúng';
+        const sibling = btn.parentElement?.querySelector(`[data-msq-button="${siblingChoice}"][data-answer-id="${aId}"]`);
+        
+        // Highlight active, reset sibling
+        btn.classList.remove('bg-gray-50', 'border-gray-200', 'text-gray-600', 'dark:bg-slate-800', 'dark:border-slate-700', 'dark:text-slate-400');
+        btn.classList.add('bg-blue-600', 'border-blue-600', 'text-white');
+
+        if (sibling) {
+          sibling.classList.remove('bg-blue-600', 'border-blue-600', 'text-white');
+          sibling.classList.add('bg-gray-50', 'border-gray-200', 'text-gray-600', 'dark:bg-slate-800', 'dark:border-slate-700', 'dark:text-slate-400');
+        }
+      });
+    });
+  };
+
+  setupInteractions();
+</script>

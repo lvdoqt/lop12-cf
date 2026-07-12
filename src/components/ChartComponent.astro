@@ -1,0 +1,144 @@
+---
+interface Props {
+  type?: 'line' | 'bar';
+  labels: string[];
+  data: number[];
+  label: string;
+  id?: string;
+  suggestedMax?: number;
+}
+
+const { type = 'line', labels, data, label, id = 'chart-' + Date.now(), suggestedMax = 10 } = Astro.props;
+---
+
+<div class="relative w-full h-64 md:h-72 bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800/80 rounded-2xl p-4 shadow-sm">
+  <canvas id={id}></canvas>
+</div>
+
+<!-- Send props to client side script securely -->
+<div
+  id={`${id}-data`}
+  class="hidden"
+  data-type={type}
+  data-labels={JSON.stringify(labels)}
+  data-values={JSON.stringify(data)}
+  data-label={label}
+  data-suggested-max={suggestedMax}
+></div>
+
+<script>
+  import Chart from 'chart.js/auto';
+
+  const initCharts = () => {
+    // Find all chart data elements
+    const dataContainers = document.querySelectorAll('[id$="-data"]');
+    
+    dataContainers.forEach(container => {
+      const dataId = container.getAttribute('id');
+      if (!dataId) return;
+      
+      const canvasId = dataId.replace('-data', '');
+      const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
+      if (!canvas) return;
+
+      // Prevent re-initialization
+      if (Chart.getChart(canvas)) {
+        Chart.getChart(canvas)?.destroy();
+      }
+
+      const type = (container.getAttribute('data-type') || 'line') as 'line' | 'bar';
+      const labels = JSON.parse(container.getAttribute('data-labels') || '[]');
+      const values = JSON.parse(container.getAttribute('data-values') || '[]');
+      const label = container.getAttribute('data-label') || '';
+      const suggestedMax = Number(container.getAttribute('data-suggested-max') || '10');
+
+      const isDark = document.documentElement.classList.contains('dark');
+      const textColor = isDark ? '#94a3b8' : '#64748b';
+      const gridColor = isDark ? 'rgba(51, 65, 85, 0.3)' : 'rgba(226, 232, 240, 0.7)';
+      const primaryColor = '#3b82f6';
+      
+      new Chart(canvas, {
+        type: type,
+        data: {
+          labels: labels,
+          datasets: [{
+            label: label,
+            data: values,
+            borderColor: primaryColor,
+            backgroundColor: type === 'line' ? 'rgba(59, 130, 246, 0.05)' : 'rgba(59, 130, 246, 0.7)',
+            borderWidth: 2.5,
+            fill: type === 'line',
+            tension: 0.3,
+            pointBackgroundColor: primaryColor,
+            pointBorderColor: isDark ? '#0f172a' : '#ffffff',
+            pointBorderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top',
+              labels: {
+                color: textColor,
+                font: {
+                  family: "'Inter', sans-serif",
+                  size: 11,
+                  weight: 'bold'
+                }
+              }
+            },
+            tooltip: {
+              backgroundColor: isDark ? '#1e293b' : '#ffffff',
+              titleColor: isDark ? '#ffffff' : '#0f172a',
+              bodyColor: isDark ? '#e2e8f0' : '#334155',
+              borderColor: isDark ? '#334155' : '#e2e8f0',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 8,
+              displayColors: false
+            }
+          },
+          scales: {
+            y: {
+              grid: {
+                color: gridColor
+              },
+              ticks: {
+                color: textColor,
+                font: {
+                  family: "'Inter', sans-serif",
+                  size: 10
+                }
+              },
+              suggestedMin: 0,
+              suggestedMax: suggestedMax
+            },
+            x: {
+              grid: {
+                display: false
+              },
+              ticks: {
+                color: textColor,
+                font: {
+                  family: "'Inter', sans-serif",
+                  size: 10
+                }
+              }
+            }
+          }
+        }
+      });
+    });
+  };
+
+  // Run on load
+  initCharts();
+
+  // Listen for view transitions or document changes
+  document.addEventListener('astro:page-load', initCharts);
+</script>

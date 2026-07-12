@@ -1,0 +1,354 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import QuestionCard from '../../components/QuestionCard.astro';
+import { db } from '../../services/db';
+
+export const prerender = false;
+
+const { subject: subjectParam, slug } = Astro.params;
+
+// Find matching lesson entry dynamically (SSR)
+const allLessonEntries = await getCollection('lessons');
+const entry = allLessonEntries.find(e => {
+  const entrySlug = e.id.split('/').pop() || e.id;
+  return e.data.subject === subjectParam && entrySlug === slug;
+});
+
+if (!entry) {
+  return Astro.redirect('/ly-thuyet');
+}
+const { Content } = await render(entry);
+
+const subjects = await db.getSubjects();
+const subject = subjects.find(s => s.slug === entry.data.subject);
+
+const allLessons = await getCollection('lessons');
+const subjectLessons = allLessons
+  .filter(l => l.data.subject === entry.data.subject)
+  .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+
+const currentIndex = subjectLessons.findIndex(l => l.id === entry.id);
+const prevLesson = currentIndex > 0 ? subjectLessons[currentIndex - 1] : null;
+const nextLesson = currentIndex < subjectLessons.length - 1 ? subjectLessons[currentIndex + 1] : null;
+
+const getSlug = (id: string) => id.split('/').pop() || id;
+
+// Fetch a random practice question in this subject for the Quick Quiz
+const subjectId = subject?.id || '';
+const allSubjectQuestions = subjectId ? await db.getQuestions(subjectId) : [];
+const randomQuestion = allSubjectQuestions.length > 0 
+  ? allSubjectQuestions[Math.floor(Math.random() * allSubjectQuestions.length)]
+  : null;
+
+// Helper: YouTube embed URL parser
+function getYoutubeEmbedUrl(url: string | null | undefined) {
+  if (!url) return null;
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) 
+    ? `https://www.youtube.com/embed/${match[2]}` 
+    : null;
+}
+
+const embedUrl = getYoutubeEmbedUrl(entry.data.video_url);
+---
+
+<Layout title={entry.data.title}>
+  <!-- Mobile Sidebar Toggle -->
+  <div class="lg:hidden mb-4">
+    <button id="lesson-sidebar-toggle" class="flex items-center space-x-2 text-sm font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-xl w-full justify-between">
+      <span>Danh sách bài học</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+    <!-- Sidebar -->
+    <aside id="lesson-sidebar" class="hidden lg:block w-full lg:w-80 shrink-0">
+      <div class="sticky top-24 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm">
+        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+          </svg>
+          Môn {subject?.name || entry.data.subject_name}
+        </h3>
+        
+        <div class="space-y-1 overflow-y-auto max-h-[calc(100vh-200px)] custom-scrollbar pr-2">
+          {subjectLessons.map((l, index) => (
+            <a 
+              href={`/${l.data.subject}/${getSlug(l.id)}`}
+              class:list={['block px-3 py-2.5 rounded-xl text-sm font-medium transition-colors', l.id === entry.id ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border border-blue-100 dark:border-blue-800/50' : 'text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800/50 hover:text-gray-900 dark:hover:text-slate-200 border border-transparent']}
+            >
+              <div class="flex gap-3">
+                <span class:list={['shrink-0 font-bold', l.id === entry.id ? 'text-blue-500' : 'text-gray-400']}>
+                  {index + 1}.
+                </span>
+                <span class="line-clamp-2 leading-snug">{l.data.title}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 space-y-8 min-w-0">
+      <!-- Breadcrumb -->
+    <div>
+      {subject && (
+        <a href={"/ly-thuyet/" + subject.slug} class="inline-flex items-center text-xs font-bold text-gray-400 hover:text-gray-600 dark:hover:text-slate-350 transition-colors uppercase tracking-wider mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Môn {subject.name}
+        </a>
+      )}
+      
+      <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-snug">
+        {entry.data.title}
+      </h1>
+    </div>
+
+    <!-- Video lecture embed -->
+    {embedUrl && (
+      <div class="aspect-video w-full rounded-2xl overflow-hidden border border-gray-250 dark:border-slate-800/80 shadow-md bg-black">
+        <iframe
+          class="w-full h-full"
+          src={embedUrl}
+          title={"Bài giảng: " + entry.data.title}
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    )}
+
+    <!-- Lesson Content -->
+    <div class="bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800/80 rounded-2xl p-6 md:p-8 shadow-sm">
+      <div class="prose dark:prose-invert max-w-none text-base select-text">
+        <Content />
+      </div>
+    </div>
+
+    <!-- PDF Attachment Card -->
+    <div class="p-6 rounded-2xl border border-blue-100 bg-blue-50/20 dark:border-slate-800 dark:bg-slate-900 flex items-center justify-between flex-wrap gap-4">
+      <div class="flex items-center space-x-4">
+        <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-bold text-gray-900 dark:text-white text-sm">Tài liệu ôn tập PDF đính kèm</h4>
+          <p class="text-xs text-gray-500 dark:text-slate-400 mt-0.5">Tóm tắt công thức, sơ đồ tư duy và bài tập về nhà.</p>
+        </div>
+      </div>
+
+      <!-- PDF Download Button -->
+      <a
+        href="#"
+        onclick="alert('Tính năng tải tài liệu ôn tập lớp 12 sẽ được hỗ trợ khi kết nối với Storage bucket của Supabase.')"
+        class="inline-flex items-center justify-center bg-white dark:bg-slate-950 text-gray-700 dark:text-slate-200 border border-gray-250 dark:border-slate-850 hover:bg-gray-50 dark:hover:bg-slate-800 px-4 py-2 rounded-xl text-sm font-semibold transition"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Tải xuống PDF
+      </a>
+    </div>
+
+    <!-- Quick Quiz Section -->
+    {randomQuestion && (
+      <div class="border-t border-gray-250 dark:border-slate-850 pt-8">
+        <div class="flex items-center space-x-2 mb-6">
+          <div class="w-2.5 h-5 rounded-sm bg-blue-600"></div>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white">Luyện tập trắc nghiệm nhanh</h2>
+        </div>
+
+        <div id="quick-quiz-container">
+          <QuestionCard question={randomQuestion} index={1} mode="take" />
+          
+          <div class="flex justify-end mt-4">
+            <button
+              id="check-answer-btn"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow text-sm transition"
+            >
+              Kiểm tra đáp án
+            </button>
+          </div>
+        </div>
+
+        <!-- Feedback Result Block (Hidden initially) -->
+        <div
+          id="quiz-feedback-box"
+          class="hidden mt-6 p-6 rounded-2xl border transition-colors duration-200"
+        >
+          <div class="flex items-center space-x-3 mb-3">
+            <span id="feedback-icon" class="w-8 h-8 rounded-full flex items-center justify-center text-white"></span>
+            <h4 id="feedback-title" class="font-bold text-base"></h4>
+          </div>
+          <p id="feedback-text" class="text-sm leading-relaxed mb-4"></p>
+          
+          <!-- Explanation -->
+          <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/5">
+            <h5 class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1">Lời giải chi tiết:</h5>
+            <p class="text-sm text-gray-700 dark:text-slate-300 leading-relaxed font-medium">
+              {randomQuestion.explanation || 'Không có lời giải chi tiết cho câu hỏi này.'}
+            </p>
+          </div>
+        </div>
+      </div>
+    )}
+      <!-- Next / Prev Buttons -->
+      <div class="flex items-center justify-between pt-8 border-t border-gray-250 dark:border-slate-850 mt-12 gap-4">
+        {prevLesson ? (
+          <a href={"/" + prevLesson.data.subject + "/" + getSlug(prevLesson.id)} class="flex-1 group flex flex-col p-4 rounded-2xl border border-gray-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700 bg-white dark:bg-slate-900 hover:shadow-md transition-all">
+            <span class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-2 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 transform group-hover:-translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+              </svg>
+              Bài trước
+            </span>
+            <span class="font-bold text-sm text-gray-900 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 line-clamp-2">
+              {prevLesson.data.title}
+            </span>
+          </a>
+        ) : <div class="flex-1"></div>}
+
+        {nextLesson ? (
+          <a href={"/" + nextLesson.data.subject + "/" + getSlug(nextLesson.id)} class="flex-1 group flex flex-col p-4 rounded-2xl border border-gray-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700 bg-white dark:bg-slate-900 hover:shadow-md transition-all text-right items-end">
+            <span class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-2 flex items-center">
+              Bài tiếp theo
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </span>
+            <span class="font-bold text-sm text-gray-900 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 line-clamp-2">
+              {nextLesson.data.title}
+            </span>
+          </a>
+        ) : <div class="flex-1"></div>}
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ correctAnswers: randomQuestion?.answers.filter(a => a.is_correct).map(a => a.id) || [] }}>
+  // Keep track of user selected answers in this client session
+  let selectedAnswersList = [];
+
+  document.addEventListener('answer-selected', (e) => {
+    // @ts-ignore
+    const { questionId, answerId, type } = e.detail;
+    
+    if (type === 'single_choice' || type === 'true_false') {
+      selectedAnswersList = [answerId];
+    } else if (type === 'multiple_choice') {
+      const idx = selectedAnswersList.indexOf(answerId);
+      if (idx > -1) {
+        selectedAnswersList.splice(idx, 1);
+      } else {
+        selectedAnswersList.push(answerId);
+      }
+    }
+  });
+
+  const checkBtn = document.getElementById('check-answer-btn');
+  const feedbackBox = document.getElementById('quiz-feedback-box');
+  const feedbackIcon = document.getElementById('feedback-icon');
+  const feedbackTitle = document.getElementById('feedback-title');
+  const feedbackText = document.getElementById('feedback-text');
+
+  if (checkBtn && feedbackBox && feedbackIcon && feedbackTitle && feedbackText) {
+    checkBtn.addEventListener('click', () => {
+      if (selectedAnswersList.length === 0) {
+        alert('Cậu hãy chọn ít nhất một đáp án trước khi kiểm tra nhé!');
+        return;
+      }
+
+      // Check correctness
+      const allCorrectSelected = correctAnswers.every(id => selectedAnswersList.includes(id));
+      const noIncorrectSelected = selectedAnswersList.every(id => correctAnswers.includes(id));
+      const isCorrect = allCorrectSelected && noIncorrectSelected && correctAnswers.length === selectedAnswersList.length;
+
+      // Disable selection and checking
+      checkBtn.classList.add('hidden');
+      document.querySelectorAll('.option-item').forEach(item => {
+        // Remove pointer cursor and disable clicks
+        item.style.pointerEvents = 'none';
+        
+        const ansId = item.getAttribute('data-answer-id');
+        if (correctAnswers.includes(ansId)) {
+          // Highlight correct green
+          item.classList.remove('border-blue-500', 'bg-blue-50/50', 'text-blue-700');
+          item.classList.add('border-emerald-500', 'bg-emerald-50/40', 'text-emerald-700', 'dark:text-emerald-400');
+          const letter = item.querySelector('.w-6');
+          if (letter) {
+            letter.classList.remove('bg-blue-600', 'border-blue-600');
+            letter.classList.add('bg-emerald-600', 'border-emerald-600');
+          }
+        } else if (selectedAnswersList.includes(ansId)) {
+          // Highlight incorrect red
+          item.classList.remove('border-blue-500', 'bg-blue-50/50', 'text-blue-700');
+          item.classList.add('border-rose-500', 'bg-rose-50/40', 'text-rose-700', 'dark:text-rose-400');
+          const letter = item.querySelector('.w-6');
+          if (letter) {
+            letter.classList.remove('bg-blue-600', 'border-blue-600');
+            letter.classList.add('bg-rose-600', 'border-rose-600');
+          }
+        }
+      });
+
+      // Update feedback box
+      if (isCorrect) {
+        feedbackBox.classList.remove('hidden');
+        feedbackBox.classList.add('bg-emerald-50/50', 'border-emerald-200/50', 'dark:bg-emerald-950/15', 'dark:border-emerald-900/35');
+        feedbackIcon.className = 'w-8 h-8 rounded-full flex items-center justify-center bg-emerald-500 text-white font-bold';
+        feedbackIcon.innerHTML = '✓';
+        feedbackTitle.className = 'font-bold text-emerald-800 dark:text-emerald-400 text-base';
+        feedbackTitle.textContent = 'Chính xác! Chúc mừng cậu.';
+        feedbackText.className = 'text-sm text-emerald-700 dark:text-emerald-300 leading-relaxed mb-4';
+        feedbackText.textContent = 'Cậu đã phân tích rất tốt và chọn đúng hoàn toàn các phương án.';
+      } else {
+        feedbackBox.classList.remove('hidden');
+        feedbackBox.classList.add('bg-rose-50/50', 'border-rose-200/50', 'dark:bg-rose-950/15', 'dark:border-rose-900/35');
+        feedbackIcon.className = 'w-8 h-8 rounded-full flex items-center justify-center bg-rose-500 text-white font-bold';
+        feedbackIcon.innerHTML = '✗';
+        feedbackTitle.className = 'font-bold text-rose-800 dark:text-rose-400 text-base';
+        feedbackTitle.textContent = 'Tiếc quá, chưa chính xác mất rồi.';
+        feedbackText.className = 'text-sm text-rose-700 dark:text-rose-300 leading-relaxed mb-4';
+        feedbackText.textContent = 'Cậu hãy xem kỹ lại lời giải chi tiết bên dưới để nắm vững kiến thức này nhé!';
+      }
+
+      // Re-trigger LaTeX parsing inside feedback box
+      // @ts-ignore
+      if (typeof renderMathInElement === 'function') {
+        // @ts-ignore
+        renderMathInElement(feedbackBox, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    });
+  }
+</script>
+
+<script>
+  // Mobile sidebar toggle script
+  const toggleBtn = document.getElementById('lesson-sidebar-toggle');
+  const sidebar = document.getElementById('lesson-sidebar');
+
+  if (toggleBtn && sidebar) {
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('hidden');
+    });
+  }
+</script>
+

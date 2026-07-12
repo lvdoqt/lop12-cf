@@ -1,0 +1,215 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { db } from '../../../services/db';
+import { marked } from 'marked';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user) return Astro.redirect('/login');
+
+const { slug, lessonId } = Astro.params;
+if (!slug || !lessonId) return Astro.redirect('/khoa-hoc');
+
+const course = await db.getCourseBySlug(slug);
+if (!course || !course.is_published) return Astro.redirect('/khoa-hoc');
+
+// Ensure user is enrolled
+const isEnrolled = await db.isUserEnrolled(course.id, user.id);
+if (!isEnrolled) return Astro.redirect(`/khoa-hoc/${slug}`);
+
+const lessons = await db.getCourseLessons(course.id);
+const publishedLessons = lessons.filter(l => l.is_published);
+const currentLesson = publishedLessons.find(l => l.id === lessonId);
+
+if (!currentLesson) return Astro.redirect(`/khoa-hoc/${slug}`);
+
+const currentIndex = publishedLessons.findIndex(l => l.id === lessonId);
+const prevLesson = currentIndex > 0 ? publishedLessons[currentIndex - 1] : null;
+const nextLesson = currentIndex < publishedLessons.length - 1 ? publishedLessons[currentIndex + 1] : null;
+
+// Convert markdown to HTML
+const htmlContent = currentLesson.content ? marked.parse(currentLesson.content) : '';
+
+// Get progress
+const progress = await db.getLessonProgress(user.id, course.id);
+const completedIds = new Set(progress.filter(p => p.completed).map(p => p.lesson_id));
+const isCompleted = completedIds.has(lessonId);
+
+// Function to extract YouTube ID
+function getYouTubeId(url: string) {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+}
+const ytId = currentLesson.video_url ? getYouTubeId(currentLesson.video_url) : null;
+---
+
+<Layout title={`${currentLesson.title} - ${course.title}`}>
+  <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 max-w-7xl mx-auto">
+    <!-- Main Content Area -->
+    <div class="flex-1 min-w-0">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center text-sm font-medium text-gray-500 dark:text-slate-400 mb-4 whitespace-nowrap overflow-x-auto pb-2">
+        <a href="/khoa-hoc" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Khóa học</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 text-gray-300 dark:text-slate-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        <a href={`/khoa-hoc/${slug}`} class="hover:text-blue-600 dark:hover:text-blue-400 transition truncate max-w-[150px] sm:max-w-xs">{course.title}</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 text-gray-300 dark:text-slate-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        <span class="text-gray-900 dark:text-white truncate">Bài {currentIndex + 1}</span>
+      </nav>
+
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+        <!-- Video Player -->
+        {ytId && (
+          <div class="aspect-w-16 aspect-h-9 bg-black">
+            <iframe 
+              src={`https://www.youtube.com/embed/${ytId}?rel=0`} 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen
+              class="w-full h-full"
+            ></iframe>
+          </div>
+        )}
+
+        <div class="p-6 md:p-8">
+          <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-4">{currentLesson.title}</h1>
+          
+          <div class="prose prose-blue dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400">
+            <Fragment set:html={htmlContent} />
+          </div>
+
+          <div class="mt-10 pt-6 border-t border-gray-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="w-full sm:w-auto">
+              {prevLesson ? (
+                <a href={`/khoa-hoc/${slug}/${prevLesson.id}`} class="inline-flex items-center justify-center w-full sm:w-auto px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-600 dark:text-slate-300 bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                  Bài trước
+                </a>
+              ) : <div></div>}
+            </div>
+
+            <div class="w-full sm:w-auto flex flex-col sm:flex-row gap-3">
+              <button 
+                id="mark-complete-btn" 
+                data-lesson-id={currentLesson.id}
+                disabled={isCompleted}
+                class={`inline-flex items-center justify-center w-full sm:w-auto px-6 py-2.5 rounded-xl text-sm font-bold transition ${isCompleted ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 cursor-default' : 'bg-blue-600 hover:bg-blue-700 text-white shadow shadow-blue-500/20'}`}
+              >
+                {isCompleted ? (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    Đã hoàn thành
+                  </>
+                ) : (
+                  'Đánh dấu hoàn thành'
+                )}
+              </button>
+
+              {nextLesson && (
+                <a href={`/khoa-hoc/${slug}/${nextLesson.id}`} class="inline-flex items-center justify-center w-full sm:w-auto px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition">
+                  Bài tiếp theo
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Playlist -->
+    <div class="w-full lg:w-80 shrink-0">
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden sticky top-24">
+        <div class="p-4 border-b border-gray-100 dark:border-slate-800 bg-gray-50/50 dark:bg-slate-800/20">
+          <h3 class="font-bold text-gray-900 dark:text-white">Nội dung khóa học</h3>
+          <div class="mt-2 w-full bg-gray-200 dark:bg-slate-700 rounded-full h-1.5">
+            <div class="bg-emerald-500 h-1.5 rounded-full transition-all" style={`width: ${Math.round((completedIds.size / publishedLessons.length) * 100)}%`}></div>
+          </div>
+          <p class="text-xs text-gray-500 mt-1.5">{completedIds.size}/{publishedLessons.length} bài hoàn thành</p>
+        </div>
+        
+        <div class="max-h-[calc(100vh-250px)] overflow-y-auto">
+          {publishedLessons.map((lesson, idx) => {
+            const isCurrent = lesson.id === lessonId;
+            const done = completedIds.has(lesson.id);
+            return (
+              <a 
+                href={`/khoa-hoc/${slug}/${lesson.id}`}
+                class={`flex items-start gap-3 p-3 transition border-l-2 ${isCurrent ? 'bg-blue-50/50 dark:bg-blue-900/10 border-blue-600 dark:border-blue-500' : 'border-transparent hover:bg-gray-50 dark:hover:bg-slate-800/50'}`}
+              >
+                <div class="mt-0.5 shrink-0">
+                  {done ? (
+                    <div class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                  ) : (
+                    <div class={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${isCurrent ? 'bg-blue-600 text-white' : 'bg-gray-100 dark:bg-slate-800 text-gray-500'}`}>
+                      {idx + 1}
+                    </div>
+                  )}
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class={`text-sm leading-tight ${isCurrent ? 'font-bold text-blue-700 dark:text-blue-400' : done ? 'font-medium text-gray-600 dark:text-slate-400' : 'font-medium text-gray-900 dark:text-slate-200'}`}>
+                    {lesson.title}
+                  </p>
+                  <p class="text-[11px] text-gray-400 mt-1 flex items-center gap-1">
+                    {lesson.video_url && <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                    {lesson.duration ? `${lesson.duration} phút` : 'Lý thuyết'}
+                  </p>
+                </div>
+              </a>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const completeBtn = document.getElementById('mark-complete-btn') as HTMLButtonElement | null;
+  if (completeBtn) {
+    completeBtn.addEventListener('click', async () => {
+      const lessonId = completeBtn.dataset.lessonId!;
+      completeBtn.disabled = true;
+      completeBtn.innerHTML = 'Đang xử lý...';
+      
+      try {
+        const res = await fetch('/api/courses/progress', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ lessonId })
+        });
+        
+        if (res.ok) {
+          window.location.reload();
+        } else {
+          alert('Có lỗi xảy ra, vui lòng thử lại.');
+          completeBtn.disabled = false;
+          completeBtn.innerHTML = 'Đánh dấu hoàn thành';
+        }
+      } catch {
+        alert('Không thể kết nối. Vui lòng kiểm tra mạng.');
+        completeBtn.disabled = false;
+        completeBtn.innerHTML = 'Đánh dấu hoàn thành';
+      }
+    });
+  }
+</script>
+
+<style>
+  /* Fix Aspect Ratio for embedded videos if needed without tailwind plugin */
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: 56.25%;
+  }
+  .aspect-w-16 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

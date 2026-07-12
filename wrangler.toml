@@ -1,0 +1,15 @@
+name = "lop12"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+# Non-secret environment variables (public vars safe to commit)
+# Secret keys (SUPABASE_SERVICE_ROLE_KEY, GEMINI_API_KEY) must be set
+# via Cloudflare Dashboard: Pages → lop12 → Settings → Environment variables
+[vars]
+PUBLIC_SUPABASE_URL = "https://dwezesrukmwygqnmefbz.supabase.co"
+PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR3ZXplc3J1a213eWdxbm1lZmJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAxMzA0NjIsImV4cCI6MjA5NTcwNjQ2Mn0.LCojdG6LGAQDHw9ewbXFiJOFIvrFYNPZLr4KRNmystw"
+
+# Note: SUPABASE_SERVICE_ROLE_KEY and GEMINI_API_KEY should be added
+# as "Secrets" in the Cloudflare Pages dashboard (NOT here, to avoid
+# committing sensitive keys to GitHub).

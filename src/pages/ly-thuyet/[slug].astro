@@ -1,0 +1,365 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import LessonCard from '../../components/LessonCard.astro';
+import AdUnit from '../../components/AdUnit.astro';
+import { db } from '../../services/db';
+
+export const prerender = false;
+
+const { slug } = Astro.params;
+
+const subjects = await db.getSubjects();
+const subject = subjects.find(s => s.slug === slug);
+
+if (!subject) {
+  return Astro.redirect('/ly-thuyet');
+}
+
+// Fetch lessons for this subject using Content Collections
+const lessonEntries = await getCollection('lessons');
+const matchingEntries = lessonEntries
+  .filter(entry => entry.data.subject === subject.slug)
+  .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+
+const lessons = matchingEntries.map(entry => ({
+  id: entry.id,
+  subject_id: subject.id,
+  title: entry.data.title,
+  slug: entry.id.split('/').pop() || entry.id,
+  video_url: entry.data.video_url || null,
+  description: entry.data.description || '',
+  content: '',
+  created_at: entry.data.created_at || new Date().toISOString()
+}));
+
+const getSubjectColor = (slug: string) => {
+  if (slug === 'toan-12') return 'blue';
+  if (slug === 'vat-ly-12') return 'purple';
+  if (slug === 'hoa-hoc-12') return 'emerald';
+  if (slug === 'sinh-hoc-12') return 'emerald';
+  if (slug === 'tieng-anh-12') return 'amber';
+  return 'vermillion';
+};
+
+const color = getSubjectColor(subject.slug);
+
+// ── JSON-LD Course Schema ─────────────────────────────────────────────────────────────────
+const siteUrl = 'https://lms.lop12.com';
+
+// Mô tả chi tiết theo từng môn học
+const subjectDescriptions: Record<string, string> = {
+  'toan-12':     `Học và luyện thi môn Toán lớp 12: Hàm số và đồ thị, Tích phân, Số phức, Hình học không gian, Xác suất. ${lessons.length} bài giảng và nhiều đề thi thử THPT.`,
+  'vat-ly-12':   `Học và luyện thi môn Vật lý lớp 12: Dao động cơ, Sóng cơ, Điện xoay chiều, Sóng ánh sáng, Hạt nhân. ${lessons.length} bài giảng và đề thi trắc nghiệm bám sát cấu trúc mới.`,
+  'hoa-hoc-12':  `Học và luyện thi môn Hóa học lớp 12: Este, Lipit, Amin, Aminoaxit, Polime, Kim loại kiềm. ${lessons.length} bài giảng lý thuyết và bài tập ôn thi.`,
+  'sinh-hoc-12': `Học và luyện thi môn Sinh học lớp 12: Di truyền học phân tử, Quy luật di truyền, Tiến hóa, Sinh thái học. ${lessons.length} bài giảng chi tiết.`,
+  'ngu-van-12':  `Học và luyện thi môn Ngữ Văn lớp 12: Đọc hiểu văn bản, Nghị luận xã hội, Nghị luận văn học, Tác phẩm trọng tâm. ${lessons.length} bài giảng ôn thi THPT.`,
+  'lich-su-12':  `Học và luyện thi môn Lịch Sử lớp 12: Lịch sử Việt Nam hiện đại, Lịch sử thế giới, Cách mạng Việt Nam. ${lessons.length} bài giảng chính sách mới.`,
+  'dia-ly-12':   `Học và luyện thi môn Địa Lý lớp 12: Địa lý tự nhiên Việt Nam, Địa lý kinh tế - xã hội, Dân số. ${lessons.length} bài giảng cập nhật.`,
+  'ktpl-12':     `Học và luyện thi môn KTPL lớp 12: Kinh tế vĩ mô, Pháp luật Việt Nam, Quyền công dân, Hôn nhân gia đình. ${lessons.length} bài giảng cập nhật.`,
+  'tieng-anh-12':  `Học và luyện thi môn Tiếng Anh lớp 12: Ngữ pháp nâng cao, Phát âm, Từ vựng, Đọc hiểu và Viết luận. ${lessons.length} bài giảng chuẩn cấu trúc mới.`,
+  'tin-hoc-12':  `Học và luyện thi môn Tin Học lớp 12: Lập trình Python, Cơ sở dữ liệu, Mạng máy tính. ${lessons.length} bài giảng thực hành.`,
+  'cong-nghe-12':  `Học và luyện thi môn Công Nghệ lớp 12: Điện tử, Cơ khí, Công nghệ thông tin. ${lessons.length} bài giảng thực tiễn.`,
+};
+const subjectDescription = subjectDescriptions[subject.slug] ||
+  `Học và luyện thi môn ${subject.name} lớp 12. Cổng thông tin tự học và thi trắc nghiệm trực tuyến. ${lessons.length} bài giảng, nhiều đề thi thử THPT.`;
+
+const courseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: `${subject.name} - Lớp 12 LMS`,
+  description: subjectDescription,
+  url: `${siteUrl}/subjects/${subject.slug}`,
+  provider: {
+    '@type': 'Organization',
+    name: 'Lớp 12 LMS',
+    url: siteUrl,
+  },
+  educationalLevel: 'Lớp 12 - THPT',
+  inLanguage: 'vi',
+  numberOfCredits: lessons.length,
+};
+
+const breadcrumbs = [
+  { name: 'Môn học', url: '/ly-thuyet' },
+  { name: subject.name, url: `/ly-thuyet/${subject.slug}` },
+];
+---
+
+<Layout
+  title={subject.name}
+  description={subjectDescription}
+  structuredData={courseSchema}
+  breadcrumbs={breadcrumbs}
+>
+  <div class="space-y-6">
+    <!-- Back breadcrumb & Header -->
+    <div>
+      <a href="/ly-thuyet" class="inline-flex items-center text-xs font-bold text-gray-400 hover:text-gray-600 dark:hover:text-slate-350 transition-colors uppercase tracking-wider mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Tất cả môn học
+      </a>
+      
+      <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">{subject.name}</h1>
+      <p class="text-sm text-gray-500 dark:text-slate-455 mt-1">
+        Cổng thông tin tự học và luyện thi trắc nghiệm môn {subject.name} lớp 12.
+      </p>
+    </div>
+
+    <!-- Tabs header -->
+    <div class="border-b border-gray-200 dark:border-slate-800 flex space-x-8">
+      <button
+        id="tab-lessons-btn"
+        class="pb-4 px-1 text-sm font-bold border-b-2 border-blue-600 text-blue-600 dark:border-blue-500 dark:text-blue-400 focus:outline-none transition-colors"
+      >
+        Bài giảng lý thuyết ({lessons.length})
+      </button>
+      <button
+        id="tab-exams-btn"
+        class="pb-4 px-1 text-sm font-bold border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:text-slate-400 dark:hover:text-slate-200 focus:outline-none transition-colors"
+      >
+        Đề thi trắc nghiệm <span id="exams-count-badge">(--)</span>
+      </button>
+    </div>
+
+    <!-- Tab contents -->
+    <div>
+      <!-- Lessons Tab -->
+      <div id="tab-lessons-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {lessons.length === 0 ? (
+          <div class="col-span-full text-center py-16 bg-white dark:bg-slate-900 rounded-2xl border border-gray-250 dark:border-slate-800">
+            <p class="text-sm text-gray-500 dark:text-slate-400">Môn học này hiện chưa có bài giảng nào được đăng tải.</p>
+          </div>
+        ) : (
+          lessons.map(lesson => (
+            <LessonCard lesson={lesson} subject={subject} color={color} />
+          ))
+        )}
+      </div>
+
+      <!-- Exams Tab (Loaded client-side) -->
+      <div id="tab-exams-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
+        <div id="exams-loading" class="col-span-full text-center py-16">
+          <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-600 border-t-transparent mb-2"></div>
+          <p class="text-sm text-gray-500 dark:text-slate-400">Đang tải danh sách đề thi...</p>
+        </div>
+        <div id="exams-list-container" class="contents"></div>
+      </div>
+    </div>
+
+    <!-- Ad Unit cuối trang môn học -->
+    <AdUnit type="responsive" adSlot="1122334455" class="mt-2" />
+  </div>
+</Layout>
+
+<script define:vars={{ subjectSlug: subject.slug, subjectName: subject.name, color }}>
+  const lessonsBtn = document.getElementById('tab-lessons-btn');
+  const examsBtn = document.getElementById('tab-exams-btn');
+  const lessonsContent = document.getElementById('tab-lessons-content');
+  const examsContent = document.getElementById('tab-exams-content');
+  const examsLoading = document.getElementById('exams-loading');
+  const examsListContainer = document.getElementById('exams-list-container');
+  const examsCountBadge = document.getElementById('exams-count-badge');
+
+  let examsLoaded = false;
+
+  const examTypeNames = {
+    '15m': 'Kiểm tra 15p',
+    '45m': 'Kiểm tra 1 tiết',
+    'semester': 'Thi học kỳ',
+    'mock_thpt': 'Thi thử THPT'
+  };
+
+  const examTypeColors = {
+    blue: {
+      '15m': 'bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400 border-blue-100/50',
+      '45m': 'bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50',
+      'semester': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50',
+      'mock_thpt': 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50'
+    },
+    amber: {
+      '15m': 'bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50',
+      '45m': 'bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50',
+      'semester': 'bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50',
+      'mock_thpt': 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50'
+    },
+    emerald: {
+      '15m': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50',
+      '45m': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50',
+      'semester': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50',
+      'mock_thpt': 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50'
+    },
+    purple: {
+      '15m': 'bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400 border-purple-100/50',
+      '45m': 'bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400 border-purple-100/50',
+      'semester': 'bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400 border-purple-100/50',
+      'mock_thpt': 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50'
+    },
+    vermillion: {
+      '15m': 'bg-vermillion-50 text-vermillion-600 dark:bg-vermillion-900/20 dark:text-vermillion-400 border-vermillion-100/50 dark:border-vermillion-900/35',
+      '45m': 'bg-[#F5F0E8] text-gold-600 dark:bg-gold-900/20 dark:text-gold-400 border-[#E8DDD0]/50 dark:border-gold-900/35',
+      'semester': 'bg-[#F0F5F0] text-jade dark:bg-jade/10 dark:text-jade border-[#D0E0D0]/50 dark:border-jade/20',
+      'mock_thpt': 'bg-vermillion-50 text-vermillion-600 dark:bg-vermillion-900/20 dark:text-vermillion-400 border-vermillion-100/50 dark:border-vermillion-900/35'
+    }
+  };
+
+  const accentColors = {
+    blue: {
+      titleHover: 'group-hover:text-blue-600 dark:group-hover:text-blue-400',
+      btn: 'bg-blue-50 text-blue-600 dark:bg-blue-950/40 dark:text-blue-400 border-blue-100 dark:border-blue-900/30',
+      btnHover: 'hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white',
+      grad: 'from-blue-500/0 via-blue-500/40 to-blue-500/0',
+      border: 'hover:border-blue-300 dark:hover:border-blue-700',
+      shadow: 'hover:shadow-blue-500/10',
+    },
+    amber: {
+      titleHover: 'group-hover:text-amber-600 dark:group-hover:text-amber-400',
+      btn: 'bg-amber-50 text-amber-600 dark:bg-amber-950/40 dark:text-amber-400 border-amber-100 dark:border-amber-900/30',
+      btnHover: 'hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white',
+      grad: 'from-amber-500/0 via-amber-500/40 to-amber-500/0',
+      border: 'hover:border-amber-300 dark:hover:border-amber-700',
+      shadow: 'hover:shadow-amber-500/10',
+    },
+    emerald: {
+      titleHover: 'group-hover:text-emerald-600 dark:group-hover:text-emerald-400',
+      btn: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400 border-emerald-100 dark:border-emerald-900/30',
+      btnHover: 'hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-600 dark:hover:text-white',
+      grad: 'from-emerald-500/0 via-emerald-500/40 to-emerald-500/0',
+      border: 'hover:border-emerald-300 dark:hover:border-emerald-700',
+      shadow: 'hover:shadow-emerald-500/10',
+    },
+    purple: {
+      titleHover: 'group-hover:text-purple-600 dark:group-hover:text-purple-400',
+      btn: 'bg-purple-50 text-purple-600 dark:bg-purple-950/40 dark:text-purple-400 border-purple-100 dark:border-purple-900/30',
+      btnHover: 'hover:bg-purple-600 hover:text-white dark:hover:bg-purple-600 dark:hover:text-white',
+      grad: 'from-purple-500/0 via-purple-500/40 to-purple-500/0',
+      border: 'hover:border-purple-300 dark:hover:border-purple-700',
+      shadow: 'hover:shadow-purple-500/10',
+    },
+    vermillion: {
+      titleHover: 'group-hover:text-vermillion-500 dark:group-hover:text-vermillion-400',
+      btn: 'bg-vermillion-50 text-vermillion-600 dark:bg-vermillion-900/40 dark:text-vermillion-400 border-vermillion-100 dark:border-vermillion-900/30',
+      btnHover: 'hover:bg-vermillion-500 hover:text-white dark:hover:bg-vermillion-500 dark:hover:text-white',
+      grad: 'from-vermillion-500/0 via-vermillion-500/40 to-vermillion-500/0',
+      border: 'hover:border-vermillion-300 dark:hover:border-vermillion-700',
+      shadow: 'hover:shadow-vermillion-500/10',
+    },
+  };
+
+  const a = accentColors[color] || accentColors.vermillion;
+  const etc = examTypeColors[color] || examTypeColors.vermillion;
+
+  async function loadExams() {
+    if (examsLoaded) return;
+    try {
+      const res = await fetch(`/api/exams-by-subject?subject_slug=${subjectSlug}`);
+      if (!res.ok) throw new Error('Failed to load exams');
+      const data = await res.json();
+      const exams = data.exams || [];
+
+      // Update badge count
+      if (examsCountBadge) {
+        examsCountBadge.textContent = `(${exams.length})`;
+      }
+
+      if (exams.length === 0) {
+        examsListContainer.innerHTML = `
+          <div class="col-span-full text-center py-16 bg-white dark:bg-slate-900 rounded-2xl border border-gray-250 dark:border-slate-800">
+            <p class="text-sm text-gray-500 dark:text-slate-400">Môn học này hiện chưa có đề thi trắc nghiệm nào.</p>
+          </div>
+        `;
+      } else {
+        examsListContainer.innerHTML = exams.map(exam => {
+          const typeBadgeClass = etc[exam.exam_type] || etc['mock_thpt'];
+          const typeName = examTypeNames[exam.exam_type] || 'Thi thử THPT';
+          
+          return `
+            <div class="ink-card group flex flex-col justify-between p-6 relative ${a.border} ${a.shadow}">
+              <div class="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r ${a.grad} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+
+              <div>
+                <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                  <span class="text-xs font-bold text-[#8A7E72] dark:text-[#8A8A9E]">
+                    Môn ${subjectName}
+                  </span>
+
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold border ${typeBadgeClass}">
+                    ${typeName}
+                  </span>
+                </div>
+
+                <h3 class="text-lg font-bold text-ink dark:text-[#E8E0D0] line-clamp-2 leading-snug ${a.titleHover} transition-colors font-serif">
+                  ${exam.title}
+                </h3>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-scholar/60 dark:border-[#3A3A5C]/60 flex items-center justify-between">
+                <div class="flex items-center space-x-3 text-xs text-[#A89888] dark:text-[#6A6A8A]">
+                  <span class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    ${exam.duration} phút
+                  </span>
+                </div>
+
+                <a
+                  href="/exams/${exam.id}"
+                  class="inline-flex items-center justify-center ${a.btn} ${a.btnHover} px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-150"
+                >
+                  Vào thi
+                </a>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      examsLoaded = true;
+      if (examsLoading) examsLoading.classList.add('hidden');
+    } catch (err) {
+      console.error(err);
+      examsListContainer.innerHTML = `
+        <div class="col-span-full text-center py-16 bg-white dark:bg-slate-900 rounded-2xl border border-rose-200">
+          <p class="text-sm text-rose-500">Đã xảy ra lỗi khi tải danh sách đề thi. Cậu vui lòng tải lại trang nhé.</p>
+        </div>
+      `;
+      if (examsLoading) examsLoading.classList.add('hidden');
+    }
+  }
+
+  // Load immediately in the background
+  loadExams();
+
+  if (lessonsBtn && examsBtn && lessonsContent && examsContent) {
+    lessonsBtn.addEventListener('click', () => {
+      // Button states
+      lessonsBtn.classList.remove('border-transparent', 'text-gray-500', 'dark:text-slate-400');
+      lessonsBtn.classList.add('border-blue-600', 'text-blue-600', 'dark:border-blue-500', 'dark:text-blue-400');
+      
+      examsBtn.classList.remove('border-blue-600', 'text-blue-600', 'dark:border-blue-500', 'dark:text-blue-400');
+      examsBtn.classList.add('border-transparent', 'text-gray-500', 'dark:text-slate-400');
+
+      // Content states
+      lessonsContent.classList.remove('hidden');
+      examsContent.classList.add('hidden');
+    });
+
+    examsBtn.addEventListener('click', () => {
+      // Button states
+      examsBtn.classList.remove('border-transparent', 'text-gray-500', 'dark:text-slate-400');
+      examsBtn.classList.add('border-blue-600', 'text-blue-600', 'dark:border-blue-500', 'dark:text-blue-400');
+      
+      lessonsBtn.classList.remove('border-blue-600', 'text-blue-600', 'dark:border-blue-500', 'dark:text-blue-400');
+      lessonsBtn.classList.add('border-transparent', 'text-gray-500', 'dark:text-slate-400');
+
+      // Content states
+      examsContent.classList.remove('hidden');
+      lessonsContent.classList.add('hidden');
+
+      loadExams();
+    });
+  }
+</script>

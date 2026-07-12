@@ -1,0 +1,448 @@
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import QuestionCard from './QuestionCard';
+import type { Question, Answer } from '../types';
+
+interface ExamViewProps {
+  exam: {
+    id: string;
+    slug: string;
+    title: string;
+    duration: number;
+  };
+  attempt: {
+    id: string;
+  };
+  questions: (Question & { answers: Answer[] })[];
+  initialSeconds: number;
+}
+
+type AnswersMap = Record<string, string | string[] | Record<string, string>>;
+
+const MCQ_TYPES = ['single_choice', 'multiple_choice', 'true_false'];
+
+const SECTION_COLORS = {
+  mcq: {
+    bg: 'from-blue-500 to-indigo-600',
+    light: 'bg-blue-50 dark:bg-blue-950/20',
+    border: 'border-blue-200 dark:border-blue-900/40',
+    text: 'text-blue-700 dark:text-blue-300',
+    badge: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
+    nav: 'bg-blue-500',
+    label: 'Câu trắc nghiệm nhiều phương án lựa chọn',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+  },
+  msq: {
+    bg: 'from-violet-500 to-purple-600',
+    light: 'bg-violet-50 dark:bg-violet-950/20',
+    border: 'border-violet-200 dark:border-violet-900/40',
+    text: 'text-violet-700 dark:text-violet-300',
+    badge: 'bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300',
+    nav: 'bg-violet-500',
+    label: 'Câu trắc nghiệm đúng sai',
+    icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  sa: {
+    bg: 'from-amber-500 to-orange-500',
+    light: 'bg-amber-50 dark:bg-amber-950/20',
+    border: 'border-amber-200 dark:border-amber-900/40',
+    text: 'text-amber-700 dark:text-amber-300',
+    badge: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
+    nav: 'bg-amber-500',
+    label: 'Câu trắc nghiệm trả lời ngắn',
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
+  },
+  tl: {
+    bg: 'from-emerald-500 to-teal-600',
+    light: 'bg-emerald-50 dark:bg-emerald-950/20',
+    border: 'border-emerald-200 dark:border-emerald-900/40',
+    text: 'text-emerald-700 dark:text-emerald-300',
+    badge: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300',
+    nav: 'bg-emerald-500',
+    label: 'Câu tự luận',
+    icon: 'M4 6h16M4 12h16M4 18h7',
+  },
+} as const;
+
+type SectionKey = keyof typeof SECTION_COLORS;
+
+export default function ExamView({ exam, attempt, questions, initialSeconds }: ExamViewProps) {
+  const [answers, setAnswers] = useState<AnswersMap>({});
+  const [timeLeft, setTimeLeft] = useState(initialSeconds);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [confirmOpen, setConfirmOpen] = useState(false);
+
+  const classified = useMemo(() => {
+    const withIndex = questions.map((q, i) => {
+      let section: SectionKey = 'mcq';
+      if (q.type === 'msq') section = 'msq';
+      else if (q.type === 'sa') section = 'sa';
+      else if (q.type === 'tl') section = 'tl';
+      return { ...q, globalIndex: i + 1, section };
+    });
+    return {
+      mcq: withIndex.filter(q => MCQ_TYPES.includes(q.type)),
+      msq: withIndex.filter(q => q.type === 'msq'),
+      sa: withIndex.filter(q => q.type === 'sa'),
+      tl: withIndex.filter(q => q.type === 'tl'),
+      all: withIndex,
+    };
+  }, [questions]);
+
+  const handleAnswer = useCallback((questionId: string, value: any) => {
+    setAnswers(prev => ({ ...prev, [questionId]: value }));
+  }, []);
+
+  const answeredCount = Object.keys(answers).length;
+
+  const handleSubmitRef = useRef<() => void>(null!);
+  const handleSubmit = useCallback(async (auto = false) => {
+    if (submitting) return;
+    setSubmitting(true);
+    setError(null);
+
+    if (!auto) {
+      setConfirmOpen(false);
+    }
+
+    try {
+      const res = await fetch('/api/attempts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ attemptId: attempt.id, answers }),
+      });
+
+      if (res.ok) {
+        window.location.href = `/exams/${exam.slug}/result/${attempt.id}`;
+      } else {
+        const data = await res.json().catch(() => null);
+        setError(data?.message || 'Có lỗi xảy ra khi nộp bài. Vui lòng thử lại.');
+        setSubmitting(false);
+      }
+    } catch {
+      setError('Lỗi kết nối mạng, vui lòng thử lại.');
+      setSubmitting(false);
+    }
+  }, [submitting, attempt.id, exam.slug, answers]);
+
+  handleSubmitRef.current = () => handleSubmit(true);
+
+  // Timer — uses ref to avoid stale closure
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+    const interval = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          handleSubmitRef.current();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Keyboard shortcut: Ctrl+Enter to submit
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter' && !submitting) {
+        setConfirmOpen(true);
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [submitting]);
+
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+  const timeDisplay = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  const isLowTime = timeLeft < 60;
+  const isCritical = timeLeft < 300;
+  const progress = exam.duration > 0 ? ((exam.duration * 60 - timeLeft) / (exam.duration * 60)) * 100 : 0;
+
+  if (!questions || questions.length === 0) {
+    return (
+      <div className="max-w-2xl mx-auto mt-12 text-center">
+        <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-10 shadow-sm">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-50 dark:bg-amber-950/20 flex items-center justify-center">
+            <svg className="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Đề thi chưa có câu hỏi</h2>
+          <p className="text-sm text-gray-500 dark:text-slate-400 mb-6">
+            Đề thi này hiện chưa được thêm câu hỏi. Vui lòng quay lại sau hoặc liên hệ giáo viên.
+          </p>
+          <a
+            href="/de-thi"
+            className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors"
+          >
+            Quay lại danh sách đề thi
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-4 relative">
+      {/* Main content */}
+      <div className="lg:col-span-3 space-y-6">
+        <div className={`px-6 py-4 rounded-2xl shadow-md flex items-center justify-between ${
+          isCritical ? 'bg-rose-600' : 'bg-blue-600'
+        } text-white`}>
+          <div className="flex-1 min-w-0">
+            <span className="text-xs font-bold uppercase tracking-wider text-white/80">
+              {isLowTime ? '⚠️ Sắp hết giờ' : 'Đang thi trực tuyến'}
+            </span>
+            <h1 className="text-lg md:text-xl font-extrabold leading-tight truncate">{exam.title}</h1>
+          </div>
+          <div className="hidden sm:flex items-center gap-3 ml-4 shrink-0">
+            <div className="bg-white/15 rounded-xl px-4 py-2 text-center">
+              <div className="text-xs font-semibold text-white/70">Đã làm</div>
+              <div className="text-lg font-black">{answeredCount}/{questions.length}</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Error state */}
+        {error && (
+          <div className="p-4 rounded-xl bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/40 flex items-center gap-3 text-sm font-semibold text-rose-700 dark:text-rose-400">
+            <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {error}
+          </div>
+        )}
+
+        {/* Questions */}
+        <div className="space-y-10">
+          {([
+            ['mcq', 'Phần I'] as const,
+            ['msq', 'Phần II'] as const,
+            ['sa', 'Phần III'] as const,
+            ['tl', 'Phần IV'] as const,
+          ] as const).map(([key, label]) => {
+            const items = classified[key];
+            if (items.length === 0) return null;
+            const color = SECTION_COLORS[key];
+            const sectionNum = key === 'mcq' ? 'I' : key === 'msq' ? 'II' : key === 'sa' ? 'III' : 'IV';
+            return (
+              <div key={key} className="space-y-4">
+                <div className={`rounded-2xl overflow-hidden border ${color.border}`}>
+                  <div className={`bg-gradient-to-r ${color.bg} px-6 py-4 flex items-center gap-3`}>
+                    <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                      <svg className="w-4.5 h-4.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d={color.icon} />
+                      </svg>
+                    </div>
+                    <div>
+                      <span className="text-white/80 text-xs font-bold uppercase tracking-wider">Phần {sectionNum}</span>
+                      <h2 className="text-lg font-extrabold text-white leading-tight">{color.label}</h2>
+                    </div>
+                    <div className="ml-auto bg-white/20 rounded-xl px-3 py-1.5 text-white text-xs font-bold">
+                      {items.length} câu
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {items.map(q => (
+                    <QuestionCard
+                      key={q.id}
+                      question={q}
+                      index={q.globalIndex}
+                      mode="take"
+                      selectedAnswer={answers[q.id]}
+                      onAnswer={handleAnswer}
+                      sectionKey={q.section}
+                    />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Sidebar */}
+      <div className="lg:col-span-1">
+        <div className="sticky top-20 space-y-6">
+          {/* Timer */}
+          <div className={`rounded-2xl p-6 shadow-sm text-center transition-all duration-300 border ${
+            isLowTime
+              ? 'bg-rose-50 dark:bg-rose-950/20 border-rose-200 dark:border-rose-900/40'
+              : 'bg-white dark:bg-slate-900 border-gray-250 dark:border-slate-800/80'
+          }`}>
+            <p className="text-xs font-bold text-gray-400 dark:text-slate-500 uppercase tracking-wider">Thời gian còn lại</p>
+            <div className={`text-3xl md:text-4xl font-black mt-2 font-mono tracking-wider transition-colors ${
+              isLowTime
+                ? 'text-rose-600 dark:text-rose-400 animate-pulse'
+                : 'text-blue-600 dark:text-blue-400'
+            }`}>
+              {timeDisplay}
+            </div>
+            {/* Progress bar */}
+            <div className="mt-3 h-1.5 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div
+                className={`h-full rounded-full transition-all duration-1000 ${
+                  isLowTime ? 'bg-rose-500' : 'bg-blue-500'
+                }`}
+                style={{ width: `${Math.min(progress, 100)}%` }}
+              />
+            </div>
+            <p className="text-[10px] text-gray-400 dark:text-slate-500 mt-2 font-medium">
+              {answeredCount}/{questions.length} câu đã làm
+            </p>
+          </div>
+
+          {/* Navigator */}
+          <div className="bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+            <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-4">Mục lục câu hỏi</h3>
+            <div className="grid grid-cols-5 gap-2">
+              {classified.all.map(q => {
+                const answered = answers[q.id] !== undefined;
+                const isMsq = q.type === 'msq';
+                const isPartial = isMsq && typeof answers[q.id] === 'object' && Object.keys(answers[q.id] as object).length > 0;
+                const sectionColor = SECTION_COLORS[q.section];
+
+                let btnClass = 'bg-gray-100 text-gray-500 dark:bg-slate-800 dark:text-slate-400 border-gray-200/50 dark:border-slate-700';
+                if (answered || isPartial) {
+                  btnClass = `${sectionColor.nav} text-white border-transparent`;
+                }
+
+                return (
+                  <a
+                    key={q.id}
+                    href={`#question-section-${q.globalIndex}`}
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm border hover:opacity-80 transition ${btnClass}`}
+                    title={`Câu ${q.globalIndex}`}
+                  >
+                    {q.globalIndex}
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Legend */}
+            <div className="flex items-center gap-3 mt-4 text-[10px] font-semibold text-gray-400 dark:text-slate-500 flex-wrap">
+              <span className="flex items-center gap-1">
+                <span className="w-3 h-3 rounded bg-blue-500" />
+                Phần I
+              </span>
+              {classified.msq.length > 0 && (
+                <span className="flex items-center gap-1">
+                  <span className="w-3 h-3 rounded bg-violet-500" />
+                  Phần II
+                </span>
+              )}
+              {classified.sa.length > 0 && (
+                <span className="flex items-center gap-1">
+                  <span className="w-3 h-3 rounded bg-amber-500" />
+                  Phần III
+                </span>
+              )}
+              {classified.tl.length > 0 && (
+                <span className="flex items-center gap-1">
+                  <span className="w-3 h-3 rounded bg-emerald-500" />
+                  Phần IV
+                </span>
+              )}
+              <span className="flex items-center gap-1">
+                <span className="w-3 h-3 rounded bg-gray-200 dark:bg-slate-700" />
+                Chưa làm
+              </span>
+            </div>
+
+            <div className="h-px bg-gray-100 dark:bg-slate-800 my-6" />
+
+            {/* Submit */}
+            <button
+              onClick={() => setConfirmOpen(true)}
+              disabled={submitting}
+              className="w-full bg-rose-600 hover:bg-rose-700 disabled:bg-rose-400 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-xl shadow-lg shadow-rose-500/20 hover:shadow-rose-500/25 transition text-sm flex items-center justify-center gap-2"
+            >
+              {submitting ? (
+                <>
+                  <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                  </svg>
+                  <span>Đang chấm điểm...</span>
+                </>
+              ) : (
+                <>
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  <span>Nộp bài thi</span>
+                </>
+              )}
+            </button>
+            <p className="text-[10px] text-gray-400 dark:text-slate-500 text-center mt-2">
+              Ctrl+Enter để nộp bài nhanh
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Confirm dialog */}
+      {confirmOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl p-6 max-w-sm mx-4 w-full border border-gray-200 dark:border-slate-800">
+            <div className="text-center">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-amber-50 dark:bg-amber-950/20 flex items-center justify-center">
+                <svg className="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M12 19.5a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Xác nhận nộp bài</h3>
+              <p className="text-sm text-gray-500 dark:text-slate-400 mb-1">
+                Bạn đã làm <strong className="text-gray-700 dark:text-slate-300">{answeredCount}/{questions.length}</strong> câu.
+              </p>
+              {answeredCount < questions.length && (
+                <p className="text-xs text-amber-600 dark:text-amber-400 font-semibold mb-4">
+                  Còn {questions.length - answeredCount} câu chưa được trả lời!
+                </p>
+              )}
+              <p className="text-sm text-gray-500 dark:text-slate-400 mb-6">
+                Sau khi nộp, bạn sẽ không thể thay đổi đáp án.
+              </p>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setConfirmOpen(false)}
+                  className="flex-1 px-4 py-3 border border-gray-250 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 text-gray-700 dark:text-slate-300 font-bold rounded-xl transition text-sm"
+                >
+                  Tiếp tục làm bài
+                </button>
+                <button
+                  onClick={() => handleSubmit(false)}
+                  disabled={submitting}
+                  className="flex-1 px-4 py-3 bg-rose-600 hover:bg-rose-700 disabled:bg-rose-400 text-white font-bold rounded-xl transition text-sm"
+                >
+                  {submitting ? 'Đang nộp...' : 'Xác nhận nộp bài'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Auto-submit overlay */}
+      {timeLeft === 0 && submitting && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl p-8 max-w-sm mx-4 w-full text-center">
+            <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-rose-50 dark:bg-rose-950/20 flex items-center justify-center">
+              <svg className="w-7 h-7 text-rose-600 animate-spin" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">⏱️ Hết giờ làm bài!</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400">Hệ thống đang tự động nộp bài thi của bạn...</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

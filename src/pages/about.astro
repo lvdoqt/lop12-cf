@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Giới thiệu" description="Giới thiệu về hệ thống học tập trực tuyến Lớp 12 LMS - Sứ mệnh, giá trị cốt lõi và các tính năng chính.">
+  <div class="space-y-12">
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-8 md:p-16 shadow-xl shadow-blue-500/10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_50%)]"></div>
+      <div class="relative z-10 max-w-2xl space-y-6">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/20 backdrop-blur-md">
+          ✨ Về chúng tôi
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight font-outfit">
+          Đồng hành cùng học sinh Lớp 12 chinh phục ước mơ
+        </h1>
+        <p class="text-lg text-blue-100 leading-relaxed font-medium">
+          Lớp 12 LMS là nền tảng học tập thông minh, tích hợp trí tuệ nhân tạo (AI), mang đến trải nghiệm ôn thi THPT Quốc gia toàn diện, cá nhân hóa và hiệu quả tối đa.
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {[
+        { value: '5+', label: 'Môn học trọng tâm' },
+        { value: '100+', label: 'Bài giảng chuyên sâu' },
+        { value: '1,000+', label: 'Câu hỏi trắc nghiệm' },
+        { value: '24/7', label: 'Trợ lý AI hỗ trợ học tập' }
+      ].map(stat => (
+        <div class="bg-white dark:bg-slate-900 border border-gray-200/60 dark:border-slate-800/80 rounded-2xl p-6 text-center shadow-sm">
+          <div class="text-3xl md:text-4xl font-extrabold text-blue-600 dark:text-blue-400 font-outfit">{stat.value}</div>
+          <div class="text-xs md:text-sm font-semibold text-gray-500 dark:text-slate-400 mt-2">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Mission & Vision -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white dark:bg-slate-900 border border-gray-200/60 dark:border-slate-800/80 rounded-3xl p-8 md:p-10 space-y-4 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/40 flex items-center justify-center text-blue-600 dark:text-blue-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925 3.546 5.974 5.974 0 0 1-2.133-1A3.75 3.75 0 0 0 12 18Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925 3.546 5.974 5.974 0 0 1-2.133-1A3.75 3.75 0 0 0 12 18Z" stroke-linecap="round" stroke-linejoin="round" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 21l4.312-2.728L19 21l-1-6.12M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707-.707" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold font-outfit text-gray-900 dark:text-white">Sứ mệnh của chúng tôi</h3>
+        <p class="text-sm md:text-base text-gray-600 dark:text-slate-350 leading-relaxed font-medium">
+          Mang đến cơ hội tiếp cận tri thức chất lượng cao bình đẳng cho mọi học sinh THPT tại Việt Nam. Chúng tôi tin rằng công nghệ và trí tuệ nhân tạo có thể biến việc học tập trở nên hứng khởi, chủ động và mang tính cá nhân hóa vượt trội.
+        </p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 border border-gray-200/60 dark:border-slate-800/80 rounded-3xl p-8 md:p-10 space-y-4 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold font-outfit text-gray-900 dark:text-white">Tầm nhìn chiến lược</h3>
+        <p class="text-sm md:text-base text-gray-600 dark:text-slate-350 leading-relaxed font-medium">
+          Trở thành cổng luyện thi trực tuyến hàng đầu tại Việt Nam, nơi công nghệ phục vụ giáo dục thực chất. Giúp học sinh không chỉ vượt qua kỳ thi THPT với điểm số mong đợi mà còn rèn luyện tư duy tự học suốt đời.
+        </p>
+      </div>
+    </div>
+
+    <!-- Core Pillars -->
+    <div class="space-y-6">
+      <h3 class="text-2xl font-bold font-outfit text-gray-900 dark:text-white text-center">Giá trị cốt lõi</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          {
+            title: 'Nội dung bám sát đề thi',
+            desc: 'Hệ thống bài giảng lý thuyết, câu hỏi và đề thi được biên soạn bám sát ma trận và định hướng kiểm tra đánh giá mới nhất của Bộ GD&ĐT.',
+            icon: '📚',
+            bg: 'bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400'
+          },
+          {
+            title: 'Trợ lý AI đắc lực',
+            desc: 'Tích hợp AI Chatbot giải toán, giải thích lý thuyết chi tiết 24/7 giúp học sinh gỡ rối bài tập khó ngay lập tức mọi lúc mọi nơi.',
+            icon: '🤖',
+            bg: 'bg-blue-50 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400'
+          },
+          {
+            title: 'Trực quan hóa tiến độ',
+            desc: 'Giao diện thống kê chi tiết biểu đồ học tập, số đề thi đã hoàn thành và đánh giá năng lực theo từng mảng kiến thức cụ thể.',
+            icon: '📊',
+            bg: 'bg-purple-50 dark:bg-purple-950/20 text-purple-600 dark:text-purple-400'
+          }
+        ].map(pillar => (
+          <div class="bg-white dark:bg-slate-900 border border-gray-200/60 dark:border-slate-800/80 rounded-2xl p-6 space-y-3 shadow-sm hover:-translate-y-1 transition-all duration-200">
+            <span class={`inline-flex items-center justify-center w-10 h-10 rounded-xl text-lg ${pillar.bg}`}>{pillar.icon}</span>
+            <h4 class="text-lg font-bold text-gray-900 dark:text-white font-outfit">{pillar.title}</h4>
+            <p class="text-sm text-gray-500 dark:text-slate-400 font-medium leading-relaxed">{pillar.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

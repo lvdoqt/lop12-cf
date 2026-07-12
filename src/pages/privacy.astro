@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Chính sách bảo mật" description="Chính sách bảo mật thông tin cá nhân và quy định sử dụng dịch vụ học tập trực tuyến Lớp 12 LMS.">
+  <div class="space-y-12 max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="text-center space-y-4">
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight font-outfit text-gray-900 dark:text-white">
+        Chính sách bảo mật dữ liệu
+      </h1>
+      <p class="text-xs md:text-sm text-gray-450 dark:text-slate-500 font-bold uppercase tracking-widest">
+        Cập nhật lần cuối: Tháng 6, 2026
+      </p>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="bg-white dark:bg-slate-900 border border-gray-200/60 dark:border-slate-800/80 rounded-3xl p-6 md:p-10 space-y-8 shadow-sm">
+      
+      <div class="space-y-3">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white font-outfit">1. Thu thập thông tin người dùng</h3>
+        <p class="text-sm md:text-base text-gray-600 dark:text-slate-350 leading-relaxed font-medium">
+          Để cung cấp trải nghiệm học tập cá nhân hóa tốt nhất, Lớp 12 LMS thu thập các thông tin sau:
+        </p>
+        <ul class="list-disc pl-5 text-sm md:text-base text-gray-550 dark:text-slate-400 space-y-1.5 font-medium">
+          <li>Thông tin định danh cơ bản: Họ tên, địa chỉ email, ảnh đại diện khi đăng ký hoặc đăng nhập thông qua Google.</li>
+          <li>Dữ liệu học tập: Lịch sử các bài thi thử đã tham gia, thời gian làm bài, đáp án lựa chọn và điểm số đạt được nhằm vẽ biểu đồ năng lực trực quan.</li>
+          <li>Dữ liệu tương tác: Nội dung hỏi đáp và học tập cùng Trợ lý ảo AI.</li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white font-outfit">2. Cam kết bảo mật thông tin (RLS & Supabase)</h3>
+        <p class="text-sm md:text-base text-gray-600 dark:text-slate-350 leading-relaxed font-medium">
+          Chúng tôi sử dụng hạ tầng an toàn từ Supabase và PostgreSQL với cơ chế kiểm soát truy cập hàng dữ liệu chuyên sâu (Row Level Security - RLS). 
+          Điều này đảm bảo rằng:
+        </p>
+        <ul class="list-disc pl-5 text-sm md:text-base text-gray-550 dark:text-slate-400 space-y-1.5 font-medium">
+          <li>Dữ liệu học tập và thông tin cá nhân của cậu chỉ có thể được xem và quản lý bởi chính cậu và đội ngũ Quản trị viên hệ thống.</li>
+          <li>Mật khẩu được mã hóa an toàn ở mức độ cao bởi phân hệ Auth của Supabase, cam kết không bao giờ bị lộ ra ngoài dưới dạng văn bản rõ.</li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white font-outfit">3. Quyền hạn của người dùng đối với dữ liệu</h3>
+        <p class="text-sm md:text-base text-gray-600 dark:text-slate-350 leading-relaxed font-medium">
+          Cậu hoàn toàn làm chủ dữ liệu cá nhân của mình trên hệ thống:
+        </p>
+        <ul class="list-disc pl-5 text-sm md:text-base text-gray-550 dark:text-slate-400 space-y-1.5 font-medium">
+          <li>Cậu có quyền chỉnh sửa hồ sơ cá nhân (thay đổi họ tên, ảnh đại diện) bất kỳ lúc nào tại trang Cá nhân.</li>
+          <li>Yêu cầu xóa toàn bộ lịch sử thi thử và tiến độ học tập nếu muốn bắt đầu lại lộ trình ôn thi từ đầu.</li>
+          <li>Yêu cầu khóa hoặc xóa vĩnh viễn tài khoản khỏi hệ thống bằng cách gửi email hỗ trợ.</li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white font-outfit">4. Chia sẻ dữ liệu với bên thứ ba</h3>
+        <p class="text-sm md:text-base text-gray-600 dark:text-slate-350 leading-relaxed font-medium">
+          Lớp 12 LMS cam kết <strong>không bao giờ chia sẻ, trao đổi hay bán thông tin cá nhân</strong> của học sinh cho bất kỳ bên thứ ba nào vì mục đích quảng cáo thương mại. 
+          Các thông tin trao đổi với Trợ lý ảo AI được ẩn danh hóa trước khi gửi đi để phân tích từ vựng hoặc thuật toán nhằm đảm bảo tính riêng tư tối đa.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</Layout>

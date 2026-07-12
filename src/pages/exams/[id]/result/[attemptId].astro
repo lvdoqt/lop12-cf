@@ -1,0 +1,248 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import QuestionCard from '../../../../components/QuestionCard.astro';
+import { db } from '../../../../services/db';
+import { uuidToSeed, mulberry32, shuffleArrayWithPRNG } from '../../../../lib/random';
+
+export const prerender = false;
+
+const { id, attemptId } = Astro.params;
+if (!id || !attemptId) {
+  return Astro.redirect('/dashboard');
+}
+
+const user = Astro.locals.user;
+// Accept both slug and UUID
+const exam = await db.getExamBySlug(id);
+const attempt = await db.getAttemptById(attemptId);
+
+if (!exam || !attempt) {
+  return Astro.redirect('/de-thi');
+}
+
+if (attempt.user_id && attempt.user_id !== user?.id) {
+  return Astro.redirect('/dashboard');
+}
+
+const allQuestions = await db.getQuestionsByExamId(exam.id);
+
+const MCQ_TYPES = ['single_choice', 'multiple_choice', 'true_false'];
+
+const bySection = {
+  mcq: allQuestions.filter(q => MCQ_TYPES.includes(q.type)),
+  msq: allQuestions.filter(q => q.type === 'msq'),
+  sa: allQuestions.filter(q => q.type === 'sa'),
+  tl: allQuestions.filter(q => q.type === 'tl'),
+};
+
+const prng = mulberry32(uuidToSeed(attempt.id));
+
+const shuffled = {
+  mcq: shuffleArrayWithPRNG(bySection.mcq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  msq: shuffleArrayWithPRNG(bySection.msq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  sa: shuffleArrayWithPRNG(bySection.sa, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  tl: shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+};
+
+const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled.tl].map((q, idx) => ({ ...q, globalIndex: idx + 1 }));
+
+const mcqQuestions = questions.filter(q => MCQ_TYPES.includes(q.type));
+const msqQuestions = questions.filter(q => q.type === 'msq');
+const saQuestions = questions.filter(q => q.type === 'sa');
+const tlQuestions = questions.filter(q => q.type === 'tl');
+
+// 1. Calculate time spent
+const timeSpentMs = attempt.finished_at 
+  ? new Date(attempt.finished_at).getTime() - new Date(attempt.started_at).getTime()
+  : 0;
+const timeSpentMin = Math.floor(timeSpentMs / (60 * 1000));
+const timeSpentSec = Math.floor((timeSpentMs % (60 * 1000)) / 1000);
+const timeSpentStr = timeSpentMin > 0 ? `${timeSpentMin} phút ${timeSpentSec} giây` : `${timeSpentSec} giây`;
+
+// 2. Calculate correct answers count
+let correctCount = 0;
+questions.forEach(q => {
+  const submitted = attempt.answers_submitted?.[q.id];
+  const correctAnswers = q.answers.filter(a => a.is_correct).map(a => a.id);
+  
+  if (!submitted) return;
+
+  if (q.type === 'single_choice' || q.type === 'true_false') {
+    const selectedId = typeof submitted === 'string' ? submitted : (submitted as string[])[0];
+    if (correctAnswers.includes(selectedId)) {
+      correctCount++;
+    }
+  } else if (q.type === 'multiple_choice') {
+    const selectedIds = Array.isArray(submitted) ? (submitted as string[]) : [submitted as string];
+    const allCorrectSelected = correctAnswers.every(id => selectedIds.includes(id));
+    const noIncorrectSelected = selectedIds.every(id => correctAnswers.includes(id));
+    if (allCorrectSelected && noIncorrectSelected && correctAnswers.length === selectedIds.length) {
+      correctCount++;
+    }
+  } else if (q.type === 'msq') {
+    if (typeof submitted === 'object' && submitted !== null) {
+      let allCorrect = true;
+      q.answers.forEach(a => {
+        const studentChoice = (submitted as any)[a.id];
+        const correctChoice = a.is_correct ? 'Đúng' : 'Sai';
+        if (studentChoice !== correctChoice) {
+          allCorrect = false;
+        }
+      });
+      if (allCorrect && q.answers.length > 0) {
+        correctCount++;
+      }
+    }
+  } else if (q.type === 'sa') {
+    if (typeof submitted === 'string' && q.answer) {
+      const normSubmitted = submitted.trim().toLowerCase().replace(/\s+/g, ' ').replace(',', '.');
+      const normCorrect = q.answer.trim().toLowerCase().replace(/\s+/g, ' ').replace(',', '.');
+      
+      if (normSubmitted === normCorrect) {
+        correctCount++;
+      } else {
+        const numSubmitted = Number(normSubmitted);
+        const numCorrect = Number(normCorrect);
+        if (!isNaN(numSubmitted) && !isNaN(numCorrect) && numSubmitted === numCorrect) {
+          correctCount++;
+        }
+      }
+    }
+  }
+});
+
+const score = attempt.score !== null ? Number(attempt.score) : 0;
+
+// 3. Theme color according to score
+let scoreTheme = {
+  bg: 'bg-emerald-50 border-emerald-200/50 dark:bg-emerald-950/20 dark:border-emerald-900/35',
+  text: 'text-emerald-700 dark:text-emerald-400',
+  title: 'Xuất sắc!',
+  desc: 'Chúc mừng cậu nhé! Cậu đã nắm rất chắc kiến thức này.'
+};
+
+if (score < 5.0) {
+  scoreTheme = {
+    bg: 'bg-rose-50 border-rose-200/50 dark:bg-rose-950/20 dark:border-rose-900/35',
+    text: 'text-rose-700 dark:text-rose-400',
+    title: 'Cần cố gắng thêm!',
+    desc: 'Đừng nản lòng nhé. Hãy xem kỹ lời giải chi tiết và ôn lại bài học lý thuyết.'
+  };
+} else if (score < 8.0) {
+  scoreTheme = {
+    bg: 'bg-amber-50 border-amber-200/50 dark:bg-amber-950/20 dark:border-amber-900/35',
+    text: 'text-amber-700 dark:text-amber-400',
+    title: 'Khá tốt!',
+    desc: 'Cậu làm tốt lắm. Chỉ cần ôn luyện thêm một chút để đạt điểm tối đa nha.'
+  };
+}
+---
+
+<Layout title={`Kết quả thi: ${exam.title}`}>
+  <div class="max-w-4xl mx-auto space-y-8">
+    
+    <!-- Breadcrumb header -->
+    <div>
+      <a href={user ? '/dashboard' : '/'} class="inline-flex items-center text-xs font-bold text-gray-400 hover:text-gray-600 dark:hover:text-slate-350 transition-colors uppercase tracking-wider mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        {user ? 'Quay lại Bảng điều khiển' : 'Quay lại trang chủ'}
+      </a>
+      
+      <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-snug">
+        Kết quả làm bài thi
+      </h1>
+      <p class="text-sm text-gray-500 dark:text-slate-400 mt-1">{exam.title}</p>
+    </div>
+
+    <!-- Score Visual Card -->
+    <div class={`border rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 ${scoreTheme.bg}`}>
+      <div class="text-center md:text-left space-y-2">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-bold bg-white/70 dark:bg-slate-900/80 border border-black/5 dark:border-white/5 uppercase tracking-wider">
+          {scoreTheme.title}
+        </span>
+        <p class="text-sm font-medium text-gray-600 dark:text-slate-300 leading-relaxed max-w-md">
+          {scoreTheme.desc}
+        </p>
+      </div>
+
+      <!-- Grade Circle -->
+      <div class="w-32 h-32 rounded-full border-4 border-white dark:border-slate-800 bg-white dark:bg-slate-900 shadow-lg flex flex-col items-center justify-center flex-shrink-0">
+        <span class={`text-4xl font-black ${scoreTheme.text}`}>{score}</span>
+        <span class="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mt-0.5">trên 10</span>
+      </div>
+    </div>
+
+    <!-- Stats Table Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="bg-white border border-gray-250 dark:bg-slate-900 dark:border-slate-800/80 p-5 rounded-2xl shadow-sm text-center">
+        <p class="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Số câu đúng</p>
+        <p class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mt-2 font-mono">{correctCount} / {questions.length} câu</p>
+      </div>
+      <div class="bg-white border border-gray-250 dark:bg-slate-900 dark:border-slate-800/80 p-5 rounded-2xl shadow-sm text-center">
+        <p class="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Thời gian làm bài</p>
+        <p class="text-xl font-bold text-gray-950 dark:text-white mt-2 font-mono">{timeSpentStr}</p>
+      </div>
+      <div class="bg-white border border-gray-250 dark:bg-slate-900 dark:border-slate-800/80 p-5 rounded-2xl shadow-sm text-center">
+        <p class="text-xs font-semibold text-gray-500 dark:text-slate-400 uppercase tracking-wider">Độ chính xác</p>
+        <p class="text-xl font-bold text-blue-600 dark:text-blue-400 mt-2 font-mono">{Math.round((correctCount / questions.length) * 100)}%</p>
+      </div>
+    </div>
+
+    <!-- Review Questions Header -->
+    <div class="border-t border-gray-250 dark:border-slate-850 pt-8 space-y-6">
+      <div class="flex items-center space-x-2">
+        <div class="w-2.5 h-5 rounded-sm bg-blue-600"></div>
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white">Xem lại chi tiết bài làm</h2>
+      </div>
+
+      <div class="space-y-8">
+        {mcqQuestions.length > 0 && (
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">Phần I. Câu trắc nghiệm nhiều phương án lựa chọn</h3>
+            {mcqQuestions.map(question => {
+              const submittedRaw = attempt.answers_submitted?.[question.id];
+              const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
+              return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
+            })}
+          </div>
+        )}
+
+        {msqQuestions.length > 0 && (
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">Phần II. Câu trắc nghiệm đúng sai</h3>
+            {msqQuestions.map(question => {
+              const submittedRaw = attempt.answers_submitted?.[question.id];
+              const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
+              return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
+            })}
+          </div>
+        )}
+
+        {saQuestions.length > 0 && (
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">Phần III. Câu trắc nghiệm trả lời ngắn</h3>
+            {saQuestions.map(question => {
+              const submittedRaw = attempt.answers_submitted?.[question.id];
+              const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
+              return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
+            })}
+          </div>
+        )}
+
+        {tlQuestions.length > 0 && (
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">Phần IV. Câu tự luận</h3>
+            {tlQuestions.map(question => {
+              const submittedRaw = attempt.answers_submitted?.[question.id];
+              const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
+              return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
+            })}
+          </div>
+        )}
+      </div>
+    </div>
+
+  </div>
+</Layout>

@@ -1,0 +1,528 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { db } from '../../../../services/db';
+
+export const prerender = false;
+
+const { id } = Astro.params;
+if (!id) {
+  return Astro.redirect('/admin/exams');
+}
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'admin' && user.role !== 'teacher')) {
+  return Astro.redirect('/dashboard');
+}
+
+const exam = await db.getExamById(id);
+if (!exam) {
+  return Astro.redirect('/admin/exams');
+}
+
+let errMsg = '';
+
+if (Astro.request.method === 'POST') {
+  try {
+    const formData = await Astro.request.formData();
+    const title = formData.get('title') as string;
+    const duration = Number(formData.get('duration'));
+    const subject_id = formData.get('subject_id') as string;
+    const exam_type = formData.get('exam_type') as '15m' | '45m' | 'semester' | 'mock_thpt';
+    
+    const questionsJson = formData.get('questions_json') as string;
+    let questionsData: any[] = [];
+    
+    if (questionsJson) {
+      const parsed = JSON.parse(questionsJson);
+      if (Array.isArray(parsed)) {
+        questionsData = parsed.map(q => {
+          const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+          let options: string[] = [];
+          let correctLetters: string[] = [];
+          if (q.answers && Array.isArray(q.answers)) {
+            q.answers.forEach((ans: any, idx: number) => {
+              options.push(ans.content);
+              if (ans.is_correct) {
+                correctLetters.push(alphabet[idx] || String(idx));
+              }
+            });
+          }
+          return {
+            content: q.content,
+            options: options,
+            answer: q.type === 'sa' || q.type === 'tl' ? q.answer : correctLetters.join(','),
+            metadata: {
+              ...(q.metadata || {}),
+              type: q.type,
+              difficulty: q.difficulty,
+              // Make sure we keep the parent_id to identify where this question came from
+              parent_id: q.metadata?.parent_id || q.id
+            },
+            type: q.type,
+            difficulty: q.difficulty
+          };
+        });
+      }
+    }
+
+    if (!title || !duration || !subject_id || !exam_type) {
+      throw new Error('Tiêu đề, Thời gian, Môn học và Phân loại đề thi là bắt buộc.');
+    }
+
+    if (questionsData.length === 0) {
+      throw new Error('Cậu cần gán ít nhất một câu hỏi vào đề thi này.');
+    }
+
+    await db.updateExamWithQuestions(exam.id, {
+      title,
+      duration,
+      subject_id,
+      exam_type
+    }, questionsData);
+
+    return Astro.redirect('/admin/exams');
+
+  } catch (err: any) {
+    errMsg = err.message || 'Lỗi cập nhật thông tin đề thi.';
+  }
+}
+
+const subjects = await db.getSubjects();
+
+// Get questions currently assigned to the exam
+const assignedQuestions = await db.getQuestionsByExamId(exam.id);
+const assignedQuestionIds = assignedQuestions.map(q => q.metadata?.parent_id || q.id);
+
+// Get the teacher's (or admin's) question bank
+const bankQuestions = await db.getQuestions(undefined, user.role === 'admin' ? undefined : user.id);
+
+// Filter out questions that are already assigned
+const availableQuestions = bankQuestions.filter(q => !assignedQuestionIds.includes(q.id));
+---
+
+<Layout title={`Sửa đề thi: ${exam.title}`}>
+  <div class="max-w-4xl mx-auto space-y-6">
+    <!-- Header -->
+    <div>
+      <a href="/admin/exams" class="inline-flex items-center text-xs font-bold text-gray-400 hover:text-gray-600 dark:hover:text-slate-350 transition-colors uppercase tracking-wider mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Quản lý đề thi
+      </a>
+      
+      <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Sửa đề thi</h1>
+      <p class="text-sm text-gray-500 dark:text-slate-400 mt-1">Cập nhật thông tin đề thi {exam.title} và chỉnh sửa câu hỏi trực tiếp.</p>
+    </div>
+
+    <!-- Error Alert -->
+    {errMsg && (
+      <div class="p-4 rounded-xl bg-rose-50 text-rose-600 text-sm font-semibold border border-rose-100 dark:bg-rose-950/20 dark:text-rose-400 dark:border-rose-900/35">
+        {errMsg}
+      </div>
+    )}
+
+    <!-- Form -->
+    <div class="bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800/80 rounded-2xl p-6 md:p-8 shadow-sm">
+      <form method="POST" id="exam-form" class="space-y-6">
+        <input type="hidden" name="questions_json" id="questions_json" value="" />
+        
+        <!-- Exam Meta Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- Title -->
+          <div class="sm:col-span-2">
+            <label for="title" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Tiêu đề đề thi</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value={exam.title}
+              required
+              placeholder="Ví dụ: Đề thi học kỳ 1 Toán 12..."
+              class="w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100 transition-colors"
+            />
+          </div>
+
+          <!-- Subject -->
+          <div>
+            <label for="subject_id" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Môn học</label>
+            <select
+              name="subject_id"
+              id="subject_id"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100"
+            >
+              {subjects.map(s => (
+                <option value={s.id} selected={s.id === exam.subject_id}>{s.name}</option>
+              ))}
+            </select>
+          </div>
+
+          <!-- Duration -->
+          <div>
+            <label for="duration" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Thời gian làm bài (Phút)</label>
+            <input
+              type="number"
+              name="duration"
+              id="duration"
+              value={exam.duration}
+              required
+              min="1"
+              max="300"
+              placeholder="15, 45, 90..."
+              class="w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100 transition-colors"
+            />
+          </div>
+
+          <!-- Exam Type -->
+          <div>
+            <label for="exam_type" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Phân loại đề thi</label>
+            <select
+              name="exam_type"
+              id="exam_type"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100"
+            >
+              <option value="15m" selected={exam.exam_type === '15m'}>Kiểm tra 15 phút</option>
+              <option value="45m" selected={exam.exam_type === '45m'}>Kiểm tra 1 tiết</option>
+              <option value="semester" selected={exam.exam_type === 'semester'}>Thi học kỳ</option>
+              <option value="mock_thpt" selected={exam.exam_type === 'mock_thpt'}>Thi thử THPT</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Assigned Questions -->
+        <div class="border-t border-gray-100 dark:border-slate-800/60 pt-6">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-sm font-bold text-gray-900 dark:text-white mb-1">Câu hỏi trong đề thi</h3>
+              <p class="text-xs text-gray-450 dark:text-slate-500">Các câu hỏi đang nằm trong đề thi này. Bạn có thể sửa trực tiếp hoặc xóa.</p>
+            </div>
+          </div>
+          
+          <!-- JS Render Target -->
+          <div id="assigned-questions-list" class="space-y-4"></div>
+
+          <div class="mt-4 flex justify-center">
+            <button
+              type="button"
+              id="btn-open-modal"
+              class="inline-flex items-center space-x-2 px-5 py-2.5 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 rounded-xl text-sm font-bold border border-blue-200 dark:border-blue-800/50 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+              <span>Thêm câu hỏi từ ngân hàng</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-end space-x-3 pt-4 border-t border-gray-100 dark:border-slate-800/60">
+          <a
+            href="/admin/exams"
+            class="bg-white border border-gray-250 dark:bg-slate-950 dark:border-slate-855 hover:bg-gray-50 dark:hover:bg-slate-800 text-gray-700 dark:text-slate-200 px-6 py-3 rounded-xl text-sm font-semibold transition"
+          >
+            Hủy
+          </a>
+          <button
+            type="submit"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl text-sm font-bold shadow-md shadow-blue-500/10 hover:shadow-xl transition"
+          >
+            Lưu và xuất bản lại
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  
+  <!-- Question Bank Modal -->
+  <div id="question-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 dark:bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col border border-gray-200 dark:border-slate-800 transform scale-95 transition-transform duration-200" id="question-modal-content">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-gray-100 dark:border-slate-800/60 flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white">Ngân hàng câu hỏi của bạn</h2>
+          <p class="text-xs text-gray-500 dark:text-slate-400 mt-1">Chọn các câu hỏi để thêm vào đề thi</p>
+        </div>
+        <button type="button" id="btn-close-modal" class="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-xl transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Modal Body -->
+      <div class="p-6 overflow-y-auto flex-1 bg-gray-50/50 dark:bg-slate-950/30">
+        <div id="no-bank-questions-warning" class="text-center p-6 bg-white dark:bg-slate-900 rounded-xl text-sm text-gray-500 dark:text-slate-400 border border-dashed border-gray-200 dark:border-slate-800 hidden">
+          Không có câu hỏi nào thuộc môn học này trong ngân hàng của bạn, hoặc bạn đã thêm tất cả vào đề thi.
+        </div>
+
+        <div id="bank-questions-list" class="space-y-4"></div>
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="px-6 py-4 border-t border-gray-100 dark:border-slate-800/60 bg-white dark:bg-slate-900 rounded-b-2xl flex justify-between items-center">
+        <span class="text-sm font-semibold text-gray-500 dark:text-slate-400"><span id="selected-count">0</span> câu hỏi được chọn</span>
+        <div class="space-x-3">
+          <button type="button" id="btn-cancel-modal" class="px-5 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 text-gray-700 dark:text-slate-300 font-semibold text-sm hover:bg-gray-50 dark:hover:bg-slate-800 transition">Hủy</button>
+          <button type="button" id="btn-add-selected" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md transition">Tiếp tục</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</Layout>
+
+<!-- Data payload for JS to consume -->
+<script type="application/json" id="assigned-questions-data" set:html={JSON.stringify(assignedQuestions).replace(/</g, '\\u003c')}></script>
+<script type="application/json" id="bank-questions-data" set:html={JSON.stringify(availableQuestions).replace(/</g, '\\u003c')}></script>
+
+<script>
+  let examQuestions = JSON.parse(document.getElementById('assigned-questions-data').textContent || '[]');
+  let bankQuestions = JSON.parse(document.getElementById('bank-questions-data').textContent || '[]');
+  let editingId = null;
+
+  const subjectSelect = document.getElementById('subject_id') as HTMLSelectElement | null;
+  const list = document.getElementById('assigned-questions-list');
+  const bankList = document.getElementById('bank-questions-list');
+  
+  function escapeHtml(unsafe) {
+    if (!unsafe) return '';
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+  }
+
+  function renderAssigned() {
+    if (!list) return;
+    list.innerHTML = '';
+    
+    if (examQuestions.length === 0) {
+      list.innerHTML = '<div class="text-center p-6 bg-gray-50 dark:bg-slate-950 rounded-xl text-xs text-gray-500 dark:text-slate-450 border border-dashed border-gray-200 dark:border-slate-855">Chưa có câu hỏi nào trong đề thi này.</div>';
+    } else {
+      examQuestions.forEach((q, idx) => {
+        const isEditing = editingId === q.id;
+        const div = document.createElement('div');
+        div.className = "p-4 rounded-xl border border-gray-250 dark:border-slate-800 bg-white dark:bg-slate-900";
+        
+        if (isEditing) {
+          let answersHtml = '';
+          if (q.answers && q.answers.length > 0) {
+            answersHtml = q.answers.map((a, aIdx) => `
+              <div class="flex items-center space-x-2">
+                <input type="radio" name="correct-${q.id}" value="${aIdx}" ${a.is_correct ? 'checked' : ''} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 cursor-pointer">
+                <input type="text" class="flex-1 px-3 py-1.5 rounded-lg border border-gray-300 dark:border-slate-700 text-sm bg-transparent dark:text-white focus:border-blue-500 outline-none" value="${escapeHtml(a.content)}" id="edit-ans-${q.id}-${aIdx}">
+              </div>
+            `).join('');
+          } else {
+            answersHtml = `<p class="text-xs text-gray-500 italic">Câu hỏi này không có đáp án trắc nghiệm.</p>`;
+          }
+
+          div.innerHTML = `
+            <div class="space-y-3">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-bold text-blue-600 dark:text-blue-400">Đang sửa câu ${idx + 1}</span>
+              </div>
+              <textarea class="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-slate-700 text-sm bg-transparent dark:text-white focus:border-blue-500 outline-none" rows="4" id="edit-content-${q.id}">${escapeHtml(q.content)}</textarea>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                ${answersHtml}
+              </div>
+              
+              <div class="flex justify-end space-x-2 mt-4 pt-3 border-t border-gray-100 dark:border-slate-800">
+                <button type="button" class="px-4 py-2 text-xs font-bold bg-gray-100 hover:bg-gray-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300 rounded-lg transition" onclick="window.cancelEdit()">Hủy</button>
+                <button type="button" class="px-4 py-2 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow transition" onclick="window.saveEdit('${q.id}')">Lưu nội dung</button>
+              </div>
+            </div>
+          `;
+        } else {
+          let answersHtml = '';
+          if (q.answers && q.answers.length > 0) {
+            answersHtml = q.answers.map((a, aIdx) => `
+              <div class="flex items-start gap-2 p-2 rounded-lg border text-xs ${a.is_correct ? 'bg-emerald-50 border-emerald-200 text-emerald-800 dark:bg-emerald-900/20 dark:border-emerald-800/50 dark:text-emerald-300' : 'bg-gray-50 border-gray-100 text-gray-600 dark:bg-slate-800/50 dark:border-slate-700 dark:text-slate-400'}">
+                <span class="font-bold shrink-0">${String.fromCharCode(65 + aIdx)}.</span>
+                <span class="leading-snug">${escapeHtml(a.content)}</span>
+              </div>
+            `).join('');
+          }
+
+          div.innerHTML = `
+            <div class="text-sm font-medium flex-1">
+              <div class="flex justify-between items-start">
+                <p class="text-gray-900 dark:text-white font-bold leading-relaxed whitespace-pre-wrap flex-1 pr-4">
+                  <span class="text-blue-600 dark:text-blue-400 mr-1">Câu ${idx + 1}:</span>
+                  ${escapeHtml(q.content)}
+                </p>
+                <div class="flex space-x-1 shrink-0">
+                  <button type="button" class="text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 p-1.5 rounded-lg transition" title="Sửa trực tiếp" onclick="window.startEdit('${q.id}')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                    </svg>
+                  </button>
+                  <button type="button" class="text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/30 p-1.5 rounded-lg transition" title="Xóa khỏi đề thi" onclick="window.removeQuestion('${q.id}')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                ${answersHtml}
+              </div>
+            </div>
+          `;
+        }
+        list.appendChild(div);
+      });
+    }
+    
+    // Update hidden input for form POST
+    const questionsInput = document.getElementById('questions_json') as HTMLInputElement;
+    if (questionsInput) {
+      questionsInput.value = JSON.stringify(examQuestions);
+    }
+  }
+
+  function renderBank() {
+    if (!bankList) return;
+    const selectedSubjectId = subjectSelect?.value;
+    const warning = document.getElementById('no-bank-questions-warning');
+    let visibleCount = 0;
+    bankList.innerHTML = '';
+
+    bankQuestions.forEach(q => {
+      // Filter by subject and ensure it's not already in examQuestions (by original bank id)
+      // examQuestion.metadata?.parent_id is the bank question ID
+      const isAlreadyInExam = examQuestions.some(eq => (eq.metadata?.parent_id || eq.id) === q.id);
+      
+      if (q.subject_id === selectedSubjectId && !isAlreadyInExam) {
+        visibleCount++;
+        const label = document.createElement('label');
+        label.className = "flex items-start space-x-4 p-4 rounded-xl border border-gray-250 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-blue-300 dark:hover:border-blue-800 transition cursor-pointer";
+        
+        let answersHtml = '';
+        if (q.answers && q.answers.length > 0) {
+          answersHtml = q.answers.map((a, aIdx) => `
+            <div class="flex items-start gap-2 p-2 rounded-lg border text-xs ${a.is_correct ? 'bg-emerald-50 border-emerald-200 text-emerald-800 dark:bg-emerald-900/20 dark:border-emerald-800/50 dark:text-emerald-300' : 'bg-gray-50 border-gray-100 text-gray-600 dark:bg-slate-800/50 dark:border-slate-700 dark:text-slate-400'}">
+              <span class="font-bold shrink-0">${String.fromCharCode(65 + aIdx)}.</span>
+              <span class="leading-snug">${escapeHtml(a.content)}</span>
+            </div>
+          `).join('');
+        }
+
+        label.innerHTML = `
+          <input type="checkbox" value="${q.id}" class="modal-question-checkbox rounded text-blue-600 focus:ring-blue-500 h-5 w-5 mt-1 shrink-0 cursor-pointer" />
+          <div class="text-sm font-medium flex-1">
+            <p class="text-gray-900 dark:text-white font-bold leading-relaxed whitespace-pre-wrap">${escapeHtml(q.content)}</p>
+            <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
+              ${answersHtml}
+            </div>
+          </div>
+        `;
+        bankList.appendChild(label);
+      }
+    });
+
+    if (warning) {
+      if (visibleCount === 0) warning.classList.remove('hidden');
+      else warning.classList.add('hidden');
+    }
+
+    updateSelectedCount();
+    
+    // Attach change listeners to new checkboxes
+    document.querySelectorAll('.modal-question-checkbox').forEach(cb => {
+      cb.addEventListener('change', updateSelectedCount);
+    });
+  }
+
+  // Edit Actions
+  window.startEdit = (id) => { editingId = id; renderAssigned(); };
+  window.cancelEdit = () => { editingId = null; renderAssigned(); };
+  window.saveEdit = (id) => {
+    const q = examQuestions.find(x => x.id === id);
+    if (!q) return;
+    q.content = document.getElementById(`edit-content-${id}`).value;
+    if (q.answers && q.answers.length > 0) {
+      q.answers.forEach((a, aIdx) => {
+        a.content = document.getElementById(`edit-ans-${id}-${aIdx}`).value;
+        const radio = document.querySelector(`input[name="correct-${id}"][value="${aIdx}"]`);
+        if (radio) a.is_correct = radio.checked;
+      });
+    }
+    editingId = null;
+    renderAssigned();
+  };
+  window.removeQuestion = (id) => {
+    examQuestions = examQuestions.filter(x => x.id !== id);
+    renderAssigned();
+    renderBank(); // Make it available in bank again
+  };
+
+  // Modal logic
+  const modal = document.getElementById('question-modal');
+  const modalContent = document.getElementById('question-modal-content');
+  const btnOpenModal = document.getElementById('btn-open-modal');
+  const btnCloseModal = document.getElementById('btn-close-modal');
+  const btnCancelModal = document.getElementById('btn-cancel-modal');
+  const btnAddSelected = document.getElementById('btn-add-selected');
+  const selectedCountEl = document.getElementById('selected-count');
+
+  const openModal = () => {
+    if (!modal || !modalContent) return;
+    renderBank();
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    modalContent.classList.remove('scale-95');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    if (!modal || !modalContent) return;
+    modal.classList.add('opacity-0', 'pointer-events-none');
+    modalContent.classList.add('scale-95');
+    document.body.style.overflow = '';
+  };
+
+  const updateSelectedCount = () => {
+    if (!selectedCountEl) return;
+    const count = document.querySelectorAll('.modal-question-checkbox:checked').length;
+    selectedCountEl.textContent = count.toString();
+  };
+
+  btnOpenModal?.addEventListener('click', openModal);
+  btnCloseModal?.addEventListener('click', closeModal);
+  btnCancelModal?.addEventListener('click', closeModal);
+
+  btnAddSelected?.addEventListener('click', () => {
+    const checked = document.querySelectorAll('.modal-question-checkbox:checked');
+    checked.forEach(cb => {
+      const qId = (cb as HTMLInputElement).value;
+      const bankQ = bankQuestions.find(x => x.id === qId);
+      if (bankQ) {
+        // Deep clone the bank question, assign a new pseudo-ID for the UI array
+        const newQ = JSON.parse(JSON.stringify(bankQ));
+        newQ.id = 'exam-q-' + Math.random().toString(36).substr(2, 9);
+        newQ.metadata = newQ.metadata || {};
+        newQ.metadata.parent_id = bankQ.id; // remember where it came from
+        examQuestions.push(newQ);
+      }
+    });
+    renderAssigned();
+    closeModal();
+  });
+
+  subjectSelect?.addEventListener('change', () => {
+    // Subject changed, just re-render bank next time it opens
+  });
+
+  // Initial render
+  renderAssigned();
+
+</script>

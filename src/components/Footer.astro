@@ -1,0 +1,101 @@
+---
+interface Props {
+  user?: import("../types").User | null;
+}
+
+const { user } = Astro.props;
+---
+
+<footer
+  class="border-t border-scholar/60 dark:border-[#3A3A5C]/70 bg-white/60 dark:bg-[#1A1A2E]/60 pt-12 pb-16 px-6 md:px-8 mt-16 transition-colors duration-200"
+>
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Column 1: Intro + Auth / Theme Buttons -->
+    <div class="md:col-span-2 space-y-4">
+      <a href="/" class="flex items-center space-x-2">
+        <div
+          class="w-8 h-8 rounded-lg bg-vermillion-500 flex items-center justify-center font-bold text-white shadow-lg shadow-vermillion-500/20"
+        >
+          L
+        </div>
+        <span
+          class="text-xl font-bold tracking-tight font-serif text-ink dark:text-[#E8E0D0]"
+          >LỚP 12 LMS</span
+        >
+      </a>
+      <p
+        class="text-sm text-[#8A7E72] dark:text-[#8A8A9E] max-w-sm leading-relaxed font-medium"
+      >
+        Hệ thống học tập, ôn thi trắc nghiệm online bám sát chương trình Giáo
+        dục Phổ thông lớp 12 của Bộ Giáo dục và Đào tạo Việt Nam.
+      </p>
+      <p class="text-xs text-[#A89888] dark:text-[#6A6A8A] font-semibold">
+        &copy; {new Date().getFullYear()} Lớp 12 LMS. Thầy Đồ - v1.1.
+      </p>
+      {
+        !user && (
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a
+              href="/login"
+              class="text-sm font-semibold text-ink dark:text-[#E8E0D0] border border-scholar dark:border-[#3A3A5C] px-5 py-2 rounded-lg hover:bg-vermillion-50 dark:hover:bg-vermillion-900/20 hover:border-vermillion-200 dark:hover:border-vermillion-900/30 hover:text-vermillion-600 dark:hover:text-vermillion-400 transition-all duration-200"
+            >
+              Đăng nhập
+            </a>
+            <a
+              href="/register"
+              class="text-sm font-semibold bg-vermillion-500 hover:bg-vermillion-600 text-white px-5 py-2 rounded-lg shadow-md shadow-vermillion-500/15 hover:shadow-vermillion-500/25 transition-all duration-200"
+            >
+              Đăng ký
+            </a>
+          </div>
+        )
+      }
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div>
+      <h4
+        class="text-xs font-bold text-[#8A7E72] dark:text-[#8A8A9E] uppercase tracking-widest mb-4"
+      >
+        Học tập
+      </h4>
+      <ul
+        class="space-y-2.5 text-sm font-semibold text-ink dark:text-[#C8C0B0]"
+      >
+        <li>
+          <a
+            href="/ly-thuyet"
+            class="hover:text-vermillion-500 dark:hover:text-vermillion-400 transition-colors"
+            >Lý thuyết</a
+          >
+        </li>
+        <li>
+          <a
+            href="/de-thi"
+            class="hover:text-vermillion-500 dark:hover:text-vermillion-400 transition-colors"
+            >Đề thi</a
+          >
+        </li>
+        <li>
+          <a
+            href="/rss.xml"
+            target="_blank"
+            rel="noopener"
+            class="hover:text-orange-500 dark:hover:text-orange-400 transition-colors flex items-center gap-1.5"
+          >
+            <svg
+              class="w-3.5 h-3.5 shrink-0 text-orange-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"
+              ></path>
+            </svg>
+            RSS Feed
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

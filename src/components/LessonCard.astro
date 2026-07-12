@@ -1,0 +1,124 @@
+---
+import type { Lesson, Subject } from '../types';
+
+interface Props {
+  lesson: Lesson;
+  subject?: Subject;
+  color?: 'blue' | 'amber' | 'emerald' | 'purple' | 'vermillion';
+}
+
+const { lesson, subject, color = 'vermillion' } = Astro.props;
+
+const accent: Record<string, {
+  badge: string;
+  title: string;
+  titleHover: string;
+  svgBox: string;
+  link: string;
+  grad: string;
+  border: string;
+  shadow: string;
+}> = {
+  blue: {
+    badge: 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 border-blue-200/50 dark:border-blue-800/50',
+    title: 'text-blue-800 dark:text-blue-300',
+    titleHover: 'hover:text-blue-600 dark:hover:text-blue-200',
+    svgBox: 'bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-900/40 dark:to-blue-800/20 text-blue-600 dark:text-blue-400 border-blue-200/60 dark:border-blue-700/40',
+    link: 'text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300',
+    grad: 'from-blue-500/0 via-blue-500/40 to-blue-500/0',
+    border: 'border-gray-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700',
+    shadow: 'hover:shadow-xl hover:shadow-blue-500/10',
+  },
+  amber: {
+    badge: 'bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400 border-amber-200/50 dark:border-amber-800/50',
+    title: 'text-blue-800 dark:text-blue-300',
+    titleHover: 'hover:text-blue-600 dark:hover:text-blue-200',
+    svgBox: 'bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-900/40 dark:to-amber-800/20 text-amber-600 dark:text-amber-400 border-amber-200/60 dark:border-amber-700/40',
+    link: 'text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300',
+    grad: 'from-amber-500/0 via-amber-500/40 to-amber-500/0',
+    border: 'border-gray-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-700',
+    shadow: 'hover:shadow-xl hover:shadow-amber-500/10',
+  },
+  emerald: {
+    badge: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400 border-emerald-200/50 dark:border-emerald-800/50',
+    title: 'text-blue-800 dark:text-blue-300',
+    titleHover: 'hover:text-blue-600 dark:hover:text-blue-200',
+    svgBox: 'bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-900/40 dark:to-emerald-800/20 text-emerald-600 dark:text-emerald-400 border-emerald-200/60 dark:border-emerald-700/40',
+    link: 'text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300',
+    grad: 'from-emerald-500/0 via-emerald-500/40 to-emerald-500/0',
+    border: 'border-gray-200 dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-700',
+    shadow: 'hover:shadow-xl hover:shadow-emerald-500/10',
+  },
+  purple: {
+    badge: 'bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400 border-purple-200/50 dark:border-purple-800/50',
+    title: 'text-blue-800 dark:text-blue-300',
+    titleHover: 'hover:text-blue-600 dark:hover:text-blue-200',
+    svgBox: 'bg-gradient-to-br from-purple-50 to-purple-100/50 dark:from-purple-900/40 dark:to-purple-800/20 text-purple-600 dark:text-purple-400 border-purple-200/60 dark:border-purple-700/40',
+    link: 'text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300',
+    grad: 'from-purple-500/0 via-purple-500/40 to-purple-500/0',
+    border: 'border-gray-200 dark:border-slate-800 hover:border-purple-300 dark:hover:border-purple-700',
+    shadow: 'hover:shadow-xl hover:shadow-purple-500/10',
+  },
+  vermillion: {
+    badge: 'bg-orange-50 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 border-orange-200/50 dark:border-orange-800/50',
+    title: 'text-blue-800 dark:text-blue-300',
+    titleHover: 'hover:text-blue-600 dark:hover:text-blue-200',
+    svgBox: 'bg-gradient-to-br from-orange-50 to-orange-100/50 dark:from-orange-900/40 dark:to-orange-800/20 text-orange-600 dark:text-orange-400 border-orange-200/60 dark:border-orange-700/40',
+    link: 'text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-300',
+    grad: 'from-orange-500/0 via-orange-500/40 to-orange-500/0',
+    border: 'border-gray-200 dark:border-slate-800 hover:border-orange-300 dark:hover:border-orange-700',
+    shadow: 'hover:shadow-xl hover:shadow-orange-500/10',
+  },
+};
+
+const a = accent[color] || accent.vermillion;
+---
+
+<div class={`bg-white dark:bg-slate-900 rounded-2xl group flex flex-col justify-between p-6 relative transition-all duration-300 border ${a.border} ${a.shadow}`}>
+  <div class={`absolute top-0 left-8 right-8 h-1 bg-gradient-to-r ${a.grad} rounded-b-full opacity-0 group-hover:opacity-100 transition-opacity duration-400`}></div>
+
+  <div>
+    <div class="flex items-start justify-between mb-4">
+      <div class={`w-12 h-12 rounded-2xl flex items-center justify-center border shadow-sm ${a.svgBox}`}>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+          <path d="M8 7h6"/>
+          <path d="M8 11h8"/>
+        </svg>
+      </div>
+      {subject && (
+        <span class={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border shadow-sm ${a.badge}`}>
+          {subject.name}
+        </span>
+      )}
+    </div>
+
+    <h3 class={`text-lg font-bold line-clamp-2 leading-snug transition-colors font-serif ${a.title} ${a.titleHover}`}>
+      <a href={`/${subject?.slug || 'toan-12'}/${lesson.slug}`} class="focus:outline-none before:absolute before:inset-0">
+        {lesson.title}
+      </a>
+    </h3>
+
+    <p class="text-sm text-gray-500 dark:text-slate-400 mt-2.5 line-clamp-2 leading-relaxed">
+      {lesson.description || 'Học lý thuyết chi tiết, xem video hướng dẫn bài giảng, giải bài tập công thức LaTeX và tài liệu PDF đính kèm.'}
+    </p>
+  </div>
+
+  <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-100 dark:border-slate-800">
+    <span class="text-xs font-medium text-gray-400 dark:text-slate-500 flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      {new Date(lesson.created_at).toLocaleDateString('vi-VN')}
+    </span>
+
+    <span
+      class={`inline-flex items-center text-sm font-bold ${a.link} group/link relative z-10`}
+    >
+      Học ngay
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </span>
+  </div>
+</div>

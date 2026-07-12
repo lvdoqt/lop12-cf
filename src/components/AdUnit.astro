@@ -1,0 +1,79 @@
+---
+/**
+ * AdUnit.astro — Component quảng cáo Google AdSense tái sử dụng
+ *
+ * Cách dùng:
+ *   <AdUnit slot="home-top" type="responsive" class="my-6" />
+ *   <AdUnit slot="blog-mid" type="rectangle" />
+ *   <AdUnit slot="banner" type="horizontal" />
+ *
+ * Sau khi AdSense phê duyệt site, thay ADSENSE_CLIENT và các slot ID thực tế.
+ */
+
+interface Props {
+  /** Loại quảng cáo */
+  type?: 'responsive' | 'horizontal' | 'rectangle' | 'vertical';
+  /** Ad slot ID từ AdSense dashboard (thay bằng giá trị thực) */
+  adSlot?: string;
+  /** CSS class bổ sung cho wrapper */
+  class?: string;
+  /** Label hiển thị phía trên (accessibility) */
+  label?: string;
+}
+
+const {
+  type = 'responsive',
+  adSlot = '0000000000',   // ← Thay bằng Ad Slot ID thực tế từ AdSense
+  class: className = '',
+  label = 'Quảng cáo',
+} = Astro.props;
+
+const ADSENSE_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX'; // ← Thay bằng Publisher ID thực tế
+
+// Kích thước theo type
+const sizeMap: Record<string, { width: string; height: string; format: string }> = {
+  responsive: { width: '100%', height: 'auto', format: 'auto' },
+  horizontal:  { width: '728px', height: '90px',  format: 'horizontal' },
+  rectangle:   { width: '300px', height: '250px', format: 'rectangle' },
+  vertical:    { width: '160px', height: '600px', format: 'vertical' },
+};
+const size = sizeMap[type] ?? sizeMap.responsive;
+---
+
+<div
+  class={`ad-unit-wrapper relative overflow-hidden text-center ${className}`}
+  aria-label={label}
+  role="complementary"
+>
+  <!-- Label mờ phía trên -->
+  <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400/60 dark:text-slate-600/60 mb-1 select-none">
+    {label}
+  </p>
+
+  <!-- AdSense ins element -->
+  <ins
+    class="adsbygoogle"
+    style={`display:block; width:${size.width}; height:${size.height};`}
+    data-ad-client={ADSENSE_CLIENT}
+    data-ad-slot={adSlot}
+    data-ad-format={size.format}
+    data-full-width-responsive={type === 'responsive' ? 'true' : undefined}
+  ></ins>
+</div>
+
+<script is:inline>
+  // Đẩy ad sau khi trang tải xong để tránh ảnh hưởng đến LCP
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch(e) {}
+      });
+    } else {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch(e) {}
+    }
+  }
+</script>

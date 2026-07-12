@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-vermillion-50: #fef2f2;
+  --color-vermillion-100: #fee2e2;
+  --color-vermillion-200: #fecaca;
+  --color-vermillion-300: #fca5a5;
+  --color-vermillion-400: #f87171;
+  --color-vermillion-500: #C53A3A;
+  --color-vermillion-600: #B83030;
+  --color-vermillion-700: #9A2828;
+  --color-vermillion-800: #7C2020;
+  --color-vermillion-900: #5E1818;
+
+  --color-gold-400: #D4A853;
+  --color-gold-500: #C8A45C;
+  --color-gold-600: #B8923E;
+
+  --color-jade: #5B8C5A;
+  --color-ink: #2C2C2C;
+  --color-rice: #FDF8F0;
+  --color-scholar: #E8DDD0;
+
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif SC', 'Georgia', serif;
+}
+
+@layer base {
+  html, body {
+    @apply min-h-screen font-sans antialiased scroll-smooth;
+  }
+
+  body {
+    @apply bg-rice text-ink transition-colors duration-200;
+  }
+
+  body.dark {
+    @apply bg-[#1A1A2E] text-[#E8E0D0];
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#D4C8B8] rounded;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-[#3A3A5C] rounded;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#C8B8A8];
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#4A4A6C];
+  }
+}
+
+.glass {
+  background: rgba(253, 248, 240, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dark .glass {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.katex-display {
+  @apply my-4 p-4 bg-[#F5F0E8]/50 dark:bg-[#252538]/50 rounded-xl overflow-x-auto border border-[#E8DDD0]/50 dark:border-[#3A3A5C]/50 text-center;
+}
+
+.ink-text {
+  @apply font-serif tracking-wide;
+}
+
+.ink-divider {
+  @apply flex items-center justify-center gap-3 my-14 select-none;
+}
+.ink-divider::before,
+.ink-divider::after {
+  content: '';
+  @apply h-px flex-1;
+  background: linear-gradient(to right, transparent, theme('colors.gold.500 / 0.3'), transparent);
+}
+.ink-divider span {
+  @apply text-gold-500/50 text-lg;
+}
+
+.ink-card {
+  @apply bg-white/90 dark:bg-[#22223A]/90 backdrop-blur-sm
+         border border-scholar dark:border-[#3A3A5C]/80
+         rounded-lg
+         hover:shadow-lg hover:shadow-vermillion-500/5
+         transition-all duration-300;
+}
+
+.section-title {
+  @apply font-serif text-3xl md:text-4xl font-bold tracking-wide text-ink dark:text-[#E8E0D0];
+}
+
+.section-subtitle {
+  @apply text-sm text-[#8A7E72] dark:text-[#8A8A9E] font-medium mt-1.5;
+}
+
+.section-box-blue {
+  @apply rounded-2xl p-8 md:p-10 border transition-colors duration-300 bg-blue-50/70 dark:bg-blue-950/20 border-blue-200/50 dark:border-blue-900/30;
+}
+.section-box-amber {
+  @apply rounded-2xl p-8 md:p-10 border transition-colors duration-300 bg-amber-50/70 dark:bg-amber-950/20 border-amber-200/50 dark:border-amber-900/30;
+}
+.section-box-emerald {
+  @apply rounded-2xl p-8 md:p-10 border transition-colors duration-300 bg-emerald-50/70 dark:bg-emerald-950/20 border-emerald-200/50 dark:border-emerald-900/30;
+}
+.section-box-purple {
+  @apply rounded-2xl p-8 md:p-10 border transition-colors duration-300 bg-purple-50/70 dark:bg-purple-950/20 border-purple-200/50 dark:border-purple-900/30;
+}

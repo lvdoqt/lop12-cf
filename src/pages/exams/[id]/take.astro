@@ -1,0 +1,74 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ExamView from '../../../components/ExamView';
+import { db } from '../../../services/db';
+import { uuidToSeed, mulberry32, shuffleArrayWithPRNG } from '../../../lib/random';
+
+export const prerender = false;
+
+const { id } = Astro.params;
+const attemptId = Astro.url.searchParams.get('attemptId');
+
+if (!id || !attemptId) {
+  return Astro.redirect('/dashboard');
+}
+
+const user = Astro.locals.user;
+const exam = await db.getExamBySlug(id);
+const attempt = await db.getAttemptById(attemptId);
+
+if (!exam || !attempt) {
+  return Astro.redirect('/de-thi');
+}
+
+if (attempt.user_id && attempt.user_id !== user?.id) {
+  return Astro.redirect('/dashboard');
+}
+
+if (exam.password && !user) {
+  return Astro.redirect(`/login?redirect=/exams/${exam.slug}`);
+}
+
+if (attempt.score !== null) {
+  return Astro.redirect(`/exams/${exam.slug}/result/${attempt.id}`);
+}
+
+const MCQ_TYPES = ['single_choice', 'multiple_choice', 'true_false'];
+
+const allQuestions = await db.getQuestionsByExamId(exam.id);
+
+const bySection = {
+  mcq: allQuestions.filter(q => MCQ_TYPES.includes(q.type)),
+  msq: allQuestions.filter(q => q.type === 'msq'),
+  sa: allQuestions.filter(q => q.type === 'sa'),
+  tl: allQuestions.filter(q => q.type === 'tl'),
+};
+
+const prng = mulberry32(uuidToSeed(attempt.id));
+
+const shuffled = {
+  mcq: shuffleArrayWithPRNG(bySection.mcq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  msq: shuffleArrayWithPRNG(bySection.msq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  sa: shuffleArrayWithPRNG(bySection.sa, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  tl: shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+};
+
+const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled.tl];
+
+console.log(`[take] exam=${exam.id} slug=${exam.slug} questions=${questions.length}`);
+
+const startTime = new Date(attempt.started_at).getTime();
+const durationMs = exam.duration * 60 * 1000;
+const elapsedMs = Date.now() - startTime;
+const remainingSeconds = Math.max(0, Math.floor((durationMs - elapsedMs) / 1000));
+---
+
+<Layout title={`Đang làm bài: ${exam.title}`} showSidebar={false}>
+  <ExamView
+    client:load
+    exam={{ id: exam.id, slug: exam.slug, title: exam.title, duration: exam.duration }}
+    attempt={{ id: attempt.id }}
+    questions={questions}
+    initialSeconds={remainingSeconds}
+  />
+</Layout>
