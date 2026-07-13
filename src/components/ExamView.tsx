@@ -84,13 +84,22 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
   const [confirmOpen, setConfirmOpen] = useState(false);
 
   const classified = useMemo(() => {
-    const withIndex = questions.map((q, i) => {
+    let currentIndex = 1;
+    const withIndex = questions.map((q) => {
       let section: SectionKey = 'mcq';
       if (q.type === 'msq') section = 'msq';
       else if (q.type === 'sa') section = 'sa';
       else if (q.type === 'tl') section = 'tl';
       else if (q.type === 'read' || q.type === 'list') section = 'readlist';
-      return { ...q, globalIndex: i + 1, section };
+      
+      const startIndex = currentIndex;
+      let count = 1;
+      if (q.type === 'read' || q.type === 'list') {
+        count = (q.metadata as any)?.questions?.length || 1;
+      }
+      currentIndex += count;
+
+      return { ...q, globalIndex: startIndex, section };
     });
     return {
       mcq: withIndex.filter(q => MCQ_TYPES.includes(q.type)),
@@ -101,6 +110,31 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       all: withIndex,
     };
   }, [questions]);
+
+  const flatNavigatorItems = useMemo(() => {
+    let items: any[] = [];
+    classified.all.forEach(q => {
+      const isReadList = q.type === 'read' || q.type === 'list';
+      if (isReadList) {
+        const numSub = (q.metadata as any)?.questions?.length || 1;
+        for (let i = 0; i < numSub; i++) {
+          items.push({
+             ...q,
+             subIndex: i,
+             displayIndex: q.globalIndex + i,
+             isSub: true
+          });
+        }
+      } else {
+         items.push({
+            ...q,
+            displayIndex: q.globalIndex,
+            isSub: false
+         });
+      }
+    });
+    return items;
+  }, [classified.all]);
 
   const handleAnswer = useCallback((questionId: string, value: any) => {
     setAnswers(prev => ({ ...prev, [questionId]: value }));
@@ -355,14 +389,20 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
           <div className="bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
             <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-4">Mục lục câu hỏi</h3>
             <div className="grid grid-cols-5 gap-2">
-              {classified.all.map(q => {
-                const isReadList = q.type === 'read' || q.type === 'list';
-                const isMsq = q.type === 'msq';
-                const answered = isReadList
-                  ? !!(answers[q.id] && typeof answers[q.id] === 'object' && !Array.isArray(answers[q.id]) && Object.keys(answers[q.id] as object).length > 0)
-                  : answers[q.id] !== undefined;
-                const isPartial = isMsq && typeof answers[q.id] === 'object' && Object.keys(answers[q.id] as object).length > 0;
-                const sectionColor = SECTION_COLORS[q.section];
+              {flatNavigatorItems.map(item => {
+                const isMsq = item.type === 'msq';
+                let answered = false;
+                let isPartial = false;
+                
+                if (item.isSub) {
+                   const sel = answers[item.id] as Record<string, string>;
+                   answered = !!(sel && sel[item.subIndex]);
+                } else {
+                   answered = answers[item.id] !== undefined;
+                   isPartial = isMsq && typeof answers[item.id] === 'object' && Object.keys(answers[item.id] as object).length > 0;
+                }
+
+                const sectionColor = SECTION_COLORS[item.section as SectionKey];
 
                 let btnClass = 'bg-gray-100 text-gray-500 dark:bg-slate-800 dark:text-slate-400 border-gray-200/50 dark:border-slate-700';
                 if (answered || isPartial) {
@@ -371,12 +411,12 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
 
                 return (
                   <a
-                    key={q.id}
-                    href={`#question-section-${q.globalIndex}`}
+                    key={item.isSub ? `${item.id}-${item.subIndex}` : item.id}
+                    href={`#question-section-${item.globalIndex}`}
                     className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm border hover:opacity-80 transition ${btnClass}`}
-                    title={`Câu ${q.globalIndex}`}
+                    title={`Câu ${item.displayIndex}`}
                   >
-                    {q.globalIndex}
+                    {item.displayIndex}
                   </a>
                 );
               })}

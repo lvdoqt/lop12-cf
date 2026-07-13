@@ -78,7 +78,7 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
     >
       <div className="flex items-center justify-between px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30">
         <span className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl text-sm font-extrabold bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-md">
-          <span className="text-base md:text-lg leading-none">Câu {index}</span>
+          <span className="text-base md:text-lg leading-none">Câu {index}{subQuestions.length > 1 ? ` - ${index + subQuestions.length - 1}` : ''}</span>
         </span>
         <div className="flex items-center gap-2">
           <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-300">{typeLabel}</span>
@@ -105,7 +105,7 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
             return (
               <li key={i} className="border-t border-indigo-100/70 dark:border-indigo-900/20 pt-3 first:border-t-0 first:pt-0">
                 <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 mb-2 leading-relaxed whitespace-pre-wrap">
-                  <span className="text-indigo-500 dark:text-indigo-400 mr-1">{subNum}.</span>
+                  <span className="text-indigo-500 dark:text-indigo-400 mr-1">Câu {index + i}.</span>
                   <span dangerouslySetInnerHTML={{ __html: parseMarkdownWithMath(sq.question || '', false) }} />
                 </p>
                 <div className="space-y-2">

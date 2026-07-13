@@ -47,7 +47,16 @@ const shuffled = {
   readlist: shuffleArrayWithPRNG(bySection.readlist, prng),
 };
 
-const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled.tl, ...shuffled.readlist].map((q, idx) => ({ ...q, globalIndex: idx + 1 }));
+let currentIndex = 1;
+const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled.tl, ...shuffled.readlist].map((q) => {
+  const startIndex = currentIndex;
+  let count = 1;
+  if (q.type === 'read' || q.type === 'list') {
+    count = (q.metadata as any)?.questions?.length || 1;
+  }
+  currentIndex += count;
+  return { ...q, globalIndex: startIndex };
+});
 
 const mcqQuestions = questions.filter(q => MCQ_TYPES.includes(q.type));
 const msqQuestions = questions.filter(q => q.type === 'msq');
