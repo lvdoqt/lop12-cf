@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_10",
+      "name": "Chuyển dịch cơ cấu kinh tế",
+      "slug": "chuyen-dich-co-cau-kinh-te",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 10,
+      "description": "Quá trình chuyển dịch cơ cấu kinh tế từ nông nghiệp sang công nghiệp và dịch vụ; yếu tố thúc đẩy và hệ quả xã hội - kinh tế.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Chuyển dịch cơ cấu kinh tế: mô tả và nguyên nhân",
+          "summary": "Chuyển dịch cơ cấu kinh tế là quá trình thay đổi tỷ trọng các ngành (nông nghiệp, công nghiệp, dịch vụ) theo hướng giảm tỷ trọng nông nghiệp, tăng công nghiệp và dịch vụ, do công nghiệp hóa, đô thị hóa, và hội nhập kinh tế.",
+          "sections": [
+            { "heading": "Quá trình chuyển dịch", "content": "Mô tả giai đoạn và các biểu hiện: giảm lao động nông nghiệp, tăng lao động trong công nghiệp và dịch vụ." },
+            { "heading": "Nguyên nhân và hệ quả", "content": "Nguyên nhân: tiến bộ kỹ thuật, đầu tư, chính sách; hệ quả: tăng năng suất, thay đổi việc làm và cơ cấu đô thị." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Nêu hai biểu hiện của chuyển dịch cơ cấu kinh tế?", "a_hint": "Giảm tỷ lệ lao động nông nghiệp; tăng tỷ trọng công nghiệp/dịch vụ." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Chuyển dịch cơ cấu kinh tế thường thấy biểu hiện nào?", "options": ["Tăng tỷ trọng nông nghiệp","Tăng tỷ trọng công nghiệp và dịch vụ","Giảm công nghiệp","Không thay đổi"], "correct": 1, "explanation": "Thường thấy tăng công nghiệp và dịch vụ." },
+          { "id": 2, "type": "mcq", "question": "Yếu tố nào thúc đẩy chuyển dịch cơ cấu?", "options": ["Công nghiệp hóa","Giảm đầu tư","Tăng nạn đói","Không thay đổi"], "correct": 0, "explanation": "Công nghiệp hóa thúc đẩy chuyển dịch cơ cấu." },
+          { "id": 3, "type": "mcq", "question": "Một hệ quả xã hội của chuyển dịch cơ cấu là?", "options": ["Tăng việc làm nông nghiệp","Di cư nông thôn - thành thị","Giảm dân số thành thị","Giảm năng suất"], "correct": 1, "explanation": "Di cư nông thôn - thành thị là hệ quả phổ biến." },
+          { "id": 4, "type": "mcq", "question": "Chính sách nào hỗ trợ chuyển dịch cơ cấu?", "options": ["Đầu tư cơ sở hạ tầng và đào tạo nghề","Ngăn chặn đầu tư","Cấm xuất khẩu","Không có chính sách"], "correct": 0, "explanation": "Đầu tư và đào tạo giúp chuyển dịch hiệu quả." },
+          { "id": 5, "type": "mcq", "question": "Chuyển dịch cơ cấu có thể dẫn đến?", "options": ["Tăng năng suất lao động","Giảm năng suất toàn bộ","Xóa bỏ công nghiệp","Không có gì"], "correct": 0, "explanation": "Nâng cao năng suất thường kèm theo chuyển dịch cơ cấu." },
+          { "id": 6, "type": "mcq", "question": "Yếu tố nào sau đây không phải là nguyên nhân của chuyển dịch?", "options": ["Thay đổi công nghệ","Chính sách kinh tế","Biến động ngôn ngữ","Mở cửa thị trường"], "correct": 2, "explanation": "Biến động ngôn ngữ không phải nguyên nhân chính." },
+          { "id": 7, "type": "mcq", "question": "Ngành nào suy giảm tỷ trọng khi chuyển dịch?", "options": ["Nông nghiệp","Dịch vụ","Công nghiệp","Du lịch"], "correct": 0, "explanation": "Tỷ trọng nông nghiệp thường giảm." },
+          { "id": 8, "type": "mcq", "question": "Một biện pháp giúp người lao động thích ứng với chuyển dịch là?", "options": ["Đào tạo nghề và chuyển đổi kỹ năng","Không hỗ trợ","Tăng giờ làm nông nghiệp","Phá sản doanh nghiệp"], "correct": 0, "explanation": "Đào tạo nghề giúp lao động thích ứng." },
+          { "id": 9, "type": "mcq", "question": "Chuyển dịch cơ cấu góp phần vào?", "options": ["Tăng trưởng kinh tế","Giảm trao đổi quốc tế","Giảm sản xuất","Không có đóng góp"], "correct": 0, "explanation": "Nó góp phần thúc đẩy tăng trưởng kinh tế." },
+          { "id": 10, "type": "mcq", "question": "Biện pháp nào hạn chế bất lợi xã hội do chuyển dịch?", "options": ["Hỗ trợ an sinh xã hội và đào tạo nghề","Phá bỏ hệ thống giáo dục","Cấm di cư","Không làm gì"], "correct": 0, "explanation": "Hỗ trợ an sinh và đào tạo giảm tác động tiêu cực." }
+        ]
+      }
+    }
+  ]
+}

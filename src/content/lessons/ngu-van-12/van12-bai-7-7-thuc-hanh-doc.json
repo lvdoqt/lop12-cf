@@ -1,0 +1,155 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-7-7-thuc-hanh-doc",
+      "name": "Thực hành đọc: Vĩ tuyến 17",
+      "slug": "thuc-hanh-doc-vi-tuyen-17",
+      "chapter": "Sự thật trong tác phẩm kí",
+      "chapter_id": "V12-7",
+      "lesson_id": 7,
+      "description": "Thực hành đọc và phân tích tác phẩm 'Vĩ tuyến 17', khám phá nỗi đau chia cắt đất nước và khát vọng thống nhất.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "reading-comprehension",
+          "name": "Đọc hiểu",
+          "slug": "doc-hieu",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Thực hành đọc: Vĩ tuyến 17",
+          "sections": [
+            {
+              "heading": "1. Giới thiệu tác phẩm",
+              "content": "<h4>a) Bối cảnh lịch sử</h4><ul><li><strong>Thời gian:</strong> Sau Hiệp định Genève 1954</li><li><strong>Sự kiện:</strong> Đất nước bị chia cắt tại vĩ tuyến 17</li><li><strong>Ý nghĩa:</strong> Nỗi đau chia ly, khát vọng thống nhất</li></ul><h4>b) Thể loại</h4><ul><li><strong>Văn kí:</strong> Ghi chép sự việc có thật</li><li><strong>Tính chất:</strong> Phóng sự, tùy bút</li><li><strong>Phong cách:</strong> Trữ tình, cảm xúc</li></ul>"
+            },
+            {
+              "heading": "2. Nội dung tác phẩm",
+              "content": "<h4>a) Chủ đề</h4><ul><li><strong>Nỗi đau:</strong> Chia cắt đất nước, gia đình</li><li><strong>Khát vọng:</strong> Thống nhất, đoàn tụ</li><li><strong>Ý chí:</strong> Kiên cường, lạc quan</li></ul><h4>b) Hình ảnh</h4><ul><li><strong>Vĩ tuyến 17:</strong> Ranh giới chia cắt</li><li><strong>Sông Bến Hải:</strong> Dòng sông chia đôi đất nước</li><li><strong>Con người:</strong> Nỗi nhớ, khát vọng đoàn tụ</li></ul><h4>c) Cảm xúc</h4><ul><li><strong>Đau thương:</strong> Chia ly, mất mát</li><li><strong>Hy vọng:</strong> Ngày đoàn tụ</li><li><strong>Tự hào:</strong> Ý chí dân tộc</li></ul>"
+            },
+            {
+              "heading": "3. Nghệ thuật",
+              "content": "<h4>a) Phương thức biểu đạt</h4><ul><li><strong>Miêu tả:</strong> Cảnh vật, con người</li><li><strong>Tự sự:</strong> Kể chuyện có thật</li><li><strong>Biểu cảm:</strong> Cảm xúc sâu sắc</li></ul><h4>b) Ngôn ngữ</h4><ul><li><strong>Trữ tình:</strong> Giàu cảm xúc</li><li><strong>Hình ảnh:</strong> Sinh động, dễ hình dung</li><li><strong>Biểu tượng:</strong> Vĩ tuyến 17, sông Bến Hải</li></ul><h4>c) Giá trị</h4><ul><li><strong>Lịch sử:</strong> Ghi dấu thời kỳ chia cắt</li><li><strong>Nhân văn:</strong> Nỗi đau con người</li><li><strong>Giáo dục:</strong> Ý thức thống nhất dân tộc</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex7-7-1",
+              "type": "mcq",
+              "question": "Vĩ tuyến 17 là ranh giới chia cắt đất nước sau sự kiện nào?",
+              "options": [
+                "Cách mạng Tháng Tám 1945",
+                "Hiệp định Genève 1954",
+                "Giải phóng miền Nam 1975",
+                "Kháng chiến chống Pháp"
+              ],
+              "correct": 1,
+              "explanation": "Sau Hiệp định Genève 1954, đất nước bị chia cắt tạm thời tại vĩ tuyến 17."
+            },
+            {
+              "id": "ex7-7-2",
+              "type": "mcq",
+              "question": "Chủ đề chính của tác phẩm 'Vĩ tuyến 17' là gì?",
+              "options": [
+                "Tình yêu",
+                "Nỗi đau chia cắt và khát vọng thống nhất",
+                "Thiên nhiên",
+                "Chiến tranh"
+              ],
+              "correct": 1,
+              "explanation": "Tác phẩm thể hiện nỗi đau chia cắt đất nước, gia đình và khát vọng thống nhất, đoàn tụ."
+            },
+            {
+              "id": "ex7-7-3",
+              "type": "mcq",
+              "question": "Sông Bến Hải trong tác phẩm tượng trưng cho điều gì?",
+              "options": [
+                "Vẻ đẹp thiên nhiên",
+                "Ranh giới chia cắt đất nước",
+                "Nguồn nước sinh hoạt",
+                "Con đường giao thông"
+              ],
+              "correct": 1,
+              "explanation": "Sông Bến Hải là biểu tượng của ranh giới chia cắt đất nước tại vĩ tuyến 17."
+            },
+            {
+              "id": "ex7-7-4",
+              "type": "mcq",
+              "question": "Tác phẩm thuộc thể loại nào?",
+              "options": [
+                "Tiểu thuyết",
+                "Văn kí (phóng sự, tùy bút)",
+                "Thơ",
+                "Kịch"
+              ],
+              "correct": 1,
+              "explanation": "'Vĩ tuyến 17' là tác phẩm văn kí, có tính chất phóng sự và tùy bút."
+            },
+            {
+              "id": "ex7-7-5",
+              "type": "mcq",
+              "question": "Cảm xúc chủ đạo trong tác phẩm là gì?",
+              "options": [
+                "Vui vẻ",
+                "Đau thương nhưng vẫn hy vọng và tự hào",
+                "Tuyệt vọng",
+                "Bình thản"
+              ],
+              "correct": 1,
+              "explanation": "Tác phẩm thể hiện nỗi đau chia ly nhưng vẫn giữ hy vọng về ngày đoàn tụ và tự hào về ý chí dân tộc."
+            },
+            {
+              "id": "ex7-7-6",
+              "type": "mcq",
+              "question": "Phương thức biểu đạt chính trong tác phẩm là gì?",
+              "options": [
+                "Chỉ nghị luận",
+                "Miêu tả, tự sự và biểu cảm",
+                "Chỉ miêu tả",
+                "Chỉ tự sự"
+              ],
+              "correct": 1,
+              "explanation": "Tác phẩm kết hợp miêu tả cảnh vật, tự sự sự việc và biểu cảm cảm xúc sâu sắc."
+            },
+            {
+              "id": "ex7-7-7",
+              "type": "mcq",
+              "question": "Ngôn ngữ trong tác phẩm có đặc điểm gì?",
+              "options": [
+                "Khô khan, máy móc",
+                "Trữ tình, giàu cảm xúc, nhiều hình ảnh biểu tượng",
+                "Hài hước",
+                "Phức tạp"
+              ],
+              "correct": 1,
+              "explanation": "Ngôn ngữ mang tính trữ tình, giàu cảm xúc và sử dụng nhiều hình ảnh biểu tượng như vĩ tuyến 17, sông Bến Hải."
+            },
+            {
+              "id": "ex7-7-8",
+              "type": "mcq",
+              "question": "Giá trị của tác phẩm là gì?",
+              "options": [
+                "Chỉ giải trí",
+                "Ghi dấu lịch sử, thể hiện nỗi đau con người, giáo dục ý thức thống nhất",
+                "Không có giá trị",
+                "Chỉ miêu tả cảnh đẹp"
+              ],
+              "correct": 1,
+              "explanation": "Tác phẩm có giá trị ghi dấu thời kỳ lịch sử, thể hiện nỗi đau con người và giáo dục ý thức về thống nhất dân tộc."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

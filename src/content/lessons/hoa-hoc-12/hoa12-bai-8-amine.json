@@ -1,0 +1,109 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-8-amine",
+      "name": "Bài 8. Amine",
+      "slug": "bai-8-amine",
+      "chapter": "Chương 3: Hợp chất chứa nitrogen",
+      "chapter_id": "H12-1003",
+      "lesson_id": 8,
+      "description": "Tìm hiểu về cấu tạo, tính chất và ứng dụng của amine.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "amine-1",
+          "name": "Amine",
+          "slug": "amine",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Amine",
+          "sections": [
+            {
+              "heading": "1. Định nghĩa và phân loại",
+              "content": "<h3>a) Định nghĩa</h3><p><strong>Amine:</strong> Hợp chất hữu cơ có được khi thay thế một hoặc nhiều nguyên tử H trong phân tử NH₃ bằng gốc hydrocarbon.</p><p><strong>Công thức chung:</strong></p><ul><li>Amine đơn chức: R-NH₂, R₂NH, R₃N</li><li>Amine thơm: C₆H₅-NH₂ (aniline)</li></ul><h3>b) Phân loại</h3><p><strong>1. Theo bậc:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Bậc</th><th class='border border-gray-300 p-2'>Công thức</th><th class='border border-gray-300 p-2'>Ví dụ</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Bậc 1</td><td class='border border-gray-300 p-2'>R-NH₂</td><td class='border border-gray-300 p-2'>CH₃NH₂ (methylamine)</td></tr><tr><td class='border border-gray-300 p-2'>Bậc 2</td><td class='border border-gray-300 p-2'>R₂NH</td><td class='border border-gray-300 p-2'>(CH₃)₂NH (dimethylamine)</td></tr><tr><td class='border border-gray-300 p-2'>Bậc 3</td><td class='border border-gray-300 p-2'>R₃N</td><td class='border border-gray-300 p-2'>(CH₃)₃N (trimethylamine)</td></tr></tbody></table><p><strong>2. Theo gốc hydrocarbon:</strong></p><ul><li>Amine no: CH₃NH₂, C₂H₅NH₂</li><li>Amine không no: CH₂=CH-NH₂</li><li>Amine thơm: C₆H₅NH₂ (aniline)</li></ul><h3>c) Danh pháp</h3><p><strong>Tên thông thường:</strong></p><ul><li>CH₃NH₂: Methylamine</li><li>C₂H₅NH₂: Ethylamine</li><li>C₆H₅NH₂: Aniline</li><li>(CH₃)₂NH: Dimethylamine</li></ul><p><strong>Tên IUPAC:</strong></p><ul><li>CH₃NH₂: Methanamine</li><li>C₂H₅NH₂: Ethanamine</li><li>C₆H₅NH₂: Benzenamine</li></ul>"
+            },
+            {
+              "heading": "2. Tính chất vật lý",
+              "content": "<h3>a) Trạng thái</h3><ul><li>Amine đơn giản (C₁-C₄): Khí</li><li>Amine phức tạp hơn: Lỏng hoặc rắn</li><li>Aniline: Lỏng, không màu (hóa nâu trong không khí)</li></ul><h3>b) Mùi</h3><ul><li>Amine đơn giản: Mùi khai, giống amoniac</li><li>Amine phức tạp: Mùi khó chịu (cá ươn)</li></ul><h3>c) Độ tan</h3><ul><li>Amine bậc thấp: Tan tốt trong nước (liên kết H)</li><li>Amine bậc cao: Ít tan trong nước</li><li>Aniline: Ít tan trong nước (0.36g/100ml)</li></ul><h3>d) Nhiệt độ sôi</h3><ul><li>Thấp hơn alcohol cùng khối lượng phân tử</li><li>Cao hơn hydrocarbon cùng khối lượng phân tử</li><li>Nguyên nhân: Liên kết H yếu hơn alcohol</li></ul>"
+            },
+            {
+              "heading": "3. Tính chất hóa học",
+              "content": "<h3>a) Tính base (quan trọng nhất)</h3><p><strong>1. Với nước:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>R-NH₂ + H₂O ⇌ R-NH₃⁺ + OH⁻</p><p>Dung dịch có tính base yếu (pH > 7)</p><p><strong>2. Với acid:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>R-NH₂ + HCl → R-NH₃⁺Cl⁻ (muối ammonium)</p><p>CH₃NH₂ + HCl → CH₃NH₃Cl (methylammonium chloride)</p><p>C₆H₅NH₂ + HCl → C₆H₅NH₃Cl (anilinium chloride)</p><p><strong>So sánh tính base:</strong></p><p>Amine no > NH₃ > Aniline</p><p>Nguyên nhân: Gốc alkyl đẩy e, gốc phenyl hút e</p><h3>b) Phản ứng thế vào nhân thơm (aniline)</h3><p><strong>1. Với Br₂:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₅NH₂ + 3Br₂ → C₆H₂Br₃NH₂↓ (trắng) + 3HBr</p><p>Tạo 2,4,6-tribromoaniline (kết tủa trắng)</p><p>Nhóm -NH₂ hoạt hóa nhân benzene</p><p><strong>2. Với HNO₃ loãng, lạnh:</strong></p><p>Không phản ứng trực tiếp (tạo muối trước)</p><h3>c) Phản ứng cháy</h3><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>4CH₃NH₂ + 9O₂ → 4CO₂ + 10H₂O + 2N₂</p><p>Tạo CO₂, H₂O và N₂</p><h3>d) Phản ứng với HNO₂ (phân biệt bậc)</h3><p><strong>Amine bậc 1:</strong></p><p>R-NH₂ + HNO₂ → R-OH + N₂↑ + H₂O (thoát khí N₂)</p><p><strong>Amine bậc 2:</strong></p><p>R₂NH + HNO₂ → R₂N-NO + H₂O (nitrosamine, vàng)</p><p><strong>Amine bậc 3:</strong></p><p>R₃N + HNO₂ → Không phản ứng hoặc tạo muối</p>"
+            },
+            {
+              "heading": "4. Điều chế và ứng dụng",
+              "content": "<h3>a) Điều chế</h3><p><strong>1. Từ halogenoalkane:</strong></p><p>R-X + NH₃ → R-NH₂ + HX</p><p>CH₃Cl + NH₃ → CH₃NH₂ + HCl</p><p><strong>2. Khử hợp chất nitro:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₅NO₂ + 3H₂ → C₆H₅NH₂ + 2H₂O (Ni, t°)</p><p>Nitrobenzene → Aniline</p><p><strong>3. Từ nitrile:</strong></p><p>R-CN + 2H₂ → R-CH₂-NH₂ (Ni, t°)</p><h3>b) Ứng dụng</h3><p><strong>1. Aniline:</strong></p><ul><li>Sản xuất thuốc nhuộm (azo dyes)</li><li>Sản xuất polymer (polyurethane)</li><li>Sản xuất dược phẩm (paracetamol)</li><li>Chất trung gian tổng hợp hữu cơ</li></ul><p><strong>2. Methylamine:</strong></p><ul><li>Sản xuất thuốc trừ sâu</li><li>Sản xuất dược phẩm</li><li>Chất tẩy rửa</li></ul><p><strong>3. Amine khác:</strong></p><ul><li>Chất xúc tác</li><li>Chất ức chế ăn mòn</li><li>Sản xuất cao su</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán tính base của amine",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH với acid</li><li>Tính mol muối ammonium</li><li>Áp dụng bảo toàn khối lượng</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Cho 6.2g methylamine (CH₃NH₂) tác dụng với dung dịch HCl dư. a) Viết PTHH. b) Tính khối lượng muối thu được. c) Tính thể tích dung dịch HCl 2M cần dùng.",
+                "solution": "<p><strong>a) PTHH:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>CH₃NH₂ + HCl → CH₃NH₃Cl</p><p><strong>b) Tính khối lượng muối:</strong></p><p>M(CH₃NH₂) = 31 g/mol</p><p>n(CH₃NH₂) = 6.2 / 31 = 0.2 mol</p><p>n(CH₃NH₃Cl) = 0.2 mol</p><p>M(CH₃NH₃Cl) = 67.5 g/mol</p><p>m(muối) = 0.2 × 67.5 = 13.5g</p><p><strong>c) Tính thể tích HCl:</strong></p><p>n(HCl) = n(CH₃NH₂) = 0.2 mol</p><p>V(HCl) = 0.2 / 2 = 0.1 lít = 100 ml</p><p><strong>Đáp án:</strong> b) 13.5g; c) 100 ml</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán phản ứng aniline với Br₂",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH: 1 mol aniline + 3 mol Br₂</li><li>Tính mol kết tủa</li><li>Lưu ý: Tỉ lệ 1:3</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Cho 9.3g aniline tác dụng với dung dịch Br₂ dư. a) Viết PTHH. b) Tính khối lượng kết tủa. c) Tính thể tích Br₂ (lỏng, d = 3.12 g/ml) cần dùng.",
+                "solution": "<p><strong>a) PTHH:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₅NH₂ + 3Br₂ → C₆H₂Br₃NH₂↓ + 3HBr</p><p><strong>b) Tính kết tủa:</strong></p><p>M(C₆H₅NH₂) = 93 g/mol</p><p>n(aniline) = 9.3 / 93 = 0.1 mol</p><p>n(kết tủa) = 0.1 mol</p><p>M(C₆H₂Br₃NH₂) = 330 g/mol</p><p>m(kết tủa) = 0.1 × 330 = 33g</p><p><strong>c) Tính thể tích Br₂:</strong></p><p>n(Br₂) = 3 × 0.1 = 0.3 mol</p><p>m(Br₂) = 0.3 × 160 = 48g</p><p>V(Br₂) = 48 / 3.12 = 15.4 ml</p><p><strong>Đáp án:</strong> b) 33g; c) 15.4 ml</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Sản xuất aniline từ nitrobenzene",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Tính aniline từ nitrobenzene</li><li>Áp dụng hiệu suất</li><li>Đánh giá kinh tế</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Sản xuất aniline từ 123 kg nitrobenzene. Quy trình: Nitrobenzene + H₂ → Aniline. a) Tính khối lượng aniline (hiệu suất 85%). b) Tính lợi nhuận (giá: nitrobenzene 50,000đ/kg, aniline 120,000đ/kg, H₂ 10,000đ/kg). c) Đánh giá an toàn và môi trường.",
+                "solution": "<p><strong>a) Tính aniline:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₅NO₂ + 3H₂ → C₆H₅NH₂ + 2H₂O</p><p>M(C₆H₅NO₂) = 123 g/mol</p><p>n(nitrobenzene) = 123,000 / 123 = 1000 mol</p><p>n(aniline) lý thuyết = 1000 mol</p><p>M(C₆H₅NH₂) = 93 g/mol</p><p>m(aniline) lý thuyết = 1000 × 93 = 93,000 g = 93 kg</p><p>m(aniline) thực tế = 93 × 85% = 79.05 kg</p><p><strong>b) Tính lợi nhuận:</strong></p><p><strong>Chi phí:</strong></p><ul><li>Nitrobenzene: 123 × 50,000 = 6,150,000 đ</li><li>H₂: n(H₂) = 3000 mol = 6 kg → 6 × 10,000 = 60,000 đ</li><li>Xúc tác, năng lượng: ~500,000 đ</li><li>Tổng: 6,710,000 đ</li></ul><p><strong>Doanh thu:</strong></p><p>Aniline: 79.05 × 120,000 = 9,486,000 đ</p><p><strong>Lợi nhuận:</strong></p><p>Lợi nhuận = 9,486,000 - 6,710,000 = 2,776,000 đ</p><p>Tỷ suất = 2,776,000 / 6,710,000 × 100% = 41.4%</p><p><strong>c) Đánh giá:</strong></p><p><strong>An toàn:</strong></p><ul><li>⚠️ Nitrobenzene độc, gây ung thư</li><li>⚠️ Aniline độc, hấp thủ qua da</li><li>⚠️ H₂ dễ cháy nổ</li><li>✓ Cần thiết bị bảo hộ nghiêm ngặt</li><li>✓ Hệ thống thông gió tốt</li></ul><p><strong>Môi trường:</strong></p><ul><li>✓ Không tạo khí độc (chỉ H₂O)</li><li>⚠️ Nước thải chứa aniline</li><li>✓ Cần xử lý nước thải</li><li>✓ Thu hồi aniline dư</li></ul><p><strong>Cải tiến:</strong></p><ul><li>Tăng hiệu suất lên 90-95%</li><li>Sử dụng xúc tác tốt hơn (Pt, Pd)</li><li>Hệ thống thu hồi H₂ dư</li><li>Xử lý nước thải bằng sinh học</li></ul><p><strong>Đáp án:</strong> a) 79.05 kg; b) Lợi nhuận 2.78 triệu đồng (41.4%); c) Cần chú ý an toàn và xử lý môi trường</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {"id": "ex1", "type": "mcq", "question": "Amine có công thức chung:", "options": ["R-OH", "R-NH₂", "R-COOH", "R-CHO"], "correct": 1, "explanation": "Amine có công thức R-NH₂."},
+          {"id": "ex2", "type": "mcq", "question": "Amine có tính:", "options": ["Acid", "Base", "Trung tính", "Lưỡng tính"], "correct": 1, "explanation": "Amine có tính base."},
+          {"id": "ex3", "type": "mcq", "question": "Aniline có công thức:", "options": ["C₆H₅OH", "C₆H₅NH₂", "C₆H₅COOH", "C₆H₅CHO"], "correct": 1, "explanation": "Aniline có công thức C₆H₅NH₂."},
+          {"id": "ex4", "type": "mcq", "question": "Aniline + Br₂ tạo kết tủa màu:", "options": ["Trắng", "Vàng", "Đỏ", "Xanh"], "correct": 0, "explanation": "Aniline + Br₂ → Kết tủa trắng (2,4,6-tribromoaniline)."},
+          {"id": "ex5", "type": "mcq", "question": "Aniline + HCl tạo:", "options": ["Muối", "Ester", "Ether", "Không phản ứng"], "correct": 0, "explanation": "Aniline + HCl → Muối anilinium chloride."},
+          {"id": "ex6", "type": "mcq", "question": "Tính base: Amine no ... NH₃ ... Aniline", "options": ["> ... >", "< ... <", "> ... <", "< ... >"], "correct": 0, "explanation": "Amine no > NH₃ > Aniline."},
+          {"id": "ex7", "type": "mcq", "question": "Điều chế aniline từ:", "options": ["Benzene", "Phenol", "Nitrobenzene", "Toluene"], "correct": 2, "explanation": "Aniline điều chế từ nitrobenzene (khử)."},
+          {"id": "ex8", "type": "mcq", "question": "CH₃NH₂ là amine bậc:", "options": ["1", "2", "3", "4"], "correct": 0, "explanation": "CH₃NH₂ là amine bậc 1."},
+          {"id": "ex9", "type": "mcq", "question": "(CH₃)₂NH là amine bậc:", "options": ["1", "2", "3", "4"], "correct": 1, "explanation": "(CH₃)₂NH là amine bậc 2."},
+          {"id": "ex10", "type": "mcq", "question": "Amine có mùi:", "options": ["Thơm", "Khai", "Chua", "Ngọt"], "correct": 1, "explanation": "Amine có mùi khai (giống amoniac)."},
+          {"id": "ex11", "type": "mcq", "question": "Aniline + 3Br₂ → ?", "options": ["C₆H₂Br₃NH₂", "C₆H₃Br₂NH₂", "C₆H₄BrNH₂", "C₆H₅Br"], "correct": 0, "explanation": "Aniline + 3Br₂ → C₆H₂Br₃NH₂ (2,4,6-tribromoaniline)."},
+          {"id": "ex12", "type": "mcq", "question": "M(aniline) = ?", "options": ["77", "93", "108", "123"], "correct": 1, "explanation": "M(C₆H₅NH₂) = 93 g/mol."},
+          {"id": "ex13", "type": "msq", "question": "Tính chất của amine:", "options": ["Tính base", "Với acid tạo muối", "Tan trong nước", "Mùi khai"], "correct": [0, 1, 2, 3], "explanation": "Amine có tất cả các tính chất trên."},
+          {"id": "ex14", "type": "msq", "question": "Phản ứng của aniline:", "options": ["Với HCl", "Với Br₂", "Với NaOH", "Khử nitrobenzene"], "correct": [0, 1], "explanation": "Aniline phản ứng với HCl, Br₂. Không với NaOH. Aniline là sản phẩm khử nitrobenzene."},
+          {"id": "ex15", "type": "msq", "question": "Ứng dụng aniline:", "options": ["Thuốc nhuộm", "Polymer", "Dược phẩm", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Aniline có nhiều ứng dụng."},
+          {"id": "ex16", "type": "msq", "question": "Amine bậc 1:", "options": ["CH₃NH₂", "(CH₃)₂NH", "C₆H₅NH₂", "(CH₃)₃N"], "correct": [0, 2], "explanation": "CH₃NH₂ và C₆H₅NH₂ là amine bậc 1."},
+          {"id": "ex17", "type": "sa", "question": "Cho 3.1g CH₃NH₂ tác dụng với HCl dư. Tính khối lượng muối (g). Làm tròn đến 1 chữ số thập phân.", "correct": "6.8", "explanation": "n = 3.1/31 = 0.1 mol. m(muối) = 0.1×67.5 = 6.75g. Đáp án: 6.8"},
+          {"id": "ex18", "type": "sa", "question": "Cho 9.3g aniline tác dụng với Br₂ dư. Tính khối lượng kết tủa (g). Làm tròn đến hàng đơn vị.", "correct": "33", "explanation": "n(aniline) = 9.3/93 = 0.1 mol. m(kết tủa) = 0.1×330 = 33g. Đáp án: 33"},
+          {"id": "ex19", "type": "sa", "question": "Aniline có khối lượng phân tử là bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "93", "explanation": "M(C₆H₅NH₂) = 93 g/mol. Đáp án: 93"},
+          {"id": "ex20", "type": "sa", "question": "Aniline + Br₂ theo tỉ lệ mol là bao nhiêu? (Aniline : Br₂). Làm tròn đến hàng đơn vị.", "correct": "3", "explanation": "1 mol aniline : 3 mol Br₂. Đáp án: 3"},
+          {"id": "ex21", "type": "sa", "question": "Khử 1 mol nitrobenzene cần bao nhiêu mol H₂? Làm tròn đến hàng đơn vị.", "correct": "3", "explanation": "C₆H₅NO₂ + 3H₂ → C₆H₅NH₂ + 2H₂O. Đáp án: 3"},
+          {"id": "ex22", "type": "sa", "question": "Methylamine (CH₃NH₂) có khối lượng phân tử là bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "31", "explanation": "M(CH₃NH₂) = 31 g/mol. Đáp án: 31"}
+        ]
+      }
+    }
+  ]
+}

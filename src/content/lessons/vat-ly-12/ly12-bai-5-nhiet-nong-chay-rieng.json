@@ -1,0 +1,281 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-5-nhiet-nong-chay-rieng",
+      "name": "Bài 5. Nhiệt nóng chảy riêng",
+      "slug": "bai-5-nhiet-nong-chay-rieng",
+      "chapter": "Chương 1. Vật lí nhiệt",
+      "chapter_id": "LY12-1",
+      "lesson_id": 5,
+      "description": "Nghiên cứu về nhiệt nóng chảy riêng, công thức và các bài toán liên quan.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1518818419601-72c8673f5852?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "nncr-1",
+          "name": "Khái niệm nhiệt nóng chảy riêng",
+          "slug": "khai-niem-nhiet-nong-chay-rieng",
+          "difficulty": "easy"
+        },
+        {
+          "id": "nncr-2",
+          "name": "Bài toán nóng chảy",
+          "slug": "bai-toan-nong-chay",
+          "difficulty": "medium"
+        },
+        {
+          "id": "nncr-3",
+          "name": "Dạng toán thực tế",
+          "slug": "dang-toan-thuc-te",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Nhiệt nóng chảy riêng",
+          "sections": [
+            {
+              "heading": "1. Khái niệm nhiệt nóng chảy riêng",
+              "content": "<p><strong>Nhiệt nóng chảy riêng (λ hoặc L):</strong> là nhiệt lượng cần thiết để chuyển hoàn toàn 1 kg chất từ thể rắn sang thể lỏng ở nhiệt độ nóng chảy.</p><p><strong>Đơn vị:</strong> J/kg</p><p><strong>Đặc điểm:</strong></p><ul><li>Mỗi chất có nhiệt nóng chảy riêng xác định</li><li>Quá trình nóng chảy xảy ra ở nhiệt độ không đổi</li></ul><p><strong>Bảng nhiệt nóng chảy riêng:</strong></p><ul><li>Nước đá: 3,34.10⁵ J/kg</li><li>Chì: 0,25.10⁵ J/kg</li><li>Đồng: 1,34.10⁵ J/kg</li><li>Nhôm: 3,97.10⁵ J/kg</li><li>Sắt: 2,72.10⁵ J/kg</li></ul>"
+            },
+            {
+              "heading": "2. Công thức tính nhiệt nóng chảy",
+              "content": "<p><strong>Công thức:</strong></p><p>$$Q = mL$$</p><p>Trong đó:</p><ul><li>Q: nhiệt lượng cần cung cấp (J)</li><li>m: khối lượng chất rắn (kg)</li><li>L: nhiệt nóng chảy riêng (J/kg)</li></ul><p><strong>Khi đông đặc (ngược của nóng chảy):</strong></p><p>$$Q = mL$$ (vật tỏa nhiệt)</p>"
+            },
+            {
+              "heading": "3. Các bài toán cân bằng nhiệt có chuyển thể",
+              "content": "<p>Khi có cả quá trình nóng lên, nóng chảy, hoặc đông đặc:</p><p><strong>Các bước giải:</strong></p><ol><li>Xác định các giai đoạn</li><li>Tính nhiệt cho từng giai đoạn</li><li>Áp dụng cân bằng nhiệt</li></ol><p><strong>Giai đoạn có thể có:</strong></p><ul><li>Nóng lên: Q = mcΔt</li><li>Nóng chảy: Q = mL</li><li>Hóa hơi: Q = mL'</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính nhiệt nóng chảy",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Q = mL</li><li>Đổi m về kg</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tính nhiệt lượng cần để nóng chảy 2kg nước đá ở 0°C. Biết L = 3,34.10⁵ J/kg.",
+                "solution": "<p><strong>Giải:</strong></p><p>Q = mL = 2 × 3,34.10⁵ = 6,68.10⁵ J</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Dạng toán thực tế",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Đọc đề, xác định khối lượng</li><li>Áp dụng Q = mL</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ thực tế:</strong> Một khay đá có 500g nước đá. Tính nhiệt lượng để làm tan chảy hoàn toàn.",
+                "solution": "<p><strong>Giải:</strong></p><p>m = 0,5 kg</p><p>Q = 0,5 × 3,34.10⁵ = 1,67.10⁵ J</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Nhiệt nóng chảy riêng là:",
+            "options": [
+              "Nhiệt lượng để nóng chảy 1kg",
+              "Nhiệt lượng để tăng 1°C",
+              "Nhiệt độ nóng chảy",
+              "Nhiệt dung riêng"
+            ],
+            "correct": 0,
+            "explanation": "Là nhiệt lượng để nóng chảy 1kg chất"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Đơn vị của nhiệt nóng chảy riêng là:",
+            "options": [
+              "J/kg",
+              "J/kg.K",
+              "J",
+              "W"
+            ],
+            "correct": 0,
+            "explanation": "Đơn vị J/kg"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Trong quá trình nóng chảy, nhiệt độ:",
+            "options": [
+              "Tăng",
+              "Giảm",
+              "Không đổi",
+              "Bất kỳ"
+            ],
+            "correct": 2,
+            "explanation": "Nhiệt độ không đổi trong nóng chảy"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Nước đá có nhiệt nóng chảy riêng:",
+            "options": [
+              "3,34.10⁵ J/kg",
+              "2,26.10⁶ J/kg",
+              "4,2.10³ J/kg",
+              "1,34.10⁵ J/kg"
+            ],
+            "correct": 0,
+            "explanation": "L_nước đá = 3,34.10⁵ J/kg"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Khi đông đặc, chất:",
+            "options": [
+              "Thu nhiệt",
+              "Tỏa nhiệt",
+              "Không trao đổi nhiệt",
+              "Cả ba đều đúng"
+            ],
+            "correct": 1,
+            "explanation": "Đông đặc tỏa nhiệt"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Công thức Q = mL, trong đó L là:",
+            "options": [
+              "Nhiệt dung riêng",
+              "Nhiệt nóng chảy riêng",
+              "Nhiệt hóa hơi",
+              "Nhiệt độ"
+            ],
+            "correct": 1,
+            "explanation": "L là nhiệt nóng chảy riêng"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Tính nhiệt để nóng chảy 1kg chì:",
+            "options": [
+              "3,34.10⁵ J",
+              "0,25.10⁵ J",
+              "1,34.10⁵ J",
+              "2,72.10⁵ J"
+            ],
+            "correct": 1,
+            "explanation": "L_chì = 0,25.10⁵ J/kg"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Khi khối lượng tăng gấp đôi, nhiệt nóng chảy:",
+            "options": [
+              "Tăng gấp đôi",
+              "Giảm một nửa",
+              "Không đổi",
+              "Tăng gấp 4"
+            ],
+            "correct": 0,
+            "explanation": "Q = mL, m tăng 2 thì Q tăng 2"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Nhiệt nóng chảy của đồng là:",
+            "options": [
+              "1,34.10⁵ J/kg",
+              "3,97.10⁵ J/kg",
+              "2,72.10⁵ J/kg",
+              "0,25.10⁵ J/kg"
+            ],
+            "correct": 0,
+            "explanation": "L_đồng = 1,34.10⁵ J/kg"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Trong nóng chảy, nhiệt lượng dùng để:",
+            "options": [
+              "Tăng nhiệt độ",
+              "Phá vỡ liên kết phân tử",
+              "Thay đổi thể tích",
+              "Giảm áp suất"
+            ],
+            "correct": 1,
+            "explanation": "Phá vỡ liên kết để chuyển từ rắn sang lỏng"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Đặc điểm của quá trình nóng chảy:",
+            "options": [
+              "Xảy ra ở nhiệt độ không đổi",
+              "Cần cung cấp nhiệt lượng",
+              "Nhiệt nóng chảy phụ thuộc khối lượng",
+              "Nhiệt độ tăng dần"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Nhiệt độ không đổi, cần cung cấp nhiệt"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các yếu tố ảnh hưởng đến nhiệt nóng chảy:",
+            "options": [
+              "Khối lượng chất",
+              "Loại chất",
+              "Nhiệt độ nóng chảy",
+              "Áp suất"
+            ],
+            "correct": [1, 3],
+            "explanation": "L phụ thuộc loại chất và áp suất"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Khi có cả nóng lên và nóng chảy:",
+            "options": [
+              "Tính Q1 = mcΔt cho phần nóng lên",
+              "Tính Q2 = mL cho phần nóng chảy",
+              "Tổng Q = Q1 + Q2",
+              "Chỉ tính một trong hai"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Cộng dồn các giai đoạn"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính nhiệt lượng để nóng chảy 3kg nhôm. Biết L_nhôm = 3,97.10⁵ J/kg.",
+            "correct": "1191000",
+            "explanation": "Q = 3 × 3,97.10⁵ = 1,191.10⁶ J"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Một khay đá 250g tan chảy hoàn toàn. Tính nhiệt lượng cần (J).",
+            "correct": "83500",
+            "explanation": "m = 0,25kg; Q = 0,25 × 3,34.10⁵ = 83500 J"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Tính nhiệt để nóng chảy 5kg sắt. L_sắt = 2,72.10⁵ J/kg.",
+            "correct": "1360000",
+            "explanation": "Q = 5 × 2,72.10⁵ = 1,36.10⁶ J"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Một vật bằng đồng khối lượng 2kg nóng chảy hoàn toàn. Tính Q (J). L_đồng=1,34.10⁵ J/kg",
+            "correct": "268000",
+            "explanation": "Q = 2 × 1,34.10⁵ = 268000 J"
+          }
+        ]
+      }
+    }
+  ]
+}

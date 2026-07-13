@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-21-cau-truc-hat-nhan",
+      "name": "Bài 21. Cấu trúc hạt nhân",
+      "slug": "bai-21-cau-truc-hat-nhan",
+      "chapter": "Chương 4. Vật lí hạt nhân",
+      "chapter_id": "LY12-4",
+      "lesson_id": 21,
+      "description": "Nghiên cứu về cấu trúc hạt nhân nguyên tử, các đặc điểm của proton và neutron.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "cthn-1",
+          "name": "Cấu tạo hạt nhân",
+          "slug": "cau-tao-hat-nhan",
+          "difficulty": "easy"
+        },
+        {
+          "id": "cthn-2",
+          "name": "Đơn vị khối lượng",
+          "slug": "don-vi-khoi-luong",
+          "difficulty": "medium"
+        },
+        {
+          "id": "cthn-3",
+          "name": "Kích thước hạt nhân",
+          "slug": "kich-thuoc-hat-nhan",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Cấu trúc hạt nhân",
+          "sections": [
+            {
+              "heading": "1. Cấu tạo hạt nhân",
+              "content": "<p><strong>Hạt nhân nguyên tử</strong> được cấu tạo bởi các <strong>nuclon</strong> gồm:</p><ul><li><strong>Proton (p):</strong> Mang điện tích dương +e, khối lượng m_p = 1,00728 u</li><li><strong>Neutron (n):</strong> Không mang điện, khối lượng m_n = 1,00867 u</li></ul><p><strong>Ký hiệu hạt nhân:</strong> $$^A_ZX$$</p><ul><li>Z: số proton (số hiệu nguyên tử)</li><li>A: số khối (tổng số proton và neutron)</li><li>N = A - Z: số neutron</li><li>X: ký hiệu nguyên tố hóa học</li></ul>"
+            },
+            {
+              "heading": "2. Đơn vị khối lượng nguyên tử",
+              "content": "<p><strong>Đơn vị khối lượng nguyên tử (u):</strong></p><p>$$1u = \\frac{1}{12} \\text{ khối lượng nguyên tử C}^{12} = 1,66055.10^{-27} \\text{ kg}$$</p><p><strong>Khối lượng các hạt:</strong></p><ul><li>m_p = 1,00728 u = 1,6726.10⁻²⁷ kg</li><li>m_n = 1,00867 u = 1,6749.10⁻²⁷ kg</li><li>m_e = 9,1094.10⁻³¹ kg</li></ul>"
+            },
+            {
+              "heading": "3. Kích thước hạt nhân",
+              "content": "<p><strong>Bán kính hạt nhân:</strong></p><p>$$R = r_0 A^{1/3}$$</p><p>Trong đó r₀ = 1,2 fm (femtomet = 10⁻¹⁵ m)</p><p><strong>Đặc điểm:</strong></p><ul><li>Kích thước hạt nhân rất nhỏ (cỡ 10⁻¹⁵ m)</li><li>Mật độ khối lượng rất lớn</li><li>Khối lượng riêng khoảng 2,8.10¹⁷ kg/m³</li></ul>"
+            },
+            {
+              "heading": "4. Đồng vị",
+              "content": "<p><strong>Đồng vị</strong> là các nguyên tử có cùng số proton Z nhưng khác số neutron N (khác số khối A).</p><p><strong>Ví dụ:</strong></p><ul><li>Đồng vị Hydro: ^1H (prôti), ^2H (đơteri), ^3H (triti)</li><li>Đồng vị Carbon: ^12C, ^13C, ^14C</li><li>Đồng vị Urani: ^235U, ^238U</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định cấu tạo hạt nhân",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định Z, A, N</li><li>Số proton = Z</li><li>Số neutron = N = A - Z</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Hạt nhân ^235_92U có bao nhiêu proton và neutron?",
+                "solution": "<p><strong>Giải:</strong></p><p>Z = 92 → số proton = 92</p><p>N = A - Z = 235 - 92 = 143 neutron</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính bán kính hạt nhân",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>R = r₀.A^(1/3)</li><li>r₀ = 1,2 fm</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Tính bán kính hạt nhân ^27_13Al.",
+                "solution": "<p><strong>Giải:</strong></p><p>R = 1,2.27^(1/3) = 1,2.3 = 3,6 fm</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Hạt nhân nguyên tử được cấu tạo bởi:",
+            "options": [
+              "Proton và electron",
+              "Proton và neutron",
+              "Neutron và electron",
+              "Proton, neutron và electron"
+            ],
+            "correct": 1,
+            "explanation": "Hạt nhân gồm proton (Z) và neutron (N)"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Số khối A là:",
+            "options": [
+              "Số proton",
+              "Số neutron",
+              "Tổng số proton và neutron",
+              "Số electron"
+            ],
+            "correct": 2,
+            "explanation": "A = Z + N (tổng số nuclon)"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Đơn vị khối lượng nguyên tử u bằng:",
+            "options": [
+              "1,66.10⁻²⁷ kg",
+              "1,66.10⁻³¹ kg",
+              "1,66.10⁻²⁴ kg",
+              "1,66.10⁻³⁰ kg"
+            ],
+            "correct": 0,
+            "explanation": "1u = 1,66055.10⁻²⁷ kg"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Proton mang điện tích:",
+            "options": [
+              "+e",
+              "-e",
+              "0",
+              "+2e"
+            ],
+            "correct": 0,
+            "explanation": "Proton mang điện +e = 1,6.10⁻¹⁹ C"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Neutron:",
+            "options": [
+              "Mang điện dương",
+              "Mang điện âm",
+              "Không mang điện",
+              "Mang điện tùy trường hợp"
+            ],
+            "correct": 2,
+            "explanation": "Neutron không mang điện"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Ký hiệu ^A_ZX có nghĩa:",
+            "options": [
+              "Z: số proton, A: số khối",
+              "Z: số neutron, A: số khối",
+              "Z: số khối, A: số proton",
+              "Z: điện tích, A: khối lượng"
+            ],
+            "correct": 0,
+            "explanation": "Z là số proton, A là số khối"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Số neutron trong hạt nhân ^238_92U là:",
+            "options": [
+              "92",
+              "146",
+              "238",
+              "330"
+            ],
+            "correct": 1,
+            "explanation": "N = A - Z = 238 - 92 = 146"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Bán kính hạt nhân được tính bằng công thức:",
+            "options": [
+              "R = r₀.A^(1/3)",
+              "R = r₀.A",
+              "R = r₀.A²",
+              "R = r₀/A^(1/3)"
+            ],
+            "correct": 0,
+            "explanation": "R = r₀.A^(1/3) với r₀ = 1,2 fm"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Đồng vị là các nguyên tử có:",
+            "options": [
+              "Cùng Z, khác A",
+              "Cùng A, khác Z",
+              "Khác Z và A",
+              "Cùng số electron"
+            ],
+            "correct": 0,
+            "explanation": "Đồng vị có cùng Z (cùng nguyên tố) nhưng khác A"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Khối lượng proton xấp xỉ:",
+            "options": [
+              "1 u",
+              "1/1840 u",
+              "1840 u",
+              "0,5 u"
+            ],
+            "correct": 0,
+            "explanation": "m_p ≈ 1,00728 u"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các nuclon gồm:",
+            "options": [
+              "Proton",
+              "Neutron",
+              "Electron",
+              "Photon"
+            ],
+            "correct": [0, 1],
+            "explanation": "Nuclon = proton + neutron"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Đặc điểm của hạt nhân:",
+            "options": [
+              "Kích thước rất nhỏ",
+              "Mật độ khối lượng rất lớn",
+              "Chứa Z proton và N neutron",
+              "Có thể tích tỉ lệ với A"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Tất cả đều là đặc điểm"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Các đồng vị của Hydro gồm:",
+            "options": [
+              "^1H (prôti)",
+              "^2H (đơteri)",
+              "^3H (triti)",
+              "^4H"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Đồng vị Hydro: ^1H, ^2H, ^3H"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính số neutron trong hạt nhân ^12_6C.",
+            "correct": "6",
+            "explanation": "N = A - Z = 12 - 6 = 6"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Tính bán kính hạt nhân ^27_13Al (fm).",
+            "correct": "3.6",
+            "explanation": "R = 1,2.27^(1/3) = 1,2.3 = 3,6 fm"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Đổi 1u ra kg.",
+            "correct": "1.66E-27",
+            "explanation": "1u = 1,66055.10⁻²⁷ kg"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Hạt nhân ^56_26Fe có bao nhiêu nuclon?",
+            "correct": "56",
+            "explanation": "Số nuclon = A = 56"
+          }
+        ]
+      }
+    }
+  ]
+}

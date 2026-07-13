@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-12",
+    "name": "Hoạt động đối ngoại của Việt Nam thế kỷ 20 đến 1945",
+    "slug": "hoat-dong-doi-ngoai-vietnam-the-ky-20-den-1945",
+    "chapter": "Chủ đề 5: Đối ngoại Việt Nam qua các giai đoạn lịch sử",
+    "chapter_id": "su12",
+    "lesson_id": 12,
+    "description": "Quan hệ quốc tế của Việt Nam từ đầu thế kỷ 20 đến 1945.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Hoạt động đối ngoại của Việt Nam thế kỷ 20 đến 1945",
+        "sections": [
+          { "heading": "1. Giai đoạn thực dân hoá (1900-1945)", "content": "Pháp kiểm soát Đông Dương khắt khe. Việt Nam không có quyền độc lập ngoại giao. Các nhân vật yêu nước tìm kiếm viện trợ nước ngoài: Phan Bội Châu (Nhật, Trung Quốc, Thái Lan). Cách mạng Việt (1911) thất bại; nhiệm vụ chuyển sang con đường khác." },
+          { "heading": "2. Tìm kiếm liên minh quốc tế (1920-1945)", "content": "Hồ Chí Minh tại Pháp (1919) trình 'Yêu sách 8 điểm' cho Hội nghị Versailes. Không được chấp nhận nhưng tìm hiểu chủ nghĩa cộng sản. Liên Xô hỗ trợ cuộc kháng chiến của nhân dân Đông Dương. Cộng nghiệp Việt gia nhập Cộng nghiệp Quốc tế. Hồ Chí Minh hoạt động tại Liên Xô, Trung Quốc." },
+          { "heading": "3. Chiến tranh Thế giới lần 2", "content": "Nhật Bản chiếm Đông Dương (1940-1945). Pháp mất quyền lực thực tế. Việt Minh hành động độc lập dưới lãnh đạo Hồ Chí Minh. Nhân Tết (1941): Hội nghị Tuyên bố thành lập Việt Minh. Liên minh chống Phát xít: Việt Minh hợp tác với Trung Quốc, Mỹ chống Nhật." },
+          { "heading": "4. Hủy Hiệp định Potsdam và cơ cấu quốc tế", "content": "Sau WWII: Trung Quốc chiếm Bắc Việt, quân anh chiếm Nam Việt. Hội nghị Potsdam (1945): Phân chia theo độ 16 rồi 17 là tạm thời. Pháp cố gắng trở lại. Hồ Chí Minh tuyên bố độc lập (2/9/1945) được quốc tế công nhận lâm thời." },
+          { "heading": "5. Mối quan hệ với Liên Xô, Trung Quốc", "content": "Liên Xô công nhận Việt Nam Dân chủ Cộng hòa. Trung Quốc không công nhận ban đầu, chỉ là chiếm đóng. Hồ Chí Minh ngoại giao linh hoạt: đàm phán với Pháp, tuy có lực lượng Trung Quốc trong đất nước. Chuẩn bị cho kháng chiến chống Pháp sắp tới." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Thế kỷ 20 sớm, Việt Nam?", "options": ["Độc lập", "Dưới quyền kiểm soát Pháp", "Tự do", "Độc lập một phần"], "correct": 1, "explanation": "Việt Nam dưới quyền kiểm soát Pháp thực dân." },
+        { "id": "ex2", "type": "mcq", "question": "Phan Bội Châu tìm viện trợ?", "options": ["Pháp", "Anh", "Nhật, TQ, Thái Lan", "Mỹ"], "correct": 2, "explanation": "Phan Bội Châu tìm kiếm viện trợ từ Nhật, Trung Quốc, Thái Lan." },
+        { "id": "ex3", "type": "mcq", "question": "Yêu sách Hồ Chí Minh?", "options": ["Tại Nhật", "Tại Pháp 1919 (Versailes)", "Tại Trung Quốc", "Tại Liên Xô"], "correct": 1, "explanation": "Hồ Chí Minh trình 'Yêu sách 8 điểm' tại hội nghị Versailes 1919." },
+        { "id": "ex4", "type": "mcq", "question": "Nhật chiếm Đông Dương?", "options": ["1930", "1935", "1940-1945", "1941"], "correct": 2, "explanation": "Nhật Bản chiếm Đông Dương (1940-1945)." },
+        { "id": "ex5", "type": "mcq", "question": "Hội nghị thành lập Việt Minh?", "options": ["Tết 1939", "Tết 1940", "Tết 1941", "Tết 1942"], "correct": 2, "explanation": "Hội nghị Tuyên bố thành lập Việt Minh (Tết 1941)." },
+        { "id": "ex6", "type": "mcq", "question": "Liên minh chống Phát xít?", "options": ["Chỉ Việt Minh", "Việt Minh + Trung Quốc + Mỹ", "Chỉ Pháp", "Chỉ Mỹ"], "correct": 1, "explanation": "Việt Minh hợp tác với Trung Quốc, Mỹ chống Nhật." },
+        { "id": "ex7", "type": "mcq", "question": "WWII kết thúc chiếm đóng?", "options": ["Trung Quốc toàn bộ", "Trung Quốc Bắc (độ 16), Anh Nam (độ 17)", "Pháp", "Mỹ"], "correct": 1, "explanation": "Trung Quốc chiếm Bắc (độ 16), Anh chiếm Nam (độ 17)." },
+        { "id": "ex8", "type": "mcq", "question": "Độc lập tuyên bố ngày?", "options": ["1/9/1945", "2/9/1945", "15/8/1945", "3/9/1945"], "correct": 1, "explanation": "Hồ Chí Minh tuyên bố độc lập ngày 2/9/1945." },
+        { "id": "ex9", "type": "mcq", "question": "Liên Xô công nhận?", "options": ["Không công nhận", "Công nhận ngay", "Công nhận sau", "Phản đối"], "correct": 1, "explanation": "Liên Xô công nhận Việt Nam Dân chủ Cộng hòa." },
+        { "id": "ex10", "type": "mcq", "question": "Mối quan hệ Hồ Chí Minh?", "options": ["Phục tùng 1 cường quốc", "Ngoại giao linh hoạt, đàm phán", "Cô lập tuyệt đối", "Phục tùng Pháp"], "correct": 1, "explanation": "Hồ Chí Minh ngoại giao linh hoạt giữa các thế lực." }
+      ]
+    }
+  }]
+}

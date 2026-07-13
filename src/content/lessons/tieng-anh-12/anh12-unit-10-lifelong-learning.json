@@ -1,0 +1,380 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-unit-10-lifelong-learning",
+      "name": "Unit 10: Lifelong Learning",
+      "slug": "unit-10-lifelong-learning",
+      "chapter": "Unit 10: Lifelong Learning",
+      "chapter_id": "A12",
+      "lesson_id": 13,
+      "description": "Learn about lifelong learning and reported speech for commands, requests, offers, and advice.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2622&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "vocab-10",
+          "name": "Lifelong Learning Vocabulary",
+          "slug": "lifelong-learning-vocabulary",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Unit 10: Lifelong Learning",
+          "sections": [
+            {
+              "heading": "1. Từ vựng (Vocabulary)",
+              "content": "<div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Word</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Type & IPA</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Meaning</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Example</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2 font-bold'>Lifelong learning</td><td class='px-4 py-2'>(n) /ˈlaɪflɒŋ ˈlɜːnɪŋ/</td><td class='px-4 py-2'>Học tập suốt đời</td><td class='px-4 py-2'>Lifelong learning is essential.</td></tr><tr><td class='px-4 py-2 font-bold'>Self-study</td><td class='px-4 py-2'>(n) /ˌself ˈstʌdi/</td><td class='px-4 py-2'>Tự học</td><td class='px-4 py-2'>Self-study requires discipline.</td></tr><tr><td class='px-4 py-2 font-bold'>Online course</td><td class='px-4 py-2'>(n) /ˈɒnlaɪn kɔːs/</td><td class='px-4 py-2'>Khóa học trực tuyến</td><td class='px-4 py-2'>I'm taking an online course.</td></tr><tr><td class='px-4 py-2 font-bold'>Certificate</td><td class='px-4 py-2'>(n) /səˈtɪfɪkət/</td><td class='px-4 py-2'>Chứng chỉ</td><td class='px-4 py-2'>She earned a certificate.</td></tr><tr><td class='px-4 py-2 font-bold'>Workshop</td><td class='px-4 py-2'>(n) /ˈwɜːkʃɒp/</td><td class='px-4 py-2'>Hội thảo, buổi thực hành</td><td class='px-4 py-2'>Attend the workshop.</td></tr><tr><td class='px-4 py-2 font-bold'>Seminar</td><td class='px-4 py-2'>(n) /ˈsemɪnɑː(r)/</td><td class='px-4 py-2'>Hội thảo</td><td class='px-4 py-2'>The seminar was informative.</td></tr><tr><td class='px-4 py-2 font-bold'>Webinar</td><td class='px-4 py-2'>(n) /ˈwebɪnɑː(r)/</td><td class='px-4 py-2'>Hội thảo trực tuyến</td><td class='px-4 py-2'>Join the webinar tomorrow.</td></tr><tr><td class='px-4 py-2 font-bold'>Skill</td><td class='px-4 py-2'>(n) /skɪl/</td><td class='px-4 py-2'>Kỹ năng</td><td class='px-4 py-2'>Develop new skills.</td></tr><tr><td class='px-4 py-2 font-bold'>Knowledge</td><td class='px-4 py-2'>(n) /ˈnɒlɪdʒ/</td><td class='px-4 py-2'>Kiến thức</td><td class='px-4 py-2'>Expand your knowledge.</td></tr><tr><td class='px-4 py-2 font-bold'>Motivation</td><td class='px-4 py-2'>(n) /ˌməʊtɪˈveɪʃn/</td><td class='px-4 py-2'>Động lực</td><td class='px-4 py-2'>Stay motivated to learn.</td></tr><tr><td class='px-4 py-2 font-bold'>Acquire</td><td class='px-4 py-2'>(v) /əˈkwaɪə(r)/</td><td class='px-4 py-2'>Đạt được, thu được</td><td class='px-4 py-2'>Acquire new knowledge.</td></tr><tr><td class='px-4 py-2 font-bold'>Update</td><td class='px-4 py-2'>(v) /ʌpˈdeɪt/</td><td class='px-4 py-2'>Cập nhật</td><td class='px-4 py-2'>Update your skills regularly.</td></tr><tr><td class='px-4 py-2 font-bold'>Enroll</td><td class='px-4 py-2'>(v) /ɪnˈrəʊl/</td><td class='px-4 py-2'>Đăng ký (khóa học)</td><td class='px-4 py-2'>Enroll in a course.</td></tr><tr><td class='px-4 py-2 font-bold'>Continuous</td><td class='px-4 py-2'>(adj) /kənˈtɪnjuəs/</td><td class='px-4 py-2'>Liên tục</td><td class='px-4 py-2'>Continuous learning is important.</td></tr><tr><td class='px-4 py-2 font-bold'>Accessible</td><td class='px-4 py-2'>(adj) /əkˈsesəbl/</td><td class='px-4 py-2'>Dễ tiếp cận</td><td class='px-4 py-2'>Online courses are accessible.</td></tr></tbody></table></div>"
+            },
+            {
+              "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
+              "content": "<p><strong>Learning Methods (Phương pháp học tập):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>formal education:</strong> giáo dục chính quy</li><li><strong>informal learning:</strong> học tập không chính thức</li><li><strong>self-directed learning:</strong> tự học có định hướng</li><li><strong>online learning:</strong> học trực tuyến</li><li><strong>distance learning:</strong> học từ xa</li><li><strong>blended learning:</strong> học kết hợp (online + offline)</li><li><strong>experiential learning:</strong> học qua trải nghiệm</li></ul><p><strong>Learning Resources (Nguồn học tập):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>online course:</strong> khóa học trực tuyến</li><li><strong>MOOC (Massive Open Online Course):</strong> khóa học trực tuyến mở đại chúng</li><li><strong>e-learning platform:</strong> nền tảng học trực tuyến (Coursera, edX, Udemy)</li><li><strong>tutorial:</strong> bài hướng dẫn</li><li><strong>podcast:</strong> chương trình âm thanh</li><li><strong>educational video:</strong> video giáo dục</li><li><strong>e-book:</strong> sách điện tử</li><li><strong>learning app:</strong> ứng dụng học tập</li></ul><p><strong>Learning Activities (Hoạt động học tập):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>attend a workshop:</strong> tham dự hội thảo thực hành</li><li><strong>take a course:</strong> tham gia khóa học</li><li><strong>enroll in a program:</strong> đăng ký chương trình</li><li><strong>complete a module:</strong> hoàn thành một mô-đun</li><li><strong>earn a certificate:</strong> nhận chứng chỉ</li><li><strong>participate in training:</strong> tham gia đào tạo</li><li><strong>join a study group:</strong> tham gia nhóm học tập</li></ul><p><strong>Skills to Develop (Kỹ năng cần phát triển):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>digital literacy:</strong> kỹ năng số</li><li><strong>critical thinking:</strong> tư duy phê phán</li><li><strong>problem-solving:</strong> giải quyết vấn đề</li><li><strong>time management:</strong> quản lý thời gian</li><li><strong>self-discipline:</strong> tự kỷ luật</li><li><strong>adaptability:</strong> khả năng thích nghi</li><li><strong>communication skills:</strong> kỹ năng giao tiếp</li></ul><p><strong>Benefits of Lifelong Learning (Lợi ích của học tập suốt đời):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>stay relevant:</strong> giữ được sự phù hợp</li><li><strong>career advancement:</strong> thăng tiến nghề nghiệp</li><li><strong>personal growth:</strong> phát triển bản thân</li><li><strong>increased confidence:</strong> tăng sự tự tin</li><li><strong>better opportunities:</strong> cơ hội tốt hơn</li><li><strong>mental stimulation:</strong> kích thích trí óc</li></ul><p><strong>Collocations về Learning:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>acquire knowledge:</strong> thu nhận kiến thức</li><li><strong>develop skills:</strong> phát triển kỹ năng</li><li><strong>update knowledge:</strong> cập nhật kiến thức</li><li><strong>expand horizons:</strong> mở rộng tầm nhìn</li><li><strong>pursue education:</strong> theo đuổi giáo dục</li><li><strong>embrace learning:</strong> đón nhận việc học</li><li><strong>commit to learning:</strong> cam kết học tập</li></ul>"
+            },
+            {
+              "heading": "3. Ngữ âm: Nhấn mạnh trong câu tường thuật",
+              "content": "<h3>Stress in reported speech</h3><p><strong>Quy tắc nhấn mạnh:</strong></p><p><strong>1. Câu tường thuật mệnh lệnh (Commands):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ tường thuật và động từ chính</li><li>Ex: She <strong>TOLD</strong> me to <strong>STUDY</strong> harder.</li><li>Ex: He <strong>ORDERED</strong> us to <strong>FINISH</strong> the work.</li></ul><p><strong>2. Câu tường thuật yêu cầu (Requests):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ tường thuật và động từ chính</li><li>Ex: She <strong>ASKED</strong> me to <strong>HELP</strong> her.</li><li>Ex: He <strong>REQUESTED</strong> us to <strong>ATTEND</strong>.</li></ul><p><strong>3. Câu tường thuật lời đề nghị (Offers):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ tường thuật và động từ chính</li><li>Ex: She <strong>OFFERED</strong> to <strong>HELP</strong> me.</li><li>Ex: He <strong>VOLUNTEERED</strong> to <strong>TEACH</strong>.</li></ul><p><strong>4. Câu tường thuật lời khuyên (Advice):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ tường thuật và động từ chính</li><li>Ex: She <strong>ADVISED</strong> me to <strong>TAKE</strong> the course.</li><li>Ex: He <strong>RECOMMENDED</strong> us to <strong>ENROLL</strong>.</li></ul>"
+            },
+            {
+              "heading": "4. Ngữ pháp: Tường thuật mệnh lệnh, yêu cầu, lời đề nghị và lời khuyên",
+              "content": "<h3>A. Câu tường thuật (Reported Speech)</h3><p><strong>Định nghĩa:</strong> Câu tường thuật được dùng để thuật lại lời nói của người khác.</p><h3>B. Tường thuật mệnh lệnh (Reported Commands)</h3><p><strong>1. Mệnh lệnh khẳng định (Positive commands):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + told/ordered/commanded + O + to V</li><li><strong>Direct:</strong> \"Study harder!\" she said to me.</li><li><strong>Reported:</strong> She <strong>told</strong> me <strong>to study</strong> harder.</li><li><strong>Direct:</strong> \"Finish your homework!\" the teacher said.</li><li><strong>Reported:</strong> The teacher <strong>ordered</strong> us <strong>to finish</strong> our homework.</li></ul><p><strong>2. Mệnh lệnh phủ định (Negative commands):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + told/ordered + O + not to V</li><li><strong>Direct:</strong> \"Don't be late!\" she said to me.</li><li><strong>Reported:</strong> She <strong>told</strong> me <strong>not to be</strong> late.</li><li><strong>Direct:</strong> \"Don't forget to submit!\" he said.</li><li><strong>Reported:</strong> He <strong>ordered</strong> us <strong>not to forget</strong> to submit.</li></ul><p><strong>Động từ tường thuật:</strong> tell, order, command, instruct, direct</p><h3>C. Tường thuật yêu cầu (Reported Requests)</h3><p><strong>1. Yêu cầu khẳng định (Positive requests):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + asked/requested/begged + O + to V</li><li><strong>Direct:</strong> \"Please help me,\" she said.</li><li><strong>Reported:</strong> She <strong>asked</strong> me <strong>to help</strong> her.</li><li><strong>Direct:</strong> \"Could you attend the meeting?\" he said.</li><li><strong>Reported:</strong> He <strong>requested</strong> us <strong>to attend</strong> the meeting.</li></ul><p><strong>2. Yêu cầu phủ định (Negative requests):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + asked/requested + O + not to V</li><li><strong>Direct:</strong> \"Please don't tell anyone,\" she said.</li><li><strong>Reported:</strong> She <strong>asked</strong> me <strong>not to tell</strong> anyone.</li><li><strong>Direct:</strong> \"Could you not make noise?\" he said.</li><li><strong>Reported:</strong> He <strong>requested</strong> us <strong>not to make</strong> noise.</li></ul><p><strong>Động từ tường thuật:</strong> ask, request, beg, implore</p><h3>D. Tường thuật lời đề nghị (Reported Offers)</h3><p><strong>1. Đề nghị làm gì cho người khác:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + offered/volunteered + to V</li><li><strong>Direct:</strong> \"I'll help you,\" she said.</li><li><strong>Reported:</strong> She <strong>offered to help</strong> me.</li><li><strong>Direct:</strong> \"Shall I carry your bag?\" he said.</li><li><strong>Reported:</strong> He <strong>offered to carry</strong> my bag.</li><li><strong>Direct:</strong> \"I'll teach you,\" she said.</li><li><strong>Reported:</strong> She <strong>volunteered to teach</strong> me.</li></ul><p><strong>2. Mời ai đó làm gì:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + invited + O + to V</li><li><strong>Direct:</strong> \"Would you like to join us?\" she said.</li><li><strong>Reported:</strong> She <strong>invited</strong> me <strong>to join</strong> them.</li></ul><p><strong>Động từ tường thuật:</strong> offer, volunteer, invite</p><h3>E. Tường thuật lời khuyên (Reported Advice)</h3><p><strong>1. Lời khuyên khẳng định:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + advised/recommended/suggested + O + to V</li><li><strong>Direct:</strong> \"You should take this course,\" she said.</li><li><strong>Reported:</strong> She <strong>advised</strong> me <strong>to take</strong> that course.</li><li><strong>Direct:</strong> \"Why don't you enroll?\" he said.</li><li><strong>Reported:</strong> He <strong>recommended</strong> me <strong>to enroll</strong>.</li></ul><p><strong>2. Lời khuyên phủ định:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + advised/warned + O + not to V</li><li><strong>Direct:</strong> \"You shouldn't give up,\" she said.</li><li><strong>Reported:</strong> She <strong>advised</strong> me <strong>not to give up</strong>.</li><li><strong>Direct:</strong> \"Don't waste time,\" he said.</li><li><strong>Reported:</strong> He <strong>warned</strong> me <strong>not to waste</strong> time.</li></ul><p><strong>3. Suggest với V-ing:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + suggested + V-ing</li><li><strong>Direct:</strong> \"Let's study together,\" she said.</li><li><strong>Reported:</strong> She <strong>suggested studying</strong> together.</li><li><strong>Cấu trúc:</strong> S + suggested + (that) + S + (should) + V</li><li><strong>Reported:</strong> She <strong>suggested that we (should) study</strong> together.</li></ul><p><strong>Động từ tường thuật:</strong> advise, recommend, suggest, warn, urge, encourage</p><h3>F. Các thay đổi khi tường thuật</h3><p><strong>1. Đại từ nhân xưng và tính từ sở hữu:</strong></p><ul class='list-disc pl-5 space-y-2'><li>I → he/she, me → him/her, my → his/her</li><li>you → I/we/they, your → my/our/their</li><li>we → they, us → them, our → their</li></ul><p><strong>2. Trạng từ chỉ thời gian và nơi chốn:</strong></p><ul class='list-disc pl-5 space-y-2'><li>now → then, today → that day</li><li>tomorrow → the next day/the following day</li><li>yesterday → the day before/the previous day</li><li>here → there, this → that, these → those</li></ul><p><strong>3. Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Không thay đổi thì động từ trong to-infinitive</li><li>\"Study!\" → told me to study (không phải 'to studied')</li><li>Please thường bỏ đi trong câu tường thuật</li><li>\"Please help me\" → asked me to help (không cần 'please')</li></ul><h3>G. Bảng tóm tắt động từ tường thuật</h3><div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Loại</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Động từ</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Cấu trúc</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2'>Commands</td><td class='px-4 py-2'>tell, order, command</td><td class='px-4 py-2'>+ O + (not) to V</td></tr><tr><td class='px-4 py-2'>Requests</td><td class='px-4 py-2'>ask, request, beg</td><td class='px-4 py-2'>+ O + (not) to V</td></tr><tr><td class='px-4 py-2'>Offers</td><td class='px-4 py-2'>offer, volunteer</td><td class='px-4 py-2'>+ to V</td></tr><tr><td class='px-4 py-2'>Invitations</td><td class='px-4 py-2'>invite</td><td class='px-4 py-2'>+ O + to V</td></tr><tr><td class='px-4 py-2'>Advice</td><td class='px-4 py-2'>advise, recommend, warn</td><td class='px-4 py-2'>+ O + (not) to V</td></tr><tr><td class='px-4 py-2'>Suggestions</td><td class='px-4 py-2'>suggest</td><td class='px-4 py-2'>+ V-ing / that S (should) V</td></tr></tbody></table></div>"
+            }
+,
+            {
+              "heading": "5. I. Getting Started",
+              "content": "<p><strong>Chủ đề:</strong> The importance of lifelong learning - Tầm quan trọng của học tập suốt đời</p><p><strong>Nội dung chính:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Hội thoại về học tập suốt đời</li><li>Thảo luận về các phương pháp học tập</li><li>Chia sẻ về khóa học và chứng chỉ</li><li>Nói về lợi ích của việc học liên tục</li></ul><p><strong>Các chủ đề được đề cập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Learning methods:</strong> Online courses, workshops, self-study</li><li><strong>Benefits:</strong> Career advancement, personal growth</li><li><strong>Challenges:</strong> Time management, motivation</li><li><strong>Resources:</strong> MOOCs, e-learning platforms</li></ul>"
+            },
+            {
+              "heading": "6. II. Language",
+              "content": "<p><strong>A. Pronunciation: Stress in reported speech</strong></p><p>Luyện phát âm nhấn mạnh trong câu tường thuật</p><p><strong>B. Vocabulary:</strong> Lifelong Learning</p><ul class='list-disc pl-5 space-y-2'><li>Learning types: lifelong learning, self-study, online course, distance learning</li><li>Resources: MOOC, e-learning platform, webinar, workshop, seminar</li><li>Activities: enroll, attend, complete, earn a certificate</li><li>Skills: digital literacy, critical thinking, time management</li><li>Adjectives: continuous, accessible, flexible, motivated</li></ul><p><strong>C. Grammar:</strong> Reported Speech for Commands, Requests, Offers, and Advice</p><ul class='list-disc pl-5 space-y-2'><li>Commands: tell/order + O + (not) to V</li><li>Requests: ask/request + O + (not) to V</li><li>Offers: offer/volunteer + to V</li><li>Advice: advise/recommend + O + (not) to V</li><li>Suggestions: suggest + V-ing / that S (should) V</li></ul>"
+            },
+            {
+              "heading": "7. III. Reading",
+              "content": "<p><strong>Chủ đề:</strong> Lifelong learning in the modern world</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc hiểu về học tập suốt đời</li><li>Tìm thông tin về lợi ích và thách thức</li><li>Hiểu về các phương pháp học tập hiện đại</li><li>Phân tích xu hướng giáo dục</li></ul><p><strong>Nội dung:</strong> Bài đọc giới thiệu về:</p><ul class='list-disc pl-5 space-y-2'><li><strong>Why lifelong learning matters:</strong> Tại sao học tập suốt đời quan trọng</li><li><strong>Online learning platforms:</strong> Nền tảng học trực tuyến (Coursera, edX, Udemy)</li><li><strong>Benefits:</strong> Career advancement, personal development</li><li><strong>How to stay motivated:</strong> Cách duy trì động lực</li></ul>"
+            },
+            {
+              "heading": "8. IV. Speaking",
+              "content": "<p><strong>Chủ đề:</strong> Discussing learning experiences and plans</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nói về kinh nghiệm học tập</li><li>Thảo luận về kế hoạch học tập</li><li>Chia sẻ lời khuyên về học tập</li><li>Tường thuật lời nói của người khác</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>My teacher told me to study harder.</li><li>She asked me to help her with the project.</li><li>He offered to teach me programming.</li><li>My mentor advised me to take online courses.</li><li>She suggested enrolling in a MOOC.</li><li>They recommended that I should learn new skills.</li><li>I was told to complete the course by next month.</li></ul>"
+            },
+            {
+              "heading": "9. V. Listening",
+              "content": "<p><strong>Chủ đề:</strong> A talk about online learning</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe hiểu bài nói về học trực tuyến</li><li>Điền thông tin về khóa học và chứng chỉ</li><li>Trả lời câu hỏi về lợi ích và thách thức</li><li>Ghi chú các lời khuyên</li></ul><p><strong>Nội dung:</strong> Bài nghe về:</p><ul class='list-disc pl-5 space-y-2'><li>Các nền tảng học trực tuyến phổ biến</li><li>Cách chọn khóa học phù hợp</li><li>Lợi ích của học trực tuyến</li><li>Lời khuyên để học hiệu quả</li></ul>"
+            },
+            {
+              "heading": "10. VI. Writing",
+              "content": "<p><strong>Chủ đề:</strong> Writing about learning experiences</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Viết về kinh nghiệm học tập</li><li>Mô tả khóa học đã tham gia</li><li>Sử dụng câu tường thuật</li><li>Đưa ra lời khuyên về học tập</li></ul><p><strong>Cấu trúc bài viết:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Introduction:</strong> Giới thiệu về tầm quan trọng của học tập suốt đời</li><li><strong>Body 1:</strong> Kinh nghiệm học tập cá nhân</li><li><strong>Body 2:</strong> Lợi ích và thách thức</li><li><strong>Conclusion:</strong> Lời khuyên và kế hoạch tương lai</li></ul><p><strong>Useful language:</strong></p><ul class='list-disc pl-5 space-y-2'><li>My teacher told me to...</li><li>I was advised to...</li><li>The instructor asked us to...</li><li>My mentor recommended that I should...</li><li>She suggested taking online courses.</li><li>I would advise others to...</li></ul>"
+            },
+            {
+              "heading": "11. VII. Communication and Culture / CLIL",
+              "content": "<p><strong>Communication:</strong> Giving and reporting advice</p><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Giving advice:</strong></li><li>You should... / I advise you to...</li><li>Why don't you...? / I recommend...</li><li>If I were you, I would...</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Reporting advice:</strong></li><li>She told me to...</li><li>He advised me to...</li><li>They recommended that I should...</li><li>My teacher suggested taking...</li></ul><p><strong>Culture:</strong> Lifelong learning around the world</p><ul class='list-disc pl-5 space-y-2'><li><strong>Finland:</strong> Strong culture of adult education and libraries</li><li><strong>Singapore:</strong> SkillsFuture program for continuous learning</li><li><strong>Japan:</strong> Community learning centers for all ages</li><li><strong>USA:</strong> Community colleges and online platforms</li><li><strong>Vietnam:</strong> Growing emphasis on vocational training and online learning</li></ul><p><strong>CLIL (Education):</strong> Learning theories</p><ul class='list-disc pl-5 space-y-2'><li>Constructivism: learning through experience</li><li>Social learning: learning from others</li><li>Self-directed learning: taking control of your learning</li><li>Metacognition: thinking about your thinking</li><li>Growth mindset: believing you can improve</li></ul>"
+            },
+            {
+              "heading": "12. VIII. Looking Back",
+              "content": "<p><strong>Ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Pronunciation:</strong> Stress in reported speech</li><li><strong>Vocabulary:</strong> Lifelong learning, self-study, online course, certificate, workshop, seminar, webinar, skill, knowledge, motivation, acquire, update, enroll, continuous, accessible</li><li><strong>Grammar:</strong> Reported speech for commands (tell/order + O + to V), requests (ask/request + O + to V), offers (offer/volunteer + to V), advice (advise/recommend + O + to V), suggestions (suggest + V-ing / that S should V)</li><li><strong>Skills:</strong> Reading about lifelong learning, Speaking about learning experiences, Listening to learning advice, Writing about learning plans</li></ul><p><strong>Self-assessment:</strong> Đánh giá khả năng:</p><ul class='list-disc pl-5 space-y-2'><li>Sử dụng từ vựng về học tập suốt đời</li><li>Nhấn mạnh đúng trong câu tường thuật</li><li>Sử dụng câu tường thuật cho mệnh lệnh, yêu cầu, lời đề nghị và lời khuyên</li><li>Thảo luận về kế hoạch và kinh nghiệm học tập</li></ul>"
+            },
+            {
+              "heading": "13. Project",
+              "content": "<p><strong>Đề tài:</strong> My lifelong learning plan</p><p><strong>Nhiệm vụ:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghiên cứu về một kỹ năng bạn muốn học</li><li>Tìm hiểu các nguồn học tập có sẵn</li><li>Lập kế hoạch học tập chi tiết</li><li>Tạo presentation hoặc infographic</li><li>Trình bày trước lớp (5-7 phút)</li></ul><p><strong>Nội dung cần có:</strong></p><ul class='list-disc pl-5 space-y-2'><li>What skill or knowledge do you want to acquire?</li><li>Why is this important for your future?</li><li>What learning resources will you use? (online courses, books, mentors)</li><li>What is your timeline and action plan?</li><li>What challenges do you expect?</li><li>How will you stay motivated?</li></ul><p><strong>Gợi ý kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Programming languages (Python, JavaScript)</li><li>Foreign languages (English, Chinese, Korean)</li><li>Digital marketing</li><li>Graphic design</li><li>Data analysis</li><li>Public speaking</li><li>Financial literacy</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Type 1: Reported Speech",
+            "method": "<p>Use reported speech correctly for commands, requests, offers, and advice.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Lifelong learning has become essential in today's rapidly changing world. Technology evolves so quickly that skills learned in school can become outdated within a few years. Employers increasingly value workers who continuously update their knowledge and adapt to new challenges.\n\nMy career counselor told me to embrace lifelong learning early in my career. She advised me to take online courses regularly and recommended that I should earn professional certificates. She also suggested joining professional networks to learn from others. This advice proved invaluable.\n\nOnline learning platforms have made education more accessible than ever. Websites like Coursera, edX, and Udemy offer thousands of courses on virtually any topic. My manager asked me to complete a data analysis course last year, and it significantly improved my job performance. The instructor told us to practice daily and encouraged us not to give up when facing difficulties.\n\nHowever, lifelong learning requires self-discipline and motivation. My mentor warned me not to take on too many courses at once. He advised me to focus on quality rather than quantity and suggested setting realistic goals. He also offered to help me create a learning plan.\n\nThe benefits of continuous learning extend beyond career advancement. Learning new skills boosts confidence, keeps the mind sharp, and opens doors to new opportunities. Whether you're learning a new language, mastering a technical skill, or exploring a hobby, the key is to stay curious and committed.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "Online courses are expensive",
+                  "Lifelong learning is essential in the modern world",
+                  "School education is enough",
+                  "Learning is only for young people"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về tầm quan trọng của học tập suốt đời trong thế giới hiện đại."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "What did the career counselor advise?",
+                "options": [
+                  "To stop learning",
+                  "To take online courses and earn certificates",
+                  "To avoid professional networks",
+                  "To focus only on work"
+                ],
+                "correct": 1,
+                "explanation": "Người tư vấn nghề nghiệp khuyên nên tham gia khóa học trực tuyến và lấy chứng chỉ."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The word 'invaluable' in paragraph 2 is closest in meaning to ______.",
+                "options": [
+                  "worthless",
+                  "extremely valuable",
+                  "cheap",
+                  "ordinary"
+                ],
+                "correct": 1,
+                "explanation": "Invaluable = extremely valuable (vô cùng quý giá)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "What did the mentor warn about?",
+                "options": [
+                  "Learning is useless",
+                  "Not to take on too many courses at once",
+                  "Online courses don't work",
+                  "To avoid all learning"
+                ],
+                "correct": 1,
+                "explanation": "Người cố vấn cảnh báo không nên tham gia quá nhiều khóa học cùng lúc."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "According to the passage, what is required for lifelong learning?",
+                "options": [
+                  "Only money",
+                  "Self-discipline and motivation",
+                  "Natural talent",
+                  "Nothing special"
+                ],
+                "correct": 1,
+                "explanation": "Học tập suốt đời cần tự kỷ luật và động lực."
+              }
+            ]
+          },
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "\"Study harder!\" → She ______ me ______ harder.",
+            "options": ["told / to study", "told / study", "said / to study", "asked / study"],
+            "correct": 0,
+            "explanation": "Tell + O + to V - tường thuật mệnh lệnh."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "\"Please help me.\" → She ______ me ______ her.",
+            "options": ["told / to help", "asked / to help", "ordered / help", "said / to help"],
+            "correct": 1,
+            "explanation": "Ask + O + to V - tường thuật yêu cầu (có 'please')."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "\"Don't be late!\" → He ______ us ______ late.",
+            "options": ["told / not to be", "told / to not be", "said / not be", "asked / not be"],
+            "correct": 0,
+            "explanation": "Tell + O + not to V - tường thuật mệnh lệnh phủ định."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "\"I'll help you.\" → She ______ to help me.",
+            "options": ["told", "asked", "offered", "ordered"],
+            "correct": 2,
+            "explanation": "Offer + to V - tường thuật lời đề nghị."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "\"You should take this course.\" → She ______ me ______ that course.",
+            "options": ["told / to take", "advised / to take", "ordered / take", "asked / take"],
+            "correct": 1,
+            "explanation": "Advise + O + to V - tường thuật lời khuyên."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "\"Let's study together.\" → She ______ studying together.",
+            "options": ["told", "asked", "suggested", "ordered"],
+            "correct": 2,
+            "explanation": "Suggest + V-ing - tường thuật lời đề nghị."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "\"Could you attend the meeting?\" → He ______ us ______ the meeting.",
+            "options": ["told / attend", "requested / to attend", "ordered / attend", "said / to attend"],
+            "correct": 1,
+            "explanation": "Request + O + to V - tường thuật yêu cầu lịch sự."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "\"Don't give up!\" → She ______ me ______ give up.",
+            "options": ["told / not to", "told / to not", "said / not", "asked / not"],
+            "correct": 0,
+            "explanation": "Tell + O + not to V - mệnh lệnh phủ định."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "\"Shall I teach you?\" → He ______ to teach me.",
+            "options": ["told", "asked", "volunteered", "ordered"],
+            "correct": 2,
+            "explanation": "Volunteer + to V - tường thuật lời đề nghị tự nguyện."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "\"You shouldn't waste time.\" → She ______ me ______ waste time.",
+            "options": ["advised / not to", "advised / to not", "told / not", "asked / not"],
+            "correct": 0,
+            "explanation": "Advise + O + not to V - lời khuyên phủ định."
+          },
+          {
+            "id": "mcq11",
+            "type": "mcq",
+            "question": "\"Please don't tell anyone.\" → She ______ me ______ tell anyone.",
+            "options": ["asked / not to", "asked / to not", "told / not", "said / not to"],
+            "correct": 0,
+            "explanation": "Ask + O + not to V - yêu cầu phủ định."
+          },
+          {
+            "id": "mcq12",
+            "type": "mcq",
+            "question": "\"Why don't you enroll?\" → He ______ me ______ enroll.",
+            "options": ["told / to", "asked / to", "recommended / to", "ordered / to"],
+            "correct": 2,
+            "explanation": "Recommend + O + to V - tường thuật lời khuyên."
+          },
+          {
+            "id": "mcq13",
+            "type": "mcq",
+            "question": "\"Would you like to join us?\" → She ______ me ______ join them.",
+            "options": ["told / to", "invited / to", "ordered / to", "asked / to"],
+            "correct": 1,
+            "explanation": "Invite + O + to V - tường thuật lời mời."
+          },
+          {
+            "id": "mcq14",
+            "type": "mcq",
+            "question": "\"Finish your homework!\" → The teacher ______ us ______ our homework.",
+            "options": ["asked / finish", "ordered / to finish", "suggested / finish", "offered / to finish"],
+            "correct": 1,
+            "explanation": "Order + O + to V - tường thuật mệnh lệnh mạnh."
+          },
+          {
+            "id": "mcq15",
+            "type": "mcq",
+            "question": "\"You should learn new skills.\" → He ______ that I ______ learn new skills.",
+            "options": ["recommended / should", "told / should", "asked / should", "ordered / should"],
+            "correct": 0,
+            "explanation": "Recommend + that + S + should + V - tường thuật lời khuyên."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "We use 'tell' for commands and 'ask' for requests.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Tell dùng cho mệnh lệnh, ask dùng cho yêu cầu."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "After 'suggest', we use to-infinitive.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Sau suggest dùng V-ing hoặc that + S + (should) + V, không dùng to-infinitive."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "'Offer' and 'volunteer' are used to report offers to do something.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Offer và volunteer dùng để tường thuật lời đề nghị làm gì đó."
+          },
+          {
+            "id": "msq4",
+            "type": "msq",
+            "question_text": "In reported commands, we use: tell/order + O + not to V for negative commands.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Mệnh lệnh phủ định: tell/order + O + not to V."
+          },
+          {
+            "id": "msq5",
+            "type": "msq",
+            "question_text": "Lifelong learning means learning only in formal education.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Học tập suốt đời bao gồm cả học chính quy và không chính quy."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call learning that continues throughout life? (two words)",
+            "correct": "lifelong learning",
+            "explanation": "Lifelong learning: học tập suốt đời."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "Complete: \"Study harder!\" → She ______ me to study harder.",
+            "correct": "told",
+            "explanation": "Tell + O + to V - tường thuật mệnh lệnh."
+          },
+          {
+            "id": "sa3",
+            "type": "sa",
+            "question_text": "What verb do we use to report offers? (one word)",
+            "correct": "offered",
+            "explanation": "Offer + to V - tường thuật lời đề nghị."
+          },
+          {
+            "id": "sa4",
+            "type": "sa",
+            "question_text": "What is the abbreviation for Massive Open Online Course? (four letters)",
+            "correct": "MOOC",
+            "explanation": "MOOC = Massive Open Online Course (khóa học trực tuyến mở đại chúng)."
+          },
+          {
+            "id": "essay1",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about advice you received about learning. Use reported speech.",
+            "sample_answer": "Throughout my education, I've received valuable advice about learning. My teacher told me to study regularly rather than cramming before exams. She advised me to take breaks and recommended that I should use different learning methods. My parents asked me not to give up when facing difficulties and encouraged me to stay curious. A mentor offered to help me create a study plan and suggested joining study groups. He warned me not to compare myself to others and told me to focus on my own progress. This advice has helped me become a more effective learner and develop a love for continuous education.",
+            "explanation": "Bài viết sử dụng: told me to, advised me to, recommended that I should, asked me not to, offered to, suggested, warned me not to."
+          },
+          {
+            "id": "essay2",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about your lifelong learning plan. Use reported speech to include advice from others.",
+            "sample_answer": "I'm committed to lifelong learning to stay relevant in my career. My career counselor advised me to take online courses in data analysis and recommended that I should earn professional certificates. She told me to set specific learning goals and asked me to track my progress regularly. My manager offered to support my learning by providing time for courses during work hours. He suggested enrolling in MOOCs and encouraged me not to be afraid of challenging subjects. I plan to complete at least two courses this year and attend workshops in my field. My mentor told me that continuous learning is the key to success.",
+            "explanation": "Bài viết sử dụng: advised me to, recommended that I should, told me to, asked me to, offered to, suggested, encouraged me not to."
+          },
+          {
+            "id": "essay3",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) giving advice to someone starting online learning. Use commands, requests, and suggestions.",
+            "sample_answer": "If you're starting online learning, here's my advice. First, set clear goals and create a study schedule. I recommend that you should choose courses from reputable platforms like Coursera or edX. Don't try to take too many courses at once - focus on quality over quantity. Join online study groups to stay motivated and learn from others. I suggest setting aside dedicated time for learning each day. Take notes and practice what you learn immediately. Don't give up when facing difficulties; instead, ask for help in course forums. Finally, celebrate your progress and reward yourself when you complete milestones. Remember, consistency is more important than intensity.",
+            "explanation": "Bài viết đưa ra lời khuyên sử dụng: recommend that you should, don't try to, suggest, take notes, don't give up, ask for help, celebrate."
+          },
+          {
+            "id": "essay4",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about the importance of lifelong learning. Include reported advice and your own opinions.",
+            "sample_answer": "Lifelong learning is essential in today's rapidly changing world. My professor once told me that learning should never stop after graduation. He advised me to stay curious and recommended that I should read widely beyond my field. Research shows that continuous learning keeps the mind sharp and opens new opportunities. Employers increasingly value workers who update their skills regularly. My mentor suggested taking online courses and offered to help me choose relevant programs. She warned me not to become complacent and encouraged me to embrace new challenges. I believe that lifelong learning is not just about career advancement - it's about personal growth and staying engaged with the world around us.",
+            "explanation": "Bài viết kết hợp: told me that, advised me to, recommended that I should, suggested, offered to, warned me not to, encouraged me to."
+          }
+        ]
+      }
+    }
+  ]
+}

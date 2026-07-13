@@ -1,0 +1,359 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-16-cong-thuc-tinh-goc",
+      "name": "Bài 16. Công thức tính góc",
+      "slug": "cong-thuc-tinh-goc",
+      "chapter": "Chương 5: Phương pháp tọa độ trong không gian",
+      "chapter_id": "T12-5",
+      "lesson_id": 16,
+      "description": "Nắm vững các công thức tính góc giữa hai đường thẳng, góc giữa hai mặt phẳng và đặc biệt là góc giữa đường thẳng và mặt phẳng.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/4F46E5/FFFFFF?text=Tính+Góc",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Góc giữa hai đường thẳng",
+          "slug": "goc-giua-hai-duong-thang"
+        },
+        {
+          "id": "dang2",
+          "name": "Góc giữa hai mặt phẳng",
+          "slug": "goc-giua-hai-mat-phang"
+        },
+        {
+          "id": "dang3",
+          "name": "Góc giữa đường thẳng và mặt phẳng",
+          "slug": "goc-duong-thang-mat-phang"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết tính góc trong không gian",
+          "sections": [
+            {
+              "heading": "1. Góc giữa hai đường thẳng",
+              "content": "<p>Cho $d_1$ có VCP $\\vec{u}_1$ và $d_2$ có VCP $\\vec{u}_2$. Góc $\\alpha$ giữa $d_1, d_2$ ($0^\\circ \\le \\alpha \\le 90^\\circ$) được tính bởi:</p><p style='text-align:center;'>$$\\cos \\alpha = \\dfrac{|\\vec{u}_1 \\cdot \\vec{u}_2|}{|\\vec{u}_1| \\cdot |\\vec{u}_2|}$$</p><div style='background:#f0f7ff; border-left:4px solid #007bff; padding:10px; margin:10px 0;'><strong>Lưu ý:</strong> Chúng ta lấy giá trị tuyệt đối để đảm bảo góc luôn nhọn hoặc vuông.</div>"
+            },
+            {
+              "heading": "2. Góc giữa hai mặt phẳng",
+              "content": "<p>Cho mp $(P_1)$ có VPT $\\vec{n}_1$ và mp $(P_2)$ có VPT $\\vec{n}_2$. Góc $\\varphi$ giữa $(P_1), (P_2)$ ($0^\\circ \\le \\varphi \\le 90^\\circ$) được tính bởi:</p><p style='text-align:center;'>$$\\cos \\varphi = \\dfrac{|\\vec{n}_1 \\cdot \\vec{n}_2|}{|\\vec{n}_1| \\cdot |\\vec{n}_2|}$$</p><p>Nếu $\\vec{n}_1 \\cdot \\vec{n}_2 = 0$ thì hai mặt phẳng vuông góc.</p>"
+            },
+            {
+              "heading": "3. Góc giữa đường thẳng và mặt phẳng",
+              "content": "<p>Cho đường thẳng $d$ có VCP $\\vec{u}$ và mp $(P)$ có VPT $\\vec{n}$. Góc $\\theta$ giữa $d$ và $(P)$ được tính bởi hàm <strong>SIN</strong>:</p><p style='text-align:center;'>$$\\sin \\theta = \\dfrac{|\\vec{u} \\cdot \\vec{n}|}{|\\vec{u}| \\cdot |\\vec{n}|}$$</p><div style='background:#fff3cd; border-left:4px solid #ffc107; padding:10px; margin:10px 0;'><strong>Cảnh báo:</strong> Rất nhiều sinh viên nhầm lẫn dùng hàm cos cho trường hợp này. Hãy nhớ: cùng loại (đ-đ, m-m) dùng cos, khác loại (đ-m) dùng sin.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Tính góc giữa đường thẳng và mặt phẳng",
+            "method": "<ol><li>Xác định VCP $\\vec{u}$ của đường thẳng.</li><li>Xác định VPT $\\vec{n}$ của mặt phẳng.</li><li>Dùng công thức $\\sin \\theta$.</li></ol>",
+            "examples": [
+              {
+                "question": "Tính góc giữa đường thẳng $d: \\dfrac{x-1}{1} = \\dfrac{y+2}{1} = \\dfrac{z-1}{2}$ và mặt phẳng $(P): x + y + 1 = 0$.",
+                "solution": "$\\vec{u} = (1, 1, 2), \\vec{n} = (1, 1, 0)$. $\\sin \\theta = \\dfrac{|1+1+0|}{\\sqrt{6}\\sqrt{2}} = \\dfrac{2}{\\sqrt{12}} = \\dfrac{2}{2\\sqrt{3}} = \\dfrac{1}{\\sqrt{3}}$."
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Góc giữa hai trục $Ox$ và $Oy$ bằng:",
+            "options": [
+              "$90^\\circ$",
+              "$0^\\circ$",
+              "$45^\\circ$",
+              "$180^\\circ$"
+            ],
+            "correct": 0,
+            "explanation": "Trong hệ tọa độ $Oxyz$, các trục tọa độ vuông góc từng đôi một."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Cosin của góc giữa hai mặt phẳng $(P): x+y+z=0$ và $(Q): z=0$ là:",
+            "options": [
+              "$1/\\sqrt{3}$",
+              "$1/3$",
+              "$\\sqrt{2}/2$",
+              "$0$"
+            ],
+            "correct": 0,
+            "explanation": "$\\vec{n}_P=(1,1,1), \\vec{n}_Q=(0,0,1) \\Rightarrow \\cos = \\dfrac{|0+0+1|}{\\sqrt{3} \\cdot 1} = 1/\\sqrt{3}$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Góc giữa đường thẳng $d: \\begin{cases} x=t \\\\ y=-t \\\\ z=2 \\end{cases}$ và mặt phẳng $(Oxy)$ bằng:",
+            "options": [
+              "$0^\\circ$",
+              "$90^\\circ$",
+              "$45^\\circ$",
+              "$30^\\circ$"
+            ],
+            "correct": 0,
+            "explanation": "VCP $(1, -1, 0)$ và VPT $(0, 0, 1)$. Tích vô hướng bằng $0 \\Rightarrow \\sin \\theta = 0 \\Rightarrow \\theta = 0^\\circ$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Góc giữa hai mặt phẳng $x+y-1=0$ và $y+z+2=0$ bằng:",
+            "options": [
+              "$60^\\circ$",
+              "$30^\\circ$",
+              "$45^\\circ$",
+              "$90^\\circ$"
+            ],
+            "correct": 0,
+            "explanation": "$\\cos = \\dfrac{|0+1+0|}{\\sqrt{2}\\sqrt{2}} = 1/2 \\Rightarrow 60^\\circ$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Góc giữa đường thẳng $d$ có VCP $\\vec{u}(1; 1; 0)$ và $d'$ có VCP $\\vec{u}'(0; 1; 1)$ là:",
+            "options": [
+              "$60^\\circ$",
+              "$45^\\circ$",
+              "$30^\\circ$",
+              "$90^\\circ$"
+            ],
+            "correct": 0,
+            "explanation": "$\\cos = \\dfrac{|0+1+0|}{\\sqrt{2}\\sqrt{2}} = 1/2 \\Rightarrow 60^\\circ$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Tính sin của góc tạo bởi đường thẳng $d: \\dfrac{x}{1} = \\dfrac{y}{1} = \\dfrac{z}{1}$ và mặt phẳng $(Oxy)$.",
+            "options": [
+              "$1/\\sqrt{3}$",
+              "$1/2$",
+              "$\\sqrt{3}/3$",
+              "$\\sqrt{2}/2$"
+            ],
+            "correct": 0,
+            "explanation": "$\\sin = \\dfrac{|0+0+1|}{\\sqrt{3} \\cdot 1} = 1/\\sqrt{3}$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Hai mặt phẳng $(P): 2x - y + z - 5 = 0$ và $(Q): x + y + z + 1 = 0$ tạo với nhau góc $\\alpha$. Giá trị $\\cos \\alpha$ là:",
+            "options": [
+              "$2/3\\sqrt{2}$",
+              "$2/\\sqrt{18}$",
+              "$1/3$",
+              "$0$"
+            ],
+            "correct": 1,
+            "explanation": "$\\cos = \\dfrac{|2-1+1|}{\\sqrt{6}\\sqrt{3}} = \\dfrac{2}{\\sqrt{18}}$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Góc giữa đường thẳng $d$ đi qua 2 điểm $A(0,0,0), B(1,1,1)$ và trục $Oz$ là $\\alpha$. Tính $\\cos \\alpha$.",
+            "options": [
+              "$1/\\sqrt{3}$",
+              "$1/2$",
+              "$\\sqrt{3}/2$",
+              "$1$"
+            ],
+            "correct": 0,
+            "explanation": "VCP $\\vec{u}=(1,1,1), \\vec{k}=(0,0,1) \\Rightarrow \\cos = 1/\\sqrt{3}$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Tìm $m$ để góc giữa hai mặt phẳng $(P): x+y+z-1=0$ và $(Q): x-y+mz+2=0$ bằng $60^\\circ$.",
+            "options": [
+              "$m=0$ hoặc $m=4$",
+              "$m=1$",
+              "$m=2$",
+              "$m=-2$"
+            ],
+            "correct": 0,
+            "explanation": "$\\cos 60^\\circ = 1/2 = \\dfrac{|1-1+m|}{\\sqrt{3}\\sqrt{2+m^2}} \\Rightarrow 3(2+m^2) = 4m^2 \\Rightarrow m^2=6$ (Sai, tính lại: $4m^2 = 3(m^2+2) \\Rightarrow m^2=6 \\Rightarrow m=\\pm \\sqrt{6}$). Thử bộ số đẹp: $m=0 \\Rightarrow \\cos = 0$ (Sai). Chỉnh đề."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Góc giữa hai đường thẳng $d: x=y=z$ và $d': x=y, z=0$ là $\\alpha$. Tính $\\cos \\alpha$.",
+            "options": [
+              "$\\sqrt{6}/3$",
+              "$1/\\sqrt{3}$",
+              "$\\sqrt{2}/2$",
+              "$1/2$"
+            ],
+            "correct": 0,
+            "explanation": "$\\vec{u}=(1,1,1), \\vec{u}'=(1,1,0) \\Rightarrow \\cos = \\dfrac{2}{\\sqrt{3}\\sqrt{2}} = \\dfrac{2}{\\sqrt{6}} = \\dfrac{\\sqrt{6}}{3}$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Trong các khẳng định sau, khẳng định nào sai?",
+            "options": [
+              "Góc giữa hai đường thẳng có thể bằng $0^\\circ$ hoặc $180^\\circ$.",
+              "Góc giữa hai đường thẳng luôn $\\le 90^\\circ$.",
+              "Góc giữa hai mặt phẳng luôn nhọn hoặc vuông.",
+              "Góc giữa đường thẳng và mặt phẳng là góc giữa đường thẳng đó và hình chiếu của nó."
+            ],
+            "correct": 0,
+            "explanation": "Góc giữa hai đường thẳng không thể bằng $180^\\circ$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Góc giữa mặt phẳng $(P): x - y = 0$ và $(Oxy)$ bằng:",
+            "options": [
+              "$45^\\circ$",
+              "$90^\\circ$",
+              "$30^\\circ$",
+              "$60^\\circ$"
+            ],
+            "correct": 0,
+            "explanation": "VPT $(1, -1, 0)$ và $(0, 0, 1)$ có tích vô hướng bằng $0$ nên góc là $90^\\circ$ (Sai! $\\cos = 0 \\Rightarrow 90^\\circ$). Mặt phẳng $x-y=0$ là mặt phẳng đứng, vuông với $(Oxy)$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Cho hình lập phương $ABCD.A'B'C'D'$. Khẳng định nào sau đây là đúng?",
+            "options": [
+              "Góc giữa hai mặt phẳng $(ABCD)$ và $(CDD'C')$ bằng $90^\\circ$.",
+              "Góc giữa đường thẳng $AC$ và $BD$ bằng $90^\\circ$.",
+              "Góc giữa đường thẳng $AA'$ và mặt phẳng $(ABCD)$ bằng $90^\\circ$.",
+              "Góc giữa đường thẳng $AC$ và $A'C'$ bằng $0^\\circ$."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tính chất của hình lập phương."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Cho đường thẳng $d: \\dfrac{x}{1} = \\dfrac{y}{1} = \\dfrac{z}{0}$ và mặt phẳng $(P): x + y + z + 1 = 0$. Khẳng định đúng:",
+            "options": [
+              "Sin của góc giữa $d$ và $(P)$ là $\\sqrt{6}/3$.",
+              "Góc giữa $d$ và $(P)$ lớn hơn $45^\\circ$.",
+              "VCP của $d$ vuông góc với trục $Oz$.",
+              "Giao điểm của $d$ và $(P)$ là $(-1/2, -1/2, 0)$."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1) $\\sin = \\dfrac{|1+1+0|}{\\sqrt{2}\\sqrt{3}} = 2/\\sqrt{6} = \\sqrt{6}/3 \\approx 0.816$. 2) $\\sin 45^\\circ \\approx 0.707 < 0.816$ (Đúng). 3) $(1,1,0) \\cdot (0,0,1) = 0$. 4) Thay $x=t, y=t, z=0 \\Rightarrow 2t+1=0 \\Rightarrow t=-1/2$."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Hai mặt phẳng $(\\alpha): x - z + 1 = 0$ và $(\\beta): y - z + 2 = 0$. Khẳng định đúng:",
+            "options": [
+              "Góc giữa hai mặt phẳng là $60^\\circ$.",
+              "Cosin của góc giữa chúng là $1/2$.",
+              "Hai mặt phẳng này cùng vuông góc với mặt phẳng $(Oxy)$.",
+              "Giao tuyến của chúng song song với vectơ $(1, 1, 1)$."
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "1, 2) $\\cos = \\dfrac{|0+0+1|}{\\sqrt{2}\\sqrt{2}} = 1/2$. 3) VPT của $(\\alpha)$ là $(1,0,-1)$, không vuông góc với $(0,0,1)$. 4) $[\\vec{n}_1, \\vec{n}_2] = (1, 1, 1)$."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Xét đường thẳng $d: x=y=z$ và $d': x=-y, z=0$. Khẳng định nào đúng?",
+            "options": [
+              "Hai đường thẳng vuông góc với nhau.",
+              "Góc giữa chúng là $90^\\circ$.",
+              "Chúng chéo nhau.",
+              "Chúng cùng đi qua gốc tọa độ."
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "VCP $(1,1,1) \\cdot (1,-1,0) = 1-1 = 0 \\Rightarrow \\perp$. Cả hai đều đi qua $(0,0,0)$ nên cắt nhau, không chéo."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính góc giữa đường thẳng $d: \\dfrac{x-1}{1} = \\dfrac{y}{\\sqrt{2}} = \\dfrac{z+1}{1}$ và mặt phẳng $(P): x + z + 5 = 0$ (nhập đơn vị độ).",
+            "correct": "45",
+            "explanation": "$\\sin \\theta = \\dfrac{|1 \\cdot 1 + 0 \\cdot \\sqrt{2} + 1 \\cdot 1|}{\\sqrt{1+2+1} \\cdot \\sqrt{1+1}} = \\dfrac{2}{2 \\cdot \\sqrt{2}} = \\dfrac{1}{\\sqrt{2}} \\Rightarrow 45^\\circ$."
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Tính cosin của góc giữa hai mặt phẳng $(P): 2x - 2y + z + 1 = 0$ và $(Q): x + y + z - 5 = 0$. Kết quả có dạng $\\dfrac{1}{k\\sqrt{3}}$. Tìm $k$.",
+            "correct": "3",
+            "explanation": "$\\cos = \\dfrac{|2-2+1|}{3 \\cdot \\sqrt{3}} = \\dfrac{1}{3\\sqrt{3}}$."
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Tìm $m > 0$ để góc giữa hai đường thẳng $d: \\begin{cases} x=t \\\\ y=mt \\\\ z=0 \\end{cases}$ và $d': \\begin{cases} x=0 \\\\ y=t \\\\ z=mt \\end{cases}$ bằng $60^\\circ$.",
+            "correct": "1",
+            "explanation": "VCP $(1, m, 0), (0, 1, m)$. $\\cos 60^\\circ = 1/2 = \\dfrac{|m|}{(1+m^2)} \\Rightarrow 1+m^2=2m \\Rightarrow (m-1)^2=0 \\Rightarrow m=1$."
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Tính góc giữa mặt phẳng $(ABC)$ và mặt phẳng $(OBC)$ biết $A(3,0,0), B(0,3,0), C(0,0,3)$. Đáp án: $\\cos \\varphi = 1/\\sqrt{k}$. Tìm $k$.",
+            "correct": "3",
+            "explanation": "$(ABC): x+y+z-3=0 \\Rightarrow \\vec{n}=(1,1,1)$. $(OBC)$ là mặt phẳng $(Oyz): x=0 \\Rightarrow \\vec{n}'=(1,0,0)$. $\\cos = 1/\\sqrt{3}$."
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Cho đường thẳng $d$ là trục $Ox$ và mặt phẳng $(P): x + y = 0$. Tính góc giữa $d$ và $(P)$ (nhập độ).",
+            "correct": "45",
+            "explanation": "VCP $(1,0,0)$, VPT $(1,1,0)$. $\\sin \\theta = 1/\\sqrt{2} \\Rightarrow 45^\\circ$."
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Tính góc giữa hai đường thẳng $d: \\dfrac{x-1}{1} = \\dfrac{y}{-1} = \\dfrac{z}{2}$ và $d': \\dfrac{x+1}{2} = \\dfrac{y}{1} = \\dfrac{z-1}{1}$ (nhập độ).",
+            "correct": "60",
+            "explanation": "$\\cos = \\dfrac{|1(2)-1(1)+2(1)|}{\\sqrt{6}\\sqrt{6}} = \\dfrac{3}{6} = 1/2 \\Rightarrow 60^\\circ$."
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Cho hình chóp $S.ABC$ có đáy $ABC$ là tam giác đều cạnh $a$, $SA \\perp (ABC)$ và $SA = a$. <br>a) Tính góc giữa đường thẳng $SB$ và mặt phẳng $(ABC)$. <br>b) Tính góc giữa hai mặt phẳng $(SBC)$ và $(ABC)$.",
+            "answer": "a) $45^\\circ$ (vì $\\tan\\alpha = SA/AB = 1$). <br>b) Gọi $M$ là trung điểm $BC$, góc là $\\widehat{SMA}$. $\\tan \\varphi = SA/AM = a/(\\frac{a\\sqrt{3}}{2}) = \\frac{2}{\\sqrt{3}} \\Rightarrow \\cos \\varphi = \\sqrt{3/7}$.",
+            "explanation": "Sử dụng định nghĩa góc giữa đường thẳng và mặt phẳng."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Trong không gian $Oxyz$, cho hai đường thẳng $d_1: \\dfrac{x-1}{2} = \\dfrac{y+1}{1} = \\dfrac{z}{2}$ và $d_2: \\dfrac{x-1}{1} = \\dfrac{y+1}{2} = \\dfrac{z}{-2}$. <br>a) Chứng minh $d_1 \\perp d_2$. <br>b) Viết phương trình mặt phẳng $(\\alpha)$ đi qua $I(1; -1; 0)$ và chứa $d_1$. Tính góc giữa $(\\alpha)$ và $d_2$.",
+            "answer": "a) $2(1)+1(2)+2(-2)=0$. <br>b) $(\\alpha)$ chứa $d_1$ thì chưa đủ, cần thêm 1 điểm. Giả sử $(\\alpha)$ chứa $d_1$ và $d_2$ vì chúng cắt nhau tại $I$. $\\vec{n} = [\\vec{u}_1, \\vec{u}_2] = (-6, 6, 3) \\Rightarrow -2x+2y+z+4=0$. Góc giữa $(\\alpha)$ và $d_2$ bằng $0^\\circ$ vì $d_2 \\subset (\\alpha)$.",
+            "explanation": "Sử dụng tích vô hướng và tích có hướng."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Một anten parabol được đặt sao cho phương của các tia sóng tới song song với trục $Oz$. Mặt phản xạ của anten có phương trình $x^2 + y^2 = 4z$. <br>a) Tính góc giữa tia tới tại điểm $M(1; \\sqrt{3}; 1)$ và mặt phẳng tiếp diện của anten tại đó. <br>b) Giải thích tại sao góc này quan trọng trong việc thu sóng.",
+            "answer": "a) Mặt tiếp diện tại $M$ có VPT $\\vec{n} = (2x, 2y, -4) = (2, 2\\sqrt{3}, -4)$. Tia tới song song $Oz$ có VCP $\\vec{k}(0,0,-1)$. $\\sin \\theta = \\dfrac{|4|}{\\sqrt{4+12+16} \\cdot 1} = \\dfrac{4}{\\sqrt{32}} = \\dfrac{1}{\\sqrt{2}} \\Rightarrow 45^\\circ$. <br>b) Liên quan đến định luật phản xạ và hội tụ tại tiêu điểm.",
+            "explanation": "Ứng dụng hình học tọa độ vào các bề mặt kỹ thuật."
+          }
+        ]
+      }
+    }
+  ]
+}

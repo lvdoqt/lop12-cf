@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-5",
+    "name": "Cộng đồng ASEAN: Từ ý tưởng đến hiện thực",
+    "slug": "cong-dong-asean-tu-y-tuong-den-hien-thuc",
+    "chapter": "Chủ đề 2: ASEAN: Những chặng đường lịch sử",
+    "chapter_id": "su12",
+    "lesson_id": 5,
+    "description": "Quá trình xây dựng Cộng đồng ASEAN và các thi độ hợp tác",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Cộng đồng ASEAN",
+        "sections": [
+          { "heading": "1. Khái niệm Cộng đồng ASEAN", "content": "Công bố 1992 tại Đồng Giang, thành lập chính thức 2015. Gồm 3 trụ cột: APSC (Chính trị-An ninh), AEC (Kinh tế), ASCC (Xã hội-Văn hóa). Mục tiêu: khu vực hòa bình, ổn định, thịnh vượng." },
+          { "heading": "2. ASEAN Political-Security Community (APSC)", "content": "Duy trì hòa bình, ổn định, an ninh; Thúc đẩy dân chủ, quyền con người; Kìm chế bạo lực; Hợp tác an ninh mạng; Chia sẻ thông tin." },
+          { "heading": "3. ASEAN Economic Community (AEC)", "content": "Thành lập 2015; 4 tự do: hàng hóa, dịch vụ, nhân công, vốn; Xóa bỏ rào cải thương mại; AFTA giảm thuế quan; Hòa nhập chuỗi sản xuất toàn cầu." },
+          { "heading": "4. ASEAN Socio-Cultural Community (ASCC)", "content": "Phát triển con người; Bảo vệ quyền con người; Hợp tác giáo dục, sức khỏe; Bảo tồn văn hóa; Hợp tác môi trường; Phát triển bền vững." },
+          { "heading": "5. Thách thức và triển vọng", "content": "Thách thức: Chênh lệch phát triển, tranh chấp Biển Đông, khác biệt chính trị, yếu thực thi. Triển vọng: Trung tâm địa chính trị Á; Tăng thương mại; Phát triển con người; Giữ độc lập." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Cộng đồng ASEAN thành lập năm?", "options": ["1992", "2010", "2015", "2020"], "correct": 2, "explanation": "Thành lập chính thức 2015." },
+        { "id": "ex2", "type": "mcq", "question": "Bao nhiêu trụ cột chính?", "options": ["2", "3", "4", "5"], "correct": 1, "explanation": "3 trụ cột: APSC, AEC, ASCC." },
+        { "id": "ex3", "type": "mcq", "question": "AEC là?", "options": ["ASEAN Event Commission", "ASEAN Economic Community", "ASEAN Education", "ASEAN Employment"], "correct": 1, "explanation": "AEC - Cộng đồng Kinh tế ASEAN." },
+        { "id": "ex4", "type": "mcq", "question": "AEC nhằm?", "options": ["Quân sự chung", "Thị trường 1 với 4 tự do", "Nông nghiệp chung", "Đóng cửa thương mại"], "correct": 1, "explanation": "Thị trường một với 4 tự do luân chuyển." },
+        { "id": "ex5", "type": "mcq", "question": "APSC tập trung?", "options": ["Kinh tế", "Chính trị-An ninh", "Giáo dục", "Sản xuất"], "correct": 1, "explanation": "Duy trì hòa bình, ổn định, an ninh." },
+        { "id": "ex6", "type": "mcq", "question": "ASCC tập trung?", "options": ["Quân sự", "Xã hội-Văn hóa", "Thương mại", "Năng lượng"], "correct": 1, "explanation": "Phát triển con người, văn hóa." },
+        { "id": "ex7", "type": "mcq", "question": "Thách thức là?", "options": ["Thống nhất toàn bộ", "Tranh chấp Biển Đông", "Chỉ phát triển", "Hoàn hảo"], "correct": 1, "explanation": "Tranh chấp lãnh thổ, chênh lệch phát triển." },
+        { "id": "ex8", "type": "mcq", "question": "4 tự do AEC gồm?", "options": ["Dầu khí, quân", "Hàng hóa, dịch vụ, nhân công, vốn", "Di cư, thương mại", "Loại"], "correct": 1, "explanation": "4 tự do: hàng hóa, dịch vụ, nhân công, vốn." },
+        { "id": "ex9", "type": "mcq", "question": "Mục tiêu ASEAN là?", "options": ["Hòa bình cô lập", "Hòa bình, ổn định, thịnh vượng", "Chỉ thương mại", "Độc tài"], "correct": 1, "explanation": "Khu vực hòa bình, ổn định, thịnh vượng." },
+        { "id": "ex10", "type": "mcq", "question": "Triển vọng ASEAN?", "options": ["Suy yếu", "Trung tâm địa chính trị Á", "Hòa tan", "Phụ thuộc"], "correct": 1, "explanation": "Trở thành trung tâm địa chính trị của châu Á-Thái Bình Dương." }
+      ]
+    }
+  }]
+}

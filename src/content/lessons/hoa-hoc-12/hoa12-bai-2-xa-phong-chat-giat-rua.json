@@ -1,0 +1,304 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-2-xa-phong-chat-giat-rua",
+      "name": "Bài 2. Xà phòng và chất giặt rửa",
+      "slug": "bai-2-xa-phong-chat-giat-rua",
+      "chapter": "Chương 1: Ester - Lipid",
+      "chapter_id": "H12-1001",
+      "lesson_id": 2,
+      "description": "Tìm hiểu về cấu tạo, tính chất, sản xuất và ứng dụng của xà phòng và chất giặt rửa tổng hợp.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "xa-phong-1",
+          "name": "Xà phòng và chất giặt rửa",
+          "slug": "xa-phong",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Xà phòng và chất giặt rửa",
+          "sections": [
+            {
+              "heading": "1. Xà phòng",
+              "content": "<h3>a) Định nghĩa và cấu tạo</h3><p><strong>Xà phòng:</strong> Muối natri hoặc kali của acid béo</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Công thức chung: R-COONa (R là gốc hydrocarbon mạch dài C₁₁-C₁₇)</p><p><strong>Ví dụ:</strong></p><ul><li>C₁₇H₃₅COONa: Natri stearat (từ stearic acid)</li><li>C₁₅H₃₁COONa: Natri palmitat (từ palmitic acid)</li><li>C₁₇H₃₃COOK: Kali oleat (từ oleic acid)</li></ul><p><strong>Cấu trúc phân tử:</strong></p><ul><li>Đầu ưa nước (hydrophilic): -COO⁻Na⁺ (phân cực)</li><li>Đuôi kỵ nước (hydrophobic): R- (không phân cực, mạch dài)</li></ul><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>R-COO⁻Na⁺ = [Đuôi kỵ nước]—[Đầu ưa nước]</p><h3>b) Sản xuất xà phòng</h3><p><strong>Phản ứng xà phòng hóa lipid:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>(RCOO)₃C₃H₅ + 3NaOH → 3RCOONa + C₃H₅(OH)₃ (t°)</p><p>Lipid + Kiềm → Xà phòng + Glycerol</p><p><strong>Quy trình sản xuất:</strong></p><p><strong>Bước 1: Xà phòng hóa</strong></p><ul><li>Đun nóng mỡ/dầu với NaOH đặc</li><li>Nhiệt độ 100-120°C</li><li>Khuấy đều trong 2-3 giờ</li></ul><p><strong>Bước 2: Tách xà phòng (muối tách)</strong></p><ul><li>Thêm NaCl bão hòa</li><li>Xà phòng nổi lên (ít tan trong nước muối)</li><li>Tách lớp xà phòng</li></ul><p><strong>Bước 3: Tinh chế</strong></p><ul><li>Rửa bằng nước</li><li>Loại bỏ tạp chất</li></ul><p><strong>Bước 4: Tạo hình</strong></p><ul><li>Thêm chất tạo màu, hương liệu</li><li>Đổ khuôn, cắt thành bánh</li></ul><p><strong>Phụ phẩm:</strong> Glycerol (có giá trị, dùng trong mỹ phẩm, dược phẩm)</p><h3>c) Tính chất của xà phòng</h3><p><strong>1. Tính chất vật lý:</strong></p><ul><li>Xà phòng natri: Rắn (xà phòng cục)</li><li>Xà phòng kali: Mềm (xà phòng lỏng)</li><li>Tan trong nước tạo dung dịch kiềm yếu</li></ul><p><strong>2. Tính chất hóa học:</strong></p><p><strong>Thủy phân trong nước:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>RCOONa + H₂O ⇌ RCOOH + NaOH</p><p>Dung dịch có tính kiềm yếu (pH = 9-10)</p><p><strong>Với acid mạnh:</strong></p><p>RCOONa + HCl → RCOOH↓ + NaCl</p><p>Tạo kết tủa acid béo</p><p><strong>Với nước cứng (Ca²⁺, Mg²⁺):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>2RCOONa + Ca²⁺ → (RCOO)₂Ca↓ + 2Na⁺</p><p>Tạo cặn không tan (giảm hiệu quả giặt rửa)</p><h3>d) Cơ chế tẩy rửa của xà phòng</h3><p><strong>Bước 1: Hấp phụ</strong></p><ul><li>Đuôi kỵ nước hướng vào vết bẩn (dầu mỡ)</li><li>Đầu ưa nước hướng ra ngoài (nước)</li></ul><p><strong>Bước 2: Tạo micelle</strong></p><ul><li>Nhiều phân tử xà phòng bao quanh vết bẩn</li><li>Tạo cấu trúc hình cầu (micelle)</li><li>Bên trong: Vết bẩn + đuôi kỵ nước</li><li>Bên ngoài: Đầu ưa nước</li></ul><p><strong>Bước 3: Phân tán</strong></p><ul><li>Micelle phân tán trong nước</li><li>Vết bẩn được cuốn đi</li><li>Không bám lại vải</li></ul><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Vết bẩn → Micelle → Phân tán trong nước</p><h3>e) Ưu và nhược điểm của xà phòng</h3><p><strong>Ưu điểm:</strong></p><ul><li>Nguồn gốc tự nhiên (mỡ, dầu thực vật)</li><li>Phân hủy sinh học dễ dàng</li><li>Không gây ô nhiễm môi trường</li><li>An toàn cho da</li><li>Giá thành hợp lý</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>Không tẩy rửa tốt trong nước cứng (tạo cặn)</li><li>Không hiệu quả trong nước lạnh</li><li>Không dùng được trong môi trường acid</li><li>Tạo bọt nhiều (khó rửa sạch)</li><li>Làm khô da nếu dùng nhiều</li></ul>"
+            },
+            {
+              "heading": "2. Chất giặt rửa tổng hợp (Detergent)",
+              "content": "<h3>a) Định nghĩa và cấu tạo</h3><p><strong>Chất giặt rửa tổng hợp:</strong> Hợp chất hữu cơ tổng hợp có khả năng tẩy rửa</p><p><strong>Thành phần chính:</strong></p><ul><li>Chất hoạt động bề mặt (surfactant) 15-30%</li><li>Chất trợ giặt (builder) 20-40%</li><li>Enzyme 1-2%</li><li>Chất tạo bọt, hương liệu, chất tẩy trắng</li></ul><h3>b) Chất hoạt động bề mặt</h3><p><strong>1. Chất hoạt động bề mặt anion:</strong></p><p><strong>Alkyl benzene sulfonate (ABS):</strong></p><p>R-C₆H₄-SO₃⁻Na⁺ (R là mạch dài C₁₀-C₁₄)</p><p><strong>Ví dụ:</strong> C₁₂H₂₅-C₆H₄-SO₃Na (natri dodecyl benzene sulfonate)</p><p><strong>Đặc điểm:</strong></p><ul><li>Phổ biến nhất (70% thị trường)</li><li>Tẩy rửa tốt</li><li>Giá thành rẻ</li><li>Tạo bọt nhiều</li></ul><p><strong>Alkyl sulfate:</strong></p><p>R-O-SO₃⁻Na⁺</p><p><strong>Ví dụ:</strong> C₁₂H₂₅-O-SO₃Na (natri lauryl sulfate - SLS)</p><p>Dùng trong dầu gội, sữa tắm</p><p><strong>2. Chất hoạt động bề mặt cation:</strong></p><p>R-N⁺(CH₃)₃Cl⁻</p><p>Dùng làm chất làm mềm vải</p><p><strong>3. Chất hoạt động bề mặt không ion:</strong></p><p>R-O-(CH₂-CH₂-O)ₙ-H</p><p>Ít tạo bọt, dùng trong máy giặt</p><h3>c) Chất trợ giặt (Builder)</h3><p><strong>Vai trò:</strong></p><ul><li>Làm mềm nước cứng (loại Ca²⁺, Mg²⁺)</li><li>Tăng pH (môi trường kiềm)</li><li>Tăng hiệu quả tẩy rửa</li></ul><p><strong>Các loại builder:</strong></p><p><strong>1. Phosphate (Na₃PO₄, Na₅P₃O₁₀):</strong></p><ul><li>Hiệu quả cao</li><li>Gây phú dưỡng nước (ô nhiễm)</li><li>Đang bị hạn chế sử dụng</li></ul><p><strong>2. Zeolite (Na₂O·Al₂O₃·nSiO₂):</strong></p><ul><li>Thân thiện môi trường</li><li>Trao đổi ion Ca²⁺, Mg²⁺</li><li>Không gây phú dưỡng</li></ul><p><strong>3. Citrate, carbonate:</strong></p><ul><li>An toàn</li><li>Phân hủy sinh học</li></ul><h3>d) Enzyme trong chất giặt rửa</h3><p><strong>1. Protease:</strong></p><ul><li>Phân hủy protein (vết máu, sữa, trứng)</li><li>Hoạt động ở 30-60°C</li></ul><p><strong>2. Amylase:</strong></p><ul><li>Phân hủy tinh bột (vết cơm, bánh)</li></ul><p><strong>3. Lipase:</strong></p><ul><li>Phân hủy chất béo (vết dầu mỡ)</li></ul><p><strong>4. Cellulase:</strong></p><ul><li>Làm mềm vải</li><li>Loại bỏ xơ vải</li></ul><h3>e) So sánh xà phòng và chất giặt rửa</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Tiêu chí</th><th class='border border-gray-300 p-2'>Xà phòng</th><th class='border border-gray-300 p-2'>Chất giặt rửa</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Nguồn gốc</td><td class='border border-gray-300 p-2'>Tự nhiên (mỡ, dầu)</td><td class='border border-gray-300 p-2'>Tổng hợp (dầu mỏ)</td></tr><tr><td class='border border-gray-300 p-2'>Thành phần</td><td class='border border-gray-300 p-2'>RCOONa</td><td class='border border-gray-300 p-2'>R-SO₃Na, enzyme, builder</td></tr><tr><td class='border border-gray-300 p-2'>Nước cứng</td><td class='border border-gray-300 p-2'>Tạo cặn, kém hiệu quả</td><td class='border border-gray-300 p-2'>Vẫn hiệu quả</td></tr><tr><td class='border border-gray-300 p-2'>Môi trường acid</td><td class='border border-gray-300 p-2'>Không dùng được</td><td class='border border-gray-300 p-2'>Dùng được</td></tr><tr><td class='border border-gray-300 p-2'>Nước lạnh</td><td class='border border-gray-300 p-2'>Kém hiệu quả</td><td class='border border-gray-300 p-2'>Vẫn hiệu quả</td></tr><tr><td class='border border-gray-300 p-2'>Phân hủy sinh học</td><td class='border border-gray-300 p-2'>Dễ dàng</td><td class='border border-gray-300 p-2'>Khó hơn (tùy loại)</td></tr><tr><td class='border border-gray-300 p-2'>Môi trường</td><td class='border border-gray-300 p-2'>Thân thiện</td><td class='border border-gray-300 p-2'>Có thể gây ô nhiễm</td></tr><tr><td class='border border-gray-300 p-2'>Giá thành</td><td class='border border-gray-300 p-2'>Trung bình</td><td class='border border-gray-300 p-2'>Rẻ hơn</td></tr><tr><td class='border border-gray-300 p-2'>Ứng dụng</td><td class='border border-gray-300 p-2'>Giặt tay, vệ sinh cá nhân</td><td class='border border-gray-300 p-2'>Giặt máy, công nghiệp</td></tr></tbody></table><h3>f) Tác động môi trường</h3><p><strong>Vấn đề ô nhiễm:</strong></p><p><strong>1. Phosphate:</strong></p><ul><li>Gây phú dưỡng nước (eutrophication)</li><li>Tảo phát triển mạnh</li><li>Cạn kiệt oxy → Cá chết</li></ul><p><strong>2. Chất hoạt động bề mặt khó phân hủy:</strong></p><ul><li>Tích tụ trong môi trường</li><li>Độc với sinh vật nước</li><li>Tạo bọt trên sông, hồ</li></ul><p><strong>Giải pháp:</strong></p><ul><li>Sử dụng chất giặt rửa sinh học (biodegradable)</li><li>Thay phosphate bằng zeolite, citrate</li><li>Giảm lượng sử dụng</li><li>Xử lý nước thải</li><li>Chọn sản phẩm thân thiện môi trường</li></ul><h3>g) Hướng dẫn sử dụng an toàn</h3><p><strong>Với xà phòng:</strong></p><ul><li>Dùng nước mềm để tăng hiệu quả</li><li>Không dùng với nước có tính acid</li><li>Bảo quản nơi khô ráo</li></ul><p><strong>Với chất giặt rửa:</strong></p><ul><li>Đeo găng tay khi tiếp xúc lâu</li><li>Không để trẻ em tiếp cận</li><li>Rửa sạch quần áo sau khi giặt</li><li>Không trộn với chất tẩy có clo (nguy hiểm)</li><li>Bảo quản nơi khô ráo, thoáng mát</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán sản xuất xà phòng",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH xà phòng hóa</li><li>Tính mol lipid và NaOH</li><li>Tính khối lượng xà phòng và glycerol</li></ul><p><strong>Công thức:</strong></p><ul><li>1 mol lipid + 3 mol NaOH → 3 mol xà phòng + 1 mol glycerol</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Xà phòng hóa 178kg hỗn hợp lipid gồm tristearin và triolein bằng dung dịch NaOH. a) Tính khối lượng NaOH cần dùng. b) Tính khối lượng xà phòng thu được. c) Tính khối lượng glycerol thu được và giá trị kinh tế.",
+                "solution": "<p><strong>Phân tích:</strong></p><p>Tristearin: (C₁₇H₃₅COO)₃C₃H₅, M = 890 g/mol</p><p>Triolein: (C₁₇H₃₃COO)₃C₃H₅, M = 884 g/mol</p><p><strong>a) Tính khối lượng NaOH:</strong></p><p><strong>Phương trình:</strong></p><p>(C₁₇H₃₅COO)₃C₃H₅ + 3NaOH → 3C₁₇H₃₅COONa + C₃H₅(OH)₃</p><p>(C₁₇H₃₃COO)₃C₃H₅ + 3NaOH → 3C₁₇H₃₃COONa + C₃H₅(OH)₃</p><p><strong>Phương pháp trung bình:</strong></p><p>Gọi M̄(lipid) ≈ 887 g/mol (trung bình)</p><p>n(lipid) = 178,000 / 887 = 200.7 mol</p><p><strong>Tính NaOH:</strong></p><p>n(NaOH) = 3 × n(lipid) = 3 × 200.7 = 602.1 mol</p><p>m(NaOH) = 602.1 × 40 = 24,084g = 24.1 kg</p><p><strong>b) Tính khối lượng xà phòng:</strong></p><p><strong>Bước 1: Tính số mol xà phòng</strong></p><p>n(xà phòng) = 3 × n(lipid) = 602.1 mol</p><p><strong>Bước 2: Tính khối lượng</strong></p><p>M̄(xà phòng) ≈ 305 g/mol (trung bình giữa C₁₇H₃₅COONa và C₁₇H₃₃COONa)</p><p>m(xà phòng) = 602.1 × 305 = 183,640g = 183.6 kg</p><p><strong>Hoặc dùng bảo toàn khối lượng:</strong></p><p>m(lipid) + m(NaOH) = m(xà phòng) + m(glycerol)</p><p>178 + 24.1 = m(xà phòng) + m(glycerol)</p><p><strong>c) Tính khối lượng glycerol:</strong></p><p><strong>Bước 1: Tính số mol glycerol</strong></p><p>n(glycerol) = n(lipid) = 200.7 mol</p><p><strong>Bước 2: Tính khối lượng</strong></p><p>M(C₃H₅(OH)₃) = 92 g/mol</p><p>m(glycerol) = 200.7 × 92 = 18,464g = 18.5 kg</p><p><strong>Kiểm tra bảo toàn khối lượng:</strong></p><p>178 + 24.1 = 183.6 + 18.5</p><p>202.1 = 202.1 ✓</p><p><strong>Giá trị kinh tế của glycerol:</strong></p><p><strong>Ứng dụng glycerol:</strong></p><ul><li>Mỹ phẩm (kem dưỡng, son môi): 40%</li><li>Dược phẩm (thuốc ho, thuốc nhỏ mắt): 30%</li><li>Thực phẩm (chất giữ ẩm): 20%</li><li>Công nghiệp (sản xuất nitroglycerin): 10%</li></ul><p><strong>Giá trị:</strong></p><p>Giá glycerol: ~50,000 VNĐ/kg</p><p>Giá trị: 18.5 × 50,000 = 925,000 VNĐ</p><p><strong>Hiệu quả kinh tế:</strong></p><ul><li>Glycerol là phụ phẩm có giá trị cao</li><li>Giảm chi phí sản xuất xà phòng</li><li>Tăng lợi nhuận cho nhà máy</li><li>Tận dụng tối đa nguyên liệu</li></ul><p><strong>Đáp án:</strong> a) 24.1 kg NaOH; b) 183.6 kg xà phòng; c) 18.5 kg glycerol, giá trị ~925,000 VNĐ</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán về tính chất của xà phòng",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xà phòng + nước cứng → Cặn</li><li>Xà phòng + acid → Acid béo</li><li>Tính toán theo PTHH</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Cho 30.6g xà phòng C₁₇H₃₅COONa vào: a) Dung dịch CaCl₂, tính khối lượng cặn. b) Dung dịch HCl dư, tính khối lượng acid béo. c) Giải thích tại sao xà phòng không hiệu quả trong nước cứng.",
+                "solution": "<p><strong>Tính số mol xà phòng:</strong></p><p>M(C₁₇H₃₅COONa) = 306 g/mol</p><p>n(xà phòng) = 30.6 / 306 = 0.1 mol</p><p><strong>a) Với dung dịch CaCl₂ (nước cứng):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>2C₁₇H₃₅COONa + CaCl₂ → (C₁₇H₃₅COO)₂Ca↓ + 2NaCl</p><p><strong>Bước 1: Tính số mol cặn</strong></p><p>Theo PTHH: n(cặn) = n(xà phòng) / 2 = 0.1 / 2 = 0.05 mol</p><p><strong>Bước 2: Tính khối lượng cặn</strong></p><p>M[(C₁₇H₃₅COO)₂Ca] = 2 × 284 + 40 = 608 g/mol</p><p>m(cặn) = 0.05 × 608 = 30.4g</p><p><strong>Hiện tượng:</strong> Xuất hiện cặn trắng không tan</p><p><strong>b) Với dung dịch HCl:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₁₇H₃₅COONa + HCl → C₁₇H₃₅COOH↓ + NaCl</p><p><strong>Bước 1: Tính số mol acid béo</strong></p><p>Theo PTHH: n(acid) = n(xà phòng) = 0.1 mol</p><p><strong>Bước 2: Tính khối lượng acid béo</strong></p><p>M(C₁₇H₃₅COOH) = 284 g/mol</p><p>m(acid) = 0.1 × 284 = 28.4g</p><p><strong>Hiện tượng:</strong> Xuất hiện kết tủa trắng (stearic acid)</p><p><strong>c) Giải thích xà phòng không hiệu quả trong nước cứng:</strong></p><p><strong>1. Nước cứng là gì?</strong></p><p>Nước chứa nhiều ion Ca²⁺, Mg²⁺ (từ CaCO₃, MgCO₃, CaSO₄, MgSO₄)</p><p><strong>2. Phản ứng với nước cứng:</strong></p><p>2RCOONa + Ca²⁺ → (RCOO)₂Ca↓ + 2Na⁺</p><p>2RCOONa + Mg²⁺ → (RCOO)₂Mg↓ + 2Na⁺</p><p><strong>3. Hậu quả:</strong></p><p><strong>a) Lãng phí xà phòng:</strong></p><ul><li>Xà phòng bị tiêu tốn để kết tủa Ca²⁺, Mg²⁺</li><li>Chỉ sau khi loại hết ion này, xà phòng mới có tác dụng tẩy rửa</li><li>Cần dùng nhiều xà phòng hơn</li></ul><p><strong>b) Tạo cặn bẩn:</strong></p><ul><li>Cặn (RCOO)₂Ca, (RCOO)₂Mg không tan</li><li>Bám trên vải → Vải cứng, xỉn màu</li><li>Bám trên da → Khó chịu, khô da</li><li>Bám trong bồn tắm, chậu rửa</li></ul><p><strong>c) Giảm hiệu quả tẩy rửa:</strong></p><ul><li>Không tạo được micelle</li><li>Không phân tán vết bẩn</li><li>Giặt không sạch</li></ul><p><strong>4. Giải pháp:</strong></p><p><strong>a) Làm mềm nước trước:</strong></p><ul><li>Đun sôi (loại Ca(HCO₃)₂, Mg(HCO₃)₂)</li><li>Thêm Na₂CO₃, Na₃PO₄ (kết tủa Ca²⁺, Mg²⁺)</li><li>Dùng chất trao đổi ion (zeolite)</li></ul><p><strong>b) Dùng chất giặt rửa tổng hợp:</strong></p><ul><li>Không tạo cặn với Ca²⁺, Mg²⁺</li><li>Có chất trợ giặt (builder) làm mềm nước</li><li>Hiệu quả trong mọi loại nước</li></ul><p><strong>5. So sánh:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Loại nước</th><th class='border border-gray-300 p-2'>Xà phòng</th><th class='border border-gray-300 p-2'>Chất giặt rửa</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Nước mềm</td><td class='border border-gray-300 p-2'>Hiệu quả tốt</td><td class='border border-gray-300 p-2'>Hiệu quả tốt</td></tr><tr><td class='border border-gray-300 p-2'>Nước cứng</td><td class='border border-gray-300 p-2'>Kém hiệu quả, tạo cặn</td><td class='border border-gray-300 p-2'>Vẫn hiệu quả</td></tr></tbody></table><p><strong>Kết luận:</strong></p><p>Xà phòng không hiệu quả trong nước cứng vì tạo cặn không tan với Ca²⁺, Mg²⁺, làm lãng phí xà phòng và giảm khả năng tẩy rửa. Nên dùng chất giặt rửa tổng hợp hoặc làm mềm nước trước khi dùng xà phòng.</p><p><strong>Đáp án:</strong> a) 30.4g cặn; b) 28.4g acid béo; c) Đã giải thích chi tiết</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Lựa chọn sản phẩm giặt rửa",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích thành phần sản phẩm</li><li>Đánh giá hiệu quả và tác động</li><li>Đưa ra khuyến nghị</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Một gia đình đang cân nhắc giữa 3 sản phẩm: A) Xà phòng tự nhiên, B) Bột giặt có phosphate, C) Nước giặt không phosphate. a) So sánh ưu nhược điểm từng loại. b) Khuyến nghị cho từng trường hợp sử dụng. c) Đánh giá tác động môi trường.",
+                "solution": "<p><strong>a) So sánh 3 sản phẩm:</strong></p><p><strong>Sản phẩm A: Xà phòng tự nhiên</strong></p><p><strong>Thành phần:</strong></p><ul><li>Muối natri của acid béo (RCOONa)</li><li>Glycerol dư</li><li>Hương liệu tự nhiên</li></ul><p><strong>Ưu điểm:</strong></p><ul><li>✓ Nguồn gốc tự nhiên, an toàn</li><li>✓ Phân hủy sinh học 100%</li><li>✓ Không gây ô nhiễm môi trường</li><li>✓ Dịu nhẹ với da</li><li>✓ Giá thành hợp lý (20,000-50,000 VNĐ/kg)</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>✗ Không hiệu quả trong nước cứng</li><li>✗ Tạo cặn với Ca²⁺, Mg²⁺</li><li>✗ Kém hiệu quả ở nước lạnh</li><li>✗ Không dùng được trong môi trường acid</li><li>✗ Tẩy rửa yếu hơn chất giặt rửa</li></ul><p><strong>Sản phẩm B: Bột giặt có phosphate</strong></p><p><strong>Thành phần:</strong></p><ul><li>Chất hoạt động bề mặt: R-SO₃Na (20%)</li><li>Phosphate (Na₅P₃O₁₀): 30%</li><li>Enzyme, chất tẩy trắng: 5%</li><li>Chất độn: 45%</li></ul><p><strong>Ưu điểm:</strong></p><ul><li>✓ Tẩy rửa mạnh, hiệu quả cao</li><li>✓ Hoạt động tốt trong nước cứng</li><li>✓ Hiệu quả ở mọi nhiệt độ</li><li>✓ Giá rẻ (15,000-30,000 VNĐ/kg)</li><li>✓ Làm trắng quần áo tốt</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>✗ Phosphate gây phú dưỡng nước</li><li>✗ Ô nhiễm môi trường nghiêm trọng</li><li>✗ Kích ứng da nếu tiếp xúc lâu</li><li>✗ Đang bị hạn chế/cấm ở nhiều nước</li></ul><p><strong>Sản phẩm C: Nước giặt không phosphate</strong></p><p><strong>Thành phần:</strong></p><ul><li>Chất hoạt động bề mặt: 25%</li><li>Zeolite, citrate (thay phosphate): 20%</li><li>Enzyme đa dạng: 3%</li><li>Chất làm mềm vải: 5%</li><li>Nước và phụ gia: 47%</li></ul><p><strong>Ưu điểm:</strong></p><ul><li>✓ Tẩy rửa hiệu quả</li><li>✓ Thân thiện môi trường (không phosphate)</li><li>✓ Enzyme đa dạng (protein, tinh bột, dầu mỡ)</li><li>✓ Dễ tan, dễ xả sạch</li><li>✓ Dịu nhẹ với da hơn bột giặt</li><li>✓ Tiện lợi (dạng lỏng, dễ định lượng)</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>✗ Giá cao hơn (40,000-80,000 VNĐ/lít)</li><li>✗ Hiệu quả tẩy trắng kém hơn bột có phosphate</li><li>✗ Cần bảo quản cẩn thận (dạng lỏng)</li></ul><p><strong>b) Khuyến nghị sử dụng:</strong></p><p><strong>Trường hợp 1: Giặt tay, quần áo trẻ em</strong></p><p><strong>→ Khuyến nghị: Xà phòng tự nhiên (A)</strong></p><ul><li>An toàn cho da nhạy cảm</li><li>Không hóa chất độc hại</li><li>Phù hợp giặt ít quần áo</li><li>Nên dùng nước mềm (đun sôi hoặc nước lọc)</li></ul><p><strong>Trường hợp 2: Giặt máy, quần áo công nhân, rất bẩn</strong></p><p><strong>→ Khuyến nghị: Bột giặt có phosphate (B) - Nhưng cần hạn chế</strong></p><ul><li>Tẩy rửa mạnh nhất</li><li>Giá rẻ, phù hợp giặt nhiều</li><li>Hiệu quả với vết bẩn cứng đầu</li><li>Lưu ý: Chỉ dùng khi cần thiết, xả kỹ</li></ul><p><strong>Trường hợp 3: Gia đình hiện đại, quan tâm môi trường</strong></p><p><strong>→ Khuyến nghị: Nước giặt không phosphate (C) - Tốt nhất</strong></p><ul><li>Cân bằng giữa hiệu quả và môi trường</li><li>An toàn cho da</li><li>Tiện lợi, dễ sử dụng</li><li>Đầu tư dài hạn cho sức khỏe và môi trường</li></ul><p><strong>Trường hợp 4: Vùng nước cứng</strong></p><p><strong>→ Khuyến nghị: Nước giặt không phosphate (C)</strong></p><ul><li>Không tạo cặn</li><li>Có chất làm mềm nước (zeolite)</li><li>Tránh dùng xà phòng (lãng phí, kém hiệu quả)</li></ul><p><strong>c) Đánh giá tác động môi trường:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Tiêu chí</th><th class='border border-gray-300 p-2'>Xà phòng (A)</th><th class='border border-gray-300 p-2'>Bột có phosphate (B)</th><th class='border border-gray-300 p-2'>Nước không phosphate (C)</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Phân hủy sinh học</td><td class='border border-gray-300 p-2'>100% (1-2 ngày)</td><td class='border border-gray-300 p-2'>60-70% (1-2 tuần)</td><td class='border border-gray-300 p-2'>90% (3-7 ngày)</td></tr><tr><td class='border border-gray-300 p-2'>Phú dưỡng nước</td><td class='border border-gray-300 p-2'>Không</td><td class='border border-gray-300 p-2'>Cao (phosphate)</td><td class='border border-gray-300 p-2'>Thấp</td></tr><tr><td class='border border-gray-300 p-2'>Độc với sinh vật</td><td class='border border-gray-300 p-2'>Rất thấp</td><td class='border border-gray-300 p-2'>Trung bình</td><td class='border border-gray-300 p-2'>Thấp</td></tr><tr><td class='border border-gray-300 p-2'>Tích tụ môi trường</td><td class='border border-gray-300 p-2'>Không</td><td class='border border-gray-300 p-2'>Có (phosphate)</td><td class='border border-gray-300 p-2'>Rất ít</td></tr><tr><td class='border border-gray-300 p-2'>Điểm môi trường</td><td class='border border-gray-300 p-2'>10/10 ⭐⭐⭐⭐⭐</td><td class='border border-gray-300 p-2'>4/10 ⭐⭐</td><td class='border border-gray-300 p-2'>8/10 ⭐⭐⭐⭐</td></tr></tbody></table><p><strong>Tác động cụ thể của phosphate:</strong></p><ul><li>1 kg bột giặt có phosphate → 300g phosphate</li><li>Phosphate → Tảo phát triển mạnh</li><li>Tảo chết → Phân hủy tiêu tốn O₂</li><li>Thiếu O₂ → Cá, tôm chết hàng loạt</li><li>Hồ, sông bị ô nhiễm nặng</li></ul><p><strong>Khuyến nghị chung:</strong></p><p><strong>1. Ưu tiên:</strong> Nước giặt không phosphate (C)</p><p><strong>2. Thay thế:</strong> Xà phòng tự nhiên (A) cho giặt tay</p><p><strong>3. Hạn chế:</strong> Bột giặt có phosphate (B)</p><p><strong>4. Thói quen tốt:</strong></p><ul><li>Dùng đúng liều lượng (không dùng quá nhiều)</li><li>Chọn sản phẩm có nhãn sinh thái</li><li>Xả sạch quần áo</li><li>Không đổ nước giặt ra môi trường trực tiếp</li></ul><p><strong>Kết luận:</strong></p><p>Nước giặt không phosphate (C) là lựa chọn tốt nhất, cân bằng giữa hiệu quả tẩy rửa và bảo vệ môi trường. Xà phòng tự nhiên (A) phù hợp cho giặt tay và da nhạy cảm. Nên hạn chế bột giặt có phosphate (B) vì tác động xấu đến môi trường.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Xà phòng là muối của:",
+            "options": ["Acid vô cơ", "Acid béo", "Alcohol", "Phenol"],
+            "correct": 1,
+            "explanation": "Xà phòng là muối natri hoặc kali của acid béo."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Phản ứng sản xuất xà phòng gọi là:",
+            "options": ["Este hóa", "Xà phòng hóa", "Trùng hợp", "Thủy phân"],
+            "correct": 1,
+            "explanation": "Phản ứng lipid + NaOH → xà phòng gọi là xà phòng hóa."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Xà phòng có cấu trúc:",
+            "options": [
+              "Đầu ưa nước, đuôi ưa nước",
+              "Đầu kỵ nước, đuôi kỵ nước",
+              "Đầu ưa nước, đuôi kỵ nước",
+              "Đầu kỵ nước, đuôi ưa nước"
+            ],
+            "correct": 2,
+            "explanation": "Xà phòng có đầu ưa nước (-COO⁻Na⁺) và đuôi kỵ nước (R-)."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Xà phòng + nước cứng tạo:",
+            "options": ["Dung dịch trong", "Cặn không tan", "Khí", "Kết tủa màu"],
+            "correct": 1,
+            "explanation": "2RCOONa + Ca²⁺ → (RCOO)₂Ca↓ (cặn không tan)."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Chất hoạt động bề mặt phổ biến nhất:",
+            "options": [
+              "Alkyl sulfate",
+              "Alkyl benzene sulfonate",
+              "Phosphate",
+              "Zeolite"
+            ],
+            "correct": 1,
+            "explanation": "Alkyl benzene sulfonate (ABS) là chất hoạt động bề mặt phổ biến nhất."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Builder trong chất giặt rửa có vai trò:",
+            "options": [
+              "Tạo bọt",
+              "Làm mềm nước",
+              "Tạo màu",
+              "Tạo hương"
+            ],
+            "correct": 1,
+            "explanation": "Builder làm mềm nước (loại Ca²⁺, Mg²⁺), tăng hiệu quả giặt."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Phosphate trong chất giặt rửa gây:",
+            "options": [
+              "Ô nhiễm không khí",
+              "Phú dưỡng nước",
+              "Mưa acid",
+              "Hiệu ứng nhà kính"
+            ],
+            "correct": 1,
+            "explanation": "Phosphate gây phú dưỡng nước (eutrophication)."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Enzyme protease trong chất giặt rửa phân hủy:",
+            "options": ["Tinh bột", "Protein", "Chất béo", "Cellulose"],
+            "correct": 1,
+            "explanation": "Protease phân hủy protein (vết máu, sữa, trứng)."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Phụ phẩm của sản xuất xà phòng:",
+            "options": ["Ethanol", "Glycerol", "Methanol", "Acetone"],
+            "correct": 1,
+            "explanation": "Phụ phẩm là glycerol (C₃H₅(OH)₃)."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Zeolite thay thế phosphate vì:",
+            "options": [
+              "Rẻ hơn",
+              "Thân thiện môi trường",
+              "Hiệu quả hơn",
+              "Tạo bọt nhiều"
+            ],
+            "correct": 1,
+            "explanation": "Zeolite thân thiện môi trường, không gây phú dưỡng."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Xà phòng kali so với xà phòng natri:",
+            "options": [
+              "Cứng hơn",
+              "Mềm hơn",
+              "Cứng như nhau",
+              "Không tan"
+            ],
+            "correct": 1,
+            "explanation": "Xà phòng kali mềm hơn (xà phòng lỏng)."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Micelle trong dung dịch xà phòng có cấu trúc:",
+            "options": [
+              "Đầu ưa nước ở trong",
+              "Đuôi kỵ nước ở ngoài",
+              "Đầu ưa nước ở ngoài",
+              "Không có cấu trúc"
+            ],
+            "correct": 2,
+            "explanation": "Micelle có đầu ưa nước ở ngoài, đuôi kỵ nước ở trong."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Ưu điểm của xà phòng:",
+            "options": [
+              "Nguồn gốc tự nhiên",
+              "Phân hủy sinh học",
+              "Hiệu quả trong nước cứng",
+              "An toàn cho da"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Xà phòng có nguồn gốc tự nhiên, phân hủy sinh học, an toàn. Không hiệu quả trong nước cứng."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Enzyme trong chất giặt rửa:",
+            "options": [
+              "Protease (phân hủy protein)",
+              "Amylase (phân hủy tinh bột)",
+              "Lipase (phân hủy chất béo)",
+              "Catalase (phân hủy H₂O₂)"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Chất giặt rửa có protease, amylase, lipase. Không có catalase."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Nhược điểm của phosphate:",
+            "options": [
+              "Gây phú dưỡng nước",
+              "Tảo phát triển mạnh",
+              "Cạn kiệt oxy",
+              "Tăng hiệu quả giặt"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Phosphate gây phú dưỡng, tảo phát triển, cạn kiệt O₂. Tăng hiệu quả giặt là ưu điểm."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Chất giặt rửa tổng hợp có ưu điểm:",
+            "options": [
+              "Hiệu quả trong nước cứng",
+              "Hiệu quả ở nước lạnh",
+              "Phân hủy sinh học 100%",
+              "Dùng được trong môi trường acid"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Chất giặt rửa hiệu quả trong nước cứng, nước lạnh, môi trường acid. Không phân hủy sinh học 100%."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Xà phòng hóa 89g lipid cần bao nhiêu gam NaOH? (M lipid = 890 g/mol). Làm tròn đến 1 chữ số thập phân.",
+            "correct": "12.0",
+            "explanation": "n(lipid) = 89/890 = 0.1 mol. n(NaOH) = 0.3 mol. m = 0.3×40 = 12g. Đáp án: 12.0"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Cho 30.6g C₁₇H₃₅COONa tác dụng với CaCl₂ dư. Tính khối lượng cặn (g). Làm tròn đến 1 chữ số thập phân.",
+            "correct": "30.4",
+            "explanation": "n(xà phòng) = 30.6/306 = 0.1 mol. n(cặn) = 0.05 mol. m = 0.05×608 = 30.4g. Đáp án: 30.4"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Xà phòng hóa 1 mol lipid thu được bao nhiêu mol glycerol? Làm tròn đến hàng đơn vị.",
+            "correct": "1",
+            "explanation": "1 mol lipid → 1 mol glycerol. Đáp án: 1"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Xà phòng hóa 1 mol lipid thu được bao nhiêu mol xà phòng? Làm tròn đến hàng đơn vị.",
+            "correct": "3",
+            "explanation": "1 mol lipid → 3 mol xà phòng. Đáp án: 3"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Glycerol có khối lượng phân tử (g/mol) là bao nhiêu? Làm tròn đến hàng đơn vị.",
+            "correct": "92",
+            "explanation": "M(C₃H₅(OH)₃) = 92 g/mol. Đáp án: 92"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Dung dịch xà phòng có pH khoảng bao nhiêu? Làm tròn đến hàng đơn vị.",
+            "correct": "9",
+            "explanation": "Dung dịch xà phòng có pH = 9-10 (kiềm yếu). Đáp án: 9"
+          }
+        ]
+      }
+    }
+  ]
+}

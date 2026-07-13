@@ -1,0 +1,308 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-7-bai-tap-vat-li-nhiet",
+      "name": "Bài 7. Bài tập vật lí nhiệt",
+      "slug": "bai-7-bai-tap-vat-li-nhiet",
+      "chapter": "Chương 1. Vật lí nhiệt",
+      "chapter_id": "LY12-1",
+      "lesson_id": 7,
+      "description": "Ôn tập và luyện tập tổng hợp các kiến thức về vật lí nhiệt: cấu trúc chất, nội năng, nhiệt độ, nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hóa hơi riêng.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "btvn-1",
+          "name": "Cấu trúc chất và chuyển thể",
+          "slug": "cau-truc-chat-chuyen-the",
+          "difficulty": "easy"
+        },
+        {
+          "id": "btvn-2",
+          "name": "Nội năng và định luật I nhiệt động lực",
+          "slug": "noi-nang-dinh-luat-1",
+          "difficulty": "medium"
+        },
+        {
+          "id": "btvn-3",
+          "name": "Nhiệt lượng và cân bằng nhiệt",
+          "slug": "nhiet-luong-can-bang-nhiet",
+          "difficulty": "medium"
+        },
+        {
+          "id": "btvn-4",
+          "name": "Nhiệt nóng chảy và hóa hơi",
+          "slug": "nhiet-nong-chay-hoa-hoi",
+          "difficulty": "hard"
+        },
+        {
+          "id": "btvn-5",
+          "name": "Bài toán tổng hợp",
+          "slug": "bai-toan-tong-hop",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Tổng hợp kiến thức Vật lí nhiệt",
+          "sections": [
+            {
+              "heading": "1. Cấu trúc chất",
+              "content": "<p><strong>Ba thể của chất:</strong> Rắn, Lỏng, Khí</p><p><strong>Đặc điểm:</strong></p><ul><li><strong>Rắn:</strong> Hình dạng và thể tích xác định, khoảng cách phân tử nhỏ, lực tương tác mạnh</li><li><strong>Lỏng:</strong> Thể tích xác định, hình dạng theo bình chứa, khoảng cách phân tử lớn hơn rắn</li><li><strong>Khí:</strong> Thể tích và hình dạng theo bình chứa, khoảng cách phân tử rất lớn</li></ul><p><strong>Chuyển thể:</strong></p><ul><li>Nóng chảy: Rắn → Lỏng</li><li>Đông đặc: Lỏng → Rắn</li><li>Bay hơi: Lỏng → Khí (mặt thoáng)</li><li>Ngưng tụ: Khí → Lỏng</li><li>Thăng hoa: Rắn → Khí</li></ul>"
+            },
+            {
+              "heading": "2. Nội năng và định luật I nhiệt động lực học",
+              "content": "<p><strong>Nội năng (U):</strong> Tổng động năng và thế năng tương tác của các phân tử</p><p><strong>Định luật I:</strong></p><p>$$ΔU = Q + A$$</p><p>Trong đó:</p><ul><li>ΔU: độ biến thiên nội năng</li><li>Q: nhiệt lượng vật nhận được (+), tỏa ra (-)</li><li>A: công vật nhận được (+), thực hiện (-)</li></ul>"
+            },
+            {
+              "heading": "3. Nhiệt lượng",
+              "content": "<p><strong>Công thức tính nhiệt lượng:</strong></p><p>Nóng lên: $$Q = mcΔt$$</p><p>Nóng chảy: $$Q = mL$$ (L: nhiệt nóng chảy riêng)</p><p>Hóa hơi: $$Q = mL$$ (L: nhiệt hóa hơi riêng)</p><p><strong>Cân bằng nhiệt:</strong> Q_tỏa = Q_thu</p>"
+            },
+            {
+              "heading": "4. Các đại lượng đặc trưng",
+              "content": "<p><strong>Nhiệt độ:</strong> Đại lượng đặc trưng cho mức độ nóng lạnh</p><p><strong>Nhiệt dung riêng (c):</strong> Nhiệt lượng để 1kg chất tăng 1°C</p><ul><li>Nước: 4200 J/kg.K</li><li>Đồng: 380 J/kg.K</li><li>Nhôm: 880 J/kg.K</li><li>Sắt: 460 J/kg.K</li></ul><p><strong>Nhiệt nóng chảy riêng (λ):</strong></p><ul><li>Nước đá: 3,34.10⁵ J/kg</li><li>Đồng: 1,34.10⁵ J/kg</li><li>Nhôm: 3,97.10⁵ J/kg</li></ul><p><strong>Nhiệt hóa hơi riêng (L):</strong></p><ul><li>Nước: 2,26.10⁶ J/kg</li><li>Rượu: 0,85.10⁶ J/kg</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Câu hỏi lý thuyết tổng hợp",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Nắm vững lý thuyết cơ bản</li><li>Phân biệt các khái niệm</li><li>Hiểu bản chất các hiện tượng</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 1:</strong> Trong quá trình nóng chảy, nhiệt độ của vật có thay đổi không?",
+                "solution": "<p><strong>Giải:</strong></p><p>Không thay đổi. Nhiệt lượng cung cấp dùng để phá vỡ liên kết phân tử, không làm tăng nhiệt độ.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán cân bằng nhiệt",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định vật thu nhiệt, vật tỏa nhiệt</li><li>Lập phương trình cân bằng: Q_tỏa = Q_thu</li><li>Chú ý các giai đoạn nếu có chuyển thể</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 2:</strong> Thả 200g nước đá ở 0°C vào 300g nước ở 50°C. Tính nhiệt độ cuối cùng.",
+                "solution": "<p><strong>Giải:</strong></p><p>Nước 50°C → 0°C: Q1 = 0,3.4200.50 = 63000J</p><p>Nước đá 0°C nóng chảy: Q2 = 0,2.3,34.10⁵ = 66800J</p><p>Vì Q1 < Q2 nên nước đá không tan hết, nhiệt độ cuối = 0°C</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán có hóa hơi",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Liệt kê các giai đoạn</li><li>Tính nhiệt từng giai đoạn</li><li>Áp dụng Q = mcΔt, Q = mL</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 3:</strong> Đun 1kg nước từ 20°C đến khi bay hơi hoàn toàn. Tính nhiệt lượng cần.",
+                "solution": "<p><strong>Giải:</strong></p><p>Nước 20°C → 100°C: Q1 = 1.4200.80 = 336000J</p><p>Nước 100°C hóa hơi: Q2 = 1.2,26.10⁶ = 2260000J</p><p>Tổng: Q = 2596000J</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Khoảng cách giữa các phân tử trong chất rắn so với chất khí:",
+            "options": [
+              "Lớn hơn",
+              "Nhỏ hơn",
+              "Bằng nhau",
+              "Không so sánh được"
+            ],
+            "correct": 1,
+            "explanation": "Khoảng cách phân tử trong rắn nhỏ hơn nhiều so với khí"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Nội năng của vật phụ thuộc vào:",
+            "options": [
+              "Nhiệt độ và thể tích",
+              "Nhiệt độ và khối lượng",
+              "Nhiệt độ và áp suất",
+              "Nhiệt độ, thể tích và khối lượng"
+            ],
+            "correct": 1,
+            "explanation": "Nội năng phụ thuộc nhiệt độ và khối lượng (số phân tử)"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Định luật I nhiệt động lực học: ΔU = Q + A, quy ước dấu nào đúng?",
+            "options": [
+              "Q > 0: vật tỏa nhiệt",
+              "A > 0: vật nhận công",
+              "ΔU > 0: nội năng giảm",
+              "Tất cả đều sai"
+            ],
+            "correct": 1,
+            "explanation": "A > 0: vật nhận công (vật bị nén hoặc có công tác dụng vào)"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Nhiệt dung riêng của nước là:",
+            "options": [
+              "4200 J/kg.K",
+              "380 J/kg.K",
+              "880 J/kg.K",
+              "460 J/kg.K"
+            ],
+            "correct": 0,
+            "explanation": "c_nước = 4200 J/kg.K"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Nhiệt nóng chảy riêng của nước đá là:",
+            "options": [
+              "3,34.10⁵ J/kg",
+              "2,26.10⁶ J/kg",
+              "4,2.10³ J/kg",
+              "1,34.10⁵ J/kg"
+            ],
+            "correct": 0,
+            "explanation": "λ_nước đá = 3,34.10⁵ J/kg"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Trong quá trình bay hơi, nhiệt độ chất lỏng:",
+            "options": [
+              "Tăng",
+              "Giảm",
+              "Không đổi",
+              "Có thể tăng hoặc giảm"
+            ],
+            "correct": 2,
+            "explanation": "Bay hơi xảy ra ở nhiệt độ không đổi (nhiệt độ sôi)"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Khi nước đá đông đặc, nó:",
+            "options": [
+              "Thu nhiệt",
+              "Tỏa nhiệt",
+              "Không trao đổi nhiệt",
+              "Có thể thu hoặc tỏa"
+            ],
+            "correct": 1,
+            "explanation": "Đông đặc là quá trình ngược của nóng chảy, tỏa nhiệt"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Nhiệt hóa hơi riêng của nước là:",
+            "options": [
+              "3,34.10⁵ J/kg",
+              "2,26.10⁶ J/kg",
+              "4,2.10³ J/kg",
+              "1,34.10⁵ J/kg"
+            ],
+            "correct": 1,
+            "explanation": "L_nước = 2,26.10⁶ J/kg"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Công thức tính nhiệt lượng khi vật nóng lên là:",
+            "options": [
+              "Q = mL",
+              "Q = mcΔt",
+              "Q = ΔU",
+              "Q = A"
+            ],
+            "correct": 1,
+            "explanation": "Q = mcΔt với c là nhiệt dung riêng"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Trong nhiệt kế thủy ngân, thủy ngân dãn nở để:",
+            "options": [
+              "Tăng nhiệt độ",
+              "Đo nhiệt độ",
+              "Giảm nhiệt độ",
+              "Giữ nhiệt độ không đổi"
+            ],
+            "correct": 1,
+            "explanation": "Thủy ngân dãn nở theo nhiệt độ, cho phép đo nhiệt độ"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các quá trình nào tỏa nhiệt:",
+            "options": [
+              "Đông đặc",
+              "Ngưng tụ",
+              "Nóng chảy",
+              "Bay hơi"
+            ],
+            "correct": [0, 1],
+            "explanation": "Đông đặc và ngưng tụ là quá trình tỏa nhiệt"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các quá trình nào thu nhiệt:",
+            "options": [
+              "Nóng chảy",
+              "Bay hơi",
+              "Đông đặc",
+              "Ngưng tụ"
+            ],
+            "correct": [0, 1],
+            "explanation": "Nóng chảy và bay hơi là quá trình thu nhiệt"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Điều kiện để vật nóng chảy hoàn toàn:",
+            "options": [
+              "Cung cấp đủ nhiệt nóng chảy",
+              "Nhiệt độ đạt đến nhiệt độ nóng chảy",
+              "Cần áp suất cao",
+              "Vật phải ở thể lỏng"
+            ],
+            "correct": [0, 1],
+            "explanation": "Cần đủ nhiệt và đạt nhiệt độ nóng chảy"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính nhiệt lượng cần để đun 2kg nước từ 20°C đến 100°C. Biết c = 4200 J/kg.K",
+            "correct": "672000",
+            "explanation": "Q = 2.4200.(100-20) = 2.4200.80 = 672000 J"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Tính nhiệt lượng để nóng chảy 5kg nước đá ở 0°C. Biết λ = 3,34.10⁵ J/kg",
+            "correct": "1670000",
+            "explanation": "Q = 5.3,34.10⁵ = 16,7.10⁵ = 1670000 J"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Tính nhiệt để hóa hơi 2kg nước ở 100°C. Biết L = 2,26.10⁶ J/kg",
+            "correct": "4520000",
+            "explanation": "Q = 2.2,26.10⁶ = 4,52.10⁶ = 4520000 J"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Thả 1kg nước đá ở 0°C vào 2kg nước ở 30°C. Tính nhiệt độ cuối cùng (°C).",
+            "correct": "0",
+            "explanation": "Q_tỏa = 2.4200.30 = 252000J; Q_thu = 1.3,34.10⁵ = 334000J. Vì Q_tỏa < Q_thu nên nước đá không tan hết, nhiệt độ = 0°C"
+          }
+        ]
+      }
+    }
+  ]
+}

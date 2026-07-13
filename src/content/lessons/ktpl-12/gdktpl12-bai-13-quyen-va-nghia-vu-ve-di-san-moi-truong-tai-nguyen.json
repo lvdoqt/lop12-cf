@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_13",
+      "name": "Quyền và nghĩa vụ của công dân trong bảo vệ di sản văn hoá, môi trường và tài nguyên thiên nhiên",
+      "slug": "quyen-va-nghia-vu-ve-di-san-moi-truong-tai-nguyen",
+      "chapter": "Quyền và nghĩa vụ của công dân về văn hóa, xã hội",
+      "chapter_id": "GDCD12",
+      "lesson_id": 13,
+      "description": "Trách nhiệm của công dân trong việc giữ gìn các giá trị văn hóa và bảo vệ tài nguyên quốc gia cho thế hệ mai sau.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Bảo vệ Di sản và Tài nguyên",
+          "summary": "Công dân có quyền hưởng thụ và nghĩa vụ bảo tồn di sản văn hóa, sử dụng hợp lý tài nguyên và bảo vệ môi trường.",
+          "sections": [
+            { "heading": "Bảo vệ di sản văn hóa", "content": "Giữ gìn các di tích lịch sử - văn hóa, danh lam thắng cảnh. Nghiêm cấm hành vi phá hoại, chiếm đoạt hoặc buôn bán trái phép di vật." },
+            { "heading": "Bảo vệ môi trường", "content": "Phòng ngừa, hạn chế tác động xấu đến môi trường. Thực hiện phân loại rác, tiết kiệm năng lượng và tham gia các hoạt động xanh." },
+            { "heading": "Sử dụng tài nguyên thiên nhiên", "content": "Sử dụng tiết kiệm, bền vững. Tài nguyên là tài sản chung của quốc gia, không được khai thác bừa bãi trái pháp luật." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Hành vi nào sau đây là thực hiện nghĩa vụ bảo vệ di sản văn hóa?", "options": ["Viết tên lên tường các di tích", "Tham gia tôn tạo, giữ gìn vệ sinh tại các khu di tích", "Lấy cắp cổ vật đem bán", "Tự ý thay đổi cấu trúc di tích"], "correct": 1, "explanation": "Giữ gìn và tôn tạo là trách nhiệm của mọi công dân đối với di sản dân tộc." },
+          { "id": 2, "type": "mcq", "question": "Bảo vệ môi trường là trách nhiệm của ai?", "options": ["Chỉ của nhân viên môi trường", "Của Nhà nước, mọi tổ chức và mọi cá nhân", "Chỉ của các nhà khoa học", "Của những người sống ở nông thôn"], "correct": 1, "explanation": "Môi trường là chung, ai cũng có trách nhiệm bảo vệ." },
+          { "id": 3, "type": "mcq", "question": "Sử dụng tài nguyên thiên nhiên 'bền vững' có nghĩa là gì?", "options": ["Khai thác thật nhanh để nhanh giàu", "Khai thác hợp lý, đi đôi với bảo vệ và phục hồi cho tương lai", "Không bao giờ được khai thác", "Chỉ khai thác để phục vụ xuất khẩu"], "correct": 1, "explanation": "Bền vững đảm bảo lợi ích cho cả thế hệ hiện tại và mai sau." },
+          { "id": 4, "type": "mcq", "question": "Hành vi xả nước thải chưa qua xử lý ra sông ngòi bị coi là?", "options": ["Việc làm tiết kiệm chi phí", "Vi phạm pháp luật về bảo vệ môi trường", "Hành động bình thường của nhà máy", "Sáng kiến sản xuất"], "correct": 1, "explanation": "Xâm hại môi trường nước gây hậu quả nghiêm trọng và bị pháp luật nghiêm cấm." },
+          { "id": 5, "type": "mcq", "question": "Khi phát hiện hành vi săn bắt động vật quý hiếm, bạn nên làm gì?", "options": ["Đứng xem", "Báo ngay cho cơ quan chức năng hoặc người có trách nhiệm", "Mua ủng hộ", "Giúp họ vận chuyển"], "correct": 1, "explanation": "Tố giác hành vi vi phạm là nghĩa vụ bảo vệ tài nguyên đa dạng sinh học." },
+          { "id": 6, "type": "mcq", "question": "Di sản văn hóa phi vật thể bao gồm đối tượng nào?", "options": ["Đền, chùa", "Dân ca, lễ hội truyền thống, nghề thủ công", "Bảo vật quốc gia", "Tranh cổ"], "correct": 1, "explanation": "Phi vật thể là những giá trị tinh thần, kĩ năng và truyền thống." },
+          { "id": 7, "type": "mcq", "question": "Việc tiết kiệm điện, nước trong gia đình góp phần?", "options": ["Làm cho gia đình nghèo đi", "Bảo vệ tài nguyên thiên nhiên và môi trường", "Chỉ để giảm hóa đơn", "Gây khó khăn cho cuộc sống"], "correct": 1, "explanation": "Tiết kiệm năng lượng là hành động thiết thực bảo vệ tài nguyên." },
+          { "id": 8, "type": "mcq", "question": "Hành vi nào bị nghiêm cấm trong bảo vệ rừng?", "options": ["Trồng rừng phủ xanh đất trống", "Đốt rừng làm nương rẫy, khai thác gỗ trái phép", "Dọn dẹp thực bì phòng cháy rừng", "Tuần tra bảo vệ rừng"], "correct": 1, "explanation": "Phá rừng làm mất lá phổi xanh và gây thiên tai." },
+          { "id": 9, "type": "mcq", "question": "Quyền hưởng thụ di sản văn hóa của công dân được thực hiện qua việc?", "options": ["Chiếm làm của riêng", "Tham quan, nghiên cứu và học tập các giá trị từ di sản", "Bán vé lấy tiền riêng", "Thay đổi tên di tích"], "correct": 1, "explanation": "Di sản là tài sản chung để mọi người cùng tiếp cận và học hỏi." },
+          { "id": 10, "type": "mcq", "question": "Tại sao phải bảo vệ môi trường và tài nguyên?", "options": ["Vì sợ bị phạt", "Vì đó là nền tảng tồn tại và phát triển của con người", "Vì muốn được nổi tiếng", "Không quan trọng lắm"], "correct": 1, "explanation": "Con người không thể sống tách rời môi trường và tài nguyên." }
+        ]
+      }
+    }
+  ]
+}

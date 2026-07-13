@@ -1,0 +1,156 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-9-3-hon-truong-ba",
+      "name": "Hồn Trương Ba, da Hàng Thịt",
+      "slug": "hon-truong-ba-da-hang-thit",
+      "chapter": "Văn học và cuộc đời",
+      "chapter_id": "V12-9",
+      "lesson_id": 3,
+      "author": "Lưu Quang Vũ",
+      "description": "Tìm hiểu kịch bản 'Hồn Trương Ba, da Hàng Thịt' của Lưu Quang Vũ, khám phá vấn đề nhân sinh sâu sắc qua câu chuyện kỳ ảo.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "drama-analysis",
+          "name": "Phân tích kịch",
+          "slug": "phan-tich-kich",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Hồn Trương Ba, da Hàng Thịt - Lưu Quang Vũ",
+          "sections": [
+            {
+              "heading": "1. Tác giả Lưu Quang Vũ",
+              "content": "<h4>a) Tiểu sử</h4><ul><li><strong>Năm sinh:</strong> 1948 tại Hà Nội</li><li><strong>Nghề nghiệp:</strong> Nhà thơ, nhà viết kịch</li><li><strong>Thành tựu:</strong> Đổi mới sân khấu Việt Nam</li></ul><h4>b) Tác phẩm</h4><ul><li><strong>Kịch:</strong> Hồn Trương Ba da Hàng Thịt, Bác Ơi</li><li><strong>Thơ:</strong> Thơ tình, thơ triết lý</li><li><strong>Phong cách:</strong> Hiện đại, triết lý</li></ul>"
+            },
+            {
+              "heading": "2. Nội dung tác phẩm",
+              "content": "<h4>a) Cốt truyện</h4><ul><li><strong>Trương Ba:</strong> Người hiền lành, chết oan</li><li><strong>Hàng Thịt:</strong> Người hung dữ, chết vì nghiệp</li><li><strong>Sự việc:</strong> Hồn Trương Ba nhập vào da Hàng Thịt</li></ul><h4>b) Xung đột</h4><ul><li><strong>Nội tâm:</strong> Hồn lành trong thân ác</li><li><strong>Xã hội:</strong> Người tốt bị hiểu lầm</li><li><strong>Đạo đức:</strong> Thiện - ác, hồn - da</li></ul><h4>c) Thông điệp</h4><ul><li><strong>Bản chất:</strong> Quan trọng hơn hình thức</li><li><strong>Nhận thức:</strong> Không nên đánh giá qua bề ngoài</li><li><strong>Nhân văn:</strong> Tôn trọng con người thật</li></ul>"
+            },
+            {
+              "heading": "3. Nghệ thuật",
+              "content": "<h4>a) Kỹ thuật kịch</h4><ul><li><strong>Kỳ ảo:</strong> Hồn nhập vào da</li><li><strong>Hiện thực:</strong> Vấn đề xã hội</li><li><strong>Kết hợp:</strong> Kỳ ảo và hiện thực</li></ul><h4>b) Nhân vật</h4><ul><li><strong>Trương Ba:</strong> Biểu tượng lòng tốt</li><li><strong>Hàng Thịt:</strong> Biểu tượng cái ác</li><li><strong>Tiểu Yến:</strong> Tình yêu chân thành</li></ul><h4>c) Giá trị</h4><ul><li><strong>Triết lý:</strong> Về bản chất con người</li><li><strong>Xã hội:</strong> Phê phán định kiến</li><li><strong>Nghệ thuật:</strong> Đổi mới sân khấu</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex9-3-1",
+              "type": "mcq",
+              "question": "Tác giả của 'Hồn Trương Ba, da Hàng Thịt' là ai?",
+              "options": [
+                "Nguyễn Huy Tưởng",
+                "Lưu Quang Vũ",
+                "Xuân Quỳnh",
+                "Tô Hoài"
+              ],
+              "correct": 1,
+              "explanation": "'Hồn Trương Ba, da Hàng Thịt' là kịch bản nổi tiếng của Lưu Quang Vũ."
+            },
+            {
+              "id": "ex9-3-2",
+              "type": "mcq",
+              "question": "Tác phẩm thuộc thể loại nào?",
+              "options": [
+                "Tiểu thuyết",
+                "Kịch",
+                "Thơ",
+                "Truyện ngắn"
+              ],
+              "correct": 1,
+              "explanation": "'Hồn Trương Ba, da Hàng Thịt' là một kịch bản sân khấu."
+            },
+            {
+              "id": "ex9-3-3",
+              "type": "mcq",
+              "question": "Sự việc chính trong tác phẩm là gì?",
+              "options": [
+                "Trương Ba và Hàng Thịt đánh nhau",
+                "Hồn Trương Ba nhập vào da Hàng Thịt",
+                "Trương Ba trở thành Hàng Thịt",
+                "Hàng Thịt trở thành người tốt"
+              ],
+              "correct": 1,
+              "explanation": "Sự việc kỳ ảo là hồn của Trương Ba hiền lành nhập vào thân xác của Hàng Thịt hung dữ."
+            },
+            {
+              "id": "ex9-3-4",
+              "type": "mcq",
+              "question": "Thông điệp chính của tác phẩm là gì?",
+              "options": [
+                "Hình thức quan trọng hơn bản chất",
+                "Bản chất quan trọng hơn hình thức, không nên đánh giá qua bề ngoài",
+                "Ngoại hình quyết định tất cả",
+                "Không có thông điệp"
+              ],
+              "correct": 1,
+              "explanation": "Tác phẩm khẳng định bản chất con người quan trọng hơn hình thức bề ngoài."
+            },
+            {
+              "id": "ex9-3-5",
+              "type": "mcq",
+              "question": "Trương Ba tượng trưng cho điều gì?",
+              "options": [
+                "Cái ác",
+                "Lòng tốt, sự hiền lành",
+                "Sự hung dữ",
+                "Không tượng trưng gì"
+              ],
+              "correct": 1,
+              "explanation": "Trương Ba là biểu tượng của lòng tốt, sự hiền lành và chân thành."
+            },
+            {
+              "id": "ex9-3-6",
+              "type": "mcq",
+              "question": "Kỹ thuật nghệ thuật đặc biệt trong tác phẩm là gì?",
+              "options": [
+                "Chỉ có hiện thực",
+                "Kết hợp kỳ ảo và hiện thực",
+                "Chỉ có kỳ ảo",
+                "Không có kỹ thuật đặc biệt"
+              ],
+              "correct": 1,
+              "explanation": "Tác phẩm kết hợp khéo léo yếu tố kỳ ảo (hồn nhập da) và hiện thực (vấn đề xã hội)."
+            },
+            {
+              "id": "ex9-3-7",
+              "type": "mcq",
+              "question": "Lưu Quang Vũ có đóng góp gì cho sân khấu Việt Nam?",
+              "options": [
+                "Không có đóng góp",
+                "Đổi mới sân khấu với kỹ thuật hiện đại",
+                "Chỉ viết thơ",
+                "Chỉ dịch kịch"
+              ],
+              "correct": 1,
+              "explanation": "Lưu Quang Vũ có công lớn trong việc đổi mới sân khấu Việt Nam với kỹ thuật và tư duy hiện đại."
+            },
+            {
+              "id": "ex9-3-8",
+              "type": "mcq",
+              "question": "Giá trị của tác phẩm là gì?",
+              "options": [
+                "Chỉ giải trí",
+                "Triết lý sâu sắc về bản chất con người, phê phán định kiến",
+                "Không có giá trị",
+                "Chỉ kể chuyện kỳ ảo"
+              ],
+              "correct": 1,
+              "explanation": "Tác phẩm có giá trị triết lý sâu sắc về bản chất con người và phê phán định kiến xã hội."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

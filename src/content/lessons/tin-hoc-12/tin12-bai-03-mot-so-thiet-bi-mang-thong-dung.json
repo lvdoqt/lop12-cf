@@ -1,0 +1,42 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_03",
+      "name": "Một số thiết bị mạng thông dụng",
+      "slug": "mot-so-thiet-bi-mang-thong-dung",
+      "chapter": "Mạng máy tính và internet",
+      "chapter_id": "tin12_ch2",
+      "lesson_id": 3,
+      "description": "Tìm hiểu về vai trò và chức năng của Switch, Router, Access Point và các thiết bị mạng khác.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thiết bị mạng",
+          "summary": "Thiết bị mạng giúp kết nối các máy tính và quản lý việc truyền tải dữ liệu hiệu quả.",
+          "sections": [
+            { "heading": "Switch (Bộ chuyển mạch)", "content": "Kết nối các thiết bị trong mạng cục bộ (LAN), truyền dữ liệu đến đúng cổng đích dựa trên địa chỉ MAC." },
+            { "heading": "Router (Bộ định tuyến)", "content": "Kết nối các mạng khác nhau (như LAN với Internet), tìm đường đi tốt nhất cho các gói tin." },
+            { "heading": "Access Point (Bộ thu phát Wi-Fi)", "content": "Cung cấp kết nối không dây cho các thiết bị di động tham gia vào mạng dây có sẵn." },
+            { "heading": "Modem", "content": "Chuyển đổi tín hiệu số sang tín hiệu tương tự (và ngược lại) để truyền qua đường dây điện thoại hoặc cáp quang." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Thiết bị nào dùng để kết nối mạng LAN với Internet?", "options": ["Switch", "Router", "Hub", "Repeater"], "correct": 1, "explanation": "Router định tuyến dữ liệu giữa mạng nội bộ và thế giới bên ngoài." },
+          { "id": 2, "type": "mcq", "question": "Switch quản lý việc gửi dữ liệu dựa trên địa chỉ nào?", "options": ["Địa chỉ nhà", "Địa chỉ IP", "Địa chỉ MAC", "Số điện thoại"], "correct": 2, "explanation": "Switch hoạt động ở lớp 2 và dùng địa chỉ MAC vật lý của card mạng." },
+          { "id": 3, "type": "mcq", "question": "Để mở rộng phạm vi phủ sóng Wi-Fi, ta dùng thiết bị nào?", "options": ["Modem", "Access Point (hoặc Repeater)", "Card mạng", "Ổ cứng"], "correct": 1, "explanation": "Access Point giúp phát sóng không dây từ mạng dây sẵn có." },
+          { "id": 4, "type": "mcq", "question": "Modem là viết tắt của cụm từ nào?", "options": ["Modern Device", "Modulator / Demodulator", "Model Memory", "Motion Detector"], "correct": 1, "explanation": "Modem thực hiện chức năng điều chế và giải điều chế tín hiệu." },
+          { "id": 5, "type": "mcq", "question": "Thiết bị mạng nào hiện nay thường tích hợp cả chức năng Router, Switch và Access Point?", "options": ["Máy in", "Wi-Fi Router (Bộ định tuyến không dây)", "Ổ cắm điện", "Màn hình"], "correct": 1, "explanation": "Các bộ Wi-Fi dùng ở gia đình thường là thiết bị tích hợp đa năng." },
+          { "id": 6, "type": "mcq", "question": "Cáp quang sử dụng phương thức truyền tín hiệu nào?", "options": ["Dòng điện", "Sóng vô tuyến", "Ánh sáng", "Âm thanh"], "correct": 2, "explanation": "Cáp quang truyền dữ liệu bằng xung ánh sáng qua sợi thủy tinh." },
+          { "id": 7, "type": "mcq", "question": "Địa chỉ MAC có đặc điểm gì?", "options": ["Có thể tự đặt tùy ý", "Duy nhất và được ghi trên phần cứng card mạng", "Thay đổi mỗi khi khởi động máy", "Giống địa chỉ IP"], "correct": 1, "explanation": "MAC là địa chỉ vật lý duy nhất toàn cầu cho mỗi thiết bị mạng." },
+          { "id": 8, "type": "mcq", "question": "Cổng LAN (RJ45) trên laptop dùng để kết nối với thiết bị nào?", "options": ["Chuột", "Loa", "Switch hoặc Router qua dây cáp", "Máy ảnh"], "correct": 2, "explanation": "Đây là cổng kết nối mạng dây chuẩn." },
+          { "id": 9, "type": "mcq", "question": "Băng thông (Bandwidth) là gì?", "options": ["Kích thước vật lý của dây cáp", "Tốc độ truyền dữ liệu tối đa trong một giây", "Số lượng máy tính trong mạng", "Chiều dài của dây mạng"], "correct": 1, "explanation": "Băng thông càng cao thì dữ liệu truyền tải càng nhanh." },
+          { "id": 10, "type": "mcq", "question": "Hub khác Switch ở điểm nào?", "options": ["Hub thông minh hơn", "Hub gửi dữ liệu đến tất cả các cổng, Switch chỉ gửi đến cổng đích", "Switch rẻ hơn", "Hub dùng cho mạng không dây"], "correct": 1, "explanation": "Hub gây lãng phí băng thông và bảo mật kém hơn Switch." }
+        ]
+      }
+    }
+  ]
+}

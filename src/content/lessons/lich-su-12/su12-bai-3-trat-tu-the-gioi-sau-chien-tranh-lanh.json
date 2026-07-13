@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-3",
+    "name": "Trật tự thế giới sau chiến tranh lạnh",
+    "slug": "trat-tu-the-gioi-sau-chien-tranh-lanh",
+    "chapter": "Chủ đề 1: Thế giới trong và sau chiến tranh lạnh",
+    "chapter_id": "su12",
+    "lesson_id": 3,
+    "description": "Sự chuyển biến từ hai cực sang đa cực và những đặc điểm mới của thế giới",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Trật tự thế giới sau chiến tranh lạnh",
+        "sections": [
+          { "heading": "1. Sự kết thúc và hình thành thế giới mới", "content": "Sự tan rã Liên Xô 1991 kết thúc chiến tranh lạnh. Thế giới chuyển từ hai cực sang đa cực hoặc một cực duy nhất (hegemony Mỹ). Xu hướng toàn cầu hóa mạnh mẽ; Liên Hợp Quốc tăng vai trò." },
+          { "heading": "2. Toàn cầu hóa", "content": "Kết nối kinh tế toàn cầu; công ty đa quốc gia mở rộng; internet kết nối các quốc gia; thương mại tự do mở rộng; tuy nhiên gây mất cân bằng kinh tế." },
+          { "heading": "3. Thách thức mới", "content": "Khủng bố quốc tế; xung đột tôn giáo; biến đổi khí hậu; COVID-19; xung đột tài nguyên; vấn đề di cư." },
+          { "heading": "4. Cường quốc mới nổi lên", "content": "Trung Quốc - cường quốc kinh tế; Ấn Độ phát triển nhanh; ASEAN tăng tầm quan trọng; Liên Âu trở thành cực cân bằng; Russia duy trì ảnh hưởng quân sự." },
+          { "heading": "5. Đặc điểm thế giới hiện đại", "content": "Hệ thống đa cực với Mỹ vẫn ảnh hưởng lớn; kết nối kinh tế tạo cân bằng quyền lực; vai trò LHQ tăng nhưng hạn chế; xu hướng khu vực hóa (EU, ASEAN); an ninh đa chiều." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Liên Xô tan rã vào năm?", "options": ["1989", "1990", "1991", "1992"], "correct": 2, "explanation": "Liên Xô chính thức tan rã năm 1991." },
+        { "id": "ex2", "type": "mcq", "question": "Khái niệm nào mô tả thế giới sau chiến tranh lạnh?", "options": ["Hai cực", "Đa cực", "Một cực", "Hỗn loạn"], "correct": 1, "explanation": "Thế giới chuyển sang tình trạng đa cực." },
+        { "id": "ex3", "type": "mcq", "question": "Biểu tượng khủng bố quốc tế là?", "options": ["Việt Nam", "11/9/2001", "Cuba", "Triều Tiên"], "correct": 1, "explanation": "Vụ 11/9/2001 ở Mỹ là biểu tượng khủng bố quốc tế." },
+        { "id": "ex4", "type": "mcq", "question": "Đặc điểm chính thế giới là?", "options": ["Tự cấp", "Toàn cầu hóa", "Phong tỏa", "Cô lập"], "correct": 1, "explanation": "Toàn cầu hóa là xu hướng chính." },
+        { "id": "ex5", "type": "mcq", "question": "Cường quốc kinh tế chính thế kỉ XXI là?", "options": ["Nhật", "Ấn Độ", "Trung Quốc", "Hàn"], "correct": 2, "explanation": "Trung Quốc nổi lên thành cường quốc kinh tế lớn nhất." },
+        { "id": "ex6", "type": "mcq", "question": "Thách thức mới nhất là?", "options": ["Mâu thuẫn Tây-Đông", "Biến đổi khí hậu", "Xung đột công nghiệp", "Phát triển"], "correct": 1, "explanation": "Biến đổi khí hậu, môi trường, COVID-19 là thách thức." },
+        { "id": "ex7", "type": "mcq", "question": "Ví dụ khu vực hóa là?", "options": ["Warszawa", "NATO", "Liên Âu", "LHQ"], "correct": 2, "explanation": "Liên Âu là ví dụ tiêu biểu của khu vực hóa." },
+        { "id": "ex8", "type": "mcq", "question": "New World Order tìm cách?", "options": ["Khôi phục chiến tranh lạnh", "Xây dựng hệ thống mới dưới Mỹ", "Xóa liên minh", "Cô lập"], "correct": 1, "explanation": "Xây dựng hệ thống quốc tế mới với Mỹ dẫn đầu." },
+        { "id": "ex9", "type": "mcq", "question": "Vai trò LHQ thế nào?", "options": ["Tăng nhưng giới hạn", "Mất hết", "Thay thế tất cả", "Chỉ ở Âu"], "correct": 0, "explanation": "Vai trò LHQ tăng nhưng bị hạn chế bởi lợi ích quốc gia." },
+        { "id": "ex10", "type": "mcq", "question": "Công nghệ chính trong toàn cầu hóa?", "options": ["Nông", "Internet-IT", "Hạt nhân", "Khai mỏ"], "correct": 1, "explanation": "Internet và công nghệ thông tin là nền tảng toàn cầu hóa." }
+      ]
+    }
+  }]
+}

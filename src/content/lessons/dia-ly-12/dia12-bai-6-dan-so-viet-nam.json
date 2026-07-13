@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_6",
+      "name": "Dân số Việt Nam",
+      "slug": "dan-so-viet-nam",
+      "chapter": "Địa lí dân cư",
+      "chapter_id": "dia12_part2",
+      "lesson_id": 6,
+      "description": "Quá trình tăng dân số, cơ cấu dân số theo tuổi và giới, phân bố dân cư và các vấn đề liên quan.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Dân số Việt Nam: đặc điểm và xu hướng",
+          "summary": "Phân tích quy mô, tốc độ tăng, cơ cấu và phân bố dân số Việt Nam; các xu hướng chính gồm già hóa dân số, chuyển dịch cơ cấu từ nông nghiệp sang công nghiệp - dịch vụ, và phân bố không đều giữa các vùng kinh tế - xã hội.",
+          "sections": [
+            { "heading": "Quy mô và tăng trưởng", "content": "Dân số Việt Nam tăng nhanh trong thế kỷ 20, sau đó tốc độ giảm dần nhờ chính sách dân số và giảm tỷ lệ sinh; các yếu tố ảnh hưởng gồm tỷ lệ sinh, tỷ lệ tử và di cư." },
+            { "heading": "Cơ cấu dân số", "content": "Cơ cấu theo tuổi đang chuyển từ trẻ sang già; cơ cấu lao động chuyển từ nông nghiệp sang công nghiệp và dịch vụ." },
+            { "heading": "Phân bố dân cư", "content": "Dân cư tập trung tại đồng bằng sông Hồng, đồng bằng sông Cửu Long và vùng Đông Nam Bộ; miền núi và ven biển một số nơi thưa dân." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Nêu hai vùng có mật độ dân số cao ở Việt Nam?", "a_hint": "Đồng bằng sông Hồng, Đông Nam Bộ." },
+            { "q": "Một hệ quả của già hóa dân số?", "a_hint": "Áp lực an sinh xã hội và y tế." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Yếu tố nào trực tiếp làm thay đổi quy mô dân số?", "options": ["Tỷ lệ sinh","Màu cờ","Vị trí cảng","Ngôn ngữ"], "correct": 0, "explanation": "Tỷ lệ sinh là yếu tố chính ảnh hưởng tới quy mô dân số." },
+          { "id": 2, "type": "mcq", "question": "Vùng nào có mật độ dân số thấp nhất ở Việt Nam?", "options": ["Đồng bằng sông Hồng","Miền núi phía Bắc","Đông Nam Bộ","Đồng bằng sông Cửu Long"], "correct": 1, "explanation": "Miền núi thường có mật độ dân số thấp hơn do địa hình khó khăn." },
+          { "id": 3, "type": "mcq", "question": "Hiện tượng già hóa dân số là do?", "options": ["Tỷ lệ sinh giảm và tuổi thọ tăng","Tỷ lệ sinh tăng mạnh","Di cư ra nước ngoài","Tăng dân số trẻ"], "correct": 0, "explanation": "Già hóa do tỷ lệ sinh giảm trong khi tuổi thọ tăng." },
+          { "id": 4, "type": "mcq", "question": "Di cư nông thôn - thành thị thường dẫn tới?", "options": ["Tăng dân số đô thị","Giảm dân số đô thị","Không thay đổi","Làm cho nông thôn đông đúc hơn"], "correct": 0, "explanation": "Di cư làm tăng dân số đô thị và áp lực hạ tầng." },
+          { "id": 5, "type": "mcq", "question": "Một thách thức do phân bố dân cư không đều là?", "options": ["Quá tải hạ tầng ở thành phố","Tăng nguồn lực nông thôn","Cải thiện chất lượng sống ở các vùng miền","Không có thách thức"], "correct": 0, "explanation": "Phân bố không đều gây quá tải ở đô thị và thiếu phát triển vùng nông thôn." },
+          { "id": 6, "type": "mcq", "question": "Chỉ số nào thể hiện cơ cấu tuổi của dân số?", "options": ["Tỷ lệ người dưới 15, người 15-64 và trên 65","Số lượng cảng biển","Diện tích rừng","GDP"], "correct": 0, "explanation": "Cơ cấu tuổi thường được biểu thị bằng tỷ lệ các nhóm tuổi như trên." },
+          { "id": 7, "type": "mcq", "question": "Một biện pháp ứng phó với già hóa dân số?", "options": ["Phát triển hệ thống an sinh xã hội và chăm sóc sức khỏe","Khuyến khích tỷ lệ sinh giảm hơn nữa","Không có biện pháp","Tăng nhập cư trẻ"], "correct": 0, "explanation": "Cần hệ thống an sinh và y tế mạnh để ứng phó già hóa." },
+          { "id": 8, "type": "mcq", "question": "Cơ cấu lao động chuyển dịch từ ngành nào sang ngành nào?", "options": ["Từ nông nghiệp sang công nghiệp và dịch vụ","Từ dịch vụ sang nông nghiệp","Từ công nghiệp sang nông nghiệp","Không thay đổi"], "correct": 0, "explanation": "Quá trình công nghiệp hóa khiến lao động dịch chuyển khỏi nông nghiệp." },
+          { "id": 9, "type": "mcq", "question": "Nguồn dữ liệu chính để nghiên cứu dân số là?", "options": ["Tổng điều tra dân số, thống kê quốc gia","Mạng xã hội","Ảnh hưởng thời tiết","Không có dữ liệu"], "correct": 0, "explanation": "Tổng điều tra dân số và số liệu thống kê là nguồn chính." },
+          { "id": 10, "type": "mcq", "question": "Một giải pháp giảm áp lực lên đô thị là?", "options": ["Phát triển kinh tế vùng, cơ sở hạ tầng nông thôn","Tập trung tất cả đầu tư vào thành phố lớn","Ngăn cản di cư bằng bạo lực","Không làm gì"], "correct": 0, "explanation": "Phát triển vùng và cơ sở hạ tầng giúp giảm di cư lên đô thị." }
+        ]
+      }
+    }
+  ]
+}

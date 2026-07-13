@@ -1,0 +1,67 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [{
+    "id": "hoa12-bai-14-on-tap-chuong-4",
+    "name": "Bài 14. Ôn tập chương 4",
+    "slug": "bai-14-on-tap-chuong-4",
+    "chapter": "Chương 4: Polymer",
+    "chapter_id": "H12-1004",
+    "lesson_id": 14,
+    "description": "Tổng hợp và ôn tập kiến thức về polymer, vật liệu polymer.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2600&auto=format&fit=crop",
+    "question_types": [{"id": "on-tap-chuong-4", "name": "Ôn tập chương 4", "slug": "on-tap-chuong-4", "difficulty": "medium"}],
+    "content": {
+      "theory": {
+        "title": "Tổng hợp kiến thức Chương 4",
+        "sections": [{
+          "heading": "1. Bảng tổng hợp Polymer",
+          "content": "<table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Polymer</th><th class='border border-gray-300 p-2'>Monomer</th><th class='border border-gray-300 p-2'>Phương pháp</th><th class='border border-gray-300 p-2'>Ứng dụng</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>PE</td><td class='border border-gray-300 p-2'>CH₂=CH₂</td><td class='border border-gray-300 p-2'>Trùng hợp</td><td class='border border-gray-300 p-2'>Túi nilon</td></tr><tr><td class='border border-gray-300 p-2'>PVC</td><td class='border border-gray-300 p-2'>CH₂=CHCl</td><td class='border border-gray-300 p-2'>Trùng hợp</td><td class='border border-gray-300 p-2'>Ống nước</td></tr><tr><td class='border border-gray-300 p-2'>PS</td><td class='border border-gray-300 p-2'>CH₂=CH-C₆H₅</td><td class='border border-gray-300 p-2'>Trùng hợp</td><td class='border border-gray-300 p-2'>Hộp xốp</td></tr><tr><td class='border border-gray-300 p-2'>Nylon-6,6</td><td class='border border-gray-300 p-2'>Acid + Amine</td><td class='border border-gray-300 p-2'>Trùng ngưng</td><td class='border border-gray-300 p-2'>Quần áo</td></tr><tr><td class='border border-gray-300 p-2'>PET</td><td class='border border-gray-300 p-2'>Acid + Glycol</td><td class='border border-gray-300 p-2'>Trùng ngưng</td><td class='border border-gray-300 p-2'>Chai nước</td></tr></tbody></table><h3>Công thức quan trọng:</h3><p>1. Trùng hợp: n(Monomer) → Polymer (không sản phẩm phụ)</p><p>2. Trùng ngưng: n(Monomer) → Polymer + nH₂O</p><p>3. M(polymer) = n × M(mắt xích)</p><p>4. Lưu hóa: Cao su + S → Cao su lưu hóa</p>"
+        }]
+      },
+      "problemTypes": [{
+        "id": "dang1",
+        "name": "Dạng 1: Bài toán tổng hợp polymer",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định loại phản ứng</li><li>Tính khối lượng sản phẩm</li><li>Áp dụng hiệu suất</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Tổng hợp polymer từ 100 kg monomer. a) Nếu là PE, tính khối lượng polymer (hiệu suất 90%). b) Nếu là Nylon-6,6, tính khối lượng polymer và H₂O (hiệu suất 85%).", "solution": "<p><strong>a) PE (trùng hợp):</strong></p><p>Không có sản phẩm phụ</p><p>m(PE) lý thuyết = 100 kg</p><p>m(PE) thực tế = 100 × 90% = 90 kg</p><p><strong>b) Nylon-6,6 (trùng ngưng):</strong></p><p>Giả sử 50 kg acid + 50 kg amine</p><p>M(acid) = 146, M(amine) = 116</p><p>M(mắt xích) = 226</p><p>Tỉ lệ: 262 kg monomer → 226 kg nylon + 36 kg H₂O</p><p>100 kg monomer → x kg nylon</p><p>x = 100 × 226/262 = 86.3 kg (lý thuyết)</p><p>m(nylon) = 86.3 × 85% = 73.4 kg</p><p>m(H₂O) = 100 × 36/262 × 85% = 11.7 kg</p><p><strong>Đáp án:</strong> a) 90 kg; b) 73.4 kg nylon, 11.7 kg H₂O</p>"}]
+      }, {
+        "id": "dang2",
+        "name": "Dạng 2: Bài toán nhận biết polymer",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Dựa vào tính chất vật lý</li><li>Dựa vào phản ứng hóa học</li><li>Dựa vào ứng dụng</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Có 4 mẫu: A (PE), B (PVC), C (Nylon), D (Cao su). Phân biệt bằng phương pháp đơn giản.", "solution": "<p><strong>Phương pháp:</strong></p><p><strong>1. Thả vào nước:</strong></p><ul><li>A (PE): Nổi</li><li>B, C, D: Chìm</li></ul><p><strong>2. Đốt cháy B, C, D:</strong></p><ul><li>B (PVC): Mùi hắc (HCl)</li><li>C (Nylon): Mùi tóc cháy</li><li>D (Cao su): Mùi khét đặc trưng</li></ul><p><strong>3. Kéo giãn D:</strong></p><ul><li>D (Cao su): Đàn hồi cao</li></ul><p><strong>Kết luận:</strong> A nổi (PE), B mùi hắc (PVC), C mùi tóc (Nylon), D đàn hồi (Cao su)</p>"}]
+      }, {
+        "id": "dang3",
+        "name": "Dạng 3: Bài toán thực tế - Kinh tế tuần hoàn polymer",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích chu trình sống polymer</li><li>Tính toán hiệu quả kinh tế</li><li>Đánh giá tác động môi trường</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Mô hình kinh tế tuần hoàn cho chai PET: Thu gom → Tái chế → Sản xuất mới. a) Tính hiệu quả kinh tế (giá: PET mới 30,000đ/kg, tái chế 20,000đ/kg, chi phí tái chế 8,000đ/kg). b) Tính giảm phát thải CO₂ (PET mới: 3 kg CO₂/kg, tái chế: 1 kg CO₂/kg). c) Đề xuất mô hình kinh tế tuần hoàn hoàn chỉnh.", "solution": "<p><strong>a) Hiệu quả kinh tế (cho 1 tấn):</strong></p><p><strong>Sản xuất mới:</strong></p><ul><li>Chi phí: 1000 × 30,000 = 30,000,000 đ</li></ul><p><strong>Tái chế:</strong></p><ul><li>Thu gom: 1000 × 20,000 = 20,000,000 đ</li><li>Tái chế: 1000 × 8,000 = 8,000,000 đ</li><li>Tổng: 28,000,000 đ</li></ul><p><strong>Tiết kiệm:</strong> 2,000,000 đ/tấn (6.7%)</p><p><strong>b) Giảm CO₂:</strong></p><p>Phát thải mới: 1000 × 3 = 3000 kg CO₂</p><p>Phát thải tái chế: 1000 × 1 = 1000 kg CO₂</p><p>Giảm: 2000 kg CO₂/tấn (67%)</p><p><strong>c) Mô hình kinh tế tuần hoàn:</strong></p><p><strong>1. Thu gom thông minh:</strong></p><ul><li>Máy thu gom tự động (đặt cọc chai)</li><li>Ứng dụng di động theo dõi điểm thu gom</li><li>Thưởng điểm tích lũy cho người dân</li><li>Mục tiêu: Thu gom 80% chai PET</li></ul><p><strong>2. Phân loại và làm sạch:</strong></p><ul><li>Công nghệ AI phân loại tự động</li><li>Làm sạch bằng enzyme sinh học</li><li>Loại bỏ nhãn, nắp tự động</li><li>Chất lượng đầu ra: 95% sạch</li></ul><p><strong>3. Tái chế chất lượng cao:</strong></p><ul><li>Công nghệ depolymerization (phân hủy thành monomer)</li><li>Tái tổng hợp PET mới (chất lượng = PET nguyên sinh)</li><li>Hiệu suất: 90%</li><li>Chi phí: Giảm 30% so với tái chế cơ học</li></ul><p><strong>4. Sản xuất sản phẩm mới:</strong></p><ul><li>Chai nước 100% tái chế</li><li>Sợi polyester (quần áo)</li><li>Vật liệu xây dựng</li><li>Đóng gói thực phẩm (food-grade)</li></ul><p><strong>5. Thiết kế bền vững:</strong></p><ul><li>Chai đơn sắc (dễ tái chế)</li><li>Giảm trọng lượng chai 20%</li><li>Nhãn dễ tách</li><li>Thiết kế cho tái chế (Design for Recycling)</li></ul><p><strong>6. Mô hình kinh doanh:</strong></p><ul><li>Doanh nghiệp trả phí tái chế (EPR - Extended Producer Responsibility)</li><li>Người tiêu dùng được thưởng khi trả chai</li><li>Nhà máy tái chế có lợi nhuận ổn định</li><li>Chính phủ giảm chi phí xử lý rác</li></ul><p><strong>Tính toán hiệu quả tổng hợp:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Chỉ tiêu</th><th class='border border-gray-300 p-2'>Hiện tại</th><th class='border border-gray-300 p-2'>Kinh tế tuần hoàn</th><th class='border border-gray-300 p-2'>Cải thiện</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Tỉ lệ tái chế</td><td class='border border-gray-300 p-2'>30%</td><td class='border border-gray-300 p-2'>80%</td><td class='border border-gray-300 p-2'>+167%</td></tr><tr><td class='border border-gray-300 p-2'>Chi phí (đ/kg)</td><td class='border border-gray-300 p-2'>30,000</td><td class='border border-gray-300 p-2'>22,000</td><td class='border border-gray-300 p-2'>-27%</td></tr><tr><td class='border border-gray-300 p-2'>CO₂ (kg/kg)</td><td class='border border-gray-300 p-2'>3</td><td class='border border-gray-300 p-2'>0.8</td><td class='border border-gray-300 p-2'>-73%</td></tr><tr><td class='border border-gray-300 p-2'>Rác thải (tấn/năm)</td><td class='border border-gray-300 p-2'>700,000</td><td class='border border-gray-300 p-2'>140,000</td><td class='border border-gray-300 p-2'>-80%</td></tr><tr><td class='border border-gray-300 p-2'>Việc làm (người)</td><td class='border border-gray-300 p-2'>10,000</td><td class='border border-gray-300 p-2'>50,000</td><td class='border border-gray-300 p-2'>+400%</td></tr></tbody></table><p><strong>Lợi ích kinh tế - xã hội:</strong></p><ul><li>Tiết kiệm 8,000 tỷ đồng/năm (1 triệu tấn PET)</li><li>Giảm 2.2 triệu tấn CO₂/năm</li><li>Tạo 40,000 việc làm mới</li><li>Giảm 80% rác thải nhựa</li><li>Bảo vệ môi trường biển</li></ul><p><strong>Kết luận:</strong></p><p>Mô hình kinh tế tuần hoàn cho PET mang lại lợi ích kinh tế (tiết kiệm 27%), môi trường (giảm 73% CO₂) và xã hội (tạo việc làm). Đây là giải pháp bền vững, cần được triển khai rộng rãi.</p><p><strong>Đáp án:</strong> a) Tiết kiệm 6.7%; b) Giảm 67% CO₂; c) Đã đề xuất mô hình chi tiết</p>"}]
+      }],
+      "exercises": [
+        {"id": "ex1", "type": "mcq", "question": "Polymer là:", "options": ["Phân tử nhỏ", "Phân tử lớn", "Ion", "Nguyên tử"], "correct": 1, "explanation": "Polymer là phân tử lớn."},
+        {"id": "ex2", "type": "mcq", "question": "Phản ứng trùng hợp có sản phẩm phụ:", "options": ["Có", "Không", "Đôi khi", "Tùy điều kiện"], "correct": 1, "explanation": "Trùng hợp không có sản phẩm phụ."},
+        {"id": "ex3", "type": "mcq", "question": "Phản ứng trùng ngưng tạo:", "options": ["Chỉ polymer", "Polymer + H₂O", "Chỉ H₂O", "Không tạo gì"], "correct": 1, "explanation": "Trùng ngưng tạo polymer + H₂O."},
+        {"id": "ex4", "type": "mcq", "question": "PE được tổng hợp bằng:", "options": ["Trùng hợp", "Trùng ngưng", "Thủy phân", "Đốt cháy"], "correct": 0, "explanation": "PE được tổng hợp bằng trùng hợp."},
+        {"id": "ex5", "type": "mcq", "question": "Nylon được tổng hợp bằng:", "options": ["Trùng hợp", "Trùng ngưng", "Thủy phân", "Đốt cháy"], "correct": 1, "explanation": "Nylon được tổng hợp bằng trùng ngưng."},
+        {"id": "ex6", "type": "mcq", "question": "Nhựa nhiệt dẻo là:", "options": ["PE", "Bakelite", "Cao su lưu hóa", "Tất cả"], "correct": 0, "explanation": "PE là nhựa nhiệt dẻo."},
+        {"id": "ex7", "type": "mcq", "question": "Lưu hóa cao su dùng:", "options": ["O₂", "S", "Cl₂", "N₂"], "correct": 1, "explanation": "Lưu hóa cao su dùng S."},
+        {"id": "ex8", "type": "mcq", "question": "Polymer thiên nhiên là:", "options": ["PE", "PVC", "Tinh bột", "Nylon"], "correct": 2, "explanation": "Tinh bột là polymer thiên nhiên."},
+        {"id": "ex9", "type": "mcq", "question": "Sợi tổng hợp là:", "options": ["Bông", "Len", "Nylon", "Tơ tằm"], "correct": 2, "explanation": "Nylon là sợi tổng hợp."},
+        {"id": "ex10", "type": "mcq", "question": "Cao su thiên nhiên là:", "options": ["PE", "Polyisoprene", "PVC", "Nylon"], "correct": 1, "explanation": "Cao su thiên nhiên là polyisoprene."},
+        {"id": "ex11", "type": "mcq", "question": "Monomer của PE là:", "options": ["CH₄", "CH₂=CH₂", "C₂H₆", "C₆H₆"], "correct": 1, "explanation": "Monomer của PE là CH₂=CH₂."},
+        {"id": "ex12", "type": "mcq", "question": "Monomer của PVC là:", "options": ["CH₂=CH₂", "CH₂=CHCl", "CH₃Cl", "C₆H₅Cl"], "correct": 1, "explanation": "Monomer của PVC là CH₂=CHCl."},
+        {"id": "ex13", "type": "msq", "question": "Polymer tổng hợp:", "options": ["PE", "PVC", "Tinh bột", "Nylon"], "correct": [0, 1, 3], "explanation": "PE, PVC, Nylon là polymer tổng hợp."},
+        {"id": "ex14", "type": "msq", "question": "Phản ứng trùng hợp:", "options": ["PE", "PVC", "Nylon", "PS"], "correct": [0, 1, 3], "explanation": "PE, PVC, PS được tổng hợp bằng trùng hợp."},
+        {"id": "ex15", "type": "msq", "question": "Nhựa nhiệt dẻo:", "options": ["PE", "PVC", "Bakelite", "PS"], "correct": [0, 1, 3], "explanation": "PE, PVC, PS là nhựa nhiệt dẻo."},
+        {"id": "ex16", "type": "msq", "question": "Ứng dụng polymer:", "options": ["Nhựa", "Sợi", "Cao su", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Polymer có nhiều ứng dụng."},
+        {"id": "ex17", "type": "sa", "question": "Trùng hợp 100 kg ethylene thu được bao nhiêu kg PE (hiệu suất 90%)? Làm tròn đến hàng đơn vị.", "correct": "90", "explanation": "m(PE) = 100 × 90% = 90 kg. Đáp án: 90"},
+        {"id": "ex18", "type": "sa", "question": "Lưu hóa 100 kg cao su với 3 kg S. Tính khối lượng cao su lưu hóa (kg). Làm tròn đến hàng đơn vị.", "correct": "103", "explanation": "m = 100 + 3 = 103 kg. Đáp án: 103"},
+        {"id": "ex19", "type": "sa", "question": "Monomer của PE có M là bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "28", "explanation": "M(CH₂=CH₂) = 28 g/mol. Đáp án: 28"},
+        {"id": "ex20", "type": "sa", "question": "Monomer của PVC có M là bao nhiêu? Làm tròn đến 1 chữ số thập phân.", "correct": "62.5", "explanation": "M(CH₂=CHCl) = 62.5 g/mol. Đáp án: 62.5"},
+        {"id": "ex21", "type": "sa", "question": "Nylon-6,6 được tổng hợp từ bao nhiêu loại monomer? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "Nylon-6,6 từ 2 monomer. Đáp án: 2"},
+        {"id": "ex22", "type": "sa", "question": "Nhựa phân hủy trong bao nhiêu năm (tối thiểu)? Làm tròn đến hàng trăm.", "correct": "100", "explanation": "Nhựa phân hủy trong 100-1000 năm. Đáp án: 100"}
+      ]
+    }
+  }]
+}

@@ -1,0 +1,79 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-10-protein-enzyme",
+      "name": "Bài 10. Protein và enzyme",
+      "slug": "bai-10-protein-enzyme",
+      "chapter": "Chương 3: Hợp chất chứa nitrogen",
+      "chapter_id": "H12-1003",
+      "lesson_id": 10,
+      "description": "Tìm hiểu về cấu tạo, tính chất và vai trò của protein và enzyme.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1628595351029-c2bf17511435?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [{"id": "protein-enzyme-1", "name": "Protein và Enzyme", "slug": "protein-enzyme", "difficulty": "medium"}],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Protein và Enzyme",
+          "sections": [
+            {
+              "heading": "1. Protein",
+              "content": "<h3>a) Định nghĩa và cấu trúc</h3><p><strong>Protein:</strong> Polypeptide có khối lượng phân tử lớn (>5000), được tạo từ nhiều amino acid liên kết với nhau.</p><p><strong>Cấu trúc:</strong></p><ul><li>Cấu trúc bậc 1: Trình tự amino acid</li><li>Cấu trúc bậc 2: Xoắn α-helix hoặc nếp gấp β</li><li>Cấu trúc bậc 3: Cuộn xoắn không gian</li><li>Cấu trúc bậc 4: Nhiều chuỗi polypeptide</li></ul><h3>b) Phân loại</h3><p><strong>1. Theo thành phần:</strong></p><ul><li>Protein đơn giản: Chỉ có amino acid (albumin)</li><li>Protein phức tạp: Có thêm nhóm phi protein (hemoglobin)</li></ul><p><strong>2. Theo chức năng:</strong></p><ul><li>Protein cấu trúc: Collagen, keratin</li><li>Protein vận chuyển: Hemoglobin</li><li>Protein bảo vệ: Kháng thể</li><li>Protein xúc tác: Enzyme</li><li>Protein điều hòa: Hormone (insulin)</li></ul><h3>c) Tính chất</h3><p><strong>1. Tính chất vật lý:</strong></p><ul><li>Chất rắn vô định hình</li><li>Tan trong nước tạo dung dịch keo</li><li>Không bay hơi, không nóng chảy</li></ul><p><strong>2. Phản ứng thủy phân:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Protein + H₂O → Peptide → Amino acid (H⁺, t° hoặc enzyme)</p><p><strong>3. Phản ứng màu:</strong></p><ul><li>Phản ứng biuret: Cu(OH)₂ → Màu tím</li><li>Phản ứng xanthoproteic: HNO₃ đặc → Màu vàng</li></ul><p><strong>4. Biến tính:</strong></p><p>Protein mất cấu trúc không gian do nhiệt, acid, base, muối kim loại nặng</p><ul><li>Đun nóng: Trứng chín</li><li>Acid/Base: pH thay đổi</li><li>Muối kim loại: Pb²⁺, Hg²⁺</li></ul>"
+            },
+            {
+              "heading": "2. Enzyme",
+              "content": "<h3>a) Định nghĩa</h3><p><strong>Enzyme:</strong> Protein có khả năng xúc tác cho các phản ứng sinh hóa.</p><p><strong>Đặc điểm:</strong></p><ul><li>Tính đặc hiệu: Mỗi enzyme chỉ xúc tác 1 phản ứng</li><li>Tính hiệu quả: Tăng tốc độ phản ứng hàng triệu lần</li><li>Hoạt động ở điều kiện sinh lý (37°C, pH 7)</li></ul><h3>b) Cơ chế hoạt động</h3><p>Enzyme + Chất nền → Phức enzyme-chất nền → Enzyme + Sản phẩm</p><p><strong>Trung tâm hoạt động:</strong> Vùng đặc biệt trên enzyme gắn với chất nền</p><h3>c) Các yếu tố ảnh hưởng</h3><p><strong>1. Nhiệt độ:</strong></p><ul><li>Tối ưu: 37°C (enzyme người)</li><li>Quá cao: Biến tính enzyme</li><li>Quá thấp: Giảm hoạt tính</li></ul><p><strong>2. pH:</strong></p><ul><li>Pepsin: pH 2 (dạ dày)</li><li>Trypsin: pH 8 (ruột)</li><li>Amylase: pH 7 (nước bọt)</li></ul><p><strong>3. Chất ức chế:</strong></p><ul><li>Cạnh tranh: Giống chất nền</li><li>Không cạnh tranh: Thay đổi cấu trúc enzyme</li></ul><h3>d) Ứng dụng</h3><ul><li>Y tế: Chẩn đoán bệnh (xét nghiệm enzyme)</li><li>Công nghiệp thực phẩm: Sản xuất đường, rượu</li><li>Giặt tẩy: Enzyme phân hủy vết bẩn</li><li>Sinh học phân tử: PCR, giải trình tự DNA</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán thủy phân protein",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Protein → Amino acid</li><li>Tính mol amino acid từ protein</li><li>Áp dụng bảo toàn khối lượng</li></ul>",
+            "examples": [{"question": "<strong>Ví dụ:</strong> Thủy phân hoàn toàn 10g protein thu được 11g hỗn hợp amino acid. a) Giải thích sự tăng khối lượng. b) Tính khối lượng nước tham gia.", "solution": "<p><strong>a) Giải thích:</strong></p><p>Protein + H₂O → Amino acid</p><p>Khối lượng tăng do nước tham gia phản ứng</p><p><strong>b) Tính nước:</strong></p><p>Bảo toàn khối lượng:</p><p>m(protein) + m(H₂O) = m(amino acid)</p><p>10 + m(H₂O) = 11</p><p>m(H₂O) = 1g</p><p><strong>Đáp án:</strong> b) 1g</p>"}]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán phản ứng màu protein",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phản ứng biuret: Cu(OH)₂ → Màu tím</li><li>Phản ứng xanthoproteic: HNO₃ → Màu vàng</li><li>Nhận biết protein</li></ul>",
+            "examples": [{"question": "<strong>Ví dụ:</strong> Cho 3 dung dịch: A (albumin), B (glucose), C (glycine). Dùng Cu(OH)₂ để phân biệt.", "solution": "<p><strong>Phản ứng:</strong></p><p>A (albumin) + Cu(OH)₂ → Màu tím (protein)</p><p>B (glucose) + Cu(OH)₂ → Phức xanh lam (không phải tím)</p><p>C (glycine) + Cu(OH)₂ → Phức xanh lam (không phải tím)</p><p><strong>Kết luận:</strong> Chất tạo màu tím là protein (A)</p>"}]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Enzyme trong công nghiệp",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích vai trò enzyme</li><li>So sánh với xúc tác hóa học</li><li>Đánh giá hiệu quả kinh tế</li></ul>",
+            "examples": [{"question": "<strong>Ví dụ:</strong> So sánh sản xuất ethanol từ tinh bột bằng: (1) Enzyme amylase, (2) Acid H₂SO₄. a) Phân tích ưu nhược điểm. b) Tính chi phí cho 1 tấn tinh bột (enzyme 500,000đ/kg, H₂SO₄ 10,000đ/kg). c) Đề xuất phương pháp tối ưu.", "solution": "<p><strong>a) Phân tích:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Tiêu chí</th><th class='border border-gray-300 p-2'>Enzyme</th><th class='border border-gray-300 p-2'>Acid H₂SO₄</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Nhiệt độ</td><td class='border border-gray-300 p-2'>60-70°C</td><td class='border border-gray-300 p-2'>100-120°C</td></tr><tr><td class='border border-gray-300 p-2'>Hiệu suất</td><td class='border border-gray-300 p-2'>90-95%</td><td class='border border-gray-300 p-2'>80-85%</td></tr><tr><td class='border border-gray-300 p-2'>Sản phẩm phụ</td><td class='border border-gray-300 p-2'>Ít</td><td class='border border-gray-300 p-2'>Nhiều (furfural)</td></tr><tr><td class='border border-gray-300 p-2'>Môi trường</td><td class='border border-gray-300 p-2'>Thân thiện</td><td class='border border-gray-300 p-2'>Ô nhiễm acid</td></tr><tr><td class='border border-gray-300 p-2'>Thiết bị</td><td class='border border-gray-300 p-2'>Đơn giản</td><td class='border border-gray-300 p-2'>Chống ăn mòn</td></tr></tbody></table><p><strong>b) Tính chi phí:</strong></p><p><strong>Enzyme:</strong></p><ul><li>Lượng enzyme: 0.5 kg/tấn tinh bột</li><li>Chi phí: 0.5 × 500,000 = 250,000 đ</li><li>Năng lượng (60°C): ~100,000 đ</li><li>Tổng: 350,000 đ</li></ul><p><strong>Acid:</strong></p><ul><li>Lượng H₂SO₄: 10 kg/tấn</li><li>Chi phí: 10 × 10,000 = 100,000 đ</li><li>Năng lượng (120°C): ~200,000 đ</li><li>Xử lý acid: ~100,000 đ</li><li>Tổng: 400,000 đ</li></ul><p><strong>c) Đề xuất:</strong></p><p><strong>Phương pháp tối ưu: Enzyme</strong></p><p><strong>Lý do:</strong></p><ul><li>✓ Chi phí thấp hơn (350k vs 400k)</li><li>✓ Hiệu suất cao hơn (90-95% vs 80-85%)</li><li>✓ Thân thiện môi trường</li><li>✓ Sản phẩm sạch hơn</li><li>✓ Thiết bị đơn giản</li></ul><p><strong>Cải tiến thêm:</strong></p><ul><li>Sử dụng enzyme cố định (tái sử dụng)</li><li>Tối ưu nhiệt độ, pH</li><li>Kết hợp nhiều enzyme (amylase + glucoamylase)</li><li>Thu hồi enzyme sau phản ứng</li></ul><p><strong>Đáp án:</strong> b) Enzyme 350k, Acid 400k; c) Nên dùng enzyme</p>"}]
+          }
+        ],
+        "exercises": [
+          {"id": "ex1", "type": "mcq", "question": "Protein là:", "options": ["Monosaccharide", "Polypeptide", "Lipid", "Amine"], "correct": 1, "explanation": "Protein là polypeptide lớn."},
+          {"id": "ex2", "type": "mcq", "question": "Protein + Cu(OH)₂ tạo màu:", "options": ["Xanh", "Tím", "Vàng", "Đỏ"], "correct": 1, "explanation": "Protein + Cu(OH)₂ → Màu tím (phản ứng biuret)."},
+          {"id": "ex3", "type": "mcq", "question": "Enzyme là:", "options": ["Lipid", "Carbohydrate", "Protein", "Amine"], "correct": 2, "explanation": "Enzyme là protein xúc tác."},
+          {"id": "ex4", "type": "mcq", "question": "Nhiệt độ tối ưu enzyme người:", "options": ["25°C", "37°C", "50°C", "100°C"], "correct": 1, "explanation": "Enzyme người hoạt động tối ưu ở 37°C."},
+          {"id": "ex5", "type": "mcq", "question": "Thủy phân protein thu được:", "options": ["Glucose", "Amino acid", "Amine", "Lipid"], "correct": 1, "explanation": "Protein thủy phân → Amino acid."},
+          {"id": "ex6", "type": "mcq", "question": "Biến tính protein do:", "options": ["Nhiệt", "Acid", "Muối kim loại", "Tất cả"], "correct": 3, "explanation": "Protein biến tính do nhiệt, acid, muối kim loại."},
+          {"id": "ex7", "type": "mcq", "question": "Hemoglobin vận chuyển:", "options": ["Glucose", "O₂", "Lipid", "Nước"], "correct": 1, "explanation": "Hemoglobin vận chuyển O₂."},
+          {"id": "ex8", "type": "mcq", "question": "Collagen là protein:", "options": ["Cấu trúc", "Vận chuyển", "Xúc tác", "Điều hòa"], "correct": 0, "explanation": "Collagen là protein cấu trúc."},
+          {"id": "ex9", "type": "mcq", "question": "Enzyme có tính:", "options": ["Đặc hiệu", "Hiệu quả", "Cả hai", "Không có"], "correct": 2, "explanation": "Enzyme có tính đặc hiệu và hiệu quả."},
+          {"id": "ex10", "type": "mcq", "question": "Pepsin hoạt động ở pH:", "options": ["2", "7", "8", "14"], "correct": 0, "explanation": "Pepsin hoạt động ở pH 2 (dạ dày)."},
+          {"id": "ex11", "type": "mcq", "question": "Protein + HNO₃ đặc tạo màu:", "options": ["Xanh", "Tím", "Vàng", "Đỏ"], "correct": 2, "explanation": "Protein + HNO₃ → Màu vàng (phản ứng xanthoproteic)."},
+          {"id": "ex12", "type": "mcq", "question": "Insulin là protein:", "options": ["Cấu trúc", "Vận chuyển", "Xúc tác", "Điều hòa"], "correct": 3, "explanation": "Insulin là protein điều hòa (hormone)."},
+          {"id": "ex13", "type": "msq", "question": "Tính chất protein:", "options": ["Thủy phân", "Biến tính", "Phản ứng màu", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Protein có tất cả các tính chất trên."},
+          {"id": "ex14", "type": "msq", "question": "Phản ứng nhận biết protein:", "options": ["Biuret", "Xanthoproteic", "Tráng gương", "Với Br₂"], "correct": [0, 1], "explanation": "Nhận biết protein bằng phản ứng biuret và xanthoproteic."},
+          {"id": "ex15", "type": "msq", "question": "Yếu tố ảnh hưởng enzyme:", "options": ["Nhiệt độ", "pH", "Chất ức chế", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Enzyme bị ảnh hưởng bởi nhiệt độ, pH, chất ức chế."},
+          {"id": "ex16", "type": "msq", "question": "Ứng dụng enzyme:", "options": ["Y tế", "Thực phẩm", "Giặt tẩy", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Enzyme có nhiều ứng dụng."},
+          {"id": "ex17", "type": "sa", "question": "Thủy phân 10g protein thu được 11g amino acid. Tính khối lượng nước (g). Làm tròn đến hàng đơn vị.", "correct": "1", "explanation": "m(H₂O) = 11 - 10 = 1g. Đáp án: 1"},
+          {"id": "ex18", "type": "sa", "question": "Enzyme người hoạt động tối ưu ở nhiệt độ bao nhiêu (°C)? Làm tròn đến hàng đơn vị.", "correct": "37", "explanation": "Enzyme người hoạt động tối ưu ở 37°C. Đáp án: 37"},
+          {"id": "ex19", "type": "sa", "question": "Pepsin hoạt động ở pH bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "Pepsin hoạt động ở pH 2. Đáp án: 2"},
+          {"id": "ex20", "type": "sa", "question": "Trypsin hoạt động ở pH bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "8", "explanation": "Trypsin hoạt động ở pH 8. Đáp án: 8"},
+          {"id": "ex21", "type": "sa", "question": "Amylase hoạt động ở pH bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "7", "explanation": "Amylase hoạt động ở pH 7. Đáp án: 7"},
+          {"id": "ex22", "type": "sa", "question": "Protein có khối lượng phân tử tối thiểu là bao nhiêu? Làm tròn đến hàng nghìn.", "correct": "5000", "explanation": "Protein có M > 5000. Đáp án: 5000"}
+        ]
+      }
+    }
+  ]
+}

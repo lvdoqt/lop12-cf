@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-4",
+    "name": "Sự ra đời và phát triển của các quốc gia Đông Nam Á (ASEAN)",
+    "slug": "su-ra-doi-va-phat-trien-cua-cac-quoc-gia-dong-nam-a",
+    "chapter": "Chủ đề 2: ASEAN: Những chặng đường lịch sử",
+    "chapter_id": "su12",
+    "lesson_id": 4,
+    "description": "Quá trình độc lập hóa và hình thành cộng đồng ASEAN",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Sự ra đời và phát triển các quốc gia Đông Nam Á",
+        "sections": [
+          { "heading": "1. Tình trạng trước độc lập", "content": "Pháp chiếm Đông Dương; Anh chiếm Malaya, Singapore; Hà Lan chiếm Indonesia; Mỹ chiếm Philippines; Thái Lan độc lập duy nhất. Chiếm đóng kéo dài nhiều thế kỉ, gây hậu quả kinh tế, xã hội." },
+          { "heading": "2. Quá trình giành độc lập", "content": "Việt Nam: Kháng Pháp (1945-1954), kháng Mỹ (1955-1975), thống nhất 1975; Indonesia: Độc lập từ Hà Lan (1945-1949); Philippines: Độc lập từ Mỹ (1946); Thái Lan: Giữ độc lập; Lào, Campuchia: Độc lập từ Pháp (1953); Malaysia: Độc lập từ Anh (1957); Singapore: Độc lập (1965); Brunei: Độc lập từ Anh (1984)." },
+          { "heading": "3. Thách thức sau độc lập", "content": "Xây dựng nhà nước; Phát triển kinh tế từ nền móng yếu; Ổn định chính trị; Giải quyết tranh chấp lãnh thổ; Cân bằng sức mạnh khu vực; Xây dựng bản sắc quốc gia; Phát triển hợp tác khu vực." },
+          { "heading": "4. Hình thành ASEAN", "content": "Thành lập 1967 với Tuyên bố Bangkok; 5 thành viên ban đầu: Thái, Indonesia, Malaya, Philippines, Singapore; Sau thêm: Brunei (1984), Việt Nam (1995), Lào-Campuchia (1997); Mục tiêu: hợp tác, hòa bình, ổn định; Nguyên tắc: không can thiệp nội bộ." },
+          { "heading": "5. Vai trò ASEAN", "content": "Thúc đẩy hợp tác kinh tế AFTA; Tham gia ARF, EAS, RCEP; Duy trì hòa bình khu vực; Tạo khối thương mại quan trọng Á; Diễn đàn đối thoại cường quốc; Phát triển bền vững." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "ASEAN thành lập năm?", "options": ["1950", "1967", "1975", "1985"], "correct": 1, "explanation": "ASEAN thành lập 1967 dựa trên Tuyên bố Bangkok." },
+        { "id": "ex2", "type": "mcq", "question": "Bao nhiêu thành viên ASEAN ban đầu?", "options": ["5", "6", "8", "10"], "correct": 0, "explanation": "5 quốc gia: Thái, Indonesia, Malaya, Philippines, Singapore." },
+        { "id": "ex3", "type": "mcq", "question": "Nước không bị chiếm đóng Đông Nam Á?", "options": ["Philippines", "Thái Lan", "Indonesia", "Campuchia"], "correct": 1, "explanation": "Thái Lan là quốc gia duy nhất không bị chiếm đóng." },
+        { "id": "ex4", "type": "mcq", "question": "Hợp đồng thương mại ASEAN gọi?", "options": ["RCEP", "AFTA", "APEC", "WTO"], "correct": 1, "explanation": "AFTA (ASEAN Free Trade Area)." },
+        { "id": "ex5", "type": "mcq", "question": "Nguyên tắc ASEAN?", "options": ["Can thiệp", "Không can thiệp nội bộ", "Chia chủ quyền", "Tư nhân toàn quyền"], "correct": 1, "explanation": "Không can thiệp vào nội bộ." },
+        { "id": "ex6", "type": "mcq", "question": "Việt Nam gia nhập ASEAN?", "options": ["1989", "1995", "1997", "2000"], "correct": 1, "explanation": "Việt Nam gia nhập 1995." },
+        { "id": "ex7", "type": "mcq", "question": "ARF là?", "options": ["Liên minh", "ASEAN Regional Forum", "Khu vực", "Hiệp ước"], "correct": 1, "explanation": "ASEAN Regional Forum - cơ chế đối thoại bảo mật." },
+        { "id": "ex8", "type": "mcq", "question": "Thách thức sau độc lập?", "options": ["Hạt nhân", "Xây dựng nhà nước", "Xâm lược", "Độc tài"], "correct": 1, "explanation": "Xây dựng nhà nước từ nền móng thấp." },
+        { "id": "ex9", "type": "mcq", "question": "RCEP bao gồm?", "options": ["Chỉ ASEAN", "ASEAN+đối tác toàn cầu", "Chỉ Á Đông", "Âu Châu"], "correct": 1, "explanation": "RCEP: ASEAN+Trung, Nhật, Hàn, Ấn, Úc, NZ." },
+        { "id": "ex10", "type": "mcq", "question": "Tuyên bố ASEAN tên?", "options": ["Kuala Lumpur", "Singapore", "Bangkok", "Manila"], "correct": 2, "explanation": "Tuyên bố Bangkok 1967 thành lập ASEAN." }
+      ]
+    }
+  }]
+}

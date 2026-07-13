@@ -1,0 +1,201 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-3-7-cung-co-mo-rong",
+      "name": "Củng cố mở rộng - Trang 88",
+      "slug": "cung-co-mo-rong",
+      "chapter": "Lập luận trong văn bản nghị luận",
+      "chapter_id": "V12-3",
+      "lesson_id": 7,
+      "description": "Ôn tập, củng cố những kiến thức chính về lập luận trong văn bản nghị luận. Mở rộng hiểu biết thông qua các bài tập, ví dụ thực tế.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1516979187457-635ffe35ff15?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "review1",
+          "name": "Ôn tập kiến thức",
+          "slug": "on-tap-kien-thuc",
+          "difficulty": "medium"
+        },
+        {
+          "id": "extend1",
+          "name": "Mở rộng ứng dụng",
+          "slug": "mo-rong-ung-dung",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Củng cố mở rộng - Lập luận trong văn bản nghị luận",
+          "sections": [
+            {
+              "heading": "1. Tóm tắt kiến thức trọng tâm",
+              "content": "<h4>a) Lập luận là gì?</h4><ul><li><strong>Định nghĩa:</strong> Lập luận là quá trình trình bày những ý kiến, quan điểm thông qua các lý do, dẫn chứng logic, nhằm thuyết phục người khác</li><li><strong>Các yếu tố chính của lập luận:</strong><br/>- Luận điểm (thesis): Ý kiến, quan điểm cần thiết lập<br/>- Lý lẽ, bằng chứng: Những sự kiện, con số, dẫn chứng\n- Kết luận: Rút ra kết luận từ lý lẽ</li></ul><h4>b) Các phương pháp lập luận chính</h4><ul><li><strong>Lập luận diễn dẫn:</strong> Từ cái chung đến cái riêng</li><li><strong>Lập luận quy nạp:</strong> Từ cái riêng đến cái chung</li><li><strong>Lập luận so sánh:</strong> So sánh để tìm ra điểm giống/khác</li><li><strong>Lập luận từ ví dụ:</strong> Sử dụng ví dụ cụ thể để hỗ trợ quan điểm</li><li><strong>Lập luận từ nguyên nhân - kết quả:</strong> Chỉ ra mối quan hệ giữa nguyên nhân và kết quả</li></ul><h4>c) Cấu trúc văn bản nghị luận</h4><ul><li><strong>Mở bài:</strong> Giới thiệu vấn đề, luận điểm chính</li><li><strong>Thân bài:</strong> Trình bày luận điểm thông qua lập luận, dẫn chứng (thường 2-3 luận điểm)</li><li><strong>Kết luận:</strong> Tóm tắt lại, nhấn mạnh luận điểm chính</li></ul>"
+            },
+            {
+              "heading": "2. Các loại dẫn chứng trong lập luận",
+              "content": "<h4>a) Dẫn chứng từ sự kiện, con số</h4><ul><li><strong>Ví dụ:</strong> \"Theo cục Thống kê, 70% học sinh thấy áp lực khi học tập\"\n<li><strong>Vai trò:</strong> Cung cấp bằng chứng khách quan, dễ thuyết phục</li><li><strong>Lưu ý:</strong> Phải có nguồn đáng tin cậy</li></ul><h4>b) Dẫn chứng từ lịch sử, sự kiện lịch sử</h4><ul><li><strong>Ví dụ:</strong> \"Lịch sử Việt Nam chứng tỏ rằng dân tộc ta luôn có tinh thần chống lại xâm lược\"\n<li><strong>Vai trò:</strong> Cung cấp bối cảnh lịch sử, giúp hiểu rõ vấn đề</li><li><strong>Lưu ý:</strong> Phải chính xác, không sai sót lịch sử</li></ul><h4>c) Dẫn chứng từ trái nghiệm cá nhân</h4><ul><li><strong>Ví dụ:</strong> \"Tôi còn nhớ hôm đó, khi lần đầu tiên gặp thất bại, tôi muốn bỏ cuộc\"\n<li><strong>Vai trò:</strong> Giúp vấn đề trở nên gần gũi, cảm động</li><li><strong>Lưu ý:</strong> Nên sử dụng khi thích hợp, không quá lạm dụng</li></ul><h4>d) Dẫn chứng từ trích dẫn, lời của nhân vật nổi tiếng</h4><ul><li><strong>Ví dụ:</strong> \"Albert Einstein từng nói: 'Trí tưởng tượng quan trọng hơn kiến thức'\"\n<li><strong>Vai trò:</strong> Cung cấp ý kiến từ người có uy tín, cộng thêm hiệu lực</li><li><strong>Lưu ý:</strong> Phải chính xác đáp trích dẫn, ghi rõ nguồn</li></ul>"
+            },
+            {
+              "heading": "3. Những lỗi lập luận thường gặp",
+              "content": "<h4>a) Lốid luận vòng tròn</h4><ul><li><strong>Ví dụ:</strong> \"Thơ hay là vì nó hay\"\n<li><strong>Cách tránh:</strong> Luôn tìm lý do cụ thể, không lặp lại khái niệm</li></ul><h4>b) Lỗi quá khái quát</h4><ul><li><strong>Ví dụ:</strong> \"Tất cả học sinh đều sợ bài kiểm tra\"\n<li><strong>Cách tránh:</strong> Sử dụng từ \"hầu hết\", \"nhiều\", \"thường\"\n</li></ul><h4>c) Lỗi nhân quả giả tạo</h4><ul><li><strong>Ví dụ:</strong> \"Tôi mặc áo xanh hôm nay, vì vậy tôi thi tốt\"\n<li><strong>Cách tránh:</strong> Kiểm tra mối quan hệ nhân quả thực sự giữa hai sự kiện</li></ul><h4>d) Lỗi so sánh không tương xứng</h4><ul><li><strong>Ví dụ:</strong> \"Học tập giống như ăn cơm\"\n<li><strong>Cách tránh:</strong> So sánh giữa những thứ có điểm tương đồng rõ ràng</li></ul>"
+            },
+            {
+              "heading": "4. Bài tập ứng dụng - Phân tích lập luận",
+              "content": "<h4>a) Cách phân tích lập luận</h4><ul><li><strong>Bước 1:</strong> Xác định luận điểm chính của tác giả</li><li><strong>Bước 2:</strong> Tìm ra các luận điểm phụ, lập luận hỗ trợ</li><li><strong>Bước 3:</strong> Xác định loại dẫn chứng được sử dụng</li><li><strong>Bước 4:</strong> Đánh giá hiệu quả của lập luận: logic, thuyết phục không?</li><li><strong>Bước 5:</strong> Nêu ý kiến cá nhân: đồng ý hay không, tại sao?</li></ul><h4>b) Ví dụ phân tích</h4><ul><li><strong>Đoạn văn cần phân tích:</strong> \"Tuổi trẻ là thời kỳ vàng để rèn luyện tính cách. Vì vậy, các bạn trẻ không nên lãng phí thời gian cho những thứ vô ích như mạng xã hội quá nhiều. Một nghiên cứu của Harvard cho thấy những người dành ít nhất 2 giờ mỗi ngày cho hoạt động bền vững như đọc sách, thể dục có tâm trạng tốt hơn.\"\n<li><strong>Phân tích:</strong><br/>- Luận điểm: Tuổi trẻ nên sử dụng thời gian cho các hoạt động bền vững<br/>- Lập luận: Tuổi trẻ là thời kỳ vàng, cần rèn luyện tính cách<br/>- Dẫn chứng: Nghiên cứu từ Harvard<br/>- Đánh giá: Lập luận logic, dẫn chứng từ nguồn đáng tin cậy</li></ul>"
+            },
+            {
+              "heading": "5. Mở rộng: Lập luận trong các bối cảnh khác nhau",
+              "content": "<h4>a) Lập luận trong tranh luận (debate)</h4><ul><li><strong>Đặc điểm:</strong> Phải lắng nghe đối thủ, sẵn sàng phản bác hoặc chấp nhận</li><li><strong>Kỹ năng:</strong> Cân nhắc các góc độ khác nhau, tìm điểm cộng chung</li></ul><h4>b) Lập luận trong các bài viết học thuật</h4><ul><li><strong>Đặc điểm:</strong> Cần dẫn chứng học thuật, tham khảo tài liệu</li><li><strong>Kỹ năng:</strong> Cách trích dẫn, ghi chú nguồn đúng cách</li></ul><h4>c) Lập luận trong quảng cáo, truyền thông</h4><ul><li><strong>Đặc điểm:</strong> Thường sử dụng cảm xúc kết hợp logic</li><li><strong>Lưu ý:</strong> Cần đánh giá phê phán, không bị \"dụ dỗ\" bởi lập luận không logic</li></ul>"
+            },
+            {
+              "heading": "6. Chiến lược để cải thiện lập luận",
+              "content": "<ul><li><strong>Đọc nhiều tác phẩm nghị luận hay:</strong> Học từ cách lập luận, dẫn chứng của các tác giả giỏi</li><li><strong>Thảo luận, tranh luận:</strong> Luyện tập lập luận thông qua trao đổi với người khác</li><li><strong>Viết nhiều bài tập:</strong> Viết bài văn nghị luận thường xuyên để nâng cao kỹ năng</li><li><strong>Đọc phê bình các bài viết:</strong> Đọc những bài phê bình lập luận để biết cách nhận biết lỗi</li><li><strong>Tìm kiếm feedback:</strong> Nhờ giáo viên, bạn bè nhận xét về lập luận của mình</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex3-7-1",
+              "type": "mcq",
+              "question": "Lập luận là quá trình trình bày ý kiến thông qua yếu tố nào?",
+              "options": [
+                "Chỉ cảm xúc cá nhân",
+                "Lý do và dẫn chứng logic",
+                "Chỉ ý kiến chủ quan",
+                "Chỉ trích dẫn từ người khác"
+              ],
+              "correct": 1,
+              "explanation": "Lập luận là quá trình trình bày ý kiến thông qua các lý do, dẫn chứng logic nhằm thuyết phục người khác, không chỉ dựa vào cảm xúc hay ý kiến chủ quan."
+            },
+            {
+              "id": "ex3-7-2",
+              "type": "mcq",
+              "question": "Phương pháp lập luận nào đi từ cái chung đến cái riêng?",
+              "options": [
+                "Lập luận quy nạp",
+                "Lập luận diễn dẫn",
+                "Lập luận so sánh",
+                "Lập luận từ ví dụ"
+              ],
+              "correct": 1,
+              "explanation": "Lập luận diễn dẫn đi từ cái chung (nguyên lý, quy luật) đến cái riêng (trường hợp cụ thể), ngược lại với lập luận quy nạp."
+            },
+            {
+              "id": "ex3-7-3",
+              "type": "mcq",
+              "question": "Loại dẫn chứng nào cung cấp bằng chứng khách quan và dễ thuyết phục nhất?",
+              "options": [
+                "Dẫn chứng từ trải nghiệm cá nhân",
+                "Dẫn chứng từ sự kiện, con số",
+                "Dẫn chứng từ cảm xúc",
+                "Dẫn chứng từ suy đoán"
+              ],
+              "correct": 1,
+              "explanation": "Dẫn chứng từ sự kiện, con số (như 'Theo cục Thống kê, 70% học sinh...') cung cấp bằng chứng khách quan, dễ kiểm chứng và có tính thuyết phục cao."
+            },
+            {
+              "id": "ex3-7-4",
+              "type": "mcq",
+              "question": "Lỗi lập luận nào xảy ra trong câu: 'Thơ hay là vì nó hay'?",
+              "options": [
+                "Lập luận vòng tròn",
+                "Quá khái quát hóa",
+                "Nhân quả giả tạo",
+                "So sánh không tương xứng"
+              ],
+              "correct": 0,
+              "explanation": "Đây là lỗi lập luận vòng tròn vì lặp lại khái niệm 'hay' mà không giải thích lý do cụ thể tại sao thơ lại hay."
+            },
+            {
+              "id": "ex3-7-5",
+              "type": "mcq",
+              "question": "Để tránh lỗi quá khái quát, nên sử dụng từ nào thay cho 'tất cả'?",
+              "options": [
+                "'Không ai'",
+                "'Hầu hết', 'nhiều', 'thường'",
+                "'Luôn luôn'",
+                "'Mọi người'"
+              ],
+              "correct": 1,
+              "explanation": "Nên sử dụng 'hầu hết', 'nhiều', 'thường' thay cho 'tất cả' để tránh quá khái quát hóa, vì hiếm khi một điều gì đó đúng với 100% trường hợp."
+            },
+            {
+              "id": "ex3-7-6",
+              "type": "mcq",
+              "question": "Trong phân tích lập luận, bước nào nên thực hiện đầu tiên?",
+              "options": [
+                "Đánh giá hiệu quả của lập luận",
+                "Xác định luận điểm chính",
+                "Nêu ý kiến cá nhân",
+                "Xác định loại dẫn chứng"
+              ],
+              "correct": 1,
+              "explanation": "Bước đầu tiên trong phân tích lập luận là xác định luận điểm chính của tác giả, sau đó mới phân tích các yếu tố hỗ trợ và đánh giá."
+            },
+            {
+              "id": "ex3-7-7",
+              "type": "mcq",
+              "question": "Lập luận trong tranh luận (debate) có đặc điểm gì?",
+              "options": [
+                "Chỉ cần trình bày quan điểm của mình",
+                "Phải lắng nghe đối thủ, sẵn sàng phản bác",
+                "Không cần dẫn chứng",
+                "Chỉ sử dụng cảm xúc"
+              ],
+              "correct": 1,
+              "explanation": "Trong tranh luận, người tham gia phải lắng nghe đối thủ, sẵn sàng phản bác hoặc chấp nhận, và cân nhắc các góc độ khác nhau của vấn đề."
+            },
+            {
+              "id": "ex3-7-8",
+              "type": "mcq",
+              "question": "Chiến lược nào giúp cải thiện kỹ năng lập luận hiệu quả nhất?",
+              "options": [
+                "Chỉ đọc sách giáo khoa",
+                "Tránh thảo luận với người khác",
+                "Viết nhiều bài tập và tìm kiếm feedback",
+                "Chỉ học thuộc lòng lý thuyết"
+              ],
+              "correct": 2,
+              "explanation": "Viết nhiều bài tập và tìm kiếm feedback từ giáo viên, bạn bè giúp cải thiện kỹ năng lập luận thông qua thực hành và điều chỉnh dựa trên nhận xét."
+            },
+            {
+              "id": "ex7-1",
+              "question": "Phân tích lập luận trong đoạn văn sau. Xác định: luận điểm, lập luận, dẫn chứng, loại dẫn chứng.\n\n'Một trong những thách thức lớn nhất của xã hội hiện đại là sự mất cân bằng giữa phát triển kinh tế và bảo vệ môi trường. Theo Liên Hợp Quốc, khoảng 10 triệu hectare rừng bị mất mỗi năm do khai thác gỗ. Điều này dẫn đến sự mất cân bằng sinh thái, ảnh hưởng đến toàn bộ hệ thống khí hậu toàn cầu.'",
+              "type": "essay",
+              "difficulty": "medium",
+              "answer_guide": "Luận điểm: Cần cân bằng phát triển kinh tế và bảo vệ môi trường. Dẫn chứng: Con số hàng năm từ LHQ (10 triệu hectare). Loại dẫn chứng: Con số, thống kê từ tổ chức quốc tế."
+            },
+            {
+              "id": "ex7-2",
+              "question": "Hãy chỉ ra thực sai lầm lập luận trong các câu sau và sửa lại:\na) 'Sách hay là vì nó hay'\nb) 'Tất cả học sinh đều không thích học toán'",
+              "type": "essay",
+              "difficulty": "medium",
+              "answer_guide": "a) Lỗi: Lập luận vòng tròn. Sửa: 'Sách hay là vì nó chứa đựng những ý tưởng sâu sắc, giúp độc giả học hỏi'\nb) Lỗi: Quá khái quát. Sửa: 'Nhiều học sinh cảm thấy khó khăn với toán học'"
+            },
+            {
+              "id": "ex7-3",
+              "question": "Viết một đoạn lập luận (5-7 câu) với chủ đề: 'Tự tin là chìa khóa để thành công'. Sử dụng ít nhất một dẫn chứng từ trải nghiệm cá nhân hoặc lịch sử.",
+              "type": "essay",
+              "difficulty": "hard",
+              "answer_guide": "Đoạn cần có: (1) Câu khẳng định luận điểm, (2) Giải thích tại sao tự tin quan trọng, (3) Dẫn chứng cụ thể (lịch sử hoặc cá nhân), (4) Kết luận nhấn mạnh lại luận điểm."
+            },
+            {
+              "id": "ex7-4",
+              "question": "Đọc một bài viết từ tờ báo, tạp chí (hoặc sách) và phân tích: cách lập luận của tác giả, hiệu quả của lập luận, đồng ý hay không với quan điểm được nêu.",
+              "type": "essay",
+              "difficulty": "hard",
+              "answer_guide": "Học sinh nên: (1) Xác định luận điểm chính, (2) Phân tích các lập luận hỗ trợ, (3) Đánh giá dẫn chứng, (4) Phát biểu ý kiến cá nhân với lý lẽ cụ thể."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

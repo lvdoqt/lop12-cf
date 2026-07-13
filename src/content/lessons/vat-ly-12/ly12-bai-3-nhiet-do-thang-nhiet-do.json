@@ -1,0 +1,300 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-3-nhiet-do-thang-nhiet-do",
+      "name": "Bài 3. Nhiệt độ. Thang nhiệt độ - Nhiệt kế",
+      "slug": "bai-3-nhiet-do-thang-nhiet-do-nhiet-ke",
+      "chapter": "Chương 1. Vật lí nhiệt",
+      "chapter_id": "LY12-1",
+      "lesson_id": 3,
+      "description": "Nghiên cứu về nhiệt độ, các thang nhiệt độ (Celsius, Fahrenheit, Kelvin) và nhiệt kế.",
+      "duration_minutes": 45,
+      "difficulty_level": "easy",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "nd-1",
+          "name": "Khái niệm nhiệt độ",
+          "slug": "khai-niem-nhiet-do",
+          "difficulty": "easy"
+        },
+        {
+          "id": "nd-2",
+          "name": "Thang nhiệt độ",
+          "slug": "thang-nhiet-do",
+          "difficulty": "medium"
+        },
+        {
+          "id": "nd-3",
+          "name": "Nhiệt kế",
+          "slug": "nhiet-ke",
+          "difficulty": "easy"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Nhiệt độ. Thang nhiệt độ - Nhiệt kế",
+          "sections": [
+            {
+              "heading": "1. Khái niệm nhiệt độ",
+              "content": "<p><strong>Nhiệt độ:</strong> là đại lượng đặc trưng cho mức độ nóng lạnh của vật.</p><p><strong>Bản chất:</strong> Nhiệt độ liên quan đến chuyển động nhiệt của các phân tử. Nhiệt độ càng cao, động năng phân tử càng lớn.</p><p><strong>Đặc điểm:</strong></p><ul><li>Nhiệt độ là đại lượng vô hướng</li><li>Đo bằng nhiệt kế</li><li>Quyết định chiều truyền nhiệt tự nhiên</li></ul>"
+            },
+            {
+              "heading": "2. Thang nhiệt độ Celsius",
+              "content": "<p><strong>Thang Celsius (°C):</strong></p><ul><li>Do Anders Celsius đề xuất năm 1742</li><li>Nhiệt độ nước đá tan: 0°C</li><li>Nhiệt độ nước sôi (ở 1 atm): 100°C</li><li>Khoảng cách chia thành 100 phần bằng nhau</li></ul><p><strong>Đặc điểm:</strong></p><ul><li>Sử dụng rộng rãi trong đời sống</li><li>Thích hợp cho nghiên cứu và đời sống hàng ngày</li></ul>"
+            },
+            {
+              "heading": "3. Thang nhiệt độ Fahrenheit",
+              "content": "<p><strong>Thang Fahrenheit (°F):</strong></p><ul><li>Do Daniel Fahrenheit đề xuất năm 1724</li><li>Nhiệt độ hỗn hợp nước-đá-lông: 0°F</li><li>Nhiệt độ cơ thể người khỏe mạnh: 96°F</li><li>Nhiệt độ nước sôi: 212°F</li></ul><p><strong>Công thức chuyển đổi:</strong></p><p>$$T(°F) = \\frac{9}{5}T(°C) + 32$$</p><p>$$T(°C) = \\frac{5}{9}(T(°F) - 32)$$</p><p><strong>Sử dụng:</strong> Chủ yếu ở Anh, Mỹ và một số nước khác.</p>"
+            },
+            {
+              "heading": "4. Thang nhiệt độ Kelvin",
+              "content": "<p><strong>Thang Kelvin (K):</strong></p><ul><li>Do Lord Kelvin đề xuất năm 1848</li><li>Điểm 0 tuyệt đối: 0 K = -273,15°C</li><li>Nước đá tan: 273,15 K</li><li>Nước sôi: 373,15 K</li></ul><p><strong>Công thức chuyển đổi:</strong></p><p>$$T(K) = T(°C) + 273,15$$</p><p>$$T(°C) = T(K) - 273,15$$</p><p><strong>Đặc điểm:</strong></p><ul><li>Là thang nhiệt độ nhiệt động học</li><li>Không âm (T ≥ 0)</li><li>Sử dụng trong vật lý và hóa học</li></ul>"
+            },
+            {
+              "heading": "5. Nhiệt kế",
+              "content": "<p><strong>Nhiệt kế:</strong> Dụng cụ đo nhiệt độ.</p><p><strong>Nguyên tắc hoạt động:</strong> Dựa vào sự giãn nở vì nhiệt của các chất.</p><p><strong>Các loại nhiệt kế:</strong></p><ul><li><strong>Nhiệt kế thủy ngân:</strong> Hoạt động theo sự giãn nở của thủy ngân</li><li><strong>Nhiệt kế rượu:</strong> Dùng rượu màu</li><li><strong>Nhiệt kế hồng ngoại:</strong> Đo nhiệt độ từ xa</li><li><strong>Nhiệt kế điện trở:</strong> Dựa vào sự thay đổi điện trở</li><li><strong>Cặp nhiệt điện:</strong> Dựa vào hiệu điện thế</li></ul><p><strong>Độ chia nhỏ nhất:</strong> Khoảng nhiệt độ nhỏ nhất mà nhiệt kế có thể đo được.</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Chuyển đổi thang nhiệt độ",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>°C → K: T(K) = T(°C) + 273</li><li>°C → °F: T(°F) = 9T(°C)/5 + 32</li><li>°F → °C: T(°C) = 5(T(°F) - 32)/9</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Chuyển 25°C sang Kelvin.",
+                "solution": "<p><strong>Giải:</strong></p><p>T = 25 + 273 = 298 K</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán nhiệt kế",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định độ chia</li><li>Tính toán theo tỉ lệ</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Nhiệt kế thủy ngân có độ chia 1°C. Khi đo được 50°C, có thể đọc được giá trị chính xác đến bao nhiêu?",
+                "solution": "<p><strong>Giải:</strong></p><p>Độ chính xác ±0,5°C</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Dạng toán thực tế",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Đọc giá trị nhiệt độ</li><li>Chuyển đổi đơn vị phù hợp</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ thực tế:</strong> Nhiệt độ cơ thể người bình thường là 98,6°F. Đổi sang °C.",
+                "solution": "<p><strong>Giải:</strong></p><p>T(°C) = 5(98,6 - 32)/9 = 37°C</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Nhiệt độ nước đá tan trong thang Celsius là:",
+            "options": [
+              "0°C",
+              "100°C",
+              "273°C",
+              "-273°C"
+            ],
+            "correct": 0,
+            "explanation": "0°C là nhiệt độ nước đá tan"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Điểm 0 tuyệt đối trong thang Kelvin bằng:",
+            "options": [
+              "0°C",
+              "-273°C",
+              "273°C",
+              "100°C"
+            ],
+            "correct": 1,
+            "explanation": "0 K = -273,15°C"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Công thức chuyển từ °C sang K là:",
+            "options": [
+              "T(K) = T(°C) - 273",
+              "T(K) = T(°C) + 273",
+              "T(K) = 273/T(°C)",
+              "T(K) = T(°C) × 273"
+            ],
+            "correct": 1,
+            "explanation": "T(K) = T(°C) + 273,15"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Nhiệt độ sôi của nước ở 1 atm trong thang Celsius là:",
+            "options": [
+              "0°C",
+              "100°C",
+              "212°C",
+              "373°C"
+            ],
+            "correct": 1,
+            "explanation": "Nước sôi ở 100°C (1 atm)"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Nhiệt kế thủy ngân hoạt động dựa trên:",
+            "options": [
+              "Sự thay đổi điện trở",
+              "Sự giãn nở vì nhiệt",
+              "Sự thay đổi màu sắc",
+              "Sự bay hơi"
+            ],
+            "correct": 1,
+            "explanation": "Dựa vào sự giãn nở của thủy ngân"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "25°C bằng bao nhiêu K?",
+            "options": [
+              "248 K",
+              "298 K",
+              "273 K",
+              "302 K"
+            ],
+            "correct": 1,
+            "explanation": "25 + 273 = 298 K"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Nhiệt độ 0°C tương ứng với:",
+            "options": [
+              "0 K",
+              "273 K",
+              "32°F",
+              "273,15°F"
+            ],
+            "correct": 1,
+            "explanation": "0°C = 273,15 K ≈ 273 K"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Thang nhiệt độ nhiệt động học là:",
+            "options": [
+              "Celsius",
+              "Fahrenheit",
+              "Kelvin",
+              "Rankine"
+            ],
+            "correct": 2,
+            "explanation": "Kelvin là thang nhiệt độ nhiệt động học"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "68°F bằng bao nhiêu °C?",
+            "options": [
+              "20°C",
+              "36°C",
+              "153°C",
+              "40°C"
+            ],
+            "correct": 0,
+            "explanation": "T(°C) = 5(68-32)/9 = 20°C"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Độ chia nhỏ nhất của nhiệt kế là:",
+            "options": [
+              "Nhiệt độ thấp nhất đo được",
+              "Nhiệt độ cao nhất đo được",
+              "Khoảng nhiệt độ nhỏ nhất có thể phân biệt",
+              "Sai số"
+            ],
+            "correct": 2,
+            "explanation": "Độ chia nhỏ nhất là khoảng nhiệt độ nhỏ nhất phân biệt được"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các đặc điểm của thang Kelvin:",
+            "options": [
+              "Không có giá trị âm",
+              "Là thang nhiệt độ nhiệt động học",
+              "Điểm 0 là động năng phân tử bằng 0",
+              "Sử dụng rộng rãi trong đời sống"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Kelvin là thang nhiệt độ tuyệt đối, không âm"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các loại nhiệt kế:",
+            "options": [
+              "Nhiệt kế thủy ngân",
+              "Nhiệt kế hồng ngoại",
+              "Nhiệt kế điện trở",
+              "Nhiệt kế khí"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Có nhiều loại nhiệt kế với nguyên tắc khác nhau"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Đặc điểm của nhiệt độ:",
+            "options": [
+              "Quyết định chiều truyền nhiệt",
+              "Là đại lượng vectơ",
+              "Đặc trưng cho động năng phân tử",
+              "Có thể âm trong thang Celsius"
+            ],
+            "correct": [0, 2, 3],
+            "explanation": "Nhiệt độ là đại lượng vô hướng, có thể âm trong thang Celsius"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Chuyển 37°C sang Kelvin.",
+            "correct": "310",
+            "explanation": "T = 37 + 273 = 310 K"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Chuyển 0°C sang độ F.",
+            "correct": "32",
+            "explanation": "T(°F) = 9×0/5 + 32 = 32°F"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Chuyển 212°F sang °C.",
+            "correct": "100",
+            "explanation": "T(°C) = 5(212-32)/9 = 100°C"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Chuyển 300K sang °C.",
+            "correct": "27",
+            "explanation": "T(°C) = 300 - 273 = 27°C"
+          }
+        ]
+      }
+    }
+  ]
+}

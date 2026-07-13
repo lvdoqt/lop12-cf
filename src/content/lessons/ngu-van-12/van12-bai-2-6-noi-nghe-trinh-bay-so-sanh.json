@@ -1,0 +1,205 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-2-6-noi-nghe-trinh-bay-so-sanh",
+      "name": "Nói và nghe: Trình bày kết quả so sánh, đánh giá hai tác phẩm thơ",
+      "slug": "noi-nghe-trinh-bay-so-sanh-tho",
+      "chapter": "Những thế giới thơ",
+      "chapter_id": "V12-2",
+      "lesson_id": 6,
+      "description": "Phát triển kỹ năng nói và nghe để trình bày kết quả so sánh, đánh giá hai tác phẩm thơ. Học cách trình bày thuyết phục, lắng nghe ý kiến khác, tham gia thảo luận về thơ ca một cách có ý nghĩa.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507842211343-583f20270319?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tq-nn-1",
+          "name": "Kỹ năng trình bày, nghe và thảo luận",
+          "slug": "ky-nang-trinh-bay-thao-luan",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Nói và nghe: Trình bày kết quả so sánh, đánh giá hai tác phẩm thơ",
+          "sections": [
+            {
+              "heading": "1. Kỹ năng trình bày (Speaking Skills)",
+              "content": "<h4>a) Chuẩn bị nội dung trình bày</h4><ul><li><strong>Lựa chọn ý chính:</strong> Không nên trình bày tất cả, hãy chọn 2-3 tiêu chí chính để so sánh</li><li><strong>Sắp xếp logic:</strong> Bắt đầu từ những điểm giống nhau, tiếp đến những điểm khác nhau, kết luận với đánh giá tổng thể</li><li><strong>Dẫn chứng cụ thể:</strong> Chuẩn bị những ví dụ cụ thể, có thể trích dẫn từ bài thơ</li><li><strong>Khiến thuyết phục:</strong> Xây dựng luận điểm logic, có ý kiến cá nhân rõ ràng</li></ul><h4>b) Kỹ thuật nói hiệu quả</h4><ul><li><strong>Giọng nói:</strong><br/>- Nên nói rõ, không quá nhanh<br/>- Thay đổi tốc độ và âm lượng để giữ sự chú ý<br/>- Nêu bật những ý chính bằng cách nói chậm hơn hoặc to hơn</li><li><strong>Ngôn ngữ cơ thể:</strong><br/>- Đứng thẳng, tự tin<br/>- Có cử chỉ tay để minh họa ý tưởng<br/>- Duy trì liên hệ mắt với khán giả<br/>- Tránh di chuyển quá nhiều</li><li><strong>Tổ chức lời nói:</strong><br/>- Sử dụng từ nối (\"thứ nhất\", \"thứ hai\", \"bên cạnh đó\", \"tóm lại\"...)<br/>- Chia bài phát biểu thành các phần rõ ràng<br/>- Dừng lại để cho khán giả tiếp nhận ý tưởng</li><li><strong>Thời gian:</strong> Nên kiểm soát thời gian, không nên quá dài</li></ul><h4>c) Cấu trúc bài phát biểu</h4><ul><li><strong>Mở đầu (Introduction):</strong><br/>- Chào hỏi khán giả<br/>- Giới thiệu chủ đề, hai tác phẩm sẽ so sánh<br/>- Nêu tiêu chí so sánh chính<br/>- Dài: 1-2 phút</li><li><strong>Phần chính (Body):</strong><br/>- Từng tiêu chí một, giải thích chi tiết<br/>- Dùng ví dụ, dẫn chứng cụ thể<br/>- Nêu ý kiến cá nhân về mỗi điểm<br/>- Dài: 5-7 phút (chính phần lớn thời gian phát biểu)</li><li><strong>Kết luận (Conclusion):</strong><br/>- Tổng kết những điểm chính<br/>- Nêu những đặc điểm chung của hai tác phẩm<br/>- Đánh giá tổng thể về giá trị<br/>- Mở cửa cho câu hỏi/thảo luận<br/>- Dài: 1-2 phút</li></ul><h4>d) Từ vựng và biểu thức hữu ích</h4><ul><li><strong>Nêu tiêu chí:</strong> \"Theo quan điểm của tôi\", \"Nhìn từ góc độ...\", \"Xét về mặt...\", \"Từ khía cạnh...\"</li><li><strong>So sánh:</strong> \"Giống như\", \"Khác với\", \"Tương tự\", \"Ngược lại\", \"Trái lại\"</li><li><strong>Nêu ví dụ:</strong> \"Chẳng hạn như\", \"Ví dụ cụ thể\", \"Để minh họa\"</li><li><strong>Nhấn mạnh:</strong> \"Quan trọng là\", \"Cần lưu ý\", \"Đặc biệt\", \"Đáng lưu ý\"</li><li><strong>Chuyển tiếp:</strong> \"Ngoài ra\", \"Bên cạnh đó\", \"Tiếp theo\", \"Tóm lại\", \"Kết luận\"</li></ul>"
+            },
+            {
+              "heading": "2. Kỹ năng nghe (Listening Skills)",
+              "content": "<h4>a) Cách lắng nghe hiệu quả</h4><ul><li><strong>Tập trung:</strong> Lắng nghe hết ý của người nói, không gián đoạn</li><li><strong>Ghi chú:</strong> Ghi lại những ý chính, các tiêu chí được so sánh</li><li><strong>Suy tư:</strong> Đánh giá những gì nghe được, tự hỏi \"Tôi đồng ý không?\", \"Có điểm gì cần bổ sung không?\"</li><li><strong>Ngôn ngữ cơ thể:</strong> Gật đầu, duy trì liên hệ mắt để cho biết bạn đang lắng nghe<br/>- Tránh những hành động khiêu khích như nhìn điện thoại hay ngoái đầu</li></ul><h4>b) Chiến lược lắng nghe</h4><ul><li><strong>Dự đoán nội dung:</strong> Trước khi nghe, đoán người nói sẽ so sánh những gì</li><li><strong>Xác định tiêu chí:</strong> Khi nghe, ghi chú những tiêu chí so sánh được nêu</li><li><strong>Theo dõi luận điểm:</strong> Ghi lại luận điểm chính, những dẫn chứng được nêu</li><li><strong>Nhận biết quan điểm:</strong> Xác định quan điểm, sở thích của người nói</li><li><strong>Đánh giá chất lượng:</strong> Luận điểm logic không? Dẫn chứng có thuyết phục không?</li></ul><h4>c) Cách xử lý khó khăn khi nghe</h4><ul><li><strong>Nếu không hiểu:</strong> Hãy yêu cầu làm lại rõ ràng, \"Bạn có thể giải thích lại không?\", \"Ý bạn là gì?\"</li><li><strong>Nếu bị gián đoạn:</strong> Trở lại những ý chính, cố gắng hiểu bối cảnh</li><li><strong>Nếu nói quá nhanh:</strong> Yêu cầu nhân vật nói chậm hơn hoặc lặp lại</li><li><strong>Nếu không đồng ý:</strong> Ghi chú phần không đồng ý để thảo luận sau</li></ul>"
+            },
+            {
+              "heading": "3. Kỹ năng thảo luận (Discussion Skills)",
+              "content": "<h4>a) Cách phát biểu ý kiến trong thảo luận</h4><ul><li><strong>Tôn trọng người khác:</strong> Không gián đoạn khi người khác nói</li><li><strong>Nghe hết ý kiến khác:</strong> Hiểu lập trường của người khác trước khi phản bác</li><li><strong>Phát biểu rõ ràng:</strong> Nêu ý kiến của mình một cách logic, có dẫn chứng</li><li><strong>Lời nói tôn trọng:</strong><br/>- \"Tôi không hoàn toàn đồng ý với ý kiến của bạn vì...\"<br/>- \"Bạn có điểm hay ở chỗ..., nhưng tôi nghĩ rằng...\"<br/>- \"Ngoài ra, còn một điểm khác...\"<br/>- Tránh nói \"Bạn sai\", \"Đó là tốc độ\"</li></ul><h4>b) Cách đồng ý hoặc không đồng ý</h4><ul><li><strong>Đồng ý một phần:</strong><br/>- \"Bạn đúng về mặt..., tuy nhiên...\"<br/>- \"Điều đó cũng hợp lý, nhưng nếu xét từ góc độ khác...\"<br/>- \"Tôi đồng ý với ý kiến thứ nhất, nhưng không đồng ý với ý thứ hai\"</li><li><strong>Hoàn toàn không đồng ý:</strong><br/>- \"Theo tôi, điều đó không chính xác vì...\"<br/>- \"Tôi có ý kiến khác. Cụ thể là...\"<br/>- \"Có thể bạn chưa cân nhắc đến điểm...\"</li><li><strong>Yêu cầu làm rõ:</strong><br/>- \"Bạn có thể giải thích thêm cái gì bạn vừa nói không?\"<br/>- \"Tôi không hiểu rõ lắm. Bạn có thể cho ví dụ cụ thể không?\"</li></ul><h4>c) Quản lý thảo luận</h4><ul><li><strong>Giữ thời gian:</strong> Đảm bảo mỗi người có cơ hội phát biểu</li><li><strong>Tập trung vấn đề:</strong> Tránh rơi vào những chủ đề không liên quan</li><li><strong>Tìm kiếm sự nhất trí:</strong> Nếu trái chiều, hãy tìm những điểm chung</li><li><strong>Tóm tắt lại:</strong> Ở cuối, tóm tắt những ý chính đã thảo luận</li></ul>"
+            },
+            {
+              "heading": "4. Các tiêu chí để đánh giá bài phát biểu",
+              "content": "<h4>a) Về nội dung (Content)</h4><ul><li><strong>Chọn tiêu chí phù hợp:</strong> Có 2-3 tiêu chí chính để so sánh không (chủ đề, cảm xúc, hình ảnh, phong cách...)</li><li><strong>Phát hiện điểm giống/khác:</strong> Có tìm ra những điểm giống và khác biệt không</li><li><strong>Dẫn chứng cụ thể:</strong> Có nêu ví dụ, dẫn chứng từ text không</li><li><strong>Lập luận logic:</strong> Những luận điểm có logic, có thu phục không</li><li><strong>Ý kiến cá nhân:</strong> Có nêu ý kiến riêng, nhân xét của bản thân không</li></ul><h4>b) Về trình bày (Presentation)</h4><ul><li><strong>Giọng nói:</strong> Nói rõ, vừa tốc độ, thay đổi tông điệu</li><li><strong>Ngôn ngữ cơ thể:</strong> Đứng thẳng, có cử chỉ, liên hệ mắt với khán giả</li><li><strong>Cấu trúc:</strong> Có mở bài, phần chính, kết luận rõ ràng</li><li><strong>Thời gian:</strong> Kiểm soát thời gian, không quá dài/ngắn</li><li><strong>Từ nối:</strong> Sử dụng từ nối phù hợp để kết nối ý tưởng</li></ul><h4>c) Về tương tác (Interaction)</h4><ul><li><strong>Lắng nghe ý kiến khác:</strong> Có nghe hết ý kiến của người khác không</li><li><strong>Phản hồi tôn trọng:</strong> Phản hồi ý kiến khác một cách tôn trọng, không phát biểu</li><li><strong>Tham gia thảo luận:</strong> Tích cực tham gia, đưa ra câu hỏi, làm rõ ý tưởng</li><li><strong>Chấp nhận ý kiến khác:</strong> Cởi mở với những quan điểm khác, sẵn sàng thay đổi nếu có lý do chính đáng</li></ul>"
+            },
+            {
+              "heading": "5. Các tình huống thực hành",
+              "content": "<h4>a) Thảo luận nhóm về so sánh hai tác phẩm</h4><ul><li><strong>Bối cảnh:</strong> Lớp học, 4-5 học sinh<br/>- Mỗi học sinh trình bày ý kiến của mình<br/>- Nhóm cùng nhau thảo luận, tìm kiếm sự nhất trí hoặc hiểu rõ những khác biệt</li><li><strong>Quy trình:</strong><br/>1. Mỗi người phát biểu 2-3 phút<br/>2. Nhóm hỏi hoặc bình luận<br/>3. Người phát biểu trả lời, giải thích thêm<br/>4. Tổng kết nhóm: những điểm chung và những điểm khác biệt</li></ul><h4>b) Cuộc tranh luận (Debate) về đánh giá hai tác phẩm</h4><ul><li><strong>Bối cảnh:</strong> Hai nhóm tranh luận<br/>- Nhóm 1: Cho rằng tác phẩm A tốt hơn<br/>- Nhóm 2: Cho rằng tác phẩm B tốt hơn (hoặc bằng nhau)</li><li><strong>Quy trình:</strong><br/>1. Mỗi nhóm trình bày luận điểm chính<br/>2. Nhóm kia phản bác<br/>3. Cung cấp dẫn chứng thêm\n4. Tóm tắt lập trường cuối cùng</li><li><strong>Quy tắc:</strong><br/>- Nên lắng nghe đối thủ hết ý<br/>- Phản bác những ý không đồng ý, không bao khác bản thân đối thủ<br/>- Sẵn sàng thay đổi nếu có lý do chính đáng</li></ul><h4>c) Phỏng vấn về ý kiến (Interview)</h4><ul><li><strong>Bối cảnh:</strong> Một người phỏng vấn, một người trả lời<br/>- Người phỏng vấn đặt câu hỏi về so sánh hai tác phẩm<br/>- Người trả lời giải thích ý kiến</li><li><strong>Kỹ năng câu hỏi:</strong> <br/>- Đặt câu hỏi mở (không chỉ có \"có\" hoặc \"không\")<br/>- Theo dõi để hiểu sâu hơn<br/>- Lắng nghe câu trả lời đầy đủ</li></ul>"
+            },
+            {
+              "heading": "6. Lỗi thường gặp khi nói/nghe/thảo luận",
+              "content": "<h4>a) Khi nói</h4><ul><li><strong>Nói quá nhanh:</strong> Khán giả không kip theo dõi → Nên nói chậm, rõ ràng</li><li><strong>Không có cấu trúc rõ:</strong> Khán giả khó hiểu → Nên chia phần mở đầu, phần chính, kết luận</li><li><strong>Dẫn chứng không cụ thể:</strong> \"Cảm hoài có hình ảng đẹp\" (quá chung chung) → Nên nêu cụ thể \"ví dụ như...\", \"ngoài ra...\"</li><li><strong>Không liên hệ mắt:</strong> Khán giả không thấy tự tin → Nên nhìn mọi người</li></ul><h4>b) Khi nghe</h4><ul><li><strong>Không tập trung:</strong> Để ý điện thoại, nhìn quanh → Nên ghi chú, giữ liên hệ mắt</li><li><strong>Gián đoạn người nói:</strong> Người nói bị cắt ý → Nên nghe hết ý rồi mới phát biểu</li><li><strong>Không ghi chú:</strong> Quên những ý chính → Nên ghi lại những ý quan trọng</li><li><strong>Không làm rõ:</strong> Không hiểu nhưng không hỏi → Nên yêu cầu làm rõ nếu không hiểu</li></ul><h4>c) Khi thảo luận</h4><ul><li><strong>Coi thường ý kiến khác:</strong> \"Đó là thất bại\", \"Bạn sai\" → Nên nói \"Tôi không đồng ý vì...\", \"Bạn có điểm hay ở...\"</li><li><strong>Bỏ cục vấn đề:</strong> Thảo luận về những chủ đề khác → Nên quay lại vấn đề chính</li><li><strong>Không chịu thay đổi:</strong> Cố chấp với ý kiến → Nên cởi mở, sẵn sàng nghe ý kiến khác</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Chuẩn bị bài phát biểu so sánh hai tác phẩm thơ",
+            "slug": "chuan-bi-bai-phat-bieu",
+            "description": "Chuẩn bị nội dung, cấu trúc, và kỹ thuật trình bày cho một bài phát biểu so sánh hai tác phẩm thơ",
+            "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Lựa chọn tiêu chí so sánh:</strong> Chọn 2-3 tiêu chí chính (chủ đề, cảm xúc, hình ảng, phong cách...)</li><li><strong>Sắp xếp logic:</strong> <br/>- Bắt đầu từ những điểm giống nhau<br/>- Tiếp đến những điểm khác nhau<br/>- Kết luận với đánh giá tổng thể</li><li><strong>Chuẩn bị ví dụ cụ thể:</strong> Mỗi tiêu chí cần 1-2 ví dụ minh họa</li><li><strong>Lập dàn bài:</strong><br/>- Mở đầu: 1-2 phút<br/>- Phần chính: 5-7 phút<br/>- Kết luận: 1-2 phút</li><li><strong>Tập luyện:</strong> Tập phát biểu trước gương, hoặc với bạn bè, để kiểm soát giọng nói, tốc độ</li></ol>",
+            "examples": "<h4>Ví dụ dàn bài phát biểu:</h4><p><strong>Mở đầu (1-2 phút):</strong><br/>\"Hôm nay tôi muốn trình bày kết quả so sánh hai bài thơ nổi tiếng: Cảm hoài của Đặng Dung và Tây Tiến của Quang Dũng. Hai bài thơ được viết trong cùng thế kỷ XX nhưng có những sự khác biệt khá lớn. Tôi sẽ so sánh chúng theo 3 tiêu chí: chủ đề, cảm xúc, và hình ảng thơ.\"<p><strong>Phần chính (5-7 phút):</strong><br/>Tiêu chí 1: Chủ đề (2 phút)<br/>- Cảm hoài viết về cảm xúc cá nhân, suy tư nhân sinh<br/>- Tây Tiến viết về sự kiện lịch sử anh hùng<br/>- Ví dụ cụ thể từ từng bài<p>Tiêu chí 2: Cảm xúc (2 phút)<br/>- Cảm hoài: buồn bã nhẹ nhàng, lạc lõng<br/>- Tây Tiến: sôi nổi, hùng tráng<p>Tiêu chí 3: Hình ảng (2 phút)<br/>- Cảm hoài: hình ảng tự nhiên<br/>- Tây Tiến: hình ảng chiến trường<p><strong>Kết luận (1-2 phút):</strong><br/>\"Qua so sánh này, chúng ta thấy rằng thơ ca có khả năng thể hiện nhiều khía cạnh khác nhau của cuộc sống con người. Cảm hoài dạy ta sâu sắc suy tư, còn Tây Tiến dạy ta về hy sinh và anh hùng. Cả hai đều có giá trị cao...\""
+          },
+          {
+            "id": "dang2",
+            "name": "Lắng nghe hiệu quả và ghi chú những ý chính",
+            "slug": "lang-nghe-hieu-qua",
+            "description": "Phát triển kỹ năng lắng nghe, ghi chú, và hiểu rõ những ý chính từ bài phát biểu của người khác",
+            "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Chuẩn bị trước:</strong> Nếu biết chủ đề, hãy suy nghĩ trước về những điểm chính sẽ được nhắc đến</li><li><strong>Tập trung lắng nghe:</strong> Giữ liên hệ mắt, ghi chú những ý chính</li><li><strong>Xác định tiêu chí so sánh:</strong> Ghi lại những tiêu chí được so sánh</li><li><strong>Theo dõi luận điểm:</strong> Ghi những luận điểm chính, những dẫn chứng</li><li><strong>Làm rõ nếu không hiểu:</strong> Yêu cầu người nói giải thích lại hoặc cho ví dụ </li><li><strong>Sau khi lắng nghe:</strong> Review ghi chú, hình dung lại nội dung bài phát biểu</li></ol>",
+            "examples": "<h4>Ví dụ ghi chú khi lắng nghe:</h4><p>Chủ đề được so sánh: Cảm hoài vs Tây Tiến<br/><br/>Tiêu chí 1: Chủ đề<br/>- Cảm hoài: Cảm xúc cá nhân<br/>- Tây Tiến: Sự kiện lịch sử anh hùng<br/><br/>Tiêu chí 2: Cảm xúc<br/>- Cảm hoài: Buồn bã nhẹ nhàng (?)<br/>- Tây Tiến: Sôi nổi, hùng tráng<br/><br/>Tiêu chí 3: Hình ảng<br/>- Cảm hoài: Tự nhiên (hơi mơ hồ - cần hỏi rõ)<br/>- Tây Tiến: Chiến trường<br/><br/>Kết luận: Thơ ca thể hiện nhiều khía cạnh - OK<br/><br/>Những ý cần hỏi thêm: Tại sao hình ảng tự nhiên phù hợp với Cảm hoài?"
+          },
+          {
+            "id": "dang3",
+            "name": "Tham gia thảo luận và bày tỏ ý kiến khác",
+            "slug": "tham-gia-thao-luan",
+            "description": "Phát triển kỹ năng phát biểu ý kiến, đồng ý/không đồng ý một cách lịch sự, và tham gia thảo luận xây dựng",
+            "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Lắng nghe hết ý kiến kia:</strong> Không gián đoạn, ghi chú những ý chính</li><li><strong>Chuẩn bị phản hồi:</strong><br/>- Nếu đồng ý: Nên nêu rõ điểm nào bạn đồng ý, tại sao<br/>- Nếu không đồng ý: Nên giải thích lý do, đưa ra dẫn chứng khác</li><li><strong>Phát biểu tôn trọng:</strong><br/>- \"Tôi đồng ý với ý kiến của bạn về..., tuy nhiên...\"<br/>- \"Điều đó cũng có lý, nhưng nếu xét từ góc độ khác...\"</li><li><strong>Yêu cầu làm rõ:</strong> Nếu không hiểu rõ, hãy hỏi thêm</li><li><strong>Tìm kiếm sự nhất trí:</strong> Nếu trái chiều, hãy tìm những điểm chung</li></ol>",
+            "examples": "<h4>Ví dụ cách phát biểu trong thảo luận:</h4><p><strong>Đồng ý một phần:</strong><br/>\"Tôi rất đồng ý với ý kiến của bạn là Cảm hoài có hình ảng đẹp, nhưng tôi nghĩ thêm rằng những hình ảng này còn có ý nghĩa biểu tượng sâu sắc hơn. Ví dụ như...\"<p><strong>Không đồng ý:</strong><br/>\"Tôi có ý kiến khác chút. Theo tôi, việc Quang Dũng lựa chọn hình ảng chiến trường cho Tây Tiến không phải chỉ để miêu tả chiến đấu mà còn để ca tụng anh hùng. Tôi cho rằng điều này rất phù hợp vì...\"<p><strong>Yêu cầu làm rõ:</strong><br/>\"Bạn có thể giải thích thêm tại sao bạn nói cảm hoài là bài thơ nội tâm không? Tôi không hiểu rõ lắm.\""
+          }
+        ],
+        "exercises": {
+          "title": "Bài tập",
+          "items": [
+            {
+              "id": "ex1",
+              "type": "mcq",
+              "question": "Phần nào là quan trọng nhất trong cấu trúc bài phát biểu so sánh?",
+              "options": [
+                "Phần mở đầu",
+                "Phần chính, nơi trình bày chi tiết những tiêu chí so sánh",
+                "Phần kết luận",
+                "Tất cả các phần đều quan trọng bằng nhau"
+              ],
+              "correct": 1,
+              "explanation": "Phần chính chiếm 5-7 phút (phần lớn thời gian), nơi tác giả trình bày chi tiết những tiêu chí so sánh, ví dụ, và ý giáo dục."
+            },
+            {
+              "id": "ex2",
+              "type": "mcq",
+              "question": "Khi nói, nên hỏi câu hỏi gì để giữ sự chú ý của khán giả?",
+              "options": [
+                "Chỉ nên đưa ra tuyên bố, không nên hỏi",
+                "Hỏi những câu hỏi mở, có thể kích thích suy tư của khán giả",
+                "Hỏi những câu hỏi có câu trả lời \"có\" hoặc \"không\"",
+                "Không nên hỏi gì cả"
+              ],
+              "correct": 1,
+              "explanation": "Vào những điểm thích hợp, dapat hỏi những câu hỏi mở để kích thích suy tư của khán giả, làm cho bài phát biểu trở nên tương tác hơn."
+            },
+            {
+              "id": "ex3",
+              "type": "mcq",
+              "question": "Khi lắng nghe, nên làm gì để chứng tỏ bạn đang chú ý?",
+              "options": [
+                "Nhìn điện thoại hoặc ngoái đầu",
+                "Gật đầu, duy trì liên hệ mắt với người nói",
+                "Ghi chú tất cả mọi thứ người nó nói",
+                "Không cần làm gì đặc biệt"
+              ],
+              "correct": 1,
+              "explanation": "Nên gật đầu, liên tục liên hệ mắt với người nói để cho biết bạn đang lắng nghe và cảm thấy quan tâm."
+            },
+            {
+              "id": "ex4",
+              "type": "mcq",
+              "question": "Cách nào tôn trọng nhất để bày tỏ không đồng ý trong thảo luận?",
+              "options": [
+                "\"Bạn sai rồi\"",
+                "\"Tôi không đồng ý với ý kiến của bạn vì... (nêu lý do)\"",
+                "\"Đó là thất bại\"",
+                "Không nên bày tỏ không đồng ý"
+              ],
+              "correct": 1,
+              "explanation": "Nên nói \"Tôi không đồng ý vì...\" thay vì trực tiếp nói \"Bạn sai\", để tránh làm tổn thương đối phương."
+            },
+            {
+              "id": "ex5",
+              "type": "mcq",
+              "question": "Nên mất bao lâu để trình bày bài so sánh hai tác phẩm thơ?",
+              "options": [
+                "1-2 phút",
+                "3-4 phút",
+                "8-10 phút (mở đầu 1-2 phút + phần chính 5-7 phút + kết luận 1-2 phút)",
+                "15-20 phút"
+              ],
+              "correct": 2,
+              "explanation": "Bài phát biểu nên khoảng 8-10 phút, với mở đầu 1-2 phút, phần chính 5-7 phút, kết luận 1-2 phút."
+            },
+            {
+              "id": "ex6",
+              "type": "mcq",
+              "question": "Khi không hiểu một phần của bài phát biểu, nên làm gì?",
+              "options": [
+                "Giữ im lặng và cố hiểu thêm sau",
+                "Yêu cầu người nói giải thích lại, \"Bạn có thể làm rõ hơn không?\"",
+                "Bỏ qua phần đó",
+                "Hỏi một người khác"
+              ],
+              "correct": 1,
+              "explanation": "Nên yêu cầu người nói giải thích lại, làm rõ, hoặc cho ví dụ cụ thể để bạn hiểu rõ hơn."
+            },
+            {
+              "id": "ex7",
+              "type": "mcq",
+              "question": "Cước gián đoạn người nói khi họ đang phát biểu tốt không?",
+              "options": [
+                "Được, nếu chúng ta muốn phát biểu",
+                "Không, nên nghe hết ý của họ trước khi phát biểu",
+                "Được nếu có ý kiến hay",
+                "Tùy hoàn cảnh"
+              ],
+              "correct": 1,
+              "explanation": "Không nên gián đoạn người nói. Cần nghe họ hết ý trước, sau đó mới phát biểu hay hỏi thêm."
+            },
+            {
+              "id": "ex8",
+              "type": "mcq",
+              "question": "Trong bài phát biểu, nên sử dụng bao nhiêu tiêu chí so sánh?",
+              "options": [
+                "Chỉ 1 tiêu chí",
+                "2-3 tiêu chí chính",
+                "4-5 tiêu chí",
+                "Càng nhiều càng tốt"
+              ],
+              "correct": 1,
+              "explanation": "Nên lựa chọn 2-3 tiêu chí chính (chủ đề, cảm xúc, hình ảng...) để trình bày chi tiết, không quá cồng kềnh."
+            },
+            {
+              "id": "ex9",
+              "type": "essay",
+              "question": "Hãy chuẩn bị một bài phát biểu 8-10 phút so sánh Cảm hoài và Tây Tiến. Viết dàn bài chi tiết với:\n1. Phần mở đầu (giới thiệu chủ đề, tiêu chí so sánh)\n2. Phần chính (từng tiêu chí một, với ví dụ cụ thể)\n3. Phần kết luận (tóm tắt, đánh giá tổng thể)\n\nSau đó, tập phát biểu với bạn bè hoặc gia đình.",
+              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Dàn bài chi tiết:\n  + Mở đầu (1-2 phút): Chào, giới thiệu hai bài thơ, nêu rõ sẽ so sánh 3 tiêu chí chính\n  + Tiêu chí 1: Chủ đề (2 phút) - với ví dụ cụ thể\n  + Tiêu chí 2: Cảm xúc (2 phút) - với ví dụ cụ thể\n  + Tiêu chí 3: Hình ảng (2 phút) - với ví dụ cụ thể\n  + Kết luận (1-2 phút): Tóm tắt, nêu những điểm chung, đánh giá tổng thể\n- Về kỹ thuật phát biểu:\n  + Nên tập phát biểu trước gương hoặc với bạn bè\n  + Kiểm soát tốc độ, không quá nhanh\n  + Duy trì liên hệ mắt\n  + Có cử chỉ tay để minh họa\n  + Sử dụng từ nối phù hợp\n- Đánh giá sau khi tập luyện:\n  + Thời gian có phù hợp không\n  + Giọng nói rõ ràng không\n  + Cấu trúc logic không\n  + Có đủ ví dụ, dẫn chứng không\n  + Ý kiến cá nhân rõ ràng không"
+            },
+            {
+              "id": "ex10",
+              "type": "essay",
+              "question": "Tổ chức một cuộc thảo luận nhóm (3-4 người) về bài so sánh Cảm hoài và Tây Tiến. Mỗi người phát biểu 2-3 phút, sau đó nhóm thảo luận để tìm những điểm chung hoặc hiểu rõ những khác biệt. Viết lại ghi chú những ý chính từ cuộc thảo luận và những điều rút ra.",
+              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Ghi chú từ cuộc thảo luận:\n  + Ý kiến của từng thành viên nhóm\n  + Những tiêu chí được so sánh\n  + Những điểm giống/khác được nhắc đến\n  + Những dẫn chứng, ví dụ được nêu\n  + Những tranh luận, thảo luận\n- Kỹ năng thảo luận được thực hiện:\n  + Mỗi người có cơ hội phát biểu\n  + Mọi người lắng nghe hết ý của người khác\n  + Có những phản hồi tôn trọng\n  + Có những câu hỏi để làm rõ\n  + Tìm kiếm sự nhất trí hoặc hiểu rõ những khác biệt\n- Những ý chính rút ra từ cuộc thảo luận:\n  + Những điểm chung của hai tác phẩm\n  + Những điểm khác biệt chính\n  + Những bài học hoặc ý nghĩa mà nhóm thấy được\n  + Cách mà thảo luận giúp bạn hiểu sâu hơn hai tác phẩm\n- Nhận xét về cuộc thảo luận:\n  + Điểm mạnh của cuộc thảo luận\n  + Những điểm cần cải thiện\n  + Những kỹ năng nói/nghe được thực hành"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

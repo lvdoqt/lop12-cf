@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_14",
+      "name": "Thực hành: Vai trò ngành nông nghiệp, lâm nghiệp và thủy sản",
+      "slug": "thuc-hanh-vai-tro-nganh-nong-lam-thuy-san",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 14,
+      "description": "Hướng dẫn thực hành: thu thập số liệu, vẽ biểu đồ và nhận xét về vai trò và tình hình phát triển ngành nông nghiệp, lâm nghiệp và thủy sản.",
+      "duration_minutes": 60,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thực hành phân tích ngành nông - lâm - thủy sản",
+          "summary": "Bước thực hành gồm thu thập số liệu sản lượng, diện tích, giá trị xuất khẩu; vẽ biểu đồ so sánh và nhận xét xu hướng, đóng góp vào GDP và việc làm.",
+          "sections": [
+            { "heading": "Thu thập số liệu", "content": "Nguồn: cục thống kê, báo cáo ngành, số liệu địa phương; số liệu về sản lượng, diện tích, giá trị xuất khẩu." },
+            { "heading": "Phân tích và vẽ biểu đồ", "content": "Sử dụng biểu đồ cột/ đường/ tròn để so sánh sản lượng theo năm và tỷ trọng đóng góp." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Ghi hai nguồn số liệu nông nghiệp?", "a_hint": "Cục Thống kê, Sở Nông nghiệp tỉnh." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Số liệu nào cần cho biểu đồ sản lượng?", "options": ["Sản lượng theo năm","Sở thích cá nhân","Số lượng trường học","Mã bưu điện"], "correct": 0, "explanation": "Sản lượng theo năm dùng để vẽ biểu đồ xu hướng." },
+          { "id": 2, "type": "mcq", "question": "Biểu đồ nào phù hợp để thể hiện thay đổi theo thời gian?", "options": ["Biểu đồ đường","Biểu đồ tròn","Ảnh tĩnh","Bản đồ"], "correct": 0, "explanation": "Biểu đồ đường/ cột thể hiện xu hướng theo thời gian." },
+          { "id": 3, "type": "mcq", "question": "Một chỉ tiêu phản ánh vai trò kinh tế của ngành là?", "options": ["Tỷ trọng đóng góp vào GDP","Số lượng nhà hàng","Số sân bay","Màu sắc cờ"], "correct": 0, "explanation": "Tỷ trọng GDP phản ánh vai trò kinh tế ngành." },
+          { "id": 4, "type": "mcq", "question": "Khi nhận xét biểu đồ cần nêu?", "options": ["Xu hướng, nguyên nhân và hệ quả","Chỉ nêu màu sắc","Không nhận xét","Nói số ngẫu nhiên"], "correct": 0, "explanation": "Nhận xét cần mô tả xu hướng và nguyên nhân." },
+          { "id": 5, "type": "mcq", "question": "Một bước quan trọng sau khi thu thập số liệu là?", "options": ["Kiểm tra tính tin cậy và làm sạch dữ liệu","In dữ liệu không kiểm tra","Bỏ qua số liệu","Chỉ dùng số liệu cũ"], "correct": 0, "explanation": "Kiểm tra và làm sạch dữ liệu đảm bảo phân tích chính xác." },
+          { "id": 6, "type": "mcq", "question": "Dữ liệu xuất khẩu giúp hiểu điều gì?", "options": ["Quy mô thị trường nước ngoài và giá trị ngành","Sở thích nội địa","Số lượng ngôi chùa","Không giúp gì"], "correct": 0, "explanation": "Dữ liệu xuất khẩu thể hiện giá trị ngành trên thị trường quốc tế." },
+          { "id": 7, "type": "mcq", "question": "Nhận xét biểu đồ nên đưa ra đề xuất gì?", "options": ["Giải pháp nâng cao năng suất hoặc đa dạng hóa sản phẩm","Không cần đề xuất","Đề xuất giảm sản xuất","Không có"], "correct": 0, "explanation": "Đề xuất nhằm cải thiện và phát triển ngành là phù hợp." },
+          { "id": 8, "type": "mcq", "question": "Một công cụ trực quan hữu ích khi phân tích nông sản theo địa lý?", "options": ["Bản đồ phân bố","Danh sách số","Văn bản dài","Không có"], "correct": 0, "explanation": "Bản đồ biểu diễn phân bố địa lý có giá trị khi phân tích ngành." },
+          { "id": 9, "type": "mcq", "question": "Tổ chức dữ liệu trước khi vẽ biểu đồ là cần thiết vì?", "options": ["Để đảm bảo tính chính xác và so sánh được","Không quan trọng","Tăng lỗi","Làm chậm quá trình"], "correct": 0, "explanation": "Dọn dữ liệu giúp phân tích rõ ràng và chính xác." },
+          { "id": 10, "type": "mcq", "question": "Một bước để giảm thiệt hại sau thu hoạch là?", "options": ["Xây kho lạnh và cải thiện chuỗi cung ứng","Bỏ qua thu hoạch","Phá hủy sản phẩm","Không làm gì"], "correct": 0, "explanation": "Kho lạnh và chuỗi cung ứng tốt giảm thất thoát sau thu hoạch." }
+        ]
+      }
+    }
+  ]
+}

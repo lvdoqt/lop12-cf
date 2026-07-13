@@ -1,0 +1,155 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-6-4-nhung-tro-lo",
+      "name": "Những trò lố hay là Va-ren và Phan Bội Châu (Nguyễn Ái Quốc)",
+      "slug": "nhung-tro-lo-varen-phan-boi-chau",
+      "chapter": "Hồ Chí Minh - Văn hóa phải soi đường cho quốc dân đi",
+      "chapter_id": "V12-6",
+      "lesson_id": 4,
+      "author": "Nguyễn Ái Quốc (Hồ Chí Minh)",
+      "description": "Phân tích bài báo của Nguyễn Ái Quốc, thể hiện tài năng báo chí, khả năng phê phán sắc sảo và tinh thần yêu nước nồng nàn.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "analyze-journalism",
+          "name": "Phân tích báo chí",
+          "slug": "phan-tich-bao-chi",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Những trò lố hay là Va-ren và Phan Bội Châu",
+          "sections": [
+            {
+              "heading": "1. Hoàn cảnh sáng tác",
+              "content": "<h4>a) Thời gian, địa điểm</h4><ul><li><strong>Thời gian:</strong> Thập niên 1920</li><li><strong>Nơi viết:</strong> Pháp</li><li><strong>Bút danh:</strong> Nguyễn Ái Quốc</li></ul><h4>b) Bối cảnh lịch sử</h4><ul><li><strong>Sự kiện:</strong> Phan Bội Châu bị bắt ở Thượng Hải</li><li><strong>Thủ đoạn:</strong> Mật thám Pháp Va-ren lừa bắt</li><li><strong>Mục đích:</strong> Vạch trần âm mưu của thực dân Pháp</li></ul>"
+            },
+            {
+              "heading": "2. Nội dung chính",
+              "content": "<h4>a) Tố cáo Va-ren</h4><ul><li><strong>Nhân vật:</strong> Va-ren - mật thám Pháp</li><li><strong>Hành động:</strong> Giả làm người yêu nước để lừa Phan Bội Châu</li><li><strong>Thủ đoạn:</strong> Xảo quyệt, đê tiện</li></ul><h4>b) Bênh vực Phan Bội Châu</h4><ul><li><strong>Đánh giá:</strong> Nhà yêu nước chân chính</li><li><strong>Công lao:</strong> Cống hiến cho sự nghiệp giải phóng dân tộc</li><li><strong>Thái độ:</strong> Tôn trọng, đồng cảm</li></ul><h4>c) Phê phán thực dân Pháp</h4><ul><li><strong>Tội ác:</strong> Đàn áp nhân dân Việt Nam</li><li><strong>Thủ đoạn:</strong> Xảo quyệt, tàn bạo</li><li><strong>Bản chất:</strong> Phi nhân đạo</li></ul>"
+            },
+            {
+              "heading": "3. Nghệ thuật</h4><ul><li><strong>Ngôn ngữ:</strong> Sắc sảo, châm biếm</li><li><strong>Lập luận:</strong> Logic, thuyết phục</li><li><strong>Cảm xúc:</strong> Phẫn nộ nhưng kiềm chế</li></ul><h4>b) Biện pháp tu từ</h4><ul><li><strong>Châm biếm:</strong> 'Những trò lố'</li><li><strong>Phản ngữ:</strong> Nói ngược để chỉ trích</li><li><strong>Đối chiếu:</strong> Va-ren vs Phan Bội Châu</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex6-4-1",
+              "type": "mcq",
+              "question": "Bài báo được viết dưới bút danh nào?",
+              "options": [
+                "Hồ Chí Minh",
+                "Nguyễn Ái Quốc",
+                "Nguyễn Sinh Cung",
+                "Nguyễn Tất Thành"
+              ],
+              "correct": 1,
+              "explanation": "Bài báo được viết dưới bút danh Nguyễn Ái Quốc trong thập niên 1920 khi Người hoạt động ở Pháp."
+            },
+            {
+              "id": "ex6-4-2",
+              "type": "mcq",
+              "question": "Va-ren là ai?",
+              "options": [
+                "Nhà yêu nước Việt Nam",
+                "Mật thám Pháp lừa bắt Phan Bội Châu",
+                "Bạn của Phan Bội Châu",
+                "Nhà báo"
+              ],
+              "correct": 1,
+              "explanation": "Va-ren là mật thám Pháp, đã giả làm người yêu nước để lừa bắt Phan Bội Châu ở Thượng Hải."
+            },
+            {
+              "id": "ex6-4-3",
+              "type": "mcq",
+              "question": "Thái độ của Nguyễn Ái Quốc với Phan Bội Châu là gì?",
+              "options": [
+                "Chỉ trích",
+                "Tôn trọng, đồng cảm, bênh vực",
+                "Thờ ơ",
+                "Khinh thường"
+              ],
+              "correct": 1,
+              "explanation": "Nguyễn Ái Quốc tôn trọng, đồng cảm và bênh vực Phan Bội Châu như một nhà yêu nước chân chính."
+            },
+            {
+              "id": "ex6-4-4",
+              "type": "mcq",
+              "question": "Cụm từ 'Những trò lố' ám chỉ điều gì?",
+              "options": [
+                "Trò chơi vui nhộn",
+                "Thủ đoạn xảo quyệt, đê tiện của thực dân Pháp",
+                "Nghệ thuật biểu diễn",
+                "Không có ý nghĩa gì"
+              ],
+              "correct": 1,
+              "explanation": "'Những trò lố' là cách châm biếm thủ đoạn xảo quyệt, đê tiện của thực dân Pháp trong việc bắt Phan Bội Châu."
+            },
+            {
+              "id": "ex6-4-5",
+              "type": "mcq",
+              "question": "Ngôn ngữ trong bài báo có đặc điểm gì?",
+              "options": [
+                "Nhẹ nhàng, dịu dàng",
+                "Sắc sảo, châm biếm, phê phán",
+                "Trung lập, khách quan",
+                "Mơ hồ, không rõ ràng"
+              ],
+              "correct": 1,
+              "explanation": "Ngôn ngữ trong bài báo sắc sảo, châm biếm, thể hiện sự phê phán mạnh mẽ đối với thực dân Pháp."
+            },
+            {
+              "id": "ex6-4-6",
+              "type": "mcq",
+              "question": "Mục đích chính của bài báo là gì?",
+              "options": [
+                "Kể chuyện",
+                "Vạch trần âm mưu thực dân Pháp và bênh vực Phan Bội Châu",
+                "Giải trí",
+                "Quảng cáo"
+              ],
+              "correct": 1,
+              "explanation": "Mục đích chính là vạch trần âm mưu, thủ đoạn của thực dân Pháp và bênh vực nhà yêu nước Phan Bội Châu."
+            },
+            {
+              "id": "ex6-4-7",
+              "type": "mcq",
+              "question": "Biện pháp tu từ nào được sử dụng nhiều trong bài?",
+              "options": [
+                "So sánh",
+                "Châm biếm, phản ngữ",
+                "Nhân hóa",
+                "Ẩn dụ"
+              ],
+              "correct": 1,
+              "explanation": "Bài báo sử dụng nhiều biện pháp châm biếm và phản ngữ để chỉ trích thực dân Pháp một cách sắc sảo."
+            },
+            {
+              "id": "ex6-4-8",
+              "type": "mcq",
+              "question": "Giá trị của bài báo là gì?",
+              "options": [
+                "Chỉ có giá trị lịch sử",
+                "Thể hiện tài năng báo chí, tinh thần yêu nước và khả năng phê phán sắc sảo",
+                "Không có giá trị",
+                "Chỉ để tham khảo"
+              ],
+              "correct": 1,
+              "explanation": "Bài báo có giá trị lớn về tư tưởng (yêu nước, phê phán) và nghệ thuật (ngôn ngữ sắc sảo, lập luận chặt chẽ)."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

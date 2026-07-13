@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_5",
+      "name": "Vấn đề sử dụng hợp lí tài nguyên thiên nhiên và bảo vệ môi trường",
+      "slug": "van-de-su-dung-hop-li-tai-nguyen-va-bao-ve-moi-truong",
+      "chapter": "Địa lí tự nhiên",
+      "chapter_id": "dia12_part1",
+      "lesson_id": 5,
+      "description": "Những vấn đề chính về khai thác tài nguyên, suy thoái môi trường và các biện pháp sử dụng hợp lý, bảo vệ môi trường ở Việt Nam.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Sử dụng hợp lý tài nguyên và bảo vệ môi trường",
+          "summary": "Tổng quan các loại tài nguyên thiên nhiên (rừng, đất, nước, khoáng sản, biển) và những vấn đề môi trường chính như ô nhiễm, suy thoái đất, phá rừng, cạn kiệt nguồn lợi; đề xuất giải pháp quản lý và sử dụng bền vững trong bối cảnh phát triển kinh tế." ,
+          "sections": [
+            { "heading": "Các vấn đề môi trường chính", "content": "Ô nhiễm không khí, ô nhiễm nước, suy thoái đất, mất đa dạng sinh học, phá rừng và suy giảm nguồn lợi biển." },
+            { "heading": "Nguyên nhân", "content": "Khai thác quá mức, công nghiệp hóa, đô thị hóa thiếu quy hoạch, nông nghiệp sử dụng hóa chất và quản lý yếu kém." },
+            { "heading": "Giải pháp bền vững", "content": "Tăng cường pháp luật, quản lý tài nguyên, phục hồi hệ sinh thái, áp dụng công nghệ sạch, chính sách khuyến khích phát triển xanh." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Nêu một giải pháp giảm ô nhiễm nước?", "a_hint": "Xây hệ thống xử lý nước thải công nghiệp và sinh hoạt." },
+            { "q": "Tên một nguồn tài nguyên biển quan trọng?", "a_hint": "Hải sản và dầu khí/thềm lục địa." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Nguyên nhân chủ yếu làm suy thoái rừng?", "options": ["Trồng rừng","Khai thác và chuyển đổi mục đích sử dụng","Bảo tồn","Không hoạt động"], "correct": 1, "explanation": "Khai thác quá mức và chuyển đổi mục đích sử dụng đất dẫn đến mất rừng." },
+          { "id": 2, "type": "mcq", "question": "Biện pháp nào giúp hạn chế ô nhiễm không khí?", "options": ["Tăng khí thải","Áp dụng công nghệ sạch và kiểm soát phát thải","Bỏ kiểm soát","Không làm gì"], "correct": 1, "explanation": "Công nghệ sạch và kiểm soát phát thải giảm ô nhiễm." },
+          { "id": 3, "type": "mcq", "question": "Một chính sách khuyến khích bảo vệ môi trường là?", "options": ["Hỗ trợ tái chế, thuế xanh","Miễn thuế cho ô nhiễm","Khuyến khích phá rừng","Không có chính sách"], "correct": 0, "explanation": "Hỗ trợ tái chế và thuế/khuyến khích cho hoạt động xanh là chính sách hiệu quả." },
+          { "id": 4, "type": "mcq", "question": "Nguồn ô nhiễm nước nông thôn chủ yếu là?", "options": ["Nước mưa sạch","Phân, thuốc bảo vệ thực vật, chất thải chăn nuôi","Nước biển","Không có ô nhiễm"], "correct": 1, "explanation": "Nông nghiệp sử dụng phân bón và thuốc bảo vệ thực vật gây ô nhiễm nước." },
+          { "id": 5, "type": "mcq", "question": "Biện pháp phục hồi đất suy thoái là?", "options": ["Trồng cây phủ đất, luân canh, hạn chế xói mòn","Xây nhà trên đất bị xói mòn","Không can thiệp","Dọn sạch đất"], "correct": 0, "explanation": "Phục hồi bằng phủ cây, luân canh và biện pháp chống xói mòn là hiệu quả." },
+          { "id": 6, "type": "mcq", "question": "Quản lý tài nguyên bền vững nghĩa là gì?", "options": ["Khai thác vô hạn","Sử dụng và bảo tồn để đáp ứng nhu cầu hiện tại và tương lai","Không sử dụng tài nguyên","Không quan tâm"], "correct": 1, "explanation": "Quản lý bền vững cân bằng giữa sử dụng và bảo tồn." },
+          { "id": 7, "type": "mcq", "question": "Biến đổi khí hậu ảnh hưởng tới môi trường bằng cách nào?", "options": ["Làm thay đổi lượng mưa, mực nước biển và tần suất thiên tai","Làm mọi thứ tốt hơn","Không ảnh hưởng","Giúp tăng diện tích rừng tự nhiên"], "correct": 0, "explanation": "Biến đổi khí hậu thay đổi lượng mưa, dâng biển và tần suất thiên tai." },
+          { "id": 8, "type": "mcq", "question": "Một ví dụ về công nghệ sạch là?", "options": ["Lò đốt không xử lý","Hệ thống xử lý nước thải và lọc khí","Xả thẳng nước thải","Tăng phát thải"], "correct": 1, "explanation": "Hệ thống xử lý nước thải và lọc khí là ví dụ công nghệ sạch." },
+          { "id": 9, "type": "mcq", "question": "Tài nguyên biển bao gồm?", "options": ["Hải sản, dầu khí, khoáng sản biển","Chỉ đất liền","Rừng nhiệt đới","Không có"], "correct": 0, "explanation": "Tài nguyên biển bao gồm hải sản, dầu khí và khoáng sản trên thềm lục địa." },
+          { "id": 10, "type": "mcq", "question": "Hành động cá nhân giúp bảo vệ môi trường là?", "options": ["Tiết kiệm nước, phân loại rác, sử dụng phương tiện công cộng","Tăng xả rác","Phá rừng","Không làm gì"], "correct": 0, "explanation": "Tiết kiệm nước, phân loại rác và dùng phương tiện công cộng là hành động hữu ích." }
+        ]
+      }
+    }
+  ]
+}

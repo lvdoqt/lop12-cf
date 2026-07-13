@@ -1,0 +1,304 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-1-ester-lipid",
+      "name": "Bài 1. Ester - Lipid",
+      "slug": "bai-1-ester-lipid",
+      "chapter": "Chương 1: Ester - Lipid",
+      "chapter_id": "H12-1001",
+      "lesson_id": 1,
+      "description": "Tìm hiểu về cấu tạo, tính chất, điều chế và ứng dụng của ester và lipid.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "ester-lipid-1",
+          "name": "Ester và Lipid",
+          "slug": "ester-lipid",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Ester và Lipid",
+          "sections": [
+            {
+              "heading": "1. Ester",
+              "content": "<h3>a) Định nghĩa và cấu tạo</h3><p><strong>Ester:</strong> Sản phẩm của phản ứng giữa acid carboxylic và alcohol (hoặc phenol)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Công thức chung: R-COO-R' (R từ acid, R' từ alcohol)</p><p><strong>Ví dụ:</strong></p><ul><li>CH₃COOC₂H₅: Ethyl acetate (từ CH₃COOH + C₂H₅OH)</li><li>HCOOCH₃: Methyl formate (từ HCOOH + CH₃OH)</li><li>C₂H₅COOC₃H₇: Propyl propionate</li></ul><h3>b) Danh pháp</h3><p><strong>Tên thông thường:</strong> Tên gốc alcohol + tên gốc acid + ate</p><ul><li>CH₃COOC₂H₅: Ethyl acetate</li><li>HCOOCH₃: Methyl formate</li></ul><p><strong>Tên IUPAC:</strong> Tên alkyl + tên acid (thay ic → ate)</p><ul><li>CH₃COOC₂H₅: Ethyl ethanoate</li><li>HCOOCH₃: Methyl methanoate</li></ul><h3>c) Tính chất vật lý</h3><p><strong>Trạng thái:</strong></p><ul><li>Ester nhẹ: Chất lỏng, dễ bay hơi</li><li>Ester nặng: Chất lỏng hoặc rắn</li><li>Không màu hoặc màu nhạt</li></ul><p><strong>Mùi:</strong></p><ul><li>Mùi thơm dễ chịu (hoa quả)</li><li>CH₃COOC₂H₅: Mùi chuối chín</li><li>CH₃COOC₅H₁₁: Mùi lê</li><li>C₃H₇COOC₅H₁₁: Mùi dứa</li></ul><p><strong>Độ tan:</strong></p><ul><li>Ít tan hoặc không tan trong nước</li><li>Nhẹ hơn nước (d < 1)</li><li>Tan tốt trong dung môi hữu cơ</li></ul><p><strong>Nhiệt độ sôi:</strong></p><ul><li>Thấp hơn acid và alcohol cùng M</li><li>Không có liên kết hydrogen giữa các phân tử</li></ul><h3>d) Tính chất hóa học</h3><p><strong>1. Phản ứng thủy phân (quan trọng nhất):</strong></p><p><strong>Thủy phân trong môi trường acid:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>R-COOR' + H₂O ⇌ R-COOH + R'-OH (H⁺, t°)</p><p>Phản ứng thuận nghịch, chậm</p><p><strong>Thủy phân trong môi trường kiềm (xà phòng hóa):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>R-COOR' + NaOH → R-COONa + R'-OH (t°)</p><p>Phản ứng một chiều, hoàn toàn</p><p><strong>Ví dụ:</strong></p><p>CH₃COOC₂H₅ + NaOH → CH₃COONa + C₂H₅OH</p><p><strong>2. Phản ứng khử (với LiAlH₄):</strong></p><p>R-COOR' + 4[H] → R-CH₂OH + R'-OH</p><p>Tạo hai alcohol</p><p><strong>3. Phản ứng cháy:</strong></p><p>CₙH₂ₙO₂ + (3n/2)O₂ → nCO₂ + nH₂O</p><p>Đặc điểm: n(CO₂) = n(H₂O) (với ester no, đơn chức, mạch hở)</p><h3>e) Điều chế ester</h3><p><strong>Phản ứng este hóa:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>R-COOH + R'-OH ⇌ R-COOR' + H₂O (H₂SO₄ đặc, t°)</p><p><strong>Điều kiện:</strong></p><ul><li>H₂SO₄ đặc làm xúc tác và hút nước</li><li>Đun nóng (60-70°C)</li><li>Tách nước để tăng hiệu suất</li></ul><p><strong>Ví dụ:</strong></p><p>CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O</p><h3>f) Ứng dụng ester</h3><ul><li>Dung môi hữu cơ (ethyl acetate)</li><li>Hương liệu thực phẩm</li><li>Nước hoa, mỹ phẩm</li><li>Sản xuất polymer (polyester)</li><li>Nhiên liệu sinh học (biodiesel)</li></ul>"
+            },
+            {
+              "heading": "2. Lipid (Chất béo)",
+              "content": "<h3>a) Định nghĩa và cấu tạo</h3><p><strong>Lipid:</strong> Ester của glycerol với acid béo (acid carboxylic mạch dài)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Công thức tổng quát: (RCOO)₃C₃H₅</p><p><strong>Glycerol:</strong> CH₂(OH)-CH(OH)-CH₂(OH)</p><p><strong>Acid béo thường gặp:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Acid béo</th><th class='border border-gray-300 p-2'>Công thức</th><th class='border border-gray-300 p-2'>Loại</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Palmitic</td><td class='border border-gray-300 p-2'>C₁₅H₃₁COOH</td><td class='border border-gray-300 p-2'>No</td></tr><tr><td class='border border-gray-300 p-2'>Stearic</td><td class='border border-gray-300 p-2'>C₁₇H₃₅COOH</td><td class='border border-gray-300 p-2'>No</td></tr><tr><td class='border border-gray-300 p-2'>Oleic</td><td class='border border-gray-300 p-2'>C₁₇H₃₃COOH</td><td class='border border-gray-300 p-2'>Không no (1 C=C)</td></tr><tr><td class='border border-gray-300 p-2'>Linoleic</td><td class='border border-gray-300 p-2'>C₁₇H₃₁COOH</td><td class='border border-gray-300 p-2'>Không no (2 C=C)</td></tr><tr><td class='border border-gray-300 p-2'>Linolenic</td><td class='border border-gray-300 p-2'>C₁₇H₂₉COOH</td><td class='border border-gray-300 p-2'>Không no (3 C=C)</td></tr></tbody></table><p><strong>Ví dụ lipid:</strong></p><p>Tristearin: (C₁₇H₃₅COO)₃C₃H₅</p><p>Triolein: (C₁₇H₃₃COO)₃C₃H₅</p><h3>b) Phân loại lipid</h3><p><strong>1. Chất béo no:</strong></p><ul><li>Chứa acid béo no (không có C=C)</li><li>Thường là chất rắn ở nhiệt độ phòng</li><li>Nguồn: Mỡ động vật (mỡ lợn, bơ)</li><li>Ví dụ: Tristearin, tripalmitin</li></ul><p><strong>2. Chất béo không no:</strong></p><ul><li>Chứa acid béo không no (có C=C)</li><li>Thường là chất lỏng ở nhiệt độ phòng</li><li>Nguồn: Dầu thực vật (dầu ăn)</li><li>Ví dụ: Triolein, trilinolein</li></ul><h3>c) Tính chất vật lý</h3><ul><li>Nhẹ hơn nước (d < 1)</li><li>Không tan trong nước</li><li>Tan trong dung môi hữu cơ (ether, benzene)</li><li>Chất béo no: Rắn (mỡ)</li><li>Chất béo không no: Lỏng (dầu)</li></ul><h3>d) Tính chất hóa học</h3><p><strong>1. Phản ứng thủy phân (xà phòng hóa):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>(RCOO)₃C₃H₅ + 3NaOH → 3RCOONa + C₃H₅(OH)₃ (t°)</p><p>Tạo xà phòng (muối của acid béo) và glycerol</p><p><strong>Ví dụ:</strong></p><p>(C₁₇H₃₅COO)₃C₃H₅ + 3NaOH → 3C₁₇H₃₅COONa + C₃H₅(OH)₃</p><p>Tristearin → Natri stearat (xà phòng)</p><p><strong>2. Phản ứng cộng hydrogen (làm cứng dầu):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>(C₁₇H₃₃COO)₃C₃H₅ + 3H₂ → (C₁₇H₃₅COO)₃C₃H₅ (Ni, t°, p)</p><p>Dầu (lỏng) → Mỡ (rắn)</p><p>Triolein → Tristearin</p><p><strong>Ứng dụng:</strong> Sản xuất bơ nhân tạo, margarine</p><p><strong>3. Phản ứng cộng halogen:</strong></p><p>Lipid không no + Br₂ → Mất màu Br₂</p><p>Nhận biết lipid không no</p><p><strong>4. Phản ứng oxi hóa:</strong></p><p>Lipid không no + O₂ → Bị oxy hóa (ôi thiu)</p><p>Cần bảo quản nơi tối, mát</p><h3>e) Chỉ số đặc trưng của lipid</h3><p><strong>1. Chỉ số xà phòng hóa (chỉ số Koettstorfer):</strong></p><p>Số mg KOH cần để xà phòng hóa 1g lipid</p><p>Đặc trưng cho khối lượng phân tử lipid</p><p><strong>2. Chỉ số iod:</strong></p><p>Số gam I₂ cộng vào 100g lipid</p><p>Đặc trưng cho độ không no (số liên kết C=C)</p><p>Dầu có chỉ số iod cao (nhiều C=C)</p><h3>f) Vai trò và ứng dụng lipid</h3><p><strong>Vai trò sinh học:</strong></p><ul><li>Nguồn năng lượng dự trữ (9 kcal/g)</li><li>Thành phần màng tế bào</li><li>Bảo vệ cơ quan nội tạng</li><li>Giữ nhiệt cho cơ thể</li><li>Hòa tan vitamin A, D, E, K</li></ul><p><strong>Ứng dụng:</strong></p><ul><li>Thực phẩm (dầu ăn, bơ)</li><li>Sản xuất xà phòng</li><li>Sản xuất glycerol</li><li>Sản xuất biodiesel</li><li>Mỹ phẩm</li></ul><p><strong>Lưu ý dinh dưỡng:</strong></p><ul><li>Nên ăn dầu thực vật (không no) nhiều hơn mỡ động vật</li><li>Acid béo không no tốt cho tim mạch</li><li>Tránh ăn quá nhiều chất béo (béo phì)</li><li>Cần acid béo thiết yếu (omega-3, omega-6)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán thủy phân ester và lipid",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH thủy phân</li><li>Tính mol NaOH theo ester/lipid</li><li>Tính khối lượng sản phẩm</li></ul><p><strong>Công thức quan trọng:</strong></p><ul><li>Ester đơn chức: n(NaOH) = n(ester)</li><li>Lipid: n(NaOH) = 3 × n(lipid)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Thủy phân hoàn toàn 44.4g hỗn hợp X gồm CH₃COOC₂H₅ và (C₁₇H₃₅COO)₃C₃H₅ bằng dung dịch NaOH vừa đủ. a) Tính khối lượng NaOH cần dùng. b) Tính khối lượng muối thu được. c) Tính % khối lượng mỗi chất trong X.",
+                "solution": "<p><strong>Phân tích:</strong></p><p>X gồm: CH₃COOC₂H₅ (ester đơn chức) và (C₁₇H₃₅COO)₃C₃H₅ (lipid)</p><p><strong>a) Tính khối lượng NaOH:</strong></p><p><strong>Phương trình:</strong></p><p>CH₃COOC₂H₅ + NaOH → CH₃COONa + C₂H₅OH ... (1)</p><p>(C₁₇H₃₅COO)₃C₃H₅ + 3NaOH → 3C₁₇H₃₅COONa + C₃H₅(OH)₃ ... (2)</p><p><strong>Đặt:</strong></p><p>n(CH₃COOC₂H₅) = a mol</p><p>n(lipid) = b mol</p><p><strong>Bước 1: Lập hệ phương trình</strong></p><p>Khối lượng X:</p><p>88a + 890b = 44.4 ... (I)</p><p>(M(CH₃COOC₂H₅) = 88, M(lipid) = 890)</p><p><strong>Bước 2: Áp dụng bảo toàn khối lượng</strong></p><p>m(X) + m(NaOH) = m(muối) + m(alcohol)</p><p>Từ (1): n(NaOH) = a mol</p><p>Từ (2): n(NaOH) = 3b mol</p><p>Tổng: n(NaOH) = a + 3b mol</p><p><strong>Bước 3: Bảo toàn khối lượng</strong></p><p>44.4 + 40(a + 3b) = [82a + 306×3b] + [46a + 92b]</p><p>44.4 + 40a + 120b = 82a + 918b + 46a + 92b</p><p>44.4 + 40a + 120b = 128a + 1010b</p><p>44.4 = 88a + 890b (đúng với phương trình I)</p><p><strong>Phương pháp nhanh hơn:</strong></p><p>Gọi số mol NaOH = x mol</p><p>Bảo toàn khối lượng:</p><p>m(X) + m(NaOH) = m(muối) + m(alcohol)</p><p>Với ester: m(muối) = m(ester) + m(NaOH) - m(alcohol)</p><p>Với lipid: m(muối) = m(lipid) + m(NaOH) - m(glycerol)</p><p><strong>Giả sử:</strong> a = 0.3 mol, b = 0.02 mol (thỏa 88×0.3 + 890×0.02 = 44.4)</p><p>n(NaOH) = 0.3 + 3×0.02 = 0.36 mol</p><p>m(NaOH) = 0.36 × 40 = 14.4g</p><p><strong>b) Tính khối lượng muối:</strong></p><p><strong>Muối từ (1):</strong></p><p>n(CH₃COONa) = 0.3 mol</p><p>m(CH₃COONa) = 0.3 × 82 = 24.6g</p><p><strong>Muối từ (2):</strong></p><p>n(C₁₇H₃₅COONa) = 3 × 0.02 = 0.06 mol</p><p>m(C₁₇H₃₅COONa) = 0.06 × 306 = 18.36g</p><p><strong>Tổng khối lượng muối:</strong></p><p>m(muối) = 24.6 + 18.36 = 42.96g</p><p><strong>c) Tính % khối lượng:</strong></p><p>%m(CH₃COOC₂H₅) = (0.3 × 88) / 44.4 × 100% = 59.5%</p><p>%m(lipid) = 100% - 59.5% = 40.5%</p><p><strong>Đáp án:</strong> a) 14.4g NaOH; b) 42.96g muối; c) 59.5% và 40.5%</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán đốt cháy ester",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Ester no, đơn chức, mạch hở: n(CO₂) = n(H₂O)</li><li>Áp dụng bảo toàn khối lượng</li><li>Tính mol ester từ CO₂ hoặc H₂O</li></ul><p><strong>Công thức:</strong></p><ul><li>CₙH₂ₙO₂ + (3n/2)O₂ → nCO₂ + nH₂O</li><li>m(ester) + m(O₂) = m(CO₂) + m(H₂O)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Đốt cháy hoàn toàn 8.8g ester X (no, đơn chức, mạch hở) thu được 17.6g CO₂ và 7.2g H₂O. a) Xác định công thức phân tử X. b) Viết công thức cấu tạo có thể có của X. c) X tác dụng với NaOH tạo muối có mùi giấm, xác định CTCT của X.",
+                "solution": "<p><strong>a) Xác định công thức phân tử:</strong></p><p><strong>Bước 1: Tính số mol CO₂ và H₂O</strong></p><p>n(CO₂) = 17.6 / 44 = 0.4 mol</p><p>n(H₂O) = 7.2 / 18 = 0.4 mol</p><p><strong>Kiểm tra:</strong> n(CO₂) = n(H₂O) → Đúng với ester no, đơn chức, mạch hở</p><p><strong>Bước 2: Tính số mol ester</strong></p><p>Công thức ester: CₙH₂ₙO₂</p><p>Từ PTHH: CₙH₂ₙO₂ → nCO₂</p><p>n(ester) = n(CO₂) / n = 0.4 / n</p><p><strong>Bước 3: Tính M(ester)</strong></p><p>M(ester) = m / n(ester) = 8.8 / (0.4/n) = 22n</p><p>Mặt khác: M(CₙH₂ₙO₂) = 12n + 2n + 32 = 14n + 32</p><p>→ 14n + 32 = 22n</p><p>→ 8n = 32</p><p>→ n = 4</p><p><strong>Công thức phân tử: C₄H₈O₂</strong></p><p><strong>Kiểm tra:</strong></p><p>M(C₄H₈O₂) = 88 g/mol</p><p>n(ester) = 8.8 / 88 = 0.1 mol</p><p>n(CO₂) = 4 × 0.1 = 0.4 mol ✓</p><p><strong>b) Các công thức cấu tạo có thể:</strong></p><p><strong>Ester từ acid và alcohol:</strong></p><p><strong>1. Từ HCOOH (C₁) + C₃H₇OH (C₃):</strong></p><ul><li>HCOOC₃H₇: Propyl formate (2 đồng phân của C₃H₇)</li><li>HCOOCH₂CH₂CH₃: n-Propyl formate</li><li>HCOOCH(CH₃)₂: Isopropyl formate</li></ul><p><strong>2. Từ CH₃COOH (C₂) + C₂H₅OH (C₂):</strong></p><ul><li>CH₃COOC₂H₅: Ethyl acetate</li></ul><p><strong>3. Từ C₂H₅COOH (C₃) + CH₃OH (C₁):</strong></p><ul><li>C₂H₅COOCH₃: Methyl propionate</li></ul><p><strong>4. Từ C₃H₇COOH (C₄) + H (không có):</strong></p><p>Không tồn tại</p><p><strong>Tổng cộng: 4 đồng phân chính</strong></p><p><strong>c) Xác định CTCT khi biết muối có mùi giấm:</strong></p><p><strong>Phân tích:</strong></p><p>Muối có mùi giấm → Muối của CH₃COOH (acid acetic)</p><p>→ X là ester của CH₃COOH</p><p><strong>Phương trình:</strong></p><p>CH₃COOC₂H₅ + NaOH → CH₃COONa + C₂H₅OH</p><p>Natri acetate (mùi giấm)</p><p><strong>Kết luận: X là CH₃COOC₂H₅ (Ethyl acetate)</strong></p><p><strong>Đáp án:</strong> a) C₄H₈O₂; b) 4 đồng phân; c) CH₃COOC₂H₅</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Sản xuất biodiesel và xà phòng",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích quy trình sản xuất</li><li>Tính toán hiệu suất</li><li>Đánh giá kinh tế và môi trường</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Một nhà máy sản xuất biodiesel từ dầu thực vật (chứa 90% triolein). Quy trình: Dầu + Methanol → Biodiesel (methyl ester) + Glycerol. a) Từ 1 tấn dầu (hiệu suất 85%), tính khối lượng biodiesel và glycerol. b) Tính lượng methanol cần dùng (dư 20%). c) So sánh biodiesel với diesel từ dầu mỏ về môi trường và kinh tế.",
+                "solution": "<p><strong>Phân tích quy trình:</strong></p><p><strong>Phản ứng chính (transesterification):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>(C₁₇H₃₃COO)₃C₃H₅ + 3CH₃OH → 3C₁₇H₃₃COOCH₃ + C₃H₅(OH)₃</p><p>Triolein + Methanol → Methyl oleate (biodiesel) + Glycerol</p><p><strong>a) Tính khối lượng sản phẩm:</strong></p><p><strong>Bước 1: Tính khối lượng triolein</strong></p><p>m(triolein) = 1000 × 90% = 900 kg</p><p><strong>Bước 2: Tính số mol triolein</strong></p><p>M(triolein) = M[(C₁₇H₃₃COO)₃C₃H₅]</p><p>= 3 × (17×12 + 33 + 12 + 16×2) + (3×12 + 5)</p><p>= 3 × 282 + 41 = 887 g/mol</p><p>n(triolein) = 900,000 / 887 = 1014.7 mol</p><p><strong>Bước 3: Tính số mol biodiesel lý thuyết</strong></p><p>Theo PTHH: n(biodiesel) = 3 × n(triolein) = 3 × 1014.7 = 3044.1 mol</p><p><strong>Bước 4: Tính khối lượng biodiesel thực tế</strong></p><p>M(C₁₇H₃₃COOCH₃) = 17×12 + 33 + 12 + 16×2 + 12 + 3 = 296 g/mol</p><p>m(biodiesel) lý thuyết = 3044.1 × 296 = 901,054g = 901.1 kg</p><p>m(biodiesel) thực tế = 901.1 × 85% = 765.9 kg</p><p><strong>Bước 5: Tính khối lượng glycerol</strong></p><p>n(glycerol) lý thuyết = n(triolein) = 1014.7 mol</p><p>M(C₃H₅(OH)₃) = 92 g/mol</p><p>m(glycerol) lý thuyết = 1014.7 × 92 = 93,352g = 93.4 kg</p><p>m(glycerol) thực tế = 93.4 × 85% = 79.4 kg</p><p><strong>b) Tính lượng methanol:</strong></p><p><strong>Bước 1: Tính methanol lý thuyết</strong></p><p>n(CH₃OH) = 3 × n(triolein) = 3 × 1014.7 = 3044.1 mol</p><p>m(CH₃OH) lý thuyết = 3044.1 × 32 = 97,411g = 97.4 kg</p><p><strong>Bước 2: Tính methanol thực tế (dư 20%)</strong></p><p>m(CH₃OH) thực tế = 97.4 × 120% = 116.9 kg</p><p><strong>c) So sánh biodiesel và diesel dầu mỏ:</strong></p><p><strong>1. Về môi trường:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Tiêu chí</th><th class='border border-gray-300 p-2'>Biodiesel</th><th class='border border-gray-300 p-2'>Diesel dầu mỏ</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Nguồn gốc</td><td class='border border-gray-300 p-2'>Tái tạo (dầu thực vật)</td><td class='border border-gray-300 p-2'>Không tái tạo (dầu mỏ)</td></tr><tr><td class='border border-gray-300 p-2'>Phát thải CO₂</td><td class='border border-gray-300 p-2'>Carbon neutral (cây hấp thụ CO₂)</td><td class='border border-gray-300 p-2'>Tăng CO₂ (hiệu ứng nhà kính)</td></tr><tr><td class='border border-gray-300 p-2'>Phát thải SO₂</td><td class='border border-gray-300 p-2'>Rất thấp (không có S)</td><td class='border border-gray-300 p-2'>Cao (gây mưa acid)</td></tr><tr><td class='border border-gray-300 p-2'>Phát thải bụi</td><td class='border border-gray-300 p-2'>Thấp hơn 50%</td><td class='border border-gray-300 p-2'>Cao</td></tr><tr><td class='border border-gray-300 p-2'>Phân hủy sinh học</td><td class='border border-gray-300 p-2'>Dễ phân hủy</td><td class='border border-gray-300 p-2'>Khó phân hủy</td></tr><tr><td class='border border-gray-300 p-2'>Độc tính</td><td class='border border-gray-300 p-2'>Thấp</td><td class='border border-gray-300 p-2'>Cao</td></tr></tbody></table><p><strong>2. Về kinh tế:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Tiêu chí</th><th class='border border-gray-300 p-2'>Biodiesel</th><th class='border border-gray-300 p-2'>Diesel dầu mỏ</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Giá thành</td><td class='border border-gray-300 p-2'>Cao hơn 20-30%</td><td class='border border-gray-300 p-2'>Thấp hơn</td></tr><tr><td class='border border-gray-300 p-2'>Năng suất cây trồng</td><td class='border border-gray-300 p-2'>Phụ thuộc mùa vụ</td><td class='border border-gray-300 p-2'>Ổn định</td></tr><tr><td class='border border-gray-300 p-2'>Nhiệt trị</td><td class='border border-gray-300 p-2'>Thấp hơn 10%</td><td class='border border-gray-300 p-2'>Cao hơn</td></tr><tr><td class='border border-gray-300 p-2'>Bôi trơn</td><td class='border border-gray-300 p-2'>Tốt hơn (kéo dài tuổi thọ động cơ)</td><td class='border border-gray-300 p-2'>Trung bình</td></tr><tr><td class='border border-gray-300 p-2'>Sử dụng</td><td class='border border-gray-300 p-2'>Trực tiếp hoặc pha (B5, B10, B20)</td><td class='border border-gray-300 p-2'>Trực tiếp</td></tr><tr><td class='border border-gray-300 p-2'>Phụ phẩm</td><td class='border border-gray-300 p-2'>Glycerol (có giá trị)</td><td class='border border-gray-300 p-2'>Không</td></tr></tbody></table><p><strong>3. Ưu điểm biodiesel:</strong></p><ul><li>Giảm phụ thuộc vào dầu mỏ</li><li>Tạo công ăn việc làm nông thôn</li><li>Giảm phát thải khí nhà kính</li><li>An toàn hơn (điểm cháy cao hơn)</li><li>Tương thích với động cơ diesel hiện có</li></ul><p><strong>4. Nhược điểm biodiesel:</strong></p><ul><li>Giá thành cao hơn</li><li>Cạnh tranh với lương thực (dầu ăn)</li><li>Cần diện tích đất lớn</li><li>Hiệu suất năng lượng thấp hơn</li><li>Kém bền trong thời tiết lạnh</li></ul><p><strong>5. Xu hướng phát triển:</strong></p><ul><li>Sử dụng nguyên liệu thế hệ 2 (dầu tảo, dầu từ chất thải)</li><li>Không cạnh tranh với lương thực</li><li>Cải thiện công nghệ sản xuất</li><li>Giảm chi phí</li><li>Chính sách khuyến khích (thuế, trợ cấp)</li></ul><p><strong>Kết luận:</strong></p><p>Từ 1 tấn dầu thu được 765.9 kg biodiesel và 79.4 kg glycerol, cần 116.9 kg methanol. Biodiesel thân thiện môi trường hơn nhưng giá thành cao hơn diesel dầu mỏ. Đây là nhiên liệu tương lai bền vững.</p><p><strong>Đáp án:</strong> a) 765.9 kg biodiesel, 79.4 kg glycerol; b) 116.9 kg methanol; c) Đã phân tích chi tiết</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Ester có công thức chung:",
+            "options": ["R-OH", "R-COOH", "R-COO-R'", "R-O-R'"],
+            "correct": 2,
+            "explanation": "Ester có công thức chung R-COO-R'."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Phản ứng thủy phân ester trong môi trường kiềm gọi là:",
+            "options": ["Este hóa", "Xà phòng hóa", "Trùng hợp", "Trùng ngưng"],
+            "correct": 1,
+            "explanation": "Thủy phân ester bằng kiềm gọi là phản ứng xà phòng hóa."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Lipid là ester của glycerol với:",
+            "options": ["Alcohol", "Phenol", "Acid béo", "Aldehyde"],
+            "correct": 2,
+            "explanation": "Lipid là ester của glycerol với acid béo."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Chất béo no thường ở trạng thái:",
+            "options": ["Khí", "Lỏng", "Rắn", "Huyền phù"],
+            "correct": 2,
+            "explanation": "Chất béo no thường là chất rắn (mỡ động vật)."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Phản ứng làm cứng dầu thực vật:",
+            "options": [
+              "Cộng H₂",
+              "Cộng Br₂",
+              "Thủy phân",
+              "Oxi hóa"
+            ],
+            "correct": 0,
+            "explanation": "Làm cứng dầu bằng cách cộng H₂ vào liên kết C=C."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Đốt cháy ester no, đơn chức, mạch hở có đặc điểm:",
+            "options": [
+              "n(CO₂) > n(H₂O)",
+              "n(CO₂) < n(H₂O)",
+              "n(CO₂) = n(H₂O)",
+              "Không xác định"
+            ],
+            "correct": 2,
+            "explanation": "Ester no, đơn chức, mạch hở: n(CO₂) = n(H₂O)."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Thủy phân 1 mol lipid cần bao nhiêu mol NaOH?",
+            "options": ["1 mol", "2 mol", "3 mol", "4 mol"],
+            "correct": 2,
+            "explanation": "1 mol lipid + 3 mol NaOH → 3 mol muối + glycerol."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Chỉ số iod đặc trưng cho:",
+            "options": [
+              "Khối lượng phân tử",
+              "Độ không no",
+              "Tính acid",
+              "Độ tan"
+            ],
+            "correct": 1,
+            "explanation": "Chỉ số iod đặc trưng cho độ không no (số liên kết C=C)."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Sản phẩm thủy phân lipid bằng NaOH:",
+            "options": [
+              "Muối + Alcohol",
+              "Muối + Glycerol",
+              "Acid + Glycerol",
+              "Acid + Alcohol"
+            ],
+            "correct": 1,
+            "explanation": "Lipid + NaOH → Muối (xà phòng) + Glycerol."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Biodiesel là:",
+            "options": [
+              "Ester của glycerol",
+              "Methyl ester của acid béo",
+              "Ethyl ester của acid béo",
+              "Acid béo tự do"
+            ],
+            "correct": 1,
+            "explanation": "Biodiesel là methyl ester của acid béo."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Ester có mùi chuối chín:",
+            "options": [
+              "CH₃COOCH₃",
+              "CH₃COOC₂H₅",
+              "HCOOC₂H₅",
+              "C₂H₅COOCH₃"
+            ],
+            "correct": 1,
+            "explanation": "CH₃COOC₂H₅ (ethyl acetate) có mùi chuối chín."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Glycerol có công thức:",
+            "options": [
+              "C₂H₅OH",
+              "C₃H₅(OH)₃",
+              "C₆H₅OH",
+              "CH₃OH"
+            ],
+            "correct": 1,
+            "explanation": "Glycerol có công thức C₃H₅(OH)₃."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Những phản ứng nào xảy ra với ester?",
+            "options": [
+              "Thủy phân",
+              "Xà phòng hóa",
+              "Cháy",
+              "Tráng gương"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Ester có phản ứng thủy phân, xà phòng hóa, cháy. Không tráng gương."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Lipid không no có tính chất:",
+            "options": [
+              "Cộng H₂",
+              "Cộng Br₂",
+              "Bị oxi hóa (ôi thiu)",
+              "Tráng gương"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Lipid không no cộng H₂, Br₂, bị oxi hóa. Không tráng gương."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Ứng dụng của ester:",
+            "options": [
+              "Dung môi",
+              "Hương liệu",
+              "Sản xuất polymer",
+              "Nhiên liệu sinh học"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Ester có nhiều ứng dụng: dung môi, hương liệu, polymer, biodiesel."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Acid béo không no:",
+            "options": [
+              "Oleic (C₁₇H₃₃COOH)",
+              "Linoleic (C₁₇H₃₁COOH)",
+              "Stearic (C₁₇H₃₅COOH)",
+              "Linolenic (C₁₇H₂₉COOH)"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Oleic, linoleic, linolenic là acid không no. Stearic là acid no."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Thủy phân 8.8g CH₃COOC₂H₅ bằng NaOH dư. Tính khối lượng muối (g) thu được. Làm tròn đến 1 chữ số thập phân.",
+            "correct": "8.2",
+            "explanation": "n(ester) = 8.8/88 = 0.1 mol. n(muối) = 0.1 mol. m = 0.1×82 = 8.2g. Đáp án: 8.2"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Đốt cháy hoàn toàn 8.8g ester no, đơn chức, mạch hở thu được 17.6g CO₂. Tính khối lượng H₂O (g) thu được. Làm tròn đến 1 chữ số thập phân.",
+            "correct": "7.2",
+            "explanation": "n(CO₂) = 17.6/44 = 0.4 mol. n(H₂O) = n(CO₂) = 0.4 mol. m = 0.4×18 = 7.2g. Đáp án: 7.2"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Thủy phân 89g lipid (C₁₇H₃₅COO)₃C₃H₅ bằng NaOH. Tính khối lượng NaOH (g) cần dùng. Làm tròng đến 1 chữ số thập phân.",
+            "correct": "12.0",
+            "explanation": "M(lipid) = 890 g/mol. n = 89/890 = 0.1 mol. n(NaOH) = 0.3 mol. m = 0.3×40 = 12g. Đáp án: 12.0"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Ester C₄H₈O₂ có bao nhiêu đồng phân cấu tạo? Làm tròn đến hàng đơn vị.",
+            "correct": "4",
+            "explanation": "C₄H₈O₂ có 4 đồng phân ester chính. Đáp án: 4"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Làm cứng hoàn toàn 88.5g triolein cần bao nhiêu lít H₂ (đktc)? Làm tròn đến 1 chữ số thập phân.",
+            "correct": "6.7",
+            "explanation": "M(triolein) = 885 g/mol. n = 88.5/885 = 0.1 mol. n(H₂) = 0.3 mol. V = 0.3×22.4 = 6.72 lít. Đáp án: 6.7"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Glycerol có bao nhiêu nhóm -OH? Làm tròn đến hàng đơn vị.",
+            "correct": "3",
+            "explanation": "Glycerol C₃H₅(OH)₃ có 3 nhóm -OH. Đáp án: 3"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-16",
+      "name": "Bài 16. Tương tác giữa kiểu gene với môi trường và thành tựu chọn giống",
+      "slug": "tuong-tac-giua-kieu-gene-voi-moi-truong-va-thanh-tuu-chon-giong",
+      "chapter": "Chương 3. Mở rộng học thuyết di truyền nhiễm sắc thể",
+      "chapter_id": "S12-3",
+      "lesson_id": 16,
+      "description": "Tìm hiểu về tương tác giữa kiểu gene với môi trường và thành tựu chọn giống.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Tương tác giữa kiểu gene với môi trường và thành tựu chọn giống",
+          "sections": [
+            {
+              "heading": "1. Tương tác giữa kiểu gene và môi trường",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Thường biến:</strong> Biến đổi kiểu hình do ảnh hưởng của môi trường, không thay đổi kiểu gen.</li><li>Thường biến có thể di truyền hay không tùy thuộc vào cơ chế.</li></ul><h4>b) Mức phản ứng</h4><ul><li>Mỗi kiểu gen có một giới hạn phản ứng nhất định với môi trường.</li><li>Ví dụ: Cây cà chua có quả to nhỏ tùy điều kiện, nhưng vẫn giống cà chua.</li></ul><h4>c) Vai trò của môi trường</h4><ul><li>Môi trường ảnh hưởng đến sự biểu hiện của gene.</li><li>Nhiệt độ, ánh sáng, dinh dưỡng đều ảnh hưởng.</li><li>Ví dụ: Hoa hydrangea đổi màu theo pH đất.</li></ul>"
+            },
+            {
+              "heading": "2. Đặc điểm của thường biến",
+              "content": "<h4>a) Đặc điểm</h4><ul><li>Biến đổi theo hướng xác định (định hướng).</li><li>Đồng loạt trong quần thể cùng điều kiện.</li><li>Không di truyền (thường biến không di truyền).</li></ul><h4>b) Ví dụ</h4><ul><li>Cây rau muống lá to/nhỏ tùy độ ẩm.</li><li>Cá rô phi da sáng/tối tùy màu nước.</li><li>Ếch nâu/xanh tùy màu nền.</li></ul><h4>c) Ý nghĩa</h4><ul><li>Giúp sinh vật thích nghi tức thì với điều kiện môi trường.</li><li>Cơ sở cho chọn lọc tự nhiên.</li></ul>"
+            },
+            {
+              "heading": "3. Thành tựu chọn giống",
+              "content": "<h4>a) Phương pháp chọn giống</h4><ul><li><strong>Chọn lọc cá thể:</strong> Chọn cá thể có tính trạng mong muốn.</li><li><strong>Lai giống:</strong> Tạo tổ hợp gen mới.</li><li><strong>Đột biến:</strong> Tạo biến dị di truyền.</li><li><strong>Công nghệ gene:</strong> Chuyển gene từ loài khác.</li></ul><h4>b) Thành tựu ở động vật</h4><ul><li>Bò sữa Holstein-Friesian năng suất cao.</li><li>Gà trắng, gà ta lai cho thịt.</li><li>Heo Yorkshire, Landrace năng suất thịt.</li></ul><h4>c) Thành tựu ở thực vật</h4><ul><li>Lúa IR8, lúa thơm Jasmine.</li><li>Ngô lai, lạc lai.</li><li>Cà chua, dưa hấu không hạt.</li></ul>"
+            },
+            {
+              "heading": "4. Bảo tồn và sử dụng nguồn gen",
+              "content": "<h4>a) Nguồn gen</h4><ul><li>Tập hợp các gene quý hiếm trong quần thể.</li><li>Là vật liệu cho chọn giống.</li></ul><h4>b) Bảo tồn</h4><ul><li>Bảo tồn in situ (tại chỗ): Bảo vệ quần thể trong tự nhiên.</li><li>Bảo tồn ex situ (ngoài chỗ): Ngân hàng gene, vườn gen.</li></ul><h4>c) Nguy cơ</h4><ul><li>Mất đa dạng di truyền do chọn lọc nhân tạo.</li><li>Cần bảo tồn giống bản địa.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Thường biến là gì?",
+            "options": [
+              "Đột biến gene",
+              "Biến đổi kiểu hình do môi trường",
+              "Biến đổi kiểu gen",
+              "Di truyền tính trạng"
+            ],
+            "correct": 1,
+            "explanation": "Thường biến là biến đổi kiểu hình do ảnh hưởng của môi trường, không thay đổi kiểu gen."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Đặc điểm nào không đúng về thường biến?",
+            "options": [
+              "Biến đổi định hướng",
+              "Đồng loạt trong quần thể",
+              "Di truyền được",
+              "Không thay đổi kiểu gen"
+            ],
+            "correct": 2,
+            "explanation": "Thường biến không di truyền được vì không thay đổi kiểu gen."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Phương pháp chọn giống nào tạo tổ hợp gen mới?",
+            "options": [
+              "Chọn lọc cá thể",
+              "Lai giống",
+              "Gây đột biến",
+              "Công nghệ gene"
+            ],
+            "correct": 1,
+            "explanation": "Lai giống tạo tổ hợp gen mới từ hai cá thể khác nhau."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Mức phản ứng của kiểu gen là gì?",
+            "options": [
+              "Giới hạn biến đổi kiểu hình",
+              "Số lượng gene",
+              "Tần số đột biến",
+              "Tốc độ sinh trưởng"
+            ],
+            "correct": 0,
+            "explanation": "Mức phản ứng là giới hạn phản ứng của kiểu gen với điều kiện môi trường."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Bảo tồn ngoài chỗ (ex situ) là gì?",
+            "options": [
+              "Bảo vệ trong tự nhiên",
+              "Bảo vệ trong ngân hàng gene",
+              "Chọn lọc tự nhiên",
+              "Lai giống"
+            ],
+            "correct": 1,
+            "explanation": "Bảo tồn ex situ là bảo tồn ngoài môi trường sống tự nhiên, như ngân hàng gene, vườn gen."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các ví dụ về thường biến:",
+            "options": [
+              "Cây lá to/nhỏ tùy độ ẩm",
+              "Ếch đổi màu theo nền",
+              "Cá rô phi sáng/tối theo nước",
+              "Bệnh di truyền"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Thường biến theo độ ẩm. B ✓: Thường biến theo màu nền. C ✓: Thường biến theo môi trường. D ✗: Bệnh di truyền là do gene."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các phương pháp chọn giống:",
+            "options": [
+              "Chọn lọc cá thể",
+              "Lai giống",
+              "Gây đột biến",
+              "Tự nhiên"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Chọn cá thể tốt. B ✓: Lai tạo giống mới. C ✓: Tạo biến dị. D ✗: Không phải phương pháp chọn giống."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một giống lúa có năng suất trung bình 5 tấn/ha, nhưng được chọn lọc đạt 8 tấn/ha. Tính % tăng năng suất. Nhập số 2 chữ số.",
+            "correct": "60",
+            "explanation": "Tăng = (8-5)/5 × 100% = 60%."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Một giống ngô có chiều cao 150cm trong điều kiện bình thường, 200cm trong điều kiện tốt. Tính % tăng trưởng. Nhập số 3 chữ số.",
+            "correct": "033",
+            "explanation": "Tăng = (200-150)/150 × 100% = 33%."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân biệt thường biến và đột biến",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Thường biến: Không thay đổi kiểu gen, không di truyền.</li><li>Đột biến: Thay đổi kiểu gen, di truyền được.</li><li>Kiểm tra: Nếu biến mất khi thay đổi môi trường → thường biến.</li></ol>",
+            "examples": [
+              {
+                "question": "Cây hoa hibiscus nở hoa đỏ ở nhiệt độ thấp, hồng ở nhiệt độ cao. Đây là gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Thay đổi theo nhiệt độ, không thay đổi kiểu gen.</p><p>Đây là <strong>thường biến</strong>.</p>"
+              },
+              {
+                "question": "Cây bị đột biến màu hoa từ đỏ sang trắng. Đây là gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Thay đổi kiểu gen (đột biến).</p><p>Di truyền được cho thế hệ sau.</p><p>Đây là <strong>đột biến</strong>.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính hiệu quả chọn giống",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Tính % cải thiện = (Giá trị sau - Giá trị trước) / Giá trị trước × 100%.</li><li>So sánh năng suất trước và sau chọn giống.</li></ol>",
+            "examples": [
+              {
+                "question": "Giống lúa ban đầu năng suất 4 tấn/ha, sau chọn giống đạt 6 tấn/ha. Tính % tăng?",
+                "solution": "<p><strong>Giải:</strong></p><p>% tăng = (6-4)/4 × 100% = 50%</p>"
+              },
+              {
+                "question": "Bò sữa ban đầu 3000kg sữa/năm, sau chọn giống 4500kg. Tính % tăng?",
+                "solution": "<p><strong>Giải:</strong></p><p>% tăng = (4500-3000)/3000 × 100% = 50%</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-19",
+      "name": "Bài 19. Các bằng chứng tiến hóa",
+      "slug": "cac-bang-chung-tien-hoa",
+      "chapter": "Chương 5. Bằng chứng và các học thuyết tiến hóa",
+      "chapter_id": "S12-5",
+      "lesson_id": 19,
+      "description": "Tìm hiểu về các bằng chứng tiến hóa.",
+      "duration_minutes": 45,
+      "difficulty_level": "easy",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Các bằng chứng tiến hóa",
+          "sections": [
+            {
+              "heading": "1. Bằng chứng giải phẫu so sánh",
+              "content": "<h4>a) Cơ quan tương đồng</h4><ul><li>Cơ quan có nguồn gốc giống nhau nhưng chức năng khác.</li><li>Chứng minh các loài có chung tổ tiên.</li><li>Ví dụ: Chi trước của người, cánh chim, vây cá, tay khỉ.</li></ul><h4>b) Cơ quan vestigial</h4><ul><li>Cơ quan tiêu giảm, không còn chức năng.</li><li>Cho thấy tiến hóa từ tổ tiên có cơ quan phát triển.</li><li>Ví dụ: Ruột thừa, xương cụt ở cá voi, gai ở cây cà rốt.</li></ul><h4>c) Cơ quan đồng hình</h4><ul><li>Cơ quan có chức năng giống nhau nhưng nguồn gốc khác.</li><li>Chứng minh tiến hóa hội tụ.</li><li>Ví dụ: Cánh chim và cánh côn trùng.</li></ul>"
+            },
+            {
+              "heading": "2. Bằng chứng sinh học phân tử",
+              "content": "<h4>a) Protein</h4><ul><li>So sánh trình tự axit amin của cùng protein giữa các loài.</li><li>Loài càng gần gũi → trình tự càng giống.</li><li>Ví dụ: Cytochrome C của người và tinh tinh giống nhau 100%.</li></ul><h4>b) DNA và RNA</h4><ul><li>So sánh trình tự nucleotit.</li><li>DNA ty thể (mtDNA) dùng nghiên cứu tiến hóa.</li><li>Đồng hồ phân tử: Định tuổi phân ly loài.</li></ul><h4>c) Sinh học phân tử</h4><ul><li>Mọi sinh vật đều dùng chung mã di truyền.</li><li>Chứng minh nguồn gốc chung.</li></ul>"
+            },
+            {
+              "heading": "3. Bằng chứng sinh học",
+              "content": "<h4>a) Cơ quan sinh học</h4><ul><li>So sánh phôi các loài.</li><li>Phôi người, cá, gà có đặc điểm giống nhau (khe mang, đuôi).</li></ul><h4>b) Sinh vật sống</h4><ul><li>Hóa thạch sống (living fossils): Cá voi, cây ginkgo.</li><li>Các loài có đặc điểm trung gian.</li></ul>"
+            },
+            {
+              "heading": "4. Bằng chứng địa lý và địa chất",
+              "content": "<h4>a) Hóa thạch</h4><ul><li>Di tích sinh vật trong đá trầm tích.</li><li>Cho thấy sự biến đổi qua thời gian.</li><li>Minh họa dạng trung gian (Archaeopteryx).</li></ul><h4>b) Địa lý sinh vật</h4><ul><li>Sự phân bố sinh vật trên Trái Đất.</li><li>Đại lục Gondwana và sự phân bố các loài có quan hệ.</li></ul><h4>c) Địa chất</h4><ul><li>Tuổi của Trái Đất (4,5 tỷ năm) đủ cho tiến hóa.</li><li>Các sự kiện tuyệt chủng và bùng nổ.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Cơ quan tương đồng là gì?",
+            "options": [
+              "Cùng chức năng, khác nguồn gốc",
+              "Cùng nguồn gốc, khác chức năng",
+              "Cơ quan tiêu giảm",
+              "Cơ quan không có chức năng"
+            ],
+            "correct": 1,
+            "explanation": "Cơ quan tương đồng có cùng nguồn gốc (tổ tiên chung) nhưng chức năng khác nhau."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Cơ quan vestigial là gì?",
+            "options": [
+              "Cơ quan có chức năng",
+              "Cơ quan tiêu giảm",
+              "Cơ quan đồng hình",
+              "Cơ quan tương đồng"
+            ],
+            "correct": 1,
+            "explanation": "Cơ quan vestigial (tiêu giảm) là cơ quan còn sót lại từ tổ tiên, không còn chức năng."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Bằng chứng sinh học phân tử dựa trên gì?",
+            "options": [
+              "So sánh hóa thạch",
+              "So sánh DNA và protein",
+              "So sánh giải phẫu",
+              "So sánh phôi"
+            ],
+            "correct": 1,
+            "explanation": "Sinh học phân tử so sánh trình tự DNA và protein giữa các loài."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Hóa thạch là gì?",
+            "options": [
+              "Sinh vật sống",
+              "Di tích trong đá",
+              "Cơ quan tiêu giảm",
+              "DNA cổ đại"
+            ],
+            "correct": 1,
+            "explanation": "Hóa thạch là di tích hoặc dấu vết của sinh vật trong đá trầm tích."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Bằng chứng nào cho thấy mọi sinh vật có chung nguồn gốc?",
+            "options": [
+              "Cùng mã di truyền",
+              "Cùng ATP",
+              "Cùng 20 axit amin",
+              "Tất cả đều đúng"
+            ],
+            "correct": 3,
+            "explanation": "Mọi sinh vật đều dùng chung mã di truyền, ATP, 20 loại axit amin - bằng chứng nguồn gốc chung."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các bằng chứng tiến hóa:",
+            "options": [
+              "Giải phẫu so sánh",
+              "Sinh học phân tử",
+              "Hóa thạch",
+              "Nuôi cấy tế bào"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Cơ quan tương đồng, vestigial. B ✓: So sánh DNA, protein. C ✓: Hóa thạch. D ✗: Không phải bằng chứng tiến hóa."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn ví dụ về cơ quan tương đồng:",
+            "options": [
+              "Cánh chim và cánh côn trùng",
+              "Tay người và cánh chim",
+              "Mắt người và mắt cá",
+              "Các loài chim"
+            ],
+            "correct": [
+              1
+            ],
+            "explanation": "A ✗: Cánh chim và côn trùng đồng hình (chức năng giống, nguồn gốc khác). B ✓: Tay người và cánh chim cùng nguồn gốc, chức năng khác. C ✗: Mắt người và mắt cá đồng hình. D ✗: Không phải cơ quan."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Người và tinh tinh có trình tự cytochrome C giống nhau 100%. Tính % khác biệt. Nhập số 2 chữ số.",
+            "correct": "00",
+            "explanation": "100% giống nhau → 0% khác biệt."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Tuổi Trái Đất là 4,5 tỷ năm. Nếu tiến hóa bắt đầu cách đây 3,5 tỷ năm, tính % thời gian tiến hóa. Nhập số 2 chữ số.",
+            "correct": "78",
+            "explanation": "3.5/4.5 × 100% = 77.78% ≈ 78%."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân biệt các loại bằng chứng tiến hóa",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Giải phẫu: Cơ quan tương đồng, đồng hình, vestigial.</li><li>Phân tử: So sánh DNA, protein.</li><li>Sinh học: Phôi, hóa thạch.</li><li>Địa lý: Phân bố sinh vật.</li></ol>",
+            "examples": [
+              {
+                "question": "So sánh DNA giữa các loài là bằng chứng gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>So sánh DNA là <bằng chứng sinh học phân tử</b>.</p>"
+              },
+              {
+                "question": "Hóa thạch Archaeopteryx là bằng chứng gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Hóa thạch dạng trung gian là <bằng chứng địa chất</b>.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính độ tương đồng",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Tính % tương đồng = (Số giống / Tổng) × 100%.</li><li>Tính % khác biệt = 100% - % tương đồng.</li><li>Loài càng gần → % tương đồng càng cao.</li></ol>",
+            "examples": [
+              {
+                "question": "2 loài có 300/500 axit amin giống nhau. Tính % tương đồng?",
+                "solution": "<p><strong>Giải:</strong></p><p>% tương đồng = 300/500 × 100% = 60%</p>"
+              },
+              {
+                "question": "Người và khỉ có 98% DNA giống nhau. Tính % khác biệt?",
+                "solution": "<p><strong>Giải:</strong></p><p>% khác biệt = 100% - 98% = 2%</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

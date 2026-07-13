@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_22",
+      "name": "Thực hành: tìm hiểu sự phát triển một số ngành dịch vụ",
+      "slug": "thuc-hanh-tim-hieu-su-phat-trien-mot-so-nganh-dich-vu",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 22,
+      "description": "Hướng dẫn thực hành: thu thập số liệu, phân tích và trình bày sự phát triển các ngành dịch vụ như thương mại, giao thông, du lịch, tài chính và viễn thông.",
+      "duration_minutes": 60,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thực hành phân tích ngành dịch vụ",
+          "summary": "Quy trình thực hành gồm chọn ngành dịch vụ, thu thập số liệu về quy mô, phân bố và đóng góp kinh tế; vẽ bản đồ, biểu đồ và đưa ra nhận xét, dự báo và đề xuất chính sách.",
+          "sections": [
+            { "heading": "Chọn ngành và chỉ tiêu phân tích", "content": "Chọn chỉ tiêu: doanh thu, lao động, tỷ trọng GDP, số điểm cung ứng dịch vụ; xác định nguồn số liệu." },
+            { "heading": "Trình bày và kết luận", "content": "Dùng bản đồ, biểu đồ cột/đường để trình bày; nêu xu hướng, nhân tố ảnh hưởng và đề xuất phát triển bền vững." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Nêu hai chỉ tiêu thích hợp để phân tích dịch vụ?", "a_hint": "Doanh thu, số lao động, tỷ trọng GDP, số điểm cung ứng." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Nguồn số liệu chính cho phân tích dịch vụ thường là?", "options": ["Cục Thống kê, báo cáo ngành và chính quyền địa phương","Truyền miệng","Hình vẽ tùy ý","Không có nguồn"], "correct": 0, "explanation": "Cục Thống kê và báo cáo ngành là nguồn chính xác và đáng tin cậy." },
+          { "id": 2, "type": "mcq", "question": "Biểu đồ nào phù hợp để so sánh doanh thu nhiều năm?", "options": ["Biểu đồ đường","Biểu đồ tròn","Ảnh tĩnh","Bản đồ nhiệt"], "correct": 0, "explanation": "Biểu đồ đường thể hiện xu hướng doanh thu theo thời gian." },
+          { "id": 3, "type": "mcq", "question": "Một bước quan trọng khi làm thực hành là?", "options": ["Xác minh tính tin cậy của số liệu","Bỏ qua nguồn dữ liệu","Dự đoán tùy hứng","Không làm gì"], "correct": 0, "explanation": "Xác minh dữ liệu đảm bảo phân tích chính xác." },
+          { "id": 4, "type": "mcq", "question": "Phân tích dịch vụ cần chú ý yếu tố nào?", "options": ["Yêu cầu về hạ tầng, nhân lực và thị trường","Màu sắc biểu đồ","Sở thích cá nhân","Không cần chú ý"], "correct": 0, "explanation": "Hạ tầng, nhân lực và thị trường là nhân tố chủ đạo ảnh hưởng tới dịch vụ." },
+          { "id": 5, "type": "mcq", "question": "Một đề xuất chính sách cho phát triển dịch vụ vùng xa là?", "options": ["Đầu tư hạ tầng viễn thông và hỗ trợ doanh nghiệp nhỏ vùng xa","Tăng thuế dịch vụ vùng xa","Cấm dịch vụ tại vùng xa","Không chính sách"], "correct": 0, "explanation": "Đầu tư viễn thông và hỗ trợ doanh nghiệp giúp phát triển dịch vụ vùng xa." },
+          { "id": 6, "type": "mcq", "question": "Một chỉ tiêu phản ánh khả năng cung ứng dịch vụ là?", "options": ["Số điểm cung ứng dịch vụ trên dân số","Diện tích rừng","Số cảng biển","Số trường đại học chưa liên quan"], "correct": 0, "explanation": "Số điểm cung ứng/đơn vị dân số cho biết mức độ phổ cập dịch vụ." },
+          { "id": 7, "type": "mcq", "question": "Khi trình bày bản đồ phân bố dịch vụ, cần ghi chú gì?", "options": ["Chú thích, thang tỷ lệ và nguồn dữ liệu","Không cần chú thích","Chỉ màu trắng","Ẩn nguồn"], "correct": 0, "explanation": "Chú thích và nguồn dữ liệu giúp người đọc hiểu bản đồ." },
+          { "id": 8, "type": "mcq", "question": "Một công cụ phân tích hữu ích là?", "options": ["GIS để biểu diễn phân bố không gian dịch vụ","Không có công cụ","Chỉ dùng bút chì","Dùng hình vẽ tay"], "correct": 0, "explanation": "GIS giúp trực quan hóa phân bố và phân tích không gian dịch vụ." },
+          { "id": 9, "type": "mcq", "question": "Phát triển dịch vụ du lịch bền vững cần lưu ý?", "options": ["Bảo tồn tài nguyên và quản lý sức chứa du lịch","Chỉ phát triển còi cát trắng","Tăng số lượng khách bằng mọi giá","Không cần quản lý"], "correct": 0, "explanation": "Quản lý sức chứa và bảo tồn tài nguyên đảm bảo bền vững du lịch." },
+          { "id": 10, "type": "mcq", "question": "Một bước cuối cùng trong báo cáo thực hành là?", "options": ["Đưa ra kết luận, hàm ý chính sách và khuyến nghị thực tế","Không kết luận","Viết nội dung một cách mơ hồ","Bỏ phần đề xuất"], "correct": 0, "explanation": "Kết luận và khuyến nghị giúp báo cáo có giá trị ứng dụng." }
+        ]
+      }
+    }
+  ]
+}

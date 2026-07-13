@@ -1,0 +1,402 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-2-gtln-gtnn-ham-so",
+      "name": "Bài 2. Giá trị lớn nhất và giá trị nhỏ nhất của hàm số",
+      "slug": "bai-2-gtln-gtnn-ham-so",
+      "chapter": "Chương 1: Ứng dụng đạo hàm để khảo sát và vẽ đồ thị hàm số",
+      "chapter_id": "T12-1",
+      "lesson_id": 2,
+      "description": "Tìm hiểu cách xác định giá trị lớn nhất (GTLN) và giá trị nhỏ nhất (GTNN) của hàm số trên một đoạn hoặc khoảng. Ứng dụng vào giải các bài toán tối ưu hóa trong thực tế.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/EC4899/FFFFFF?text=GTLN+và+GTNN",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Tìm GTLN, GTNN trên đoạn $[a; b]$",
+          "slug": "tim-gtln-gtnn-tren-doan",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Tìm GTLN, GTNN trên khoảng hoặc nửa khoảng",
+          "slug": "tim-gtln-gtnn-tren-khoang",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: Bài toán thực tế – Tối ưu hóa",
+          "slug": "bai-toan-thuc-te-toi-uu-hoa",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Định nghĩa",
+              "content": "<h3>Giá trị lớn nhất (GTLN)</h3><p>Cho hàm số $y = f(x)$ xác định trên tập $D$. Số $M$ được gọi là <strong>giá trị lớn nhất</strong> của $f$ trên $D$ nếu:</p><ul><li>$f(x) \\leq M$ với mọi $x \\in D$</li><li>Tồn tại $x_0 \\in D$ sao cho $f(x_0) = M$</li></ul><p>Ký hiệu: $M = \\max_{x \\in D} f(x)$ hay $M = \\max_D f$.</p><h3>Giá trị nhỏ nhất (GTNN)</h3><p>Số $m$ được gọi là <strong>giá trị nhỏ nhất</strong> của $f$ trên $D$ nếu:</p><ul><li>$f(x) \\geq m$ với mọi $x \\in D$</li><li>Tồn tại $x_0 \\in D$ sao cho $f(x_0) = m$</li></ul><p>Ký hiệu: $m = \\min_{x \\in D} f(x)$ hay $m = \\min_D f$.</p><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 1:</strong> Không phải hàm số nào cũng có GTLN hoặc GTNN. Ví dụ $y = x$ không có GTLN lẫn GTNN trên $\\mathbb{R}$. Hàm số $y = \\dfrac{1}{x}$ không có GTLN lẫn GTNN trên $(0; +\\infty)$.</div><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 2 (Định lý Weierstrass):</strong> Nếu hàm số $f$ <em>liên tục</em> trên <em>đoạn đóng</em> $[a; b]$ thì $f$ <strong>luôn có cả GTLN và GTNN</strong> trên $[a; b]$. Điều này không đảm bảo trên khoảng mở hoặc nửa khoảng.</div>"
+            },
+            {
+              "heading": "2. Tìm GTLN, GTNN trên đoạn $[a; b]$",
+              "content": "<h3>Quy trình 3 bước</h3><ol><li>Tính $f'(x)$. Giải $f'(x) = 0$ trong khoảng $(a; b)$, tìm các nghiệm $x_1, x_2, \\ldots$</li><li>Tính giá trị $f(a),\\; f(x_1),\\; f(x_2),\\;\\ldots,\\; f(b)$.</li><li>So sánh: <strong>GTLN</strong> = giá trị lớn nhất; <strong>GTNN</strong> = giá trị nhỏ nhất trong các giá trị đó.</li></ol><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 3:</strong> Phải tính giá trị tại <strong>cả hai đầu mút</strong> $f(a)$ và $f(b)$. GTLN hoặc GTNN có thể đạt tại đầu mút dù đó không phải điểm cực trị.</div><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 4:</strong> Nếu $f'(x)$ không đổi dấu trên $(a; b)$ (hàm đơn điệu thuần), thì GTLN và GTNN đạt trực tiếp tại hai đầu mút: đầu mút bên cao hơn cho GTLN, đầu mút bên thấp hơn cho GTNN.</div>"
+            },
+            {
+              "heading": "3. Tìm GTLN, GTNN trên khoảng, nửa khoảng",
+              "content": "<p>Trên khoảng mở $(a; b)$ hoặc nửa khoảng, <strong>không đảm bảo</strong> hàm số có GTLN/GTNN. Cách xác định:</p><ul><li>Lập bảng biến thiên đầy đủ trên toàn khoảng.</li><li>Xét giới hạn tại các đầu mút mở (kể cả $\\pm \\infty$).</li><li>Nếu hàm có <strong>duy nhất một cực đại</strong> và giá trị tại cực đại lớn hơn giới hạn ở cả hai đầu → đó là <strong>GTLN</strong>.</li><li>Tương tự với cực tiểu duy nhất → <strong>GTNN</strong>.</li></ul><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 5 – Phân biệt cực trị và GTLN/GTNN:</strong><br>• <strong>Cực đại</strong> là cực trị <em>cục bộ</em> (lớn hơn các giá trị lân cận).<br>• <strong>GTLN</strong> là lớn nhất <em>toàn cục</em> trên toàn miền xét.<br>Vì vậy: giá trị cực đại <strong>chưa chắc</strong> là GTLN; GTLN <strong>có thể</strong> đạt tại đầu mút (không phải điểm cực trị).</div>"
+            },
+            {
+              "heading": "4. Ứng dụng vào bài toán tối ưu hóa thực tế",
+              "content": "<h3>Các bước giải</h3><ol><li><strong>Xác định đại lượng:</strong> Đọc đề, tìm đại lượng cần tối ưu (diện tích, thể tích, chi phí, lợi nhuận...).</li><li><strong>Đặt ẩn và điều kiện:</strong> Chọn ẩn $x$, xác định miền $D$ từ ràng buộc thực tế.</li><li><strong>Lập hàm mục tiêu:</strong> Biểu diễn đại lượng cần tối ưu theo $x$: $y = f(x)$.</li><li><strong>Tìm GTLN/GTNN</strong> của $f$ trên $D$.</li><li><strong>Kết luận</strong> kèm đơn vị, kiểm tra nghiệm có thỏa mãn điều kiện.</li></ol><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 6:</strong> Trong bài toán thực tế, miền $D$ thường là <em>đoạn đóng</em> $[a; b]$ (ràng buộc vật lý), nên luôn phải kiểm tra cả hai đầu mút. Đôi khi đầu mút không có ý nghĩa thực tế (ví dụ chiều dài $= 0$) nhưng vẫn cần tính để so sánh.</div><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 7 – Các ứng dụng điển hình:</strong><br>• Tối ưu <strong>diện tích, chu vi</strong> hình phẳng với điều kiện cho trước.<br>• Tối ưu <strong>thể tích, diện tích bề mặt</strong> hình không gian (hộp, trụ, nón...).<br>• Tối ưu <strong>chi phí, lợi nhuận</strong> trong bài toán kinh tế.<br>• Tối ưu <strong>quãng đường, thời gian, vận tốc</strong> trong bài toán vật lý.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tìm GTLN, GTNN trên đoạn $[a; b]$",
+            "method": "<h3>Phương pháp</h3><ol><li>Tính $f'(x)$, giải $f'(x) = 0$ trong $(a; b)$, được nghiệm $x_1, x_2, \\ldots$</li><li>Tính $f(a), f(x_1), \\ldots, f(b)$.</li><li>GTLN = max; GTNN = min trong các giá trị đó.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tìm GTLN và GTNN của $f(x) = x^3 - 3x + 2$ trên $[-2; 2]$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$f'(x) = 3x^2-3 = 3(x-1)(x+1) = 0 \\Leftrightarrow x = \\pm1 \\in (-2; 2)$.</p><p>Tính: $f(-2)=-8+6+2=0$; $f(-1)=-1+3+2=4$; $f(1)=1-3+2=0$; $f(2)=8-6+2=4$.</p><p><strong>Kết luận:</strong> $\\max_{[-2;2]} f = 4$ (tại $x=-1$ và $x=2$); $\\min_{[-2;2]} f = 0$ (tại $x=-2$ và $x=1$).</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Tìm GTNN của $g(x) = x^2 - 4x + 5$ trên $[0; 5]$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$g'(x) = 2x-4 = 0 \\Leftrightarrow x=2 \\in (0;5)$.</p><p>$g(0)=5$; $g(2)=4-8+5=1$; $g(5)=25-20+5=10$.</p><p><strong>Kết luận:</strong> $\\min_{[0;5]} g = 1$ (tại $x=2$); $\\max_{[0;5]} g = 10$ (tại $x=5$).</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tìm GTLN, GTNN trên khoảng hoặc nửa khoảng",
+            "method": "<h3>Phương pháp</h3><ol><li>Lập bảng biến thiên đầy đủ trên khoảng.</li><li>Xét giới hạn tại các đầu mút.</li><li>Nếu có cực trị duy nhất và vượt trội so với hai đầu: cực đại duy nhất = GTLN; cực tiểu duy nhất = GTNN.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tìm GTLN của $y = \\dfrac{x}{x^2+1}$ trên $[0; +\\infty)$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$y'=\\dfrac{1-x^2}{(x^2+1)^2}=0 \\Leftrightarrow x=1$. $y'>0$ trên $(0;1)$; $y'<0$ trên $(1;+\\infty)$ → cực đại tại $x=1$.</p><p>$y(0)=0$; $y(1)=\\dfrac{1}{2}$; $\\lim_{x\\to+\\infty}y=0$. Cực đại duy nhất lớn hơn hai đầu.</p><p><strong>Kết luận:</strong> $\\max_{[0;+\\infty)} y = \\dfrac{1}{2}$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Tìm GTNN của $h(x) = x + \\dfrac{4}{x}$ trên $(0; +\\infty)$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$h'(x) = 1-\\dfrac{4}{x^2} = 0 \\Leftrightarrow x=2$. $h'<0$ trên $(0;2)$; $h'>0$ trên $(2;+\\infty)$ → cực tiểu tại $x=2$.</p><p>$\\lim_{x\\to0^+}h=+\\infty$; $\\lim_{x\\to+\\infty}h=+\\infty$. Cực tiểu duy nhất là nhỏ nhất.</p><p><strong>Kết luận:</strong> $\\min_{(0;+\\infty)} h = h(2) = 2+2 = 4$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế – Tối ưu hóa",
+            "method": "<h3>Phương pháp</h3><ol><li>Đặt ẩn $x$, xác định điều kiện và miền $D$.</li><li>Lập hàm mục tiêu $f(x)$ biểu diễn đại lượng cần tối ưu.</li><li>Tìm GTLN hoặc GTNN của $f$ trên $D$.</li><li>Kết luận kèm đơn vị, kiểm tra thỏa mãn điều kiện.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Hình chữ nhật có chu vi $40$ cm. Tìm kích thước để diện tích lớn nhất.",
+                "solution": "<p><strong>Giải:</strong></p><p>Gọi chiều dài là $x$ (cm, $0 < x < 20$). Chiều rộng: $20-x$.</p><p>Diện tích: $S(x) = x(20-x) = 20x-x^2$. $S'(x)=20-2x=0 \\Leftrightarrow x=10$.</p><p>$S''=-2<0$ → cực đại (duy nhất) = GTLN. $S(10)=100$ cm².</p><p><strong>Kết luận:</strong> Hình vuông cạnh $10$ cm có diện tích lớn nhất là $100$ cm².</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Người ta làm hộp hình hộp chữ nhật không nắp, đáy vuông cạnh $x$, diện tích tôn là $75$ cm². Tìm $x$ để thể tích lớn nhất.",
+                "solution": "<p><strong>Giải:</strong></p><p>Diện tích 5 mặt: $x^2 + 4xh = 75 \\Rightarrow h = \\dfrac{75-x^2}{4x}$.</p><p>$V(x) = x^2 h = \\dfrac{x(75-x^2)}{4}$. $V'=\\dfrac{75-3x^2}{4}=0 \\Leftrightarrow x=5$.</p><p>$h = \\dfrac{75-25}{20}=\\dfrac{50}{20}=2{,}5$ cm. $V_{max} = \\dfrac{5(75-25)}{4} = \\dfrac{250}{4} = 62{,}5$ cm³.</p><p><strong>Kết luận:</strong> Đáy cạnh $5$ cm, cao $2{,}5$ cm, thể tích lớn nhất là $62{,}5$ cm³.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "GTLN của hàm số $y = x^3 - 3x + 2$ trên đoạn $[-2; 2]$ là:",
+            "options": [
+              "$4$",
+              "$2$",
+              "$0$",
+              "$-2$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=3x^2-3=0 \\Leftrightarrow x=\\pm1$. Tính: $y(-2)=-8+6+2=0$; $y(-1)=-1+3+2=4$; $y(1)=1-3+2=0$; $y(2)=8-6+2=4$. GTLN $= 4$."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "GTNN của hàm số $y = x^2 - 4x + 5$ trên đoạn $[0; 5]$ là:",
+            "options": [
+              "$5$",
+              "$1$",
+              "$10$",
+              "$0$"
+            ],
+            "correct": 1,
+            "explanation": "$y'=2x-4=0 \\Leftrightarrow x=2$. Tính: $y(0)=5$; $y(2)=4-8+5=1$; $y(5)=25-20+5=10$. GTNN $= 1$ tại $x=2$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "GTLN của hàm số $y = -x^2 + 6x - 5$ trên $\\mathbb{R}$ là:",
+            "options": [
+              "$4$",
+              "$9$",
+              "$-5$",
+              "$6$"
+            ],
+            "correct": 0,
+            "explanation": "$y = -(x-3)^2+4$. Hàm bậc hai hướng xuống, đạt GTLN tại đỉnh $x=3$: $y(3)=-9+18-5=4$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "GTNN của hàm số $y = x + \\dfrac{9}{x}$ trên $(0; +\\infty)$ là:",
+            "options": [
+              "$9$",
+              "$6$",
+              "$3$",
+              "$12$"
+            ],
+            "correct": 1,
+            "explanation": "Theo BĐT Cô-si: $x + \\dfrac{9}{x} \\geq 2\\sqrt{9} = 6$. Dấu bằng khi $x = 3$. Hoặc: $y'=1-\\frac{9}{x^2}=0 \\Leftrightarrow x=3$; $y(3)=3+3=6$. Vậy GTNN $= 6$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Hàm số $y = x^3 - 6x^2 + 9x + 1$ trên đoạn $[0; 4]$ đạt GTLN là:",
+            "options": [
+              "$5$",
+              "$1$",
+              "$3$",
+              "$6$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=3x^2-12x+9=3(x-1)(x-3)=0 \\Rightarrow x=1,x=3$. Tính: $y(0)=1$; $y(1)=1-6+9+1=5$; $y(3)=27-54+27+1=1$; $y(4)=64-96+36+1=5$. GTLN $=5$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "GTLN của hàm số $y = \\dfrac{x}{x^2+1}$ trên $[0; +\\infty)$ là:",
+            "options": [
+              "$\\dfrac{1}{2}$",
+              "$1$",
+              "$0$",
+              "$2$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=\\dfrac{1-x^2}{(x^2+1)^2}=0 \\Leftrightarrow x=1$. $y'>0$ trên $(0;1)$; $y'<0$ trên $(1;+\\infty)$ → cực đại duy nhất. $y(0)=0$; $y(1)=\\dfrac{1}{2}$; $\\lim_{+\\infty}y=0$. Vậy GTLN $=\\dfrac{1}{2}$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Vận tốc của một vật chuyển động: $v(t) = -3t^2 + 12t$ (m/s), $t \\in [0; 5]$ giây. Vận tốc lớn nhất đạt được là:",
+            "options": [
+              "$12$ m/s",
+              "$15$ m/s",
+              "$9$ m/s",
+              "$0$ m/s"
+            ],
+            "correct": 0,
+            "explanation": "$v'(t)=-6t+12=0 \\Leftrightarrow t=2$. Tính: $v(0)=0$; $v(2)=-12+24=12$; $v(5)=-75+60=-15$. GTLN $=v(2)=12$ m/s."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Hàm số $y = -x^3 + 3x^2 + 9x - 2$ trên đoạn $[-2; 4]$ đạt GTNN là:",
+            "options": [
+              "$-20$",
+              "$-2$",
+              "$5$",
+              "$25$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=-3x^2+6x+9=-3(x-3)(x+1)=0 \\Rightarrow x=-1$ và $x=3$. Tính: $y(-2)=8+12-18-2=-20$ (lưu ý: $-(-2)^3+3(-2)^2+9(-2)-2 = 8+12-18-2=-20$); $y(-1)=1+3-9-2=-7$; $y(3)=-27+27+27-2=25$; $y(4)=-64+48+36-2=18$. GTNN $=-20$ tại $x=-2$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "GTLN của hàm số $y = \\sqrt{4-x^2}$ trên $[-2; 2]$ là:",
+            "options": [
+              "$2$",
+              "$4$",
+              "$0$",
+              "$\\sqrt{2}$"
+            ],
+            "correct": 0,
+            "explanation": "$4-x^2$ đạt GTLN bằng $4$ tại $x=0$. Khi đó $y(0)=\\sqrt{4}=2$. Tại $x=\\pm2$: $y=0$. Vậy GTLN $=2$, GTNN $=0$."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Hàm số $y = \\dfrac{1}{3}x^3 - x^2 - 3x + 5$ trên đoạn $[-2; 5]$ có GTNN bằng:",
+            "options": [
+              "$-4$",
+              "$5$",
+              "$\\dfrac{1}{3}$",
+              "$2$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=x^2-2x-3=(x-3)(x+1)=0 \\Rightarrow x=-1$ và $x=3$. Tính: $y(-2)=\\frac{-8}{3}-4+6+5=\\frac{-8}{3}+7=\\frac{13}{3}$; $y(-1)=\\frac{-1}{3}-1+3+5=\\frac{-1-3+9+15}{3}=\\frac{20}{3}$; $y(3)=9-9-9+5=-4$; $y(5)=\\frac{125}{3}-25-15+5=\\frac{125-60}{3}=\\frac{65}{3}$. GTNN $=-4$ tại $x=3$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Hình chữ nhật có chu vi $40$ cm. Diện tích lớn nhất có thể đạt được là:",
+            "options": [
+              "$100$ cm²",
+              "$200$ cm²",
+              "$80$ cm²",
+              "$150$ cm²"
+            ],
+            "correct": 0,
+            "explanation": "Gọi chiều dài là $x$ ($0<x<20$). Chiều rộng: $20-x$. Diện tích: $S=x(20-x)=20x-x^2$. $S'=20-2x=0 \\Leftrightarrow x=10$. $S_{max}=10\\times10=100$ cm²."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Một hộp không nắp, đáy hình vuông cạnh $x$ (cm), diện tích tôn 5 mặt là $75$ cm². Thể tích lớn nhất của hộp là:",
+            "options": [
+              "$62{,}5$ cm³",
+              "$125$ cm³",
+              "$50$ cm³",
+              "$75$ cm³"
+            ],
+            "correct": 0,
+            "explanation": "$x^2+4xh=75 \\Rightarrow h=\\dfrac{75-x^2}{4x}$. $V=x^2h=\\dfrac{x(75-x^2)}{4}$. $V'=\\dfrac{75-3x^2}{4}=0 \\Leftrightarrow x=5$. $h=\\dfrac{75-25}{20}=2{,}5$. $V_{max}=25\\times2{,}5=62{,}5$ cm³."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Hàm số $y = x^3 - 3x^2 + 1$ trên đoạn $[-1; 3]$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "GTLN của hàm số bằng $1$",
+              "GTNN của hàm số bằng $-3$",
+              "GTLN đạt tại $x = 0$ và $x = 3$",
+              "GTNN đạt tại $x = -1$ và $x = 2$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$y'=3x^2-6x=3x(x-2)=0 \\Rightarrow x=0$ và $x=2$. Tính: $y(-1)=-1-3+1=-3$; $y(0)=1$; $y(2)=8-12+1=-3$; $y(3)=27-27+1=1$. GTLN $=1$ (A ✓) đạt tại $x=0$ và $x=3$ (C ✓). GTNN $=-3$ (B ✓) đạt tại $x=-1$ và $x=2$ (D ✓)."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Hàm số $y = 2x^3 - 3x^2 - 12x + 5$ trên $[-2; 3]$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "GTLN bằng $12$",
+              "GTNN bằng $-15$",
+              "GTLN đạt tại $x = -1$",
+              "GTNN đạt tại $x = 2$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$y'=6x^2-6x-12=6(x-2)(x+1)=0 \\Rightarrow x=-1$ và $x=2$. Tính: $y(-2)=-16-12+24+5=1$; $y(-1)=-2-3+12+5=12$; $y(2)=16-12-24+5=-15$; $y(3)=54-27-36+5=-4$. GTLN $=12$ (A ✓) tại $x=-1$ (C ✓). GTNN $=-15$ (B ✓) tại $x=2$ (D ✓)."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Hàm số $y = -x^2 + 4x + 1$ trên $\\mathbb{R}$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số có GTLN trên $\\mathbb{R}$",
+              "GTLN bằng $5$",
+              "GTLN đạt tại $x = 2$",
+              "Hàm số không có GTNN trên $\\mathbb{R}$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$y=-(x-2)^2+5$. Parabol hướng xuống → có GTLN, không có GTNN trên $\\mathbb{R}$ (A ✓, D ✓). Khi $x\\to\\pm\\infty$: $y\\to-\\infty$, không có giới hạn dưới → không có GTNN. GTLN $=5$ (B ✓) tại $x=2$ (C ✓)."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Hàm số $y = x + \\dfrac{4}{x}$ trên $(0; +\\infty)$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số có GTNN trên $(0; +\\infty)$",
+              "GTNN bằng $4$",
+              "GTNN đạt tại $x = 2$",
+              "Hàm số không có GTLN trên $(0; +\\infty)$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$y'=1-\\dfrac{4}{x^2}=0 \\Leftrightarrow x=2$. $y'<0$ trên $(0;2)$; $y'>0$ trên $(2;+\\infty)$ → cực tiểu duy nhất tại $x=2$. $\\lim_{x\\to0^+}y=+\\infty$; $\\lim_{x\\to+\\infty}y=+\\infty$ → không có GTLN (D ✓). Cực tiểu duy nhất = GTNN $=y(2)=4$ (A ✓, B ✓, C ✓)."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tìm GTLN của hàm số $y = -x^3 + 3x^2 + 9x - 5$ trên đoạn $[-2; 4]$. Nhập kết quả (số nguyên).",
+            "explanation": "$y'=-3x^2+6x+9=-3(x-3)(x+1)=0 \\Rightarrow x=-1$ và $x=3$. Tính: $y(-2)=8+12-18-5=-3$; $y(-1)=1+3-9-5=-10$; $y(3)=-27+27+27-5=22$; $y(4)=-64+48+36-5=15$. GTLN $=y(3)=22$.",
+            "correct": "22"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Tìm GTNN của hàm số $y = \\dfrac{1}{3}x^3 - x^2 - 3x + 5$ trên đoạn $[-2; 4]$. Nhập kết quả (số nguyên).",
+            "explanation": "$y'=x^2-2x-3=(x-3)(x+1)=0 \\Rightarrow x=-1$ và $x=3$. Tính: $y(-2)=\\frac{-8}{3}-4+6+5=\\frac{-8+21}{3}=\\frac{13}{3}\\approx4{,}3$; $y(-1)=\\frac{-1}{3}-1+3+5=\\frac{-1+21}{3}=\\frac{20}{3}\\approx6{,}7$; $y(3)=9-9-9+5=-4$; $y(4)=\\frac{64}{3}-16-12+5=\\frac{64-69}{3}=\\frac{-5}{3}\\approx-1{,}7$. GTNN $=y(3)=-4$.",
+            "correct": "-4"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Hàm số $y = x + \\dfrac{16}{x}$ trên $(0; +\\infty)$ đạt GTNN bằng bao nhiêu? Nhập số nguyên.",
+            "explanation": "$y'=1-\\dfrac{16}{x^2}=0 \\Leftrightarrow x^2=16 \\Leftrightarrow x=4$ (nhận). Cực tiểu duy nhất tại $x=4$; $\\lim_{x\\to0^+}y=+\\infty$ và $\\lim_{x\\to+\\infty}y=+\\infty$ → GTNN là cực tiểu. $y(4)=4+4=8$.",
+            "correct": "8"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "🌍 [Thực tế] Người nông dân có 60 m hàng rào để quây 3 mặt của khu vực hình chữ nhật ven bờ sông (mặt tiếp sông không cần rào). Diện tích lớn nhất (m²) khu vực đạt được là bao nhiêu?",
+            "explanation": "Gọi chiều rộng (vuông góc bờ sông) là $x$ m ($0<x<30$). Chiều dài (song song bờ sông): $y=60-2x$. Diện tích: $S(x)=x(60-2x)=60x-2x^2$. $S'(x)=60-4x=0 \\Leftrightarrow x=15$. $S''=-4<0$ → cực đại = GTLN. $S_{max}=S(15)=15\\times30=450$ m².",
+            "correct": "450"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "🌍 [Thực tế] Một quán cà phê bán $x$ ly/ngày ($0 \\leq x \\leq 100$). Doanh thu là $R(x) = 50x - 0{,}5x^2$ (nghìn đồng), chi phí $C(x) = 10x + 200$ (nghìn đồng). Tính lợi nhuận lớn nhất (nghìn đồng) có thể đạt được.",
+            "explanation": "Lợi nhuận: $P(x)=R(x)-C(x)=(50x-0{,}5x^2)-(10x+200)=-0{,}5x^2+40x-200$. $P'(x)=-x+40=0 \\Leftrightarrow x=40$ (nhận, $0\\leq40\\leq100$). $P''=-1<0$ → cực đại = GTLN. Kiểm tra biên: $P(0)=-200<0$; $P(100)=-5000+4000-200=-1200<0$. $P(40)=-0{,}5\\times1600+1600-200=-800+1600-200=600$. Vậy lợi nhuận lớn nhất là $600$ nghìn đồng tại $x=40$ ly.",
+            "correct": "600"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "🌍 [Thực tế] Một rạp chiếu phim có 500 ghế. Hiện tại giá vé $100$ nghìn đồng và bán được $300$ vé. Biết rằng cứ tăng giá thêm $10$ nghìn đồng thì số khách mua giảm $10$ người. Tính giá vé (nghìn đồng) để tổng doanh thu lớn nhất.",
+            "explanation": "Gọi số lần tăng giá là $k$ ($k \\geq 0$). Giá vé: $(100+10k)$ nghìn đồng. Số khách: $(300-10k)$. Điều kiện: $300-10k>0 \\Leftrightarrow k<30$, tức $0 \\leq k \\leq 30$. Doanh thu: $T(k)=(100+10k)(300-10k)=30000-1000k+3000k-100k^2=30000+2000k-100k^2$. $T'(k)=2000-200k=0 \\Leftrightarrow k=10$. $T''=-200<0$ → cực đại = GTLN. Kiểm tra biên: $T(0)=30000$; $T(10)=(100+100)(300-100)=200\\times200=40000$; $T(30)=400\\times0=0$. Vậy doanh thu lớn nhất $=40\\;000$ nghìn đồng tại giá vé $\\mathbf{200}$ nghìn đồng.",
+            "correct": "200"
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Tìm GTLN và GTNN của hàm số $f(x) = x^3 - 3x + 2$ trên đoạn $[0; 2]$.",
+            "answer": "GTLN là 4 tại $x=2$, GTNN là 0 tại $x=1$.",
+            "explanation": "Tính $f'(x)$, tìm nghiệm trong đoạn, so sánh giá trị tại các biên và nghiệm."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Một tấm tôn hình vuông cạnh 12cm được cắt bỏ 4 hình vuông cạnh $x$ ở 4 góc rồi gấp thành một hình hộp không nắp. Tìm $x$ để thể tích khối hộp lớn nhất.",
+            "answer": "$x = 2$ cm.",
+            "explanation": "Lập hàm thể tích $V(x) = x(12-2x)^2$, tìm cực đại của hàm số trên $(0; 6)$."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Tìm các giá trị của $m$ để giá trị nhỏ nhất của hàm số $y = x + \\dfrac{m}{x}$ trên khoảng $(0; +\\infty)$ bằng 4.",
+            "answer": "$m = 4$.",
+            "explanation": "Dùng BĐT Cô-si hoặc đạo hàm để tìm GTNN là $2\\sqrt{m}$."
+          }
+        ]
+      }
+    }
+  ]
+}

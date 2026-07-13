@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_11",
+      "name": "Vấn đề phát triển ngành nông nghiệp",
+      "slug": "van-de-phat-trien-nganh-nong-nghiep",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 11,
+      "description": "Các vấn đề phát triển nông nghiệp: năng suất, cơ cấu cây trồng, nông nghiệp bền vững và chuỗi giá trị nông sản.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Vấn đề và hướng phát triển nông nghiệp",
+          "summary": "Nông nghiệp phải chuyển đổi theo hướng tăng năng suất, đa dạng hoá sản phẩm, ứng phó với biến đổi khí hậu và tham gia chuỗi giá trị toàn cầu.",
+          "sections": [
+            { "heading": "Năng suất và kỹ thuật canh tác", "content": "Ứng dụng giống, phân bón hợp lý, tưới tiêu và cơ giới hóa để nâng cao năng suất." },
+            { "heading": "Nông nghiệp bền vững", "content": "Mô hình canh tác bảo vệ đất, sử dụng hợp lý nước và giảm sử dụng hóa chất." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Nêu một thách thức của nông nghiệp hiện nay?", "a_hint": "Biến đổi khí hậu, xâm nhập mặn, đất bạc màu." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Một biện pháp tăng năng suất nông nghiệp là?", "options": ["Sử dụng giống tốt hơn","Giảm tưới tiêu","Tăng phá rừng","Không can thiệp"], "correct": 0, "explanation": "Giống năng suất cao và kỹ thuật canh tác tốt giúp tăng năng suất." },
+          { "id": 2, "type": "mcq", "question": "Nông nghiệp bền vững chú trọng điều gì?", "options": ["Bảo vệ đất và nước","Tăng dùng thuốc BVTV","Khai thác quá mức","Không quan tâm"], "correct": 0, "explanation": "Bảo vệ tài nguyên là trọng tâm của nông nghiệp bền vững." },
+          { "id": 3, "type": "mcq", "question": "Chuỗi giá trị nông sản là gì?", "options": ["Từ sản xuất đến tiêu thụ gồm chế biến, vận chuyển, thị trường","Chỉ trồng trọt","Chỉ xuất khẩu","Chỉ tiêu thụ nội địa"], "correct": 0, "explanation": "Chuỗi giá trị bao gồm nhiều khâu từ sản xuất đến tiêu dùng." },
+          { "id": 4, "type": "mcq", "question": "Một rủi ro ảnh hưởng tới nông nghiệp ven biển?", "options": ["Xâm nhập mặn và bão","Tuyết rơi","Nắng yếu liên tục","Không có rủi ro"], "correct": 0, "explanation": "Xâm nhập mặn và bão là rủi ro vùng ven biển." },
+          { "id": 5, "type": "mcq", "question": "Phát triển nông nghiệp cần ưu tiên?", "options": ["Đào tạo kỹ thuật nông nghiệp và cơ sở hạ tầng nông thôn","Tập trung tất cả ở thành phố","Ngăn chặn mọi công nghệ","Không đầu tư"], "correct": 0, "explanation": "Đầu tư vào kỹ thuật và hạ tầng giúp nông nghiệp phát triển." },
+          { "id": 6, "type": "mcq", "question": "Nông nghiệp có thể thích ứng với biến đổi khí hậu bằng?", "options": ["Chọn giống chịu hạn/mặn, cải thiện quản lý nước","Không làm gì","Tăng phá rừng","Giảm canh tác"], "correct": 0, "explanation": "Chọn giống và quản lý nước là biện pháp thích ứng." },
+          { "id": 7, "type": "mcq", "question": "Một chỉ tiêu để đánh giá hiệu quả nông nghiệp là?", "options": ["Năng suất trên đơn vị diện tích","Số lượng cảng biển","Số trường đại học","Số bệnh viện"], "correct": 0, "explanation": "Năng suất/ha là chỉ tiêu quan trọng trong nông nghiệp." },
+          { "id": 8, "type": "mcq", "question": "Phát triển nông nghiệp bền vững giảm tác động nào?", "options": ["Suy thoái đất và ô nhiễm nước","Tăng phá rừng","Giảm sản lượng mãi mãi","Không có gì"], "correct": 0, "explanation": "Thực hành bền vững giúp giảm suy thoái và ô nhiễm." },
+          { "id": 9, "type": "mcq", "question": "Hoạt động nào giúp nông sản gia tăng giá trị?", "options": ["Chế biến sau thu hoạch và đóng gói","Bán tươi tại sân nhà","Không xử lý","Bỏ qua tiêu chuẩn"], "correct": 0, "explanation": "Chế biến và tiêu chuẩn chất lượng tăng giá trị nông sản." },
+          { "id": 10, "type": "mcq", "question": "Một yếu tố ảnh hưởng tới phân bố cây trồng là?", "options": ["Đất và khí hậu","Màu sắc cờ","Số lượng cửa hàng","Không có yếu tố"], "correct": 0, "explanation": "Đất và khí hậu quyết định phù hợp trồng loại cây nào." }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-10-dinh-luat-charles",
+      "name": "Bài 10. Định luật Charles",
+      "slug": "bai-10-dinh-luat-charles",
+      "chapter": "Chương 2. Khí lí tưởng",
+      "chapter_id": "LY12-2",
+      "lesson_id": 10,
+      "description": "Nghiên cứu định luật Charles về quá trình đẳng áp của khí lí tưởng.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "dlc-1",
+          "name": "Phát biểu định luật Charles",
+          "slug": "phat-bieu-dinh-luat-charles",
+          "difficulty": "easy"
+        },
+        {
+          "id": "dlc-2",
+          "name": "Quá trình đẳng áp",
+          "slug": "qua-trinh-dang-ap",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dlc-3",
+          "name": "Bài toán đẳng áp",
+          "slug": "bai-toan-dang-ap",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Định luật Charles",
+          "sections": [
+            {
+              "heading": "1. Phát biểu định luật",
+              "content": "<p><strong>Định luật Charles:</strong></p><p>Trong quá trình đẳng áp (áp suất không đổi), thể tích của một lượng khí xác định tỉ lệ thuận với nhiệt độ tuyệt đối.</p><p><strong>Công thức:</strong></p><p>$$\\frac{V}{T} = \\text{const}$$</p><p>Hay: $$\\frac{V_1}{T_1} = \\frac{V_2}{T_2}$$</p><p>Trong đó:</p><ul><li>V₁, T₁: thể tích và nhiệt độ ban đầu</li><li>V₂, T₂: thể tích và nhiệt độ cuối</li><li>T phải đo bằng Kelvin (K)</li></ul>"
+            },
+            {
+              "heading": "2. Đường đẳng áp",
+              "content": "<p>Đồ thị V = f(T) trong quá trình đẳng áp là một <strong>đường thẳng</strong> đi qua gốc tọa độ.</p><p>Đối với các áp suất khác nhau, ta có các đường đẳng áp khác nhau. Áp suất càng lớn, đường đẳng áp càng thấp.</p><p><strong>Đặc điểm:</strong></p><ul><li>Khi T tăng 2 lần thì V tăng 2 lần</li><li>Đường đẳng áp có dạng: V = kT (k = const/p)</li></ul>"
+            },
+            {
+              "heading": "3. Quá trình đẳng tích (Gay-Lussac)",
+              "content": "<p><strong>Định luật Gay-Lussac (quá trình đẳng tích):</strong></p><p>Trong quá trình đẳng tích (thể tích không đổi), áp suất của khí tỉ lệ thuận với nhiệt độ tuyệt đối.</p><p>$$\\frac{p}{T} = \\text{const}$$</p><p>Hay: $$\\frac{p_1}{T_1} = \\frac{p_2}{T_2}$$</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính thể tích hoặc nhiệt độ",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Sử dụng V₁/T₁ = V₂/T₂</li><li>Chú ý: T phải đổi sang Kelvin</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Khí ở 27°C có V₁ = 4 lít. Đun nóng đẳng áp đến 127°C. Tính V₂.",
+                "solution": "<p><strong>Giải:</strong></p><p>T₁ = 27 + 273 = 300 K</p><p>T₂ = 127 + 273 = 400 K</p><p>V₁/T₁ = V₂/T₂ → 4/300 = V₂/400 → V₂ = 5,33 lít</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán đẳng tích",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>p₁/T₁ = p₂/T₂</li><li>Thể tích không đổi</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Khí trong bình kín ở 27°C có p = 2 atm. Tính áp suất khi nhiệt độ tăng đến 127°C.",
+                "solution": "<p><strong>Giải:</strong></p><p>T₁ = 300K, T₂ = 400K</p><p>p₁/T₁ = p₂/T₂ → 2/300 = p₂/400 → p₂ = 2,67 atm</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Quá trình đẳng áp là quá trình:",
+            "options": [
+              "Áp suất không đổi",
+              "Nhiệt độ không đổi",
+              "Thể tích không đổi",
+              "Nội năng không đổi"
+            ],
+            "correct": 0,
+            "explanation": "Đẳng áp = áp suất không đổi"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Trong quá trình đẳng áp, V tỉ lệ với:",
+            "options": [
+              "p",
+              "T",
+              "1/T",
+              "V"
+            ],
+            "correct": 1,
+            "explanation": "V/T = const → V tỉ lệ thuận với T"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Khi nhiệt độ tăng 2 lần (đẳng áp), thể tích:",
+            "options": [
+              "Giảm 2 lần",
+              "Tăng 2 lần",
+              "Không đổi",
+              "Tăng 4 lần"
+            ],
+            "correct": 1,
+            "explanation": "V tỉ lệ thuận với T"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Đồ thị V-T trong quá trình đẳng áp là:",
+            "options": [
+              "Đường thẳng qua gốc",
+              "Đường cong hypebol",
+              "Đường parabol",
+              "Đường tròn"
+            ],
+            "correct": 0,
+            "explanation": "Đường đẳng áp là đường thẳng đi qua gốc tọa độ"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Công thức định luật Charles:",
+            "options": [
+              "V₁/T₁ = V₂/T₂",
+              "p₁V₁ = p₂V₂",
+              "p₁/T₁ = p₂/T₂",
+              "pV = nRT"
+            ],
+            "correct": 0,
+            "explanation": "V/T = const cho quá trình đẳng áp"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Quá trình đẳng tích có công thức:",
+            "options": [
+              "p/T = const",
+              "V/T = const",
+              "pV = const",
+              "p + V = const"
+            ],
+            "correct": 0,
+            "explanation": "p/T = const cho quá trình đẳng tích (Gay-Lussac)"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Nhiệt độ 127°C tương đương:",
+            "options": [
+              "127K",
+              "400K",
+              "146K",
+              "-146K"
+            ],
+            "correct": 1,
+            "explanation": "T = 127 + 273 = 400 K"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Trong quá trình đẳng tích, khi nhiệt độ tăng:",
+            "options": [
+              "Áp suất giảm",
+              "Áp suất tăng",
+              "Thể tích tăng",
+              "Áp suất không đổi"
+            ],
+            "correct": 1,
+            "explanation": "p tỉ lệ thuận với T trong đẳng tích"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Định luật Gay-Lussac liên quan đến:",
+            "options": [
+              "Đẳng áp",
+              "Đẳng nhiệt",
+              "Đẳng tích",
+              "Đẳng năng"
+            ],
+            "correct": 2,
+            "explanation": "Gay-Lussac: quá trình đẳng tích p/T = const"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Khí ở 27°C có V = 6 lít. Đun nóng đẳng áp đến 227°C. Tính V₂:",
+            "options": [
+              "8 lít",
+              "10 lít",
+              "12 lít",
+              "14 lít"
+            ],
+            "correct": 1,
+            "explanation": "T₁=300K, T₂=500K → 6/300 = V₂/500 → V₂ = 10 lít"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Trong quá trình đẳng áp:",
+            "options": [
+              "Áp suất không đổi",
+              "Thể tích tỉ lệ thuận nhiệt độ",
+              "V/T = hằng số",
+              "Áp suất tỉ lệ nghịch thể tích"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Đẳng áp: p = const, V/T = const"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Trong quá trình đẳng tích:",
+            "options": [
+              "Thể tích không đổi",
+              "Áp suất tỉ lệ thuận nhiệt độ",
+              "p/T = hằng số",
+              "Nhiệt độ tăng thì V tăng"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Đẳng tích: V = const, p/T = const"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Điều kiện để áp dụng định luật Charles:",
+            "options": [
+              "Khối lượng khí không đổi",
+              "Áp suất không đổi",
+              "Nhiệt độ đo bằng Kelvin",
+              "Thể tích không đổi"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Đẳng áp: p = const, n = const"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Khí ở 27°C có V = 5 lít. Đun nóng đẳng áp đến 127°C. Tính V₂ (lít).",
+            "correct": "6.67",
+            "explanation": "T₁=300K, T₂=400K → 5/300 = V₂/400 → V₂ = 6,67 lít"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Khí trong bình ở 27°C có p = 3 atm. Đun nóng đẳng tích đến 177°C. Tính p₂ (atm).",
+            "correct": "4.5",
+            "explanation": "T₁=300K, T₂=450K → 3/300 = p₂/450 → p₂ = 4,5 atm"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Thể tích khí tăng từ 8 lít lên 12 lít khi đun nóng đẳng áp. Nhiệt độ tăng bao nhiêu lần?",
+            "correct": "1.5",
+            "explanation": "V tỉ lệ với T → T tăng 12/8 = 1,5 lần"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Áp suất tăng từ 2 atm lên 3 atm khi đun nóng đẳng tích. Nhiệt độ tăng bao nhiêu lần?",
+            "correct": "1.5",
+            "explanation": "p tỉ lệ với T → T tăng 3/2 = 1,5 lần"
+          }
+        ]
+      }
+    }
+  ]
+}

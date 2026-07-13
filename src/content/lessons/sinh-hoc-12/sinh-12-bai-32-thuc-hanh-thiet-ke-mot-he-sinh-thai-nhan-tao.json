@@ -1,0 +1,192 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-32",
+      "name": "Bài 32. Thực hành: Thiết kế một hệ sinh thái nhân tạo",
+      "slug": "thuc-hanh-thiet-ke-mot-he-sinh-thai-nhan-tao",
+      "chapter": "Chương 7. Sinh thái học quần xã",
+      "chapter_id": "S12-7",
+      "lesson_id": 32,
+      "description": "Thực hành thiết kế một hệ sinh thái nhân tạo.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Thực hành: Thiết kế một hệ sinh thái nhân tạo",
+          "sections": [
+            {
+              "heading": "1. Mục đích yêu cầu",
+              "content": "<ul><li>Hiểu nguyên tắc cấu tạo và hoạt động của hệ sinh thái.</li><li> Thiết kế hệ sinh thái nhân tạo đơn giản.</li><li>Vận dụng kiến thức về trao đổi vật chất, chuỗi thức ăn, chu trình.</li><li>Rèn luyện kỹ năng làm việc nhóm.</li></ul>"
+            },
+            {
+              "heading": "2. Nguyên tắc thiết kế",
+              "content": "<h4>a) Thành phần cơ bản</h4><ul><li><strong>Sinh vật sản xuất:</strong> Thực vật xanh (cây, rong, tảo).</li><li><strong>Sinh vật tiêu thụ:</strong> Động vật nhỏ (cá, ốc, tôm).</li><li><strong>Sinh vật phân giải:</strong> Vi khuẩn, nấm trong đất/nước.</li><li><strong>Môi trường:</strong> Nước, đất, không khí, ánh sáng.</li></ul><h4>b) Cân bằng</h4><ul><li>Số lượng SV tiêu thụ phải phù hợp với SV sản xuất.</li><li>Cần có chu trình nước, cung cấp ánh sáng.</li><li>Tránh quá tải hệ thống.</li></h4>"
+            },
+            {
+              "heading": "3. Các bước thiết kế",
+              "content": "<h4>a) Bước 1: Chọn loại hệ sinh thái</h4><ul><li>Hệ thủy sinh (bể cá, ao)</li><li>Hệ trên cạn (chậu cây, vườn)</li><li>Hệ kết hợp (vườn nước)</li></ul><h4>b) Bước 2: Xác định thành phần</h4><ul><li>Chọn cây trồng phù hợp.</li><li>Chọn động vật phù hợp (cùng môi trường).</li><li>Thiết kế chuỗi thức ăn hợp lý.</li></ul><h4>c) Bước 3: Thiết kế chi tiết</h4><ul><li>Kích thước, hình dạng.</li><li>Vị trí đặt (ánh sáng, nhiệt độ).</li><li>Hệ thống nước, thoát nước.</li></ul><h4>d) Bước 4: Lập dự toán</h4><ul><li>Chi phí vật liệu.</li><li>Thời gian thực hiện.</li><li>Kế hoạch duy trì.</li></ul>"
+            },
+            {
+              "heading": "4. Ví dụ thiết kế hệ thủy sinh",
+              "content": "<h4>a) Bể cá cảnh mini</h4><ul><li><strong>Thành phần:</strong> Cá nhỏ, rong rêu, vi khuẩn.</li><li><strong>Chuỗi thức ăn:</strong> Thức ăn cá → Cá → Phân → Vi khuẩn → Rong → Cá.</li><li><strong>Điều kiện:</strong> Ánh sáng, nhiệt độ 25-28°C, lọc khí.</li></ul><h4>b) Ao nuôi nhỏ</h4><ul><li><strong>Thành phần:</strong> Cá, tôm, ốc, rong.</li><li><strong>Chuỗi:</strong> Rong → Tôm → Cá → Ốc.</li><li><strong>Lưu ý:</strong> Cần oxy, kiểm tra pH.</li></h4>"
+            },
+            {
+              "heading": "5. Kết quả và đánh giá",
+              "content": "<h4>a) Tiêu chí đánh giá</h4><ul><li>Tính khả thi của thiết kế.</li><li>Tính cân bằng sinh thái.</li><li>Tính thẩm mỹ.</li><li>Chi phí hợp lý.</li></ul><h4>b) Kết luận</h4><ul><li>Hệ sinh thái nhân tạo cần có đủ thành phần và cân bằng.</li><li>Con người có thể điều khiển hệ sinh thái theo mục đích.</li><li>Việc thiết kế giúp hiểu sâu hơn về sinh thái học.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Thành phần nào không thể thiếu trong hệ sinh thái nhân tạo?",
+            "options": [
+              "Sinh vật tiêu thụ",
+              "Sinh vật sản xuất",
+              "Động vật lớn",
+              "Hệ thống sưởi"
+            ],
+            "correct": 1,
+            "explanation": "Sinh vật sản xuất (thực vật) cung cấp năng lượng cho toàn hệ, không thể thiếu."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Khi thiết kế hệ sinh thái cần đảm bảo yếu tố nào quan trọng nhất?",
+            "options": [
+              "Thẩm mỹ",
+              "Cân bằng sinh thái",
+              "Chi phí thấp",
+              "Dễ làm"
+            ],
+            "correct": 1,
+            "explanation": "Cân bằng sinh thái là yếu tố quan trọng nhất để hệ tồn tại bền vững."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Trong bể cá cảnh, vai trò của vi khuẩn là gì?",
+            "options": [
+              "Làm thức ăn cho cá",
+              "Phân giải chất thải",
+              "Tạo oxy",
+              "Trang trí"
+            ],
+            "correct": 1,
+            "explanation": "Vi khuẩn phân giải chất thải của cá, giúp cân bằng môi trường nước."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Yếu tố nào ảnh hưởng đến hệ sinh thái nhân tạo?",
+            "options": [
+              "Chỉ ánh sáng",
+              "Ánh sáng, nhiệt độ, oxy",
+              "Chỉ nước",
+              "Chỉ thức ăn"
+            ],
+            "correct": 1,
+            "explanation": "Ánh sáng, nhiệt độ, oxy đều ảnh hưởng đến hoạt động của hệ sinh thái."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Mục đích chính của thực hành thiết kế hệ sinh thái nhân tạo là gì?",
+            "options": [
+              "Giải trí",
+              "Hiểu nguyên tắc hoạt động hệ sinh thái",
+              "Tiết kiệm chi phí",
+              "Trang trí nhà cửa"
+            ],
+            "correct": 1,
+            "explanation": "Thực hành giúp hiểu nguyên tắc cấu tạo và hoạt động của hệ sinh thái."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các thành phần cần thiết của hệ sinh thái nhân tạo:",
+            "options": [
+              "Sinh vật sản xuất",
+              "Sinh vật tiêu thụ",
+              "Sinh vật phân giải",
+              "Hóa chất tẩy"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cần có SV sản xuất, SV tiêu thụ, SV phân giải. Hóa chất tẩy không cần thiết."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các yếu tố môi trường cần điều chỉnh trong hệ thủy sinh:",
+            "options": [
+              "Ánh sáng",
+              "Nhiệt độ",
+              "pH",
+              "Màu sắc cá"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Ánh sáng, nhiệt độ, pH là các yếu tố môi trường quan trọng. Màu sắc không quan trọng."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một hệ sinh thái cân bằng cần tối thiểu mấy thành phần chính? Nhập số 1 chữ số.",
+            "correct": "3"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Hệ thủy sinh cần đảm bảo yếu tố nào cho sinh vật sống? Nhập số 2 chữ số.",
+            "correct": "02"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Thiết kế chuỗi thức ăn trong hệ sinh thái",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định SV sản xuất phù hợp với môi trường.</li><li>Chọn SV tiêu thụ bậc 1 ăn SV sản xuất.</li><li>Chọn SV tiêu thụ bậc 2 (nếu cần).</li><li>Đảm bảo số lượng cân đối.</li></ol>",
+            "examples": [
+              {
+                "question": "Thiết kế chuỗi thức ăn cho bể cá cảnh: rong, cá, tôm. Sắp xếp theo bậc?",
+                "solution": "<p><strong>Giải:</strong></p><p>Rong (Bậc 1: SV sản xuất) → Tôm (Bậc 2: SV tiêu thụ bậc 1) → Cá (Bậc 3: SV tiêu thụ bậc 2)</p>"
+              },
+              {
+                "question": "Trong vườn rau, có rau, sâu, chim. Sắp xếp bậc dinh dưỡng?",
+                "solution": "<p><strong>Giải:</strong></p><p>Rau (Bậc 1) → Sâu (Bậc 2) → Chim (Bậc 3)</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định điều kiện môi trường phù hợp",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Tìm hiểu yêu cầu của từng loài sinh vật.</li><li>Điều chỉnh: ánh sáng, nhiệt độ, pH, oxy.</li><li>Đảm bảo phù hợp với tất cả các loài trong hệ.</li></ol>",
+            "examples": [
+              {
+                "question": "Thiết kế bể cá với cá vàng và cá betta. Nhiệt độ phù hợp?",
+                "solution": "<p><strong>Giải:</strong></p><p>Cá vàng: 18-22°C, cá betta: 24-28°C. Chọn 24°C phù hợp cả hai.</p>"
+              },
+              {
+                "question": "Cây thủy sinh cần điều kiện gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Ánh sáng vừa, nhiệt độ 22-28°C, pH trung tính, đủ CO₂.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

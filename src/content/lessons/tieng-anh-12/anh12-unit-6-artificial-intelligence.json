@@ -1,0 +1,380 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-unit-6-artificial-intelligence",
+      "name": "Unit 6: Artificial Intelligence",
+      "slug": "unit-6-artificial-intelligence",
+      "chapter": "Unit 6: Artificial Intelligence",
+      "chapter_id": "A12",
+      "lesson_id": 8,
+      "description": "Learn about artificial intelligence, its applications, and causative forms (active and passive).",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2670&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "vocab-6",
+          "name": "AI Vocabulary",
+          "slug": "ai-vocabulary",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Unit 6: Artificial Intelligence",
+          "sections": [
+            {
+              "heading": "1. Từ vựng (Vocabulary)",
+              "content": "<div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Word</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Type & IPA</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Meaning</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Example</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2 font-bold'>Artificial intelligence (AI)</td><td class='px-4 py-2'>(n) /ˌɑːtɪfɪʃl ɪnˈtelɪdʒəns/</td><td class='px-4 py-2'>Trí tuệ nhân tạo</td><td class='px-4 py-2'>AI is changing our lives.</td></tr><tr><td class='px-4 py-2 font-bold'>Algorithm</td><td class='px-4 py-2'>(n) /ˈælɡərɪðəm/</td><td class='px-4 py-2'>Thuật toán</td><td class='px-4 py-2'>The algorithm learns from data.</td></tr><tr><td class='px-4 py-2 font-bold'>Machine learning</td><td class='px-4 py-2'>(n) /məˈʃiːn ˈlɜːnɪŋ/</td><td class='px-4 py-2'>Học máy</td><td class='px-4 py-2'>Machine learning improves accuracy.</td></tr><tr><td class='px-4 py-2 font-bold'>Robot</td><td class='px-4 py-2'>(n) /ˈrəʊbɒt/</td><td class='px-4 py-2'>Người máy</td><td class='px-4 py-2'>Robots work in factories.</td></tr><tr><td class='px-4 py-2 font-bold'>Automation</td><td class='px-4 py-2'>(n) /ˌɔːtəˈmeɪʃn/</td><td class='px-4 py-2'>Tự động hóa</td><td class='px-4 py-2'>Automation increases efficiency.</td></tr><tr><td class='px-4 py-2 font-bold'>Data</td><td class='px-4 py-2'>(n) /ˈdeɪtə/</td><td class='px-4 py-2'>Dữ liệu</td><td class='px-4 py-2'>AI needs large amounts of data.</td></tr><tr><td class='px-4 py-2 font-bold'>Process</td><td class='px-4 py-2'>(v) /ˈprəʊses/</td><td class='px-4 py-2'>Xử lý</td><td class='px-4 py-2'>Computers process information quickly.</td></tr><tr><td class='px-4 py-2 font-bold'>Recognize</td><td class='px-4 py-2'>(v) /ˈrekəɡnaɪz/</td><td class='px-4 py-2'>Nhận dạng</td><td class='px-4 py-2'>AI can recognize faces.</td></tr><tr><td class='px-4 py-2 font-bold'>Predict</td><td class='px-4 py-2'>(v) /prɪˈdɪkt/</td><td class='px-4 py-2'>Dự đoán</td><td class='px-4 py-2'>AI predicts weather patterns.</td></tr><tr><td class='px-4 py-2 font-bold'>Analyze</td><td class='px-4 py-2'>(v) /ˈænəlaɪz/</td><td class='px-4 py-2'>Phân tích</td><td class='px-4 py-2'>AI analyzes large datasets.</td></tr><tr><td class='px-4 py-2 font-bold'>Virtual assistant</td><td class='px-4 py-2'>(n) /ˈvɜːtʃuəl əˈsɪstənt/</td><td class='px-4 py-2'>Trợ lý ảo</td><td class='px-4 py-2'>Siri is a virtual assistant.</td></tr><tr><td class='px-4 py-2 font-bold'>Autonomous</td><td class='px-4 py-2'>(adj) /ɔːˈtɒnəməs/</td><td class='px-4 py-2'>Tự động, tự trị</td><td class='px-4 py-2'>Autonomous vehicles drive themselves.</td></tr><tr><td class='px-4 py-2 font-bold'>Intelligent</td><td class='px-4 py-2'>(adj) /ɪnˈtelɪdʒənt/</td><td class='px-4 py-2'>Thông minh</td><td class='px-4 py-2'>Intelligent systems learn from experience.</td></tr><tr><td class='px-4 py-2 font-bold'>Efficient</td><td class='px-4 py-2'>(adj) /ɪˈfɪʃnt/</td><td class='px-4 py-2'>Hiệu quả</td><td class='px-4 py-2'>AI makes processes more efficient.</td></tr><tr><td class='px-4 py-2 font-bold'>Accurate</td><td class='px-4 py-2'>(adj) /ˈækjərət/</td><td class='px-4 py-2'>Chính xác</td><td class='px-4 py-2'>AI provides accurate results.</td></tr></tbody></table></div>"
+            },
+            {
+              "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
+              "content": "<p><strong>AI Technology (Công nghệ AI):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>artificial intelligence (AI):</strong> trí tuệ nhân tạo</li><li><strong>machine learning:</strong> học máy</li><li><strong>deep learning:</strong> học sâu</li><li><strong>neural network:</strong> mạng nơ-ron</li><li><strong>algorithm:</strong> thuật toán</li><li><strong>data:</strong> dữ liệu</li><li><strong>big data:</strong> dữ liệu lớn</li></ul><p><strong>AI Applications (Ứng dụng AI):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>facial recognition:</strong> nhận dạng khuôn mặt</li><li><strong>voice recognition:</strong> nhận dạng giọng nói</li><li><strong>virtual assistant:</strong> trợ lý ảo (Siri, Alexa)</li><li><strong>chatbot:</strong> trò chuyện tự động</li><li><strong>autonomous vehicle:</strong> xe tự lái</li><li><strong>recommendation system:</strong> hệ thống gợi ý</li><li><strong>translation software:</strong> phần mềm dịch thuật</li></ul><p><strong>AI Actions (Hành động của AI):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>process information:</strong> xử lý thông tin</li><li><strong>analyze data:</strong> phân tích dữ liệu</li><li><strong>recognize patterns:</strong> nhận dạng mẫu</li><li><strong>predict outcomes:</strong> dự đoán kết quả</li><li><strong>make decisions:</strong> đưa ra quyết định</li><li><strong>learn from experience:</strong> học từ kinh nghiệm</li><li><strong>solve problems:</strong> giải quyết vấn đề</li></ul><p><strong>Benefits and Concerns (Lợi ích và lo ngại):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Benefits:</strong> efficient, accurate, fast, convenient, cost-effective</li><li><strong>Concerns:</strong> job loss, privacy issues, ethical concerns, dependence on technology</li></ul><p><strong>Collocations về AI:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>develop AI:</strong> phát triển AI</li><li><strong>train a model:</strong> huấn luyện mô hình</li><li><strong>collect data:</strong> thu thập dữ liệu</li><li><strong>improve accuracy:</strong> cải thiện độ chính xác</li><li><strong>replace human workers:</strong> thay thế lao động con người</li><li><strong>raise ethical concerns:</strong> nêu lên lo ngại đạo đức</li></ul>"
+            }
+,
+            {
+              "heading": "3. Ngữ âm: Nhấn mạnh trong câu với thể sai khiến",
+              "content": "<h3>Stress in causative sentences</h3><p><strong>Quy tắc nhấn mạnh:</strong></p><p><strong>1. Thể sai khiến chủ động (Active causative):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ chính và tân ngữ</li><li>Ex: I <strong>HAD</strong> my computer <strong>REPAIRED</strong>.</li><li>Ex: She <strong>GOT</strong> her phone <strong>FIXED</strong>.</li></ul><p><strong>2. Thể sai khiến bị động (Passive causative):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ have/get và động từ chính</li><li>Ex: I <strong>HAD</strong> the robot <strong>CLEAN</strong> the house.</li><li>Ex: They <strong>GOT</strong> AI to <strong>ANALYZE</strong> the data.</li></ul><p><strong>3. Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Have/Get thường nhấn nhẹ hơn động từ chính</li><li>Tân ngữ (object) được nhấn mạnh vừa phải</li><li>Động từ chính (main verb) được nhấn mạnh nhất</li></ul>"
+            },
+            {
+              "heading": "4. Ngữ pháp: Thể sai khiến chủ động và bị động (Active and Passive Causatives)",
+              "content": "<h3>A. Thể sai khiến (Causative Form)</h3><p><strong>Định nghĩa:</strong> Thể sai khiến được dùng khi chủ ngữ không tự làm việc mà nhờ người/vật khác làm giúp.</p><h3>B. Thể sai khiến chủ động (Active Causative)</h3><p><strong>1. Cấu trúc với HAVE:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>S + have + O (person) + V (bare infinitive)</strong></li><li>Nghĩa: nhờ/bảo ai đó làm gì</li><li>Ex: I <strong>have</strong> my assistant <strong>check</strong> the data.</li><li>Ex: She <strong>has</strong> the robot <strong>clean</strong> the house.</li><li>Ex: They <strong>had</strong> the technician <strong>install</strong> the software.</li></ul><p><strong>2. Cấu trúc với GET:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>S + get + O (person) + to V (infinitive)</strong></li><li>Nghĩa: thuyết phục/khiến ai đó làm gì</li><li>Ex: I <strong>got</strong> my friend <strong>to help</strong> me.</li><li>Ex: She <strong>gets</strong> AI <strong>to translate</strong> documents.</li><li>Ex: We <strong>got</strong> the engineer <strong>to fix</strong> the robot.</li></ul><p><strong>3. Cấu trúc với MAKE:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>S + make + O (person) + V (bare infinitive)</strong></li><li>Nghĩa: bắt buộc ai đó làm gì</li><li>Ex: The boss <strong>made</strong> us <strong>work</strong> overtime.</li><li>Ex: AI <strong>makes</strong> tasks <strong>become</strong> easier.</li></ul><p><strong>4. Cấu trúc với LET:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>S + let + O (person) + V (bare infinitive)</strong></li><li>Nghĩa: cho phép ai đó làm gì</li><li>Ex: My parents <strong>let</strong> me <strong>use</strong> AI tools.</li><li>Ex: The teacher <strong>lets</strong> students <strong>use</strong> chatbots.</li></ul><h3>C. Thể sai khiến bị động (Passive Causative)</h3><p><strong>1. Cấu trúc với HAVE:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>S + have + O (thing) + V3/ed (past participle)</strong></li><li>Nghĩa: nhờ ai đó làm gì cho mình (không nói rõ người làm)</li><li>Ex: I <strong>have</strong> my computer <strong>repaired</strong>.</li><li>Ex: She <strong>has</strong> her hair <strong>cut</strong> every month.</li><li>Ex: They <strong>had</strong> the robot <strong>programmed</strong>.</li></ul><p><strong>2. Cấu trúc với GET:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>S + get + O (thing) + V3/ed (past participle)</strong></li><li>Nghĩa: làm cho cái gì được làm (thường tốn công sức hơn)</li><li>Ex: I <strong>got</strong> my phone <strong>fixed</strong>.</li><li>Ex: We <strong>got</strong> the software <strong>updated</strong>.</li><li>Ex: She <strong>gets</strong> her car <strong>serviced</strong> regularly.</li></ul><h3>D. So sánh HAVE và GET trong thể sai khiến bị động</h3><div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>HAVE</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>GET</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2'>Trang trọng hơn</td><td class='px-4 py-2'>Thân mật hơn</td></tr><tr><td class='px-4 py-2'>Việc thường xuyên, dễ dàng</td><td class='px-4 py-2'>Việc tốn công sức, khó khăn</td></tr><tr><td class='px-4 py-2'>I have my car washed weekly.</td><td class='px-4 py-2'>I finally got my car fixed.</td></tr></tbody></table></div><h3>E. Các thì với thể sai khiến</h3><ul class='list-disc pl-5 space-y-2'><li><strong>Present Simple:</strong> I have/get my computer repaired.</li><li><strong>Present Continuous:</strong> I'm having/getting my computer repaired.</li><li><strong>Past Simple:</strong> I had/got my computer repaired.</li><li><strong>Present Perfect:</strong> I have had/have got my computer repaired.</li><li><strong>Future:</strong> I will have/get my computer repaired.</li><li><strong>Modal verbs:</strong> I should have/get my computer repaired.</li></ul><h3>F. Lưu ý quan trọng</h3><ul class='list-disc pl-5 space-y-2'><li><strong>Active causative:</strong> Nhấn mạnh người làm việc</li><li>I have my assistant check the data. (trợ lý tôi kiểm tra)</li><li><strong>Passive causative:</strong> Nhấn mạnh việc được làm, không quan tâm ai làm</li><li>I have the data checked. (dữ liệu được kiểm tra)</li><li><strong>Have + O + V:</strong> bare infinitive (không 'to')</li><li><strong>Get + O + to V:</strong> infinitive (có 'to')</li><li><strong>Have/Get + O + V3/ed:</strong> past participle (bị động)</li></ul>"
+            },
+            {
+              "heading": "5. I. Getting Started",
+              "content": "<p><strong>Chủ đề:</strong> AI in daily life - AI trong cuộc sống hàng ngày</p><p><strong>Nội dung chính:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Hội thoại về ứng dụng AI trong cuộc sống</li><li>Thảo luận về lợi ích và thách thức của AI</li><li>Chia sẻ kinh nghiệm sử dụng công nghệ AI</li><li>Nói về tương lai của AI</li></ul><p><strong>Các chủ đề được đề cập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>AI applications:</strong> Ứng dụng AI (virtual assistants, facial recognition, autonomous vehicles)</li><li><strong>Benefits:</strong> Lợi ích (efficiency, accuracy, convenience)</li><li><strong>Concerns:</strong> Lo ngại (job loss, privacy, ethical issues)</li><li><strong>Future of AI:</strong> Tương lai của AI</li></ul>"
+            },
+            {
+              "heading": "6. II. Language",
+              "content": "<p><strong>A. Pronunciation: Stress in causative sentences</strong></p><p>Luyện phát âm nhấn mạnh trong câu thể sai khiến</p><p><strong>B. Vocabulary:</strong> Artificial Intelligence</p><ul class='list-disc pl-5 space-y-2'><li>Technology: AI, algorithm, machine learning, robot, automation, data</li><li>Actions: process, recognize, predict, analyze, learn</li><li>Applications: virtual assistant, facial recognition, autonomous vehicle</li><li>Adjectives: intelligent, efficient, accurate, autonomous</li></ul><p><strong>C. Grammar:</strong> Active and Passive Causatives</p><ul class='list-disc pl-5 space-y-2'><li>Active: have/get + person + (to) V</li><li>Passive: have/get + thing + V3/ed</li><li>Make/Let: make/let + person + V</li></ul>"
+            },
+            {
+              "heading": "7. III. Reading",
+              "content": "<p><strong>Chủ đề:</strong> The impact of AI on society</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc hiểu về tác động của AI đến xã hội</li><li>Tìm thông tin về ứng dụng AI</li><li>Hiểu về lợi ích và thách thức của AI</li><li>Phân tích quan điểm về AI</li></ul><p><strong>Nội dung:</strong> Bài đọc giới thiệu về:</p><ul class='list-disc pl-5 space-y-2'><li><strong>AI in healthcare:</strong> AI trong y tế (chẩn đoán bệnh, phát triển thuốc)</li><li><strong>AI in education:</strong> AI trong giáo dục (học cá nhân hóa, chatbot)</li><li><strong>AI in transportation:</strong> AI trong giao thông (xe tự lái)</li><li><strong>AI in business:</strong> AI trong kinh doanh (phân tích dữ liệu, dự đoán)</li></ul>"
+            },
+            {
+              "heading": "8. IV. Speaking",
+              "content": "<p><strong>Chủ đề:</strong> Discussing AI and its applications</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nói về ứng dụng AI trong cuộc sống</li><li>Thảo luận về lợi ích và nhược điểm của AI</li><li>Bày tỏ quan điểm về tương lai AI</li><li>So sánh AI với trí tuệ con người</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>AI is used to... / AI can...</li><li>I have my phone recognize my face.</li><li>I get AI to translate documents.</li><li>The benefits of AI include...</li><li>However, AI raises concerns about...</li><li>In my opinion, AI will...</li><li>I think AI should be...</li></ul>"
+            },
+            {
+              "heading": "9. V. Listening",
+              "content": "<p><strong>Chủ đề:</strong> A talk about AI technology</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe hiểu bài nói về công nghệ AI</li><li>Điền thông tin về ứng dụng AI</li><li>Trả lời câu hỏi về lợi ích và thách thức</li><li>Ghi chú các ý chính</li></ul><p><strong>Nội dung:</strong> Bài nghe về:</p><ul class='list-disc pl-5 space-y-2'><li>Định nghĩa và lịch sử AI</li><li>Các ứng dụng AI hiện tại</li><li>Lợi ích của AI</li><li>Thách thức và lo ngại về AI</li></ul>"
+            },
+            {
+              "heading": "10. VI. Writing",
+              "content": "<p><strong>Chủ đề:</strong> Writing an essay about AI</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Viết bài luận về AI</li><li>Trình bày lợi ích và thách thức</li><li>Sử dụng thể sai khiến</li><li>Đưa ra quan điểm cá nhân</li></ul><p><strong>Cấu trúc bài luận:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Introduction:</strong> Giới thiệu chủ đề AI</li><li><strong>Body 1:</strong> Lợi ích của AI (efficiency, accuracy, convenience)</li><li><strong>Body 2:</strong> Thách thức của AI (job loss, privacy, ethics)</li><li><strong>Conclusion:</strong> Kết luận và quan điểm cá nhân</li></ul><p><strong>Useful language:</strong></p><ul class='list-disc pl-5 space-y-2'><li>AI has revolutionized...</li><li>We can have AI analyze data...</li><li>People get AI to perform tasks...</li><li>On the one hand, AI... On the other hand,...</li><li>Despite the concerns, AI...</li><li>In conclusion, AI will continue to...</li></ul>"
+            },
+            {
+              "heading": "11. VII. Communication and Culture / CLIL",
+              "content": "<p><strong>Communication:</strong> Talking about AI experiences</p><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Describing AI use:</strong></li><li>I use AI to... / I have AI help me with...</li><li>I get my phone to recognize my voice.</li><li>AI makes my life easier by...</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Expressing opinions:</strong></li><li>I think AI is... / In my view, AI...</li><li>AI has both advantages and disadvantages.</li><li>We should be careful about...</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Discussing concerns:</strong></li><li>I'm concerned about... / I worry that...</li><li>AI might replace... / AI could lead to...</li><li>We need to address...</li></ul><p><strong>Culture:</strong> AI development around the world</p><ul class='list-disc pl-5 space-y-2'><li><strong>USA:</strong> Silicon Valley, leading in AI research (Google, OpenAI)</li><li><strong>China:</strong> Rapid AI development, facial recognition, smart cities</li><li><strong>Japan:</strong> Robotics, elderly care robots</li><li><strong>Europe:</strong> Focus on AI ethics and regulations</li><li><strong>Vietnam:</strong> Growing AI industry, AI in education and healthcare</li></ul><p><strong>CLIL (Computer Science):</strong> How AI works</p><ul class='list-disc pl-5 space-y-2'><li>Machine learning: computers learn from data</li><li>Neural networks: inspired by human brain</li><li>Training models: feeding data to AI</li><li>Pattern recognition: identifying patterns in data</li></ul>"
+            },
+            {
+              "heading": "12. VIII. Looking Back",
+              "content": "<p><strong>Ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Pronunciation:</strong> Stress in causative sentences</li><li><strong>Vocabulary:</strong> AI, algorithm, machine learning, robot, automation, data, process, recognize, predict, analyze, virtual assistant, autonomous, intelligent, efficient, accurate</li><li><strong>Grammar:</strong> Active causatives (have/get + person + (to) V), Passive causatives (have/get + thing + V3/ed), Make/Let structures</li><li><strong>Skills:</strong> Reading about AI impact, Speaking about AI applications, Listening to AI talks, Writing essays about AI</li></ul><p><strong>Self-assessment:</strong> Đánh giá khả năng:</p><ul class='list-disc pl-5 space-y-2'><li>Sử dụng từ vựng về AI</li><li>Nhấn mạnh đúng trong câu thể sai khiến</li><li>Sử dụng thể sai khiến chủ động và bị động</li><li>Thảo luận về lợi ích và thách thức của AI</li></ul>"
+            },
+            {
+              "heading": "13. Project",
+              "content": "<p><strong>Đề tài:</strong> AI in the future</p><p><strong>Nhiệm vụ:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghiên cứu về một ứng dụng AI cụ thể</li><li>Phân tích lợi ích và thách thức</li><li>Dự đoán tương lai của AI</li><li>Tạo presentation hoặc poster</li><li>Trình bày trước lớp (5-7 phút)</li></ul><p><strong>Nội dung cần có:</strong></p><ul class='list-disc pl-5 space-y-2'><li>What is the AI application?</li><li>How does it work?</li><li>What are its benefits?</li><li>What concerns does it raise?</li><li>How will it develop in the future?</li><li>Should we embrace or limit this technology?</li></ul><p><strong>Gợi ý chủ đề:</strong></p><ul class='list-disc pl-5 space-y-2'><li>AI in healthcare (medical diagnosis)</li><li>Autonomous vehicles</li><li>AI in education (personalized learning)</li><li>Facial recognition technology</li><li>AI chatbots and virtual assistants</li><li>AI in creative fields (art, music)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Type 1: Causative Forms",
+            "method": "<p>Use active and passive causatives correctly with have, get, make, and let.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Artificial Intelligence (AI) has become one of the most transformative technologies of the 21st century. From virtual assistants like Siri and Alexa to autonomous vehicles and medical diagnosis systems, AI is changing how we live and work.\n\nAI works by processing large amounts of data and recognizing patterns. Machine learning, a subset of AI, allows computers to learn from experience without being explicitly programmed. For example, when you use a streaming service, AI analyzes your viewing habits and recommends shows you might enjoy. Similarly, facial recognition systems learn to identify faces by studying thousands of images.\n\nThe benefits of AI are numerous. In healthcare, AI helps doctors diagnose diseases more accurately and develop new treatments faster. In education, AI provides personalized learning experiences for students. In business, companies use AI to analyze customer data and improve their services. AI also makes our daily lives more convenient - we can have our phones recognize our voices, get AI to translate foreign languages instantly, and have virtual assistants manage our schedules.\n\nHowever, AI also raises important concerns. Many people worry that AI will replace human workers, leading to widespread unemployment. Privacy is another major issue - AI systems collect vast amounts of personal data, which could be misused. There are also ethical questions about AI decision-making, especially in areas like criminal justice and healthcare. Some experts warn that we need to develop AI responsibly to ensure it benefits humanity.\n\nDespite these challenges, AI will continue to advance. The key is to balance innovation with careful regulation and ethical considerations.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "AI is perfect and has no problems",
+                  "AI is transforming society with both benefits and concerns",
+                  "AI should be banned",
+                  "AI only works in healthcare"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về AI đang thay đổi xã hội với cả lợi ích và lo ngại."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "How does machine learning work?",
+                "options": [
+                  "It needs explicit programming",
+                  "It learns from experience and data",
+                  "It doesn't work",
+                  "It only recognizes faces"
+                ],
+                "correct": 1,
+                "explanation": "Machine learning học từ kinh nghiệm và dữ liệu mà không cần lập trình cụ thể."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The word 'transformative' in paragraph 1 is closest in meaning to ______.",
+                "options": [
+                  "unchanging",
+                  "life-changing",
+                  "useless",
+                  "expensive"
+                ],
+                "correct": 1,
+                "explanation": "Transformative = life-changing (thay đổi cuộc sống, mang tính biến đổi)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "What concern about AI is mentioned?",
+                "options": [
+                  "It's too cheap",
+                  "Job loss and privacy issues",
+                  "It's too slow",
+                  "It's too simple"
+                ],
+                "correct": 1,
+                "explanation": "Các lo ngại được đề cập là mất việc làm và vấn đề riêng tư."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "According to the passage, what is important for AI development?",
+                "options": [
+                  "Developing as fast as possible without rules",
+                  "Balancing innovation with regulation and ethics",
+                  "Stopping all AI research",
+                  "Only using AI in games"
+                ],
+                "correct": 1,
+                "explanation": "Quan trọng là cân bằng giữa đổi mới với quy định và đạo đức."
+              }
+            ]
+          },
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "I ______ my computer repaired yesterday.",
+            "options": ["have", "had", "has", "having"],
+            "correct": 1,
+            "explanation": "Had (Past Simple) - thể sai khiến bị động trong quá khứ: have + O + V3/ed."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "She ______ AI translate the document for her.",
+            "options": ["got to", "got", "get to", "getting"],
+            "correct": 1,
+            "explanation": "Got - thể sai khiến chủ động: get + O + to V (AI to translate)."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "We ______ the robot ______ the house every day.",
+            "options": ["have / clean", "have / to clean", "have / cleaned", "has / clean"],
+            "correct": 0,
+            "explanation": "Have...clean - thể sai khiến chủ động: have + O (person/thing) + V (bare infinitive)."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "I need to ______ my phone ______.",
+            "options": ["get / fix", "get / fixed", "got / fixed", "getting / fix"],
+            "correct": 1,
+            "explanation": "Get...fixed - thể sai khiến bị động: get + O (thing) + V3/ed."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "The teacher ______ students ______ AI tools in class.",
+            "options": ["lets / use", "lets / to use", "let / using", "letting / use"],
+            "correct": 0,
+            "explanation": "Lets...use - let + O + V (bare infinitive): cho phép ai đó làm gì."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "AI ______ tasks ______ easier.",
+            "options": ["makes / become", "makes / to become", "make / becomes", "making / become"],
+            "correct": 0,
+            "explanation": "Makes...become - make + O + V (bare infinitive): khiến cái gì trở nên như thế nào."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "I ______ my assistant ______ the data.",
+            "options": ["have / check", "have / to check", "has / check", "having / check"],
+            "correct": 0,
+            "explanation": "Have...check - thể sai khiến chủ động: have + O (person) + V (bare infinitive)."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "She ______ her hair ______ every month.",
+            "options": ["has / cut", "has / to cut", "have / cut", "having / cut"],
+            "correct": 0,
+            "explanation": "Has...cut - thể sai khiến bị động: have + O (thing) + V3/ed."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "We ______ the engineer ______ the robot.",
+            "options": ["got / fix", "got / to fix", "get / fixed", "getting / fix"],
+            "correct": 1,
+            "explanation": "Got...to fix - thể sai khiến chủ động: get + O (person) + to V."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "My parents ______ me ______ chatbots for homework.",
+            "options": ["let / use", "let / to use", "lets / use", "letting / use"],
+            "correct": 0,
+            "explanation": "Let...use - let + O + V (bare infinitive): cho phép."
+          },
+          {
+            "id": "mcq11",
+            "type": "mcq",
+            "question": "I'm ______ my computer ______ right now.",
+            "options": ["having / repaired", "have / repair", "had / repaired", "has / repaired"],
+            "correct": 0,
+            "explanation": "Having...repaired - Present Continuous của thể sai khiến bị động."
+          },
+          {
+            "id": "mcq12",
+            "type": "mcq",
+            "question": "AI can ______ information very quickly.",
+            "options": ["process", "processes", "processing", "processed"],
+            "correct": 0,
+            "explanation": "Process (v) - động từ nguyên thể sau 'can'."
+          },
+          {
+            "id": "mcq13",
+            "type": "mcq",
+            "question": "Facial recognition systems ______ faces accurately.",
+            "options": ["recognize", "recognizes", "recognizing", "recognized"],
+            "correct": 0,
+            "explanation": "Recognize (Present Simple) - chủ ngữ số nhiều 'systems'."
+          },
+          {
+            "id": "mcq14",
+            "type": "mcq",
+            "question": "I will ______ the software ______ tomorrow.",
+            "options": ["have / updated", "have / update", "has / updated", "having / update"],
+            "correct": 0,
+            "explanation": "Have...updated - Future của thể sai khiến bị động: will have + O + V3/ed."
+          },
+          {
+            "id": "mcq15",
+            "type": "mcq",
+            "question": "The boss ______ us ______ overtime.",
+            "options": ["made / work", "made / to work", "makes / working", "make / work"],
+            "correct": 0,
+            "explanation": "Made...work - make + O + V (bare infinitive): bắt buộc ai đó làm gì."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "In passive causative, we use: have/get + object + past participle.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Thể sai khiến bị động: have/get + O (thing) + V3/ed."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "After 'have' in active causative, we use 'to + infinitive'.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Sau 'have' dùng bare infinitive (không 'to'): have + O + V."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "After 'get' in active causative, we use 'to + infinitive'.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Get + O + to V (có 'to')."
+          },
+          {
+            "id": "msq4",
+            "type": "msq",
+            "question_text": "AI can recognize patterns and make predictions.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. AI có thể nhận dạng mẫu và đưa ra dự đoán."
+          },
+          {
+            "id": "msq5",
+            "type": "msq",
+            "question_text": "'Make' and 'let' are followed by bare infinitive (without 'to').",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Make/let + O + V (bare infinitive)."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call a computer program that learns from data? (two words)",
+            "correct": "machine learning",
+            "explanation": "Machine learning: học máy - chương trình máy tính học từ dữ liệu."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "Complete: I ______ my phone ______ (fix) yesterday. (Passive causative, past)",
+            "correct": "had fixed",
+            "explanation": "Had fixed - thể sai khiến bị động trong quá khứ: had + O + V3/ed."
+          },
+          {
+            "id": "sa3",
+            "type": "sa",
+            "question_text": "Complete: She ______ AI ______ (translate) documents. (Active causative with 'get')",
+            "correct": "gets to translate",
+            "explanation": "Gets...to translate - thể sai khiến chủ động: get + O + to V."
+          },
+          {
+            "id": "sa4",
+            "type": "sa",
+            "question_text": "What do we call vehicles that drive themselves? (two words)",
+            "correct": "autonomous vehicles",
+            "explanation": "Autonomous vehicles: xe tự lái."
+          },
+          {
+            "id": "essay1",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about the benefits of AI. Use causative forms.",
+            "sample_answer": "Artificial Intelligence brings many benefits to modern society. AI makes our lives more convenient by automating routine tasks. For example, we can have virtual assistants manage our schedules and get AI to translate foreign languages instantly. In healthcare, doctors have AI analyze medical images to detect diseases earlier. Students get AI to provide personalized learning experiences. Businesses have AI process large amounts of data to make better decisions. AI also lets people work more efficiently by handling repetitive tasks. Overall, AI has transformed how we live and work, making many processes faster and more accurate.",
+            "explanation": "Bài viết sử dụng các thể sai khiến: have AI analyze, get AI to translate, have AI process, lets people work."
+          },
+          {
+            "id": "essay2",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about concerns regarding AI. Use causative forms and express your opinion.",
+            "sample_answer": "While AI offers many advantages, it also raises serious concerns. Many people worry that AI will make workers lose their jobs as companies have robots replace human employees. Privacy is another major issue - AI systems collect vast amounts of personal data, which could be misused. Some experts fear that AI might make decisions that harm people, especially in areas like criminal justice. There are also ethical questions about letting AI make important choices. In my opinion, we should have governments regulate AI development carefully to ensure it benefits everyone. We need to get technology companies to prioritize safety and ethics over profit.",
+            "explanation": "Bài viết sử dụng thể sai khiến: make workers lose, have robots replace, letting AI make, have governments regulate, get companies to prioritize."
+          },
+          {
+            "id": "essay3",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about how you use AI in your daily life. Use causative forms.",
+            "sample_answer": "I use AI technology in many aspects of my daily life. Every morning, I have my phone's alarm wake me up and get my virtual assistant to read the news. When I study, I have AI help me translate difficult English texts and get chatbots to explain complex concepts. I also let AI recommend music and videos based on my preferences. For homework, I sometimes have AI check my grammar and get it to suggest improvements. My parents have our home security system use facial recognition. Although I find AI very helpful, I'm careful not to let it make all my decisions. I believe we should have AI assist us, not replace our thinking.",
+            "explanation": "Bài viết sử dụng nhiều thể sai khiến: have my phone wake, get assistant to read, have AI help, get chatbots to explain, let AI recommend, have AI check, get it to suggest, have system use, let it make, have AI assist."
+          },
+          {
+            "id": "essay4",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about the future of AI. Use causative forms and various sentence structures.",
+            "sample_answer": "The future of AI looks both exciting and challenging. In the coming years, we will have AI perform even more complex tasks. Autonomous vehicles will let people travel safely without driving. In healthcare, doctors will get AI to diagnose diseases with near-perfect accuracy. Education will have AI provide completely personalized learning for each student. However, we must be careful. Governments should make companies develop AI responsibly and have experts monitor its impact on society. We need to get researchers to focus on AI safety and let ethicists guide development. If we manage AI wisely, it will make our future better. The key is to have humans remain in control while getting AI to enhance our capabilities.",
+            "explanation": "Bài viết kết hợp thể sai khiến với các cấu trúc câu đa dạng: will have AI perform, will let people travel, will get AI to diagnose, will have AI provide, make companies develop, have experts monitor, get researchers to focus, let ethicists guide, have humans remain, getting AI to enhance."
+          }
+        ]
+      }
+    }
+  ]
+}

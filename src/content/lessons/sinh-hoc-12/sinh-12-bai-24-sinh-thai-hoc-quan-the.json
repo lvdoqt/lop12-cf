@@ -1,0 +1,190 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-24",
+      "name": "Bài 24. Sinh thái học quần thể",
+      "slug": "sinh-thai-hoc-quan-the",
+      "chapter": "Chương 6. Môi trường và sinh thái học quần thể",
+      "chapter_id": "S12-6",
+      "lesson_id": 24,
+      "description": "Tìm hiểu về các đặc trưng cơ bản của quần thể sinh vật.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Sinh thái học quần thể",
+          "sections": [
+            {
+              "heading": "1. Đặc trưng của quần thể",
+              "content": "<h4>a) Kích thước quần thể</h4><ul><li>Số lượng cá thể trong quần thể.</li><li>Thay đổi theo thời gian do sinh, tử, di cư.</li><li>Bị giới hạn bởi khả năng chịu đựng của môi trường.</li></ul><h4>b) Mật độ quần thể</h4><ul><li>Số cá thể trên đơn vị diện tích hoặc thể tích.</li><li>Mật độ = Số cá thể / Diện tích (hoặc thể tích).</li><li>Phản ánh mức độ sử dụng nguồn sống.</li></ul><h4>c) Tỷ lệ giới tính</h4><ul><li>Tỷ lệ giữa số đực và số cái.</li><li>Ảnh hưởng đến khả năng sinh sản.</li><li>Tỷ lệ 1:1 là phổ biến ở nhiều loài.</li></ul><h4>d) Thành phần tuổi</h4><ul><li>Phân bố các nhóm tuổi trong quần thể.</li><li>Gồm: tuổi trước sinh sản, tuổi sinh sản, tuổi sau sinh sản.</li><li>Quyết định khả năng tăng trưởng của quần thể.</li></ul>"
+            },
+            {
+              "heading": "2. Sự tăng trưởng của quần thể",
+              "content": "<h4>a) Tăng trưởng không giới hạn</h4><ul><li>Quần thể tăng theo cấp số nhân.</li><li>Không có giới hạn về nguồn sống.</li><li>Công thức: Nt = N0 × e^(rt) hoặc Nt = N0 × 2^t/T</li></ul><h4>b) Tăng trưởng có giới hạn</h4><ul><li>Quần thể tăng đến giới hạn dung lượng môi trường (K).</li><li>Tuân theo mô hình logistic.</li><li>Công thức: dN/dt = rN(1 - N/K)</li></ul><h4>c) Các yếu tố ảnh hưởng</h4><ul><li>Tỷ lệ sinh: Số cá thể sinh ra trên đơn vị thời gian.</li><li>Tỷ lệ tử: Số cá thể chết trên đơn vị thời gian.</li><li>Di cư: Số cá thể ra/vào quần thể.</li></ul>"
+            },
+            {
+              "heading": "3. Biến động số lượng quần thể",
+              "content": "<h4>a) Nguyên nhân biến động</h4><ul><li>Thay đổi theo mùa, theo năm.</li><li>Do thiên tai, dịch bệnh.</li><li>Do hoạt động của con người.</li></ul><h4>b) Đặc điểm biến động</h4><ul><li>Quần thể có xu hướng dao động quanh mức cân bằng.</li><li>Biên độ dao động khác nhau tùy loài.</li><li>Loài có tuổi thọ ngắn, sinh sản nhanh → biến động lớn.</li></ul><h4>c) Điều hòa quần thể</h4><ul><li>Cạnh tranh nội bộ quần thể.</li><li>Quan hệ với loài khác (không gian, thức ăn).</li><li>Yếu tố vô sinh (nhiệt độ, thức ăn).</li></ul>"
+            },
+            {
+              "heading": "4. Tương tác giữa các quần thể",
+              "content": "<h4>a) Quan hệ cùng loài</h4><ul><li><strong>Cạnh tranh:</strong> Giành nguồn thức ăn, nơi sống.</li><li><strong>Hợp tác:</strong> Tăng khả năng sinh tồn (đàn, đàn).</li></ul><h4>b) Quan hệ khác loài</h4><ul><li><strong>Cạnh tranh:</strong> Loài cùng nguồn thức ăn.</li><li><strong>Tiêu xác:</strong> Mối quan hệ săn mồi - con mồi.</li><li><strong>Ký sinh - Vật chủ:</strong> Quan hệ có hại cho vật chủ.</li><li><strong>Hỗ sinh:</strong> Cả hai cùng có lợi.</li><li><strong>Cộng sinh:</strong> Quan hệ bắt buộc, cả hai cùng có lợi.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Mật độ quần thể được tính như thế nào?",
+            "options": [
+              "Số cá thể × Diện tích",
+              "Số cá thể / Diện tích",
+              "Số cá thể + Diện tích",
+              "Số cá thể - Diện tích"
+            ],
+            "correct": 1,
+            "explanation": "Mật độ quần thể = Số cá thể / Đơn vị diện tích (hoặc thể tích)."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Tăng trưởng logistic khác với tăng trưởng mũ ở điểm nào?",
+            "options": [
+              "Không có giới hạn",
+              "Có giới hạn dung lượng môi trường",
+              "Tăng chậm hơn",
+              "Giảm theo thời gian"
+            ],
+            "correct": 1,
+            "explanation": "Tăng trưởng logistic có giới hạn dung lượng môi trường (K), tăng đến K rồi dừng lại."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Quần thể có tỷ lệ sinh > tỷ lệ tử sẽ như thế nào?",
+            "options": [
+              "Giảm kích thước",
+              "Tăng kích thước",
+              "Không thay đổi",
+              "Dao động"
+            ],
+            "correct": 1,
+            "explanation": "Khi tỷ lệ sinh > tỷ lệ tử, quần thể tăng kích thước."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Quan hệ tiêu xác là gì?",
+            "options": [
+              "Cả hai cùng có lợi",
+              "Một loài ăn loài khác",
+              "Loài sống trên loài khác",
+              "Cạnh tranh nhau"
+            ],
+            "correct": 1,
+            "explanation": "Tiêu xác là quan hệ trong đó loài này ăn (tiêu diệt) loài khác."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Thành phần tuổi của quần thể gồm những gì?",
+            "options": [
+              "Chỉ tuổi sinh sản",
+              "Tuổi trước, trong và sau sinh sản",
+              "Chỉ tuổi già",
+              "Chỉ tuổi trẻ"
+            ],
+            "correct": 1,
+            "explanation": "Thành phần tuổi gồm: tuổi trước sinh sản, tuổi sinh sản, tuổi sau sinh sản."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các yếu tố ảnh hưởng đến kích thước quần thể:",
+            "options": [
+              "Tỷ lệ sinh",
+              "Tỷ lệ tử",
+              "Di cư",
+              "Mật độ"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Sinh làm tăng. B ✓: Tử làm giảm. C ✓: Di cư thay đổi số lượng. D ✗: Mật độ là kết quả, không phải yếu tố."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các loại tương tác giữa các quần thể:",
+            "options": [
+              "Cạnh tranh",
+              "Tiêu xác",
+              "Ký sinh",
+              "Hợp tác"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đều là các loại tương tác giữa các quần thể sinh vật."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Quần thể có 1000 cá thể, sau 1 năm có 1200 cá thể. Tính % tăng trưởng. Nhập số 3 chữ số. (Ví dụ: 020)",
+            "correct": "020",
+            "explanation": "Tăng = (1200-1000)/1000 × 100% = 20%."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Quần thể 500 cá thể trên 25 km². Tính mật độ. Nhập số 2 chữ số.",
+            "correct": "20"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính mật độ và tốc độ tăng trưởng",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Mật độ = Số cá thể / Diện tích.</li><li>% tăng = (Số mới - Số cũ) / Số cũ × 100%.</li><li>Hệ số tăng r = ln(Nt/N0)/t.</li></ol>",
+            "examples": [
+              {
+                "question": "Quần thể 200 cá thể/10km². Sau 1 năm: 250 cá thể. Tính mật độ và % tăng?",
+                "solution": "<p><strong>Giải:</strong></p><p>Mật độ = 200/10 = 20 cá thể/km²</p><p>% tăng = (250-200)/200 × 100% = 25%</p>"
+              },
+              {
+                "question": "Quần thể tăng từ 100 lên 400 trong 3 năm. Tính hệ số tăng r?",
+                "solution": "<p><strong>Giải:</strong></p><p>r = ln(400/100) / 3 = ln(4) / 3 ≈ 1.39 / 3 ≈ 0.46/năm</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Dự đoán số lượng quần thể theo mô hình logistic",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Mô hình logistic: dN/dt = rN(1 - N/K)</li><li>Nt = K / (1 + ((K-N0)/N0)e^(-rt))</li><li>Trong đó K = dung lượng môi trường.</li></ol>",
+            "examples": [
+              {
+                "question": "K=1000, N0=100, r=0.5, t=2. Tính Nt?",
+                "solution": "<p><strong>Giải:</strong></p><p>Nt = 1000 / (1 + (900/100)e^(-0.5×2))</p><p>= 1000 / (1 + 9×e^(-1)) = 1000 / (1 + 9/2.718)</p><p>= 1000 / (1 + 3.31) ≈ 232</p>"
+              },
+              {
+                "question": "Quần thể đạt bao nhiêu % K khi N = K/2?",
+                "solution": "<p><strong>Giải:</strong></p><p>Khi N = K/2, hệ số (1 - N/K) = 1 - 0.5 = 0.5</p><p>Tốc độ tăng = 50% tốc độ tối đa.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

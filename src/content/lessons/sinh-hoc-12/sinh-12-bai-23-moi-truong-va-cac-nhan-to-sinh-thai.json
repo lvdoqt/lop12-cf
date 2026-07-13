@@ -1,0 +1,190 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-23",
+      "name": "Bài 23. Môi trường và các nhân tố sinh thái",
+      "slug": "moi-truong-va-cac-nhan-to-sinh-thai",
+      "chapter": "Chương 6. Môi trường và sinh thái học quần thể",
+      "chapter_id": "S12-6",
+      "lesson_id": 23,
+      "description": "Tìm hiểu về môi trường và các nhân tố sinh thái ảnh hưởng đến sinh vật.",
+      "duration_minutes": 45,
+      "difficulty_level": "easy",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Môi trường và các nhân tố sinh thái",
+          "sections": [
+            {
+              "heading": "1. Khái niệm môi trường",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Môi trường:</strong> Tổng hợp các yếu tố tự nhiên và xã hội bao quanh sinh vật, ảnh hưởng đến đời sống và phát triển của sinh vật.</li><li>Môi trường bao gồm: yếu tố vô sinh và yếu tố hữu sinh.</li></ul><h4>b) Phân loại môi trường</h4><ul><li><strong>Môi trường vô sinh:</strong> Nhiệt độ, ánh sáng, nước, đất, không khí...</li><li><strong>Môi trường hữu sinh:</strong> Sinh vật khác cùng loài và khác loài.</li><li><strong>Môi trường xã hội:</strong> Con người và hoạt động của con người.</li></ul>"
+            },
+            {
+              "heading": "2. Các nhân tố vô sinh",
+              "content": "<h4>a) Nhiệt độ</h4><ul><li>Ảnh hưởng đến quá trình trao đổi chất, sinh trưởng và phát triển.</li><li>Mỗi loài có giới hạn nhiệt độ khác nhau (giới hạn sinh thái).</li><li>Động vật biến nhiệt và động vật hằng nhiệt.</li></ul><h4>b) Ánh sáng</h4><ul><li>Nguồn năng lượng chính cho quang hợp.</li><li>Ảnh hưởng đến hình thái và tính ra hoa.</li><li>Cường độ, thời gian chiếu sáng và thành phần quang phổ đều quan trọng.</li></ul><h4>c) Nước</h4><ul><li>yếu tố giới hạn cho sự sống trên cạn.</li><li>Ảnh hưởng đến phân bố sinh vật.</li><li>Động vật thích nghi bằng nhiều cách (da, lông, vảy...).</li></ul><h4>d) Đất và không khí</h4><ul><li>Đất: Cung cấp dinh dưỡng, nước, nơi bám.</li><li>Không khí: Cung cấp O2 cho hô hấp, CO2 cho quang hợp.</li></ul>"
+            },
+            {
+              "heading": "3. Các nhân tố hữu sinh",
+              "content": "<h4>a) Quan hệ giữa các cá thể cùng loài</h4><ul><li><strong>Cạnh tranh:</strong> Giành tài nguyên (thức ăn, nơi sống, bạn tình).</li><li><strong>Hợp tác:</strong> Giúp đỡ nhau sinh sống (đàn sói, đàn sư tử).</li><li><strong>Hiệu ứng nhóm:</strong> Mật độ ảnh hưởng đến sinh vật.</li></ul><h4>b) Quan hệ giữa các loài</h4><ul><li><strong>Cạnh tranh:</strong> Hai loài cùng sử dụng một nguồn thức ăn.</li><li><strong>Ký sinh:</strong> Loài ký sinh sống trên loài chủ.</li><li><strong>Hỗ sinh:</strong> Cả hai loài đều có lợi.</li><li><strong>Tiêu xác:</strong> Loài này ăn loài kia.</li></ul>"
+            },
+            {
+              "heading": "4. Giới hạn sinh thái và giới hạn chịu đựng",
+              "content": "<h4>a) Giới hạn sinh thái</h4><ul><li>Khoảng giá trị của nhân tố sinh thái mà sinh vật có thể tồn tại.</li><li>Gồm: Điểm cực tiểu, điểm cực đại và điểm thuận lợi.</li></ul><h4>b) Giới hạn chịu đựng</h4><ul><li>Khoảng nhân tố mà sinh vật có thể thích nghi.</li><li>Quy luật giới hạn chịu đựng (Liebig): Sinh vật bị giới hạn bởi yếu tố khan hiếm nhất.</li></ul><h4>c) Vai trò của các nhân tố</h4><ul><li>Giới hạn phân bố sinh vật.</li><li>Ảnh hưởng đến kích thước quần thể.</li><li>Tạo ra đa dạng sinh học.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Môi trường vô sinh bao gồm những gì?",
+            "options": [
+              "Động vật",
+              "Thực vật",
+              "Nhiệt độ và ánh sáng",
+              "Vi sinh vật"
+            ],
+            "correct": 2,
+            "explanation": "Môi trường vô sinh gồm các yếu tố vật lý như nhiệt độ, ánh sáng, nước, đất, không khí."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Quan hệ ký sinh là gì?",
+            "options": [
+              "Cả hai cùng có lợi",
+              "Một loài ăn loài khác",
+              "Loài sống trên loài khác và có hại",
+              "Cạnh tranh giành thức ăn"
+            ],
+            "correct": 2,
+            "explanation": "Ký sinh là quan hệ trong đó loài ký sinh sống trên loài chủ và gây hại cho loài chủ."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Giới hạn sinh thái là gì?",
+            "options": [
+              "Khoảng giá trị nhân tố mà sinh vật có thể tồn tại",
+              "Khoảng cách giữa các loài",
+              "Số lượng cá thể tối đa",
+              "Tuổi thọ của sinh vật"
+            ],
+            "correct": 0,
+            "explanation": "Giới hạn sinh thái là khoảng giá trị của nhân tố sinh thái mà sinh vật có thể tồn tại, sinh sống."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Động vật biến nhiệt là gì?",
+            "options": [
+              "Động vật có nhiệt độ cơ thể thay đổi theo môi trường",
+              "Động vật duy trì nhiệt độ cơ thể ổn định",
+              "Động vật sống dưới nước",
+              "Động vật ngủ đông"
+            ],
+            "correct": 0,
+            "explanation": "Động vật biến nhiệt (cold-blooded) có nhiệt độ cơ thể thay đổi theo nhiệt độ môi trường."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Quy luật giới hạn chịu đựng (Liebig) nói gì?",
+            "options": [
+              "Sinh vật cạnh tranh nhau",
+              "Sinh vật bị giới hạn bởi yếu tố khan hiếm nhất",
+              "Nhiệt độ ảnh hưởng nhất",
+              "Nước là yếu tố quan trọng nhất"
+            ],
+            "correct": 1,
+            "explanation": "Quy luật Liebig: Sinh vật bị giới hạn bởi yếu tố sinh thái khan hiếm nhất, không phải yếu tố dồi dào nhất."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các nhân tố vô sinh ảnh hưởng đến sinh vật:",
+            "options": [
+              "Nhiệt độ",
+              "Ánh sáng",
+              "Nước",
+              "Cạnh tranh"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Nhiệt độ ảnh hưởng đến trao đổi chất. B ✓: Ánh sáng nguồn năng lượng chính. C ✓: Nước yếu tố giới hạn. D ✗: Cạnh tranh là nhân tố hữu sinh."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các quan hệ giữa các loài:",
+            "options": [
+              "Cạnh tranh",
+              "Ký sinh",
+              "Hỗ sinh",
+              "Tiêu xác"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đều là quan hệ giữa các loài: cạnh tranh, ký sinh, hỗ sinh, tiêu xác."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một loài cá sống ở nhiệt độ 15-30°C. Tính khoảng nhiệt độ (°C). Nhập số 2 chữ số. (Ví dụ: 15)",
+            "correct": "15",
+            "explanation": "Khoảng nhiệt độ = 30 - 15 = 15°C."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Quần thể có 100 cá thể, mỗi cá thể có thể sống tối đa 5 năm. Tính tuổi thọ trung bình (năm). Nhập số 1 chữ số.",
+            "correct": "5"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định giới hạn sinh thái",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định điểm cực tiểu và cực đại.</li><li>Tính khoảng = cực đại - cực tiểu.</li><li>Xác định điểm thuận lợi (optimum).</li></ol>",
+            "examples": [
+              {
+                "question": "Loài A sống ở nhiệt độ 20-35°C. Điểm thuận lợi nhất là 28°C. Tính khoảng giới hạn?",
+                "solution": "<p><strong>Giải:</strong></p><p>Giới hạn = 35 - 20 = 15°C</p><p>Điểm thuận lợi 28°C nằm trong khoảng này.</p>"
+              },
+              {
+                "question": "Loài cá có giới hạn pH 6-8. Tính khoảng pH?",
+                "solution": "<p><strong>Giải:</strong></p><p>Khoảng pH = 8 - 6 = 2 đơn vị pH</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính mật độ quần thể",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Mật độ = Số cá thể / Diện tích (hoặc thể tích).</li><li>Đơn vị: cá thể/m², cá thể/km².</li></ol>",
+            "examples": [
+              {
+                "question": "Quần thể có 500 cá thể trên diện tích 25 km². Tính mật độ?",
+                "solution": "<p><strong>Giải:</strong></p><p>Mật độ = 500 / 25 = 20 cá thể/km²</p>"
+              },
+              {
+                "question": "Mật độ cây trồng là 50 cây/100m². Trên 500m² có bao nhiêu cây?",
+                "solution": "<p><strong>Giải:</strong></p><p>Số cây = 50 × (500/100) = 250 cây</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

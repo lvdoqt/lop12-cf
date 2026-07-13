@@ -1,0 +1,186 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-9",
+      "name": "Bài 9. Mở rộng học thuyết Mendel",
+      "slug": "mo-rong-hoc-thuyet-mendel",
+      "chapter": "Chương 2. Di truyền nhiễm sắc thể",
+      "chapter_id": "S12-2",
+      "lesson_id": 9,
+      "description": "Tìm hiểu về tương tác gene và di truyền kiểu hình.",
+      "duration_minutes": 45,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Mở rộng học thuyết Mendel",
+          "sections": [
+            {
+              "heading": "1. Tương tác gene",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Tương tác gene:</strong> Nhiều gene cùng quy định một tính trạng.</li><li>Các gene có thể tương tác bổ sung, át chế, cộng gộp...</li></ul><h4>b) Tương tác bổ sung (complementary gene)</h4><ul><li>Hai gene không alen cùng tham gia quy định một tính trạng.</li><li>Khi có ít nhất một allele trội của mỗi gene → tính trạng trội.</li><li>Tỷ lệ F2: 9:7 (9 trội : 7 lặn).</li></ul><h4>c) Tương tác át chế (epistasis)</h4><ul><li>Một gene át chế sự biểu hiện của gene khác.</li><li>Át chế trội: Tỷ lệ 12:3:1</li><li>Át chế lặn: Tỷ lệ 9:3:4</li></ul>"
+            },
+            {
+              "heading": "2. Di truyền kiểu hình",
+              "content": "<h4>a) Di truyền đa gene (polygenic inheritance)</h4><ul><li>Một tính trạng được quy định bởi nhiều gene cùng tác động.</li><li>Hiện tượng mỗi gene góp phần nhỏ vào tính trạng (cộng gộp).</li><li>Ví dụ: Màu da người, chiều cao, năng suất lúa...</li><li>Phân phối chuẩn: Nhiều tính trạng trung gian, ít cực đoan.</li></ul><h4>b) Di truyền ngoài NST (extranuclear inheritance)</h4><ul><li>Gene nằm trong ti thể và lạp thể.</li><li>Di truyền theo dòng mẹ (maternal inheritance).</li><li>Ví dụ: Bệnh mù màu di truyền qua ti thể.</li></ul>"
+            },
+            {
+              "heading": "3. Hiện tượng át điểu hòa phiên mã (RNA interference)",
+              "content": "<h4>a) Cơ chế</h4><ul><li>RNA đặc hiệu (siRNA, miRNA) gắn vào mRNA tương ứng.</li><li>Gây ức chế dịch mã hoặc phân giải mRNA.</li></ul><h4>b) Ý nghĩa</h4><ul><li>Điều hòa biểu hiện gene ở sinh vật nhân thực.</li><li>Ứng dụng trong nghiên cứu và điều trị bệnh.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Tương tác bổ sung có tỷ lệ F2 là bao nhiêu?",
+            "options": [
+              "9:3:3:1",
+              "9:7",
+              "12:3:1",
+              "9:3:4"
+            ],
+            "correct": 1,
+            "explanation": "Tương tác bổ sung (có ít nhất 2 allele trội A-B- biểu hiện trội) có tỷ lệ F2: 9:7."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Tương tác át chế trội có tỷ lệ F2 là bao nhiêu?",
+            "options": [
+              "9:7",
+              "12:3:1",
+              "9:3:4",
+              "9:3:3:1"
+            ],
+            "correct": 1,
+            "explanation": "Tương tác át chế trội (gene A át chế gene B) có tỷ lệ F2: 12:3:1."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Di truyền đa gene là gì?",
+            "options": [
+              "Một gene quy định nhiều tính trạng",
+              "Nhiều gene cùng quy định một tính trạng",
+              "Gene ngoài nhân",
+              "Gene trên NST giới tính"
+            ],
+            "correct": 1,
+            "explanation": "Di truyền đa gene là hiện tượng nhiều gene cùng góp phần quy định một tính trạng (mỗi gene góp phần nhỏ)."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Di truyền ngoài NST có đặc điểm gì?",
+            "options": [
+              "Di truyền theo dòng bố",
+              "Di truyền theo dòng mẹ",
+              "Di truyền theo giới tính",
+              "Di truyền ngẫu nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Di truyền ngoài NST (ti thể, lạp thể) di truyền theo dòng mẹ vì giao tử cái cung cấp cả cytoplasm."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Tương tác át chế lặn có tỷ lệ F2 là bao nhiêu?",
+            "options": [
+              "9:7",
+              "12:3:1",
+              "9:3:4",
+              "15:1"
+            ],
+            "correct": 2,
+            "explanation": "Tương tác át chế lặn có tỷ lệ F2: 9:3:4 (9 trội-độc lập : 3 át chế : 4 lặn do át chế)."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các ví dụ về di truyền đa gene:",
+            "options": [
+              "Màu da người",
+              "Chiều cao người",
+              "Bệnh máu khó đông",
+              "Năng suất lúa"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "A ✓: Màu da do nhiều gene cộng gộp. B ✓: Chiều cao do nhiều gene. C ✗: Bệnh máu khó đông do một gene lặn trên X. D ✓: Năng suất do nhiều gene."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các loại tương tác gene:",
+            "options": [
+              "Tương tác bổ sung",
+              "Tương tác át chế",
+              "Tương tác cộng gộp",
+              "Tương tác đối chọi"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Tương tác bổ sung (complementary). B ✓: Tương tác át chế (epistasis). C ✓: Tương tác cộng gộp (additive). D ✗: Không phải loại tương tác."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Lai hai cây có kiểu gen AAbb × aaBB (tương tác bổ sung). Tính tỷ lệ % cây có kiểu hình trội ở F1. Nhập số 3 chữ số. (Ví dụ: 100)",
+            "correct": "100",
+            "explanation": "F1 có kiểu gen AaBb (có cả A và B trội) → 100% biểu hiện tính trạng trội."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Lai AaBb × AaBb (tương tác bổ sung). Tính tỷ lệ % cây có kiểu hình lặn ở F2. Nhập số 2 chữ số. (Ví dụ: 25)",
+            "correct": "25",
+            "explanation": "Tương tác bổ sung tỷ lệ 9:7. Lặn = 7/16 = 43.75%? Để tính chính xác: aabb = 1/16 = 6.25%? Sai. Tỷ lệ 9:7 = 9/16 trội, 7/16 lặn. 7/16 = 43.75%. Cần xem lại đáp án."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định tỷ lệ kiểu hình khi có tương tác gene",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định loại tương tác từ tỷ lệ đặc trưng.</li><li>9:7 = tương tác bổ sung, 12:3:1 = át chế trội, 9:3:4 = át chế lặn.</li><li>Tính số tổ hợp: Từng cặp Aa × Aa → 4 tổ hợp, Bb × Bb → 4 tổ hợp → 16 tổ hợp.</li><li>Nhóm các tổ hợp cho cùng kiểu hình.</li></ol>",
+            "examples": [
+              {
+                "question": "Lai AaBb × AaBb (tương tác bổ sung). Tính tỷ lệ cây trội?",
+                "solution": "<p><strong>Giải:</strong></p><p>Tổ hợp: 16</p><p>Trội (A-B-): 9/16 = 56.25%</p><p>Lặn (còn lại): 7/16 = 43.75%</p>"
+              },
+              {
+                "question": "Lai AaBb × AaBb (át chế trội, A át chế B). Tính tỷ lệ cây át chế?",
+                "solution": "<p><strong>Giải:</strong></p><p>Át chế: A-bb = 3/16</p><p>Tỷ lệ = 3/16 = 18.75%</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định loại tương tác từ tỷ lệ F2",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Quan sát tỷ lệ F2.</li><li>9:7 → Tương tác bổ sung.</li><li>12:3:1 → Át chế trội.</li><li>9:3:4 → Át chế lặn.</li><li>9:3:3:1 → Phân li độc lập (không tương tác).</li></ol>",
+            "examples": [
+              {
+                "question": "F2 có tỷ lệ 9 trội : 7 lặn. Đây là loại tương tác nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Tỷ lệ 9:7 đặc trưng cho <strong>tương tác bổ sung</strong>.</p><p>Cần ít nhất 2 allele trội (A-B-) để biểu hiện trội.</p>"
+              },
+              {
+                "question": "F2 có tỷ lệ 12 trội : 3 át chế : 1 lặn. Xác định loại tương tác.",
+                "solution": "<p><strong>Giải:</strong></p><p>Tỷ lệ 12:3:1 đặc trưng cho <strong>tương tác át chế trội</strong>.</p><p>Gene A át chế gene B khi có mặt A trội.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

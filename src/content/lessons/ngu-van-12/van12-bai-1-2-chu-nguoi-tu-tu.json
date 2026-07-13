@@ -1,0 +1,207 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-1-2-chu-nguoi-tu-tu",
+      "name": "Chữ người tử tù",
+      "slug": "chu-nguoi-tu-tu",
+      "chapter": "Khả năng thay đổi thế giới của văn học",
+      "chapter_id": "V12-1",
+      "lesson_id": 2,
+      "description": "Tìm hiểu truyện ngắn hiện đại Chữ người tử tù của Nguyễn Tuân, phân tích sức mạnh của chữ viết, tình yêu và lòng chung thủy con người.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507842211343-583f20270319?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tq-ct-1",
+          "name": "Phân tích sức mạnh của chữ viết",
+          "slug": "phan-tich-suc-manh-chu-viet",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Chữ người tử tù",
+          "sections": [
+            {
+              "heading": "1. Giới thiệu tác giả và tác phẩm",
+              "content": "<h4>a) Tác giả Nguyễn Tuân</h4><ul><li><strong>Thời đại:</strong> Thế kỷ XX (sinh 1910-1987)</li><li><strong>Hoàn cảnh sáng tác:</strong> Thời kỳ Pháp thuộc, Việt Nam mù chữ</li><li><strong>Xu hướng sáng tác:</strong> Truyện ngắn hiện đại, chú trọng đến cảm xúc, tâm lý con người</li><li><strong>Phong cách:</strong> Sử dụng ngôn ngữ sống động, giàu tính chất nhân văn</li></ul><h4>b) Tác phẩm Chữ người tử tù</h4><ul><li><strong>Thể loại:</strong> Truyện ngắn hiện đại</li><li><strong>Nội dung:</strong> Kể về người đàn ông bị tử hình vì tội phạm chính trị, trước khi chết để lại lá thư cho vợ</li><li><strong>Đặc điểm:</strong> Giàu tính nhân văn, sự kết hợp giữa tình yêu và trách nhiệm chính trị</li><li><strong>Ý nghĩa:</strong> Thể hiện sức mạnh của chữ viết, tình yêu và tinh thần yêu nước</li></ul>"
+            },
+            {
+              "heading": "2. Tóm tắt nội dung",
+              "content": "<h4>a) Hoàn cảnh sự việc</h4><ul><li><strong>Nhân vật chính:</strong> Người đàn ông tư tù (không được nêu tên cụ thể)</li><li><strong>Tình cảnh:</strong> Người đàn ông bị kết án tử hình, chilled đón ngày tử dùng</li><li><strong>Lý do:</strong> Tình nghi liên quan đến hoạt động chính trị, yêu nước</li><li><strong>Thời gian:</strong> Đêm trước ngày tử (hoặc những ngày cuối cùng)</li></ul><h4>b) Lá thư cuối cùng</h4><ul><li><strong>Người nhận:</strong> Người vợ của anh ta</li><li><strong>Nội dung chủ yếu:</strong><ul><li>Lời yêu thương dành cho vợ</li><li>Giải thích lý do hành động của anh</li><li>Khích lệ vợ sống tiếp, xây dựng tương lai</li><li>Niềm tin vào công lý, lý tưởng cống hiến</li></ul></li><li><strong>Đặc điểm của lá thư:</strong><ul><li>Giản dị nhưng sâu sắc</li><li>Tránh những lời lẻ loẻ, phô trương</li><li>Thể hiện sự yên tĩnh, bình thản trước cái chết</li></ul></li></ul><h4>c) Những hình ảnh đối lập</h4><ul><li><strong>Chữ viết:</strong> Đại diện cho sức sống, tình yêu, tinh thần</li><li><strong>Cái chết:</strong> Mệnh lệnh đen tối, quyền lực, bạo lực</li><li><strong>Sự tương phản:</strong> Chữ viết yếu công của anh nhưng sâu sắc hơn cái chết</li></ul><h4>d) Kết thúc</h4><ul><li><strong>Lá thư gửi đi:</strong> Sau anh ta, chỉ còn những chữ viết</li><li><strong>Sức sống của chữ viết:</strong> Lá thư vẽ lại tinh thần anh, ảnh hưởng vợ từng độc giả mãi sau</li></ul>"
+            },
+            {
+              "heading": "3. Phân tích nhân vật",
+              "content": "<h4>a) Người đàn ông tử tù</h4><ul><li><strong>Xuất thân:</strong><ul><li>Một người có lý tưởng chính trị, yêu nước</li><li>Có đủ dũng khí để hành động vì niềm tin</li><li>Sẵn sàng hy sinh để cho đất nước, nhân dân</li></ul></li><li><strong>Tính cách:</strong><ul><li><strong>Can đảm:</strong> Không sợ cái chết</li><li><strong>Trung thành:</strong> Với lý tưởng, với vợ</li><li><strong>Bình thản:</strong> Chấp nhận vận mệnh, không phản nàn</li><li><strong>Lịch sự:</strong> Với vợ, không muốn vợ đau khổ</li></ul></li><li><strong>Mâu thuẫn nội tâm:</strong><ul><li>Yêu vợ nhưng đối mặt với cái chết sắp tới</li><li>Có trách nhiệm với lý tưởng, cũng có trách nhiệm với gia đình</li><li>Giữa tình cá nhân và lợi ích chung</li></ul></li></ul><h4>b) Người vợ</h4><ul><li><strong>Xuất thân:</strong><ul><li>Kiều nữ, có học vấn</li><li>Yêu chồng một cách tuyệt đối</li></ul></li><li><strong>Tính cách:</strong><ul><li><strong>Yêu thương:</strong> Sẵn sàng chịu đựng vì chồng</li><li><strong>Mạnh mẽ:</strong> Biết ủng hộ chồng dù biết hậu quả</li><li><strong>Tinh tế:</strong> Hiểu rõ suy nghĩ, tình cảm của chồng</li></ul></li><li><strong>Vị trí:</strong><ul><li>Người nhận lá thư, người duy nhất biết được suy tư chồng</li><li>Biểu tượng cho những người yêu thương, tiếp nhận di sản tinh thần</li></ul></li></ul>"
+            },
+            {
+              "heading": "4. Đặc điểm nghệ thuật",
+              "content": "<h4>a) Cấu trúc tác phẩm</h4><ul><li><strong>Hình thức:</strong> Nhân vật kể lại, hoặc người kể chuyện chung quanh lá thư</li><li><strong>Trục khoá:</strong> Lá thư người tử tù - vật chứng duy nhất, giữ linh hồn của anh ta</li><li><strong>Phát triển:</strong> Từ hiện tại (đêm trước tử) quay lại quá khứ tình yêu, tương lai hy vọng</li></ul><h4>b) Chủ đề chính</h4><ul><li><strong>Sức mạnh của chữ viết:</strong><ul><li>Chữ viết lâu hơn cuộc sống</li><li>Chữ viết chứa đựng tâm hồn, ý chí</li><li>Chữ viết có khả năng thay đổi con người nhận</li></ul></li><li><strong>Tình yêu vượt qua cái chết:</strong><ul><li>Yêu thương không bị chết giới hạn</li><li>Thông qua chữ viết, tình yêu tồn tại mãi</li></ul></li><li><strong>Ý chí cách mạng:</strong><ul><li>Không thể giết được lý tưởng</li><li>Tinh thần sống lại trong những người còn lại</li></ul></li></ul><h4>c) Tính chất truyện ngắn hiện đại</h4><ul><li><strong>Cốt truyện đơn giản:</strong> Chỉ một sự kiện chính (lá thư trước cái chết)</li><li><strong>Chú trọng đến cảm xúc, tâm lý:</strong> Phân tích sâu sắc từng chi tiết cảm xúc</li><li><strong>Kỹ thuật tường thuật:</strong> Sử dụng các đoạn hội thoại, lá thư để miêu tả</li><li><strong>Mở kết:</strong> Để độc giả suy ngẫm về ý nghĩa, hiệp lực</li></ul><h4>d) Ngôn ngữ</h4><ul><li><strong>Lời lẻ, sâu sắc:</strong> Không dư thừa, mỗi từ đều đúng chỗ</li><li><strong>Giàu hình ảnh:</strong> Miêu tả chi tiết những cảm xúc, chi tiết dung tích</li><li><strong>Có tính chất thơ:</strong> Giàu chất liệu tính nhân văn, lãng mạn</li><li><strong>Sử dụng so sánh, ẩn dụ:</strong> Để thể hiện yêu thương, mất mát, hy vọng</li></ul><h4>e) Các kỹ thuật nghệ thuật</h4><ul><li><strong>Đối lập:</strong> Chữ viết ↔ cái chết; Yêu thương ↔ mất mát; Hiện tại ↔ quá khứ</li><li><strong>Nhắc lại (thức linh hồn):</strong> Những hình ảnh, cảm xúc lặp lại để nhấn mạnh</li><li><strong>Biểu tượng:</strong><ul><li>Chữ viết - tính bất diệt của con người</li><li>Lá thư - những gì duy nhất còn lại</li></ul></li></ul>"
+            },
+            {
+              "heading": "5. Ý nghĩa tác phẩm",
+              "content": "<h4>a) Ý nghĩa về sức mạnh của chữ viết</h4><ul><li><strong>Chữ viết bất diệt:</strong> Khi con người có thể chết, chữ viết vẫn sống</li><li><strong>Chữ viết thay đổi con người:</strong> Lа thư của người tử tù thay đổi vợ, có thể thay đổi độc giả</li><li><strong>Chữ viết gợi toàn bộ quá khứ:</strong> Thông qua chữ viết, chúng ta khôi phục kỷ niệm, tình cảm</li></ul><h4>b) Ý nghĩa về tình yêu</h4><ul><li><strong>Tình yêu vượt thời gian, không gian:</strong> Tình yêu vẫn tồn tại qua chữ viết dù con người đã mất</li><li><strong>Tình yêu là nguồn lực:</strong> Giúp con người chịu được mất mát, cô đơn</li><li><strong>Tính phổ quát:</strong> Câu chuyện yêu thương này có thể chạm tới bất cứ ai</li></ul><h4>c) Ý nghĩa xã hội chính trị</h4><ul><li><strong>Hy sinh vì lý tưởng:</strong> Có những người sẵn sàng hy sinh chính mạng sống cho đất nước</li><li><strong>Tinh thần cách mạng:</strong> Không thể giết chết bằng cái chết, nhưng bằng chữ viết, hành động</li><li><strong>Lịch sử:</strong> Những tên tuổi như vậy được ghi nhớ mãi mãi trong lịch sử</li></ul><h4>d) Ý nghĩa nhân văn</h4><ul><li><strong>Vẻ đẹp của con người:</strong> Trong hoàn cảnh mất mát, con người vẫn giữ được lương tâm, yêu thương</li><li><strong>Sức mạnh nội tâm:</strong> Con người can đảm đối mặt với cái chết</li><li><strong>Sự kết nối:</strong> Qua chữ viết, hai con người kết nối qua bao giờ, thời gian</li></ul><h4>e) Ý nghĩa của tác phẩm với độc giả</h4><ul><li><strong>Cảm hóa, giáo dục:</strong> Thí dụ về lòng yêu nước, tinh thần hy sinh</li><li><strong>Suy ngẫm:</strong> Về giá trị thực sự của cuộc sống, tình yêu</li><li><strong>Cảm thụ:</strong> Nhạy cảm hơn với những cảm xúc sâu thẳm, không lời nói</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân tích tác phẩm Chữ người tử tù",
+            "method": "<p><strong>Phương pháp giải:</strong></p><ul><li>Xác định nội dung chính của lá thư, cảm xúc nhân vật</li><li>Phân tích mâu thuẫn nội tâm của người đàn ông tử tù</li><li>Tìm các hình ảnh, ẩn dụ về sức mạnh của chữ viết</li><li>Rút ra ý nghĩa toàn bộ tác phẩm đối với con người</li></ul>",
+            "examples": [
+              {
+                "question": "Tại sao Nguyễn Tuân lại chọn hình thức lá thư để kể chuyện về người tử tù?",
+                "answer": "Nguyễn Tuân chọn hình thức lá thư vì:\n1. Lá thư là giọng nói cuối cùng của người tử tù - những gì duy nhất còn lại\n2. Lá thư thể hiện trực tiếp tâm hồn, cảm xúc, không ngoằn ngoèo\n3. Lá thư có tính chất thân mật, gợi ra cảm xúc mạnh mẽ ở độc giả\n4. Lá thư là minh chứng về sức mạnh của chữ viết - nó kéo dài cuộc sống con người qua thời gian\n5. Lá thư giữ được phẩm chất, giá trị tinh thần của con người đã mất"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: So sánh các cách thể hiện ý chí sống của con người",
+            "method": "<p><strong>Phương pháp giải:</strong></p><ul><li>Xác định những cách thể hiện ý chí: hành động, chữ viết, tinh thần</li><li>So sánh hiệu quả lâu dài của mỗi cách</li><li>Tìm điểm mạnh, yếu</li><li>Rút ra kết luận về tầm quan trọng</li></ul>",
+            "examples": [
+              {
+                "question": "So sánh sức mạnh của hành động cách mạng và sức mạnh của chữ viết trong tác phẩm",
+                "answer": "Hành động cách mạng: tạo tác động tức thời, nhưng có thể bị dập tắt bằng bạo lực, tử hình\nChữ viết: không có sức mạnh vật chất, nhưng lâu dài hơn, sâu sắc hơn, ảnh hưởng tâm hồn\nKết luận: Chữ viết có sức mạnh thực sự vượt qua cái chết"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Phân tích mâu thuẫn giữa tình yêu cá nhân và lý tưởng xã hội",
+            "method": "<p><strong>Phương pháp giải:</strong></p><ul><li>Xác định hai lực lượng đối lập: tình yêu với vợ vs lý tưởng chính trị</li><li>Phân tích cách nhân vật xử lý mâu thuẫn</li><li>Đánh giá giá trị lựa chọn của nhân vật</li><li>Rút ra bài học về trách nhiệm con người</li></ul>",
+            "examples": [
+              {
+                "question": "Người đàn ông tử tù phải đối mặt với mâu thuẫn gì? Anh ta giải quyết nó như thế nào?",
+                "answer": "Mâu thuẫn:\n- Một bên: yêu vợ sâu sắc, muốn bên cạnh vợ mãi mãi\n- Bên kia: có lý tưởng yêu nước, sẵn sàng hy sinh\nGiải quyết:\n- Không bỏ lý tưởng, nhưng cố gắng an ủi vợ qua lá thư\n- Giải thích lý do hành động, khích lệ vợ sống tiếp\n- Thông qua chữ viết, tình yêu vẫn tiếp tục tồn tại\nBài học: Con người có thể kết hợp tình cá nhân với trach nhiệm xã hội"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Ý chính của tác phẩm Chữ người tử tù là gì?",
+            "options": [
+              "Phê phán những người liều mạng vì chính trị",
+              "Thể hiện sức mạnh bất diệt của chữ viết và tình yêu vượt qua cái chết",
+              "Kể lại câu chuyện lịch sử về cuộc chiến chống Pháp",
+              "Bộc lộ sẻ lẻ của người sắp chết"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm Chữ người tử tù chủ yếu thể hiện: qua lá thư cuối cùng, Nguyễn Tuân muốn nhấn mạnh sức mạnh của chữ viết - nó bất diệt, có khả năng lưu giữ và truyền đạt tâm hồn con người qua thời gian, cũng như tình yêu vượt qua cái chết."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Lá thư của người tử tù có tác dụng gì?",
+            "options": [
+              "Để xin lỗi vợ vì những sai lầm của anh",
+              "Để yêu cầu vợ nuôi dợi con em anh",
+              "Để giải thích lý do hành động, bộc lộ tâm hồn, khích lệ vợ sống tiếp",
+              "Để hủy dứt mối quan hệ với vợ"
+            ],
+            "correct": 2,
+            "explanation": "Lá thư của người tử tù có nhiều tác dụng: giải thích lý do hành động yêu nước của anh, bộc lộ tâm hồn sâu sắc, khích lệ vợ sống tiếp và sáng lạo, cũng như ghi lại những gì duy nhất còn lại sau cái chết - chữ viết."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Nguyễn Tuân, người viết truyện, muốn gửi thông điệp gì tới độc giả?",
+            "options": [
+              "Cảm hóa, giáo dục lòng yêu nước, tinh thần hy sinh",
+              "Chỉ kể một câu chuyện thú vị",
+              "Phản đối chính quyền bằng lời nói",
+              "Vô danh hóa khó khăn trong cuộc sống"
+            ],
+            "correct": 0,
+            "explanation": "Thông qua câu chuyện người tử tù, Nguyễn Tuân muốn cảm hóa, giáo dục độc giả về lòng yêu nước, tinh thần hy sinh, và sức mạnh của tình yêu, công lý."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Tính chất hiện đại của truyện ngắn Chữ người tử tù thể hiện ở đâu?",
+            "options": [
+              "Sử dụng các yếu tố kỳ ảo như truyện cổ",
+              "Cốt truyện đơn giản (một sự kiện), chú trọng cảm xúc, tâm lý con người",
+              "Mô tả chi tiết về cảnh vật, con vật",
+              "Dùng ngôn ngữ quá khó hiểu"
+            ],
+            "correct": 1,
+            "explanation": "Truyện ngắn hiện đại là thể loại có cốt truyện đơn giản nhưng sâu sắc về cảm xúc, tâm lý. Chữ người tử tù chỉ quay quanh một sự kiện (lá thư trước cái chết) nhưng phân tích sâu sắc cảm xúc."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Hình ảnh đối lập trong tác phẩm là gì?",
+            "options": [
+              "Chữ viết ↔ cái chết; Yêu thương ↔ mất mát; Hiện tại ↔ quá khứ",
+              "Vợ ↔ chồng; Gia đình ↔ xã hội",
+              "Ngày ↔ đêm; Sáng ↔ tối",
+              "Đất (nước ↔ trời"
+            ],
+            "correct": 0,
+            "explanation": "Các hình ảnh đối lập: chữ viết (yếu nhưng bất diệt) vs cái chết (mạnh nhưng mất); yêu thương vs mất mát; hiện tại vs quá khứ, làm tác phẩm sâu sắc hơn."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Người vợ trong tác phẩm được mô tả như thế nào?",
+            "options": [
+              "Yếu đuối, chỉ biết khóc",
+              "Kiều nữ, có học vấn, yêu chồng một cách tuyệt đối nhưng cũng mạnh mẽ",
+              "Vô duyên, không yêu chồng",
+              "Giáo dục kém, thô lỗ"
+            ],
+            "correct": 1,
+            "explanation": "Người vợ là một nhân vật phức tạp: yêu chồng sâu sắc, nhưng đủ mạnh mẽ để ủng hộ chồng dù biết hậu quả. Cô gái có học vấn, tinh tế, hiểu rõ suy nghĩ chồng."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Tại sao lá thư được tiêu đề là 'Chữ người tử tù' chứ không phải kiểu tên khác?",
+            "options": [
+              "Chỉ vì đó là hình thức của tác phẩm",
+              "Để nhấn mạnh sức mạnh của chữ viết - đó là thứ duy nhất người tử tù có thể để lại sau khi mất",
+              "Vì tác phẩm về lá thư yêu cầu phải gọi như vậy",
+              "Để tránh bị kiểm duyệt"
+            ],
+            "correct": 1,
+            "explanation": "Tiêu đề 'Chữ người tử tù' nhấn mạnh rằng: chữ viết là những gì duy nhất, bất diệt, giữ được linh hồn của người tử tù. Đó là trung tâm của tác phẩm."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Tác phẩm có ý nghĩa gì với những người đọc hiện nay?",
+            "options": [
+              "Chỉ là lịch sử cũ, không còn ý nghĩa",
+              "Dạy bài học về lòng yêu nước, tình yêu, và sức mạnh của chữ viết - những giá trị vĩnh viễn",
+              "Kích thích mâu thuẫn trong gia đình",
+              "Không có ý nghĩa gì cả"
+            ],
+            "correct": 1,
+            "explanation": "Dù viết về lịch sử, Chữ người tử tù vẫn mang những bài học về lòng yêu nước, tình yêu chân thành, sức mạnh của chữ viết - những giá trị không bao giờ lỗi thời, áp dụng cho bất kỳ thế hệ nào."
+          },
+          {
+            "id": "ex9",
+            "type": "essay",
+            "question": "Phân tích cách Nguyễn Tuân sử dụng hình thức lá thư để tạo tính thuyết phục cho tác phẩm. Nêu cam nhậncủa bạn về tác động của lá thư đối với độc giả.",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Phần 1: Hình thức lá thư\n  + Lá thư là hình thức trực tiếp, thân mật\n  + Giọng văn tâm sự, lôi cuốn độc giả\n  + Lá thư giới hạn thời gian (đêm trước tử), tạo cảm giác cấp bách\n- Phần 2: Cách sử dụng\n  + Nội dung: giải thích, khích lệ, bộc lộ tâm hồn\n  + Ngôn ngữ: lời lẻ, sâu sắc, không phô trương\n  + Cảm xúc: yêu thương pha với bình thản trước cái chết\n- Phần 3: Tác động\n  + Độc giả cảm thấy mình là người nhận lá thư\n  + Những cảm xúc được truyền tải trực tiếp\n  + Tin tưởng vào tính xác thực của câu chuyện\n- Kết luận: Lá thư là hình thức hoàn hảo để thể hiện sức mạnh của chữ viết"
+          },
+          {
+            "id": "ex10",
+            "type": "essay",
+            "question": "Nêu luận điểm của bạn: Trong tác phẩm Chữ người tử tù, sức mạnh của chữ viết có vượt qua được cái chết không? Sử dụng bằng chứng từ tác phẩm để chứng minh.",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\nLuận điểm: CÓ, chữ viết vượt qua cái chết\n- Lý do 1: Kéo dài cuộc sống\n  + Mặc dù cơ thể chết, chữ viết làm linh hồn người tử tù sống lại\n  + Vợ anh ta, qua lá thư, có thể tiếp tục trò chuyện với chồng\n  + Độc giả, qua lá thư, có thể tiếp xúc với linh hồn người tử tù\n- Lý do 2: Thay đổi con người\n  + Lá thư thay đổi vợ - từ buồn bã sang có lý do để sống\n  + Lá thư thay đổi độc giả - gợi suy ngẫm về giá trị cuộc sống\n  + Thay đổi mà cái chết không thể làm được\n- Lý do 3: Tính bất diệt\n  + Cái chết là tạm thời, chữ viết còn mãi\n  + Tác phẩm được lưu giữ, tái bản qua nhiều thế hệ\n  + Mỗi thế hệ mới lại tiếp tục được giáo huấn, cảm động qua lá thư\n- Kết luận: Chữ viết thực sự vượt qua cái chết, đó là thông điệp chính của Nguyễn Tuân"
+          }
+        ]
+      }
+    }
+  ]
+}

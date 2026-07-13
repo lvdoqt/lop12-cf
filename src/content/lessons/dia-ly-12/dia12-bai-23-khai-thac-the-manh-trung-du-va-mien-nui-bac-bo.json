@@ -1,0 +1,46 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_23",
+      "name": "Khai thác thế mạnh ở trung du và miền núi Bắc Bộ",
+      "slug": "khai-thac-the-manh-trung-du-va-mien-nui-bac-bo",
+      "chapter": "Địa lí các vùng kinh tế",
+      "chapter_id": "dia12_part4",
+      "lesson_id": 23,
+      "description": "Đặc điểm tự nhiên, nguồn lực và các thế mạnh để phát triển kinh tế (nông nghiệp đặc sản, lâm nghiệp, khoáng sản, du lịch) ở trung du và miền núi Bắc Bộ; giải pháp phát triển bền vững.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thế mạnh và chiến lược phát triển vùng trung du và miền núi Bắc Bộ",
+          "summary": "Vùng trung du và miền núi Bắc Bộ có địa hình đồi núi, khí hậu đa dạng, thuận lợi cho các cây công nghiệp, chăn nuôi đặc sản, lâm nghiệp và du lịch sinh thái; cần phát triển bền vững đi đôi với bảo tồn môi trường và nâng cao đời sống dân cư." ,
+          "sections": [
+            { "heading": "Tài nguyên và thế mạnh", "content": "Đất đai phù hợp cây công nghiệp như chè, cà phê ở vùng cao; rừng cung cấp gỗ và dịch vụ sinh thái; nhiều khu di sản và cảnh quan đẹp thu hút du lịch." },
+            { "heading": "Vấn đề và giải pháp", "content": "Thách thức bao gồm giao thông, khó khăn tiếp cận thị trường, xói mòn đất; giải pháp: cải thiện hạ tầng, phát triển nông nghiệp giá trị cao, bảo tồn rừng và du lịch bền vững." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Nêu một cây công nghiệp phù hợp với vùng trung du và miền núi Bắc Bộ?", "a_hint": "Chè hoặc cây ăn quả đặc sản." },
+            { "q": "Một giải pháp giảm xói mòn đất ở vùng đồi núi?", "a_hint": "Trồng cây phủ, bậc thang canh tác, terracing." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Một thế mạnh tự nhiên của miền núi Bắc Bộ là?", "options": ["Đất bằng phẳng rộng lớn","Địa hình đồi núi và rừng phong phú","Biển nông cạn","Sa mạc"], "correct": 1, "explanation": "Địa hình đồi núi với rừng phong phú là đặc trưng của vùng." },
+          { "id": 2, "type": "mcq", "question": "Cây công nghiệp nào thường trồng ở vùng cao?", "options": ["Chè","Lúa nước truyền thống đồng bằng","Cây thủy sinh","Cây sa mạc"], "correct": 0, "explanation": "Chè phát triển tốt ở vùng cao, khí hậu mát." },
+          { "id": 3, "type": "mcq", "question": "Một hạn chế lớn của phát triển vùng núi là?", "options": ["Giao thông khó khăn và tiếp cận thị trường hạn chế","Quá nhiều cảng biển","Nguồn nước thừa thãi","Không có dân cư"], "correct": 0, "explanation": "Giao thông vướng thưa, làm tăng chi phí tiếp cận thị trường." },
+          { "id": 4, "type": "mcq", "question": "Biện pháp nào giúp phát triển du lịch bền vững ở miền núi?", "options": ["Phát triển du lịch cộng đồng và quản lý sức chứa","Xây dựng hàng loạt khu resort lớn mà không quy hoạch","Đập phá cảnh quan","Không làm gì"], "correct": 0, "explanation": "Du lịch cộng đồng và quản lý sức chứa giúp bền vững." },
+          { "id": 5, "type": "mcq", "question": "Một sản phẩm nông nghiệp đặc sản có thể xuất khẩu từ vùng núi là?", "options": ["Cà phê đặc sản","Dầu mỏ","Lúa gạo đồng bằng","Không có sản phẩm"], "correct": 0, "explanation": "Cà phê đặc sản là sản phẩm xuất khẩu của vùng cao một số nơi." },
+          { "id": 6, "type": "mcq", "question": "Quản lý rừng ở miền núi cần chú trọng?", "options": ["Phục hồi rừng, sử dụng bền vững và quản lý cháy rừng","Chặt phá rừng để mở đất","Không can thiệp","Chỉ trồng cây ngoại lai"], "correct": 0, "explanation": "Phục hồi và quản lý bền vững giúp duy trì nguồn lợi rừng." },
+          { "id": 7, "type": "mcq", "question": "Một yếu tố quan trọng để nông sản miền núi tiếp cận thị trường là?", "options": ["Hạ tầng giao thông và kho lạnh","Chỉ dựa vào con đường mòn","Không cần gì","Tăng phí vận chuyển"], "correct": 0, "explanation": "Hạ tầng và kho lạnh giảm tổn thất sau thu hoạch và chi phí vận chuyển." },
+          { "id": 8, "type": "mcq", "question": "Thu hút đầu tư vào miền núi nên tập trung vào?", "options": ["Sản phẩm giá trị cao, du lịch sinh thái và chế biến nông sản","Khai thác cát biển","Khai thác toàn bộ rừng","Không thu hút đầu tư"], "correct": 0, "explanation": "Đầu tư vào giá trị gia tăng và du lịch bền vững là phù hợp." },
+          { "id": 9, "type": "mcq", "question": "Một rủi ro khí hậu đối với miền núi là?", "options": ["Sạt lở đất do mưa lớn","Bão tuyết liên tục","Sự tan chảy băng hà","Không có rủi ro"], "correct": 0, "explanation": "Mưa lớn có thể gây sạt lở đất ở địa hình dốc." },
+          { "id": 10, "type": "mcq", "question": "Vai trò cộng đồng địa phương trong phát triển vùng miền núi là?", "options": ["Tham gia quản lý, bảo tồn và phát triển du lịch cộng đồng","Không tham gia","Chỉ khai thác tài nguyên","Không liên quan"], "correct": 0, "explanation": "Cộng đồng địa phương nên tham gia quản lý tài nguyên và du lịch." }
+        ]
+      }
+    }
+  ]
+}

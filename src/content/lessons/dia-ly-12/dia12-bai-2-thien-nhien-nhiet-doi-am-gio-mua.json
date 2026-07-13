@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_2",
+      "name": "Thiên nhiên nhiệt đới ẩm gió mùa",
+      "slug": "thien-nhien-nhiet-doi-am-gio-mua",
+      "chapter": "Địa lí tự nhiên",
+      "chapter_id": "dia12_part1",
+      "lesson_id": 2,
+      "description": "Đặc điểm của thiên nhiên nhiệt đới ẩm gió mùa: nhiệt độ cao, ẩm, mưa theo mùa; tác động đến hệ sinh thái và sản xuất nông nghiệp.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thiên nhiên nhiệt đới ẩm gió mùa",
+          "summary": "Thiên nhiên nhiệt đới ẩm gió mùa đặc trưng bởi nhiệt độ cao quanh năm, độ ẩm lớn và sự phân mùa rõ rệt: mùa mưa và mùa khô. Ở Việt Nam, gió mùa Tây Nam và Đông Bắc cùng các hệ thống biển-khí hậu tạo nên mô hình thời tiết, lượng mưa và phân bố thảm thực vật đặc trưng.",
+          "sections": [
+            { "heading": "Khí hậu và gió mùa", "content": "Mùa mưa do gió mùa Tây Nam và các dải hội tụ, mùa khô do gió mùa Đông Bắc; lượng mưa phân bố không đều theo vùng và theo mùa." },
+            { "heading": "Thảm thực vật", "content": "Phong phú với rừng nhiệt đới ẩm, rừng mùa, rừng ngập mặn ven biển; thảm thực vật phản ánh độ ẩm và địa hình." },
+            { "heading": "Tác động tới nông nghiệp", "content": "Mùa mưa cung cấp nước cho lúa nước; mùa khô cần tưới tiêu; thiên tai (bão, lũ) ảnh hưởng lớn tới sản xuất." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Hai gió mùa chính ảnh hưởng đến Việt Nam?", "a_hint": "Gió mùa Tây Nam và Đông Bắc." },
+            { "q": "Một hệ sinh thái ven biển quan trọng?", "a_hint": "Rừng ngập mặn." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Khí hậu nhiệt đới ẩm gió mùa có đặc trưng nào?", "options": ["Bốn mùa rõ rệt giống ôn đới","Mùa mưa và mùa khô","Hoàn toàn khô hạn","Nhiệt độ dưới 0°C"], "correct": 1, "explanation": "Khí hậu nhiệt đới ẩm gió mùa có hai mùa chính: mưa và khô." },
+          { "id": 2, "type": "mcq", "question": "Yếu tố chính quyết định mùa mưa ở Việt Nam?", "options": ["Gió mùa","Độ cao","Vĩ độ","Địa hình"], "correct": 0, "explanation": "Gió mùa quyết định mùa mưa ở Việt Nam." },
+          { "id": 3, "type": "mcq", "question": "Loại rừng nào thường xuất hiện ở vùng ven biển Việt Nam?", "options": ["Rừng taiga","Rừng ngập mặn","Rừng lá kim","Rừng ôn đới"], "correct": 1, "explanation": "Rừng ngập mặn phân bố ven bờ, cửa sông." },
+          { "id": 4, "type": "mcq", "question": "Hệ quả của lượng mưa không đều theo mùa?", "options": ["Không cần tưới tiêu","Cần hệ thống tưới tiêu và đối phó lũ lụt","Giảm sản xuất lương thực vĩnh viễn","Không tác động"], "correct": 1, "explanation": "Lượng mưa theo mùa đòi hỏi hệ thống tưới tiêu và phòng chống lũ." },
+          { "id": 5, "type": "mcq", "question": "Một hiểm họa thiên nhiên liên quan đến gió mùa và biển là?", "options": ["Động đất","Bão và sóng thần","Sương mù vĩnh viễn","Sa mạc hoá"], "correct": 1, "explanation": "Bão xuất phát từ biển và gió mùa gây ảnh hưởng lớn tới ven biển." },
+          { "id": 6, "type": "mcq", "question": "Ở miền Nam Việt Nam, mùa mưa kéo dài chủ yếu vào thời gian nào?", "options": ["Tháng 5-10","Tháng 11-4","Tháng 1-3","Không có mùa mưa"], "correct": 0, "explanation": "Mùa mưa ở miền Nam thường từ khoảng tháng 5 đến tháng 10." },
+          { "id": 7, "type": "mcq", "question": "Thảm thực vật nhiệt đới ẩm thường có đặc điểm?", "options": ["Ít loài cây","Đa dạng loài và tầng tán dày","Chủ yếu cây lá kim","Không có gỗ"], "correct": 1, "explanation": "Rừng nhiệt đới ẩm có đa dạng loài và tầng tán phát triển." },
+          { "id": 8, "type": "mcq", "question": "Biện pháp nào giúp giảm thiểu tác động của lũ lụt?", "options": ["Không xây dựng hệ thống phòng lũ","Quản lý lưu vực, xây đập, trồng rừng đầu nguồn","Xây nhà trên bãi sông","Không can thiệp"], "correct": 1, "explanation": "Quản lý lưu vực và trồng rừng đầu nguồn giúp giảm lũ." },
+          { "id": 9, "type": "mcq", "question": "Nguồn nước chủ yếu cho nông nghiệp lúa nước là?", "options": ["Nước mưa và nước sông","Nước ngầm duy nhất","Nước biển","Không cần nước"], "correct": 0, "explanation": "Nước mưa mùa và nước sông cung cấp cho sản xuất lúa nước." },
+          { "id": 10, "type": "mcq", "question": "Yếu tố nào làm gia tăng rủi ro thiên tai ven biển?", "options": ["Sự ổn định khí hậu","Biến đổi khí hậu và dâng biển","Giảm mực nước biển","Không có dân cư ven biển"], "correct": 1, "explanation": "Biến đổi khí hậu và dâng biển làm tăng rủi ro cho vùng ven biển." }
+        ]
+      }
+    }
+  ]
+}

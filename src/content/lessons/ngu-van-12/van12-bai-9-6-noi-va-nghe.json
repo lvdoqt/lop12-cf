@@ -1,0 +1,155 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-9-6-noi-va-nghe",
+      "name": "Nói và nghe: Thuyết trình về cơ hội và thách thức đối với đất nước",
+      "slug": "noi-va-nghe-thuyet-trinh",
+      "chapter": "Văn học và cuộc đời",
+      "chapter_id": "V12-9",
+      "lesson_id": 6,
+      "description": "Phát triển kỹ năng thuyết trình về các vấn đề liên quan đến cơ hội và thách thức đối với đất nước trong thời kỳ hội nhập.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "presentation-skills",
+          "name": "Kỹ năng thuyết trình",
+          "slug": "ky-nang-thuyet-trinh",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Thuyết trình về cơ hội và thách thức",
+          "sections": [
+            {
+              "heading": "1. Cơ hội và thách thức của đất nước",
+              "content": "<h4>a) Cơ hội</h4><ul><li><strong>Hội nhập:</strong> Kinh tế quốc tế</li><li><strong>Công nghệ:</strong> Cách mạng 4.0</li><li><strong>Dân số:</strong> Trẻ, năng động</li><li><strong>Vị trí:</strong> Địa lý chiến lược</li></ul><h4>b) Thách thức</h4><ul><li><strong>Cạnh tranh:</strong> Toàn cầu hóa</li><li><strong>Môi trường:</strong> Ô nhiễm, biến đổi khí hậu</li><li><strong>Giáo dục:</strong> Chất lượng nguồn nhân lực</li><li><strong>Xã hội:</strong> Bất bình đẳng, già hóa dân số</li></ul>"
+            },
+            {
+              "heading": "2. Kỹ năng thuyết trình",
+              "content": "<h4>a) Chuẩn bị nội dung</h4><ul><li><strong>Nghiên cứu:</strong> Vấn đề kỹ lưỡng</li><li><strong>Phân tích:</strong> Cơ hội và thách thức</li><li><strong>Đề xuất:</strong> Giải pháp cụ thể</li></ul><h4>b) Cấu trúc bài thuyết trình</h4><ul><li><strong>Mở đầu:</strong> Giới thiệu vấn đề</li><li><strong>Phân tích cơ hội:</strong> Điểm mạnh, thuận lợi</li><li><strong>Phân tích thách thức:</strong> Khó khăn, rủi ro</li><li><strong>Giải pháp:</strong> Đề xuất hành động</li><li><strong>Kết luận:</strong> Tóm tắt, kêu gọi</li></ul><h4>c) Kỹ thuật trình bày</h4><ul><li><strong>Slide:</strong> Trực quan, dễ hiểu</li><li><strong>Dữ liệu:</strong> Số liệu, biểu đồ</li><li><strong>Tương tác:</strong> Với khán giả</li></ul>"
+            },
+            {
+              "heading": "3. Kỹ năng lắng nghe và phản hồi",
+              "content": "<h4>a) Lắng nghe tích cực</h4><ul><li><strong>Tập trung:</strong> Nội dung thuyết trình</li><li><strong>Ghi chú:</strong> Điểm quan trọng</li><li><strong>Đánh giá:</strong> Phân tích, luận cứ</li></ul><h4>b) Đặt câu hỏi</h4><ul><li><strong>Làm rõ:</strong> Thông tin chưa hiểu</li><li><strong>Phản biện:</strong> Quan điểm khác</li><li><strong>Mở rộng:</strong> Vấn đề liên quan</li></ul><h4>c) Đưa ra phản hồi</h4><ul><li><strong>Tích cực:</strong> Ghi nhận điểm hay</li><li><strong>Xây dựng:</strong> Góp ý cải thiện</li><li><strong>Khách quan:</strong> Đánh giá công bằng</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex9-6-1",
+              "type": "mcq",
+              "question": "Cơ hội lớn nhất của Việt Nam hiện nay là gì?",
+              "options": [
+                "Không có cơ hội",
+                "Hội nhập kinh tế, công nghệ 4.0, dân số trẻ",
+                "Chỉ có vị trí địa lý",
+                "Không rõ"
+              ],
+              "correct": 1,
+              "explanation": "Việt Nam có nhiều cơ hội: hội nhập kinh tế quốc tế, cách mạng công nghệ 4.0, dân số trẻ và vị trí địa lý chiến lược."
+            },
+            {
+              "id": "ex9-6-2",
+              "type": "mcq",
+              "question": "Thách thức lớn nhất đối với Việt Nam là gì?",
+              "options": [
+                "Không có thách thức",
+                "Cạnh tranh toàn cầu, môi trường, chất lượng nguồn nhân lực",
+                "Chỉ có vấn đề môi trường",
+                "Chỉ có vấn đề giáo dục"
+              ],
+              "correct": 1,
+              "explanation": "Việt Nam đối mặt nhiều thách thức: cạnh tranh toàn cầu, ô nhiễm môi trường, chất lượng nguồn nhân lực."
+            },
+            {
+              "id": "ex9-6-3",
+              "type": "mcq",
+              "question": "Khi chuẩn bị thuyết trình, cần làm gì đầu tiên?",
+              "options": [
+                "Làm slide ngay",
+                "Nghiên cứu vấn đề kỹ lưỡng",
+                "Không cần chuẩn bị",
+                "Chỉ tập nói"
+              ],
+              "correct": 1,
+              "explanation": "Cần nghiên cứu vấn đề kỹ lưỡng trước khi phân tích và đề xuất giải pháp."
+            },
+            {
+              "id": "ex9-6-4",
+              "type": "mcq",
+              "question": "Cấu trúc bài thuyết trình cần có những phần nào?",
+              "options": [
+                "Chỉ có mở đầu",
+                "Mở đầu, phân tích cơ hội-thách thức, giải pháp, kết luận",
+                "Chỉ có kết luận",
+                "Không cần cấu trúc"
+              ],
+              "correct": 1,
+              "explanation": "Bài thuyết trình cần có: mở đầu, phân tích cơ hội và thách thức, đề xuất giải pháp, kết luận."
+            },
+            {
+              "id": "ex9-6-5",
+              "type": "mcq",
+              "question": "Slide thuyết trình cần có đặc điểm gì?",
+              "options": [
+                "Nhiều chữ, phức tạp",
+                "Trực quan, dễ hiểu, có biểu đồ số liệu",
+                "Chỉ có chữ",
+                "Không cần slide"
+              ],
+              "correct": 1,
+              "explanation": "Slide cần trực quan, dễ hiểu, sử dụng biểu đồ và số liệu để minh họa."
+            },
+            {
+              "id": "ex9-6-6",
+              "type": "mcq",
+              "question": "Khi lắng nghe thuyết trình, cần làm gì?",
+              "options": [
+                "Nhìn điện thoại",
+                "Tập trung, ghi chú, đánh giá nội dung",
+                "Nói chuyện riêng",
+                "Ngủ"
+              ],
+              "correct": 1,
+              "explanation": "Cần tập trung lắng nghe, ghi chú các điểm quan trọng và đánh giá phân tích, luận cứ."
+            },
+            {
+              "id": "ex9-6-7",
+              "type": "mcq",
+              "question": "Loại câu hỏi nào phù hợp sau bài thuyết trình?",
+              "options": [
+                "Câu hỏi về đời tư",
+                "Câu hỏi làm rõ, phản biện, mở rộng vấn đề",
+                "Câu hỏi về thời tiết",
+                "Không nên hỏi"
+              ],
+              "correct": 1,
+              "explanation": "Nên hỏi để làm rõ thông tin, phản biện quan điểm hoặc mở rộng vấn đề liên quan."
+            },
+            {
+              "id": "ex9-6-8",
+              "type": "mcq",
+              "question": "Phản hồi sau thuyết trình cần như thế nào?",
+              "options": [
+                "Chỉ chỉ trích",
+                "Ghi nhận điểm hay, góp ý xây dựng, khách quan",
+                "Không nói gì",
+                "Chỉ khen ngợi"
+              ],
+              "correct": 1,
+              "explanation": "Phản hồi cần ghi nhận điểm hay, góp ý xây dựng và đánh giá khách quan."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

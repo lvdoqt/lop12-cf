@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-14",
+    "name": "Hoạt động đối ngoại của Việt Nam từ 1975 đến nay",
+    "slug": "hoat-dong-doi-ngoai-vietnam-1975-den-nay",
+    "chapter": "Chủ đề 5: Đối ngoại Việt Nam qua các giai đoạn lịch sử",
+    "chapter_id": "su12",
+    "lesson_id": 14,
+    "description": "Ngoại giao Việt Nam từ 1975 đến thời đại, hòa nhập quốc tế, quan hệ với các cường quốc.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Hoạt động đối ngoại của Việt Nam từ 1975 đến nay",
+        "sections": [
+          { "heading": "1. Giai đoạn khó khăn và bị cô lập (1975-1986)", "content": "Sau 1975, Việt Nam bị phương Tây cô lập do chiến tranh. Tôi mưa Kampuchea (1978-1979) khiến Liên Hợp quốc phản đối. Xung đột biên giới Trung Quốc (2/1979). Người tị nạn 'thuyền nhân' bỏ trốn. Kinh tế khó khăn, bị trừng phạt kinh tế từ phương Tây. Chỉ có Liên Xô, LHP Eastern Bloc hỗ trợ." },
+          { "heading": "2. Giai đoạn mở cửa đối ngoại (1986-1995)", "content": "Đổi mới 1986 minh bạch ngoại giao. Rút khỏi Kampuchea (1989), giảm căng thẳng. Liên Xô sụp đổ (1991), Việt Nam thắng lợi với Liên Xô cũ => Nga; quan hệ được bình thường hóa. Bình thường hóa quan hệ với Mỹ (1995), gở cấm vận. Gia nhập ASEAN (1995), trở thành phối hợp quốc tế." },
+          { "heading": "3. Hòa nhập quốc tế mạnh mẽ (1995-2010)", "content": "Gia nhập WTO (2007), mở cửa thị trường. Gia nhập các hiệp định thương mại: AFTA, CEPT ở ASEAN. Phát triển quan hệ với các cường quốc: Nhật, Hàn Quốc, Áu Châu. Tham gia phong trào quốc tế: LHQ, đối thoại khu vực (ARF, EAS). Tăng cường quân sự, an ninh: Nhân lực tăng, vũ khí hiện đại." },
+          { "heading": "4. Chính sách 'Bạn bè chiều cả mọi phía' (2010-nay)", "content": "Cân bằng giữa các cường quốc: Mỹ, Trung Quốc, Liên Xô cũ (Nga), Nhật, Anh, Pháp, Đức. Chiến lược phía Đông của Mỹ (2011): Việt Nam hỗ trợ sự điều cân bằng quyền lực. Tranh chấp Biển Đông: Việt Nam bảo vệ quyền lợi, đàm phán liên khu vực. Quan hệ với TQ: Thương mại mạnh nhưng also căng thẳng dân sự." },
+          { "heading": "5. Xu hướng hiện đại: Đa phương, chủ động, linh hoạt", "content": "Việt Nam không phụ thuộc 1 cường quốc; phụ thuộc kinh tế, giao tiếp mạnh. Tham gia TPP/CPTPP, RCEP: hòa nhập toàn cầu. Ngoại giao sâu sắc: đối thoại nhân dân, văn hóa, giáo dục. Đăng cai ASEAN Chairman (2020): Việt Nam là lãnh đạo khu vực. Phát triển quan hệ 'Toàn diện chiến lược': Nga (2019), Mỹ (2016), Nhật (2013), TQ (2008), Anh (2020)." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Giai đoạn 1975-1986?", "options": ["Mạnh mẽ", "Bị cô lập, khó khăn", "Hòa nhập toàn cầu", "Lâu dài hòa bình"], "correct": 1, "explanation": "Giai đoạn bị cô lập, khó khăn kinh tế, chính trị." },
+        { "id": "ex2", "type": "mcq", "question": "Rút khỏi Kampuchea?", "options": ["1975", "1979", "1989", "1995"], "correct": 2, "explanation": "Rút khỏi Kampuchea năm 1989, giảm căng thẳng." },
+        { "id": "ex3", "type": "mcq", "question": "Bình thường hoá Mỹ?", "options": ["1990", "1993", "1995", "1997"], "correct": 2, "explanation": "Bình thường hóa quan hệ với Mỹ năm 1995." },
+        { "id": "ex4", "type": "mcq", "question": "Gia nhập ASEAN?", "options": ["1990", "1993", "1995", "1998"], "correct": 2, "explanation": "Gia nhập ASEAN năm 1995." },
+        { "id": "ex5", "type": "mcq", "question": "Gia nhập WTO?", "options": ["2000", "2005", "2007", "2010"], "correct": 2, "explanation": "Gia nhập WTO năm 2007, mở cửa thị trường." },
+        { "id": "ex6", "type": "mcq", "question": "Chính sách ngoại giao?", "options": ["Phục tùng một cường quốc", "Bạn bè chiều cả mọi phía", "Cô lập hoàn toàn", "Chi phối bộp bồi"], "correct": 1, "explanation": "Chính sách 'Bạn bè chiều cả mọi phía', cân bằng các lực lượng." },
+        { "id": "ex7", "type": "mcq", "question": "Hiệp định TPP/CP TPP?", "options": ["Khối Đông", "Hòa nhập toàn cầu", "Liên Xô", "Pháp"], "correct": 1, "explanation": "Tham gia TPP/CPTPP: hòa nhập toàn cầu, thương mại tự do." },
+        { "id": "ex8", "type": "mcq", "question": "ASEAN Chairman?", "options": ["2017", "2018", "2019", "2020"], "correct": 3, "explanation": "Việt Nam đăng cai ASEAN Chairman năm 2020." },
+        { "id": "ex9", "type": "mcq", "question": "Quan hệ toàn diện chiến lược?", "options": ["Chỉ một nước", "Chỉ Mỹ, Trung Quốc", "Nhiều nước: Nga, Mỹ, Nhật, TQ, Anh", "Không nước nào"], "correct": 2, "explanation": "Phát triển quan hệ 'Toàn diện chiến lược' với Nga, Mỹ, Nhật, TQ, Anh." },
+        { "id": "ex10", "type": "mcq", "question": "Xu hướng hiện đại?", "options": ["Phục tùng", "Cô lập", "Đa phương, chủ động, linh hoạt", "Yếu đi"], "correct": 2, "explanation": "Đa phương, chủ động, linh hoạt; không phụ thuộc một cường quốc." }
+      ]
+    }
+  }]
+}

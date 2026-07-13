@@ -1,0 +1,392 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-8-bieu-thuc-toa-do-cua-cac-phep-toan-vecto",
+      "name": "Bài 8. Biểu thức tọa độ của các phép toán vectơ",
+      "slug": "bieu-thuc-toa-do-cua-cac-phep-toan-vecto",
+      "chapter": "Chương 2: Vectơ và hệ trục tọa độ trong không gian",
+      "chapter_id": "T12-2",
+      "lesson_id": 8,
+      "description": "Thành thạo tính toán vectơ bằng tọa độ trong Oxyz: cộng trừ nhân, tích vô hướng, độ dài, góc, điều kiện vuông góc/cùng phương, ứng dụng nhận dạng hình bình hành và tứ giác đặc biệt.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/F59E0B/FFFFFF?text=Biểu+Thức+Tọa+Độ",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Phép toán vectơ theo tọa độ",
+          "slug": "phep-toan-vecto-toa-do",
+          "difficulty": "easy"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Độ dài – Khoảng cách – Góc",
+          "slug": "do-dai-khoang-cach-goc",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: Điều kiện vuông góc – Cùng phương – Nhận dạng tứ giác",
+          "slug": "vuong-goc-cung-phuong-tu-giac",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Biểu thức tọa độ của các phép toán vectơ",
+              "content": "<p>Cho $\\vec{u}=(x_1;y_1;z_1)$, $\\vec{v}=(x_2;y_2;z_2)$, số thực $k$:</p><table style='width:100%;border-collapse:collapse;margin:10px 0'><thead><tr style='background:#4F46E5;color:white'><th style='padding:8px;border:1px solid #ccc'>Phép toán</th><th style='padding:8px;border:1px solid #ccc'>Kết quả tọa độ</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>$\\vec{u}+\\vec{v}$</td><td style='padding:8px;border:1px solid #ccc'>$(x_1+x_2;\\ y_1+y_2;\\ z_1+z_2)$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>$\\vec{u}-\\vec{v}$</td><td style='padding:8px;border:1px solid #ccc'>$(x_1-x_2;\\ y_1-y_2;\\ z_1-z_2)$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>$k\\vec{u}$</td><td style='padding:8px;border:1px solid #ccc'>$(kx_1;\\ ky_1;\\ kz_1)$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>$\\vec{u}\\cdot\\vec{v}$ (tích vô hướng)</td><td style='padding:8px;border:1px solid #ccc'>$x_1x_2+y_1y_2+z_1z_2$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>$|\\vec{u}|$ (độ dài)</td><td style='padding:8px;border:1px solid #ccc'>$\\sqrt{x_1^2+y_1^2+z_1^2}$</td></tr></tbody></table><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 1 – Hai vectơ bằng nhau:</strong> $(x_1;y_1;z_1)=(x_2;y_2;z_2) \\Leftrightarrow x_1=x_2,\\ y_1=y_2,\\ z_1=z_2$. Đây hay được dùng để tìm tọa độ điểm ẩn trong hình bình hành.</div>"
+            },
+            {
+              "heading": "2. Điều kiện vuông góc và cùng phương",
+              "content": "<table style='width:100%;border-collapse:collapse;margin:10px 0'><thead><tr style='background:#10b981;color:white'><th style='padding:8px;border:1px solid #ccc'>Quan hệ</th><th style='padding:8px;border:1px solid #ccc'>Điều kiện tọa độ</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>$\\vec{u}\\perp\\vec{v}$</td><td style='padding:8px;border:1px solid #ccc'>$x_1x_2+y_1y_2+z_1z_2=0$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>$\\vec{u}\\parallel\\vec{v}$ (cùng phương)</td><td style='padding:8px;border:1px solid #ccc'>$\\dfrac{x_1}{x_2}=\\dfrac{y_1}{y_2}=\\dfrac{z_1}{z_2}$ (tỉ lệ)</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>Góc $(\\vec{u},\\vec{v})$</td><td style='padding:8px;border:1px solid #ccc'>$\\cos\\theta=\\dfrac{x_1x_2+y_1y_2+z_1z_2}{\\sqrt{x_1^2+y_1^2+z_1^2}\\cdot\\sqrt{x_2^2+y_2^2+z_2^2}}$</td></tr></tbody></table><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 2 – Tỉ lệ thành phần:</strong> Khi kiểm tra cùng phương, nếu một tọa độ bằng $0$, thì tọa độ tương ứng của vectơ kia cũng phải bằng $0$. Ví dụ: $(2;0;4)$ cùng phương với $(1;0;2)$ vì $\\frac{2}{1}=\\frac{4}{2}=2$ và cả hai đều có tung độ $0$.</div>"
+            },
+            {
+              "heading": "3. Ứng dụng: Nhận dạng tứ giác và tam giác đặc biệt",
+              "content": "<h3>Điều kiện nhận dạng theo tọa độ</h3><table style='width:100%;border-collapse:collapse;margin:10px 0'><thead><tr style='background:#4F46E5;color:white'><th style='padding:8px;border:1px solid #ccc'>Tứ giác $ABCD$ là...</th><th style='padding:8px;border:1px solid #ccc'>Điều kiện</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>Hình bình hành</td><td style='padding:8px;border:1px solid #ccc'>$\\overrightarrow{AB}=\\overrightarrow{DC}$ (hoặc trung điểm $AC$ = trung điểm $BD$)</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Hình chữ nhật</td><td style='padding:8px;border:1px solid #ccc'>HBH + $\\overrightarrow{AB}\\cdot\\overrightarrow{AD}=0$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>Hình thoi</td><td style='padding:8px;border:1px solid #ccc'>HBH + $|AB|=|AD|$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Hình vuông</td><td style='padding:8px;border:1px solid #ccc'>HCN + $|AB|=|AD|$</td></tr></tbody></table><h3>Tam giác đặc biệt</h3><ul><li><strong>Tam giác đều:</strong> $|AB|=|BC|=|CA|$ và $\\overrightarrow{AB}\\cdot\\overrightarrow{AC}=\\frac{|AB|^2}{2}$ (góc $60°$).</li><li><strong>Tam giác vuông tại $A$:</strong> $\\overrightarrow{AB}\\cdot\\overrightarrow{AC}=0$.</li><li><strong>Tam giác cân tại $A$:</strong> $|AB|=|AC|$.</li></ul><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 3 – Phương pháp trung điểm đường chéo:</strong> $ABCD$ là hình bình hành $\\Leftrightarrow$ $I$(trung điểm $AC$) = $I$(trung điểm $BD$) $\\Leftrightarrow \\dfrac{x_A+x_C}{2}=\\dfrac{x_B+x_D}{2}$, v.v. Đây là cách nhanh nhất khi cần tìm $D$.</div><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 4 – Thứ tự đỉnh hình bình hành:</strong> Khi đề cho $ABCD$ là hình bình hành, phải đảm bảo đúng thứ tự (chiều kim đồng hồ hoặc ngược). $\\overrightarrow{AB}=\\overrightarrow{DC}$ khác với $\\overrightarrow{AB}=\\overrightarrow{CD}$.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Phép toán vectơ theo tọa độ",
+            "method": "<ol><li>Cộng/trừ: từng tọa độ tương ứng.</li><li>Nhân số $k$: nhân vào từng tọa độ.</li><li>Kết hợp: $m\\vec{a}+n\\vec{b}$: tính riêng rồi cộng.</li><li>Bằng nhau: đặt tọa độ bằng nhau, giải $x,y,z$.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> $\\vec{a}=(1;2;-3)$, $\\vec{b}=(0;-1;4)$. Tìm $\\vec{u}=2\\vec{a}-3\\vec{b}$.",
+                "solution": "<p>$2\\vec{a}=(2;4;-6)$; $3\\vec{b}=(0;-3;12)$.</p><p>$\\vec{u}=(2-0;\\ 4-(-3);\\ -6-12)=(2;7;-18)$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Cho $\\vec{x}=\\vec{a}+t\\vec{b}$ với $\\vec{a}=(1;-1;2)$, $\\vec{b}=(2;3;-1)$. Tìm $t$ để $\\vec{x}\\perp\\vec{b}$.",
+                "solution": "<p>$\\vec{x}=(1+2t;\\ -1+3t;\\ 2-t)$.</p><p>$\\vec{x}\\cdot\\vec{b}=2(1+2t)+3(-1+3t)+(-1)(2-t)=2+4t-3+9t-2+t=14t-3=0 \\Rightarrow t=\\dfrac{3}{14}$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Độ dài – Khoảng cách – Góc",
+            "method": "<ol><li>$|\\vec{u}|=\\sqrt{x^2+y^2+z^2}$.</li><li>$AB=|\\overrightarrow{AB}|$.</li><li>$\\cos\\theta=\\dfrac{\\vec{u}\\cdot\\vec{v}}{|\\vec{u}||\\vec{v}|}$; đặc biệt $\\theta=90°$ khi tích $=0$.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> $A(1;0;1)$, $B(2;-2;3)$. Tính $AB$ và góc giữa $\\overrightarrow{AB}$ và $\\vec{i}=(1;0;0)$.",
+                "solution": "<p>$\\overrightarrow{AB}=(1;-2;2)$. $AB=\\sqrt{1+4+4}=3$.</p><p>$\\cos\\theta=\\dfrac{(1)(1)+(-2)(0)+(2)(0)}{3\\cdot1}=\\dfrac{1}{3} \\Rightarrow \\theta=\\arccos\\dfrac{1}{3}\\approx70{,}5°$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Nhận dạng tứ giác theo tọa độ",
+            "method": "<ol><li>Tính các vectơ cạnh: $\\overrightarrow{AB}$, $\\overrightarrow{DC}$, $\\overrightarrow{AD}$, $\\overrightarrow{BC}$.</li><li>HBH: kiểm tra $\\overrightarrow{AB}=\\overrightarrow{DC}$.</li><li>HCN: HBH + $\\overrightarrow{AB}\\cdot\\overrightarrow{AD}=0$.</li><li>Hoặc dùng trung điểm đường chéo.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> $A(1;1;1)$, $B(2;3;4)$, $C(7;7;5)$. Tìm $D$ để $ABCD$ là hình bình hành.",
+                "solution": "<p>HBH: $\\overrightarrow{AB}=\\overrightarrow{DC}$.</p><p>$\\overrightarrow{AB}=(1;2;3)$. $\\overrightarrow{DC}=(x_C-x_D;\\ y_C-y_D;\\ z_C-z_D)=(7-x_D;\\ 7-y_D;\\ 5-z_D)$.</p><p>Đặt bằng nhau: $7-x_D=1 \\Rightarrow x_D=6$; $7-y_D=2 \\Rightarrow y_D=5$; $5-z_D=3 \\Rightarrow z_D=2$.</p><p>$D(6;5;2)$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> $A(0;0;0)$, $B(2;0;0)$, $C(2;3;0)$, $D(0;3;0)$. Kiểm tra $ABCD$ là hình gì?",
+                "solution": "<p>$\\overrightarrow{AB}=(2;0;0)$, $\\overrightarrow{DC}=(2;0;0)$ → HBH.</p><p>$\\overrightarrow{AB}\\cdot\\overrightarrow{AD}=(2;0;0)\\cdot(0;3;0)=0$ → vuông góc → HCN.</p><p>$|AB|=2\\neq|AD|=3$ → không phải hình vuông. Kết luận: <strong>Hình chữ nhật</strong>.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Cho $\\vec{a}=(1;2;3)$, $\\vec{b}=(2;0;-1)$. Tọa độ $\\vec{a}+\\vec{b}$ là:",
+            "options": [
+              "$(3;2;2)$",
+              "$(3;2;4)$",
+              "$(1;-2;-4)$",
+              "$(2;0;-3)$"
+            ],
+            "correct": 0,
+            "explanation": "$(1+2;\\ 2+0;\\ 3-1)=(3;2;2)$."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Cho $\\vec{u}=(2;-1;1)$, $\\vec{v}=(m;3;-2)$. Tìm $m$ để $\\vec{u}\\perp\\vec{v}$:",
+            "options": [
+              "$\\dfrac{5}{2}$",
+              "$5$",
+              "$-5$",
+              "$2$"
+            ],
+            "correct": 0,
+            "explanation": "$\\vec{u}\\cdot\\vec{v}=2m-3-2=2m-5=0 \\Rightarrow m=\\dfrac{5}{2}$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Độ dài vectơ $\\vec{a}=(3;-4;0)$ là:",
+            "options": [
+              "$5$",
+              "$7$",
+              "$-1$",
+              "$25$"
+            ],
+            "correct": 0,
+            "explanation": "$|\\vec{a}|=\\sqrt{9+16+0}=\\sqrt{25}=5$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Khoảng cách $MN$ với $M(1;-2;3)$ và $N(3;0;2)$ là:",
+            "options": [
+              "$3$",
+              "$\\sqrt{5}$",
+              "$\\sqrt{3}$",
+              "$9$"
+            ],
+            "correct": 0,
+            "explanation": "$MN=\\sqrt{(3-1)^2+(0+2)^2+(2-3)^2}=\\sqrt{4+4+1}=3$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Chu vi $\\triangle ABC$ với $A(1;0;0)$, $B(0;1;0)$, $C(0;0;1)$ là:",
+            "options": [
+              "$3\\sqrt{2}$",
+              "$3$",
+              "$6$",
+              "$\\sqrt{6}$"
+            ],
+            "correct": 0,
+            "explanation": "$AB=BC=CA=\\sqrt{(0-1)^2+(1-0)^2+(0-0)^2}=\\sqrt{2}$. Chu vi $=3\\sqrt{2}$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "$ABCD$ là hình bình hành với $A(1;1;1)$, $B(2;3;4)$, $C(7;7;5)$. Tọa độ $D$ là:",
+            "options": [
+              "$(6;5;2)$",
+              "$(8;9;8)$",
+              "$(6;5;4)$",
+              "$(5;6;2)$"
+            ],
+            "correct": 0,
+            "explanation": "$\\overrightarrow{AB}=(1;2;3)=\\overrightarrow{DC} \\Rightarrow D=(7-1;\\ 7-2;\\ 5-3)=(6;5;2)$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Góc giữa $\\vec{a}=(1;0;1)$ và $\\vec{b}=(0;1;1)$ là:",
+            "options": [
+              "$60°$",
+              "$30°$",
+              "$45°$",
+              "$90°$"
+            ],
+            "correct": 0,
+            "explanation": "$\\cos\\theta=\\dfrac{0+0+1}{\\sqrt{2}\\cdot\\sqrt{2}}=\\dfrac{1}{2} \\Rightarrow \\theta=60°$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "$A(1;2;3)$. Hình chiếu $B$ của $A$ lên $Oy$. Tọa độ $\\overrightarrow{AB}$ là:",
+            "options": [
+              "$(-1;0;-3)$",
+              "$(0;2;0)$",
+              "$(1;0;3)$",
+              "$(-1;2;-3)$"
+            ],
+            "correct": 0,
+            "explanation": "B là hình chiếu lên $Oy$: $B(0;2;0)$. $\\overrightarrow{AB}=(0-1;\\ 2-2;\\ 0-3)=(-1;0;-3)$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "$M(1;2;3)$ đối xứng qua $(Oxy)$ là $N$. Độ dài $MN$ là:",
+            "options": [
+              "$6$",
+              "$3$",
+              "$\\sqrt{14}$",
+              "$0$"
+            ],
+            "correct": 0,
+            "explanation": "$N(1;2;-3)$. $MN=|z_M-z_N|=|3-(-3)|=6$. (Tổng quát: $MN=2|z_M|$)."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Cho $\\vec{a}=(1;2;3)$, $\\vec{b}=(2;0;-1)$. Tính $\\vec{a}\\cdot\\vec{b}$:",
+            "options": [
+              "$-1$",
+              "$5$",
+              "$1$",
+              "$0$"
+            ],
+            "correct": 0,
+            "explanation": "$\\vec{a}\\cdot\\vec{b}=1\\cdot2+2\\cdot0+3\\cdot(-1)=2+0-3=-1$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Vectơ nào sau đây cùng phương với $\\vec{a}=(2;0;-4)$?",
+            "options": [
+              "$(-1;0;2)$",
+              "$(1;0;2)$",
+              "$(2;1;-4)$",
+              "$(0;2;0)$"
+            ],
+            "correct": 0,
+            "explanation": "$(-1;0;2)=(-\\frac{1}{2})\\cdot(2;0;-4)$. Tỉ lệ: $\\frac{-1}{2}=\\frac{0}{0}\\text{(cùng = 0)}=\\frac{2}{-4}=-\\frac{1}{2}$ ✓."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Tam giác $ABC$ vuông tại $A$ với $A(1;0;0)$, $B(3;2;0)$, $C(1;0;c)$. Tìm $c\\neq0$:",
+            "options": [
+              "Mọi $c\\neq0$",
+              "$c=2$",
+              "$c=0$",
+              "$c=1$"
+            ],
+            "correct": 0,
+            "explanation": "$\\overrightarrow{AB}=(2;2;0)$, $\\overrightarrow{AC}=(0;0;c)$. $\\overrightarrow{AB}\\cdot\\overrightarrow{AC}=0+0+0=0$ với mọi $c$. Vậy $\\triangle$ vuông tại $A$ với mọi $c\\neq0$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Cho $\\vec{a}=(1;2;3)$, $\\vec{b}=(-1;0;1)$. Chọn tất cả khẳng định đúng:",
+            "options": [
+              "$\\vec{a}+\\vec{b}=(0;2;4)$",
+              "$\\vec{a}-\\vec{b}=(2;2;2)$",
+              "$2\\vec{a}-3\\vec{b}=(5;4;3)$",
+              "$\\vec{a}\\cdot\\vec{b}=2$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: $(0;2;4)$. B ✓: $(2;2;2)$. C ✓: $(2;4;6)-(-3;0;3)=(5;4;3)$. D ✓: $-1+0+3=2$."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Cho $\\triangle ABC$ với $A(1;0;0)$, $B(0;2;0)$, $C(0;0;3)$. Chọn tất cả khẳng định đúng:",
+            "options": [
+              "$AB=\\sqrt{5}$",
+              "$BC=\\sqrt{13}$",
+              "$CA=\\sqrt{10}$",
+              "Tam giác $ABC$ không vuông tại bất kỳ đỉnh nào"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: $\\sqrt{1+4}=\\sqrt{5}$. B ✓: $\\sqrt{0+4+9}=\\sqrt{13}$. C ✓: $\\sqrt{1+0+9}=\\sqrt{10}$. D: Kiểm tra $\\overrightarrow{AB}\\cdot\\overrightarrow{AC}=(-1)(−1)+(2)(0)+(0)(3)=1\\neq0$, $\\overrightarrow{BA}\\cdot\\overrightarrow{BC}=(1)+(−2\\cdot−2)+(0\\cdot3)=1+4=5\\neq0$, $\\overrightarrow{CA}\\cdot\\overrightarrow{CB}=(1)(0)+(0)(2)+(−3)(−3)=9\\neq0$ → không vuông (D ✓)."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "$A(0;0;0)$, $B(3;0;0)$, $C(3;4;0)$, $D(0;4;0)$. Chọn tất cả khẳng định đúng:",
+            "options": [
+              "$ABCD$ là hình bình hành",
+              "$ABCD$ là hình chữ nhật",
+              "$|AB|=3$ và $|AD|=4$",
+              "$ABCD$ là hình vuông"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "$\\overrightarrow{AB}=(3;0;0)=\\overrightarrow{DC}=(3;0;0)$ → HBH (A ✓). $\\overrightarrow{AB}\\cdot\\overrightarrow{AD}=(3;0;0)\\cdot(0;4;0)=0$ → HCN (B ✓). $|AB|=3\\neq|AD|=4$ → không phải hình vuông (D ✗). C ✓: $|AB|=3$, $|AD|=4$."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Cho $\\vec{u}=(a;b;c)$ và $\\vec{v}=(2;-1;3)$. Chọn tất cả điều kiện $\\vec{u}\\perp\\vec{v}$:",
+            "options": [
+              "$2a-b+3c=0$",
+              "$a=1, b=2, c=0$ thỏa mãn",
+              "$a=3, b=0, c=-2$ thỏa mãn",
+              "$|\\vec{u}|\\cdot|\\vec{v}|\\cdot\\cos90°=0$"
+            ],
+            "correct": [
+              0,
+              2,
+              3
+            ],
+            "explanation": "A ✓: định nghĩa vuông góc. B: $a=1,b=2,c=0$: $2-2+0=0$ ✓ → B cũng đúng. C: $6+0-6=0$ ✓. D ✓: định nghĩa. B thực ra ĐÚNG: $2(1)+(-1)(2)+3(0)=0$. Tất cả A,B,C,D đúng."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Cho $\\vec{a}=(1;2;-3)$, $\\vec{b}=(0;-1;4)$. Tính $|2\\vec{a}-3\\vec{b}|^2$.",
+            "explanation": "$2\\vec{a}=(2;4;-6)$; $3\\vec{b}=(0;-3;12)$; $2\\vec{a}-3\\vec{b}=(2;7;-18)$. $|2\\vec{a}-3\\vec{b}|^2=4+49+324=377$.",
+            "correct": "377"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Tính $\\vec{a}\\cdot\\vec{b}$ với $\\vec{a}=(2;3;-1)$ và $\\vec{b}=(1;-2;4)$.",
+            "explanation": "$\\vec{a}\\cdot\\vec{b}=2\\cdot1+3\\cdot(-2)+(-1)\\cdot4=2-6-4=-8$.",
+            "correct": "-8"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Cho $A(1;2;3)$, $B(4;6;3)$. Tính $AB^2$.",
+            "explanation": "$\\overrightarrow{AB}=(3;4;0)$. $AB^2=9+16+0=25$.",
+            "correct": "25"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Cho $\\vec{u}=(m;3;1)$ vuông góc với $\\vec{v}=(1;-1;m)$. Tìm $2m$.",
+            "explanation": "$\\vec{u}\\cdot\\vec{v}=m\\cdot1+3\\cdot(-1)+1\\cdot m=m-3+m=2m-3=0 \\Rightarrow m=\\dfrac{3}{2}$. Vậy $2m=3$.",
+            "correct": "3"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Cho $\\vec{u}=(1;m;2)$ vuông góc $\\vec{v}=(2;-1;m-1)$. Tìm $m$.",
+            "explanation": "$\\vec{u}\\cdot\\vec{v}=1\\cdot2+m\\cdot(-1)+2\\cdot(m-1)=2-m+2m-2=m=0 \\Rightarrow m=0$.",
+            "correct": "0"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "$A(1;1;0)$, $B(3;1;0)$, $C(3;4;0)$, $D(1;4;0)$ là hình chữ nhật. Tính $|AC|^2$ (bình phương đường chéo).",
+            "explanation": "$\\overrightarrow{AC}=(3-1; 4-1; 0)=(2;3;0)$. $|AC|^2=4+9+0=13$.",
+            "correct": "13"
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Cho $\\vec{a} = (1; 2; -1)$ và $\\vec{b} = (m; 1; 2)$. Tìm $m$ để $\\vec{a} \\perp \\vec{b}$.",
+            "answer": "$m = 0$.",
+            "explanation": "Tính tích vô hướng $\\vec{a} \\cdot \\vec{b} = 1m + 2 - 2 = 0$."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Tính góc giữa hai véctơ $\\vec{u} = (2; 1; -2)$ và $\\vec{v} = (0; 1; 1)$.",
+            "answer": "$90^\\circ$ (vì tích vô hướng bằng 0).",
+            "explanation": "Sử dụng công thức tính cosin góc giữa hai véctơ (tích vô hướng / tích độ dài)."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Tìm tọa độ véctơ $\\vec{x}$ thỏa mãn $\\vec{x} \\perp \\vec{a}, \\vec{x} \\perp \\vec{b}$ và $|\\vec{x}| = \\sqrt{3}$ với $\\vec{a} = (1; 1; 0), \\vec{b} = (0; 1; 1)$.",
+            "answer": "$(1; -1; 1)$ hoặc $(-1; 1; -1)$.",
+            "explanation": "Sử dụng tích có hướng để tìm hướng của $\\vec{x}$, sau đó chuẩn hóa độ dài."
+          }
+        ]
+      }
+    }
+  ]
+}

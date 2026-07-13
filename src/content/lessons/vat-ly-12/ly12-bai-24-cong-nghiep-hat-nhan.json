@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-24-cong-nghiep-hat-nhan",
+      "name": "Bài 24. Công nghiệp hạt nhân",
+      "slug": "bai-24-cong-nghiep-hat-nhan",
+      "chapter": "Chương 4. Vật lí hạt nhân",
+      "chapter_id": "LY12-4",
+      "lesson_id": 24,
+      "description": "Nghiên cứu về ứng dụng của vật lí hạt nhân trong đời sống và công nghiệp.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "cnhn-1",
+          "name": "Nhà máy điện hạt nhân",
+          "slug": "nha-may-dien-hat-nhan",
+          "difficulty": "easy"
+        },
+        {
+          "id": "cnhn-2",
+          "name": "Ứng dụng trong y học",
+          "slug": "ung-dung-y-hoc",
+          "difficulty": "medium"
+        },
+        {
+          "id": "cnhn-3",
+          "name": "Ứng dụng trong nông nghiệp và công nghiệp",
+          "slug": "ung-dung-nong-nghiep-cong-nghiep",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Công nghiệp hạt nhân",
+          "sections": [
+            {
+              "heading": "1. Nhà máy điện hạt nhân",
+              "content": "<p><strong>Nguyên tắc hoạt động:</strong></p><ul><li>Sử dụng năng lượng từ phản ứng phân hạch</li><li>Nhiệt tỏa ra làm nóng nước thành hơi nước</li><li>Hơi nước quay tuabin tạo điện</li></ul><p><strong>Cấu tạo:</strong></p><ul><li>Lò phản ứng hạt nhân</li><li>Hệ thống làm mát</li><li>Turbine và máy phát điện</li><li>Hệ thống an toàn</li></ul><p><strong>Ưu điểm:</strong></p><ul><li>Năng lượng lớn, hiệu suất cao</li><li>Không thải khí CO₂</li><li>Nhiên liệu (U) có trữ lượng lớn</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>Chi phí xây dựng cao</li><li>Rác thải phóng xạ</li><li>Rủi ro an toàn</li></ul>"
+            },
+            {
+              "heading": "2. Ứng dụng trong y học",
+              "content": "<p><strong>Chẩn đoán bệnh:</strong></p><ul><li>Xạ trị ung thư</li><li>Chụp cắt lớp (PET, SPECT)</li><li>Đánh dấu đồng vị phóng xạ</li></ul><p><strong>Đồng vị phóng xạ thường dùng:</strong></p><ul><li>I-131: điều trị ung thư tuyến giáp</li><li>Co-60: xạ trị ung thư</li><li> Tc-99m: chẩn đoán hình ảnh</li><li>C-14: đánh dấu sinh học</li></ul><p><strong>Thiết bị y tế:</strong></p><ul><li>Máy gia tốc hạt</li><li>Máy xạ trị</li><li>Máy chụp X-quang</li></ul>"
+            },
+            {
+              "heading": "3. Ứng dụng trong nông nghiệp",
+              "content": "<p><strong>Bảo quản thực phẩm:</strong></p><ul><li>Diệt khuẩn, nấm bằng bức xạ gamma</li><li>Kéo dài thời hạn bảo quản</li><li>Không sử dụng hóa chất bảo quản</li></ul><p><strong>Giống cây trồng:</strong></p><ul><li>Tạo đột biến gen</li><li>Chọn lọc giống có phẩm chất tốt</li><li>Tăng năng suất</li></ul><p><strong>Kiểm tra sâu bệnh:</strong></p><ul><li>Sử dụng đồng vị phóng xạ để theo dõi</li><li>Kiểm soát côn trùng gây hại</li></ul>"
+            },
+            {
+              "heading": "4. Ứng dụng trong công nghiệp",
+              "content": "<p><strong>Kiểm tra không phá hủy:</strong></p><ul><li>Sử dụng tia X, gamma để kiểm tra khuyết tật vật liệu</li><li>Kiểm tra mối hàn, đường ống</li></ul><p><strong>Đo lường:</strong></p><ul><li>Đo độ dày vật liệu</li><li>Đo mức chất lỏng</li><li>Kiểm tra hàm lượng</li></ul><p><strong>Xử lý bức xạ:</strong></p><ul><li>Khử trùng dụng cụ y tế</li><li>Biến tính vật liệu polymer</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Ứng dụng nhà máy điện hạt nhân",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Hiểu nguyên tắc chuyển đổi năng lượng</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Nhà máy điện hạt nhân hoạt động dựa trên phản ứng nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Phản ứng phân hạch hạt nhân Urani</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Ứng dụng trong y học",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Nắm các đồng vị phóng xạ thường dùng</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Đồng vị nào dùng điều trị ung thư tuyến giáp?",
+                "solution": "<p><strong>Giải:</strong></p><p>I-131 (Iodine-131)</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Nhà máy điện hạt nhân sử dụng:",
+            "options": [
+              "Phản ứng phân hạch",
+              "Phản ứng nhiệt hạch",
+              "Phản ứng phóng xạ",
+              "Đốt than"
+            ],
+            "correct": 0,
+            "explanation": "Điện hạt nhân dùng phân hạch"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Nhiên liệu chính cho nhà máy điện hạt nhân:",
+            "options": [
+              "Uranium",
+              "Thorium",
+              "Plutonium",
+              "Carbon"
+            ],
+            "correct": 0,
+            "explanation": "Uranium-235 hoặc Uranium-238"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "I-131 được dùng trong:",
+            "options": [
+              "Điều trị ung thư tuyến giáp",
+              "Xạ trị ung thư da",
+              "Chụp X-quang",
+              "Khử trùng"
+            ],
+            "correct": 0,
+            "explanation": "I-131 dùng điều trị ung thư tuyến giáp"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Ứng dụng bức xạ trong bảo quản thực phẩm:",
+            "options": [
+              "Diệt khuẩn",
+              "Tăng dinh dưỡng",
+              "Thay đổi màu sắc",
+              "Tất cả đều sai"
+            ],
+            "correct": 0,
+            "explanation": "Bức xạ gamma diệt khuẩn, nấm"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Đồng vị Co-60 thường dùng trong:",
+            "options": [
+              "Xạ trị ung thư",
+              "Đánh dấu sinh học",
+              "Kiểm tra độ dày",
+              "Tạo giống"
+            ],
+            "correct": 0,
+            "explanation": "Co-60 dùng trong xạ trị"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Ưu điểm của điện hạt nhân:",
+            "options": [
+              "Hiệu suất cao, không CO2",
+              "Chi phí thấp",
+              "An toàn tuyệt đối",
+              "Xây dựng nhanh"
+            ],
+            "correct": 0,
+            "explanation": "Điện hạt nhân có hiệu suất cao, không thải CO2"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Tc-99m thường dùng trong:",
+            "options": [
+              "Chẩn đoán hình ảnh y tế",
+              "Xạ trị ung thư",
+              "Bảo quản thực phẩm",
+              "Tạo giống cây trồng"
+            ],
+            "correct": 0,
+            "explanation": "Tc-99m dùng trong chẩn đoán hình ảnh"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Trong công nghiệp, bức xạ dùng để:",
+            "options": [
+              "Kiểm tra khuyết tật vật liệu",
+              "Tăng độ cứng",
+              "Tạo màu",
+              "Giảm trọng lượng"
+            ],
+            "correct": 0,
+            "explanation": "Dùng tia X, gamma kiểm tra không phá hủy"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Vấn đề lớn nhất của điện hạt nhân:",
+            "options": [
+              "Xử lý chất thải phóng xạ",
+              "Thiếu nhiên liệu",
+              "Hiệu suất thấp",
+              "Ô nhiễm không khí"
+            ],
+            "correct": 0,
+            "explanation": "Xử lý chất thải phóng xạ là thách thức lớn"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Phóng xạ trong nông nghiệp dùng để:",
+            "options": [
+              "Tạo giống cây trồng mới",
+              "Tăng kích thước cây",
+              "Thay thế phân bón",
+              "Diệt cỏ dại"
+            ],
+            "correct": 0,
+            "explanation": "Dùng bức xạ tạo đột biến gen"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các đồng vị phóng xạ thường dùng trong y học:",
+            "options": [
+              "I-131",
+              "Co-60",
+              "Tc-99m",
+              "U-235"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "U-235 dùng trong nhà máy điện, không phải y tế"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Ứng dụng của năng lượng hạt nhân:",
+            "options": [
+              "Phát điện",
+              "Xạ trị ung thư",
+              "Bảo quản thực phẩm",
+              "Tất cả đều đúng"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Tất cả đều là ứng dụng"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Nhược điểm của điện hạt nhân:",
+            "options": [
+              "Chi phí xây dựng cao",
+              "Rác thải phóng xạ",
+              "Rủi ro an toàn",
+              "Hiệu suất thấp"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Hiệu suất thực tế rất cao"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Nhà máy điện hạt nhân dùng phản ứng gì để sinh năng lượng?",
+            "correct": "phan-hach",
+            "explanation": "Phản ứng phân hạch"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Đồng vị nào dùng điều trị ung thư tuyến giáp?",
+            "correct": "I-131",
+            "explanation": "Iodine-131"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Co-60 thường dùng trong lĩnh vực nào?",
+            "correct": "xa-tri",
+            "explanation": "Xạ trị ung thư"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Bức xạ gamma dùng để làm gì trong bảo quản thực phẩm?",
+            "correct": "diet-khuan",
+            "explanation": "Diệt khuẩn, nấm"
+          }
+        ]
+      }
+    }
+  ]
+}

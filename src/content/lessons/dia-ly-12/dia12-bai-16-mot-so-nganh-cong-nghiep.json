@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_16",
+      "name": "Một số ngành công nghiệp",
+      "slug": "mot-so-nganh-cong-nghiep",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 16,
+      "description": "Tìm hiểu các ngành công nghiệp chủ yếu: khai khoáng, luyện kim, cơ khí, dệt may, chế biến thực phẩm, điện tử và đóng tàu.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Các ngành công nghiệp tiêu biểu",
+          "summary": "Mô tả vai trò, đầu vào và phân bố của các ngành công nghiệp quan trọng trong nền kinh tế hiện đại và ở Việt Nam.",
+          "sections": [
+            { "heading": "Công nghiệp khai khoáng và luyện kim", "content": "Dựa vào nguồn tài nguyên khoáng sản, có phân bố theo mỏ." },
+            { "heading": "Công nghiệp chế tạo và điện tử", "content": "Phát triển khu công nghiệp, yêu cầu lao động có kỹ năng và hạ tầng logistics." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Nêu một ngành công nghiệp sử dụng nhiều nguyên liệu khoáng sản?", "a_hint": "Luyện kim, khai khoáng." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Ngành nào dựa trên nguồn khoáng sản?", "options": ["Khai khoáng và luyện kim","Dịch vụ tài chính","Du lịch","Giáo dục"], "correct": 0, "explanation": "Khai khoáng và luyện kim phụ thuộc vào nguồn khoáng." },
+          { "id": 2, "type": "mcq", "question": "Ngành nào thường tập trung tại khu công nghiệp?", "options": ["Chế tạo, điện tử, dệt may","Trồng trọt nhỏ lẻ","Rừng tự nhiên","Ngư nghiệp truyền thống"], "correct": 0, "explanation": "Công nghiệp chế tạo và điện tử thường nằm ở các khu công nghiệp." },
+          { "id": 3, "type": "mcq", "question": "Một yếu tố quan trọng cho ngành điện tử là?", "options": ["Nguồn lao động có kỹ năng và cung cấp điện ổn định","Nhiệt độ trung bình cao","Số lượng ruộng lúa","Không cần yếu tố gì"], "correct": 0, "explanation": "Kỹ năng và điện ổn định quan trọng cho ngành điện tử." },
+          { "id": 4, "type": "mcq", "question": "Ngành dệt may thường có lợi thế gì?", "options": ["Sử dụng nhiều lao động và chi phí nhân công thấp","Cần nhiều khoáng sản","Chỉ làm ở vùng núi","Không có lợi thế"], "correct": 0, "explanation": "Dệt may sử dụng lao động nhiều và tận dụng chi phí nhân công." },
+          { "id": 5, "type": "mcq", "question": "Ngành chế biến thực phẩm cần chú ý gì?", "options": ["Chuỗi cung ứng và bảo quản sau thu hoạch","Không cần bảo quản","Chỉ dựa vào nhập khẩu","Không quan trọng"], "correct": 0, "explanation": "Bảo quản và chuỗi cung ứng quan trọng cho chế biến thực phẩm." },
+          { "id": 6, "type": "mcq", "question": "Một ngành công nghiệp phụ thuộc nhiều vào cảng biển là?", "options": ["Đóng tàu và cảng biển, chế tạo nặng","Trồng lúa nhỏ lẻ","Giáo dục địa phương","Không có phụ thuộc"], "correct": 0, "explanation": "Đóng tàu và sản phẩm nặng thường gần cảng để xuất nhập khẩu." },
+          { "id": 7, "type": "mcq", "question": "Công nghiệp nào cần ít lao động lành nghề nhất?", "options": ["Sản xuất thâm dụng lao động như dệt may","Công nghiệp công nghệ cao","Nghiên cứu công nghệ","Không có"], "correct": 0, "explanation": "Một số ngành dệt may sử dụng lao động phổ thông đông đảo." },
+          { "id": 8, "type": "mcq", "question": "Phát triển ngành công nghiệp cần chú ý gì về môi trường?", "options": ["Xử lý chất thải và giảm phát thải","Không quan tâm","Tăng xả thải","Phá hoại nguồn nước"], "correct": 0, "explanation": "Xử lý chất thải là yêu cầu quan trọng khi phát triển công nghiệp." },
+          { "id": 9, "type": "mcq", "question": "Một xu hướng toàn cầu trong công nghiệp là?", "options": ["Tự động hóa và công nghiệp 4.0","Quay lại thủ công hoàn toàn","Giảm sử dụng công nghệ","Không thay đổi"], "correct": 0, "explanation": "Tự động hóa và công nghệ 4.0 là xu hướng hiện nay." },
+          { "id": 10, "type": "mcq", "question": "Yếu tố nào giúp ngành công nghiệp hấp dẫn nhà đầu tư nước ngoài?", "options": ["Hạ tầng, chính sách ưu đãi và nguồn nhân lực","Không có yếu tố nào","Khó khăn thủ tục","Mục tiêu đóng cửa"], "correct": 0, "explanation": "Hạ tầng và ưu đãi thu hút đầu tư nước ngoài." }
+        ]
+      }
+    }
+  ]
+}

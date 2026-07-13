@@ -1,0 +1,67 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [{
+    "id": "hoa12-bai-11-on-tap-chuong-3",
+    "name": "Bài 11. Ôn tập chương 3",
+    "slug": "bai-11-on-tap-chuong-3",
+    "chapter": "Chương 3: Hợp chất chứa nitrogen",
+    "chapter_id": "H12-1003",
+    "lesson_id": 11,
+    "description": "Tổng hợp và ôn tập kiến thức về amine, amino acid, peptide, protein và enzyme.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2600&auto=format&fit=crop",
+    "question_types": [{"id": "on-tap-chuong-3", "name": "Ôn tập chương 3", "slug": "on-tap-chuong-3", "difficulty": "medium"}],
+    "content": {
+      "theory": {
+        "title": "Tổng hợp kiến thức Chương 3",
+        "sections": [{
+          "heading": "1. Bảng tổng hợp hợp chất chứa nitrogen",
+          "content": "<table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Hợp chất</th><th class='border border-gray-300 p-2'>Công thức</th><th class='border border-gray-300 p-2'>Tính chất đặc trưng</th><th class='border border-gray-300 p-2'>Phản ứng nhận biết</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Amine</td><td class='border border-gray-300 p-2'>R-NH₂</td><td class='border border-gray-300 p-2'>Tính base</td><td class='border border-gray-300 p-2'>+ HCl → Muối</td></tr><tr><td class='border border-gray-300 p-2'>Aniline</td><td class='border border-gray-300 p-2'>C₆H₅NH₂</td><td class='border border-gray-300 p-2'>Tính base yếu</td><td class='border border-gray-300 p-2'>+ 3Br₂ → Kết tủa trắng</td></tr><tr><td class='border border-gray-300 p-2'>Amino acid</td><td class='border border-gray-300 p-2'>H₂N-R-COOH</td><td class='border border-gray-300 p-2'>Lưỡng tính</td><td class='border border-gray-300 p-2'>+ HCl, + NaOH</td></tr><tr><td class='border border-gray-300 p-2'>Peptide</td><td class='border border-gray-300 p-2'>-CO-NH-</td><td class='border border-gray-300 p-2'>Thủy phân</td><td class='border border-gray-300 p-2'>+ Cu(OH)₂ → Tím</td></tr><tr><td class='border border-gray-300 p-2'>Protein</td><td class='border border-gray-300 p-2'>Polypeptide</td><td class='border border-gray-300 p-2'>Biến tính</td><td class='border border-gray-300 p-2'>Biuret, Xanthoproteic</td></tr></tbody></table><h3>Công thức quan trọng:</h3><p>1. Aniline + Br₂: 1:3</p><p>2. Amino acid + HCl: 1:1</p><p>3. Amino acid + NaOH: 1:1</p><p>4. Protein → Amino acid (thủy phân)</p>"
+        }]
+      },
+      "problemTypes": [{
+        "id": "dang1",
+        "name": "Dạng 1: Bài toán tổng hợp hợp chất nitrogen",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích hỗn hợp</li><li>Xác định tính chất từng chất</li><li>Lập hệ phương trình</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Hỗn hợp X gồm aniline, glycine. Cho X tác dụng với HCl dư thu được 20.3g muối. Cho X tác dụng với NaOH dư thu được 17.2g muối. Tính khối lượng mỗi chất.", "solution": "<p><strong>Đặt:</strong> n(aniline) = a, n(glycine) = b</p><p><strong>Với HCl:</strong></p><p>Aniline: M(muối) = 129.5</p><p>Glycine: M(muối) = 111.5</p><p>129.5a + 111.5b = 20.3 ... (1)</p><p><strong>Với NaOH:</strong></p><p>Aniline: Không phản ứng</p><p>Glycine: M(muối) = 97</p><p>97b = 17.2 → b = 0.177 mol</p><p>Từ (1): 129.5a = 20.3 - 19.76 = 0.54 → a = 0.004 mol</p><p>m(aniline) = 0.004×93 = 0.37g</p><p>m(glycine) = 0.177×75 = 13.3g</p><p><strong>Đáp án:</strong> 0.37g aniline, 13.3g glycine</p>"}]
+      }, {
+        "id": "dang2",
+        "name": "Dạng 2: Bài toán chuỗi phản ứng",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định sản phẩm từng bước</li><li>Tính mol qua từng phản ứng</li><li>Áp dụng hiệu suất</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Từ benzene, qua các bước: Benzene → Nitrobenzene → Aniline → Muối. Tính khối lượng muối từ 78g benzene (hiệu suất mỗi bước 80%).", "solution": "<p><strong>Bước 1:</strong> C₆H₆ + HNO₃ → C₆H₅NO₂</p><p>n(benzene) = 78/78 = 1 mol</p><p>n(nitrobenzene) = 1×0.8 = 0.8 mol</p><p><strong>Bước 2:</strong> C₆H₅NO₂ + 3H₂ → C₆H₅NH₂</p><p>n(aniline) = 0.8×0.8 = 0.64 mol</p><p><strong>Bước 3:</strong> C₆H₅NH₂ + HCl → C₆H₅NH₃Cl</p><p>n(muối) = 0.64×0.8 = 0.512 mol</p><p>m(muối) = 0.512×129.5 = 66.3g</p><p><strong>Đáp án:</strong> 66.3g</p>"}]
+      }, {
+        "id": "dang3",
+        "name": "Dạng 3: Bài toán thực tế - Dinh dưỡng protein",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Tính nhu cầu protein hàng ngày</li><li>Phân tích nguồn protein</li><li>Đánh giá chất lượng dinh dưỡng</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Người trưởng thành cần 1g protein/kg cân nặng/ngày. a) Tính nhu cầu cho người 60kg. b) Lập thực đơn từ: Thịt (20% protein), Trứng (13% protein), Đậu (25% protein). c) Đánh giá chất lượng protein.", "solution": "<p><strong>a) Nhu cầu:</strong></p><p>Protein cần = 60×1 = 60g/ngày</p><p><strong>b) Thực đơn:</strong></p><p><strong>Phương án 1 (cân bằng):</strong></p><ul><li>Thịt: 150g → 30g protein</li><li>Trứng: 100g → 13g protein</li><li>Đậu: 68g → 17g protein</li><li>Tổng: 60g protein</li></ul><p><strong>c) Đánh giá:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Nguồn</th><th class='border border-gray-300 p-2'>Ưu điểm</th><th class='border border-gray-300 p-2'>Nhược điểm</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Thịt</td><td class='border border-gray-300 p-2'>Đầy đủ amino acid thiết yếu</td><td class='border border-gray-300 p-2'>Nhiều chất béo, cholesterol</td></tr><tr><td class='border border-gray-300 p-2'>Trứng</td><td class='border border-gray-300 p-2'>Protein chất lượng cao nhất</td><td class='border border-gray-300 p-2'>Cholesterol cao</td></tr><tr><td class='border border-gray-300 p-2'>Đậu</td><td class='border border-gray-300 p-2'>Ít chất béo, nhiều chất xơ</td><td class='border border-gray-300 p-2'>Thiếu một số amino acid</td></tr></tbody></table><p><strong>Khuyến nghị:</strong></p><ul><li>Kết hợp nhiều nguồn protein</li><li>Ưu tiên protein thực vật</li><li>Hạn chế thịt đỏ (<500g/tuần)</li><li>Ăn cá 2-3 lần/tuần</li></ul><p><strong>Đáp án:</strong> a) 60g; b) Đã lập; c) Nên kết hợp đa dạng</p>"}]
+      }],
+      "exercises": [
+        {"id": "ex1", "type": "mcq", "question": "Amine có tính:", "options": ["Acid", "Base", "Lưỡng tính", "Trung tính"], "correct": 1, "explanation": "Amine có tính base."},
+        {"id": "ex2", "type": "mcq", "question": "Amino acid có tính:", "options": ["Acid", "Base", "Lưỡng tính", "Trung tính"], "correct": 2, "explanation": "Amino acid có tính lưỡng tính."},
+        {"id": "ex3", "type": "mcq", "question": "Aniline + 3Br₂ tạo:", "options": ["Kết tủa trắng", "Kết tủa vàng", "Dung dịch đỏ", "Không phản ứng"], "correct": 0, "explanation": "Aniline + 3Br₂ → Kết tủa trắng."},
+        {"id": "ex4", "type": "mcq", "question": "Protein + Cu(OH)₂ tạo màu:", "options": ["Xanh", "Tím", "Vàng", "Đỏ"], "correct": 1, "explanation": "Protein + Cu(OH)₂ → Màu tím."},
+        {"id": "ex5", "type": "mcq", "question": "Liên kết peptide là:", "options": ["-CO-NH-", "-CO-O-", "-O-", "-NH-"], "correct": 0, "explanation": "Liên kết peptide là -CO-NH-."},
+        {"id": "ex6", "type": "mcq", "question": "Enzyme hoạt động tối ưu ở:", "options": ["25°C", "37°C", "50°C", "100°C"], "correct": 1, "explanation": "Enzyme người hoạt động tối ưu ở 37°C."},
+        {"id": "ex7", "type": "mcq", "question": "MSG là muối của:", "options": ["Glycine", "Alanine", "Glutamic acid", "Valine"], "correct": 2, "explanation": "MSG là muối của glutamic acid."},
+        {"id": "ex8", "type": "mcq", "question": "Tính base: Amine no ... NH₃ ... Aniline", "options": ["> ... >", "< ... <", "> ... <", "< ... >"], "correct": 0, "explanation": "Amine no > NH₃ > Aniline."},
+        {"id": "ex9", "type": "mcq", "question": "Thủy phân protein thu được:", "options": ["Glucose", "Amino acid", "Amine", "Lipid"], "correct": 1, "explanation": "Protein → Amino acid."},
+        {"id": "ex10", "type": "mcq", "question": "Biến tính protein do:", "options": ["Nhiệt", "Acid", "Muối kim loại", "Tất cả"], "correct": 3, "explanation": "Protein biến tính do nhiệt, acid, muối kim loại."},
+        {"id": "ex11", "type": "mcq", "question": "Glycine có công thức:", "options": ["H₂N-CH₂-COOH", "H₂N-CH(CH₃)-COOH", "CH₃-COOH", "C₆H₅NH₂"], "correct": 0, "explanation": "Glycine: H₂N-CH₂-COOH."},
+        {"id": "ex12", "type": "mcq", "question": "M(aniline) = ?", "options": ["77", "93", "108", "123"], "correct": 1, "explanation": "M(C₆H₅NH₂) = 93 g/mol."},
+        {"id": "ex13", "type": "msq", "question": "Hợp chất có tính base:", "options": ["Amine", "Aniline", "Amino acid", "Protein"], "correct": [0, 1], "explanation": "Amine và aniline có tính base. Amino acid lưỡng tính."},
+        {"id": "ex14", "type": "msq", "question": "Phản ứng nhận biết protein:", "options": ["Biuret", "Xanthoproteic", "Tráng gương", "Với Br₂"], "correct": [0, 1], "explanation": "Nhận biết protein: Biuret, Xanthoproteic."},
+        {"id": "ex15", "type": "msq", "question": "Ứng dụng enzyme:", "options": ["Y tế", "Thực phẩm", "Giặt tẩy", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Enzyme có nhiều ứng dụng."},
+        {"id": "ex16", "type": "msq", "question": "Amino acid thiết yếu:", "options": ["Lysine", "Methionine", "Glycine", "Valine"], "correct": [0, 1, 3], "explanation": "Lysine, methionine, valine là amino acid thiết yếu."},
+        {"id": "ex17", "type": "sa", "question": "Cho 9.3g aniline tác dụng với Br₂ dư. Tính khối lượng kết tủa (g). Làm tròn đến hàng đơn vị.", "correct": "33", "explanation": "n = 9.3/93 = 0.1 mol. m = 0.1×330 = 33g. Đáp án: 33"},
+        {"id": "ex18", "type": "sa", "question": "Cho 7.5g glycine tác dụng với HCl. Tính khối lượng muối (g). Làm tròn đến 1 chữ số thập phân.", "correct": "11.2", "explanation": "n = 7.5/75 = 0.1 mol. m = 0.1×111.5 = 11.15g. Đáp án: 11.2"},
+        {"id": "ex19", "type": "sa", "question": "Thủy phân 10g protein thu được 11g amino acid. Tính khối lượng nước (g). Làm tròn đến hàng đơn vị.", "correct": "1", "explanation": "m(H₂O) = 11 - 10 = 1g. Đáp án: 1"},
+        {"id": "ex20", "type": "sa", "question": "Enzyme người hoạt động tối ưu ở nhiệt độ bao nhiêu (°C)? Làm tròn đến hàng đơn vị.", "correct": "37", "explanation": "Enzyme người: 37°C. Đáp án: 37"},
+        {"id": "ex21", "type": "sa", "question": "Tripeptide có bao nhiêu liên kết peptide? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "Tripeptide có 2 liên kết peptide. Đáp án: 2"},
+        {"id": "ex22", "type": "sa", "question": "Khử 1 mol nitrobenzene cần bao nhiêu mol H₂? Làm tròn đến hàng đơn vị.", "correct": "3", "explanation": "C₆H₅NO₂ + 3H₂ → C₆H₅NH₂. Đáp án: 3"}
+      ]
+    }
+  }]
+}

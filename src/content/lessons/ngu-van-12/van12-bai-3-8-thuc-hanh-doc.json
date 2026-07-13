@@ -1,0 +1,202 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-3-8-thuc-hanh-doc",
+      "name": "Thực hành đọc: Cảm hứng và sáng tạo",
+      "slug": "thuc-hanh-doc-cam-hung-sang-tao",
+      "chapter": "Lập luận trong văn bản nghị luận",
+      "chapter_id": "V12-3",
+      "lesson_id": 8,
+      "author": "Nguyễn Trần Bạt",
+      "description": "Rèn luyện kỹ năng đọc hiểu, phân tích tác phẩm về cảm hứng và sáng tạo. Hiểu được mối quan hệ giữa cảm hứng và quá trình sáng tạo.",
+      "duration_minutes": 50,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507842211343-583f20270319?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "read1",
+          "name": "Đọc hiểu",
+          "slug": "doc-hieu",
+          "difficulty": "medium"
+        },
+        {
+          "id": "analyze1",
+          "name": "Phân tích tác phẩm",
+          "slug": "phan-tich-tac-pham",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Thực hành đọc: Cảm hứng và sáng tạo - Nguyễn Trần Bạt",
+          "sections": [
+            {
+              "heading": "1. Tác giả Nguyễn Trần Bạt",
+              "content": "<p><strong>Nguyễn Trần Bạt</strong> (1916-1997) là một nhà thơ, nhà văn của Việt Nam hiện đại. Ông có những suy tư sâu sắc về thơ, văn học và tạo hứng cảm trong quá trình sáng tạo.</p><ul><li><strong>Hoạt động chính:</strong> Thơ, văn học, lý luận văn học</li><li><strong>Tác phẩm nổi tiếng:</strong> Các bài thơ lãng mạn, những bài viết về phê bình văn học</li><li><strong>Quan điểm:</strong> Cảm hứng là khởi nguồn, nhưng cần được rèn luyện, hoàn thiện qua sáng tạo</li></ul>"
+            },
+            {
+              "heading": "2. Cảm hứng là gì?",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Cảm hứng:</strong> Là trạng thái tinh thần, cảm xúc, ý tưởng bất ngờ xuất hiện trong con người, thúc đẩy con người muốn sáng tạo</li><li><strong>Đặc điểm:</strong><br/>- Xuất hiện bất ngờ, không thể dự đoán<br/>- Kéo theo sự phấn khích, nhiệt huyết\n- Cung cấp ý tưởng, hình ảnh mới lạ<br/>- Ngắn thôi nếu không kịp ghi lại</li></ul><h4>b) Nguồn gốc của cảm hứng</h4><ul><li><strong>Từ thiên nhiên:</strong> Cảnh đẹp, thời tiết, mùa hè làm sinh ra cảm hứng</li><li><strong>Từ trải nghiệm sống:</strong> Tình yêu, đau khổ, niềm vui, thành công tạo ra cảm hứng</li><li><strong>Từ con người khác:</strong> Gặp một người có hoặc cuộc đối thoại ý nghĩa có thể gợi cảm hứng</li><li><strong>Từ tác phẩm khác:</strong> Đọc sách, nghe nhạc, xem tranh có thể gợi lại cảm hứng</li><li><strong>Từ việc suy tút:</strong> Đôi khi cảm hứng xuất hiện khi chúng ta đang suy tư về một vấn đề</li></ul>"
+            },
+            {
+              "heading": "3. Sáng tạo là gì?",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Sáng tạo:</strong> Là quá trình biến cảm hứng, ý tưởng thành tác phẩm hoàn chỉnh</li><li><strong>Đặc điểm:</strong><br/>- Là một quá trình, không chỉ là một khoảnh khắc\n- Cần sự tập trung, chịu khó, rèn luyện<br/>- Kết hợp cảm hứng với kỹ năng, kiến thức<br/>- Có thể phải loại bỏ, sửa đổi lại nhiều lần</li></ul><h4>b) Các giai đoạn của sáng tạo</h4><ul><li><strong>Giai đoạn 1: Tích lũy</strong><br/>- Thu thập kiến thức, trải nghiệm<br/>- Quan sát cẩn thận thế giới xung quanh</li><li><strong>Giai đoạn 2: Chuẩn bị</strong><br/>- Suy tư sâu về vấn đề<br/>- Giải quyết các vấn đề kỹ thuật</li><li><strong>Giai đoạn 3: Cảm hứng bất ngờ</strong><br/>- Cảm hứng đến một cách bất ngờ<br/>- Mang lại giải pháp hoặc ý tưởng mới</li><li><strong>Giai đoạn 4: Thực hiện</strong><br/>- Biến ý tưởng thành tác phẩm\n- Làm việc chăm chỉ, kiên nhẫn\n- Sử dụng các kỹ năng, kiến thức</li><li><strong>Giai đoạn 5: Hoàn thiện</strong><br/>- Chỉnh sửa, sửa đổi tác phẩm\n- Kiểm tra, đánh giá lại\n- Có thể phải bắt đầu lại từ đầu</li></ul>"
+            },
+            {
+              "heading": "4. Mối quan hệ giữa cảm hứng và sáng tạo",
+              "content": "<h4>a) Cảm hứng là điều kiện cần nhưng không đủ</h4><ul><li><strong>Ý nghĩa:</strong> Cảm hứng là cầu nối giữa ý tưởng và tác phẩm, nhưng nếu chỉ có cảm hứng mà không phải là tác phẩm</li><li><strong>Ví dụ:</strong> Một nhà thơ có cảm hứng nhưng nếu không biết cách sắp xếp từ ngữ, làm phong phú hình ảnh, thì tác phẩm sẽ không tốt</li></ul><h4>b) Sáng tạo là sự kiểm soát cảm hứng</h4><ul><li><strong>Ý nghĩa:</strong> Không phải bất kỳ cảm hứng nào cũng thích hợp. Sáng tạo đòi hỏi sự lựa chọn, loại bỏ những gì không cần</li><li><strong>Ví dụ:</strong> Một họa sĩ có thể có cảm hứng vẽ bạn bè, nhưng chỉ vẽ được khuôn mặt của người bạn để thu hút người xem</li></ul><h4>c) Sáng tạo cần sự giải phóng</h4><ul><li><strong>Ý nghĩa:</strong> Trong quá trình sáng tạo, cần có sự cân bằng giữa cảm hứng (sự giải phóng, tự do) và kỹ thuật (sự kiểm soát, kỉ luật)</li><li><strong>Ví dụ:</strong> Để viết thơ hay, nhà thơ cần vừa để cảm xúc tự do chảy, vừa cần tuân thủ một số quy tắc về vần điệu, nhịp điệu</li></ul>"
+            },
+            {
+              "heading": "5. Những nhân tố ảnh hưởng đến cảm hứng",
+              "content": "<ul><li><strong>Nhân tố tích cực:</strong><br/>- Tâm trạng bình thản, lạc quan\n- Môi trường im tĩnh, yên tĩnh\n- Có những người bạn, người thân yêu thích\n- Tiếp xúc với thiên nhiên, nghệ thuật</li><li><strong>Nhân tố tiêu cực:</strong><br/>- Mệt mỏi, buồn chán<br/>- Áp lực công việc, học tập quá nhiều<br/>- Xung đột, cãi vã\n- Chồng chất vấn đề chưa giải quyết</li><li><strong>Cách duy trì cảm hứng:</strong><br/>- Đọc sách, nghe nhạc, xem tranh\n- Giao lưu với những người sáng tạo\n- Tham gia những hoạt động mà bản thân yêu thích\n- Dành thời gian để nghỉ ngơi, thư giãn\n- Ghi lại những ý tưởng khi cảm hứng đến</li></ul>"
+            },
+            {
+              "heading": "6. Cách đọc hiểu và phân tích bài viết về cảm hứng - sáng tạo",
+              "content": "<h4>a) Kỹ năng đọc hiểu</h4><ul><li><strong>Lần đầu tiên:</strong> Đọc toàn bộ bài một cách nhanh để nắm được ý chính</li><li><strong>Lần thứ hai:</strong> Đọc từng đoạn một, ghi chú những ý chính, những từ khóa quan trọng</li><li><strong>Lần thứ ba:</strong> Đọc lại để xác nhận hiểu đúng</li></ul><h4>b) Phân tích bài viết</h4><ul><li><strong>Xác định chủ đề chính:</strong> Bài viết nói về vấn đề gì?</li><li><strong>Tìm luận điểm chính:</strong> Tác giả muốn chứng tỏ điều gì?</li><li><strong>Phân tích lập luận:</strong> Tác giả sử dụng những phương pháp lập luận nào?</li><li><strong>Đánh giá dẫn chứng:</strong> Những dẫn chứng có thuyết phục không?</li><li><strong>Phát biểu ý kiến:</strong> Bạn đồng ý hay không với quan điểm tác giả?</li></ul><h4>c) Những câu hỏi cần trả lời khi đọc</h4><ul><li>Cảm hứng là gì theo tác giả?</li><li>Sáng tạo là gì theo tác giả?</li><li>Mối quan hệ giữa cảm hứng và sáng tạo là gì?</li><li>Tác giả chủ trương cảm hứng hay kỹ thuật hơn?</li><li>Quan điểm của tác giả có hợp lý không?</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex3-8-1",
+              "type": "mcq",
+              "question": "Theo bài học, cảm hứng có đặc điểm gì?",
+              "options": [
+                "Xuất hiện theo kế hoạch, có thể dự đoán",
+                "Xuất hiện bất ngờ, không thể dự đoán",
+                "Luôn kéo dài mãi mãi",
+                "Chỉ xuất hiện khi ta làm việc"
+              ],
+              "correct": 1,
+              "explanation": "Cảm hứng có đặc điểm xuất hiện bất ngờ, không thể dự đoán, kéo theo sự phấn khích và cung cấp ý tưởng mới lạ, nhưng sẽ ngắn ngủi nếu không kịp ghi lại."
+            },
+            {
+              "id": "ex3-8-2",
+              "type": "mcq",
+              "question": "Nguồn cảm hứng nào KHÔNG được đề cập trong bài học?",
+              "options": [
+                "Từ thiên nhiên và thời tiết",
+                "Từ trải nghiệm sống",
+                "Từ tác phẩm nghệ thuật khác",
+                "Từ máy tính và công nghệ"
+              ],
+              "correct": 3,
+              "explanation": "Bài học đề cập các nguồn cảm hứng từ thiên nhiên, trải nghiệm sống, con người khác, tác phẩm nghệ thuật, và suy tư, nhưng không đề cập cụ thể đến máy tính và công nghệ."
+            },
+            {
+              "id": "ex3-8-3",
+              "type": "mcq",
+              "question": "Sáng tạo khác với cảm hứng ở điểm nào?",
+              "options": [
+                "Sáng tạo là một khoảnh khắc, cảm hứng là quá trình",
+                "Sáng tạo là quá trình, cảm hứng là khoảnh khắc",
+                "Sáng tạo không cần kỹ năng",
+                "Cảm hứng quan trọng hơn sáng tạo"
+              ],
+              "correct": 1,
+              "explanation": "Sáng tạo là một quá trình biến cảm hứng thành tác phẩm hoàn chỉnh, cần sự tập trung và rèn luyện, trong khi cảm hứng là khoảnh khắc bất ngờ."
+            },
+            {
+              "id": "ex3-8-4",
+              "type": "mcq",
+              "question": "Trong các giai đoạn của sáng tạo, giai đoạn nào diễn ra đầu tiên?",
+              "options": [
+                "Cảm hứng bất ngờ",
+                "Tích lũy kiến thức và trải nghiệm",
+                "Thực hiện ý tưởng",
+                "Hoàn thiện tác phẩm"
+              ],
+              "correct": 1,
+              "explanation": "Giai đoạn đầu tiên là tích lũy kiến thức, trải nghiệm và quan sát thế giới xung quanh, tạo nền tảng cho các giai đoạn sau."
+            },
+            {
+              "id": "ex3-8-5",
+              "type": "mcq",
+              "question": "Mối quan hệ giữa cảm hứng và sáng tạo được mô tả như thế nào?",
+              "options": [
+                "Cảm hứng là điều kiện đủ cho sáng tạo",
+                "Cảm hứng là điều kiện cần nhưng không đủ",
+                "Sáng tạo không cần cảm hứng",
+                "Cảm hứng và sáng tạo là một"
+              ],
+              "correct": 1,
+              "explanation": "Cảm hứng là điều kiện cần nhưng không đủ cho sáng tạo. Sáng tạo cần cảm hứng kết hợp với kỹ năng, kiến thức và sự chịu khó."
+            },
+            {
+              "id": "ex3-8-6",
+              "type": "mcq",
+              "question": "Nhân tố nào sau đây có tác động TIÊU CỰC đến cảm hứng?",
+              "options": [
+                "Tâm trạng bình thản, lạc quan",
+                "Tiếp xúc với thiên nhiên",
+                "Áp lực công việc quá nhiều",
+                "Giao lưu với người sáng tạo"
+              ],
+              "correct": 2,
+              "explanation": "Áp lực công việc, học tập quá nhiều là nhân tố tiêu cực ảnh hưởng đến cảm hứng, cùng với mệt mỏi, xung đột và vấn đề chưa giải quyết."
+            },
+            {
+              "id": "ex3-8-7",
+              "type": "mcq",
+              "question": "Khi đọc hiểu bài viết về cảm hứng - sáng tạo, nên đọc bao nhiêu lần?",
+              "options": [
+                "Một lần là đủ",
+                "Hai lần",
+                "Ba lần với mục đích khác nhau",
+                "Không cần đọc nhiều lần"
+              ],
+              "correct": 2,
+              "explanation": "Nên đọc ba lần: lần đầu đọc nhanh nắm ý chính, lần hai đọc từng đoạn ghi chú, lần ba đọc lại để xác nhận hiểu đúng."
+            },
+            {
+              "id": "ex3-8-8",
+              "type": "mcq",
+              "question": "Nguyễn Trần Bạt (1916-1997) có quan điểm gì về cảm hứng?",
+              "options": [
+                "Cảm hứng là tất cả, không cần rèn luyện",
+                "Cảm hứng là khởi nguồn, cần được rèn luyện qua sáng tạo",
+                "Cảm hứng không quan trọng trong sáng tạo",
+                "Chỉ cần kỹ thuật, không cần cảm hứng"
+              ],
+              "correct": 1,
+              "explanation": "Nguyễn Trần Bạt cho rằng cảm hứng là khởi nguồn quan trọng, nhưng cần được rèn luyện và hoàn thiện thông qua quá trình sáng tạo."
+            },
+            {
+              "id": "ex8-1",
+              "question": "Hãy nêu những nguồn cảm hứng có thể gợi cảm hứng cho một nhà thơ, nhà văn hoặc nghệ sĩ.",
+              "type": "essay",
+              "difficulty": "medium",
+              "answer_guide": "Từ thiên nhiên, trải nghiệm sống, con người, tác phẩm khác, suy tư. Nên cho ví dụ cụ thể cho mỗi nguồn (ví dụ: mùa xuân làm gợi cảm hứng viết thơ tình)"
+            },
+            {
+              "id": "ex8-2",
+              "question": "Phân tích mối quan hệ giữa cảm hứng và sáng tạo. Cảm hứng là điều kiện cần hay đủ cho sáng tạo?",
+              "type": "essay",
+              "difficulty": "hard",
+              "answer_guide": "Cảm hứng là điều kiện cần nhưng không đủ. Sáng tạo cần cảm hứng + kỹ năng + kiến thức + chịu khó. Nên có ví dụ cụ thể minh họa."
+            },
+            {
+              "id": "ex8-3",
+              "question": "Đọc một bài viết về cảm hứng hoặc sáng tạo và phân tích: luận điểm chính, lập luận được sử dụng, dẫn chứng, ý kiến của bạn.",
+              "type": "essay",
+              "difficulty": "hard",
+              "answer_guide": "Phân tích cần bao gồm: (1) Xác định luận điểm, (2) Phân tích lập luận, (3) Đánh giá dẫn chứng, (4) Phát biểu ý kiến cá nhân"
+            },
+            {
+              "id": "ex8-4",
+              "question": "Hãy viết một đoạn ngắn (5-7 câu) về một lần bạn cảm thấy cảm hứng để sáng tạo (viết thơ, vẽ, làm bài tập...). Mô tả: nguồn cảm hứng, quá trình sáng tạo, kết quả.",
+              "type": "essay",
+              "difficulty": "hard",
+              "answer_guide": "Bài viết nên có: (1) Mô tả nguồn cảm hứng (cụ thể, chi tiết), (2) Cảm xúc khi có cảm hứng, (3) Quá trình sáng tạo (khó khăn, giải pháp), (4) Kết quả, bài học."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

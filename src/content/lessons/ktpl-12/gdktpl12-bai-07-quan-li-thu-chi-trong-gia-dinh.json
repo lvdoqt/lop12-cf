@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_07",
+      "name": "Quản lí thu chi trong gia đình",
+      "slug": "quan-li-thu-chi-trong-gia-dinh",
+      "chapter": "Quản lí thu, chi trong gia đình",
+      "chapter_id": "GDCD12",
+      "lesson_id": 7,
+      "description": "Kỹ năng lập kế hoạch tài chính cá nhân và gia đình để bảo đảm cuộc sống ổn định và phát triển bền vững.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Tài chính Gia đình",
+          "summary": "Quản lý thu chi là việc cân đối giữa nguồn thu nhập và các khoản chi tiêu sao cho hợp lý, tiết kiệm và có tích lũy.",
+          "sections": [
+            { "heading": "Nguồn thu nhập", "content": "Lương, tiền thưởng, thu nhập từ kinh doanh, đầu tư, các nguồn trợ cấp." },
+            { "heading": "Phân loại chi tiêu", "content": "Chi thiết yếu (ăn uống, học tập), chi không thiết yếu (giải trí, mua sắm xa xỉ) và chi dự phòng." },
+            { "heading": "Nguyên tắc quản lý", "content": "Thu > Chi. Ưu tiên chi thiết yếu trước. Luôn có quỹ dự phòng cho rủi ro bất ngờ." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Quản lý thu chi trong gia đình nhằm mục đích gì?", "options": ["Để tằn tiện hết mức", "Bảo đảm tài chính ổn định, nâng cao chất lượng sống và có tích lũy", "Để cho hàng xóm thấy mình giàu", "Để không phải ăn uống"], "correct": 1, "explanation": "Quản lý tốt giúp gia đình chủ động trước mọi tình huống tài chính." },
+          { "id": 2, "type": "mcq", "question": "Khoản nào sau đây là chi tiêu thiết yếu?", "options": ["Mua điện thoại đời mới nhất", "Tiền học phí cho con cái", "Đi du lịch nước ngoài hàng tháng", "Mua đồ trang sức đắt tiền"], "correct": 1, "explanation": "Giáo dục, y tế, thực phẩm là những nhu cầu cơ bản không thể thiếu." },
+          { "id": 3, "type": "mcq", "question": "Quy tắc 50/30/20 trong quản lý tài chính khuyên chia thu nhập thế nào?", "options": ["50% tiết kiệm, 30% đầu tư, 20% tiêu xài", "50% thiết yếu, 30% sở thích, 20% tích lũy/trả nợ", "50% đi chơi, 30% ăn uống, 20% mua sắm", "100% cho tiết kiệm"], "correct": 1, "explanation": "Đây là công thức quản lý tài chính cá nhân phổ biến và khoa học." },
+          { "id": 4, "type": "mcq", "question": "Quỹ dự phòng (Emergency Fund) dùng để làm gì?", "options": ["Để mua xe mới khi thích", "Để chi trả cho các sự cố bất ngờ như ốm đau, mất việc", "Để cho vay lấy lãi", "Để tổ chức tiệc sinh nhật"], "correct": 1, "explanation": "Quỹ này giúp gia đình không bị rơi vào khủng hoảng khi gặp rủi ro." },
+          { "id": 5, "type": "mcq", "question": "Làm thế nào để tăng nguồn thu cho gia đình?", "options": ["Chỉ dựa vào một công việc duy nhất", "Nâng cao năng lực chuyên môn, kinh doanh thêm hoặc đầu tư hợp lý", "Đợi trúng số", "Cắt giảm toàn bộ ăn uống"], "correct": 1, "explanation": "Đa dạng hóa nguồn thu giúp tài chính gia đình vững chắc hơn." },
+          { "id": 6, "type": "mcq", "question": "Việc ghi chép các khoản chi tiêu hàng ngày giúp ích gì?", "options": ["Làm mất thời gian", "Theo dõi được dòng tiền và cắt giảm những khoản chi không cần thiết", "Để khoe với bạn bè", "Làm cho ví tiền nặng hơn"], "correct": 1, "explanation": "Ghi chép giúp bạn nhận ra những lỗ hổng trong thói quen tiêu xài." },
+          { "id": 7, "type": "mcq", "question": "Khi 'Thu < Chi' trong thời gian dài, gia đình sẽ?", "options": ["Trở nên giàu có", "Rơi vào nợ nần và mất an toàn tài chính", "Vẫn sống thoải mái", "Được ngân hàng tặng tiền"], "correct": 1, "explanation": "Mất cân đối tài chính dẫn đến áp lực nợ nần." },
+          { "id": 8, "type": "mcq", "question": "Mua sắm theo kiểu 'ngẫu hứng' thường dẫn đến?", "options": ["Tiết kiệm tiền", "Lãng phí và mua những thứ không thực sự cần thiết", "Hạnh phúc lâu dài", "Tăng thu nhập"], "correct": 1, "explanation": "Chi tiêu thiếu kế hoạch là kẻ thù của tiết kiệm." },
+          { "id": 9, "type": "mcq", "question": "Đầu tư cho giáo dục được coi là loại chi tiêu?", "options": ["Lãng phí", "Đầu tư cho tương lai và phát triển bền vững", "Chi tiêu không thiết yếu", "Chỉ dành cho người giàu"], "correct": 1, "explanation": "Kiến thức là tài sản có giá trị sinh lời cao nhất." },
+          { "id": 10, "type": "mcq", "question": "Gia đình hạnh phúc về mặt tài chính là gia đình?", "options": ["Có nhiều tiền nhất khu phố", "Biết quản lý, cân đối thu chi và hài lòng với cuộc sống", "Không bao giờ tiêu tiền", "Vay mượn khắp nơi để tiêu xài"], "correct": 1, "explanation": "Sự an tâm về tài chính đến từ việc kiểm soát được túi tiền của mình." }
+        ]
+      }
+    }
+  ]
+}

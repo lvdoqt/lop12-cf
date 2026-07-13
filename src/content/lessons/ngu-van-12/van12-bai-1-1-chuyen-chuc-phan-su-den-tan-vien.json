@@ -1,0 +1,207 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-1-1-chuyen-chuc-phan-su-den-tan-vien",
+      "name": "Chuyện chức Phán sự đền Tản Viên",
+      "slug": "chuyen-chuc-phan-su-den-tan-vien",
+      "chapter": "Khả năng thay đổi thế giới của văn học",
+      "chapter_id": "V12-1",
+      "lesson_id": 1,
+      "description": "Tìm hiểu về tác phẩm Chuyện chức Phán sự đền Tản Viên của Nguyễn Dữ, một truyện truyền kỳ thể hiện sức ảnh hưởng của văn học đối với thế giới xã hội và nhân sinh.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507842211343-583f20270319?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tq-cp-1",
+          "name": "Phân tích nội dung và ý nghĩa tác phẩm",
+          "slug": "phan-tich-noi-dung-y-nghia-tac-pham",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Chuyện chức Phán sự đền Tản Viên",
+          "sections": [
+            {
+              "heading": "1. Giới thiệu tác giả và tác phẩm",
+              "content": "<h4>a) Tác giả Nguyễn Dữ</h4><ul><li><strong>Thời đại:</strong> Thế kỷ XVII-XVIII, đời Việt Nam phong kiến</li><li><strong>Xuất thân:</strong> Literati (ưu nhân) có học vấn cao</li><li><strong>Đặc điểm:</strong> Am hiểu Phật giáo, Nho giáo, văn hóa dân gian</li><li><strong>Phong cách:</strong> Chủ yếu viết truyện kỳ, ngôn tình</li></ul><h4>b) Tác phẩm</h4><ul><li><strong>Thể loại:</strong> Truyện truyền kỳ (histoire merveille)</li><li><strong>Nội dung:</strong> Kể chuyện xảy ra tại đền Tản Viên với tính chất siêu nhiên</li><li><strong>Đặc điểm:</strong> Hỗn hợp yếu tố Phật giáo, thần thoại và hiện thực</li><li><strong>Ý nghĩa:</strong> Thể hiện sức mạnh ngôn từ trong thay đổi vận mệnh con người</li></ul>"
+            },
+            {
+              "heading": "2. Tóm tắt nội dung",
+              "content": "<h4>a) Hoàn cảnh sự việc</h4><ul><li><strong>Địa điểm:</strong> Đền Tản Viên (Ba Vì), nơi thờ vị thần nước</li><li><strong>Nhân vật chính:</strong> Nguyễn Công Biên (một phận sĩ)</li><li><strong>Sự kiện:</strong> Công Biên đi du ngoạn, đến đền Tản Viên cầu siêu</li></ul><h4>b) Câu chuyện kỳ diệu</h4><ul><li><strong>Người chức Phán sự:</strong> Một ông già bí ẩn xuất hiện</li><li><strong>Địa vị:</strong> Chức Phán sự (vị vụ quản các sự vụ thần linh)</li><li><strong>Sự gặp gỡ:</strong> Công Biên được mời vào phòng riêng, gặp người chức</li><li><strong>Cuộc đối thoại:</strong> Được tiết lộ những bí mật về vận số, nhân quả</li></ul><h4>c) Vạn bản sổ các thế hệ</h4><ul><li><strong>Công Biên thấy được:</strong> Những trang sổ ghi các tên, dòng nhân vật</li><li><strong>Nội dung:</strong> Ghi chi tiết về quá khứ, hiện tại, tương lai</li><li><strong>Hé lộ:</strong> Những mối quan hệ nhân quả qua các đời</li><li><strong>Khám phá cá nhân:</strong> Công Biên nhìn thấy tên mình và dòng dõi</li></ul><h4>d) Những bài học giáo huấn</h4><ul><li><strong>Về nhân quả Phật giáo:</strong> Mọi hành động đều có hệ quả</li><li><strong>Về vận mệnh:</strong> Vận như tờ giấy ghi, nhưng con người có thể thay đổi</li><li><strong>Về đạo đức:</strong> Cần sống tốt, để lại điều tốt cho con em</li><li><strong>Về văn học:</strong> Hành động, chữ nghĩa có sức ảnh hưởng tuyệt vời</li></ul><h4>e) Kết thúc và điều ứng</h4><ul><li><strong>Thức tỉnh:</strong> Công Biên như mơ, tỉnh dậy tại đền</li><li><strong>Phản xứ:</strong> Biến chuyến đi du ngoạn thành sự giác ngộ</li><li><strong>Quyết tâm:</strong> Cam kết tu tập, sống theo những lời dạy</li></ul>"
+            },
+            {
+              "heading": "3. Phân tích nhân vật",
+              "content": "<h4>a) Công Biên</h4><ul><li><strong>Xuất thân:</strong><ul><li>Một phận sĩ đi du ngoạn, tìm kiếm ý nghĩa cuộc sống</li><li>Có tri thức, hiểu văn hóa truyền thống</li><li>Còn hoân ót, cần được giáo huấn</li></ul></li><li><strong>Tính cách:</strong><ul><li><strong>Tò mò:</strong> Muốn tìm hiểu về kiếp người, vận mệnh</li><li><strong>Mở lòng:</strong> Sẵn sàng tiếp nhận những lời dạy mới</li><li><strong>Có lương tâm:</strong> Nhận thức về trách nhiệm với xã hội</li></ul></li><li><strong>Vai trò:</strong><ul><li>Đại diện cho độc giả, người được giáo huấn</li><li>Nhân vật dẫn dắt xuyên suốt câu chuyện</li><li>Thể hiện quá trình tu tập, giác ngộ của con người</li></ul></li></ul><h4>b) Chức Phán sự</h4><ul><li><strong>Xuất thân:</strong><ul><li>Một vị thần linh quản lý vận mệnh loài người</li><li>Có hiểu biết toàn diện, vượt thời gian</li><li>Lịch sử, hiện tại, tương lai đều nằm trong tầm là</li></ul></li><li><strong>Tính cách:</strong><ul><li><strong>Thêm lẫn tình thương:</strong> Sẵn sàng giúp đỡ một người tốt bụng</li><li><strong>Công bằng:</strong> Phán xử các sự vụ theo luật Phật, Nho</li><li><strong>Sâu sắc:</strong> Hiểu rõ bản chất con người, vận mệnh</li></ul></li><li><strong>Công năng giáo huấn:</strong><ul><li>Dạy Công Biên về nhân quả Phật giáo</li><li>Hé lộ bí mật vũ trụ và tương lai</li><li>Khuyến khích sống tốt để tạo nên tương lai tốt</li></ul></li></ul><h4>c) Các nhân vật khác</h4><ul><li><strong>Gia tộc Công Biên:</strong> Thể hiện qua sổ ghi, mối liên hệ nhân quả</li><li><strong>Những người tốt, kém:</strong> Chia buồn, chia vui qua kiếp người</li></ul>"
+            },
+            {
+              "heading": "4. Đặc điểm nghệ thuật",
+              "content": "<h4>a) Cấu trúc tác phẩm</h4><ul><li><strong>Mở đầu:</strong> Công Biên đi du ngoạn, đến đền Tản Viên</li><li><strong>Phát triển:</strong> Gặp chức Phán sự, được tiết lộ bí mật</li><li><strong>Cao trào:</strong> Nhìn thấy sổ ghi vận mệnh, nhân quả</li><li><strong>Kết thúc:</strong> Thức dậy, giác ngộ, quyết tâm tu tập</li></ul><h4>b) Yếu tố kỳ ảo</h4><ul><li><strong>Không gian bí ẩn:</strong> Phòng riêng trong đền, không gian thần linh</li><li><strong>Nhân vật thần linh:</strong> Chức Phán sự, những vị thần khác</li><li><strong>Phép thuật:</strong> Năng lực nhìn thấy quá khứ, hiện tại, tương lai</li><li><strong>Vật phẩm kỳ bí:</strong> Các trang sổ ghi vận mệnh</li><li><strong>Ý nghĩa:</strong> Thể hiện trí tưởng tượng phong phú, gắn kết thế tục và siêu thoát</li></ul><h4>c) Nghệ thuật kết hợp các tư tưởng</h4><ul><li><strong>Phật giáo:</strong><ul><li>Nhân quả, luân hồi, tu tập, giác ngộ</li><li>Sự thương xót, lòng từ bi</li></ul></li><li><strong>Nho giáo:</strong><ul><li>Đạo đức, trách nhiệm xã hội</li><li>Gia tộc, dòng dõi</li></ul></li><li><strong>Dân gian:</strong><ul><li>Tín ngưỡng thần linh, tâm linh</li><li>Giáo huấn qua câu chuyện</li></ul></li><li><strong>Hạn chế:</strong> Không phải toàn Nho, toàn Phật, mà là hồn hợp</li></ul><h4>d) Ngôn ngữ và phác hoạ</h4><ul><li><strong>Văn xuôi cổ:</strong> Sử dụng chữ Hán, cấu trúc cổ xưa</li><li><strong>Tính chất sử liệu:</strong> Kể chuyện như sự kiện thực xảy ra</li><li><strong>Giàu hình ảnh:</strong> Miêu tả chi tiết cảnh đền, không gian kỳ ảo</li><li><strong>Đối thoại sâu sắc:</strong> Thể hiện tư duy, giáo huấn qua lời nói</li></ul><h4>e) Kỹ thuật chuyển từ thực sang ảo</h4><ul><li><strong>Mở đầu thực:</strong> Công Biên là con người thực, du ngoạn là sự kiện bình thường</li><li><strong>Chuyển ảo:</strong> Từ từ đưa vào không gian siêu nhiên, giai đoạn mơ</li><li><strong>Kết thúc thực:</strong> Tỉnh dậy, trở về thế tục nhưng đã giác ngộ</li><li><strong>Hiệu quả:</strong> Làm câu chuyện thêm phần thuyết phục, gần gũi</li></ul>"
+            },
+            {
+              "heading": "5. Ý nghĩa tác phẩm",
+              "content": "<h4>a) Ý nghĩa triết học</h4><ul><li><strong>Nhân quả Phật giáo:</strong> Mọi hành động đều có hệ quả, không gì vô duyên</li><li><strong>Tự do ý chí:</strong> Mặc dù vận đã ghi sẵn, nhưng con người có thể thay đổi nó qua hành động</li><li><strong>Giá trị của con người:</strong> Con người không là nô lệ của vận mệnh, có khả năng tạo nên tương lai</li></ul><h4>b) Ý nghĩa đạo đức</h4><ul><li><strong>Trách nhiệm xã hội:</strong> Mỗi hành động đều ảnh hưởng đến gia tộc, đến xã hội</li><li><strong>Lương tâm:</strong> Cần sống lương thiện, trung thực</li><li><strong>Tích đức:</strong> Lâu dài sẽ có hoa quả tốt đẹp</li></ul><h4>c) Ý nghĩa về sức mạnh của văn học</h4><ul><li><strong>Văn học thay đổi con người:</strong> Qua câu chuyện này, Công Biên được giáo huấn, thay đổi cuộc sống</li><li><strong>Văn học thay đổi xã hội:</strong> Nếu mỗi cá nhân thay đổi, xã hội sẽ thay đổi</li><li><strong>Sức ảnh hưởng dài hạn:</strong> Những tác phẩm tốt sẽ ảnh hưởng đến nhiều đời nhiều thế hệ</li></ul><h4>d) Ý nghĩa tôn giáo, tín ngưỡng</h4><ul><li><strong>Phật giáo:</strong> Tìm hiểu sau sắc, con đường tu tập</li><li><strong>Tôn kính thần linh:</strong> Thần linh là những vị quản lý vũ trụ, công bằng</li><li><strong>Hy vọng và ý chí:</strong> Niềm tin vào sự công bằng, lòng từ bi</li></ul><h4>e) Ý nghĩa văn hóa</h4><ul><li><strong>Bảo tồn truyền thuyết:</strong> Ghi lại những câu chuyện, niềm tin dân gian</li><li><strong>Kết hợp các tư tưởng:</strong> Thể hiện tính đa dạng, linh hoạt của văn hóa Việt</li><li><strong>Giả duyên lịch sử:</strong> Liên kết với truyền thuyết Tản Viên, địa chỉ lịch sử</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân tích tác phẩm Chuyện chức Phán sự đền Tản Viên",
+            "method": "<p><strong>Phương pháp giải:</strong></p><ul><li>Xác định nội dung chính, sự kiện then chốt</li><li>Phân tích vai trò các nhân vật</li><li>Tìm sự kết hợp giữa yếu tố thực và ảo</li><li>Rút ra ý nghĩa toàn bộ câu chuyện</li></ul>",
+            "examples": [
+              {
+                "question": "Trong Chuyện chức Phán sự đền Tản Viên, Nguyễn Dữ muốn thể hiện điều gì khi cho nhân vật Công Biên gặp chức Phán sự và được tiết lộ vận mệnh?",
+                "answer": "Nguyễn Dữ muốn thể hiện:\n1. Sức mạnh của nhân quả Phật giáo - mọi hành động đều có hệ quả\n2. Tự do ý chí của con người - mặc dù vận được ghi sẵn nhưng con người có thể thay đổi nó\n3. Trách nhiệm xã hội - hành động của cá nhân ảnh hưởng đến gia tộc, xã hội\n4. Sức mạnh của văn học - câu chuyện này thay đổi Công Biên, từ đó ảnh hưởng đến xã hội"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: So sánh với các tác phẩm truyện kỳ khác",
+            "method": "<p><strong>Phương pháp giải:</strong></p><ul><li>Xác định thể loại chung: cả truyện kỳ</li><li>So sánh yếu tố kỳ ảo, cấu trúc, nội dung</li><li>Tìm điểm giống giữa các tác tả</li><li>Tìm điểm khác biệt trong cách tiếp cận</li><li>Rút ra bài học về sự phát triển của thể loại</li></ul>",
+            "examples": [
+              {
+                "question": "So sánh tính chất kỳ ảo trong tác phẩm Chuyện chức Phán sự đền Tản Viên và Tản Viên từ Phán sự lục?",
+                "answer": "Giống: cả hai đều sử dụng yếu tố thần linh, không gian bí ẩn, canh cánh giữa thực và ảo\nKhác: Tản Viên từ Phán sự lục tập trung vào sự kiện lịch sử (thành Cổ Loa), có tính chất chiến tranh. Chuyện chức Phán sự đền Tản Viên tập trung vào giáo huấn, triết học, nhân quả.\nNguyên nhân: Mục đích sáng tác khác nhau - lịch sử so với giáo huấn"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Phân tích ý nghĩa triết học và văn hóa của tác phẩm",
+            "method": "<p><strong>Phương pháp giải:</strong></p><ul><li>Xác định các tư tưởng chính: Phật giáo, Nho giáo, dân gian</li><li>Phân tích cách Nguyễn Dữ kết hợp các tư tưởng</li><li>Tìm ý nghĩa về nhân quả, vận mệnh, tự do ý chí</li><li>Đánh giá giá trị hiện tại của tác phẩm</li></ul>",
+            "examples": [
+              {
+                "question": "Nguyễn Dữ kết hợp ba tư tưởng: Phật giáo, Nho giáo và Dân gian dân gian như thế nào trong Chuyện chức Phán sự đền Tản Viên?",
+                "answer": "Kết hợp:\n- Phật giáo: Nhân quả, luân hồi, tu tập, giác ngộ thể hiện qua câu chuyện Công Biên được giáo huấn về vận mệnh\n- Nho giáo: Đạo đức, trách nhiệm xã hội, gia tộc - thể hiện qua sổ ghi dòng dõi Công Biên\n- Dân gian: Tín ngưỡng thần linh (chức Phán sự), không gian bí ẩn (đền Tản Viên)\nHiệu quả: Tạo ra một tác phẩm toàn diện, vừa giáo huấn vừa giải trí, dễ tiếp cận độc giả"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Tác phẩm Chuyện chức Phán sự đền Tản Viên chủ yếu muốn truyền tải điều gì?",
+            "options": [
+              "Những sự kiện lịch sử của đất nước",
+              "Sức mạnh của văn học trong thay đổi con người và xã hội",
+              "Lịch sử của đền Tản Viên qua các thời kỳ",
+              "Những câu chuyện ma quỷ hư cấu"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm Chuyện chức Phán sự đền Tản Viên thông qua câu chuyện Công Biên gặp chức Phán sự, được giáo huấn về nhân quả, vận mệnh, để thể hiện sức mạnh của văn học trong thay đổi con người và từ đó ảnh hưởng xã hội."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Nhân vật chức Phán sự trong truyện có vai trò gì?",
+            "options": [
+              "Là kẻ gây rắc rối cho Công Biên",
+              "Là vị thần quản lý vận mệnh, đóng vai trò giáo huấn, khích lệ con người sống tốt",
+              "Là một pháp sư huyền bí",
+              "Là người bạn thân của Công Biên"
+            ],
+            "correct": 1,
+            "explanation": "Chức Phán sự là một vị thần linh có vai trò quan trọng: quản lý vận mệnh, giáo huấn Công Biên về nhân quả Phật giáo, khuyến khích con người sống tốt để tạo nên tương lai tốt đẹp."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Nguyễn Dữ sử dụng kỹ thuật nào để tạo ra tính thuyết phục cho câu chuyện?",
+            "options": [
+              "Chỉ sử dụng yếu tố kỳ ảo",
+              "Chuyển từ không gian thực (du ngoạn) sang ảo (mơ) rồi trở về thực (tỉnh dậy) nhưng con người đã thay đổi",
+              "Kể chuyện theo trình tự thời gian",
+              "Sử dụng những đoạn hội thoại dài"
+            ],
+            "correct": 1,
+            "explanation": "Kỹ thuật chuyển từ thực sang ảo rồi trở về thực làm cho câu chuyện vừa kỳ ảo vừa có tính thuyết phục. Người đọc dễ chấp nhận vì bắt đầu từ môi trường quen thuộc."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Tư tưởng nào dưới đây KHÔNG được thể hiện trong tác phẩm?",
+            "options": [
+              "Nhân quả Phật giáo",
+              "Trách nhiệm xã hội (Nho giáo)",
+              "Tôn kính thần linh (dân gian)",
+              "Xé bỏ tất cả truyền thống cũ"
+            ],
+            "correct": 3,
+            "explanation": "Tác phẩm không propagate việc xé bỏ truyền thống mà là hòa hợp các tư tưởng: Phật giáo (nhân quả), Nho giáo (đạo đức), dân gian (tín ngưỡng)."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Công Biên được gọi là 'phận sĩ' vì lý do gì?",
+            "options": [
+              "Anh ta là một viên chức triều đình",
+              "Anh ta là một học giả đi du ngoạn tìm kiếm ý nghĩa cuộc sống",
+              "Anh ta là một thương nhân giàu có",
+              "Anh ta là một thợ thủ công tài ba"
+            ],
+            "correct": 1,
+            "explanation": "'Phận sĩ' là tầng lớp trí thức, có học vấn, thường đi du ngoạn để tìm kiếm ý nghĩa cuộc sống, tu tập tâm linh. Công Biên là đại diện điển hình."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Sổ ghi vận mệnh trong truyện biểu tượng cho điều gì?",
+            "options": [
+              "Tính khách quan, không thay đổi được của vận mệnh",
+              "Sức mạnh của người thần linh",
+              "Phía tương lai sáng sủa của con người",
+              "Cái chết và kết thúc tất cả"
+            ],
+            "correct": 0,
+            "explanation": "Sổ ghi vận mệnh biểu tượng cho tính khách quan của nhân quả, nhưng tác phẩm cũng chỉ ra rằng con người có thể thay đổi vận mệnh ghi sẵn qua hành động của mình."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Ý nghĩa của việc Công Biên 'tỉnh dậy' ở cuối truyện là gì?",
+            "options": [
+              "Anh ta chỉ đang ngủ mà thôi",
+              "Anh ta thức dậy từ giấc mơ giác ngộ, hiểu được ý nghĩa cuộc sống",
+              "Anh ta trở nên bình thường như bình thường",
+              "Anh ta bỏ bê tất cả để tu tập"
+            ],
+            "correct": 1,
+            "explanation": "'Tỉnh dậy' không chỉ là thức dậy từ giấc ngủ vật chất, mà là giác ngộ, hiểu được các bài học về nhân quả, trách nhiệm, sức mạnh của hành động."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Tác phẩm có liên hệ với truyền thuyết Tản Viên như thế nào?",
+            "options": [
+              "Không có liên hệ gì",
+              "Sử dụng tên địa điểm Tản Viên để tạo sự gắn kết với lịch sử dân tộc, làm cho câu chuyện khoa học hơn",
+              "Chỉ là trùng hợp về tên gọi",
+              "Lặp lại nguyên nguyên truyền thuyết cổ"
+            ],
+            "correct": 1,
+            "explanation": "Nguyễn Dữ sử dụng đền Tản Viên (một nơi có sẵn trong truyền thuyết dân gian) để bộc lộ tác phẩm, từ đó gắn kết với bản sắc văn hóa Việt."
+          },
+          {
+            "id": "ex9",
+            "type": "essay",
+            "question": "Phân tích cách Nguyễn Dữ sử dụng kỳ ảo để thuyết phục độc giả trong tác phẩm Chuyện chức Phán sự đền Tản Viên. Nó có hiệu quả không? Tại sao?",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Xác định các yếu tố kỳ ảo: chức Phán sự (thần linh), sổ ghi vận mệnh, không gian bí ẩn\n- Phân tích cách sử dụng: Bắt đầu từ hiện tại (du ngoạn) → chuyển vào siêu thoát (gặp thần linh) → trở về hiện tại (tỉnh dậy)\n- Đánh giá hiệu quả:\n  + Có hiệu quả vì: yếu tố kỳ ảo tạo sự lôi cuốn, giúp độc giả cởi mở tâm trí để tiếp nhận bài học; cách chuyển từ thực sang ảo rồi trở về thực làm câu chuyện thuyết phục hơn\n  + Công Biên là con người bình thường, khi anh ta thay đổi, độc giả tin rằng bản thân họ cũng có thể thay đổi\n- Kết luận: Kỳ ảo không phải để thoát hiện thực, mà để giúp con người nhận thức rõ hơn về hiện thực"
+          },
+          {
+            "id": "ex10",
+            "type": "essay",
+            "question": "Tại sao tác phẩm được gồm trong chương 'Khả năng thay đổi thế giới của văn học'? Hãy lập luận để chứng minh rằng Chuyện chức Phán sự đền Tản Viên thể hiện sức mạnh này.",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Mở bài: Nêu vấn đề: sức mạnh của văn học trong thay đổi thế giới\n- Lập luận 1: Thay đổi con người từng cá nhân\n  + Công Biên trước khi gặp chức Phán sự: đi du ngoạn, chưa có định hướng rõ ràng\n  + Sau khi được giáo huấn: hiểu bài học nhân quả, giác ngộ, quyết tâm tu tập\n  + Hành động: sẽ thay đổi cách sống, hành động, ảnh hưởng gia tộc\n- Lập luận 2: Thay đổi xã hội qua tác phẩm\n  + Tác phẩm được viết để chia sẻ với độc giả\n  + Độc giả tiếp nhận bài học từ Công Biên\n  + Từng cá nhân thay đổi hành động, xã hội sẽ thay đổi\n- Lập luận 3: Ảnh hưởng lâu dài\n  + Tác phẩm được lưu trữ, tái bản qua nhiều thế hệ\n  + Mỗi độc giả mới đều có thể được giáo huấn như Công Biên\n  + Sức mạnh tích lũy theo thời gian\n- Kết luận: Văn học không phải để giải trí mà để thay đổi con người, từ đó thay đổi thế giới"
+          }
+        ]
+      }
+    }
+  ]
+}

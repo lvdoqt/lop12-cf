@@ -1,0 +1,190 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-7",
+      "name": "Bài 7. Cấu trúc và chức năng của nhiễm sắc thể",
+      "slug": "cau-truc-va-chuc-nang-cua-nhiem-sac-the",
+      "chapter": "Chương 2. Di truyền nhiễm sắc thể",
+      "chapter_id": "S12-2",
+      "lesson_id": 7,
+      "description": "Tìm hiểu về cấu trúc và chức năng của nhiễm sắc thể.",
+      "duration_minutes": 45,
+      "difficulty_level": "easy",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2690&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Cấu trúc và chức năng của nhiễm sắc thể",
+          "sections": [
+            {
+              "heading": "1. Cấu trúc của nhiễm sắc thể",
+              "content": "<h4>a) Thành phần hóa học</h4><ul><li>Nhiễm sắc thể (NST) bao gồm DNA và protein histone.</li><li>DNA cuộn quanh các protein histone tạo thành nucleosome.</li><li>Cấu trúc chromatin: DNA + histone → nucleosome → sợi chromatin → NST.</li></ul><h4>b) Cấu trúc hiển vi</h4><ul><li><strong>Tâm động (centromere):</strong> Vị trí gắn thoi phân bào, chia NST thành 2 cánh.</li><li><strong>Tĩnh mạch (kinetochore):</strong> Vùng protein trên tâm động gắn với thoi phân bào.</li><li><strong>Cánh NST:</strong> Hai phần bằng nhau của NST sau khi chia bởi tâm động.</li></ul>"
+            },
+            {
+              "heading": "2. Các loại nhiễm sắc thể",
+              "content": "<h4>a) Phân loại theo vị trí tâm động</h4><ul><li><strong>NST kép trung tâm (metacentric):</strong> Tâm động ở giữa, 2 cánh bằng nhau.</li><li><strong>NST kép lệch tâm (submetacentric):</strong> Tâm động lệch gần một đầu.</li><li><strong>NST kép đầu mút (acrocentric):</strong> Tâm động gần đầu mút.</li><li><strong>NST không có tâm động (telocentric):</strong> Tâm động ở đầu mút.</li></ul><h4>b) Phân loại theo chức năng</h4><ul><li><strong>NST thường (autosome):</strong> Quy định tính trạng thường.</li><li><strong>NST giới tính (sex chromosome):</strong> Quy định giới tính.</li></ul>"
+            },
+            {
+              "heading": "3. Chức năng của nhiễm sắc thể",
+              "content": "<ul><li><strong>Mang gene:</strong> NST là vật chất di truyền cấp độ tế bào, chứa hàng nghìn gene.</li><li><strong>Bảo quản thông tin di truyền:</strong> DNA trên NST được đóng gói chặt chẽ.</li><li><strong>Truyền thông tin di truyền:</strong> NST nhân đôi và phân chia đều cho tế bào con.</li><li><strong>Điều hòa hoạt động gene:</strong> Cấu trúc chromatin ảnh hưởng đến biểu hiện gene.</li></ul>"
+            },
+            {
+              "heading": "4. Bộ nhiễm sắc thể",
+              "content": "<h4>a) Đặc điểm</h4><ul><li><strong>Bộ nhiễm sắc thể đơn bội (n):</strong> Số lượng NST trong giao tử.</li><li><strong>Bộ nhiễm sắc thể lưỡng bội (2n):</strong> Số lượng NST trong tế bào sinh dưỡng.</li><li>Mỗi cặp NST tương đồng chứa các allele của cùng gene.</li></ul><h4>b) Bộ nhiễm sắc thể của một số loài</h4><ul><li>Người: 2n = 46</li><li>Tinh tinh: 2n = 48</li><li>Lúa: 2n = 24</li><li>Ruồi giấm: 2n = 8</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Nhiễm sắc thể được cấu tạo từ những thành phần nào?",
+            "options": [
+              "Chỉ có DNA",
+              "DNA và protein histone",
+              "Chỉ có protein",
+              "RNA và protein"
+            ],
+            "correct": 1,
+            "explanation": "Nhiễm sắc thể được cấu tạo từ DNA và protein histone, trong đó DNA cuộn quanh các protein histone tạo thành nucleosome."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Tâm động của nhiễm sắc thể có chức năng gì?",
+            "options": [
+              "Tổng hợp protein",
+              "Gắn thào",
+              "oi phân bNhân đôi DNA",
+              "Tạo RNA"
+            ],
+            "correct": 1,
+            "explanation": "Tâm động là vị trí gắn thoi phân bào trong quá trình phân bào, giúp NST được phân chia đều cho tế bào con."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Bộ nhiễm sắc thể lưỡng bội của người là bao nhiêu?",
+            "options": [
+              "23",
+              "44",
+              "46",
+              "48"
+            ],
+            "correct": 2,
+            "explanation": "Người có 2n = 46 nhiễm sắc thể (23 cặp), trong đó 44 NST thường và 2 NST giới tính."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "NST trung tâm là loại NST như thế nào?",
+            "options": [
+              "Tâm động ở đầu mút",
+              "Tâm động ở giữa",
+              "Không có tâm động",
+              "Tâm động bị che khuất"
+            ],
+            "correct": 1,
+            "explanation": "NST trung tâm (metacentric) có tâm động nằm ở giữa, hai cánh bằng nhau."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Số lượng NST trong giao tử người là bao nhiêu?",
+            "options": [
+              "23",
+              "44",
+              "46",
+              "45"
+            ],
+            "correct": 0,
+            "explanation": "Giao tử có bộ nhiễm sắc thể đơn bội n = 23."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các thành phần cấu trúc của nhiễm sắc thể:",
+            "options": [
+              "DNA",
+              "Protein histone",
+              "Tâm động",
+              "Ribosome"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: DNA là thành phần chính. B ✓: Protein histone tạo nucleosome. C ✓: Tâm động là vị trí gắn thoi phân bào. D ✗: Ribosome không phải thành phần của NST."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các chức năng của nhiễm sắc thể:",
+            "options": [
+              "Mang gene",
+              "Bảo quản thông tin di truyền",
+              "Tổng hợp protein",
+              "Truyền thông tin di truyền"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "A ✓: NST chứa gene. B ✓: DNA được đóng gói an toàn. C ✗: Tổng hợp protein là chức năng của ribosome. D ✓: NST phân chia đều cho tế bào con."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một tế bào có 2n = 8. Khi giảm phân tạo ra giao tử, số NST trong mỗi giao tử là bao nhiêu? Nhập số 1 chữ số.",
+            "correct": "4",
+            "explanation": "Giao tử có bộ n = 4 (giảm một nửa so với 2n = 8)."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Tế bào da người (2n=46) đang ở kỳ giữa của nguyên phân. Có bao nhiêu NST đơn? Nhập số 2 chữ số. (Ví dụ: 92)",
+            "correct": "92",
+            "explanation": "Kỳ giữa nguyên phân, NST đã nhân đôi thành NST kép. Số NST kép = 46, mỗi NST kép gồm 2 NST đơn = 46 × 2 = 92 NST đơn."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định số NST trong các kỳ phân bào",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Nắm: Kỳ đầu, giữa, sau: 2n NST kép. Kỳ cuối: n NST đơn (giảm phân) hoặc 2n NST đơn (nguyên phân).</li><li>Nguyên phân: Kỳ sau có 2n NST đơn.</li><li>Giảm phân I: Kỳ sau có n NST kép.</li><li>Giảm phân II: Kỳ sau có n NST đơn.</li></ol>",
+            "examples": [
+              {
+                "question": "Tế bào có 2n = 20. Ở kỳ giữa của nguyên phân, có bao nhiêu NST?",
+                "solution": "<p><strong>Giải:</strong></p><p>Nguyên phân: Kỳ giữa có 2n NST kép = 20 NST kép</p><p>Mỗi NST kép = 2 NST đơn → 20 × 2 = 40 NST đơn</p>"
+              },
+              {
+                "question": "Tế bào 2n = 12 giảm phân. Kỳ sau giảm phân I có bao nhiêu NST?",
+                "solution": "<p><strong>Giải:</strong></p><p>Giảm phân I: Kỳ sau có n NST kép = 12/2 = 6 NST kép</p><p>Mỗi NST kép = 2 NST đơn → 6 × 2 = 12 NST đơn</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định số chromatid và tâm động",
+            "method": "<h3>Phương pháp giải</h3><ol><li>NST kép = 2 chromatid + 1 tâm động.</li><li>Số chromatid = số NST kép × 2.</li><li>Số tâm động = số NST kép (vì mỗi NST kép có 1 tâm động).</li></ol>",
+            "examples": [
+              {
+                "question": "Tế bào 2n = 8 ở kỳ giữa nguyên phân. Có bao nhiêu chromatid?",
+                "solution": "<p><strong>Giải:</strong></p><p>Kỳ giữa nguyên phân: 2n = 8 NST kép</p><p>Số chromatid = 8 × 2 = 16</p>"
+              },
+              {
+                "question": "Tế bào có 12 NST kép. Có bao nhiêu tâm động?",
+                "solution": "<p><strong>Giải:</strong></p><p>Mỗi NST kép có 1 tâm động</p><p>Số tâm động = 12</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

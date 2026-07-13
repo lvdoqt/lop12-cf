@@ -1,0 +1,190 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-18",
+      "name": "Bài 18. Di truyền học quần thể",
+      "slug": "di-truyen-hoc-quan-the",
+      "chapter": "Chương 4. Di truyền quần thể",
+      "chapter_id": "S12-4",
+      "lesson_id": 18,
+      "description": "Tìm hiểu về di truyền học quần thể và cấu trúc di truyền quần thể.",
+      "duration_minutes": 45,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Di truyền học quần thể",
+          "sections": [
+            {
+              "heading": "1. Khái niệm quần thể và cấu trúc di truyền",
+              "content": "<h4>a) Quần thể</h4><ul><li><strong>Quần thể:</strong> Tập hợp các cá thể cùng loài, sống trong cùng một khu vực, có khả năng giao phối với nhau.</li><li>Quần thể là đơn vị tiến hóa.</li></ul><h4>b) Cấu trúc di truyền</h4><ul><li><strong>Tần số allele:</strong> Tỷ lệ các loại allele trong quần thể.</li><li><strong>Tần số kiểu gen:</strong> Tỷ lệ các loại kiểu gen trong quần thể.</li></ul><h4>c) Đặc điểm quần thể ngẫu phối</h4><ul><li>Các cá thể giao phối ngẫu nhiên.</li><li>Quần thể đạt trạng thái cân bằng di truyền.</li></ul>"
+            },
+            {
+              "heading": "2. Công thức Hardy-Weinberg",
+              "content": "<h4>a) Nội dung</h4><ul><li>Trong quần thể ngẫu phối lớn, không có đột biến, chọn lọc, di cư → tần số allele và kiểu gen không đổi qua các thế hệ.</li></ul><h4>b) Công thức</h4><ul><li>Gọi p = tần số allele trội A</li><li>q = tần số allele lặn a</li><li>p + q = 1</li><li>Tần số kiểu gen: p² + 2pq + q² = 1</li></ul><h4>c) Ứng dụng</h4><ul><li>Tính tần số allele và kiểu gen.</li><li>Xác định quần thể cân bằng.</li><li>Tính xác suất sinh con bệnh.</li></ul>"
+            },
+            {
+              "heading": "3. Các yếu tố làm thay đổi tần số allele",
+              "content": "<h4>a) Đột biến</h4><ul><li>Nguồn biến dị di truyền.</li><li>Tạo allele mới cho quần thể.</li><li>Tần số đột biến rất thấp (10^-5 - 10^-6).</li></ul><h4>b) Chọn lọc tự nhiên</h4><ul><li>Tăng hoặc giảm tần số allele có lợi/hại.</li><li>Chọn lọc định hướng, chọn lọc phân hóa, chọn lọc ổn định.</li></ul><h4>c) Di cư và giao phối không ngẫu nhiên</h4><ul><li>Di cư (gene flow): Đưa allele mới vào hoặc ra khỏi quần thể.</li><li>Giao phối không ngẫu nhiên thay đổi tần số kiểu gen.</li></ul>"
+            },
+            {
+              "heading": "4. Ứng dụng di truyền học quần thể",
+              "content": "<h4>a) Trong y học</h4><ul><li>Tính tần số người mang gene bệnh di truyền.</li><li>Tư vấn di truyền và sàng lọc.</li></ul><h4>b) Trong bảo tồn</h4><ul><li>Đánh giá đa dạng di truyền.</li><li>Quản lý quần thể endangered.</li></ul><h4>c) Trong chọn giống</li><ul><li>Dự đoán tỷ lệ kiểu gen trong quần thể.</li><li>Thiết kế chương trình chọn giống.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Quần thể là gì?",
+            "options": [
+              "Tập hợp các loài",
+              "Tập hợp các cá thể cùng loài",
+              "Tập hợp các gene",
+              "Tập hợp các quần thể"
+            ],
+            "correct": 1,
+            "explanation": "Quần thể là tập hợp các cá thể cùng loài, sống trong cùng khu vực và có khả năng giao phối."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Công thức Hardy-Weinberg cho biết điều gì?",
+            "options": [
+              "Tần số allele thay đổi",
+              "Quần thể cân bằng di truyền",
+              "Đột biến xảy ra",
+              "Chọn lọc tự nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Công thức Hardy-Weinberg mô tả trạng thái cân bằng di truyền trong quần thể ngẫu phối."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Trong công thức p² + 2pq + q² = 1, p và q là gì?",
+            "options": [
+              "Tần số kiểu gen",
+              "Tần số allele",
+              "Số cá thể",
+              "Số gene"
+            ],
+            "correct": 1,
+            "explanation": "p là tần số allele trội A, q là tần số allele lặn a."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Yếu tố nào làm thay đổi tần số allele?",
+            "options": [
+              "Chọn lọc tự nhiên",
+              "Đột biến",
+              "Di cư",
+              "Tất cả đều đúng"
+            ],
+            "correct": 3,
+            "explanation": "Tất cả các yếu tố: đột biến, chọn lọc tự nhiên và di cư đều làm thay đổi tần số allele."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Điều kiện nào để quần thể cân bằng Hardy-Weinberg?",
+            "options": [
+              "Quần thể nhỏ",
+              "Có đột biến",
+              "Ngẫu phối, không chọn lọc",
+              "Di cư nhiều"
+            ],
+            "correct": 2,
+            "explanation": "Quần thể cân bằng khi ngẫu phối, không đột biến, không chọn lọc, không di cư."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các yếu tố làm thay đổi tần số allele:",
+            "options": [
+              "Đột biến",
+              "Chọn lọc tự nhiên",
+              "Di cư",
+              "Ngẫu phối"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Đột biến tạo allele mới. B ✓: Chọn lọc thay đổi tần số. C ✓: Di cư đưa allele mới. D ✗: Ngẫu phối duy trì cân bằng."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các ứng dụng của di truyền học quần thể:",
+            "options": [
+              "Tính tần số người mang gene",
+              "Tư vấn di truyền",
+              "Đánh giá đa dạng di truyền",
+              "Tạo đột biến"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Tính tần số người mang gene bệnh. B ✓: Tư vấn di truyền. C ✓: Đánh giá đa dạng. D ✗: Không phải ứng dụng."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Quần thể có p=0.6, q=0.4. Tính tần số kiểu gen aa (q²). Nhập số 2 chữ số. (Ví dụ: 16)",
+            "correct": "16",
+            "explanation": "q² = (0.4)² = 0.16 = 16%."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Trong 100 người, có 9 người bệnh PKU (aa). Tính tần số q (lặn). Lấy 2 chữ số. Nhập số 2 chữ số. (Ví dụ: 03)",
+            "correct": "03",
+            "explanation": "q² = 9/100 = 0.09 → q = √0.09 = 0.3 = 03."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính tần số allele và kiểu gen",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định số cá thể mỗi kiểu gen.</li><li>Tính p = (2×AA + Aa) / 2×Tổng</li><li>q = 1 - p</li><li>Kiểm tra: p² + 2pq + q² = 1</li></ol>",
+            "examples": [
+              {
+                "question": "Quần thể 100 người: 64 AA, 32 Aa, 4 aa. Tính p và q?",
+                "solution": "<p><strong>Giải:</strong></p><p>Tổng allele = 200</p><p>Allele A = 64×2 + 32 = 160</p><p>p = 160/200 = 0.8</p><p>q = 1 - 0.8 = 0.2</p>"
+              },
+              {
+                "question": "Biết q = 0.3. Tính % người mang gene (Aa)?",
+                "solution": "<p><strong>Giải:</strong></p><p>% Aa = 2pq = 2 × 0.7 × 0.3 = 0.42 = 42%</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định quần thể cân bằng",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Tính p, q từ số liệu.</li><li>Tính tần số kiểu gen lý thuyết: p², 2pq, q².</li><li>So sánh với thực tế. Nếu bằng nhau → cân bằng.</li></ol>",
+            "examples": [
+              {
+                "question": "Quần thể có 25% AA, 50% Aa, 25% aa. Có cân bằng không?",
+                "solution": "<p><strong>Giải:</strong></p><p>p = 0.5, q = 0.5</p><p>Lý thuyết: p²=0.25, 2pq=0.50, q²=0.25</p><p>Thực tế: 25%, 50%, 25% → Cân bằng</p>"
+              },
+              {
+                "question": "Quần thể có 36% AA, 48% Aa, 16% aa. Kiểm tra cân bằng?",
+                "solution": "<p><strong>Giải:</strong></p><p>p = 0.6, q = 0.4</p><p>Lý thuyết: 36%, 48%, 16%</p><p>Thực tế: 36%, 48%, 16% → Cân bằng</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

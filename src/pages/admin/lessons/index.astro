@@ -10,14 +10,16 @@ if (!user || user.role !== 'admin') {
   return Astro.redirect('/dashboard');
 }
 
-// Fetch MDX lessons
+// Fetch JSON lessons
 const mdxLessons = await getCollection('lessons');
 
 // Sort lessons by subject then order
 const sortedLessons = [...mdxLessons].sort((a, b) => {
   const subCompare = a.data.subject.localeCompare(b.data.subject);
   if (subCompare !== 0) return subCompare;
-  return (a.data.order || 0) - (b.data.order || 0);
+  const orderA = a.data.lessons?.[0]?.lesson_id || 0;
+  const orderB = b.data.lessons?.[0]?.lesson_id || 0;
+  return orderA - orderB;
 });
 
 // Fetch subjects for name mapping
@@ -27,7 +29,7 @@ const getSubjectName = (slug: string) => {
 };
 ---
 
-<Layout title="Quản lý bài giảng MDX">
+<Layout title="Quản lý bài giảng JSON">
   <div class="space-y-6">
     <!-- Header -->
     <div>
@@ -38,13 +40,13 @@ const getSubjectName = (slug: string) => {
         Quản trị Admin
       </a>
       
-      <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Quản lý bài giảng (MDX)</h1>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Quản lý bài giảng (JSON)</h1>
       <p class="text-sm text-gray-500 dark:text-slate-400 mt-1">
-        Hệ thống hiện tại sử dụng kiến trúc **Hybrid** với bài học là các file tĩnh dạng `.mdx` để đảm bảo hiệu năng tối đa và hỗ trợ công thức toán học LaTeX tốt nhất.
+        Hệ thống hiện tại sử dụng bài học lưu trữ ở các file tĩnh dạng `.json`.
       </p>
     </div>
 
-    <!-- Hướng dẫn viết bài học bằng file MDX -->
+    <!-- Hướng dẫn viết bài học bằng file JSON -->
     <div class="p-6 rounded-2xl border border-blue-100 bg-blue-50/20 dark:border-slate-800 dark:bg-slate-900/50">
       <div class="flex items-start space-x-4">
         <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
@@ -55,28 +57,29 @@ const getSubjectName = (slug: string) => {
         <div class="space-y-3 flex-1">
           <h3 class="font-bold text-gray-900 dark:text-white text-sm">Làm thế nào để thêm hoặc chỉnh sửa bài học?</h3>
           <p class="text-xs text-gray-600 dark:text-slate-400 leading-relaxed">
-            Vì bài giảng được lưu trữ dưới dạng file tĩnh, giáo viên/admin sẽ tạo hoặc chỉnh sửa trực tiếp các file `.mdx` nằm trong thư mục nguồn:
-            <code class="px-1.5 py-0.5 rounded bg-gray-100 dark:bg-slate-800 font-mono text-[11px] text-blue-600 dark:text-blue-400 mx-1">src/content/lessons/&lt;môn-học&gt;/&lt;tên-bài-viết&gt;.mdx</code>
+            Vì bài giảng được lưu trữ dưới dạng file tĩnh, giáo viên/admin sẽ tạo hoặc chỉnh sửa trực tiếp các file `.json` nằm trong thư mục nguồn:
+            <code class="px-1.5 py-0.5 rounded bg-gray-100 dark:bg-slate-800 font-mono text-[11px] text-blue-600 dark:text-blue-400 mx-1">src/content/lessons/&lt;môn-học&gt;/&lt;tên-bài-viết&gt;.json</code>
           </p>
           
           <div class="bg-white dark:bg-slate-950 p-4 rounded-xl border border-gray-250 dark:border-slate-850">
-            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Cấu trúc Frontmatter mẫu (Phần đầu file):</h4>
-            <pre class="text-[11px] font-mono text-gray-700 dark:text-slate-350 leading-relaxed overflow-x-auto">---
-title: "Sự đồng biến, nghịch biến của hàm số"
-subject: "toan-12"         # Slug môn học
-subject_name: "Toán 12"     # Tên hiển thị môn học
-description: "Tìm hiểu định nghĩa tính đơn điệu..."
-video_url: "https://www.youtube.com/watch?v=..."
-tags: ["Giải tích", "Đạo hàm"]
-created_at: "2026-06-08T09:00:00Z"
-order: 1                    # Thứ tự hiển thị
----</pre>
+            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Cấu trúc mẫu (Phần đầu file JSON):</h4>
+            <pre class="text-[11px] font-mono text-gray-700 dark:text-slate-350 leading-relaxed overflow-x-auto">&#123;
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    &#123;
+      "id": "toan12-bai-1",
+      "name": "Bài 1. Tính đơn điệu",
+      ...
+    &#125;
+  ]
+&#125;</pre>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Table of MDX lessons -->
+    <!-- Table of JSON lessons -->
     <div class="bg-white border border-gray-250 dark:bg-slate-900 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
       <h2 class="text-base font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-between">
         Danh sách bài học tĩnh hiện tại
@@ -90,7 +93,7 @@ order: 1                    # Thứ tự hiển thị
           <table class="min-w-full divide-y divide-gray-250 dark:divide-slate-800">
             <thead>
               <tr class="text-left text-xs font-bold text-gray-400 dark:text-slate-550 uppercase tracking-wider">
-                <th class="pb-3">Tiêu đề bài học (File MDX)</th>
+                <th class="pb-3">Tiêu đề bài học (File JSON)</th>
                 <th class="pb-3">Môn học</th>
                 <th class="pb-3 hidden md:table-cell">Thứ tự (Order)</th>
                 <th class="pb-3 text-right">Xem trên web</th>
@@ -98,26 +101,28 @@ order: 1                    # Thứ tự hiển thị
             </thead>
             <tbody class="divide-y divide-gray-100 dark:divide-slate-800/60 text-sm font-medium">
               {sortedLessons.map(lesson => {
-                const slug = lesson.id.split('/').pop() || lesson.id;
+                const parts = lesson.id.split('/');
+                const slug = parts.pop() || lesson.id;
+                const subjectSlug = parts[0] || 'ly-thuyet';
                 return (
                   <tr class="text-gray-700 dark:text-slate-350">
                     <td class="py-4 pr-3">
-                      <span class="font-bold text-gray-900 dark:text-white block">{lesson.data.title}</span>
+                      <span class="font-bold text-gray-900 dark:text-white block">{lesson.data.lessons?.[0]?.name || lesson.id}</span>
                       <span class="text-[11px] text-gray-400 dark:text-slate-500 font-mono block mt-0.5">
-                        lessons/{lesson.id}.mdx
+                        lessons/{lesson.id}.json
                       </span>
                     </td>
                     <td class="py-4 pr-3">
                       <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-gray-100 text-gray-600 dark:bg-slate-850 dark:text-slate-300">
-                        {getSubjectName(lesson.data.subject)}
+                        {getSubjectName(subjectSlug)}
                       </span>
                     </td>
                     <td class="py-4 hidden md:table-cell text-gray-500 dark:text-slate-450">
-                      {lesson.data.order ?? 'Không'}
+                      {lesson.data.lessons?.[0]?.lesson_id ?? 'Không'}
                     </td>
                     <td class="py-4 text-right">
                       <a
-                        href={`/${lesson.data.subject}/${slug}`}
+                        href={`/${subjectSlug}/${slug}`}
                         target="_blank"
                         class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center"
                       >

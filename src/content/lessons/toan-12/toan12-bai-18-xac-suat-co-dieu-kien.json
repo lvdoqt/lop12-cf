@@ -1,0 +1,405 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-18-xac-suat-co-dieu-kien",
+      "name": "Bài 18. Xác suất có điều kiện",
+      "slug": "xac-suat-co-dieu-kien",
+      "chapter": "Chương 6: Xác suất có điều kiện và công thức Bayes",
+      "chapter_id": "T12-6",
+      "lesson_id": 18,
+      "description": "Hiểu khái niệm xác suất có điều kiện, công thức nhân xác suất và cách sử dụng sơ đồ hình cây để giải các bài toán xác suất thực tế.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/F59E0B/FFFFFF?text=Xác+Suất+Có+Điều+Kiện",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Tính xác suất có điều kiện bằng công thức",
+          "slug": "tinh-bang-cong-thuc"
+        },
+        {
+          "id": "dang2",
+          "name": "Sử dụng sơ đồ hình cây",
+          "slug": "so-do-hinh-cay"
+        },
+        {
+          "id": "dang3",
+          "name": "Xác suất trong các phép thử lặp và lấy mẫu",
+          "slug": "phep-thu-lap"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết xác suất có điều kiện",
+          "sections": [
+            {
+              "heading": "1. Khái niệm xác suất có điều kiện",
+              "content": "<p>Cho hai biến cố $A$ và $B$. Xác suất của biến cố $A$ với điều kiện biến cố $B$ đã xảy ra được gọi là <strong>xác suất có điều kiện</strong> của $A$ đối với $B$, ký hiệu là $P(A|B)$.</p><div style='background:#fdf2f2; border-left:4px solid #ef4444; padding:10px; margin:10px 0;'><strong>Công thức:</strong> Nếu $P(B) > 0$ thì: $$P(A|B) = \\dfrac{P(A \\cap B)}{P(B)}$$</div><p>Ý nghĩa: Chúng ta đang thu hẹp không gian mẫu từ $\\Omega$ xuống chỉ còn các kết quả thuộc $B$.</p>"
+            },
+            {
+              "heading": "2. Công thức nhân xác suất",
+              "content": "<p>Từ định nghĩa, ta có quy tắc nhân xác suất cho hai biến cố bất kỳ:</p><p style='text-align:center;'>$$P(A \\cap B) = P(B) \\cdot P(A|B)$$</p><p>Hoặc nếu tính theo $A$ trước: $$P(A \\cap B) = P(A) \\cdot P(B|A)$$</p><div style='background:#f0f9ff; border-left:4px solid #0ea5e9; padding:10px; margin:10px 0;'><strong>Biến cố độc lập:</strong> Hai biến cố $A, B$ được gọi là độc lập nếu việc xảy ra biến cố này không làm thay đổi xác suất của biến cố kia: $P(A|B) = P(A)$ và $P(B|A) = P(B)$. Khi đó: $P(A \\cap B) = P(A) \\cdot P(B)$</div>"
+            },
+            {
+              "heading": "3. Sơ đồ hình cây",
+              "content": "<p>Sơ đồ hình cây là công cụ trực quan mạnh mẽ để giải các bài toán xác suất có nhiều giai đoạn.</p><ul><li><strong>Quy tắc nhân:</strong> Xác suất của một biến cố tương ứng với một đường đi từ gốc đến ngọn bằng tích các xác suất ghi trên các nhánh của đường đi đó.</li><li><strong>Quy tắc cộng:</strong> Nếu một biến cố gồm nhiều kết cục (nhiều ngọn), xác suất của nó bằng tổng các xác suất của các kết cục đó.</li></ul><p><em>Ví dụ:</em> Lấy bi từ hộp 1 rồi bỏ vào hộp 2, sau đó lấy bi từ hộp 2.</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Tính xác suất có điều kiện bằng công thức",
+            "method": "<ol><li>Xác định biến cố điều kiện $B$ và tính $P(B)$.</li><li>Xác định biến cố giao $A \\cap B$ và tính $P(A \\cap B)$.</li><li>Áp dụng công thức $P(A|B) = P(A \\cap B) / P(B)$.</li></ol>",
+            "examples": [
+              {
+                "question": "Gieo hai con xúc xắc cân đối. Tính xác suất để tổng số chấm bằng 8, biết rằng có ít nhất một con xuất hiện mặt 5 chấm.",
+                "solution": "<p>Gọi $B$: \"Có ít nhất một con mặt 5 chấm\". Số kết quả của $B$ là $11$ trường hợp (gồm $(5,1 \\dots 6)$ và $(1 \\dots 6, 5)$ trừ $(5,5)$ trùng). $P(B) = 11/36$.</p><p>Gọi $A$: \"Tổng bằng 8\". $A \\cap B = \\{(5,3), (3,5)\\}$. Có 2 trường hợp. $P(A \\cap B) = 2/36$.</p><p>Vậy $P(A|B) = \\dfrac{2/36}{11/36} = 2/11$.</p>"
+              },
+              {
+                "question": "Cho $P(A) = 0.5, P(B) = 0.6$ và $P(A \\cup B) = 0.8$. Tính $P(B|A)$.",
+                "solution": "<p>Ta có $P(A \\cap B) = P(A) + P(B) - P(A \\cup B) = 0.5 + 0.6 - 0.8 = 0.3$.</p><p>$P(B|A) = \\dfrac{P(A \\cap B)}{P(A)} = \\dfrac{0.3}{0.5} = 0.6$.</p>"
+              },
+              {
+                "question": "Một tổ có 10 học sinh gồm 6 nam và 4 nữ. Chọn ngẫu nhiên 2 học sinh. Biết rằng người thứ nhất được chọn là nữ, tính xác suất người thứ hai cũng là nữ.",
+                "solution": "<p>Gọi $N_1$: \"Người đầu là nữ\", $N_2$: \"Người sau là nữ\".</p><p>Sau khi chọn 1 nữ, tổ còn 9 người (6 nam, 3 nữ). Xác suất người tiếp theo là nữ là $P(N_2|N_1) = 3/9 = 1/3$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Sử dụng sơ đồ hình cây",
+            "method": "<ol><li>Xây dựng các nhánh tương ứng với từng giai đoạn.</li><li>Ghi xác suất lên từng nhánh. Nhánh sau luôn là xác suất có điều kiện.</li><li>Tính xác suất tại các ngọn bằng cách nhân dọc theo nhánh.</li></ol>",
+            "examples": [
+              {
+                "question": "Một hộp bi có 5 bi xanh, 3 bi đỏ. Lấy ngẫu nhiên lần lượt 2 viên bi không hoàn lại. Tính xác suất lấy được viên thứ hai màu xanh.",
+                "solution": "<p>Giai đoạn 1: X (5/8) hoặc Đ (3/8).</p><p>Giai đoạn 2:</p><ul><li>Nếu lần 1 X: Nhánh X (4/7) hoặc Đ (3/7).</li><li>Nếu lần 1 Đ: Nhánh X (5/7) hoặc Đ (2/7).</li></ul><p>$P(X_2) = P(X_1 \\cap X_2) + P(\\text{Đ}_1 \\cap X_2) = \\dfrac{5}{8} \\cdot \\dfrac{4}{7} + \\dfrac{3}{8} \\cdot \\dfrac{5}{7} = \\dfrac{20 + 15}{56} = \\dfrac{35}{56} = \\dfrac{5}{8}$.</p>"
+              },
+              {
+                "question": "Một vận động viên bắn súng 2 lần. Xác suất trúng lần đầu là 0.7. Nếu lần đầu trúng, xác suất trúng lần hai là 0.8. Nếu lần đầu trượt, xác suất trúng lần hai là 0.5. Tính xác suất vận động viên trúng đúng 1 lần.",
+                "solution": "<p>Trúng 1 lần gồm 2 trường hợp: (Trúng 1, Trượt 2) hoặc (Trượt 1, Trúng 2).</p><p>$P = 0.7 \\cdot (1 - 0.8) + (1 - 0.7) \\cdot 0.5 = 0.7 \\cdot 0.2 + 0.3 \\cdot 0.5 = 0.14 + 0.15 = 0.29$.</p>"
+              },
+              {
+                "question": "Hai túi đựng kẹo: Túi 1 có 4 kẹo dâu, 2 kẹo bạc hà. Túi 2 có 3 kẹo dâu, 5 kẹo bạc hà. Chọn ngẫu nhiên 1 túi rồi lấy 1 viên kẹo. Tính xác suất lấy được kẹo dâu.",
+                "solution": "<p>Nhánh 1: Chọn Túi 1 (1/2) $\\to$ Kẹo dâu (4/6). Tích = $1/2 \\cdot 2/3 = 1/3$.</p><p>Nhánh 2: Chọn Túi 2 (1/2) $\\to$ Kẹo dâu (3/8). Tích = $1/2 \\cdot 3/8 = 3/16$.</p><p>Xác suất chung: $1/3 + 3/16 = 25/48$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Xác suất trong các phép thử lặp và lấy mẫu",
+            "method": "<p>Sử dụng công thức nhân xác suất $P(A \\cap B) = P(A)P(B|A)$ cho các phép lấy mẫu không hoàn lại hoặc các sự kiện phụ thuộc lẫn nhau.</p>",
+            "examples": [
+              {
+                "question": "Một bộ bài có 52 lá. Rút lần lượt 2 lá bài không hoàn lại. Tính xác suất cả hai lá đều là Át.",
+                "solution": "<p>$P(A_1) = 4/52 = 1/13$.</p><p>Sau lá thứ nhất là Át, còn 51 lá và 3 lá Át. $P(A_2|A_1) = 3/51 = 1/17$.</p><p>$P = 1/13 \\cdot 1/17 = 1/221$.</p>"
+              },
+              {
+                "question": "Một thiết bị có 3 linh kiện hoạt động nối tiếp. Xác suất hỏng của linh kiện 1 là 0.1. Nếu linh kiện 1 hoạt động, linh kiện 2 hỏng với xác suất 0.05. Tính xác suất cả 2 linh kiện đầu đều hoạt động tốt.",
+                "solution": "<p>$P(T_1 \\cap T_2) = P(T_1) \\cdot P(T_2|T_1) = (1 - 0.1) \\cdot (1 - 0.05) = 0.9 \\cdot 0.95 = 0.855$.</p>"
+              },
+              {
+                "question": "Một kiểm tra trắc nghiệm có 2 câu hỏi. Xác suất trả lời đúng câu 1 là 0.7. Nếu đúng câu 1, xác suất đúng câu 2 là 0.8. Nếu sai câu 1, xác suất đúng câu 2 chỉ là 0.4. Tính xác suất trả lời đúng cả 2 câu.",
+                "solution": "<p>$P(D_1 \\cap D_2) = P(D_1) \\cdot P(D_2|D_1) = 0.7 \\cdot 0.8 = 0.56$.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Cho $P(A|B) = 0.6$ và $P(B) = 0.3$. Tính $P(A \\cap B)$.",
+            "options": [
+              "$0.18$",
+              "$0.9$",
+              "$0.2$",
+              "$0.5$"
+            ],
+            "correct": 0,
+            "explanation": "$P(A \\cap B) = P(B) \\cdot P(A|B) = 0.3 \\cdot 0.6 = 0.18$."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Gieo con xúc xắc cân đối 1 lần. Biết mặt xuất hiện có số chấm lẻ, tính xác suất nó là số nguyên tố.",
+            "options": [
+              "$2/3$",
+              "$1/2$",
+              "$1/3$",
+              "$3/6$"
+            ],
+            "correct": 0,
+            "explanation": "Tập lẻ $B = \\{1, 3, 5\\}$. Trong đó số nguyên tố là $\\{3, 5\\}$ (số 1 không là số nguyên tố). Vậy $P = 2/3$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Khẳng định nào sau đây ĐÚNG với hai biến cố bất kỳ $A, B$?",
+            "options": [
+              "$P(A|B) + P(\\overline{A}|B) = 1$",
+              "$P(A|B) + P(A|\\overline{B}) = 1$",
+              "$P(A|B) = P(B|A)$",
+              "$P(A \\cap B) = P(A) \\cdot P(B)$"
+            ],
+            "correct": 0,
+            "explanation": "Với cùng một điều kiện $B$, xác suất của biến cố và biến cố đối có tổng bằng 1."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Một người lấy ngẫu nhiên 2 lá bài từ bộ bài 52 lá không hoàn lại. Xác suất lá thứ hai là cơ biết lá thứ nhất là cơ là:",
+            "options": [
+              "$12/51$",
+              "$13/52$",
+              "$13/51$",
+              "$12/52$"
+            ],
+            "correct": 0,
+            "explanation": "Lá 1 là cơ $\\to$ còn 51 lá tổng, trong đó còn 12 lá cơ. $P = 12/51$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Hai xạ thủ cùng bắn vào bia. Xác suất trúng của người 1 là 0.8, người 2 là 0.7. Xác suất người 2 trúng biết người 1 đã trúng là:",
+            "options": [
+              "$0.7$",
+              "$0.8$",
+              "$0.56$",
+              "$0.1$"
+            ],
+            "correct": 0,
+            "explanation": "Hai người bắn độc lập nên $P(2|1) = P(2) = 0.7$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Cho $P(A) = 0.4, P(B) = 0.5$ và $P(A|B) = 0.3$. Tính $P(B|A)$.",
+            "options": [
+              "$0.375$",
+              "$0.15$",
+              "$0.12$",
+              "$0.6$"
+            ],
+            "correct": 0,
+            "explanation": "$P(A \\cap B) = P(B)P(A|B) = 0.5 \\cdot 0.3 = 0.15$. $P(B|A) = 0.15 / 0.4 = 0.375$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Trong sơ đồ hình cây, xác suất ghi trên nhánh thứ hai từ gốc đi ra (nhánh sau) là:",
+            "options": [
+              "Xác suất có điều kiện",
+              "Xác suất của biến cố giao",
+              "Xác suất đơn lẻ",
+              "Tổng xác suất"
+            ],
+            "correct": 0,
+            "explanation": "Theo quy tắc xây dựng sơ đồ hình cây, các nhánh sau ghi xác suất có điều kiện ứng với nhánh trước đó."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Lấy 2 bi từ hộp (4 đỏ, 5 xanh) không hoàn lại. Xác suất cả 2 đều đỏ là:",
+            "options": [
+              "$1/6$",
+              "$16/81$",
+              "$4/9$",
+              "$2/9$"
+            ],
+            "correct": 0,
+            "explanation": "$P = (4/9) \\cdot (3/8) = 12/72 = 1/6$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Gieo 2 xúc xắc. Tính xác suất tổng bằng 10 biết rằng có ít nhất một con mặt 6.",
+            "options": [
+              "$2/11$",
+              "$1/6$",
+              "$3/11$",
+              "$1/12$"
+            ],
+            "correct": 0,
+            "explanation": "Điều kiện $B$ (ít nhất 1 con 6): 11 cách. Tổng bằng 10 và có 6 là $\\{(6,4), (4,6)\\}$: 2 cách. $P = 2/11$."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Nếu $A$ và $B$ là hai biến cố độc lập và $P(A)=0.3, P(B)=0.4$, thì $P(A|B)$ bằng:",
+            "options": [
+              "$0.3$",
+              "$0.4$",
+              "$0.12$",
+              "$0.7$"
+            ],
+            "correct": 0,
+            "explanation": "Độc lập thì $P(A|B) = P(A) = 0.3$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Xác suất một bệnh nhân khỏi bệnh khi dùng thuốc là 0.8. Nếu không khỏi, xác suất chuyển nặng là 0.5. Tính xác suất bệnh nhân chuyển nặng khi dùng thuốc.",
+            "options": [
+              "$0.1$",
+              "$0.4$",
+              "$0.5$",
+              "$0.2$"
+            ],
+            "correct": 0,
+            "explanation": "$P(\\text{Nặng}) = P(\\overline{\\text{Khỏi}}) \\cdot P(\\text{Nặng}|\\overline{\\text{Khỏi}}) = 0.2 \\cdot 0.5 = 0.1$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Một người rút 2 lá bài. Biết lá 1 là Át, xác suất lá 2 là Át (không hoàn lại) là:",
+            "options": [
+              "$3/51$",
+              "$1/13$",
+              "$4/52$",
+              "$3/52$"
+            ],
+            "correct": 0,
+            "explanation": " Còn lại 51 lá và 3 lá Át $\\to 3/51$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Cho hai biến cố $A$ và $B$ có $P(A)=0.4, P(B)=0.5, P(A \\cap B)=0.1$. Các khẳng định nào sau đây là đúng?",
+            "options": [
+              "$P(A|B) = 0.2$",
+              "$P(B|A) = 0.25$",
+              "Hai biến cố $A, B$ độc lập.",
+              "$P(A \\cup B) = 0.8$"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "1) $0.1/0.5 = 0.2$. 2) $0.1/0.4 = 0.25$. 3) $P(A)P(B) = 0.2 \\neq 0.1$ (Không độc lập). 4) $0.4+0.5-0.1 = 0.8$."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Lấy lần lượt 2 bi từ hộp (3 đỏ, 7 xanh) không hoàn lại. Khẳng định nào đúng?",
+            "options": [
+              "Xác suất lần 1 đỏ là 0.3.",
+              "Xác suất lần 2 đỏ khi biết lần 1 đỏ là $2/9$.",
+              "Xác suất cả 2 lần đều đỏ là $1/15$.",
+              "Xác suất lần 2 đỏ khi biết lần 1 xanh là $3/9$."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1) $3/10=0.3$. 2) Lấy 1 đỏ còn 2 đỏ/9 tổng. 3) $(3/10) \\cdot (2/9) = 6/90 = 1/15$. 4) Lấy 1 xanh còn 3 đỏ/9 tổng."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Xét bài toán bắn súng 2 lần. $P(T_1)=0.6$. Nếu trúng lần 1, $P(T_2)=0.8$. Nếu trượt lần 1, $P(T_2)=0.4$. Khẳng định đúng:",
+            "options": [
+              "Xác suất trúng cả 2 lần là 0.48.",
+              "Xác suất trượt cả 2 lần là 0.24.",
+              "Xác suất trúng ít nhất 1 lần là 0.76.",
+              "Biến cố trúng lần 1 và trúng lần 2 là độc lập."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "1) $0.6 \\cdot 0.8 = 0.48$. 2) $0.4 \\cdot 0.6 = 0.24$. 3) $1 - 0.24 = 0.76$. 4) Không độc lập vì $P(T_2)$ thay đổi tùy kết quả $T_1$."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Trong một kỳ thi, xác suất một học sinh giỏi toán là 0.3, giỏi văn là 0.2, giỏi cả hai là 0.1. Khẳng định đúng:",
+            "options": [
+              "Biết HS giỏi toán, xác suất giỏi văn là $1/3$.",
+              "Biết HS giỏi văn, xác suất giỏi toán là $1/2$.",
+              "Biết HS giỏi ít nhất 1 môn, xác suất giỏi cả 2 là $1/4$.",
+              "Giỏi toán và giỏi văn là hai biến cố độc lập."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "1) $0.1/0.3 = 1/3$. 2) $0.1/0.2 = 1/2$. 3) $P(A \\cup B) = 0.3+0.2-0.1 = 0.4$. $P=0.1/0.4 = 1/4$. 4) $0.3 \\cdot 0.2 = 0.06 \\neq 0.1$ (Không độc lập)."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Cho $P(A)=0.7, P(B)=0.2, P(A \\cup B)=0.8$. Tính $100 \\times P(A|B)$.",
+            "correct": "50",
+            "explanation": "$P(A \\cap B) = 0.7 + 0.2 - 0.8 = 0.1$. $P(A|B) = 0.1 / 0.2 = 0.5$. Kết quả $50$."
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Hộp có 10 bi (6 đỏ, 4 xanh). Lấy 2 bi không hoàn lại. Tính xác suất lấy được 2 bi khác màu (nhập kết quả tối giản dưới dạng a/b, ví dụ 8/15).",
+            "correct": "8/15",
+            "explanation": "$P = (6/10 \\cdot 4/9) + (4/10 \\cdot 6/9) = 24/90 + 24/90 = 48/90 = 8/15$."
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Một người bắn cung 2 lần. Xác suất trúng lần đầu là 0.8. Nếu trúng, lần sau trúng với xác suất 0.9. Tính xác suất trúng cả hai lần.",
+            "correct": "0.72",
+            "explanation": "$0.8 \\times 0.9 = 0.72$."
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Một bệnh hiếm gặp có tỉ lệ mắc 1/1000. Xét nghiệm có độ chính xác 99% (nghĩa là mắc bệnh thì 99% dương tính). Tính xác suất một người dương tính đúng là mắc bệnh (lấy 4 chữ số thập phân).",
+            "explanation": "Sử dụng Bayes (sẽ học bài sau nhưng có thể suy luận): $P(B|+) = \\dfrac{0.001 \\cdot 0.99}{0.001 \\cdot 0.99 + 0.999 \\cdot 0.01} = \\dfrac{0.00099}{0.01098} \\approx 0.0902$.",
+            "correct": "0.0902"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Tìm $P(B)$ biết $P(A)=0.5, P(A|B)=0.4, P(B|A)=0.8$.",
+            "correct": "1",
+            "explanation": "$P(A \\cap B) = P(A)P(B|A) = 0.5 \\cdot 0.8 = 0.4$. Ta có $P(A \\cap B) = P(B)P(A|B) \\Rightarrow 0.4 = P(B) \\cdot 0.4 \\Rightarrow P(B)=1$.",
+            "correct": "1"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Lấy lần lượt 3 quân bài từ bộ 52 lá không hoàn lại. Xác suất cả 3 lá đều là K là $k/C_{52}^3$. Tìm $k$.",
+            "correct": "4",
+            "explanation": "Số cách lấy 3 lá K từ 4 lá là $C_4^3 = 4$."
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Một chiếc máy có 2 bộ phận $A$ và $B$ hoạt động độc lập. Xác suất bộ phận $A$ hỏng trong 1 năm là 0.1, bộ phận $B$ hỏng là 0.15. <br>a) Tính xác suất để máy hỏng (biết máy hỏng nếu ít nhất 1 bộ phận hỏng). <br>b) Biết rằng máy bị hỏng, tính xác suất để chỉ có bộ phận $A$ hỏng.",
+            "answer": "a) $P(\\text{Hỏng}) = 1 - P(\\text{Cả 2 tốt}) = 1 - (0.9 \\cdot 0.85) = 1 - 0.765 = 0.235$. <br>b) Biến cố $H_A$: \"Chỉ $A$ hỏng\" $\\Rightarrow P(H_A) = 0.1 \\cdot 0.85 = 0.085$. <br>Xác suất cần tìm $P(H_A | \\text{Hỏng}) = 0.085 / 0.235 \\approx 0.3617$.",
+            "explanation": "Sử dụng định nghĩa xác suất có điều kiện trên không gian mẫu đã thu hẹp."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Một sinh viên đi thi trắc nghiệm. Xác suất sinh viên đó thuộc bài là 0.8. Nếu thuộc bài, sinh viên chọn đúng đáp án với xác suất 1.0. Nếu không thuộc bài, sinh viên chọn ngẫu nhiên 1 trong 4 đáp án. <br>a) Vẽ sơ đồ hình cây cho tình huống này. <br>b) Tính xác suất sinh viên trả lời đúng. <br>c) Nếu sinh viên trả lời đúng, tính xác suất sinh viên đó thực sự thuộc bài.",
+            "answer": "a) Nhánh 1: Thuộc (0.8) $\\to$ Đúng (1.0). Nhánh 2: Không thuộc (0.2) $\\to$ Đúng (0.25) hoặc Sai (0.75). <br>b) $P(\\text{Đúng}) = 0.8 \\cdot 1.0 + 0.2 \\cdot 0.25 = 0.8 + 0.05 = 0.85$. <br>c) $P(\\text{Thuộc}|\\text{Đúng}) = 0.8 / 0.85 \\approx 0.9412$.",
+            "explanation": "Đây là bài toán điển hình sử dụng sơ đồ hình cây và tư duy xác suất ngược."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Trong một đợt kiểm tra sức khỏe, 20% người dân được xác định là có hút thuốc. Tỉ lệ mắc bệnh phổi ở người hút thuốc là 30%, ở người không hút thuốc là 5%. <br>a) Tính xác suất một người dân mắc bệnh phổi. <br>b) Nếu một người mắc bệnh phổi, tính xác suất người đó có hút thuốc.",
+            "answer": "a) $P(\\text{Phổi}) = 0.2 \\cdot 0.3 + 0.8 \\cdot 0.05 = 0.06 + 0.04 = 0.1$. <br>b) $P(\\text{Hút}|\\text{Phổi}) = (0.2 \\cdot 0.3) / 0.1 = 0.6$.",
+            "explanation": "Phân tích các nhóm dân cư và áp dụng quy tắc nhân, cộng xác suất."
+          }
+        ]
+      }
+    }
+  ]
+}

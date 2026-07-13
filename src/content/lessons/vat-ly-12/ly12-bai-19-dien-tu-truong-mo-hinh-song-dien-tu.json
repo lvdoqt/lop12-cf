@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-19-dien-tu-truong-mo-hinh-song-dien-tu",
+      "name": "Bài 19. Điện từ trường. Mô hình sóng điện từ",
+      "slug": "bai-19-dien-tu-truong-mo-hinh-song-dien-tu",
+      "chapter": "Chương 3. Từ trường",
+      "chapter_id": "LY12-3",
+      "lesson_id": 19,
+      "description": "Nghiên cứu về điện từ trường và mô hình sóng điện từ.",
+      "duration_minutes": 45,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "dtt-1",
+          "name": "Điện từ trường",
+          "slug": "dien-tu-truong",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dtt-2",
+          "name": "Sóng điện từ",
+          "slug": "song-dien-tu",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dtt-3",
+          "name": "Thang sóng điện từ",
+          "slug": "thang-song-dien-tu",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Điện từ trường và Sóng điện từ",
+          "sections": [
+            {
+              "heading": "1. Điện từ trường",
+              "content": "<p><strong>Khái niệm điện từ trường:</strong> Là trường thống nhất bao gồm điện trường biến thiên và từ trường biến thiên liên kết với nhau.</p><p><strong>Giả thuyết Maxwell:</strong></p><ul><li>Một từ trường biến thiên theo thời gian sinh ra một điện trường xoáy</li><li>Một điện trường biến thiên theo thời gian sinh ra một từ trường xoáy</li></ul><p><strong>Kết luận:</strong> Điện trường và từ trường có thể chuyển hóa lẫn nhau, tạo thành trường thống nhất - điện từ trường.</p>"
+            },
+            {
+              "heading": "2. Sóng điện từ",
+              "content": "<p><strong>Định nghĩa:</strong> Sóng điện từ là quá trình lan truyền điện từ trường trong không gian.</p><p><strong>Đặc điểm sóng điện từ:</strong></p><ul><li>Sóng điện từ là sóng ngang</li><li>Dao động của E và B vuông góc với phương truyền sóng và vuông góc với nhau</li><li>Tốc độ truyền sóng trong chân không: c = 3.10⁸ m/s</li><li>Sóng điện từ mang năng lượng</li><li>Có thể truyền trong mọi môi trường (kể cả chân không)</li></ul><p><strong>Cường độ sóng:</strong></p><p>$$I = \\frac{S}{S} = \\frac{P}{4\\pi r^2}$$</p>"
+            },
+            {
+              "heading": "3. Phương trình sóng điện từ",
+              "content": "<p><strong>Tốc độ sóng điện từ:</strong></p><p>$$c = \\frac{1}{\\sqrt{\\varepsilon_0 \\mu_0}} = 3.10^8 \\text{ m/s}$$</p><p><strong>Bước sóng và tần số:</strong></p><p>$$\\lambda = \\frac{c}{f} = cT$$</p><p><strong>Năng lượng sóng điện từ:</strong></p><p>Năng lượng điện trường: W_đ = (εE²V)/2</p><p>Năng lượng từ trường: W_t = (B²V)/(2μ₀)</p>"
+            },
+            {
+              "heading": "4. Thang sóng điện từ",
+              "content": "<p><strong>Các loại sóng điện từ (theo bước sóng giảm dần):</strong></p><ol><li><strong>Sóng vô tuyến:</strong> λ > 1m, f < 300MHz</li><li><strong>Tia hồng ngoại:</strong> 0,76μm - 1mm, f = 3.10¹¹ - 4.10¹⁴Hz</li><li><strong>Ánh sáng nhìn thấy:</strong> 0,38μm - 0,76μm</li><li><strong>Tia tử ngoại:</strong> 10nm - 0,38μm</li><li><strong>Tia X:</strong> 0,01nm - 10nm</li><li><strong>Tia gamma:</strong> λ < 0,01nm</li></ol><p><strong>Tính chất chung:</strong> Đều có bản chất điện từ, truyền trong chân không với cùng tốc độ c.</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính bước sóng và tần số",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>λ = c/f</li><li>c = 3.10⁸ m/s</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tính bước sóng của sóng điện từ có f = 100MHz.",
+                "solution": "<p><strong>Giải:</strong></p><p>λ = c/f = 3.10⁸/10⁸ = 3 m</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Phân loại sóng điện từ",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Dựa vào bước sóng λ hoặc tần số f</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Sóng có λ = 0,5μm thuộc loại nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>0,5μm = 5.10⁻⁷m, thuộc ánh sáng nhìn thấy</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Điện từ trường gồm:",
+            "options": [
+              "Điện trường và từ trường",
+              "Điện trường tĩnh",
+              "Từ trường tĩnh",
+              "Trường hấp dẫn"
+            ],
+            "correct": 0,
+            "explanation": "Điện từ trường là trường thống nhất của điện trường và từ trường biến thiên"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Sóng điện từ là:",
+            "options": [
+              "Sóng ngang",
+              "Sóng dọc",
+              "Sóng cơ",
+              "Sóng âm"
+            ],
+            "correct": 0,
+            "explanation": "Sóng điện từ là sóng ngang"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Tốc độ sóng điện từ trong chân không:",
+            "options": [
+              "3.10⁸ m/s",
+              "3.10⁶ m/s",
+              "3.10⁴ m/s",
+              "3.10² m/s"
+            ],
+            "correct": 0,
+            "explanation": "c = 3.10⁸ m/s"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Tia hồng ngoại có bước sóng:",
+            "options": [
+              "0,76μm - 1mm",
+              "10nm - 0,38μm",
+              "0,38μm - 0,76μm",
+              "< 0,01nm"
+            ],
+            "correct": 0,
+            "explanation": "Hồng ngoại: 0,76μm - 1mm"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Ánh sáng nhìn thấy có bước sóng:",
+            "options": [
+              "0,38μm - 0,76μm",
+              "0,76μm - 1mm",
+              "10nm - 0,38μm",
+              "< 0,01nm"
+            ],
+            "correct": 0,
+            "explanation": "Ánh sáng: 0,38μm - 0,76μm"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Tia X có bước sóng:",
+            "options": [
+              "0,01nm - 10nm",
+              "10nm - 0,38μm",
+              "0,38μm - 0,76μm",
+              "> 1m"
+            ],
+            "correct": 0,
+            "explanation": "Tia X: 0,01nm - 10nm"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Công thức liên hệ λ, f, c:",
+            "options": [
+              "λ = c/f",
+              "λ = cf",
+              "λ = c + f",
+              "λ = c - f"
+            ],
+            "correct": 0,
+            "explanation": "λ = c/f"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Sóng vô tuyến có λ:",
+            "options": [
+              "> 1m",
+              "< 1mm",
+              "0,38μm - 0,76μm",
+              "< 0,01nm"
+            ],
+            "correct": 0,
+            "explanation": "Sóng vô tuyến λ > 1m"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Tia gamma có bước sóng:",
+            "options": [
+              "< 0,01nm",
+              "> 1m",
+              "0,38μm - 0,76μm",
+              "10nm - 0,38μm"
+            ],
+            "correct": 0,
+            "explanation": "Gamma λ < 0,01nm"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Tia tử ngoại có bước sóng:",
+            "options": [
+              "10nm - 0,38μm",
+              "0,76μm - 1mm",
+              "0,38μm - 0,76μm",
+              "> 1m"
+            ],
+            "correct": 0,
+            "explanation": "Tử ngoại: 10nm - 0,38μm"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Đặc điểm sóng điện từ:",
+            "options": [
+              "Là sóng ngang",
+              "Truyền trong chân không",
+              "Có tốc độ c = 3.10⁸ m/s",
+              "Có thể phản xạ, khúc xạ"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Sóng điện từ có tất cả các đặc điểm trên"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Sóng điện từ có thể truyền trong:",
+            "options": [
+              "Chân không",
+              "Không khí",
+              "Nước",
+              "Tất cả đều đúng"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Sóng điện từ truyền được trong mọi môi trường"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Thang sóng điện từ (theo λ tăng dần):",
+            "options": [
+              "Tia gamma",
+              "Tia X",
+              "Tia tử ngoại",
+              "Ánh sáng nhìn thấy"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Gamma < X < Tử ngoại < Ánh sáng < Hồng ngoại < Vô tuyến"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính bước sóng của sóng vô tuyến f = 30MHz (m).",
+            "correct": "10",
+            "explanation": "λ = c/f = 3.10⁸/3.10⁷ = 10m"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Tính tần số của sóng có λ = 600nm (Hz).",
+            "correct": "5E14",
+            "explanation": "f = c/λ = 3.10⁸/6.10⁻⁷ = 5.10¹⁴Hz"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Tính λ biết f = 10²⁰Hz (nm).",
+            "correct": "0.003",
+            "explanation": "λ = c/f = 3.10⁸/10²⁰ = 3.10⁻¹²m = 0,003nm"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính f của tia X có λ = 0,1nm (Hz).",
+            "correct": "3E18",
+            "explanation": "f = c/λ = 3.10⁸/10⁻¹⁰ = 3.10¹⁸Hz"
+          }
+        ]
+      }
+    }
+  ]
+}

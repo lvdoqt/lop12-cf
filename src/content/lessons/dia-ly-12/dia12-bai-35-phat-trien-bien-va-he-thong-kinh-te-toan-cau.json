@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_35",
+      "name": "Biển và hệ thống kinh tế toàn cầu: ảnh hưởng và liên kết",
+      "slug": "phat-trien-bien-va-he-thong-kinh-te-toan-cau",
+      "chapter": "Địa lí các vùng kinh tế",
+      "chapter_id": "dia12_part5",
+      "lesson_id": 35,
+      "description": "Tổng quan vai trò của biển trong hệ thống kinh tế toàn cầu: vận tải biển quốc tế, tuyến hàng hải, thương mại, và tác động tới kinh tế quốc gia; hướng đến liên kết vùng và chính sách thích ứng.",
+      "duration_minutes": 60,
+      "difficulty_level": "khó",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Biển trong nền kinh tế toàn cầu",
+          "summary": "Biển là trục chính của thương mại toàn cầu, với tuyến vận tải chính, cảng lớn và chuỗi cung ứng quốc tế; quốc gia ven biển cần chính sách để tận dụng lợi thế và ứng phó rủi ro toàn cầu (khủng hoảng, biến động giá, an ninh biển).",
+          "sections": [
+            { "heading": "Vai trò quốc tế", "content": "Vận tải biển chiếm phần lớn khối lượng thương mại quốc tế; tuyến hàng hải và cảng chính là mắt xích của chuỗi cung ứng toàn cầu." },
+            { "heading": "Tác động với kinh tế quốc gia", "content": "Cảng lớn và logistics kết nối doanh nghiệp trong nước với thị trường quốc tế; rủi ro toàn cầu ảnh hưởng tới giá cả và an ninh nguồn cung." }
+          ]
+        },
+        "exercises": { "essay": [ { "q": "Phân tích lợi ích và rủi ro khi gia tăng hội nhập biển toàn cầu cho một nền kinh tế ven biển.", "a_hint": "Xem tới thương mại, an ninh, biến động thị trường và chính sách bảo vệ ngành nội địa." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Vai trò chủ yếu của biển trong kinh tế toàn cầu là?", "options": ["Vận tải hàng hóa quốc tế","Chỉ giải trí","Nông nghiệp trên biển","Không có vai trò"], "correct": 0, "explanation": "Vận tải biển là trụ cột cho thương mại quốc tế." },
+          { "id": 2, "type": "mcq", "question": "Quốc gia có cảng lớn thường có lợi thế gì?", "options": ["Tiếp cận thị trường quốc tế và chi phí logistics thấp hơn","Không có lợi thế","Ít giao thương","Giảm xuất khẩu"], "correct": 0, "explanation": "Cảng lớn giúp doanh nghiệp tiếp cận thị trường và cạnh tranh hơn." },
+          { "id": 3, "type": "mcq", "question": "Một rủi ro toàn cầu ảnh hưởng tới kinh tế biển là?", "options": ["Khủng hoảng logistic toàn cầu và tăng giá cước vận tải","Thời tiết địa phương","Không có rủi ro","Tăng sản xuất"], "correct": 0, "explanation": "Khủng hoảng logistics gây gián đoạn chuỗi cung ứng quốc tế." },
+          { "id": 4, "type": "mcq", "question": "Một chiến lược quốc gia để tận dụng lợi thế biển là?", "options": ["Đầu tư cảng và chính sách hỗ trợ xuất khẩu","Cấm thương mại quốc tế","Không đầu tư","Tập trung vào nông nghiệp nội địa"], "correct": 0, "explanation": "Đầu tư hạ tầng và chính sách hỗ trợ là chiến lược hợp lý." },
+          { "id": 5, "type": "mcq", "question": "Tuyến hàng hải quốc tế quan trọng vì?", "options": ["Nối liền các trung tâm kinh tế và giảm chi phí vận tải","Không quan trọng","Chỉ dành cho du lịch","Dùng để khai khoáng"], "correct": 0, "explanation": "Tuyến hàng hải giúp tối ưu hóa chi phí và thời gian vận chuyển giữa trung tâm kinh tế." },
+          { "id": 6, "type": "mcq", "question": "Một biểu hiện của liên kết toàn cầu qua biển là?", "options": ["Chuỗi cung ứng xuyên biên giới và cảng trung chuyển","Tự cung tự cấp hoàn toàn","Tiêu dùng nội địa tăng","Không liên kết"], "correct": 0, "explanation": "Cảng trung chuyển và chuỗi xuyên biên giới minh họa sự liên kết toàn cầu." },
+          { "id": 7, "type": "mcq", "question": "Chính sách ứng phó rủi ro cần chú trọng?", "options": ["Đa dạng hóa thị trường và tăng dự trữ chiến lược","Không cần ứng phó","Tập trung một thị trường chính","Loại bỏ dự trữ"], "correct": 0, "explanation": "Đa dạng hóa và dự trữ giúp giảm thiểu rủi ro gián đoạn." },
+          { "id": 8, "type": "mcq", "question": "Cơ sở hạ tầng quan trọng để tham gia chuỗi cung ứng toàn cầu là?", "options": ["Cảng hiện đại, logistics và kho bãi hiệu quả","Chỉ đường bộ nhỏ","Không cần hạ tầng","Chỉ văn phòng thương mại"], "correct": 0, "explanation": "Cảng và logistics hiệu quả là hạ tầng thiết yếu." },
+          { "id": 9, "type": "mcq", "question": "Một thách thức khi gia tăng hội nhập biển là?", "options": ["Cạnh tranh mạnh mẽ và áp lực môi trường","Tăng an ninh hoàn toàn","Giảm xuất khẩu","Không có thách thức"], "correct": 0, "explanation": "Gia nhập sâu sắc có thể làm tăng cạnh tranh và áp lực bảo vệ môi trường." },
+          { "id": 10, "type": "mcq", "question": "Mục tiêu chính của chính sách biển quốc gia nên là?", "options": ["Tối ưu lợi ích kinh tế đồng thời đảm bảo an ninh và bền vững môi trường","Chỉ tối ưu lợi nhuận ngắn hạn","Chỉ tập trung vào quân sự","Không có mục tiêu"], "correct": 0, "explanation": "Chính sách cần cân bằng phát triển kinh tế và bảo vệ môi trường, an ninh." }
+        ]
+      }
+    }
+  ]
+}

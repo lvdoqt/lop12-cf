@@ -1,0 +1,296 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-6-nhiet-hoa-hoi-rieng",
+      "name": "Bài 6. Nhiệt hóa hơi riêng",
+      "slug": "bai-6-nhiet-hoa-hoi-rieng",
+      "chapter": "Chương 1. Vật lí nhiệt",
+      "chapter_id": "LY12-1",
+      "lesson_id": 6,
+      "description": "Nghiên cứu về nhiệt hóa hơi riêng, công thức và các bài toán liên quan đến sự bay hơi và ngưng tụ.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "nhhr-1",
+          "name": "Khái niệm nhiệt hóa hơi riêng",
+          "slug": "khai-niem-nhiet-hoa-hoi-rieng",
+          "difficulty": "easy"
+        },
+        {
+          "id": "nhhr-2",
+          "name": "Bài toán hóa hơi",
+          "slug": "bai-toan-hoa-hoi",
+          "difficulty": "medium"
+        },
+        {
+          "id": "nhhr-3",
+          "name": "Dạng toán thực tế",
+          "slug": "dang-toan-thuc-te",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Nhiệt hóa hơi riêng",
+          "sections": [
+            {
+              "heading": "1. Khái niệm nhiệt hóa hơi riêng",
+              "content": "<p><strong>Nhiệt hóa hơi riêng (L hoặc L_h):</strong> là nhiệt lượng cần thiết để chuyển hoàn toàn 1 kg chất từ thể lỏng sang thể hơi ở nhiệt độ sôi.</p><p><strong>Đơn vị:</strong> J/kg</p><p><strong>Đặc điểm:</strong></p><ul><li>Mỗi chất có nhiệt hóa hơi riêng xác định</li><li>Quá trình hóa hơi xảy ra ở nhiệt độ không đổi (nhiệt độ sôi)</li><li>Quá trình ngưng tụ tỏa nhiệt với lượng nhiệt bằng với khi hóa hơi</li></ul><p><strong>Bảng nhiệt hóa hơi riêng:</strong></p><ul><li>Nước: 2,26.10⁶ J/kg</li><li>Rượu: 0,85.10⁶ J/kg</li><li>Éte: 0,38.10⁶ J/kg</li><li>Thủy ngân: 0,29.10⁶ J/kg</li><li>Nitơ: 2,01.10⁵ J/kg</li></ul>"
+            },
+            {
+              "heading": "2. Công thức tính nhiệt hóa hơi",
+              "content": "<p><strong>Công thức:</strong></p><p>$$Q = mL$$</p><p>Trong đó:</p><ul><li>Q: nhiệt lượng cần cung cấp (J)</li><li>m: khối lượng chất lỏng (kg)</li><li>L: nhiệt hóa hơi riêng (J/kg)</li></ul><p><strong>Khi ngưng tụ (ngược của hóa hơi):</strong></p><p>$$Q = mL$$ (vật tỏa nhiệt)</p>"
+            },
+            {
+              "heading": "3. Các bài toán cân bằng nhiệt có hóa hơi",
+              "content": "<p>Khi có cả quá trình nóng lên, hóa hơi, hoặc ngưng tụ:</p><p><strong>Các bước giải:</strong></p><ol><li>Xác định các giai đoạn</li><li>Tính nhiệt cho từng giai đoạn</li><li>Áp dụng cân bằng nhiệt: Tổng nhiệt thu = Tổng nhiệt tỏa</li></ol><p><strong>Giai đoạn có thể có:</strong></p><ul><li>Nóng lên: Q = mcΔt</li><li>Hóa hơi: Q = mL</li><li>Ngưng tụ: Q = -mL (tỏa nhiệt)</li></ul>"
+            },
+            {
+              "heading": "4. Sự bay hơi và sôi",
+              "content": "<p><strong>Bay hơi:</strong> Xảy ra ở mặt thoáng, ở mọi nhiệt độ, chỉ có các phân tử ở bề mặt thoát ra.</p><p><strong>Sôi:</strong> Xảy ra ở toàn bộ thể tích chất lỏng, ở nhiệt độ xác định (nhiệt độ sôi), khi áp suất hơi bằng áp suất ngoài.</p><p><strong>Điều kiện sôi:</strong> Áp suất hơi bão hòa = Áp suất ngoài</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính nhiệt hóa hơi",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Q = mL</li><li>Đổi m về kg</li><li>Chú ý: 1kJ = 1000J; 1MJ = 10⁶J</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tính nhiệt lượng cần để bay hơi 2kg nước ở 100°C. Biết L = 2,26.10⁶ J/kg.",
+                "solution": "<p><strong>Giải:</strong></p><p>Q = mL = 2 × 2,26.10⁶ = 4,52.10⁶ J</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán cân bằng nhiệt có hóa hơi",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Liệt kê các giai đoạn</li><li>Tính nhiệt từng giai đoạn</li><li>Áp dụng: Q_thu = Q_tỏa</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Thả 0,5kg nước đá ở 0°C vào 1kg nước ở 50°C. Tính nhiệt độ cuối cùng.",
+                "solution": "<p><strong>Giải:</strong></p><p>Quá trình: Nước 50°C → 0°C: Q1 = 1.4200.50 = 210000J</p><p>Nước đá 0°C nóng chảy: Q2 = 0,5.3,34.10⁵ = 167000J</p><p>So sánh: Q1 > Q2 → Nước đá tan hết, nước nguội</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Dạng toán thực tế",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Đọc đề, xác định khối lượng</li><li>Xác định các quá trình</li><li>Áp dụng công thức</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ thực tế:</strong> Một ấm đun nước có công suất 2000W. Tính thời gian để sôi 2kg nước từ 20°C.",
+                "ian để đsolution": "<p><strong>Giải:</strong></p><p>Q = mcΔt + mL = 2.4200.80 + 2.2,26.10⁶ = 672000 + 4520000 = 5192000 J</p><p>t = Q/P = 5192000/2000 = 2596s ≈ 43 phút</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Nhiệt hóa hơi riêng là:",
+            "options": [
+              "Nhiệt lượng để hóa hơi 1kg chất ở nhiệt độ sôi",
+              "Nhiệt lượng để tăng 1°C",
+              "Nhiệt độ sôi",
+              "Nhiệt dung riêng"
+            ],
+            "correct": 0,
+            "explanation": "L là nhiệt lượng để hóa hơi hoàn toàn 1kg chất lỏng ở nhiệt độ sôi"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Đơn vị của nhiệt hóa hơi riêng là:",
+            "options": [
+              "J/kg",
+              "J/kg.K",
+              "J",
+              "W"
+            ],
+            "correct": 0,
+            "explanation": "Đơn vị J/kg"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Trong quá trình sôi, nhiệt độ:",
+            "options": [
+              "Tăng",
+              "Giảm",
+              "Không đổi",
+              "Bất kỳ"
+            ],
+            "correct": 2,
+            "explanation": "Nhiệt độ không đổi trong quá trình sôi"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Nước có nhiệt hóa hơi riêng:",
+            "options": [
+              "3,34.10⁵ J/kg",
+              "2,26.10⁶ J/kg",
+              "4,2.10³ J/kg",
+              "1,34.10⁵ J/kg"
+            ],
+            "correct": 1,
+            "explanation": "L_nước = 2,26.10⁶ J/kg"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Khi ngưng tụ, chất:",
+            "options": [
+              "Thu nhiệt",
+              "Tỏa nhiệt",
+              "Không trao đổi nhiệt",
+              "Cả ba đều đúng"
+            ],
+            "correct": 1,
+            "explanation": "Ngưng tụ tỏa nhiệt với lượng nhiệt bằng khi hóa hơi"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Công thức Q = mL, trong đó L là:",
+            "options": [
+              "Nhiệt dung riêng",
+              "Nhiệt nóng chảy riêng",
+              "Nhiệt hóa hơi riêng",
+              "Nhiệt độ"
+            ],
+            "correct": 2,
+            "explanation": "L là nhiệt hóa hơi riêng"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Tính nhiệt để hóa hơi 1kg rượu:",
+            "options": [
+              "3,34.10⁵ J",
+              "0,85.10⁶ J",
+              "1,34.10⁵ J",
+              "2,72.10⁵ J"
+            ],
+            "correct": 1,
+            "explanation": "L_rượu = 0,85.10⁶ J/kg"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Khi khối lượng tăng gấp đôi, nhiệt hóa hơi:",
+            "options": [
+              "Tăng gấp đôi",
+              "Giảm một nửa",
+              "Không đổi",
+              "Tăng gấp 4"
+            ],
+            "correct": 0,
+            "explanation": "Q = mL, m tăng 2 thì Q tăng 2"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Nhiệt hóa hơi của éte là:",
+            "options": [
+              "2,26.10⁶ J/kg",
+              "0,38.10⁶ J/kg",
+              "0,85.10⁶ J/kg",
+              "0,29.10⁶ J/kg"
+            ],
+            "correct": 1,
+            "explanation": "L_ête = 0,38.10⁶ J/kg"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Trong hóa hơi, nhiệt lượng dùng để:",
+            "options": [
+              "Tăng nhiệt độ",
+              "Phá vỡ liên kết phân tử",
+              "Thay đổi thể tích",
+              "Giảm áp suất"
+            ],
+            "correct": 1,
+            "explanation": "Phá vỡ liên kết để chuyển từ lỏng sang hơi"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Đặc điểm của quá trình hóa hơi:",
+            "options": [
+              "Xảy ra ở nhiệt độ không đổi",
+              "Cần cung cấp nhiệt lượng",
+              "Nhiệt hóa hơi phụ thuộc khối lượng",
+              "Nhiệt độ tăng dần"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Xảy ra ở nhiệt độ sôi, cần cung cấp nhiệt, Q = mL"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các yếu tố ảnh hưởng đến nhiệt hóa hơi:",
+            "options": [
+              "Khối lượng chất",
+              "Loại chất",
+              "Nhiệt độ sôi",
+              "Áp suất"
+            ],
+            "correct": [1, 3],
+            "explanation": "L phụ thuộc loại chất và áp suất"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Khi có cả nóng lên và hóa hơi:",
+            "options": [
+              "Tính Q1 = mcΔt cho phần nóng lên",
+              "Tính Q2 = mL cho phần hóa hơi",
+              "Tổng Q = Q1 + Q2",
+              "Chỉ tính một trong hai"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Cộng dồn các giai đoạn nhiệt"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính nhiệt lượng để hóa hơi 2kg nước ở 100°C. Biết L_nước = 2,26.10⁶ J/kg.",
+            "correct": "4520000",
+            "explanation": "Q = 2 × 2,26.10⁶ = 4,52.10⁶ J = 4520000 J"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Một ấm nước 500g nước bay hơi hoàn toàn. Tính nhiệt lượng cần (J). L = 2,26.10⁶ J/kg",
+            "correct": "1130000",
+            "explanation": "m = 0,5kg; Q = 0,5 × 2,26.10⁶ = 1,13.10⁶ J = 1130000 J"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Tính nhiệt để hóa hơi 3kg rượu. L_rượu = 0,85.10⁶ J/kg.",
+            "correct": "2550000",
+            "explanation": "Q = 3 × 0,85.10⁶ = 2,55.10⁶ J = 2550000 J"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Một vật bằng thủy ngân khối lượng 1kg hóa hơi hoàn toàn. Tính Q (J). L = 0,29.10⁶ J/kg",
+            "correct": "290000",
+            "explanation": "Q = 1 × 0,29.10⁶ = 290000 J"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-10-phuong-sai-va-do-lech-chuan",
+      "name": "Bài 10. Phương sai và độ lệch chuẩn",
+      "slug": "phuong-sai-va-do-lech-chuan",
+      "chapter": "Chương 3: Các số đặc trưng đo mức độ phân tán của mẫu số liệu ghép nhóm",
+      "chapter_id": "T12-3",
+      "lesson_id": 10,
+      "description": "Tính phương sai s² và độ lệch chuẩn s để đánh giá mức độ phân tán quanh giá trị trung bình. Ứng dụng so sánh chất lượng, đánh giá sự đồng đều giữa các mẫu thực tế.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/6366F1/FFFFFF?text=Phương+Sai+Độ+Lệch+Chuẩn",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Tính trung bình và phương sai từ bảng ghép nhóm",
+          "slug": "tinh-phuong-sai-ghep-nhom",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Tính độ lệch chuẩn và nhận xét",
+          "slug": "tinh-do-lech-chuan",
+          "difficulty": "hard"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: So sánh phân tán giữa các mẫu",
+          "slug": "so-sanh-phan-tan-phuong-sai",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Giá trị đại diện và số trung bình",
+              "content": "<p>Với nhóm $[a_i;a_{i+1})$, <strong>giá trị đại diện</strong>: $x_i=\\dfrac{a_i+a_{i+1}}{2}$ (trung điểm).</p><p><strong>Số trung bình mẫu:</strong></p><p style='text-align:center'>$$\\bar{x}=\\frac{\\displaystyle\\sum_{i=1}^k n_i x_i}{n}=\\frac{n_1x_1+n_2x_2+\\cdots+n_kx_k}{n}$$</p><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 1 – Kiểm tra:</strong> Sau khi tính $\\bar{x}$, kiểm tra xem $\\bar{x}$ có nằm trong khoảng số liệu hay không (phải hợp lý). Nếu kết quả bất thường, kiểm tra lại phép tính.</div>"
+            },
+            {
+              "heading": "2. Phương sai s²",
+              "content": "<p><strong>Phương sai</strong> đo mức phân tán quanh $\\bar{x}$:</p><p style='text-align:center'>$$s^2=\\frac{1}{n}\\sum_{i=1}^k n_i(x_i-\\bar{x})^2$$</p><p>Công thức rút gọn (tính nhanh):</p><p style='text-align:center'>$$s^2=\\frac{1}{n}\\sum_{i=1}^k n_i x_i^2 - \\bar{x}^2$$</p><table style='width:100%;border-collapse:collapse;margin:10px 0'><thead><tr style='background:#6366F1;color:white'><th style='padding:8px;border:1px solid #ccc'>Tính chất</th><th style='padding:8px;border:1px solid #ccc'>Giá trị</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>$s^2\\geq0$ luôn luôn</td><td style='padding:8px;border:1px solid #ccc'>Phương sai không âm</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>$s^2=0$</td><td style='padding:8px;border:1px solid #ccc'>Mọi giá trị bằng nhau (mẫu không phân tán)</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>$s^2$ lớn</td><td style='padding:8px;border:1px solid #ccc'>Số liệu phân tán nhiều quanh $\\bar{x}$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Đơn vị $s^2$</td><td style='padding:8px;border:1px solid #ccc'>(đơn vị số liệu)²</td></tr></tbody></table><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 2 – Công thức rút gọn:</strong> $s^2=\\dfrac{\\sum n_ix_i^2}{n}-\\bar{x}^2$ thường nhanh hơn khi tính tay vì tránh bình phương hiệu số. Lập bảng thêm cột $n_ix_i^2$ là đủ.</div>"
+            },
+            {
+              "heading": "3. Độ lệch chuẩn s và ứng dụng",
+              "content": "<p style='text-align:center'>$$s=\\sqrt{s^2}$$</p><p>$s$ có <strong>cùng đơn vị</strong> với số liệu → dễ diễn giải hơn $s^2$.</p><h3>Ứng dụng thực tế</h3><ul><li><strong>So sánh chất lượng:</strong> Hai lớp cùng điểm trung bình, lớp nào $s$ nhỏ hơn thì kết quả đồng đều hơn.</li><li><strong>Kiểm soát chất lượng:</strong> Sản phẩm có $s$ nhỏ → quy trình sản xuất ổn định.</li><li><strong>Quy tắc 3-sigma:</strong> Trong phân phối chuẩn, khoảng $[\\bar{x}-3s;\\ \\bar{x}+3s]$ chứa ~99,7% số liệu.</li></ul><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 3 – Quy trình tính bảng (5 bước):</strong><br>① Lập cột $x_i$ (giá trị đại diện).<br>② Lập cột $n_ix_i$ → tính $\\bar{x}$.<br>③ Lập cột $(x_i-\\bar{x})^2$.<br>④ Lập cột $n_i(x_i-\\bar{x})^2$ → cộng hết chia $n$.<br>⑤ $s=\\sqrt{s^2}$.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Tính trung bình và phương sai",
+            "method": "<ol><li>Xác định $x_i$ = trung điểm nhóm $i$.</li><li>$\\bar{x}=\\dfrac{\\sum n_ix_i}{n}$.</li><li>$s^2=\\dfrac{\\sum n_i(x_i-\\bar{x})^2}{n}$ hoặc $\\dfrac{\\sum n_ix_i^2}{n}-\\bar{x}^2$.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Bảng điểm: $[0;10)$ f=1; $[10;20)$ f=1. Tính $s^2$ và $s$.",
+                "solution": "<p>$x_1=5$, $x_2=15$. $n=2$. $\\bar{x}=\\frac{5+15}{2}=10$.</p><p>$s^2=\\frac{1(5-10)^2+1(15-10)^2}{2}=\\frac{25+25}{2}=25$. $s=5$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2 (công thức rút gọn):</strong> Bảng: $[0;4)$ f=5; $[4;8)$ f=10; $[8;12)$ f=5. $n=20$. Tính $s^2$.",
+                "solution": "<p>$x_1=2$, $x_2=6$, $x_3=10$. $\\bar{x}=\\frac{5\\cdot2+10\\cdot6+5\\cdot10}{20}=\\frac{10+60+50}{20}=6$.</p><p>$\\sum n_ix_i^2=5\\cdot4+10\\cdot36+5\\cdot100=20+360+500=880$.</p><p>$s^2=\\frac{880}{20}-6^2=44-36=8$. $s=\\sqrt{8}=2\\sqrt{2}\\approx2{,}83$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Tính s và nhận xét",
+            "method": "<ol><li>Tính $\\bar{x}$ và $s^2$ theo dạng 1.</li><li>$s=\\sqrt{s^2}$.</li><li>Nhận xét: $s$ nhỏ → đồng đều; $s$ lớn → phân tán.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Lớp A: $\\bar{x}=7$, $s=0{,}5$. Lớp B: $\\bar{x}=7$, $s=2$. Nhận xét?",
+                "solution": "<p>Hai lớp cùng điểm TB $=7$. Lớp A có $s=0{,}5<2=s_B$ → kết quả lớp A <strong>đồng đều hơn</strong>. Lớp B phân tán hơn.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "So sánh phân tán",
+            "method": "<ol><li>Tính $s^2$ hoặc $s$ cho từng mẫu.</li><li>Mẫu nào $s$ nhỏ hơn → ổn định hơn / đồng đều hơn.</li><li>Kết luận gắn với ngữ cảnh bài toán.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Hai nhóm học sinh cùng điểm TB $\\bar{x}=6{,}5$. Nhóm I: $s^2=0{,}49$. Nhóm II: $s^2=2{,}25$. Nhóm nào đồng đều hơn?",
+                "solution": "<p>$s_I=0{,}7<s_{II}=1{,}5$. Nhóm I <strong>đồng đều hơn</strong>.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Mối liên hệ giữa phương sai $s^2$ và độ lệch chuẩn $s$:",
+            "options": [
+              "$s=\\sqrt{s^2}$",
+              "$s=(s^2)^2$",
+              "$s^2=\\sqrt{s}$",
+              "$s=2s^2$"
+            ],
+            "correct": 0,
+            "explanation": "Định nghĩa: $s=\\sqrt{s^2}$ luôn luôn."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Giá trị đại diện của nhóm $[20;30)$ là:",
+            "options": [
+              "$25$",
+              "$20$",
+              "$30$",
+              "$50$"
+            ],
+            "correct": 0,
+            "explanation": "Trung điểm: $(20+30)/2=25$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Nếu phương sai $s^2=16$ thì độ lệch chuẩn $s$ bằng:",
+            "options": [
+              "$4$",
+              "$8$",
+              "$32$",
+              "$256$"
+            ],
+            "correct": 0,
+            "explanation": "$s=\\sqrt{16}=4$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Mẫu số liệu có tất cả giá trị bằng nhau thì phương sai bằng:",
+            "options": [
+              "$0$",
+              "$1$",
+              "Không xác định",
+              "Cỡ mẫu $n$"
+            ],
+            "correct": 0,
+            "explanation": "Mọi $x_i=\\bar{x}$ nên $(x_i-\\bar{x})^2=0$, $s^2=0$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Độ lệch chuẩn có ưu điểm gì so với phương sai khi diễn giải?",
+            "options": [
+              "Cùng đơn vị với số liệu gốc",
+              "Luôn lớn hơn phương sai",
+              "Không phụ thuộc vào $\\bar{x}$",
+              "Dễ tính hơn phương sai"
+            ],
+            "correct": 0,
+            "explanation": "$s=\\sqrt{s^2}$ có đơn vị bằng đơn vị số liệu (mét, điểm...) nên dễ so sánh hơn."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Bảng: $[0;2)$ f=10; $[2;4)$ f=10. $n=20$. Số trung bình $\\bar{x}$ là:",
+            "options": [
+              "$2$",
+              "$1$",
+              "$3$",
+              "$4$"
+            ],
+            "correct": 0,
+            "explanation": "$x_1=1$, $x_2=3$. $\\bar{x}=(10\\cdot1+10\\cdot3)/20=(10+30)/20=2$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Bảng: $[0;2)$ f=10; $[2;4)$ f=10. $\\bar{x}=2$. Phương sai $s^2$ bằng:",
+            "options": [
+              "$1$",
+              "$2$",
+              "$4$",
+              "$0$"
+            ],
+            "correct": 0,
+            "explanation": "$s^2=\\frac{10(1-2)^2+10(3-2)^2}{20}=\\frac{10+10}{20}=1$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Hai mẫu cùng $\\bar{x}=70$. Mẫu A có $s=5$, mẫu B có $s=12$. Khẳng định nào đúng?",
+            "options": [
+              "Mẫu A đồng đều hơn mẫu B",
+              "Mẫu B đồng đều hơn mẫu A",
+              "Hai mẫu đồng đều như nhau",
+              "Không so sánh được"
+            ],
+            "correct": 0,
+            "explanation": "$s_A=5<s_B=12$ → Mẫu A có số liệu san sát hơn quanh $\\bar{x}$, đồng đều hơn."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Đơn vị của phương sai $s^2$ so với đơn vị số liệu:",
+            "options": [
+              "Bình phương đơn vị số liệu",
+              "Cùng đơn vị số liệu",
+              "Không có đơn vị",
+              "Tùy thuộc cỡ mẫu"
+            ],
+            "correct": 0,
+            "explanation": "Vì $s^2=\\frac{\\sum n_i(x_i-\\bar{x})^2}{n}$, đơn vị là (đơn vị số liệu)²."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Công thức rút gọn $s^2=\\dfrac{\\sum n_ix_i^2}{n}-\\bar{x}^2$ tương đương với công thức nào?",
+            "options": [
+              "$s^2=\\dfrac{\\sum n_i(x_i-\\bar{x})^2}{n}$",
+              "$s^2=\\dfrac{\\sum n_ix_i}{n}-\\bar{x}$",
+              "$s^2=\\bar{x}^2-\\dfrac{\\sum n_ix_i^2}{n}$",
+              "$s^2=\\dfrac{\\sum(x_i-\\bar{x})^2}{n}$"
+            ],
+            "correct": 0,
+            "explanation": "Hai công thức là tương đương: khai triển $(x_i-\\bar{x})^2=x_i^2-2x_i\\bar{x}+\\bar{x}^2$ rồi sắp xếp lại."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Bảng: $[0;4)$ f=5; $[4;8)$ f=10; $[8;12)$ f=5. $n=20$, $\\bar{x}=6$. Tính $\\sum n_ix_i^2$:",
+            "options": [
+              "$880$",
+              "$360$",
+              "$440$",
+              "$720$"
+            ],
+            "correct": 0,
+            "explanation": "$5\\cdot4+10\\cdot36+5\\cdot100=20+360+500=880$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Tiếp bài ex11: $\\sum n_ix_i^2=880$, $n=20$, $\\bar{x}=6$. Phương sai $s^2$ bằng:",
+            "options": [
+              "$8$",
+              "$44$",
+              "$36$",
+              "$4$"
+            ],
+            "correct": 0,
+            "explanation": "$s^2=880/20-6^2=44-36=8$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Chọn tất cả khẳng định đúng về phương sai $s^2$:",
+            "options": [
+              "$s^2\\geq0$ với mọi mẫu",
+              "$s^2=0$ khi và chỉ khi mọi giá trị trong mẫu bằng nhau",
+              "Phương sai đo mức phân tán quanh $\\bar{x}$",
+              "Đơn vị $s^2$ là bình phương đơn vị số liệu"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đúng: A (định nghĩa bình phương), B ($x_i=\\bar{x}$ → $s^2=0$), C (ý nghĩa), D (đơn vị)."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Bảng: $[0;2)$ f=10; $[2;4)$ f=10. Chọn tất cả khẳng định đúng:",
+            "options": [
+              "$x_1=1$, $x_2=3$",
+              "$\\bar{x}=2$",
+              "$s^2=1$",
+              "$s=1$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: trung điểm. B ✓: $(10+30)/20=2$. C ✓: $(10+10)/20=1$. D ✓: $\\sqrt{1}=1$."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Bối cảnh: So sánh kết quả thi của 2 lớp cùng điểm TB = 7,5. Chọn tất cả khẳng định đúng:",
+            "options": [
+              "Nếu $s_A<s_B$ thì kết quả lớp A đồng đều hơn",
+              "Lớp có $s^2=0$ có tất cả học sinh đạt điểm 7,5",
+              "Để đánh giá độ đồng đều, ta dùng $s$ hoặc $s^2$",
+              "Lớp có $s$ lớn hơn có kết quả kém đồng đều hơn"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đúng: đây là ứng dụng trực tiếp của độ lệch chuẩn trong giáo dục."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Bảng: $[60;70)$ f=5; $[70;80)$ f=20; $[80;90)$ f=25. $n=50$. Chọn tất cả khẳng định đúng:",
+            "options": [
+              "$x_1=65$, $x_2=75$, $x_3=85$",
+              "$\\bar{x}=\\dfrac{5\\cdot65+20\\cdot75+25\\cdot85}{50}=79$",
+              "$\\sum n_ix_i=325+1500+2125=3950$",
+              "$\\bar{x}=3950/50=79$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓. B,C,D ✓: $325+1500+2125=3950$; $3950/50=79$."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Phương sai $s^2=25$. Độ lệch chuẩn $s$ bằng bao nhiêu?",
+            "explanation": "$s=\\sqrt{25}=5$.",
+            "correct": "5"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Bảng: $[0;2)$ f=10; $[2;4)$ f=10. $\\bar{x}=2$. Phương sai $s^2$ bằng bao nhiêu?",
+            "explanation": "$s^2=\\frac{10(1-2)^2+10(3-2)^2}{20}=\\frac{10+10}{20}=1$.",
+            "correct": "1"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Giá trị đại diện của nhóm $[30;40)$ là bao nhiêu?",
+            "explanation": "Trung điểm: $(30+40)/2=35$.",
+            "correct": "35"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Bảng: $[0;4)$ f=5; $[4;8)$ f=10; $[8;12)$ f=5. $n=20$, $\\bar{x}=6$. Tính $s^2$ dùng công thức rút gọn. Biết $\\sum n_ix_i^2=880$. $s^2$ bằng bao nhiêu?",
+            "explanation": "$s^2=880/20-6^2=44-36=8$.",
+            "correct": "8"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Bảng: $[60;70)$ f=5; $[70;80)$ f=20; $[80;90)$ f=25. $n=50$, $\\bar{x}=79$. Tính $\\sum n_i(x_i-\\bar{x})^2$.",
+            "explanation": "$5(65-79)^2+20(75-79)^2+25(85-79)^2=5\\times196+20\\times16+25\\times36=980+320+900=2200$.",
+            "correct": "2200"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Bảng: $[60;70)$ f=5; $[70;80)$ f=20; $[80;90)$ f=25. $n=50$, $\\bar{x}=79$, $\\sum n_i(x_i-\\bar{x})^2=2200$. Tính $s^2$.",
+            "explanation": "$s^2=2200/50=44$. $s=\\sqrt{44}=2\\sqrt{11}\\approx6{,}63$.",
+            "correct": "44"
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Giải thích ý nghĩa của độ lệch chuẩn trong việc đánh giá mức độ ổn định của một vận động viên bắn súng.",
+            "answer": "Độ lệch chuẩn càng nhỏ thì vận động viên bắn càng ổn định (các phát bắn tập trung quanh điểm trung bình).",
+            "explanation": "Liên hệ định nghĩa độ phân tán với thực tế."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Tính phương sai của bảng điểm (SV lấy dữ liệu mẫu).",
+            "answer": "HS tính số trung bình, sau đó tính phương sai.",
+            "explanation": "Sử dụng công thức tính phương sai cho dữ liệu ghép nhóm."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Tại sao trong thực tế người ta thường dùng độ lệch chuẩn thay vì phương sai để báo cáo kết quả?",
+            "answer": "Vì độ lệch chuẩn có cùng đơn vị đo với đại lượng đang xét (ví dụ: mét thay vì mét vuông).",
+            "explanation": "So sánh đơn vị đo của hai đại lượng."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_1",
+      "name": "Vị trí địa lí và phạm vi lãnh thổ",
+      "slug": "vi-tri-dia-li-va-pham-vi-lanh-tho",
+      "chapter": "Địa lí tự nhiên",
+      "chapter_id": "dia12_part1",
+      "lesson_id": 1,
+      "description": "Vị trí địa lí, giới hạn và phạm vi lãnh thổ Việt Nam; ý nghĩa vị trí đối với tự nhiên, kinh tế, an ninh và giao lưu quốc tế.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Vị trí địa lí và phạm vi lãnh thổ Việt Nam",
+          "summary": "Việt Nam nằm ở khu vực Đông Nam Á, kéo dài từ vĩ tuyến khoảng 8°N đến 23°N và từ kinh tuyến khoảng 102°E đến 110°E; lãnh thổ bao gồm đất liền, quần đảo, vùng biển và không phận. Vị trí này quyết định nhiều đặc điểm tự nhiên, tạo điều kiện cho giao thương hàng hải và ảnh hưởng đến an ninh, đối ngoại.",
+          "sections": [
+            { "heading": "Giới hạn lãnh thổ", "content": "Đất liền giáp Trung Quốc, Lào và Campuchia; phía đông, đông nam giáp Biển Đông với nhiều vịnh, cửa sông và quần đảo; lãnh thổ còn bao gồm vùng đặc quyền kinh tế và thềm lục địa." },
+            { "heading": "Ảnh hưởng tới tự nhiên", "content": "Vị trí ven biển và nằm trong khu vực nhiệt đới gió mùa làm cho khí hậu ôn đới phân mùa; ảnh hưởng tới thủy văn, hệ sinh thái ven biển và tài nguyên hải sản." },
+            { "heading": "Ý nghĩa kinh tế - chính trị", "content": "Vị trí gần các tuyến hàng hải quốc tế thuận lợi cho phát triển thương mại, đồng thời yêu cầu chú trọng an ninh biển và hợp tác khu vực." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Việt Nam giáp biển nào?", "a_hint": "Biển Đông." },
+            { "q": "Ba nước láng giềng trên đất liền của Việt Nam?", "a_hint": "Trung Quốc, Lào, Campuchia." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Việt Nam nằm trên lục địa nào?", "options": ["Châu Âu","Châu Á","Châu Phi","Châu Mỹ"], "correct": 1, "explanation": "Việt Nam thuộc châu Á, cụ thể là Đông Nam Á." },
+          { "id": 2, "type": "mcq", "question": "Vùng biển phía đông Việt Nam là?", "options": ["Biển Bắc","Biển Đông","Biển Đen","Biển Cổ"], "correct": 1, "explanation": "Phía đông Việt Nam giáp Biển Đông." },
+          { "id": 3, "type": "mcq", "question": "Yếu tố nào không thuộc phạm vi lãnh thổ quốc gia?", "options": ["Đất liền, đảo, vùng biển, không phận","Chỉ đất liền","Chỉ vùng biển","Chỉ không phận"], "correct": 1, "explanation": "Phạm vi lãnh thổ bao gồm đất liền, đảo, vùng biển và không phận." },
+          { "id": 4, "type": "mcq", "question": "Vị trí ven biển của Việt Nam có lợi ích chính nào?", "options": ["Phát triển nông nghiệp sa mạc","Phát triển thương mại hàng hải","Cách ly toàn cầu","Không có lợi ích"], "correct": 1, "explanation": "Vị trí ven biển thuận lợi cho giao thương hàng hải." },
+          { "id": 5, "type": "mcq", "question": "Vị trí địa lí ảnh hưởng đến khí hậu theo cơ chế nào?", "options": ["Vĩ độ","Kinh độ","Mã bưu chính","Ngôn ngữ"], "correct": 0, "explanation": "Vĩ độ là yếu tố quan trọng ảnh hưởng tới bức xạ và khí hậu." },
+          { "id": 6, "type": "mcq", "question": "Phạm vi lãnh thổ gồm những thành phần nào?", "options": ["Đất liền, đảo, vùng biển, không phận","Chỉ đất liền","Chỉ vùng biển","Chỉ không phận"], "correct": 0, "explanation": "Phạm vi lãnh thổ bao gồm đất liền, đảo, vùng biển và không phận." },
+          { "id": 7, "type": "mcq", "question": "Một hệ quả tiêu cực cần chú ý do vị trí biển là?", "options": ["Rủi ro thiên tai ven biển như bão và xâm nhập mặn","Tăng diện tích đất nông nghiệp","Giảm nguồn hải sản","Không có gì"], "correct": 0, "explanation": "Vị trí ven biển làm tăng rủi ro thiên tai như bão, sóng thần và xâm nhập mặn." },
+          { "id": 8, "type": "mcq", "question": "Quần đảo nào thuộc Việt Nam?", "options": ["Quần đảo Hoàng Sa và Trường Sa","Quần đảo Aleutian","Quần đảo Fiji","Quần đảo Canary"], "correct": 0, "explanation": "Hoàng Sa và Trường Sa là quần đảo trực thuộc Việt Nam." },
+          { "id": 9, "type": "mcq", "question": "Vùng đặc quyền kinh tế có ý nghĩa chính gì?", "options": ["Quyền độc quyền khai thác tài nguyên biển đến 200 hải lý","Quyền kiểm soát không khí ở toàn cầu","Quyền sở hữu đất liền nước khác","Không có ý nghĩa"], "correct": 0, "explanation": "Vùng đặc quyền kinh tế cho phép quốc gia khai thác tài nguyên biển trong phạm vi 200 hải lý." },
+          { "id": 10, "type": "mcq", "question": "Yếu tố nào hỗ trợ giao lưu quốc tế cho Việt Nam?", "options": ["Vị trí ven biển và các cảng biển","Thiếu cảng biển","Địa hình băng giá","Không có dân cư"], "correct": 0, "explanation": "Vị trí ven biển và hệ thống cảng biển hỗ trợ giao lưu quốc tế." }
+        ]
+      }
+    }
+  ]
+}

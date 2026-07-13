@@ -1,0 +1,393 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-11-nguyen-ham",
+      "name": "Bài 11. Nguyên hàm",
+      "slug": "bai-11-nguyen-ham",
+      "chapter": "Chương 4: Nguyên hàm và Tích phân",
+      "chapter_id": "T12-4",
+      "lesson_id": 11,
+      "description": "Nắm vững khái niệm nguyên hàm, bảng công thức, tính chất và phương pháp tìm nguyên hàm bằng biến đổi đại số. Ứng dụng nguyên hàm vào bài toán chuyển động và kinh tế.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/6366F1/FFFFFF?text=Nguyên+Hàm",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Nguyên hàm cơ bản từ bảng công thức",
+          "slug": "nguyen-ham-co-ban",
+          "difficulty": "easy"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Nguyên hàm thỏa điều kiện cho trước",
+          "slug": "nguyen-ham-dieu-kien",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: Ứng dụng nguyên hàm vào bài toán thực tế",
+          "slug": "ung-dung-thuc-te",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Khái niệm và tính chất nguyên hàm",
+              "content": "<p>$F(x)$ là <strong>nguyên hàm</strong> của $f(x)$ trên $K$ nếu $F'(x)=f(x)$ với mọi $x\\in K$.</p><p>Ký hiệu: $\\int f(x)\\,dx=F(x)+C$ ($C\\in\\mathbb{R}$: hằng số tích phân).</p><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:10px 16px;border-radius:6px;margin:10px 0'><strong>💡 Ba tính chất cốt lõi:</strong><ol><li>$\\left(\\int f(x)\\,dx\\right)'=f(x)$ — vi phân và tích phân là hai phép toán ngược nhau.</li><li>$\\int kf(x)\\,dx=k\\int f(x)\\,dx$ — đưa hằng số ra ngoài.</li><li>$\\int[f(x)\\pm g(x)]\\,dx=\\int f(x)\\,dx\\pm\\int g(x)\\,dx$ — tuyến tính.</li></ol></div><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:10px 16px;border-radius:6px;margin:10px 0'><strong>⚠️ Lưu ý:</strong> Họ nguyên hàm của $f$ có vô số hàm, tất cả đều có dạng $F(x)+C$. Hai nguyên hàm của cùng một hàm chỉ khác nhau một hằng số.</div>"
+            },
+            {
+              "heading": "2. Bảng nguyên hàm và công thức mở rộng",
+              "content": "<table style='width:100%;border-collapse:collapse;margin:8px 0'><thead><tr style='background:#6366F1;color:white'><th style='padding:8px;border:1px solid #ccc'>Hàm số $f(x)$</th><th style='padding:8px;border:1px solid #ccc'>Nguyên hàm $\\int f(x)\\,dx$</th><th style='padding:8px;border:1px solid #ccc'>Mở rộng $\\int f(ax+b)\\,dx$</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc;text-align:center'>$x^\\alpha\\ (\\alpha\\neq-1)$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{x^{\\alpha+1}}{\\alpha+1}+C$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{(ax+b)^{\\alpha+1}}{a(\\alpha+1)}+C$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{1}{x}$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\ln|x|+C$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{1}{a}\\ln|ax+b|+C$</td></tr><tr><td style='padding:8px;border:1px solid #ccc;text-align:center'>$e^x$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$e^x+C$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{e^{ax+b}}{a}+C$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc;text-align:center'>$a^x\\ (a>0,a\\neq1)$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{a^x}{\\ln a}+C$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{a^{cx}}{c\\ln a}+C$</td></tr><tr><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\sin x$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$-\\cos x+C$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$-\\dfrac{\\cos(ax+b)}{a}+C$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\cos x$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\sin x+C$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{\\sin(ax+b)}{a}+C$</td></tr><tr><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{1}{\\cos^2 x}$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\tan x+C$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{\\tan(ax)}{a}+C$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc;text-align:center'>$\\dfrac{1}{\\sin^2 x}$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$-\\cot x+C$</td><td style='padding:8px;border:1px solid #ccc;text-align:center'>$-\\dfrac{\\cot(ax)}{a}+C$</td></tr></tbody></table><div style='background:#d4edda;border-left:4px solid #28a745;padding:10px 16px;border-radius:6px;margin:10px 0'><strong>📝 Quy tắc hàm hợp tuyến tính:</strong> $\\int f(ax+b)\\,dx=\\dfrac{1}{a}F(ax+b)+C$. Ý nghĩa: nhân nguyên hàm với $\\dfrac{1}{a}$ (hệ số của $x$). Ví dụ: $\\int\\sin(3x-1)\\,dx=-\\dfrac{\\cos(3x-1)}{3}+C$.</div>"
+            },
+            {
+              "heading": "3. Ứng dụng nguyên hàm vào thực tế",
+              "content": "<h3>① Bài toán chuyển động</h3><table style='width:100%;border-collapse:collapse;margin:8px 0'><thead><tr style='background:#10b981;color:white'><th style='padding:7px;border:1px solid #ccc'>Biết</th><th style='padding:7px;border:1px solid #ccc'>Tìm</th><th style='padding:7px;border:1px solid #ccc'>Phương pháp</th></tr></thead><tbody><tr><td style='padding:7px;border:1px solid #ccc'>Gia tốc $a(t)$</td><td style='padding:7px;border:1px solid #ccc'>Vận tốc $v(t)$</td><td style='padding:7px;border:1px solid #ccc'>$v(t)=\\int a(t)\\,dt+C$; dùng $v(t_0)$ tìm $C$</td></tr><tr style='background:#f8f9fa'><td style='padding:7px;border:1px solid #ccc'>Vận tốc $v(t)$</td><td style='padding:7px;border:1px solid #ccc'>Quãng đường $s(t)$</td><td style='padding:7px;border:1px solid #ccc'>$s(t)=\\int v(t)\\,dt+C$; dùng $s(t_0)$ tìm $C$</td></tr></tbody></table><h3>② Bài toán kinh tế</h3><table style='width:100%;border-collapse:collapse;margin:8px 0'><thead><tr style='background:#6366F1;color:white'><th style='padding:7px;border:1px solid #ccc'>Biết</th><th style='padding:7px;border:1px solid #ccc'>Tìm</th><th style='padding:7px;border:1px solid #ccc'>Công thức</th></tr></thead><tbody><tr><td style='padding:7px;border:1px solid #ccc'>Chi phí biên $C'(q)$</td><td style='padding:7px;border:1px solid #ccc'>Hàm chi phí $C(q)$</td><td style='padding:7px;border:1px solid #ccc'>$C(q)=\\int C'(q)\\,dq$; dùng $C(0)$ tìm hằng số</td></tr><tr style='background:#f8f9fa'><td style='padding:7px;border:1px solid #ccc'>Doanh thu biên $R'(q)$</td><td style='padding:7px;border:1px solid #ccc'>Hàm doanh thu $R(q)$</td><td style='padding:7px;border:1px solid #ccc'>$R(q)=\\int R'(q)\\,dq$; thường $R(0)=0$</td></tr></tbody></table><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:10px 16px;border-radius:6px;margin:10px 0'><strong>💡 Chú ý:</strong> Chi phí biên $C'(q)$ = chi phí sản xuất thêm một đơn vị hàng hóa. Doanh thu biên $R'(q)$ = doanh thu từ đơn vị hàng hóa tiếp theo.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Nguyên hàm cơ bản từ bảng công thức",
+            "method": "<ol><li>Khai triển biểu thức về tổng các số hạng cơ bản (nhân tung, hằng đẳng thức, chia phân thức).</li><li>Áp dụng tính chất tuyến tính: $\\int(f\\pm g)=\\int f\\pm\\int g$.</li><li>Dùng bảng nguyên hàm và quy tắc hàm hợp tuyến tính $\\int f(ax+b)=\\dfrac{F(ax+b)}{a}+C$.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tìm $\\int\\left(3x^2-\\dfrac{2}{x}+5e^x\\right)dx$.",
+                "solution": "<p>$=3\\cdot\\dfrac{x^3}{3}-2\\ln|x|+5e^x+C=x^3-2\\ln|x|+5e^x+C$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2 (hàm hợp tuyến tính):</strong> Tìm $\\int\\cos(2x-1)\\,dx$ và $\\int e^{3x}\\,dx$.",
+                "solution": "<p>$\\int\\cos(2x-1)\\,dx=\\dfrac{\\sin(2x-1)}{2}+C$.</p><p>$\\int e^{3x}\\,dx=\\dfrac{e^{3x}}{3}+C$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Nguyên hàm thỏa điều kiện cho trước",
+            "method": "<ol><li>Tìm họ nguyên hàm: $F(x)=G(x)+C$.</li><li>Thay điều kiện $F(x_0)=k$ để tìm giá trị cụ thể của $C$.</li><li>Viết kết quả hoàn chỉnh.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Tìm $F(x)$ là nguyên hàm của $f(x)=4x^3-6x^2+2$ biết $F(1)=3$.",
+                "solution": "<p>$F(x)=x^4-2x^3+2x+C$. $F(1)=1-2+2+C=1+C=3\\Rightarrow C=2$.</p><p>Vậy $F(x)=x^4-2x^3+2x+2$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Ứng dụng nguyên hàm vào bài toán thực tế",
+            "method": "<ol><li>Nhận diện đại lượng cần tìm là nguyên hàm của đại lượng nào ($v=\\int a\\,dt$; $s=\\int v\\,dt$; $C=\\int C'\\,dq$).</li><li>Tìm họ nguyên hàm.</li><li>Dùng điều kiện ban đầu (tại $t=0$ hoặc $q=0$) để tìm hằng số $C$.</li><li>Tính giá trị yêu cầu.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1 (chuyển động):</strong> Vật có gia tốc $a(t)=6t-4$ (m/s²). Biết $v(0)=10$ m/s và $s(0)=0$. Tìm $v(t)$ và $s(t)$.",
+                "solution": "<p>$v(t)=\\int(6t-4)dt=3t^2-4t+C_1$. $v(0)=C_1=10\\Rightarrow v(t)=3t^2-4t+10$.</p><p>$s(t)=\\int(3t^2-4t+10)dt=t^3-2t^2+10t+C_2$. $s(0)=C_2=0\\Rightarrow s(t)=t^3-2t^2+10t$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2 (kinh tế):</strong> Chi phí biên $C'(q)=3q^2-4q+10$ (triệu đồng/sản phẩm). Chi phí cố định $C(0)=5$ triệu đồng. Tìm hàm chi phí $C(q)$ và tính $C(4)$.",
+                "solution": "<p>$C(q)=\\int(3q^2-4q+10)\\,dq=q^3-2q^2+10q+C_0$. $C(0)=C_0=5$.</p><p>$C(q)=q^3-2q^2+10q+5$. $C(4)=64-32+40+5=77$ triệu đồng.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Nguyên hàm của $f(x)=x^4$ là:",
+            "options": [
+              "$\\dfrac{x^5}{5}+C$",
+              "$4x^3+C$",
+              "$x^5+C$",
+              "$\\dfrac{x^3}{3}+C$"
+            ],
+            "correct": 0,
+            "explanation": "$\\int x^4dx=\\dfrac{x^5}{5}+C$."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Nguyên hàm của $e^{3x}$ là:",
+            "options": [
+              "$\\dfrac{e^{3x}}{3}+C$",
+              "$3e^{3x}+C$",
+              "$e^{3x}+C$",
+              "$\\dfrac{e^x}{3}+C$"
+            ],
+            "correct": 0,
+            "explanation": "Quy tắc hàm hợp: $\\int e^{3x}dx=\\dfrac{e^{3x}}{3}+C$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Nguyên hàm của $\\sin(2x)$ là:",
+            "options": [
+              "$-\\dfrac{\\cos2x}{2}+C$",
+              "$2\\cos2x+C$",
+              "$-2\\cos2x+C$",
+              "$\\dfrac{\\cos2x}{2}+C$"
+            ],
+            "correct": 0,
+            "explanation": "$\\int\\sin(2x)dx=-\\dfrac{\\cos2x}{2}+C$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Họ nguyên hàm của $f(x)=\\dfrac{3}{x}$ là:",
+            "options": [
+              "$3\\ln|x|+C$",
+              "$\\dfrac{3}{x^2}+C$",
+              "$-\\dfrac{3}{2x^2}+C$",
+              "$3\\ln x+C$"
+            ],
+            "correct": 0,
+            "explanation": "$\\int\\dfrac{3}{x}dx=3\\ln|x|+C$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "$F(x)$ là nguyên hàm của $f(x)=2x+1$, $F(1)=5$. Tính $F(3)$:",
+            "options": [
+              "$15$",
+              "$12$",
+              "$7$",
+              "$10$"
+            ],
+            "correct": 0,
+            "explanation": "$F(x)=x^2+x+C$. $F(1)=2+C=5\\Rightarrow C=3$. $F(3)=9+3+3=15$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Nguyên hàm của $f(x)=(x+1)^3$ là:",
+            "options": [
+              "$\\dfrac{(x+1)^4}{4}+C$",
+              "$(x+1)^4+C$",
+              "$3(x+1)^2+C$",
+              "$\\dfrac{(x+1)^4}{3}+C$"
+            ],
+            "correct": 0,
+            "explanation": "Hàm hợp tuyến tính ($a=1$): $\\int(x+1)^3dx=\\dfrac{(x+1)^4}{4}+C$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Vật chuyển động với $v(t)=3t^2+2$ m/s, $s(0)=5$ m. Tìm $s(2)$:",
+            "options": [
+              "$17$",
+              "$12$",
+              "$8$",
+              "$5$"
+            ],
+            "correct": 0,
+            "explanation": "$s(t)=t^3+2t+C$. $s(0)=C=5$. $s(2)=8+4+5=17$ m."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Chi phí biên $C'(q)=2q+5$ (đvt/sp), $C(0)=100$. Tính $C(10)$:",
+            "options": [
+              "$250$",
+              "$150$",
+              "$200$",
+              "$50$"
+            ],
+            "correct": 0,
+            "explanation": "$C(q)=q^2+5q+100$. $C(10)=100+50+100=250$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Nguyên hàm của $f(x)=\\dfrac{x^2-4}{x^2}=1-\\dfrac{4}{x^2}$:",
+            "options": [
+              "$x+\\dfrac{4}{x}+C$",
+              "$x-\\dfrac{4}{x}+C$",
+              "$x+4x^{-1}+C$",
+              "A và C đều đúng"
+            ],
+            "correct": 3,
+            "explanation": "$\\int\\left(1-4x^{-2}\\right)dx=x-4\\cdot\\dfrac{x^{-1}}{-1}+C=x+\\dfrac{4}{x}+C$. A và C là cùng một biểu thức."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Gia tốc $a(t)=10$ m/s² (hằng số), $v(0)=0$. Vận tốc sau $3$ giây là:",
+            "options": [
+              "$30$ m/s",
+              "$10$ m/s",
+              "$45$ m/s",
+              "$15$ m/s"
+            ],
+            "correct": 0,
+            "explanation": "$v(t)=\\int10\\,dt=10t+C$. $v(0)=C=0$. $v(3)=30$ m/s."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Nguyên hàm của $f(x)=\\cos(3x+1)$ là:",
+            "options": [
+              "$\\dfrac{\\sin(3x+1)}{3}+C$",
+              "$3\\sin(3x+1)+C$",
+              "$-\\dfrac{\\cos(3x+1)}{3}+C$",
+              "$\\sin(3x+1)+C$"
+            ],
+            "correct": 0,
+            "explanation": "$\\int\\cos(3x+1)dx=\\dfrac{\\sin(3x+1)}{3}+C$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Doanh thu biên $R'(q)=100-2q$, $R(0)=0$. Doanh thu bán $20$ sp:",
+            "options": [
+              "$1600$",
+              "$2000$",
+              "$800$",
+              "$1200$"
+            ],
+            "correct": 0,
+            "explanation": "$R(q)=100q-q^2$. $R(20)=2000-400=1600$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Chọn tất cả nguyên hàm đúng:",
+            "options": [
+              "$\\int e^xdx=e^x+C$",
+              "$\\int\\cos x\\,dx=\\sin x+C$",
+              "$\\int\\sin x\\,dx=-\\cos x+C$",
+              "$\\int\\dfrac{1}{\\cos^2x}dx=\\tan x+C$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đúng theo bảng nguyên hàm cơ bản."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "$F(x)$ là nguyên hàm $f(x)=6x^2-4x+1$, $F(0)=2$. Chọn tất cả đúng:",
+            "options": [
+              "$F(x)=2x^3-2x^2+x+2$",
+              "$F(1)=3$",
+              "$F(-1)=-1$",
+              "$F(2)=10$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$F(x)=2x^3-2x^2+x+2$. $F(1)=2-2+1+2=3$ ✓. $F(-1)=-2-2-1+2=-3$. Kiểm tra: $F(-1)=-2-2+(-1)+2=-3$ ≠ -1 → C sai. $F(2)=16-8+2+2=12$ ≠ 10 → D sai."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Vật có $v(t)=2t+3$ m/s, $s(0)=1$ m. Chọn tất cả đúng:",
+            "options": [
+              "$s(t)=t^2+3t+1$",
+              "$s(1)=5$ m",
+              "$s(2)=11$ m",
+              "Vật đi được $10$ m trong khoảng $t\\in[0;3]$"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "$s(t)=t^2+3t+1$. $s(1)=1+3+1=5$ ✓. $s(2)=4+6+1=11$ ✓. $s(3)=9+9+1=19\\Rightarrow$ quãng đường $=19-1=18$ m ≠ 10 → D ✗."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Chi phí biên $C'(q)=3q^2-4q+10$, $C(0)=5$. Chọn tất cả đúng:",
+            "options": [
+              "$C(q)=q^3-2q^2+10q+5$",
+              "$C(1)=14$ (triệu đồng)",
+              "$C(2)=21$ (triệu đồng)",
+              "$C(4)=77$ (triệu đồng)"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$C(q)=q^3-2q^2+10q+5$. $C(1)=1-2+10+5=14$ ✓. $C(2)=8-8+20+5=25$ ≠ 21 → C sai. $C(4)=64-32+40+5=77$ ✓."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "$F(x)$ là nguyên hàm của $f(x)=4x^3-6x$, $F(1)=0$. Tính $F(2)$.",
+            "explanation": "$F(x)=x^4-3x^2+C$. $F(1)=1-3+C=0\\Rightarrow C=2$. $F(2)=16-12+2=6$.",
+            "correct": "6"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "$f(x)=6x^2-4x+1$, $F(0)=2$. Tính $F(1)$.",
+            "explanation": "$F(x)=2x^3-2x^2+x+2$. $F(1)=2-2+1+2=3$.",
+            "correct": "3"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Vật có gia tốc $a(t)=6t$, $v(0)=4$ m/s, $s(0)=0$. Tính $s(2)$.",
+            "explanation": "$v(t)=3t^2+4$. $s(t)=t^3+4t+C$. $s(0)=0$. $s(2)=8+8=16$ m.",
+            "correct": "16"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Chi phí biên $C'(q)=2q+5$, $C(0)=100$. Tính $C(10)$.",
+            "explanation": "$C(q)=q^2+5q+100$. $C(10)=100+50+100=250$.",
+            "correct": "250"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Doanh thu biên $R'(q)=80-4q$, $R(0)=0$. Tính $R(10)$.",
+            "explanation": "$R(q)=80q-2q^2$. $R(10)=800-200=600$ (đơn vị tiền).",
+            "correct": "600"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "$F(x)=x^2+ax+b$ là nguyên hàm của $f(x)=2x+3$. Tìm $a+b$ biết $F(0)=1$.",
+            "explanation": "$F'(x)=2x+a=2x+3\\Rightarrow a=3$. $F(0)=b=1$. $a+b=3+1=4$.",
+            "correct": "4"
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Tìm nguyên hàm của hàm số $f(x) = \\dfrac{1}{x^2 - 3x + 2}$.",
+            "answer": "$\\ln|\\dfrac{x-2}{x-1}| + C$.",
+            "explanation": "Phân tích phân thức thành tổng các phân thức đơn giản."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Cho $f(x)$ là hàm số liên tục trên $\\mathbb{R}$. Biết $F(x)$ là một nguyên hàm của $f(x)$ và $F(2) = 5, F(4) = 9$. Tính tích phân $I = \\int_2^4 f(x) dx$.",
+            "answer": "4.",
+            "explanation": "Áp dụng định nghĩa nguyên hàm và công thức Newton-Leibniz."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Tìm $F(x)$ là nguyên hàm của $f(x) = \\sin^2 x$ biết đồ thị hàm số $F(x)$ đi qua điểm $O(0; 0)$.",
+            "answer": "$F(x) = \\dfrac{1}{2}x - \\dfrac{1}{4}\\sin 2x$.",
+            "explanation": "Sử dụng công thức hạ bậc $\\sin^2 x = \\dfrac{1 - \\cos 2x}{2}$."
+          }
+        ]
+      }
+    }
+  ]
+}

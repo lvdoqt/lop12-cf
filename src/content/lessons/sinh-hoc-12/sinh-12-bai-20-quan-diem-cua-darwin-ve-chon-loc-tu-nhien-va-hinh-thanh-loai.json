@@ -1,0 +1,188 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-20",
+      "name": "Bài 20. Quan điểm của Darwin về chọn lọc tự nhiên và hình thành loài",
+      "slug": "quan-diem-cua-darwin-ve-chon-loc-tu-nhien-va-hinh-thanh-loai",
+      "chapter": "Chương 5. Bằng chứng và các học thuyết tiến hóa",
+      "chapter_id": "S12-5",
+      "lesson_id": 20,
+      "description": "Tìm hiểu quan điểm của Darwin về chọn lọc tự nhiên và hình thành loài.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Quan điểm của Darwin về chọn lọc tự nhiên và hình thành loài",
+          "sections": [
+            {
+              "heading": "1. Học thuyết tiến hóa của Darwin",
+              "content": "<h4>a) Nguồn gốc các loài</h4><ul><li>Các loài biến đổi qua thời gian.</li><li>Loài mới hình thành từ loài ban đầu.</li><li>Tiến hóa là quá trình phân hóa từ một dạng chung.</li></ul><h4>b) Bằng chứng</h4><ul><li>Darwin quan sát trên quần đảo Galapagos.</li><li>Các loài sống trên đảo khác nhau nhưng có quan hệ với đất liền.</li><li>Chim sẻ có mỏ khác nhau tùy thức ăn.</li></ul>"
+            },
+            {
+              "heading": "2. Chọn lọc tự nhiên",
+              "content": "<h4>a) Cơ chế</h4><ul><li>Cá thể có biến dị di truyền có lợi sống sót cao hơn.</li><li>Cá thể có lợi sinh sản nhiều hơn.</li><li>Allele có lợi tăng tần số trong quần thể.</li></ul><h4>b) Điều kiện</h4><ul><li>Biến dị di truyền trong quần thể.</li><li>Sự cạnh tranh sinh tồn.</li><li>Tài nguyên giới hạn.</li></ul><h4>c) Ví dụ</h4><ul><li>Công trùng bám trên cây có màu giống nền.</li><li>Kháng thuốc trừ sâu ở côn trùng.</li><li>Tuần lộc có sừng to hơn qua các thế hệ.</li></ul>"
+            },
+            {
+              "heading": "3. Hình thành loài",
+              "content": "<h4>a) Khái niệm loài</h4><ul><li><strong>Loài:</strong> Nhóm quần thể có khả năng giao phối tự nhiên với nhau, sinh ra thế hệ sau có khả năng sinh sản, cách ly sinh sản với nhóm khác.</li></ul><h4>b) Cơ chế cách ly</h4><ul><li><strong>Cách ly trước hợp tử:</strong> Không giao phối được (cách ly địa lý, mùa, tập tính).</li><li><strong>Cách ly sau hợp tử:</strong> Hợp tử chết hoặc không sinh sản được (lai sterile).</li></ul><h4>c) Hình thành loài</h4><ul><li><strong>Phân bố địa lý:</strong> Quần thể bị chia cắt → cách ly → tiến hóa khác nhau → loài mới.</li><li><strong>Đa dạng hóa:</strong> Một loài tiến hóa thành nhiều loài.</li></ul>"
+            },
+            {
+              "heading": "4. Vai trò của chọn lọc tự nhiên",
+              "content": "<h4>a) Trong tiến hóa</h4><ul><li>Tạo sự thích nghi của sinh vật với môi trường.</li><li>Tạo đa dạng sinh học.</li><li>Là cơ chế chính của tiến hóa.</li></ul><h4>b) Trong thích nghi</h4><ul><li>Giúp sinh vật tồn tại trong điều kiện mới.</li><li>Tạo các đặc điểm thích nghi đặc biệt.</li></ul><h4>c) Ví dụ thực tế</h4><ul><li>Kháng kháng sinh vi khuẩn.</li><li>Kháng thuốc trừ sâu.</li><li>Tiến hóa của các loài thực vật và động vật.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Ai là người đề xuất học thuyết tiến hóa?",
+            "options": [
+              "Lamarc",
+              "Darwin",
+              "Mendel",
+              "Wallace"
+            ],
+            "correct": 1,
+            "explanation": "Charles Darwin là người đề xuất học thuyết tiến hóa qua chọn lọc tự nhiên."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Chọn lọc tự nhiên dựa trên cơ sở nào?",
+            "options": [
+              "Biến dị di truyền",
+              "Môi trường",
+              "Cạnh tranh sinh tồn",
+              "Tất cả đều đúng"
+            ],
+            "correct": 3,
+            "explanation": "Chọn lọc tự nhiên dựa trên biến dị di truyền, môi trường và cạnh tranh sinh tồn."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Cách ly sau hợp tử là gì?",
+            "options": [
+              "Không giao phối được",
+              "Hợp tử chết hoặc lai không sinh sản được",
+              "Khác mùa giao phối",
+              "Khác nơi sống"
+            ],
+            "correct": 1,
+            "explanation": "Cách ly sau hợp tử: hợp tử chết hoặc lai (F1) không sinh sản được."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Loài được định nghĩa dựa trên tiêu chí nào?",
+            "options": [
+              "Hình thái giống nhau",
+              "Khả năng giao phối và sinh con có khả năng sinh sản",
+              "Cùng môi trường sống",
+              "Cùng nguồn gốc"
+            ],
+            "correct": 1,
+            "explanation": "Loài là nhóm quần thể có khả năng giao phối tự nhiên và sinh con có khả năng sinh sản."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Ví dụ nào là chọn lọc tự nhiên?",
+            "options": [
+              "Tạo giống bò sữa",
+              "Côn trùng kháng thuốc trừ sâu",
+              "Lai tạo giống lúa",
+              "Nuôi cấy tế bào"
+            ],
+            "correct": 1,
+            "explanation": "Côn trùng kháng thuốc trừ sâu là ví dụ về chọn lọc tự nhiên trong tự nhiên."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các điều kiện của chọn lọc tự nhiên:",
+            "options": [
+              "Biến dị di truyền",
+              "Cạnh tranh sinh tồn",
+              "Tài nguyên giới hạn",
+              "Giao phối ngẫu nhiên"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Biến dị di truyền là nguyên liệu. B ✓: Cạnh tranh sinh tồn. C ✓: Tài nguyên giới hạn. D ✗: Không cần thiết."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các ví dụ về cách ly trước hợp tử:",
+            "options": [
+              "Khác mùa giao phối",
+              "Khác nơi sống",
+              "Hợp tử chết",
+              "Khác tập tính"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "A ✓: Cách ly mùa. B ✓: Cách ly địa lý. C ✗: Cách ly sau hợp tử. D ✓: Cách ly tập tính."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một quần thể 100 cá thể có 20 cá thể có allele A có lợi. Nếu tất cả sinh sản như nhau, sau 1 thế hệ có bao nhiêu cá thể có allele A? Nhập số 3 chữ số.",
+            "correct": "020"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Quần thể ban đầu 1000 cá thể. Sau chọn lọc, 200 cá thể có lợi sống sót. Tính % sống sót. Nhập số 3 chữ số.",
+            "correct": "200"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định cơ chế cách ly",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Cách ly trước hợp tử: Không tạo được hợp tử (khác mùa, địa lý, tập tính).</li><li>Cách ly sau hợp tử: Hợp tử chết hoặc lai không sinh sản được.</li></ol>",
+            "examples": [
+              {
+                "question": "Hai loài cá sống ở hai dòng sông khác nhau. Đây là cách ly gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Khác nơi sống → Cách ly <strong>địa lý</strong> (trước hợp tử).</p>"
+              },
+              {
+                "question": "Lai giữa hai loài chim tạo trứng nhưng trứng không nở. Đây là cách ly gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Hợp tử chết → Cách ly <strong>sau hợp tử</strong>.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính tần số allele sau chọn lọc",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định số cá thể sống sót và sinh sản.</li><li>Tính tần số allele mới = Số allele có lợi / Tổng số allele.</li></ol>",
+            "examples": [
+              {
+                "question": "100 cá thể, 50 có allele A, 50 có allele a. Sau chọn lọc, 25 AA và 25 aa sống sót. Tính p?",
+                "solution": "<p><strong>Giải:</strong></p><p>Sống sót: 50 cá thể</p><p>Allele A = 25×2 = 50</p><p>Tổng allele = 50×2 = 100</p><p>p = 50/100 = 0.5</p>"
+              },
+              {
+                "question": "Quần thể có p=0.6, sau chọn lọc 80% cá thể có A sống sót, 20% cá thể có a sống sót. Tính p mới?",
+                "solution": "<p><strong>Giải:</strong></p><p>Giả sử 100 cá thể: 60 A, 40 a</p><p>Sống sót: 60×0.8 = 48 A, 40×0.2 = 8 a</p><p>Tổng = 56 cá thể</p><p>p = (48×2)/112 = 0.857</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

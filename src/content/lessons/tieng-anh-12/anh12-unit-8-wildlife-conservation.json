@@ -1,0 +1,380 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-unit-8-wildlife-conservation",
+      "name": "Unit 8: Wildlife Conservation",
+      "slug": "unit-8-wildlife-conservation",
+      "chapter": "Unit 8: Wildlife Conservation",
+      "chapter_id": "A12",
+      "lesson_id": 10,
+      "description": "Learn about wildlife conservation, endangered species, and adverbial clauses of condition and comparison.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?q=80&w=2676&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "vocab-8",
+          "name": "Wildlife Vocabulary",
+          "slug": "wildlife-vocabulary",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Unit 8: Wildlife Conservation",
+          "sections": [
+            {
+              "heading": "1. Từ vựng (Vocabulary)",
+              "content": "<div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Word</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Type & IPA</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Meaning</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Example</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2 font-bold'>Wildlife</td><td class='px-4 py-2'>(n) /ˈwaɪldlaɪf/</td><td class='px-4 py-2'>Động vật hoang dã</td><td class='px-4 py-2'>We must protect wildlife.</td></tr><tr><td class='px-4 py-2 font-bold'>Conservation</td><td class='px-4 py-2'>(n) /ˌkɒnsəˈveɪʃn/</td><td class='px-4 py-2'>Bảo tồn</td><td class='px-4 py-2'>Wildlife conservation is important.</td></tr><tr><td class='px-4 py-2 font-bold'>Endangered</td><td class='px-4 py-2'>(adj) /ɪnˈdeɪndʒəd/</td><td class='px-4 py-2'>Có nguy cơ tuyệt chủng</td><td class='px-4 py-2'>Tigers are endangered species.</td></tr><tr><td class='px-4 py-2 font-bold'>Extinct</td><td class='px-4 py-2'>(adj) /ɪkˈstɪŋkt/</td><td class='px-4 py-2'>Tuyệt chủng</td><td class='px-4 py-2'>Dinosaurs are extinct.</td></tr><tr><td class='px-4 py-2 font-bold'>Habitat</td><td class='px-4 py-2'>(n) /ˈhæbɪtæt/</td><td class='px-4 py-2'>Môi trường sống</td><td class='px-4 py-2'>Protect animal habitats.</td></tr><tr><td class='px-4 py-2 font-bold'>Poaching</td><td class='px-4 py-2'>(n) /ˈpəʊtʃɪŋ/</td><td class='px-4 py-2'>Săn bắt trái phép</td><td class='px-4 py-2'>Poaching threatens wildlife.</td></tr><tr><td class='px-4 py-2 font-bold'>Deforestation</td><td class='px-4 py-2'>(n) /diːˌfɒrɪˈsteɪʃn/</td><td class='px-4 py-2'>Phá rừng</td><td class='px-4 py-2'>Deforestation destroys habitats.</td></tr><tr><td class='px-4 py-2 font-bold'>Biodiversity</td><td class='px-4 py-2'>(n) /ˌbaɪəʊdaɪˈvɜːsəti/</td><td class='px-4 py-2'>Đa dạng sinh học</td><td class='px-4 py-2'>Biodiversity is declining.</td></tr><tr><td class='px-4 py-2 font-bold'>Ecosystem</td><td class='px-4 py-2'>(n) /ˈiːkəʊsɪstəm/</td><td class='px-4 py-2'>Hệ sinh thái</td><td class='px-4 py-2'>Protect the ecosystem.</td></tr><tr><td class='px-4 py-2 font-bold'>Species</td><td class='px-4 py-2'>(n) /ˈspiːʃiːz/</td><td class='px-4 py-2'>Loài</td><td class='px-4 py-2'>Many species are at risk.</td></tr><tr><td class='px-4 py-2 font-bold'>Preserve</td><td class='px-4 py-2'>(v) /prɪˈzɜːv/</td><td class='px-4 py-2'>Bảo vệ, gìn giữ</td><td class='px-4 py-2'>We must preserve nature.</td></tr><tr><td class='px-4 py-2 font-bold'>Protect</td><td class='px-4 py-2'>(v) /prəˈtekt/</td><td class='px-4 py-2'>Bảo vệ</td><td class='px-4 py-2'>Protect endangered animals.</td></tr><tr><td class='px-4 py-2 font-bold'>Threaten</td><td class='px-4 py-2'>(v) /ˈθretn/</td><td class='px-4 py-2'>Đe dọa</td><td class='px-4 py-2'>Pollution threatens wildlife.</td></tr><tr><td class='px-4 py-2 font-bold'>Sustainable</td><td class='px-4 py-2'>(adj) /səˈsteɪnəbl/</td><td class='px-4 py-2'>Bền vững</td><td class='px-4 py-2'>Sustainable development is key.</td></tr><tr><td class='px-4 py-2 font-bold'>Sanctuary</td><td class='px-4 py-2'>(n) /ˈsæŋktʃuəri/</td><td class='px-4 py-2'>Khu bảo tồn</td><td class='px-4 py-2'>Wildlife sanctuary protects animals.</td></tr></tbody></table></div>"
+            },
+            {
+              "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
+              "content": "<p><strong>Conservation Terms (Thuật ngữ bảo tồn):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>wildlife conservation:</strong> bảo tồn động vật hoang dã</li><li><strong>endangered species:</strong> loài có nguy cơ tuyệt chủng</li><li><strong>extinct species:</strong> loài đã tuyệt chủng</li><li><strong>threatened species:</strong> loài bị đe dọa</li><li><strong>protected area:</strong> khu vực được bảo vệ</li><li><strong>wildlife sanctuary:</strong> khu bảo tồn động vật hoang dã</li><li><strong>national park:</strong> vườn quốc gia</li><li><strong>nature reserve:</strong> khu bảo tồn thiên nhiên</li></ul><p><strong>Threats to Wildlife (Mối đe dọa đối với động vật hoang dã):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>poaching:</strong> săn bắt trái phép</li><li><strong>illegal hunting:</strong> săn bắn bất hợp pháp</li><li><strong>habitat loss:</strong> mất môi trường sống</li><li><strong>deforestation:</strong> phá rừng</li><li><strong>climate change:</strong> biến đổi khí hậu</li><li><strong>pollution:</strong> ô nhiễm</li><li><strong>overfishing:</strong> đánh bắt cá quá mức</li><li><strong>illegal wildlife trade:</strong> buôn bán động vật hoang dã bất hợp pháp</li></ul><p><strong>Conservation Actions (Hành động bảo tồn):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>protect habitats:</strong> bảo vệ môi trường sống</li><li><strong>preserve biodiversity:</strong> bảo tồn đa dạng sinh học</li><li><strong>ban hunting:</strong> cấm săn bắn</li><li><strong>establish sanctuaries:</strong> thành lập khu bảo tồn</li><li><strong>breed in captivity:</strong> nhân giống trong điều kiện nuôi nhốt</li><li><strong>reintroduce to the wild:</strong> tái thả về tự nhiên</li><li><strong>raise awareness:</strong> nâng cao nhận thức</li><li><strong>enforce laws:</strong> thực thi luật pháp</li></ul><p><strong>Animals and Habitats (Động vật và môi trường sống):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>mammals:</strong> động vật có vú (tigers, elephants, rhinos)</li><li><strong>birds:</strong> chim (eagles, parrots)</li><li><strong>reptiles:</strong> bò sát (turtles, crocodiles)</li><li><strong>marine life:</strong> sinh vật biển (whales, dolphins, coral)</li><li><strong>rainforest:</strong> rừng mưa nhiệt đới</li><li><strong>savanna:</strong> thảo nguyên</li><li><strong>wetland:</strong> vùng đất ngập nước</li><li><strong>coral reef:</strong> rạn san hô</li></ul><p><strong>Collocations về Wildlife Conservation:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>protect endangered species:</strong> bảo vệ loài có nguy cơ tuyệt chủng</li><li><strong>preserve natural habitats:</strong> bảo tồn môi trường sống tự nhiên</li><li><strong>prevent extinction:</strong> ngăn chặn tuyệt chủng</li><li><strong>combat poaching:</strong> chống săn bắt trái phép</li><li><strong>restore ecosystems:</strong> phục hồi hệ sinh thái</li><li><strong>promote sustainable practices:</strong> thúc đẩy thực hành bền vững</li></ul>"
+            }
+,
+            {
+              "heading": "3. Ngữ âm: Nhấn mạnh trong mệnh đề trạng ngữ chỉ điều kiện và so sánh",
+              "content": "<h3>Stress in conditional and comparative clauses</h3><p><strong>Quy tắc nhấn mạnh:</strong></p><p><strong>1. Mệnh đề điều kiện (Conditional clauses):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ chính và điều kiện quan trọng</li><li>Ex: <strong>IF</strong> we <strong>PROTECT</strong> habitats, animals will <strong>SURVIVE</strong>.</li><li>Ex: <strong>UNLESS</strong> we <strong>ACT</strong> now, species will become <strong>EXTINCT</strong>.</li></ul><p><strong>2. Mệnh đề so sánh (Comparative clauses):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh các yếu tố được so sánh</li><li>Ex: The <strong>MORE</strong> we protect, the <strong>BETTER</strong> it is.</li><li>Ex: Tigers are <strong>MORE ENDANGERED</strong> than lions.</li></ul><p><strong>3. Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Liên từ (if, unless, as...as, than) thường nhấn nhẹ</li><li>Động từ chính và tính từ so sánh được nhấn mạnh</li><li>Trong double comparatives (the more...the more), cả hai 'more' đều được nhấn</li></ul>"
+            },
+            {
+              "heading": "4. Ngữ pháp: Mệnh đề trạng ngữ chỉ điều kiện và so sánh (Adverbial Clauses of Condition and Comparison)",
+              "content": "<h3>A. Mệnh đề trạng ngữ chỉ điều kiện (Adverbial Clauses of Condition)</h3><p><strong>Định nghĩa:</strong> Mệnh đề trạng ngữ chỉ điều kiện diễn tả điều kiện cần thiết để một hành động xảy ra.</p><p><strong>1. IF (nếu):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> If + S + V, S + V</li><li><strong>Type 1 (Real condition - Điều kiện có thật):</strong></li><li>If + Present Simple, will/can/may + V</li><li>Ex: <strong>If</strong> we protect habitats, animals <strong>will survive</strong>.</li><li>Ex: <strong>If</strong> people stop poaching, species <strong>can recover</strong>.</li><li><strong>Type 2 (Unreal present - Điều kiện không có thật ở hiện tại):</strong></li><li>If + Past Simple, would/could/might + V</li><li>Ex: <strong>If</strong> we had more sanctuaries, we <strong>would save</strong> more animals.</li><li>Ex: <strong>If</strong> people cared more, wildlife <strong>wouldn't be</strong> endangered.</li><li><strong>Type 3 (Unreal past - Điều kiện không có thật ở quá khứ):</strong></li><li>If + Past Perfect, would/could/might + have + V3</li><li>Ex: <strong>If</strong> we had protected them earlier, they <strong>wouldn't have become</strong> extinct.</li></ul><p><strong>2. UNLESS (trừ khi, nếu không):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> Unless + S + V (khẳng định), S + V</li><li>Unless = If...not</li><li>Ex: <strong>Unless</strong> we act now, species will disappear. (= If we don't act now...)</li><li>Ex: <strong>Unless</strong> we stop deforestation, habitats will be destroyed.</li><li>Ex: Animals will die <strong>unless</strong> we protect them.</li></ul><p><strong>3. PROVIDED/PROVIDING (THAT) (miễn là, với điều kiện):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> Provided/Providing (that) + S + V, S + V</li><li>Ex: We can save species <strong>provided that</strong> we act quickly.</li><li>Ex: Wildlife will survive <strong>providing</strong> we protect their habitats.</li></ul><p><strong>4. AS LONG AS / SO LONG AS (miễn là):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> As long as / So long as + S + V, S + V</li><li>Ex: Animals will be safe <strong>as long as</strong> we protect them.</li><li>Ex: <strong>So long as</strong> we preserve habitats, biodiversity will thrive.</li></ul><p><strong>5. IN CASE (phòng khi, trong trường hợp):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + V + in case + S + V</li><li>Ex: We have sanctuaries <strong>in case</strong> animals need protection.</li><li>Ex: Save seeds <strong>in case</strong> species become extinct.</li></ul><h3>B. Mệnh đề trạng ngữ chỉ so sánh (Adverbial Clauses of Comparison)</h3><p><strong>Định nghĩa:</strong> Mệnh đề trạng ngữ chỉ so sánh được dùng để so sánh hai sự vật, hiện tượng.</p><p><strong>1. AS...AS (bằng, như):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + V + as + adj/adv + as + S + V</li><li>Dùng để so sánh bằng</li><li>Ex: Tigers are <strong>as endangered as</strong> rhinos.</li><li>Ex: We should protect wildlife <strong>as much as</strong> we can.</li><li>Ex: This species is <strong>as important as</strong> any other.</li><li><strong>Not as...as:</strong> không bằng</li><li>Ex: Lions are <strong>not as endangered as</strong> tigers.</li></ul><p><strong>2. THAN (hơn):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> S + V + comparative adj/adv + than + S + V</li><li>Dùng để so sánh hơn</li><li>Ex: Tigers are <strong>more endangered than</strong> lions.</li><li>Ex: Protecting habitats is <strong>more important than</strong> we think.</li><li>Ex: Deforestation happens <strong>faster than</strong> reforestation.</li></ul><p><strong>3. THE...THE (càng...càng):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cấu trúc:</strong> The + comparative..., the + comparative...</li><li>Dùng để chỉ sự thay đổi tương ứng</li><li>Ex: <strong>The more</strong> we protect habitats, <strong>the more</strong> species survive.</li><li>Ex: <strong>The faster</strong> we act, <strong>the better</strong> the results.</li><li>Ex: <strong>The more</strong> people care, <strong>the less</strong> poaching occurs.</li></ul><p><strong>4. LIKE / AS (như, giống như):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Like + noun/pronoun:</strong> giống như (không phải mệnh đề)</li><li>Ex: Protect animals <strong>like</strong> tigers and elephants.</li><li><strong>As + clause:</strong> như, theo cách (có mệnh đề)</li><li>Ex: Protect wildlife <strong>as</strong> we protect our families.</li><li>Ex: Do <strong>as</strong> conservationists recommend.</li></ul><h3>C. Lưu ý quan trọng</h3><ul class='list-disc pl-5 space-y-2'><li><strong>Unless:</strong> luôn dùng với động từ khẳng định (không dùng 'not')</li><li>Unless we act = If we don't act (ĐÚNG)</li><li>Unless we don't act (SAI)</li><li><strong>Provided/As long as:</strong> nhấn mạnh điều kiện cần thiết</li><li><strong>In case:</strong> chuẩn bị cho tình huống có thể xảy ra</li><li><strong>As...as:</strong> so sánh bằng (cả khẳng định và phủ định)</li><li><strong>Than:</strong> luôn đi với so sánh hơn (comparative)</li><li><strong>The...the:</strong> cả hai đều dùng comparative</li><li><strong>Like vs As:</strong></li><li>Like + noun: Protect animals like tigers.</li><li>As + clause: Do as I say.</li></ul>"
+            },
+            {
+              "heading": "5. I. Getting Started",
+              "content": "<p><strong>Chủ đề:</strong> Wildlife conservation and endangered species - Bảo tồn động vật hoang dã và các loài có nguy cơ tuyệt chủng</p><p><strong>Nội dung chính:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Hội thoại về các loài động vật có nguy cơ tuyệt chủng</li><li>Thảo luận về nguyên nhân và giải pháp</li><li>Chia sẻ về các nỗ lực bảo tồn</li><li>Nói về tầm quan trọng của đa dạng sinh học</li></ul><p><strong>Các chủ đề được đề cập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Endangered species:</strong> Tigers, elephants, rhinos, pandas</li><li><strong>Threats:</strong> Poaching, habitat loss, climate change</li><li><strong>Solutions:</strong> Protected areas, breeding programs, laws</li><li><strong>Importance:</strong> Biodiversity, ecosystem balance</li></ul>"
+            },
+            {
+              "heading": "6. II. Language",
+              "content": "<p><strong>A. Pronunciation: Stress in conditional and comparative clauses</strong></p><p>Luyện phát âm nhấn mạnh trong mệnh đề điều kiện và so sánh</p><p><strong>B. Vocabulary:</strong> Wildlife Conservation</p><ul class='list-disc pl-5 space-y-2'><li>Animals: wildlife, species, mammals, birds, reptiles, marine life</li><li>Conservation: conservation, endangered, extinct, habitat, sanctuary</li><li>Threats: poaching, deforestation, pollution, climate change</li><li>Actions: protect, preserve, conserve, restore, ban</li><li>Adjectives: endangered, extinct, threatened, sustainable</li></ul><p><strong>C. Grammar:</strong> Adverbial Clauses of Condition and Comparison</p><ul class='list-disc pl-5 space-y-2'><li>Condition: if, unless, provided that, as long as, in case</li><li>Comparison: as...as, than, the...the, like/as</li></ul>"
+            },
+            {
+              "heading": "7. III. Reading",
+              "content": "<p><strong>Chủ đề:</strong> Endangered species and conservation efforts</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc hiểu về các loài có nguy cơ tuyệt chủng</li><li>Tìm thông tin về nguyên nhân và hậu quả</li><li>Hiểu về các nỗ lực bảo tồn</li><li>Phân tích giải pháp và thách thức</li></ul><p><strong>Nội dung:</strong> Bài đọc giới thiệu về:</p><ul class='list-disc pl-5 space-y-2'><li><strong>Endangered animals:</strong> Tigers, elephants, rhinos, pandas</li><li><strong>Causes:</strong> Poaching, habitat destruction, climate change</li><li><strong>Conservation efforts:</strong> National parks, breeding programs</li><li><strong>Success stories:</strong> Species recovery examples</li></ul>"
+            },
+            {
+              "heading": "8. IV. Speaking",
+              "content": "<p><strong>Chủ đề:</strong> Discussing wildlife conservation</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nói về các loài có nguy cơ tuyệt chủng</li><li>Thảo luận về nguyên nhân và giải pháp</li><li>Bày tỏ quan điểm về bảo tồn</li><li>So sánh các phương pháp bảo tồn</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>If we protect habitats, animals will survive.</li><li>Unless we act now, species will become extinct.</li><li>The more we protect, the better it is.</li><li>Tigers are more endangered than lions.</li><li>Conservation is as important as development.</li><li>In my opinion, we should...</li><li>I think wildlife conservation is...</li></ul>"
+            },
+            {
+              "heading": "9. V. Listening",
+              "content": "<p><strong>Chủ đề:</strong> A talk about wildlife conservation</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe hiểu bài nói về bảo tồn động vật hoang dã</li><li>Điền thông tin về các loài có nguy cơ tuyệt chủng</li><li>Trả lời câu hỏi về nguyên nhân và giải pháp</li><li>Ghi chú các ý chính</li></ul><p><strong>Nội dung:</strong> Bài nghe về:</p><ul class='list-disc pl-5 space-y-2'><li>Tình trạng động vật hoang dã hiện nay</li><li>Các mối đe dọa chính</li><li>Nỗ lực bảo tồn toàn cầu</li><li>Vai trò của mỗi người</li></ul>"
+            },
+            {
+              "heading": "10. VI. Writing",
+              "content": "<p><strong>Chủ đề:</strong> Writing an essay about wildlife conservation</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Viết bài luận về bảo tồn động vật hoang dã</li><li>Trình bày nguyên nhân và hậu quả</li><li>Sử dụng mệnh đề điều kiện và so sánh</li><li>Đề xuất giải pháp</li></ul><p><strong>Cấu trúc bài viết:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Introduction:</strong> Giới thiệu vấn đề bảo tồn động vật hoang dã</li><li><strong>Body 1:</strong> Nguyên nhân (poaching, habitat loss, climate change)</li><li><strong>Body 2:</strong> Hậu quả và giải pháp</li><li><strong>Conclusion:</strong> Kết luận và kêu gọi hành động</li></ul><p><strong>Useful language:</strong></p><ul class='list-disc pl-5 space-y-2'><li>If we don't act, species will disappear.</li><li>Unless we protect habitats, animals will die.</li><li>The more we care, the more species survive.</li><li>Conservation is more important than ever.</li><li>We should protect wildlife as much as possible.</li></ul>"
+            },
+            {
+              "heading": "11. VII. Communication and Culture / CLIL",
+              "content": "<p><strong>Communication:</strong> Discussing conservation issues</p><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Expressing concern:</strong></li><li>I'm worried about... / I'm concerned that...</li><li>It's alarming that...</li><li>We need to address...</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Suggesting solutions:</strong></li><li>We should... / We need to...</li><li>If we..., then...</li><li>One solution is to...</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Making comparisons:</strong></li><li>...is more endangered than...</li><li>...is as important as...</li><li>The more we..., the more...</li></ul><p><strong>Culture:</strong> Conservation efforts worldwide</p><ul class='list-disc pl-5 space-y-2'><li><strong>Africa:</strong> Protecting elephants and rhinos, anti-poaching patrols</li><li><strong>Asia:</strong> Tiger conservation, panda breeding programs</li><li><strong>Australia:</strong> Protecting unique species (koalas, kangaroos)</li><li><strong>Vietnam:</strong> Protecting saola, Asian elephants, Cat Tien National Park</li></ul><p><strong>CLIL (Biology/Environmental Science):</strong> Ecosystems and biodiversity</p><ul class='list-disc pl-5 space-y-2'><li>Food chains and food webs</li><li>Keystone species</li><li>Ecosystem services</li><li>Impact of species loss</li><li>Conservation biology</li></ul>"
+            },
+            {
+              "heading": "12. VIII. Looking Back",
+              "content": "<p><strong>Ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Pronunciation:</strong> Stress in conditional and comparative clauses</li><li><strong>Vocabulary:</strong> Wildlife, conservation, endangered, extinct, habitat, poaching, deforestation, biodiversity, ecosystem, species, preserve, protect, threaten, sustainable, sanctuary</li><li><strong>Grammar:</strong> Conditional clauses (if, unless, provided that, as long as, in case), Comparative clauses (as...as, than, the...the, like/as)</li><li><strong>Skills:</strong> Reading about endangered species, Speaking about conservation, Listening to conservation talks, Writing essays about wildlife</li></ul><p><strong>Self-assessment:</strong> Đánh giá khả năng:</p><ul class='list-disc pl-5 space-y-2'><li>Sử dụng từ vựng về bảo tồn động vật hoang dã</li><li>Nhấn mạnh đúng trong mệnh đề điều kiện và so sánh</li><li>Sử dụng mệnh đề điều kiện và so sánh</li><li>Thảo luận về vấn đề bảo tồn</li></ul>"
+            },
+            {
+              "heading": "13. Project",
+              "content": "<p><strong>Đề tài:</strong> Create a wildlife conservation campaign</p><p><strong>Nhiệm vụ:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Chọn một loài động vật có nguy cơ tuyệt chủng</li><li>Nghiên cứu về tình trạng và mối đe dọa</li><li>Đề xuất giải pháp bảo tồn</li><li>Tạo poster hoặc presentation</li><li>Trình bày trước lớp (5-7 phút)</li></ul><p><strong>Nội dung cần có:</strong></p><ul class='list-disc pl-5 space-y-2'><li>What is the species?</li><li>Why is it endangered?</li><li>What are the main threats?</li><li>What conservation efforts exist?</li><li>What can people do to help?</li><li>What will happen if we don't act?</li></ul><p><strong>Gợi ý loài động vật:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Tigers (Hổ)</li><li>Asian elephants (Voi châu Á)</li><li>Rhinos (Tê giác)</li><li>Sea turtles (Rùa biển)</li><li>Saola (Sao la - Vietnam)</li><li>Orangutans (Đười ươi)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Type 1: Conditional and Comparative Clauses",
+            "method": "<p>Use conditional clauses (if, unless, provided that) and comparative clauses (as...as, than, the...the) correctly.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Wildlife conservation has become more urgent than ever before. Many species are disappearing faster than scientists can study them. If we don't take immediate action, we will lose countless species forever.\n\nThe main threats to wildlife are habitat loss, poaching, and climate change. Deforestation destroys the homes of millions of animals. The more forests we cut down, the fewer places animals have to live. Tigers, for example, are more endangered now than they were 50 years ago because their forest habitats have shrunk dramatically. Unless we stop destroying habitats, many species will become extinct within our lifetime.\n\nPoaching is another serious problem. Illegal hunters kill elephants for ivory, rhinos for horns, and tigers for their skins. The demand for wildlife products is as high as it has ever been, particularly in some Asian markets. If governments enforced stricter laws and punished poachers more severely, fewer animals would be killed. Some countries have made progress - provided that anti-poaching patrols are well-funded and equipped, they can protect animals effectively.\n\nClimate change affects wildlife in ways that are not always obvious. As temperatures rise, animals must adapt or move to cooler areas. However, many species cannot move fast enough. Polar bears, for instance, are losing their ice habitats as the Arctic warms. The faster the climate changes, the harder it is for species to survive.\n\nDespite these challenges, there are success stories. Giant pandas, once critically endangered, have recovered thanks to intensive conservation efforts in China. This shows that if we invest in conservation and protect habitats, species can recover. The more people understand the importance of biodiversity, the more support conservation efforts receive. Everyone can help - whether by supporting conservation organizations, reducing consumption, or spreading awareness. As long as we work together, there is hope for wildlife.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "All animals are safe",
+                  "Wildlife conservation is urgent and requires action",
+                  "Climate change doesn't affect animals",
+                  "Poaching has stopped"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về sự cấp thiết của bảo tồn động vật hoang dã và cần hành động."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "According to the passage, what is the main cause of habitat loss?",
+                "options": [
+                  "Climate change",
+                  "Deforestation",
+                  "Pollution",
+                  "Overfishing"
+                ],
+                "correct": 1,
+                "explanation": "Phá rừng (deforestation) là nguyên nhân chính gây mất môi trường sống."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The word 'shrunk' in paragraph 2 is closest in meaning to ______.",
+                "options": [
+                  "expanded",
+                  "decreased in size",
+                  "improved",
+                  "stayed the same"
+                ],
+                "correct": 1,
+                "explanation": "Shrunk = decreased in size (thu nhỏ, giảm kích thước)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "What example of conservation success is mentioned?",
+                "options": [
+                  "Tigers",
+                  "Giant pandas",
+                  "Elephants",
+                  "Polar bears"
+                ],
+                "correct": 1,
+                "explanation": "Gấu trúc khổng lồ (giant pandas) được đề cập như ví dụ thành công."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "According to the passage, how can individuals help conservation?",
+                "options": [
+                  "By doing nothing",
+                  "By supporting organizations and spreading awareness",
+                  "By buying wildlife products",
+                  "By ignoring the problem"
+                ],
+                "correct": 1,
+                "explanation": "Mọi người có thể giúp bằng cách hỗ trợ tổ chức và nâng cao nhận thức."
+              }
+            ]
+          },
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "______ we protect habitats, animals will survive.",
+            "options": ["If", "Unless", "Because", "Although"],
+            "correct": 0,
+            "explanation": "If - mệnh đề điều kiện loại 1: If + Present Simple, will + V."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "______ we act now, species will become extinct.",
+            "options": ["If", "Unless", "When", "Because"],
+            "correct": 1,
+            "explanation": "Unless - trừ khi, nếu không: Unless we act = If we don't act."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "Tigers are ______ endangered ______ rhinos.",
+            "options": ["as / as", "more / than", "as / than", "more / as"],
+            "correct": 0,
+            "explanation": "As...as - so sánh bằng: as + adj + as."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "______ more we protect, ______ better it is.",
+            "options": ["The / the", "A / a", "The / a", "A / the"],
+            "correct": 0,
+            "explanation": "The...the - so sánh kép: The + comparative..., the + comparative..."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "Animals will be safe ______ we protect them.",
+            "options": ["unless", "if", "as long as", "in case"],
+            "correct": 2,
+            "explanation": "As long as - miễn là: chỉ điều kiện cần thiết."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "Deforestation happens ______ reforestation.",
+            "options": ["as fast as", "faster than", "as faster as", "more fast than"],
+            "correct": 1,
+            "explanation": "Faster than - so sánh hơn: comparative + than."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "We can save species ______ we act quickly.",
+            "options": ["unless", "provided that", "if not", "except"],
+            "correct": 1,
+            "explanation": "Provided that - với điều kiện là, miễn là."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "Lions are not ______ endangered ______ tigers.",
+            "options": ["as / as", "so / than", "as / than", "more / as"],
+            "correct": 0,
+            "explanation": "Not as...as - không bằng: not as + adj + as."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "______ faster we act, ______ better the results.",
+            "options": ["The / the", "A / the", "The / a", "More / more"],
+            "correct": 0,
+            "explanation": "The...the - so sánh kép: The + comparative..., the + comparative..."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "We have sanctuaries ______ animals need protection.",
+            "options": ["unless", "if", "in case", "provided"],
+            "correct": 2,
+            "explanation": "In case - phòng khi, trong trường hợp."
+          },
+          {
+            "id": "mcq11",
+            "type": "mcq",
+            "question": "If we ______ more sanctuaries, we would save more animals.",
+            "options": ["have", "had", "has", "having"],
+            "correct": 1,
+            "explanation": "Had - điều kiện loại 2: If + Past Simple, would + V."
+          },
+          {
+            "id": "mcq12",
+            "type": "mcq",
+            "question": "Protecting habitats is ______ important ______ we think.",
+            "options": ["as / as", "more / than", "as / than", "more / as"],
+            "correct": 1,
+            "explanation": "More...than - so sánh hơn: more + adj + than."
+          },
+          {
+            "id": "mcq13",
+            "type": "mcq",
+            "question": "______ people care, ______ poaching occurs.",
+            "options": ["The more / the less", "More / less", "The more / less", "More / the less"],
+            "correct": 0,
+            "explanation": "The more...the less - so sánh kép: The + comparative..., the + comparative..."
+          },
+          {
+            "id": "mcq14",
+            "type": "mcq",
+            "question": "Wildlife will survive ______ we preserve habitats.",
+            "options": ["unless", "if not", "so long as", "except"],
+            "correct": 2,
+            "explanation": "So long as - miễn là: chỉ điều kiện cần thiết."
+          },
+          {
+            "id": "mcq15",
+            "type": "mcq",
+            "question": "Conservation is ______ important ______ development.",
+            "options": ["as / as", "more / than", "as / than", "so / as"],
+            "correct": 0,
+            "explanation": "As...as - so sánh bằng: as + adj + as."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "'Unless' means 'if not' and is used with affirmative verbs.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Unless = if not và dùng với động từ khẳng định."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "In double comparatives, we use 'the + comparative' twice.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. The more..., the more... - cả hai đều dùng 'the + comparative'."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "'As long as' and 'provided that' have similar meanings.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Cả hai đều có nghĩa 'miễn là, với điều kiện'."
+          },
+          {
+            "id": "msq4",
+            "type": "msq",
+            "question_text": "Many wildlife species are endangered due to human activities.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Nhiều loài động vật hoang dã có nguy cơ tuyệt chủng do hoạt động của con người."
+          },
+          {
+            "id": "msq5",
+            "type": "msq",
+            "question_text": "'In case' is used to express a condition that must happen.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. 'In case' dùng để chuẩn bị cho tình huống có thể xảy ra, không phải điều kiện bắt buộc."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call species that are at risk of extinction? (two words)",
+            "correct": "endangered species",
+            "explanation": "Endangered species: loài có nguy cơ tuyệt chủng."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "Complete: ______ we protect habitats, animals will survive. (Conditional)",
+            "correct": "If",
+            "explanation": "If - mệnh đề điều kiện: If + Present Simple, will + V."
+          },
+          {
+            "id": "sa3",
+            "type": "sa",
+            "question_text": "Complete: Tigers are ______ endangered ______ rhinos. (Comparison of equality)",
+            "correct": "as as",
+            "explanation": "As...as - so sánh bằng: as + adj + as."
+          },
+          {
+            "id": "sa4",
+            "type": "sa",
+            "question_text": "What do we call the natural environment where an animal lives? (one word)",
+            "correct": "habitat",
+            "explanation": "Habitat: môi trường sống tự nhiên."
+          },
+          {
+            "id": "essay1",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about why wildlife conservation is important. Use conditional clauses.",
+            "sample_answer": "Wildlife conservation is crucial for maintaining ecological balance. If we don't protect endangered species, entire ecosystems will collapse. Many animals play vital roles in their habitats - for example, bees pollinate plants, and predators control prey populations. Unless we preserve biodiversity, we will lose these essential services. If forests disappear, climate change will worsen because trees absorb carbon dioxide. Moreover, many medicines come from plants and animals. If species become extinct, we may lose potential cures for diseases. Provided that we act now and protect habitats, we can prevent extinctions. As long as people understand the importance of wildlife, conservation efforts will succeed.",
+            "explanation": "Bài viết sử dụng nhiều mệnh đề điều kiện: If we don't protect, Unless we preserve, If forests disappear, If species become extinct, Provided that we act, As long as people understand."
+          },
+          {
+            "id": "essay2",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) comparing threats to wildlife. Use comparative clauses.",
+            "sample_answer": "Different threats affect wildlife in various ways. Habitat loss is more widespread than poaching, affecting millions of species globally. The more forests we destroy, the more animals lose their homes. Climate change is as serious as habitat destruction because it affects entire ecosystems. However, poaching is more immediate than climate change - animals are killed instantly rather than gradually. Illegal wildlife trade is growing faster than conservation efforts can respond. The bigger the demand for wildlife products, the more animals are killed. Some threats are easier to address than others - we can stop poaching more quickly than we can reverse climate change. Nevertheless, all threats are equally important to tackle.",
+            "explanation": "Bài viết sử dụng nhiều mệnh đề so sánh: more widespread than, The more...the more, as serious as, more immediate than, faster than, The bigger...the more, easier to address than, equally important."
+          },
+          {
+            "id": "essay3",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about what individuals can do to help wildlife conservation. Use conditional and comparative clauses.",
+            "sample_answer": "Individuals can make a significant difference in wildlife conservation. If everyone makes small changes, the collective impact will be huge. The more people support conservation organizations, the more resources are available for protection efforts. We can help by reducing consumption - if we buy fewer products made from endangered species, demand will decrease. Supporting eco-tourism is as important as donating money because it provides economic incentives for conservation. Unless we educate others about wildlife issues, awareness won't grow. Provided that we make sustainable choices in daily life, we contribute to conservation. The more we learn about wildlife, the better we can protect it. As long as individuals take action, there is hope for endangered species.",
+            "explanation": "Bài viết kết hợp mệnh đề điều kiện (If everyone makes, if we buy, Unless we educate, Provided that we make, As long as individuals take) và mệnh đề so sánh (The more...the more, as important as, The more...the better)."
+          },
+          {
+            "id": "essay4",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about a specific endangered species and how to protect it. Use conditional and comparative clauses.",
+            "sample_answer": "Tigers are more endangered now than ever before, with fewer than 4,000 remaining in the wild. If we don't protect their forest habitats, tigers will become extinct within decades. Poaching is as serious a threat as habitat loss because tigers are killed for their skins and bones. The more we enforce anti-poaching laws, the safer tigers become. Unless governments create more protected areas, tiger populations will continue declining. Conservation programs have shown that if we invest in breeding and habitat protection, tiger numbers can recover. India's tiger population has increased because the government established sanctuaries and hired rangers. Provided that we maintain these efforts and reduce human-wildlife conflict, tigers have a chance to survive. The faster we act, the better their chances of recovery.",
+            "explanation": "Bài viết kết hợp mệnh đề điều kiện (If we don't protect, Unless governments create, if we invest, Provided that we maintain) và mệnh đề so sánh (more endangered than, as serious as, The more...the safer, The faster...the better)."
+          }
+        ]
+      }
+    }
+  ]
+}

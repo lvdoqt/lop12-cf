@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-16-tu-thong-hien-tuong-cam-ung-dien-tu",
+      "name": "Bài 16. Từ thông. Hiện tượng cảm ứng điện từ",
+      "slug": "bai-16-tu-thong-hien-tuong-cam-ung-dien-tu",
+      "chapter": "Chương 3. Từ trường",
+      "chapter_id": "LY12-3",
+      "lesson_id": 16,
+      "description": "Nghiên cứu về từ thông và hiện tượng cảm ứng điện từ.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tt-1",
+          "name": "Từ thông",
+          "slug": "tu-thong",
+          "difficulty": "easy"
+        },
+        {
+          "id": "tt-2",
+          "name": "Hiện tượng cảm ứng điện từ",
+          "slug": "hien-tuong-cam-ung-dien-tu",
+          "difficulty": "medium"
+        },
+        {
+          "id": "tt-3",
+          "name": "Định luật Faraday",
+          "slug": "dinh-luat-faraday",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Từ thông và Cảm ứng điện từ",
+          "sections": [
+            {
+              "heading": "1. Từ thông",
+              "content": "<p><strong>Định nghĩa:</strong> Từ thông qua một mặt là số đường sức từ đi qua mặt đó.</p><p><strong>Công thức:</strong></p><p>$$\\Phi = B S \\cos\\alpha$$</p><p>Trong đó:</p><ul><li>Φ: từ thông (Wb - Weber)</li><li>B: cảm ứng từ (T)</li><li>S: diện tích mặt (m²)</li><li>α: góc giữa vectơ B và pháp tuyến mặt</li></ul><p><strong>Đơn vị:</strong> Weber (Wb)</p><p>1 Wb = 1 T.m²</p>"
+            },
+            {
+              "heading": "2. Hiện tượng cảm ứng điện từ",
+              "content": "<p><strong>Định nghĩa:</strong> Khi từ thông qua một mạch kín biến thiên thì trong mạch xuất hiện dòng điện gọi là dòng điện cảm ứng.</p><p><strong>Điều kiện xuất hiện dòng điện cảm ứng:</strong> Từ thông qua mạch kín phải biến thiên.</p><p><strong>Hiện tượng cảm ứng điện từ:</strong> Hiện tượng xuất hiện dòng điện cảm ứng trong mạch kín khi từ thông qua mạch biến thiên.</p><p><strong>Chiều dòng điện cảm ứng:</strong> Xác định bằng định luật Lenz: Dòng điện cảm ứng có chiều sao cho từ trường do nó sinh ra chống lại sự biến thiên của từ thông ban đầu.</p>"
+            },
+            {
+              "heading": "3. Định luật Faraday",
+              "content": "<p><strong>Suất điện động cảm ứng:</strong></p><p>$$e_c = -\\frac{\\Delta\\Phi}{\\Delta t}$$</p><p><strong>Định luật Faraday:</strong> Độ lớn suất điện động cảm ứng bằng tốc độ biến thiên của từ thông.</p><p><strong>Dòng điện cảm ứng:</strong></p><p>$$i_c = \\frac{e_c}{R} = -\\frac{1}{R} \\frac{\\Delta\\Phi}{\\Delta t}$$</p><p>Trong đó R là điện trở mạch.</p>"
+            },
+            {
+              "heading": "4. Dòng điện Fu-cô",
+              "content": "<p><strong>Dòng điện Fu-cô (Foucault):</strong> Là dòng điện cảm ứng xuất hiện trong các khối kim loại khi chuyển động trong từ trường.</p><p><strong>Tính chất:</strong></p><ul><li>Có hại: Gây tỏa nhiệt, làm giảm hiệu suất máy</li><li>Có ích: Bếp từ, lò cảm ứng, phanh từ</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính từ thông",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Φ = BS cosα</li><li>Chú ý góc α</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Khung dây diện tích 100cm² đặt trong B = 0,2T, pháp tuyến song song với B. Tính Φ.",
+                "solution": "<p><strong>Giải:</strong></p><p>S = 100cm² = 10⁻² m²</p><p>α = 0° (B // n) → cosα = 1</p><p>Φ = 0,2.10⁻².1 = 2.10⁻³ Wb</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính suất điện động cảm ứng",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>e_c = |ΔΦ/Δt|</li><li>Chú û: dấu trừ trong định luật Lenz</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Từ thông giảm từ 0,5 Wb xuống 0,2 Wb trong 0,1s. Tính e_c.",
+                "solution": "<p><strong>Giải:</strong></p><p>ΔΦ = 0,2 - 0,5 = -0,3 Wb</p><p>e_c = -ΔΦ/Δt = -(-0,3)/0,1 = 3 V</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Từ thông qua mặt S được tính bằng công thức:",
+            "options": [
+              "Φ = BS",
+              "Φ = BS cosα",
+              "Φ = BS sinα",
+              "Φ = B/S"
+            ],
+            "correct": 1,
+            "explanation": "Φ = BS cosα với α là góc giữa B và pháp tuyến"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Đơn vị của từ thông là:",
+            "options": [
+              "Tesla (T)",
+              "Vôn (V)",
+              "Weber (Wb)",
+              "Ampe (A)"
+            ],
+            "correct": 2,
+            "explanation": "Đơn vị từ thông là Weber (Wb)"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Dòng điện cảm ứng xuất hiện khi:",
+            "options": [
+              "Từ thông không đổi",
+              "Từ thông biến thiên",
+              "Nam châm đứng yên",
+              "Khung dây đứng yên trong B đều"
+            ],
+            "correct": 1,
+            "explanation": "Dòng điện cảm ứng xuất hiện khi từ thông biến thiên"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Định luật Lenz cho biết:",
+            "options": [
+              "Độ lớn e_c",
+              "Chiều dòng điện cảm ứng",
+              "Cường độ dòng điện",
+              "Công suất"
+            ],
+            "correct": 1,
+            "explanation": "Định luật Lenz xác định chiều dòng điện cảm ứng"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Suất điện động cảm ứng:",
+            "options": [
+              "e_c = ΔΦ/Δt",
+              "e_c = -ΔΦ/Δt",
+              "e_c = Φ/Δt",
+              "e_c = Φ.Δt"
+            ],
+            "correct": 1,
+            "explanation": "e_c = -ΔΦ/Δt (định luật Faraday)"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Khi từ thông tăng, dòng điện cảm ứng có chiều:",
+            "options": [
+              "Tạo từ trường cùng chiều",
+              "Tạo từ trường ngược chiều",
+              "Không tạo từ trường",
+              "Tạo từ trường bất kỳ"
+            ],
+            "correct": 1,
+            "explanation": "Dòng điện cảm ứng chống lại sự tăng của từ thông"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Từ thông cực đại khi:",
+            "options": [
+              "B ⊥ S",
+              "B // n",
+              "B ⊥ n",
+              "B = 0"
+            ],
+            "correct": 1,
+            "explanation": "Φmax = BS khi B // n (α = 0)"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Từ thông bằng 0 khi:",
+            "options": [
+              "B = 0",
+              "S = 0",
+              "B ⊥ n",
+              "Tất cả đều đúng"
+            ],
+            "correct": 3,
+            "explanation": "Φ = BS cosα = 0 khi B = 0, S = 0, hoặc cosα = 0"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Khung dây phẳng diện tích S = 50cm², B = 0,2T, B vuông góc mặt phẳng. Tính Φ:",
+            "options": [
+              "10⁻³ Wb",
+              "0 Wb",
+              "10⁻⁴ Wb",
+              "10⁻² Wb"
+            ],
+            "correct": 1,
+            "explanation": "B ⊥ S → α = 90° → cosα = 0 → Φ = 0"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Dòng điện Fu-cô là:",
+            "options": [
+              "Dòng điện một chiều",
+              "Dòng điện xoay chiều",
+              "Dòng điện cảm ứng trong khối kim loại",
+              "Dòng điện trong chất điện phân"
+            ],
+            "correct": 2,
+            "explanation": "Dòng Fu-cô là dòng cảm ứng trong khối kim loại"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Điều kiện xuất hiện dòng điện cảm ứng:",
+            "options": [
+              "Mạch kín",
+              "Từ thông biến thiên",
+              "Có nguồn điện",
+              "Mạch đặt trong từ trường"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Dòng cảm ứng xuất hiện khi mạch kín đặt trong từ trường biến thiên"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Từ thông qua khung dây phụ thuộc:",
+            "options": [
+              "Cảm ứng từ B",
+              "Diện tích S",
+              "Góc α giữa B và pháp tuyến",
+              "Điện trở khung dây"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Φ = BS cosα, không phụ thuộc điện trở"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Hiện tượng cảm ứng điện từ được ứng dụng trong:",
+            "options": [
+              "Máy phát điện",
+              "Bếp từ",
+              "Động cơ điện",
+              "Tất cả đều đúng"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Động cơ điện hoạt động dựa trên lực từ, không phải cảm ứng điện từ"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Khung dây diện tích 0,02m² đặt trong B = 0,5T, pháp tuyến hợp B góc 60°. Tính Φ (Wb).",
+            "correct": "0.005",
+            "explanation": "Φ = BS cos60° = 0,5.0,02.0,5 = 0,005 Wb"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Từ thông giảm từ 0,8 Wb xuống 0,3 Wb trong 0,2s. Tính e_c (V).",
+            "correct": "2.5",
+            "explanation": "e_c = |ΔΦ/Δt| = |0,3-0,8|/0,2 = 0,5/0,2 = 2,5 V"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Từ thông tăng từ 0,1 Wb lên 0,6 Wb trong 0,05s. Tính e_c (V).",
+            "correct": "10",
+            "explanation": "e_c = |0,6-0,1|/0,05 = 0,5/0,05 = 10 V"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Khung dây có R = 5Ω, e_c = 2V. Tính i_c (A).",
+            "correct": "0.4",
+            "explanation": "i_c = e_c/R = 2/5 = 0,4 A"
+          }
+        ]
+      }
+    }
+  ]
+}

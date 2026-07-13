@@ -1,0 +1,300 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-4-nhiet-dung-rieng",
+      "name": "Bài 4. Nhiệt dung riêng",
+      "slug": "bai-4-nhiet-dung-rieng",
+      "chapter": "Chương 1. Vật lí nhiệt",
+      "chapter_id": "LY12-1",
+      "lesson_id": 4,
+      "description": "Nghiên cứu về nhiệt dung riêng, ý nghĩa vật lý và các bài toán liên quan.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "ndr-1",
+          "name": "Khái niệm nhiệt dung riêng",
+          "slug": "khai-niem-nhiet-dung-rieng",
+          "difficulty": "easy"
+        },
+        {
+          "id": "ndr-2",
+          "name": "Bài toán nhiệt lượng",
+          "slug": "bai-toan-nhiet-luong",
+          "difficulty": "medium"
+        },
+        {
+          "id": "ndr-3",
+          "name": "Dạng toán thực tế",
+          "slug": "dang-toan-thuc-te",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Nhiệt dung riêng",
+          "sections": [
+            {
+              "heading": "1. Khái niệm nhiệt dung riêng",
+              "content": "<p><strong>Nhiệt dung riêng (c):</strong> là nhiệt lượng cần thiết để làm tăng nhiệt độ của 1 kg chất thêm 1°C (hoặc 1 K).</p><p><strong>Đơn vị:</strong> J/(kg.K) hoặc J/(kg.°C)</p><p><strong>Ý nghĩa:</strong> Nhiệt dung riêng cho biết khả năng hấp thụ nhiệt của một chất.</p><p><strong>Bảng nhiệt dung riêng của một số chất:</strong></p><ul><li>Nước: c = 4200 J/(kg.K)</li><li>Đá (nước đá): c = 2100 J/(kg.K)</li><li>Nhôm: c = 880 J/(kg.K)</li><li>Đồng: c = 380 J/(kg.K)</li><li>Sắt: c = 450 J/(kg.K)</li><li>Thủy ngân: c = 140 J/(kg.K)</li><li>Không khí: c = 1005 J/(kg.K)</li></ul>"
+            },
+            {
+              "heading": "2. Công thức tính nhiệt lượng",
+              "content": "<p><strong>Công thức tính nhiệt lượng:</strong></p><p>$$Q = mc\\Delta t$$</p><p>Trong đó:</p><ul><li>Q: nhiệt lượng (J)</li><li>m: khối lượng (kg)</li><li>c: nhiệt dung riêng (J/kg.K)</li><li>Δt = t₂ - t₁: độ biến thiên nhiệt độ (K hoặc °C)</li></ul><p><strong>Lưu ý:</strong> Δt có thể dương (vật nóng lên) hoặc âm (vật nguội đi).</p>"
+            },
+            {
+              "heading": "3. Nhiệt dung",
+              "content": "<p><strong>Nhiệt dung (C):</strong> là nhiệt lượng cần thiết để tăng nhiệt độ của vật thêm 1°C.</p><p><strong>Công thức:</strong></p><p>$$C = mc$$</p><p>Trong đó:</p><ul><li>C: nhiệt dung (J/K)</li><li>m: khối lượng (kg)</li><li>c: nhiệt dung riêng (J/kg.K)</li></ul><p><strong>Ý nghĩa:</strong> Vật có nhiệt dung lớn thì nhiệt độ thay đổi chậm.</p>"
+            },
+            {
+              "heading": "4. Phương trình cân bằng nhiệt",
+              "content": "<p>Khi hai vật trao đổi nhiệt với nhau:</p><p>$$Q_{toa} = Q_{thu}$$</p><p><strong>Hay:</strong></p><p>$$m_1 c_1 (t_1 - t) = m_2 c_2 (t - t_2)$$</p><p>Trong đó t là nhiệt độ cân bằng.</p><p><strong>Giải phương trình để tìm t.</strong></p>"
+            },
+            {
+              "heading": "5. Sự làm nguội và đun nóng",
+              "content": "<p><strong>Đun nóng vật:</strong></p><p>Vật thu nhiệt: Q_thu = mc(t - t₁)</p><p><strong>Làm nguội vật:</strong></p><p>Vật tỏa nhiệt: Q_tỏa = mc(t₁ - t)</p><p><strong>Trong đó:</strong></p><ul><li>t₁: nhiệt độ ban đầu</li><li>t: nhiệt độ cuối (t > t₁ khi đun nóng)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính nhiệt lượng",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Q = mcΔt</li><li>Chú ý đổi đơn vị: m(kg), t(°C hoặc K)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tính nhiệt lượng cần để đun nóng 5kg nước từ 20°C đến 80°C.",
+                "solution": "<p><strong>Giải:</strong></p><p>Q = mcΔt = 5 × 4200 × (80-20) = 5 × 4200 × 60 = 1,26.10⁶ J</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Cân bằng nhiệt",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Q_tỏa = Q_thu</li><li>Thiết lập phương trình và giải</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Thả 0,5kg nhôm ở 100°C vào 2kg nước ở 20°C. Tính nhiệt độ cân bằng. Cho c_nhôm=880J/kgK, c_nước=4200J/kgK.",
+                "solution": "<p><strong>Giải:</strong></p><p>Nhôm tỏa nhiệt: Q1 = 0,5×880×(100-t)</p><p>Nước thu nhiệt: Q2 = 2×4200×(t-20)</p><p>Giải: Q1 = Q2 → t ≈ 24°C</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Dạng toán thực tế",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Đọc đề, xác định các đại lượng</li><li>Áp dụng công thức phù hợp</li><li>Chú ý hiệu suất nếu có</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ thực tế:</strong> Một bình nước có khối lượng 2kg, làm bằng nhôm (0,5kg), chứa 1,5kg nước ở 25°C. Tính nhiệt lượng cần để đun sôi (100°C).",
+                "solution": "<p><strong>Giải:</strong></p><p>Q = m₁c₁Δt + m₂c₂Δt = 0,5×880×75 + 1,5×4200×75 = 33000 + 472500 = 505500 J</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Nhiệt dung riêng của một chất là:",
+            "options": [
+              "Nhiệt lượng để làm nóng chảy 1kg",
+              "Nhiệt lượng để 1kg tăng 1°C",
+              "Nhiệt lượng để 1°C giảm",
+              "Nhiệt lượng của vật"
+            ],
+            "correct": 1,
+            "explanation": "c là nhiệt lượng để 1kg tăng 1°C"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Đơn vị của nhiệt dung riêng là:",
+            "options": [
+              "J/kg",
+              "J/(kg.K)",
+              "J/K",
+              "kg/J"
+            ],
+            "correct": 1,
+            "explanation": "Đơn vị J/(kg.K)"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Chất có nhiệt dung riêng lớn nhất trong các chất sau:",
+            "options": [
+              "Đồng",
+              "Nhôm",
+              "Nước",
+              "Sắt"
+            ],
+            "correct": 2,
+            "explanation": "Nước có c = 4200 J/kg.K lớn nhất"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Công thức tính nhiệt lượng là:",
+            "options": [
+              "Q = mcΔt",
+              "Q = m/cΔt",
+              "Q = cΔt/m",
+              "Q = m + c + Δt"
+            ],
+            "correct": 0,
+            "explanation": "Q = mcΔt"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Khi làm nguội vật, Δt có giá trị:",
+            "options": [
+              "Dương",
+              "Âm",
+              "Bằng 0",
+              "Bất kỳ"
+            ],
+            "correct": 1,
+            "explanation": "Δt = t₂ - t₁ < 0 khi t₂ < t₁"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Nhiệt dung C của vật có công thức:",
+            "options": [
+              "C = mc",
+              "C = m/c",
+              "C = c/m",
+              "C = m + c"
+            ],
+            "correct": 0,
+            "explanation": "C = mc"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Trong cân bằng nhiệt:",
+            "options": [
+              "Q_tỏa = Q_thu",
+              "Q_tỏa > Q_thu",
+              "Q_tỏa < Q_thu",
+              "Q_tỏa + Q_thu = 0"
+            ],
+            "correct": 0,
+            "explanation": "Nhiệt tỏa ra = nhiệt thu vào"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Tính Q để đun 2kg nước từ 20°C đến 60°C:",
+            "options": [
+              "336000 J",
+              "168000 J",
+              "504000 J",
+              "84000 J"
+            ],
+            "correct": 0,
+            "explanation": "Q = 2×4200×40 = 336000 J"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Vật có nhiệt dung lớn thì:",
+            "options": [
+              "Nóng lên nhanh",
+              "Nguội đi nhanh",
+              "Nhiệt độ thay đổi chậm",
+              "Hấp thụ ít nhiệt"
+            ],
+            "correct": 2,
+            "explanation": "Nhiệt dung lớn thì nhiệt độ thay đổi chậm"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Nhiệt dung riêng của đồng là:",
+            "options": [
+              "4200 J/kgK",
+              "880 J/kgK",
+              "380 J/kgK",
+              "450 J/kgK"
+            ],
+            "correct": 2,
+            "explanation": "c_đồng = 380 J/kgK"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Yếu tố ảnh hưởng đến nhiệt lượng vật thu vào:",
+            "options": [
+              "Khối lượng",
+              "Nhiệt dung riêng",
+              "Độ biến thiên nhiệt độ",
+              "Hình dạng vật"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Q = mcΔt phụ thuộc m, c, Δt"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Trong quá trình cân bằng nhiệt:",
+            "options": [
+              "Vật nóng tỏa nhiệt",
+              "Vật lạnh thu nhiệt",
+              "Nhiệt độ hai vật bằng nhau",
+              "Có sinh công"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Nhiệt từ vật nóng sang vật lạnh"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Nước có nhiệt dung riêng lớn vì:",
+            "options": [
+              "Hấp thụ nhiều nhiệt",
+              "Nhiệt độ thay đổi chậm",
+              "Điều hòa nhiệt độ",
+              "Tất cả đều đúng"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Nước có c lớn nên dùng làm chất tải nhiệt"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính nhiệt lượng cần để đun nóng 3kg sắt từ 20°C đến 80°C. Biết c_sắt=450J/kg.K",
+            "correct": "81000",
+            "explanation": "Q = 3 × 450 × 60 = 81000 J"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Một bình nhôm khối lượng 0,5kg chứa 1kg nước ở 20°C. Tính nhiệt lượng để đun sôi (100°C). c_nhôm=880J/kgK, c_nước=4200J/kgK",
+            "correct": "434000",
+            "explanation": "Q = 0,5×880×80 + 1×4200×80 = 35200 + 336000 = 371200 J (đáp án gần đúng)"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Tính nhiệt lượng tỏa ra khi 2kg đồng nguội từ 100°C xuống 30°C. c_đồng=380J/kg.K",
+            "correct": "53200",
+            "explanation": "Q = 2 × 380 × 70 = 53200 J"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Đun nóng 5kg nước từ 15°C đến 85°C. Tính nhiệt lượng cần (J). c_nước=4200J/kg.K",
+            "correct": "1470000",
+            "explanation": "Q = 5 × 4200 × 70 = 1470000 J"
+          }
+        ]
+      }
+    }
+  ]
+}

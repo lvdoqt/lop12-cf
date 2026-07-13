@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-15-luc-tu-cam-ung-tu",
+      "name": "Bài 15. Lực từ tác dụng lên dây dẫn mang dòng điện. Cảm ứng từ",
+      "slug": "bai-15-luc-tu-cam-ung-tu",
+      "chapter": "Chương 3. Từ trường",
+      "chapter_id": "LY12-3",
+      "lesson_id": 15,
+      "description": "Nghiên cứu lực từ tác dụng lên dây dẫn mang dòng điện và cảm ứng từ.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "lt-1",
+          "name": "Lực từ tác dụng lên dây dẫn",
+          "slug": "luc-tu-tac-dung-len-day-dan",
+          "difficulty": "easy"
+        },
+        {
+          "id": "lt-2",
+          "name": "Cảm ứng từ",
+          "slug": "cam-ung-tu",
+          "difficulty": "medium"
+        },
+        {
+          "id": "lt-3",
+          "name": "Lực Lorenxơ",
+          "slug": "luc-lorenxo",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Lực từ và Cảm ứng từ",
+          "sections": [
+            {
+              "heading": "1. Lực từ tác dụng lên dây dẫn mang dòng điện",
+              "content": "<p><strong>Lực từ (lực Ampere):</strong> Khi đặt dây dẫn mang dòng điện trong từ trường, dây dẫn chịu lực từ.</p><p><strong>Công thức:</strong></p><p>$$F = B I l \\sin\\alpha$$</p><p>Trong đó:</p><ul><li>F: lực từ (N)</li><li>B: cảm ứng từ (T)</li><li>I: cường độ dòng điện (A)</li><li>l: chiều dài dây dẫn (m)</li><li>α: góc giữa dây dẫn và đường sức từ</li></ul><p><strong>Điều kiện để có lực từ:</strong> Dây dẫn không song song với đường sức từ (α ≠ 0, α ≠ 180°)</p><p><strong>Chiều lực từ:</strong> Xác định bằng quy tắc bàn tay trái: Đặt bàn tay trái sao cho các đường sức từ đi vào lòng bàn tay, dòng điện đi từ cổ tay đến ngón tay, ngón cái chỉ chiều lực từ.</p>"
+            },
+            {
+              "heading": "2. Cảm ứng từ",
+              "content": "<p><strong>Định nghĩa:</strong> Cảm ứng từ tại một điểm là đại lượng đặc trưng cho từ trường về phương diện tác dụng lực từ.</p><p>$$B = \\frac{F}{I l \\sin\\alpha}$$</p><p><strong>Đơn vị:</strong> Tesla (T)</p><p><strong>Từ trường đều:</strong> Từ trường mà cảm ứng từ tại mọi điểm đều bằng nhau về độ lớn và hướng.</p>"
+            },
+            {
+              "heading": "3. Lực Lorenxơ",
+              "content": "<p><strong>Lực Lorenxơ:</strong> Lực từ tác dụng lên điện tích chuyển động trong từ trường.</p><p><strong>Công thức:</strong></p><p>$$f = q v B \\sin\\alpha$$</p><p>Trong đó:</p><ul><li>f: lực Lorenxơ (N)</li><li>q: điện tích (C)</li><li>v: vận tốc (m/s)</li><li>B: cảm ứng từ (T)</li><li>α: góc giữa v và B</li></ul><p><strong>Đặc điểm:</strong></p><ul><li>Lực Lorenxơ vuông góc với mặt phẳng (v, B)</li><li>Không sinh công vì lực vuông góc với vận tốc</li><li>Lực Lorenxơ là nguyên nhân của chuyển động tròn đều</li></ul>"
+            },
+            {
+              "heading": "4. Chuyển động của điện tích trong từ trường",
+              "content": "<p>Khi hạt mang điện chuyển động vuông góc với đường sức từ:</p><p><strong>Bán kính quỹ đạo:</strong></p><p>$$R = \\frac{mv}{qB}$$</p><p><strong>Chu kỳ:</strong></p><p>$$T = \\frac{2\\pi m}{qB}$$</p><p><strong>Lưu ý:</strong> Lực Lorenxơ đóng vai trò lực hướng tâm.</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính lực từ",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>F = BIl sinα</li><li>Dùng quy tắc bàn tay trái xác định chiều</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Dây dẫn dài 20cm mang dòng điện 10A đặt trong từ trường đều B = 0,2T. Tính F biết dây vuông góc với B.",
+                "solution": "<p><strong>Giải:</strong></p><p>F = BIl sin90° = 0,2.10.0,2.1 = 0,4 N</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính bán kính quỹ đạo",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>R = mv/|q|B</li><li>Chú ý đơn vị</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Electron chuyển động với v = 10⁶ m/s vuông góc với B = 10⁻⁴ T. Tính bán kính.",
+                "solution": "<p><strong>Giải:</strong></p><p>R = mv/(|q|B) = 9,1.10⁻³¹.10⁶/(1,6.10⁻¹⁹.10⁻⁴) = 5,7.10⁻² m</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Lực từ tác dụng lên dây dẫn mang dòng điện:",
+            "options": [
+              "F = BIl",
+              "F = BIl sinα",
+              "F = BIl cosα",
+              "F = BIl tanα"
+            ],
+            "correct": 1,
+            "explanation": "Công thức đúng: F = BIl sinα"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Quy tắc bàn tay trái dùng để xác định:",
+            "options": [
+              "Chiều dòng điện",
+              "Chiều đường sức từ",
+              "Chiều lực từ",
+              "Chiều cảm ứng từ"
+            ],
+            "correct": 2,
+            "explanation": "Quy tắc bàn tay trái xác định chiều lực từ"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Lực từ cực đại khi:",
+            "options": [
+              "Dây song song với B",
+              "Dây vuông góc với B",
+              "Dây hợp với B góc 45°",
+              "Dây hợp với B góc 180°"
+            ],
+            "correct": 1,
+            "explanation": "Fmax khi sinα = 1, tức α = 90° (vuông góc)"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Đơn vị của cảm ứng từ Tesla bằng:",
+            "options": [
+              "N/(A.m)",
+              "kg/(A.s²)",
+              "Cả A và B đều đúng",
+              "Cả A và B đều sai"
+            ],
+            "correct": 2,
+            "explanation": "1 T = 1 N/(A.m) = 1 kg/(A.s²)"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Lực Lorenxơ tác dụng lên điện tích q chuyển động:",
+            "options": [
+              "f = qvB",
+              "f = qvB sinα",
+              "f = qvB cosα",
+              "f = qvB tanα"
+            ],
+            "correct": 1,
+            "explanation": "f = qvB sinα với α là góc giữa v và B"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Khi hạt mang điện chuyển động song song với đường sức từ:",
+            "options": [
+              "Lực Lorenxơ cực đại",
+              "Lực Lorenxơ bằng không",
+              "Hạt chuyển động thẳng nhanh dần",
+              "Hạt chuyển động theo quỹ đạo tròn"
+            ],
+            "correct": 1,
+            "explanation": "f = qvB sin0° = 0"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Bán kính quỹ đạo của điện tích trong từ trường:",
+            "options": [
+              "R = mv/(qB)",
+              "R = qvB/m",
+              "R = m/(qvB)",
+              "R = qB/(mv)"
+            ],
+            "correct": 0,
+            "explanation": "R = mv/(|q|B)"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Lực Lorenxơ có tính chất:",
+            "options": [
+              "Sinh công",
+              "Không sinh công",
+              "Có thể sinh công hoặc không",
+              "Tỉ lệ với vận tốc"
+            ],
+            "correct": 1,
+            "explanation": "Lực Lorenxơ vuông góc với v nên không sinh công"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Dây dẫn dài l = 30cm, I = 5A, B = 0,1T vuông góc. Tính F:",
+            "options": [
+              "0,15 N",
+              "0,015 N",
+              "1,5 N",
+              "0,5 N"
+            ],
+            "correct": 0,
+            "explanation": "F = BIl sin90° = 0,1.5.0,3 = 0,15 N"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Lực từ bằng không khi:",
+            "options": [
+              "α = 0° hoặc 180°",
+              "α = 90°",
+              "α = 45°",
+              "α = 60°"
+            ],
+            "correct": 0,
+            "explanation": "F = BIl sinα = 0 khi sinα = 0, tức α = 0° hoặc 180°"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Lực từ tác dụng lên dây dẫn phụ thuộc:",
+            "options": [
+              "Cường độ dòng điện I",
+              "Chiều dài dây l",
+              "Cảm ứng từ B",
+              "Góc α giữa dây và B"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "F = BIl sinα phụ thuộc tất cả"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Lực Lorenxơ tác dụng lên hạt mang điện:",
+            "options": [
+              "Vuông góc với v và B",
+              "Không sinh công",
+              "Có thể làm thay đổi động năng",
+              "Đóng vai trò lực hướng tâm khi v ⊥ B"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Lực Lorenxơ không sinh công nên không thay đổi động năng"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Điều kiện để dây dẫn chịu lực từ:",
+            "options": [
+              "Dây dẫn mang dòng điện",
+              "Đặt trong từ trường",
+              "Dây không song song với B",
+              "Dây phải đứng yên"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Dây chịu lực từ khi có I, đặt trong B và không song song với B"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính lực từ tác dụng lên dây dẫn dài 0,5m, I = 4A, B = 0,2T, dây vuông góc với B (N).",
+            "correct": "0.4",
+            "explanation": "F = BIl = 0,2.4.0,5 = 0,4 N"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Electron chuyển động với v = 10⁷ m/s vuông góc B = 10⁻³ T. Tính bán kính R (m).",
+            "correct": "5.7E-5",
+            "explanation": "R = mv/(|q|B) = 9,1.10⁻³¹.10⁷/(1,6.10⁻¹⁹.10⁻³) = 5,7.10⁻⁵ m"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Dây dẫn dài 20cm, I = 10A đặt trong B = 0,5T hợp góc 30°. Tính F (N).",
+            "correct": "0.5",
+            "explanation": "F = BIl sin30° = 0,5.10.0,2.0,5 = 0,5 N"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Proton chuyển động với v = 2.10⁶ m/s vuông góc B = 10⁻⁴ T. Tính R (m).",
+            "correct": "0.2",
+            "explanation": "R = 1,67.10⁻²⁷.2.10⁶/(1,6.10⁻¹⁹.10⁻⁴) = 0,2 m"
+          }
+        ]
+      }
+    }
+  ]
+}

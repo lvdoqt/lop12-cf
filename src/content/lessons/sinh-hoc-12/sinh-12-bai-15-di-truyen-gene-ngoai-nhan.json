@@ -1,0 +1,189 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-15",
+      "name": "Bài 15. Di truyền gene ngoài nhân",
+      "slug": "di-truyen-gene-ngoai-nhan",
+      "chapter": "Chương 3. Mở rộng học thuyết di truyền nhiễm sắc thể",
+      "chapter_id": "S12-3",
+      "lesson_id": 15,
+      "description": "Tìm hiểu về di truyền gene ngoài nhân (di truyền ngoài nhiễm sắc thể).",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2690&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Di truyền gene ngoài nhân",
+          "sections": [
+            {
+              "heading": "1. Khái niệm di truyền ngoài nhân",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Di truyền ngoài nhân (di truyền ngoài NST):</strong> Di truyền các gene nằm trong ti thể và lạp thể.</li><li>Các gene này nằm ngoài nhân tế bào, trong vùng cytoplasm.</li></ul><h4>b) Đặc điểm</h4><ul><li>Di truyền theo dòng mẹ (maternal inheritance).</li><li>Gene trong ti thể (mtDNA) được truyền từ mẹ cho tất cả con cái.</li><li>Không tuân theo các quy luật Mendel.</li></ul>"
+            },
+            {
+              "heading": "2. DNA ti thể (mtDNA)",
+              "content": "<h4>a) Cấu trúc</h4><ul><li>DNA vòng kép, nhỏ hơn nhiều so với DNA nhân.</li><li>Người có khoảng 16.500 cặp bazơ, mã hóa 37 gene.</li><li>Các gene mã hóa tRNA, rRNA và một số protein của chuỗi vận chuyển electron.</li></ul><h4>b) Đặc điểm di truyền</h4><ul><li>Giao tử cái cung cấp cả nhân và cytoplasm cho hợp tử.</li><li>Giao tử đực chỉ cung cấp nhân (không có cytoplasm hoặc rất ít).</li><li>Con nhận mtDNA từ mẹ, không từ bố.</li></ul>"
+            },
+            {
+              "heading": "3. DNA lạp thể (cpDNA)",
+              "content": "<h4>a) Cấu trúc</h4><ul><li>DNA vòng kép trong lạp thể (chloroplast).</li><li>Kích thước lớn hơn mtDNA (120-200 kb).</li><li>Mã hóa các protein liên quan đến quang hợp.</li></ul><h4>b) Di truyền</h4><ul><li>Cũng di truyền theo dòng mẹ ở hầu hết thực vật.</li><li>Một số loài di truyền theo cả bố và mẹ (biparental).</li></ul>"
+            },
+            {
+              "heading": "4. Ứng dụng và bệnh liên quan",
+              "content": "<h4>a) Bệnh di truyền ti thể</h4><ul><li>Bệnh mù màu ti thể.</li><li>Đái tháo đường týp 2 và một số bệnh chuyển hóa.</li><li>Hội chứng MELAS (bệnh lactic acidosis).</li></ul><h4>b) Ứng dụng</h4><ul><li>Nghiên cứu tiến hóa và nguồn gốc loài.</li><li>Di truyền học pháp y (xác định quan hệ mẹ-con).</li><li>Theo dõi dòng di cư của các quần thể.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Di truyền ngoài nhân là gì?",
+            "options": [
+              "Di truyền gene trên NST",
+              "Di truyền gene trong ti thể và lạp thể",
+              "Di truyền gene trên NST giới tính",
+              "Di truyền gene trên NST thường"
+            ],
+            "correct": 1,
+            "explanation": "Di truyền ngoài nhân là di truyền các gene nằm trong ti thể (mitochondria) và lạp thể (chloroplast)."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "DNA ti thể được truyền từ ai cho con?",
+            "options": [
+              "Từ bố",
+              "Từ mẹ",
+              "Từ cả bố và mẹ",
+              "Ngẫu nhiên"
+            ],
+            "correct": 1,
+            "explanation": "DNA ti thể được truyền từ mẹ cho tất cả con cái vì giao tử cái cung cấp cytoplasm, giao tử đực không cung cấp."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Đặc điểm nào không đúng với di truyền ngoài nhân?",
+            "options": [
+              "Di truyền theo dòng mẹ",
+              "Gene nằm ngoài nhân",
+              "Tuân theo quy luật Mendel",
+              "Không phân li theo NST"
+            ],
+            "correct": 2,
+            "explanation": "Di truyền ngoài nhân không tuân theo các quy luật Mendel vì gene không nằm trên NST."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "mtDNA mã hóa những gì?",
+            "options": [
+              "Tất cả protein của tế bào",
+              "tRNA, rRNA và một số protein",
+              "Chỉ mRNA",
+              "Chỉ DNA"
+            ],
+            "correct": 1,
+            "explanation": "mtDNA mã hóa 37 gene: 22 tRNA, 2 rRNA và 13 protein của chuỗi vận chuyển electron."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Ứng dụng nào của di truyền ti thể?",
+              "options": [
+              "Tạo giống cây trồng",
+              "Nghiên cứu tiến hóa và pháp y",
+              "Chẩn đoán bệnh",
+              "Tất cả đều đúng"
+            ],
+            "correct": 3,
+            "explanation": "Di truyền ti thể được ứng dụng trong nghiên cứu tiến hóa, pháp y, chẩn đoán bệnh và tạo giống."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các đặc điểm của di truyền ngoài nhân:",
+            "options": [
+              "Di truyền theo dòng mẹ",
+              "Gene nằm trong ti thể",
+              "Tuân theo quy luật phân li",
+              "Gene nằm trong lạp thể"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "A ✓: Di truyền theo dòng mẹ. B ✓: Gene trong ti thể. C ✗: Không tuân theo quy luật Mendel. D ✓: Gene trong lạp thể."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các ứng dụng của di truyền ti thể:",
+            "options": [
+              "Nghiên cứu tiến hóa",
+              "Pháp y",
+              "Tạo bệnh di truyền",
+              "Xác định quan hệ huyết thống"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "A ✓: mtDNA dùng nghiên cứu nguồn gốc. B ✓: Xác định mẹ-con. C ✗: Không tạo bệnh. D ✓: Xác định quan hệ."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một người đàn ông bị bệnh di truyền ti thể. Xác suất % con trai mắc bệnh là bao nhiêu? Nhập số 2 chữ số.",
+            "correct": "00",
+            "explanation": "Con trai nhận mtDNA từ mẹ, không từ bố. 0% con trai mắc bệnh."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "mtDNA người có khoảng 16500 cặp bazơ. Tính số nucleotit. Nhập số 5 chữ số. (Ví dụ: 16500)",
+            "correct": "16500"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định nguồn gốc di truyền ngoài nhân",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Gene ngoài nhân chỉ được truyền từ mẹ.</li><li>Con cái nhận mtDNA từ mẹ.</li><li>Con đực không truyền mtDNA cho thế hệ sau.</li></ol>",
+            "examples": [
+              {
+                "question": "Một người đàn ông bị bệnh mtDNA. Tính xác suất cháu nội (trai) mắc bệnh?",
+                "solution": "<p><strong>Giải:</strong></p><p>Người đàn ông truyền X cho con gái (không truyền cho con trai).</p><p>Con gái truyền mtDNA cho cháu.</p><p>Cháu trai nhận mtDNA từ mẹ (con gái), không từ ông nội.</p><p>Xác suất = 0%</p>"
+              },
+              {
+                "question": "Một phụ nữ bình thường có mẹ bị bệnh mtDNA. Xác suất % con mắc bệnh?",
+                "solution": "<p><strong>Giải:</strong></p><p>mtDNA được truyền từ mẹ cho tất cả con.</p><p>100% con mắc bệnh.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Phân biệt di truyền ngoài nhân và di truyền NST",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Di truyền NST: Tuân theo Mendel, phân li cùng NST.</li><li>Di truyền ngoài nhân: Không Mendel, truyền qua cytoplasm.</li><li>Quan sát phả hệ: Nếu bệnh từ mẹ truyền cho tất cả con → ngoài nhân.</li></ol>",
+            "examples": [
+              {
+                "question": "Trong phả hệ, bệnh từ ông nội truyền cho cháu trai. Đây là di truyền gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Con trai nhận Y từ bố, không nhận NST từ bố (ngoại trừ Y).</p><p>Không nhận mtDNA từ bố.</p><p>Nếu bệnh từ ông nội → Di truyền trên Y hoặc NST thường, không phải ngoài nhân.</p>"
+              },
+              {
+                "question": "Bệnh từ mẹ truyền cho tất cả con (không phân biệt giới). Đây là di truyền gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Đặc điểm đặc trưng của <strong>di truyền ngoài nhân</strong>.</p><p>Vì chỉ có mtDNA từ mẹ truyền cho tất cả con.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-25-bai-tap-ve-vat-li-hat-nhan",
+      "name": "Bài 25. Bài tập về vật lí hạt nhân",
+      "slug": "bai-25-bai-tap-ve-vat-li-hat-nhan",
+      "chapter": "Chương 4. Vật lí hạt nhân",
+      "chapter_id": "LY12-4",
+      "lesson_id": 25,
+      "description": "Ôn tập và luyện tập tổng hợp các kiến thức về vật lí hạt nhân.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "btvln-1",
+          "name": "Cấu trúc hạt nhân",
+          "slug": "cau-truc-hat-nhan",
+          "difficulty": "easy"
+        },
+        {
+          "id": "btvln-2",
+          "name": "Năng lượng liên kết",
+          "slug": "nang-luong-lien-ket",
+          "difficulty": "medium"
+        },
+        {
+          "id": "btvln-3",
+          "name": "Phóng xạ",
+          "slug": "phong-xa",
+          "difficulty": "medium"
+        },
+        {
+          "id": "btvln-4",
+          "name": "Phản ứng hạt nhân",
+          "slug": "phan-ung-hat-nhan",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Tổng hợp kiến thức Vật lí hạt nhân",
+          "sections": [
+            {
+              "heading": "1. Cấu trúc hạt nhân",
+              "content": "<p><strong>Hạt nhân:</strong> Z proton + N neutron</p><p><strong>Ký hiệu:</strong> ^A_ZX</p><p><strong>Đơn vị khối lượng:</strong> 1u = 1,66.10⁻²⁷ kg</p><p><strong>Bán kính:</strong> R = r₀.A^(1/3) với r₀ = 1,2 fm</p>"
+            },
+            {
+              "heading": "2. Năng lượng liên kết",
+              "content": "<p><strong>Độ hụt khối:</strong> Δm = [Z.m_p + N.m_n] - m_X</p><p><strong>Năng lượng liên kết:</strong> E_lk = Δm.c²</p><p><strong>Năng lượng liên kết riêng:</strong> ε = E_lk/A</p>"
+            },
+            {
+              "heading": "3. Phóng xạ",
+              "content": "<p><strong>Định luật phóng xạ:</strong> N = N₀.2^(-t/T)</p><p><strong>Chu kỳ bán rã:</strong> T</p><p><strong>Hoạt động phóng xạ:</strong> A = A₀.2^(-t/T)</p><p><strong>Các tia:</strong> α, β, γ</p>"
+            },
+            {
+              "heading": "4. Phản ứng hạt nhân",
+              "content": "<p><strong>Phân hạch:</strong> Hạt nhân nặng vỡ</p><p><strong>Nhiệt hạch:</strong> Hạt nhân nhẹ tổng hợp</p><p><strong>Bảo toàn:</strong> Số nuclon, điện tích, năng lượng</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài tập cấu trúc hạt nhân",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>N = A - Z</li><li>R = r₀.A^(1/3)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 1:</strong> Hạt nhân ^60_27Co có bao nhiêu proton và neutron?",
+                "solution": "<p><strong>Giải:</strong></p><p>Z = 27 proton</p><p>N = 60 - 27 = 33 neutron</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài tập phóng xạ",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>N = N₀.2^(-t/T)</li><li>A = A₀.2^(-t/T)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 2:</strong> Chất phóng xạ có T = 15 năm. Sau 30 năm, còn bao nhiêu %?",
+                "solution": "<p><strong>Giải:</strong></p><p>t/T = 30/15 = 2</p><p>N/N₀ = 2^(-2) = 1/4 = 25%</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài tập năng lượng",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>E = Δm.c²</li><li>1u = 931,5 MeV/c²</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 3:</strong> Tính năng lượng liên kết nếu Δm = 0,03u.",
+                "solution": "<p><strong>Giải:</strong></p><p>E = 0,03.931,5 = 27,95 MeV</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Hạt nhân nguyên tử được cấu tạo bởi:",
+            "options": [
+              "Proton và neutron",
+              "Proton và electron",
+              "Neutron và electron",
+              "Proton, neutron và electron"
+            ],
+            "correct": 0,
+            "explanation": "Hạt nhân gồm proton và neutron"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Số khối A là:",
+            "options": [
+              "Tổng số proton và neutron",
+              "Số proton",
+              "Số neutron",
+              "Số electron"
+            ],
+            "correct": 0,
+            "explanation": "A = Z + N"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Đơn vị khối lượng nguyên tử u bằng:",
+            "options": [
+              "1,66.10⁻²⁷ kg",
+              "1,66.10⁻³¹ kg",
+              "1,66.10⁻²⁴ kg",
+              "1,66.10⁻³⁰ kg"
+            ],
+            "correct": 0,
+            "explanation": "1u = 1,66055.10⁻²⁷ kg"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Phóng xạ là hiện tượng:",
+            "options": [
+              "Hạt nhân tự phát ra bức xạ",
+              "Tạo hạt nhân mới",
+              "Cả A và B đều đúng",
+              "Cả A và B đều sai"
+            ],
+            "correct": 2,
+            "explanation": "Phóng xạ vừa phát bức xạ vừa tạo hạt nhân mới"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Tia alpha là:",
+            "options": [
+              "Hạt nhân Heli",
+              "Electron",
+              "Sóng điện từ",
+              "Proton"
+            ],
+            "correct": 0,
+            "explanation": "Tia α là hạt nhân ^4_2He"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Chu kỳ bán rã là:",
+            "options": [
+              "Thời gian để 1/2 hạt nhân phân rã",
+              "Thời gian để tất cả phân rã",
+              "Thời gian hạt nhân tăng gấp đôi",
+              "Thời gian sống trung bình"
+            ],
+            "correct": 0,
+            "explanation": "T là thời gian để 50% hạt nhân phân rã"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Phản ứng phân hạch là:",
+            "options": [
+              "Hạt nhân nặng vỡ",
+              "Hạt nhân nhẹ tổng hợp",
+              "Hạt nhân phát xạ",
+              "Hạt nhân hấp thụ"
+            ],
+            "correct": 0,
+            "explanation": "Phân hạch: hạt nhân nặng vỡ thành mảnh"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Năng lượng liên kết được tính bằng:",
+            "options": [
+              "E = Δm.c²",
+              "E = Δm/c²",
+              "E = Δm.c",
+              "E = m.c²"
+            ],
+            "correct": 0,
+            "explanation": "E_lk = Δm.c²"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Sau 3 chu kỳ bán rã, số hạt nhân còn lại:",
+            "options": [
+              "12,5%",
+              "25%",
+              "50%",
+              "75%"
+            ],
+            "correct": 0,
+            "explanation": "N/N₀ = 1/2³ = 1/8 = 12,5%"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "1 MeV bằng:",
+            "options": [
+              "1,6.10⁻¹³ J",
+              "1,6.10⁻¹⁹ J",
+              "1,6.10⁻¹⁶ J",
+              "1,6.10⁻²³ J"
+            ],
+            "correct": 0,
+            "explanation": "1 MeV = 1,6.10⁻¹³ J"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các loại tia phóng xạ:",
+            "options": [
+              "Tia alpha",
+              "Tia beta",
+              "Tia gamma",
+              "Tia tử ngoại"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Phóng xạ có α, β, γ"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Đặc điểm của phản ứng hạt nhân:",
+            "options": [
+              "Bảo toàn số nuclon",
+              "Bảo toàn điện tích",
+              "Bảo toàn năng lượng",
+              "Bảo toàn khối lượng"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Khối lượng không được bảo toàn (có độ hụt khối)"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Đặc điểm của phóng xạ:",
+            "options": [
+              "Xảy ra tự nhiên",
+              "Không phụ thuộc điều kiện bên ngoài",
+              "Tuân theo định luật phóng xạ",
+              "Cần kích thích"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Phóng xạ tự nhiên không cần kích thích"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính số neutron trong hạt nhân ^235_92U.",
+            "correct": "143",
+            "explanation": "N = A - Z = 235 - 92 = 143"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Tính năng lượng liên kết nếu Δm = 0,015u (MeV).",
+            "correct": "13.97",
+            "explanation": "E = 0,015.931,5 = 13,97 MeV"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Chất phóng xạ có T = 8 ngày. Sau 24 ngày, còn bao nhiêu %?",
+            "correct": "12.5",
+            "explanation": "t/T = 24/8 = 3; N/N₀ = 2^(-3) = 12,5%"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính bán kính hạt nhân ^27_13Al (fm).",
+            "correct": "3.6",
+            "explanation": "R = 1,2.27^(1/3) = 1,2.3 = 3,6 fm"
+          }
+        ]
+      }
+    }
+  ]
+}

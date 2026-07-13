@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_11",
+      "name": "Quyền và nghĩa vụ của công dân trong học tập",
+      "slug": "quyen-va-nghia-vu-trong-hoc-tap",
+      "chapter": "Quyền và nghĩa vụ của công dân về văn hóa, xã hội",
+      "chapter_id": "GDCD12",
+      "lesson_id": 11,
+      "description": "Hiểu về quyền được đi học và trách nhiệm rèn luyện kiến thức của công dân Việt Nam.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Quyền và Nghĩa vụ Học tập",
+          "summary": "Học tập là quyền cơ bản và cũng là nghĩa vụ để công dân phát triển bản thân và đóng góp cho tổ chức.",
+          "sections": [
+            { "heading": "Quyền học tập", "content": "Mọi công dân đều có quyền học không hạn chế (từ tiểu học đến đại học), học bất kỳ ngành nghề nào và học bằng nhiều hình thức." },
+            { "heading": "Sự bình đẳng trong học tập", "content": "Không phân biệt dân tộc, tôn giáo, giới tính, nguồn gốc gia đình và địa vị xã hội." },
+            { "heading": "Nghĩa vụ học tập", "content": "Học tập để hoàn thành phổ cập giáo dục theo quy định của Nhà nước và không ngừng nâng cao kiến thức, kĩ năng." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Mọi công dân đều có quyền học tập 'không hạn chế' nghĩa là?", "options": ["Học ở bất cứ đâu", "Có thể học từ bậc thấp đến bậc cao (Tiến sĩ, sau Tiến sĩ...)", "Học mà không cần thi", "Học miễn phí hoàn toàn"], "correct": 1, "explanation": "Công dân có thể học suốt đời tùy theo năng lực và điều kiện." },
+          { "id": 2, "type": "mcq", "question": "Quyền học tập của công dân được quy định đầu tiên trong văn bản nào?", "options": ["Nội quy nhà trường", "Luật Giáo dục", "Hiến pháp", "Sách giáo khoa"], "correct": 2, "explanation": "Hiến pháp là luật cơ bản quy định các quyền con người." },
+          { "id": 3, "type": "mcq", "question": "Học tập bằng nhiều hình thức (chính quy, từ xa, vừa học vừa làm) thể hiện quyền gì?", "options": ["Quyền sáng tạo", "Quyền tự do lựa chọn hình thức học tập", "Quyền ưu tiên", "Quyền bắt buộc"], "correct": 1, "explanation": "Nhà nước tạo điều kiện linh hoạt để ai cũng có thể tiếp cận tri thức." },
+          { "id": 4, "type": "mcq", "question": "Việc Nhà nước cấp học bổng cho học sinh nghèo vượt khó thể hiện?", "options": ["Sự thương hại", "Tính công bằng và tạo điều kiện thực hiện quyền học tập", "Sự lãng phí ngân sách", "Để lấy thành tích"], "correct": 1, "explanation": "Chính sách này giúp thu hẹp khoảng cách tiếp cận giáo dục." },
+          { "id": 5, "type": "mcq", "question": "Bình đẳng trong học tập giữa các dân tộc có ý nghĩa gì?", "options": ["Mỗi dân tộc học một trường riêng", "Mọi dân tộc đều được tạo điều kiện học tập như nhau", "Dân tộc ít người không cần học", "Chỉ dân tộc Kinh mới được học đại học"], "correct": 1, "explanation": "Đảm bảo quyền lợi học tập cho tất cả các dân tộc anh em trên đất nước." },
+          { "id": 6, "type": "mcq", "question": "Bậc học nào ở Việt Nam là bắt buộc đối với mọi trẻ em?", "options": ["Đại học", "Giáo dục tiểu học và trung học cơ sở", "Thạc sĩ", "Trung học phổ thông"], "correct": 1, "explanation": "Nhà nước quy định phổ cập giáo dục bắt buộc ở bậc thấp để đảm bảo dân trí." },
+          { "id": 7, "type": "mcq", "question": "Học sinh có nghĩa vụ gì trong học tập?", "options": ["Chỉ cần đến lớp ngồi", "Học tập chuyên cần, rèn luyện đạo đức và tuân thủ nội quy trường học", "Làm bài hộ bạn", "Quay cóp trong thi cử"], "correct": 1, "explanation": "Nghiêm túc trong học tập là trách nhiệm của người học." },
+          { "id": 8, "type": "mcq", "question": "Học tập suốt đời (Lifelong learning) giúp công dân?", "options": ["Mệt mỏi thêm", "Thích nghi với sự thay đổi của xã hội và công nghệ", "Tốn nhiều tiền", "Được khen ngợi"], "correct": 1, "explanation": "Trong thời đại số, ngừng học đồng nghĩa với tụt hậu." },
+          { "id": 9, "type": "mcq", "question": "Hành vi cản trở người khác đi học bị coi là?", "options": ["Hành vi giúp đỡ", "Vi phạm quyền học tập của công dân", "Quyền của cha mẹ", "Việc bình thường"], "correct": 1, "explanation": "Xâm phạm quyền học tập là vi phạm pháp luật và đạo đức." },
+          { "id": 10, "type": "mcq", "question": "Tại sao học tập lại là nghĩa vụ đối với đất nước?", "options": ["Để có nhiều bằng cấp cho đẹp", "Vì dân trí cao là sức mạnh và tương lai của dân tộc", "Để Nhà nước thu tiền học phí", "Để học sinh bớt thời gian chơi"], "correct": 1, "explanation": "Nguồn nhân lực chất lượng là yếu tố then chốt để phát triển quốc gia." }
+        ]
+      }
+    }
+  ]
+}

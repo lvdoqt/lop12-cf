@@ -1,0 +1,253 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-19-tinh-chat-vat-li-hoa-hoc-kim-loai",
+      "name": "Bài 19. Tính chất vật lí và tính chất hóa học của kim loại",
+      "slug": "bai-19-tinh-chat-vat-li-hoa-hoc-kim-loai",
+      "chapter": "Chương 6: Đại cương về kim loại",
+      "chapter_id": "H12-1006",
+      "lesson_id": 19,
+      "description": "Tìm hiểu về tính chất vật lí và hóa học của kim loại.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530981279185-9f5b7c00e5d0?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tinh-chat-kim-loai-1",
+          "name": "Tính chất kim loại",
+          "slug": "tinh-chat-kim-loai",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Tính chất Kim loại",
+          "sections": [
+            {
+              "heading": "1. Tính chất vật lí",
+              "content": "<h3>a) Trạng thái</h3><ul><li>Hầu hết rắn ở nhiệt độ phòng (trừ Hg lỏng)</li><li>Có ánh kim đặc trưng</li></ul><h3>b) Tính dẫn điện và dẫn nhiệt</h3><p><strong>Dẫn điện tốt nhất:</strong> Ag > Cu > Au > Al</p><p><strong>Dẫn nhiệt tốt nhất:</strong> Ag > Cu > Au > Al</p><p><strong>Ứng dụng:</strong></p><ul><li>Cu: Dây điện, thiết bị điện</li><li>Al: Dây điện cao thế, nồi nấu</li><li>Ag: Thiết bị điện tử cao cấp</li></ul><h3>c) Tính dẻo, dễ rèn</h3><p><strong>Dẻo nhất:</strong> Au > Ag > Cu > Al</p><p><strong>Ứng dụng:</strong></p><ul><li>Dát mỏng: Au (0.0001 mm)</li><li>Kéo sợi: Cu, Al</li><li>Rèn: Fe, Al</li></ul><h3>d) Khối lượng riêng</h3><p><strong>Nhẹ nhất:</strong> Li (0.53 g/cm³)</p><p><strong>Nặng nhất:</strong> Os (22.6 g/cm³)</p><p><strong>Phân loại:</strong></p><ul><li>Kim loại nhẹ: d < 5 g/cm³ (Al, Mg, Ti)</li><li>Kim loại nặng: d > 5 g/cm³ (Fe, Cu, Pb)</li></ul><h3>e) Nhiệt độ nóng chảy</h3><p><strong>Cao nhất:</strong> W (3422°C)</p><p><strong>Thấp nhất:</strong> Hg (-39°C), Cs (28.5°C)</p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Kim loại</th><th class='border border-gray-300 p-2'>Nhiệt độ nóng chảy (°C)</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>W</td><td class='border border-gray-300 p-2'>3422</td></tr><tr><td class='border border-gray-300 p-2'>Fe</td><td class='border border-gray-300 p-2'>1538</td></tr><tr><td class='border border-gray-300 p-2'>Cu</td><td class='border border-gray-300 p-2'>1085</td></tr><tr><td class='border border-gray-300 p-2'>Al</td><td class='border border-gray-300 p-2'>660</td></tr><tr><td class='border border-gray-300 p-2'>Zn</td><td class='border border-gray-300 p-2'>420</td></tr><tr><td class='border border-gray-300 p-2'>Hg</td><td class='border border-gray-300 p-2'>-39</td></tr></tbody></table>"
+            },
+            {
+              "heading": "2. Tính chất hóa học",
+              "content": "<h3>a) Tính khử</h3><p><strong>Đặc điểm chung:</strong> Kim loại có tính khử (dễ nhường electron)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>M → M^n+ + ne⁻</p><p><strong>Dãy điện hóa:</strong></p><p>Li K Ba Ca Na Mg Al Zn Fe Ni Sn Pb (H) Cu Ag Au</p><p>← Tính khử tăng | Tính khử giảm →</p><h3>b) Phản ứng với phi kim</h3><p><strong>1. Với O₂:</strong></p><p>2M + O₂ → 2MO (oxit base)</p><p>4Al + 3O₂ → 2Al₂O₃</p><p><strong>Lưu ý:</strong></p><ul><li>Kim loại kiềm: 4K + O₂ → 2K₂O</li><li>Kim loại kiềm thổ: 2Ca + O₂ → 2CaO</li><li>Au, Pt không phản ứng với O₂</li></ul><p><strong>2. Với Cl₂:</strong></p><p>2M + nCl₂ → 2MCl_n</p><p>2Fe + 3Cl₂ → 2FeCl₃</p><p><strong>3. Với S:</strong></p><p>2M + nS → M₂S_n (t°)</p><p>Fe + S → FeS (t°)</p><h3>c) Phản ứng với nước</h3><p><strong>1. Kim loại kiềm (Li, Na, K):</strong></p><p>2Na + 2H₂O → 2NaOH + H₂↑</p><p><strong>2. Kim loại kiềm thổ (Ca, Ba):</strong></p><p>Ca + 2H₂O → Ca(OH)₂ + H₂↑</p><p><strong>3. Kim loại trung bình (Mg, Al, Zn, Fe):</strong></p><p>Phản ứng với hơi nước ở nhiệt độ cao</p><p>3Fe + 4H₂O → Fe₃O₄ + 4H₂ (t°)</p><p><strong>4. Kim loại yếu (Cu, Ag, Au):</strong></p><p>Không phản ứng với nước</p><h3>d) Phản ứng với acid</h3><p><strong>1. Acid không có tính oxi hóa (HCl, H₂SO₄ loãng):</strong></p><p>Kim loại đứng trước H trong dãy điện hóa</p><p>Zn + 2HCl → ZnCl₂ + H₂↑</p><p>Fe + H₂SO₄ → FeSO₄ + H₂↑</p><p><strong>2. Acid có tính oxi hóa (HNO₃, H₂SO₄ đặc):</strong></p><p>Oxi hóa hầu hết kim loại (trừ Au, Pt)</p><p><strong>HNO₃ loãng:</strong></p><p>3Cu + 8HNO₃ loãng → 3Cu(NO₃)₂ + 2NO↑ + 4H₂O</p><p><strong>HNO₃ đặc:</strong></p><p>Cu + 4HNO₃ đặc → Cu(NO₃)₂ + 2NO₂↑ + 2H₂O</p><p><strong>H₂SO₄ đặc nóng:</strong></p><p>2Fe + 6H₂SO₄ đặc → Fe₂(SO₄)₃ + 3SO₂↑ + 6H₂O</p><p><strong>Thụ động hóa:</strong></p><ul><li>Al, Fe, Cr thụ động trong HNO₃ đặc nguội, H₂SO₄ đặc nguội</li><li>Tạo lớp oxit bảo vệ</li></ul><h3>e) Phản ứng với dung dịch muối</h3><p><strong>Điều kiện:</strong> Kim loại mạnh đẩy kim loại yếu ra khỏi dung dịch muối</p><p>Fe + CuSO₄ → FeSO₄ + Cu↓</p><p>Zn + 2AgNO₃ → Zn(NO₃)₂ + 2Ag↓</p><p><strong>Lưu ý:</strong></p><ul><li>Kim loại kiềm, kiềm thổ phản ứng với nước trước</li><li>Không dùng để điều chế kim loại</li></ul>"
+            },
+            {
+              "heading": "3. Dãy hoạt động hóa học của kim loại",
+              "content": "<h3>a) Dãy điện hóa</h3><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Li K Ba Ca Na Mg Al Zn Fe Ni Sn Pb (H) Cu Ag Au</p><p><strong>Ý nghĩa:</strong></p><ul><li>Tính khử giảm dần từ trái sang phải</li><li>Tính oxi hóa của ion tăng dần từ trái sang phải</li></ul><h3>b) Ứng dụng dãy điện hóa</h3><p><strong>1. Dự đoán phản ứng với acid không oxi hóa:</strong></p><ul><li>Kim loại trước H: Phản ứng, giải phóng H₂</li><li>Kim loại sau H: Không phản ứng</li></ul><p><strong>2. Dự đoán phản ứng với dung dịch muối:</strong></p><ul><li>Kim loại mạnh đẩy kim loại yếu ra khỏi muối</li></ul><p><strong>3. Dự đoán phản ứng với nước:</strong></p><ul><li>Kim loại kiềm, kiềm thổ: Phản ứng mạnh</li><li>Kim loại trung bình: Phản ứng với hơi nước (t°)</li><li>Kim loại yếu: Không phản ứng</li></ul><h3>c) Bảng tổng hợp phản ứng</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Kim loại</th><th class='border border-gray-300 p-2'>Với O₂</th><th class='border border-gray-300 p-2'>Với H₂O</th><th class='border border-gray-300 p-2'>Với HCl</th><th class='border border-gray-300 p-2'>Với HNO₃</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Na, K</td><td class='border border-gray-300 p-2'>✓ (mạnh)</td><td class='border border-gray-300 p-2'>✓ (mạnh)</td><td class='border border-gray-300 p-2'>✓ (mạnh)</td><td class='border border-gray-300 p-2'>✓</td></tr><tr><td class='border border-gray-300 p-2'>Ca, Mg</td><td class='border border-gray-300 p-2'>✓</td><td class='border border-gray-300 p-2'>✓</td><td class='border border-gray-300 p-2'>✓</td><td class='border border-gray-300 p-2'>✓</td></tr><tr><td class='border border-gray-300 p-2'>Al, Zn, Fe</td><td class='border border-gray-300 p-2'>✓</td><td class='border border-gray-300 p-2'>✓ (hơi, t°)</td><td class='border border-gray-300 p-2'>✓</td><td class='border border-gray-300 p-2'>✓</td></tr><tr><td class='border border-gray-300 p-2'>Cu</td><td class='border border-gray-300 p-2'>✓ (t°)</td><td class='border border-gray-300 p-2'>✗</td><td class='border border-gray-300 p-2'>✗</td><td class='border border-gray-300 p-2'>✓</td></tr><tr><td class='border border-gray-300 p-2'>Ag</td><td class='border border-gray-300 p-2'>✓ (t° cao)</td><td class='border border-gray-300 p-2'>✗</td><td class='border border-gray-300 p-2'>✗</td><td class='border border-gray-300 p-2'>✓</td></tr><tr><td class='border border-gray-300 p-2'>Au</td><td class='border border-gray-300 p-2'>✗</td><td class='border border-gray-300 p-2'>✗</td><td class='border border-gray-300 p-2'>✗</td><td class='border border-gray-300 p-2'>✗</td></tr></tbody></table>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán phản ứng kim loại với acid",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định loại acid (oxi hóa hay không)</li><li>Viết phương trình phản ứng</li><li>Tính mol chất, thể tích khí</li><li>Áp dụng bảo toàn electron</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Hòa tan 13g Zn trong dung dịch HCl dư. a) Viết phương trình. b) Tính thể tích H₂ (đktc). c) Nếu dùng HNO₃ loãng, tính thể tích NO (đktc).",
+                "solution": "<p><strong>a) Phương trình với HCl:</strong></p><p>Zn + 2HCl → ZnCl₂ + H₂↑</p><p><strong>b) Tính thể tích H₂:</strong></p><p>n(Zn) = 13 / 65 = 0.2 mol</p><p>n(H₂) = n(Zn) = 0.2 mol</p><p>V(H₂) = 0.2 × 22.4 = 4.48 lít</p><p><strong>c) Với HNO₃ loãng:</strong></p><p><strong>Phương trình:</strong></p><p>3Zn + 8HNO₃ loãng → 3Zn(NO₃)₂ + 2NO↑ + 4H₂O</p><p><strong>Tính NO:</strong></p><p>n(Zn) = 0.2 mol</p><p>n(NO) = (2/3) × 0.2 = 0.133 mol</p><p>V(NO) = 0.133 × 22.4 = 2.98 lít</p><p><strong>Đáp án:</strong> b) 4.48 lít H₂; c) 2.98 lít NO</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán kim loại đẩy kim loại",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định kim loại mạnh hơn</li><li>Viết phương trình</li><li>Tính khối lượng kim loại bám</li><li>Tính khối lượng thanh kim loại thay đổi</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Nhúng thanh Fe (56g) vào 500ml dung dịch CuSO₄ 1M. a) Viết phương trình. b) Tính khối lượng Cu bám. c) Tính khối lượng thanh Fe sau phản ứng.",
+                "solution": "<p><strong>a) Phương trình:</strong></p><p>Fe + CuSO₄ → FeSO₄ + Cu↓</p><p><strong>b) Tính khối lượng Cu:</strong></p><p>n(CuSO₄) = 0.5 × 1 = 0.5 mol</p><p>n(Fe phản ứng) = n(CuSO₄) = 0.5 mol</p><p>n(Cu) = 0.5 mol</p><p>m(Cu) = 0.5 × 64 = 32g</p><p><strong>c) Khối lượng thanh Fe:</strong></p><p><strong>Fe giảm:</strong> m = 0.5 × 56 = 28g</p><p><strong>Cu tăng:</strong> m = 32g</p><p><strong>Khối lượng thanh:</strong></p><p>m = 56 - 28 + 32 = 60g</p><p><strong>Hoặc:</strong> Δm = m(Cu) - m(Fe) = 32 - 28 = 4g</p><p>m(thanh) = 56 + 4 = 60g</p><p><strong>Đáp án:</strong> b) 32g Cu; c) 60g</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Ăn mòn và bảo vệ kim loại",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích nguyên nhân ăn mòn</li><li>Tính tốc độ ăn mòn</li><li>Đề xuất biện pháp bảo vệ</li><li>Đánh giá hiệu quả kinh tế</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Cầu thép (1000 tấn) bị ăn mòn 2% khối lượng/năm. a) Tính khối lượng Fe bị ăn mòn/năm. b) Tính chi phí sơn chống gỉ (100,000đ/m², diện tích 5000m²). c) So sánh chi phí sơn vs thay thế thép (20 triệu đồng/tấn). d) Đề xuất giải pháp tối ưu.",
+                "solution": "<p><strong>a) Khối lượng Fe bị ăn mòn:</strong></p><p>m = 1000 × 2% = 20 tấn/năm</p><p><strong>b) Chi phí sơn:</strong></p><p>Chi phí = 5000 × 100,000 = 500,000,000 đ</p><p>Tuổi thọ sơn: 5 năm</p><p>Chi phí/năm = 500,000,000 / 5 = 100,000,000 đ/năm</p><p><strong>c) So sánh chi phí:</strong></p><p><strong>Không bảo vệ:</strong></p><ul><li>Thép mất: 20 tấn/năm</li><li>Chi phí: 20 × 20,000,000 = 400,000,000 đ/năm</li><li>Tuổi thọ cầu: 1000 / 20 = 50 năm</li></ul><p><strong>Có sơn bảo vệ:</strong></p><ul><li>Chi phí sơn: 100,000,000 đ/năm</li><li>Giảm ăn mòn 90% → 2 tấn/năm</li><li>Chi phí thép: 2 × 20,000,000 = 40,000,000 đ/năm</li><li>Tổng: 140,000,000 đ/năm</li><li>Tuổi thọ cầu: 1000 / 2 = 500 năm</li></ul><p><strong>Tiết kiệm:</strong> 400 - 140 = 260 triệu đồng/năm (65%)</p><p><strong>d) Đề xuất giải pháp tối ưu:</strong></p><p><strong>1. Phân tích nguyên nhân ăn mòn:</strong></p><ul><li>Ăn mòn điện hóa (Fe + O₂ + H₂O)</li><li>Môi trường ẩm, có muối (gần biển)</li><li>Ứng suất cơ học (tải trọng)</li><li>Vi sinh vật (vi khuẩn khử sulfate)</li></ul><p><strong>2. Các phương án bảo vệ:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Phương án</th><th class='border border-gray-300 p-2'>Chi phí ban đầu</th><th class='border border-gray-300 p-2'>Chi phí/năm</th><th class='border border-gray-300 p-2'>Tuổi thọ</th><th class='border border-gray-300 p-2'>Hiệu quả</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Không bảo vệ</td><td class='border border-gray-300 p-2'>0</td><td class='border border-gray-300 p-2'>400 triệu</td><td class='border border-gray-300 p-2'>50 năm</td><td class='border border-gray-300 p-2'>0%</td></tr><tr><td class='border border-gray-300 p-2'>Sơn chống gỉ</td><td class='border border-gray-300 p-2'>500 triệu</td><td class='border border-gray-300 p-2'>140 triệu</td><td class='border border-gray-300 p-2'>500 năm</td><td class='border border-gray-300 p-2'>90%</td></tr><tr><td class='border border-gray-300 p-2'>Mạ kẽm</td><td class='border border-gray-300 p-2'>800 triệu</td><td class='border border-gray-300 p-2'>100 triệu</td><td class='border border-gray-300 p-2'>800 năm</td><td class='border border-gray-300 p-2'>95%</td></tr><tr><td class='border border-gray-300 p-2'>Bảo vệ catot</td><td class='border border-gray-300 p-2'>300 triệu</td><td class='border border-gray-300 p-2'>80 triệu</td><td class='border border-gray-300 p-2'>1000 năm</td><td class='border border-gray-300 p-2'>98%</td></tr><tr><td class='border border-gray-300 p-2'>Thép không gỉ</td><td class='border border-gray-300 p-2'>30 tỷ</td><td class='border border-gray-300 p-2'>20 triệu</td><td class='border border-gray-300 p-2'>2000 năm</td><td class='border border-gray-300 p-2'>99%</td></tr></tbody></table><p><strong>3. Giải pháp tối ưu - Kết hợp:</strong></p><p><strong>a) Ngắn hạn (5-10 năm):</strong></p><ul><li>Sơn chống gỉ epoxy (500 triệu)</li><li>Bảo vệ catot (300 triệu)</li><li>Tổng: 800 triệu</li><li>Chi phí/năm: 80 triệu (bảo trì catot)</li><li>Hiệu quả: 98%</li></ul><p><strong>b) Dài hạn (50-100 năm):</strong></p><ul><li>Thay thế dần bằng thép không gỉ (ưu tiên vị trí quan trọng)</li><li>Chi phí: 30 tỷ / 50 năm = 600 triệu/năm</li><li>Kết hợp với sơn + catot cho phần còn lại</li></ul><p><strong>4. Lộ trình triển khai:</strong></p><p><strong>Năm 1-2:</strong></p><ul><li>Kiểm tra toàn bộ cầu (siêu âm, từ tính)</li><li>Xác định vị trí ăn mòn nghiêm trọng</li><li>Sơn chống gỉ toàn bộ: 500 triệu</li><li>Lắp hệ thống bảo vệ catot: 300 triệu</li></ul><p><strong>Năm 3-5:</strong></p><ul><li>Thay thế 10% thép bị ăn mòn nặng: 3 tỷ</li><li>Bảo trì sơn: 100 triệu/năm</li><li>Vận hành catot: 80 triệu/năm</li></ul><p><strong>Năm 6-50:</strong></p><ul><li>Thay thế dần 2%/năm bằng thép không gỉ: 600 triệu/năm</li><li>Bảo trì hệ thống: 100 triệu/năm</li><li>Tổng: 700 triệu/năm</li></ul><p><strong>5. Hiệu quả kinh tế:</strong></p><p><strong>Tổng chi phí 50 năm:</strong></p><ul><li>Không bảo vệ: 400 triệu × 50 = 20 tỷ</li><li>Có bảo vệ: 800 triệu + 700 triệu × 49 = 35 tỷ</li></ul><p><strong>Nhưng:</strong></p><ul><li>Không bảo vệ: Cầu hỏng sau 50 năm, phải xây mới (50 tỷ)</li><li>Có bảo vệ: Cầu dùng được 500-1000 năm</li></ul><p><strong>Tiết kiệm thực:</strong> 50 - 35 = 15 tỷ (30%)</p><p><strong>6. Công nghệ mới:</strong></p><p><strong>a) Sơn nano:</strong></p><ul><li>Tuổi thọ 20 năm (gấp 4 lần)</li><li>Chi phí: 800 triệu (gấp 1.6 lần)</li><li>Hiệu quả: 95%</li></ul><p><strong>b) Hợp kim chống ăn mòn:</strong></p><ul><li>Thép Corten (tự tạo lớp oxit bảo vệ)</li><li>Chi phí: +20% so với thép thường</li><li>Tuổi thọ: 100 năm</li></ul><p><strong>c) Cảm biến IoT:</strong></p><ul><li>Giám sát ăn mòn thời gian thực</li><li>Cảnh báo sớm</li><li>Bảo trì chủ động</li><li>Chi phí: 200 triệu</li></ul><p><strong>7. Tác động môi trường:</strong></p><ul><li>Giảm 90% thép phế liệu</li><li>Giảm 80% CO₂ (sản xuất thép)</li><li>Không ô nhiễm nước (gỉ sắt)</li><li>Phát triển bền vững</li></ul><p><strong>Kết luận:</strong></p><p>Giải pháp tối ưu là kết hợp sơn chống gỉ + bảo vệ catot (ngắn hạn) và thay thế dần bằng thép không gỉ (dài hạn). Tiết kiệm 15 tỷ đồng trong 50 năm (30%), kéo dài tuổi thọ cầu gấp 10 lần. Đầu tư ban đầu 800 triệu, hoàn vốn sau 3 năm.</p><p><strong>Đáp án:</strong> a) 20 tấn/năm; b) 100 triệu đồng/năm; c) Tiết kiệm 260 triệu/năm; d) Đã đề xuất chi tiết</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Kim loại dẫn điện tốt nhất:",
+            "options": ["Cu", "Ag", "Au", "Al"],
+            "correct": 1,
+            "explanation": "Ag dẫn điện tốt nhất."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Kim loại nhẹ nhất:",
+            "options": ["Al", "Mg", "Li", "Na"],
+            "correct": 2,
+            "explanation": "Li nhẹ nhất (0.53 g/cm³)."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Kim loại có nhiệt độ nóng chảy cao nhất:",
+            "options": ["Fe", "Cu", "W", "Al"],
+            "correct": 2,
+            "explanation": "W có nhiệt độ nóng chảy cao nhất (3422°C)."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Kim loại lỏng ở nhiệt độ phòng:",
+            "options": ["Na", "Hg", "Cs", "Ga"],
+            "correct": 1,
+            "explanation": "Hg lỏng ở nhiệt độ phòng."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Kim loại phản ứng mạnh với nước ở nhiệt độ thường:",
+            "options": ["Fe", "Cu", "Na", "Ag"],
+            "correct": 2,
+            "explanation": "Na phản ứng mạnh với nước."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Kim loại không phản ứng với HCl:",
+            "options": ["Fe", "Zn", "Cu", "Al"],
+            "correct": 2,
+            "explanation": "Cu không phản ứng với HCl (sau H)."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Kim loại bị thụ động trong HNO₃ đặc nguội:",
+            "options": ["Cu", "Zn", "Fe", "Ag"],
+            "correct": 2,
+            "explanation": "Fe bị thụ động trong HNO₃ đặc nguội."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Phản ứng Fe + CuSO₄ thuộc loại:",
+            "options": ["Oxi hóa - khử", "Thế", "Trao đổi", "Phân hủy"],
+            "correct": 0,
+            "explanation": "Fe + CuSO₄ là phản ứng oxi hóa - khử."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Sản phẩm khử của HNO₃ loãng với Cu:",
+            "options": ["NO₂", "NO", "N₂O", "N₂"],
+            "correct": 1,
+            "explanation": "HNO₃ loãng + Cu → NO."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Sản phẩm khử của HNO₃ đặc với Cu:",
+            "options": ["NO₂", "NO", "N₂O", "N₂"],
+            "correct": 0,
+            "explanation": "HNO₃ đặc + Cu → NO₂."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Kim loại có tính khử mạnh nhất:",
+            "options": ["Na", "K", "Li", "Ca"],
+            "correct": 2,
+            "explanation": "Li có tính khử mạnh nhất."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Kim loại không phản ứng với O₂:",
+            "options": ["Fe", "Cu", "Au", "Al"],
+            "correct": 2,
+            "explanation": "Au không phản ứng với O₂."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Kim loại phản ứng với nước ở nhiệt độ thường:",
+            "options": ["Na", "K", "Ca", "Fe"],
+            "correct": [0, 1, 2],
+            "explanation": "Na, K, Ca phản ứng với nước ở nhiệt độ thường."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Kim loại phản ứng với HCl:",
+            "options": ["Fe", "Zn", "Cu", "Al"],
+            "correct": [0, 1, 3],
+            "explanation": "Fe, Zn, Al phản ứng với HCl (trước H)."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Kim loại bị thụ động:",
+            "options": ["Al", "Fe", "Cr", "Cu"],
+            "correct": [0, 1, 2],
+            "explanation": "Al, Fe, Cr bị thụ động trong HNO₃ đặc nguội."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Tính chất vật lí của kim loại:",
+            "options": ["Dẫn điện", "Dẫn nhiệt", "Dẻo", "Tất cả"],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Kim loại có nhiều tính chất vật lí."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Hòa tan 6.5g Zn trong HCl dư. Tính thể tích H₂ (lít, đktc). Làm tròn đến 2 chữ số thập phân.",
+            "correct": "2.24",
+            "explanation": "n(Zn) = 6.5/65 = 0.1 mol. V(H₂) = 0.1×22.4 = 2.24 lít. Đáp án: 2.24"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Hòa tan 5.6g Fe trong HCl dư. Tính thể tích H₂ (lít, đktc). Làm tròn đến 2 chữ số thập phân.",
+            "correct": "2.24",
+            "explanation": "n(Fe) = 5.6/56 = 0.1 mol. V(H₂) = 0.1×22.4 = 2.24 lít. Đáp án: 2.24"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Nhúng Fe vào CuSO₄, thu được 6.4g Cu. Tính khối lượng Fe phản ứng (g). Làm tròn đến 1 chữ số thập phân.",
+            "correct": "5.6",
+            "explanation": "n(Cu) = 6.4/64 = 0.1 mol. n(Fe) = 0.1 mol. m = 0.1×56 = 5.6g. Đáp án: 5.6"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Hòa tan 1.92g Cu trong HNO₃ loãng dư. Tính thể tích NO (lít, đktc). Làm tròn đến 2 chữ số thập phân.",
+            "correct": "0.45",
+            "explanation": "n(Cu) = 1.92/64 = 0.03 mol. n(NO) = (2/3)×0.03 = 0.02 mol. V = 0.02×22.4 = 0.448 lít. Đáp án: 0.45"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Ag có khối lượng riêng bao nhiêu (g/cm³)? Làm tròn đến 1 chữ số thập phân.",
+            "correct": "10.5",
+            "explanation": "Ag có d = 10.5 g/cm³. Đáp án: 10.5"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Al có nhiệt độ nóng chảy bao nhiêu (°C)? Làm tròn đến hàng chục.",
+            "correct": "660",
+            "explanation": "Al có nhiệt độ nóng chảy 660°C. Đáp án: 660"
+          }
+        ]
+      }
+    }
+  ]
+}

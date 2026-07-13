@@ -1,0 +1,41 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_21",
+      "name": "Hội thảo hướng nghiệp",
+      "slug": "hoi-thao-huong-nghiep",
+      "chapter": "Hướng nghiệp với tin học",
+      "chapter_id": "tin12_ch5",
+      "lesson_id": 21,
+      "description": "Tổng kết và chia sẻ thông tin về các hướng đi nghề nghiệp trong kỉ nguyên số.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Định hướng nghề nghiệp",
+          "summary": "Học sinh cần chủ động tìm hiểu thị trường lao động và đánh giá năng lực cá nhân để chọn nghề phù hợp.",
+          "sections": [
+            { "heading": "Sự đa dạng của nghề CNTT", "content": "Không chỉ có lập trình, còn có kiểm thử (Tester), thiết kế giao diện (UI/UX), phân tích dữ liệu, marketing số, chuyên gia AI." },
+            { "heading": "Các hình thức đào tạo", "content": "Đại học, cao đẳng, các trung tâm đào tạo kĩ năng ngắn hạn và tự học qua các nền tảng trực tuyến (Coursera, Udemy)." },
+            { "heading": "Kĩ năng thế kỉ 21", "content": "Năng lực số, tư duy phản biện, khả năng tự học, ngoại ngữ và kĩ năng thích ứng." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Hội thảo hướng nghiệp giúp học sinh điều gì?", "options": ["Có thêm thông tin về các nghề nghiệp và cơ hội học tập", "Điểm cao hơn trong môn học", "Được cấp bằng đại học ngay", "Không phải đi học nữa"], "correct": 0, "explanation": "Cung cấp cái nhìn thực tế và lời khuyên từ chuyên gia." },
+          { "id": 2, "type": "mcq", "question": "Nghề UI/UX Designer tập trung vào việc gì?", "options": ["Viết code database", "Thiết kế giao diện và trải nghiệm người dùng của ứng dụng", "Sửa chữa phần cứng máy tính", "Quét virus"], "correct": 1, "explanation": "Họ đảm bảo ứng dụng vừa đẹp vừa dễ sử dụng." },
+          { "id": 3, "type": "mcq", "question": "Khái niệm 'Lifelong learning' trong nghề tin học nghĩa là?", "options": ["Chỉ học khi có thầy giáo dạy", "Học tập suốt đời để cập nhật công nghệ thay đổi liên tục", "Học đến năm 100 tuổi", "Học 1 lần dùng mãi mãi"], "correct": 1, "explanation": "Công nghệ đổi mới mỗi ngày, dừng học hỏi là lạc hậu." },
+          { "id": 4, "type": "mcq", "question": "Tại sao ngoại ngữ lại quan trọng đối với nghề Tin học?", "options": ["Để đi du lịch nước ngoài", "Để đọc tài liệu chuyên môn và làm việc trong môi trường quốc tế", "Để máy tính chạy nhanh hơn", "Không quan trọng"], "correct": 1, "explanation": "Hầu hết tài liệu kĩ thuật mới nhất đều bằng tiếng Anh." },
+          { "id": 5, "type": "mcq", "question": "Người làm nghề 'Tester' thực hiện công việc gì?", "options": ["Viết code ban đầu", "Kiểm tra phần mềm để tìm lỗi trước khi phát hành", "Bán phần mềm", "Vẽ logo"], "correct": 1, "explanation": "Tester đảm bảo chất lượng của sản phẩm phần mềm." },
+          { "id": 6, "type": "mcq", "question": "Để theo đuổi ngành CNTT, bạn cần chuẩn bị gì ngay từ bây giờ?", "options": ["Chỉ cần chơi game giỏi", "Rèn luyện tư duy logic, học tốt môn Toán và Tin học", "Mua chiếc máy tính đắt nhất", "Không cần chuẩn bị gì"], "correct": 1, "explanation": "Tư duy logic là nền tảng cốt lõi của mọi nghề tin học." },
+          { "id": 7, "type": "mcq", "question": "Nghề nào liên quan đến việc quảng bá sản phẩm trên các nền tảng số?", "options": ["Quản trị mạng", "Digital Marketing", "Sửa chữa phần cứng", "Phân tích dữ liệu"], "correct": 1, "explanation": "Tiếp thị số là ngành kết hợp giữa marketing và công nghệ." },
+          { "id": 8, "type": "mcq", "question": "Hình thức học 'Online' có ưu điểm gì cho người học công nghệ?", "options": ["Dễ dàng quay cóp", "Linh hoạt về thời gian và tiếp cận được kiến thức từ các chuyên gia toàn cầu", "Không cần đóng học phí", "Được máy tính làm bài hộ"], "correct": 1, "explanation": "Nguồn tài liệu mở trên Internet là kho tàng tri thức khổng lồ cho ngành tin." },
+          { "id": 9, "type": "mcq", "question": "Yếu tố nào giúp bạn bền vững với nghề Tin học?", "options": ["Sự may mắn", "Niềm đam mê khám phá và khả năng tự học tốt", "Chỉ làm việc 8 tiếng mỗi ngày", "Dùng phần mềm lậu"], "correct": 1, "explanation": "Đam mê giúp bạn vượt qua những thách thức kĩ thuật khó khăn." },
+          { "id": 10, "type": "mcq", "question": "Nhân lực ngành CNTT hiện nay tại Việt Nam như thế nào?", "options": ["Thừa rất nhiều", "Đang thiếu hụt nhân lực chất lượng cao", "Không có ai muốn học", "Đã được thay thế hết bởi AI"], "correct": 1, "explanation": "Cơ hội việc làm luôn mở rộng cho những người có năng lực thật sự." }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_25",
+      "name": "Phát triển nông nghiệp, lâm nghiệp và thủy sản ở Bắc Trung Bộ",
+      "slug": "phat-trien-nong-nghiep-lam-nghiep-thuy-san-bac-trung-bo",
+      "chapter": "Địa lí các vùng kinh tế",
+      "chapter_id": "dia12_part4",
+      "lesson_id": 25,
+      "description": "Đặc điểm tự nhiên Bắc Trung Bộ; các hướng phát triển nông nghiệp (lúa, cây công nghiệp), lâm nghiệp và thủy sản ven biển; thích ứng với điều kiện khô hạn và bão lụt.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Phát triển nông - lâm - thủy sản ở Bắc Trung Bộ",
+          "summary": "Bắc Trung Bộ có khí hậu khô hạn và gió mùa mạnh, bờ biển dài; cần phát triển nông nghiệp chống hạn, rừng phòng hộ, và nghề cá bền vững; tận dụng lợi thế cây công nghiệp phù hợp và thủy sản ven bờ.",
+          "sections": [
+            { "heading": "Nông nghiệp thích ứng", "content": "Áp dụng giống chịu hạn, tưới tiết kiệm, và mô hình canh tác phù hợp để tăng hiệu quả trên đất hạn chế nước." },
+            { "heading": "Lâm nghiệp và thủy sản", "content": "Tăng cường trồng rừng phòng hộ, quản lý rừng bền vững; phát triển nghề cá ven bờ và nuôi trồng kết hợp, quản lý mùa khai thác." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Một biện pháp tăng cường an ninh nguồn nước ở Bắc Trung Bộ?", "a_hint": "Xây trạm chứa nước, tích trữ và hệ thống tưới nhỏ giọt." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Một đặc điểm khí hậu Bắc Trung Bộ là?", "options": ["Khô hạn vùng mùa khô và bão mùa mưa","Luôn ẩm ướt quanh năm","Khí hậu băng giá","Không có gió mùa"], "correct": 0, "explanation": "Bắc Trung Bộ thường có mùa khô kéo dài và chịu bão vào mùa mưa." },
+          { "id": 2, "type": "mcq", "question": "Biện pháp nào thích hợp cho nông nghiệp ở vùng hạn?", "options": ["Tưới nhỏ giọt và chọn giống chịu hạn","Tăng tưới lãng phí","Trồng cây không chịu hạn","Không can thiệp"], "correct": 0, "explanation": "Tưới tiết kiệm và giống chịu hạn giúp tăng năng suất vùng khô hạn." },
+          { "id": 3, "type": "mcq", "question": "Một vai trò của rừng phòng hộ ven biển là?", "options": ["Chống sói mòn, bảo vệ đất và ngăn xói mòn","Tăng ô nhiễm biển","Giảm đa dạng sinh học","Không có vai trò"], "correct": 0, "explanation": "Rừng phòng hộ bảo vệ bờ biển và chống xói mòn." },
+          { "id": 4, "type": "mcq", "question": "Thủy sản ven bờ cần quản lý như thế nào?", "options": ["Hạn chế khai thác quá mức và bảo vệ khu sinh sản","Khai thác tối đa mọi lúc","Không quản lý","Phá hủy rạn san hô"], "correct": 0, "explanation": "Quản lý mùa khai thác và khu bảo tồn giúp duy trì nguồn lợi." },
+          { "id": 5, "type": "mcq", "question": "Một cây công nghiệp phù hợp với Bắc Trung Bộ có thể là?", "options": ["Cây ăn quả chịu hạn và cây công nghiệp địa phương","Cây trồng băng giá","Cây lục địa sa mạc","Không có cây nào phù hợp"], "correct": 0, "explanation": "Cây chịu hạn hoặc cây phù hợp khí hậu địa phương là lựa chọn thích hợp." },
+          { "id": 6, "type": "mcq", "question": "Phát triển lâm nghiệp bền vững cần?", "options": ["Phục hồi rừng, quản lý khai thác và sinh kế thay thế cho cộng đồng","Chặt phá rừng không kiểm soát","Tăng đốt phá rừng","Không quản lý"], "correct": 0, "explanation": "Phục hồi rừng và quản lý bền vững là cần thiết." },
+          { "id": 7, "type": "mcq", "question": "Một thách thức chung ở Bắc Trung Bộ là?", "options": ["Xâm nhập mặn ở ven biển và thiếu nước ngọt","Thừa nước quanh năm","Không có mùa khô","Đông dân quá mức"], "correct": 0, "explanation": "Xâm nhập mặn và thiếu nước là thách thức vùng ven biển Bắc Trung Bộ." },
+          { "id": 8, "type": "mcq", "question": "Giải pháp nào giúp phát triển thủy sản bền vững?", "options": ["Khu vực mùa cấm, quản lý đánh bắt và nuôi trồng quy mô hợp lý","Tăng khai thác bất kể mùa vụ","Đẩy mạnh sản xuất bằng mọi giá","Không quản lý"], "correct": 0, "explanation": "Quản lý mùa khai thác và khu bảo tồn giúp phục hồi nguồn lợi." },
+          { "id": 9, "type": "mcq", "question": "Một yếu tố kinh tế thúc đẩy phát triển vùng là?", "options": ["Tiếp cận thị trường và đầu tư chế biến nông thủy sản","Không có yếu tố kinh tế","Chỉ dựa vào trợ cấp","Giảm kết nối giao thông"], "correct": 0, "explanation": "Tiếp cận thị trường và chế biến tại chỗ tăng giá trị sản phẩm." },
+          { "id": 10, "type": "mcq", "question": "Vai trò cộng đồng địa phương trong bảo vệ nguồn lợi là?", "options": ["Tham gia giám sát, thực thi các quy định và tham gia phục hồi môi trường","Không tham gia","Chỉ khai thác","Không quan trọng"], "correct": 0, "explanation": "Cộng đồng địa phương là nhân tố then chốt trong bảo vệ và quản lý tài nguyên." }
+        ]
+      }
+    }
+  ]
+}

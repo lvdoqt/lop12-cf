@@ -1,0 +1,156 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-9-2-tro-ve",
+      "name": "Trở về (trích Ông già và biển cả)",
+      "slug": "tro-ve",
+      "chapter": "Văn học và cuộc đời",
+      "chapter_id": "V12-9",
+      "lesson_id": 2,
+      "author": "Ernest Hemingway (Ơ-nít Hê-minh-uê)",
+      "description": "Tìm hiểu đoạn trích 'Trở về' từ tiểu thuyết 'Ông già và biển cả' của Hemingway, khám phá ý chí con người trước thử thách cuộc đời.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "novel-analysis",
+          "name": "Phân tích tiểu thuyết",
+          "slug": "phan-tich-tieu-thuyet",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Trở về - Ernest Hemingway",
+          "sections": [
+            {
+              "heading": "1. Tác giả Ernest Hemingway",
+              "content": "<h4>a) Tiểu sử</h4><ul><li><strong>Quốc tịch:</strong> Mỹ (1899-1961)</li><li><strong>Nghề nghiệp:</strong> Nhà văn, nhà báo</li><li><strong>Giải thưởng:</strong> Nobel Văn học 1954</li></ul><h4>b) Tác phẩm</h4><ul><li><strong>Ông già và biển cả:</strong> Tác phẩm đỉnh cao</li><li><strong>Vũ khí vĩnh biệt:</strong> Về chiến tranh</li><li><strong>Phong cách:</strong> Văn xuôi ngắn gọn, súc tích</li></ul>"
+            },
+            {
+              "heading": "2. Nội dung tác phẩm",
+              "content": "<h4>a) Cốt truyện</h4><ul><li><strong>Nhân vật:</strong> Ông già Santiago</li><li><strong>Sự việc:</strong> Đánh bắt cá kiếm khổng lồ</li><li><strong>Kết quả:</strong> Trở về với bộ xương cá</li></ul><h4>b) Đoạn 'Trở về'</h4><ul><li><strong>Hành trình:</strong> Trở về sau cuộc chiến</li><li><strong>Tâm trạng:</strong> Kiệt sức nhưng không khuất phục</li><li><strong>Ý nghĩa:</strong> Ý chí con người</li></ul><h4>c) Thông điệp</h4><ul><li><strong>Ý chí:</strong> Con người có thể bị tiêu diệt nhưng không bị đánh bại</li><li><strong>Kiên trì:</strong> Không bỏ cuộc trước khó khăn</li><li><strong>Phẩm giá:</strong> Giữ vững nhân phẩm</li></ul>"
+            },
+            {
+              "heading": "3. Nghệ thuật",
+              "content": "<h4>a) Nhân vật</h4><ul><li><strong>Santiago:</strong> Biểu tượng ý chí con người</li><li><strong>Tính cách:</strong> Kiên cường, bền bỉ</li><li><strong>Hành động:</strong> Không bỏ cuộc</li></ul><h4>b) Phong cách</h4><ul><li><strong>Văn xuôi:</strong> Ngắn gọn, súc tích</li><li><strong>Miêu tả:</strong> Chính xác, sinh động</li><li><strong>Biểu tượng:</strong> Biển cả, cá kiếm</li></ul><h4>c) Giá trị</h4><ul><li><strong>Nhân văn:</strong> Tôn vinh ý chí con người</li><li><strong>Triết lý:</strong> Về cuộc đời, thử thách</li><li><strong>Nghệ thuật:</strong> Kỹ thuật viết tinh tế</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex9-2-1",
+              "type": "mcq",
+              "question": "Tác giả của 'Ông già và biển cả' là ai?",
+              "options": [
+                "Mark Twain",
+                "Ernest Hemingway",
+                "Jack London",
+                "William Faulkner"
+              ],
+              "correct": 1,
+              "explanation": "'Ông già và biển cả' là tác phẩm của Ernest Hemingway, đoạt giải Nobel Văn học 1954."
+            },
+            {
+              "id": "ex9-2-2",
+              "type": "mcq",
+              "question": "Nhân vật chính trong tác phẩm là ai?",
+              "options": [
+                "Một thanh niên",
+                "Ông già Santiago",
+                "Một ngư dân trẻ",
+                "Một thuyền trưởng"
+              ],
+              "correct": 1,
+              "explanation": "Nhân vật chính là ông già Santiago, một ngư dân già kiên cường."
+            },
+            {
+              "id": "ex9-2-3",
+              "type": "mcq",
+              "question": "Thông điệp chính của tác phẩm là gì?",
+              "options": [
+                "Con người yếu đuối",
+                "Con người có thể bị tiêu diệt nhưng không bị đánh bại",
+                "Nên bỏ cuộc khi gặp khó khăn",
+                "Không nên ra biển"
+              ],
+              "correct": 1,
+              "explanation": "Thông điệp chính là con người có thể bị tiêu diệt nhưng không bị đánh bại, thể hiện ý chí kiên cường."
+            },
+            {
+              "id": "ex9-2-4",
+              "type": "mcq",
+              "question": "Santiago trở về với gì sau cuộc chiến?",
+              "options": [
+                "Con cá nguyên vẹn",
+                "Bộ xương cá",
+                "Không có gì",
+                "Nhiều cá nhỏ"
+              ],
+              "correct": 1,
+              "explanation": "Santiago trở về với bộ xương cá sau khi cá bị cá mập ăn thịt, nhưng ông không khuất phục."
+            },
+            {
+              "id": "ex9-2-5",
+              "type": "mcq",
+              "question": "Phong cách văn xuôi của Hemingway có đặc điểm gì?",
+              "options": [
+                "Dài dòng, rườm rà",
+                "Ngắn gọn, súc tích",
+                "Phức tạp, khó hiểu",
+                "Hoa mỹ, trang trí"
+              ],
+              "correct": 1,
+              "explanation": "Hemingway nổi tiếng với phong cách văn xuôi ngắn gọn, súc tích, chính xác."
+            },
+            {
+              "id": "ex9-2-6",
+              "type": "mcq",
+              "question": "Biển cả trong tác phẩm tượng trưng cho điều gì?",
+              "options": [
+                "Nơi nghỉ ngơi",
+                "Cuộc đời với thử thách, khó khăn",
+                "Nơi vui chơi",
+                "Không tượng trưng gì"
+              ],
+              "correct": 1,
+              "explanation": "Biển cả tượng trưng cho cuộc đời đầy thử thách và khó khăn mà con người phải đối mặt."
+            },
+            {
+              "id": "ex9-2-7",
+              "type": "mcq",
+              "question": "Hemingway đoạt giải Nobel Văn học năm nào?",
+              "options": [
+                "1950",
+                "1954",
+                "1960",
+                "1961"
+              ],
+              "correct": 1,
+              "explanation": "Ernest Hemingway đoạt giải Nobel Văn học năm 1954, phần lớn nhờ tác phẩm 'Ông già và biển cả'."
+            },
+            {
+              "id": "ex9-2-8",
+              "type": "mcq",
+              "question": "Giá trị của tác phẩm là gì?",
+              "options": [
+                "Chỉ kể chuyện đánh cá",
+                "Tôn vinh ý chí, phẩm giá con người trước thử thách",
+                "Không có giá trị",
+                "Chỉ miêu tả biển cả"
+              ],
+              "correct": 1,
+              "explanation": "Tác phẩm có giá trị nhân văn sâu sắc, tôn vinh ý chí và phẩm giá con người trước thử thách cuộc đời."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

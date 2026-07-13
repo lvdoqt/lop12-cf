@@ -1,0 +1,105 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-4-glucose-fructose",
+      "name": "Bài 4. Giới thiệu về carbohydrate. Glucose và fructose",
+      "slug": "bai-4-glucose-fructose",
+      "chapter": "Chương 2: Carbohydrate",
+      "chapter_id": "H12-1002",
+      "lesson_id": 4,
+      "description": "Tìm hiểu về carbohydrate, cấu tạo và tính chất của glucose và fructose.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1587049352846-4a222e784acc?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "glucose-fructose-1",
+          "name": "Glucose và Fructose",
+          "slug": "glucose-fructose",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Carbohydrate - Glucose - Fructose",
+          "sections": [
+            {
+              "heading": "1. Giới thiệu về Carbohydrate",
+              "content": "<h3>a) Định nghĩa</h3><p><strong>Carbohydrate (Glucid):</strong> Hợp chất hữu cơ tạp chức có công thức chung Cₙ(H₂O)ₘ</p><p><strong>Tên gọi:</strong> Carbohydrate = Carbon + Hydrate (hydrat carbon)</p><p><strong>Lưu ý:</strong> Không phải tất cả carbohydrate đều có công thức Cₙ(H₂O)ₘ</p><ul><li>Deoxyribose: C₅H₁₀O₄ (không theo công thức)</li><li>Acid glucuronic: C₆H₁₀O₇ (không theo công thức)</li></ul><h3>b) Phân loại</h3><p><strong>1. Monosaccharide (Đường đơn):</strong></p><ul><li>Không thủy phân được</li><li>Ví dụ: Glucose (C₆H₁₂O₆), Fructose (C₆H₁₂O₆), Ribose (C₅H₁₀O₅)</li></ul><p><strong>2. Disaccharide (Đường đôi):</strong></p><ul><li>Thủy phân → 2 phân tử monosaccharide</li><li>Ví dụ: Saccharose (C₁₂H₂₂O₁₁), Maltose (C₁₂H₂₂O₁₁), Lactose (C₁₂H₂₂O₁₁)</li></ul><p><strong>3. Polysaccharide (Đường đa):</strong></p><ul><li>Thủy phân → nhiều phân tử monosaccharide</li><li>Ví dụ: Tinh bột (C₆H₁₀O₅)ₙ, Cellulose (C₆H₁₀O₅)ₙ, Glycogen</li></ul><h3>c) Vai trò sinh học</h3><p><strong>1. Nguồn năng lượng:</strong></p><ul><li>Glucose: Nguồn năng lượng chính (4 kcal/g)</li><li>Tinh bột: Dự trữ năng lượng (thực vật)</li><li>Glycogen: Dự trữ năng lượng (động vật)</li></ul><p><strong>2. Cấu trúc tế bào:</strong></p><ul><li>Cellulose: Thành phần thành tế bào thực vật</li><li>Chitin: Vỏ giáp xác côn trùng</li></ul><p><strong>3. Di truyền:</strong></p><ul><li>Ribose, Deoxyribose: Thành phần RNA, DNA</li></ul><p><strong>4. Khác:</strong></p><ul><li>Heparin: Chống đông máu</li><li>Hyaluronic acid: Bôi trơn khớp</li></ul><h3>d) Nguồn carbohydrate</h3><p><strong>Thực vật:</strong></p><ul><li>Tinh bột: Gạo, ngô, khoai, sắn</li><li>Cellulose: Gỗ, bông, cây cỏ</li><li>Saccharose: Mía, củ cải đường</li></ul><p><strong>Động vật:</strong></p><ul><li>Glycogen: Gan, cơ</li><li>Lactose: Sữa</li></ul>"
+            },
+            {
+              "heading": "2. Glucose (C₆H₁₂O₆)",
+              "content": "<h3>a) Cấu tạo phân tử</h3><p><strong>Công thức phân tạo dạng mạch hở:</strong></p><pre>CHO-CHOH-CHOH-CHOH-CHOH-CH₂OH</pre><p>Có 1 nhóm aldehyde (-CHO) và 5 nhóm hydroxyl (-OH)</p><p><strong>Công thức vòng (dạng α và β):</strong></p><ul><li>Glucose tồn tại chủ yếu ở dạng vòng 6 cạnh (pyranose)</li><li>Dạng α-glucose: Nhóm -OH ở C₁ hướng xuống</li><li>Dạng β-glucose: Nhóm -OH ở C₁ hướng lên</li></ul><h3>b) Tính chất vật lý</h3><ul><li>Chất rắn kết tinh, không màu</li><li>Vị ngọt (ngọt hơn saccharose)</li><li>Tan tốt trong nước</li><li>Nhiệt độ nóng chảy: 146°C</li><li>Quay mặt phẳng phân cực ánh sáng (phải)</li></ul><h3>c) Tính chất hóa học</h3><p><strong>1. Phản ứng của nhóm -CHO (tính khử):</strong></p><p><strong>a) Tráng gương (Tollens):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₁₂O₆ + 2AgNO₃ + 3NH₃ + H₂O → C₆H₁₂O₇ + 2Ag↓ + 2NH₄NO₃</p><p>Glucose → Acid gluconic + Bạc</p><p><strong>b) Với Cu(OH)₂:</strong></p><p><strong>Ở nhiệt độ thường:</strong></p><p>C₆H₁₂O₆ + Cu(OH)₂ → Phức màu xanh lam</p><p><strong>Đun nóng:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₁₂O₆ + 2Cu(OH)₂ → C₆H₁₂O₇ + Cu₂O↓ (đỏ gạch) + H₂O</p><p><strong>2. Phản ứng của nhóm -OH:</strong></p><p><strong>a) Phản ứng este hóa:</strong></p><p>C₆H₁₂O₆ + 5CH₃COOH → C₆H₇O(OCOCH₃)₅ + 5H₂O</p><p>Tạo glucose pentaacetate</p><p><strong>3. Phản ứng lên men:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ (men rượu, 30-35°C)</p><p>Lên men rượu</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₁₂O₆ → 2CH₃-CH(OH)-COOH (men lactic, 35-40°C)</p><p>Lên men lactic (tạo sữa chua)</p><h3>d) Điều chế</h3><p><strong>1. Thủy phân tinh bột:</strong></p><p>(C₆H₁₀O₅)ₙ + nH₂O → nC₆H₁₂O₆ (H⁺, t°)</p><p><strong>2. Quang hợp:</strong></p><p>6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (ánh sáng, diệp lục)</p><h3>e) Ứng dụng</h3><ul><li>Thực phẩm: Đường ăn, nước giải khát</li><li>Y tế: Truyền dịch, cấp năng lượng</li><li>Công nghiệp: Sản xuất ethanol, vitamin C</li><li>Mỹ phẩm: Kem dưỡng da</li></ul>"
+            },
+            {
+              "heading": "3. Fructose (C₆H₁₂O₆)",
+              "content": "<h3>a) Cấu tạo phân tử</h3><p><strong>Công thức dạng mạch hở:</strong></p><pre>CH₂OH-CO-CHOH-CHOH-CHOH-CH₂OH</pre><p>Có 1 nhóm ketone (>C=O) và 5 nhóm hydroxyl (-OH)</p><p><strong>Công thức vòng:</strong></p><ul><li>Fructose tồn tại chủ yếu ở dạng vòng 5 cạnh (furanose)</li></ul><h3>b) Tính chất vật lý</h3><ul><li>Chất rắn kết tinh, không màu</li><li>Vị ngọt nhất (ngọt hơn glucose và saccharose)</li><li>Tan tốt trong nước</li><li>Nhiệt độ nóng chảy: 103°C</li><li>Quay mặt phẳng phân cực ánh sáng (trái)</li></ul><h3>c) Tính chất hóa học</h3><p><strong>1. Tính khử (yếu hơn glucose):</strong></p><p>Fructose có nhóm ketone nhưng vẫn có tính khử do chuyển hóa thành glucose trong môi trường kiềm</p><p><strong>a) Tráng gương:</strong></p><p>C₆H₁₂O₆ (fructose) → C₆H₁₂O₆ (glucose) → Tráng bạc</p><p><strong>b) Với Cu(OH)₂:</strong></p><p>Tương tự glucose, tạo phức xanh lam và Cu₂O đỏ gạch khi đun nóng</p><p><strong>2. Phản ứng lên men:</strong></p><p>C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ (men rượu)</p><h3>d) So sánh Glucose và Fructose</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Đặc điểm</th><th class='border border-gray-300 p-2'>Glucose</th><th class='border border-gray-300 p-2'>Fructose</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Công thức</td><td class='border border-gray-300 p-2'>C₆H₁₂O₆</td><td class='border border-gray-300 p-2'>C₆H₁₂O₆</td></tr><tr><td class='border border-gray-300 p-2'>Nhóm chức</td><td class='border border-gray-300 p-2'>Aldehyde (-CHO)</td><td class='border border-gray-300 p-2'>Ketone (>C=O)</td></tr><tr><td class='border border-gray-300 p-2'>Vòng</td><td class='border border-gray-300 p-2'>6 cạnh (pyranose)</td><td class='border border-gray-300 p-2'>5 cạnh (furanose)</td></tr><tr><td class='border border-gray-300 p-2'>Vị ngọt</td><td class='border border-gray-300 p-2'>Ngọt</td><td class='border border-gray-300 p-2'>Ngọt nhất</td></tr><tr><td class='border border-gray-300 p-2'>Tính khử</td><td class='border border-gray-300 p-2'>Mạnh</td><td class='border border-gray-300 p-2'>Yếu hơn</td></tr><tr><td class='border border-gray-300 p-2'>Quang hoạt</td><td class='border border-gray-300 p-2'>Phải (+)</td><td class='border border-gray-300 p-2'>Trái (-)</td></tr><tr><td class='border border-gray-300 p-2'>Nguồn</td><td class='border border-gray-300 p-2'>Tinh bột, mật ong</td><td class='border border-gray-300 p-2'>Hoa quả, mật ong</td></tr></tbody></table><h3>e) Ứng dụng Fructose</h3><ul><li>Thực phẩm: Đường cho người tiểu đường</li><li>Nước giải khát: Ngọt tự nhiên</li><li>Mật ong: Thành phần chính</li><li>Y tế: Truyền dịch (hấp thụ chậm hơn glucose)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán tráng gương glucose",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH tráng gương</li><li>Tính mol Ag theo glucose</li><li>Lưu ý: 1 mol glucose → 2 mol Ag</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Cho 18g glucose tác dụng với dung dịch AgNO₃/NH₃ dư. a) Tính khối lượng Ag thu được. b) Nếu dùng Cu(OH)₂ đun nóng, tính khối lượng Cu₂O. c) So sánh hai phản ứng.",
+                "solution": "<p><strong>Tính số mol glucose:</strong></p><p>M(C₆H₁₂O₆) = 180 g/mol</p><p>n(glucose) = 18 / 180 = 0.1 mol</p><p><strong>a) Phản ứng tráng gương:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₁₂O₆ + 2AgNO₃ + 3NH₃ + H₂O → C₆H₁₂O₇ + 2Ag↓ + 2NH₄NO₃</p><p>n(Ag) = 2 × n(glucose) = 2 × 0.1 = 0.2 mol</p><p>m(Ag) = 0.2 × 108 = 21.6g</p><p><strong>b) Với Cu(OH)₂ đun nóng:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₁₂O₆ + 2Cu(OH)₂ → C₆H₁₂O₇ + Cu₂O↓ + H₂O (t°)</p><p>n(Cu₂O) = n(glucose) = 0.1 mol</p><p>M(Cu₂O) = 144 g/mol</p><p>m(Cu₂O) = 0.1 × 144 = 14.4g</p><p><strong>c) So sánh:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Phản ứng</th><th class='border border-gray-300 p-2'>Tráng gương</th><th class='border border-gray-300 p-2'>Cu(OH)₂</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Tỉ lệ mol</td><td class='border border-gray-300 p-2'>1 : 2</td><td class='border border-gray-300 p-2'>1 : 1</td></tr><tr><td class='border border-gray-300 p-2'>Sản phẩm</td><td class='border border-gray-300 p-2'>Ag (bạc)</td><td class='border border-gray-300 p-2'>Cu₂O (đỏ gạch)</td></tr><tr><td class='border border-gray-300 p-2'>Nhiệt độ</td><td class='border border-gray-300 p-2'>Đun nhẹ</td><td class='border border-gray-300 p-2'>Đun sôi</td></tr></tbody></table><p><strong>Đáp án:</strong> a) 21.6g Ag; b) 14.4g Cu₂O</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán lên men glucose",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH lên men</li><li>Tính mol sản phẩm</li><li>Tính theo hiệu suất</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Lên men 360g glucose (hiệu suất 80%). a) Tính thể tích ethanol thu được (d = 0.8 g/ml). b) Tính thể tích CO₂ (đktc). c) Tính độ rượu của dung dịch (giả sử thể tích không đổi, V = 500ml).",
+                "solution": "<p><strong>Tính số mol glucose:</strong></p><p>n(glucose) = 360 / 180 = 2 mol</p><p><strong>a) Tính thể tích ethanol:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂</p><p>n(C₂H₅OH) lý thuyết = 2 × 2 = 4 mol</p><p>n(C₂H₅OH) thực tế = 4 × 80% = 3.2 mol</p><p>m(C₂H₅OH) = 3.2 × 46 = 147.2g</p><p>V(C₂H₅OH) = 147.2 / 0.8 = 184 ml</p><p><strong>b) Tính thể tích CO₂:</strong></p><p>n(CO₂) = n(C₂H₅OH) = 3.2 mol</p><p>V(CO₂) = 3.2 × 22.4 = 71.68 lít</p><p><strong>c) Tính độ rượu:</strong></p><p>Độ rượu = V(ethanol) / V(dung dịch) × 100%</p><p>Độ rượu = 184 / 500 × 100% = 36.8°</p><p><strong>Đáp án:</strong> a) 184 ml; b) 71.68 lít; c) 36.8°</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Sản xuất ethanol từ nguyên liệu",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Tính glucose từ nguyên liệu</li><li>Tính ethanol qua lên men</li><li>Đánh giá hiệu quả kinh tế</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Sản xuất ethanol từ 10 tấn gạo (chứa 75% tinh bột). Quy trình: Tinh bột → Glucose → Ethanol. a) Tính khối lượng ethanol (hiệu suất: thủy phân 90%, lên men 85%). b) Tính lợi nhuận (giá: gạo 15,000đ/kg, ethanol 25,000đ/lít, d = 0.8 g/ml). c) So sánh với ethanol từ dầu mỏ.",
+                "solution": "<p><strong>a) Tính khối lượng ethanol:</strong></p><p><strong>Bước 1: Tính tinh bột</strong></p><p>m(tinh bột) = 10,000 × 75% = 7,500 kg</p><p><strong>Bước 2: Thủy phân tinh bột</strong></p><p>(C₆H₁₀O₅)ₙ + nH₂O → nC₆H₁₂O₆</p><p>162n kg → 180n kg</p><p>7,500 kg → x kg</p><p>x = 7,500 × 180 / 162 = 8,333 kg glucose (lý thuyết)</p><p>m(glucose) thực tế = 8,333 × 90% = 7,500 kg</p><p><strong>Bước 3: Lên men glucose</strong></p><p>C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂</p><p>180 kg → 92 kg</p><p>7,500 kg → y kg</p><p>y = 7,500 × 92 / 180 = 3,833 kg (lý thuyết)</p><p>m(ethanol) thực tế = 3,833 × 85% = 3,258 kg</p><p><strong>b) Tính lợi nhuận:</strong></p><p><strong>Chi phí:</strong></p><ul><li>Gạo: 10,000 × 15,000 = 150,000,000 đ</li><li>Enzyme, năng lượng: ~30,000,000 đ</li><li>Tổng: 180,000,000 đ</li></ul><p><strong>Doanh thu:</strong></p><p>V(ethanol) = 3,258 / 0.8 = 4,072.5 lít</p><p>Doanh thu = 4,072.5 × 25,000 = 101,812,500 đ</p><p><strong>Lợi nhuận:</strong></p><p>Lỗ = 180,000,000 - 101,812,500 = -78,187,500 đ</p><p><strong>Nhận xét:</strong> Sản xuất ethanol từ gạo không hiệu quả kinh tế!</p><p><strong>c) So sánh với ethanol từ dầu mỏ:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Tiêu chí</th><th class='border border-gray-300 p-2'>Từ gạo</th><th class='border border-gray-300 p-2'>Từ dầu mỏ</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Nguyên liệu</td><td class='border border-gray-300 p-2'>Gạo (lương thực)</td><td class='border border-gray-300 p-2'>Ethylene (dầu mỏ)</td></tr><tr><td class='border border-gray-300 p-2'>Hiệu suất</td><td class='border border-gray-300 p-2'>76.5% (90%×85%)</td><td class='border border-gray-300 p-2'>95%</td></tr><tr><td class='border border-gray-300 p-2'>Chi phí</td><td class='border border-gray-300 p-2'>Cao (gạo đắt)</td><td class='border border-gray-300 p-2'>Thấp hơn</td></tr><tr><td class='border border-gray-300 p-2'>Môi trường</td><td class='border border-gray-300 p-2'>Tái tạo, carbon neutral</td><td class='border border-gray-300 p-2'>Không tái tạo, CO₂</td></tr><tr><td class='border border-gray-300 p-2'>Đạo đức</td><td class='border border-gray-300 p-2'>Cạnh tranh lương thực</td><td class='border border-gray-300 p-2'>Không ảnh hưởng</td></tr></tbody></table><p><strong>Khuyến nghị:</strong></p><ul><li>Không nên dùng gạo (lương thực) để sản xuất ethanol</li><li>Nên dùng: Mía, sắn, rơm rạ (cellulose)</li><li>Ethanol sinh học chỉ hiệu quả với nguyên liệu rẻ</li></ul><p><strong>Đáp án:</strong> a) 3,258 kg; b) Lỗ 78 triệu đồng; c) Không hiệu quả</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {"id": "ex1", "type": "mcq", "question": "Glucose có công thức phân tử:", "options": ["C₅H₁₀O₅", "C₆H₁₂O₆", "C₁₂H₂₂O₁₁", "C₆H₁₀O₅"], "correct": 1, "explanation": "Glucose có công thức C₆H₁₂O₆."},
+          {"id": "ex2", "type": "mcq", "question": "Glucose có nhóm chức:", "options": ["Aldehyde", "Ketone", "Acid", "Ester"], "correct": 0, "explanation": "Glucose có nhóm aldehyde (-CHO)."},
+          {"id": "ex3", "type": "mcq", "question": "Fructose có nhóm chức:", "options": ["Aldehyde", "Ketone", "Acid", "Ester"], "correct": 1, "explanation": "Fructose có nhóm ketone (>C=O)."},
+          {"id": "ex4", "type": "mcq", "question": "Glucose tráng gương theo tỉ lệ mol:", "options": ["1:1", "1:2", "1:3", "1:4"], "correct": 1, "explanation": "1 mol glucose → 2 mol Ag."},
+          {"id": "ex5", "type": "mcq", "question": "Lên men glucose tạo:", "options": ["Methanol", "Ethanol", "Propanol", "Butanol"], "correct": 1, "explanation": "Glucose lên men tạo ethanol (C₂H₅OH)."},
+          {"id": "ex6", "type": "mcq", "question": "Đường nào ngọt nhất?", "options": ["Glucose", "Fructose", "Saccharose", "Maltose"], "correct": 1, "explanation": "Fructose ngọt nhất."},
+          {"id": "ex7", "type": "mcq", "question": "Glucose + Cu(OH)₂ (thường) tạo:", "options": ["Kết tủa xanh", "Phức xanh lam", "Kết tủa đỏ", "Không phản ứng"], "correct": 1, "explanation": "Glucose + Cu(OH)₂ tạo phức xanh lam."},
+          {"id": "ex8", "type": "mcq", "question": "Glucose + Cu(OH)₂ (đun nóng) tạo:", "options": ["Cu", "CuO", "Cu₂O", "Cu(OH)₂"], "correct": 2, "explanation": "Đun nóng tạo Cu₂O (đỏ gạch)."},
+          {"id": "ex9", "type": "mcq", "question": "Monosaccharide là:", "options": ["Glucose", "Saccharose", "Tinh bột", "Cellulose"], "correct": 0, "explanation": "Glucose là monosaccharide."},
+          {"id": "ex10", "type": "mcq", "question": "Glucose có bao nhiêu nhóm -OH?", "options": ["3", "4", "5", "6"], "correct": 2, "explanation": "Glucose có 5 nhóm -OH."},
+          {"id": "ex11", "type": "mcq", "question": "Phản ứng nào chứng minh glucose có nhóm -CHO?", "options": ["Lên men", "Tráng gương", "Este hóa", "Với NaOH"], "correct": 1, "explanation": "Tráng gương chứng minh có nhóm -CHO."},
+          {"id": "ex12", "type": "mcq", "question": "Carbohydrate có vai trò:", "options": ["Năng lượng", "Cấu trúc", "Di truyền", "Tất cả"], "correct": 3, "explanation": "Carbohydrate có nhiều vai trò: năng lượng, cấu trúc, di truyền."},
+          {"id": "ex13", "type": "msq", "question": "Tính chất của glucose:", "options": ["Tráng gương", "Lên men", "Với Cu(OH)₂", "Không tan nước"], "correct": [0, 1, 2], "explanation": "Glucose tráng gương, lên men, với Cu(OH)₂. Tan tốt trong nước."},
+          {"id": "ex14", "type": "msq", "question": "Monosaccharide:", "options": ["Glucose", "Fructose", "Saccharose", "Ribose"], "correct": [0, 1, 3], "explanation": "Glucose, fructose, ribose là monosaccharide. Saccharose là disaccharide."},
+          {"id": "ex15", "type": "msq", "question": "Ứng dụng glucose:", "options": ["Thực phẩm", "Y tế", "Công nghiệp", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Glucose có nhiều ứng dụng."},
+          {"id": "ex16", "type": "msq", "question": "Phản ứng lên men glucose:", "options": ["Tạo ethanol", "Tạo CO₂", "Cần men", "Cần nhiệt độ cao"], "correct": [0, 1, 2], "explanation": "Lên men tạo ethanol, CO₂, cần men, nhiệt độ 30-35°C (không cao)."},
+          {"id": "ex17", "type": "sa", "question": "Cho 18g glucose tác dụng với AgNO₃/NH₃ dư. Tính khối lượng Ag (g). Làm tròn đến 1 chữ số thập phân.", "correct": "21.6", "explanation": "n(glucose) = 18/180 = 0.1 mol. n(Ag) = 0.2 mol. m = 0.2×108 = 21.6g. Đáp án: 21.6"},
+          {"id": "ex18", "type": "sa", "question": "Lên men 36g glucose thu được bao nhiêu gam ethanol (hiệu suất 100%)? Làm tròn đến 1 chữ số thập phân.", "correct": "18.4", "explanation": "n(glucose) = 36/180 = 0.2 mol. n(ethanol) = 0.4 mol. m = 0.4×46 = 18.4g. Đáp án: 18.4"},
+          {"id": "ex19", "type": "sa", "question": "Glucose có khối lượng phân tử là bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "180", "explanation": "M(C₆H₁₂O₆) = 180 g/mol. Đáp án: 180"},
+          {"id": "ex20", "type": "sa", "question": "Lên men 1 mol glucose thu được bao nhiêu mol CO₂? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "1 mol glucose → 2 mol CO₂. Đáp án: 2"},
+          {"id": "ex21", "type": "sa", "question": "Glucose có bao nhiêu carbon? Làm tròn đến hàng đơn vị.", "correct": "6", "explanation": "Glucose C₆H₁₂O₆ có 6 carbon. Đáp án: 6"},
+          {"id": "ex22", "type": "sa", "question": "Tráng gương 1 mol glucose thu được bao nhiêu mol Ag? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "1 mol glucose → 2 mol Ag. Đáp án: 2"}
+        ]
+      }
+    }
+  ]
+}

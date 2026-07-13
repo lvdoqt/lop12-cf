@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_17",
+      "name": "Tổ chức lãnh thổ công nghiệp",
+      "slug": "to-chuc-lanh-tho-cong-nghiep",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 17,
+      "description": "Nguyên tắc tổ chức lãnh thổ công nghiệp: khu công nghiệp, vùng chuyên ngành, vai trò hạ tầng và liên kết vùng.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Tổ chức lãnh thổ công nghiệp và vùng chuyên ngành",
+          "summary": "Sắp xếp các hoạt động công nghiệp theo vùng để tận dụng lợi thế về nguyên liệu, thị trường, lao động và hạ tầng; phát triển khu công nghiệp và liên kết vùng là yếu tố then chốt.",
+          "sections": [
+            { "heading": "Khu công nghiệp và vùng chuyên ngành", "content": "Khu công nghiệp tập trung cơ sở hạ tầng, chính sách và dịch vụ hỗ trợ; vùng chuyên ngành tận dụng nguồn nguyên liệu và lao động." },
+            { "heading": "Liên kết vùng", "content": "Phát triển chuỗi cung ứng và kết nối giữa vùng nguyên liệu, chế biến và thị trường." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Nêu vai trò của khu công nghiệp?", "a_hint": "Thu hút đầu tư, tạo việc làm, phát triển chuỗi cung ứng." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Khu công nghiệp thường cung cấp gì cho doanh nghiệp?", "options": ["Hạ tầng, điện, nước và dịch vụ suport","Màu sắc cờ","Đất nông nghiệp","Không hỗ trợ gì"], "correct": 0, "explanation": "Khu công nghiệp cung cấp hạ tầng và dịch vụ cần thiết." },
+          { "id": 2, "type": "mcq", "question": "Liên kết vùng giúp gì cho công nghiệp?", "options": ["Tối ưu chuỗi cung ứng và giảm chi phí vận chuyển","Làm tăng chi phí","Làm giảm năng suất","Không có ý nghĩa"], "correct": 0, "explanation": "Liên kết vùng tối ưu chi phí và nguồn nguyên liệu." },
+          { "id": 3, "type": "mcq", "question": "Một yếu tố quan trọng khi chọn địa điểm khu công nghiệp là?", "options": ["Gần cảng hoặc đường sắt, nguồn lao động và điện","Màu sắc quốc kỳ","Số lượng trường đại học duy nhất","Không có yếu tố"], "correct": 0, "explanation": "Gần cảng, lao động và nguồn điện là lợi thế địa điểm." },
+          { "id": 4, "type": "mcq", "question": "Khu công nghiệp góp phần tạo?", "options": ["Việc làm và thu hút vốn","Giảm việc làm","Tăng đói nghèo","Không gì cả"], "correct": 0, "explanation": "Khu công nghiệp tạo việc làm và thu hút đầu tư." },
+          { "id": 5, "type": "mcq", "question": "Một thách thức khi phát triển lãnh thổ công nghiệp là?", "options": ["Quản lý ô nhiễm và tái định cư dân cư","Không có thách thức","Tăng diện tích rừng","Ngăn chặn bất cứ điều gì"], "correct": 0, "explanation": "Ô nhiễm và vấn đề tái định cư là thách thức địa phương." },
+          { "id": 6, "type": "mcq", "question": "Vùng chuyên ngành thường có đặc trưng?", "options": ["Tập trung các doanh nghiệp cùng ngành và chuỗi cung ứng","Phân tán ngẫu nhiên","Không có liên kết","Giảm hiệu quả"], "correct": 0, "explanation": "Vùng chuyên ngành tập trung doanh nghiệp cùng chuỗi cung ứng." },
+          { "id": 7, "type": "mcq", "question": "Quy hoạch lãnh thổ công nghiệp cần cân nhắc?", "options": ["Môi trường, dân cư và hạ tầng","Chỉ lợi ích kinh tế","Không cần quy hoạch","Chỉ sử dụng đất"], "correct": 0, "explanation": "Quy hoạch cần kết hợp yếu tố kinh tế và môi trường." },
+          { "id": 8, "type": "mcq", "question": "Một biện pháp giảm ô nhiễm công nghiệp là?", "options": ["Hệ thống xử lý chất thải và công nghệ sạch","Tăng xả thải","Không kiểm soát","Đóng cửa tất cả khu công nghiệp"], "correct": 0, "explanation": "Công nghệ sạch và xử lý chất thải giảm ô nhiễm." },
+          { "id": 9, "type": "mcq", "question": "Vai trò của hạ tầng giao thông trong công nghiệp?", "options": ["Giảm chi phí vận chuyển và kết nối thị trường","Không quan trọng","Tăng rào cản","Làm chậm sản xuất"], "correct": 0, "explanation": "Hạ tầng giao thông giúp kết nối và giảm chi phí." },
+          { "id": 10, "type": "mcq", "question": "Chính sách nào hỗ trợ phát triển khu công nghiệp bền vững?", "options": ["Quy hoạch, quản lý môi trường và ưu đãi đầu tư","Tăng rào cản hành chính","Bỏ quy hoạch","Không có chính sách"], "correct": 0, "explanation": "Quy hoạch và quản lý môi trường là yêu cầu phát triển bền vững." }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_06",
+      "name": "Trách nhiệm xã hội của doanh nghiệp",
+      "slug": "trach-nhiem-xa-hoi-cua-doanh-nghiep",
+      "chapter": "Trách nhiệm xã hội của doanh nghiệp",
+      "chapter_id": "GDCD12",
+      "lesson_id": 6,
+      "description": "Tìm hiểu về cam kết của doanh nghiệp đóng góp vào sự phát triển bền vững của cộng đồng và xã hội.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Trách nhiệm xã hội (CSR)",
+          "summary": "Doanh nghiệp không chỉ chạy theo lợi nhuận mà còn phải quan tâm đến lợi ích của người lao động, khách hàng và môi trường.",
+          "sections": [
+            { "heading": "Khái niệm", "content": "Sự cam kết của doanh nghiệp đối với đạo đức kinh doanh, đóng góp cho phát triển kinh tế bền vững và nâng cao chất lượng cuộc sống." },
+            { "heading": "Các khía cạnh chính", "content": "Bảo vệ môi trường, đảm bảo quyền lợi người lao động, tính trung thực với khách hàng và hoạt động nhân đạo." },
+            { "heading": "Lợi ích", "content": "Xây dựng thương hiệu uy tín, thu hút nhân tài và nhận được sự ủng hộ của cộng đồng." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Trách nhiệm xã hội của doanh nghiệp (CSR) là gì?", "options": ["Chỉ là việc nộp thuế", "Cam kết đóng góp cho phát triển bền vững và cộng đồng", "Chỉ quan tâm đến lợi nhuận tối đa", "Việc quảng cáo sản phẩm"], "correct": 1, "explanation": "Nó bao gồm trách nhiệm với môi trường, con người và xã hội." },
+          { "id": 2, "type": "mcq", "question": "Hành động nào sau đây thể hiện trách nhiệm với môi trường?", "options": ["Xả thải trực tiếp ra sông", "Sử dụng công nghệ xanh và xử lý chất thải đúng quy chuẩn", "Khai thác cạn kiệt rừng", "Dùng túi nilon bừa bãi"], "correct": 1, "explanation": "Bảo vệ môi trường là một trụ cột quan trọng của CSR." },
+          { "id": 3, "type": "mcq", "question": "Đối với người lao động, doanh nghiệp có trách nhiệm gì?", "options": ["Trả lương thấp nhất có thể", "Bảo đảm môi trường làm việc an toàn và trả lương xứng đáng", "Ép làm thêm giờ không giới hạn", "Không cho phép nghỉ phép"], "correct": 1, "explanation": "Quyền lợi và an toàn của nhân viên phải được đặt lên hàng đầu." },
+          { "id": 4, "type": "mcq", "question": "Việc cung cấp sản phẩm đảm bảo chất lượng và an toàn cho khách hàng là trách nhiệm về?", "options": ["Kinh tế", "Đạo đức kinh doanh", "Pháp luật", "Môi trường"], "correct": 1, "explanation": "Trung thực với người tiêu dùng là nền tảng đạo đức của doanh nghiệp." },
+          { "id": 5, "type": "mcq", "question": "Lợi ích lâu dài khi doanh nghiệp thực hiện tốt trách nhiệm xã hội là?", "options": ["Tốn kém tiền bạc vô ích", "Nâng cao uy tín và giá trị thương hiệu", "Bị các đối thủ cười chê", "Làm giảm năng suất"], "correct": 1, "explanation": "Người tiêu dùng hiện đại có xu hướng ủng hộ các doanh nghiệp tử tế." },
+          { "id": 6, "type": "mcq", "question": "Hoạt động từ thiện, xây nhà tình nghĩa thuộc khía cạnh nào của CSR?", "options": ["Trách nhiệm kinh tế", "Trách nhiệm nhân đạo/từ thiện", "Trách nhiệm bắt buộc", "Trách nhiệm kĩ thuật"], "correct": 1, "explanation": "Đây là sự sẻ chia tự nguyện với những hoàn cảnh khó khăn." },
+          { "id": 7, "type": "mcq", "question": "Doanh nghiệp vi phạm trách nhiệm xã hội (như trốn thuế, bán hàng giả) sẽ bị?", "options": ["Người tiêu dùng tẩy chay và bị pháp luật xử lý", "Khen thưởng", "Tăng doanh thu", "Cộng đồng nể phục"], "correct": 0, "explanation": "Vi phạm CSR gây tổn hại nghiêm trọng đến sự tồn vong của doanh nghiệp." },
+          { "id": 8, "type": "mcq", "question": "CSR giúp doanh nghiệp như thế nào trong việc tuyển dụng?", "options": ["Không ai muốn vào làm", "Thu hút được nhiều nhân tài có đạo đức và năng lực", "Tăng chi phí tuyển dụng", "Làm nhân viên nhanh chán"], "correct": 1, "explanation": "Một môi trường làm việc nhân văn luôn hấp dẫn ứng viên." },
+          { "id": 9, "type": "mcq", "question": "Kinh doanh bền vững có nghĩa là?", "options": ["Làm giàu bằng mọi giá", "Phát triển kinh tế đi đôi với bảo vệ xã hội và môi trường", "Chỉ làm giàu cho thế hệ hiện tại", "Không bao giờ thay đổi sản phẩm"], "correct": 1, "explanation": "Đảm bảo lợi ích cho tương lai là cốt lõi của sự bền vững." },
+          { "id": 10, "type": "mcq", "question": "Tại sao nhà nước khuyến khích doanh nghiệp thực hiện CSR?", "options": ["Để giảm bớt gánh nặng cho ngân sách xã hội", "Để doanh nghiệp nghèo đi", "Để tăng kiểm soát doanh nghiệp", "Để lấy tiền đi du lịch"], "correct": 0, "explanation": "Sự phối hợp của doanh nghiệp giúp giải quyết các vấn đề xã hội hiệu quả hơn." }
+        ]
+      }
+    }
+  ]
+}

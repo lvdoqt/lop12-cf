@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_26",
+      "name": "Phát triển kinh tế biển ở duyên hải Nam Trung Bộ",
+      "slug": "phat-trien-kinh-te-bien-duyen-hai-nam-trung-bo",
+      "chapter": "Địa lí các vùng kinh tế",
+      "chapter_id": "dia12_part4",
+      "lesson_id": 26,
+      "description": "Tiềm năng biển, cảng biển, du lịch biển, nuôi trồng thủy sản và dầu khí ở duyên hải Nam Trung Bộ; cân bằng phát triển kinh tế biển và bảo vệ môi trường biển.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Phát triển kinh tế biển vùng duyên hải Nam Trung Bộ",
+          "summary": "Vùng duyên hải Nam Trung Bộ có bờ biển dài, vịnh, cảng tự nhiên và tiềm năng du lịch; phát triển cảng biển, nuôi trồng thủy sản, du lịch biển và khai thác dầu khí cần đồng bộ với bảo vệ môi trường biển.",
+          "sections": [
+            { "heading": "Tiềm năng biển", "content": "Cảng tự nhiên, vùng nước tương đối sâu, nguồn hải sản và cảnh quan biển phù hợp phát triển du lịch." },
+            { "heading": "Phát triển bền vững", "content": "Quy hoạch cảng, quản lý khai thác hải sản, bảo tồn rạn san hô và kiểm soát ô nhiễm từ hoạt động cảng và du lịch." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Nêu một hoạt động kinh tế biển quan trọng ở duyên hải Nam Trung Bộ?", "a_hint": "Du lịch biển, cảng biển hoặc nuôi trồng thủy sản." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Một lợi thế của duyên hải Nam Trung Bộ là?", "options": ["Cảng tự nhiên và bờ biển đẹp","Sa mạc trung tâm","Rừng băng hà","Không có đặc điểm"], "correct": 0, "explanation": "Vùng có cảng tự nhiên và bờ biển đẹp thích hợp du lịch và cảng biển." },
+          { "id": 2, "type": "mcq", "question": "Một quan ngại khi phát triển cảng biển là?", "options": ["Ô nhiễm nước và tác động tới hệ sinh thái ven bờ","Tăng rừng tự nhiên","Giảm du lịch","Không có quan ngại"], "correct": 0, "explanation": "Hoạt động cảng có thể gây ô nhiễm và tác động đến hệ sinh thái ven bờ nếu không quản lý." },
+          { "id": 3, "type": "mcq", "question": "Phát triển du lịch biển bền vững cần chú ý?", "options": ["Bảo tồn rạn san hô và quản lý số khách","Xây dựng vô tội vạ mọi nơi","Tăng xả thải","Không chú ý"], "correct": 0, "explanation": "Bảo tồn rạn san hô và quản lý khách là cần thiết để bền vững." },
+          { "id": 4, "type": "mcq", "question": "Một hoạt động khai thác biển đem lại ngoại tệ lớn là?", "options": ["Dầu khí và thủy sản xuất khẩu","Trồng lúa biển","Trồng rừng ngập mặn để xuất khẩu","Không có hoạt động"], "correct": 0, "explanation": "Dầu khí và thủy sản xuất khẩu đóng góp ngoại tệ cho vùng và quốc gia." },
+          { "id": 5, "type": "mcq", "question": "Một biện pháp giảm tác động cảng tới môi trường là?", "options": ["Xây trạm xử lý nước thải và quản lý chất thải rắn","Không xử lý chất thải","Tăng xả thải","Đóng cảng"], "correct": 0, "explanation": "Xử lý nước thải và quản lý chất thải giúp giảm ô nhiễm cảng." },
+          { "id": 6, "type": "mcq", "question": "Nuôi trồng thủy sản ven bờ cần tránh?", "options": ["Nuôi quá mật độ gây ô nhiễm và dịch bệnh","Xây hệ nuôi hợp lý","Kiểm soát chất lượng nước","Quản lý tốt"], "correct": 0, "explanation": "Nuôi quá mật độ gây ô nhiễm và dịch bệnh, cần quản lý mật độ và chất lượng nước." },
+          { "id": 7, "type": "mcq", "question": "Một yếu tố thu hút du lịch biển là?", "options": ["Bãi biển đẹp và hạ tầng lưu trú tốt","Sự ô nhiễm mạnh mẽ","Khí hậu băng giá","Không có yếu tố"], "correct": 0, "explanation": "Bãi biển đẹp và hạ tầng tốt thu hút du khách." },
+          { "id": 8, "type": "mcq", "question": "Vai trò của cảng biển trong phát triển vùng là?", "options": ["Kết nối thương mại, tạo việc làm và thu hút đầu tư","Chỉ làm đẹp cảnh quan","Giảm giao thương","Không vai trò"], "correct": 0, "explanation": "Cảng kết nối thương mại và tạo động lực phát triển kinh tế vùng." },
+          { "id": 9, "type": "mcq", "question": "Một nguy cơ đối với hệ sinh thái biển là?", "options": ["Ô nhiễm dầu, rác thải và phá hủy rạn san hô","Tăng chất lượng nước","Phục hồi hệ sinh thái","Không có nguy cơ"], "correct": 0, "explanation": "Ô nhiễm dầu và rác thải có thể phá hoại hệ sinh thái biển." },
+          { "id": 10, "type": "mcq", "question": "Phát triển kinh tế biển bền vững cần?", "options": ["Quy hoạch, giám sát môi trường và tham gia cộng đồng địa phương","Chỉ khai thác tối đa","Không quy hoạch","Tập trung khai thác vô hạn"], "correct": 0, "explanation": "Quy hoạch và giám sát môi trường cùng sự tham gia cộng đồng là yêu cầu thiết yếu." }
+        ]
+      }
+    }
+  ]
+}

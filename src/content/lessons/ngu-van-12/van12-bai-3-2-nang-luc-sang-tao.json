@@ -1,0 +1,206 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-3-2-nang-luc-sang-tao",
+      "name": "Năng lực sáng tạo",
+      "slug": "nang-luc-sang-tao",
+      "chapter": "Lập luận trong văn bản nghị luận",
+      "chapter_id": "V12-3",
+      "lesson_id": 2,
+      "author": "Phan Đình Diệu",
+      "description": "Tìm hiểu về tầm quan trọng của năng lực sáng tạo qua bài viết nghị luận của Phan Đình Diệu. Phân tích cách tác giả lập luận để chỉ ra ý nghĩa của sáng tạo trong cuộc sống.",
+      "duration_minutes": 50,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "luan1",
+          "name": "Phân tích lập luận",
+          "slug": "phan-tich-lap-luan",
+          "difficulty": "medium"
+        },
+        {
+          "id": "luan3",
+          "name": "Áp dụng lập luận",
+          "slug": "ap-dung-lap-luan",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Năng lực sáng tạo - Phan Đình Diệu",
+          "sections": [
+            {
+              "heading": "1. Tác giả Phan Đình Diệu",
+              "content": "<p><strong>Phan Đình Diệu</strong> (1935-2020) là một nhà tư tưởng, nhà giáo dục nổi tiếng của Việt Nam. Ông có những quan sát sâu sắc về vai trò của sáng tạo trong phát triển xã hội và vận mệnh dân tộc.</p><ul><li><strong>Lĩnh vực hoạt động:</strong> Giáo dục, tư tưởng, xã hội học</li><li><strong>Tác phẩm nổi tiếng:</strong> Nhiều bài văn về phát triển con người, tầm quan trọng của tư duy sáng tạo</li><li><strong>Quan điểm:</strong> Sáng tạo là vốn quý báu, là chìa khóa để dân tộc tiến bộ</li></ul>"
+            },
+            {
+              "heading": "2. Khái niệm năng lực sáng tạo",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Sáng tạo:</strong> Là khả năng tạo ra cái mới, tìm ra những giải pháp mới, những cách nhìn nhận mới</li><li><strong>Năng lực sáng tạo:</strong> Tài năng, khả năng của con người trong việc phát sinh ý tưởng mới, sản phẩm mới</li></ul><h4>b) Các yếu tố cấu thành năng lực sáng tạo</h4><ul><li><strong>Tưởng tượng:</strong> Khả năng tưởng tượng về những điều chưa tồn tại</li><li><strong>Kiến thức:</strong> Accumulated knowledge as foundation</li><li><strong>Kỹ năng:</strong> Khả năng biến ý tưởng thành hiện thực</li><li><strong>Phẩm chất tâm lý:</strong> Năng động, dám thử, không sợ thất bại</li><li><strong>Cảm xúc:</strong> Đam mê, nhiệt huyết, yêu thích công việc</li></ul>"
+            },
+            {
+              "heading": "3. Tầm quan trọng của năng lực sáng tạo",
+              "content": "<h4>a) Trong phát triển cá nhân</h4><ul><li><strong>Phát triển tiềm năng:</strong> Sáng tạo giúp con người khám phá và phát triển những khả năng tiềm ẩn</li><li><strong>Tự thực hiện:</strong> Sáng tạo là con đường để con người tự thực hiện mong muốn</li><li><strong>Tạo giá trị:</strong> Sáng tạo giúp con người tạo ra giá trị cho bản thân và xã hội</li></ul><h4>b) Trong phát triển xã hội</h4><ul><li><strong>Tiến bộ khoa học - kỹ thuật:</strong> Những phát minh, phát hiện lớn lao xuất phát từ tâm trí sáng tạo</li><li><strong>Phát triển kinh tế:</strong> Sáng tạo trong sản xuất, quản lý tạo ra hiệu quả cao hơn</li><li><strong>Giải quyết vấn đề:</strong> Mỗi vấn đề xã hội cần một cách tiếp cận sáng tạo, không thể chỉ bắt chước</li></ul><h4>c) Trong phát triển dân tộc</h4><ul><li><strong>Độc lập - tự chủ:</strong> Dân tộc không thể phát triển dựa vào bắt chước mà cần sáng tạo riêng</li><li><strong>Cạnh tranh quốc tế:</strong> Trong thế giới cầu nối, chỉ những quốc gia có khả năng sáng tạo cao mới thành công</li><li><strong>Bảo tồn bản sắc:</strong> Sáng tạo giúp kết hợp truyền thống với hiện đại một cách độc đáo</li></ul>"
+            },
+            {
+              "heading": "4. Lập luận chính của tác giả",
+              "content": "<h4>a) Luận điểm 1: Sáng tạo là bản chất của con người</h4><ul><li><strong>Giải thích:</strong> Con người khác với vật chất ở chỗ có khả năng tạo mới. Đó là bản chất của con người</li><li><strong>Dẫn chứng:</strong> Lịch sử loài người là lịch sử của những phát minh, sáng tạo</li><li><strong>Kết luận:</strong> Nếu không sáng tạo, con người sẽ không phải là con người</li></ul><h4>b) Luận điểm 2: Sáng tạo có thể học được và phát triển được</h4><ul><li><strong>Giải thích:</strong> Mặc dù không phải ai cũng sáng tạo, nhưng năng lực sáng tạo có thể được rèn luyện</li><li><strong>Dẫn chứng:</strong> Đó là kết quả của giáo dục, học tập, thực hành</li><li><strong>Kết luận:</strong> Xã hội cần tạo điều kiện để phát triển năng lực sáng tạo</li></ul><h4>c) Luận điểm 3: Sáng tạo là chìa khóa để dân tộc vươn lên</h4><ul><li><strong>Giải thích:</strong> Dân tộc Việt Nam muốn độc lập, phồn vinh cần của người sáng tạo</li><li><strong>Dẫn chứng:</strong> Những quốc gia phát triển là những quốc gia có nhiều người sáng tạo</li><li><strong>Kết luận:</strong> Giáo dục phải hướng tới phát triển năng lực sáng tạo của con người</li></ul>"
+            },
+            {
+              "heading": "5. Phương pháp lập luận",
+              "content": "<ul><li><strong>Lập luận từ bản chất:</strong> Bắt đầu từ bản chất của con người là có khả năng sáng tạo</li><li><strong>Lập luận từ ví dụ lịch sử:</strong> Dùng những ví dụ từ lịch sử phát triển loài người, dân tộc</li><li><strong>Lập luận so sánh:</strong> So sánh những quốc gia, dân tộc có sáng tạo cao với những quốc gia ít sáng tạo</li><li><strong>Lập luận từ nguyên nhân - kết quả:</strong> Chỉ ra rằng nếu không phát triển sáng tạo sẽ dẫn đến lạc hậu</li></ul>"
+            },
+            {
+              "heading": "6. Những thách thức đối với sáng tạo",
+              "content": "<ul><li><strong>Giáo dục rập khuôn:</strong> Hệ thống giáo dục chỉ dạy học sinh học thuộc, làm theo mẫu</li><li><strong>Áp lực xã hội:</strong> Xã hội khuyến khích sự tuân thủ nhiều hơn là khuyến khích sáng tạo</li><li><strong>Sợ hãi thất bại:</strong> Mỗi sáng tạo đều có rủi ro, và xã hội không sẵn sàng chấp nhận thất bại</li><li><strong>Thiếu tài nguyên:</strong> Sáng tạo cần tài nguyên nhân lực, tài chính; không phải nơi nào cũng có</li></ul>"
+            },
+            {
+              "heading": "7. Hàm ý - Ý nghĩa của bài viết",
+              "content": "<ul><li><strong>Cho giáo dục:</strong> Cần cải cách hệ thống giáo dục để tạo điều kiện phát triển sáng tạo</li><li><strong>Cho xã hội:</strong> Cần tôn trọng, khuyến khích những người sáng tạo; chấp nhận những nỗ lực thất bại</li><li><strong>Cho con người:</strong> Mỗi cá nhân cần nhận thức rõ về tầm quan trọng của sáng tạo và rèn luyện năng lực này</li><li><strong>Cho dân tộc:</strong> Sáng tạo là việc cần thiết để dân tộc Việt Nam phát triển trong thế kỷ 21</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex3-2-1",
+              "type": "mcq",
+              "question": "Năng lực sáng tạo là gì?",
+              "options": [
+                "Chỉ là tài năng bẩm sinh",
+                "Khả năng tạo ra cái mới, tìm giải pháp mới, cách nhìn mới",
+                "Chỉ dành cho nghệ sĩ",
+                "Không thể học được"
+              ],
+              "correct": 1,
+              "explanation": "Năng lực sáng tạo là khả năng tạo ra cái mới, tìm ra những giải pháp mới, những cách nhìn nhận mới về vấn đề."
+            },
+            {
+              "id": "ex3-2-2",
+              "type": "mcq",
+              "question": "Theo tác giả, sáng tạo có thể học được không?",
+              "options": [
+                "Không, chỉ là bẩm sinh",
+                "Có, năng lực sáng tạo có thể được rèn luyện qua giáo dục và thực hành",
+                "Chỉ một số người có thể học",
+                "Không ai có thể học"
+              ],
+              "correct": 1,
+              "explanation": "Tác giả khẳng định năng lực sáng tạo có thể học được và phát triển được thông qua giáo dục, học tập và thực hành."
+            },
+            {
+              "id": "ex3-2-3",
+              "type": "mcq",
+              "question": "Sáng tạo có vai trò gì với phát triển dân tộc?",
+              "options": [
+                "Không có vai trò",
+                "Là chìa khóa để dân tộc độc lập, tự chủ và cạnh tranh quốc tế",
+                "Chỉ quan trọng với nghệ thuật",
+                "Chỉ cần cho khoa học"
+              ],
+              "correct": 1,
+              "explanation": "Sáng tạo là chìa khóa để dân tộc độc lập, tự chủ, cạnh tranh quốc tế và bảo tồn bản sắc trong thời đại toàn cầu hóa."
+            },
+            {
+              "id": "ex3-2-4",
+              "type": "mcq",
+              "question": "Yếu tố nào cấu thành năng lực sáng tạo?",
+              "options": [
+                "Chỉ có tưởng tượng",
+                "Tưởng tượng, kiến thức, kỹ năng, phẩm chất tâm lý, cảm xúc",
+                "Chỉ có kiến thức",
+                "Chỉ có kỹ năng"
+              ],
+              "correct": 1,
+              "explanation": "Năng lực sáng tạo là sự kết hợp của: tưởng tượng, kiến thức, kỹ năng, phẩm chất tâm lý (dám thử, không sợ thất bại) và cảm xúc (đam mê)."
+            },
+            {
+              "id": "ex3-2-5",
+              "type": "mcq",
+              "question": "Thách thức nào cản trở sự phát triển sáng tạo?",
+              "options": [
+                "Không có thách thức",
+                "Giáo dục rập khuôn, áp lực xã hội, sợ thất bại, thiếu tài nguyên",
+                "Chỉ có vấn đề kinh tế",
+                "Chỉ do con người lười biếng"
+              ],
+              "correct": 1,
+              "explanation": "Các thách thức bao gồm: giáo dục rập khuôn, áp lực xã hội khuyến khích tuân thủ, sợ hãi thất bại, và thiếu tài nguyên."
+            },
+            {
+              "id": "ex3-2-6",
+              "type": "mcq",
+              "question": "Sáng tạo có ý nghĩa gì với cá nhân?",
+              "options": [
+                "Không có ý nghĩa",
+                "Giúp phát triển tiềm năng, tự thực hiện, tạo giá trị",
+                "Chỉ để khoe khoang",
+                "Chỉ để kiếm tiền"
+              ],
+              "correct": 1,
+              "explanation": "Sáng tạo giúp cá nhân phát triển tiềm năng, tự thực hiện mong muốn và tạo ra giá trị cho bản thân cũng như xã hội."
+            },
+            {
+              "id": "ex3-2-7",
+              "type": "mcq",
+              "question": "Phương pháp lập luận nào tác giả sử dụng?",
+              "options": [
+                "Chỉ dùng cảm xúc",
+                "Từ bản chất, ví dụ lịch sử, so sánh, nguyên nhân-kết quả",
+                "Chỉ kể chuyện",
+                "Không có phương pháp"
+              ],
+              "correct": 1,
+              "explanation": "Tác giả sử dụng: lập luận từ bản chất con người, từ ví dụ lịch sử, so sánh các quốc gia, và nguyên nhân-kết quả."
+            },
+            {
+              "id": "ex3-2-8",
+              "type": "mcq",
+              "question": "Bài viết có hàm ý gì với giáo dục?",
+              "options": [
+                "Giữ nguyên giáo dục hiện tại",
+                "Cần cải cách giáo dục để phát triển năng lực sáng tạo",
+                "Bỏ giáo dục",
+                "Chỉ dạy kiến thức"
+              ],
+              "correct": 1,
+              "explanation": "Bài viết kêu gọi cải cách hệ thống giáo dục để tạo điều kiện phát triển năng lực sáng tạo thay vì chỉ dạy học thuộc."
+            },
+            {
+              "id": "ex2-1",
+              "question": "Hãy giải thích khái niệm 'năng lực sáng tạo' theo quan điểm của Phan Đình Diệu.",
+              "type": "essay",
+              "difficulty": "medium",
+              "answer_guide": "Năng lực sáng tạo là khả năng tạo ra cái mới, tìm ra những giải pháp mới, những cách nhìn nhận mới. Nó là sự kết hợp của tưởng tượng, kiến thức, kỹ năng, phẩm chất tâm lý."
+            },
+            {
+              "id": "ex2-2",
+              "question": "Tác giả cho rằng sáng tạo có thể học được. Bạn có đồng ý không? Hãy giải thích.",
+              "type": "essay",
+              "difficulty": "hard",
+              "answer_guide": "Học sinh cần lập luận rõ ràng, có dẫn chứng. Có thể đồng ý hoặc không đồng ý miễn là có lý do chính đáng và dẫn chứng hỗ trợ."
+            },
+            {
+              "id": "ex2-3",
+              "question": "Theo bài viết, những thách thức nào đang cản trở sự phát triển năng lực sáng tạo ở Việt Nam?",
+              "type": "essay",
+              "difficulty": "medium",
+              "answer_guide": "Giáo dục rập khuôn, áp lực xã hội, sợ hãi thất bại, thiếu tài nguyên. Học sinh nên giải thích chi tiết từng thách thức."
+            },
+            {
+              "id": "ex2-4",
+              "question": "Hãy đề xuất các giải pháp để phát triển năng lực sáng tạo cho học sinh hiện nay.",
+              "type": "essay",
+              "difficulty": "hard",
+              "answer_guide": "Học sinh nên đề xuất các giải pháp thực tế, cụ thể. Ví dụ: cải cách giáo dục, tôn trọng những nỗ lực sáng tạo, tạo môi trường an toàn để thử nghiệm."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

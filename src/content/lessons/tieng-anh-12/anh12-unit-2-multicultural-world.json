@@ -1,0 +1,288 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-unit-2-multicultural-world",
+      "name": "Unit 2: A Multicultural World",
+      "slug": "unit-2-multicultural-world",
+      "chapter": "Unit 2: A Multicultural World",
+      "chapter_id": "A12",
+      "lesson_id": 2,
+      "description": "Learn about cultural diversity, articles (a, an, the), and multicultural societies.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2670&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "vocab-2",
+          "name": "Multicultural Vocabulary",
+          "slug": "multicultural-vocabulary",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Unit 2: A Multicultural World",
+          "sections": [
+            {
+              "heading": "1. Từ vựng (Vocabulary)",
+              "content": "<div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Word</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Type & IPA</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Meaning</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Example</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2 font-bold'>Multicultural</td><td class='px-4 py-2'>(adj) /ˌmʌltiˈkʌltʃərəl/</td><td class='px-4 py-2'>Đa văn hóa</td><td class='px-4 py-2'>We live in a multicultural society.</td></tr><tr><td class='px-4 py-2 font-bold'>Diversity</td><td class='px-4 py-2'>(n) /daɪˈvɜːsəti/</td><td class='px-4 py-2'>Sự đa dạng</td><td class='px-4 py-2'>Cultural diversity enriches society.</td></tr><tr><td class='px-4 py-2 font-bold'>Integrate</td><td class='px-4 py-2'>(v) /ˈɪntɪɡreɪt/</td><td class='px-4 py-2'>Hòa nhập</td><td class='px-4 py-2'>Immigrants integrate into society.</td></tr><tr><td class='px-4 py-2 font-bold'>Tradition</td><td class='px-4 py-2'>(n) /trəˈdɪʃn/</td><td class='px-4 py-2'>Truyền thống</td><td class='px-4 py-2'>Respect cultural traditions.</td></tr><tr><td class='px-4 py-2 font-bold'>Custom</td><td class='px-4 py-2'>(n) /ˈkʌstəm/</td><td class='px-4 py-2'>Phong tục</td><td class='px-4 py-2'>Learn about local customs.</td></tr><tr><td class='px-4 py-2 font-bold'>Heritage</td><td class='px-4 py-2'>(n) /ˈherɪtɪdʒ/</td><td class='px-4 py-2'>Di sản</td><td class='px-4 py-2'>Preserve cultural heritage.</td></tr><tr><td class='px-4 py-2 font-bold'>Identity</td><td class='px-4 py-2'>(n) /aɪˈdentəti/</td><td class='px-4 py-2'>Bản sắc</td><td class='px-4 py-2'>Maintain cultural identity.</td></tr><tr><td class='px-4 py-2 font-bold'>Immigrant</td><td class='px-4 py-2'>(n) /ˈɪmɪɡrənt/</td><td class='px-4 py-2'>Người nhập cư</td><td class='px-4 py-2'>Immigrants bring new cultures.</td></tr><tr><td class='px-4 py-2 font-bold'>Assimilate</td><td class='px-4 py-2'>(v) /əˈsɪməleɪt/</td><td class='px-4 py-2'>Đồng hóa</td><td class='px-4 py-2'>Some people assimilate quickly.</td></tr><tr><td class='px-4 py-2 font-bold'>Tolerance</td><td class='px-4 py-2'>(n) /ˈtɒlərəns/</td><td class='px-4 py-2'>Sự kh관용</td><td class='px-4 py-2'>Show tolerance for differences.</td></tr><tr><td class='px-4 py-2 font-bold'>Discrimination</td><td class='px-4 py-2'>(n) /dɪˌskrɪmɪˈneɪʃn/</td><td class='px-4 py-2'>Phân biệt đối xử</td><td class='px-4 py-2'>Fight against discrimination.</td></tr><tr><td class='px-4 py-2 font-bold'>Ethnic</td><td class='px-4 py-2'>(adj) /ˈeθnɪk/</td><td class='px-4 py-2'>Thuộc dân tộc</td><td class='px-4 py-2'>Ethnic minorities have rights.</td></tr><tr><td class='px-4 py-2 font-bold'>Cuisine</td><td class='px-4 py-2'>(n) /kwɪˈziːn/</td><td class='px-4 py-2'>Ẩm thực</td><td class='px-4 py-2'>Try different cuisines.</td></tr><tr><td class='px-4 py-2 font-bold'>Celebrate</td><td class='px-4 py-2'>(v) /ˈselɪbreɪt/</td><td class='px-4 py-2'>Kỷ niệm, tôn vinh</td><td class='px-4 py-2'>Celebrate cultural festivals.</td></tr></tbody></table></div>"
+            },
+            {
+              "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
+              "content": "<p><strong>Culture and society (Văn hóa và xã hội):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>multicultural society:</strong> xã hội đa văn hóa</li><li><strong>cultural diversity:</strong> đa dạng văn hóa</li><li><strong>cultural heritage:</strong> di sản văn hóa</li><li><strong>cultural identity:</strong> bản sắc văn hóa</li><li><strong>ethnic group:</strong> nhóm dân tộc</li><li><strong>minority group:</strong> nhóm thiểu số</li></ul><p><strong>Integration and adaptation (Hòa nhập và thích nghi):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>integrate into society:</strong> hòa nhập vào xã hội</li><li><strong>assimilate:</strong> đồng hóa</li><li><strong>adapt to:</strong> thích nghi với</li><li><strong>immigrant:</strong> người nhập cư</li><li><strong>migration:</strong> di cư</li></ul><p><strong>Values and attitudes (Giá trị và thái độ):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>tolerance:</strong> sự khoan dung</li><li><strong>respect:</strong> tôn trọng</li><li><strong>acceptance:</strong> chấp nhận</li><li><strong>discrimination:</strong> phân biệt đối xử</li><li><strong>prejudice:</strong> định kiến</li><li><strong>stereotype:</strong> khuôn mẫu</li></ul><p><strong>Collocations về văn hóa:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>preserve traditions:</strong> bảo tồn truyền thống</li><li><strong>celebrate diversity:</strong> tôn vinh sự đa dạng</li><li><strong>embrace differences:</strong> đón nhận sự khác biệt</li><li><strong>cultural exchange:</strong> trao đổi văn hóa</li><li><strong>cross-cultural communication:</strong> giao tiếp liên văn hóa</li></ul>"
+            }
+,
+            {
+              "heading": "3. Ngữ âm: Trọng âm trong từ bốn âm tiết",
+              "content": "<h3>Stress in four-syllable words</h3><p><strong>Quy tắc trọng âm trong từ bốn âm tiết:</strong></p><p><strong>1. Trọng âm rơi vào âm tiết thứ hai:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhiều từ bốn âm tiết có trọng âm ở âm tiết thứ hai</li><li>Ex: mul<strong>TI</strong>cultural /ˌmʌltiˈkʌltʃərəl/</li><li>Ex: in<strong>TE</strong>gration /ˌɪntɪˈɡreɪʃn/</li><li>Ex: com<strong>MU</strong>nication /kəˌmjuːnɪˈkeɪʃn/</li></ul><p><strong>2. Trọng âm rơi vào âm tiết thứ ba:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Từ có hậu tố -tion, -sion thường có trọng âm trước hậu tố</li><li>Ex: discrimi<strong>NA</strong>tion /dɪˌskrɪmɪˈneɪʃn/</li><li>Ex: celebra<strong>TION</strong> /ˌselɪˈbreɪʃn/</li></ul><p><strong>3. Từ ghép bốn âm tiết:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Trọng âm chính thường ở từ đầu tiên</li><li>Ex: <strong>CUL</strong>tural heritage /ˈkʌltʃərəl ˈherɪtɪdʒ/</li></ul><p><strong>Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Từ bốn âm tiết có thể có hai trọng âm: primary (chính) và secondary (phụ)</li><li>Ex: ˌmultiˈcultural (secondary ở multi, primary ở cul)</li><li>Cần tra từ điển để biết trọng âm chính xác</li></ul>"
+            }
+,
+            {
+              "heading": "4. Ngữ pháp: Mạo từ - ôn tập và mở rộng (Articles - Review and Extension)",
+              "content": "<h3>A. Indefinite Articles: A / An (Mạo từ không xác định)</h3><p><strong>1. Cách dùng A:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Dùng trước danh từ số ít đếm được bắt đầu bằng phụ âm</li><li>Ex: <strong>a</strong> country, <strong>a</strong> tradition, <strong>a</strong> university (phát âm /juː/)</li><li>Ex: She is <strong>a</strong> teacher in <strong>a</strong> multicultural school.</li></ul><p><strong>2. Cách dùng AN:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Dùng trước danh từ số ít đếm được bắt đầu bằng nguyên âm (a, e, i, o, u)</li><li>Ex: <strong>an</strong> immigrant, <strong>an</strong> ethnic group, <strong>an</strong> hour (h câm)</li><li>Ex: He is <strong>an</strong> American living in Vietnam.</li></ul><p><strong>3. Khi dùng A/AN:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nói về nghề nghiệp: She is <strong>a</strong> doctor.</li><li>Lần đầu nhắc đến: I met <strong>an</strong> interesting person.</li><li>Với số lượng: once <strong>a</strong> week, 100 km <strong>an</strong> hour</li><li>Trong cấu trúc: What <strong>a</strong> beautiful culture! Such <strong>a</strong> diverse country!</li></ul><h3>B. Definite Article: THE (Mạo từ xác định)</h3><p><strong>1. Khi dùng THE:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Đã được nhắc đến:</strong> I visited <strong>a</strong> museum. <strong>The</strong> museum was amazing.</li><li><strong>Duy nhất:</strong> <strong>the</strong> sun, <strong>the</strong> moon, <strong>the</strong> Earth</li><li><strong>Với so sánh nhất:</strong> <strong>the</strong> most diverse country</li><li><strong>Với số thứ tự:</strong> <strong>the</strong> first, <strong>the</strong> second</li><li><strong>Nhạc cụ:</strong> play <strong>the</strong> piano, <strong>the</strong> guitar</li><li><strong>Tên riêng:</strong> <strong>the</strong> United States, <strong>the</strong> UK, <strong>the</strong> Mekong River</li><li><strong>Tên dân tộc:</strong> <strong>the</strong> Vietnamese, <strong>the</strong> British</li></ul><p><strong>2. Các trường hợp đặc biệt với THE:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Tên nước có từ:</strong> <strong>the</strong> United Kingdom, <strong>the</strong> Philippines</li><li><strong>Dãy núi, quần đảo:</strong> <strong>the</strong> Himalayas, <strong>the</strong> Maldives</li><li><strong>Đại dương, sông, sa mạc:</strong> <strong>the</strong> Pacific, <strong>the</strong> Amazon, <strong>the</strong> Sahara</li><li><strong>Tên gia đình:</strong> <strong>the</strong> Smiths (gia đình Smith)</li></ul><h3>C. Zero Article (Không dùng mạo từ)</h3><p><strong>1. Khi KHÔNG dùng mạo từ:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Danh từ số nhiều nói chung:</strong> <strong>Ø</strong> Immigrants contribute to society.</li><li><strong>Danh từ không đếm được nói chung:</strong> <strong>Ø</strong> Diversity is important.</li><li><strong>Tên nước (hầu hết):</strong> <strong>Ø</strong> Vietnam, <strong>Ø</strong> France, <strong>Ø</strong> Japan</li><li><strong>Tên châu lục:</strong> <strong>Ø</strong> Asia, <strong>Ø</strong> Europe, <strong>Ø</strong> Africa</li><li><strong>Tên thành phố:</strong> <strong>Ø</strong> Hanoi, <strong>Ø</strong> London, <strong>Ø</strong> New York</li><li><strong>Tên núi đơn lẻ:</strong> <strong>Ø</strong> Mount Everest</li><li><strong>Tên hồ:</strong> <strong>Ø</strong> Lake Superior</li><li><strong>Bữa ăn:</strong> have <strong>Ø</strong> breakfast, <strong>Ø</strong> lunch, <strong>Ø</strong> dinner</li><li><strong>Môn thể thao:</strong> play <strong>Ø</strong> football, <strong>Ø</strong> basketball</li><li><strong>Ngôn ngữ:</strong> speak <strong>Ø</strong> English, <strong>Ø</strong> Vietnamese</li></ul><h3>D. Lưu ý quan trọng</h3><div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Trường hợp</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Dùng mạo từ</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Ví dụ</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2'>Nói chung</td><td class='px-4 py-2'>Không dùng</td><td class='px-4 py-2'>Ø Culture is important.</td></tr><tr><td class='px-4 py-2'>Nói cụ thể</td><td class='px-4 py-2'>Dùng THE</td><td class='px-4 py-2'>The culture of Vietnam is rich.</td></tr><tr><td class='px-4 py-2'>Lần đầu nhắc</td><td class='px-4 py-2'>Dùng A/AN</td><td class='px-4 py-2'>I visited a temple.</td></tr><tr><td class='px-4 py-2'>Đã nhắc đến</td><td class='px-4 py-2'>Dùng THE</td><td class='px-4 py-2'>The temple was beautiful.</td></tr></tbody></table></div>"
+            }
+,
+            {
+              "heading": "5. I. Getting Started",
+              "content": "<p><strong>Chủ đề:</strong> Living in a multicultural world - Sống trong thế giới đa văn hóa</p><p><strong>Nội dung chính:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Hội thoại về xã hội đa văn hóa</li><li>Thảo luận về lợi ích của đa dạng văn hóa</li><li>Chia sẻ về trải nghiệm với các nền văn hóa khác</li><li>Nói về thách thức trong xã hội đa văn hóa</li></ul><p><strong>Các chủ đề được đề cập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Cultural diversity:</strong> Đa dạng văn hóa trong xã hội</li><li><strong>Immigration:</strong> Nhập cư và hòa nhập</li><li><strong>Traditions:</strong> Bảo tồn truyền thống</li><li><strong>Integration:</strong> Hòa nhập văn hóa</li></ul>"
+            },
+            {
+              "heading": "6. II. Language",
+              "content": "<p><strong>A. Pronunciation: Stress in four-syllable words</strong></p><p>Luyện phát âm trọng âm trong từ bốn âm tiết</p><p><strong>B. Vocabulary:</strong> Multicultural world</p><ul class='list-disc pl-5 space-y-2'><li>Culture: multicultural, diversity, tradition, custom, heritage, identity</li><li>People: immigrant, ethnic group, minority</li><li>Integration: integrate, assimilate, adapt</li><li>Values: tolerance, respect, discrimination</li><li>Activities: celebrate, preserve, embrace</li></ul><p><strong>C. Grammar:</strong> Articles (A, An, The, Zero article)</p><ul class='list-disc pl-5 space-y-2'><li>A/An: indefinite articles for singular countable nouns</li><li>The: definite article for specific things</li><li>Zero article: no article for general plural/uncountable nouns</li><li>Special cases: countries, languages, meals, sports</li></ul>"
+            },
+            {
+              "heading": "7. III. Reading",
+              "content": "<p><strong>Chủ đề:</strong> Multicultural societies around the world</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc hiểu về xã hội đa văn hóa</li><li>Tìm thông tin về lợi ích và thách thức</li><li>Hiểu về cách các nước quản lý đa dạng văn hóa</li><li>Phân tích vai trò của hòa nhập văn hóa</li></ul><p><strong>Nội dung:</strong> Bài đọc giới thiệu về:</p><ul class='list-disc pl-5 space-y-2'><li><strong>Benefits:</strong> Lợi ích của xã hội đa văn hóa</li><li><strong>Challenges:</strong> Thách thức trong hòa nhập</li><li><strong>Examples:</strong> Các quốc gia đa văn hóa (Canada, Australia, Singapore)</li><li><strong>Solutions:</strong> Cách thúc đẩy hòa nhập và tôn trọng</li></ul>"
+            },
+            {
+              "heading": "8. IV. Speaking",
+              "content": "<p><strong>Chủ đề:</strong> Discussing cultural diversity</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nói về đa dạng văn hóa trong cộng đồng</li><li>Thảo luận về lợi ích của xã hội đa văn hóa</li><li>Chia sẻ trải nghiệm với các nền văn hóa khác</li><li>Đề xuất cách thúc đẩy hòa nhập</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>In my opinion, cultural diversity...</li><li>I think/believe that...</li><li>One of the benefits is...</li><li>However, there are also challenges such as...</li><li>We should respect/embrace...</li><li>It's important to preserve...</li><li>People from different cultures...</li><li>In a multicultural society, ...</li></ul>"
+            }
+,
+            {
+              "heading": "9. V. Listening",
+              "content": "<p><strong>Chủ đề:</strong> A talk about living in a multicultural community</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe hiểu về trải nghiệm sống trong cộng đồng đa văn hóa</li><li>Điền thông tin về các nền văn hóa khác nhau</li><li>Trả lời câu hỏi về lợi ích và thách thức</li><li>Ghi chú các ý quan trọng về hòa nhập</li></ul><p><strong>Nội dung:</strong> Bài nghe về:</p><ul class='list-disc pl-5 space-y-2'><li>Trải nghiệm của người nhập cư</li><li>Các lễ hội văn hóa khác nhau</li><li>Thách thức trong giao tiếp liên văn hóa</li><li>Cách thích nghi với văn hóa mới</li></ul>"
+            },
+            {
+              "heading": "10. VI. Writing",
+              "content": "<p><strong>Chủ đề:</strong> Writing an article about cultural diversity</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Viết bài báo về đa dạng văn hóa</li><li>Sử dụng mạo từ chính xác</li><li>Trình bày lợi ích và thách thức</li><li>Đưa ra ví dụ và giải pháp</li></ul><p><strong>Cấu trúc bài viết:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Title:</strong> Tiêu đề thu hút về đa dạng văn hóa</li><li><strong>Introduction:</strong> Giới thiệu chủ đề</li><li><strong>Body Paragraph 1:</strong> Lợi ích của xã hội đa văn hóa</li><li><strong>Body Paragraph 2:</strong> Thách thức và vấn đề</li><li><strong>Body Paragraph 3:</strong> Giải pháp và đề xuất</li><li><strong>Conclusion:</strong> Kết luận</li></ul><p><strong>Useful language:</strong></p><ul class='list-disc pl-5 space-y-2'><li>This article discusses/explores...</li><li>Cultural diversity brings many benefits...</li><li>One of the main advantages is...</li><li>However, there are also challenges...</li><li>For example/For instance, ...</li><li>To promote integration, we should...</li><li>In conclusion, ...</li></ul>"
+            },
+            {
+              "heading": "11. VII. Communication and Culture / CLIL",
+              "content": "<p><strong>Communication:</strong> Showing respect for cultural differences</p><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Showing respect:</strong></li><li>I respect your culture/traditions.</li><li>That's interesting. Tell me more about...</li><li>I'd like to learn about...</li><li>I appreciate the differences.</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Asking about culture:</strong></li><li>Could you tell me about...?</li><li>What are the customs in your country?</li><li>How do you celebrate...?</li><li>What's the tradition for...?</li></ul><p><strong>Culture:</strong> Multicultural countries</p><ul class='list-disc pl-5 space-y-2'><li><strong>Canada:</strong> Bilingual (English/French), diverse immigrant population</li><li><strong>Australia:</strong> Indigenous culture + multicultural immigration</li><li><strong>Singapore:</strong> Chinese, Malay, Indian, and Western cultures</li><li><strong>United States:</strong> Melting pot of cultures</li><li><strong>Vietnam:</strong> 54 ethnic groups with diverse traditions</li></ul><p><strong>CLIL (Social Studies):</strong> Immigration and integration</p><ul class='list-disc pl-5 space-y-2'><li>Understanding migration patterns</li><li>Reasons for immigration</li><li>Integration policies</li><li>Benefits of cultural exchange</li></ul>"
+            }
+,
+            {
+              "heading": "12. VIII. Looking Back",
+              "content": "<p><strong>Ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Pronunciation:</strong> Stress in four-syllable words (multicultural, integration, discrimination, celebration)</li><li><strong>Vocabulary:</strong> Multicultural, diversity, integrate, tradition, custom, heritage, identity, immigrant, assimilate, tolerance, discrimination, ethnic, cuisine, celebrate</li><li><strong>Grammar:</strong> Articles (A/An for first mention, The for specific/mentioned, Zero article for general)</li><li><strong>Skills:</strong> Reading about multicultural societies, Speaking about diversity, Listening to cultural experiences, Writing articles</li></ul><p><strong>Self-assessment:</strong> Đánh giá khả năng:</p><ul class='list-disc pl-5 space-y-2'><li>Sử dụng từ vựng về đa văn hóa</li><li>Phát âm đúng trọng âm trong từ bốn âm tiết</li><li>Sử dụng mạo từ chính xác</li><li>Thảo luận về đa dạng văn hóa và hòa nhập</li></ul>"
+            },
+            {
+              "heading": "13. Project",
+              "content": "<p><strong>Đề tài:</strong> Create a presentation about cultural diversity in your community</p><p><strong>Nhiệm vụ:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghiên cứu về các nhóm văn hóa trong cộng đồng</li><li>Tìm hiểu về truyền thống và phong tục của họ</li><li>Phỏng vấn người từ các nền văn hóa khác (nếu có thể)</li><li>Tạo presentation với hình ảnh và thông tin</li><li>Trình bày trước lớp (5-7 phút)</li></ul><p><strong>Nội dung cần có:</strong></p><ul class='list-disc pl-5 space-y-2'><li>What cultural groups live in your community?</li><li>What are their traditions and customs?</li><li>What festivals do they celebrate?</li><li>What is their traditional food/cuisine?</li><li>How do they contribute to the community?</li><li>What can we learn from their culture?</li><li>How can we promote cultural understanding?</li></ul><p><strong>Gợi ý chủ đề:</strong></p><ul class='list-disc pl-5 space-y-2'><li>54 ethnic groups in Vietnam</li><li>International communities in major cities</li><li>Cultural festivals in your area</li><li>Traditional cuisines from different cultures</li><li>Cultural exchange programs</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Type 1: Articles",
+            "method": "<p>Choose the correct article (a, an, the) or no article based on context.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Canada is known as one of the most multicultural countries in the world. With a population of over 38 million people, Canada is home to immigrants from more than 200 countries. The country's official policy of multiculturalism encourages people to maintain their cultural heritage while integrating into Canadian society.\n\nThe benefits of this diversity are numerous. Immigrants bring new ideas, skills, and perspectives that enrich Canadian culture and economy. Cities like Toronto and Vancouver are vibrant multicultural centers where you can experience cuisines, festivals, and traditions from around the world. This cultural exchange promotes tolerance and understanding among different communities.\n\nHowever, integration is not without challenges. Language barriers can make it difficult for newcomers to find jobs and access services. Some immigrants face discrimination and prejudice. Additionally, maintaining cultural identity while adapting to a new society can be emotionally challenging.\n\nTo address these issues, the Canadian government provides language training programs and settlement services. Community organizations also play a crucial role in helping immigrants integrate. Schools teach students about different cultures to promote respect and acceptance from an early age. Through these efforts, Canada continues to celebrate diversity while building a cohesive society.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "Canada has too many immigrants",
+                  "Canada is a successful multicultural country with benefits and challenges",
+                  "Immigration should be stopped",
+                  "Canadian culture is disappearing"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về Canada là quốc gia đa văn hóa thành công với cả lợi ích và thách thức."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "According to the passage, what is one benefit of multiculturalism in Canada?",
+                "options": [
+                  "Everyone speaks the same language",
+                  "Immigrants bring new ideas and enrich culture",
+                  "There are no challenges",
+                  "People forget their heritage"
+                ],
+                "correct": 1,
+                "explanation": "Người nhập cư mang đến ý tưởng mới và làm phong phú văn hóa Canada."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The word 'vibrant' in paragraph 2 is closest in meaning to ______.",
+                "options": [
+                  "quiet and boring",
+                  "full of energy and life",
+                  "small",
+                  "dangerous"
+                ],
+                "correct": 1,
+                "explanation": "Vibrant = full of energy and life (sôi động, đầy sức sống)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "What is one challenge mentioned for immigrants?",
+                "options": [
+                  "Too much food",
+                  "Language barriers",
+                  "Too many festivals",
+                  "Too much money"
+                ],
+                "correct": 1,
+                "explanation": "Rào cản ngôn ngữ là một thách thức được đề cập cho người nhập cư."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "How does Canada help immigrants integrate?",
+                "options": [
+                  "By ignoring them",
+                  "By providing language training and settlement services",
+                  "By sending them back",
+                  "By making them forget their culture"
+                ],
+                "correct": 1,
+                "explanation": "Canada cung cấp chương trình đào tạo ngôn ngữ và dịch vụ định cư."
+              }
+            ]
+          }
+,
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "She is ______ immigrant from Vietnam.",
+            "options": ["a", "an", "the", "Ø"],
+            "correct": 1,
+            "explanation": "An (trước nguyên âm 'i') - lần đầu nhắc đến."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "______ diversity is important in modern society.",
+            "options": ["A", "An", "The", "Ø"],
+            "correct": 3,
+            "explanation": "Ø (zero article) - danh từ không đếm được nói chung."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "I visited ______ United States last summer.",
+            "options": ["a", "an", "the", "Ø"],
+            "correct": 2,
+            "explanation": "The United States - tên nước có từ 'United' cần mạo từ 'the'."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "People should show ______ for different cultures.",
+            "options": ["tolerate", "tolerant", "tolerance", "tolerated"],
+            "correct": 2,
+            "explanation": "Tolerance (n) - danh từ chỉ sự khoan dung."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "Immigrants need to ______ into society.",
+            "options": ["integrate", "integration", "integrated", "integrating"],
+            "correct": 0,
+            "explanation": "Integrate (v) - động từ nguyên thể sau 'need to'."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "She speaks ______ English and ______ French fluently.",
+            "options": ["Ø / Ø", "the / the", "an / a", "a / an"],
+            "correct": 0,
+            "explanation": "Ø (zero article) - không dùng mạo từ trước tên ngôn ngữ."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "We should preserve our cultural ______.",
+            "options": ["heritage", "heritages", "inherit", "inheritance"],
+            "correct": 0,
+            "explanation": "Heritage (n) - danh từ không đếm được chỉ di sản."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "______ Vietnamese are known for their hospitality.",
+            "options": ["A", "An", "The", "Ø"],
+            "correct": 2,
+            "explanation": "The Vietnamese - dùng 'the' trước tên dân tộc."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "I had ______ breakfast with ______ friend from India.",
+            "options": ["Ø / a", "a / a", "the / the", "Ø / the"],
+            "correct": 0,
+            "explanation": "Ø breakfast (không dùng mạo từ trước bữa ăn) / a friend (lần đầu nhắc)."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "Cultural ______ enriches our understanding of the world.",
+            "options": ["diverse", "diversify", "diversity", "diversely"],
+            "correct": 2,
+            "explanation": "Diversity (n) - danh từ chỉ sự đa dạng."
+          }
+,
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "We use 'the' before the names of most countries.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Hầu hết tên nước không dùng 'the' (Vietnam, France), chỉ một số nước có từ đặc biệt mới dùng (the UK, the USA)."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "We don't use articles before the names of languages.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Không dùng mạo từ trước tên ngôn ngữ (speak English, learn Vietnamese)."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "Cultural diversity only brings benefits with no challenges.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Đa dạng văn hóa mang lại lợi ích nhưng cũng có thách thức như rào cản ngôn ngữ, phân biệt đối xử."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call a person who moves to another country to live? (one word)",
+            "correct": "immigrant",
+            "explanation": "Immigrant: người nhập cư."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "Complete: I visited ______ museum. ______ museum was amazing. (a/an/the)",
+            "correct": "a / The",
+            "explanation": "A museum (lần đầu nhắc) / The museum (đã được nhắc đến)."
+          }
+        ]
+      }
+    }
+  ]
+}

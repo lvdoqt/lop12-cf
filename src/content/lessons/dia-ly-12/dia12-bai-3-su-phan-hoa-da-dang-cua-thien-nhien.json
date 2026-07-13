@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_3",
+      "name": "Sự phân hóa đa dạng của thiên nhiên",
+      "slug": "su-phan-hoa-da-dang-cua-thien-nhien",
+      "chapter": "Địa lí tự nhiên",
+      "chapter_id": "dia12_part1",
+      "lesson_id": 3,
+      "description": "Nguyên nhân và biểu hiện của sự phân hóa tự nhiên theo vĩ độ, độ cao, địa hình và ảnh hưởng đến phân bố sinh vật và con người.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Sự phân hóa đa dạng của thiên nhiên",
+          "summary": "Sự phân hóa thiên nhiên là kết quả của tương tác giữa vĩ độ, độ cao, địa hình, khí hậu, đất và hoạt động của con người. Ở Việt Nam, cảnh quan biến đổi rõ theo từ bắc vào nam, vùng đồng bằng ven biển và miền núi.",
+          "sections": [
+            { "heading": "Phân hóa theo vĩ độ", "content": "Thay đổi bức xạ mặt trời theo vĩ độ dẫn đến sự khác nhau về nhiệt độ và chế độ nhiệt giữa các vùng." },
+            { "heading": "Phân hóa theo độ cao và địa hình", "content": "Độ cao làm giảm nhiệt độ, làm thay đổi độ ẩm và thảm thực vật; địa hình ảnh hưởng tới lượng mưa và phân bố nguồn nước." },
+            { "heading": "Ảnh hưởng của con người", "content": "Canh tác, đô thị hóa và khai thác tài nguyên làm biến đổi cảnh quan tự nhiên, hình thành vùng sử dụng đất mới." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Nêu hai yếu tố tự nhiên gây phân hóa thiên nhiên?", "a_hint": "Vĩ độ và độ cao." },
+            { "q": "Hoạt động nào của con người gây thay đổi cảnh quan?", "a_hint": "Khai thác rừng, đô thị hóa." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Yếu tố nào sau đây ảnh hưởng mạnh đến phân bố nhiệt độ?", "options": ["Vĩ độ","Màu sắc cờ","Dân số","Ngôn ngữ"], "correct": 0, "explanation": "Vĩ độ ảnh hưởng trực tiếp đến lượng bức xạ và nhiệt độ." },
+          { "id": 2, "type": "mcq", "question": "Độ cao ảnh hưởng đến khí hậu bằng cách nào?", "options": ["Làm tăng nhiệt độ","Làm giảm nhiệt độ","Không ảnh hưởng","Thay đổi màu sắc đất"], "correct": 1, "explanation": "Nhiệt độ giảm khi độ cao tăng." },
+          { "id": 3, "type": "mcq", "question": "Địa hình dốc thường có đặc điểm thủy văn nào?", "options": ["Nước chảy mạnh, xói mòn cao","Nước đứng yên","Mực nước biển tăng","Không có sông"], "correct": 0, "explanation": "Địa hình dốc dẫn tới dòng chảy mạnh và xói mòn." },
+          { "id": 4, "type": "mcq", "question": "Hoạt động nào góp phần làm suy thoái rừng?", "options": ["Trồng rừng","Khai thác gỗ trái phép","Bảo tồn" ,"Không có hoạt động"], "correct": 1, "explanation": "Khai thác gỗ trái phép làm suy giảm rừng." },
+          { "id": 5, "type": "mcq", "question": "Phân hóa thiên nhiên biểu hiện qua điều nào?", "options": ["Khí hậu, đất, sinh vật","Một màu sắc duy nhất","Dân số ổn định","Không có biểu hiện"], "correct": 0, "explanation": "Phân hóa biểu hiện qua khác biệt khí hậu, thảm thực vật và đất." },
+          { "id": 6, "type": "mcq", "question": "Vùng đồng bằng thường có đặc điểm địa hình nào?", "options": ["Bằng phẳng, phù hợp nông nghiệp","Đồi núi cao","Sa mạc","Băng tuyết"], "correct": 0, "explanation": "Đồng bằng bằng phẳng, thuận lợi cho canh tác." },
+          { "id": 7, "type": "mcq", "question": "Nguyên nhân chủ yếu làm thay đổi cảnh quan tự nhiên gần đây là?", "options": ["Hoạt động con người","Sự dịch chuyển của lục địa nhanh","Thay đổi ngôn ngữ","Không có nguyên nhân"], "correct": 0, "explanation": "Hoạt động con người như nông nghiệp và đô thị hóa thay đổi cảnh quan." },
+          { "id": 8, "type": "mcq", "question": "Một hệ quả tích cực của phân hóa thiên nhiên là?", "options": ["Tạo đa dạng sinh học và lợi thế về tài nguyên","Làm cho mọi vùng giống nhau","Xóa bỏ tài nguyên","Không có gì"], "correct": 0, "explanation": "Phân hóa tạo ra đa dạng sinh học và lợi thế phân vùng sử dụng tài nguyên." },
+          { "id": 9, "type": "mcq", "question": "Biện pháp nào giúp giảm tác động xấu của con người lên thiên nhiên?", "options": ["Bảo tồn và phục hồi hệ sinh thái","Tăng phá rừng","Bỏ bê quản lý","Không hành động"], "correct": 0, "explanation": "Bảo tồn và phục hồi là biện pháp quan trọng." },
+          { "id": 10, "type": "mcq", "question": "Phân hóa thiên nhiên theo vĩ độ thể hiện rõ nhất qua?", "options": ["Sự thay đổi về nhiệt độ và sinh vật","Màu sắc quốc kỳ","Số dân","Câu trả lời không đúng"], "correct": 0, "explanation": "Vĩ độ ảnh hưởng tới nhiệt độ và phân bố sinh vật." }
+        ]
+      }
+    }
+  ]
+}

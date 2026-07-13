@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_8",
+      "name": "Đô thị hóa",
+      "slug": "do-thi-hoa",
+      "chapter": "Địa lí dân cư",
+      "chapter_id": "dia12_part2",
+      "lesson_id": 8,
+      "description": "Quá trình đô thị hóa ở Việt Nam: tốc độ, cơ cấu, tác động tích cực và tiêu cực, chính sách quản lý đô thị." ,
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Đô thị hóa: quá trình và hệ quả",
+          "summary": "Đô thị hóa là quá trình tăng tỷ lệ dân số sống ở đô thị kèm theo phát triển cơ sở hạ tầng, kinh tế và dịch vụ. Ở Việt Nam, đô thị hóa nhanh tạo cơ hội tăng trưởng nhưng cũng dẫn đến thách thức như áp lực hạ tầng, nhà ở, ô nhiễm và bất bình đẳng không gian.",
+          "sections": [
+            { "heading": "Nguyên nhân", "content": "Di cư nông thôn - thành thị, đầu tư vào công nghiệp và dịch vụ, chính sách phát triển đô thị." },
+            { "heading": "Hệ quả tích cực", "content": "Tạo động lực kinh tế, thúc đẩy đổi mới, tăng tiếp cận dịch vụ và việc làm." },
+            { "heading": "Hệ quả tiêu cực", "content": "Áp lực nhà ở, ùn tắc giao thông, ô nhiễm môi trường và phân hóa không gian." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Nêu một lợi ích của đô thị hóa?", "a_hint": "Tiếp cận dịch vụ y tế, giáo dục tốt hơn." },
+            { "q": "Nêu một vấn đề do đô thị hóa nhanh gây ra?", "a_hint": "Ùn tắc giao thông, ô nhiễm, giá nhà tăng." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Đô thị hóa là gì?", "options": ["Sự tăng dân số thành thị và phát triển đô thị","Sự tăng dân số nông thôn","Sự giảm dân số toàn quốc","Không có định nghĩa"], "correct": 0, "explanation": "Đô thị hóa là quá trình tăng tỷ lệ dân số sống ở đô thị và mở rộng đô thị." },
+          { "id": 2, "type": "mcq", "question": "Yếu tố nào góp phần thúc đẩy đô thị hóa?", "options": ["Phát triển công nghiệp và dịch vụ","Tăng sản xuất nông nghiệp truyền thống","Tăng diện tích rừng","Giảm số lượng trường học"], "correct": 0, "explanation": "Công nghiệp và dịch vụ tạo việc làm thu hút dân cư vào thành phố." },
+          { "id": 3, "type": "mcq", "question": "Một hệ quả tiêu cực của đô thị hóa là?", "options": ["Ùn tắc giao thông","Gia tăng đất nông nghiệp","Giảm dân số đô thị","Tăng diện tích sông"], "correct": 0, "explanation": "Ùn tắc giao thông thường kèm theo đô thị hóa nhanh." },
+          { "id": 4, "type": "mcq", "question": "Giải pháp giảm ùn tắc giao thông là?", "options": ["Phát triển giao thông công cộng","Cấm mọi xe","Không làm gì","Đào kênh"], "correct": 0, "explanation": "Giao thông công cộng hiệu quả giúp giảm ùn tắc." },
+          { "id": 5, "type": "mcq", "question": "Đô thị hóa bền vững cần chú trọng?", "options": ["Quy hoạch, hạ tầng xanh và nhà ở xã hội","Không quy hoạch","Tăng bê tông hóa","Loại bỏ cây xanh"], "correct": 0, "explanation": "Quy hoạch và không gian xanh giúp đô thị bền vững." },
+          { "id": 6, "type": "mcq", "question": "Một chỉ tiêu đánh giá đô thị hóa là?", "options": ["Tỷ lệ dân số sống ở đô thị","Tổng diện tích rừng","Số cảng biển","Không có chỉ tiêu"], "correct": 0, "explanation": "Tỷ lệ dân số đô thị là chỉ tiêu cơ bản." },
+          { "id": 7, "type": "mcq", "question": "Chính sách nào giúp kiểm soát giá nhà?", "options": ["Phát triển nhà ở xã hội và quản lý thị trường bất động sản","Cấm xây nhà mới","Tăng thuế cho người thuê","Không chính sách"], "correct": 0, "explanation": "Nhà ở xã hội và quản lý thị trường giúp ổn định giá nhà." },
+          { "id": 8, "type": "mcq", "question": "Một tác động tích cực của đô thị hóa tới giáo dục?", "options": ["Tăng tiếp cận trường học chất lượng","Giảm trường học","Không thay đổi","Đóng cửa trường"], "correct": 0, "explanation": "Đô thị hóa tăng cơ hội tiếp cận trường học chất lượng." },
+          { "id": 9, "type": "mcq", "question": "Thuật ngữ nào mô tả sự mở rộng không kiểm soát của đô thị?", "options": ["Phát triển đô thị bền vững","Sprawl (ranh giới đô thị lan rộng)","Quy hoạch hiệu quả","Đô thị hóa chậm"], "correct": 1, "explanation": "Urban sprawl mô tả việc mở rộng đô thị không kiểm soát." },
+          { "id": 10, "type": "mcq", "question": "Một biện pháp xanh trong đô thị là?", "options": ["Tăng cây xanh, vườn trên mái và công viên","Loại bỏ công viên","Tăng bê tông hóa","Giảm không gian công cộng"], "correct": 0, "explanation": "Tăng cây xanh và không gian công cộng giúp giảm ô nhiễm và tăng chất lượng sống." }
+        ]
+      }
+    }
+  ]
+}

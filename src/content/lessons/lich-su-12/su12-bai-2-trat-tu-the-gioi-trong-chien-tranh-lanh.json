@@ -1,0 +1,43 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [
+    {
+      "id": "su12-bai-2",
+      "name": "Trật tự thế giới trong chiến tranh lạnh",
+      "slug": "trat-tu-the-gioi-trong-chien-tranh-lanh",
+      "chapter": "Chủ đề 1: Thế giới trong và sau chiến tranh lạnh",
+      "chapter_id": "su12",
+      "lesson_id": 2,
+      "description": "Sự hình thành, đặc điểm và ảnh hưởng của trật tự hai cực trong thế giới chiến tranh lạnh",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+      "content": {
+        "theory": {
+          "title": "Trật tự thế giới trong chiến tranh lạnh",
+          "sections": [
+            { "heading": "1. Khái niệm Chiến tranh lạnh", "content": "Chiến tranh lạnh là tình trạng căng thẳng chính trị, quân sự, kinh tế giữa Hoa Kỳ và Liên Xô từ 1945-1991. Được gọi là 'lạnh' vì tránh trực tiếp quân sự nhưng đầy mối đe dọa hạt nhân; xảy ra cuộc xung đột proxy ở các nước khác." },
+            { "heading": "2. Nguyên nhân hình thành", "content": "Mâu thuẫn ý thức hệ giữa chủ nghĩa tư bản (Mỹ) và xã hội chủ nghĩa (Liên Xô); Xô viết có quân đội mạnh sau WWII; Mỹ có nền kinh tế mạnh nhất thế giới; Phân chia lãnh thổ ở Âu Châu được tạo ra sau WWII." },
+            { "heading": "3. Đặc điểm chính", "content": "Chia thế giới thành hai khối: Tây phương (tư bản) và Xã hội chủ nghĩa; Cuộc chạy đua vũ khí hạt nhân; Xung đột cục bộ ở Korea, Vietnam, Cuba, Afghanistan; Các tổ chức liên minh NATO (Tây) và Hiệp ước Warszawa (Đông)." },
+            { "heading": "4. Những cuộc khủng hoảng", "content": "Khủng hoảng Cuba (1962): nguy cơ WWIII; Chiến tranh Triều Tiên (1950-1953); Chiến tranh Việt Nam (1955-1975); Khủng hoảng Berlin; xâm lược Afghanistan (1979) khiến Xô viết suy yếu." },
+            { "heading": "5. Hậu quả", "content": "Thế giới phân chia thành 'khối Tây' và 'khối Đông'; Các nước không liên minh tìm con đường riêng; Cuộc chạy đua vũ khí gây áp lực kinh tế; Nước lạnh kết thúc 1991 khi Liên Xô tan rã." }
+          ]
+        },
+        "exercises": [
+          { "id": "ex1", "type": "mcq", "question": "Chiến tranh lạnh diễn ra giữa Mỹ và ai?", "options": ["Anh", "Liên Xô", "Pháp", "Trung Quốc"], "correct": 1, "explanation": "Chiến tranh lạnh xảy ra giữa Hoa Kỳ và Liên Xô từ 1945-1991." },
+          { "id": "ex2", "type": "mcq", "question": "Tại sao được gọi là 'lạnh'?", "options": ["Vì ở đất lạnh", "Vì tránh xung đột trực tiếp nhưng đầy căng thẳng", "Vì kéo dài lâu", "Vì liên quan tới vũ khí"], "correct": 1, "explanation": "Gọi là 'lạnh' vì tránh xung đột toàn diện nhưng đầy mối đe dọa." },
+          { "id": "ex3", "type": "mcq", "question": "Khủng hoảng Cuba xảy ra lúc nào?", "options": ["1955", "1962", "1975", "1989"], "correct": 1, "explanation": "Khủng hoảng Cuba diễn ra năm 1962, gần như dẫn tới WWIII." },
+          { "id": "ex4", "type": "mcq", "question": "NATO là liên minh của khối nào?", "options": ["Xã hội chủ nghĩa", "Tư bản - Tây phương", "Không liên minh", "Á-Thái"], "correct": 1, "explanation": "NATO là liên minh quân sự của khối Tây phương tư bản." },
+          { "id": "ex5", "type": "mcq", "question": "Hiệp ước Warszawa là liên minh của ai?", "options": ["Tây phương", "Liên Xô và các nước Đông Âu", "Không liên minh", "LHQ"], "correct": 1, "explanation": "Hiệp ước Warszawa do Liên Xô lãnh đạo, gồm các nước Đông Âu." },
+          { "id": "ex6", "type": "mcq", "question": "Nguyên nhân sâu xa là gì?", "options": ["Cạnh tranh tài nguyên", "Mâu thuẫn ý thức hệ tư bản-xã hội", "Xung đột lãnh thổ chỉ ở Âu Châu", "Cạnh tranh học tập"], "correct": 1, "explanation": "Mâu thuẫn ý thức hệ giữa tư bản (Mỹ) và xã hội chủ nghĩa (Xô viết)." },
+          { "id": "ex7", "type": "mcq", "question": "Cuộc chạy đua tập trung vào?", "options": ["Thép", "Vũ khí hạt nhân", "Hóa chất", "Công nghiệp văn bản"], "correct": 1, "explanation": "Cuộc chạy đua vũ khí hạt nhân giữa Mỹ và Xô viết là đặc điểm chính." },
+          { "id": "ex8", "type": "mcq", "question": "Chiến tranh Việt Nam là?", "options": ["Xung đột địa phương", "Cuộc xung đột proxy trong chiến tranh lạnh", "WWIII", "Nội chiến"], "correct": 1, "explanation": "Chiến tranh Việt Nam là xung đột proxy - Mỹ vs Xô viết thông qua các nước." },
+          { "id": "ex9", "type": "mcq", "question": "Chiến tranh lạnh kết thúc khi nào?", "options": ["1972", "1985", "1989", "1991"], "correct": 3, "explanation": "Chiến tranh lạnh kết thúc năm 1991 khi Liên Xô tan rã." },
+          { "id": "ex10", "type": "mcq", "question": "Các nước không liên minh là?", "options": ["Tây Âu", "Những nước tiếp cận độc lập, không chọn bên", "Bắc Mỹ", "Tây Ban Nha"], "correct": 1, "explanation": "Các nước không liên minh tìm con đường phát triển độc lập, như Việt Nam, Ấn Độ." }
+        ]
+      }
+    }
+  ]
+}

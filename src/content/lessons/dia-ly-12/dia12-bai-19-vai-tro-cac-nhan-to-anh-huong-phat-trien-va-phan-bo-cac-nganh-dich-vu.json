@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_19",
+      "name": "Vai trò, các nhân tố ảnh hưởng đến sự phát triển và phân bố các ngành dịch vụ",
+      "slug": "vai-tro-cac-nhan-to-anh-huong-phat-trien-va-phan-bo-cac-nganh-dich-vu",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 19,
+      "description": "Vai trò của dịch vụ trong nền kinh tế, các nhân tố ảnh hưởng (dân số, thu nhập, vị trí địa lý, hạ tầng) và đặc điểm phân bố các ngành dịch vụ.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Dịch vụ: vai trò và nhân tố ảnh hưởng",
+          "summary": "Dịch vụ đóng góp lớn vào GDP và tạo việc làm; phân bố dịch vụ phụ thuộc vào quy mô đô thị, thu nhập, hạ tầng giao thông và công nghệ thông tin.",
+          "sections": [
+            { "heading": "Vai trò của dịch vụ", "content": "Cung cấp hàng hóa vô hình, hỗ trợ sản xuất, logistics, tài chính, giáo dục, y tế và du lịch; nâng cao giá trị gia tăng cho nền kinh tế." },
+            { "heading": "Nhân tố ảnh hưởng", "content": "Quy mô dân số và đô thị, mức thu nhập, hạ tầng giao thông và viễn thông, chính sách và hội nhập quốc tế." },
+            { "heading": "Phân bố dịch vụ", "content": "Dịch vụ cao cấp (tài chính, công nghệ) tập trung ở các đô thị lớn; dịch vụ cơ bản (bán lẻ, vận tải) phân bố rộng, hướng tới thị trường tiêu thụ." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Nêu hai ngành dịch vụ có vai trò kinh tế lớn?", "a_hint": "Tài chính, du lịch, giao thông, y tế, giáo dục." },
+            { "q": "Yếu tố nào ảnh hưởng mạnh đến phân bố dịch vụ cao cấp?", "a_hint": "Quy mô đô thị và hạ tầng công nghệ." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Ngành dịch vụ nào đóng vai trò kết nối thị trường?", "options": ["Giao thông và logistics","Nông nghiệp","Khai khoáng","Chăn nuôi"], "correct": 0, "explanation": "Giao thông và logistics kết nối thị trường trong nước và quốc tế." },
+          { "id": 2, "type": "mcq", "question": "Yếu tố nào làm tăng nhu cầu dịch vụ?", "options": ["Tăng thu nhập và đô thị hóa","Giảm dân số","Giảm thu nhập","Không ai dùng dịch vụ"], "correct": 0, "explanation": "Tăng thu nhập và đô thị hóa làm gia tăng nhu cầu dịch vụ." },
+          { "id": 3, "type": "mcq", "question": "Dịch vụ cao cấp thường tập trung ở?", "options": ["Đô thị lớn","Khu vực nông thôn thưa dân","Vùng núi xa xôi","Giữa biển"], "correct": 0, "explanation": "Đô thị lớn cung cấp thị trường và nguồn nhân lực cho dịch vụ cao cấp." },
+          { "id": 4, "type": "mcq", "question": "Một nhân tố kỹ thuật quan trọng cho dịch vụ CNTT là?", "options": ["Hạ tầng viễn thông và băng thông rộng","Diện tích rừng","Mật độ gia súc","Loại đất"], "correct": 0, "explanation": "Hạ tầng viễn thông quyết định khả năng phát triển dịch vụ CNTT." },
+          { "id": 5, "type": "mcq", "question": "Ngành dịch vụ nào tạo giá trị xuất khẩu cho quốc gia?", "options": ["Du lịch và dịch vụ CNTT xuất khẩu","Dịch vụ nội bộ gia đình","Chỉ dịch vụ nội địa","Không dịch vụ nào"], "correct": 0, "explanation": "Du lịch quốc tế và dịch vụ CNTT xuất khẩu đóng góp ngoại tệ." },
+          { "id": 6, "type": "mcq", "question": "Phân bố dịch vụ bán lẻ thường phụ thuộc vào?", "options": ["Mật độ dân cư và thu nhập","Sở thích chính phủ","Độ cao","Loại đá"], "correct": 0, "explanation": "Mật độ dân cư và mức thu nhập quyết định mạng lưới bán lẻ." },
+          { "id": 7, "type": "mcq", "question": "Một tác động tiêu cực của dịch vụ tập trung quá mức ở thành phố là?", "options": ["Bất bình đẳng vùng và quá tải hạ tầng","Giảm nguồn lao động","Tăng nông nghiệp","Không có tác động"], "correct": 0, "explanation": "Tập trung dịch vụ dẫn đến bất bình đẳng phát triển và quá tải hạ tầng đô thị." },
+          { "id": 8, "type": "mcq", "question": "Chính sách nào giúp phân bổ dịch vụ công bằng hơn?", "options": ["Phát triển hạ tầng vùng và khuyến khích đầu tư vào dịch vụ khu vực","Tập trung mọi thứ vào thủ đô","Cấm dịch vụ ở vùng xa","Không có chính sách"], "correct": 0, "explanation": "Đầu tư vào hạ tầng vùng và ưu đãi giúp dịch vụ lan tỏa ra vùng phụ cận." },
+          { "id": 9, "type": "mcq", "question": "Dịch vụ y tế và giáo dục thường phân bố dựa trên?", "options": ["Quy mô dân cư, năng lực tài chính địa phương và chính sách công","Loại đất","Số cảng","Màu sắc quốc kỳ"], "correct": 0, "explanation": "Sự phân bố dịch vụ y tế/giáo dục gắn với quy mô dân cư và nguồn lực ngân sách." },
+          { "id": 10, "type": "mcq", "question": "Một nhân tố toàn cầu ảnh hưởng đến dịch vụ là?", "options": ["Hội nhập kinh tế và công nghệ toàn cầu","Chỉ thời tiết địa phương","Số lượng trường đại học riêng lẻ","Không có yếu tố"], "correct": 0, "explanation": "Hội nhập và công nghệ toàn cầu thay đổi cầu và cung dịch vụ." }
+        ]
+      }
+    }
+  ]
+}

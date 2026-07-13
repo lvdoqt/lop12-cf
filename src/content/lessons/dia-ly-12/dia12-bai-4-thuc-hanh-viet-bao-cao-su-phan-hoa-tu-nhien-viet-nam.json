@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_4",
+      "name": "Thực hành: Viết báo cáo về sự phân hóa tự nhiên Việt Nam",
+      "slug": "thuc-hanh-viet-bao-cao-ve-su-phan-hoa-tu-nhien-viet-nam",
+      "chapter": "Địa lí tự nhiên",
+      "chapter_id": "dia12_part1",
+      "lesson_id": 4,
+      "description": "Hướng dẫn và mẫu để viết báo cáo nghiên cứu sự phân hóa tự nhiên ở một vùng cụ thể của Việt Nam.",
+      "duration_minutes": 60,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Hướng dẫn thực hành: Viết báo cáo địa lý",
+          "summary": "Hướng dẫn từng bước để lập một báo cáo địa lý về phân hóa tự nhiên ở một vùng: xác định đề tài, thu thập dữ liệu, mô tả hiện trạng, phân tích nguyên nhân - hệ quả và đề xuất giải pháp quản lý bền vững.",
+          "sections": [
+            { "heading": "Cấu trúc báo cáo", "content": "Mở bài (giới thiệu vùng và mục tiêu), phần phương pháp (nguồn số liệu, phương pháp thu thập), phần kết quả (mô tả hiện trạng), phần phân tích (nguyên nhân, ảnh hưởng), kết luận và đề xuất." },
+            { "heading": "Thu thập dữ liệu", "content": "Sử dụng bản đồ, số liệu khí hậu và thủy văn, quan sát thực địa, phỏng vấn người dân và tra cứu tư liệu chuyên ngành." },
+            { "heading": "Trình bày và minh họa", "content": "Sử dụng bản đồ, biểu đồ và ảnh thực địa để minh họa; trích dẫn nguồn và chú thích rõ ràng." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Ghi hai nguồn số liệu thường dùng?", "a_hint": "Bản đồ, số liệu thống kê (Cục Thống kê)." },
+            { "q": "Phần nào nêu đề xuất chính sách?", "a_hint": "Kết luận và đề xuất." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Phần nào trong báo cáo mô tả hiện trạng?", "options": ["Mở bài","Kết quả","Phương pháp","Kết luận"], "correct": 1, "explanation": "Phần kết quả mô tả hiện trạng thu thập được." },
+          { "id": 2, "type": "mcq", "question": "Nguồn dữ liệu nào hữu ích cho phân tích khí hậu?", "options": ["Số liệu khí tượng","Sổ đỏ","Biên lai thuế","Không cần dữ liệu"], "correct": 0, "explanation": "Số liệu khí tượng là nguồn chính cho phân tích khí hậu." },
+          { "id": 3, "type": "mcq", "question": "Minh họa nào phù hợp cho phân bố địa hình?", "options": ["Bản đồ địa hình","Danh sách tên","Bảng thuế","Không minh họa"], "correct": 0, "explanation": "Bản đồ địa hình thể hiện phân bố địa hình rõ ràng." },
+          { "id": 4, "type": "mcq", "question": "Một bước quan trọng trước khi viết báo cáo là?", "options": ["Thu thập số liệu","Viết ngay lập tức","Bỏ qua dữ liệu","Không cần chuẩn bị"], "correct": 0, "explanation": "Thu thập số liệu là bước cần thiết trước khi phân tích." },
+          { "id": 5, "type": "mcq", "question": "Phương pháp thực địa gồm?", "options": ["Quan sát, đo đạc, phỏng vấn","Chỉ đọc sách","Nghe tin đồn","Không làm gì"], "correct": 0, "explanation": "Quan sát, đo đạc và phỏng vấn là phương pháp thực địa cơ bản." },
+          { "id": 6, "type": "mcq", "question": "Khi trình bày kết quả, nên sử dụng gì?", "options": ["Biểu đồ và bản đồ","Chữ in hoa toàn bộ","Không định dạng","Ảnh mờ"], "correct": 0, "explanation": "Biểu đồ và bản đồ giúp trình bày rõ ràng số liệu." },
+          { "id": 7, "type": "mcq", "question": "Trích dẫn nguồn là quan trọng vì?", "options": ["Tăng tính tin cậy","Làm dài báo cáo vô ích","Gây hiểu nhầm","Không cần thiết"], "correct": 0, "explanation": "Trích dẫn nguồn tăng tính tin cậy của báo cáo." },
+          { "id": 8, "type": "mcq", "question": "Kết luận trong báo cáo nên chứa gì?", "options": ["Tóm tắt kết quả và đề xuất giải pháp","Danh sách tham khảo","Bản đồ mới","Không có gì"], "correct": 0, "explanation": "Kết luận tóm tắt và đề xuất biện pháp là phần quan trọng." },
+          { "id": 9, "type": "mcq", "question": "Một đề xuất phù hợp cho vùng ngập lụt là?", "options": ["Phát triển hệ thống tiêu thoát, cảnh báo sớm","Xây nhà trên bãi sông không tính toán","Không làm gì","Đẩy người dân ra biển"], "correct": 0, "explanation": "Hệ thống tiêu thoát và cảnh báo sớm giảm thiệt hại do lũ." },
+          { "id": 10, "type": "mcq", "question": "Khi thu thập dữ liệu, điều gì cần làm?", "options": ["Ghi nguồn, kiểm tra độ tin cậy","Chỉ dựa vào lời đồn","Sao chép trái phép","Không cần kiểm tra"], "correct": 0, "explanation": "Ghi nguồn và kiểm tra độ tin cậy là quan trọng." }
+        ]
+      }
+    }
+  ]
+}

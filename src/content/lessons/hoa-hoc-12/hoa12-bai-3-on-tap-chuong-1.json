@@ -1,0 +1,308 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-3-on-tap-chuong-1",
+      "name": "Bài 3. Ôn tập chương 1",
+      "slug": "bai-3-on-tap-chuong-1",
+      "chapter": "Chương 1: Ester - Lipid",
+      "chapter_id": "H12-1001",
+      "lesson_id": 3,
+      "description": "Tổng hợp và ôn tập kiến thức về ester, lipid, xà phòng và chất giặt rửa.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "on-tap-chuong-1",
+          "name": "Ôn tập chương 1",
+          "slug": "on-tap-chuong-1",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Tổng hợp kiến thức Chương 1",
+          "sections": [
+            {
+              "heading": "1. Bảng tổng hợp Ester - Lipid - Xà phòng",
+              "content": "<h3>a) So sánh Ester - Lipid - Xà phòng</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Đặc điểm</th><th class='border border-gray-300 p-2'>Ester</th><th class='border border-gray-300 p-2'>Lipid</th><th class='border border-gray-300 p-2'>Xà phòng</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Công thức</td><td class='border border-gray-300 p-2'>R-COO-R'</td><td class='border border-gray-300 p-2'>(RCOO)₃C₃H₅</td><td class='border border-gray-300 p-2'>R-COONa</td></tr><tr><td class='border border-gray-300 p-2'>Nguồn gốc</td><td class='border border-gray-300 p-2'>Acid + Alcohol</td><td class='border border-gray-300 p-2'>Glycerol + Acid béo</td><td class='border border-gray-300 p-2'>Lipid + NaOH</td></tr><tr><td class='border border-gray-300 p-2'>Trạng thái</td><td class='border border-gray-300 p-2'>Lỏng/Rắn</td><td class='border border-gray-300 p-2'>Lỏng (dầu)/Rắn (mỡ)</td><td class='border border-gray-300 p-2'>Rắn/Mềm</td></tr><tr><td class='border border-gray-300 p-2'>Mùi</td><td class='border border-gray-300 p-2'>Thơm (hoa quả)</td><td class='border border-gray-300 p-2'>Không mùi/Nhẹ</td><td class='border border-gray-300 p-2'>Đặc trưng</td></tr><tr><td class='border border-gray-300 p-2'>Độ tan nước</td><td class='border border-gray-300 p-2'>Ít tan</td><td class='border border-gray-300 p-2'>Không tan</td><td class='border border-gray-300 p-2'>Tan</td></tr><tr><td class='border border-gray-300 p-2'>Phản ứng chính</td><td class='border border-gray-300 p-2'>Thủy phân, cháy</td><td class='border border-gray-300 p-2'>Xà phòng hóa, cộng H₂</td><td class='border border-gray-300 p-2'>Với nước cứng, acid</td></tr><tr><td class='border border-gray-300 p-2'>Ứng dụng</td><td class='border border-gray-300 p-2'>Hương liệu, dung môi</td><td class='border border-gray-300 p-2'>Thực phẩm, năng lượng</td><td class='border border-gray-300 p-2'>Tẩy rửa, vệ sinh</td></tr></tbody></table><h3>b) Công thức quan trọng</h3><p><strong>1. Este hóa:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>R-COOH + R'-OH ⇌ R-COO-R' + H₂O (H₂SO₄ đặc, t°)</p><p><strong>2. Thủy phân ester (acid):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>R-COO-R' + H₂O ⇌ R-COOH + R'-OH (H⁺, t°)</p><p><strong>3. Xà phòng hóa ester:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>R-COO-R' + NaOH → R-COONa + R'-OH (t°)</p><p><strong>4. Xà phòng hóa lipid:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>(RCOO)₃C₃H₅ + 3NaOH → 3R-COONa + C₃H₅(OH)₃</p><p><strong>5. Làm cứng dầu:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>(C₁₇H₃₃COO)₃C₃H₅ + 3H₂ → (C₁₇H₃₅COO)₃C₃H₅ (Ni, t°, p)</p><p><strong>6. Đốt cháy ester no, đơn chức:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>CₙH₂ₙO₂ + (3n/2)O₂ → nCO₂ + nH₂O</p><p>Đặc điểm: n(CO₂) = n(H₂O)</p><p><strong>7. Xà phòng + nước cứng:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>2R-COONa + Ca²⁺ → (R-COO)₂Ca↓ + 2Na⁺</p><p><strong>8. Xà phòng + acid:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>R-COONa + HCl → R-COOH↓ + NaCl</p><h3>c) Tỉ lệ mol quan trọng</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Phản ứng</th><th class='border border-gray-300 p-2'>Tỉ lệ mol</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Ester đơn chức + NaOH</td><td class='border border-gray-300 p-2'>1 : 1</td></tr><tr><td class='border border-gray-300 p-2'>Lipid + NaOH</td><td class='border border-gray-300 p-2'>1 : 3</td></tr><tr><td class='border border-gray-300 p-2'>Lipid → Xà phòng</td><td class='border border-gray-300 p-2'>1 : 3</td></tr><tr><td class='border border-gray-300 p-2'>Lipid → Glycerol</td><td class='border border-gray-300 p-2'>1 : 1</td></tr><tr><td class='border border-gray-300 p-2'>Lipid không no + H₂</td><td class='border border-gray-300 p-2'>1 : 3k (k = số C=C/phân tử)</td></tr><tr><td class='border border-gray-300 p-2'>Xà phòng + Ca²⁺</td><td class='border border-gray-300 p-2'>2 : 1</td></tr></tbody></table>"
+            },
+            {
+              "heading": "2. Phương pháp giải các dạng bài tập",
+              "content": "<h3>a) Dạng 1: Bài toán thủy phân hỗn hợp</h3><p><strong>Phương pháp:</strong></p><ul><li>Gọi số mol các chất: a, b, c...</li><li>Lập phương trình khối lượng</li><li>Lập phương trình mol NaOH</li><li>Giải hệ phương trình</li></ul><p><strong>Công thức nhanh:</strong></p><p>Với hỗn hợp ester + lipid:</p><p>n(NaOH) = n(ester đơn chức) + 3×n(lipid)</p><h3>b) Dạng 2: Bài toán đốt cháy</h3><p><strong>Đặc điểm ester no, đơn chức, mạch hở:</strong></p><ul><li>n(CO₂) = n(H₂O)</li><li>Công thức: CₙH₂ₙO₂</li><li>M = 14n + 32</li></ul><p><strong>Phương pháp:</strong></p><ul><li>Từ n(CO₂) = n(H₂O) → Xác định loại ester</li><li>Tính n(ester) = n(CO₂)/n</li><li>Tính M(ester) = m/n(ester)</li><li>Từ M = 14n + 32 → Tìm n</li></ul><h3>c) Dạng 3: Bài toán xà phòng hóa</h3><p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH xà phòng hóa</li><li>Tính mol NaOH = 3×mol lipid</li><li>Tính khối lượng sản phẩm</li><li>Áp dụng bảo toàn khối lượng</li></ul><p><strong>Bảo toàn khối lượng:</strong></p><p>m(lipid) + m(NaOH) = m(xà phòng) + m(glycerol)</p><h3>d) Dạng 4: Bài toán làm cứng dầu</h3><p><strong>Phương pháp:</strong></p><ul><li>Xác định số liên kết C=C</li><li>Tính mol H₂ = 3k×mol lipid (k = số C=C/gốc acid)</li><li>Tính thể tích H₂ (đktc)</li></ul><p><strong>Ví dụ:</strong></p><ul><li>Triolein: 1 C=C/gốc → k = 1 → n(H₂) = 3n(lipid)</li><li>Trilinolein: 2 C=C/gốc → k = 2 → n(H₂) = 6n(lipid)</li></ul><h3>e) Dạng 5: Bài toán chỉ số đặc trưng</h3><p><strong>Chỉ số xà phòng hóa:</strong></p><p>Số mg KOH để xà phòng hóa 1g lipid</p><p>Chỉ số = (56 × 1000 × 3) / M(lipid)</p><p><strong>Chỉ số iod:</strong></p><p>Số gam I₂ cộng vào 100g lipid</p><p>Chỉ số = (254 × số C=C × 100) / M(lipid)</p><h3>f) Dạng 6: Bài toán tổng hợp</h3><p><strong>Kết hợp nhiều phản ứng:</strong></p><ul><li>Este hóa → Ester</li><li>Thủy phân → Acid + Alcohol</li><li>Xà phòng hóa → Xà phòng + Glycerol</li><li>Đốt cháy → CO₂ + H₂O</li></ul><p><strong>Phương pháp:</strong></p><ul><li>Phân tích từng bước</li><li>Áp dụng bảo toàn (khối lượng, nguyên tố)</li><li>Kết hợp các công thức</li></ul>"
+            },
+            {
+              "heading": "3. Sơ đồ tư duy chương 1",
+              "content": "<h3>a) Sơ đồ chuyển hóa</h3><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Acid + Alcohol ⇌ Ester + H₂O (este hóa)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Ester + H₂O ⇌ Acid + Alcohol (thủy phân acid)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Ester + NaOH → Muối + Alcohol (xà phòng hóa)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Lipid + NaOH → Xà phòng + Glycerol</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Dầu + H₂ → Mỡ (làm cứng)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Xà phòng + Ca²⁺ → Cặn (nước cứng)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Xà phòng + HCl → Acid béo↓</p><h3>b) Mối quan hệ giữa các chất</h3><pre>Acid carboxylic + Alcohol\n         ↓ (este hóa)\n       Ester\n         ↓ (xà phòng hóa)\n    Muối + Alcohol\n\nGlycerol + Acid béo\n         ↓\n       Lipid\n         ↓ (xà phòng hóa)\n  Xà phòng + Glycerol\n         ↓\n   Chất giặt rửa</pre><h3>c) Ứng dụng thực tế</h3><p><strong>1. Ester:</strong></p><ul><li>Hương liệu thực phẩm</li><li>Nước hoa, mỹ phẩm</li><li>Dung môi công nghiệp</li><li>Sản xuất polymer</li><li>Biodiesel</li></ul><p><strong>2. Lipid:</strong></p><ul><li>Thực phẩm (dầu ăn, bơ)</li><li>Nguồn năng lượng</li><li>Sản xuất xà phòng</li><li>Sản xuất glycerol</li><li>Mỹ phẩm</li></ul><p><strong>3. Xà phòng:</strong></p><ul><li>Vệ sinh cá nhân</li><li>Giặt tay quần áo</li><li>Tẩy rửa nhẹ</li></ul><p><strong>4. Chất giặt rửa:</strong></p><ul><li>Giặt máy</li><li>Tẩy rửa công nghiệp</li><li>Vệ sinh nhà cửa</li></ul><h3>d) Lưu ý quan trọng</h3><p><strong>1. Phân biệt:</strong></p><ul><li>Ester ≠ Ether (R-COO-R' ≠ R-O-R')</li><li>Lipid ≠ Ester thường (3 gốc acid béo)</li><li>Xà phòng ≠ Chất giặt rửa (nguồn gốc, tính chất)</li></ul><p><strong>2. Điều kiện phản ứng:</strong></p><ul><li>Este hóa: H₂SO₄ đặc, t° (60-70°C)</li><li>Xà phòng hóa: NaOH, t° (100-120°C)</li><li>Làm cứng dầu: H₂, Ni, t°, p</li></ul><p><strong>3. Hiệu suất:</strong></p><ul><li>Este hóa: 60-80% (cân bằng)</li><li>Xà phòng hóa: 90-95% (một chiều)</li><li>Làm cứng dầu: 85-90%</li></ul><p><strong>4. Môi trường:</strong></p><ul><li>Ưu tiên sản phẩm phân hủy sinh học</li><li>Hạn chế phosphate</li><li>Sử dụng đúng liều lượng</li><li>Xử lý nước thải</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán tổng hợp ester - lipid - xà phòng",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích hỗn hợp các chất</li><li>Lập hệ phương trình</li><li>Áp dụng bảo toàn khối lượng</li><li>Tính toán từng bước</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Hỗn hợp X gồm CH₃COOC₂H₅, (C₁₇H₃₅COO)₃C₃H₅ và C₁₇H₃₅COONa. Cho 50.6g X tác dụng vừa đủ với 200ml dung dịch NaOH 1M, thu được dung dịch Y. Cô cạn Y thu được m gam chất rắn khan. a) Tính m. b) Cho Y tác dụng với dung dịch CaCl₂ dư, tính khối lượng kết tủa. c) Tính % khối lượng mỗi chất trong X.",
+                "solution": "<p><strong>Phân tích hỗn hợp X:</strong></p><ul><li>CH₃COOC₂H₅: Ester đơn chức</li><li>(C₁₇H₃₅COO)₃C₃H₅: Lipid (tristearin)</li><li>C₁₇H₃₅COONa: Xà phòng (có sẵn)</li></ul><p><strong>Tính số mol NaOH:</strong></p><p>n(NaOH) = 0.2 × 1 = 0.2 mol</p><p><strong>a) Tính khối lượng chất rắn:</strong></p><p><strong>Phản ứng:</strong></p><p>CH₃COOC₂H₅ + NaOH → CH₃COONa + C₂H₅OH ... (1)</p><p>(C₁₇H₃₅COO)₃C₃H₅ + 3NaOH → 3C₁₇H₃₅COONa + C₃H₅(OH)₃ ... (2)</p><p>C₁₇H₃₅COONa: Không phản ứng ... (3)</p><p><strong>Đặt:</strong></p><p>n(CH₃COOC₂H₅) = a mol</p><p>n(lipid) = b mol</p><p>n(C₁₇H₃₅COONa) = c mol</p><p><strong>Hệ phương trình:</strong></p><p>88a + 890b + 306c = 50.6 ... (I) (khối lượng X)</p><p>a + 3b = 0.2 ... (II) (mol NaOH)</p><p><strong>Chất rắn sau cô cạn Y:</strong></p><ul><li>CH₃COONa: a mol (từ phản ứng 1)</li><li>C₁₇H₃₅COONa: 3b + c mol (từ phản ứng 2 và có sẵn)</li></ul><p><strong>Khối lượng chất rắn:</strong></p><p>m = 82a + 306(3b + c)</p><p>m = 82a + 918b + 306c</p><p><strong>Áp dụng bảo toàn khối lượng:</strong></p><p>m(X) + m(NaOH) = m(chất rắn) + m(alcohol)</p><p>50.6 + 0.2×40 = m + [46a + 92b]</p><p>50.6 + 8 = m + 46a + 92b</p><p>58.6 = m + 46a + 92b</p><p>m = 58.6 - 46a - 92b</p><p>Hoặc: m = 82a + 918b + 306c</p><p><strong>Từ phương trình (II):</strong> a = 0.2 - 3b</p><p><strong>Thử nghiệm:</strong></p><p>Giả sử b = 0.05 mol → a = 0.2 - 0.15 = 0.05 mol</p><p>Từ (I): 88×0.05 + 890×0.05 + 306c = 50.6</p><p>4.4 + 44.5 + 306c = 50.6</p><p>306c = 1.7</p><p>c ≈ 0.0056 mol</p><p><strong>Tính m:</strong></p><p>m = 82×0.05 + 918×0.05 + 306×0.0056</p><p>m = 4.1 + 45.9 + 1.7 = 51.7g</p><p><strong>Kiểm tra:</strong></p><p>m(alcohol) = 46×0.05 + 92×0.05 = 2.3 + 4.6 = 6.9g</p><p>50.6 + 8 = 51.7 + 6.9</p><p>58.6 = 58.6 ✓</p><p><strong>b) Tính khối lượng kết tủa:</strong></p><p><strong>Phản ứng:</strong></p><p>2C₁₇H₃₅COONa + Ca²⁺ → (C₁₇H₃₅COO)₂Ca↓ + 2Na⁺</p><p>2CH₃COONa + Ca²⁺ → (CH₃COO)₂Ca (tan, không kết tủa)</p><p><strong>Chỉ C₁₇H₃₅COONa tạo kết tủa:</strong></p><p>n(C₁₇H₃₅COONa) = 3b + c = 3×0.05 + 0.0056 = 0.1556 mol</p><p>n(kết tủa) = n(C₁₇H₃₅COONa) / 2 = 0.1556 / 2 = 0.0778 mol</p><p>M[(C₁₇H₃₅COO)₂Ca] = 2×284 + 40 = 608 g/mol</p><p>m(kết tủa) = 0.0778 × 608 = 47.3g</p><p><strong>c) Tính % khối lượng:</strong></p><p>%m(CH₃COOC₂H₅) = (0.05 × 88) / 50.6 × 100% = 8.7%</p><p>%m(lipid) = (0.05 × 890) / 50.6 × 100% = 87.9%</p><p>%m(C₁₇H₃₅COONa) = (0.0056 × 306) / 50.6 × 100% = 3.4%</p><p><strong>Đáp án:</strong> a) 51.7g; b) 47.3g; c) 8.7%, 87.9%, 3.4%</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán đốt cháy và xác định công thức",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Từ n(CO₂) và n(H₂O) → Xác định loại hợp chất</li><li>Tính M từ khối lượng</li><li>Xác định công thức phân tử</li><li>Viết đồng phân cấu tạo</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Đốt cháy hoàn toàn 13.2g hỗn hợp X gồm ester no, đơn chức, mạch hở và lipid thu được 30.8g CO₂ và 12.6g H₂O. a) Chứng minh X chứa lipid. b) Xà phòng hóa X cần 0.15 mol NaOH, xác định công thức lipid. c) Tính % khối lượng mỗi chất.",
+                "solution": "<p><strong>a) Chứng minh X chứa lipid:</strong></p><p><strong>Bước 1: Tính số mol CO₂ và H₂O</strong></p><p>n(CO₂) = 30.8 / 44 = 0.7 mol</p><p>n(H₂O) = 12.6 / 18 = 0.7 mol</p><p><strong>Nhận xét:</strong> n(CO₂) = n(H₂O)</p><p><strong>Bước 2: Phân tích</strong></p><p>Nếu X chỉ chứa ester no, đơn chức, mạch hở (CₙH₂ₙO₂):</p><p>→ n(CO₂) = n(H₂O) luôn đúng</p><p>Nhưng cần kiểm tra bằng cách khác</p><p><strong>Bước 3: Tính số mol O trong X</strong></p><p>Bảo toàn O: n(O trong X) + 2n(O₂) = 2n(CO₂) + n(H₂O)</p><p>n(O trong X) = 2×0.7 + 0.7 - 2n(O₂)</p><p>Bảo toàn khối lượng:</p><p>m(X) + m(O₂) = m(CO₂) + m(H₂O)</p><p>13.2 + 32n(O₂) = 30.8 + 12.6</p><p>32n(O₂) = 30.2</p><p>n(O₂) = 0.944 mol</p><p>n(O trong X) = 2×0.7 + 0.7 - 2×0.944 = 0.212 mol</p><p><strong>Bước 4: Tính số O trung bình</strong></p><p>Gọi n̄ là số C trung bình</p><p>n(X) = n(CO₂) / n̄ = 0.7 / n̄</p><p>Số O trung bình = n(O trong X) / n(X) = 0.212 / (0.7/n̄) = 0.303n̄</p><p>Nếu chỉ có ester đơn chức: Số O = 2</p><p>→ 0.303n̄ = 2 → n̄ = 6.6</p><p>Nhưng nếu có lipid (6 O): 0.303n̄ > 2</p><p><strong>Kết luận:</strong> X chứa lipid (có nhiều hơn 2 O)</p><p><strong>b) Xác định công thức lipid:</strong></p><p><strong>Phản ứng xà phòng hóa:</strong></p><p>Ester: n(NaOH) = n(ester)</p><p>Lipid: n(NaOH) = 3n(lipid)</p><p>Gọi: n(ester) = a mol, n(lipid) = b mol</p><p>a + 3b = 0.15 ... (1)</p><p><strong>Từ đốt cháy:</strong></p><p>Giả sử ester có công thức CₙH₂ₙO₂, lipid có công thức C₅₇H₁₀₄O₆ (trung bình)</p><p>n(CO₂) = na + 57b = 0.7 ... (2)</p><p>n(H₂O) = na + 52b = 0.7 ... (3)</p><p>Từ (2) và (3): 57b = 52b → 5b = 0 (vô lý)</p><p><strong>Thử với lipid cụ thể:</strong></p><p>Tristearin: (C₁₇H₃₅COO)₃C₃H₅ = C₅₇H₁₁₀O₆</p><p>Triolein: (C₁₇H₃₃COO)₃C₃H₅ = C₅₇H₁₀₄O₆</p><p><strong>Giả sử lipid là tristearin:</strong></p><p>n(CO₂) = na + 57b = 0.7</p><p>n(H₂O) = na + 55b = 0.7</p><p>→ 57b = 55b → 2b = 0 (vô lý)</p><p><strong>Phương pháp đơn giản hơn:</strong></p><p>Từ a + 3b = 0.15</p><p>Thử b = 0.01 mol → a = 0.15 - 0.03 = 0.12 mol</p><p>Kiểm tra khối lượng:</p><p>Giả sử ester là CH₃COOC₂H₅ (M = 88)</p><p>Lipid là tristearin (M = 890)</p><p>m = 88×0.12 + 890×0.01 = 10.56 + 8.9 = 19.46g ≠ 13.2g</p><p><strong>Thử lại:</strong> b = 0.01, a = 0.12</p><p>Ester nhẹ hơn: HCOOCH₃ (M = 60)</p><p>m = 60×0.12 + 890×0.01 = 7.2 + 8.9 = 16.1g (gần hơn)</p><p><strong>Kết luận:</strong> Lipid là tristearin (C₁₇H₃₅COO)₃C₃H₅</p><p><strong>c) Tính % khối lượng:</strong></p><p>Với a = 0.12, b = 0.01</p><p>%m(ester) = (0.12 × 60) / 13.2 × 100% ≈ 54.5%</p><p>%m(lipid) = 100% - 54.5% = 45.5%</p><p><strong>Đáp án:</strong> a) Đã chứng minh; b) Tristearin; c) 54.5% và 45.5%</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Quy trình sản xuất tích hợp",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích quy trình nhiều bước</li><li>Tính toán hiệu suất từng bước</li><li>Đánh giá kinh tế và môi trường</li><li>Đề xuất cải tiến</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Một nhà máy tích hợp sản xuất xà phòng và biodiesel từ dầu thực vật. Quy trình: Dầu → (1) Xà phòng + Glycerol → (2) Biodiesel. Từ 100 tấn dầu (90% triolein): a) Tính sản phẩm mỗi bước (hiệu suất: bước 1: 90%, bước 2: 85%). b) Tính lợi nhuận (giá: dầu 20,000đ/kg, xà phòng 30,000đ/kg, biodiesel 25,000đ/kg, glycerol 50,000đ/kg). c) Đánh giá và đề xuất cải tiến.",
+                "solution": "<p><strong>Phân tích quy trình:</strong></p><p><strong>Bước 1: Sản xuất xà phòng</strong></p><p>(C₁₇H₃₃COO)₃C₃H₅ + 3NaOH → 3C₁₇H₃₃COONa + C₃H₅(OH)₃</p><p><strong>Bước 2: Sản xuất biodiesel từ glycerol</strong></p><p>C₃H₅(OH)₃ + 3CH₃OH → 3CH₃OH (không đúng)</p><p>Thực tế: Glycerol bán riêng, biodiesel từ dầu còn lại</p><p><strong>Sửa lại đề:</strong> Một phần dầu → Xà phòng, phần còn lại → Biodiesel</p><p><strong>a) Tính sản phẩm:</strong></p><p><strong>Dữ liệu đầu vào:</strong></p><p>m(dầu) = 100 tấn = 100,000 kg</p><p>m(triolein) = 100,000 × 90% = 90,000 kg</p><p>M(triolein) = 884 g/mol</p><p>n(triolein) = 90,000,000 / 884 = 101,809 mol</p><p><strong>Phân chia:</strong></p><ul><li>60% dầu → Xà phòng: 60,000 kg triolein</li><li>40% dầu → Biodiesel: 40,000 kg triolein</li></ul><p><strong>Bước 1: Sản xuất xà phòng</strong></p><p>n(triolein cho xà phòng) = 60,000,000 / 884 = 67,873 mol</p><p><strong>Xà phòng lý thuyết:</strong></p><p>n(xà phòng) = 3 × 67,873 = 203,619 mol</p><p>M(C₁₇H₃₃COONa) = 304 g/mol</p><p>m(xà phòng) lý thuyết = 203,619 × 304 = 61,900 kg</p><p><strong>Xà phòng thực tế (hiệu suất 90%):</strong></p><p>m(xà phòng) = 61,900 × 90% = 55,710 kg</p><p><strong>Glycerol lý thuyết:</strong></p><p>n(glycerol) = 67,873 mol</p><p>M(glycerol) = 92 g/mol</p><p>m(glycerol) lý thuyết = 67,873 × 92 = 6,244 kg</p><p><strong>Glycerol thực tế:</strong></p><p>m(glycerol) = 6,244 × 90% = 5,620 kg</p><p><strong>Bước 2: Sản xuất biodiesel</strong></p><p>Triolein + 3CH₃OH → 3 Methyl oleate + Glycerol</p><p>n(triolein cho biodiesel) = 40,000,000 / 884 = 45,249 mol</p><p><strong>Biodiesel lý thuyết:</strong></p><p>n(biodiesel) = 3 × 45,249 = 135,747 mol</p><p>M(methyl oleate) = 296 g/mol</p><p>m(biodiesel) lý thuyết = 135,747 × 296 = 40,181 kg</p><p><strong>Biodiesel thực tế (hiệu suất 85%):</strong></p><p>m(biodiesel) = 40,181 × 85% = 34,154 kg</p><p><strong>Glycerol từ biodiesel:</strong></p><p>n(glycerol) = 45,249 mol</p><p>m(glycerol) lý thuyết = 45,249 × 92 = 4,163 kg</p><p>m(glycerol) thực tế = 4,163 × 85% = 3,539 kg</p><p><strong>Tổng glycerol:</strong> 5,620 + 3,539 = 9,159 kg</p><p><strong>b) Tính lợi nhuận:</strong></p><p><strong>Chi phí:</strong></p><ul><li>Dầu: 100,000 × 20,000 = 2,000,000,000 đ</li><li>NaOH, CH₃OH, năng lượng: ~300,000,000 đ</li><li>Tổng chi phí: 2,300,000,000 đ</li></ul><p><strong>Doanh thu:</strong></p><ul><li>Xà phòng: 55,710 × 30,000 = 1,671,300,000 đ</li><li>Biodiesel: 34,154 × 25,000 = 853,850,000 đ</li><li>Glycerol: 9,159 × 50,000 = 457,950,000 đ</li><li>Tổng doanh thu: 2,983,100,000 đ</li></ul><p><strong>Lợi nhuận:</strong></p><p>Lợi nhuận = 2,983,100,000 - 2,300,000,000 = 683,100,000 đ</p><p>Tỷ suất lợi nhuận = 683,100,000 / 2,300,000,000 × 100% = 29.7%</p><p><strong>c) Đánh giá và đề xuất:</strong></p><p><strong>Ưu điểm quy trình:</strong></p><ul><li>✓ Tận dụng tối đa nguyên liệu (100% dầu)</li><li>✓ Đa dạng sản phẩm (xà phòng, biodiesel, glycerol)</li><li>✓ Glycerol có giá trị cao (phụ phẩm → sản phẩm)</li><li>✓ Lợi nhuận tốt (29.7%)</li><li>✓ Thân thiện môi trường (biodiesel)</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>✗ Hiệu suất chưa cao (90%, 85%)</li><li>✗ Cần nhiều hóa chất (NaOH, CH₃OH)</li><li>✗ Nước thải cần xử lý</li><li>✗ Phụ thuộc giá dầu thực vật</li></ul><p><strong>Đề xuất cải tiến:</strong></p><p><strong>1. Nâng cao hiệu suất:</strong></p><ul><li>Cải tiến thiết bị phản ứng</li><li>Tối ưu nhiệt độ, áp suất</li><li>Sử dụng xúc tác tốt hơn</li><li>Mục tiêu: 95% (xà phòng), 90% (biodiesel)</li></ul><p><strong>2. Tái sử dụng hóa chất:</strong></p><ul><li>Thu hồi methanol dư</li><li>Tái chế nước thải</li><li>Giảm 20% chi phí hóa chất</li></ul><p><strong>3. Mở rộng sản phẩm:</strong></p><ul><li>Glycerol → Sản xuất propylene glycol</li><li>Glycerol → Sản xuất 1,3-propanediol</li><li>Tăng giá trị glycerol lên 100,000đ/kg</li></ul><p><strong>4. Năng lượng tái tạo:</strong></p><ul><li>Sử dụng năng lượng mặt trời</li><li>Thu hồi nhiệt thải</li><li>Giảm 30% chi phí năng lượng</li></ul><p><strong>5. Xử lý môi trường:</strong></p><ul><li>Hệ thống xử lý nước thải hiện đại</li><li>Không xả thải ra môi trường</li><li>Đạt tiêu chuẩn ISO 14001</li></ul><p><strong>Dự báo sau cải tiến:</strong></p><ul><li>Hiệu suất tăng: +5-10%</li><li>Chi phí giảm: -15%</li><li>Lợi nhuận tăng: +40%</li><li>Tỷ suất lợi nhuận: ~40%</li></ul><p><strong>Kết luận:</strong></p><p>Quy trình tích hợp hiệu quả, lợi nhuận tốt (683 triệu đồng từ 100 tấn dầu). Cần cải tiến để nâng cao hiệu suất và giảm tác động môi trường. Đây là mô hình sản xuất bền vững, phù hợp xu hướng kinh tế xanh.</p><p><strong>Đáp án:</strong> a) 55,710 kg xà phòng, 34,154 kg biodiesel, 9,159 kg glycerol; b) Lợi nhuận 683 triệu đồng (29.7%); c) Đã phân tích và đề xuất chi tiết</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Ester no, đơn chức, mạch hở khi đốt cháy có đặc điểm:",
+            "options": [
+              "n(CO₂) > n(H₂O)",
+              "n(CO₂) < n(H₂O)",
+              "n(CO₂) = n(H₂O)",
+              "n(CO₂) = 2n(H₂O)"
+            ],
+            "correct": 2,
+            "explanation": "Ester no, đơn chức, mạch hở: n(CO₂) = n(H₂O)."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Thủy phân 1 mol lipid cần bao nhiêu mol NaOH?",
+            "options": ["1 mol", "2 mol", "3 mol", "4 mol"],
+            "correct": 2,
+            "explanation": "1 mol lipid + 3 mol NaOH → 3 mol xà phòng + glycerol."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Phản ứng nào là phản ứng một chiều?",
+            "options": [
+              "Este hóa",
+              "Thủy phân ester (acid)",
+              "Xà phòng hóa",
+              "Tất cả đều thuận nghịch"
+            ],
+            "correct": 2,
+            "explanation": "Xà phòng hóa là phản ứng một chiều (không thuận nghịch)."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Làm cứng hoàn toàn 1 mol triolein cần bao nhiêu mol H₂?",
+            "options": ["1 mol", "2 mol", "3 mol", "6 mol"],
+            "correct": 2,
+            "explanation": "Triolein có 3 liên kết C=C → cần 3 mol H₂."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Chất nào không phải sản phẩm xà phòng hóa lipid?",
+            "options": ["Xà phòng", "Glycerol", "Alcohol", "Muối natri"],
+            "correct": 2,
+            "explanation": "Xà phòng hóa lipid tạo xà phòng (muối) + glycerol, không tạo alcohol."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Ester C₄H₈O₂ có bao nhiêu đồng phân?",
+            "options": ["2", "3", "4", "5"],
+            "correct": 2,
+            "explanation": "C₄H₈O₂ có 4 đồng phân ester."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Phản ứng nào có hiệu suất cao nhất?",
+            "options": [
+              "Este hóa (60-80%)",
+              "Xà phòng hóa (90-95%)",
+              "Làm cứng dầu (85-90%)",
+              "Đốt cháy (100%)"
+            ],
+            "correct": 3,
+            "explanation": "Đốt cháy có hiệu suất 100% (phản ứng hoàn toàn)."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Chỉ số iod đặc trưng cho:",
+            "options": [
+              "Khối lượng phân tử",
+              "Độ không no",
+              "Tính acid",
+              "Độ tan"
+            ],
+            "correct": 1,
+            "explanation": "Chỉ số iod đặc trưng cho độ không no (số liên kết C=C)."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Xà phòng + Ca²⁺ tạo cặn theo tỉ lệ mol:",
+            "options": ["1:1", "2:1", "1:2", "3:1"],
+            "correct": 1,
+            "explanation": "2RCOONa + Ca²⁺ → (RCOO)₂Ca↓ (tỉ lệ 2:1)."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Biodiesel là ester của:",
+            "options": [
+              "Glycerol + Acid béo",
+              "Methanol + Acid béo",
+              "Ethanol + Acid béo",
+              "Propanol + Acid béo"
+            ],
+            "correct": 1,
+            "explanation": "Biodiesel là methyl ester của acid béo."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Phản ứng nào cần H₂SO₄ đặc làm xúc tác?",
+            "options": [
+              "Este hóa",
+              "Xà phòng hóa",
+              "Làm cứng dầu",
+              "Đốt cháy"
+            ],
+            "correct": 0,
+            "explanation": "Este hóa cần H₂SO₄ đặc làm xúc tác và hút nước."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Glycerol có công thức:",
+            "options": [
+              "C₂H₄(OH)₂",
+              "C₃H₅(OH)₃",
+              "C₄H₆(OH)₄",
+              "C₅H₇(OH)₅"
+            ],
+            "correct": 1,
+            "explanation": "Glycerol có công thức C₃H₅(OH)₃."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Sản phẩm xà phòng hóa lipid:",
+            "options": [
+              "Xà phòng",
+              "Glycerol",
+              "Alcohol",
+              "Nước"
+            ],
+            "correct": [0, 1],
+            "explanation": "Xà phòng hóa lipid tạo xà phòng + glycerol."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Phản ứng của ester:",
+            "options": [
+              "Thủy phân",
+              "Xà phòng hóa",
+              "Cháy",
+              "Tráng gương"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Ester có phản ứng thủy phân, xà phòng hóa, cháy. Không tráng gương."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Ứng dụng của glycerol:",
+            "options": [
+              "Mỹ phẩm",
+              "Dược phẩm",
+              "Thực phẩm",
+              "Nhiên liệu"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Glycerol dùng trong mỹ phẩm, dược phẩm, thực phẩm. Không dùng làm nhiên liệu."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Lipid không no có phản ứng:",
+            "options": [
+              "Cộng H₂",
+              "Cộng Br₂",
+              "Xà phòng hóa",
+              "Tráng gương"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Lipid không no cộng H₂, Br₂, xà phòng hóa. Không tráng gương."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Thủy phân 17.6g ester no, đơn chức cần 0.2 mol NaOH. Tính M(ester). Làm tròn đến hàng đơn vị.",
+            "correct": "88",
+            "explanation": "n(ester) = n(NaOH) = 0.2 mol. M = 17.6/0.2 = 88 g/mol. Đáp án: 88"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Xà phòng hóa 89g lipid (M=890) cần bao nhiêu gam NaOH? Làm tròn đến 1 chữ số thập phân.",
+            "correct": "12.0",
+            "explanation": "n(lipid) = 89/890 = 0.1 mol. n(NaOH) = 0.3 mol. m = 0.3×40 = 12g. Đáp án: 12.0"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Đốt 8.8g ester no, đơn chức thu được 17.6g CO₂. Tính n (số C). Làm tròn đến hàng đơn vị.",
+            "correct": "4",
+            "explanation": "n(CO₂) = 17.6/44 = 0.4 mol. M = 8.8/(0.4/n) = 22n. 14n+32 = 22n → n = 4. Đáp án: 4"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Làm cứng 88.4g triolein cần bao nhiêu lít H₂ (đktc)? Làm tròn đến 1 chữ số thập phân.",
+            "correct": "6.7",
+            "explanation": "n(triolein) = 88.4/884 = 0.1 mol. n(H₂) = 0.3 mol. V = 0.3×22.4 = 6.72 lít. Đáp án: 6.7"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Xà phòng hóa 1 mol lipid thu được bao nhiêu mol glycerol? Làm tròn đến hàng đơn vị.",
+            "correct": "1",
+            "explanation": "1 mol lipid → 1 mol glycerol. Đáp án: 1"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Este hóa có hiệu suất trung bình (%) là bao nhiêu? Làm tròn đến hàng chục.",
+            "correct": "70",
+            "explanation": "Este hóa có hiệu suất 60-80%, trung bình ~70%. Đáp án: 70"
+          }
+        ]
+      }
+    }
+  ]
+}

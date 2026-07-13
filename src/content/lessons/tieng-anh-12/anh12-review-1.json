@@ -1,0 +1,415 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-review-1",
+      "name": "Review 1 (Units 1 - 3)",
+      "slug": "review-1-units-1-3",
+      "chapter": "Review 1",
+      "chapter_id": "A12",
+      "lesson_id": 4,
+      "description": "Consolidation of vocabulary and grammar from Units 1, 2, and 3.",
+      "duration_minutes": 60,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2673&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "review-1-mixed",
+          "name": "Mixed Review",
+          "slug": "mixed-review",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Review 1: Units 1-3",
+          "sections": [
+            {
+              "heading": "I. Language - Ôn tập ngôn ngữ",
+              "content": "<h3>A. Pronunciation (Phát âm)</h3><p><strong>Unit 1:</strong> Stress in three-syllable words</p><ul class='list-disc pl-5 space-y-2'><li>Trọng âm thường rơi vào âm tiết thứ nhất (danh từ/tính từ) hoặc thứ hai (động từ)</li><li>Ex: <strong>AD</strong>mirable, ad<strong>MIRE</strong>, dedi<strong>CA</strong>tion, contri<strong>BU</strong>tion</li></ul><p><strong>Unit 2:</strong> Stress in four-syllable words</p><ul class='list-disc pl-5 space-y-2'><li>Trọng âm thường rơi vào âm tiết thứ hai hoặc thứ ba</li><li>Ex: mul<strong>TI</strong>cultural, discrimi<strong>NA</strong>tion, in<strong>TE</strong>gration</li></ul><p><strong>Unit 3:</strong> Linking sounds</p><ul class='list-disc pl-5 space-y-2'><li>Consonant + Vowel: liên kết trực tiếp</li><li>Ex: turn <strong>off</strong> → tur<strong>noff</strong>, pick <strong>up</strong> → pi<strong>ckup</strong></li></ul><h3>B. Vocabulary (Từ vựng)</h3><p><strong>Unit 1: Life Stories We Admire</strong></p><ul class='list-disc pl-5 space-y-2'><li>Qualities: admire, dedication, perseverance, determination, courage</li><li>Achievements: achievement, contribution, legacy, pioneer, influential</li><li>Challenges: overcome, struggle, obstacle, hardship</li></ul><p><strong>Unit 2: A Multicultural World</strong></p><ul class='list-disc pl-5 space-y-2'><li>Culture: multicultural, diversity, tradition, custom, heritage, identity</li><li>Integration: integrate, immigrant, assimilate, tolerance</li><li>Issues: discrimination, ethnic, celebrate</li></ul><p><strong>Unit 3: Green Living</strong></p><ul class='list-disc pl-5 space-y-2'><li>The 3Rs: reduce, reuse, recycle</li><li>Energy: sustainable, renewable, solar panel, emission, carbon footprint</li><li>Products: eco-friendly, biodegradable, organic</li><li>Actions: conserve, turn off, cut down on, pick up</li></ul><h3>C. Grammar (Ngữ pháp)</h3><p><strong>Unit 1: Past Simple & Past Continuous</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Past Simple:</strong> hành động đã hoàn thành (yesterday, last week, ago, in + year)</li><li>Ex: Marie Curie <strong>won</strong> two Nobel Prizes.</li><li><strong>Past Continuous:</strong> hành động đang xảy ra tại thời điểm trong quá khứ</li><li>Ex: She <strong>was studying</strong> when I called.</li><li><strong>Kết hợp:</strong> Past Continuous + when + Past Simple</li><li>Ex: I <strong>was reading</strong> when she <strong>arrived</strong>.</li></ul><p><strong>Unit 2: Articles (A, An, The, Zero article)</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>A/An:</strong> lần đầu nhắc, trước danh từ số ít đếm được</li><li>Ex: I met <strong>an</strong> immigrant from Vietnam.</li><li><strong>The:</strong> đã nhắc đến, duy nhất, so sánh nhất</li><li>Ex: <strong>The</strong> United States, <strong>the</strong> most diverse country</li><li><strong>Zero article:</strong> danh từ số nhiều/không đếm được nói chung, tên nước, ngôn ngữ, bữa ăn</li><li>Ex: <strong>Ø</strong> Diversity is important. / speak <strong>Ø</strong> English / have <strong>Ø</strong> breakfast</li></ul><p><strong>Unit 3: Phrasal Verbs & Relative Pronoun 'which'</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Phrasal verbs:</strong> turn off, cut down on, give up, pick up, throw away, run out of</li><li>Với đại từ: Turn <strong>it</strong> off (NOT: Turn off it)</li><li><strong>Which:</strong> thay thế cho vật/sự việc</li><li>Ex: Solar panels, <strong>which</strong> convert sunlight, are eco-friendly.</li><li>Ex: He recycles, <strong>which</strong> is responsible. (which = việc anh ấy tái chế)</li></ul>"
+            }
+,
+            {
+              "heading": "II. Skills - Ôn tập kỹ năng",
+              "content": "<h3>A. Reading (Đọc hiểu)</h3><p><strong>Kỹ năng cần ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc lướt để nắm ý chính (skimming)</li><li>Đọc kỹ để tìm thông tin chi tiết (scanning)</li><li>Đoán nghĩa từ vựng qua ngữ cảnh</li><li>Hiểu ý chính và ý phụ của đoạn văn</li><li>Xác định thông tin đúng/sai</li><li>Suy luận và rút ra kết luận</li></ul><p><strong>Chủ đề đã đọc:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Biographies of inspiring people (Marie Curie, Nelson Mandela)</li><li>Multicultural societies (Canada, Australia, Singapore)</li><li>Green living and sustainable development</li></ul><h3>B. Speaking (Nói)</h3><p><strong>Chủ đề đã học:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Talking about people you admire</li><li>Discussing cultural diversity and integration</li><li>Talking about green living practices</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>I admire... because... / What I admire most is...</li><li>He/She was born in... / He/She overcame...</li><li>In my opinion, cultural diversity...</li><li>We should respect/embrace...</li><li>I try to... / We should turn off/cut down on...</li><li>It's important to...</li></ul><h3>C. Listening (Nghe hiểu)</h3><p><strong>Kỹ năng cần ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe để nắm ý chính</li><li>Nghe để tìm thông tin cụ thể</li><li>Điền thông tin còn thiếu (gap-filling)</li><li>Trả lời câu hỏi chi tiết</li><li>Ghi chú các ý quan trọng (note-taking)</li><li>Hiểu thái độ và ý kiến của người nói</li></ul><p><strong>Chủ đề đã nghe:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Talks about inspiring life stories</li><li>Discussions about multicultural communities</li><li>Presentations about green living tips</li></ul><h3>D. Writing (Viết)</h3><p><strong>Dạng bài đã học:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Writing biographies of admired people</li><li>Writing articles about cultural diversity</li><li>Writing proposals about green living</li></ul><p><strong>Kỹ năng viết:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Tổ chức bài viết: Introduction - Body - Conclusion</li><li>Sử dụng thì quá khứ đơn và quá khứ tiếp diễn</li><li>Sử dụng mạo từ chính xác</li><li>Sử dụng phrasal verbs và relative clauses</li><li>Viết câu đa dạng và mạch lạc</li></ul><p><strong>Cấu trúc bài viết mẫu:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Introduction:</strong> Giới thiệu chủ đề (1-2 câu)</li><li><strong>Body:</strong> Trình bày ý chính (2-3 đoạn với supporting details)</li><li><strong>Conclusion:</strong> Kết luận và nhấn mạnh ý chính (1-2 câu)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Mixed Exercise",
+            "method": "<p>Review all grammar points and vocabulary from Units 1-3.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Nelson Mandela was born in 1918 in South Africa. He grew up during a time when black people faced severe discrimination under apartheid, a system that separated people by race. Despite these challenges, Mandela was determined to fight for equality and justice.\n\nWhile he was studying law at university, Mandela became involved in the anti-apartheid movement. He joined the African National Congress (ANC) and dedicated his life to ending racial discrimination. In 1964, he was arrested and sentenced to life in prison. He spent 27 years in jail, but he never gave up his beliefs.\n\nDuring his imprisonment, Mandela became a symbol of resistance. People around the world, which included leaders and ordinary citizens, campaigned for his release. Finally, in 1990, he was freed. Four years later, he became South Africa's first black president.\n\nMandela's legacy is remarkable. He showed that perseverance and forgiveness can overcome hatred. His story inspires millions of people to stand up for justice. He received the Nobel Peace Prize in 1993 and is remembered as one of the most influential leaders in history.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "Mandela was born in 1918",
+                  "Mandela's inspiring life story and fight for equality",
+                  "Apartheid was a bad system",
+                  "Mandela spent time in prison"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về câu chuyện cuộc đời truyền cảm hứng và cuộc đấu tranh cho bình đẳng của Mandela."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "How long did Mandela spend in prison?",
+                "options": [
+                  "10 years",
+                  "27 years",
+                  "4 years",
+                  "50 years"
+                ],
+                "correct": 1,
+                "explanation": "Mandela dành 27 năm trong tù."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The word 'severe' in paragraph 1 is closest in meaning to ______.",
+                "options": [
+                  "mild",
+                  "very serious",
+                  "small",
+                  "happy"
+                ],
+                "correct": 1,
+                "explanation": "Severe = very serious (nghiêm trọng)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "When did Mandela become South Africa's president?",
+                "options": [
+                  "1964",
+                  "1990",
+                  "1994",
+                  "1993"
+                ],
+                "correct": 2,
+                "explanation": "Mandela trở thành tổng thống năm 1994 (4 năm sau khi được thả năm 1990)."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "What did Mandela receive in 1993?",
+                "options": [
+                  "A prison sentence",
+                  "The Nobel Peace Prize",
+                  "A law degree",
+                  "Nothing"
+                ],
+                "correct": 1,
+                "explanation": "Mandela nhận giải Nobel Hòa bình năm 1993."
+              }
+            ]
+          }
+,
+          {
+            "id": "reading2",
+            "type": "reading",
+            "passage": "Living in a multicultural society offers many benefits, but it also presents challenges. Countries like Canada and Australia have successfully created diverse communities where people from different cultures live together harmoniously.\n\nOne major advantage of multiculturalism is cultural enrichment. When people from various backgrounds share their traditions, cuisines, and customs, society becomes more interesting and vibrant. For example, in Toronto, you can experience food from over 200 countries. This diversity also promotes tolerance and understanding among different groups.\n\nHowever, integration can be difficult. Immigrants must learn a new language and adapt to different customs, which takes time and effort. Some people face discrimination, which makes them feel unwelcome. To address these issues, governments provide language classes and settlement services. Schools teach students about different cultures to promote respect from an early age.\n\nEnvironmental protection is also important in diverse societies. People should turn off lights when not needed and cut down on waste. Using public transportation instead of cars helps reduce carbon emissions. By working together, multicultural communities can create sustainable cities that benefit everyone.",
+            "questions": [
+              {
+                "id": "reading2-q1",
+                "question": "What is one benefit of multiculturalism mentioned?",
+                "options": [
+                  "Everyone speaks the same language",
+                  "Cultural enrichment and diversity",
+                  "No challenges exist",
+                  "People stay separate"
+                ],
+                "correct": 1,
+                "explanation": "Một lợi ích là làm phong phú văn hóa và sự đa dạng."
+              },
+              {
+                "id": "reading2-q2",
+                "question": "What challenge do immigrants face?",
+                "options": [
+                  "Too much food",
+                  "Learning a new language and adapting to customs",
+                  "Too many festivals",
+                  "Nothing difficult"
+                ],
+                "correct": 1,
+                "explanation": "Người nhập cư phải học ngôn ngữ mới và thích nghi với phong tục khác."
+              },
+              {
+                "id": "reading2-q3",
+                "question": "The word 'harmoniously' in paragraph 1 is closest in meaning to ______.",
+                "options": [
+                  "peacefully together",
+                  "separately",
+                  "angrily",
+                  "sadly"
+                ],
+                "correct": 0,
+                "explanation": "Harmoniously = peacefully together (hòa thuận, hòa hợp)."
+              },
+              {
+                "id": "reading2-q4",
+                "question": "How do governments help immigrants integrate?",
+                "options": [
+                  "By ignoring them",
+                  "By providing language classes and settlement services",
+                  "By sending them away",
+                  "By making them forget their culture"
+                ],
+                "correct": 1,
+                "explanation": "Chính phủ cung cấp lớp học ngôn ngữ và dịch vụ định cư."
+              },
+              {
+                "id": "reading2-q5",
+                "question": "According to the passage, what helps reduce carbon emissions?",
+                "options": [
+                  "Driving more cars",
+                  "Using public transportation",
+                  "Wasting energy",
+                  "Buying more products"
+                ],
+                "correct": 1,
+                "explanation": "Sử dụng phương tiện công cộng giúp giảm khí thải carbon."
+              }
+            ]
+          }
+,
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "Marie Curie ______ two Nobel Prizes during her lifetime.",
+            "options": ["win", "won", "was winning", "has won"],
+            "correct": 1,
+            "explanation": "Won (Past Simple) - hành động đã hoàn thành trong quá khứ với thời gian xác định."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "She is ______ immigrant from Vietnam.",
+            "options": ["a", "an", "the", "Ø"],
+            "correct": 1,
+            "explanation": "An (trước nguyên âm 'i') - lần đầu nhắc đến."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "Please ______ the lights when you leave.",
+            "options": ["turn off", "turn on", "turn up", "turn down"],
+            "correct": 0,
+            "explanation": "Turn off: tắt (đèn)."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "While she ______ at university, she joined the movement.",
+            "options": ["studied", "was studying", "studies", "has studied"],
+            "correct": 1,
+            "explanation": "Was studying (Past Continuous) - hành động đang diễn ra trong quá khứ."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "______ diversity is important in modern society.",
+            "options": ["A", "An", "The", "Ø"],
+            "correct": 3,
+            "explanation": "Ø (zero article) - danh từ không đếm được nói chung."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "Solar panels, ______ convert sunlight to energy, are eco-friendly.",
+            "options": ["who", "which", "where", "when"],
+            "correct": 1,
+            "explanation": "Which: đại từ quan hệ thay thế cho vật (solar panels)."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "I really ______ her courage and determination.",
+            "options": ["admire", "admires", "admiring", "admired"],
+            "correct": 0,
+            "explanation": "Admire (Present Simple) - sự thật hiện tại."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "Immigrants need to ______ into society.",
+            "options": ["integrate", "integration", "integrated", "integrating"],
+            "correct": 0,
+            "explanation": "Integrate (v) - động từ nguyên thể sau 'need to'."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "We should ______ plastic bags and use reusable ones.",
+            "options": ["give in", "give up", "give away", "give out"],
+            "correct": 1,
+            "explanation": "Give up: từ bỏ."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "I visited ______ United States last year.",
+            "options": ["a", "an", "the", "Ø"],
+            "correct": 2,
+            "explanation": "The United States - tên nước có từ 'United' cần mạo từ 'the'."
+          },
+          {
+            "id": "mcq11",
+            "type": "mcq",
+            "question": "He ______ many obstacles to achieve success.",
+            "options": ["overcome", "overcame", "was overcoming", "overcomes"],
+            "correct": 1,
+            "explanation": "Overcame (Past Simple) - hành động đã hoàn thành trong quá khứ."
+          },
+          {
+            "id": "mcq12",
+            "type": "mcq",
+            "question": "We speak ______ English at school.",
+            "options": ["a", "an", "the", "Ø"],
+            "correct": 3,
+            "explanation": "Ø (zero article) - không dùng mạo từ trước tên ngôn ngữ."
+          },
+          {
+            "id": "mcq13",
+            "type": "mcq",
+            "question": "Don't ______ recyclable materials.",
+            "options": ["throw away", "throw up", "throw in", "throw out"],
+            "correct": 0,
+            "explanation": "Throw away: vứt bỏ."
+          },
+          {
+            "id": "mcq14",
+            "type": "mcq",
+            "question": "While he ______ his speech, the audience ______ quietly.",
+            "options": ["gave / listened", "was giving / was listening", "gave / was listening", "was giving / listened"],
+            "correct": 1,
+            "explanation": "Was giving / was listening (Past Continuous) - hai hành động đang xảy ra đồng thời."
+          },
+          {
+            "id": "mcq15",
+            "type": "mcq",
+            "question": "He recycles all his waste, ______ is very responsible.",
+            "options": ["who", "which", "that", "what"],
+            "correct": 1,
+            "explanation": "Which: thay thế cho cả mệnh đề trước đó (việc anh ấy tái chế)."
+          }
+,
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "Past Simple is used for completed actions with specific time in the past.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Past Simple dùng cho hành động đã hoàn thành với thời gian xác định trong quá khứ."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "We use 'the' before the names of most countries.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Hầu hết tên nước không dùng 'the' (Vietnam, France), chỉ một số nước đặc biệt mới dùng (the UK, the USA)."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "Phrasal verbs with pronouns must have the pronoun between the verb and preposition.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Với đại từ phải đặt giữa: Turn it off (NOT: Turn off it)."
+          },
+          {
+            "id": "msq4",
+            "type": "msq",
+            "question_text": "Marie Curie won Nobel Prizes in three different sciences.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Marie Curie giành giải Nobel ở hai lĩnh vực: Vật lý và Hóa học."
+          },
+          {
+            "id": "msq5",
+            "type": "msq",
+            "question_text": "'Which' can replace a whole clause, not just a noun.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. 'Which' có thể thay thế cả mệnh đề: He recycles, which is good."
+          }
+,
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call someone who is the first to do something? (one word)",
+            "correct": "pioneer",
+            "explanation": "Pioneer: người tiên phong."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "What do we call a person who moves to another country to live? (one word)",
+            "correct": "immigrant",
+            "explanation": "Immigrant: người nhập cư."
+          },
+          {
+            "id": "sa3",
+            "type": "sa",
+            "question_text": "Complete: She ______ (study) when I called her. (Past Continuous)",
+            "correct": "was studying",
+            "explanation": "Was studying (Past Continuous) - hành động đang xảy ra khi có hành động khác xen vào."
+          },
+          {
+            "id": "sa4",
+            "type": "sa",
+            "question_text": "What do we call energy that can be replaced naturally? (one word)",
+            "correct": "renewable",
+            "explanation": "Renewable energy: năng lượng tái tạo."
+          }
+,
+          {
+            "id": "essay1",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about a person you admire. Use Past Simple and Past Continuous.",
+            "sample_answer": "I really admire Malala Yousafzai, who is a Pakistani activist for female education. She was born in 1997 in Pakistan. While she was studying at school, the Taliban banned girls from attending classes. Despite facing death threats, she continued to speak out for education rights. In 2012, while she was returning home from school, she was shot by the Taliban. However, she survived and became even more determined. She won the Nobel Peace Prize in 2014 at age 17, becoming the youngest Nobel laureate. Her courage and dedication inspire millions of people worldwide.",
+            "explanation": "Bài viết sử dụng Past Simple cho các sự kiện đã hoàn thành và Past Continuous cho hành động đang diễn ra khi có sự kiện khác xảy ra."
+          },
+          {
+            "id": "essay2",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about the benefits of living in a multicultural society. Use articles correctly.",
+            "sample_answer": "Living in a multicultural society brings many benefits. First, cultural diversity enriches our lives. We can experience different cuisines, traditions, and festivals from around the world. For example, in Canada, people celebrate both Chinese New Year and Christmas. Second, multiculturalism promotes tolerance and understanding. When we interact with people from different backgrounds, we learn to respect differences. Third, diverse societies are more creative and innovative. Immigrants bring new ideas and perspectives that help solve problems. In conclusion, the benefits of multiculturalism make our communities stronger and more vibrant.",
+            "explanation": "Bài viết sử dụng mạo từ chính xác: 'a multicultural society' (lần đầu nhắc), 'the benefits' (đã nhắc đến), zero article với 'Ø cultural diversity' (nói chung)."
+          },
+          {
+            "id": "essay3",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about what you do to live green. Use phrasal verbs and 'which'.",
+            "sample_answer": "I try to live green by making small changes in my daily life. First, I always turn off lights and appliances when I'm not using them, which helps save energy. Second, I cut down on plastic use by bringing reusable bags when shopping. I also pick up litter in my neighborhood, which keeps the environment clean. Third, I never throw away items that can be recycled. Instead, I separate waste into different bins. Finally, I use public transportation instead of asking my parents to drive me, which reduces carbon emissions. These simple actions make a difference.",
+            "explanation": "Bài viết sử dụng phrasal verbs (turn off, cut down on, pick up, throw away) và 'which' để nối mệnh đề quan hệ."
+          },
+          {
+            "id": "essay4",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) explaining how past experiences shape who we are today.",
+            "sample_answer": "Our past experiences play a crucial role in shaping our present identity. When we face challenges and overcome them, we become stronger and more resilient. For example, while I was struggling with math in grade 10, I learned the importance of perseverance. That experience taught me never to give up. Similarly, people who experienced discrimination often become advocates for equality. Nelson Mandela spent 27 years in prison, but that experience made him more determined to fight for justice. In conclusion, our past struggles and achievements help us grow and become better people.",
+            "explanation": "Bài viết kết hợp Past Simple và Past Continuous để mô tả kinh nghiệm quá khứ và ảnh hưởng của chúng đến hiện tại."
+          },
+          {
+            "id": "essay5",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about how individuals can contribute to both cultural diversity and environmental protection.",
+            "sample_answer": "Individuals can contribute to both cultural diversity and environmental protection in meaningful ways. First, we should respect and celebrate different cultures by learning about traditions and customs, which promotes tolerance. We can attend cultural festivals and try foods from various countries. At the same time, we must protect the environment by turning off unnecessary lights and cutting down on waste. We should give up single-use plastics and use eco-friendly products. By combining cultural appreciation with green living, we create sustainable multicultural communities. In conclusion, everyone has a responsibility to embrace diversity while protecting our planet for future generations.",
+            "explanation": "Bài viết kết hợp từ vựng và ngữ pháp từ cả ba unit: cultural diversity, phrasal verbs, relative pronoun 'which', và articles."
+          }
+        ]
+      }
+    }
+  ]
+}

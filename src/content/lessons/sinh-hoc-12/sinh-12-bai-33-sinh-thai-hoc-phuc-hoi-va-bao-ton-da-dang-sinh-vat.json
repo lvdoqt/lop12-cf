@@ -1,0 +1,192 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-33",
+      "name": "Bài 33. Sinh thái học phục hồi và bảo tồn đa dạng sinh vật",
+      "slug": "sinh-thai-hoc-phuc-hoi-va-bao-ton-da-dang-sinh-vat",
+      "chapter": "Chương 8. Sinh thái học phục hồi, bảo tồn và phát triển bền vững",
+      "chapter_id": "S12-8",
+      "lesson_id": 33,
+      "description": "Tìm hiểu về sinh thái học phục hồi và bảo tồn đa dạng sinh vật.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Sinh thái học phục hồi và bảo tồn đa dạng sinh vật",
+          "sections": [
+            {
+              "heading": "1. Đa dạng sinh vật",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Đa dạng sinh vật</strong> là sự phong phú về số lượng loài, số lượng cá thể và sự đa dạng di truyền trong sinh giới.</li></ul><h4>b) Các cấp độ</h4><ul><li><strong>Đa dạng loài:</strong> Số lượng loài khác nhau.</li><li><strong>Đa dạng di truyền:</strong> Sự khác biệt gen trong cùng loài.</li><li><strong>Đa dạng hệ sinh thái:</strong> Sự khác biệt giữa các hệ sinh thái.</li></ul><h4>c) Ý nghĩa</h4><ul><li>Duy trì cân bằng sinh thái.</li><li>Cung cấp tài nguyên gen.</li><li>Giá trị kinh tế, y tế, khoa học.</li></ul>"
+            },
+            {
+              "heading": "2. Suy thoái đa dạng sinh vật",
+              "content": "<h4>a) Nguyên nhân</h4><ul><li><strong>Mất môi trường sống:</strong> Phá rừng, lấn biển, đô thị hóa.</li><li><strong>Khai thác quá mức:</strong> Đánh bắt cá quá mức, săn bắt động vật hoang dã.</li><li><strong>Ô nhiễm môi trường:</strong> Hóa chất, rác thải, khí thải.</li><li><strong>Biến đổi khí hậu:</strong> Nhiệt độ tăng, mực nước biển dâng.</li><li><strong>Loài ngoại lai xâm lấn:</strong> Cạnh tranh với loài bản địa.</li></ul><h4>b) Hậu quả</h4><ul><li>Mất cân bằng sinh thái.</li><li>Giảm khả năng chống chịu của hệ sinh thái.</li><li>Mất nguồn gen quý hiếm.</li></ul>"
+            },
+            {
+              "heading": "3. Sinh thái học phục hồi",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Sinh thái học phục hồi</strong> là ngành khoa học nghiên cứu cách khôi phục các hệ sinh thái bị suy thoái, bị hư hại về trạng thái ban đầu hoặc trạng thái có chức năng tương đương.</li></ul><h4>b) Nguyên tắc phục hồi</h4><ul><li><strong>Giảm áp lực:</strong> Loại bỏ tác nhân gây hại.</li><li><strong>Tái tạo môi trường:</strong> Phục hồi đất, nước.</li><li><strong>Tái thiết quần xã:</strong> Đưa các loài về.</li><li><strong>Thời gian:</strong> Cần thời gian dài để phục hồi.</li></ul><h4>c) Các phương pháp</h4><ul><li><strong>Phục hồi tự nhiên:</strong> Để hệ tự phục hồi.</li><li><strong>Phục hồi chủ động:</strong> Can thiệp của con người.</li><li><strong>Tái sinh học:</strong> Sử dụng kỹ thuật sinh học.</li></ul>"
+            },
+            {
+              "heading": "4. Bảo tồn đa dạng sinh vật",
+              "content": "<h4>a) Chiến lược bảo tồn</h4><ul><li><strong>Bảo tồn trong môi trường sống tự nhiên (in situ):</li></ul><ul><li>+ Khu bảo tồn thiên nhiên, vườn quốc gia.</li><li>+ Khu dự trữ sinh quyển.</li><li>+ Bảo tồn các loài nguy cấp.</li></ul><ul><li><strong>Bảo tồn ngoài môi trường sống (ex situ):</li></ul><ul><li>+ Vườn thú, vườn bách thảo.</li><li>+ Ngân hàng gen, ngân hàng hạt giống.</li><li>+ Nhân giống, gây nuôi nhân tạo.</li></ul><h4>b) Luật pháp và chính sách</h4><ul><li>Công ước CITES về buôn bán quốc tế loài nguy cấp.</li><li>Luật Đa dạng sinh học tại Việt Nam.</li><li>Red List - Danh sách đỏ các loài bị đe dọa.</li></ul>"
+            },
+            {
+              "heading": "5. Vai trò của con người",
+              "content": "<h4>a) Trách nhiệm</h4><ul><li>Mỗi cá nhân có trách nhiệm bảo vệ môi trường.</li><li>Hạn chế sử dụng tài nguyên không tái tạo.</li><li>Giảm ô nhiễm, rác thải.</li></ul><h4>b) Hành động cụ thể</h4><ul><li>Trồng cây, phục hồi rừng.</li><li>Giảm sử dụng nhựa, túi ni lông.</li><li>Tiết kiệm nước, điện.</li><li>Tuyên truyền, nâng cao nhận thức.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Đa dạng sinh vật gồm những cấp độ nào?",
+            "options": [
+              "Đa dạng loài, đa dạng cá thể",
+              "Đa dạng loài, đa dạng di truyền, đa dạng hệ sinh thái",
+              "Đa dạng hình thái, đa dạng màu sắc",
+              "Đa dạng kích thước"
+            ],
+            "correct": 1,
+            "explanation": "Đa dạng sinh vật gồm: đa dạng loài, đa dạng di truyền, đa dạng hệ sinh thái."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Nguyên nhân chính gây suy thoái đa dạng sinh vật là gì?",
+            "options": [
+              "Mất môi trường sống",
+              "Ô nhiễm",
+              "Khai thác quá mức",
+              "Tất cả đều đúng"
+            ],
+            "correct": 3,
+            "explanation": "Tất cả các nguyên nhân: mất môi trường sống, ô nhiễm, khai thác quá mức đều gây suy thoái."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Sinh thái học phục hồi nghiên cứu gì?",
+            "options": [
+              "Cách chống ô nhiễm",
+              "Cách khôi phục hệ sinh thái bị suy thoái",
+              "Cách khai thác tài nguyên",
+              "Cách tăng năng suất"
+            ],
+            "correct": 1,
+            "explanation": "Sinh thái học phục hồi nghiên cứu cách khôi phục các hệ sinh thái bị suy thoái."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Bảo tồn in situ là gì?",
+            "options": [
+              "Bảo tồn trong vườn thú",
+              "Bảo tồn trong môi trường sống tự nhiên",
+              "Bảo tồn trong ngân hàng gen",
+              "Bảo tồn bằng nhân giống"
+            ],
+            "correct": 1,
+            "explanation": "Bảo tồn in situ là bảo tồn tại môi trường sống tự nhiên như vườn quốc gia, khu bảo tồn."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Phương pháp bảo tồn nào ex situ?",
+            "options": [
+              "Khu bảo tồn thiên nhiên",
+              "Vườn quốc gia",
+              "Ngân hàng gen",
+              "Khu dự trữ sinh quyển"
+            ],
+            "correct": 2,
+            "explanation": "Ngân hàng gen là phương pháp bảo tồn ex situ (ngoài môi trường sống tự nhiên)."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các nguyên nhân suy thoái đa dạng sinh vật:",
+            "options": [
+              "Phá rừng",
+              "Ô nhiễm môi trường",
+              "Trồng cây xanh",
+              "Khai thác quá mức"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Phá rừng, ô nhiễm, khai thác quá mức gây suy thoái. Trồng cây xanh là hành động bảo tồn."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các phương pháp bảo tồn ex situ:",
+            "options": [
+              "Vườn thú",
+              "Ngân hàng gen",
+              "Vườn quốc gia",
+              "Nhân giống nhân tạo"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Vườn thú, ngân hàng gen, nhân giống là ex situ. Vườn quốc gia là in situ."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Có 3 cấp độ đa dạng sinh vật. Điền số 1 chữ số.",
+            "correct": "3"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Việt Nam có khoảng bao nhiêu vườn quốc gia? Nhập số 2 chữ số (ước tính).",
+            "correct": "30"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân biệt các phương pháp bảo tồn",
+            "method": "<h3>Phương pháp giải</h3><ol><li><strong>In situ:</strong> Bảo tồn tại chỗ, trong môi trường sống tự nhiên.</li><li>+ Vườn quốc gia, khu bảo tồn, khu dự trữ sinh quyển.</li><li><strong>Ex situ:</strong> Bảo tồn ngoài môi trường sống tự nhiên.</li><li>+ Vườn thú, vườn bách thảo, ngân hàng gen, nhân giống.</li></ol>",
+            "examples": [
+              {
+                "question": "Khu bảo ôn thiên nhiên là phương pháp bảo tồn nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Khu bảo tồn thiên nhiên bảo tồn tại chỗ → In situ.</p>"
+              },
+              {
+                "question": "Ngân hàng hạt giống là phương pháp nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Ngân hàng hạt giống lưu trữ ngoài môi trường tự nhiên → Ex situ.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định nguyên nhân suy thoái và biện pháp khắc phục",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Phân tích tình huống suy thoái.</li><li>Xác định nguyên nhân chính.</li><li>Đề xuất biện pháp phù hợp:</li><li>- Phá rừng → Trồng rừng, bảo vệ rừng.</li><li>- Ô nhiễm → Xử lý chất thải, giảm phát thải.</li><li>- Khai thác quá mức → Quản lý khai thác, nghỉ sinh thái.</li></ol>",
+            "examples": [
+              {
+                "question": "Một hồ bị ô nhiễm nặng, cá chết hàng loạt. Nguyên nhân và biện pháp?",
+                "solution": "<p><strong>Giải:</strong></p><p>Nguyên nhân: Ô nhiễm nước từ nước thải sinh hoạt, công nghiệp.</p><p>Biện pháp: Xử lý nước thải, phục hồi hệ sinh thái, cấp cá giống.</p>"
+              },
+              {
+                "question": "Rừng bị phá để trồng cây công nghiệp. Đề xuất biện pháp?",
+                "solution": "<p><strong>Giải:</strong></p><p>Biện pháp: Trồng rừng phục hồi, chuyển đổi sang trồng cây bản địa, thu hẹp diện tích cây công nghiệp.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

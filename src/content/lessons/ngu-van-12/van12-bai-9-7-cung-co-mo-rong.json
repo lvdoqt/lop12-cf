@@ -1,0 +1,155 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-9-7-cung-co-mo-rong",
+      "name": "Củng cố, mở rộng",
+      "slug": "cung-co-mo-rong",
+      "chapter": "Văn học và cuộc đời",
+      "chapter_id": "V12-9",
+      "lesson_id": 7,
+      "description": "Củng cố kiến thức về mối quan hệ giữa văn học và cuộc đời, mở rộng hiểu biết về vai trò của văn học.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "consolidation",
+          "name": "Củng cố kiến thức",
+          "slug": "cung-co-kien-thuc",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Củng cố về văn học và cuộc đời",
+          "sections": [
+            {
+              "heading": "1. Mối quan hệ văn học và cuộc đời",
+              "content": "<h4>a) Văn học phản ánh cuộc đời</h4><ul><li><strong>Hiện thực:</strong> Đời sống xã hội</li><li><strong>Con người:</strong> Tâm tư, tình cảm</li><li><strong>Thời đại:</strong> Bối cảnh lịch sử</li></ul><h4>b) Văn học tác động đến cuộc đời</h4><ul><li><strong>Giáo dục:</strong> Tư tưởng, đạo đức</li><li><strong>Thẩm mỹ:</strong> Nâng cao nhận thức</li><li><strong>Hành động:</strong> Thay đổi xã hội</li></ul>"
+            },
+            {
+              "heading": "2. Vai trò của văn học",
+              "content": "<h4>a) Giáo dục</h4><ul><li><strong>Tri thức:</strong> Kiến thức về đời sống</li><li><strong>Đạo đức:</strong> Giá trị nhân văn</li><li><strong>Thẩm mỹ:</strong> Nâng cao nhận thức</li></ul><h4>b) Giải trí</h4><ul><li><strong>Thư giãn:</strong> Sau giờ làm việc</li><li><strong>Cảm xúc:</strong> Chia sẻ, đồng cảm</li><li><strong>Trải nghiệm:</strong> Cuộc sống qua văn học</li></ul><h4>c) Xã hội</h4><ul><li><strong>Phản ánh:</strong> Hiện thực xã hội</li><li><strong>Phê phán:</strong> Tiêu cực, bất công</li><li><strong>Định hướng:</strong> Giá trị tốt đẹp</li></ul>"
+            },
+            {
+              "heading": "3. Đọc và thưởng thức văn học",
+              "content": "<h4>a) Cách đọc</h4><ul><li><strong>Chọn lọc:</strong> Tác phẩm phù hợp</li><li><strong>Suy ngẫm:</strong> Thông điệp, ý nghĩa</li><li><strong>Liên hệ:</strong> Với cuộc sống</li></ul><h4>b) Thưởng thức</h4><ul><li><strong>Nội dung:</strong> Chủ đề, nhân vật</li><li><strong>Nghệ thuật:</strong> Ngôn ngữ, kỹ thuật</li><li><strong>Giá trị:</strong> Nhân văn, xã hội</li></ul><h4>c) Ứng dụng</h4><ul><li><strong>Học tập:</strong> Bài học cuộc sống</li><li><strong>Sáng tạo:</strong> Viết văn, thơ</li><li><strong>Chia sẻ:</strong> Với người khác</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex9-7-1",
+              "type": "mcq",
+              "question": "Văn học phản ánh cuộc đời như thế nào?",
+              "options": [
+                "Không phản ánh",
+                "Phản ánh hiện thực, con người, thời đại",
+                "Chỉ tưởng tượng",
+                "Không liên quan"
+              ],
+              "correct": 1,
+              "explanation": "Văn học phản ánh hiện thực đời sống xã hội, con người và bối cảnh thời đại."
+            },
+            {
+              "id": "ex9-7-2",
+              "type": "mcq",
+              "question": "Văn học tác động đến cuộc đời qua điều gì?",
+              "options": [
+                "Không tác động",
+                "Giáo dục tư tưởng, nâng cao thẩm mỹ, thay đổi hành động",
+                "Chỉ giải trí",
+                "Không ảnh hưởng"
+              ],
+              "correct": 1,
+              "explanation": "Văn học tác động qua việc giáo dục tư tưởng, nâng cao nhận thức thẩm mỹ và thay đổi hành động."
+            },
+            {
+              "id": "ex9-7-3",
+              "type": "mcq",
+              "question": "Vai trò giáo dục của văn học là gì?",
+              "options": [
+                "Không có vai trò",
+                "Cung cấp tri thức, giáo dục đạo đức, nâng cao thẩm mỹ",
+                "Chỉ dạy chữ",
+                "Chỉ giải trí"
+              ],
+              "correct": 1,
+              "explanation": "Văn học có vai trò giáo dục: cung cấp tri thức, giáo dục đạo đức và nâng cao nhận thức thẩm mỹ."
+            },
+            {
+              "id": "ex9-7-4",
+              "type": "mcq",
+              "question": "Văn học có vai trò xã hội gì?",
+              "options": [
+                "Không có vai trò",
+                "Phản ánh, phê phán hiện thực, định hướng giá trị",
+                "Chỉ kể chuyện",
+                "Không liên quan xã hội"
+              ],
+              "correct": 1,
+              "explanation": "Văn học phản ánh và phê phán hiện thực xã hội, định hướng các giá trị tốt đẹp."
+            },
+            {
+              "id": "ex9-7-5",
+              "type": "mcq",
+              "question": "Khi đọc văn học, cần làm gì?",
+              "options": [
+                "Chỉ đọc lướt",
+                "Chọn lọc tác phẩm, suy ngẫm, liên hệ cuộc sống",
+                "Không cần suy nghĩ",
+                "Chỉ ghi nhớ"
+              ],
+              "correct": 1,
+              "explanation": "Cần chọn lọc tác phẩm phù hợp, suy ngẫm về thông điệp và liên hệ với cuộc sống."
+            },
+            {
+              "id": "ex9-7-6",
+              "type": "mcq",
+              "question": "Thưởng thức văn học cần chú ý những gì?",
+              "options": [
+                "Chỉ chú ý cốt truyện",
+                "Nội dung, nghệ thuật, giá trị nhân văn",
+                "Không cần chú ý gì",
+                "Chỉ chú ý nhân vật"
+              ],
+              "correct": 1,
+              "explanation": "Cần chú ý đến nội dung (chủ đề, nhân vật), nghệ thuật (ngôn ngữ, kỹ thuật) và giá trị."
+            },
+            {
+              "id": "ex9-7-7",
+              "type": "mcq",
+              "question": "Ứng dụng văn học vào cuộc sống như thế nào?",
+              "options": [
+                "Không thể ứng dụng",
+                "Học bài học cuộc sống, sáng tạo, chia sẻ",
+                "Chỉ để thi cử",
+                "Không cần ứng dụng"
+              ],
+              "correct": 1,
+              "explanation": "Có thể học bài học cuộc sống, sáng tạo văn thơ và chia sẻ với người khác."
+            },
+            {
+              "id": "ex9-7-8",
+              "type": "mcq",
+              "question": "Tại sao cần đọc văn học?",
+              "options": [
+                "Không cần thiết",
+                "Nâng cao tri thức, đạo đức, thẩm mỹ, hiểu cuộc đời",
+                "Chỉ vì bắt buộc",
+                "Không có lý do"
+              ],
+              "correct": 1,
+              "explanation": "Đọc văn học giúp nâng cao tri thức, đạo đức, thẩm mỹ và hiểu sâu hơn về cuộc đời."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

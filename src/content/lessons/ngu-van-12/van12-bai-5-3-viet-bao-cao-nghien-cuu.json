@@ -1,0 +1,155 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-5-3-viet-bao-cao-nghien-cuu",
+      "name": "Viết báo cáo nghiên cứu về một vấn đề tự nhiên, xã hội",
+      "slug": "viet-bao-cao-nghien-cuu",
+      "chapter": "Tiếng cười của hài kịch",
+      "chapter_id": "V12-5",
+      "lesson_id": 3,
+      "description": "Học cách viết báo cáo nghiên cứu về các vấn đề tự nhiên hoặc xã hội. Nắm vững cấu trúc, phương pháp thu thập và phân tích dữ liệu, cách trình bày kết quả nghiên cứu một cách khoa học.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "research-report",
+          "name": "Báo cáo nghiên cứu",
+          "slug": "bao-cao-nghien-cuu",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Viết báo cáo nghiên cứu về vấn đề tự nhiên, xã hội",
+          "sections": [
+            {
+              "heading": "1. Khái niệm báo cáo nghiên cứu",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Báo cáo nghiên cứu:</strong> Văn bản trình bày kết quả của một quá trình nghiên cứu, khảo sát về một vấn đề cụ thể</li><li><strong>Mục đích:</strong> Cung cấp thông tin, phân tích, đánh giá về vấn đề được nghiên cứu</li><li><strong>Tính chất:</strong> Khoa học, khách quan, có căn cứ</li></ul><h4>b) Phân loại</h4><ul><li><strong>Theo lĩnh vực:</strong> Tự nhiên, xã hội, kinh tế, văn hóa...</li><li><strong>Theo phương pháp:</strong> Định tính, định lượng, hỗn hợp</li><li><strong>Theo quy mô:</strong> Nhỏ (cá nhân), vừa (nhóm), lớn (tổ chức)</li></ul>"
+            },
+            {
+              "heading": "2. Cấu trúc báo cáo nghiên cứu",
+              "content": "<h4>a) Phần mở đầu</h4><ul><li><strong>Trang bìa:</strong> Tên đề tài, tác giả, thời gian</li><li><strong>Mục lục:</strong> Danh sách các phần</li><li><strong>Tóm tắt:</strong> Nội dung chính của nghiên cứu</li></ul><h4>b) Phần nội dung</h4><ul><li><strong>Đặt vấn đề:</strong> Giới thiệu vấn đề, lý do chọn đề tài</li><li><strong>Cơ sở lý thuyết:</strong> Tổng quan các nghiên cứu liên quan</li><li><strong>Phương pháp nghiên cứu:</strong> Cách thu thập và phân tích dữ liệu</li><li><strong>Kết quả:</strong> Trình bày số liệu, phát hiện</li><li><strong>Thảo luận:</strong> Phân tích, đánh giá kết quả</li><li><strong>Kết luận:</strong> Tóm tắt, đề xuất giải pháp</li></ul><h4>c) Phần phụ lục</h4><ul><li><strong>Tài liệu tham khảo</strong></li><li><strong>Phụ lục:</strong> Bảng biểu, phiếu khảo sát...</li></ul>"
+            },
+            {
+              "heading": "3. Quy trình viết báo cáo nghiên cứu",
+              "content": "<h4>a) Bước 1: Chọn đề tài</h4><ul><li><strong>Tiêu chí:</strong> Có ý nghĩa, khả thi, phù hợp năng lực</li><li><strong>Ví dụ:</strong> Ô nhiễm môi trường, bạo lực học đường, sử dụng mạng xã hội...</li></ul><h4>b) Bước 2: Thu thập dữ liệu</h4><ul><li><strong>Phương pháp:</strong> Khảo sát, phỏng vấn, quan sát, nghiên cứu tài liệu</li><li><strong>Công cụ:</strong> Phiếu khảo sát, máy ghi âm, camera...</li></ul><h4>c) Bước 3: Phân tích dữ liệu</h4><ul><li><strong>Định lượng:</strong> Thống kê, tính tỷ lệ phần trăm</li><li><strong>Định tính:</strong> Phân loại, so sánh, đánh giá</li></ul><h4>d) Bước 4: Viết báo cáo</h4><ul><li><strong>Soạn thảo:</strong> Viết theo cấu trúc</li><li><strong>Chỉnh sửa:</strong> Kiểm tra lỗi, hoàn thiện</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex5-3-1",
+              "type": "mcq",
+              "question": "Báo cáo nghiên cứu là gì?",
+              "options": [
+                "Văn bản kể chuyện",
+                "Văn bản trình bày kết quả nghiên cứu về một vấn đề",
+                "Văn bản miêu tả cảnh vật",
+                "Văn bản bày tỏ cảm xúc"
+              ],
+              "correct": 1,
+              "explanation": "Báo cáo nghiên cứu là văn bản trình bày kết quả của quá trình nghiên cứu, khảo sát về một vấn đề cụ thể một cách khoa học."
+            },
+            {
+              "id": "ex5-3-2",
+              "type": "mcq",
+              "question": "Phần nào KHÔNG thuộc cấu trúc báo cáo nghiên cứu?",
+              "options": [
+                "Đặt vấn đề",
+                "Phương pháp nghiên cứu",
+                "Thơ ca",
+                "Kết luận"
+              ],
+              "correct": 2,
+              "explanation": "Thơ ca không thuộc cấu trúc báo cáo nghiên cứu. Báo cáo nghiên cứu cần có: đặt vấn đề, phương pháp, kết quả, thảo luận, kết luận."
+            },
+            {
+              "id": "ex5-3-3",
+              "type": "mcq",
+              "question": "Bước đầu tiên trong quy trình viết báo cáo nghiên cứu là gì?",
+              "options": [
+                "Thu thập dữ liệu",
+                "Chọn đề tài",
+                "Phân tích dữ liệu",
+                "Viết báo cáo"
+              ],
+              "correct": 1,
+              "explanation": "Bước đầu tiên là chọn đề tài nghiên cứu phù hợp, có ý nghĩa và khả thi."
+            },
+            {
+              "id": "ex5-3-4",
+              "type": "mcq",
+              "question": "Phương pháp nào dùng để thu thập dữ liệu trong nghiên cứu?",
+              "options": [
+                "Chỉ có khảo sát",
+                "Khảo sát, phỏng vấn, quan sát, nghiên cứu tài liệu",
+                "Chỉ có phỏng vấn",
+                "Không cần thu thập dữ liệu"
+              ],
+              "correct": 1,
+              "explanation": "Có nhiều phương pháp thu thập dữ liệu: khảo sát, phỏng vấn, quan sát, nghiên cứu tài liệu, tùy theo đặc điểm đề tài."
+            },
+            {
+              "id": "ex5-3-5",
+              "type": "mcq",
+              "question": "Tính chất quan trọng nhất của báo cáo nghiên cứu là gì?",
+              "options": [
+                "Hài hước",
+                "Khoa học, khách quan, có căn cứ",
+                "Cảm xúc",
+                "Tưởng tượng"
+              ],
+              "correct": 1,
+              "explanation": "Báo cáo nghiên cứu phải có tính khoa học, khách quan và có căn cứ, dựa trên dữ liệu thực tế."
+            },
+            {
+              "id": "ex5-3-6",
+              "type": "mcq",
+              "question": "Phần 'Thảo luận' trong báo cáo nghiên cứu có vai trò gì?",
+              "options": [
+                "Giới thiệu đề tài",
+                "Phân tích, đánh giá kết quả nghiên cứu",
+                "Thu thập dữ liệu",
+                "Viết tài liệu tham khảo"
+              ],
+              "correct": 1,
+              "explanation": "Phần 'Thảo luận' có vai trò phân tích, đánh giá, giải thích ý nghĩa của các kết quả nghiên cứu đã thu được."
+            },
+            {
+              "id": "ex5-3-7",
+              "type": "mcq",
+              "question": "Khi chọn đề tài nghiên cứu, cần chú ý tiêu chí nào?",
+              "options": [
+                "Chỉ cần thú vị",
+                "Có ý nghĩa, khả thi, phù hợp năng lực",
+                "Chỉ cần dễ làm",
+                "Không cần tiêu chí"
+              ],
+              "correct": 1,
+              "explanation": "Đề tài nghiên cứu cần có ý nghĩa thực tiễn, khả thi (có thể thực hiện được) và phù hợp với năng lực của người nghiên cứu."
+            },
+            {
+              "id": "ex5-3-8",
+              "type": "mcq",
+              "question": "Phần 'Kết luận' trong báo cáo nghiên cứu nên bao gồm nội dung gì?",
+              "options": [
+                "Chỉ tóm tắt kết quả",
+                "Tóm tắt kết quả và đề xuất giải pháp",
+                "Chỉ nêu hạn chế",
+                "Giới thiệu đề tài mới"
+              ],
+              "correct": 1,
+              "explanation": "Phần 'Kết luận' cần tóm tắt các kết quả chính, đánh giá ý nghĩa và đề xuất các giải pháp, kiến nghị liên quan."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

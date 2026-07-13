@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_7",
+      "name": "Lao động và việc làm",
+      "slug": "lao-dong-va-viec-lam",
+      "chapter": "Địa lí dân cư",
+      "chapter_id": "dia12_part2",
+      "lesson_id": 7,
+      "description": "Cơ cấu lao động, phân bố việc làm theo ngành, vấn đề thất nghiệp và giải pháp tạo việc làm ở Việt Nam.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Lao động và việc làm ở Việt Nam",
+          "summary": "Phân tích lực lượng lao động theo ngành, xu hướng chuyển dịch nghề nghiệp, vấn đề việc làm, thất nghiệp và di cư lao động; các chính sách đào tạo nghề, tạo việc làm và thúc đẩy việc làm bền vững.",
+          "sections": [
+            { "heading": "Cơ cấu lao động theo ngành", "content": "Tỷ lệ lao động nông nghiệp giảm, trong khi công nghiệp và dịch vụ tăng theo tiến trình công nghiệp hóa và đô thị hóa." },
+            { "heading": "Thất nghiệp và thiếu việc làm", "content": "Thất nghiệp ở thanh niên, lao động trình độ thấp và ở một số vùng nông thôn là thách thức; cần đào tạo kỹ năng và hỗ trợ tạo việc làm." },
+            { "heading": "Di cư và thị trường lao động", "content": "Di cư lao động sang thành phố hoặc đi làm việc ở nước ngoài là xu hướng lớn, có lợi và cả rủi ro xã hội." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Nêu một chính sách giúp tạo việc làm?", "a_hint": "Đào tạo nghề, hỗ trợ doanh nghiệp vừa và nhỏ." },
+            { "q": "Một nguyên nhân gây thất nghiệp ở thanh niên?", "a_hint": "Thiếu kỹ năng phù hợp với thị trường." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Ngành nào đang giảm tỷ lệ lao động ở Việt Nam?", "options": ["Nông nghiệp","Công nghiệp","Dịch vụ","Du lịch"], "correct": 0, "explanation": "Tỷ lệ lao động trong nông nghiệp giảm do công nghiệp hóa." },
+          { "id": 2, "type": "mcq", "question": "Giải pháp nào giúp giảm thất nghiệp thanh niên?", "options": ["Đào tạo nghề và kết nối việc làm","Tăng giờ làm cho người già","Giảm giáo dục","Không có giải pháp"], "correct": 0, "explanation": "Đào tạo nghề giúp thanh niên có kỹ năng phù hợp." },
+          { "id": 3, "type": "mcq", "question": "Di cư lao động thường dẫn tới?", "options": ["Tăng lực lượng lao động tại thành phố","Giảm lực lượng lao động ở thành phố","Không thay đổi","Tăng nông thôn"], "correct": 0, "explanation": "Di cư nông thôn - thành thị làm tăng lực lượng lao động tại thành phố." },
+          { "id": 4, "type": "mcq", "question": "Một rủi ro của lao động đi làm nước ngoài là?", "options": ["Thu nhập thấp hơn ở nước ngoài","Rủi ro về hợp đồng, sức khỏe và gia đình bị ảnh hưởng","Không có rủi ro","Giảm kỹ năng"], "correct": 1, "explanation": "Lao động xuất khẩu có thể gặp rủi ro về hợp đồng và điều kiện sống." },
+          { "id": 5, "type": "mcq", "question": "Chính sách nào khuyến khích doanh nghiệp tạo việc làm?", "options": ["Hỗ trợ tín dụng và giảm thuế cho doanh nghiệp nhỏ","Tăng thuế cho doanh nghiệp nhỏ","Cấm doanh nghiệp tuyển dụng","Không có chính sách"], "correct": 0, "explanation": "Hỗ trợ tài chính và ưu đãi thuế khuyến khích doanh nghiệp tuyển dụng." },
+          { "id": 6, "type": "mcq", "question": "Yếu tố nào làm gia tăng nhu cầu lao động có kỹ năng cao?", "options": ["Công nghiệp hoá, hiện đại hoá","Giảm đầu tư","Tăng người thất nghiệp","Không có yếu tố"], "correct": 0, "explanation": "Công nghiệp hóa yêu cầu lao động có kỹ năng chuyên môn hơn." },
+          { "id": 7, "type": "mcq", "question": "Việc làm phi chính thức thường có đặc điểm?", "options": ["Thu nhập bấp bênh, thiếu bảo hiểm xã hội","Thu nhập ổn định và bảo hiểm đầy đủ","Luôn là công việc nhà nước","Không tồn tại"], "correct": 0, "explanation": "Việc làm phi chính thức thường thiếu bảo đảm xã hội và thu nhập không ổn định." },
+          { "id": 8, "type": "mcq", "question": "Một biện pháp hỗ trợ lao động nông thôn là?", "options": ["Phát triển vùng và đa dạng hóa sinh kế","Cấm mọi hoạt động kinh tế","Tập trung tất cả vào thành phố","Không hỗ trợ"], "correct": 0, "explanation": "Phát triển kinh tế vùng giúp tạo việc làm tại chỗ cho nông thôn." },
+          { "id": 9, "type": "mcq", "question": "Thị trường lao động minh bạch cần có?", "options": ["Cơ sở dữ liệu việc làm, trung tâm giới thiệu và thông tin tuyển dụng","Bí mật hoàn toàn","Không có thông tin","Chỉ tuyển qua mối quan hệ"], "correct": 0, "explanation": "Thông tin việc làm minh bạch giúp kết nối người tìm việc và nhà tuyển dụng." },
+          { "id": 10, "type": "mcq", "question": "Một chỉ tiêu thường dùng để đánh giá việc làm là?", "options": ["Tỷ lệ thất nghiệp","Chiều cao trung bình","Số lượng cảng","Tổng diện tích rừng"], "correct": 0, "explanation": "Tỷ lệ thất nghiệp là chỉ tiêu đánh giá tình trạng việc làm." }
+        ]
+      }
+    }
+  ]
+}

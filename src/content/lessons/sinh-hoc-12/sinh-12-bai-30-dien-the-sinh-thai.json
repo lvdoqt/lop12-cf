@@ -1,0 +1,192 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-30",
+      "name": "Bài 30. Diễn thế sinh thái",
+      "slug": "dien-the-sinh-thai",
+      "chapter": "Chương 7. Sinh thái học quần xã",
+      "chapter_id": "S12-7",
+      "lesson_id": 30,
+      "description": "Tìm hiểu về diễn thế sinh thái, các giai đoạn và loại diễn thế.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Diễn thế sinh thái",
+          "sections": [
+            {
+              "heading": "1. Khái niệm diễn thế sinh thái",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Diễn thế sinh thái</strong> là quá trình biến đổi tuần tự của quần xã sinh vật theo thời gian tại một vùng nhất định.</li><li>Kết quả: Hệ sinh thái thay đổi từ đơn giản đến phức tạp, hoặc ngược lại.</li></ul><h4>b) Đặc điểm</h4><ul><li>Là quá trình có hướng, có trình tự.</li><li>Có thể tự nhiên hoặc do con người gây ra.</li><li>Phụ thuộc vào điều kiện ban đầu của môi trường.</li></ul>"
+            },
+            {
+              "heading": "2. Các giai đoạn diễn thế",
+              "content": "<h4>a) Giai đoạn đầu (nucleic)</h4><ul><li>Quần xã khởi đầu với ít loài.</li><li>Các loài ưu thế xuất hiện.</li><li>Năng suất sinh học thấp.</li></ul><h4>b) Giai đoạn giữa (intermediate)</h4><ul><li>Số lượng loài tăng dần.</li><li>Cấu trúc quần xã phức tạp hơn.</li><li>Năng suất sinh học tăng.</li></ul><h4>c) Giai đoạn cuối (climax)</h4><ul><li>Quần xã ổn định, cân bằng.</li><li>Đa dạng loài cao nhất.</li><li>Năng suất sinh học ổn định.</li></ul>"
+            },
+            {
+              "heading": "3. Các loại diễn thế",
+              "content": "<h4>a) Diễn thế nguyên sinh</h4><ul><li><strong>Định nghĩa:</strong> Diễn thế từ môi trường chưa có sinh vật.</li><li><strong>Ví dụ:</strong> Đảo núi lửa mới hình thành, đất trống mới.</li><li><strong>Quá trình:</strong> Địa y → Cỏ → Bụi → Cây gỗ → Rừng.</li></ul><h4>b) Diễn thế thứ sinh</h4><ul><li><strong>Định nghĩa:</strong> Diễn thế từ quần xã đã bị phá hủy một phần.</li><li><strong>Ví dụ:</strong> Rừng bị chặt, đồng bằng bị bỏ hoang.</li><li><strong>Quá trình:</strong> Nhanh hơn nguyên sinh vì đất còn.</li></ul><h4>c) Diễn thế ngược</h4><ul><li><strong>Định nghĩa:</strong> Quần xã thoái hóa từ phức tạp về đơn giản.</li><li><strong>Ví dụ:</strong> Rừng bị khai thác quá mức thành cây bụi, thảo nguyên.</li></ul>"
+            },
+            {
+              "heading": "4. Diễn thế trên cạn và dưới nước",
+              "content": "<h4>a) Diễn thế trên cạn</h4><ul><li><strong>Nguyên sinh:</strong> Đá → Địa y → Cỏ → Bụi → Rừng.</li><li>Cây gỗ thay thế cây thân thảo.</li><li>Đất hình thành, giàu dinh dưỡng.</li></ul><h4>b) Diễn thế dưới nước</h4><ul><li><strong>Trong hồ:</strong> Nước → Tảo → Thủy sinh → Bùn → Cây bờ → Rừng.</li><li>Hồ bị lấp dần thành đầm lầy → đất.</li><li>Quá trình phụ thuộc độ sâu, dinh dưỡng.</li></ul>"
+            },
+            {
+              "heading": "5. Ý nghĩa của diễn thế",
+              "content": "<h4>a) Ý nghĩa sinh thái</h4><ul><li>Giúp hiểu quá trình hình thành và phát triển hệ sinh thái.</li><li>Giải thích sự phân bố sinh vật theo thời gian.</li></ul><h4>b) Ý nghĩa thực tiễn</h4><ul><li>Quản lý và phục hồi hệ sinh thái bị suy thoái.</li><li>Dự báo các giai đoạn diễn thế để có biện pháp can thiệp.</li><li>Thiết kế các hệ sinh thái nhân tạo theo mục đích.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Diễn thế sinh thái là gì?",
+            "options": [
+              "Sự biến đổi khí hậu",
+              "Quá trình biến đổi quần xã theo thời gian",
+              "Sự di chuyển của sinh vật",
+              "Sự thay đổi mùa"
+            ],
+            "correct": 1,
+            "explanation": "Diễn thế sinh thái là quá trình biến đổi tuần tự của quần xã sinh vật theo thời gian."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Diễn thế nguyên sinh xảy ra ở đâu?",
+            "options": [
+              "Rừng bị chặt",
+              "Môi trường chưa có sinh vật",
+              "Đồng bằng bị bỏ hoang",
+              "Ao nuôi cá"
+            ],
+            "correct": 1,
+            "explanation": "Diễn thế nguyên sinh xảy ra ở môi trường chưa có sinh vật như đảo núi lửa mới."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Diễn thế thứ sinh khác nguyên sinh ở điểm nào?",
+            "options": [
+              "Từ quần xã đã có sẵn",
+              "Nhanh hơn vì đất còn",
+              "Có ít giai đoạn",
+              "Không thay đổi"
+            ],
+            "correct": 1,
+            "explanation": "Diễn thế thứ sinh xảy ra nhanh hơn vì môi trường và đất đã có sẵn."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Giai đoạn cuối của diễn thế gọi là gì?",
+            "options": [
+              "Giai đoạn đầu",
+              "Giai đoạn chuyển tiếp",
+              "Giai đoạn climax",
+              "Giai đoạn suy thoái"
+            ],
+            "correct": 2,
+            "explanation": "Giai đoạn cuối ổn định gọi là climax - quần xã cân bằng với môi trường."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Trong diễn thế nguyên thành đất trống, giai đoạn nào xuất hiện đầu tiên?",
+            "options": [
+              "Cây gỗ",
+              "Cỏ",
+              "Địa y",
+              "Bụi cây"
+            ],
+            "correct": 2,
+            "explanation": "Địa y là sinh vật đầu tiên xuất hiện trên đá trần, phá vỡ đá tạo đất."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các loại diễn thế sinh thái:",
+            "options": [
+              "Diễn thế nguyên sinh",
+              "Diễn thế thứ sinh",
+              "Diễn thế ngang",
+              "Diễn thế ngược"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Các loại diễn thế: nguyên sinh, thứ sinh, ngược. Không có diễn thế ngang."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các giai đoạn của diễn thế:",
+            "options": [
+              "Giai đoạn đầu",
+              "Giai đoạn giữa",
+              "Giai đoạn climax",
+              "Giai đoạn suy thoái"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Các giai đoạn: đầu, giữa, climax. Suy thoái là diễn thế ngược, không phải giai đoạn."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Diễn thế nguyên sinh trên đá có 4 giai đoạn chính. Điền số 1 chữ số.",
+            "correct": "4"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Một hồ nước sau khi bị lấp dần thành đầm lầy rồi thành đất là bao nhiêu giai đoạn chính? Nhập số 1 chữ số.",
+            "correct": "3"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân biệt các loại diễn thế",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định trạng thái môi trường ban đầu:</li><li>- Chưa có sinh vật → Nguyên sinh</li><li>- Đã có quần xã bị phá hủy → Thứ sinh</li><li>- Quần xã thoái hóa → Ngược</li></ol>",
+            "examples": [
+              {
+                "question": "Núi lửa phun tạo đảo mới, trên đảo chưa có sinh vật. Đây là loại diễn thế nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Môi trường chưa có sinh vật → Diễn thế nguyên sinh.</p>"
+              },
+              {
+                "question": "Rừng bị chặt phết, sau đó phục hồi thành cây bụi. Đây là loại diễn thế nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Quần xã đã bị phá hủy một phần → Diễn thế thứ sinh.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Sắp xếp các giai đoạn diễn thế",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Nguyên sinh trên cạn: Đá → Địa y → Cỏ → Bụi → Cây gỗ → Rừng.</li><li>Thứ sinh: Cỏ → Bụi → Cây gỗ → Rừng (nhanh hơn).</li><li>Nuôi dưỡng hồ: Nước trong → Tảo phát triển → Lắng đọng → Cây thủy sinh → Đầm.</li></ol>",
+            "examples": [
+              {
+                "question": "Sắp xếp các giai đoạn diễn thế nguyên sinh: (1) Cỏ, (2) Địa y, (3) Cây gỗ, (4) Đá. Thứ tự đúng?",
+                "solution": "<p><strong>Giải:</strong></p><p>Đá → Địa y → Cỏ → Cây gỗ</p><p>Thứ tự: 4 → 2 → 1 → 3</p>"
+              },
+              {
+                "question": "Hồ nước chuyển thành đầm lầy rồi thành đất theo thứ tự nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Hồ nước → Tảo phát triển → Bùn tích tụ → Cây thủy sinh → Đầm lầy → Đất</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

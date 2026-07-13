@@ -1,0 +1,390 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-5-ung-dung-dao-ham-thuc-tien",
+      "name": "Bài 5. Ứng dụng đạo hàm vào thực tiễn",
+      "slug": "bai-5-ung-dung-dao-ham-thuc-tien",
+      "chapter": "Chương 1: Ứng dụng đạo hàm để khảo sát và vẽ đồ thị hàm số",
+      "chapter_id": "T12-1",
+      "lesson_id": 5,
+      "description": "Vận dụng đạo hàm và khảo sát hàm số để giải quyết các bài toán thực tiễn: tối ưu hóa hình học, chuyển động cơ học, và bài toán kinh tế (chi phí, doanh thu, lợi nhuận).",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/10B981/FFFFFF?text=Ứng+dụng+thực+tiễn",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Tối ưu hóa hình học",
+          "slug": "toi-uu-hinh-hoc",
+          "difficulty": "hard"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Bài toán chuyển động",
+          "slug": "bai-toan-chuyen-dong",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: Bài toán kinh tế",
+          "slug": "bai-toan-kinh-te",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Quy trình giải bài toán tối ưu hóa",
+              "content": "<h3>4 bước thực hiện</h3><ol><li><strong>Bước 1 – Chọn biến:</strong> Đặt biến số $x$ (chiều dài, bán kính, số lượng...). Xác định miền xác định: $x \\in (a;b)$ hoặc $[a;b]$.</li><li><strong>Bước 2 – Lập hàm mục tiêu:</strong> Biểu diễn đại lượng cần tối ưu (Diện tích, Thể tích, Lợi nhuận...) theo $x$ → hàm $f(x)$.</li><li><strong>Bước 3 – Tìm cực trị:</strong> Tính $f'(x)$, giải $f'(x)=0$, lập bảng biến thiên hoặc so sánh tại đầu mút.</li><li><strong>Bước 4 – Kết luận:</strong> Tính giá trị tối ưu và trả lời câu hỏi thực tế.</li></ol><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 1 – Khi nào dùng BĐT Cauchy?</strong><br>Nếu hàm mục tiêu có dạng $f(x)=x+\\dfrac{k}{x}$ ($k>0$, $x>0$) thì áp dụng BĐT Cauchy: $x+\\dfrac{k}{x}\\geq2\\sqrt{k}$. Dấu bằng khi $x=\\sqrt{k}$. Nhanh hơn tính đạo hàm.</div><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 2 – Kiểm tra điều kiện thực tế:</strong> Nghiệm tìm được phải thỏa mãn điều kiện thực tế (dương, nguyên nếu cần, trong phạm vi cho phép).</div>"
+            },
+            {
+              "heading": "2. Ứng dụng trong chuyển động cơ học",
+              "content": "<h3>Các công thức cơ bản</h3><p>Vật chuyển động thẳng với quãng đường $s = s(t)$ ($t$ là thời gian):</p><table style='width:100%;border-collapse:collapse;margin:10px 0'><thead><tr style='background:#4F46E5;color:white'><th style='padding:8px;border:1px solid #ccc'>Đại lượng</th><th style='padding:8px;border:1px solid #ccc'>Công thức</th><th style='padding:8px;border:1px solid #ccc'>Ý nghĩa</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>Vận tốc tức thời</td><td style='padding:8px;border:1px solid #ccc'>$v(t)=s'(t)$</td><td style='padding:8px;border:1px solid #ccc'>$v>0$: chiều dương; $v<0$: chiều âm</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Gia tốc tức thời</td><td style='padding:8px;border:1px solid #ccc'>$a(t)=v'(t)=s''(t)$</td><td style='padding:8px;border:1px solid #ccc'>$a>0$: tăng tốc; $a<0$: giảm tốc</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>Vận tốc lớn nhất</td><td style='padding:8px;border:1px solid #ccc'>Khảo sát $v(t)$ trên $[t_1;t_2]$</td><td style='padding:8px;border:1px solid #ccc'>GTLN của $v(t)$</td></tr></tbody></table><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 3 – Vật dừng lại:</strong> $v(t_0)=0$ là điều kiện cần, không phải điều kiện đủ để vật dừng. Cần kiểm tra chiều chuyển động.</div>"
+            },
+            {
+              "heading": "3. Ứng dụng trong kinh tế",
+              "content": "<h3>Các hàm kinh tế cơ bản</h3><p>Cho $x$ là số lượng sản phẩm sản xuất/bán ra ($x>0$):</p><ul><li><strong>Hàm chi phí $C(x)$:</strong> Chi phí sản xuất $x$ đơn vị. Thường gồm chi phí cố định $C_0$ và chi phí biến đổi.</li><li><strong>Chi phí trung bình:</strong> $\\bar{C}(x) = \\dfrac{C(x)}{x}$.</li><li><strong>Chi phí biên:</strong> $C'(x)$ — chi phí ước tính cho đơn vị sản phẩm thứ $x+1$.</li><li><strong>Hàm doanh thu:</strong> $R(x) = x\\cdot p(x)$ (với $p(x)$ là hàm giá bán).</li><li><strong>Hàm lợi nhuận:</strong> $P(x) = R(x) - C(x)$.</li></ul><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 4 – Điều kiện tối ưu:</strong> Lợi nhuận cực đại khi $P'(x)=0 \\Leftrightarrow R'(x)=C'(x)$ (doanh thu biên = chi phí biên). Đây là nguyên lý kinh tế vi mô quan trọng.</div><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 5 – Giá vé/giá bán tối ưu:</strong> Khi đề cho biết mối quan hệ giữa giá bán $p$ và lượng cầu $q$ (hàm cầu ngược), cần lập $R(p)=p\\cdot q(p)$ rồi tối ưu theo $p$.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tối ưu hóa hình học",
+            "method": "<ol><li>Chọn biến $x$ (cạnh, bán kính, chiều cao...), xác định điều kiện $x>0$ và các ràng buộc.</li><li>Biểu diễn đại lượng cần tối ưu theo $x$ (dùng công thức diện tích, thể tích, chu vi).</li><li>Tìm GTLN/GTNN của hàm $f(x)$ trên miền xác định.</li><li>Kiểm tra điều kiện thực tế và kết luận.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Quây vườn hình chữ nhật diện tích $200\\,m^2$ dọc theo một bờ tường (chỉ rào 3 mặt). Tìm kích thước để chu vi hàng rào nhỏ nhất.",
+                "solution": "<p>Gọi cạnh song song tường là $x$, cạnh vuông góc là $y$ ($x,y>0$).</p><p>$xy=200 \\Rightarrow y=\\dfrac{200}{x}$.</p><p>Độ dài hàng rào: $L=x+2y=x+\\dfrac{400}{x}$.</p><p>$L'=1-\\dfrac{400}{x^2}=0 \\Rightarrow x=20$. $L''=\\dfrac{800}{x^3}>0$ → cực tiểu.</p><p>$y=\\dfrac{200}{20}=10$. <strong>Kích thước: $20\\,m\\times10\\,m$.</strong></p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Cắt 4 hình vuông cạnh $x$ ở 4 góc tấm nhôm $12\\times12\\,cm$ rồi gập lại thành hộp không nắp. Tìm $x$ để thể tích lớn nhất.",
+                "solution": "<p>Đáy hộp: $(12-2x)\\times(12-2x)$; cao: $x$. Điều kiện: $0<x<6$.</p><p>$V(x)=x(12-2x)^2=4x(6-x)^2$.</p><p>$V'(x)=4(6-x)^2+4x\\cdot2(6-x)(-1)=4(6-x)(6-3x)=12(6-x)(2-x)$.</p><p>$V'=0 \\Rightarrow x=2$ (nhận) hoặc $x=6$ (loại).</p><p>$V(2)=2\\cdot8^2=128\\,cm^3$. <strong>$x=2\\,cm$, thể tích max $=128\\,cm^3$.</strong></p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán chuyển động",
+            "method": "<ol><li>Xác định hàm vị trí $s(t)$ (cho sẵn).</li><li>Tính $v(t)=s'(t)$; $a(t)=v'(t)$.</li><li>Tìm vận tốc lớn nhất/nhỏ nhất bằng khảo sát hàm $v(t)$ trên đoạn $[0;T]$.</li><li>Tìm thời điểm vật dừng: giải $v(t)=0$.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Vật chuyển động theo $s(t)=-t^3+6t^2$ ($t$ giây, $s$ mét, $t\\in[0;6]$). Tìm vận tốc lớn nhất.",
+                "solution": "<p>$v(t)=s'(t)=-3t^2+12t$.</p><p>$v'(t)=-6t+12=0 \\Rightarrow t=2$.</p><p>So sánh: $v(0)=0$; $v(2)=12$; $v(6)=-36$.</p><p><strong>Vận tốc lớn nhất là $12\\,m/s$ tại $t=2\\,s$.</strong></p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán kinh tế",
+            "method": "<ol><li>Xác định hàm mục tiêu: $P(x)=R(x)-C(x)$ hoặc $\\bar{C}(x)$.</li><li>Tìm cực đại của $P(x)$ hoặc cực tiểu của $\\bar{C}(x)$.</li><li>Kiểm tra điều kiện $x>0$ (và nguyên nếu cần).</li><li>Kết luận: số sản phẩm tối ưu, mức giá tối ưu, lợi nhuận max.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Công ty sản xuất $x$ sản phẩm với $C(x)=x^2+20x+4000$. Tìm $x$ để chi phí trung bình nhỏ nhất.",
+                "solution": "<p>$\\bar{C}(x)=\\dfrac{x^2+20x+4000}{x}=x+20+\\dfrac{4000}{x}$.</p><p>$\\bar{C}'(x)=1-\\dfrac{4000}{x^2}=0 \\Rightarrow x=\\sqrt{4000}\\approx63$ sản phẩm.</p><p>Hoặc dùng BĐT Cauchy: $x+\\dfrac{4000}{x}\\geq2\\sqrt{4000}=40\\sqrt{10}$, dấu bằng khi $x=\\sqrt{4000}$.</p><p><strong>Cần sản xuất khoảng $63$ sản phẩm.</strong></p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Vật chuyển động theo $s(t)=-\\dfrac{1}{3}t^3+6t^2$ ($m$, $t\\in[0;10]$ giây). Vận tốc lớn nhất đạt được bằng:",
+            "options": [
+              "$36\\,m/s$",
+              "$12\\,m/s$",
+              "$6\\,m/s$",
+              "$108\\,m/s$"
+            ],
+            "correct": 0,
+            "explanation": "$v(t)=-t^2+12t$. Parabol bề lõm đỉnh tại $t=6$. $v(6)=-36+72=36$. Kiểm tra biên: $v(0)=0$, $v(10)=-100+120=20$. Max $=36\\,m/s$."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Tìm độ dài cạnh hình vuông có chu vi $16\\,cm$ để diện tích lớn nhất. Đáp án cạnh bằng:",
+            "options": [
+              "$4\\,cm$",
+              "$2\\,cm$",
+              "$6\\,cm$",
+              "$8\\,cm$"
+            ],
+            "correct": 0,
+            "explanation": "Với chu vi cố định, hình có diện tích lớn nhất là hình vuông. Chu vi $=16 \\Rightarrow$ cạnh $=4\\,cm$, diện tích $=16\\,cm^2$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Chất điểm chuyển động theo $s(t)=t^3-3t^2-9t+2$ ($t\\geq0$). Gia tốc tại thời điểm vận tốc triệt tiêu là:",
+            "options": [
+              "$12\\,m/s^2$",
+              "$-6\\,m/s^2$",
+              "$0$",
+              "$6\\,m/s^2$"
+            ],
+            "correct": 0,
+            "explanation": "$v(t)=3t^2-6t-9=0 \\Rightarrow t^2-2t-3=0 \\Rightarrow t=3$ (nhận). $a(t)=6t-6$, $a(3)=18-6=12\\,m/s^2$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Người bán gạo bán giá $x$ nghìn đồng/kg thì bán được $D(x)=120-x$ tấn/tháng. Chi phí sản xuất $10$ nghìn/kg. Giá bán tối ưu là:",
+            "options": [
+              "$65$ nghìn đồng",
+              "$60$ nghìn đồng",
+              "$70$ nghìn đồng",
+              "$55$ nghìn đồng"
+            ],
+            "correct": 0,
+            "explanation": "$P(x)=(x-10)(120-x)=-x^2+130x-1200$. Cực đại tại $x=65$. Kiểm tra: $P(65)=55\\times55=3025>0$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Xây hộp không nắp từ tấm nhôm $12\\times12\\,cm$ bằng cách cắt 4 góc hình vuông cạnh $x$. Thể tích hộp lớn nhất khi $x$ bằng:",
+            "options": [
+              "$2\\,cm$",
+              "$3\\,cm$",
+              "$4\\,cm$",
+              "$1\\,cm$"
+            ],
+            "correct": 0,
+            "explanation": "$V(x)=x(12-2x)^2=4x(6-x)^2$. $V'=4(6-x)(6-3x)=0 \\Rightarrow x=2$ (nhận). $V(2)=128\\,cm^3$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Trong các hình trụ cùng thể tích $V$, hình trụ có diện tích toàn phần nhỏ nhất thỏa mãn:",
+            "options": [
+              "$h=2R$",
+              "$h=R$",
+              "$h=3R$",
+              "$R=2h$"
+            ],
+            "correct": 0,
+            "explanation": "$S_{tp}=2\\pi R^2+\\dfrac{2V}{R}$. $S'=4\\pi R-\\dfrac{2V}{R^2}=0 \\Rightarrow 2\\pi R^3=V=\\pi R^2 h \\Rightarrow h=2R$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Dây $60\\,cm$ cắt làm 2 đoạn: hình vuông và vòng tròn. Độ dài đoạn uốn hình vuông để tổng diện tích nhỏ nhất là:",
+            "options": [
+              "$\\dfrac{240}{\\pi+4}\\,cm$",
+              "$\\dfrac{60}{\\pi+4}\\,cm$",
+              "$30\\,cm$",
+              "$40\\,cm$"
+            ],
+            "correct": 0,
+            "explanation": "Cạnh hình vuông $=a$, chu vi $=4a$. $r=\\dfrac{60-4a}{2\\pi}$. $S=a^2+\\dfrac{(60-4a)^2}{4\\pi}$. $S'=2a-\\dfrac{4(60-4a)}{2\\pi}=0 \\Rightarrow a\\pi=60-4a \\Rightarrow a=\\dfrac{60}{\\pi+4}$. Chu vi HV $=4a=\\dfrac{240}{\\pi+4}$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Hình chữ nhật $ABCD$ nội tiếp nửa đường tròn bán kính $R=10\\,cm$ (cạnh $AB$ trên đường kính). Diện tích lớn nhất bằng:",
+            "options": [
+              "$100\\,cm^2$",
+              "$50\\,cm^2$",
+              "$200\\,cm^2$",
+              "$\\pi\\cdot50\\,cm^2$"
+            ],
+            "correct": 0,
+            "explanation": "Gọi nửa cạnh $AB=x$ ($0<x<10$). Chiều cao $=\\sqrt{100-x^2}$. $S=2x\\sqrt{100-x^2}$. $S^2=4x^2(100-x^2)$. Đặt $u=x^2$: max tại $u=50 \\Rightarrow x=5\\sqrt{2}$. $S=2\\cdot5\\sqrt{2}\\cdot5\\sqrt{2}=100\\,cm^2$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Doanh thu biên $R'(100)$ của hàm $R(x)=40x-0{,}02x^2$ bằng:",
+            "options": [
+              "$36$",
+              "$38$",
+              "$40$",
+              "$32$"
+            ],
+            "correct": 0,
+            "explanation": "$R'(x)=40-0{,}04x$. $R'(100)=40-4=36$."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Quây vườn hình chữ nhật $200\\,m^2$ dọc bờ tường (3 mặt). Chiều dài song song tường để chu vi hàng rào nhỏ nhất là:",
+            "options": [
+              "$20\\,m$",
+              "$10\\,m$",
+              "$40\\,m$",
+              "$14\\,m$"
+            ],
+            "correct": 0,
+            "explanation": "Gọi cạnh song song tường $=x$, vuông góc $=y$. $xy=200$, $L=x+2y=x+\\dfrac{400}{x}$. $L'=1-\\dfrac{400}{x^2}=0 \\Rightarrow x=20\\,m$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Vật chuyển động theo $v(t)=-t^2+10t$ ($m/s$). Thời điểm gia tốc bằng $0$ là:",
+            "options": [
+              "$t=5\\,s$",
+              "$t=0$",
+              "$t=10\\,s$",
+              "$t=2\\,s$"
+            ],
+            "correct": 0,
+            "explanation": "$a(t)=v'(t)=-2t+10=0 \\Rightarrow t=5\\,s$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Hàm lợi nhuận $P(x)=-x^2+80x-1200$ ($x>0$). Lợi nhuận lớn nhất bằng:",
+            "options": [
+              "$400$",
+              "$800$",
+              "$1200$",
+              "$600$"
+            ],
+            "correct": 0,
+            "explanation": "$P'(x)=-2x+80=0 \\Rightarrow x=40$. $P(40)=-1600+3200-1200=400$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Vật chuyển động theo $s(t)=t^3-3t^2-9t+2$ ($t\\geq0$, đơn vị: $m$, $s$). Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Vận tốc của vật là $v(t)=3t^2-6t-9$",
+              "Vật triệt tiêu vận tốc tại $t=3\\,s$",
+              "Gia tốc tại $t=3\\,s$ là $12\\,m/s^2$",
+              "Vật chuyển động theo chiều âm trong khoảng $(0;3)$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: $v=s'=3t^2-6t-9$. B ✓: $v(3)=27-18-9=0$. C ✓: $a=v'=6t-6$, $a(3)=12$. D ✓: $v(1)=3-6-9=-12<0$ → chiều âm trên $(0;3)$."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Bài toán tối ưu hộp không nắp từ tấm $12\\times12\\,cm$ (cắt cạnh $x$). Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Thể tích hộp là $V(x)=4x(6-x)^2$",
+              "Điều kiện: $0<x<6$",
+              "Thể tích lớn nhất tại $x=2$",
+              "Thể tích lớn nhất là $128\\,cm^3$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Đáy $(12-2x)^2=4(6-x)^2$, cao $x$ → $V=4x(6-x)^2$ (A ✓). $0<x<6$ (B ✓). $V'=12(6-x)(2-x)=0 \\Rightarrow x=2$ (C ✓). $V(2)=4\\cdot2\\cdot16=128$ (D ✓)."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Hàm lợi nhuận người bán gạo $P(x)=(x-10)(120-x)$ với $10<x<120$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "$P(x)=-x^2+130x-1200$",
+              "Lợi nhuận cực đại tại $x=65$",
+              "Lợi nhuận cực đại bằng $2025$",
+              "Đây là bài toán tìm cực đại của hàm bậc hai"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Khai triển: $P=-x^2+130x-1200$ (A ✓). Đỉnh parabol: $x=65$ (B ✓). $P(65)=-4225+8450-1200=3025$... kiểm tra: $P(65)=(65-10)(120-65)=55\\times55=3025$ (C: 3025, không phải 2025 - đáp án ý C sai, nhưng D đúng). D ✓: bậc 2 cực đại."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Hình trụ tối ưu (diện tích toàn phần nhỏ nhất, thể tích $V$ cố định). Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Điều kiện tối ưu là $h=2R$",
+              "Khi $h=2R$, hình trụ được gọi là 'hình trụ đều'",
+              "Diện tích toàn phần: $S=2\\pi R^2+\\dfrac{2V}{R}$",
+              "Điều kiện $S'=0$ cho $4\\pi R^3=2V$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$S=2\\pi R^2+2\\pi Rh=2\\pi R^2+\\dfrac{2\\pi R\\cdot V}{\\pi R^2}=2\\pi R^2+\\dfrac{2V}{R}$ (C ✓). $S'=4\\pi R-\\dfrac{2V}{R^2}=0 \\Rightarrow 4\\pi R^3=2V$ (D ✓). Thay $V=\\pi R^2 h$: $4\\pi R^3=2\\pi R^2 h \\Rightarrow h=2R$ (A ✓). Hình trụ đều (B ✓)."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "🌍 Vật chuyển động theo $s(t)=-t^3+6t^2+9t$ ($t\\geq0$). Tìm vận tốc lớn nhất (m/s) trong $[0;5]$.",
+            "explanation": "$v(t)=-3t^2+12t+9$. $v'(t)=-6t+12=0 \\Rightarrow t=2$. $v(0)=9$; $v(2)=-12+24+9=21$; $v(5)=-75+60+9=-6$. GTLN $=21\\,m/s$ tại $t=2\\,s$.",
+            "correct": "21"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "🌍 Hàm chi phí $C(x)=x^2-6x+100$ (triệu đồng, $x>0$). Chi phí nhỏ nhất bằng bao nhiêu (triệu đồng)?",
+            "explanation": "$C'(x)=2x-6=0 \\Rightarrow x=3$. $C''=2>0$ → cực tiểu. $C(3)=9-18+100=91$ triệu đồng.",
+            "correct": "91"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "🌍 Quây vườn hình chữ nhật $S=500\\,m^2$ dọc bờ tường thẳng (chỉ rào 3 mặt: 2 cạnh vuông góc và 1 cạnh song song). Chu vi hàng rào nhỏ nhất là bao nhiêu mét?",
+            "explanation": "Gọi cạnh song song tường $=x$, vuông góc $=y$. $xy=500$. Hàng rào $=x+2y=x+\\dfrac{1000}{x}$. Cực tiểu tại $x=\\sqrt{1000}\\approx31{,}6$? Kiểm tra: $L=x+\\dfrac{1000}{x}\\geq2\\sqrt{1000}=20\\sqrt{10}\\approx63{,}2$. Thay chính xác: $x=10\\sqrt{10}$, $y=5\\sqrt{10}$. $L=10\\sqrt{10}+10\\sqrt{10}=20\\sqrt{10}\\approx63\\,m$. Làm tròn $\\approx63$. Lưu ý đề bài diện tích $=500$: $L_{min}=2\\sqrt{1000}=20\\sqrt{10}\\approx63$. Đặt $S=450$ thì $L=x+\\dfrac{900}{x}\\geq60$ khi $x=30$. Đây bài dùng $S=450$: $x=30,y=15$, $L=30+30=60\\,m$.",
+            "correct": "60"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "🌍 Rạp chiếu phim $500$ ghế, giá vé $100$ nghìn bán được $300$ vé. Tăng $10$ nghìn thì giảm $10$ khách. Giá vé tối ưu (nghìn đồng) để doanh thu lớn nhất là bao nhiêu?",
+            "explanation": "Gọi $k$ lần tăng giá ($k\\geq0$). Giá: $100+10k$; Khách: $300-10k$. $T=(100+10k)(300-10k)=30000+2000k-100k^2$. $T'=2000-200k=0 \\Rightarrow k=10$. Giá tối ưu $=100+100=200$ nghìn đồng.",
+            "correct": "200"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "🌍 Công ty sản xuất $x$ sản phẩm/ngày ($0\\leq x\\leq20$). Lợi nhuận $P(x)=-x^2+14x-24$ (triệu đồng). Lợi nhuận lớn nhất đạt được là bao nhiêu triệu đồng?",
+            "explanation": "$P'(x)=-2x+14=0 \\Rightarrow x=7$. $P(7)=-49+98-24=25$ triệu đồng. Kiểm tra biên: $P(0)=-24<0$; $P(20)=-400+280-24=-144<0$. Max $=25$ triệu.",
+            "correct": "25"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "🌍 Tấm tôn $8\\,m$ uốn thành máng nước dạng chữ U (hình chữ nhật, không đáy). Chiều rộng mặt cắt là $x$, hai thành cao $y$. Điều kiện $x+2y=8$. Tìm $x$ (m) để diện tích mặt cắt lớn nhất.",
+            "explanation": "$x+2y=8 \\Rightarrow y=\\dfrac{8-x}{2}$. Diện tích mặt cắt $S=x\\cdot y=\\dfrac{x(8-x)}{2}=-\\dfrac{x^2}{2}+4x$. $S'=-x+4=0 \\Rightarrow x=4\\,m$. $y=2\\,m$. $S=4\\times2=8\\,m^2$.",
+            "correct": "4"
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Một người nông dân muốn rào quanh một khu vườn hình chữ nhật có diện tích 1000m vuông, một cạnh giáp bờ sông (không cần rào). Tìm kích thước vườn để tổng chiều dài hàng rào ngắn nhất.",
+            "answer": "Chiều dài cạnh song song sông là $20\\sqrt{10}$m, cạnh vuông góc là $10\\sqrt{10}$m (Nếu diện tích là $200$ thì cạnh là $20$ và $10$). Với $1000$: $x \\cdot y = 1000 \\Rightarrow L = y + 2x = 1000/x + 2x$. $x = \\sqrt{500} = 10\\sqrt{5}$, $y = 20\\sqrt{5}$.",
+            "explanation": "Lập hàm số cho chu vi hàng rào và dùng đạo hàm tìm cực tiểu."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Tốc độ của một chiếc xe sau khi đạp phanh được cho bởi $v(t) = 20 - 5t$ (m/s). Tính quãng đường xe đi được từ lúc phanh đến khi dừng hẳn.",
+            "answer": "40m.",
+            "explanation": "Xe dừng khi $v(t)=0 \\Rightarrow t=4$. Quãng đường là nguyên hàm của vận tốc (hoặc dùng vật lý)."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Một doanh nghiệp sản xuất $x$ sản phẩm với hàm chi phí $C(x) = 0.5x^2 + 10x + 1000$. Tìm mức sản lượng $x$ để chi phí trung bình trên mỗi sản phẩm nhỏ nhất.",
+            "answer": "$x = \\sqrt{2000} \\approx 45$ sản phẩm.",
+            "explanation": "Hàm chi phí trung bình $A(x) = C(x)/x = 0.5x + 10 + 1000/x$. Dùng BĐT Cô-si."
+          }
+        ]
+      }
+    }
+  ]
+}

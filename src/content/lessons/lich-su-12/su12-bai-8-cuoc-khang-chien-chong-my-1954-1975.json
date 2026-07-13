@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-8",
+    "name": "Cuộc kháng chiến chống Mỹ (1954-1975)",
+    "slug": "cuoc-khang-chien-chong-my-1954-1975",
+    "chapter": "Chủ đề 3: Cách mạng tháng tám, chiến tranh giải phóng dân tộc",
+    "chapter_id": "su12",
+    "lesson_id": 8,
+    "description": "Nguyên nhân, quá trình, kết quả cuộc kháng chiến chống Mỹ, giành độc lập và thống nhất đất nước.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Cuộc kháng chiến chống Mỹ (1954-1975)",
+        "sections": [
+          { "heading": "1. Nguyên nhân phát động kháng chiến", "content": "Hiệp định Ghi Nước (1954) chia tạm thời tại độ 17. Mỹ hỗ trợ Việt Nam Cộng hòa (Nam Việt). Chính quyền miền Nam bao biện bầu cử. Cộng hòa Xã hội chủ nghĩa Việt Nam (Bắc Việt) hỗ trợ Việt Cộng. Nhân dân miền Nam kháng cự sự áp bức. Tất yếu lịch sử: chiến tranh chống Mỹ." },
+          { "heading": "2. Giai đoạn (1955-1964): Xây dựng lực lượng", "content": "Việt Cộng hoạt động du kích ở miền Nam. Mỹ gửi 900 cố vấn (tăng từ từ). Cuộc xung đột nhỏ lẻ xảy ra. Việt Cộng kiềm chế trong chiến tranh du kích. Diều động Tonkin (2/8/1964) được báo cáo, tho không đúng." },
+          { "heading": "3. Giai đoạn (1965-1968): Chiến tranh toàn diện", "content": "Mỹ bắt đầu Tác vụ Bay mưa (Rolling Thunder) oanh tạc Bắc Việt. Hơn 500,000 lính Mỹ tham chiến (đỉnh 1968). Mỹ dùng vũ khí mới: bom, chất độc. Việt Minh kháng cự quyết liệt. Sự kiện Tết 1968: Việt Cộng tấn công 100 thành phố. Người Mỹ chịu tổn thất nặng, dư luận phản đối." },
+          { "heading": "4. Giai đoạn (1968-1975): Hạ gục thế lực Mỹ", "content": "Mỹ bắt đầu Mỹ hóa chiến tranh (Vietnamization). Rút quân Mỹ từ từ về nhà. Miền Bắc tấn công Ease Easter Offensive (1972) nhưng không thắng. Mỹ ký Hiệp định Paris (1/1973) rút vũ khí. Cuộc tấn công cuối cùng (30/4/1975): Miền Bắc giải phóng Sài Gòn, thống nhất đất nước." },
+          { "heading": "5. Kết quả và ý nghĩa lịch sử", "content": "Việt Nam giành độc lập hoàn toàn. Miền Bắc giải phóng miền Nam; Đất nước thống nhất. Nước Cộng hòa Xã hội chủ nghĩa Việt Nam thành lập (1976). Tổn thất: 2-3 triệu người chết. Bài học: Chủ nghĩa thực dân không bao giờ thắng lợi; Nhân dân quyết tâm chiến đấu sẽ thắng." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Mỹ hỗ trợ bên nào?", "options": ["Miền Bắc", "Miền Nam Việt Nam Cộng hòa", "Pháp", "Anh"], "correct": 1, "explanation": "Mỹ hỗ trợ Việt Nam Cộng hòa (miền Nam)." },
+        { "id": "ex2", "type": "mcq", "question": "Cơ hội giải phóng?", "options": ["Hiệp định Paris", "Sự kiện Tonkin", "Tết 1968", "Tấn công Easter"], "correct": 2, "explanation": "Tết 1968: Cuộc tấn công lớn của Việt Cộng dội vỡ phòng tuyến Mỹ." },
+        { "id": "ex3", "type": "mcq", "question": "Bao nhiêu lính Mỹ?", "options": ["100,000", "300,000", "500,000", "1 triệu"], "correct": 2, "explanation": "Hơn 500,000 lính Mỹ tham chiến (đỉnh 1968)." },
+        { "id": "ex4", "type": "mcq", "question": "Tác vụ Mỹ tên?", "options": ["Operation Vietnam", "Rolling Thunder", "Easter Offensive", "French Union"], "correct": 1, "explanation": "Tác vụ Bay mưa (Rolling Thunder) oanh tạc Bắc Việt." },
+        { "id": "ex5", "type": "mcq", "question": "Hiệp định cuối?", "options": ["Ghi Nước 1954", "Paris 1973", "Geneova 1955", "Hà Nội 1974"], "correct": 1, "explanation": "Hiệp định Paris (1/1/1973) rút quân Mỹ." },
+        { "id": "ex6", "type": "mcq", "question": "Ngày giải phóng?", "options": ["1/1/1973", "30/4/1975", "2/9/1945", "21/7/1954"], "correct": 1, "explanation": "30/4/1975: Ngày giải phóng miền Nam, thống nhất đất nước." },
+        { "id": "ex7", "type": "mcq", "question": "Nước thành lập?", "options": ["Việt Nam Cộng hòa", "Cộng hòa Xã hội Chủ nghĩa Việt Nam", "Đại Việt", "Liên bang Đông Dương"], "correct": 1, "explanation": "Cuộc thống nhất đất nước tạo ra Cộng hòa Xã hội chủ nghĩa Việt Nam (1976)." },
+        { "id": "ex8", "type": "mcq", "question": "Tổn thất?", "options": ["100,000 người", "500,000 người", "2-3 triệu người", "5 triệu người"], "correct": 2, "explanation": "Tổn thất khoảng 2-3 triệu người chết." },
+        { "id": "ex9", "type": "mcq", "question": "Chính sách Mỹ sau Tết?", "options": ["Tăng cường quân", "Mỹ hóa chiến tranh, rút quân", "Chiếm Hà Nội", "Mở rộng luận lao động"], "correct": 1, "explanation": "Sau Tết 1968, Mỹ bắt đầu rút quân theo chính sách Mỹ hóa." },
+        { "id": "ex10", "type": "mcq", "question": "Ý nghĩa lịch sử?", "options": ["Mỹ thủ tiêu cộng sản", "Việt Nam độc lập, thống nhất", "Châu Á sống chung hòa bình", "Nước Mỹ thắng lợi"], "correct": 1, "explanation": "Việt Nam giành độc lập hoàn toàn, thất nước thống nhất." }
+      ]
+    }
+  }]
+}

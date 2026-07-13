@@ -54,13 +54,16 @@ export const GET: APIRoute = async ({ request }) => {
 
   // ── Bài học (/[subject]/[slug]) ────────────────────────────────────────────────
   for (const entry of lessonEntries) {
-    const slug = entry.id.split('/').pop() || entry.id;
-    const lastmod = entry.data.created_at
-      ? new Date(entry.data.created_at).toISOString()
+    const parts = entry.id.split('/');
+    const subjectSlug = parts[0] || '';
+    const slug = parts.pop() || entry.id;
+    const created_at = entry.data.lessons?.[0]?.created_at;
+    const lastmod = created_at
+      ? new Date(created_at).toISOString()
       : now;
     urls.push(`
   <url>
-    <loc>${origin}${base}/${entry.data.subject}/${slug}</loc>
+    <loc>${origin}${base}/${subjectSlug}/${slug}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>

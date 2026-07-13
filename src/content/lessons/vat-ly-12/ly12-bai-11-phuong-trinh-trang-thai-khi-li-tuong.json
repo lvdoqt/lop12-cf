@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-11-phuong-trinh-trang-thai-khi-li-tuong",
+      "name": "Bài 11. Phương trình trạng thái của khí lí tưởng",
+      "slug": "bai-11-phuong-trinh-trang-thai-khi-li-tuong",
+      "chapter": "Chương 2. Khí lí tưởng",
+      "chapter_id": "LY12-2",
+      "lesson_id": 11,
+      "description": "Nghiên cứu phương trình trạng thái của khí lí tưởng và các bài toán liên quan.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "pttt-1",
+          "name": "Phương trình Clayperon",
+          "slug": "phuong-trinh-clayperon",
+          "difficulty": "easy"
+        },
+        {
+          "id": "pttt-2",
+          "name": "Định luật Avogadro",
+          "slug": "dinh-luat-avogadro",
+          "difficulty": "medium"
+        },
+        {
+          "id": "pttt-3",
+          "name": "Bài toán trạng thái",
+          "slug": "bai-toan-trang-thai",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Phương trình trạng thái khí lí tưởng",
+          "sections": [
+            {
+              "heading": "1. Phương trình Clayperon",
+              "content": "<p>Phương trình trạng thái tổng quát của khí lí tưởng:</p><p>$$pV = nRT$$</p><p>Trong đó:</p><ul><li>p: áp suất (Pa)</li><li>V: thể tích (m³)</li><li>n: số mol (mol)</li><li>R = 8,314 J/(mol.K): hằng số khí</li><li>T: nhiệt độ tuyệt đối (K)</li></ul><p><strong>Các dạng khác:</strong></p><p>$$pV = Nk_B T$$</p><p>$$pV = \\frac{m}{M}RT$$</p><p>Trong đó:</p><ul><li>N: số phân tử</li><li>k_B = 1,38.10⁻²³ J/K: hằng số Boltzmann</li><li>m: khối lượng (kg)</li><li>M: khối lượng mol (kg/mol)</li></ul>"
+            },
+            {
+              "heading": "2. Định luật Avogadro",
+              "content": "<p><strong>Phát biểu:</strong> Ở cùng nhiệt độ và áp suất, các khí có cùng thể tích chứa cùng số mol.</p><p><strong>Hệ quả:</strong> Ở điều kiện tiêu chuẩn (đkc):</p><ul><li>p₀ = 1 atm = 101325 Pa</li><li>T₀ = 273 K</li><li>V₀ = 22,4 lít/mol = 22,4.10⁻³ m³/mol</li></ul><p><strong>Công thức:</strong></p><p>$$n = \\frac{V}{V_0} \\cdot \\frac{p_0 T}{RT_0}$$</p>"
+            },
+            {
+              "heading": "3. Phương trình liên tục cho 2 trạng thái",
+              "content": "<p>Khi lượng khí không đổi (n = const):</p><p>$$\\frac{p_1 V_1}{T_1} = \\frac{p_2 V_2}{T_2}$$</p><p>Đây là phương trình tổng hợp của 3 định luật:</p><ul><li>Đẳng nhiệt (T₁ = T₂): p₁V₁ = p₂V₂ (Boyle)</li><li>Đẳng áp (p₁ = p₂): V₁/T₁ = V₂/T₂ (Charles)</li><li>Đẳng tích (V₁ = V₂): p₁/T₁ = p₂/T₂ (Gay-Lussac)</li></ul>"
+            },
+            {
+              "heading": "4. Một số dạng đặc biệt",
+              "content": "<p><strong>Khối lượng riêng:</strong></p><p>$$D = \\frac{m}{V} = \\frac{pM}{RT}$$</p><p><strong>Áp suất riêng phần:</strong> (hỗn hợp khí)</p><p>$$p = n_1 \\frac{RT}{V} + n_2 \\frac{RT}{V} + ...$$</p><p><strong>Phương trình Mendeleev-Clapeyron:</strong></p><p>$$pV = \\frac{m}{M}RT$$</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tìm các thông số trạng thái",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Sử dụng pV = nRT</li><li>Đổi đơn vị về SI</li><li>Chú ý: 1 atm = 101325 Pa, 1 lít = 10⁻³ m³</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tính thể tích của 2 mol khí ở 27°C và 2 atm.",
+                "solution": "<p><strong>Giải:</strong></p><p>T = 300K, p = 2 atm = 202650 Pa</p><p>V = nRT/p = 2.8,314.300/202650 = 0,0246 m³ = 24,6 lít</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán 2 trạng thái",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Áp dụng p₁V₁/T₁ = p₂V₂/T₂</li><li>Giữ nguyên lượng khí</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Khí ở 27°C, 3 atm, 4 lít. Đun nóng đến 127°C và giãn nở đến 8 lít. Tính áp suất mới.",
+                "solution": "<p><strong>Giải:</strong></p><p>T₁=300K, p₁=3 atm, V₁=4l</p><p>T₂=400K, V₂=8l</p><p>p₁V₁/T₁ = p₂V₂/T₂ → 3.4/300 = p₂.8/400 → p₂ = 2 atm</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Phương trình trạng thái khí lí tưởng:",
+            "options": [
+              "pV = nRT",
+              "pV = const.T",
+              "p/T = const.V",
+              "VT = const.p"
+            ],
+            "correct": 0,
+            "explanation": "pV = nRT là phương trình Clayperon"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Hằng số khí R có giá trị:",
+            "options": [
+              "8,314 J/(mol.K)",
+              "1,38.10⁻²³ J/K",
+              "6,022.10²³ mol⁻¹",
+              "22,4 l/mol"
+            ],
+            "correct": 0,
+            "explanation": "R = 8,314 J/(mol.K)"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Thể tích 1 mol khí ở đkc:",
+            "options": [
+              "22,4 lít",
+              "24,0 lít",
+              "20,0 lít",
+              "25,0 lít"
+            ],
+            "correct": 0,
+            "explanation": "V₀ = 22,4 lít/mol ở 273K, 1 atm"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Định luật Avogadro: Ở cùng T và p, các khí có cùng V chứa:",
+            "options": [
+              "Cùng khối lượng",
+              "Cùng số mol",
+              "Cùng khối lượng mol",
+              "Cùng mật độ"
+            ],
+            "correct": 1,
+            "explanation": "Cùng V, T, p → cùng số mol"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Công thức pV = mRT/M trong đó M là:",
+            "options": [
+              "Khối lượng",
+              "Khối lượng mol",
+              "Số mol",
+              "Thể tích mol"
+            ],
+            "correct": 1,
+            "explanation": "M là khối lượng mol"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Từ pV = nRT, ta suy ra:",
+            "options": [
+              "p₁V₁/T₁ = p₂V₂/T₂",
+              "p₁V₁ = p₂V₂",
+              "V₁/T₁ = V₂/T₂",
+              "p₁/T₁ = p₂/T₂"
+            ],
+            "correct": 0,
+            "explanation": "Khi n không đổi: p₁V₁/T₁ = p₂V₂/T₂"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Hằng số Boltzmann kB liên hệ với R qua:",
+            "options": [
+              "kB = R/NA",
+              "kB = R.NA",
+              "kB = R + NA",
+              "kB = R - NA"
+            ],
+            "correct": 0,
+            "explanation": "kB = R/NA"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Khi nhiệt độ tăng và thể tích tăng, áp suất:",
+            "options": [
+              "Tăng",
+              "Giảm",
+              "Không đổi",
+              "Có thể tăng hoặc giảm"
+            ],
+            "correct": 3,
+            "explanation": "Phụ thuộc vào mức độ thay đổi của T và V"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Đổi 2 atm sang Pa:",
+            "options": [
+              "202650 Pa",
+              "101325 Pa",
+              "303975 Pa",
+              "50662,5 Pa"
+            ],
+            "correct": 0,
+            "explanation": "2 atm = 2.101325 = 202650 Pa"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Khối lượng riêng D của khí phụ thuộc:",
+            "options": [
+              "Chỉ p",
+              "Chỉ T",
+              "p và T",
+              "Chỉ M"
+            ],
+            "correct": 2,
+            "explanation": "D = pM/RT"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Phương trình pV = nRT suy ra các định luật:",
+            "options": [
+              "Boyle (đẳng nhiệt)",
+              "Charles (đẳng áp)",
+              "Gay-Lussac (đẳng tích)",
+              "Avogadro"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Tất cả đều suy ra từ pV = nRT"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các đại lượng trong phương trình trạng thái:",
+            "options": [
+              "p: áp suất",
+              "V: thể tích",
+              "T: nhiệt độ",
+              "n: số mol"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Tất cả đều là thông số trạng thái"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Điều kiện tiêu chuẩn (đkc):",
+            "options": [
+              "p₀ = 1 atm",
+              "T₀ = 273 K",
+              "V₀ = 22,4 l/mol",
+              "n = 1 mol"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Đkc: p₀ = 1 atm, T₀ = 273K, V₀ = 22,4 l/mol"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính thể tích 1 mol khí ở 27°C và 1 atm (lít).",
+            "correct": "24.7",
+            "explanation": "V = nRT/p = 1.8,314.300/101325 = 0,0247 m³ = 24,7 lít"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Tính số mol trong 5,6 lít khí ở đkc.",
+            "correct": "0.25",
+            "explanation": "n = V/V₀ = 5,6/22,4 = 0,25 mol"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Khí ở 27°C, 2 atm, 4 lít được đun nóng đến 127°C và nén đến 2 lít. Tính áp suất mới (atm).",
+            "correct": "5.33",
+            "explanation": "p₁V₁/T₁ = p₂V₂/T₂ → 2.4/300 = p₂.2/400 → p₂ = 5,33 atm"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính khối lượng của 2 mol CO₂. M = 44 g/mol.",
+            "correct": "88",
+            "explanation": "m = n.M = 2.44 = 88 g = 0,088 kg"
+          }
+        ]
+      }
+    }
+  ]
+}

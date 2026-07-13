@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_12",
+      "name": "Vấn đề phát triển ngành lâm nghiệp và ngành thủy sản",
+      "slug": "van-de-phat-trien-nganh-lam-nghiep-va-thuy-san",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 12,
+      "description": "Thách thức và giải pháp phát triển lâm nghiệp và thủy sản: bảo tồn rừng, quản lý khai thác gỗ, phát triển nuôi trồng và đánh bắt bền vững.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Phát triển lâm nghiệp và thủy sản bền vững",
+          "summary": "Lâm nghiệp cần cân bằng giữa khai thác và phục hồi, thủy sản cần quản lý đánh bắt và nuôi trồng để bảo đảm nguồn lợi lâu dài; các biện pháp bao gồm bảo vệ rừng, quản lý vùng biển và chuỗi giá trị thủy sản.",
+          "sections": [
+            { "heading": "Vấn đề lâm nghiệp", "content": "Phá rừng, suy thoái rừng, cần phục hồi rừng, quản lý bền vững và phát triển lâm nghiệp sản xuất." },
+            { "heading": "Vấn đề thủy sản", "content": "Quản lý đánh bắt quá mức, ô nhiễm môi trường biển, phát triển nuôi trồng thủy sản bền vững và quản lý vùng bờ." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Nêu một biện pháp quản lý nguồn lợi thủy sản?", "a_hint": "Giới hạn đánh bắt, mùa cấm, khu bảo tồn biển." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Nguyên nhân chính dẫn tới suy giảm rừng?", "options": ["Khai thác gỗ trái phép và chuyển đổi mục đích sử dụng đất","Trồng rừng nhiều hơn","Bảo tồn quá mức","Không có nguyên nhân"], "correct": 0, "explanation": "Khai thác và chuyển đổi mục đích sử dụng là nguyên nhân chính." },
+          { "id": 2, "type": "mcq", "question": "Biện pháp giúp phát triển thủy sản bền vững?", "options": ["Quản lý hạn ngạch đánh bắt và khu bảo tồn biển","Tăng đánh bắt bất chấp nguồn lợi","Không quản lý","Phá vỡ rạn san hô"], "correct": 0, "explanation": "Hạn ngạch và khu bảo tồn giúp bảo vệ nguồn lợi." },
+          { "id": 3, "type": "mcq", "question": "Một lợi ích của rừng phòng hộ ven sông là?", "options": ["Giảm xói mòn và bảo vệ nguồn nước","Tăng xói mòn","Gây ô nhiễm","Không có lợi ích"], "correct": 0, "explanation": "Rừng phòng hộ giảm xói mòn và duy trì chất lượng nước." },
+          { "id": 4, "type": "mcq", "question": "Nuôi trồng thủy sản bền vững cần chú ý?", "options": ["Quản lý chất lượng nước và mật độ nuôi","Xả thải trực tiếp sang biển","Không kiểm soát","Tăng mật độ vô hạn"], "correct": 0, "explanation": "Quản lý mật độ và chất lượng nước là cần thiết." },
+          { "id": 5, "type": "mcq", "question": "Một chỉ tiêu đánh giá khai thác thủy sản hợp lý là?", "options": ["Sản lượng bền vững và đa dạng loài biển","Tăng sản lượng ngay lập tức","Giảm đa dạng sinh học","Không có chỉ tiêu"], "correct": 0, "explanation": "Đánh giá bền vững dựa trên sản lượng ổn định và đa dạng loài." },
+          { "id": 6, "type": "mcq", "question": "Hoạt động nào gây suy giảm nguồn lợi biển?", "options": ["Đánh bắt tận diệt và ô nhiễm","Trồng rừng","Bảo tồn biển","Giảm khai thác"], "correct": 0, "explanation": "Đánh bắt tận diệt và ô nhiễm làm suy giảm nguồn lợi." },
+          { "id": 7, "type": "mcq", "question": "Phục hồi rừng cần làm gì?", "options": ["Trồng rừng, chống xói mòn, quản lý cháy rừng","Xóa bỏ thực vật","Tăng khai thác","Không hành động"], "correct": 0, "explanation": "Trồng rừng và bảo vệ là bước phục hồi chính." },
+          { "id": 8, "type": "mcq", "question": "Một công cụ quản lý biển hiệu quả là?", "options": ["Khu bảo tồn biển và vùng cấm đánh bắt","Tăng đánh bắt nhân tạo","Giảm chính sách","Không có công cụ"], "correct": 0, "explanation": "Khu bảo tồn và vùng cấm giúp bảo vệ nguồn lợi." },
+          { "id": 9, "type": "mcq", "question": "Một rủi ro khi nuôi trồng thủy sản quy mô lớn là?", "options": ["Ô nhiễm nước và dịch bệnh lây lan","Tăng đa dạng loài","Giảm sản lượng","Không có rủi ro"], "correct": 0, "explanation": "Ô nhiễm và dịch bệnh là rủi ro nuôi trồng tập trung." },
+          { "id": 10, "type": "mcq", "question": "Vai trò của cộng đồng trong quản lý tài nguyên là?", "options": ["Tham gia bảo vệ, giám sát và thực hiện quy định địa phương","Không tham gia","Hủy hoại tài nguyên","Không có vai trò"], "correct": 0, "explanation": "Cộng đồng đóng vai trò quan trọng trong bảo vệ và quản lý." }
+        ]
+      }
+    }
+  ]
+}

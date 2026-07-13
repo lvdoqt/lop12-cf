@@ -1,0 +1,203 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-3-4-thuc-hanh-tieng-viet",
+      "name": "Thực hành tiếng Việt: Lỗi logic, lỗi câu mơ hồ và cách sửa",
+      "slug": "thuc-hanh-tieng-viet-loi-logic",
+      "chapter": "Lập luận trong văn bản nghị luận",
+      "chapter_id": "V12-3",
+      "lesson_id": 4,
+      "description": "Rèn luyện kỹ năng sử dụng tiếng Việt đúng cách. Nhận diện và sửa những lỗi logic, lỗi câu mơ hồ một cách hiệu quả.",
+      "duration_minutes": 50,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1516979187457-635ffe35ff15?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "loi1",
+          "name": "Nhận biết lỗi",
+          "slug": "nhan-biet-loi",
+          "difficulty": "medium"
+        },
+        {
+          "id": "sua1",
+          "name": "Sửa lỗi",
+          "slug": "sua-loi",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lỗi logic, lỗi câu mơ hồ và cách sửa",
+          "sections": [
+            {
+              "heading": "1. Lỗi logic trong định nghĩa",
+              "content": "<h4>a) Định nghĩa quá rộng</h4><ul><li><strong>Khái niệm:</strong> Là khi phạm vi định nghĩa lớn hơn khái niệm cần định nghĩa</li><li><strong>Ví dụ lỗi:</strong> \"Sách là những trang giấy được ghi chữ\". (Vì báo, tạp chí cũng có những trang giấy ghi chữ nhưng không phải sách)</li><li><strong>Cách sửa:</strong> \"Sách là những trang giấy được ghi chữ, liên kết với nhau tạo thành một khối để truyền tải kiến thức, dung cảm\"</li></ul><h4>b) Định nghĩa quá hẹp</h4><ul><li><strong>Khái niệm:</strong> Là khi phạm vi định nghĩa bé hơn khái niệm cần định nghĩa</li><li><strong>Ví dụ lỗi:</strong> \"Hoa là những cây cảnh được trồng trong chậu trong nhà\". (Vì hoa còn có những loại khác như hoa cây to, hoa làm đám cưới...)</li><li><strong>Cách sửa:</strong> \"Hoa (hay hoa lá) là bộ phận sinh sản của thực vật, thường có màu sắc đẹp mắt, có mùi thơm, bao gồm nhị hoa, tỉnh hoa, tách hoa...\"</li></ul><h4>c) Định nghĩa theo vòng tròn</h4><ul><li><strong>Khái niệm:</strong> Là khi dùng chính khái niệm đó để định nghĩa cho chính khái niệm ấy</li><li><strong>Ví dụ lỗi:</strong> \"Đội ngũ là sự tập hợp của những người thành lập nên một đội ngũ\"</li><li><strong>Cách sửa:</strong> \"Đội ngũ là những người có cùng mục tiêu, cùng tập hợp lại để hoàn thành một nhiệm vụ chung\"</li></ul><h4>d) Định nghĩa không rõ, quá tối nghĩa</h4><ul><li><strong>Khái niệm:</strong> Là khi sử dụng các từ quá trừu tượng, khó hiểu</li><li><strong>Ví dụ lỗi:</strong> \"Yêu là cảm giác vô định vô hạn\". (Quá trừu tượng, khó hiểu)</li><li><strong>Cách sửa:</strong> \"Yêu là cảm giác do sự gắn bó, thấu hiểu ơi sâu sắc giữa hai con người gây ra, thường kèm theo mong muốn được ở bên cạnh, chăm sóc đối tượng mà mình yêu\"</li></ul>"
+            },
+            {
+              "heading": "2. Lỗi logic trong so sánh",
+              "content": "<h4>a) So sánh giữa những thứ không cùng cấp hoặc không có điểm chung</h4><ul><li><strong>Ví dụ lỗi:</strong> \"Học thêm môn học ngoại khoá giống như chạy thêm 100 mét nữa mỗi ngày\". (Học thêm là về trí tuệ, chạy là về sức khỏe; không có điểm chung để so sánh)</li><li><strong>Cách sửa:</strong> \"Học thêm môn học ngoại khoá giống như mở thêm một cửa sổ để tìm hiểu thế giới, vậy khi ta biết nhiều thứ hơn, trí tuệ ta sẽ rộng mở hơn\"</li></ul><h4>b) So sánh không rõ tiêu chí so sánh</h4><ul><li><strong>Ví dụ lỗi:</strong> \"Bạn A giống như bạn B\". (Không rõ ở những điểm nào giống nhau)</li><li><strong>Cách sửa:</strong> \"Bạn A giống như bạn B ở chỗ cả hai đều có tính cách hướng ngoại, yêu thích giao tiếp và hoạt động nhóm\"</li></ul><h4>c) So sánh lập thể - không tương xứng</h4><ul><li><strong>Ví dụ lỗi:</strong> \"Cô ấy hiểu biết và ngoại hình rất xinh đẹp\". (Kết hợp không tương xứng: hiểu biết là về trí tuệ, ngoại hình là về thể xác)</li><li><strong>Cách sửa:</strong> \"Cô ấy vừa hiểu biết sâu rộng vừa ngoại hình xinh đẹp\" hoặc \"Cô ấy không chỉ ngoại hình xinh đẹp mà còn rất thông minh\"</li></ul>"
+            },
+            {
+              "heading": "3. Lỗi logic trong lập luận nhân quả",
+              "content": "<h4>a) Nhân quả giả tạo (Post hoc, ergo propter hoc)</h4><ul><li><strong>Khái niệm:</strong> Là sai lầm cho rằng vì sự kiện A xảy ra trước sự kiện B, nên A là nguyên nhân gây B</li><li><strong>Ví dụ lỗi:</strong> \"Tôi mang theo lá cầu kỳ của mẹ, sau đó tôi thi được điểm cao. Vậy lá cầu kỳ giúp tôi thi tốt\". (Thực tế, tôi thi tốt là vì học chăm chỉ, không phải vì lá cầu kỳ)</li><li><strong>Phương pháp giải quyết:</strong> Tìm ra nguyên nhân thực sự, không nhầm lẫn trình tự thời gian với mối quan hệ nhân quả</li></ul><h4>b) Lập luận nguyên nhân không đủ</h4><ul><li><strong>Khái niệm:</strong> Là khi chỉ nêu ra một nguyên nhân trong khi có nhiều nguyên nhân khác</li><li><strong>Ví dụ lỗi:</strong> \"Tình trạng ô nhiễm không khí là do lưu thông giao thông quá tải\". (Thực ra còn có nhiều nguyên nhân khác như thải khí từ nhà máy, đốt phế phẩm...)</li><li><strong>Cách sửa:</strong> \"Tình trạng ô nhiễm không khí có nhiều nguyên nhân: lưu thông giao thông quá tải, khí thải từ nhà máy, việc đốt phế phẩm, ...\"</li></ul><h4>c) Lập luận không xem xét hệ quả đảo chiều</h4><ul><li><strong>Ví dụ lỗi:</strong> \"Những người giàu có không cần học tập gì thêm\". (Nhưng thực tế, những người giàu có thường chuyên focus vào học tập để duy trì hoặc tăng cường tài sản)</li><li><strong>Cách sửa:</strong> \"Những người giàu có vẫn cần tiếp tục học tập để duy trì và phát triển tài sản của mình\"</li></ul>"
+            },
+            {
+              "heading": "4. Lỗi câu mơ hồ",
+              "content": "<h4>a) Lỗi chủ ngữ không rõ</h4><ul><li><strong>Ví dụ lỗi:</strong> \"Qua bài đọc này, nó giúp chúng tôi hiểu rõ hơn\". (Chủ ngữ \"nó\" thay chỉ để không rõ)</li><li><strong>Cách sửa:</strong> \"Qua bài đọc này, chúng tôi hiểu rõ hơn\" hoặc \"Bài đọc này giúp chúng tôi hiểu rõ hơn\"</li></ul><h4>b) Lỗi tân ngữ không rõ</h4><ul><li><strong>Ví dụ lỗi:</strong> \"Tôi nhìn thấy con chim chở bao thư buổi sáng\". (Không rõ \"buổi sáng\" là khi con chim chở hay khi tôi nhìn thấy)</li><li><strong>Cách sửa:</strong> \"Buổi sáng, tôi nhìn thấy con chim chở bao thư\" hoặc \"Tôi nhìn thấy con chim chở bao thư vào buổi sáng\"</li></ul><h4>c) Lỗi từ nối không phù hợp</h4><ul><li><strong>Ví dụ lỗi:</strong> \"Anh ấy bận rộn nhưng hoàn thành bài tập đúng hạn\". (Dùng \"nhưng\" thể hiện mâu thuẫn, nhưng ở đây không có mâu thuẫn)</li><li><strong>Cách sửa:</strong> \"Mặc dù bận rộn nhưng anh ấy vẫn hoàn thành bài tập đúng hạn\" (dùng \"mặc dù... nhưng...\" là hợp)\n hoặc \"Anh ấy bận rộn và vẫn hoàn thành bài tập đúng hạn\" (dùng \"và\")</li></ul><h4>d) Lỗi cấu trúc câu không song song</h4><ul><li><strong>Ví dụ lỗi:</strong> \"Có ba cách để học tiếng Anh tốt: đọc sách, nghe podcast, và bạn nên nói chuyện với người bản ngữ\". (Cấu trúc không song parallel)</li><li><strong>Cách sửa:</strong> \"Có ba cách để học tiếng Anh tốt: đọc sách, nghe podcast, và nói chuyện với người bản ngữ\"</li></ul><h4>e) Lỗi tính từ, trạng từ đặt sai vị trí</h4><ul><li><strong>Ví dụ lỗi:</strong> \"Những cô gái trẻ với chiếc áo dài trắng đi ngang qua khu vườn mộc vệ sáng nay rất đẹp\". (Không rõ \"rất đẹp\" là chỉ gì)</li><li><strong>Cách sửa:</strong> \"Sáng nay, những cô gái trẻ với chiếc áo dài trắng đi ngang qua khu vườn mộc trông rất đẹp\" hoặc \"Sáng nay, khu vườn mộc trông rất đẹp khi những cô gái trẻ mặc áo dài trắng đi ngang qua\"</li></ul>"
+            },
+            {
+              "heading": "5. Cách nhận biết và sửa lỗi logic, lỗi câu",
+              "content": "<h4>a) Bước 1: Đọc kỹ câu, đoạn, bài</h4><ul><li>Trước hết hãy đọc toàn bộ câu, đoạn bằng một hoặc hai lần để nắm được ý chính</li><li>Xác định chủ ngữ, vị ngữ, tân ngữ chính</li></ul><h4>b) Bước 2: Xác định loại lỗi</h4><ul><li>Nếu liên quan đến ý, logic → có thể là lỗi logic</li><li>Nếu liên quan đến cấu trúc, chữ từ → có thể là lỗi câu mơ hồ</li></ul><h4>c) Bước 3: Sửa lỗi</h4><ul><li>Đối với lỗi logic: Tìm ra lỗi suy luận, thay thế bằng lập luận hợp lý</li><li>Đối với lỗi câu mơ hồ: Sắp xếp lại từ, cấu trúc câu để làm rõ ý nghĩa</li></ul><h4>d) Bước 4: Kiểm tra lại</h4><ul><li>Đọc lại câu sửa xem nó có hợp lý, rõ ràng không</li><li>Có thể đọc to để nghe sự thường xuyên, tự nhiên của câu</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex3-4-1",
+              "type": "mcq",
+              "question": "Lỗi định nghĩa quá rộng là gì?",
+              "options": [
+                "Định nghĩa quá ngắn",
+                "Phạm vi định nghĩa lớn hơn khái niệm cần định nghĩa",
+                "Định nghĩa quá chi tiết",
+                "Định nghĩa không có ví dụ"
+              ],
+              "correct": 1,
+              "explanation": "Lỗi định nghĩa quá rộng xảy ra khi phạm vi định nghĩa lớn hơn khái niệm cần định nghĩa, bao gồm cả những thứ không thuộc khái niệm đó."
+            },
+            {
+              "id": "ex3-4-2",
+              "type": "mcq",
+              "question": "Định nghĩa theo vòng tròn là gì?",
+              "options": [
+                "Định nghĩa có hình tròn",
+                "Dùng chính khái niệm đó để định nghĩa cho chính nó",
+                "Định nghĩa quá dài",
+                "Định nghĩa có nhiều ví dụ"
+              ],
+              "correct": 1,
+              "explanation": "Định nghĩa theo vòng tròn là khi dùng chính khái niệm đó để định nghĩa cho chính khái niệm ấy, không giải thích được gì."
+            },
+            {
+              "id": "ex3-4-3",
+              "type": "mcq",
+              "question": "Lỗi nhân quả giả tạo (Post hoc) là gì?",
+              "options": [
+                "Tìm đúng nguyên nhân",
+                "Cho rằng vì A xảy ra trước B nên A là nguyên nhân gây B",
+                "Không tìm được nguyên nhân",
+                "Có quá nhiều nguyên nhân"
+              ],
+              "correct": 1,
+              "explanation": "Lỗi nhân quả giả tạo là khi nhầm lẫn trình tự thời gian với mối quan hệ nhân quả - cho rằng vì A xảy ra trước B nên A gây ra B."
+            },
+            {
+              "id": "ex3-4-4",
+              "type": "mcq",
+              "question": "Lỗi so sánh nào là phổ biến?",
+              "options": [
+                "So sánh quá chi tiết",
+                "So sánh giữa những thứ không cùng cấp hoặc không có điểm chung",
+                "So sánh quá ngắn",
+                "So sánh có quá nhiều ví dụ"
+              ],
+              "correct": 1,
+              "explanation": "Lỗi so sánh phổ biến là so sánh giữa những thứ không cùng cấp hoặc không có điểm chung, làm cho so sánh không hợp lý."
+            },
+            {
+              "id": "ex3-4-5",
+              "type": "mcq",
+              "question": "Lỗi câu mơ hồ do chủ ngữ không rõ thường xảy ra khi nào?",
+              "options": [
+                "Khi câu quá dài",
+                "Khi sử dụng đại từ 'nó', 'họ' mà không rõ thay thế cho ai/cái gì",
+                "Khi câu quá ngắn",
+                "Khi có quá nhiều động từ"
+              ],
+              "correct": 1,
+              "explanation": "Lỗi chủ ngữ không rõ thường xảy ra khi sử dụng đại từ như 'nó', 'họ' mà không rõ ràng thay thế cho ai hoặc cái gì."
+            },
+            {
+              "id": "ex3-4-6",
+              "type": "mcq",
+              "question": "Cách sửa lỗi cấu trúc không song song là gì?",
+              "options": [
+                "Thêm nhiều từ hơn",
+                "Đảm bảo các thành phần trong chuỗi có cấu trúc ngữ pháp giống nhau",
+                "Viết lại toàn bộ câu",
+                "Bỏ bớt từ"
+              ],
+              "correct": 1,
+              "explanation": "Để sửa lỗi cấu trúc không song parallel, cần đảm bảo các thành phần trong chuỗi (liệt kê) có cấu trúc ngữ pháp giống nhau."
+            },
+            {
+              "id": "ex3-4-7",
+              "type": "mcq",
+              "question": "Bước đầu tiên để nhận biết lỗi là gì?",
+              "options": [
+                "Sửa ngay",
+                "Đọc kỹ câu, đoạn để nắm ý chính và xác định chủ vị",
+                "Bỏ qua",
+                "Hỏi người khác"
+              ],
+              "correct": 1,
+              "explanation": "Bước đầu tiên là đọc kỹ câu, đoạn để nắm được ý chính và xác định chủ ngữ, vị ngữ, tân ngữ chính."
+            },
+            {
+              "id": "ex3-4-8",
+              "type": "mcq",
+              "question": "Sau khi sửa lỗi, cần làm gì?",
+              "options": [
+                "Không cần làm gì",
+                "Kiểm tra lại xem câu có hợp lý, rõ ràng không",
+                "Viết lại từ đầu",
+                "Xóa câu đó"
+              ],
+              "correct": 1,
+              "explanation": "Sau khi sửa lỗi, cần kiểm tra lại xem câu sửa có hợp lý, rõ ràng không, có thể đọc to để nghe sự tự nhiên của câu."
+            },
+            {
+              "id": "ex4-1",
+              "question": "Xác định loại lỗi logic còn lại trong câu sau: 'Những người thông minh đều học tập chăm chỉ, vậy nếu bạn học tập chăm chỉ thì bạn sẽ thông minh'",
+              "type": "multiple_choice",
+              "difficulty": "medium",
+              "options": [
+                "Định nghĩa quá rộng",
+                "Lập luận nhân quả giả tạo",
+                "Logic đảo ngược không đúng",
+                "Định nghĩa theo vòng tròn"
+              ],
+              "answer": "Logic đảo ngược không đúng"
+            },
+            {
+              "id": "ex4-2",
+              "question": "Sửa lỗi câu mơ hồ trong câu: 'Tôi thấy qua cửa sổ những chiếc xe chở hàng hóa khiến tôi nhượng chỗ'",
+              "type": "essay",
+              "difficulty": "medium",
+              "answer_guide": "Câu này có chủ ngữ \"tôi\" không rõ ràng. Cách sửa: 'Nhìn qua cửa sổ, tôi thấy những chiếc xe chở hàng hóa chạy với tốc độ cao, khiến tôi thở phào' hoặc 'Từ cửa sổ, tôi nhìn thấy những chiếc xe chở hàng hóa chạy qua, và điều đó khiến tôi thở phào'"
+            },
+            {
+              "id": "ex4-3",
+              "question": "Tìm và sửa lỗi logic trong đoạn: 'Sách nói là những tệp âm thanh được đọc từ sách in. Vậy bất cứ tệp âm thanh nào cũng được gọi là sách nói'",
+              "type": "essay",
+              "difficulty": "medium",
+              "answer_guide": "Lỗi: Lập luận logic đảo ngược không đúng. Định nghĩa sách nói rất rộng trong câu thứ hai. Sửa: 'Sách nói là những tệp âm thanh ghi lại tiếng người đọc từ một sách in hay một tác phẩm văn học. Không phải bất cứ tệp âm thanh nào cũng là sách nói'"
+            },
+            {
+              "id": "ex4-4",
+              "question": "Hãy sửa lỗi cấu trúc không song song trong câu: 'Cách chăm sóc thực vật bao gồm: tưới nước đều đặn, đặt thực vật ở nơi có ánh sáng đầy đủ, và nên bón phân thường xuyên'",
+              "type": "essay",
+              "difficulty": "medium",
+              "answer_guide": "Cách sửa: 'Cách chăm sóc thực vật bao gồm: tưới nước đều đặn, đặt thực vật ở nơi có ánh sáng đầy đủ, và bón phân thường xuyên' (loại bỏ 'nên')"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

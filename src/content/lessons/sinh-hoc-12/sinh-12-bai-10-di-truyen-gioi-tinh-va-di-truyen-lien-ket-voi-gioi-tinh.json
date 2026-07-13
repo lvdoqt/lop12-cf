@@ -1,0 +1,185 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-10",
+      "name": "Bài 10. Di truyền giới tính và di truyền liên kết với giới tính",
+      "slug": "di-truyen-gioi-tinh-va-di-truyen-lien-ket-voi-gioi-tinh",
+      "chapter": "Chương 2. Di truyền nhiễm sắc thể",
+      "chapter_id": "S12-2",
+      "lesson_id": 10,
+      "description": "Tìm hiểu về di truyền giới tính và các tính trạng liên kết với giới tính.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Di truyền giới tính và di truyền liên kết với giới tính",
+          "sections": [
+            {
+              "heading": "1. Cơ chế xác định giới tính",
+              "content": "<h4>a) Hệ thống XY</h4><ul><li>XX: Giới tính cái (đồng giao tử)</li><li>XY: Giới tính đực (dị giao tử)</li><li>Người, ruồi giấm, động vật có vú: XX♀, XY♂</li></ul><h4>b) Hệ thống ZW</h4><ul><li>ZW: Giới tính cái (dị giao tử)</li><li>ZZ: Giới tính đực (đồng giao tử)</li><li>Chim, bướm, một số cá: ZZ♂, ZW♀</li></ul><h4>c) Hệ thống XO</h4><ul><li>XX: Giới tính cái</li><li>XO: Giới tính đực (thiếu Y)</li><li>Ví dụ: Cào cào, châu chấu</li></ul>"
+            },
+            {
+              "heading": "2. Di truyền liên kết với giới tính",
+              "content": "<h4>a) Gene trên NST X</h4><ul><li>Gene nằm trên NST X, không có allele tương ứng trên Y.</li><li>Con đực nhận X từ mẹ, truyền X cho cháu gái.</li><li>Ví dụ: Bệnh mù màu, hemophilia (máu khó đông).</li></ul><h4>b) Gene trên NST Y</h4><ul><li>Gene chỉ có trên Y (holandric gene).</li><li>Di truyền từ cha sang con trai (không qua cá thể cái).</li><li>Ví dụ: Hội chứng lông tai.</li></ul><h4>c) Đặc điểm di truyền</h4><ul><li>Tính trạng lặn trên X biểu hiện nhiều hơn ở giới đực (XY) vì chỉ có 1 allele.</li><li>Con cái nhận X từ cả bố và mẹ.</li></ul>"
+            },
+            {
+              "heading": "3. Các bệnh di truyền liên kết giới tính",
+              "content": "<h4>a) Bệnh mù màu (color blindness)</h4><ul><li>Gene lặn trên X (X^c).</li><li>Nam: X^cY biểu hiện bệnh (1/12 nam).</li><li>Nữ: X^cX^c mới bệnh, X^C X^c là người mang gene.</li></ul><h4>b) Bệnh hemophilia (máu khó đông)</h4><ul><li>Gene lặn trên X (X^h).</li><li>Nam hiếm gặp hơn nữ do chỉ cần 1 allele lặn.</li><li>Nữ mang gene có thể truyền cho con trai.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Ở người, giới tính nam được xác định bởi cặp NST nào?",
+            "options": [
+              "XX",
+              "XY",
+              "ZW",
+              "XO"
+            ],
+            "correct": 1,
+            "explanation": "Ở người, nam có cặp NST XY, nữ có XX."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Bệnh mù màu di truyền theo cơ chế nào?",
+            "options": [
+              "Gene trên NST thường",
+              "Gene trên NST X",
+              "Gene trên NST Y",
+              "Gene ngoài nhân"
+            ],
+            "correct": 1,
+            "explanation": "Bệnh mù màu do gene lặn trên NST X quy định."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Tại sao nam giới mắc bệnh mù màu nhiều hơn nữ?",
+            "options": [
+              "Nam làm việc nhiều",
+              "Nam chỉ có 1 NST X",
+              "Nữ có 2 NST X",
+              "Nam ít quan tâm"
+            ],
+            "correct": 1,
+            "explanation": "Nam chỉ có 1 NST X, nên nếu nhận allele lặn sẽ biểu hiện bệnh. Nữ cần 2 allele lặn mới bệnh."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Con trai nhận NST X từ ai?",
+            "options": [
+              "Bố",
+              "Mẹ",
+              "Bố và mẹ",
+              "Ông nội"
+            ],
+            "correct": 1,
+            "explanation": "Con trai (XY) nhận X từ mẹ, Y từ bố."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Gene trên NST Y di truyền như thế nào?",
+            "options": [
+              "Từ mẹ sang con",
+              "Từ bố sang con gái",
+              "Từ bố sang con trai",
+              "Ngẫu nhiên"
+            ],
+            "correct": 2,
+            "explanation": "Gene trên NST Y (holandric) chỉ truyền từ bố sang con trai, không qua nữ."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các đặc điểm của hệ thống xác định giới tính XY:",
+            "options": [
+              "XX là giới cái",
+              "XY là giới đực",
+              "Nam truyền X cho con gái",
+              "Nam truyền Y cho con gái"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: XX là cái. B ✓: XY là đực. C ✓: Nam truyền X cho con gái (vì con gái nhận X từ bố). D ✗: Nam truyền Y cho con trai."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các bệnh di truyền liên kết với NST X:",
+            "options": [
+              "Bệnh mù màu",
+              "Bệnh hemophilia",
+              "Hội chứng lông tai",
+              "Bệnh bạch cầu"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "A ✓: Mù màu do gene lặn trên X. B ✓: Hemophilia do gene lặn trên X. C ✗: Hội chứng lông tai trên Y. D ✗: Bạch cầu không liên kết giới tính."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Mẹ bình thường (X^C X^C) kết hôn với cha mù màu (X^c Y). Tính % con trai bị bệnh. Nhập số 2 chữ số. (Ví dụ: 50)",
+            "correct": "50",
+            "explanation": "Con trai nhận X^c từ mẹ (50% X^C, 50% X^c). Xác suất bị bệnh = 50%."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Mẹ mang gene mù màu (X^C X^c) kết hôn với bố bình thường (X^C Y). Tính % con gái bị bệnh. Nhập số 2 chữ số. (Ví dụ: 50)",
+            "correct": "00",
+            "explanation": "Con gái nhận X^C từ bố, X^C hoặc X^c từ mẹ. Không có con gái X^c X^c (cần bố mù màu). 0% con gái bệnh."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định kiểu gen và kiểu hình về tính trạng liên kết X",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định allele trên X của bố mẹ.</li><li>Con trai nhận X từ mẹ, Y từ bố.</li><li>Con gái nhận X từ cả bố và mẹ.</li><li>Nam XY chỉ cần 1 allele lặn biểu hiện bệnh.</li><li>Nữ XX cần 2 allele lặn mới bệnh.</li></ol>",
+            "examples": [
+              {
+                "question": "Mẹ bình thường (X^C X^C) × Bố mù màu (X^c Y). Tính % con mắc bệnh?",
+                "solution": "<p><strong>Giải:</strong></p><p>Con trai: Nhận X^c từ mẹ → 100% bệnh</p><p>Con gái: Nhận X^C từ bố → X^C X^c (mang gene) → không bệnh</p><p>50% con mắc bệnh (nếu tính cả 2 giới)</p>"
+              },
+              {
+                "question": "Mẹ mang gene (X^C X^c) × Bố bình thường (X^C Y). Tính % con trai bệnh?",
+                "solution": "<p><strong>Giải:</strong></p><p>Con trai nhận X từ mẹ: 50% X^C, 50% X^c</p><p>Xác suất con trai bệnh = 50%</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định nguồn gốc allele bệnh",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Nam bệnh nhận X từ mẹ.</li><li>Nữ bệnh (X^l X^l) nhận X^l từ cả bố và mẹ.</li><li>Nếu bố bệnh → tất cả con gái mang gene.</li><li>Nếu mẹ mang gene + bố bệnh → 50% con gái bệnh.</li></ol>",
+            "examples": [
+              {
+                "question": "Một người nam bị mù màu. Tính xác suất anh ta truyền gene bệnh cho cháu trai?",
+                "solution": "<p><strong>Giải:</strong></p><p>Anh ta truyền X cho con gái (100% mang gene).</p><p>Con gái truyền cho con trai (50%).</p><p>Xác suất = 100% × 50% = 50%</p>"
+              },
+              {
+                "question": "Bố mù màu, mẹ bình thường. Tất cả con trai có bệnh không?",
+                "solution": "<p><strong>Giải:</strong></p><p>Con trai nhận X từ mẹ (X^C X^C).</p><p>Không nhận X từ bố (bố truyền Y).</p><p>Tất cả con trai bình thường.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

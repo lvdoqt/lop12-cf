@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-16",
+    "name": "Hồ Chí Minh - Anh hùng giải phóng dân tộc",
+    "slug": "ho-chi-minh-anh-hung-giai-phong-dan-toc",
+    "chapter": "Chủ đề 6: Hồ Chí Minh - cuộc đời và sự nghiệp",
+    "chapter_id": "su12",
+    "lesson_id": 16,
+    "description": "Đóng góp của Hồ Chí Minh trong giải phóng dân tộc, độc lập đất nước.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Hồ Chí Minh - Anh hùng giải phóng dân tộc",
+        "sections": [
+          { "heading": "1. Khát vọng giải phóng dân tộc của Hồ", "content": "Từ nhỏ Hồ Chí Minh mơ ước làm nước Việt Nam độc lập, giải phóng dân tộc khỏi thực dân Pháp. Tìm theo Phan Bội Châu, rồi tìm đường Liên Xô, Trung Quốc. Từng tuyên bố: 'Không có gì quý hơn độc lập, tự do'. Khát vọng giải phóng dân tộc là động lực suốt đời Hồ." },
+          { "heading": "2. Lãnh đạo Thích Việt Minh, Cách mạng tháng tám", "content": "1941: Thành lập Việt Minh với tính đảng lý, quân sự, chính trị hỗn hợp. Kêu gọi nhân dân cách mạng, đấu tranh chống Nhật, thực dân. Tháng 8/1945: Dẫn dắt Cách mạng tháng tám giành thắng lợi. Tuyên bố độc lập 2/9/1945 trên nền tảng: 'Toàn thể nhân dân Việt Nam sẵn sàng công khai hay kín đáo xung phong để bảo vệ độc lập'." },
+          { "heading": "3. Chỉ đạo kháng chiến chống Pháp (1946-1954)", "content": "Pháp cố gắng trở lại xâm chiếm. Hồ quyết định kháng chiến bất khuất. Chỉ đạo Võ Nguyên Giáp phát triển quân lực từ yếu thành mạnh. Chiến lược: nắm lấy nông thôn, vây ép thành thị. Điểm cao nhất: Chiến dịch Điện Biên Phủ (1954) tiêu diệt toàn bộ quân Pháp. Giành độc lập độc lập từ thực dân Pháp." },
+          { "heading": "4. Chỉ đạo xây dựng nước độc lập (1955-1969)", "content": "Sau giành độc lập Pháp, Hồ số nước Việt Nam tự quyết phát triển. Xây dựng Cộng hòa Xã hội chủ nghĩa Việt Nam. 1955-1965: Xây dựng nền kinh tế xã hội chủ nghĩa, nông nghiệp hợp tác hóa. 1965-1969: Chỉ đạo kháng chiến chống Mỹ dữ dội. Hồ không bao giờ chịu khuất phục, quyết tâm giành độc lập toàn vẹn." },
+          { "heading": "5. Di sản lịch_sử - Anh hùng giải phóng dân tộc", "content": "Hồ Chí Minh giành độc lập cho Việt Nam sau 100 năm chịu thực dân. Thúc đẩy phong công giải phóng dân tộc ở Châu Á, Châu Phi. Để lại tư tưởng, đường lối cho nhân dân. Được ghi_danh anh hùng toàn toàn. Hạnh phúc anh hùng giải phóng dân tộc của nhân_dân Việt Nam, Châu_Á." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Khát vọng chính?", "options": ["Làm kỷ đốc", "Giải phóng dân tộc, độc lập nước", "Giàu sang", "Yên tĩnh"], "correct": 1, "explanation": "Khát vọng giải phóng dân tộc, độc lập đất nước là mục tiêu suốt đời." },
+        { "id": "ex2", "type": "mcq", "question": "Tuyên bố nổi tiếng?", "options": ["Học thêm quyết tâm", "Không có gì quý hơn độc lập, tự do", "Yêu thương toàn cầu", "Sống hòa bình"], "correct": 1, "explanation": "'Không có gì quý hơn độc lập, tự do' là tuyên bố kinh điển." },
+        { "id": "ex3", "type": "mcq", "question": "Việt Minh thành lập?", "options": ["1939", "1940", "1941", "1942"], "correct": 2, "explanation": "Việt Minh thành lập năm 1941 dưới lãnh đạo Hồ." },
+        { "id": "ex4", "type": "mcq", "question": "Cách mạng tháng tám?", "options": ["Tháng 6/1945", "Tháng 8/1945", "Tháng 9/1945", "Tháng 10/1945"], "correct": 1, "explanation": "Cách mạng tháng tám 1945 Hồ Chí Minh lãnh đạo." },
+        { "id": "ex5", "type": "mcq", "question": "Tuyên bố độc lập?", "options": ["1/9/1945", "2/9/1945 tại Hà Nội", "15/8/1945", "30/8/1945"], "correct": 1, "explanation": "2/9/1945: Hồ tuyên bố độc lập tại Hà Nội." },
+        { "id": "ex6", "type": "mcq", "question": "Kháng chiến Pháp?", "options": ["1945-1950", "1946-1954", "1947-1955", "1948-1956"], "correct": 1, "explanation": "Kháng chiến chống Pháp kéo dài 1946-1954." },
+        { "id": "ex7", "type": "mcq", "question": "Chiến dịch quen?", "options": ["Hà Nội", "Điện Biên Phủ 1954", "Sài Gòn", "Huế"], "correct": 1, "explanation": "Điện Biên Phủ 1954 là chiến dịch bừng lửa kết thúc." },
+        { "id": "ex8", "type": "mcq", "question": "Kháng chiến Mỹ?", "options": ["1954-1965", "1955-1969", "1956-1970", "1960-1975"], "correct": 1, "explanation": "Kháng chiến chống Mỹ yêu cầu Hồ chỉ đạo từ 1955 đến qua đời 1969." },
+        { "id": "ex9", "type": "mcq", "question": "Ảnh hưởng toàn cầu?", "options": ["Chỉ Việt Nam", "Châu Á, Châu Phi giải phóng", "Chỉ phương Tây", "Không ảnh hưởng"], "correct": 1, "explanation": "Thúc đẩy phong trào giải phóng dân tộc toàn Châu Á, Châu Phi." },
+        { "id": "ex10", "type": "mcq", "question": "Di sản?", "options": ["Kim pyramidu tài", "Anh hùng giải phóng dân tộc, lãnh tụ nhân dân", "Tư bản gia", "Không có"], "correct": 1, "explanation": "Ghi danh anh hùng giải phóng dân tộc, lãnh tụ yêu quý nhân dân." }
+      ]
+    }
+  }]
+}

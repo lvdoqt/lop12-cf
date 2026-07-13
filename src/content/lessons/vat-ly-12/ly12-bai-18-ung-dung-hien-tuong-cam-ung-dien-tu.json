@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-18-ung-dung-hien-tuong-cam-ung-dien-tu",
+      "name": "Bài 18. Ứng dụng hiện tượng cảm ứng điện từ",
+      "slug": "bai-18-ung-dung-hien-tuong-cam-ung-dien-tu",
+      "chapter": "Chương 3. Từ trường",
+      "chapter_id": "LY12-3",
+      "lesson_id": 18,
+      "description": "Nghiên cứu các ứng dụng của hiện tượng cảm ứng điện từ trong thực tế.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "ud-1",
+          "name": "Bếp từ và lò cảm ứng",
+          "slug": "bep-tu-lo-cam-ung",
+          "difficulty": "easy"
+        },
+        {
+          "id": "ud-2",
+          "name": "Máy biến áp",
+          "slug": "may-bien-ap",
+          "difficulty": "medium"
+        },
+        {
+          "id": "ud-3",
+          "name": "Các ứng dụng khác",
+          "slug": "cac-ung-dung-khac",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Ứng dụng hiện tượng cảm ứng điện từ",
+          "sections": [
+            {
+              "heading": "1. Bếp từ và lò cảm ứng",
+              "content": "<p><strong>Nguyên tắc hoạt động:</strong></p><p>Dựa trên hiện tượng cảm ứng điện từ và dòng điện Fu-cô.</p><p><strong>Cấu tạo bếp từ:</strong></p><ul><li>Cuộn dây đồng đặt dưới mặt kính</li><li>Mạch điện tử tạo dòng điện xoay chiều tần số cao (20-100 kHz)</li></ul><p><strong>Hoạt động:</strong></p><ul><li>Dòng điện xoay chiều tạo từ trường biến thiên</li><li>Trong nồi nấu (đáy kim loại), từ trường biến thiên tạo dòng điện cảm ứng (dòng Fu-cô)</li><li>Dòng điện Fu-cô gây tỏa nhiệt trong đáy nồi</li></ul><p><strong>Ưu điểm:</strong></p><ul><li>Hiệu suất cao (90%)</li><>An toàn, không sinh lửa</li><li>Điều chỉnh nhiệt độ nhanh</li></ul>"
+            },
+            {
+              "heading": "2. Máy biến áp",
+              "content": "<p><strong>Định nghĩa:</strong> Thiết bị hoạt động dựa trên hiện tượng cảm ứng điện từ, dùng để biến đổi điện áp xoay chiều.</p><p><strong>Cấu tạo:</strong></p><ul><li><strong>Lõi thép:</strong> Làm bằng các lá thép kỹ thuật điện ghép cách điện</li><li><strong>Các cuộn dây:</strong> Cuộn sơ cấp (N₁ vòng) và cuộn thứ cấp (N₂ vòng)</li></ul><p><strong>Nguyên tắc hoạt động:</strong></p><ul><li>Dòng điện xoay chiều vào cuộn sơ cấp tạo từ thông biến thiên</li><li>Từ thông biến thiên này cảm ứng trong cuộn thứ cấp</li></ul><p><strong>Công thức máy biến áp:</strong></p><p>$$\\frac{U_1}{U_2} = \\frac{N_1}{N_2} = \\frac{I_2}{I_1}$$</p><p><strong>Phân loại:</strong></p><ul><li><strong>Tăng áp:</strong> N₂ > N₁ → U₂ > U₁</li><li><strong>Giảm áp:</strong> N₂ < N₁ → U₂ < U₁</li></ul>"
+            },
+            {
+              "heading": "3. Máy biến áp trong truyền tải điện",
+              "content": "<p><strong>Vấn đề truyền tải điện:</strong></p><ul><li>Công suất P = UI cosφ</li><li>Khi truyền tải, công suất hao phí do tỏa nhiệt: P_hp = I²R</li><li>Để giảm hao phí, cần giảm I → tăng U</li></ul><p><strong>Giải pháp:</strong></p><ul><li>Dùng máy tăng áp: Tăng U lên hàng trăm nghìn V</li><li>Dùng máy hạ áp: Hạ U xuống mức an toàn sử dụng</li></ul><p><strong>Hiệu suất truyền tải:</strong></p><p>$$H = \\frac{P_{tp}}{P_{ph}} = \\frac{P - P_{hp}}{P}$$</p>"
+            },
+            {
+              "heading": "4. Các ứng dụng khác",
+              "content": "<p><strong>Quạt điện, máy bơm nước:</strong></p><ul><li>Động cơ điện hoạt động dựa trên lực từ tác dụng lên dòng điện</li></ul><p><strong>Máy hàn điện:</strong></p><ul><li>Dùng hiện tượng cảm ứng điện từ để tạo nhiệt độ cao</li></ul><p><strong>Phanh từ (phanh hãm điện từ):</strong></p><ul><li>Dùng dòng điện Fu-cô để tạo lực cản</li></ul><p><strong>Đèn huỳnh quang:</strong></p><ul><li>Chấn lưu (ballast) dùng hiện tượng tự cảm</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán máy biến áp",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>U₁/U₂ = N₁/N₂</li><li>P₁ ≈ P₂ (nếu bỏ qua hao phí)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Máy biến áp có N₁ = 1000 vòng, N₂ = 500 vòng. Tính U₂ khi U₁ = 220V.",
+                "solution": "<p><strong>Giải:</strong></p><p>U₁/U₂ = N₁/N₂ → 220/U₂ = 1000/500 = 2</p><p>U₂ = 220/2 = 110 V</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Truyền tải điện",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>P_hp = I²R</li><li>Để giảm P_hp: tăng U hoặc giảm R</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Truyền công suất 100kW, U = 10kV, R = 10Ω. Tính hao phí.",
+                "solution": "<p><strong>Giải:</strong></p><p>I = P/U = 100000/10000 = 10 A</p><p>P_hp = I²R = 10².10 = 1000 W = 1 kW</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Bếp từ hoạt động dựa trên:",
+            "options": [
+              "Hiện tượng cảm ứng điện từ",
+              "Hiệu ứng Joule",
+              "Hiện tượng nhiệt điện",
+              "Hiện tượng quang điện"
+            ],
+            "correct": 0,
+            "explanation": "Bếp từ dựa trên cảm ứng điện từ và dòng Fu-cô"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Máy biến áp hoạt động dựa trên:",
+            "options": [
+              "Hiện tượng cảm ứng điện từ",
+              "Lực từ",
+              "Hiệu ứng Joule",
+              "Hiện tượng nhiệt điện"
+            ],
+            "correct": 0,
+            "explanation": "Máy biến áp dựa trên hiện tượng cảm ứng điện từ"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Công thức máy biến áp:",
+            "options": [
+              "U₁/U₂ = N₁/N₂",
+              "U₁/U₂ = N₂/N₁",
+              "U₁N₁ = U₂N₂",
+              "U₁ + U₂ = N₁ + N₂"
+            ],
+            "correct": 0,
+            "explanation": "U₁/U₂ = N₁/N₂"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Máy tăng áp có:",
+            "options": [
+              "N₂ > N₁",
+              "N₂ < N₁",
+              "N₂ = N₁",
+              "N₂ = 0"
+            ],
+            "correct": 0,
+            "explanation": "Máy tăng áp có N₂ > N₁"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Để giảm hao phí trên đường dây tải điện cần:",
+            "options": [
+              "Tăng điện áp",
+              "Giảm điện áp",
+              "Tăng cường độ dòng điện",
+              "Tăng điện trở"
+            ],
+            "correct": 0,
+            "explanation": "P_hp = I²R, tăng U để giảm I"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Dòng điện Fu-cô có thể:",
+            "options": [
+              "Gây tỏa nhiệt",
+              "Gây lực cản",
+              "Cả A và B đều đúng",
+              "Cả A và B đều sai"
+            ],
+            "correct": 2,
+            "explanation": "Dòng Fu-cô vừa gây tỏa nhiệt vừa gây lực cản"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Lõi máy biến áp làm bằng:",
+            "options": [
+              "Lá thép kỹ thuật điện",
+              "Đồng",
+              "Nhôm",
+              "Sắt từ"
+            ],
+            "correct": 0,
+            "explanation": "Lõi thép kỹ thuật điện để giảm dòng Fu-cô"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Hiệu suất bếp từ:",
+            "options": [
+              "Khoảng 90%",
+              "Khoảng 50%",
+              "Khoảng 30%",
+              "Khoảng 70%"
+            ],
+            "correct": 0,
+            "explanation": "Hiệu suất bếp từ khoảng 90%"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Khi tăng U lên 10 lần, hao phí do tỏa nhiệt giảm:",
+            "options": [
+              "100 lần",
+              "10 lần",
+              "20 lần",
+              "Không đổi"
+            ],
+            "correct": 0,
+            "explanation": "I giảm 10 lần → I² giảm 100 lần"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Máy hạ áp dùng để:",
+            "options": [
+              "Giảm điện áp",
+              "Tăng điện áp",
+              "Tăng công suất",
+              "Giảm công suất"
+            ],
+            "correct": 0,
+            "explanation": "Máy hạ áp giảm điện áp"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các ứng dụng của hiện tượng cảm ứng điện từ:",
+            "options": [
+              "Bếp từ",
+              "Máy biến áp",
+              "Máy phát điện",
+              "Tất cả đều đúng"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Tất cả đều ứng dụng cảm ứng điện từ"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Để tăng hiệu suất máy biến áp cần:",
+            "options": [
+              "Giảm điện trở cuộn dây",
+              "Dùng lõi thép chất lượng cao",
+              "Giảm dòng Fu-cô",
+              "Tăng tần số"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Tần số cần giữ không đổi theo điện lưới"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Hao phí trên đường dây tải điện phụ thuộc:",
+            "options": [
+              "Cường độ dòng điện",
+              "Điện trở đường dây",
+              "Khoảng cách truyền tải",
+              "Hiệu điện thế"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "P_hp = I²R, I = P/U"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Máy biến áp có N₁=2000, N₂=500, U₁=220V. Tính U₂ (V).",
+            "correct": "55",
+            "explanation": "U₂ = U₁.N₂/N₁ = 220.500/2000 = 55V"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Truyền P=1MW, U=100kV, R=20Ω. Tính I (A).",
+            "correct": "10",
+            "explanation": "I = P/U = 10⁶/10⁵ = 10A"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Tính P_hp biết I=10A, R=20Ω (W).",
+            "correct": "2000",
+            "explanation": "P_hp = I²R = 10².20 = 2000W"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Máy tăng áp có N₁=1000, U₁=220V, U₂=22kV. Tính N₂.",
+            "correct": "100000",
+            "explanation": "N₂ = N₁.U₂/U₁ = 1000.22000/220 = 100000 vòng"
+          }
+        ]
+      }
+    }
+  ]
+}

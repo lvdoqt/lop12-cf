@@ -1,0 +1,186 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-3",
+      "name": "Bài 3. Điều hòa biểu hiện gene",
+      "slug": "dieu-hoa-bieu-hien-gene",
+      "chapter": "Chương 1. Di truyền phân tử",
+      "chapter_id": "S12-1",
+      "lesson_id": 3,
+      "description": "Tìm hiểu cơ chế điều hòa biểu hiện gene ở sinh vật nhân sơ và nhân thực.",
+      "duration_minutes": 45,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2670&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Điều hòa biểu hiện gene",
+          "sections": [
+            {
+              "heading": "1. Khái niệm điều hòa biểu hiện gene",
+              "content": "<h4>a) Tại sao cần điều hòa</h4><ul><li>Không phải mọi gene đều biểu hiện liên tục.</li><li>Điều hòa giúp tế bào tiết kiệm năng lượng và nguyên liệu.</li><li>Điều hòa giúp tế bào thích ứng với điều kiện môi trường.</li></ul><h4>b) Mức độ điều hòa</h4><ul><li>Điều hòa phiên mã (quan trọng nhất).</li><li>Điều hòa sau phiên mã.</li><li>Điều hòa dịch mã.</li><li>Điều hòa sau dịch mã.</li></ul>"
+            },
+            {
+              "heading": "2. Điều hòa gene ở sinh vật nhân sơ",
+              "content": "<h4>a) Mô hình operon của Jacob và Monod</h4><ul><li><strong>Operon</strong> là đơn vị điều hòa gồm nhóm gene cùng hoạt động dưới sự kiểm soát của một vùng điều hòa chung.</li><li>Cấu trúc operon: Vùng khởi động (P), vùng vận hành (O), các gene cấu trúc (lacZ, lacY, lacA).</li></ul><h4>b) Điều hòa operon lac</h4><ul><li>Khi <strong>không có lactose</strong>: Protein ức chế gắn vào vùng O, ngăn cản RNA polymerase → các gene không biểu hiện.</li><li>Khi <strong>có lactose</strong>: Lactose gắn vào protein ức chế → protein giảm ái lực với O, rời khỏi → gene biểu hiện.</li></ul><h4>c) Điều hòa operon tryptophan (operon khử)</h4><ul><li>Khi <strong>tryptophan đủ</strong>: Protein ức chế hoạt động gắn vào O → gene không biểu hiện.</li><li>Khi <strong>tryptophan thiếu</strong>: Protein ức chế không hoạt động, rời khỏi O → gene biểu hiện.</li></ul>"
+            },
+            {
+              "heading": "3. Điều hòa gene ở sinh vật nhân thực",
+              "content": "<h4>a) Đặc điểm</h4><ul><li>Phức tạp hơn nhiều so với sinh vật nhân sơ.</li><li>DNA nằm trong nhân tế bào cùng với histone tạo thành nucleosome.</li><li>Nhiều mức điều hòa đa dạng.</li></ul><h4>b) Các cơ chế điều hòa</h4><ul><li><strong>Biến đổi cấu trúc chromatin:</strong> Methyl hóa DNA, histone acetylation ảnh hưởng đến sự biểu hiện gene.</li><li><strong>Điều hòa phiên mã:</strong> Yếu tố phiên mã gắn vào vùng điều hòa kích hoạt hoặc ức chế phiên mã.</li><li><strong>Điều hòa sau phiên mã:</strong> Cắt nối RNA, RNA editing.</li><li><strong>Điều hòa dịch mã:</strong> Kiểm soát quá trình dịch mã tại ribosome.</li></ul><h4>c) Điều hòa theo phát triển</h4><ul><li>Các gene được kích hoạt theo trình tự trong quá trình phát triển phôi.</li><li>Ví dụ: Gene Hox quy định trục cơ thể và phân đoạn.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Operon là gì?",
+            "options": [
+              "Một gene đơn lẻ",
+              "Nhóm gene cùng hoạt động dưới sự kiểm soát chung",
+              "Một loại enzyme",
+              "Một loại RNA"
+            ],
+            "correct": 1,
+            "explanation": "Operon là đơn vị điều hòa gồm nhóm gene cùng hoạt động dưới sự kiểm soát của một vùng điều hòa chung."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Trong operon lac, khi có lactose, điều gì xảy ra?",
+            "options": [
+              "Protein ức chế gắn mạnh hơn vào vùng vận hành",
+              "Protein ức chế giảm ái lực với vùng vận hành",
+              "Gene cấu trúc bị ức chế hoàn toàn",
+              "RNA polymerase không hoạt động"
+            ],
+            "correct": 1,
+            "explanation": "Khi có lactose, nó gắn vào protein ức chế làm thay đổi cấu trúc, giảm ái lực với vùng vận hành, cho phép phiên mã."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Điều hòa sau dịch mã bao gồm những gì?",
+            "options": [
+              "Biến đổi cấu trúc chromatin",
+              "Cắt nối RNA",
+              "Phân giải protein",
+              "Biến đổi histone"
+            ],
+            "correct": 2,
+            "explanation": "Điều hòa sau dịch mã bao gồm các quá trình xảy ra sau khi protein được tổng hợp như phân giải protein, biến đổi hậu dịch mã."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Yếu tố phiên mã là gì?",
+            "options": [
+              "Enzyme tổng hợp RNA",
+              "Protein gắn vào vùng điều hòa để điều khiển phiên mã",
+              "DNA polymerase",
+              "Ribosome"
+            ],
+            "correct": 1,
+            "explanation": "Yếu tố phiên mã là protein gắn vào vùng điều hòa (promoter, enhancer) để kích hoạt hoặc ức chế quá trình phiên mã."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Mức điều hòa quan trọng nhất là gì?",
+            "options": [
+              "Điều hòa sau dịch mã",
+              "Điều hòa dịch mã",
+              "Điều hòa phiên mã",
+              "Điều hòa sau phiên mã"
+            ],
+            "correct": 2,
+            "explanation": "Điều hòa phiên mã là mức điều hòa quan trọng nhất vì nó quyết định liệu một gene có được sao chép thành RNA hay không."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các thành phần cấu trúc của operon lac:",
+            "options": [
+              "Vùng khởi động (P)",
+              "Vùng vận hành (O)",
+              "Gene cấu trúc lacZ",
+              "Gene ức chế"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Promoter - nơi RNA polymerase bám vào. B ✓: Operator - nơi protein ức chế gắn. C ✓: Gene cấu trúc mã hóa enzyme. D ✗: Protein ức chế được mã hóa bởi gene riêng (lacI), không nằm trong operon."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các cơ chế điều hòa gene ở sinh vật nhân thực:",
+            "options": [
+              "Methyl hóa DNA",
+              "Histone acetylation",
+              "Operon",
+              "RNA interference"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "A ✓: Methyl hóa DNA ức chế phiên mã. B ✓: Histone acetylation kích hoạt phiên mã. C ✗: Operon là cơ chế ở sinh vật nhân sơ. D ✓: RNAi ức chế dịch mã."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một tế bào có 1000 phân tử mRNA, mỗi phân tử được dịch thành 50 phân tử protein. Tính tổng số protein được tạo ra. Nhập số 4 chữ số. (Ví dụ: 5000)",
+            "correct": "5000",
+            "explanation": "Số protein = 1000 × 50 = 5000 phân tử protein."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Nếu một gene phiên mã với tốc độ 30 nucleotit/giây và mRNA có 900 nucleotit, tính thời gian phiên mã (giây). Nhập số 3 chữ số. (Ví dụ: 030)",
+            "correct": "030",
+            "explanation": "Thời gian = 900 / 30 = 30 giây."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định trạng thái biểu hiện của operon",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định loại operon (lac hay trp).</li><li>Xác định chất nền/cảm ứng có mặt hay vắng.</li><li>Xác định trạng thái protein ức chế (hoạt động/không hoạt động).</li><li>Kết luận: Gene biểu hiện hay không biểu hiện.</li></ol>",
+            "examples": [
+              {
+                "question": "Trong operon lac, khi không có lactose trong môi trường, các gene cấu trúc có biểu hiện không? Giải thích.",
+                "solution": "<p><strong>Giải:</strong></p><p>Khi không có lactose, protein ức chế (repressor) ở trạng thái hoạt động.</p><p>Protein ức chế gắn vào vùng vận hành (O), ngăn cản RNA polymerase tiến hành phiên mã.</p><p>Kết luận: Các gene cấu trúc <strong>không biểu hiện</strong>.</p>"
+              },
+              {
+                "question": "Trong operon tryptophan, khi nào các gene cấu trúc được biểu hiện?",
+                "solution": "<p><strong>Giải:</strong></p><p>Operon tryptophan là operon khử (repressible operon).</p><p>Khi <strong>tryptophan thiếu</strong>, protein ức chế ở trạng thái không hoạt động.</p><p>Protein ức chế rời khỏi vùng vận hành, RNA polymerase tiến hành phiên mã.</p><p>Kết luận: Gene biểu hiện khi tryptophan thiếu.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Phân biệt các mức điều hòa",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Nhớ các mức điều hòa: phiên mã, sau phiên mã, dịch mã, sau dịch mã.</li><li>Xác định quá trình xảy ra ở đâu:</li><ul><li>Phiên mã: trong nhân, DNA → mRNA</li><li>Sau phiên mã: trong nhân, xử lý mRNA</li><li>Dịch mã: trong tế bào chất, mRNA → protein</li><li>Sau dịch mã: sau khi protein được tạo</li></ul></ol>",
+            "examples": [
+              {
+                "question": "Quá trình histone acetylation diễn ra ở mức điều hòa nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Histone acetylation là biến đổi cấu trúc chromatin.</p><p>Đây là quá trình làm thay đổi khả năng tiếp cận của RNA polymerase với DNA.</p><p>Vì vậy, histone acetylation diễn ra ở mức <strong>điều hòa phiên mã</strong>.</p>"
+              },
+              {
+                "question": "Quá trình cắt nối intron trong mRNA diễn ra ở mức điều hòa nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Cắt nối intron (RNA splicing) là quá trình xử lý mRNA sau khi phiên mã.</li></ul>Diễn ra trong nhân tế bào.</p><p>Đây là mức <strong>điều hòa sau phiên mã</strong>.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

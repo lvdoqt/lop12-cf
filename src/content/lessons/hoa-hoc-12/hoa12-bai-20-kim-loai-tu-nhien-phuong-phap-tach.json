@@ -1,0 +1,105 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-20-kim-loai-tu-nhien-phuong-phap-tach",
+      "name": "Bài 20. Kim loại trong tự nhiên và phương pháp tách kim loại",
+      "slug": "bai-20-kim-loai-tu-nhien-phuong-phap-tach",
+      "chapter": "Chương 6: Đại cương về kim loại",
+      "chapter_id": "H12-1006",
+      "lesson_id": 20,
+      "description": "Tìm hiểu về kim loại trong tự nhiên và các phương pháp tách kim loại.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1565372195458-9de0b320ef04?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tach-kim-loai-1",
+          "name": "Tách kim loại",
+          "slug": "tach-kim-loai",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Kim loại trong Tự nhiên",
+          "sections": [
+            {
+              "heading": "1. Kim loại trong tự nhiên",
+              "content": "<h3>a) Trạng thái tồn tại</h3><p><strong>1. Ở dạng tự do:</strong></p><ul><li>Kim loại kém hoạt động: Au, Ag, Pt</li><li>Không bị oxi hóa trong tự nhiên</li></ul><p><strong>2. Ở dạng hợp chất:</strong></p><ul><li>Kim loại hoạt động: Na, K, Ca, Mg, Al, Fe, Zn, Cu...</li><li>Dạng oxit, sulfide, carbonate, silicate...</li></ul><h3>b) Quặng kim loại quan trọng</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Kim loại</th><th class='border border-gray-300 p-2'>Quặng</th><th class='border border-gray-300 p-2'>Công thức</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Al</td><td class='border border-gray-300 p-2'>Boxit</td><td class='border border-gray-300 p-2'>Al₂O₃·nH₂O</td></tr><tr><td class='border border-gray-300 p-2'>Fe</td><td class='border border-gray-300 p-2'>Hematit</td><td class='border border-gray-300 p-2'>Fe₂O₃</td></tr><tr><td class='border border-gray-300 p-2'>Fe</td><td class='border border-gray-300 p-2'>Magnetit</td><td class='border border-gray-300 p-2'>Fe₃O₄</td></tr><tr><td class='border border-gray-300 p-2'>Cu</td><td class='border border-gray-300 p-2'>Chalcopyrite</td><td class='border border-gray-300 p-2'>CuFeS₂</td></tr><tr><td class='border border-gray-300 p-2'>Zn</td><td class='border border-gray-300 p-2'>Sphalerite</td><td class='border border-gray-300 p-2'>ZnS</td></tr><tr><td class='border border-gray-300 p-2'>Pb</td><td class='border border-gray-300 p-2'>Galena</td><td class='border border-gray-300 p-2'>PbS</td></tr><tr><td class='border border-gray-300 p-2'>Ca</td><td class='border border-gray-300 p-2'>Đá vôi</td><td class='border border-gray-300 p-2'>CaCO₃</td></tr><tr><td class='border border-gray-300 p-2'>Na</td><td class='border border-gray-300 p-2'>Muối mỏ</td><td class='border border-gray-300 p-2'>NaCl</td></tr></tbody></table><h3>c) Trữ lượng kim loại</h3><p><strong>Trong vỏ Trái Đất (% khối lượng):</strong></p><ul><li>Al: 8.1% (nhiều nhất)</li><li>Fe: 5.0%</li><li>Ca: 3.6%</li><li>Na: 2.8%</li><li>Mg: 2.1%</li></ul>"
+            },
+            {
+              "heading": "2. Phương pháp tách kim loại",
+              "content": "<h3>a) Nguyên tắc chung</h3><p><strong>Khử ion kim loại thành kim loại:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>M^n+ + ne⁻ → M</p><p><strong>Chất khử:</strong> C, CO, H₂, Al, điện phân</p><h3>b) Phương pháp nhiệt luyện</h3><p><strong>Nguyên tắc:</strong> Dùng chất khử (C, CO, H₂) ở nhiệt độ cao</p><p><strong>1. Khử bằng carbon (C):</strong></p><p>ZnO + C → Zn + CO (t°)</p><p>SnO₂ + 2C → Sn + 2CO (t°)</p><p><strong>2. Khử bằng CO:</strong></p><p>Fe₂O₃ + 3CO → 2Fe + 3CO₂ (t°)</p><p>CuO + CO → Cu + CO₂ (t°)</p><p><strong>3. Khử bằng H₂:</strong></p><p>CuO + H₂ → Cu + H₂O (t°)</p><p>WO₃ + 3H₂ → W + 3H₂O (t°)</p><p><strong>Ứng dụng:</strong> Sản xuất Fe, Cu, Zn, Sn, Pb...</p><h3>c) Phương pháp thủy luyện</h3><p><strong>Nguyên tắc:</strong> Hòa tan quặng → Khử ion kim loại trong dung dịch</p><p><strong>Ví dụ sản xuất Cu:</strong></p><p><strong>Bước 1:</strong> Hòa tan quặng</p><p>CuO + H₂SO₄ → CuSO₄ + H₂O</p><p><strong>Bước 2:</strong> Khử Cu²⁺</p><p>CuSO₄ + Fe → FeSO₄ + Cu↓</p><p><strong>Ưu điểm:</strong> Tiết kiệm năng lượng, ít ô nhiễm</p><h3>d) Phương pháp điện phân</h3><p><strong>1. Điện phân nóng chảy:</strong></p><p>Sản xuất kim loại hoạt động mạnh (Na, K, Ca, Mg, Al)</p><p><strong>Ví dụ sản xuất Al:</strong></p><p>2Al₂O₃ → 4Al + 3O₂ (điện phân nóng chảy)</p><p><strong>2. Điện phân dung dịch:</strong></p><p>Tinh chế kim loại (Cu, Ag, Au)</p><p><strong>Ví dụ tinh chế Cu:</strong></p><ul><li>Anode (+): Cu không tinh khiết</li><li>Cathode (-): Cu tinh khiết</li><li>Điện ly: CuSO₄</li></ul><p>Anode: Cu → Cu²⁺ + 2e⁻</p><p>Cathode: Cu²⁺ + 2e⁻ → Cu</p><h3>e) Phương pháp nhiệt nhôm</h3><p><strong>Nguyên tắc:</strong> Dùng Al khử oxit kim loại ở nhiệt độ cao</p><p>Cr₂O₃ + 2Al → 2Cr + Al₂O₃ (t°)</p><p>3MnO₂ + 4Al → 3Mn + 2Al₂O₃ (t°)</p><p><strong>Ứng dụng:</strong></p><ul><li>Sản xuất Cr, Mn, V, Ti</li><li>Hàn ray xe lửa</li></ul>"
+            },
+            {
+              "heading": "3. Sơ đồ sản xuất kim loại",
+              "content": "<h3>a) Sản xuất gang và thép</h3><p><strong>Nguyên liệu:</strong> Quặng Fe (Fe₂O₃, Fe₃O₄), than cốc (C), đá vôi (CaCO₃)</p><p><strong>Thiết bị:</strong> Lò cao</p><p><strong>Phản ứng:</strong></p><p>C + O₂ → CO₂ (cháy)</p><p>CO₂ + C → 2CO (t°)</p><p>Fe₂O₃ + 3CO → 2Fe + 3CO₂ (t°)</p><p><strong>Sản phẩm:</strong></p><ul><li>Gang: 2-5% C, cứng, giòn</li><li>Thép: < 2% C, cứng, dai</li></ul><h3>b) Sản xuất nhôm</h3><p><strong>Nguyên liệu:</strong> Boxit (Al₂O₃·nH₂O)</p><p><strong>Phương pháp:</strong> Điện phân nóng chảy Al₂O₃</p><p>2Al₂O₃ → 4Al + 3O₂</p><p><strong>Đặc điểm:</strong></p><ul><li>Tiêu tốn điện năng lớn (15 kWh/kg Al)</li><li>Nhiệt độ: 950-1000°C</li></ul><h3>c) Sản xuất đồng</h3><p><strong>Phương pháp 1: Nhiệt luyện</strong></p><p>2CuFeS₂ + 4O₂ → Cu₂S + 2FeO + 3SO₂</p><p>Cu₂S + O₂ → 2Cu + SO₂</p><p><strong>Phương pháp 2: Thủy luyện</strong></p><p>CuO + H₂SO₄ → CuSO₄ + H₂O</p><p>CuSO₄ + Fe → FeSO₄ + Cu</p><p><strong>Tinh chế:</strong> Điện phân dung dịch CuSO₄</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán khử oxit kim loại",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết phương trình khử</li><li>Tính mol chất khử</li><li>Tính khối lượng kim loại</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Khử 16g Fe₂O₃ bằng CO dư ở nhiệt độ cao. a) Viết phương trình. b) Tính khối lượng Fe. c) Tính thể tích CO (đktc).",
+                "solution": "<p><strong>a) Phương trình:</strong></p><p>Fe₂O₃ + 3CO → 2Fe + 3CO₂</p><p><strong>b) Khối lượng Fe:</strong></p><p>n(Fe₂O₃) = 16 / 160 = 0.1 mol</p><p>n(Fe) = 2 × 0.1 = 0.2 mol</p><p>m(Fe) = 0.2 × 56 = 11.2g</p><p><strong>c) Thể tích CO:</strong></p><p>n(CO) = 3 × 0.1 = 0.3 mol</p><p>V(CO) = 0.3 × 22.4 = 6.72 lít</p><p><strong>Đáp án:</strong> b) 11.2g; c) 6.72 lít</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán điện phân sản xuất kim loại",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Áp dụng định luật Faraday</li><li>Tính khối lượng kim loại</li><li>Tính điện năng tiêu thụ</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Điện phân Al₂O₃ nóng chảy với I = 10A trong 9650s. a) Tính khối lượng Al. b) Tính điện năng (U = 5V, hiệu suất 50%).",
+                "solution": "<p><strong>a) Khối lượng Al:</strong></p><p>Q = I × t = 10 × 9650 = 96500 C</p><p>n(e⁻) = 96500 / 96500 = 1 mol</p><p>Al³⁺ + 3e⁻ → Al</p><p>n(Al) = 1 / 3 = 0.333 mol</p><p>m(Al) = 0.333 × 27 = 9g</p><p><strong>b) Điện năng:</strong></p><p>W lý thuyết = Q × U = 96500 × 5 = 482,500 J = 0.134 kWh</p><p>W thực tế = 0.134 / 50% = 0.268 kWh</p><p><strong>Đáp án:</strong> a) 9g; b) 0.268 kWh</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Tái chế kim loại",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích quy trình tái chế</li><li>Tính hiệu quả năng lượng</li><li>Đánh giá kinh tế và môi trường</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> So sánh sản xuất Al từ quặng vs tái chế. a) Tính năng lượng (quặng: 15 kWh/kg, tái chế: 0.75 kWh/kg). b) Tính chi phí (điện 2000đ/kWh). c) Đánh giá môi trường.",
+                "solution": "<p><strong>a) Năng lượng (cho 1 tấn Al):</strong></p><p><strong>Từ quặng:</strong> 15,000 kWh</p><p><strong>Tái chế:</strong> 750 kWh</p><p><strong>Tiết kiệm:</strong> 14,250 kWh (95%)</p><p><strong>b) Chi phí điện:</strong></p><p><strong>Từ quặng:</strong> 15,000 × 2000 = 30,000,000 đ</p><p><strong>Tái chế:</strong> 750 × 2000 = 1,500,000 đ</p><p><strong>Tiết kiệm:</strong> 28,500,000 đ (95%)</p><p><strong>c) Đánh giá môi trường:</strong></p><ul><li>Giảm 95% CO₂</li><li>Giảm 97% ô nhiễm nước</li><li>Không khai thác quặng</li><li>Bảo vệ rừng, đất</li></ul><p><strong>Kết luận:</strong> Tái chế Al tiết kiệm 95% năng lượng và chi phí, giảm mạnh ô nhiễm. Đây là giải pháp bền vững.</p><p><strong>Đáp án:</strong> a) Tiết kiệm 95%; b) Tiết kiệm 28.5 triệu/tấn; c) Rất tốt cho môi trường</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {"id": "ex1", "type": "mcq", "question": "Kim loại tồn tại tự do trong tự nhiên:", "options": ["Fe", "Cu", "Au", "Al"], "correct": 2, "explanation": "Au tồn tại tự do."},
+          {"id": "ex2", "type": "mcq", "question": "Quặng chính của Al:", "options": ["Hematit", "Boxit", "Magnetit", "Galena"], "correct": 1, "explanation": "Boxit là quặng của Al."},
+          {"id": "ex3", "type": "mcq", "question": "Quặng chính của Fe:", "options": ["Boxit", "Hematit", "Chalcopyrite", "Sphalerite"], "correct": 1, "explanation": "Hematit (Fe₂O₃) là quặng của Fe."},
+          {"id": "ex4", "type": "mcq", "question": "Phương pháp sản xuất Al:", "options": ["Nhiệt luyện", "Thủy luyện", "Điện phân nóng chảy", "Nhiệt nhôm"], "correct": 2, "explanation": "Al sản xuất bằng điện phân nóng chảy."},
+          {"id": "ex5", "type": "mcq", "question": "Phương pháp sản xuất Fe:", "options": ["Nhiệt luyện", "Thủy luyện", "Điện phân", "Nhiệt nhôm"], "correct": 0, "explanation": "Fe sản xuất bằng nhiệt luyện."},
+          {"id": "ex6", "type": "mcq", "question": "Chất khử trong lò cao:", "options": ["C", "CO", "H₂", "Al"], "correct": 1, "explanation": "CO là chất khử chính trong lò cao."},
+          {"id": "ex7", "type": "mcq", "question": "Gang chứa bao nhiêu % C:", "options": ["< 2%", "2-5%", "5-10%", "> 10%"], "correct": 1, "explanation": "Gang chứa 2-5% C."},
+          {"id": "ex8", "type": "mcq", "question": "Thép chứa bao nhiêu % C:", "options": ["< 2%", "2-5%", "5-10%", "> 10%"], "correct": 0, "explanation": "Thép chứa < 2% C."},
+          {"id": "ex9", "type": "mcq", "question": "Kim loại nhiều nhất trong vỏ Trái Đất:", "options": ["Fe", "Al", "Ca", "Na"], "correct": 1, "explanation": "Al nhiều nhất (8.1%)."},
+          {"id": "ex10", "type": "mcq", "question": "Phương pháp tinh chế Cu:", "options": ["Nhiệt luyện", "Thủy luyện", "Điện phân dung dịch", "Nhiệt nhôm"], "correct": 2, "explanation": "Cu tinh chế bằng điện phân dung dịch."},
+          {"id": "ex11", "type": "mcq", "question": "Phản ứng nhiệt nhôm:", "options": ["Al + oxit", "Al + muối", "Al + acid", "Al + nước"], "correct": 0, "explanation": "Nhiệt nhôm: Al khử oxit kim loại."},
+          {"id": "ex12", "type": "mcq", "question": "Sản xuất Na bằng:", "options": ["Nhiệt luyện", "Thủy luyện", "Điện phân NaCl nóng chảy", "Nhiệt nhôm"], "correct": 2, "explanation": "Na sản xuất bằng điện phân NaCl nóng chảy."},
+          {"id": "ex13", "type": "msq", "question": "Phương pháp sản xuất kim loại:", "options": ["Nhiệt luyện", "Thủy luyện", "Điện phân", "Nhiệt nhôm"], "correct": [0, 1, 2, 3], "explanation": "Có nhiều phương pháp sản xuất kim loại."},
+          {"id": "ex14", "type": "msq", "question": "Chất khử trong sản xuất kim loại:", "options": ["C", "CO", "H₂", "Al"], "correct": [0, 1, 2, 3], "explanation": "Có nhiều chất khử."},
+          {"id": "ex15", "type": "msq", "question": "Kim loại sản xuất bằng điện phân:", "options": ["Na", "Al", "Cu (tinh chế)", "Fe"], "correct": [0, 1, 2], "explanation": "Na, Al, Cu (tinh chế) dùng điện phân."},
+          {"id": "ex16", "type": "msq", "question": "Quặng của Fe:", "options": ["Hematit", "Magnetit", "Boxit", "Siderite"], "correct": [0, 1, 3], "explanation": "Fe có nhiều loại quặng."},
+          {"id": "ex17", "type": "sa", "question": "Khử 32g Fe₂O₃ bằng CO. Tính khối lượng Fe (g). Làm tròn đến 1 chữ số thập phân.", "correct": "22.4", "explanation": "n = 32/160 = 0.2 mol. n(Fe) = 0.4 mol. m = 0.4×56 = 22.4g. Đáp án: 22.4"},
+          {"id": "ex18", "type": "sa", "question": "Khử 16g CuO bằng H₂. Tính khối lượng Cu (g). Làm tròn đến 1 chữ số thập phân.", "correct": "12.8", "explanation": "n = 16/80 = 0.2 mol. m(Cu) = 0.2×64 = 12.8g. Đáp án: 12.8"},
+          {"id": "ex19", "type": "sa", "question": "Điện phân Al₂O₃, thu được 2.7g Al. Tính mol electron. Làm tròn đến 1 chữ số thập phân.", "correct": "0.3", "explanation": "n(Al) = 2.7/27 = 0.1 mol. n(e⁻) = 0.3 mol. Đáp án: 0.3"},
+          {"id": "ex20", "type": "sa", "question": "Gang chứa tối đa bao nhiêu % C? Làm tròn đến hàng đơn vị.", "correct": "5", "explanation": "Gang chứa 2-5% C. Đáp án: 5"},
+          {"id": "ex21", "type": "sa", "question": "Thép chứa tối đa bao nhiêu % C? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "Thép chứa < 2% C. Đáp án: 2"},
+          {"id": "ex22", "type": "sa", "question": "Al chiếm bao nhiêu % khối lượng vỏ Trái Đất? Làm tròn đến 1 chữ số thập phân.", "correct": "8.1", "explanation": "Al chiếm 8.1%. Đáp án: 8.1"}
+        ]
+      }
+    }
+  ]
+}

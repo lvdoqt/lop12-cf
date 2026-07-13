@@ -1,0 +1,43 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [
+    {
+      "id": "su12-bai-1",
+      "name": "Liên Hợp Quốc",
+      "slug": "lien-hop-quoc",
+      "chapter": "Chủ đề 1: Thế giới trong và sau chiến tranh lạnh",
+      "chapter_id": "su12",
+      "lesson_id": 1,
+      "description": "Sự ra đời, mục tiêu, cấu trúc và hoạt động của Liên Hợp Quốc",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+      "content": {
+        "theory": {
+          "title": "Liên Hợp Quốc",
+          "sections": [
+            { "heading": "1. Sự ra đời của Liên Hợp Quốc", "content": "Liên Hợp Quốc được thành lập năm 1945 tại San Francisco (Mỹ), thay thế Liên Minh Quốc tế sau Thế chiến thứ nhất. Nó được thành lập nhằm duy trì hòa bình và an ninh quốc tế sau Thế chiến thứ hai. Hiến chương Liên Hợp Quốc được ký ngày 26 tháng 6 năm 1945 bởi 51 quốc gia thành viên ban đầu." },
+            { "heading": "2. Mục tiêu của Liên Hợp Quốc", "content": "Duy trì hòa bình và an ninh quốc tế; phát triển quan hệ thân thiện giữa các quốc gia dựa trên bình đẳng quyền; thúc đẩy sự hợp tác quốc tế để giải quyết các vấn đề kinh tế, xã hội, văn hóa và nhân đạo; thúc đẩy quyền con người cơ bản." },
+            { "heading": "3. Cấu trúc tổ chức Liên Hợp Quốc", "content": "Đại Hội đồng: bao gồm tất cả các quốc gia thành viên; Hội đồng Bảo an: gồm 15 thành viên (5 thường trực có quyền phủ quyết: Mỹ, Liên Xô/Nga, Anh, Pháp, Trung Quốc; 10 thành viên không thường trực); Hội đồng Kinh tế và Xã hội; Tòa án Quốc tế; Văn phòng Tổng Thư ký." },
+            { "heading": "4. Hoạt động chính của Liên Hợp Quốc", "content": "Giải quyết tranh chấp quốc tế, duy trì hoà bình; gửi các lực lượng gìn giữ hoà bình; thúc đẩy phát triển bền vững, giáo dục, y tế; hỗ trợ nhân đạo cho các nước gặp khó khăn; bảo vệ quyền con người và tự do cơ bản." },
+            { "heading": "5. Vai trò của Liên Hợp Quốc trong thế giới hiện đại", "content": "Là diễn đàn đối thoại quốc tế quan trọng; thúc đẩy hợp tác phát triển bền vững; can thiệp trong các cuộc tranh chấp để tìm giải pháp hòa bình; hỗ trợ các nước kém phát triển; đóng vai trò then chốt trong các vấn đề toàn cầu." }
+          ]
+        },
+        "exercises": [
+          { "id": "ex1", "type": "mcq", "question": "Liên Hợp Quốc được thành lập vào năm nào?", "options": ["1945", "1939", "1950", "1960"], "correct": 0, "explanation": "Liên Hợp Quốc được thành lập năm 1945 sau Thế chiến II." },
+          { "id": "ex2", "type": "mcq", "question": "Bao nhiêu quốc gia là thành viên sáng lập của Liên Hợp Quốc?", "options": ["51", "100", "193", "45"], "correct": 0, "explanation": "Có 51 quốc gia ký Hiến chương Liên Hợp Quốc ban đầu." },
+          { "id": "ex3", "type": "mcq", "question": "Hội đồng Bảo an có bao nhiêu thành viên thường trực có quyền phủ quyết?", "options": ["3", "5", "7", "10"], "correct": 1, "explanation": "Hội đồng Bảo an có 5 thành viên thường trực có quyền phủ quyết (P5)." },
+          { "id": "ex4", "type": "mcq", "question": "Những nước nào là thành viên thường trực của Hội đồng Bảo an?", "options": ["Mỹ, Anh, Pháp, Nga, Trung Quốc", "Mỹ, Canada, Anh, Pháp, Đức", "Mỹ, Nhật, Anh, Pháp, Ấn Độ", "Mỹ, Anh, Australia, Pháp, Hàn Quốc"], "correct": 0, "explanation": "5 thành viên thường trực là Mỹ, Liên Xô/Nga, Anh, Pháp, Trung Quốc." },
+          { "id": "ex5", "type": "mcq", "question": "Mục tiêu chính của Liên Hợp Quốc là?", "options": ["Xây dựng chế độ phong kiến mới", "Duy trì hòa bình và an ninh quốc tế", "Thúc đẩy chủ nghĩa đế quốc", "Kiểm soát thương mại"], "correct": 1, "explanation": "Mục tiêu chính là duy trì hòa bình và an ninh quốc tế sau WWII." },
+          { "id": "ex6", "type": "mcq", "question": "Hiến chương Liên Hợp Quốc được ký kết tại thành phố nào?", "options": ["New York", "San Francisco", "Washington", "Geneva"], "correct": 1, "explanation": "Hiến chương được ký tại San Francisco, Mỹ, ngày 26/6/1945." },
+          { "id": "ex7", "type": "mcq", "question": "Cơ quan nào của Liên Hợp Quốc bao gồm tất cả các quốc gia thành viên?", "options": ["Hội đồng Bảo an", "Hội đồng Kinh tế Xã hội", "Đại Hội đồng", "Tòa án Quốc tế"], "correct": 2, "explanation": "Đại Hội đồng là cơ quan gồm tất cả các quốc gia thành viên Liên Hợp Quốc." },
+          { "id": "ex8", "type": "mcq", "question": "Lực lượng gìn giữ hoà bình của Liên Hợp Quốc được gọi là?", "options": ["Military Forces", "Peacekeeping Forces", "Defence Forces", "Security Forces"], "correct": 1, "explanation": "Được gọi là Peacekeeping Forces, thường được gửi để duy trì hoà bình." },
+          { "id": "ex9", "type": "mcq", "question": "Tổ chức nào thay thế Liên Minh Quốc tế (League of Nations) sau Thế chiến I?", "options": ["Hiệp hội các quốc gia", "Liên Hợp Quốc", "Tổ chức Thương mại Thế giới", "NATO"], "correct": 1, "explanation": "Liên Hợp Quốc thay thế Liên Minh Quốc tế, có cấu trúc mạnh mẽ hơn." },
+          { "id": "ex10", "type": "mcq", "question": "Một trong những hoạt động hỗ trợ nhân đạo chính của Liên Hợp Quốc là?", "options": ["Kiểm soát thị trường chứng khoán", "Hỗ trợ cứu trợ hiếu kỳ", "Cấp vốn cho công ty tư nhân", "Kiểm soát quân sự các nước"], "correct": 1, "explanation": "Liên Hợp Quốc gửi cứu trợ nhân đạo tới các nước gặp khó khăn, thảm họa." }
+        ]
+      }
+    }
+  ]
+}

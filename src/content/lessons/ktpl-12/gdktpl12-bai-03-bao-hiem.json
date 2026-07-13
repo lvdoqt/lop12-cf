@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_03",
+      "name": "Bảo hiểm",
+      "slug": "bao-hiem",
+      "chapter": "Bảo hiểm và an sinh xã hội",
+      "chapter_id": "GDCD12",
+      "lesson_id": 3,
+      "description": "Các loại hình bảo hiểm và vai trò của bảo hiểm trong việc phòng ngừa rủi ro tài chính.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Bảo hiểm",
+          "summary": "Bảo hiểm là phương thức san sẻ rủi ro giữa các tổ chức, cá nhân tham gia thông qua các quỹ tài chính.",
+          "sections": [
+            { "heading": "Khái niệm bảo hiểm", "content": "Là hoạt động chuyển giao rủi ro từ người được bảo hiểm sang người bảo hiểm thông qua hợp đồng bảo hiểm." },
+            { "heading": "Các loại hình bảo hiểm", "content": "Bảo hiểm xã hội (nhà nước tổ chức), Bảo hiểm y tế, Bảo hiểm thất nghiệp và Bảo hiểm thương mại (tự nguyện)." },
+            { "heading": "Vai trò của bảo hiểm", "content": "Ổn định cuộc sống khi gặp sự cố, tạo nguồn vốn đầu tư và mang lại sự an tâm cho người tham gia." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Bản chất của bảo hiểm là gì?", "options": ["Một hình thức đánh bạc", "Sự san sẻ rủi ro tài chính", "Việc tiêu tiền vô ích", "Sự trốn thuế"], "correct": 1, "explanation": "Bảo hiểm giúp giảm bớt gánh nặng tài chính khi rủi ro không may xảy ra." },
+          { "id": 2, "type": "mcq", "question": "Bảo hiểm xã hội bắt buộc do cơ quan nào tổ chức?", "options": ["Các công ty tư nhân", "Nhà nước", "Hội chữ thập đỏ", "Ngân hàng thương mại"], "correct": 1, "explanation": "Bảo hiểm xã hội là chính sách an sinh của Nhà nước." },
+          { "id": 3, "type": "mcq", "question": "Loại bảo hiểm nào hỗ trợ chi phí khám chữa bệnh cho người dân?", "options": ["Bảo hiểm nhân thọ", "Bảo hiểm y tế", "Bảo hiểm thất nghiệp", "Bảo hiểm vật chất xe máy"], "correct": 1, "explanation": "Bảo hiểm y tế đảm bảo quyền lợi về chăm sóc sức khỏe." },
+          { "id": 4, "type": "mcq", "question": "Bảo hiểm thất nghiệp giúp gì cho người lao động?", "options": ["Làm cho họ không muốn đi làm nữa", "Hỗ trợ thu nhập và học nghề trong thời gian mất việc", "Tăng lương", "Cho vay vốn mua nhà"], "correct": 1, "explanation": "Giúp ổn định đời sống tạm thời khi chấm dứt hợp đồng lao động." },
+          { "id": 5, "type": "mcq", "question": "Bảo hiểm thương mại hoạt động dựa trên nguyên tắc nào?", "options": ["Ép buộc mọi người tham gia", "Tự nguyện và có lợi nhuận", "Cấp miễn phí", "Chỉ dành cho người giàu"], "correct": 1, "explanation": "Đây là sản phẩm của các doanh nghiệp kinh doanh bảo hiểm." },
+          { "id": 6, "type": "mcq", "question": "Khi tham gia bảo hiểm, người tham gia phải đóng gì?", "options": ["Tiền phạt", "Phí bảo hiểm", "Lãi suất", "Tiền thế chấp"], "correct": 1, "explanation": "Phí bảo hiểm là số tiền định kỳ để duy trì quyền lợi bảo hiểm." },
+          { "id": 7, "type": "mcq", "question": "Hợp đồng bảo hiểm là văn bản thỏa thuận giữa ai?", "options": ["Bên mua bảo hiểm và doanh nghiệp bảo hiểm", "Người dân và Chính phủ", "Hai người bạn", "Công ty và ngân hàng"], "correct": 0, "explanation": "Hợp đồng quy định quyền và nghĩa vụ của các bên liên quan." },
+          { "id": 8, "type": "mcq", "question": "Bảo hiểm nhân thọ là loại bảo hiểm liên quan đến đối tượng nào?", "options": ["Hàng hóa vận chuyển", "Tính mạng và sức khỏe con người", "Nhà cửa", "Vật nuôi"], "correct": 1, "explanation": "Đối tượng của bảo hiểm nhân thọ là tuổi thọ hoặc tính mạng con người." },
+          { "id": 9, "type": "mcq", "question": "Bảo hiểm giúp ích gì cho xã hội?", "options": ["Gây ra lạm phát", "Góp phần ổn định trật tự và an toàn xã hội", "Làm mọi người lo lắng hơn", "Tăng chi phí nhà nước"], "correct": 1, "explanation": "Bảo hiểm giúp giảm thiểu các cú sốc tài chính gây bất ổn đời sống." },
+          { "id": 10, "type": "mcq", "question": "Chế độ hưu trí thuộc loại bảo hiểm nào?", "options": ["Bảo hiểm y tế", "Bảo hiểm xã hội", "Bảo hiểm tài sản", "Bảo hiểm trách nhiệm dân sự"], "correct": 1, "explanation": "Lương hưu là chế độ quan trọng nhất của bảo hiểm xã hội khi hết tuổi lao động." }
+        ]
+      }
+    }
+  ]
+}

@@ -19,19 +19,26 @@ if (!subject) {
 // Fetch lessons for this subject using Content Collections
 const lessonEntries = await getCollection('lessons');
 const matchingEntries = lessonEntries
-  .filter(entry => entry.data.subject === subject.slug)
-  .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+  .filter(entry => entry.id.startsWith(subject.slug + '/'))
+  .sort((a, b) => {
+    const orderA = a.data.lessons?.[0]?.lesson_id || 0;
+    const orderB = b.data.lessons?.[0]?.lesson_id || 0;
+    return orderA - orderB;
+  });
 
-const lessons = matchingEntries.map(entry => ({
-  id: entry.id,
-  subject_id: subject.id,
-  title: entry.data.title,
-  slug: entry.id.split('/').pop() || entry.id,
-  video_url: entry.data.video_url || null,
-  description: entry.data.description || '',
-  content: '',
-  created_at: entry.data.created_at || new Date().toISOString()
-}));
+const lessons = matchingEntries.map(entry => {
+  const lessonData = entry.data.lessons && entry.data.lessons.length > 0 ? entry.data.lessons[0] : null;
+  return {
+    id: entry.id,
+    subject_id: subject.id,
+    title: lessonData ? lessonData.name : 'Bài học',
+    slug: entry.id.split('/').pop() || entry.id,
+    video_url: lessonData ? lessonData.video_url || null : null,
+    description: lessonData ? lessonData.description || '' : '',
+    content: '',
+    created_at: new Date().toISOString()
+  };
+});
 
 const getSubjectColor = (slug: string) => {
   if (slug === 'toan-12') return 'blue';

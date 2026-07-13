@@ -1,0 +1,494 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-3-duong-tiem-can",
+      "name": "Bài 3. Đường tiệm cận",
+      "slug": "bai-3-duong-tiem-can",
+      "chapter": "Chương 1: Ứng dụng đạo hàm để khảo sát và vẽ đồ thị hàm số",
+      "chapter_id": "T12-1",
+      "lesson_id": 3,
+      "description": "Tìm hiểu về đường tiệm cận đứng, tiệm cận ngang và tiệm cận xiên của đồ thị hàm số. Nắm vững cách tính giới hạn và chia đa thức để xác định tiệm cận, ứng dụng vào khảo sát hàm số.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/10B981/FFFFFF?text=Đường+Tiệm+Cận",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Tìm tiệm cận ngang",
+          "slug": "tim-tiem-can-ngang",
+          "difficulty": "easy"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Tìm tiệm cận đứng",
+          "slug": "tim-tiem-can-dung",
+          "difficulty": "easy"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: Đếm số đường tiệm cận",
+          "slug": "dem-so-duong-tiem-can",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang4",
+          "name": "Dạng 4: Tìm tiệm cận xiên (hàm bậc 2/bậc 1)",
+          "slug": "tim-tiem-can-xien",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Đường tiệm cận ngang (TCN)",
+              "content": "<h3>Định nghĩa</h3><p>Đường thẳng $y = y_0$ được gọi là <strong>tiệm cận ngang</strong> của đồ thị hàm số $y = f(x)$ nếu:</p><ul><li>$\\lim_{x \\to +\\infty} f(x) = y_0$, hoặc</li><li>$\\lim_{x \\to -\\infty} f(x) = y_0$</li></ul><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 1 – Số lượng TCN:</strong><br>• Nếu $\\lim_{x\\to+\\infty}f = \\lim_{x\\to-\\infty}f = y_0$ → <strong>1 TCN</strong>: $y = y_0$.<br>• Nếu $\\lim_{x\\to+\\infty}f = y_1 \\neq y_2 = \\lim_{x\\to-\\infty}f$ → <strong>2 TCN</strong>: $y=y_1$ và $y=y_2$.<br>• Nếu cả hai giới hạn đều $= \\infty$ → <strong>không có TCN</strong>.</div><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 2 – Quy tắc nhanh cho phân thức $\\dfrac{P(x)}{Q(x)}$:</strong><br>• Bậc tử <strong>&lt;</strong> bậc mẫu $\\Rightarrow$ TCN là $y = 0$.<br>• Bậc tử <strong>=</strong> bậc mẫu $\\Rightarrow$ TCN là $y = \\dfrac{a_n}{b_n}$.<br>• Bậc tử <strong>&gt;</strong> bậc mẫu $\\Rightarrow$ <em>không có TCN</em> (có thể có tiệm cận xiên).</div>"
+            },
+            {
+              "heading": "2. Đường tiệm cận đứng (TCĐ)",
+              "content": "<h3>Định nghĩa</h3><p>Đường thẳng $x = x_0$ được gọi là <strong>tiệm cận đứng</strong> nếu ít nhất một trong các điều kiện sau thỏa mãn:</p><ul><li>$\\lim_{x \\to x_0^+} f(x) = \\pm\\infty$</li><li>$\\lim_{x \\to x_0^-} f(x) = \\pm\\infty$</li></ul><h3>Cách tìm TCĐ cho hàm phân thức</h3><ol><li><strong>Rút gọn</strong> phân thức (nếu có nhân tử chung).</li><li>Tìm nghiệm $x_0$ của mẫu <em>sau khi rút gọn</em>: $Q(x_0) = 0$.</li><li>Kiểm tra $P(x_0) \\neq 0$ → $x = x_0$ là TCĐ.</li></ol><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 3:</strong> Nếu tử và mẫu cùng có nhân tử $(x - x_0)$ thì $x = x_0$ <em>không phải</em> TCĐ mà là điểm \"lỗ hổng\" của đồ thị.</div><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 4 – Hàm phân thức tuyến tính $y = \\dfrac{ax+b}{cx+d}$:</strong><br>• TCĐ: $x = -\\dfrac{d}{c}$. &nbsp; TCN: $y = \\dfrac{a}{c}$.<br>• Đồ thị luôn có đúng <strong>1 TCĐ và 1 TCN</strong> (nếu $ad \\neq bc$).</div>"
+            },
+            {
+              "heading": "3. Đường tiệm cận xiên (TCX)",
+              "content": "<h3>Định nghĩa</h3><p>Đường thẳng $y = kx + b$ ($k \\neq 0$) được gọi là <strong>tiệm cận xiên</strong> của đồ thị hàm số $y = f(x)$ nếu:</p><ul><li>$\\lim_{x \\to +\\infty}[f(x) - (kx+b)] = 0$, hoặc</li><li>$\\lim_{x \\to -\\infty}[f(x) - (kx+b)] = 0$</li></ul><h3>Điều kiện xuất hiện TCX</h3><p>Hàm phân thức $y = \\dfrac{P(x)}{Q(x)}$ có tiệm cận xiên khi và chỉ khi <strong>bậc tử = bậc mẫu + 1</strong>.</p><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 5 – Phương pháp tìm TCX bằng chia đa thức:</strong><br>Với $y = \\dfrac{ax^2+bx+c}{dx+e}$, thực hiện <strong>chia đa thức</strong>:<br>$$y = \\dfrac{ax^2+bx+c}{dx+e} = \\underbrace{(kx+n)}_{\\text{thương}} + \\underbrace{\\dfrac{r}{dx+e}}_{\\to 0 \\text{ khi } x\\to\\infty}$$<br>Khi $x \\to \\pm\\infty$: phần dư $\\to 0$, nên đồ thị tiệm cận về $y = kx + n$.<br><strong>Hệ số:</strong> $k = \\dfrac{a}{d}$ và $n = \\dfrac{bd - ae}{d^2}$.</div><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 6 – Phân biệt 3 loại tiệm cận:</strong><br>• <strong>TCN</strong> ($y = c$, hằng số): xuất hiện khi bậc tử ≤ bậc mẫu.<br>• <strong>TCX</strong> ($y = kx+n$, $k\\neq0$): xuất hiện khi bậc tử = bậc mẫu + 1.<br>• <strong>TCĐ</strong> ($x = x_0$): xuất hiện khi mẫu = 0, tử ≠ 0.</div>"
+            },
+            {
+              "heading": "4. Bảng tổng hợp các dạng hàm",
+              "content": "<table style='width:100%;border-collapse:collapse;margin:8px 0'><thead><tr style='background:#4F46E5;color:white'><th style='padding:8px;border:1px solid #ccc'>Dạng hàm</th><th style='padding:8px;border:1px solid #ccc'>TCĐ</th><th style='padding:8px;border:1px solid #ccc'>TCN</th><th style='padding:8px;border:1px solid #ccc'>TCX</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>$y=\\dfrac{ax+b}{cx+d}$</td><td style='padding:8px;border:1px solid #ccc'>$x=-\\dfrac{d}{c}$</td><td style='padding:8px;border:1px solid #ccc'>$y=\\dfrac{a}{c}$</td><td style='padding:8px;border:1px solid #ccc'>Không có</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>$y=\\dfrac{ax+b}{cx^2+dx+e}$</td><td style='padding:8px;border:1px solid #ccc'>Nghiệm mẫu (tử $\\neq0$)</td><td style='padding:8px;border:1px solid #ccc'>$y=0$</td><td style='padding:8px;border:1px solid #ccc'>Không có</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>$y=\\dfrac{ax^2+bx+c}{dx+e}$</td><td style='padding:8px;border:1px solid #ccc'>$x=-\\dfrac{e}{d}$</td><td style='padding:8px;border:1px solid #ccc'>Không có</td><td style='padding:8px;border:1px solid #ccc'>$y=\\dfrac{a}{d}x+\\dfrac{bd-ae}{d^2}$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>$y=\\dfrac{\\sqrt{x^2+a}}{bx+c}$</td><td style='padding:8px;border:1px solid #ccc'>$x=-\\dfrac{c}{b}$</td><td style='padding:8px;border:1px solid #ccc'>2 TCN (khác dấu)</td><td style='padding:8px;border:1px solid #ccc'>Không có</td></tr></tbody></table>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tìm tiệm cận ngang",
+            "method": "<h3>Phương pháp</h3><ol><li>Tính $\\lim_{x\\to+\\infty}f(x)$ và $\\lim_{x\\to-\\infty}f(x)$.</li><li>Mỗi giá trị hữu hạn là một TCN.</li><li>Với phân thức: so sánh bậc tử và mẫu để xét nhanh.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tìm tiệm cận ngang của $y = \\dfrac{2x+1}{x-3}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$\\lim_{x\\to\\pm\\infty}\\dfrac{2x+1}{x-3} = \\dfrac{2}{1} = 2$. <strong>TCN: $y = 2$</strong>.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Tìm tiệm cận ngang của $y = \\dfrac{\\sqrt{x^2+1}}{x-1}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$\\lim_{x\\to+\\infty}y = 1$; $\\lim_{x\\to-\\infty}y = -1$ (vì $\\sqrt{x^2}=|x|=-x$ khi $x<0$).</p><p><strong>2 TCN:</strong> $y=1$ và $y=-1$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tìm tiệm cận đứng",
+            "method": "<h3>Phương pháp</h3><ol><li>Rút gọn phân thức.</li><li>Tìm nghiệm của mẫu sau rút gọn: $Q(x_0)=0$.</li><li>Tử $P(x_0)\\neq0$ → $x=x_0$ là TCĐ.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tìm TCĐ của $y = \\dfrac{x+1}{x^2-4}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>Mẫu: $(x-2)(x+2)=0 \\Rightarrow x=\\pm2$. Tử $\\neq0$ tại cả hai.</p><p><strong>2 TCĐ: $x=2$ và $x=-2$.</strong></p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Tìm TCĐ của $y = \\dfrac{x^2-3x+2}{x^2-5x+6}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>Rút gọn: $y=\\dfrac{(x-1)(x-2)}{(x-2)(x-3)}=\\dfrac{x-1}{x-3}$ ($x\\neq2$).</p><p>Mẫu sau rút gọn $=0$ tại $x=3$ → <strong>1 TCĐ: $x=3$</strong>. Điểm $x=2$ là lỗ hổng.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Đếm tổng số đường tiệm cận",
+            "method": "<h3>Phương pháp</h3><ol><li>Tìm tất cả TCĐ và TCN như trên.</li><li>Nếu bậc tử = bậc mẫu + 1: tìm thêm TCX (bằng chia đa thức).</li><li>Tổng = số TCĐ + số TCN + số TCX.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Đồ thị $y=\\dfrac{x+1}{x^2-4}$ có bao nhiêu tiệm cận?",
+                "solution": "<p>TCĐ: $x=\\pm2$ (2 đường). TCN: $y=0$ (1 đường). Tổng: <strong>3</strong>.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Đồ thị $y=\\dfrac{x^2+3x+1}{x+2}$ có bao nhiêu tiệm cận?",
+                "solution": "<p>Bậc tử (2) = bậc mẫu (1) + 1 → có TCX. Chia: $y=x+1+\\dfrac{-1}{x+2}$. TCX: $y=x+1$ (1 đường). TCĐ: $x=-2$ (1 đường). Không có TCN. Tổng: <strong>2</strong>.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang4",
+            "name": "Dạng 4: Tìm tiệm cận xiên (hàm bậc 2/bậc 1)",
+            "method": "<h3>Phương pháp</h3><ol><li>Kiểm tra điều kiện: bậc tử = bậc mẫu + 1.</li><li><strong>Chia đa thức</strong> tử cho mẫu, lấy phần thương $Q(x) = kx+n$.</li><li><strong>TCX:</strong> $y = kx + n$ (phần thương).</li><li><strong>TCĐ:</strong> nghiệm mẫu (nếu tử $\\neq0$ tại đó).</li><li><strong>Không có TCN</strong> (bậc tử > bậc mẫu).</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tìm tiệm cận xiên của $y = \\dfrac{x^2+3x+1}{x+2}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>Chia $x^2+3x+1$ cho $x+2$:</p><p>$x^2+3x+1 = (x+2)\\cdot x + (x+1) = (x+2)\\cdot x + (x+2) - 1 = (x+2)(x+1) - 1$.</p><p>Vậy: $y = x+1 + \\dfrac{-1}{x+2}$.</p><p>$\\lim_{x\\to\\pm\\infty}\\dfrac{-1}{x+2}=0$ → <strong>TCX: $y = x+1$</strong>. TCĐ: $x=-2$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Tìm tất cả tiệm cận của $y = \\dfrac{2x^2-x+3}{x-1}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>Chia $2x^2-x+3$ cho $x-1$:</p><p>$2x^2-x+3 = 2x(x-1) + (x+3) = 2x(x-1) + (x-1) + 4 = (x-1)(2x+1) + 4$.</p><p>$y = 2x+1+\\dfrac{4}{x-1}$.</p><ul><li><strong>TCX:</strong> $y = 2x+1$.</li><li><strong>TCĐ:</strong> $x=1$ (mẫu $=0$, tử tại $x=1$: $4\\neq0$).</li><li><strong>Không có TCN</strong>.</li></ul><p><strong>Tổng: 2 tiệm cận.</strong></p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Tiệm cận ngang của đồ thị hàm số $y = \\dfrac{3x-1}{x+2}$ là:",
+            "options": [
+              "$y = 3$",
+              "$y = -\\dfrac{1}{2}$",
+              "$y = 0$",
+              "$y = -2$"
+            ],
+            "correct": 0,
+            "explanation": "Bậc tử = bậc mẫu = 1. TCN: $y = \\dfrac{3}{1} = 3$."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Tiệm cận đứng của đồ thị hàm số $y = \\dfrac{x+1}{x-5}$ là:",
+            "options": [
+              "$x = 5$",
+              "$x = -1$",
+              "$x = 0$",
+              "$x = 1$"
+            ],
+            "correct": 0,
+            "explanation": "Mẫu $= 0 \\Leftrightarrow x=5$. Tử tại $x=5$: $6\\neq0$. TCĐ: $x=5$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Đồ thị hàm số $y = \\dfrac{2x+3}{x^2-1}$ có bao nhiêu tiệm cận?",
+            "options": [
+              "$3$",
+              "$2$",
+              "$1$",
+              "$4$"
+            ],
+            "correct": 0,
+            "explanation": "TCĐ: $x^2-1=0 \\Rightarrow x=\\pm1$ (2 TCĐ). TCN: bậc tử < bậc mẫu → $y=0$ (1 TCN). Tổng: $3$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Đồ thị hàm số $y = \\dfrac{x^2}{x-1}$ có bao nhiêu tiệm cận ngang?",
+            "options": [
+              "$0$",
+              "$1$",
+              "$2$",
+              "$3$"
+            ],
+            "correct": 0,
+            "explanation": "Bậc tử (2) > bậc mẫu (1) → không có TCN (có TCX)."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Hàm số $y = \\dfrac{1}{x^2+1}$ có bao nhiêu tiệm cận?",
+            "options": [
+              "$1$",
+              "$0$",
+              "$2$",
+              "$3$"
+            ],
+            "correct": 0,
+            "explanation": "TCĐ: $x^2+1=0$ vô nghiệm → không có TCĐ. TCN: $\\lim_{x\\to\\pm\\infty}y=0$ → $y=0$ (1 TCN). Tổng: 1."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Số tiệm cận đứng của đồ thị hàm số $y = \\dfrac{x^2-3x-4}{x^2-16}$:",
+            "options": [
+              "$1$",
+              "$2$",
+              "$0$",
+              "$3$"
+            ],
+            "correct": 0,
+            "explanation": "Rút gọn: $y=\\dfrac{(x-4)(x+1)}{(x-4)(x+4)}=\\dfrac{x+1}{x+4}$ ($x\\neq4$). TCĐ duy nhất: $x=-4$. Điểm $x=4$ là lỗ hổng."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Cho $\\lim_{x\\to+\\infty}f(x)=2$ và $\\lim_{x\\to-\\infty}f(x)=-1$. Số TCN của đồ thị là:",
+            "options": [
+              "$2$",
+              "$1$",
+              "$0$",
+              "$3$"
+            ],
+            "correct": 0,
+            "explanation": "Hai giới hạn hữu hạn và khác nhau → có 2 TCN: $y=2$ và $y=-1$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Đồ thị hàm số $y = \\dfrac{\\sqrt{x^2+1}}{x-1}$ có bao nhiêu đường tiệm cận?",
+            "options": [
+              "$3$",
+              "$2$",
+              "$1$",
+              "$4$"
+            ],
+            "correct": 0,
+            "explanation": "TCĐ: $x=1$ (1 đường). TCN: $\\lim_{+\\infty}y=1$; $\\lim_{-\\infty}y=-1$ → 2 TCN. Tổng: $3$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Tiệm cận đứng của đồ thị $y = \\dfrac{x^2-2x}{x^2-4x+4}$ là:",
+            "options": [
+              "$x = 2$",
+              "$x = 0$ và $x = 2$",
+              "Không có TCĐ",
+              "$x = 4$"
+            ],
+            "correct": 0,
+            "explanation": "Rút gọn: $y=\\dfrac{x(x-2)}{(x-2)^2}=\\dfrac{x}{x-2}$ ($x\\neq2$). Mẫu sau rút gọn $=0$ tại $x=2$; tử tại $x=2$ là $2\\neq0$ → TCĐ: $x=2$."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Tiệm cận ngang của hàm số $y = \\dfrac{2x^2-3}{x^2+5}$ là:",
+            "options": [
+              "$y = 2$",
+              "$y = -\\dfrac{3}{5}$",
+              "$y = 0$",
+              "Không có TCN"
+            ],
+            "correct": 0,
+            "explanation": "Bậc tử = bậc mẫu = 2. $\\lim_{x\\to\\pm\\infty}y=\\dfrac{2}{1}=2$. TCN: $y=2$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Hàm số $y = \\dfrac{3x+1}{x^2-x-2}$ có tổng số đường tiệm cận là:",
+            "options": [
+              "$3$",
+              "$2$",
+              "$4$",
+              "$1$"
+            ],
+            "correct": 0,
+            "explanation": "Mẫu: $(x-2)(x+1)=0 \\Rightarrow x=2$ và $x=-1$ → 2 TCĐ. TCN: bậc tử < bậc mẫu → $y=0$ (1 TCN). Tổng: $3$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Hàm số $y = \\dfrac{x^2+x+1}{x+1}$ có đặc điểm gì về tiệm cận?",
+            "options": [
+              "Có 1 TCĐ, không có TCN, có 1 TCX",
+              "Có 1 TCĐ và 1 TCN",
+              "Không có tiệm cận",
+              "Có 1 TCĐ và 1 TCX nhưng không có TCN"
+            ],
+            "correct": 3,
+            "explanation": "Bậc tử (2) = bậc mẫu (1) + 1 → có TCX, không có TCN. TCĐ: $x=-1$. Chia: $x^2+x+1=(x+1)\\cdot x+1$, vậy $y=x+\\dfrac{1}{x+1}$ → TCX: $y=x$. Đáp án D: 1 TCĐ ($x=-1$) và 1 TCX ($y=x$)."
+          },
+          {
+            "id": "ex13",
+            "type": "mcq",
+            "question": "Tiệm cận xiên của đồ thị hàm số $y = \\dfrac{x^2+2x+3}{x+1}$ là:",
+            "options": [
+              "$y = x+1$",
+              "$y = x+2$",
+              "$y = x$",
+              "$y = x+3$"
+            ],
+            "correct": 0,
+            "explanation": "Chia: $x^2+2x+3=(x+1)(x+1)+2$. Vậy $y=x+1+\\dfrac{2}{x+1}$. TCX: $y=x+1$."
+          },
+          {
+            "id": "ex14",
+            "type": "mcq",
+            "question": "Hàm số $y = \\dfrac{2x^2-x+3}{x-1}$ có tiệm cận xiên là:",
+            "options": [
+              "$y = 2x+1$",
+              "$y = 2x-1$",
+              "$y = 2x+3$",
+              "$y = x+1$"
+            ],
+            "correct": 0,
+            "explanation": "Chia: $2x^2-x+3=(x-1)(2x+1)+4$. Vậy $y=2x+1+\\dfrac{4}{x-1}$. TCX: $y=2x+1$."
+          },
+          {
+            "id": "ex15",
+            "type": "mcq",
+            "question": "Hàm số $y = \\dfrac{3x^2+x-2}{x+1}$ có tiệm cận xiên là:",
+            "options": [
+              "$y = 3x-2$",
+              "$y = 3x+2$",
+              "$y = 3x$",
+              "$y = 3x+1$"
+            ],
+            "correct": 0,
+            "explanation": "Chia $3x^2+x-2$ cho $x+1$: bước 1: $3x^2\\div x=3x$, $3x(x+1)=3x^2+3x$, dư: $-2x-2$. Bước 2: $-2x\\div x=-2$, $-2(x+1)=-2x-2$, dư: $0$. Vậy $y=3x-2+\\dfrac{0}{x+1}=3x-2$. TCX: $y=3x-2$."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Đồ thị hàm số $y = \\dfrac{2x+1}{x-3}$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số có tiệm cận đứng $x = 3$",
+              "Hàm số có tiệm cận ngang $y = 2$",
+              "Đồ thị cắt trục $Ox$ tại $\\left(-\\dfrac{1}{2};0\\right)$",
+              "Tổng số đường tiệm cận là $2$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "TCĐ: $x=3$ (A ✓). TCN: $y=2$ (B ✓). Giao $Ox$: $2x+1=0 \\Rightarrow x=-\\frac{1}{2}$ (C ✓). Tổng: $1+1=2$ (D ✓)."
+          },
+          {
+            "id": "ex17",
+            "type": "msq",
+            "question": "Đồ thị hàm số $y = \\dfrac{x+1}{x^2-4}$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số có 2 tiệm cận đứng",
+              "Tiệm cận ngang là $y = 0$",
+              "Hàm số có tổng cộng 3 đường tiệm cận",
+              "Tiệm cận đứng là $x=2$ và $x=-2$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Mẫu $x^2-4=(x-2)(x+2) \\Rightarrow$ 2 TCĐ (A ✓, D ✓). Bậc tử < bậc mẫu → TCN: $y=0$ (B ✓). Tổng $=3$ (C ✓)."
+          },
+          {
+            "id": "ex18",
+            "type": "msq",
+            "question": "Đồ thị hàm số $y = \\dfrac{x^2-5x+6}{x^2-9}$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Sau rút gọn hàm tương đương $y = \\dfrac{x-2}{x+3}$ ($x\\neq3$)",
+              "Hàm số chỉ có 1 tiệm cận đứng là $x=-3$",
+              "Hàm số có tiệm cận ngang $y=1$",
+              "Hàm số có tổng cộng 2 đường tiệm cận"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Rút gọn: $\\dfrac{(x-2)(x-3)}{(x-3)(x+3)}=\\dfrac{x-2}{x+3}$ (A ✓). TCĐ: $x=-3$ duy nhất (B ✓). TCN: $y=1$ (C ✓). Tổng: $1+1=2$ (D ✓)."
+          },
+          {
+            "id": "ex19",
+            "type": "msq",
+            "question": "Hàm số $y = \\dfrac{x^2+3x+1}{x+2}$. Chọn tất cả khẳng định đúng:",
+            "options": [
+              "Hàm số có tiệm cận xiên $y = x+1$",
+              "Hàm số có tiệm cận đứng $x = -2$",
+              "Hàm số không có tiệm cận ngang",
+              "Tổng số đường tiệm cận là $2$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Chia: $x^2+3x+1=(x+2)(x+1)-1$. Vậy $y=x+1-\\dfrac{1}{x+2}$. TCX: $y=x+1$ (A ✓). TCĐ: $x=-2$ (B ✓). Bậc tử > bậc mẫu → không có TCN (C ✓). Tổng: $1+1=2$ (D ✓)."
+          },
+          {
+            "id": "ex20",
+            "type": "msq",
+            "question": "Hàm số $y = \\dfrac{2x^2-x+3}{x-1}$. Chọn tất cả khẳng định đúng:",
+            "options": [
+              "Hàm số có tiệm cận xiên $y = 2x+1$",
+              "Hàm số có tiệm cận đứng $x = 1$",
+              "Hàm số không có tiệm cận ngang",
+              "Tổng số đường tiệm cận là $2$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Chia: $2x^2-x+3=(x-1)(2x+1)+4$. TCX: $y=2x+1$ (A ✓). TCĐ: $x=1$ (B ✓). Bậc tử > bậc mẫu → không có TCN (C ✓). Tổng: $1+1=2$ (D ✓)."
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Hàm số $y = \\dfrac{3x-2}{x+1}$ có TCĐ $x = a$ và TCN $y = b$. Tính $a + b$.",
+            "explanation": "TCĐ: $x+1=0 \\Rightarrow x=-1$ → $a=-1$. TCN: $y=\\dfrac{3}{1}=3$ → $b=3$. $a+b=-1+3=2$.",
+            "correct": "2"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Đồ thị hàm số $y = \\dfrac{2x^2-8}{x^2-x-6}$ có bao nhiêu đường tiệm cận? Nhập số nguyên.",
+            "explanation": "Tử: $2(x-2)(x+2)$. Mẫu: $(x-3)(x+2)$. Rút gọn: $y=\\dfrac{2(x-2)}{x-3}$ ($x\\neq-2$). Bậc tử = bậc mẫu = 1 → TCN: $y=2$ (1 đường). TCĐ: $x=3$ (1 đường). Tổng: $2$.",
+            "correct": "2"
+          },
+          {
+            "id": "ex23",
+            "type": "sa",
+            "question": "Hàm số $y = \\dfrac{x+3}{x^2-2x-3}$. Tính tổng các giá trị $x_0$ là tiệm cận đứng.",
+            "explanation": "Mẫu: $x^2-2x-3=(x-3)(x+1)=0 \\Rightarrow x=3$ hoặc $x=-1$. Tử tại cả hai $\\neq0$ → 2 TCĐ. Tổng: $3+(-1)=2$.",
+            "correct": "2"
+          },
+          {
+            "id": "ex24",
+            "type": "sa",
+            "question": "Hàm số $y = \\dfrac{\\sqrt{4x^2+1}}{2x-3}$ có $k$ đường tiệm cận. Tính $k$.",
+            "explanation": "TCĐ: $2x-3=0 \\Rightarrow x=\\frac{3}{2}$; tử $\\sqrt{10}\\neq0$ → 1 TCĐ. TCN: $\\lim_{+\\infty}y=1$; $\\lim_{-\\infty}y=-1$ → 2 TCN. Tổng: $k=3$.",
+            "correct": "3"
+          },
+          {
+            "id": "ex25",
+            "type": "sa",
+            "question": "Hàm số $y = \\dfrac{x^2-x+2}{x-2}$ có TCX là $y = ax+b$. Tính $a+b$.",
+            "explanation": "Chia: $x^2-x+2=(x-2)(x+1)+4$. Vậy $y=x+1+\\dfrac{4}{x-2}$. TCX: $y=x+1$, tức $a=1$, $b=1$. $a+b=2$.",
+            "correct": "2"
+          },
+          {
+            "id": "ex26",
+            "type": "sa",
+            "question": "Tìm TCX $y = kx+n$ của hàm số $y = \\dfrac{3x^2+x-2}{x+1}$. Tính $k\\cdot n$.",
+            "explanation": "Chia $3x^2+x-2$ cho $x+1$: $3x^2+x-2=3x(x+1)-2x-2+... $. Thực hiện: Bước 1: $3x^2\\div x=3x$; $3x(x+1)=3x^2+3x$; dư $-2x-2$. Bước 2: $-2x\\div x=-2$; $-2(x+1)=-2x-2$; dư $0$. Vậy $y=3x-2$. TCX: $y=3x-2$, tức $k=3$, $n=-2$. $k\\cdot n=-6$.",
+            "correct": "-6"
+          },
+          {
+            "id": "ex27",
+            "type": "sa",
+            "question": "Hàm số $y = \\dfrac{x^2+4}{x-2}$ có TCX $y = x+c$ và TCĐ $x = d$. Tính $c+d$.",
+            "explanation": "Chia $x^2+4$ cho $x-2$: $x^2+4=x(x-2)+2x+4=x(x-2)+2(x-2)+8=(x-2)(x+2)+8$. Vậy $y=x+2+\\dfrac{8}{x-2}$. TCX: $y=x+2$ → $c=2$. TCĐ: $x=2$ → $d=2$. $c+d=2+2=4$.",
+            "correct": "4"
+          },
+          {
+            "id": "ex28",
+            "type": "sa",
+            "question": "Hàm số $y = \\dfrac{x^2-4x+3}{x^2-6x+9}$ có TCĐ $x=a$ và tổng tiệm cận $k$. Tính $a+k$.",
+            "explanation": "Rút gọn: $\\dfrac{(x-1)(x-3)}{(x-3)^2}=\\dfrac{x-1}{x-3}$ ($x\\neq3$). Tại $x=3$: mẫu rút gọn $=0$, tử $=2\\neq0$ → TCĐ: $x=3$, tức $a=3$. TCN: bậc tử = bậc mẫu = 1 → $y=1$ (1 TCN). Tổng: $k=1+1=2$. $a+k=3+2=5$.",
+            "correct": "5"
+          },
+          {
+            "id": "ex29",
+            "type": "essay",
+            "question": "Tìm các đường tiệm cận của đồ thị hàm số $y = \\dfrac{2x^2 - 3x + 1}{x - 2}$.",
+            "answer": "TCĐ: $x=2$; TCX: $y = 2x + 1$.",
+            "explanation": "Tính các giới hạn khi $x \\to 2$ và $x \\to \\infty$."
+          },
+          {
+            "id": "ex30",
+            "type": "essay",
+            "question": "Chứng minh rằng đồ thị hàm số $y = \\dfrac{x+1}{x-1}$ có tâm đối xứng là giao điểm của hai đường tiệm cận.",
+            "answer": "Giao điểm là $I(1; 1)$. Chứng minh $f(1+x) + f(1-x) = 2$.",
+            "explanation": "Xác định tiệm cận đứng $x=1$, tiệm cận ngang $y=1$."
+          },
+          {
+            "id": "ex31",
+            "type": "essay",
+            "question": "Tìm $m$ để đồ thị hàm số $y = \\dfrac{x-1}{x^2 - mx + 4}$ có đúng hai đường tiệm cận đứng.",
+            "answer": "$|m| > 4$ và $m \\neq 5$.",
+            "explanation": "Phương trình mẫu có 2 nghiệm phân biệt khác 1."
+          }
+        ]
+      }
+    }
+  ]
+}

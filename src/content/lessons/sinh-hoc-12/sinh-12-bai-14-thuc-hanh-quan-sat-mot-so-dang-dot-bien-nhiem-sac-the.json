@@ -1,0 +1,190 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-14",
+      "name": "Bài 14. Thực hành: Quan sát một số dạng đột biến nhiễm sắc thể",
+      "slug": "thuc-hanh-quan-sat-mot-so-dang-dot-bien-nhiem-sac-the",
+      "chapter": "Chương 2. Di truyền nhiễm sắc thể",
+      "chapter_id": "S12-2",
+      "lesson_id": 14,
+      "description": "Thực hành quan sát và nhận dạng các dạng đột biến nhiễm sắc thể.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2690&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Thực hành: Quan sát một số dạng đột biến nhiễm sắc thể",
+          "sections": [
+            {
+              "heading": "1. Mục đích và yêu cầu",
+              "content": "<h4>a) Mục đích</h4><ul><li>Nhận dạng một số dạng đột biến NST qua ảnh hoặc mẫu tiêu bản.</li><li>Phân biệt các loại đột biến cấu trúc và số lượng NST.</li></ul><h4>b) Yêu cầu</h4><ul><li>Nhận biết hình thái NST bình thường và đột biến.</li><li>Đếm và phân tích số lượng NST.</li><li>Ghi nhận và phân loại các dạng đột biến.</li></ul>"
+            },
+            {
+              "heading": "2. Quan sát đột biến cấu trúc NST",
+              "content": "<h4>a) Mất đoạn (deletion)</h4><ul><li>NST ngắn hơn bình thường.</li><li>Có thể thấy đoạn bị mất trên ảnh hiển vi.</li><li>Ví dụ: Hội chứng mèo kêu (mất đoạn 5p).</li></ul><h4>b) Lặp đoạn (duplication)</h4><ul><li>NST dài hơn bình thường.</li><li>Có vùng lặp lại trên NST.</li></ul><h4>c) Đảo đoạn (inversion)</h4><ul><li>NST có hình dạng bình thường nhưng thứ tự vùng đã đảo.</li><li>Có thể thấy vùng đảo tạo vòng.</li></ul><h4>d) Chuyển đoạn (translocation)</h4><ul><li>Có NST chuyển đến NST khác.</li><li>Có thể thấy NST mang đoạn chuyển.</li></ul>"
+            },
+            {
+              "heading": "3. Quan sát đột biến số lượng NST",
+              "content": "<h4>a) Thể lệch bội</h4><ul><li><strong>Đơn nhiễm (monosomy):</strong> 2n-1 NST.</li><li><strong>Ba nhiễm (trisomy):</strong> 2n+1 NST.</li><li>Đếm số NST trong ảnh hoặc tiêu bản.</li></ul><h4>b) Thể đa bội</h4><ul><li><strong>Tự đa bội:</strong> Số NST là bội số của n (3n, 4n).</li><li><strong>Dị đa bội:</strong> Số NST không phải bội số của n.</li></ul><h4>c) Nhận dạng một số hội chứng</h4><ul><li><strong>Down:</strong> 3 nhiễm cặp 21.</li><li><strong>Turner:</strong> Thiếu NST X (45).</li><li><strong>Klinefelter:</strong> Thừa X (XXY).</li></ul>"
+            },
+            {
+              "heading": "4. Phương pháp làm tiêu bản",
+              "content": "<h4>a) Nhuộm NST</h4><ul><li>Sử dụng thuốc nhuộm đặc hiệu (orcein, giemsa).</li><li>NST nhuộm màu đậm.</li></ul><h4>b) Kỹ thuật quan sát</h4><ul><li>Sử dụng kính hiển vi quang học (độ phóng đại 1000x).</li><li>Sử dụng kính hiển vi huỳnh quang cho NST fluorescent.</li></ul><h4>c) Phân tích karyotype</h4><ul><li>Sắp xếp các cặp NST theo kích thước.</li><li>So sánh với karyotype bình thường.</li><li>Phát hiện bất thường về số lượng và cấu trúc.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Đột biến mất đoạn NST có đặc điểm gì?",
+            "options": [
+              "NST dài hơn bình thường",
+              "NST ngắn hơn bình thường",
+              "NST có hình vòng",
+              "NST bị đứt gãy"
+            ],
+            "correct": 1,
+            "explanation": "Mất đoạn làm NST ngắn hơn bình thường vì một phần bị mất đi."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Đột biến lặp đoạn có đặc điểm gì?",
+            "options": [
+              "NST ngắn lại",
+              "NST dài ra",
+              "NST có vòng",
+              "NST chuyển sang NST khác"
+            ],
+            "correct": 1,
+            "explanation": "Lặp đoạn làm NST dài hơn vì có đoạn được nhân đôi."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Thể ba nhiễm có số lượng NST là bao nhiêu?",
+            "options": [
+              "2n-1",
+              "2n",
+              "2n+1",
+              "3n"
+            ],
+            "correct": 2,
+            "explanation": "Thể ba nhiễm có 2n+1 NST (thêm một NST)."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Hội chứng Down có đặc điểm NST như thế nào?",
+            "options": [
+              "Thiếu NST X",
+              "3 nhiễm cặp 21",
+              "3 nhiễm cặp 18",
+              "Thừa NST Y"
+            ],
+            "correct": 1,
+            "explanation": "Hội chứng Down (3 nhiễm 21) có 3 NST ở cặp 21."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Phương pháp nào dùng để phân tích karyotype?",
+            "options": [
+              "PCR",
+              "Nuôi cấy và nhuộm NST",
+              "Điện di",
+              "Western blot"
+            ],
+            "correct": 1,
+            "explanation": "Karyotype được phân tích bằng cách nuôi cấy tế bào, thu NST và nhuộm để quan sát."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các dạng đột biến cấu trúc NST có thể quan sát:",
+            "options": [
+              "Mất đoạn",
+              "Lặp đoạn",
+              "Đảo đoạn",
+              "Lệch bội"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Mất đoạn nhìn thấy NST ngắn hơn. B ✓: Lặp đoạn nhìn thấy NST dài hơn. C ✓: Đảo đoạn có thể thấy vùng đảo. D ✗: Lệch bội là đột biến số lượng."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các hội chứng đột biến số lượng NST:",
+            "options": [
+              "Hội chứng Down",
+              "Hội chứng Turner",
+              "Hội chứng Klinefelter",
+              "Bệnh ung thư"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: 3 nhiễm 21. B ✓: X0 (45 NST). C ✓: XXY (47 NST). D ✗: Ung thư không phải hội chứng NST."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một tiêu bản có 47 NST, trong đó có 3 NST cặp 21. Đây là hội chứng gì? Nhập số thứ tự: 1=Down, 2=Turner, 3=Klinefelter.",
+            "correct": "1",
+            "explanation": "3 nhiễm cặp 21 → Hội chứng Down."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Một tiêu bản có 45 NST. Đây là hội chứng gì? Nhập số thứ tự: 1=Down, 2=Turner, 3=Klinefelter.",
+            "correct": "2",
+            "explanation": "45 NST → Thiếu một NST → Hội chứng Turner (X0)."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Nhận dạng đột biến cấu trúc từ hình ảnh NST",
+            "method": "<h3>Phương pháp giải</h3><ol><li>So sánh với NST bình thường cùng cặp.</li><li>NST ngắn hơn → Mất đoạn.</li><li>NST dài hơn → Lặp đoạn.</li><li>NST có vòng → Đảo đoạn hoặc isochromosome.</li><li>NST có đoạn từ NST khác → Chuyển đoạn.</li></ol>",
+            "examples": [
+              {
+                "question": "Quan sát một NST thấy ngắn hơn NST đối tác. Đây là dạng nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>NST ngắn hơn → <strong>Mất đoạn</strong></p><p>Một phần của NST đã bị mất đi</p>"
+              },
+              {
+                "question": "Quan sát thấy NST có vùng lặp lại. Đây là dạng nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Vùng lặp lại → <strong>Lặp đoạn</strong></p><p>Một đoạn đã được nhân đôi</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định hội chứng từ số lượng NST",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Đếm số NST trong tiêu bản.</li><li>2n+1 = 47 → Down hoặc Klinefelter (kiểm tra NST giới tính).</li><li>2n-1 = 45 → Turner (X0).</li><li>Kiểm tra cặp NST bất thường.</li></ol>",
+            "examples": [
+              {
+                "question": "Tiêu bản có 47 NST, trong đó có XXY. Đây là hội chứng nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>47 NST + XXY → <strong>Hội chứng Klinefelter</strong></p>"
+              },
+              {
+                "question": "Tiêu bản có 45 NST, chỉ có một NST X. Đây là hội chứng nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>45 NST + X0 → <strong>Hội chứng Turner</strong></p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

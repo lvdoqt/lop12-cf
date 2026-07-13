@@ -1,0 +1,192 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-35",
+      "name": "Bài 35. Dự án: Tìm hiểu thực trạng bảo tồn và phục hồi hệ sinh thái tại địa phương, đề xuất giải pháp bảo tồn",
+      "slug": "du-an-tim-hieu-thuc-trang-bao-ton-va-phuc-hoi-he-sinh-thai-tai-dia-phuong",
+      "chapter": "Chương 8. Sinh thái học phục hồi, bảo tồn và phát triển bền vững",
+      "chapter_id": "S12-8",
+      "lesson_id": 35,
+      "description": "Dự án tìm hiểu thực trạng bảo tồn và phục hồi hệ sinh thái tại địa phương.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Dự án: Tìm hiểu thực trạng bảo tồn và phục hồi hệ sinh thái tại địa phương",
+          "sections": [
+            {
+              "heading": "1. Mục tiêu dự án",
+              "content": "<ul><li>Đánh giá thực trạng môi trường và hệ sinh thái tại địa phương.</li><li>Xác định các vấn đề về bảo tồn và phục hồi.</li><li>Đề xuất giải pháp bảo tồn phù hợp.</li><li>Rèn luyện kỹ năng nghiên cứu, làm việc nhóm.</li><li>Nâng cao nhận thức về bảo vệ môi trường.</li></ul>"
+            },
+            {
+              "heading": "2. Nội dung nghiên cứu",
+              "content": "<h4>a) Khảo sát hiện trạng</h4><ul><li><strong>Hệ sinh thái tự nhiên:</strong> Rừng, sông, hồ, biển, đầm lầy.</li><li><strong>Hệ sinh thái nhân tạo:</strong> Nông nghiệp, ao nuôi, đô thị.</li><li><strong>Đa dạng sinh vật:</strong> Các loài bản địa, loài nguy cấp.</li></ul><h4>b) Đánh giá các mối đe dọa><li>Mất</h4><ul môi trường sống.</li><li>Ô nhiễm (nước, đất, không khí).</li><li>Khai thác quá mức.</li><li>Loài ngoại lai xâm lấn.</li></ul><h4>c) Các biện pháp bảo tồn hiện có</h4><ul><li>Khu bảo tồn, vườn quốc gia.</li><li>Chính sách, luật pháp.</li><li>Hoạt động của các tổ chức.</li></ul>"
+            },
+            {
+              "heading": "3. Phương pháp nghiên cứu",
+              "content": "<h4>a) Thu thập dữ liệu thứ cấp</h4><ul><li>Tài liệu, báo cáo của chính quyền.</li><li>Nghiên cứu khoa học, bài báo.</li><li>Thông tin từ internet, phương tiện truyền thông.</li></ul><h4>b) Thu thập dữ liệu sơ cấp</h4><ul><li><strong>Phỏng vấn:</strong> Người dân, chính quyền, chuyên gia.</li><li><strong>Khảo sát thực địa:</strong> Quan sát, đo đạc, ghi nhận.</li><li><strong>Điều tra xã hội:</strong> Phiếu khảo sát, thu thập ý kiến.</li></ul><h4>c) Xử lý và phân tích</h4><ul><li>Thống kê, biểu đồ hóa dữ liệu.</li><li>So sánh với các nguồn khác.</li><li>Đánh giá mức độ nghiêm trọng.</li></ul>"
+            },
+            {
+              "heading": "4. Cấu trúc báo cáo dự án",
+              "content": "<h4>a) Phần mở đầu</h4><ul><li>Đặt vấn đề, lý do chọn đề tài.</li><li>Mục tiêu nghiên cứu.</li><li>Phạm vi, đối tượng nghiên cứu.</li></ul><h4>b) Phần nội dung</h4><ul><li>Giới thiệu về địa phương.</li><li>Thực trạng hệ sinh thái.</li><li>Các mối đe dọa.</li><li>Các biện pháp bảo tồn hiện có.</li><li>Đề xuất giải pháp.</li></ul><h4>c) Phần kết luận</h4><ul><li>Tổng kết kết quả.</li><li>Đề xuất khuyến nghị.</li><li>Hướng phát triển.</li></ul><h4>d) Phụ lục</h4><ul><li>Bảng câu hỏi, phiếu khảo sát.</li><li>Hình ảnh, số liệu chi tiết.</li></ul>"
+            },
+            {
+              "heading": "5. Đề xuất giải pháp",
+              "content": "<h4>a) Giải pháp kỹ thuật</h4><ul><li>Phục hồi môi trường sống.</li><li>Trồng rừng, phục hồi rừng ngập mặn.</li><li>Xử lý ô nhiễm nước, không khí.</li><li>Nuôi dưỡng, tái thả động vật hoang dã.</li></ul><h4>b) Giải pháp quản lý</h4><ul><li>Tăng cường tuần tra, bảo vệ.</li><li>Xử phạt vi phạm.</li><li>Quy hoạch sử dụng đất hợp lý.</li><li>Phát triển du lịch sinh thái bền vững.</li></ul><h4>c) Giải pháp giáo dục</h4><ul><li>Tuyên truyền nâng cao nhận thức.</li><li>Đưa nội dung bảo tồn vào trường học.</li><li>Khen thưởng, biểu dương các mô hình tốt.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Mục đích chính của dự án là gì?",
+            "options": [
+              "Học tập lý thuyết",
+              "Tìm hiểu thực trạng và đề xuất giải pháp bảo tồn",
+              "Viết báo cáo khoa học",
+              "Thiết kế dự án kinh doanh"
+            ],
+            "correct": 1,
+            "explanation": "Dự án nhằm tìm hiểu thực trạng bảo tồn và phục hồi hệ sinh thái tại địa phương và đề xuất giải pháp."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Phương pháp thu thập dữ liệu nào phù hợp để khảo sát ý kiến người dân?",
+            "options": [
+              "Khảo sát thực địa",
+              "Phỏng vấn, điều tra xã hội",
+              "Nghiên cứu tài liệu",
+              "Thí nghiệm"
+            ],
+            "correct": 1,
+            "explanation": "Phỏng vấn và điều tra xã hội là phương pháp phù hợp để thu thập ý kiến người dân."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Nội dung nào cần có trong báo cáo dự án?",
+            "options": [
+              "Chỉ kết quả khảo sát",
+              "Thực trạng, mối đe dọa, giải pháp đề xuất",
+              "Chỉ lý thuyết",
+              "Chỉ hình ảnh"
+            ],
+            "correct": 1,
+            "explanation": "Báo cáo dự án cần có: thực trạng, các mối đe dọa, và giải pháp đề xuất."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Giải pháp kỹ thuật nào phù hợp để phục hồi rừng ngập mặn?",
+            "options": [
+              "Xây dựng nhà máy",
+              "Trồng cây ngập mặn",
+              "Khai thác gỗ",
+              "Xây đê điều"
+            ],
+            "correct": 1,
+            "explanation": "Trồng cây ngập mặn là giải pháp kỹ thuật để phục hồi rừng ngập mặn."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Để đánh giá thực trạng hệ sinh thái, cần thu thập thông tin về yếu tố nào?",
+            "options": [
+              "Chỉ về động vật",
+              "Môi trường, đa dạng sinh vật, các mối đe dọa",
+              "Chỉ về thực vật",
+              "Chỉ về kinh tế"
+            ],
+            "correct": 1,
+            "explanation": "Cần thu thập thông tin về môi trường, đa dạng sinh vật và các mối đe dọa."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các phương pháp thu thập dữ liệu trong dự án:",
+            "options": [
+              "Phỏng vấn",
+              "Khảo sát thực địa",
+              "Nghiên cứu tài liệu",
+              "Bói toán"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Phỏng vấn, khảo sát thực địa, nghiên cứu tài liệu là các phương pháp khoa học."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các giải pháp bảo tồn:",
+            "options": [
+              "Trồng rừng",
+              "Xử lý ô nhiễm",
+              "Khai thác quá mức",
+              "Tuyên truyền giáo dục"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Trồng rừng, xử lý ô nhiễm, tuyên truyền là giải pháp bảo tồn. Khai thác quá mức là mối đe dọa."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một dự án nghiên cứu cần có mấy phần chính trong báo cáo? Nhập số 1 chữ số.",
+            "correct": "3"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Có 3 loại giải pháp chính (kỹ thuật, quản lý, giáo dục). Nhập số 1 chữ số.",
+            "correct": "3"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Đề xuất giải pháp cho vấn đề môi trường cụ thể",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định vấn đề cụ thể của hệ sinh thái.</li><li>Phân tích nguyên nhân gây ra vấn đề.</li><li>Đề xuất giải pháp phù hợp từng cấp độ:</li><li>- Kỹ thuật: Phục hồi, xử lý</li><li>- Quản lý: Chính sách, xử phạt</li><li>- Giáo dục: Tuyên truyền, nâng cao nhận thức</li></ol>",
+            "examples": [
+              {
+                "question": "Sông bị ô nhiễm nặng do nước thải sinh hoạt. Đề xuất giải pháp?",
+                "solution": "<p><strong>Giải:</strong></p><p>- Kỹ thuật: Xây dựng nhà máy xử lý nước thải.</p><p>- Quản lý: Quy định xử phạt nguồn thải, kiểm tra định kỳ.</p><p>- Giáo dục: Tuyên truyền người dân không xả rác, nước thải bừa bãi.</p>"
+              },
+              {
+                "question": "Rừng bị phá, động vật môi trường sống bị thu hẹp. Giải pháp?",
+                "solution": "<p><strong>Giải:</strong></p><p>- Kỹ thuật: Trồng rừng phục hồi, tạo hành lang sinh học.</p><p>- Quản lý: Cấm phá rừng, tăng cường kiểm lâm.</p><p>- Giáo dục: Tuyên truyền, hỗ trợ sinh kế cho người dân.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Thiết kế khảo sát đánh giá thực trạng",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định mục tiêu khảo sát.</li><li>Chọn phương pháp phù hợp:</li><li>- Thu thập dữ liệu thứ cấp: Tài liệu, báo cáo</li><li>- Thu thập dữ liệu sơ cấp: Phỏng vấn, khảo sát</li><li>Thiết kế công cụ:</li><li>- Bảng câu hỏi phỏng vấn</li><li>- Phiếu khảo sát</li><li>- Checklist quan sát</li><li>Phân tích và trình bày kết quả.</li></ol>",
+            "examples": [
+              {
+                "question": "Thiết kế khảo sát để đánh giá nhận thức của học sinh về bảo vệ môi trường?",
+                "solution": "<p><strong>Giải:</strong></p><p>- Mục tiêu: Đánh giá nhận thức</p><p>- Phương pháp: Phiếu khảo sát, phỏng vấn</p><p>- Nội dung câu hỏi:</p><p>+ Hiểu biết về môi trường</p><p>+ Hành vi bảo vệ môi trường</p><p>+ Đề xuất cải thiện</p>"
+              },
+              {
+                "question": "Thiết kế khảo sát để đánh giá chất lượng nước một con sông?",
+                "solution": "<p><strong>Giải:</strong></p><p>- Phương pháp: Khảo sát thực địa, lấy mẫu nước</p><p>- Chỉ tiêu: pH, DO, BOD, COD, kim loại nặng</p><p>- Vị trí: Thượng nguồn, trung nguồn, hạ nguồn</p><p>- Tần suất: Mùa mưa, mùa khô</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

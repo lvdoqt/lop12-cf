@@ -1,0 +1,185 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-8",
+      "name": "Bài 8. Học thuyết di truyền Mendel",
+      "slug": "hoc-thuyet-di-truyen-mendel",
+      "chapter": "Chương 2. Di truyền nhiễm sắc thể",
+      "chapter_id": "S12-2",
+      "lesson_id": 8,
+      "description": "Tìm hiểu về các quy luật di truyền của Mendel.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Học thuyết di truyền Mendel",
+          "sections": [
+            {
+              "heading": "1. Phương pháp nghiên cứu của Mendel",
+              "content": "<h4>a) Đối tượng nghiên cứu</h4><ul><li>Mendel chọn đậu Hà Lan (Pisum sativum) làm đối tượng nghiên cứu vì: dễ trồng, tự thụ phấn, có nhiều tính trạng tương phản, thời gian sinh trưởng ngắn.</li></ul><h4>b) Phương pháp</h4><ul><li>Phân tích di truyền từng cặp tính trạng (lai một cặp).</li><li>Quan sát và đếm tỷ lệ phân ly ở đời con.</li><li>Sử dụng toán thống kê để phân tích kết quả.</li></ul><h4>c) Khái niệm</h4><ul><li><strong>Gene:</strong> Đơn vị di truyền quy định tính trạng.</li><li><strong>Allele:</strong> Các trạng thái khác nhau của cùng một gene.</li><li><strong>Kiểu gen:</strong> Tập hợp các allele trong tế bào.</li><li><strong>Kiểu hình:</strong> Biểu hiện ra ngoài của kiểu gen.</li></ul>"
+            },
+            {
+              "heading": "2. Quy luật phân li",
+              "content": "<h4>a) Thí nghiệm</h4><ul><li>Lai hai cây đậu thuần chủng: Hoa tím (AA) × Hoa trắng (aa)</li><li>F1: 100% hoa tím (Aa)</li><li>F2: 75% hoa tím, 25% hoa trắng (tỷ lệ 3:1)</li></ul><h4>b) Nội dung quy luật</h4><ul><li>Mỗi tính trạng do một cặp allele quy định.</li><li>Một allele trội át chế allele lặn.</li><li>Khi giảm phân, các allele phân li độc lập về các giao tử.</li></ul><h4>c) Cơ sở tế bào học</h4><ul><li>Các allele nằm trên cặp NST tương đồng.</li><li>Khi giảm phân, các NST tương đồng phân li → các allele phân li.</li></ul>"
+            },
+            {
+              "heading": "3. Quy luật phân li độc lập",
+              "content": "<h4>a) Thí nghiệm</h4><ul><li>Lai hai cặp tính trạng: Hạt vàng, trơn (AABB) × Hạt xanh, nhăn (aabb)</li><li>F1: 100% hạt vàng, trơn (AaBb)</li><li>F2: Tỷ lệ 9:3:3:1</li></ul><h4>b) Nội dung quy luật</h4><ul><li>Các cặp allele phân li độc lập với nhau trong quá trình hình thành giao tử.</li><li>Mỗi cặp tính trạng phân li theo quy luật phân li.</li><li>Các cặp tính trạng phân li độc lập → tổ hợp tự do.</li></ul><h4>c) Điều kiện áp dụng</h4><ul><li>Các cặp allele nằm trên các cặp NST khác nhau.</li><li>Các gene không có tương tác với nhau.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Quy luật phân li của Mendel giải thích điều gì?",
+            "options": [
+              "Các gene phân li độc lập",
+              "Một allele át chế allele khác",
+              "Gene nằm trên NST",
+              "Tỷ lệ 9:3:3:1"
+            ],
+            "correct": 1,
+            "explanation": "Quy luật phân li giải thích hiện tượng một allele trội át chế allele lặn trong kiểu gen heterozygous."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Tỷ lệ phân ly kiểu hình ở F2 trong lai một cặp tính trạng là bao nhiêu?",
+            "options": [
+              "1:1",
+              "3:1",
+              "9:3:3:1",
+              "1:2:1"
+            ],
+            "correct": 1,
+            "explanation": "Khi lai hai cá thể thuần chủng khác nhau về một tính trạng, F2 có tỷ lệ 3 trội : 1 lặn."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Tỷ lệ 9:3:3:1 là tỷ lệ của quy luật nào?",
+            "options": [
+              "Phân li",
+              "Phân li độc lập",
+              "Di truyền độc lập",
+              "Liên kết gene"
+            ],
+            "correct": 1,
+            "explanation": "Tỷ lệ 9:3:3:1 là tỷ lệ đặc trưng của quy luật phân li độc lập (lai hai cặp tính trạng)."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Khi lai Aa × Aa, tỷ lệ kiểu gen là bao nhiêu?",
+            "options": [
+              "1:1",
+              "3:1",
+              "1:2:1",
+              "1:1:1:1"
+            ],
+            "correct": 2,
+            "explanation": "Khi lai hai cá thể dị hợp Aa, tỷ lệ kiểu gen là 1AA : 2Aa : 1aa."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Điều kiện để xảy ra phân li độc lập là gì?",
+            "options": [
+              "Các gene cùng nằm trên một NST",
+              "Các gene nằm trên các cặp NST khác nhau",
+              "Có hiện tượng liên kết gene",
+              "Gene tương tác với nhau"
+            ],
+            "correct": 1,
+            "explanation": "Quy luật phân li độc lập chỉ xảy ra khi các cặp allele nằm trên các cặp NST tương đồng khác nhau."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các đặc điểm của đậu Hà Lan mà Mendel dùng trong nghiên cứu:",
+            "options": [
+              "Dễ trồng",
+              "Tự thụ phấn",
+              "Có nhiều tính trạng tương phản",
+              "Có thời gian sinh trưởng dài"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Thuận tiện cho trồng trọt. B ✓: Đảm bảo thuần chủng. C ✓: Dễ quan sát và phân tích. D ✗: Thời gian ngắn mới tốt."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các quy luật di truyền của Mendel:",
+            "options": [
+              "Quy luật phân li",
+              "Quy luật phân li độc lập",
+              "Quy luật liên kết gene",
+              "Quy luật hoán vị gene"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "A ✓: Quy luật phân li (law of segregation). B ✓: Quy luật phân li độc lập (law of independent assortment). C,D ✗: Đây là các quy luật được phát hiện sau Mendel."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Lai hai cây đậu thuần chủng: AA × aa. Tính tỷ lệ % cây có kiểu gen AA ở F2. Nhập số 2 chữ số. (Ví dụ: 25)",
+            "correct": "25",
+            "explanation": "F2 có tỷ lệ kiểu gen: 1AA : 2Aa : 1aa. Tỷ lệ AA = 1/4 = 25%."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Lai AaBb × AaBb (2 cặp gen phân li độc lập). Tính số kiểu gen khác nhau ở F2. Nhập số 2 chữ số. (Ví dụ: 09)",
+            "correct": "09",
+            "explanation": "Mỗi cặp gen tạo 3 kiểu gen (AA, Aa, aa). 2 cặp tạo 3 × 3 = 9 kiểu gen."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định tỷ lệ kiểu gen và kiểu hình",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định kiểu gen của P.</li><li>Lập bảng Punnet cho F1 và F2.</li><li>Tính tỷ lệ kiểu gen: Đếm số ô thỏa mãn.</li><li>Tính tỷ lệ kiểu hình: Nhóm các kiểu gen cùng biểu hiện.</li></ol>",
+            "examples": [
+              {
+                "question": "Lai Aa × Aa. Tính tỷ lệ kiểu hình trội ở F1?",
+                "solution": "<p><strong>Giải:</strong></p><p>F1: AA, Aa, aa → Kiểu hình trội: AA, Aa = 3/4 = 75%</p><p>Tỷ lệ trội : lặn = 3 : 1</p>"
+              },
+              {
+                "question": "Lai AaBb × aabb. Tính tỷ lệ kiểu hình lặn về cả hai tính trạng?",
+                "solution": "<p><strong>Giải:</strong></p><p>Aa × aa → 1/2 Aa, 1/2 aa</p><p>Bb × bb → 1/2 Bb, 1/2 bb</p><p>Tỷ lệ aa bb = 1/2 × 1/2 = 1/4 = 25%</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định kiểu gen của P",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Dựa vào tỷ lệ kiểu hình ở đời con.</li><li>Nếu F1 đồng nhất → P thuần chủng.</li><li>Nếu F1 có 1 trội : 1 lặn → một P thuần chủng trội, một P thuần chủng lặn.</li><li>Nếu F1 có 3 trội : 1 lặn → P dị hợp × dị hợp.</li></ol>",
+            "examples": [
+              {
+                "question": "Khi lai hai cây, F1 đều có hoa tím. F2 có 75% hoa tím, 25% hoa trắng. Xác định kiểu gen của P.",
+                "solution": "<p><strong>Giải:</strong></p><p>F2 có tỷ lệ 3:1 → F1 dị hợp Aa</p><p>F1 đồng nhất hoa tím → P thuần chủng AA × aa</p>"
+              },
+              {
+                "question": "Lai Aa × aa, F1 có tỷ lệ 1 trội : 1 lặn. Xác định kiểu gen P là đúng?",
+                "solution": "<p><strong>Giải:</strong></p><p>Aa × aa → 1/2 Aa (trội), 1/2 aa (lặn)</p><p>Kết quả phù hợp với lai Aa × aa</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

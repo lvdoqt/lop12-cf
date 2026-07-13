@@ -1,0 +1,192 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-25",
+      "name": "Bài 25. Thực hành: Xác định một số đặc trưng của quần thể",
+      "slug": "thuc-hanh-xac-dinh-mot-so-dac-trung-cua-quan-the",
+      "chapter": "Chương 6. Môi trường và sinh thái học quần thể",
+      "chapter_id": "S12-6",
+      "lesson_id": 25,
+      "description": "Thực hành xác định các đặc trưng cơ bản của quần thể sinh vật.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2690&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Thực hành: Xác định một số đặc trưng của quần thể",
+          "sections": [
+            {
+              "heading": "1. Mục đích và yêu cầu",
+              "content": "<h4>a) Mục đích</h4><ul><li>Xác định kích thước, mật độ, thành phần tuổi của quần thể.</li><li>Rèn luyện kỹ năng thực hành sinh thái học.</li><li>Ứng dụng các phương pháp điều tra quần thể.</li></ul><h4>b) Yêu cầu</h4><ul><li>Thực hiện đúng quy trình điều tra.</li><li>Ghi chép và xử lý số liệu chính xác.</li><li>Tính toán và phân tích các chỉ số.</li></ul>"
+            },
+            {
+              "heading": "2. Xác định kích thước quần thể",
+              "content": "<h4>a) Phương pháp đếm trực tiếp</h4><ul><li>Đếm toàn bộ cá thể trong quần thể.</li><li>Áp dụng cho quần thể nhỏ, diện tích hẹp.</li></ul><h4>b) Phương pháp mẫu (sampling)</h4><ul><li>Đếm cá thể trong các ô mẫu.</li><li>Suy ra toàn quần thể.</li><li>Công thức: N = (n × S) / s</li><li>Trong đó: n = số cá thể trong ô mẫu, S = diện tích tổng, s = diện tích ô mẫu.</li></ul><h4>c) Phương pháp đánh dấu - bắt lại</h4><ul><li>Đánh dấu cá thể, thả lại.</li><li>Đếm cá thể đánh dấu trong lần bắt sau.</li><li>Công thức: N = (n1 × n2) / m</li></ul>"
+            },
+            {
+              "heading": "3. Xác định mật độ quần thể",
+              "content": "<h4>a) Mật độ tuyệt đối</h4><ul><li>Số cá thể trên đơn vị diện tích hoặc thể tích.</li><li>Đơn vị: cá thể/m², cá thể/km², cá thể/lít...</li></ul><h4>b) Mật độ tương đối</h4><ul><li>Số cá thể trên đơn vị nguồn sống.</li><li>Ví dụ: số cá/1m³ nước, số cây/1ha rừng.</li></ul><h4>c) Cách đo</h4><ul><li>Đo diện tích/thể tích thực tế.</li><li>Đếm số cá thể trong đó.</li><li>Tính mật độ = Số cá thể / Diện tích.</li></ul>"
+            },
+            {
+              "heading": "4. Xác định thành phần tuổi",
+              "content": "<h4>a) Phân nhóm tuổi</h4><ul><li><strong>Tuổi trước sinh sản:</strong> Chưa có khả năng sinh sản.</li><li><strong>Tuổi sinh sản:</strong> Có khả năng sinh sản.</li><li><strong>Tuổi sau sinh sản:</strong> Hết khả năng sinh sản.</li></ul><h4>b) Ý nghĩa</h4><ul><li>Tuổi trước sinh sản cao → quần thể đang tăng trưởng.</li><li>Tuổi sinh sản cao → quần thể ổn định.</li><li>Tuổi sau sinh sản cao → quần thể suy giảm.</li></ul><h4>c) Cách xác định</h4><ul><li>Phân loại cá thể theo kích thước, hình thái.</li><li>Đếm số cá thể mỗi nhóm tuổi.</li><li>Tính tỷ lệ % mỗi nhóm.</li></ul>"
+            },
+            {
+              "heading": "5. Xác định tỷ lệ giới tính",
+              "content": "<h4>a) Khái niệm</h4><ul><li>Tỷ lệ giữa số đực và số cái trong quần thể.</li><li>Thường gần 1:1 ở nhiều loài.</li></ul><h4>b) Ý nghĩa</h4><ul><li>Ảnh hưởng đến khả năng sinh sản.</li><li>Tỷ lệ > 1:1 hoặc < 1:1 ảnh hưởng đến tốc độ tăng trưởng.</li></ul><h4>c) Cách xác định</h4><ul><li>Phân loại cá thể đực/cái.</li><li>Tính tỷ lệ = Số đực / Số cái.</li><li>Biểu diễn dạng 1:X hoặc %.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Phương pháp nào dùng để đếm quần thể lớn?",
+            "options": [
+              "Đếm trực tiếp",
+              "Phương pháp mẫu",
+              "Đánh dấu - bắt lại",
+              "Ước lượng"
+            ],
+            "correct": 1,
+            "explanation": "Phương pháp mẫu (sampling) dùng để ước lượng kích thước quần thể lớn, không thể đếm hết."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Công thức tính mật độ là gì?",
+            "options": [
+              "Số cá thể × Diện tích",
+              "Số cá thể / Diện tích",
+              "Số cá thể + Diện tích",
+              "Số cá thể - Diện tích"
+            ],
+            "correct": 1,
+            "explanation": "Mật độ = Số cá thể / Đơn vị diện tích hoặc thể tích."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Thành phần tuổi nào cho thấy quần thể đang tăng trưởng?",
+            "options": [
+              "Nhiều tuổi sinh sản",
+              "Nhiều tuổi trước sinh sản",
+              "Nhiều tuổi sau sinh sản",
+              "Cân bằng các nhóm"
+            ],
+            "correct": 1,
+            "explanation": "Nhiều cá thể tuổi trước sinh sản → quần thể có nhiều cá thể trẻ → quần thể đang tăng trưởng."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Phương pháp đánh dấu - bắt lại dùng để làm gì?",
+            "options": [
+              "Đếm trực tiếp",
+              "Ước lượng kích thước quần thể động vật di động",
+              "Đo mật độ thực vật",
+              "Xác định tuổi"
+            ],
+            "correct": 1,
+            "explanation": "Phương pháp đánh dấu - bắt lại dùng để ước lượng kích thước quần thể động vật di động."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Tỷ lệ giới tính 1:1 có nghĩa là gì?",
+            "options": [
+              "Số đực = Số cái",
+              "Số đực gấp đôi số cái",
+              "Số cái gấp đôi số đực",
+              "Không xác định được"
+            ],
+            "correct": 0,
+            "explanation": "Tỷ lệ giới tính 1:1 có nghĩa là số đực bằng số cái."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các phương pháp xác định kích thước quần thể:",
+            "options": [
+              "Đếm trực tiếp",
+              "Phương pháp mẫu",
+              "Đánh dấu - bắt lại",
+              "Quan sát"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Đếm trực tiếp cho quần thể nhỏ. B ✓: Phương pháp mẫu. C ✓: Đánh dấu - bắt lại. D ✗: Quan sát không phải phương pháp định lượng."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các nhóm tuổi trong thành phần tuổi:",
+            "options": [
+              "Tuổi trước sinh sản",
+              "Tuổi sinh sản",
+              "Tuổi già",
+              "Tuổi trưởng thành"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Trước sinh sản. B ✓: Sinh sản. C ✓: Sau sinh sản (già). D: Có thể trùng với sinh sản."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Đếm trong ô mẫu 10m² có 20 cây. Tổng diện tích 1000m². Tính tổng số cây. Nhập số 4 chữ số.",
+            "correct": "2000"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Quần thể có 50 đực, 50 cái. Tính tỷ lệ giới tính (đực/cái). Nhập số 2 chữ số. (Ví dụ: 01)",
+            "correct": "01"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính kích thước quần thể bằng phương pháp mẫu",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định số cá thể trong ô mẫu (n).</li><li>Xác định diện tích ô mẫu (s) và diện tích tổng (S).</li><li>Tính mật độ: D = n/s.</li><li>Tính tổng số: N = D × S = n × S/s.</li></ol>",
+            "examples": [
+              {
+                "question": "Ô mẫu 5m² có 25 cá thể. Diện tích khu = 500m². Tính tổng số cá thể?",
+                "solution": "<p><strong>Giải:</strong></p><p>Mật độ = 25/5 = 5 cá thể/m²</p><p>Tổng = 5 × 500 = 2500 cá thể</p>"
+              },
+              {
+                "question": "3 ô mẫu, mỗi ô 10m² có: 20, 25, 30 cây. Diện tích khu = 2000m². Tính tổng?",
+                "solution": "<p><strong>Giải:</strong></p><p>Trung bình mẫu = (20+25+30)/3 = 25 cây</p><p>Mật độ = 25/10 = 2.5 cây/m²</p><p>Tổng = 2.5 × 2000 = 5000 cây</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính tỷ lệ thành phần tuổi",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Đếm số cá thể mỗi nhóm tuổi.</li><li>Tính tổng số cá thể.</li><li>Tính % mỗi nhóm = (Số nhóm / Tổng) × 100%.</li></ol>",
+            "examples": [
+              {
+                "question": "Quần thể có: 100 trước sinh sản, 150 sinh sản, 50 sau sinh sản. Tính % trước sinh sản?",
+                "solution": "<p><strong>Giải:</strong></p><p>Tổng = 100 + 150 + 50 = 300</p><p>% trước sinh sản = 100/300 × 100% = 33.3%</p>"
+              },
+              {
+                "question": "Quần thể có 200 đực, 300 cái. Tính tỷ lệ % cái?",
+                "solution": "<p><strong>Giải:</strong></p><p>Tổng = 500</p><p>% cái = 300/500 × 100% = 60%</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

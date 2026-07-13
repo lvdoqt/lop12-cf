@@ -1,0 +1,394 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-13-ung-dung-hinh-hoc-cua-tich-phan",
+      "name": "Bài 13. Ứng dụng hình học của tích phân",
+      "slug": "ung-dung-hinh-hoc-cua-tich-phan",
+      "chapter": "Chương 4: Nguyên hàm và Tích phân",
+      "chapter_id": "T12-4",
+      "lesson_id": 13,
+      "description": "Sử dụng tích phân để tính diện tích hình phẳng (giữa hai đường cong, phá trị tuyệt đối) và thể tích khối tròn xoay quanh trục Ox/Oy. Tăng cường bài tập khó về tham số và bài tích hợp nhận dạng hình.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/F59E0B/FFFFFF?text=Ứng+Dụng+Tích+Phân",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Diện tích hình phẳng",
+          "slug": "dien-tich-hinh-phang",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Thể tích khối tròn xoay",
+          "slug": "the-tich-tron-xoay",
+          "difficulty": "hard"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: Thể tích vật thể và bài toán tham số",
+          "slug": "the-tich-vat-the-tham-so",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Diện tích hình phẳng",
+              "content": "<table style='width:100%;border-collapse:collapse;margin:8px 0'><thead><tr style='background:#F59E0B;color:white'><th style='padding:8px;border:1px solid #ccc'>Trường hợp</th><th style='padding:8px;border:1px solid #ccc'>Công thức</th><th style='padding:8px;border:1px solid #ccc'>Chú ý</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>Giữa $y=f(x)$ và $Ox$</td><td style='padding:8px;border:1px solid #ccc'>$S=\\int_a^b|f(x)|dx$</td><td style='padding:8px;border:1px solid #ccc'>Phải dùng $|\\cdot|$, không phải $f(x)$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Giữa $y=f(x)$ và $y=g(x)$</td><td style='padding:8px;border:1px solid #ccc'>$S=\\int_a^b|f(x)-g(x)|dx$</td><td style='padding:8px;border:1px solid #ccc'>Tìm giao điểm $f=g$ để đổi dấu</td></tr></tbody></table><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:10px 14px;border-radius:6px;margin:10px 0'><strong>⚠️ Sai lầm phổ biến:</strong> Dùng $\\int_a^b f(x)dx$ thay cho $\\int_a^b|f(x)|dx$. Khi $f(x)<0$, tích phân âm không phải diện tích! Phải phân đoạn và phá dấu trị tuyệt đối.</div>"
+            },
+            {
+              "heading": "2. Thể tích khối tròn xoay",
+              "content": "<p><strong>Quay quanh trục $Ox$:</strong></p><p style='text-align:center'>$$V=\\pi\\int_a^b[f(x)]^2dx$$</p><p><strong>Quay quanh trục $Oy$:</strong> Cần đổi biến, biểu thị $x$ theo $y$.</p><p style='text-align:center'>$$V=\\pi\\int_c^d[h(y)]^2dy$$  ($h(y)$ là hàm $x$ theo $y$).</p><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:10px 14px;border-radius:6px;margin:10px 0'><strong>💡 Bảng thể tích hình học kiểm chứng bằng tích phân:</strong><table style='width:100%;border-collapse:collapse;margin:8px 0'><tr style='background:#4F46E5;color:white'><th style='padding:6px;border:1px solid #ccc'>Hình</th><th style='padding:6px;border:1px solid #ccc'>$f(x)$</th><th style='padding:6px;border:1px solid #ccc'>$[a;b]$</th><th style='padding:6px;border:1px solid #ccc'>$V$</th></tr><tr><td style='padding:6px;border:1px solid #ccc'>Hình trụ $r,h$</td><td style='padding:6px;border:1px solid #ccc'>$r$</td><td style='padding:6px;border:1px solid #ccc'>$[0;h]$</td><td style='padding:6px;border:1px solid #ccc'>$\\pi r^2h$</td></tr><tr style='background:#f8f9fa'><td style='padding:6px;border:1px solid #ccc'>Hình nón $r,h$</td><td style='padding:6px;border:1px solid #ccc'>$\\dfrac{r}{h}x$</td><td style='padding:6px;border:1px solid #ccc'>$[0;h]$</td><td style='padding:6px;border:1px solid #ccc'>$\\dfrac{1}{3}\\pi r^2h$</td></tr><tr><td style='padding:6px;border:1px solid #ccc'>Hình cầu $R$</td><td style='padding:6px;border:1px solid #ccc'>$\\sqrt{R^2-x^2}$</td><td style='padding:6px;border:1px solid #ccc'>$[-R;R]$</td><td style='padding:6px;border:1px solid #ccc'>$\\dfrac{4}{3}\\pi R^3$</td></tr></table></div>"
+            },
+            {
+              "heading": "3. Thể tích vật thể tổng quát",
+              "content": "<p>Nếu thiết diện vuông góc với trục $Ox$ tại $x$ có diện tích $S(x)$:</p><p style='text-align:center'>$$V=\\int_a^b S(x)dx$$</p><p>Đây là công thức tổng quát nhất. Hình tròn xoay là trường hợp riêng với $S(x)=\\pi[f(x)]^2$.</p><div style='background:#d4edda;border-left:4px solid #28a745;padding:10px 14px;border-radius:6px;margin:10px 0'><strong>📝 Dạng thiết diện hay gặp:</strong><br>• Hình vuông cạnh $a(x)$: $S=a^2(x)$.<br>• Hình tròn bán kính $r(x)$: $S=\\pi r^2(x)$.<br>• Tam giác đều cạnh $a(x)$: $S=\\dfrac{\\sqrt{3}}{4}a^2(x)$.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Diện tích hình phẳng",
+            "method": "<ol><li>Xác định các đường giới hạn và cận $[a;b]$.</li><li>Tìm giao điểm (giải PT $f(x)=g(x)$ hoặc $f(x)=0$).</li><li>Chia đoạn, phá trị tuyệt đối theo dấu của hàm.</li><li>Tính từng đoạn rồi cộng lại.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Diện tích hình phẳng giữa $y=x^2-1$, $Ox$, $x=0$, $x=2$.",
+                "solution": "<p>$x^2-1=0\\Rightarrow x=1$. Trên $[0;1]$: $f<0$; trên $[1;2]$: $f>0$.</p><p>$S=\\int_0^1(1-x^2)dx+\\int_1^2(x^2-1)dx=(x-x^3/3)\\Big|_0^1+(x^3/3-x)\\Big|_1^2=2/3+4/3=2$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Diện tích giữa $y=x^2$ và $y=x+2$.",
+                "solution": "<p>Giao điểm: $x^2=x+2\\Rightarrow x=-1$ hoặc $x=2$.</p><p>Trên $[-1;2]$: $x+2\\geq x^2$. $S=\\int_{-1}^2(-x^2+x+2)dx=(-x^3/3+x^2/2+2x)\\Big|_{-1}^2=(−8/3+2+4)−(1/3+1/2−2)=10/3+7/6=9/2$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Thể tích khối tròn xoay quanh Ox",
+            "method": "<ol><li>Xác định $f(x)$ và $[a;b]$.</li><li>Tính $[f(x)]^2$ (biến đổi nếu cần).</li><li>$V=\\pi\\int_a^b[f(x)]^2dx$.</li><li>Lượng giác: dùng $\\sin^2x=\\dfrac{1-\\cos2x}{2}$ để tính $\\int\\sin^2x$.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Thể tích khi quay $y=\\sqrt{x}$ ($0\\leq x\\leq4$) quanh $Ox$.",
+                "solution": "<p>$V=\\pi\\int_0^4(\\sqrt{x})^2dx=\\pi\\int_0^4 x\\,dx=\\pi\\cdot8=8\\pi$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2 (khó):</strong> Thể tích khi quay vùng giữa $y=x$ và $y=x^2$ ($0\\leq x\\leq1$) quanh $Ox$.",
+                "solution": "<p>$V=\\pi\\int_0^1[x^2-(x^2)^2]dx=\\pi\\int_0^1(x^2-x^4)dx=\\pi\\left(\\dfrac{x^3}{3}-\\dfrac{x^5}{5}\\right)\\Big|_0^1=\\pi\\left(\\dfrac{1}{3}-\\dfrac{1}{5}\\right)=\\dfrac{2\\pi}{15}$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Thể tích vật thể và bài tham số",
+            "method": "<ol><li>Xác định $S(x)$ từ hình dạng thiết diện.</li><li>$V=\\int_a^b S(x)dx$.</li><li>Với bài tham số: lập tích phân theo tham số, đặt phương trình tìm tham số.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ (tham số):</strong> Tìm $m$ để diện tích hình phẳng giữa $y=x^2$ và $y=mx$ bằng $\\dfrac{4}{3}$.",
+                "solution": "<p>Giao điểm: $x^2=mx\\Rightarrow x=0$ hoặc $x=m$ (giả sử $m>0$).</p><p>$S=\\int_0^m(mx-x^2)dx=\\left(\\dfrac{mx^2}{2}-\\dfrac{x^3}{3}\\right)\\Big|_0^m=\\dfrac{m^3}{6}=\\dfrac{4}{3}\\Rightarrow m^3=8\\Rightarrow m=2$.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Diện tích hình phẳng giữa $y=f(x)$, $Ox$, $x=a$, $x=b$ được tính bằng:",
+            "options": [
+              "$S=\\int_a^b|f(x)|dx$",
+              "$S=\\int_a^b f(x)dx$",
+              "$S=|\\int_a^b f(x)dx|$",
+              "$S=\\pi\\int_a^b[f(x)]^2dx$"
+            ],
+            "correct": 0,
+            "explanation": "Phải lấy giá trị tuyệt đối hàm số trước khi tích phân."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Diện tích $S$ giữa $y=x^2$, $Ox$, $x=0$, $x=3$ bằng:",
+            "options": [
+              "$9$",
+              "$3$",
+              "$27$",
+              "$81$"
+            ],
+            "correct": 0,
+            "explanation": "$S=\\int_0^3 x^2dx=x^3/3\\Big|_0^3=9$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Số $\\pi$ trong công thức $V=\\pi\\int_a^b[f(x)]^2dx$ xuất hiện vì:",
+            "options": [
+              "Thiết diện là hình tròn bán kính $|f(x)|$",
+              "Để đổi đơn vị",
+              "Tự nhiên trong tích phân",
+              "Không cần thiết, là quy ước"
+            ],
+            "correct": 0,
+            "explanation": "Thiết diện của vật tròn xoay là hình tròn có diện tích $\\pi r^2=\\pi[f(x)]^2$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Thể tích khi quay $y=\\sqrt{x}$ từ $x=0$ đến $x=4$ quanh $Ox$ là:",
+            "options": [
+              "$8\\pi$",
+              "$4\\pi$",
+              "$16\\pi$",
+              "$\\pi$"
+            ],
+            "correct": 0,
+            "explanation": "$V=\\pi\\int_0^4 x\\,dx=\\pi\\cdot8=8\\pi$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Diện tích hình phẳng giữa $y=\\sin x$, $Ox$, $x=0$, $x=\\pi$ bằng:",
+            "options": [
+              "$2$",
+              "$0$",
+              "$1$",
+              "$\\pi$"
+            ],
+            "correct": 0,
+            "explanation": "$S=\\int_0^\\pi|\\sin x|dx=\\int_0^\\pi\\sin x\\,dx=-\\cos x\\Big|_0^\\pi=2$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Diện tích giữa $y=x^2$ và $y=x$ trên $[0;1]$:",
+            "options": [
+              "$\\dfrac{1}{6}$",
+              "$\\dfrac{1}{3}$",
+              "$\\dfrac{1}{2}$",
+              "$1$"
+            ],
+            "correct": 0,
+            "explanation": "Trên $[0;1]$: $x\\geq x^2$. $S=\\int_0^1(x-x^2)dx=1/2-1/3=1/6$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Thể tích vật thể thiết diện $S(x)=x+1$ từ $x=0$ đến $x=1$:",
+            "options": [
+              "$\\dfrac{3}{2}$",
+              "$1$",
+              "$\\dfrac{1}{2}$",
+              "$2$"
+            ],
+            "correct": 0,
+            "explanation": "$V=\\int_0^1(x+1)dx=(x^2/2+x)\\Big|_0^1=3/2$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Thể tích hình cầu bán kính $R$: quay $y=\\sqrt{R^2-x^2}$ quanh $Ox$ từ $-R$ đến $R$. Kết quả:",
+            "options": [
+              "$\\dfrac{4}{3}\\pi R^3$",
+              "$\\pi R^3$",
+              "$2\\pi R^3$",
+              "$\\pi R^2$"
+            ],
+            "correct": 0,
+            "explanation": "$V=\\pi\\int_{-R}^R(R^2-x^2)dx=\\pi\\left[R^2x-\\dfrac{x^3}{3}\\right]_{-R}^R=\\dfrac{4}{3}\\pi R^3$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Tìm $m>0$ để diện tích hình phẳng giữa $y=x^2$ và $y=mx$ bằng $\\dfrac{4}{3}$:",
+            "options": [
+              "$2$",
+              "$1$",
+              "$3$",
+              "$4$"
+            ],
+            "correct": 0,
+            "explanation": "$S=\\dfrac{m^3}{6}=\\dfrac{4}{3}\\Rightarrow m^3=8\\Rightarrow m=2$."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Thể tích khi quay vùng giữa $y=x$ và $y=x^2$ ($0\\leq x\\leq1$) quanh $Ox$:",
+            "options": [
+              "$\\dfrac{2\\pi}{15}$",
+              "$\\dfrac{\\pi}{3}$",
+              "$\\dfrac{\\pi}{6}$",
+              "$\\dfrac{\\pi}{15}$"
+            ],
+            "correct": 0,
+            "explanation": "$V=\\pi\\int_0^1(x^2-x^4)dx=\\pi(1/3-1/5)=2\\pi/15$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Diện tích hình phẳng giữa $y=e^x$, $Oy$ ($x=0$), $x=1$, $Ox$ là:",
+            "options": [
+              "$e-1$",
+              "$e$",
+              "$e+1$",
+              "$1$"
+            ],
+            "correct": 0,
+            "explanation": "$S=\\int_0^1 e^x\\,dx=e^x\\Big|_0^1=e-1$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Vật thể nằm giữa $x=0$, $x=10$. Thiết diện tại $x$ là hình vuông cạnh $\\sqrt{x}$. Thể tích:",
+            "options": [
+              "$50$",
+              "$50\\pi$",
+              "$100$",
+              "$10$"
+            ],
+            "correct": 0,
+            "explanation": "$S(x)=(\\sqrt{x})^2=x$. $V=\\int_0^{10}x\\,dx=50$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Chọn tất cả khẳng định ĐÚNG về diện tích $S=\\int_a^b|f(x)|dx$:",
+            "options": [
+              "$S\\geq0$ luôn luôn",
+              "Nếu $f(x)\\geq0$ trên $[a;b]$ thì $S=\\int_a^b f(x)dx$",
+              "Khi $f$ đổi dấu trong $[a;b]$, phải chia đoạn",
+              "$|\\int_a^b f(x)dx|\\leq\\int_a^b|f(x)|dx$ (bất đẳng thức tích phân)"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đúng: A (diện tích luôn dương), B (không cần giá trị tuyệt đối khi $f\\geq0$), C (phải phân đoạn), D (bất đẳng thức cơ bản)."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Quay $y=x^2$ từ $x=0$ đến $x=1$ quanh $Ox$. Chọn tất cả khẳng định đúng:",
+            "options": [
+              "$V=\\pi\\int_0^1 x^4\\,dx$",
+              "$V=\\pi\\cdot\\dfrac{x^5}{5}\\Big|_0^1=\\dfrac{\\pi}{5}$",
+              "Thiết diện tại $x$ là hình tròn bán kính $x^2$",
+              "$V=\\dfrac{\\pi}{5}$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A: $[f(x)]^2=[x^2]^2=x^4$ ✓. B,D: $\\pi/5$ ✓. C: bán kính $=|y|=x^2$ ✓."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Diện tích hình phẳng giữa $y=x^2-4$ và $Ox$ từ $x=-2$ đến $x=2$. Chọn đúng:",
+            "options": [
+              "Trên $(-2;2)$: $x^2-4<0$",
+              "$S=\\int_{-2}^2(4-x^2)dx$",
+              "$S=\\left(4x-\\dfrac{x^3}{3}\\right)\\Big|_{-2}^2$",
+              "$S=\\dfrac{32}{3}$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: $x^2<4$ khi $-2<x<2$. B ✓: phá trị tuyệt đối. C ✓: nguyên hàm đúng. D ✓: $(8-8/3)-(-8+8/3)=16-16/3=32/3$."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Cho diện tích $S=\\int_0^m(mx-x^2)dx=m^3/6$. Chọn đúng nếu $S=4/3$:",
+            "options": [
+              "$m^3/6=4/3$",
+              "$m^3=8$",
+              "$m=2$",
+              "Giao điểm $y=x^2$ và $y=mx$ gồm $x=0$ và $x=m$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đúng theo bài tham số Ví dụ 3 trong phần lý thuyết."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính diện tích $S=\\int_0^3 x^2dx$.",
+            "explanation": "$x^3/3\\Big|_0^3=27/3=9$.",
+            "correct": "9"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Thể tích khi quay $y=x$ ($0\\leq x\\leq 3$) quanh $Ox$. $V=\\pi\\int_0^3 x^2dx=?\\cdot\\pi$. Điền số.",
+            "explanation": "$V=\\pi\\cdot x^3/3\\Big|_0^3=\\pi\\cdot9=9\\pi$. Số nhân $\\pi$ là $9$.",
+            "correct": "9"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Diện tích giữa $y=x$ và $y=x^2$ trên $[0;1]$ bằng bao nhiêu (nhân 6)?",
+            "explanation": "$S=1/6$. $S\\times6=1$.",
+            "correct": "1"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Thể tích vật thể thiết diện $S(x)=3x^2$ từ $x=0$ đến $x=2$.",
+            "explanation": "$V=\\int_0^2 3x^2dx=x^3\\Big|_0^2=8$.",
+            "correct": "8"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Tìm $m>0$ để $\\int_0^m(m-x)dx=2$.",
+            "explanation": "$\\int_0^m(m-x)dx=(mx-x^2/2)\\Big|_0^m=m^2-m^2/2=m^2/2=2\\Rightarrow m^2=4\\Rightarrow m=2$.",
+            "correct": "2"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Thể tích $\\pi\\int_0^R\\left(R^2-x^2\\right)dx$ (nửa cầu). Kết quả $=\\dfrac{k}{3}\\pi R^3$. Tìm $k$.",
+            "explanation": "$\\pi\\left(R^2x-x^3/3\\right)\\Big|_0^R=\\pi(R^3-R^3/3)=\\pi\\cdot\\dfrac{2R^3}{3}=\\dfrac{2}{3}\\pi R^3$. $k=2$.",
+            "correct": "2"
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Tính diện tích hình phẳng giới hạn bởi đường cong $y = x^2$ và đường thẳng $y = x$.",
+            "answer": "$1/6$.",
+            "explanation": "Giải phương trình hoành độ giao điểm, xác định cận và tính tích phân."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Tính thể tích vật thể tròn xoay khi quay hình phẳng giới hạn bởi $y = \\sqrt{x}$, $y = 0$, $x = 4$ quanh trục $Ox$.",
+            "answer": "$8\\pi$.",
+            "explanation": "Áp dụng công thức $V = \\pi \\int_a^b f^2(x) dx$."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Một chiếc cốc có hình dạng một khối tròn xoay quanh trục $Oy$. Phần chứa nước có mặt cắt đứng là parabol $y = x^2$. Tính lượng nước tối đa cốc chứa được nếu chiều cao phần chứa nước là $h=4$.",
+            "answer": "$8\\pi$.",
+            "explanation": "Quay quanh trục $Oy$, thể tích $V = \\pi \\int_0^4 x^2 dy = \\pi \\int_0^4 y dy$."
+          }
+        ]
+      }
+    }
+  ]
+}

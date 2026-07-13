@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_29",
+      "name": "Cảng biển và quy hoạch hạ tầng cảng ở Nam Trung bộ",
+      "slug": "cang-bien-va-quy-hoach-hai-cang-nam-trung_bo",
+      "chapter": "Địa lí các vùng kinh tế",
+      "chapter_id": "dia12_part4",
+      "lesson_id": 29,
+      "description": "Vai trò cảng biển trong phát triển kinh tế vùng, phân tích vị trí và quy hoạch các cảng lớn - vừa - nhỏ ở Nam Trung bộ, kèm đánh giá tác động môi trường và an ninh.",
+      "duration_minutes": 60,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Cảng biển: động lực phát triển kinh tế vùng",
+          "summary": "Cảng biển thúc đẩy thương mại, giao thông, công nghiệp liên quan và tạo việc làm; quy hoạch hạ tầng cảng cần cân nhắc tải trọng, giao thông kết nối và bảo vệ môi trường biển.",
+          "sections": [
+            { "heading": "Chức năng cảng", "content": "Tiếp nhận hàng hóa xuất nhập khẩu, dịch vụ logistics, hậu cần nghề cá; hỗ trợ phát triển khu công nghiệp ven biển." },
+            { "heading": "Tiêu chí quy hoạch", "content": "Vị trí an toàn, tiếp cận tuyến hàng hải, kết nối đường bộ, khả năng mở rộng và tác động môi trường." }
+          ]
+        },
+        "exercises": { "analysis": [ { "q": "Phân tích vị trí phù hợp để xây cảng quy mô vừa ở một tỉnh ven biển?", "a_hint": "Xem luồng tàu, bến tự nhiên, kết nối đường bộ, không ảnh hưởng khu bảo tồn biển." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Một chức năng chính của cảng biển là?", "options": ["Tiếp nhận và chuyển tải hàng hóa quốc tế","Trồng lúa","Sản xuất điện","Không quan trọng"], "correct": 0, "explanation": "Cảng là nơi tiếp nhận và chuyển tải hàng hóa." },
+          { "id": 2, "type": "mcq", "question": "Tiêu chí quan trọng khi quy hoạch cảng là?", "options": ["Tiếp cận tuyến hàng hải và kết nối giao thông","Chỉ coi cảnh quan","Không quan trọng","Lựa chọn ngẫu nhiên"], "correct": 0, "explanation": "Vị trí tiếp cận tuyến hàng hải và kết nối là yếu tố then chốt." },
+          { "id": 3, "type": "mcq", "question": "Một rủi ro môi trường khi xây cảng là?", "options": ["Ô nhiễm và xói mòn bờ biển","Giảm thương mại","Tăng rừng ngập mặn","Không có rủi ro"], "correct": 0, "explanation": "Xây cảng có thể gây ô nhiễm và thay đổi bờ biển." },
+          { "id": 4, "type": "mcq", "question": "Cảng hỗ trợ phát triển ngành nào gần vùng ven biển?", "options": ["Logistics và dịch vụ hậu cần","Trồng trọt ở nội địa","Sản xuất gỗ rừng sâu","Không hỗ trợ ngành nào"], "correct": 0, "explanation": "Cảng thúc đẩy logistics và dịch vụ liên quan." },
+          { "id": 5, "type": "mcq", "question": "Quy hoạch cảng cần phối hợp với?", "options": ["Giao thông đường bộ, đường sắt và khu công nghiệp ven biển","Chỉ nhà đầu tư","Không cần phối hợp","Chỉ du lịch"], "correct": 0, "explanation": "Phối hợp đa ngành giúp phát huy hiệu quả cảng." },
+          { "id": 6, "type": "mcq", "question": "Cảng an ninh quan trọng vì?", "options": ["Quản lý luồng tàu và bảo vệ chủ quyền vùng biển","Không liên quan đến an ninh","Chỉ phục vụ du lịch","Tạo xung đột"], "correct": 0, "explanation": "Cảng giúp quản lý tàu thuyền và hỗ trợ an ninh hàng hải." },
+          { "id": 7, "type": "mcq", "question": "Một biện pháp giảm tác động môi trường của cảng là?", "options": ["Kỹ thuật xử lý nước thải và bãi chứa rắn an toàn","Không xử lý","Tăng xả thải","Phá hủy rạn san hô"], "correct": 0, "explanation": "Xử lý nước thải và quản lý chất thải giúp giảm tác động." },
+          { "id": 8, "type": "mcq", "question": "Cảng ở Nam Trung bộ cần chú trọng kết nối với?", "options": ["Hệ thống đường bộ và sân bay gần đó","Chỉ biển cả","Không cần kết nối","Chỉ đường sắt"], "correct": 0, "explanation": "Kết nối đa phương tiện giúp cảng hoạt động hiệu quả." },
+          { "id": 9, "type": "mcq", "question": "Một dấu hiệu cho thấy cảng phát triển tốt là?", "options": ["Lưu lượng hàng hóa tăng và dịch vụ logistics hiệu quả","Mất khách hàng","Giảm đầu tư","Không thay đổi"], "correct": 0, "explanation": "Tăng lưu lượng hàng hóa cho thấy cảng hoạt động hiệu quả." },
+          { "id": 10, "type": "mcq", "question": "Kế hoạch phát triển cảng nên xem xét?", "options": ["Tác động môi trường, khả năng mở rộng và an ninh biển","Chỉ lợi ích ngắn hạn","Không cần xem xét","Chỉ nhu cầu du lịch"], "correct": 0, "explanation": "Đánh giá toàn diện giúp quy hoạch bền vững." }
+        ]
+      }
+    }
+  ]
+}

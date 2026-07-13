@@ -1,0 +1,41 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_07",
+      "name": "HTML và cấu trúc trang web",
+      "slug": "html-va-cau-truc-trang-web",
+      "chapter": "Giải quyết vấn đề với sự trợ giúp của máy tính",
+      "chapter_id": "tin12_ch4",
+      "lesson_id": 7,
+      "description": "Giới thiệu ngôn ngữ đánh dấu siêu văn bản (HTML) và các thành phần cơ bản của một trang web.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Ngôn ngữ HTML",
+          "summary": "HTML dùng các thẻ (tags) để định nghĩa cấu trúc và nội dung hiển thị trên trình duyệt web.",
+          "sections": [
+            { "heading": "Khái niệm HTML", "content": "HTML (HyperText Markup Language) không phải ngôn ngữ lập trình mà là ngôn ngữ đánh dấu." },
+            { "heading": "Cấu trúc cơ bản", "content": "Gồm các thẻ <html>, <head> (chứa thông tin tiêu đề, meta), <body> (chứa nội dung hiển thị)." },
+            { "heading": "Thẻ và Thuộc tính", "content": "Thẻ thường đi theo cặp <tag>nội dung</tag>. Thuộc tính cung cấp thêm thông tin cho thẻ." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "HTML là viết tắt của cụm từ nào?", "options": ["HyperText Markup Language", "HighTech Modern Language", "Hyperlink Text Management", "Home Tool Markup"], "correct": 0, "explanation": "HTML là Ngôn ngữ đánh dấu siêu văn bản." },
+          { "id": 2, "type": "mcq", "question": "Phần nội dung hiển thị trên trang web nằm trong cặp thẻ nào?", "options": ["<head>", "<body>", "<title>", "<footer>"], "correct": 1, "explanation": "Mọi thứ hiển thị trên màn hình trình duyệt đều nằm trong <body>." },
+          { "id": 3, "type": "mcq", "question": "Cặp thẻ nào dùng để khai báo tiêu đề trang web (hiển thị trên tab trình duyệt)?", "options": ["<h1>", "<header>", "<title>", "<meta>"], "correct": 2, "explanation": "<title> nằm trong <head> định nghĩa tiêu đề trang." },
+          { "id": 4, "type": "mcq", "question": "Để khai báo cấu trúc chuẩn của HTML5, dòng đầu tiên của file phải là?", "options": ["<html>", "<head>", "<!DOCTYPE html>", "<body>"], "correct": 2, "explanation": "DOCTYPE giúp trình duyệt biết phiên bản HTML đang sử dụng." },
+          { "id": 5, "type": "mcq", "question": "Phần nào chứa các thông tin mô tả về trang web nhưng không hiển thị trực tiếp cho người dùng?", "options": ["<body>", "<head>", "<footer>", "<main>"], "correct": 1, "explanation": "<head> chứa tiêu đề, khai báo CSS, JavaScript và metadata." },
+          { "id": 6, "type": "mcq", "question": "Thẻ nào dùng để tạo tiêu đề lớn nhất trong trang web?", "options": ["<h6>", "<head>", "<h1>", "<title>"], "correct": 2, "explanation": "HTML có từ <h1> đến <h6>, trong đó <h1> là lớn nhất." },
+          { "id": 7, "type": "mcq", "question": "HTML là loại ngôn ngữ gì?", "options": ["Ngôn ngữ lập trình", "Ngôn ngữ máy", "Ngôn ngữ đánh dấu", "Hệ điều hành"], "correct": 2, "explanation": "HTML dùng các thẻ để đánh dấu cấu trúc nội dung." },
+          { "id": 8, "type": "mcq", "question": "Dấu hiệu nào nhận biết một thẻ kết thúc (đóng thẻ) trong HTML?", "options": ["Dấu / trước tên thẻ", "Dấu / sau tên thẻ", "Dấu !", "Dấu ?"], "correct": 0, "explanation": "Ví dụ: </body> là thẻ đóng của <body>." },
+          { "id": 9, "type": "mcq", "question": "Trình duyệt web đóng vai trò gì đối với file HTML?", "options": ["Là nơi soạn thảo", "Là nơi thông dịch và hiển thị nội dung HTML", "Là nơi lưu trữ file", "Là công cụ vẽ ảnh"], "correct": 1, "explanation": "Trình duyệt đọc mã HTML và vẽ ra trang web tương ứng." },
+          { "id": 10, "type": "mcq", "question": "Thẻ <p> dùng để định nghĩa đối tượng nào?", "options": ["Một hình ảnh", "Một đoạn văn bản (Paragraph)", "Một liên kết", "Một tiêu đề"], "correct": 1, "explanation": "Thẻ <p> dùng cho các đoạn văn nội dung." }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_34",
+      "name": "Thực hành: Lập kế hoạch phát triển dịch vụ hàng hải ở Nam Trung bộ",
+      "slug": "thuc-hanh-lap-ke-hoach-phat-trien-dich-vu-hang-hai-nam_trung_bo",
+      "chapter": "Địa lí các vùng kinh tế",
+      "chapter_id": "dia12_part4",
+      "lesson_id": 34,
+      "description": "Thực hành xây dựng kế hoạch phát triển dịch vụ hàng hải (logistics, cảng, bảo đảm an ninh hàng hải) dành cho một địa phương ở Nam Trung bộ, bao gồm đánh giá hiện trạng và đề xuất giải pháp.",
+      "duration_minutes": 90,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Dịch vụ hàng hải: khái niệm và thành phần",
+          "summary": "Dịch vụ hàng hải bao gồm logistics cảng, xếp dỡ, kho bãi, bảo hiểm, dịch vụ tàu và các hoạt động hỗ trợ; kế hoạch phát triển cần đánh giá hạ tầng, nguồn lực và yêu cầu an ninh hàng hải.",
+          "sections": [
+            { "heading": "Thành phần dịch vụ", "content": "Logistics, kho bãi, dịch vụ xếp dỡ, sửa chữa tàu và dịch vụ an ninh hàng hải." },
+            { "heading": "Tiêu chí lập kế hoạch", "content": "Đánh giá nhu cầu, năng lực cảng, kết nối giao thông và tính bền vững môi trường." }
+          ]
+        },
+        "exercises": { "plan_tasks": [ { "q": "Soạn một bản tóm tắt kế hoạch 1 trang gồm hiện trạng, mục tiêu và 3 giải pháp chính.", "a_hint": "Tập trung vào nâng cấp cảng, đào tạo nhân lực và quản lý môi trường." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Dịch vụ hàng hải bao gồm hoạt động nào?", "options": ["Logistics cảng và xếp dỡ hàng","Trồng lúa","Khai thác khoáng sản nội địa","Không có hoạt động gì"], "correct": 0, "explanation": "Logistics và xếp dỡ là phần cốt lõi của dịch vụ hàng hải." },
+          { "id": 2, "type": "mcq", "question": "Một bước quan trọng khi lập kế hoạch là?", "options": ["Đánh giá nhu cầu hiện có và năng lực cơ sở hạ tầng","Bắt đầu xây dựng ngay","Không khảo sát","Chỉ dựa vào ước tính"], "correct": 0, "explanation": "Đánh giá hiện trạng là bước khởi đầu thiết yếu." },
+          { "id": 3, "type": "mcq", "question": "Kế hoạch dịch vụ hàng hải nên chú trọng?", "options": ["Kết nối với cảng, đường biển và quản lý môi trường","Chỉ quảng bá du lịch","Không chú trọng gì","Chỉ quan tâm lợi nhuận"], "correct": 0, "explanation": "Kết nối hạ tầng và môi trường là trọng tâm của kế hoạch bền vững." },
+          { "id": 4, "type": "mcq", "question": "Một giải pháp nâng cao năng lực dịch vụ là?", "options": ["Đào tạo nhân lực và nâng cấp trang thiết bị bốc xếp","Giảm nhân lực","Bỏ qua công nghệ","Không làm gì"], "correct": 0, "explanation": "Đào tạo và công nghệ hỗ trợ tăng năng suất dịch vụ." },
+          { "id": 5, "type": "mcq", "question": "Kế hoạch cần đánh giá yếu tố nào về môi trường?", "options": ["Tác động đến vùng sinh thái và chất lượng nước biển","Chỉ lợi nhuận","Không cần đánh giá","Chỉ số khách du lịch"], "correct": 0, "explanation": "Đánh giá môi trường giúp giảm tác động tiêu cực của dịch vụ hàng hải." },
+          { "id": 6, "type": "mcq", "question": "Một chỉ tiêu thành công cho kế hoạch có thể là?", "options": ["Tăng lưu lượng hàng hóa qua cảng và thời gian giao nhận giảm","Tăng ô nhiễm","Giảm dịch vụ","Không có chỉ tiêu"], "correct": 0, "explanation": "Lưu lượng hàng hóa và hiệu quả giao nhận là chỉ tiêu thực tế." },
+          { "id": 7, "type": "mcq", "question": "Ai là người nên tham gia lập kế hoạch?", "options": ["Chính quyền, doanh nghiệp cảng, ngư dân và chuyên gia môi trường","Chỉ chính quyền","Không ai","Chỉ doanh nghiệp nước ngoài"], "correct": 0, "explanation": "Sự tham gia đa bên giúp kế hoạch khả thi và bền vững." },
+          { "id": 8, "type": "mcq", "question": "Một rủi ro nếu không quản lý dịch vụ hàng hải tốt là?", "options": ["Ô nhiễm và nghẽn giao thông cảng","Tăng diện tích rừng","Cải thiện du lịch","Không có rủi ro"], "correct": 0, "explanation": "Quản lý kém dẫn tới ô nhiễm và giảm hiệu quả cảng." },
+          { "id": 9, "type": "mcq", "question": "Kế hoạch nên bao gồm mục tiêu nào?", "options": ["Nâng cao năng lực cảng và giảm tác động môi trường","Chỉ lợi nhuận ngắn hạn","Không có mục tiêu","Tăng ô nhiễm"], "correct": 0, "explanation": "Mục tiêu phải cân bằng hiệu quả và bảo vệ môi trường." },
+          { "id": 10, "type": "mcq", "question": "Một công cụ hỗ trợ lập kế hoạch hiệu quả là?", "options": ["Bản đồ hiện trạng hạ tầng và phân tích SWOT","Không cần công cụ","Chỉ dùng cảm tính","Sử dụng may rủi"], "correct": 0, "explanation": "Bản đồ và phân tích SWOT giúp hình dung rõ ưu - nhược điểm." }
+        ]
+      }
+    }
+  ]
+}

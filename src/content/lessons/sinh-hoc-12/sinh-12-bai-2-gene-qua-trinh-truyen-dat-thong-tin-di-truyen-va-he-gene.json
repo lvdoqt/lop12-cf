@@ -1,0 +1,187 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-2",
+      "name": "Bài 2. Gene, quá trình truyền đạt thông tin di truyền và hệ gene",
+      "slug": "gene-qua-trinh-truyen-dat-thong-tin-di-truyen-va-he-gene",
+      "chapter": "Chương 1. Di truyền phân tử",
+      "chapter_id": "S12-1",
+      "lesson_id": 2,
+      "description": "Tìm hiểu về gene, cơ chế truyền đạt thông tin di truyền và hệ gene.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2690&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Gene, quá trình truyền đạt thông tin di truyền và hệ gene",
+          "sections": [
+            {
+              "heading": "1. Khái niệm Gene",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Gene</strong> là đơn vị chức năng của thông tin di truyền, có khả năng mang thông tin quy định một tính trạng.</li><li>Gene là một đoạn DNA có trình tự nucleotit đặc hiệu, mang thông tin mã hóa cho một sản phẩm cụ thể (protein hoặc RNA).</li></ul><h4>b) Cấu trúc của Gene</h4><ul><li><strong>Vùng mã hóa:</strong> Chứa thông tin mã hóa axit amin.</li><li><strong>Vùng điều hòa:</strong> Vùng khởi động (promoter), vùng kết thúc (terminator).</li><li><strong>Exon:</strong> Vùng mã hóa được phiên mã và dịch mã.</li><li><strong>Intron:</strong> Vùng không mã hóa, bị cắt bỏ trong quá trình xử lý RNA.</li></ul>"
+            },
+            {
+              "heading": "2. Quá trình truyền đạt thông tin di truyền",
+              "content": "<h4>a) Nguyên tắc truyền đạt thông tin</h4><ul><li><strong>Dogma trung tâm:</strong> DNA → RNA → Protein</li><li>DNA truyền đạt thông tin cho RNA (phiên mã), RNA truyền đạt thông tin cho protein (dịch mã).</li></ul><h4>b) Phiên mã</h4><ul><li>Là quá trình tổng hợp RNA từ DNA theo nguyên tắc bổ sung.</li><li>Diễn ra trong nhân tế bào (đối với tế bào nhân thực).</li><li>Enzyme chính: <strong>RNA polymerase</strong>.</li><li>Quá trình: Khởi đầu → Kéo dài → Kết thúc.</li></ul><h4>c) Dịch mã</h4><ul><li>Là quá trình tổng hợp protein từ mRNA.</li><li>Diễn ra ở ribosome trong tế bào chất.</li><li>Mã di truyền: 3 nucleotit (1 codon) mã hóa 1 axit amin.</li><li>64 codon mã hóa 20 loại axit amin (có codon mở đầu và codon kết thúc).</li></ul>"
+            },
+            {
+              "heading": "3. Hệ Gene",
+              "content": "<h4>a) Khái niệm hệ gene</h4><ul><li><strong>Hệ gene (genome)</strong> là toàn bộ gen có trong một tế bào hoặc một sinh vật.</li><li>Ở sinh vật nhân sơ, hệ gene gồm DNA vòng chứa các gene liên kết với nhau.</li><li>Ở sinh vực nhân thực, hệ gene gồm DNA trong nhân và DNA ngoài nhân (mitochondria, lạp thể).</li></ul><h4>b) Đặc điểm hệ gene</h4><ul><li>Kích thước hệ gene khác nhau giữa các loài.</li><li>Hệ gene người khoảng 3,2 tỷ cặp bazơ, chứa khoảng 20.000-25.000 gene.</li><li>Gen chiếm một phần nhỏ trong hệ gene, phần còn lại là DNA không mã hóa.</li></ul><h4>c) Mối quan hệ giữa các gene</h4><ul><li>Các gene có thể tương tác với nhau quy định một tính trạng.</li><li>Một gene có thể ảnh hưởng đến nhiều tính trạng (đa hiệu).</li><li>Nhiều gene cùng quy định một tính trạng (tương tác gen).</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Gene là gì?",
+            "options": [
+              "Là đơn vị cấu trúc của DNA",
+              "Là đơn vị chức năng mang thông tin di truyền",
+              "Là đoạn RNA",
+              "Là protein"
+            ],
+            "correct": 1,
+            "explanation": "Gene là đơn vị chức năng của thông tin di truyền, có khả năng mang thông tin quy định một tính trạng."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Trong quá trình phiên mã, enzyme nào tổng hợp RNA?",
+            "options": [
+              "DNA polymerase",
+              "RNA polymerase",
+              "Ligase",
+              "Helicase"
+            ],
+            "correct": 1,
+            "explanation": "RNA polymerase là enzyme tổng hợp RNA từ khuôn DNA trong quá trình phiên mã."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Mã di truyền có đặc điểm gì?",
+            "options": [
+              "Mỗi axit amin được mã hóa bởi 1 nucleotit",
+              "Mỗi axit amin được mã hóa bởi 2 nucleotit",
+              "Mỗi axit amin được mã hóa bởi 3 nucleotit",
+              "Mã di truyền không xác định"
+            ],
+            "correct": 2,
+            "explanation": "Mã di truyền là mã bộ ba: 3 nucleotit (1 codon) mã hóa 1 axit amin."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Exon là gì?",
+            "options": [
+              "Vùng không mã hóa bị cắt bỏ",
+              "Vùng mã hóa được dịch mã",
+              "Vùng khởi động",
+              "Vùng kết thúc"
+            ],
+            "correct": 1,
+            "explanation": "Exon là vùng mã hóa trong gene, được phiên mã và dịch mã thành protein."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Hệ gene người có khoảng bao nhiêu gene?",
+            "options": [
+              "Khoảng 10.000",
+              "Khoảng 20.000-25.000",
+              "Khoảng 50.000",
+              "Khoảng 100.000"
+            ],
+            "correct": 1,
+            "explanation": "Hệ gene người chứa khoảng 20.000-25.000 gene theo ước tính hiện tại."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các thành phần tham gia vào quá trình dịch mã:",
+            "options": [
+              "Ribosome",
+              "mRNA",
+              "DNA polymerase",
+              "tRNA"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "A ✓: Ribosome là nơi diễn ra dịch mã. B ✓: mRNA mang mã di truyền. C ✗: DNA polymerase tham gia nhân đôi DNA. D ✓: tRNA mang axit amin đến ribosome."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các đặc điểm đúng về mã di truyền:",
+            "options": [
+              "Mã bộ ba",
+              "Mã có tính đặc hiệu",
+              "Mã liên tục",
+              "Mã phổ biến cho tất cả sinh vật"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: 3 nucleotit mã hóa 1 axit amin. B ✓: Mỗi codon chỉ mã hóa 1 axit amin. C ✓: Các codon đọc liên tiếp không trùng lặp. D ✓: Mã di truyền gần như phổ biến cho mọi sinh vật."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một gene mã hóa protein có 900 cặp bazơ trong vùng mã hóa. Tính số axit amin tối đa trong protein. Nhập số 4 chữ số. (Ví dụ: 0300)",
+            "correct": "0300",
+            "explanation": "Số cặp bazơ = 900 → Số nucleotit = 900. Số codon = 900/3 = 300 codon. Số axit amin = 300 (nếu không có codon kết thúc)."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Một chuỗi mRNA có trình tự: AUG UUU GGG AAA (không tính codon kết thúc). Tính số axit amin trong chuỗi polypeptide. Nhập số 2 chữ số. (Ví dụ: 04)",
+            "correct": "03",
+            "explanation": "4 codon → 4 axit amin. Tuy nhiên, trừ codon mở đầu AUG (mã hóa Met), số axit amin thực tế = 4 - 1 = 3."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định trình tự mRNA từ DNA",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định mạch DNA được sử dụng làm khuôn.</li><li>Thay T bằng U trong mạch bổ sung (vì RNA sử dụng U thay T).</li><li>Áp dụng nguyên tắc: A↔U, G↔C, T↔A, C↔G.</li><li>Chú ý chiều 5'→3' của RNA.</li></ol>",
+            "examples": [
+              {
+                "question": "Cho mạch khuôn của DNA có trình tự: 3'-TAXGCGTAT-5'. Xác định trình tự mRNA được tổng hợp.",
+                "solution": "<p><strong>Giải:</strong></p><p>Mạch khuôn: 3'-TAXGCGTAT-5'</p><p>mRNA (bổ sung): 5'-AUGCGCAUA-3'</p><p>Trình tự mRNA: AUGCGCAUA</p>"
+              },
+              {
+                "question": "Một đoạn DNA mạch mã có trình tự: 5'-ATG AAC GGA TTT-3'. Xác định trình tự mRNA tương ứng.",
+                "solution": "<p><strong>Giải:</strong></p><p>Mạch mã: 5'-ATG AAC GGA TTT-3'</p><p>mRNA (thay T bằng U): 5'-AUG AAC GGA UUU-3'</p><p>Trình tự mRNA: AUG AAC GGA UUU</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính số axit amin trong chuỗi polypeptide",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định số nucleotit trong mRNA từ dữ kiện đề bài.</li><li>Số codon = số nucleotit / 3.</li><li>Số axit amin trong protein = số codon - 1 (trừ codon kết thúc không mã hóa axit amin).</li><li>Chú ý: Codon mở đầu AUG mã hóa Met, codon kết thúc là UAA, UAG, UGA.</li></ol>",
+            "examples": [
+              {
+                "question": "Một mRNA có 450 nucleotit (không tính codon kết thúc). Hỏi chuỗi polypeptide được tổng hợp có bao nhiêu axit amin?",
+                "solution": "<p><strong>Giải:</strong></p><p>Số codon = 450 / 3 = 150 codon</p><p>Số axit amin = 150 - 1 = 149 axit amin</p><p>(Trừ 1 codon kết thúc không mã hóa axit amin)</p>"
+              },
+              {
+                "question": "Gene mã hóa protein có 1500 cặp bazơ, trong đó vùng mã hóa bắt đầu từ codon AUG và kết thúc bằng codon UGA. Tính số axit amin trong protein.",
+                "solution": "<p><strong>Giải:</strong></p><p>Số cặp bazơ mã hóa = 1500</p><p>Số nucleotit mã hóa = 1500</p><p>Số codon = 1500 / 3 = 500 codon</p><p>Số axit amin = 500 - 1 = 499</p><p>(Trừ codon kết thúc UGA)</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

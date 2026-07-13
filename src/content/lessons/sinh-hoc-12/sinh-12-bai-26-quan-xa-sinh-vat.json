@@ -1,0 +1,189 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-26",
+      "name": "Bài 26. Quần xã sinh vật",
+      "slug": "quan-xa-sinh-vat",
+      "chapter": "Chương 7. Sinh thái học quần xã",
+      "chapter_id": "S12-7",
+      "lesson_id": 26,
+      "description": "Tìm hiểu về quần xã sinh vật và các đặc trưng cơ bản.",
+      "duration_minutes": 45,
+      "difficulty_level": "easy",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Quần xã sinh vật",
+          "sections": [
+            {
+              "heading": "1. Khái niệm quần xã",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Quần xã:</strong> Tập hợp các quần thể sinh vật khác loài cùng sống trong một khu vực nhất định.</li><li>Quần xã bao gồm: sinh vật sản xuất, sinh vật tiêu thụ, sinh vật phân giải.</li></ul><h4>b) Thành phần</h4><ul><li><strong>Sinh vật sản xuất:</strong> Tự dưỡng, quang hợp (thực vật, tảo).</li><li><strong>Sinh vật tiêu thụ:</strong> Dị dưỡng (động vật, nấm).</li><li><strong>Sinh vật phân giải:</strong> Phân giải chất hữu cơ (vi khuẩn, nấm).</li></ul>"
+            },
+            {
+              "heading": "2. Đặc trưng của quần xã",
+              "content": "<h4>a) Độ đa dạng</h4><ul><li>Số lượng loài và số lượng cá thể mỗi loài.</li><li>Quần xã đa dạng cao → hệ sinh thái ổn định.</li></ul><h4>b) Cấu trúc thành phần</h4><ul><li><strong>Tầng cao:</strong> Thực vật cao, nhận ánh sáng.</li><li><strong>Tầng giữa:</strong> Thực vật thân gỗ, dây leo.</li><li><strong>Tầng dưới:</strong> Cây bụi, cỏ.</li><li><strong>Tầng đất:</strong> Động vật đáy, vi sinh vật.</li></ul><h4>c) Quan hệ dinh dưỡng</h4><ul><li>Chuỗi thức ăn: Năng lượng truyền từ sinh vật sản xuất → sinh vật tiêu thụ bậc 1, 2, 3...</li><li>Lưới thức ăn: Nhiều chuỗi thức ăn liên kết với nhau.</li></ul>"
+            },
+            {
+              "heading": "3. Các mối quan hệ trong quần xã",
+              "content": "<h4>a) Quan hệ cùng loài</h4><ul><li><strong>Cạnh tranh:</strong> Giành thức ăn, nơi sống.</li><li><strong>Hợp tác:</strong> Hỗ trợ nhau sinh sống.</li></ul><h4>b) Quan hệ khác loài</h4><ul><li><strong>Cạnh tranh:</strong> Hai loài cùng sử dụng một nguồn.</li><li><strong>Tiêu xác:</strong> Động vật ăn thịt - con mồi.</li><li><strong>Ký sinh:</strong> Ký sinh - vật chủ.</li><li><strong>Hỗ sinh:</strong> Cả hai cùng có lợi.</li><li><strong>Cộng sinh:</strong> Quan hệ bắt buộc, cùng có lợi.</li></ul>"
+            },
+            {
+              "heading": "4. Hiệu ứng biên và rìa",
+              "content": "<h4>a) Hiệu ứng biên</h4><ul><li>Khu vực ranh giới giữa hai quần xã có điều kiện đặc biệt.</li><li>Thường có đa dạng loài cao hơn.</li></ul><h4>b) Đặc điểm</h4><ul><li>Ánh sáng, nhiệt độ, độ ẩm thay đổi đột ngột.</li><li>Có nhiều loài thích nghi ở ranh giới.</li><li>Ví dụ: Rìa rừng - đồng bằng.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Quần xã sinh vật là gì?",
+            "options": [
+              "Tập hợp các cá thể cùng loài",
+              "Tập hợp các quần thể khác loài",
+              "Tập hợp các hệ sinh thái",
+              "Tập hợp các loài"
+            ],
+            "correct": 1,
+            "explanation": "Quần xã là tập hợp các quần thể sinh vật khác loài cùng sống trong một khu vực nhất định."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Sinh vật sản xuất có vai trò gì trong quần xã?",
+            "options": [
+              "Phân giải chất hữu cơ",
+              "Tổng hợp chất hữu cơ từ vô cơ",
+              "Tiêu thụ sinh vật khác",
+              "Điều hòa quần xã"
+            ],
+            "correct": 1,
+            "explanation": "Sinh vật sản xuất (tự dưỡng) tổng hợp chất hữu cơ từ vô cơ qua quang hợp."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Chuỗi thức ăn khác lưới thức ăn ở điểm nào?",
+            "options": [
+              "Chuỗi là một đường, lưới là nhiều đường",
+              "Không có gì khác",
+              "Chuỗi phức tạp hơn",
+              "Lưới đơn giản hơn"
+            ],
+            "correct": 0,
+            "explanation": "Chuỗi thức ăn là một đường thẳng truyền năng lượng, lưới thức ăn là nhiều chuỗi liên kết với nhau."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Quan hệ tiêu xác là gì?",
+            "options": [
+              "Cả hai cùng có lợi",
+              "Một loài ăn loài khác",
+              "Loài sống trên loài khác",
+              "Cạnh tranh nhau"
+            ],
+            "correct": 1,
+            "explanation": "Tiêu xác là quan hệ động vật ăn thịt con mồi."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Hiệu ứng biên là gì?",
+            "options": [
+              "Hiệu ứng ở tâm quần xã",
+              "Hiệu ứng ở ranh giới quần xã",
+              "Hiệu ứng nhiệt độ",
+              "Hiệu ứng ánh sáng"
+            ],
+            "correct": 1,
+            "explanation": "Hiệu ứng biên xảy ra ở ranh giới giữa hai quần xã, thường có đa dạng cao hơn."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các thành phần của quần xã:",
+            "options": [
+              "Sinh vật sản xuất",
+              "Sinh vật tiêu thụ",
+              "Sinh vật phân giải",
+              "Môi trường vô sinh"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Thực vật, tảo. B ✓: Động vật. C ✓: Vi khuẩn, nấm. D ✗: Môi trường không phải thành phần sống."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các mối quan hệ giữa các loài trong quần xã:",
+            "options": [
+              "Cạnh tranh",
+              "Tiêu xác",
+              "Ký sinh",
+              "Hỗ sinh"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đều là các mối quan hệ giữa các loài trong quần xã."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một chuỗi thức ăn: Cỏ → Châu chấu → Ếch → Rắn. Có bao nhiêu bậc dinh dưỡng? Nhập số 1 chữ số.",
+            "correct": "4"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Quần xã có 50 loài, mỗi loài có 20 cá thể. Tính tổng số cá thể. Nhập số 3 chữ số.",
+            "correct": "1000"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định bậc dinh dưỡng trong chuỗi thức ăn",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Bậc 1: Sinh vật sản xuất (thực vật).</li><li>Bậc 2: Sinh vật tiêu thụ bậc 1 (ăn thực vật).</li><li>Bậc 3: Sinh vật tiêu thụ bậc 2 (ăn thịt).</li><li>Bậc 4: Sinh vật tiêu thụ bậc cao hơn.</li></ol>",
+            "examples": [
+              {
+                "question": "Chuỗi: Nước -> Tảo -> Cá -> Chim -> Rắn. Xác định bậc dinh dưỡng của tảo.",
+                "solution": "<p><strong>Giải:</strong></p><p>Nước (vô sinh) -> Tảo (Bậc 1: SV sản xuất)</p><p>Tảo là bậc 1 trong chuỗi này.</p>"
+              },
+              {
+                "question": "Trong chuỗi: Thực vật -> Sâu -> Chim -> Mèo. Mèo thuộc bậc nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Thực vật: Bậc 1</p><p>Sâu: Bậc 2</p><p>Chim: Bậc 3</p><p>Mèo: Bậc 4</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính hiệu suất truyền năng lượng",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Hiệu suất truyền năng lượng giữa các bậc khoảng 10%.</li><li>Năng lượng bậc n = Năng lượng bậc n-1 × 10%.</li><li>Hệ số chuyển đổi = 10%.</li></ol>",
+            "examples": [
+              {
+                "question": "Năng lượng thực vật là 10000 kcal, truyền cho sâu (bậc 2). Tính năng lượng sâu nhận được (10% hiệu suất)?",
+                "solution": "<p><strong>Giải:</strong></p><p>Năng lượng sâu = 10000 × 10% = 1000 kcal</p>"
+              },
+              {
+                "question": "Chuỗi: Thực vật (10000J) -> Sâu (bậc 2) -> Chim (bậc 3). Tính năng lượng chim nhận được?",
+                "solution": "<p><strong>Giải:</strong></p><p>Sâu = 10000 × 10% = 1000J</p><p>Chim = 1000 × 10% = 100J</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-28",
+      "name": "Bài 28. Hệ sinh thái",
+      "slug": "he-sinh-thai",
+      "chapter": "Chương 7. Sinh thái học quần xã",
+      "chapter_id": "S12-7",
+      "lesson_id": 28,
+      "description": "Tìm hiểu về hệ sinh thái, thành phần và cấu trúc của hệ sinh thái.",
+      "duration_minutes": 45,
+      "difficulty_level": "easy",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Hệ sinh thái",
+          "sections": [
+            {
+              "heading": "1. Khái niệm hệ sinh thái",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Hệ sinh thái</strong> là một đơn vị sinh thái bao gồm quần xã sinh vật và môi trường sống của nó, trong đó có sự trao đổi vật chất và năng lượng.</li><li>Hệ sinh thái là đơn vị sinh thái lớn nhất, bao gồm cả thành phần vô sinh và hữu sinh.</li></ul><h4>b) Đặc điểm</h4><ul><li>Có sự trao đổi vật chất tuần hoàn.</li><li>Có sự chuyển hóa năng lượng một chiều.</li><li>Có khả năng tự điều chỉnh và cân bằng.</li></ul>"
+            },
+            {
+              "heading": "2. Thành phần của hệ sinh thái",
+              "content": "<h4>a) Thành phần vô sinh (môi trường)</h4><ul><li><strong>Ánh sáng:</strong> Nguồn năng lượng chính.</li><li><strong>Nước:</strong> Dung môi, điều hòa nhiệt.</li><li><strong>Đất:</strong> Nền tảng, cung cấp khoáng.</li><li><strong>Không khí:</strong> CO₂, O₂ cho trao đổi khí.</li><li><strong>Nhiệt độ:</strong> Ảnh hưởng hoạt động sinh vật.</li></ul><h4>b) Thành phần hữu sinh</h4><ul><li><strong>Sinh vật sản xuất:</strong> Thực vật, tảo, vi khuẩn quang hợp.</li><li><strong>Sinh vật tiêu thụ:</strong> Động vật ăn thực vật, ăn thịt.</li><li><strong>Sinh vật phân giải:</strong> Vi khuẩn, nấm phân giải chất hữu cơ.</li></ul>"
+            },
+            {
+              "heading": "3. Các loại hệ sinh thái",
+              "content": "<h4>a) Hệ sinh thái tự nhiên</h4><ul><li><strong>Hệ sinh thái trên cạn:</strong> Rừng nhiệt đới, rừng ôn đới, thảo nguyên, sa mạc.</li><li><strong>Hệ sinh thái nước ngọt:</strong> Hồ, đầm, sông, suối.</li><li><strong>Hệ sinh thái biển:</strong> Biển, đại dương, rạn san hô, vùng bờ.</li></ul><h4>b) Hệ sinh thái nhân tạo</h4><ul><li><strong>Nông nghiệp:</strong> Ruộng lúa, vườn cây ăn quả.</li><li><strong>Thủy sản:</strong> Ao nuôi, hồ nuôi.</li><li><strong>Đô thị:</strong> Thành phố, khu công nghiệp.</li></ul>"
+            },
+            {
+              "heading": "4. Giới hạn sinh thái",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Giới hạn sinh thái</strong> là khoảng giá trị của các yếu tố môi trường mà sinh vật có thể tồn tại và phát triển.</li></ul><h4>b) Các giới hạn</h4><ul><li><strong>Giới hạn nhiệt độ:</strong> Thường 0°C - 50°C.</li><li><strong>Giới hạn ánh sáng:</strong> Cường độ, thời gian chiếu sáng.</li><li><strong>Giới hạn nước:</strong> Độ ẩm, lượng mưa.</li><li><strong>Giới hạn dinh dưỡng:</strong> Hàm lượng khoáng trong đất, nước.</li></ul><h4>c) Giới hạn sinh thái và phân bố</h4><ul><li>Sinh vật chỉ phân bố trong giới hạn sinh thái phù hợp.</li><li>Ranh giới hệ sinh thái thường là nơi giới hạn thay đổi đột ngột.</li></ul>"
+            },
+            {
+              "heading": "5. Mối quan hệ trong hệ sinh thái",
+              "content": "<h4>a) Quan hệ vật chất</h4><ul><li>Chuỗi thức ăn truyền năng lượng.</li><li>Vật chất được tuần hoàn (C, N, P, nước).</li></ul><h4>b) Quan hệ không gian</h4><ul><li>Sinh vật sống ở các tầng khác nhau.</li><li>Phân bố theo điều kiện môi trường.</li></ul><h4>c) Điều hòa sinh thái</h4><ul><li>Số lượng cá thể được điều chỉnh qua quan hệ tiêu xác, cạnh tranh.</li><li>Hệ sinh thái có cơ chế tự cân bằng.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Hệ sinh thái là gì?",
+            "options": [
+              "Tập hợp các quần thể sinh vật",
+              "Quần xã sinh vật và môi trường sống",
+              "Tập hợp các hệ sinh thái",
+              "Môi trường sống"
+            ],
+            "correct": 1,
+            "explanation": "Hệ sinh thái bao gồm quần xã sinh vật và môi trường sống, có sự trao đổi vật chất và năng lượng."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Thành phần nào là sinh vật sản xuất trong hệ sinh thái?",
+            "options": [
+              "Động vật ăn thịt",
+              "Vi khuẩn phân giải",
+              "Thực vật",
+              "Nấm"
+            ],
+            "correct": 2,
+            "explanation": "Thực vật là sinh vật sản xuất, tự tổng hợp chất hữu cơ qua quang hợp."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Hệ sinh thái nào là hệ sinh thái nhân tạo?",
+            "options": [
+              "Rừng nhiệt đới",
+              "Biển",
+              "Ao nuôi cá",
+              "Hồ nước ngọt"
+            ],
+            "correct": 2,
+            "explanation": "Ao nuôi cá là hệ sinh thái nhân tạo do con người tạo ra."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Giới hạn sinh thái là gì?",
+            "options": [
+              "Kích thước của hệ sinh thái",
+              "Khoảng giá trị yếu tố môi trường sinh vật sống được",
+              "Số lượng loài trong hệ sinh thái",
+              "Diện tích hệ sinh thái"
+            ],
+            "correct": 1,
+            "explanation": "Giới hạn sinh thái là khoảng giá trị của các yếu tố môi trường mà sinh vật có thể tồn tại."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Năng lượng trong hệ sinh thái được truyền theo hướng nào?",
+            "options": [
+              "Tuần hoàn",
+              "Một chiều",
+              "Hai chiều",
+              "Không thay đổi"
+            ],
+            "correct": 1,
+            "explanation": "Năng lượng được truyền một chiều từ sinh vật sản xuất → sinh vật tiêu thụ → môi trường."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các thành phần vô sinh của hệ sinh thái:",
+            "options": [
+              "Ánh sáng",
+              "Nước",
+              "Thực vật",
+              "Đất"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Ánh sáng, nước, đất là thành phần vô sinh. Thực vật là thành phần hữu sinh."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các hệ sinh thái tự nhiên:",
+            "options": [
+              "Rừng nhiệt đới",
+              "Ruộng lúa",
+              "Biển",
+              "Ao nuôi cá"
+            ],
+            "correct": [
+              0,
+              2
+            ],
+            "explanation": "Rừng nhiệt đới và biển là hệ sinh thái tự nhiên. Ruộng lúa và ao nuôi cá là nhân tạo."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một hệ sinh thái có 3 bậc dinh dưỡng. Năng lượng bậc 1 là 10000J, hiệu suất truyền 10%. Tính năng lượng bậc 3 (J). Nhập số 3 chữ số.",
+            "correct": "100"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Hệ sinh thái có 4 thành phần chính. Điền số 1 chữ số.",
+            "correct": "4"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân biệt hệ sinh thái tự nhiên và nhân tạo",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định nguồn gốc: Tự nhiên do tự nhiên tạo ra, nhân tạo do con người tạo.</li><li>Đặc điểm: Tự nhiên đa dạng cao, nhân tạo đơn giản hơn.</li><li>Ví dụ cụ thể để ghi nhớ.</li></ol>",
+            "examples": [
+              {
+                "question": "Ao nuôi cá là hệ sinh thái gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Ao nuôi cá do con người tạo → Hệ sinh thái nhân tạo.</p>"
+              },
+              {
+                "question": "Rừng nhiệt đới là hệ sinh thái gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Rừng nhiệt đới tự nhiên → Hệ sinh thái tự nhiên.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính năng lượng qua các bậc dinh dưỡng",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Năng lượng bậc 1 (SV sản xuất) = Năng lượng ban đầu.</li><li>Năng lượng bậc 2 = Bậc 1 × 10%.</li><li>Năng lượng bậc 3 = Bậc 2 × 10% = Bậc 1 × (10%)².</li><li>Năng lượng bậc n = Bậc 1 × (10%)^(n-1).</li></ol>",
+            "examples": [
+              {
+                "question": "Năng lượng thực vật (bậc 1) là 50000J. Tính năng lượng bậc 3?",
+                "solution": "<p><strong>Giải:</strong></p><p>Bậc 2: 50000 × 10% = 5000J</p><p>Bậc 3: 5000 × 10% = 500J</p>"
+              },
+              {
+                "question": "Năng lượng bậc 1 là 20000J. Tính năng lượng bậc 2 và bậc 4?",
+                "solution": "<p><strong>Giải:</strong></p><p>Bậc 2: 20000 × 10% = 2000J</p><p>Bậc 4: 20000 × (10%)³ = 20000 × 0.001 = 20J</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

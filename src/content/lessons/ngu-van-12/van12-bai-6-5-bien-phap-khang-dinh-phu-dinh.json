@@ -1,0 +1,155 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-6-5-bien-phap-khang-dinh-phu-dinh",
+      "name": "Một số biện pháp làm tăng tính khẳng định, phủ định trong văn bản nghị luận",
+      "slug": "bien-phap-khang-dinh-phu-dinh",
+      "chapter": "Hồ Chí Minh - Văn hóa phải soi đường cho quốc dân đi",
+      "chapter_id": "V12-6",
+      "lesson_id": 5,
+      "description": "Học các biện pháp ngôn ngữ giúp tăng cường tính khẳng định hoặc phủ định trong văn bản nghị luận, làm cho lập luận mạnh mẽ và thuyết phục hơn.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "language-techniques",
+          "name": "Biện pháp ngôn ngữ",
+          "slug": "bien-phap-ngon-ngu",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Biện pháp làm tăng tính khẳng định, phủ định",
+          "sections": [
+            {
+              "heading": "1. Biện pháp tăng tính khẳng định",
+              "content": "<h4>a) Sử dụng từ nhấn mạnh</h4><ul><li><strong>Từ ngữ:</strong> Chắc chắn, nhất định, hoàn toàn, tuyệt đối</li><li><strong>Ví dụ:</strong> 'Chúng ta chắc chắn sẽ thắng lợi'</li><li><strong>Tác dụng:</strong> Làm cho khẳng định mạnh mẽ hơn</li></ul><h4>b) Lặp lại</h4><ul><li><strong>Cách dùng:</strong> Lặp lại từ, cụm từ quan trọng</li><li><strong>Ví dụ:</strong> 'Độc lập, tự do, hạnh phúc'</li><li><strong>Tác dụng:</strong> Nhấn mạnh, gây ấn tượng</li></ul><h4>c) Câu cảm thán</h4><ul><li><strong>Cách dùng:</strong> Sử dụng dấu chấm than</li><li><strong>Ví dụ:</strong> 'Việt Nam muôn năm!'</li><li><strong>Tác dụng:</strong> Thể hiện cảm xúc mạnh mẽ</li></ul>"
+            },
+            {
+              "heading": "2. Biện pháp tăng tính phủ định",
+              "content": "<h4>a) Phủ định kép</h4><ul><li><strong>Cách dùng:</strong> Không...không, chẳng...chẳng</li><li><strong>Ví dụ:</strong> 'Không gì quý hơn độc lập tự do'</li><li><strong>Tác dụng:</strong> Nhấn mạnh sự phủ định tuyệt đối</li></ul><h4>b) Câu hỏi tu từ phủ định</h4><ul><li><strong>Cách dùng:</strong> Đặt câu hỏi mang tính phủ định</li><li><strong>Ví dụ:</strong> 'Ai có thể chối bỏ sự thật này?'</li><li><strong>Tác dụng:</strong> Khẳng định bằng cách phủ định</li></ul><h4>c) Từ phủ định mạnh</h4><ul><li><strong>Từ ngữ:</strong> Tuyệt đối không, hoàn toàn không, không bao giờ</li><li><strong>Ví dụ:</strong> 'Chúng ta tuyệt đối không đầu hàng'</li><li><strong>Tác dụng:</strong> Phủ định dứt khoát</li></ul>"
+            },
+            {
+              "heading": "3. Ứng dụng trong văn bản nghị luận",
+              "content": "<h4>a) Khi nào dùng khẳng định mạnh</h4><ul><li><strong>Trường hợp:</strong> Nêu luận điểm chính</li><li><strong>Mục đích:</strong> Thuyết phục người đọc</li><li><strong>Ví dụ:</strong> Trong Tuyên ngôn độc lập</li></ul><h4>b) Khi nào dùng phủ định mạnh</h4><ul><li><strong>Trường hợp:</strong> Bác bỏ quan điểm sai</li><li><strong>Mục đích:</strong> Làm rõ lập trường</li><li><strong>Ví dụ:</strong> Trong bài phê phán</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex6-5-1",
+              "type": "mcq",
+              "question": "Từ nào dùng để tăng tính khẳng định?",
+              "options": [
+                "Có thể, có lẽ",
+                "Chắc chắn, nhất định, hoàn toàn",
+                "Không, chẳng",
+                "Nếu, giả sử"
+              ],
+              "correct": 1,
+              "explanation": "Các từ 'chắc chắn', 'nhất định', 'hoàn toàn' giúp tăng cường tính khẳng định, làm cho phát biểu mạnh mẽ hơn."
+            },
+            {
+              "id": "ex6-5-2",
+              "type": "mcq",
+              "question": "Biện pháp nào giúp nhấn mạnh bằng cách lặp lại?",
+              "options": [
+                "So sánh",
+                "Lặp lại từ, cụm từ quan trọng",
+                "Ẩn dụ",
+                "Nhân hóa"
+              ],
+              "correct": 1,
+              "explanation": "Lặp lại từ, cụm từ quan trọng giúp nhấn mạnh ý tưởng và gây ấn tượng mạnh với người đọc/nghe."
+            },
+            {
+              "id": "ex6-5-3",
+              "type": "mcq",
+              "question": "Câu 'Không gì quý hơn độc lập tự do' sử dụng biện pháp gì?",
+              "options": [
+                "Khẳng định đơn giản",
+                "Phủ định kép để khẳng định",
+                "So sánh",
+                "Ẩn dụ"
+              ],
+              "correct": 1,
+              "explanation": "Câu này sử dụng phủ định kép ('Không gì...hơn') để khẳng định mạnh mẽ giá trị của độc lập tự do."
+            },
+            {
+              "id": "ex6-5-4",
+              "type": "mcq",
+              "question": "Câu hỏi tu từ phủ định có tác dụng gì?",
+              "options": [
+                "Hỏi thông tin",
+                "Khẳng định bằng cách phủ định",
+                "Không có tác dụng",
+                "Gây nhầm lẫn"
+              ],
+              "correct": 1,
+              "explanation": "Câu hỏi tu từ phủ định như 'Ai có thể chối bỏ...?' thực chất là cách khẳng định mạnh mẽ bằng phủ định."
+            },
+            {
+              "id": "ex6-5-5",
+              "type": "mcq",
+              "question": "Khi nào nên dùng khẳng định mạnh trong văn bản nghị luận?",
+              "options": [
+                "Khi không chắc chắn",
+                "Khi nêu luận điểm chính, thuyết phục người đọc",
+                "Khi kể chuyện",
+                "Khi miêu tả cảnh vật"
+              ],
+              "correct": 1,
+              "explanation": "Khẳng định mạnh được dùng khi nêu luận điểm chính để thuyết phục người đọc tin tưởng vào quan điểm của mình."
+            },
+            {
+              "id": "ex6-5-6",
+              "type": "mcq",
+              "question": "Từ nào thể hiện phủ định mạnh nhất?",
+              "options": [
+                "Không",
+                "Tuyệt đối không, hoàn toàn không",
+                "Có lẽ không",
+                "Chưa"
+              ],
+              "correct": 1,
+              "explanation": "'Tuyệt đối không', 'hoàn toàn không' thể hiện sự phủ định dứt khoát, không có ngoại lệ."
+            },
+            {
+              "id": "ex6-5-7",
+              "type": "mcq",
+              "question": "Câu cảm thán có tác dụng gì trong văn bản nghị luận?",
+              "options": [
+                "Không có tác dụng",
+                "Thể hiện cảm xúc mạnh mẽ, tăng tính khẳng định",
+                "Gây nhầm lẫn",
+                "Làm văn bản dài hơn"
+              ],
+              "correct": 1,
+              "explanation": "Câu cảm thán giúp thể hiện cảm xúc mạnh mẽ và tăng cường tính khẳng định của phát biểu."
+            },
+            {
+              "id": "ex6-5-8",
+              "type": "mcq",
+              "question": "Trong Tuyên ngôn độc lập, Hồ Chí Minh sử dụng biện pháp nào?",
+              "options": [
+                "Chỉ kể chuyện",
+                "Khẳng định mạnh mẽ quyền độc lập của dân tộc",
+                "Không dùng biện pháp gì",
+                "Chỉ miêu tả"
+              ],
+              "correct": 1,
+              "explanation": "Trong Tuyên ngôn độc lập, Người sử dụng nhiều biện pháp khẳng định mạnh mẽ quyền độc lập, tự do của dân tộc Việt Nam."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

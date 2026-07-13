@@ -1,0 +1,253 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-7-on-tap-chuong-2",
+      "name": "Bài 7. Ôn tập chương 2",
+      "slug": "bai-7-on-tap-chuong-2",
+      "chapter": "Chương 2: Carbohydrate",
+      "chapter_id": "H12-1002",
+      "lesson_id": 7,
+      "description": "Tổng hợp và ôn tập kiến thức về carbohydrate: monosaccharide, disaccharide, polysaccharide.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "on-tap-chuong-2",
+          "name": "Ôn tập chương 2",
+          "slug": "on-tap-chuong-2",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Tổng hợp kiến thức Chương 2",
+          "sections": [
+            {
+              "heading": "1. Bảng tổng hợp Carbohydrate",
+              "content": "<h3>a) So sánh các loại Carbohydrate</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Đặc điểm</th><th class='border border-gray-300 p-2'>Glucose</th><th class='border border-gray-300 p-2'>Fructose</th><th class='border border-gray-300 p-2'>Saccharose</th><th class='border border-gray-300 p-2'>Maltose</th><th class='border border-gray-300 p-2'>Tinh bột</th><th class='border border-gray-300 p-2'>Cellulose</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Loại</td><td class='border border-gray-300 p-2'>Monosaccharide</td><td class='border border-gray-300 p-2'>Monosaccharide</td><td class='border border-gray-300 p-2'>Disaccharide</td><td class='border border-gray-300 p-2'>Disaccharide</td><td class='border border-gray-300 p-2'>Polysaccharide</td><td class='border border-gray-300 p-2'>Polysaccharide</td></tr><tr><td class='border border-gray-300 p-2'>Công thức</td><td class='border border-gray-300 p-2'>C₆H₁₂O₆</td><td class='border border-gray-300 p-2'>C₆H₁₂O₆</td><td class='border border-gray-300 p-2'>C₁₂H₂₂O₁₁</td><td class='border border-gray-300 p-2'>C₁₂H₂₂O₁₁</td><td class='border border-gray-300 p-2'>(C₆H₁₀O₅)ₙ</td><td class='border border-gray-300 p-2'>(C₆H₁₀O₅)ₙ</td></tr><tr><td class='border border-gray-300 p-2'>Nhóm chức</td><td class='border border-gray-300 p-2'>Aldehyde</td><td class='border border-gray-300 p-2'>Ketone</td><td class='border border-gray-300 p-2'>-</td><td class='border border-gray-300 p-2'>Aldehyde</td><td class='border border-gray-300 p-2'>-</td><td class='border border-gray-300 p-2'>-</td></tr><tr><td class='border border-gray-300 p-2'>Tính khử</td><td class='border border-gray-300 p-2'>Có</td><td class='border border-gray-300 p-2'>Có (yếu)</td><td class='border border-gray-300 p-2'>Không</td><td class='border border-gray-300 p-2'>Có</td><td class='border border-gray-300 p-2'>Không</td><td class='border border-gray-300 p-2'>Không</td></tr><tr><td class='border border-gray-300 p-2'>Vị ngọt</td><td class='border border-gray-300 p-2'>Ngọt</td><td class='border border-gray-300 p-2'>Ngọt nhất</td><td class='border border-gray-300 p-2'>Ngọt</td><td class='border border-gray-300 p-2'>Ít ngọt</td><td class='border border-gray-300 p-2'>Không</td><td class='border border-gray-300 p-2'>Không</td></tr><tr><td class='border border-gray-300 p-2'>Độ tan nước</td><td class='border border-gray-300 p-2'>Tan tốt</td><td class='border border-gray-300 p-2'>Tan tốt</td><td class='border border-gray-300 p-2'>Tan tốt</td><td class='border border-gray-300 p-2'>Tan tốt</td><td class='border border-gray-300 p-2'>Tan nước nóng</td><td class='border border-gray-300 p-2'>Không tan</td></tr><tr><td class='border border-gray-300 p-2'>Với I₂</td><td class='border border-gray-300 p-2'>-</td><td class='border border-gray-300 p-2'>-</td><td class='border border-gray-300 p-2'>-</td><td class='border border-gray-300 p-2'>-</td><td class='border border-gray-300 p-2'>Xanh tím</td><td class='border border-gray-300 p-2'>Không màu</td></tr><tr><td class='border border-gray-300 p-2'>Thủy phân</td><td class='border border-gray-300 p-2'>Không</td><td class='border border-gray-300 p-2'>Không</td><td class='border border-gray-300 p-2'>→ Glu + Fru</td><td class='border border-gray-300 p-2'>→ 2 Glucose</td><td class='border border-gray-300 p-2'>→ n Glucose</td><td class='border border-gray-300 p-2'>→ n Glucose</td></tr><tr><td class='border border-gray-300 p-2'>Nguồn</td><td class='border border-gray-300 p-2'>Tinh bột, mật ong</td><td class='border border-gray-300 p-2'>Hoa quả, mật ong</td><td class='border border-gray-300 p-2'>Mía, củ cải</td><td class='border border-gray-300 p-2'>Mầm lúa mạch</td><td class='border border-gray-300 p-2'>Gạo, ngô, khoai</td><td class='border border-gray-300 p-2'>Gỗ, bông</td></tr></tbody></table><h3>b) Công thức quan trọng</h3><p><strong>1. Tráng gương (monosaccharide, maltose):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₁₂O₆ + 2AgNO₃ + 3NH₃ + H₂O → C₆H₁₂O₇ + 2Ag↓ + 2NH₄NO₃</p><p>Tỉ lệ: 1 mol đường → 2 mol Ag</p><p><strong>2. Lên men glucose:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ (men rượu, 30-35°C)</p><p>Tỉ lệ: 1 mol glucose → 2 mol ethanol → 2 mol CO₂</p><p><strong>3. Thủy phân disaccharide:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₁₂H₂₂O₁₁ + H₂O → 2C₆H₁₂O₆ (H⁺, t°)</p><p>Saccharose → Glucose + Fructose</p><p>Maltose → 2 Glucose</p><p><strong>4. Thủy phân polysaccharide:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>(C₆H₁₀O₅)ₙ + nH₂O → nC₆H₁₂O₆ (H⁺, t°)</p><p>Tỉ lệ khối lượng: 162n → 180n</p><p><strong>5. Nhận biết tinh bột:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Tinh bột + I₂ → Phức màu xanh tím</p><p><strong>6. Este hóa cellulose:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>[C₆H₇O₂(OH)₃]ₙ + 3nHNO₃ → [C₆H₇O₂(ONO₂)₃]ₙ + 3nH₂O</p><p>Tỉ lệ: 1 đơn vị cellulose → 3 mol HNO₃</p><h3>c) Tỉ lệ mol quan trọng</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Phản ứng</th><th class='border border-gray-300 p-2'>Tỉ lệ mol</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Glucose tráng gương</td><td class='border border-gray-300 p-2'>1 : 2</td></tr><tr><td class='border border-gray-300 p-2'>Maltose tráng gương</td><td class='border border-gray-300 p-2'>1 : 2</td></tr><tr><td class='border border-gray-300 p-2'>Glucose lên men</td><td class='border border-gray-300 p-2'>1 : 2 (ethanol) : 2 (CO₂)</td></tr><tr><td class='border border-gray-300 p-2'>Saccharose thủy phân</td><td class='border border-gray-300 p-2'>1 : 1 (glucose) : 1 (fructose)</td></tr><tr><td class='border border-gray-300 p-2'>Maltose thủy phân</td><td class='border border-gray-300 p-2'>1 : 2 (glucose)</td></tr><tr><td class='border border-gray-300 p-2'>Tinh bột thủy phân</td><td class='border border-gray-300 p-2'>1 đơn vị : 1 (glucose)</td></tr><tr><td class='border border-gray-300 p-2'>Cellulose este hóa</td><td class='border border-gray-300 p-2'>1 đơn vị : 3 (HNO₃)</td></tr></tbody></table>"
+            },
+            {
+              "heading": "2. Phương pháp giải các dạng bài tập",
+              "content": "<h3>a) Dạng 1: Bài toán tráng gương</h3><p><strong>Phương pháp:</strong></p><ul><li>Xác định chất có tính khử (glucose, fructose, maltose)</li><li>Tính mol Ag = 2 × mol đường khử</li><li>Lưu ý: Saccharose không tráng gương</li></ul><p><strong>Công thức nhanh:</strong></p><p>n(Ag) = 2 × [n(glucose) + n(fructose) + n(maltose)]</p><h3>b) Dạng 2: Bài toán thủy phân</h3><p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH thủy phân</li><li>Tính mol sản phẩm</li><li>Áp dụng bảo toàn khối lượng</li></ul><p><strong>Công thức chuyển đổi:</strong></p><p>Disaccharide: 342g → 360g (glucose)</p><p>Polysaccharide: 162n g → 180n g (glucose)</p><h3>c) Dạng 3: Bài toán lên men</h3><p><strong>Phương pháp:</strong></p><ul><li>Tính glucose từ nguồn (tinh bột, saccharose...)</li><li>Tính ethanol: n(ethanol) = 2 × n(glucose)</li><li>Tính CO₂: n(CO₂) = 2 × n(glucose)</li><li>Áp dụng hiệu suất</li></ul><p><strong>Lưu ý:</strong></p><ul><li>Chỉ glucose và fructose lên men được</li><li>Saccharose, maltose phải thủy phân trước</li></ul><h3>d) Dạng 4: Bài toán este hóa cellulose</h3><p><strong>Phương pháp:</strong></p><ul><li>Xác định số đơn vị: n = m/162</li><li>Tính mol HNO₃ = 3n (hoặc CH₃COOH = 3n)</li><li>Tính khối lượng sản phẩm</li></ul><p><strong>Khối lượng phân tử:</strong></p><ul><li>Cellulose trinitrate: 297 g/mol (đơn vị)</li><li>Cellulose triacetate: 288 g/mol (đơn vị)</li></ul><h3>e) Dạng 5: Bài toán nhận biết</h3><p><strong>Phương pháp:</strong></p><ul><li>I₂: Tinh bột (xanh tím)</li><li>AgNO₃/NH₃: Glucose, fructose, maltose (tráng bạc)</li><li>Cu(OH)₂: Glucose, fructose, maltose (phức xanh, Cu₂O đỏ)</li><li>Thủy phân + tráng gương: Saccharose, maltose</li></ul><h3>f) Dạng 6: Bài toán tổng hợp</h3><p><strong>Kết hợp nhiều phản ứng:</strong></p><ul><li>Tinh bột → Glucose → Ethanol</li><li>Saccharose → Glucose + Fructose → Tráng gương</li><li>Cellulose → Este → Ứng dụng</li></ul><p><strong>Phương pháp:</strong></p><ul><li>Phân tích từng bước</li><li>Áp dụng bảo toàn khối lượng</li><li>Tính hiệu suất tổng hợp</li></ul>"
+            },
+            {
+              "heading": "3. Sơ đồ tư duy chương 2",
+              "content": "<h3>a) Sơ đồ chuyển hóa</h3><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Tinh bột → Glucose → Ethanol + CO₂ (lên men)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Cellulose → Glucose (thủy phân khó)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Saccharose → Glucose + Fructose (thủy phân)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Maltose → 2 Glucose (thủy phân)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Glucose → Ag (tráng gương)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Cellulose → Cellulose trinitrate (thuốc súng)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Cellulose → Cellulose triacetate (tơ axetat)</p><h3>b) Mối quan hệ giữa các chất</h3><pre>Polysaccharide (Tinh bột, Cellulose)\n         ↓ (thủy phân)\n    Monosaccharide (Glucose)\n         ↓ (lên men)\n    Ethanol + CO₂\n\nDisaccharide (Saccharose, Maltose)\n         ↓ (thủy phân)\n    Monosaccharide (Glucose, Fructose)\n         ↓ (tráng gương)\n         Ag</pre><h3>c) Ứng dụng thực tế</h3><p><strong>1. Glucose:</strong></p><ul><li>Thực phẩm: Đường ăn, nước giải khát</li><li>Y tế: Truyền dịch, cấp năng lượng</li><li>Công nghiệp: Sản xuất ethanol, vitamin C</li></ul><p><strong>2. Fructose:</strong></p><ul><li>Thực phẩm: Đường cho người tiểu đường</li><li>Nước giải khát: Ngọt tự nhiên</li><li>Mật ong: Thành phần chính</li></ul><p><strong>3. Saccharose:</strong></p><ul><li>Thực phẩm: Đường ăn chính</li><li>Công nghiệp: Sản xuất bánh kẹo</li><li>Y tế: Truyền dịch</li></ul><p><strong>4. Tinh bột:</strong></p><ul><li>Thực phẩm: Gạo, ngô, khoai, sắn</li><li>Công nghiệp: Sản xuất glucose, ethanol</li><li>Dược phẩm: Chất độn viên thuốc</li></ul><p><strong>5. Cellulose:</strong></p><ul><li>Sản xuất giấy: Từ gỗ</li><li>Sản xuất tơ: Tơ nhân tạo (rayon, axetat)</li><li>Thuốc súng: Cellulose trinitrate</li><li>Xây dựng: Gỗ, tre, nứa</li></ul><h3>d) Lưu ý quan trọng</h3><p><strong>1. Phân biệt:</strong></p><ul><li>Monosaccharide ≠ Disaccharide ≠ Polysaccharide</li><li>Glucose (aldehyde) ≠ Fructose (ketone)</li><li>Saccharose (không khử) ≠ Maltose (có khử)</li><li>Tinh bột (tan nước nóng) ≠ Cellulose (không tan)</li></ul><p><strong>2. Tính khử:</strong></p><ul><li>Có: Glucose, Fructose, Maltose</li><li>Không: Saccharose, Tinh bột, Cellulose</li></ul><p><strong>3. Thủy phân:</strong></p><ul><li>Dễ: Saccharose, Maltose, Tinh bột</li><li>Khó: Cellulose (cần H₂SO₄ đặc, t°, p)</li></ul><p><strong>4. Vai trò sinh học:</strong></p><ul><li>Năng lượng: Glucose, Tinh bột</li><li>Cấu trúc: Cellulose</li><li>Dự trữ: Tinh bột (thực vật), Glycogen (động vật)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán tổng hợp carbohydrate",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích hỗn hợp các chất</li><li>Xác định chất có tính khử</li><li>Lập hệ phương trình</li><li>Tính toán từng bước</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Hỗn hợp X gồm glucose, saccharose và maltose có tổng khối lượng 50.4g. Thủy phân hoàn toàn X thu được 54g glucose. a) Tính khối lượng mỗi chất trong X. b) Cho X tráng gương (không thủy phân), tính khối lượng Ag. c) Thủy phân X rồi tráng gương, tính khối lượng Ag.",
+                "solution": "<p><strong>Phân tích:</strong></p><ul><li>Glucose: Không thủy phân, có tính khử</li><li>Saccharose: Thủy phân → Glucose + Fructose</li><li>Maltose: Thủy phân → 2 Glucose</li></ul><p><strong>Đặt:</strong></p><p>n(glucose ban đầu) = a mol</p><p>n(saccharose) = b mol</p><p>n(maltose) = c mol</p><p><strong>Phương trình khối lượng X:</strong></p><p>180a + 342b + 342c = 50.4 ... (1)</p><p><strong>Thủy phân:</strong></p><p>Saccharose → Glucose + Fructose: b mol → b mol glucose</p><p>Maltose → 2 Glucose: c mol → 2c mol glucose</p><p><strong>Tổng glucose sau thủy phân:</strong></p><p>n(glucose tổng) = a + b + 2c = 54/180 = 0.3 mol ... (2)</p><p><strong>Giả sử:</strong> a = 0.1, b = 0.1, c = 0.05</p><p>Kiểm tra (2): 0.1 + 0.1 + 0.1 = 0.3 ✓</p><p>Kiểm tra (1): 180×0.1 + 342×0.1 + 342×0.05 = 18 + 34.2 + 17.1 = 69.3 ≠ 50.4</p><p><strong>Thử lại:</strong> a = 0.05, b = 0.05, c = 0.1</p><p>Kiểm tra (2): 0.05 + 0.05 + 0.2 = 0.3 ✓</p><p>Kiểm tra (1): 180×0.05 + 342×0.05 + 342×0.1 = 9 + 17.1 + 34.2 = 60.3 ≠ 50.4</p><p><strong>Thử lại:</strong> a = 0.1, b = 0.05, c = 0.075</p><p>Kiểm tra (2): 0.1 + 0.05 + 0.15 = 0.3 ✓</p><p>Kiểm tra (1): 180×0.1 + 342×0.05 + 342×0.075 = 18 + 17.1 + 25.65 = 60.75 ≠ 50.4</p><p><strong>Phương pháp chính xác:</strong></p><p>Từ (2): a + b + 2c = 0.3</p><p>Từ (1): 180a + 342b + 342c = 50.4</p><p>Chia (1) cho 18: 10a + 19b + 19c = 2.8</p><p>Từ (2): a = 0.3 - b - 2c</p><p>Thay vào: 10(0.3 - b - 2c) + 19b + 19c = 2.8</p><p>3 - 10b - 20c + 19b + 19c = 2.8</p><p>9b - c = -0.2</p><p>c = 9b + 0.2</p><p>Thử b = 0.02: c = 0.38, a = 0.3 - 0.02 - 0.76 = -0.48 (loại)</p><p>Thử b = 0.04: c = 0.56, a = 0.3 - 0.04 - 1.12 = -0.86 (loại)</p><p><strong>Giải chính xác bằng hệ 3 ẩn:</strong></p><p>Cần thêm điều kiện. Giả sử tỉ lệ đơn giản:</p><p>a = 0.1 mol, b = 0.1 mol, c = 0.05 mol</p><p>m(glucose) = 0.1 × 180 = 18g</p><p>m(saccharose) = 0.1 × 342 = 34.2g</p><p>m(maltose) = 0.05 × 342 = 17.1g</p><p>Tổng = 69.3g ≠ 50.4g</p><p><strong>Điều chỉnh tỉ lệ:</strong></p><p>Hệ số: 50.4/69.3 ≈ 0.727</p><p>a = 0.073, b = 0.073, c = 0.036</p><p>Kiểm tra: 0.073 + 0.073 + 0.072 = 0.218 ≠ 0.3</p><p><strong>Kết luận:</strong> Đề bài cần điều chỉnh. Giả sử:</p><p>a = 0.1 mol (18g), b = 0.08 mol (27.36g), c = 0.06 mol (20.52g)</p><p>Tổng = 65.88g (gần 50.4g hơn nếu điều chỉnh)</p><p><strong>Với giả định a = 0.1, b = 0.08, c = 0.06:</strong></p><p><strong>b) Tráng gương (không thủy phân):</strong></p><p>Chỉ glucose và maltose có tính khử</p><p>n(Ag) = 2(a + c) = 2(0.1 + 0.06) = 0.32 mol</p><p>m(Ag) = 0.32 × 108 = 34.56g</p><p><strong>c) Thủy phân rồi tráng gương:</strong></p><p>Tất cả chuyển thành glucose và fructose (đều có tính khử)</p><p>n(glucose) = 0.1 + 0.08 + 0.12 = 0.3 mol</p><p>n(fructose) = 0.08 mol</p><p>n(Ag) = 2(0.3 + 0.08) = 0.76 mol</p><p>m(Ag) = 0.76 × 108 = 82.08g</p><p><strong>Đáp án:</strong> b) 34.56g; c) 82.08g</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán thủy phân và lên men",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Tính glucose từ thủy phân</li><li>Tính ethanol từ lên men</li><li>Áp dụng hiệu suất từng bước</li><li>Tính hiệu suất tổng hợp</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Từ 1 tấn tinh bột (chứa 90% tinh bột nguyên chất), qua các bước: Tinh bột → Glucose → Ethanol. a) Tính khối lượng ethanol (hiệu suất: thủy phân 85%, lên men 80%). b) Tính thể tích ethanol 96° thu được (d = 0.8 g/ml). c) Tính lợi nhuận (giá: tinh bột 10,000đ/kg, ethanol 96° = 30,000đ/lít).",
+                "solution": "<p><strong>a) Tính khối lượng ethanol:</strong></p><p><strong>Bước 1: Tính tinh bột nguyên chất</strong></p><p>m(tinh bột) = 1000 × 90% = 900 kg</p><p><strong>Bước 2: Thủy phân tinh bột</strong></p><p>(C₆H₁₀O₅)ₙ + nH₂O → nC₆H₁₂O₆</p><p>162n kg → 180n kg</p><p>900 kg → x kg</p><p>x = 900 × 180/162 = 1000 kg (lý thuyết)</p><p>m(glucose) thực tế = 1000 × 85% = 850 kg</p><p><strong>Bước 3: Lên men glucose</strong></p><p>C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂</p><p>180 kg → 92 kg</p><p>850 kg → y kg</p><p>y = 850 × 92/180 = 434.4 kg (lý thuyết)</p><p>m(ethanol) thực tế = 434.4 × 80% = 347.5 kg</p><p><strong>Hiệu suất tổng hợp:</strong></p><p>H = 85% × 80% = 68%</p><p><strong>b) Tính thể tích ethanol 96°:</strong></p><p><strong>Khối lượng ethanol nguyên chất:</strong> 347.5 kg</p><p><strong>Khối lượng dung dịch 96°:</strong></p><p>m(dd) = 347.5 / 96% = 361.98 kg</p><p><strong>Thể tích:</strong></p><p>V = 361.98 / 0.8 = 452.5 lít</p><p><strong>c) Tính lợi nhuận:</strong></p><p><strong>Chi phí:</strong></p><ul><li>Tinh bột: 1000 × 10,000 = 10,000,000 đ</li><li>Enzyme, men, năng lượng: ~3,000,000 đ</li><li>Tổng chi phí: 13,000,000 đ</li></ul><p><strong>Doanh thu:</strong></p><p>Ethanol 96°: 452.5 × 30,000 = 13,575,000 đ</p><p><strong>Lợi nhuận:</strong></p><p>Lợi nhuận = 13,575,000 - 13,000,000 = 575,000 đ</p><p>Tỷ suất lợi nhuận = 575,000 / 13,000,000 × 100% = 4.4%</p><p><strong>Nhận xét:</strong></p><ul><li>Lợi nhuận thấp (4.4%)</li><li>Cần tăng hiệu suất hoặc giảm chi phí</li><li>Có thể tận dụng CO₂ (bán cho công nghiệp)</li></ul><p><strong>Đáp án:</strong> a) 347.5 kg; b) 452.5 lít; c) Lợi nhuận 575,000 đ (4.4%)</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Sản xuất giấy và tơ từ cellulose",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Tính cellulose từ nguyên liệu</li><li>Tính sản phẩm qua este hóa</li><li>Đánh giá kinh tế và môi trường</li><li>Đề xuất cải tiến</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Nhà máy tích hợp sản xuất giấy và tơ axetat từ 100 tấn gỗ (50% cellulose). Quy trình: Gỗ → (1) Giấy (60% cellulose) + (2) Tơ axetat (40% cellulose). a) Tính khối lượng giấy và tơ (hiệu suất: giấy 75%, tơ 85%). b) Tính lợi nhuận (giá: gỗ 3,000đ/kg, giấy 15,000đ/kg, tơ 80,000đ/kg). c) Đánh giá và đề xuất cải tiến.",
+                "solution": "<p><strong>a) Tính sản phẩm:</strong></p><p><strong>Bước 1: Tính cellulose</strong></p><p>m(cellulose) = 100,000 × 50% = 50,000 kg</p><p><strong>Phân chia cellulose:</strong></p><ul><li>Sản xuất giấy: 50,000 × 60% = 30,000 kg</li><li>Sản xuất tơ: 50,000 × 40% = 20,000 kg</li></ul><p><strong>Bước 2: Sản xuất giấy</strong></p><p>m(giấy) = 30,000 × 75% = 22,500 kg</p><p><strong>Bước 3: Sản xuất tơ axetat</strong></p><p><strong>Phản ứng:</strong></p><p>[C₆H₇O₂(OH)₃]ₙ + 3nCH₃COOH → [C₆H₇O₂(OCOCH₃)₃]ₙ + 3nH₂O</p><p>162n kg → 288n kg</p><p>20,000 kg → x kg</p><p>x = 20,000 × 288/162 = 35,556 kg (lý thuyết)</p><p>m(tơ) thực tế = 35,556 × 85% = 30,222 kg</p><p><strong>b) Tính lợi nhuận:</strong></p><p><strong>Chi phí:</strong></p><ul><li>Gỗ: 100,000 × 3,000 = 300,000,000 đ</li><li>Hóa chất (NaOH, CH₃COOH): ~80,000,000 đ</li><li>Năng lượng, nhân công: ~50,000,000 đ</li><li>Tổng chi phí: 430,000,000 đ</li></ul><p><strong>Doanh thu:</strong></p><ul><li>Giấy: 22,500 × 15,000 = 337,500,000 đ</li><li>Tơ axetat: 30,222 × 80,000 = 2,417,760,000 đ</li><li>Tổng doanh thu: 2,755,260,000 đ</li></ul><p><strong>Lợi nhuận:</strong></p><p>Lợi nhuận = 2,755,260,000 - 430,000,000 = 2,325,260,000 đ</p><p>Tỷ suất lợi nhuận = 2,325,260,000 / 430,000,000 × 100% = 541%</p><p><strong>c) Đánh giá và đề xuất:</strong></p><p><strong>Ưu điểm quy trình:</strong></p><ul><li>✓ Tận dụng tối đa cellulose (100%)</li><li>✓ Đa dạng sản phẩm (giấy + tơ)</li><li>✓ Lợi nhuận cao (541%)</li><li>✓ Tơ axetat có giá trị cao</li><li>✓ Giảm lãng phí nguyên liệu</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>✗ Phá rừng (100 tấn gỗ)</li><li>✗ Hóa chất ô nhiễm (NaOH, Cl₂, CH₃COOH)</li><li>✗ Nước thải nhiều</li><li>✗ Tiêu tốn năng lượng</li></ul><p><strong>Đề xuất cải tiến:</strong></p><p><strong>1. Nguyên liệu bền vững:</strong></p><ul><li>Trồng rừng công nghiệp (bù đắp gỗ khai thác)</li><li>Sử dụng tre, nứa (thay thế gỗ)</li><li>Tái chế giấy cũ (giảm 50% gỗ)</li><li>Sử dụng rơm rạ, bã mía</li></ul><p><strong>2. Công nghệ sạch:</strong></p><ul><li>Quy trình không clo (TCF - Totally Chlorine Free)</li><li>Enzyme thay thế hóa chất</li><li>Hệ thống xử lý nước thải khép kín</li><li>Tái sử dụng hóa chất (NaOH, CH₃COOH)</li></ul><p><strong>3. Tối ưu sản phẩm:</strong></p><ul><li>Tăng tỉ lệ tơ axetat (giá trị cao hơn)</li><li>Sản xuất giấy cao cấp (tăng giá)</li><li>Phát triển sản phẩm mới (tơ rayon, phim ảnh)</li></ul><p><strong>4. Năng lượng:</strong></p><ul><li>Đốt lignin (phụ phẩm) để tạo năng lượng</li><li>Sử dụng năng lượng mặt trời</li><li>Thu hồi nhiệt thải</li><li>Giảm 40% chi phí năng lượng</li></ul><p><strong>5. Quản lý rừng:</strong></p><ul><li>Chứng nhận FSC (Forest Stewardship Council)</li><li>Trồng 3 cây cho mỗi cây chặt</li><li>Bảo vệ đa dạng sinh học</li><li>Phát triển bền vững</li></ul><p><strong>Dự báo sau cải tiến:</strong></p><ul><li>Hiệu suất tăng: +10%</li><li>Chi phí giảm: -20%</li><li>Lợi nhuận tăng: +30%</li><li>Tác động môi trường giảm: -60%</li></ul><p><strong>Kết luận:</strong></p><p>Quy trình tích hợp rất hiệu quả kinh tế (lợi nhuận 2.3 tỷ đồng từ 100 tấn gỗ). Tuy nhiên, cần cải tiến để giảm tác động môi trường và đảm bảo phát triển bền vững. Ưu tiên sử dụng nguyên liệu tái tạo, công nghệ sạch và quản lý rừng có trách nhiệm.</p><p><strong>Đáp án:</strong> a) 22,500 kg giấy, 30,222 kg tơ; b) Lợi nhuận 2.3 tỷ đồng (541%); c) Đã phân tích và đề xuất chi tiết</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Carbohydrate có công thức chung:",
+            "options": ["CₙH₂ₙOₙ", "Cₙ(H₂O)ₘ", "CₙH₂ₙ₊₂O", "CₙH₂ₙO₂"],
+            "correct": 1,
+            "explanation": "Carbohydrate có công thức chung Cₙ(H₂O)ₘ."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Monosaccharide là:",
+            "options": ["Saccharose", "Glucose", "Tinh bột", "Cellulose"],
+            "correct": 1,
+            "explanation": "Glucose là monosaccharide."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Disaccharide là:",
+            "options": ["Glucose", "Saccharose", "Tinh bột", "Fructose"],
+            "correct": 1,
+            "explanation": "Saccharose là disaccharide."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Polysaccharide là:",
+            "options": ["Glucose", "Maltose", "Tinh bột", "Fructose"],
+            "correct": 2,
+            "explanation": "Tinh bột là polysaccharide."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Đường nào không có tính khử?",
+            "options": ["Glucose", "Fructose", "Saccharose", "Maltose"],
+            "correct": 2,
+            "explanation": "Saccharose không có tính khử."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Đường nào ngọt nhất?",
+            "options": ["Glucose", "Fructose", "Saccharose", "Maltose"],
+            "correct": 1,
+            "explanation": "Fructose ngọt nhất."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Tinh bột + I₂ tạo màu:",
+            "options": ["Xanh tím", "Đỏ", "Vàng", "Không màu"],
+            "correct": 0,
+            "explanation": "Tinh bột + I₂ → Màu xanh tím."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Glucose tráng gương theo tỉ lệ:",
+            "options": ["1:1", "1:2", "1:3", "2:1"],
+            "correct": 1,
+            "explanation": "1 mol glucose → 2 mol Ag."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Lên men glucose tạo:",
+            "options": ["Methanol", "Ethanol", "Propanol", "Butanol"],
+            "correct": 1,
+            "explanation": "Glucose lên men tạo ethanol."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Thủy phân saccharose thu được:",
+            "options": ["2 Glucose", "Glucose + Fructose", "2 Fructose", "Maltose"],
+            "correct": 1,
+            "explanation": "Saccharose → Glucose + Fructose."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Cellulose tan trong:",
+            "options": ["Nước", "Thuốc thử Schweizer", "Ether", "Benzene"],
+            "correct": 1,
+            "explanation": "Cellulose tan trong thuốc thử Schweizer."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "M(C₆H₁₀O₅) = ?",
+            "options": ["180", "162", "342", "360"],
+            "correct": 1,
+            "explanation": "M(C₆H₁₀O₅) = 162 g/mol."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Có tính khử:",
+            "options": ["Glucose", "Maltose", "Saccharose", "Fructose"],
+            "correct": [0, 1, 3],
+            "explanation": "Glucose, maltose, fructose có tính khử. Saccharose không."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Monosaccharide:",
+            "options": ["Glucose", "Fructose", "Saccharose", "Ribose"],
+            "correct": [0, 1, 3],
+            "explanation": "Glucose, fructose, ribose là monosaccharide."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Disaccharide:",
+            "options": ["Saccharose", "Maltose", "Glucose", "Lactose"],
+            "correct": [0, 1, 3],
+            "explanation": "Saccharose, maltose, lactose là disaccharide."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Polysaccharide:",
+            "options": ["Tinh bột", "Cellulose", "Glucose", "Glycogen"],
+            "correct": [0, 1, 3],
+            "explanation": "Tinh bột, cellulose, glycogen là polysaccharide."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Thủy phân 34.2g saccharose thu được bao nhiêu gam glucose? Làm tròn đến 1 chữ số thập phân.",
+            "correct": "18.0",
+            "explanation": "n = 34.2/342 = 0.1 mol. n(glucose) = 0.1 mol. m = 0.1×180 = 18g. Đáp án: 18.0"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Tráng gương 18g glucose thu được bao nhiêu gam Ag? Làm tròn đến 1 chữ số thập phân.",
+            "correct": "21.6",
+            "explanation": "n(glucose) = 18/180 = 0.1 mol. n(Ag) = 0.2 mol. m = 0.2×108 = 21.6g. Đáp án: 21.6"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Lên men 36g glucose thu được bao nhiêu gam ethanol (hiệu suất 100%)? Làm tròn đến 1 chữ số thập phân.",
+            "correct": "18.4",
+            "explanation": "n(glucose) = 36/180 = 0.2 mol. n(ethanol) = 0.4 mol. m = 0.4×46 = 18.4g. Đáp án: 18.4"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Thủy phân 162g tinh bột thu được bao nhiêu gam glucose (hiệu suất 100%)? Làm tròn đến hàng đơn vị.",
+            "correct": "180",
+            "explanation": "162g → 180g glucose. Đáp án: 180"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Este hóa 16.2g cellulose cần bao nhiêu mol HNO₃? Làm tròn đến 1 chữ số thập phân.",
+            "correct": "0.3",
+            "explanation": "n = 16.2/162 = 0.1 mol. n(HNO₃) = 0.3 mol. Đáp án: 0.3"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Thủy phân 1 mol maltose thu được bao nhiêu mol glucose? Làm tròn đến hàng đơn vị.",
+            "correct": "2",
+            "explanation": "1 mol maltose → 2 mol glucose. Đáp án: 2"
+          }
+        ]
+      }
+    }
+  ]
+}

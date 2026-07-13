@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-22-phan-ung-hat-nhan-nang-luong-lien-ket",
+      "name": "Bài 22. Phản ứng hạt nhân và năng lượng liên kết",
+      "slug": "bai-22-phan-ung-hat-nhan-nang-luong-lien-ket",
+      "chapter": "Chương 4. Vật lí hạt nhân",
+      "chapter_id": "LY12-4",
+      "lesson_id": 22,
+      "description": "Nghiên cứu về phản ứng hạt nhân, năng lượng liên kết và năng lượng tỏa ra trong phản ứng.",
+      "duration_minutes": 45,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "pulkl-1",
+          "name": "Phản ứng hạt nhân",
+          "slug": "phan-ung-hat-nhan",
+          "difficulty": "medium"
+        },
+        {
+          "id": "pulkl-2",
+          "name": "Năng lượng liên kết",
+          "slug": "nang-luong-lien-ket",
+          "difficulty": "medium"
+        },
+        {
+          "id": "pulkl-3",
+          "name": "Phản ứng phân hạch và nhiệt hạch",
+          "slug": "phan-hach-nhiet-hach",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Phản ứng hạt nhân và Năng lượng liên kết",
+          "sections": [
+            {
+              "heading": "1. Phản ứng hạt nhân",
+              "content": "<p><strong>Định nghĩa:</strong> Phản ứng hạt nhân là quá trình biến đổi của các hạt nhân.</p><p><strong>Phương trình phản ứng hạt nhân:</strong></p><p>$$^A_1X_1 + ^A_2X_2 \\rightarrow ^A_3X_3 + ^A_4X_4$$</p><p><strong>Đặc điểm:</strong></p><ul><li>Bảo toàn số nuclon (số khối A)</li><li>Bảo toàn điện tích (Z)</li><li>Bảo toàn năng lượng và động lượng</li></ul><p><strong>Các loại phản ứng:</strong></p><ul><li>Phản ứng tổng hợp (nhiệt hạch)</li><li>Phản ứng phân hạch</li><li>Phản ứng phóng xạ</li></ul>"
+            },
+            {
+              "heading": "2. Năng lượng liên kết",
+              "content": "<p><strong>Năng lượng liên kết (E_lk):</strong> Là năng lượng cần thiết để phá vỡ hạt nhân thành các nuclon riêng biệt.</p><p>$$E_{lk} = [Z.m_p + (A-Z).m_n - m_X].c^2$$</p><p><strong>Độ hụt khối:</strong></p><p>$$\\Delta m = [Z.m_p + (A-Z).m_n] - m_X$$</p><p>$$E_{lk} = \\Delta m.c^2$$</p><p><strong>Năng lượng liên kết riêng:</strong></p><p>$$\\varepsilon = \\frac{E_{lk}}{A}$$</p><p>Năng lượng liên kết riêng đặc trưng cho sự bền vững của hạt nhân. Hạt nhân có năng lượng liên kết riêng lớn hơn thì bền hơn.</p>"
+            },
+            {
+              "heading": "3. Phản ứng phân hạch",
+              "content": "<p><strong>Phản ứng phân hạch:</strong> Là phản ứng trong đó hạt nhân nặng vỡ thành hai hạt nhân nhẹ hơn khi hấp thụ neutron.</p><p><strong>Ví dụ:</strong></p><p>$$^{235}_{92}U + ^1_0n \\rightarrow ^{236}_{92}U^* \\rightarrow ^{141}_{56}Ba + ^{92}_{36}Kr + 3^1_0n$$</p><p><strong>Đặc điểm:</strong></p><ul><li>Giải phóng năng lượng lớn (khoảng 200 MeV/phản ứng)</li><li>Giải phóng 2-3 neutron</li><li>Có thể tạo phản ứng dây chuyền</li></ul>"
+            },
+            {
+              "heading": "4. Phản ứng nhiệt hạch",
+              "content": "<p><strong>Phản ứng nhiệt hạch:</strong> Là phản ứng tổng hợp hai hạt nhân nhẹ thành hạt nhân nặng hơn ở nhiệt độ rất cao.</p><p><strong>Ví dụ:</strong></p><p>$$^2_1H + ^3_1H \\rightarrow ^4_2He + ^1_0n + 17,6 \\text{ MeV}$$</p><p><strong>Đặc điểm:</strong></p><ul><li>Tỏa năng lượng lớn hơn phân hạch tính theo khối lượng</li><li>Cần nhiệt độ rất cao (hàng triệu độ)</li><li>Không gây ô nhiễm phóng xạ</li></ul><p><strong>Ứng dụng:</strong> Năng lượng Mặt Trời, hydro bom</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính năng lượng liên kết",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>E_lk = Δm.c²</li><li>Δm = [Z.m_p + N.m_n] - m_X</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tính năng lượng liên kết của hạt nhân ^4_2He. Biết m_He = 4,0026 u, m_p = 1,00728 u, m_n = 1,00867 u.",
+                "solution": "<p><strong>Giải:</strong></p><p>Δm = 2.1,00728 + 2.1,00867 - 4,0026 = 0,0303 u</p><p>E_lk = 0,0303.931,5 = 28,3 MeV</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Phản ứng phân hạch",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết phương trình</li><li>Tính năng lượng tỏa ra</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Tính năng lượng tỏa ra khi phân hạch 1 hạt nhân U235 biết tỏa 200 MeV.",
+                "solution": "<p><strong>Giải:</strong></p><p>E = 200 MeV = 200.1,6.10⁻¹³ = 3,2.10⁻¹¹ J</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Trong phản ứng hạt nhân có bảo toàn:",
+            "options": [
+              "Số nuclon",
+              "Điện tích",
+              "Năng lượng",
+              "Tất cả đều được bảo toàn"
+            ],
+            "correct": 3,
+            "explanation": "Phản ứng hạt nhân bảo toàn số nuclon, điện tích, năng lượng và động lượng"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Năng lượng liên kết là:",
+            "options": [
+              "Năng lượng cần để phá vỡ hạt nhân",
+              "Năng lượng tỏa ra khi tạo thành hạt nhân",
+              "Cả A và B đều đúng",
+              "Cả A và B đều sai"
+            ],
+            "correct": 2,
+            "explanation": "E_lk là năng lượng cần phá vỡ hoặc tỏa ra khi tạo hạt nhân"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Công thức năng lượng liên kết:",
+            "options": [
+              "E_lk = Δm.c²",
+              "E_lk = Δm/c²",
+              "E_lk = Δm.c",
+              "E_lk = m.c²"
+            ],
+            "correct": 0,
+            "explanation": "E_lk = Δm.c²"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Phản ứng phân hạch là:",
+            "options": [
+              "Hạt nhân nặng vỡ thành hạt nhân nhẹ",
+              "Hạt nhân nhẹ tổng hợp thành hạt nhân nặng",
+              "Hạt nhân phát ra tia phóng xạ",
+              "Hạt nhân kết hợp với electron"
+            ],
+            "correct": 0,
+            "explanation": "Phân hạch: hạt nhân nặng vỡ"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Phản ứng nhiệt hạch là:",
+            "options": [
+              "Tổng hợp hạt nhân nhẹ",
+              "Phân rã hạt nhân nặng",
+              "Phóng xạ",
+              "Tách hạt nhân"
+            ],
+            "correct": 0,
+            "explanation": "Nhiệt hạch: tổng hợp hạt nhân nhẹ"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "1 MeV bằng:",
+            "options": [
+              "1,6.10⁻¹³ J",
+              "1,6.10⁻¹⁹ J",
+              "1,6.10⁻¹⁶ J",
+              "1,6.10⁻²³ J"
+            ],
+            "correct": 0,
+            "explanation": "1 MeV = 1,6.10⁻¹³ J"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Độ hụt khối là:",
+            "options": [
+              "Chênh lệch khối lượng",
+              "Khối lượng bị mất",
+              "Hiệu số khối lượng thực và khối lượng nuclon",
+              "Cả A và C đều đúng"
+            ],
+            "correct": 2,
+            "explanation": "Δm = (Z.m_p + N.m_n) - m_X"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Năng lượng liên kết riêng đặc trưng cho:",
+            "options": [
+              "Độ bền vững hạt nhân",
+              "Kích thước hạt nhân",
+              "Số proton",
+              "Số neutron"
+            ],
+            "correct": 0,
+            "explanation": "Năng lượng liên kết riêng càng lớn, hạt nhân càng bền"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Phản ứng phân hạch U235 tỏa năng lượng:",
+            "options": [
+              "Khoảng 200 MeV",
+              "Khoảng 17 MeV",
+              "Khoảng 2 MeV",
+              "Khoảng 1000 MeV"
+            ],
+            "correct": 0,
+            "explanation": "Khoảng 200 MeV/phản ứng"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Phản ứng nhiệt hạch xảy ra ở:",
+            "options": [
+              "Nhiệt độ rất cao",
+              "Nhiệt độ thường",
+              "Nhiệt độ thấp",
+              "Áp suất thấp"
+            ],
+            "correct": 0,
+            "explanation": "Cần hàng triệu độ"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các loại phản ứng hạt nhân:",
+            "options": [
+              "Phân hạch",
+              "Nhiệt hạch",
+              "Phóng xạ",
+              "Tất cả đều đúng"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Tất cả đều là phản ứng hạt nhân"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Đặc điểm của phản ứng phân hạch:",
+            "options": [
+              "Tỏa nhiều năng lượng",
+              "Giải phóng neutron",
+              "Có thể tạo phản ứng dây chuyền",
+              "Cần nhiệt độ cao"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Phân hạch không cần nhiệt độ cao như nhiệt hạch"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Đặc điểm của phản ứng nhiệt hạch:",
+            "options": [
+              "Cần nhiệt độ rất cao",
+              "Tỏa năng lượng lớn hơn phân hạch theo khối lượng",
+              "Không gây ô nhiễm phóng xạ",
+              "Cần neutron để xảy ra"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Nhiệt hạch không cần neutron, cần nhiệt độ cao"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính năng lượng liên kết nếu Δm = 0,02u (MeV).",
+            "correct": "18.63",
+            "explanation": "E = 0,02.931,5 = 18,63 MeV"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "1 hạt nhân U235 phân hạch tỏa 200 MeV. Tính E tỏa ra (J).",
+            "correct": "3.2E-11",
+            "explanation": "E = 200.1,6.10⁻¹³ = 3,2.10⁻¹¹ J"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Đổi 5 MeV ra Jun (J).",
+            "correct": "8E-13",
+            "explanation": "5.1,6.10⁻¹³ = 8.10⁻¹³ J"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính năng lượng liên kết riêng nếu E_lk = 30 MeV, A = 60 (MeV/nuclon).",
+            "correct": "0.5",
+            "explanation": "ε = 30/60 = 0,5 MeV/nuclon"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_18",
+      "name": "Thực hành: Vẽ biểu đồ, nhận xét và giải thích tình hình phát triển ngành công nghiệp",
+      "slug": "thuc-hanh-ve-phan-tich-cong-nghiep",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 18,
+      "description": "Hướng dẫn thực hành thu thập số liệu công nghiệp, vẽ biểu đồ sản lượng, tỷ trọng và nhận xét các xu hướng phát triển ngành công nghiệp.",
+      "duration_minutes": 60,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thực hành phân tích ngành công nghiệp",
+          "summary": "Các bước thu thập số liệu công nghiệp (sản lượng, giá trị sản xuất công nghiệp, tỷ trọng theo ngành), vẽ biểu đồ và phân tích nguyên nhân, xu hướng và ảnh hưởng địa lý.",
+          "sections": [
+            { "heading": "Thu thập số liệu", "content": "Nguồn: công bố ngành, cục thống kê, báo cáo doanh nghiệp; chú ý số liệu theo năm và theo ngành." },
+            { "heading": "Phân tích biểu đồ", "content": "So sánh tỷ trọng các ngành, nhận xét xu hướng tăng/giảm và liên hệ đến chính sách, thị trường và nguồn lực." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Ghi hai chỉ tiêu công nghiệp thường dùng?", "a_hint": "Giá trị sản xuất công nghiệp, sản lượng, tỷ trọng ngành." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Nguồn dữ liệu công nghiệp có thể lấy từ?", "options": ["Cục Thống kê và báo cáo ngành","Bản đồ du lịch","Tổng điều tra nông nghiệp","Không có nguồn"], "correct": 0, "explanation": "Cục Thống kê và báo cáo ngành là nguồn chính." },
+          { "id": 2, "type": "mcq", "question": "Biểu đồ phù hợp để so sánh tỷ trọng các ngành là?", "options": ["Biểu đồ tròn hoặc cột chồng","Biểu đồ đường cho một ngành duy nhất","Ảnh minh họa","Không biểu đồ"], "correct": 0, "explanation": "Biểu đồ tròn hoặc cột chồng thể hiện tỷ trọng các ngành." },
+          { "id": 3, "type": "mcq", "question": "Khi nhận xét xu hướng cần liên hệ tới?", "options": ["Chính sách, thị trường và nguồn lực","Màu sắc biểu đồ","Sở thích cá nhân","Không cần liên hệ"], "correct": 0, "explanation": "Cần liên hệ đến nguyên nhân thực tế như chính sách và thị trường." },
+          { "id": 4, "type": "mcq", "question": "Một chỉ tiêu phản ánh năng lực công nghiệp là?", "options": ["Giá trị sản xuất công nghiệp","Số lượng công viên","Số trường học","Số ngọn núi"], "correct": 0, "explanation": "Giá trị sản xuất phản ánh quy mô và năng lực ngành." },
+          { "id": 5, "type": "mcq", "question": "Một bước quan trọng khi vẽ biểu đồ là?", "options": ["Chuẩn hóa đơn vị và khoảng thời gian","Bỏ qua đơn vị","Tô màu ngẫu nhiên","Chọn số ngẫu nhiên"], "correct": 0, "explanation": "Chuẩn hóa đơn vị để so sánh chính xác." },
+          { "id": 6, "type": "mcq", "question": "Phân tích biểu đồ nên nêu điều gì?", "options": ["Xu hướng, nguyên nhân và hàm ý chính sách","Chỉ ghi con số","Không cần phân tích","Chỉ vẽ đồ thị"], "correct": 0, "explanation": "Phân tích cần nêu xu hướng và liên hệ thực tiễn." },
+          { "id": 7, "type": "mcq", "question": "Một yếu tố địa lý ảnh hưởng đến phân bố công nghiệp là?", "options": ["Sự gần cảng, nguồn nguyên liệu và lao động","Màu sắc quốc kỳ","Số lượng tách trà","Không có yếu tố"], "correct": 0, "explanation": "Cảng, nguyên liệu và lao động ảnh hưởng mạnh đến phân bố." },
+          { "id": 8, "type": "mcq", "question": "Khi so sánh các năm, cần chú ý?", "options": ["Thời kỳ so sánh và các biến động đặc biệt","Chỉ chọn năm ngẫu nhiên","Bỏ qua năm có biến động","Không so sánh"], "correct": 0, "explanation": "Chọn thời kỳ phù hợp và chú ý biến động bất thường khi phân tích." },
+          { "id": 9, "type": "mcq", "question": "Một kết luận hợp lý từ phân tích công nghiệp là?", "options": ["Đề xuất chính sách hỗ trợ ngành tăng trưởng bền vững","Không đưa ra kết luận","Khuyến khích phá hoại môi trường","Giữ nguyên hiện trạng"], "correct": 0, "explanation": "Kết luận nên gắn với đề xuất chính sách phù hợp." },
+          { "id": 10, "type": "mcq", "question": "Một công cụ hỗ trợ trực quan khi phân tích công nghiệp là?", "options": ["Bản đồ phân bố công nghiệp kết hợp biểu đồ","Danh sách dài số liệu","Văn bản khô khan","Không công cụ"], "correct": 0, "explanation": "Bản đồ kết hợp biểu đồ giúp trực quan hóa phân bố và quy mô ngành." }
+        ]
+      }
+    }
+  ]
+}

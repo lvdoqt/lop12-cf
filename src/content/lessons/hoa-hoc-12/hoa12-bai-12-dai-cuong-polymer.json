@@ -1,0 +1,105 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-12-dai-cuong-polymer",
+      "name": "Bài 12. Đại cương về polymer",
+      "slug": "bai-12-dai-cuong-polymer",
+      "chapter": "Chương 4: Polymer",
+      "chapter_id": "H12-1004",
+      "lesson_id": 12,
+      "description": "Tìm hiểu về khái niệm, phân loại và phương pháp tổng hợp polymer.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "polymer-1",
+          "name": "Đại cương Polymer",
+          "slug": "dai-cuong-polymer",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Đại cương về Polymer",
+          "sections": [
+            {
+              "heading": "1. Khái niệm và đặc điểm",
+              "content": "<h3>a) Định nghĩa</h3><p><strong>Polymer (Polyme):</strong> Hợp chất có phân tử khối lớn, được tạo thành từ nhiều đơn vị nhỏ (monomer) liên kết với nhau.</p><p><strong>Monomer:</strong> Phân tử nhỏ tham gia tạo polymer</p><p><strong>Mắt xích:</strong> Nhóm nguyên tử lặp lại trong mạch polymer</p><p><strong>Ví dụ:</strong></p><p>nCH₂=CH₂ → (-CH₂-CH₂-)ₙ</p><p>Ethylene (monomer) → Polyethylene (polymer)</p><h3>b) Đặc điểm</h3><ul><li>Phân tử khối lớn (10³ - 10⁶)</li><li>Không có nhiệt độ nóng chảy xác định</li><li>Không bay hơi</li><li>Ít tan trong dung môi thông thường</li><li>Độ bền cơ học cao</li></ul><h3>c) Phân loại</h3><p><strong>1. Theo nguồn gốc:</strong></p><ul><li>Polymer thiên nhiên: Tinh bột, cellulose, protein, cao su thiên nhiên</li><li>Polymer tổng hợp: PE, PVC, nylon, teflon</li></ul><p><strong>2. Theo thành phần:</strong></p><ul><li>Polymer đồng nhất: Từ 1 loại monomer (PE, PVC)</li><li>Copolymer: Từ 2+ loại monomer (nylon-6,6)</li></ul><p><strong>3. Theo cấu trúc:</strong></p><ul><li>Mạch thẳng: PE, PVC</li><li>Mạch nhánh: Tinh bột</li><li>Mạch không gian: Cao su lưu hóa</li></ul><p><strong>4. Theo tính chất nhiệt:</strong></p><ul><li>Polymer nhiệt dẻo: Nóng chảy khi đun (PE, PVC)</li><li>Polymer nhiệt rắn: Không nóng chảy (bakelite)</li></ul>"
+            },
+            {
+              "heading": "2. Phương pháp tổng hợp polymer",
+              "content": "<h3>a) Phản ứng trùng hợp</h3><p><strong>Định nghĩa:</strong> Nhiều phân tử nhỏ (monomer) liên kết với nhau tạo polymer, không tạo sản phẩm phụ.</p><p><strong>Điều kiện:</strong> Monomer có liên kết bội (C=C, C≡C)</p><p><strong>Ví dụ 1: Polyethylene (PE)</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>nCH₂=CH₂ → (-CH₂-CH₂-)ₙ (t°, p, xúc tác)</p><p><strong>Ví dụ 2: Polyvinyl chloride (PVC)</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>nCH₂=CHCl → (-CH₂-CHCl-)ₙ</p><p><strong>Ví dụ 3: Polystyrene (PS)</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>nCH₂=CH-C₆H₅ → (-CH₂-CH(C₆H₅)-)ₙ</p><h3>b) Phản ứng trùng ngưng</h3><p><strong>Định nghĩa:</strong> Nhiều phân tử nhỏ liên kết với nhau tạo polymer và giải phóng phân tử nhỏ (H₂O, HCl...).</p><p><strong>Điều kiện:</strong> Monomer có ≥2 nhóm chức phản ứng</p><p><strong>Ví dụ 1: Nylon-6,6</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>nHOOC-(CH₂)₄-COOH + nH₂N-(CH₂)₆-NH₂ → [-OC-(CH₂)₄-CO-NH-(CH₂)₆-NH-]ₙ + 2nH₂O</p><p><strong>Ví dụ 2: Polyester (PET)</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>nHOOC-C₆H₄-COOH + nHO-CH₂-CH₂-OH → [-OC-C₆H₄-CO-O-CH₂-CH₂-O-]ₙ + 2nH₂O</p><h3>c) So sánh trùng hợp và trùng ngưng</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Đặc điểm</th><th class='border border-gray-300 p-2'>Trùng hợp</th><th class='border border-gray-300 p-2'>Trùng ngưng</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Monomer</td><td class='border border-gray-300 p-2'>Có liên kết bội</td><td class='border border-gray-300 p-2'>Có ≥2 nhóm chức</td></tr><tr><td class='border border-gray-300 p-2'>Sản phẩm phụ</td><td class='border border-gray-300 p-2'>Không</td><td class='border border-gray-300 p-2'>Có (H₂O, HCl...)</td></tr><tr><td class='border border-gray-300 p-2'>Mắt xích</td><td class='border border-gray-300 p-2'>Giống monomer</td><td class='border border-gray-300 p-2'>Khác monomer</td></tr><tr><td class='border border-gray-300 p-2'>Ví dụ</td><td class='border border-gray-300 p-2'>PE, PVC, PS</td><td class='border border-gray-300 p-2'>Nylon, PET</td></tr></tbody></table>"
+            },
+            {
+              "heading": "3. Một số polymer quan trọng",
+              "content": "<h3>a) Polyethylene (PE)</h3><ul><li>Monomer: CH₂=CH₂</li><li>Tính chất: Nhẹ, bền, cách điện</li><li>Ứng dụng: Túi nilon, màng bọc, ống nước</li></ul><h3>b) Polyvinyl chloride (PVC)</h3><ul><li>Monomer: CH₂=CHCl</li><li>Tính chất: Cứng, bền, chống ăn mòn</li><li>Ứng dụng: Ống nước, dây điện, sàn nhà</li></ul><h3>c) Polystyrene (PS)</h3><ul><li>Monomer: CH₂=CH-C₆H₅</li><li>Tính chất: Trong suốt, cứng, cách nhiệt</li><li>Ứng dụng: Hộp xốp, đồ dùng nhựa</li></ul><h3>d) Teflon (PTFE)</h3><ul><li>Monomer: CF₂=CF₂</li><li>Tính chất: Chịu nhiệt cao, không dính</li><li>Ứng dụng: Chảo chống dính, băng keo</li></ul><h3>e) Nylon-6,6</h3><ul><li>Monomer: Acid adipic + Hexamethylenediamine</li><li>Tính chất: Bền, dai, đàn hồi</li><li>Ứng dụng: Sợi dệt, dây cáp, bánh răng</li></ul><h3>f) Polyester (PET)</h3><ul><li>Monomer: Acid terephthalic + Ethylene glycol</li><li>Tính chất: Bền, trong suốt</li><li>Ứng dụng: Chai nước, sợi vải, màng phim</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định monomer và viết phương trình",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Từ polymer → Xác định mắt xích</li><li>Từ mắt xích → Xác định monomer</li><li>Viết phương trình trùng hợp/trùng ngưng</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Polymer có công thức: (-CH₂-CHCl-)ₙ. a) Xác định monomer. b) Viết phương trình tổng hợp. c) Tính khối lượng monomer cần để tạo 1 tấn polymer (hiệu suất 90%).",
+                "solution": "<p><strong>a) Xác định monomer:</strong></p><p>Mắt xích: -CH₂-CHCl-</p><p>Monomer: CH₂=CHCl (vinyl chloride)</p><p><strong>b) Phương trình:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>nCH₂=CHCl → (-CH₂-CHCl-)ₙ</p><p>Phản ứng trùng hợp (không có sản phẩm phụ)</p><p><strong>c) Tính khối lượng monomer:</strong></p><p>M(monomer) = M(mắt xích) = 62.5 g/mol</p><p>Vì không có sản phẩm phụ:</p><p>m(monomer) lý thuyết = m(polymer) = 1000 kg</p><p>m(monomer) thực tế = 1000 / 90% = 1111 kg</p><p><strong>Đáp án:</strong> a) CH₂=CHCl; c) 1111 kg</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính khối lượng phân tử polymer",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>M(polymer) = n × M(mắt xích)</li><li>Với trùng ngưng: Trừ khối lượng H₂O</li><li>Tính số mắt xích n</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Nylon-6,6 có công thức: [-OC-(CH₂)₄-CO-NH-(CH₂)₆-NH-]ₙ. a) Tính M(mắt xích). b) Nếu n = 100, tính M(polymer). c) Tính khối lượng H₂O tạo ra khi tổng hợp 1 tấn nylon (hiệu suất 95%).",
+                "solution": "<p><strong>a) Tính M(mắt xích):</strong></p><p>Mắt xích: -OC-(CH₂)₄-CO-NH-(CH₂)₆-NH-</p><p>M = 12×12 + 22×1 + 2×14 + 2×16 = 226 g/mol</p><p><strong>b) Tính M(polymer):</strong></p><p>M(polymer) = 100 × 226 = 22,600 g/mol</p><p><strong>c) Tính khối lượng H₂O:</strong></p><p><strong>Phương trình:</strong></p><p>nHOOC-(CH₂)₄-COOH + nH₂N-(CH₂)₆-NH₂ → Nylon + 2nH₂O</p><p>M(acid) = 146 g/mol</p><p>M(amine) = 116 g/mol</p><p>M(monomer tổng) = 146 + 116 = 262 g/mol</p><p>M(mắt xích) = 226 g/mol</p><p>M(H₂O) = 262 - 226 = 36 g/mol (2 phân tử H₂O)</p><p><strong>Tính cho 1 tấn nylon:</strong></p><p>m(nylon) thực tế = 1000 kg</p><p>m(nylon) lý thuyết = 1000 × 95% = 950 kg</p><p>Tỉ lệ: 226 kg nylon → 36 kg H₂O</p><p>950 kg nylon → x kg H₂O</p><p>x = 950 × 36 / 226 = 151.3 kg</p><p><strong>Đáp án:</strong> a) 226 g/mol; b) 22,600 g/mol; c) 151.3 kg</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Tái chế polymer",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích lợi ích tái chế</li><li>Tính toán kinh tế</li><li>Đánh giá môi trường</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Nhà máy tái chế 100 tấn chai PET. a) Tính lượng PET thu hồi (hiệu suất 85%). b) So sánh chi phí: Tái chế vs Sản xuất mới (giá: PET tái chế 15,000đ/kg, PET mới 30,000đ/kg, chi phí tái chế 8,000đ/kg). c) Đánh giá tác động môi trường.",
+                "solution": "<p><strong>a) Tính PET thu hồi:</strong></p><p>m(PET thu hồi) = 100 × 85% = 85 tấn</p><p><strong>b) So sánh chi phí:</strong></p><p><strong>Phương án 1: Tái chế</strong></p><ul><li>Chi phí thu gom: 100 × 15,000 = 1,500,000,000 đ</li><li>Chi phí tái chế: 100 × 8,000 = 800,000,000 đ</li><li>Tổng chi phí: 2,300,000,000 đ</li><li>Sản phẩm: 85 tấn PET</li><li>Chi phí/kg: 2,300,000,000 / 85,000 = 27,059 đ/kg</li></ul><p><strong>Phương án 2: Sản xuất mới</strong></p><ul><li>Chi phí: 85 × 30,000 = 2,550,000,000 đ</li><li>Chi phí/kg: 30,000 đ/kg</li></ul><p><strong>So sánh:</strong></p><ul><li>Tái chế rẻ hơn: 30,000 - 27,059 = 2,941 đ/kg</li><li>Tiết kiệm: 2,941 × 85,000 = 250,000,000 đ (10%)</li></ul><p><strong>c) Tác động môi trường:</strong></p><p><strong>Lợi ích tái chế:</strong></p><ul><li>✓ Giảm 60% năng lượng so với sản xuất mới</li><li>✓ Giảm 70% khí thải CO₂</li><li>✓ Tiết kiệm tài nguyên dầu mỏ</li><li>✓ Giảm rác thải nhựa (100 tấn không vào bãi rác)</li><li>✓ Giảm ô nhiễm đại dương</li></ul><p><strong>Tính toán cụ thể:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Tiêu chí</th><th class='border border-gray-300 p-2'>Tái chế</th><th class='border border-gray-300 p-2'>Sản xuất mới</th><th class='border border-gray-300 p-2'>Tiết kiệm</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Năng lượng (kWh)</td><td class='border border-gray-300 p-2'>40,000</td><td class='border border-gray-300 p-2'>100,000</td><td class='border border-gray-300 p-2'>60%</td></tr><tr><td class='border border-gray-300 p-2'>CO₂ (tấn)</td><td class='border border-gray-300 p-2'>30</td><td class='border border-gray-300 p-2'>100</td><td class='border border-gray-300 p-2'>70%</td></tr><tr><td class='border border-gray-300 p-2'>Nước (m³)</td><td class='border border-gray-300 p-2'>500</td><td class='border border-gray-300 p-2'>2000</td><td class='border border-gray-300 p-2'>75%</td></tr><tr><td class='border border-gray-300 p-2'>Dầu mỏ (tấn)</td><td class='border border-gray-300 p-2'>0</td><td class='border border-gray-300 p-2'>150</td><td class='border border-gray-300 p-2'>100%</td></tr></tbody></table><p><strong>Thách thức:</strong></p><ul><li>⚠️ Cần phân loại rác tại nguồn</li><li>⚠️ Chi phí thu gom cao</li><li>⚠️ Chất lượng PET tái chế thấp hơn</li><li>⚠️ Cần công nghệ tái chế hiện đại</li></ul><p><strong>Giải pháp:</strong></p><ul><li>Khuyến khích phân loại rác (giảm giá thu gom)</li><li>Đầu tư công nghệ tái chế tiên tiến</li><li>Chính sách thuế ưu đãi cho tái chế</li><li>Giáo dục cộng đồng về tái chế</li><li>Xây dựng hệ thống thu gom hiệu quả</li></ul><p><strong>Kết luận:</strong></p><p>Tái chế PET tiết kiệm 250 triệu đồng (10%) và giảm 70% tác động môi trường. Đây là giải pháp bền vững, cần được khuyến khích và phát triển mạnh mẽ.</p><p><strong>Đáp án:</strong> a) 85 tấn; b) Tiết kiệm 250 triệu đồng; c) Giảm 60% năng lượng, 70% CO₂</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {"id": "ex1", "type": "mcq", "question": "Polymer là:", "options": ["Phân tử nhỏ", "Phân tử lớn", "Ion", "Nguyên tử"], "correct": 1, "explanation": "Polymer là phân tử lớn."},
+          {"id": "ex2", "type": "mcq", "question": "Monomer của PE là:", "options": ["CH₄", "CH₂=CH₂", "C₂H₆", "C₆H₆"], "correct": 1, "explanation": "Monomer của PE là CH₂=CH₂ (ethylene)."},
+          {"id": "ex3", "type": "mcq", "question": "Monomer của PVC là:", "options": ["CH₂=CH₂", "CH₂=CHCl", "CH₃Cl", "C₆H₅Cl"], "correct": 1, "explanation": "Monomer của PVC là CH₂=CHCl (vinyl chloride)."},
+          {"id": "ex4", "type": "mcq", "question": "Phản ứng trùng hợp có sản phẩm phụ:", "options": ["Có", "Không", "Đôi khi", "Tùy điều kiện"], "correct": 1, "explanation": "Phản ứng trùng hợp không có sản phẩm phụ."},
+          {"id": "ex5", "type": "mcq", "question": "Phản ứng trùng ngưng tạo:", "options": ["Chỉ polymer", "Polymer + H₂O", "Chỉ H₂O", "Không tạo gì"], "correct": 1, "explanation": "Trùng ngưng tạo polymer + H₂O (hoặc HCl...)."},
+          {"id": "ex6", "type": "mcq", "question": "Nylon-6,6 được tổng hợp bằng:", "options": ["Trùng hợp", "Trùng ngưng", "Thủy phân", "Đốt cháy"], "correct": 1, "explanation": "Nylon-6,6 được tổng hợp bằng trùng ngưng."},
+          {"id": "ex7", "type": "mcq", "question": "Polymer nhiệt dẻo là:", "options": ["PE", "Bakelite", "Cao su lưu hóa", "Tất cả"], "correct": 0, "explanation": "PE là polymer nhiệt dẻo (nóng chảy khi đun)."},
+          {"id": "ex8", "type": "mcq", "question": "Teflon có monomer:", "options": ["CH₂=CH₂", "CF₂=CF₂", "CH₂=CHCl", "CH₂=CH-C₆H₅"], "correct": 1, "explanation": "Teflon có monomer CF₂=CF₂."},
+          {"id": "ex9", "type": "mcq", "question": "Polymer thiên nhiên là:", "options": ["PE", "PVC", "Tinh bột", "Nylon"], "correct": 2, "explanation": "Tinh bột là polymer thiên nhiên."},
+          {"id": "ex10", "type": "mcq", "question": "Polystyrene có monomer:", "options": ["CH₂=CH₂", "CH₂=CHCl", "CH₂=CH-C₆H₅", "CF₂=CF₂"], "correct": 2, "explanation": "Polystyrene có monomer CH₂=CH-C₆H₅ (styrene)."},
+          {"id": "ex11", "type": "mcq", "question": "PET được tổng hợp bằng:", "options": ["Trùng hợp", "Trùng ngưng", "Thủy phân", "Đốt cháy"], "correct": 1, "explanation": "PET được tổng hợp bằng trùng ngưng."},
+          {"id": "ex12", "type": "mcq", "question": "Mắt xích của PE là:", "options": ["-CH₂-", "-CH₂-CH₂-", "-CH₂-CHCl-", "-CH₂-CH(C₆H₅)-"], "correct": 1, "explanation": "Mắt xích của PE là -CH₂-CH₂-."},
+          {"id": "ex13", "type": "msq", "question": "Polymer tổng hợp:", "options": ["PE", "PVC", "Tinh bột", "Nylon"], "correct": [0, 1, 3], "explanation": "PE, PVC, Nylon là polymer tổng hợp. Tinh bột là polymer thiên nhiên."},
+          {"id": "ex14", "type": "msq", "question": "Phản ứng trùng hợp:", "options": ["PE", "PVC", "Nylon", "PS"], "correct": [0, 1, 3], "explanation": "PE, PVC, PS được tổng hợp bằng trùng hợp. Nylon bằng trùng ngưng."},
+          {"id": "ex15", "type": "msq", "question": "Polymer nhiệt dẻo:", "options": ["PE", "PVC", "Bakelite", "PS"], "correct": [0, 1, 3], "explanation": "PE, PVC, PS là polymer nhiệt dẻo. Bakelite là polymer nhiệt rắn."},
+          {"id": "ex16", "type": "msq", "question": "Ứng dụng PE:", "options": ["Túi nilon", "Màng bọc", "Ống nước", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "PE có nhiều ứng dụng."},
+          {"id": "ex17", "type": "sa", "question": "Monomer của PVC có khối lượng phân tử là bao nhiêu? Làm tròn đến 1 chữ số thập phân.", "correct": "62.5", "explanation": "M(CH₂=CHCl) = 62.5 g/mol. Đáp án: 62.5"},
+          {"id": "ex18", "type": "sa", "question": "Monomer của PE có khối lượng phân tử là bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "28", "explanation": "M(CH₂=CH₂) = 28 g/mol. Đáp án: 28"},
+          {"id": "ex19", "type": "sa", "question": "Mắt xích của PE có khối lượng là bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "28", "explanation": "M(-CH₂-CH₂-) = 28 g/mol. Đáp án: 28"},
+          {"id": "ex20", "type": "sa", "question": "Trùng hợp 1 mol ethylene tạo bao nhiêu mol PE? Làm tròn đến hàng đơn vị.", "correct": "1", "explanation": "n mol monomer → 1 mol polymer. Đáp án: 1"},
+          {"id": "ex21", "type": "sa", "question": "Teflon có monomer chứa bao nhiêu nguyên tử F? Làm tròn đến hàng đơn vị.", "correct": "4", "explanation": "CF₂=CF₂ có 4 nguyên tử F. Đáp án: 4"},
+          {"id": "ex22", "type": "sa", "question": "Nylon-6,6 được tổng hợp từ bao nhiêu loại monomer? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "Nylon-6,6 từ 2 monomer (acid + amine). Đáp án: 2"}
+        ]
+      }
+    }
+  ]
+}

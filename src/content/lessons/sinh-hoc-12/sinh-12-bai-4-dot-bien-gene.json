@@ -1,0 +1,188 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-4",
+      "name": "Bài 4. Đột biến gene",
+      "slug": "dot-bien-gene",
+      "chapter": "Chương 1. Di truyền phân tử",
+      "chapter_id": "S12-1",
+      "lesson_id": 4,
+      "description": "Tìm hiểu về các loại đột biến gene, nguyên nhân và cơ chế gây đột biến.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Đột biến gene",
+          "sections": [
+            {
+              "heading": "1. Khái niệm đột biến gene",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Đột biến gene</strong> là những biến đổi trong cấu trúc DNA ở mức phân tử, liên quan đến một hoặc một số cặp nucleotit.</li><li>Đột biạo ra cácến gene t alen mới, là nguồn biến dị di truyền cho quá trình tiến hóa.</li></ul><h4>b) Đặc điểm</h4><ul><li>Có thể di truyền cho thế hệ sau (nếu xảy ra trong tế bào sinh dưỡng hoặc giao tử).</li><li>Có thể có lợi, có hại hoặc trung tính.</li><li>Tần số đột biến tự nhiên rất thấp (10^-5 đến 10^-6).</li></ul>"
+            },
+            {
+              "heading": "2. Các loại đột biến gene",
+              "content": "<h4>a) Đột biến điểm</h4><ul><li><strong>Thay thế nucleotit:</strong> Một cặp nucleotit này được thay bằng cặp nucleotit khác.</li><ul><li>Chuyển đổi (transition): Purin ↔ Purin hoặc Pyrimidin ↔ Pyrimidin.</li><li>Chuyển vị (transversion): Purin ↔ Pyrimidin.</li></ul></ul><h4>b) Đột biến thêm - mất nucleotit</h4><ul><li><strong>Đột biến thêm (insertion):</strong> Thêm một hoặc nhiều cặp nucleotit.</li><li><strong>Đột biến mất (deletion):</strong> Mất một hoặc nhiều cặp nucleotit.</li><li>Gây hiệu ứng khung đọc (frameshift) nếu số nucleotit thêm/mất không chia hết cho 3.</li></ul>"
+            },
+            {
+              "heading": "3. Hậu quả của đột biến gene",
+              "content": "<h4>a) Đối với mã di truyền</h4><ul><li><strong>Đột biến đồng nghĩa (silent mutation):</strong> Codon mới mã hóa cùng axit amin.</li><li><strong>Đột biến vô nghĩa (nonsense mutation):</strong> Codon mới trở thành codon kết thúc.</li><li><strong>Đột biến sai nghĩa (missense mutation):</strong> Codon mới mã hóa axit amin khác.</li><li><strong>Đột biến dịch khung:</strong> Thay đổi toàn bộ trình tự axit amin từ điểm đột biến.</li></ul><h4>b) Đối với protein</h4><ul><li>Protein bị vô hiệu hóa hoàn toàn hoặc giảm hoạt tính.</li><li>Protein mới có chức năng khác.</li><li>Protein bị phân giải nhanh hơn.</li></ul>"
+            },
+            {
+              "heading": "4. Nguyên nhân gây đột biến",
+              "content": "<h4>a) Đột biến tự nhiên (spontaneous mutation)</h4><ul><li>Sai sót trong quá trình nhân đôi DNA.</li><li>Spontaneous depurination, deamination.</li></ul><h4>b) Đột biến cảm ứng (induced mutation)</h4><ul><li><strong>Tác nhân vật lý:</strong> Tia UV, tia X, bức xạ ion hóa.</li><li><strong>Tác nhân hóa học:</strong> 5-bromouracil, nitrosoguanidine, chất đồng vị.</li><li><strong>Tác nhân sinh học:</strong> Virus, retrotransposon.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Đột biến gene là gì?",
+            "options": [
+              "Biến đổi nhiễm sắc thể",
+              "Biến đổi cấu trúc DNA ở mức phân tử",
+              "Biến đổi số lượng nhiễm sắc thể",
+              "Biến đổi hình thái nhiễm sắc thể"
+            ],
+            "correct": 1,
+            "explanation": "Đột biến gene là những biến đổi trong cấu trúc DNA ở mức phân tử, liên quan đến một hoặc một số cặp nucleotit."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Đột biến nào làm thay đổi một axit amin thành axit amin khác?",
+            "options": [
+              "Đột biến đồng nghĩa",
+              "Đột biến sai nghĩa",
+              "Đột biến vô nghĩa",
+              "Đột biến dịch khung"
+            ],
+            "correct": 1,
+            "explanation": "Đột biến sai nghĩa (missense) làm thay đổi codon mã hóa một axit amin thành axit amin khác."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Đột biến vô nghĩa (nonsense) tạo ra kết quả gì?",
+            "options": [
+              "Thay đổi một axit amin",
+              "Không thay đổi axit amin",
+              "Tạo codon kết thúc sớm",
+              "Thay đổi khung đọc"
+            ],
+            "correct": 2,
+            "explanation": "Đột biến vô nghĩa biến đổi một codon mã hóa axit amin thành codon kết thúc (UAA, UAG, UGA), làm dừng dịch mã sớm."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Tác nhân vật lý nào gây đột biến?",
+            "options": [
+              "5-bromouracil",
+              "Virus",
+              "Tia UV",
+              "Nitrosoguanidine"
+            ],
+            "correct": 2,
+            "explanation": "Tia UV (tia cực tím) là tác nhân vật lý gây đột biến, có thể tạo dimer thymine trong DNA."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Đột biến dịch khung (frameshift) xảy ra khi nào?",
+            "options": [
+              "Thay thế 1 cặp nucleotit",
+              "Thêm hoặc mất 3 nucleotit",
+              "Thêm hoặc mất số nucleotit không chia hết cho 3",
+              "Thay thế purin bằng purin"
+            ],
+            "correct": 2,
+            "explanation": "Đột biến dịch khung xảy ra khi thêm hoặc mất số nucleotit không chia hết cho 3, làm thay đổi khung đọc từ vị trí đột biến."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các loại đột biến điểm:",
+            "options": [
+              "Thay thế nucleotit",
+              "Chèn nucleotit",
+              "Mất nucleotit",
+              "Chuyển đoạn"
+            ],
+            "correct": [
+              0
+            ],
+            "explanation": "A ✓: Thay thế nucleotit là đột biến điểm. B,C ✗: Chèn và mất là đột biến cấu trúc. D ✗: Chuyển đoạn là đột biến nhiễm sắc thể."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các tác nhân gây đột biến:",
+            "options": [
+              "Tia UV",
+              "5-bromouracil",
+              "Nitrosoguanidine",
+              "Enzyme restriction"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Tia UV gây đột biến vật lý. B ✓: 5-bromouracil là chất gây đột biến hóa học. C ✓: Nitrosoguanidine là chất gây đột biến hóa học. D ✗: Enzyme restriction dùng trong công nghệ gene."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một gene có 600 nucleotit trong vùng mã hóa. Nếu đột biến mất 3 nucleotit, số axit amin thay đổi là bao nhiêu? Nhập số 2 chữ số. (Ví dụ: 01)",
+            "correct": "01",
+            "explanation": "Mất 3 nucleotit = mất 1 codon. Protein mất 1 axit amin (không dịch khung)."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Một gene mã hóa 200 axit amin. Nếu đột biến thêm 1 nucleotit ở đầu gene, số axit amin thay đổi là bao nhiêu? Nhập số 3 chữ số. (Ví dụ: 199)",
+            "correct": "199",
+            "explanation": "Thêm 1 nucleotit gây dịch khung → tất cả axit amin từ vị trí đột biến trở đi thay đổi. 200 - 1 = 199 axit amin thay đổi."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định loại đột biến dựa trên trình tự DNA",
+            "method": "<h3>Phương pháp giải</h3><ol><li>So sánh trình tự DNA trước và sau đột biến.</li><li>Nếu số nucleotit thay đổi → đột biến điểm.</li><li>Nếu có thêm nucleotit → đột biến insertion.</li><li>Nếu mất nucleotit → đột biến deletion.</li><li>Phân tích codon bị ảnh hưởng để xác định loại hậu quả.</li></ol>",
+            "examples": [
+              {
+                "question": "Cho trình tự mRNA ban đầu: 5'-AUG GCC UAC AAA-3'. Nếu nucleotit thứ 6 (U) bị thay bằng C, xác định loại đột biến.",
+                "solution": "<p><strong>Giải:</strong></p><p>Trình tự ban đầu: AUG GCC UAC AAA</p><p>AUG = Met, GCC = Ala, UAC = Tyr, AAA = Lys</p><p>Sau đột biến: AUG GCC CAC AAA</p><p>GCC → GCC (không đổi), UAC → CAC (Tyr → His)</p><p>Đây là <strong>đột biến sai nghĩa (missense)</strong> vì axit amin thay đổi.</p>"
+              },
+              {
+                "question": "Cho trình tự DNA: 5'-ATG AAA GGG TTT-3'. Nếu mất nucleotit thứ 4 (A), xác định loại đột biến.",
+                "solution": "<p><strong>Giải:</strong></p><p>Ban đầu: ATG AAA GGG TTT → mRNA: AUG AAA GGG UUU</p><p>Sau mất A: ATG AA GGG TTT → mRNA: AUG AAG GGU UU</p><p>Số nucleotit mất = 1 (không chia hết cho 3)</p><p>Đây là <strong>đột biến dịch khung (frameshift)</strong> vì khung đọc bị thay đổi từ vị trí mất nucleotit.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính số axit amin thay đổi sau đột biến",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định loại đột biến: thay thế, thêm, mất.</li><li>Nếu thay thế 1 nucleotit: thường chỉ ảnh hưởng 1 axit amin.</li><li>Nếu thêm/mất 3 nucleotit: ảnh hưởng 1 axit amin (không dịch khung).</li><li>Nếu thêm/mất không chia hết cho 3: ảnh hưởng từ điểm đột biến đến hết chuỗi.</li></ol>",
+            "examples": [
+              {
+                "question": "Một gene mã hóa protein có 300 axit amin. Nếu đột biến mất 3 cặp bazơ ở giữa gene, số axit amin thay đổi là bao nhiêu?",
+                "solution": "<p><strong>Giải:</strong></p><p>Đột biến mất 3 cặp bazơ = mất 1 codon</p><p>Protein mất 1 axit amin (không bị dịch khung)</p><p>Số axit amin thay đổi: <strong>1 axit amin</strong></p>"
+              },
+              {
+                "question": "Một gene mã hóa protein có 500 axit amin. Nếu đột biến thêm 2 cặp bazơ ở đầu mã hóa, số axit amin thay đổi là bao nhiêu?",
+                "solution": "<p><strong>Giải:</strong></p><p>Đột biến thêm 2 cặp bazơ (không chia hết cho 3)</p><p>Đây là đột biến dịch khung</p><p>Tất cả axit amin từ vị trí đột biến trở đi đều thay đổi</p><p>Số axit amin thay đổi: <strong>gần như toàn bộ protein</strong></p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

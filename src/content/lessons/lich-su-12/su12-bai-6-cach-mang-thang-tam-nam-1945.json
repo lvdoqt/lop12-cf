@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-6",
+    "name": "Cách mạng tháng tám năm 1945",
+    "slug": "cach-mang-thang-tam-nam-1945",
+    "chapter": "Chủ đề 3: Cách mạng tháng tám, chiến tranh giải phóng dân tộc",
+    "chapter_id": "su12",
+    "lesson_id": 6,
+    "description": "Bối cảnh, quá trình và ý nghĩa của Cách mạng tháng tám 1945",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Cách mạng tháng tám năm 1945",
+        "sections": [
+          { "heading": "1. Bối cảnh lịch sử", "content": "Thế chiến II sắp kết thúc (8/1945); Nhật Bản thất bại; Pháp suy yếu. Người Việt muốn giành độc lập. Đảng Cộng sản lãnh đạo cuộc cách mạng. Các lực lượng yêu nước sẵn sàng." },
+          { "heading": "2. Quá trình Cách mạng", "content": "Ngày 2/9/1945: Hồ Chí Minh tuyên bố độc lập. Nước Việt Nam Dân chủ Cộng hòa thành lập. Quân Nhật từng phục kích nhưng rời Việt Nam. Pháp cố gắng trở lại nhưng bị cách mạng phản kháng." },
+          { "heading": "3. Vai trò của Hồ Chí Minh", "content": "Nắm quyền lãnh đạo Việt Minh. Tuyên bố độc lập từ tên Hồ Chí Minh. Thành lập chính phủ đầu tiên. Lập quân đội cách mạng. Khôi phục nền tảng quốc gia độc lập." },
+          { "heading": "4. Chính sách ban đầu", "content": "Chính sách bình dân; Bãi bỏ thuế nông; Giáo dục nhân dân; Liên minh các giai cấp; Bình đẳng nam nữ." },
+          { "heading": "5. Ý nghĩa Cách mạng tháng tám", "content": "Giành độc lập từ chủ nghĩa thực dân; Lập nước Việt Nam độc lập; Thúc đẩy phong trào giải phóng dân tộc Á-Phi; Mở đầu cho kháng chiến chống Pháp." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Ngày 2/9/1945 là?", "options": ["Kết thúc WWII", "Tuyên bố độc lập Việt Nam", "Mất máy bay", "Cuộc khởi nghĩa"], "correct": 1, "explanation": "Ngày 2/9/1945 Hồ Chí Minh tuyên bố độc lập." },
+        { "id": "ex2", "type": "mcq", "question": "Lực lượng nào lãnh đạo?", "options": ["Phong kiến", "Đảng Cộng sản", "Tư sản", "Phương Tây"], "correct": 1, "explanation": "Đảng Cộng sản Việt Nam lãnh đạo cách mạng." },
+        { "id": "ex3", "type": "mcq", "question": "Ai là lãnh đạo chính?", "options": ["Võ Nguyên Giáp", "Hồ Chí Minh", "Trần Hưng Đạo", "Phan Bội Châu"], "correct": 1, "explanation": "Hồ Chí Minh là lãnh đạo cách mạng." },
+        { "id": "ex4", "type": "mcq", "question": "Tên nước ban đầu?", "options": ["Đại Việt", "Việt Nam Dân chủ Cộng hòa", "Việt Minh", "Liên hiệp Đông Dương"], "correct": 1, "explanation": "Nước Việt Nam Dân chủ Cộng hòa thành lập." },
+        { "id": "ex5", "type": "mcq", "question": "Ngành quân được lập?", "options": ["Gendarme Pháp", "Quân đội cách mạng", "Quân Nhật", "Không có"], "correct": 1, "explanation": "Quân đội Việt Minh được thành lập." },
+        { "id": "ex6", "type": "mcq", "question": "Chính sách ban đầu?", "options": ["Tổn lợi tầng lớp giàu", "Bình dân, bãi thuế nông", "Xây lão thực dân", "Quân phục tú"], "correct": 1, "explanation": "Chính sách bình dân, bãi bỏ thuế nông, hỗ trợ nhân dân." },
+        { "id": "ex7", "type": "mcq", "question": "Bối cảnh chính?", "options": ["WWII kết thúc, Pháp suy yếu", "Chiến tranh Napoleo", "Khủng hoảng kinh tế", "Nội chiến Việt Nam"], "correct": 0, "explanation": "WWII sắp kết thúc, Nhật thua, Pháp suy yếu." },
+        { "id": "ex8", "type": "mcq", "question": "Quân Nhật?", "options": ["Chiếm Việt Nam", "Từng phục kích rồi rời", "Trợ giúp Pháp", "Đóng lâu dài"], "correct": 1, "explanation": "Quân Nhật rời Việt Nam sau WWII." },
+        { "id": "ex9", "type": "mcq", "question": "Ý nghĩa quan trọng nhất?", "options": ["Thay đổi ngôn ngữ", "Giành độc lập từ thực dân", "Xây dựng kinh tế mới", "Đổi các quy tắc"], "correct": 1, "explanation": "Giành độc lập từ chủ nghĩa thực dân là ý nghĩa lớn nhất." },
+        { "id": "ex10", "type": "mcq", "question": "Hậu quả tiếp theo?", "options": ["Hòa bình", "Kháng chiến chống Pháp", "Xã hội ổn định", "Phát triển kinh tế"], "correct": 1, "explanation": "Mở đầu cho kháng chiến chống Pháp (1945-1954)." }
+      ]
+    }
+  }]
+}

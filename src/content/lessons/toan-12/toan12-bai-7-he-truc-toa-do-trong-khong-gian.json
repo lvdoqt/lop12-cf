@@ -1,0 +1,393 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-7-he-truc-toa-do-trong-khong-gian",
+      "name": "Bài 7. Hệ trục tọa độ trong không gian",
+      "slug": "he-truc-toa-do-trong-khong-gian",
+      "chapter": "Chương 2: Vectơ và hệ trục tọa độ trong không gian",
+      "chapter_id": "T12-2",
+      "lesson_id": 7,
+      "description": "Làm quen với hệ trục tọa độ Oxyz: tọa độ điểm và vectơ, các phép toán theo tọa độ, khoảng cách giữa hai điểm, tích vô hướng, trung điểm, trọng tâm và các bài toán ứng dụng.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/10B981/FFFFFF?text=Hệ+Trục+Tọa+Độ",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Tọa độ điểm – Vectơ – Phép toán",
+          "slug": "toa-do-diem-vecto",
+          "difficulty": "easy"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Khoảng cách – Tích vô hướng – Góc",
+          "slug": "khoang-cach-tich-vo-huong",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: Trung điểm – Trọng tâm – Hình chiếu – Đối xứng",
+          "slug": "trung-diem-trong-tam",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Hệ trục tọa độ Oxyz – Tọa độ điểm và vectơ",
+              "content": "<p>Hệ trục <strong>Oxyz</strong> gồm 3 trục $Ox, Oy, Oz$ đôi một vuông góc tại gốc $O$. Vectơ đơn vị: $\\vec{i}=(1;0;0)$, $\\vec{j}=(0;1;0)$, $\\vec{k}=(0;0;1)$.</p><p>Tính chất: $\\vec{i}\\cdot\\vec{j}=\\vec{j}\\cdot\\vec{k}=\\vec{k}\\cdot\\vec{i}=0$; $|\\vec{i}|=|\\vec{j}|=|\\vec{k}|=1$.</p><table style='width:100%;border-collapse:collapse;margin:10px 0'><thead><tr style='background:#4F46E5;color:white'><th style='padding:8px;border:1px solid #ccc'>Đối tượng</th><th style='padding:8px;border:1px solid #ccc'>Ký hiệu</th><th style='padding:8px;border:1px solid #ccc'>Điều kiện đặc biệt</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>Vectơ</td><td style='padding:8px;border:1px solid #ccc'>$\\vec{u}=(x;y;z)$</td><td style='padding:8px;border:1px solid #ccc'>$\\vec{u}=x\\vec{i}+y\\vec{j}+z\\vec{k}$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Điểm</td><td style='padding:8px;border:1px solid #ccc'>$M(x;y;z)$</td><td style='padding:8px;border:1px solid #ccc'>$\\overrightarrow{OM}=(x;y;z)$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>Điểm trên $Ox$</td><td style='padding:8px;border:1px solid #ccc'>$M(x;0;0)$</td><td style='padding:8px;border:1px solid #ccc'>$y=z=0$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Điểm trên $(Oxy)$</td><td style='padding:8px;border:1px solid #ccc'>$M(x;y;0)$</td><td style='padding:8px;border:1px solid #ccc'>$z=0$</td></tr></tbody></table><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 1:</strong> Tọa độ của điểm $M$ chính là tọa độ của vectơ $\\overrightarrow{OM}$, không phải của điểm trên đường thẳng nào đó. Luôn ghi theo thứ tự $(x;y;z)$.</div>"
+            },
+            {
+              "heading": "2. Các công thức tính theo tọa độ",
+              "content": "<p>Cho $A(x_1;y_1;z_1)$, $B(x_2;y_2;z_2)$, $\\vec{u}=(a_1;b_1;c_1)$, $\\vec{v}=(a_2;b_2;c_2)$:</p><table style='width:100%;border-collapse:collapse;margin:10px 0'><thead><tr style='background:#4F46E5;color:white'><th style='padding:8px;border:1px solid #ccc'>Đại lượng</th><th style='padding:8px;border:1px solid #ccc'>Công thức</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>Vectơ $\\overrightarrow{AB}$</td><td style='padding:8px;border:1px solid #ccc'>$(x_2-x_1;\\ y_2-y_1;\\ z_2-z_1)$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Độ dài $|\\vec{u}|$</td><td style='padding:8px;border:1px solid #ccc'>$\\sqrt{a_1^2+b_1^2+c_1^2}$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>Khoảng cách $AB$</td><td style='padding:8px;border:1px solid #ccc'>$\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Tích vô hướng $\\vec{u}\\cdot\\vec{v}$</td><td style='padding:8px;border:1px solid #ccc'>$a_1a_2+b_1b_2+c_1c_2$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>Tổng $\\vec{u}+\\vec{v}$</td><td style='padding:8px;border:1px solid #ccc'>$(a_1+a_2;\\ b_1+b_2;\\ c_1+c_2)$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>$k\\vec{u}$</td><td style='padding:8px;border:1px solid #ccc'>$(ka_1;\\ kb_1;\\ kc_1)$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>Góc $(\\vec{u},\\vec{v})$</td><td style='padding:8px;border:1px solid #ccc'>$\\cos\\theta=\\dfrac{\\vec{u}\\cdot\\vec{v}}{|\\vec{u}||\\vec{v}|}=\\dfrac{a_1a_2+b_1b_2+c_1c_2}{\\sqrt{a_1^2+b_1^2+c_1^2}\\cdot\\sqrt{a_2^2+b_2^2+c_2^2}}$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Vuông góc</td><td style='padding:8px;border:1px solid #ccc'>$\\vec{u}\\perp\\vec{v} \\Leftrightarrow a_1a_2+b_1b_2+c_1c_2=0$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>Cùng phương</td><td style='padding:8px;border:1px solid #ccc'>$\\dfrac{a_1}{a_2}=\\dfrac{b_1}{b_2}=\\dfrac{c_1}{c_2}$ (tỉ lệ)</td></tr></tbody></table><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 2 – Vuông góc qua tọa độ:</strong> Điều kiện vuông góc $a_1a_2+b_1b_2+c_1c_2=0$ rất quan trọng và hay xuất hiện trong đề thi. Ghi nhớ công thức này.</div>"
+            },
+            {
+              "heading": "3. Trung điểm, trọng tâm, hình chiếu, đối xứng",
+              "content": "<p>Cho $A(x_1;y_1;z_1)$, $B(x_2;y_2;z_2)$, $C(x_3;y_3;z_3)$:</p><table style='width:100%;border-collapse:collapse;margin:10px 0'><thead><tr style='background:#10b981;color:white'><th style='padding:8px;border:1px solid #ccc'>Điểm</th><th style='padding:8px;border:1px solid #ccc'>Tọa độ</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>Trung điểm $M$ của $AB$</td><td style='padding:8px;border:1px solid #ccc'>$\\left(\\dfrac{x_1+x_2}{2};\\ \\dfrac{y_1+y_2}{2};\\ \\dfrac{z_1+z_2}{2}\\right)$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Trọng tâm $G$ của $\\triangle ABC$</td><td style='padding:8px;border:1px solid #ccc'>$\\left(\\dfrac{x_1+x_2+x_3}{3};\\ \\dfrac{y_1+y_2+y_3}{3};\\ \\dfrac{z_1+z_2+z_3}{3}\\right)$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>Hình chiếu lên $(Oxy)$</td><td style='padding:8px;border:1px solid #ccc'>$M'(x;y;0)$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Đối xứng qua $(Oxy)$</td><td style='padding:8px;border:1px solid #ccc'>$M'(x;y;-z)$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>Đối xứng qua $Oz$</td><td style='padding:8px;border:1px solid #ccc'>$M'(-x;-y;z)$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>Đối xứng qua $O$</td><td style='padding:8px;border:1px solid #ccc'>$M'(-x;-y;-z)$</td></tr></tbody></table><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 3 – Quy tắc nhớ:</strong><br>• <strong>Hình chiếu</strong> lên mặt phẳng nào: tọa độ thứ 3 (vuông góc mặt phẳng đó) = 0.<br>• <strong>Đối xứng</strong> qua mặt phẳng nào: tọa độ vuông góc đó đổi dấu, hai tọa độ còn lại giữ nguyên.<br>• <strong>Đối xứng qua trục</strong>: hai tọa độ vuông góc với trục đổi dấu.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Tọa độ điểm – Vectơ – Phép toán",
+            "method": "<ol><li>Vectơ $\\vec{u}=x\\vec{i}+y\\vec{j}+z\\vec{k} \\Rightarrow \\vec{u}=(x;y;z)$.</li><li>$\\overrightarrow{AB}=(x_B-x_A;\\ y_B-y_A;\\ z_B-z_A)$.</li><li>Phép toán: cộng/trừ từng tọa độ; nhân số: nhân vào từng tọa độ.</li><li>Cùng phương: các tọa độ tỉ lệ.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> $\\vec{a}=2\\vec{i}-3\\vec{k}+\\vec{j}$. Tìm tọa độ $\\vec{a}$.",
+                "solution": "<p>Sắp xếp: $\\vec{a}=2\\vec{i}+1\\vec{j}+(-3)\\vec{k}$. Vậy $\\vec{a}=(2;1;-3)$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> $A(1;2;3)$, $B(4;-1;5)$. Tìm $\\overrightarrow{AB}$ và $|\\overrightarrow{AB}|$.",
+                "solution": "<p>$\\overrightarrow{AB}=(4-1;\\ -1-2;\\ 5-3)=(3;-3;2)$.</p><p>$|\\overrightarrow{AB}|=\\sqrt{9+9+4}=\\sqrt{22}$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Khoảng cách – Tích vô hướng – Góc",
+            "method": "<ol><li>Khoảng cách $AB=\\sqrt{(x_B-x_A)^2+(y_B-y_A)^2+(z_B-z_A)^2}$.</li><li>Tích vô hướng: $\\vec{u}\\cdot\\vec{v}=a_1a_2+b_1b_2+c_1c_2$.</li><li>Vuông góc: tích vô hướng $=0$.</li><li>Góc: $\\cos\\theta=\\dfrac{\\vec{u}\\cdot\\vec{v}}{|\\vec{u}|\\cdot|\\vec{v}|}$.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> $\\vec{u}=(1;2;-2)$, $\\vec{v}=(2;1;2)$. Tính $\\vec{u}\\cdot\\vec{v}$ và góc giữa hai vectơ.",
+                "solution": "<p>$\\vec{u}\\cdot\\vec{v}=1\\cdot2+2\\cdot1+(-2)\\cdot2=2+2-4=0$.</p><p>$\\vec{u}\\cdot\\vec{v}=0 \\Rightarrow \\vec{u}\\perp\\vec{v}$, góc $=90°$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Trung điểm – Trọng tâm – Hình chiếu – Đối xứng",
+            "method": "<ol><li>Trung điểm: trung bình cộng tọa độ.</li><li>Trọng tâm tam giác: trung bình cộng tọa độ 3 đỉnh.</li><li>Hình chiếu: thành phần vuông góc với mặt phẳng → = 0.</li><li>Đối xứng: đổi dấu thành phần vuông góc với mặt phẳng (hoặc trục).</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> $A(1;2;3)$, $B(3;0;-1)$. Tìm trung điểm $M$ của $AB$.",
+                "solution": "<p>$M=\\left(\\dfrac{1+3}{2};\\ \\dfrac{2+0}{2};\\ \\dfrac{3+(-1)}{2}\\right)=(2;1;1)$.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> $A(1;-2;3)$. Tìm điểm đối xứng với $A$ qua $(Oxy)$ và qua trục $Oz$.",
+                "solution": "<p>Đối xứng qua $(Oxy)$: đổi dấu $z$ → $A'(1;-2;-3)$.</p><p>Đối xứng qua trục $Oz$: đổi dấu $x,y$ → $A''(-1;2;3)$.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Trong $Oxyz$, $\\vec{u}=2\\vec{i}-\\vec{j}+3\\vec{k}$. Tọa độ $\\vec{u}$ là:",
+            "options": [
+              "$(2;-1;3)$",
+              "$(2;1;3)$",
+              "$(2;-1;-3)$",
+              "$(3;-1;2)$"
+            ],
+            "correct": 0,
+            "explanation": "Hệ số $\\vec{i},\\vec{j},\\vec{k}$ lần lượt: $2,-1,3$. Vậy $\\vec{u}=(2;-1;3)$."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Cho $A(1;2;3)$, $B(4;-1;5)$. Tọa độ $\\overrightarrow{AB}$ là:",
+            "options": [
+              "$(3;-3;2)$",
+              "$(-3;3;-2)$",
+              "$(5;1;8)$",
+              "$(3;3;2)$"
+            ],
+            "correct": 0,
+            "explanation": "$\\overrightarrow{AB}=(4-1;\\ -1-2;\\ 5-3)=(3;-3;2)$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Khoảng cách $AB$ với $A(1;0;0)$ và $B(0;3;4)$ bằng:",
+            "options": [
+              "$\\sqrt{26}$",
+              "$5$",
+              "$6$",
+              "$\\sqrt{18}$"
+            ],
+            "correct": 0,
+            "explanation": "$AB=\\sqrt{(0-1)^2+(3-0)^2+(4-0)^2}=\\sqrt{1+9+16}=\\sqrt{26}$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Cho $\\vec{u}=(1;2;-2)$, $\\vec{v}=(2;1;2)$. Tích vô hướng $\\vec{u}\\cdot\\vec{v}$ bằng:",
+            "options": [
+              "$0$",
+              "$4$",
+              "$-4$",
+              "$9$"
+            ],
+            "correct": 0,
+            "explanation": "$\\vec{u}\\cdot\\vec{v}=1\\cdot2+2\\cdot1+(-2)\\cdot2=2+2-4=0$. Hai vectơ vuông góc!"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Điểm nào sau đây nằm trên mặt phẳng $(Oyz)$?",
+            "options": [
+              "$A(1;2;3)$",
+              "$B(1;0;2)$",
+              "$C(0;-1;4)$",
+              "$D(2;3;0)$"
+            ],
+            "correct": 2,
+            "explanation": "$(Oyz)$ có phương trình $x=0$. Chỉ có $C(0;-1;4)$ thỏa mãn $x=0$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Trọng tâm $G$ của $\\triangle ABC$ với $A(1;0;0)$, $B(0;2;0)$, $C(0;0;3)$ có tọa độ:",
+            "options": [
+              "$\\left(\\frac{1}{3};\\frac{2}{3};1\\right)$",
+              "$(1;2;3)$",
+              "$\\left(\\frac{1}{2};1;\\frac{3}{2}\\right)$",
+              "$(0;0;0)$"
+            ],
+            "correct": 0,
+            "explanation": "$G=\\left(\\dfrac{1+0+0}{3};\\ \\dfrac{0+2+0}{3};\\ \\dfrac{0+0+3}{3}\\right)=\\left(\\dfrac{1}{3};\\ \\dfrac{2}{3};\\ 1\\right)$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Điểm đối xứng của $B(2;-1;5)$ qua trục $Oy$ là:",
+            "options": [
+              "$(-2;-1;-5)$",
+              "$(2;1;5)$",
+              "$(-2;1;-5)$",
+              "$(0;-1;0)$"
+            ],
+            "correct": 0,
+            "explanation": "Đối xứng qua $Oy$: đổi dấu $x$ và $z$, giữ $y$. $B'(-2;-1;-5)$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Hình chiếu của $A(1;2;3)$ lên $(Oxy)$ là:",
+            "options": [
+              "$(1;2;0)$",
+              "$(1;0;0)$",
+              "$(0;0;3)$",
+              "$(0;2;3)$"
+            ],
+            "correct": 0,
+            "explanation": "Chiếu lên $(Oxy)$: $z=0$, giữ $x,y$. Hình chiếu: $(1;2;0)$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Vectơ nào sau đây cùng phương với $\\vec{a}=(1;2;-2)$?",
+            "options": [
+              "$(-1;-2;2)$",
+              "$(2;4;4)$",
+              "$(1;2;2)$",
+              "$(2;1;-2)$"
+            ],
+            "correct": 0,
+            "explanation": "$\\vec{c}=(-1;-2;2)=(-1)\\cdot(1;2;-2)=-\\vec{a}$. Cùng phương (ngược hướng)."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "$\\overrightarrow{MA}=(1;2;3)$, $A(2;3;4)$. Tọa độ $M$ là:",
+            "options": [
+              "$(1;1;1)$",
+              "$(3;5;7)$",
+              "$(-1;-1;-1)$",
+              "$(1;1;-1)$"
+            ],
+            "correct": 0,
+            "explanation": "$\\overrightarrow{MA}=(x_A-x_M;\\ y_A-y_M;\\ z_A-z_M)=(1;2;3)$. Suy ra $x_M=1$, $y_M=1$, $z_M=1$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Khoảng cách từ $M(3;-4;12)$ đến mặt phẳng $(Oxy)$ bằng:",
+            "options": [
+              "$12$",
+              "$4$",
+              "$3$",
+              "$13$"
+            ],
+            "correct": 0,
+            "explanation": "Khoảng cách từ $M(x;y;z)$ đến $(Oxy)$ bằng $|z|=|12|=12$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Cho $\\vec{u}=(2;-1;2)$ và $\\vec{v}=(1;2;0)$. Góc giữa $\\vec{u}$ và $\\vec{v}$ bằng:",
+            "options": [
+              "$90°$",
+              "$60°$",
+              "$45°$",
+              "$30°$"
+            ],
+            "correct": 0,
+            "explanation": "$\\vec{u}\\cdot\\vec{v}=2\\cdot1+(-1)\\cdot2+2\\cdot0=2-2+0=0 \\Rightarrow$ góc $=90°$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Cho $A(2;1;-3)$, $B(4;5;1)$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "$\\overrightarrow{AB}=(2;4;4)$",
+              "$|\\overrightarrow{AB}|=6$",
+              "Trung điểm $M$ của $AB$ là $(3;3;-1)$",
+              "$\\overrightarrow{BA}=(-2;-4;-4)$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: $(4-2;5-1;1-(-3))=(2;4;4)$. B ✓: $|AB|=\\sqrt{4+16+16}=\\sqrt{36}=6$. C ✓: $M=\\left(\\frac{2+4}{2};\\ \\frac{1+5}{2};\\ \\frac{-3+1}{2}\\right)=(3;3;-1)$. D ✓: $\\overrightarrow{BA}=-\\overrightarrow{AB}=(-2;-4;-4)$."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Cho $\\vec{u}=(1;-2;2)$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "$|\\vec{u}|=3$",
+              "$\\vec{v}=(2;-4;4)$ cùng phương với $\\vec{u}$",
+              "$\\vec{u}\\cdot\\vec{u}=9$",
+              "$\\vec{w}=(2;1;0)$ vuông góc với $\\vec{u}$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: $\\sqrt{1+4+4}=3$. B ✓: $\\vec{v}=2\\vec{u}$. C ✓: $\\vec{u}\\cdot\\vec{u}=|\\vec{u}|^2=9$. D ✓: $\\vec{u}\\cdot\\vec{w}=2-2+0=0$."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Cho $M(a;b;c)$. Chọn tất cả các khẳng định đúng về điểm đối xứng và hình chiếu:",
+            "options": [
+              "Hình chiếu lên $(Oxy)$ là $M_1(a;b;0)$",
+              "Đối xứng qua $(Oxy)$ là $M'(a;b;-c)$",
+              "Đối xứng qua gốc $O$ là $M''(-a;-b;-c)$",
+              "Đối xứng qua trục $Oz$ là $M'''(-a;-b;c)$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả 4 đều đúng: A (chiếu $Oxy$: $z=0$), B (đổi dấu $z$), C (đổi dấu cả 3), D (đổi dấu $x,y$ khi đối xứng qua $Oz$)."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "$A(1;2;3)$, $B(3;0;1)$, $C(2;4;0)$. Chọn tất cả khẳng định đúng về trọng tâm $G$ của $\\triangle ABC$:",
+            "options": [
+              "Tọa độ $G=\\left(2;\\ 2;\\ \\frac{4}{3}\\right)$",
+              "$\\overrightarrow{GA}+\\overrightarrow{GB}+\\overrightarrow{GC}=\\vec{0}$",
+              "$|GA|=|GB|=|GC|$ suy ra $\\triangle ABC$ đều",
+              "$G$ chia mỗi đường trung tuyến theo tỉ lệ $2:1$ kể từ đỉnh"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "A ✓: $G=\\left(\\frac{1+3+2}{3};\\ \\frac{2+0+4}{3};\\ \\frac{3+1+0}{3}\\right)=\\left(2;2;\\frac{4}{3}\\right)$. B ✓: định nghĩa trọng tâm. C ✗: $|GA|=|GB|=|GC|$ không suy ra $\\triangle$ đều (chỉ đúng với đường tròn ngoại tiếp). D ✓: tính chất trọng tâm."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Cho $A(1;2;-2)$ và $B(4;6;2)$. Tính $|\\overrightarrow{AB}|^2$.",
+            "explanation": "$\\overrightarrow{AB}=(3;4;4)$. $|\\overrightarrow{AB}|^2=9+16+16=41$.",
+            "correct": "41"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Cho $\\vec{u}=(2;-1;2)$, $\\vec{v}=(1;3;0)$. Tính $\\vec{u}\\cdot\\vec{v}$.",
+            "explanation": "$\\vec{u}\\cdot\\vec{v}=2\\cdot1+(-1)\\cdot3+2\\cdot0=2-3+0=-1$.",
+            "correct": "-1"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Cho $A(2;4;6)$ và $B(8;2;2)$. Tọa độ trung điểm $M$ của $AB$ là $(x_0;y_0;z_0)$. Tính $x_0+y_0+z_0$.",
+            "explanation": "$M=\\left(\\frac{2+8}{2};\\ \\frac{4+2}{2};\\ \\frac{6+2}{2}\\right)=(5;3;4)$. $x_0+y_0+z_0=5+3+4=12$.",
+            "correct": "12"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Cho $A(1;0;0)$, $B(0;3;0)$, $C(0;0;4)$. Tính $|\\overrightarrow{AB}|^2+|\\overrightarrow{BC}|^2+|\\overrightarrow{CA}|^2$.",
+            "explanation": "$|AB|^2=1+9+0=10$. $|BC|^2=0+9+16=25$. $|CA|^2=1+0+16=17$. Tổng $=10+25+17=52$.",
+            "correct": "52"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Cho $\\vec{u}=(1;2;2)$. Tính $|\\vec{u}|$.",
+            "explanation": "$|\\vec{u}|=\\sqrt{1^2+2^2+2^2}=\\sqrt{1+4+4}=\\sqrt{9}=3$.",
+            "correct": "3"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Cho $A(3;0;4)$ và $O(0;0;0)$ là gốc tọa độ. Tính khoảng cách $OA$.",
+            "explanation": "$OA=\\sqrt{x_A^2+y_A^2+z_A^2}=\\sqrt{3^2+0^2+4^2}=\\sqrt{9+0+16}=\\sqrt{25}=5$.",
+            "correct": "5"
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Tìm tọa độ điểm $D$ để tứ giác $ABCD$ là hình bình hành, biết $A(1; 2; 1), B(2; 3; 5), C(0; -1; 2)$.",
+            "answer": "$D(-1; -2; -2)$.",
+            "explanation": "Điều kiện $\\overrightarrow{AB} = \\overrightarrow{DC}$."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Cho tam giác $ABC$ có $A(1; 0; 0), B(0; 1; 0), C(0; 0; 1)$. Tính diện tích tam giác $ABC$.",
+            "answer": "$\\dfrac{\\sqrt{3}}{2}$.",
+            "explanation": "$S = \\dfrac{1}{2}|[\\overrightarrow{AB}, \\overrightarrow{AC}]|$."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Tìm điểm $M$ trên trục $Oz$ cách đều hai điểm $A(1; 2; 3)$ và $B(2; -1; 1)$.",
+            "answer": "$M(0; 0; 2)$.",
+            "explanation": "Đặt $M(0; 0; z)$, giải phương trình $MA^2 = MB^2$."
+          }
+        ]
+      }
+    }
+  ]
+}

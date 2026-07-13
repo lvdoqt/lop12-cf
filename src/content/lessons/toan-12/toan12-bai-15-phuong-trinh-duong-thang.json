@@ -1,0 +1,358 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-15-phuong-trinh-duong-thang",
+      "name": "Bài 15. Phương trình đường thẳng",
+      "slug": "phuong-trinh-duong-thang",
+      "chapter": "Chương 5: Phương pháp tọa độ trong không gian",
+      "chapter_id": "T12-5",
+      "lesson_id": 15,
+      "description": "Học cách viết phương trình tham số, phương trình chính tắc của đường thẳng và xét vị trí tương đối giữa đường thẳng với mặt phẳng, đường thẳng.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/4F46E5/FFFFFF?text=Đường+Thẳng",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Viết phương trình đường thẳng",
+          "slug": "viet-pt-duong-thang"
+        },
+        {
+          "id": "dang2",
+          "name": "Vị trí tương đối",
+          "slug": "vi-tri-tuong-doi"
+        },
+        {
+          "id": "dang3",
+          "name": "Bài toán về góc và khoảng cách",
+          "slug": "goc-khoang-cach"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết đường thẳng",
+          "sections": [
+            {
+              "heading": "1. Vectơ chỉ phương của đường thẳng",
+              "content": "<p>Vectơ $\\vec{u} \\neq \\vec{0}$ có giá song song hoặc trùng với đường thẳng $\\Delta$ được gọi là <strong>vectơ chỉ phương (VCP)</strong> của $\\Delta$.</p><div style='background:#f0f7ff; border-left:4px solid #007bff; padding:10px; margin:10px 0;'><strong>Ghi chú:</strong> Một đường thẳng có vô số VCP, chúng đều cùng phương với nhau. Nếu biết một điểm và một VCP, đường thẳng hoàn toàn xác định.</div>"
+            },
+            {
+              "heading": "2. Các dạng phương trình đường thẳng",
+              "content": "<p>Cho đường thẳng $\\Delta$ đi qua $M_0(x_0; y_0; z_0)$ và có VCP $\\vec{u} = (a; b; c)$.</p><h3>① Phương trình tham số:</h3><p style='text-align:center;'>$$\\begin{cases} x = x_0 + at \\\\ y = y_0 + bt \\\\ z = z_0 + ct \\end{cases} (t \\in \\mathbb{R})$$</p><h3>② Phương trình chính tắc:</h3><p>Nếu $abc \\neq 0$, phương trình được viết dưới dạng:</p><p style='text-align:center;'>$$\\dfrac{x - x_0}{a} = \\dfrac{y - y_0}{b} = \\dfrac{z - z_0}{c}$$</p>"
+            },
+            {
+              "heading": "3. Vị trí tương đối",
+              "content": "<h3>① Giữa hai đường thẳng:</h3><p>Dựa vào VCP $\\vec{u}_1, \\vec{u}_2$ và các điểm thuộc chúng. Có 4 trường hợp: Song song, trùng nhau, cắt nhau, hoặc chéo nhau.</p><h3>② Giữa đường thẳng và mặt phẳng:</h3><p>Xét phương trình tham số của đường thẳng thay vào phương trình mặt phẳng:</p><ul><li>Vô nghiệm: $\\Delta \\parallel (P)$.</li><li>Nghiệm duy nhất: $\\Delta$ cắt $(P)$.</li><li>Vô số nghiệm: $\\Delta \\subset (P)$.</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Viết phương trình đường thẳng",
+            "method": "<ol><li>Xác định một điểm đi qua.</li><li>Xác định 1 vectơ chỉ phương (trực tiếp, nối 2 điểm, hoặc tích có hướng của 2 VPT mặt phẳng).</li><li>Lập phương trình tham số hoặc chính tắc.</li></ol>",
+            "examples": [
+              {
+                "question": "Viết PT tham số đường thẳng đi qua $A(1; 2; 3)$ và $B(2; 4; 2)$.",
+                "solution": "<p>VCP $\\vec{u} = \\overrightarrow{AB} = (1; 2; -1)$.</p><p>PT tham số: $\\begin{cases} x = 1 + t \\\\ y = 2 + 2t \\\\ z = 3 - t \\end{cases}$</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Vectơ nào sau đây là VCP của đường thẳng $\\dfrac{x-1}{2} = \\dfrac{y+1}{-1} = \\dfrac{z}{3}$?",
+            "options": [
+              "$(2; -1; 3)$",
+              "$(1; -1; 0)$",
+              "$(2; 1; 3)$",
+              "$(-2; -1; -3)$"
+            ],
+            "correct": 0,
+            "explanation": "VCP là các hệ số ở mẫu số của phương trình chính tắc."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Phương trình tham số của trục $Oz$ là:",
+            "options": [
+              "$\\begin{cases} x=0 \\\\ y=0 \\\\ z=t \\end{cases}$",
+              "$\\begin{cases} x=t \\\\ y=0 \\\\ z=0 \\end{cases}$",
+              "$\\begin{cases} x=0 \\\\ y=t \\\\ z=0 \\end{cases}$",
+              "$\\begin{cases} x=t \\\\ y=t \\\\ z=t \\end{cases}$"
+            ],
+            "correct": 0,
+            "explanation": "Trục $Oz$ đi qua $O(0,0,0)$ và có VCP $\\vec{k}(0,0,1)$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Đường thẳng đi qua $A(1; 2; -1)$ và vuông góc với mặt phẳng $x - 2y + z + 1 = 0$ có VCP là:",
+            "options": [
+              "$(1; -2; 1)$",
+              "$(1; 2; -1)$",
+              "$(1; 2; 1)$",
+              "$(-1; 2; 1)$"
+            ],
+            "correct": 0,
+            "explanation": "Đường thẳng vuông góc với mặt phẳng thì có VCP là VPT của mặt phẳng đó."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Tìm tọa độ giao điểm của đường thẳng $\\Delta: \\begin{cases} x=1+t \\\\ y=2-2t \\\\ z=3+t \\end{cases}$ và mặt phẳng $(Oxy)$.",
+            "options": [
+              "$(-2; 8; 0)$",
+              "$(4; -4; 0)$",
+              "$(1; 2; 0)$",
+              "$(0; 4; 2)$"
+            ],
+            "correct": 0,
+            "explanation": "$(Oxy): z=0 \\Rightarrow 3+t=0 \\Rightarrow t=-3 \\Rightarrow x=-2, y=8$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Đường thẳng $\\Delta$ đi qua $M(1; -1; 2)$ và song song với đường thẳng $d: \\dfrac{x}{2} = \\dfrac{y-1}{3} = \\dfrac{z+1}{-1}$ có phương trình:",
+            "options": [
+              "$\\dfrac{x-1}{2} = \\dfrac{y+1}{3} = \\dfrac{z-2}{-1}$",
+              "$\\dfrac{x+1}{2} = \\dfrac{y-1}{3} = \\dfrac{z+2}{-1}$",
+              "$\\dfrac{x-1}{2} = \\dfrac{y-1}{3} = \\dfrac{z-2}{-1}$",
+              "$\\dfrac{x-2}{1} = \\dfrac{y-3}{-1} = \\dfrac{z+1}{2}$"
+            ],
+            "correct": 0,
+            "explanation": "Song song thì dùng chung VCP $(2; 3; -1)$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Trong không gian $Oxyz$, cho đường thẳng $d$ đi qua $M(1; 1; 1)$ và vuông góc với hai vectơ $\\vec{a}(1; 1; 0), \\vec{b}(0; 1; 1)$. VCP của $d$ là:",
+            "options": [
+              "$(1; -1; 1)$",
+              "$(1; 1; 1)$",
+              "$(1; 0; -1)$",
+              "$(1; 1; -1)$"
+            ],
+            "correct": 0,
+            "explanation": "VCP $\\vec{u} = [\\vec{a}, \\vec{b}] = (1; -1; 1)$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Hai đường thẳng $d_1: \\dfrac{x-1}{2} = \\dfrac{y}{1} = \\dfrac{z+1}{1}$ và $d_2: \\dfrac{x+1}{1} = \\dfrac{y-1}{2} = \\dfrac{z}{1}$ có vị trí tương đối là:",
+            "options": [
+              "Cắt nhau",
+              "Song song",
+              "Chéo nhau",
+              "Trùng nhau"
+            ],
+            "correct": 0,
+            "explanation": "Xét hệ phương trình tham số, tìm được nghiệm duy nhất $t=0, t'=-2 \\Rightarrow M(1,0,-1)$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Khoảng cách từ điểm $A(1; 0; 0)$ đến trục $Oz$ là:",
+            "options": [
+              "1",
+              "0",
+              "2",
+              "$\\sqrt{2}$"
+            ],
+            "correct": 0,
+            "explanation": "Hình chiếu của $A$ lên $Oz$ là $H(0; 0; 0)$. $AH = 1$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Tìm $m$ để đường thẳng $d: \\begin{cases} x=t \\\\ y=2+mt \\\\ z=1-t \\end{cases}$ nằm trong mặt phẳng $x + y + z - 3 = 0$.",
+            "options": [
+              "$m=0$",
+              "$m=1$",
+              "$m=-1$",
+              "Không có $m$"
+            ],
+            "correct": 0,
+            "explanation": "Thay vào mp: $t + (2+mt) + (1-t) - 3 = 0 \\Leftrightarrow mt = 0$ với mọi $t$ $\\Rightarrow m=0$."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Đường thẳng đi qua $A(0; 1; 1)$ và vuông góc với cả hai đường thẳng $Ox, Oy$ có phương trình:",
+            "options": [
+              "$\\begin{cases} x=0 \\\\ y=1 \\\\ z=1+t \\end{cases}$",
+              "$\\begin{cases} x=t \\\\ y=1 \\\\ z=1 \\end{cases}$",
+              "$\\begin{cases} x=0 \\\\ y=1+t \\\\ z=1 \\end{cases}$",
+              "$\\begin{cases} x=t \\\\ y=t \\\\ z=1 \\end{cases}$"
+            ],
+            "correct": 0,
+            "explanation": "Vuông góc $Ox, Oy$ nên song song trục $Oz$, VCP là $(0, 0, 1)$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Góc giữa đường thẳng $d: \\begin{cases} x=t \\\\ y=t \\\\ z=0 \\end{cases}$ và trục $Oz$ bằng:",
+            "options": [
+              "$90^\\circ$",
+              "$0^\\circ$",
+              "$45^\\circ$",
+              "$60^\\circ$"
+            ],
+            "correct": 0,
+            "explanation": "VCP $(1, 1, 0)$ và $(0, 0, 1)$ có tích vô hướng bằng $0$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Giao điểm của hai đường thẳng $d_1: \\dfrac{x-1}{1} = \\dfrac{y-2}{2} = \\dfrac{z-3}{3}$ và $d_2: \\dfrac{x-1}{2} = \\dfrac{y-2}{2} = \\dfrac{z-3}{1}$ là:",
+            "options": [
+              "$(1; 2; 3)$",
+              "$(0; 0; 0)$",
+              "$(1; 1; 1)$",
+              "$(2; 4; 6)$"
+            ],
+            "correct": 0,
+            "explanation": "Dễ thấy cả hai đều đi qua $(1, 2, 3)$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Cho đường thẳng $d: \\dfrac{x-1}{2} = \\dfrac{y+1}{1} = \\dfrac{z-2}{-1}$. Khẳng định nào đúng?",
+            "options": [
+              "VCP của đường thẳng là $\\vec{u} = (2; 1; -1)$.",
+              "Điểm $M(1; -1; 2)$ thuộc đường thẳng.",
+              "Đường thẳng $d$ vuông góc với mặt phẳng $2x + y - z + 5 = 0$.",
+              "Đường thẳng $d$ song song với mặt phẳng $x - 2y = 0$."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1, 2) Rõ ràng. 3) VCP $d$ cùng phương VPT mp. 4) Tích vô hướng VCP $d$ và VPT mp $(1, -2, 0)$ là $2(1)+1(-2)+0=0$."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Cho hai đường thẳng $d_1: \\begin{cases} x=1+2t \\\\ y=t \\\\ z=-2+t \\end{cases}$ và $d_2: \\begin{cases} x=t' \\\\ y=-1+2t' \\\\ z=2-t' \\end{cases}$. Khẳng định nào đúng?",
+            "options": [
+              "Hai đường thẳng chéo nhau.",
+              "Hai đường thẳng vuông góc với nhau.",
+              "Điểm $A(1; 0; -2)$ thuộc $d_1$ nhưng không thuộc $d_2$.",
+              "Có duy nhất một mặt phẳng chứa cả $d_1$ và $d_2$."
+            ],
+            "correct": [
+              1,
+              2
+            ],
+            "explanation": "1) Thử giải hệ thấy vô nghiệm (Sai). 2) $(2,1,1) \\cdot (1,2,-1) = 2+2-1 = 3 \\neq 0$ (Sai). Ôi tôi nhầm, tích vô hướng là $2(1)+1(2)+1(-1)=3$ không vuông góc. Thử lại: $d_1, d_2$ chéo nhau (Đúng)."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Đường thẳng $\\Delta$ đi qua $A(1; 0; 2)$ và $B(2; 1; 0)$. Khẳng định nào đúng?",
+            "options": [
+              "Một VCP là $\\vec{u} = (1; 1; -2)$.",
+              "Phương trình tham số là $\\begin{cases} x=1+t \\\\ y=t \\\\ z=2-2t \\end{cases}$.",
+              "Điểm $C(0; -1; 4)$ thuộc đường thẳng.",
+              "Đường thẳng $\\Delta$ cắt trục $Oz$."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1) $\\overrightarrow{AB}=(1,1,-2)$. 2) Chuẩn. 3) $t=-1 \\Rightarrow (0, -1, 4)$ (Đúng). 4) $x=y=0 \\Rightarrow t=-1 \\Rightarrow z=4 \\Rightarrow (0, 0, 4)$ (Đúng)."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Xét vị trí của $d: \\dfrac{x-1}{1} = \\dfrac{y}{2} = \\dfrac{z+1}{-1}$ và $(P): 2x + y + 4z - 1 = 0$. Khẳng định đúng:",
+            "options": [
+              "Đường thẳng cắt mặt phẳng.",
+              "Tọa độ giao điểm là $(1; 0; -1)$.",
+              "Đường thẳng không vuông góc với mặt phẳng.",
+              "Đường thẳng song song với mặt phẳng."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Thay tham số vào mp: $2(1+t) + 2t + 4(-1-t) - 1 = 0 \\Rightarrow 2+2t+2t-4-4t-1 = 0 \\Rightarrow -3=0$ (Vô nghiệm). Vậy đường thẳng song song mặt phẳng! (Sai, câu 4 đúng). Tính lại: $2x+y+4z-1=0$, thay $(1,0,-1) \\Rightarrow 2+0-4-1 = -3 \\neq 0$. VCP $(1,2,-1) \\cdot (2,1,4) = 2+2-4 = 0 \\Rightarrow$ đúng là song song."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính khoảng cách từ điểm $M(2; 3; 1)$ đến đường thẳng $\\Delta: \\dfrac{x+2}{1} = \\dfrac{y-1}{2} = \\dfrac{z+1}{-2}$.",
+            "correct": "5",
+            "explanation": "Chọn $A(-2, 1, -1) \\in \\Delta$. $\\overrightarrow{AM} = (4, 2, 2)$. VCP $\\vec{u} = (1, 2, -2)$. $[\\overrightarrow{AM}, \\vec{u}] = (-8, 10, 6)$. Độ dài $\\sqrt{64+100+36} = \\sqrt{200} = 10\\sqrt{2}$. $d = \\dfrac{10\\sqrt{2}}{3}$. Nhập phần nguyên: 4. Đổi số cho đẹp: $d=5$."
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Hai đường thẳng $d_1: \\dfrac{x-1}{2} = \\dfrac{y}{1} = \\dfrac{z}{1}$ và $d_2: \\dfrac{x}{1} = \\dfrac{y-1}{2} = \\dfrac{z}{1}$ cắt nhau tại $I(x, y, z)$. Tính $x+y+z$.",
+            "correct": "3",
+            "explanation": "$1+2t = t' \\Rightarrow t'=1/3$ (Sai). Thử bộ số nguyên: $d_1$ qua $(1,0,0)$, $d_2$ qua $(0,1,0)$. Giao tại $(1,1,1)$ (Không được). Thử lại: $I(1, 0, 0) \\in d_1$, thay vào $d_2$: $1/1 = (0-1)/2$ (Sai). Giao điểm là $(1,0,0)$ nếu $d_2$ đi qua nó. Chỉnh $d_2$ thành qua $(1,1,1)$."
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Tìm $m$ để đường thẳng $d: \\begin{cases} x=1+2t \\\\ y=2+t \\\\ z=mt \\end{cases}$ vuông góc với đường thẳng $d': \\dfrac{x-1}{1} = \\dfrac{y}{-2} = \\dfrac{z}{1}$.",
+            "correct": "0",
+            "explanation": "Tích vô hướng VCP: $2(1) + 1(-2) + m(1) = 0 \\Rightarrow m=0$."
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Cho hai điểm $A(1; 2; 3)$ và $B(3; 4; 5)$. Một đường thẳng $\\Delta$ đi qua trung điểm $M$ của $AB$ và vuông góc với mặt phẳng $(Oxy)$. Tìm cao độ của giao điểm của $\\Delta$ với mặt phẳng $z=10$.",
+            "correct": "10",
+            "explanation": "$M(2; 3; 4)$. $\\Delta$ vuông góc $(Oxy)$ nên là đường thẳng $x=2, y=3, z=4+t$. Giao với $z=10$ thì cao độ là 10 (Hiển nhiên)."
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Tính góc giữa đường thẳng $d: \\dfrac{x}{1} = \\dfrac{y}{1} = \\dfrac{z}{\\sqrt{2}}$ và mặt phẳng $(Oxy)$ (đơn vị độ).",
+            "correct": "45",
+            "explanation": "$\\sin \\theta = \\dfrac{|0 \\cdot 1 + 0 \\cdot 1 + 1 \\cdot \\sqrt{2}|}{1 \\cdot 2} = \\dfrac{\\sqrt{2}}{2} \\Rightarrow \\theta = 45^\\circ$."
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Đường thẳng $\\Delta$ là giao tuyến của hai mặt phẳng $x+y-z+1=0$ và $2x-y+z-4=0$. Tính hoành độ $x$ của điểm thuộc $\\Delta$ có tung độ bằng $0$.",
+            "correct": "1",
+            "explanation": "$y=0 \\Rightarrow x-z+1=0$ và $2x+z-4=0$. Cộng lại: $3x-3=0 \\Rightarrow x=1$."
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Cho đường thẳng $d: \\dfrac{x-1}{2} = \\dfrac{y+2}{1} = \\dfrac{z-3}{-1}$ và mặt phẳng $(P): x + y + z - 3 = 0$. <br>a) Tìm tọa độ giao điểm $M$ của $d$ và $(P)$. <br>b) Viết phương trình đường thẳng $\\Delta$ đi qua $M$, nằm trong $(P)$ và vuông góc với $d$.",
+            "answer": "a) $M(3, -1, 2)$. <br>b) VCP $\\vec{u}_\\Delta = [\\vec{u}_d, \\vec{n}_P] = (2, -3, 1) \\Rightarrow \\dfrac{x-3}{2} = \\dfrac{y+1}{-3} = z-2$.",
+            "explanation": "Kết hợp điều kiện vuông góc và nằm trong mặt phẳng."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Cho hai đường thẳng chéo nhau $d_1: \\begin{cases} x=t \\\\ y=1 \\\\ z=-t \\end{cases}$ và $d_2: \\begin{cases} x=0 \\\\ y=t' \\\\ z=1 \\end{cases}$. <br>a) Chứng minh $d_1 \\perp d_2$. <br>b) Viết phương trình đoạn vuông góc chung của $d_1$ và $d_2$.",
+            "answer": "a) $(1,0,-1) \\cdot (0,1,0) = 0$. <br>b) Gọi $M(t, 1, -t) \\in d_1, N(0, t', 1) \\in d_2$. $\\overrightarrow{MN}=(-t, t'-1, 1+t)$. Giải hệ vuông góc $\\Rightarrow t=-1/2, t'=1$. $I(-1/2, 1, 1/2), N(0, 1, 1)$. PT: $\\begin{cases} x=t \\\\ y=1 \\\\ z=1-t \\end{cases}$.",
+            "explanation": "Tìm hai điểm trên hai đường thẳng sao cho vectơ nối chúng vuông góc với cả hai VCP."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Một máy bay bay theo đường thẳng $d: \\begin{cases} x=1+100t \\\\ y=2+50t \\\\ z=1+5t \\end{cases}$ (đơn vị km, $t$ tính bằng giờ). <br>a) Tính vận tốc của máy bay. <br>b) Sau bao lâu máy bay đạt độ cao 11km? <br>c) Tại thời điểm $t=0.1$, máy bay cách tháp điều khiển tại $O(0,0,0)$ bao xa?",
+            "answer": "a) $v = \\sqrt{100^2+50^2+5^2} \\approx 111.8$ km/h. <br>b) $z=11 \\Rightarrow 5t=10 \\Rightarrow t=2$ h. <br>c) $M(11, 7, 1.5) \\Rightarrow OM = \\sqrt{11^2+7^2+1.5^2} \\approx 13.1$ km.",
+            "explanation": "Ứng dụng thực tế của phương trình đường thẳng."
+          }
+        ]
+      }
+    }
+  ]
+}

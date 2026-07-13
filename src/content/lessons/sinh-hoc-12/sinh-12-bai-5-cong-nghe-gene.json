@@ -1,0 +1,190 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-5",
+      "name": "Bài 5. Công nghệ gene",
+      "slug": "cong-nghe-gene",
+      "chapter": "Chương 1. Di truyền phân tử",
+      "chapter_id": "S12-1",
+      "lesson_id": 5,
+      "description": "Tìm hiểu về công nghệ gene, các kỹ thuật cơ bản và ứng dụng.",
+      "duration_minutes": 45,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2670&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Công nghệ gene",
+          "sections": [
+            {
+              "heading": "1. Khái niệm công nghệ gene",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Công nghệ gene</strong> (công nghệ DNA tái tổ hợp) là tập hợp các kỹ thuật cho phép nghiên cứu và thao tác với gene, tạo ra các sinh vật có tính trạng mới.</li></ul><h4>b) Các bước cơ bản</h4><ul><li>Tách gene từ tế bào cho.</li><li>Nhân gene vào vector chuyển.</li><li>Đưa vector vào tế bào nhận.</li><li>Chọn lọc và nhân bản sinh vật chuyển gene.</li></ul>"
+            },
+            {
+              "heading": "2. Các công cụ của công nghệ gene",
+              "content": "<h4>a) Enzyme cắt giới hạn (Restriction endonuclease)</h4><ul><li>Nhận ra trình tự đặc hiệu 4-8 nucleotit trên DNA.</li><li>Cắt DNA tại vị trí nhận biết, tạo đầu dính hoặc đầu thẳng.</li><li>Ví dụ: EcoRI cắt tại GAATTC, tạo đầu dính.</li></ul><h4>b) Vector chuyển gene</h4><ul><li><strong>Plasmid:</strong> DNA vòng nhỏ, phổ biến trong công nghệ gene.</li><li><strong>Phage:</strong> Virus bacteriophage, chuyển gene hiệu quả.</li><li><strong>Cosmid:</strong> Kết hợp plasmid và phage.</li><li><strong>YAC/BAC:</strong> Nhiễm sắc thể nhân tạo.</li></ul><h4>c) Enzyme ligase</h4><ul><li>Nối các đoạn DNA lại với nhau.</li><li>Tạo DNA tái tổ hợp.</li></ul>"
+            },
+            {
+              "heading": "3. Quy trình công nghệ gene",
+              "content": "<h4>a) Tạo DNA tái tổ hợp</h4><ul><li>Cắt DNA nguồn và plasmid bằng enzyme cắt giới hạn cùng loại.</li><li>Nối DNA vào plasmid bằng enzyme ligase.</li><li>Tạo plasmid tái tổ hợp.</li></ul><h4>b) Đưa DNA vào tế bào</h4><ul><li><strong>Biến nạp (Transformation):</strong> Đưa plasmid vào vi khuẩn bằng CaCl₂ và nhiệt sốc.</li><li><strong>Điện biến nạp (Electroporation):</strong> Dùng điện trường tạo lỗ màng.</li><li><strong>Microinjection:</strong> Tiêm trực tiếp vào tế bào.</li><li><strong>Sử dụng vector virus:</strong> Đưa gene vào tế bào động vật.</li></ul><h4>c) Chọn lọc và nhân bản</h4><ul><li>Sử dụng kháng sinh chọn lọc tế bào chuyển gene.</li><li>Sử dụng reporter gene (lacZ, GFP).</li></ul>"
+            },
+            {
+              "heading": "4. Ứng dụng của công nghệ gene",
+              "content": "<h4>a) Trong y học</h4><ul><li>Sản xuất hormone insulin, vaccine, kháng thể đơn dòng.</li><li>Gene therapy (điều trị bệnh di truyền).</li><li>Chẩn đoán bệnh bằng PCR.</li></ul><h4>b) Trong nông nghiệp</h4><ul><li>Tạo cây trồng chuyển gene kháng sâu, kháng thuốc trừ cỏ.</li><li>Cây trồng biến đổi gen tăng dinh dưỡng (Golden Rice).</li><li>Động vật chuyển gene cho năng suất cao.</li></ul><h4>c) Trong công nghiệp</h4><ul><li>Sản xuất enzyme, amino acid, vitamin.</li><li>Xử lý môi trường (vi khuẩn phân giải dầu).</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Enzyme cắt giới hạn có chức năng gì?",
+            "options": [
+              "Nối các đoạn DNA",
+              "Cắt DNA tại trình tự đặc hiệu",
+              "Tổng hợp DNA mới",
+              "Nhân đôi DNA"
+            ],
+            "correct": 1,
+            "explanation": "Enzyme cắt giới hạn (restriction endonuclease) nhận ra trình tự đặc hiệu trên DNA và cắt tại vị trí đó."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Plasmid là gì?",
+            "options": [
+              "Một loại virus",
+              "DNA vòng nhỏ trong vi khuẩn",
+              "Một loại enzyme",
+              "Một loại protein"
+            ],
+            "correct": 1,
+            "explanation": "Plasmid là DNA vòng nhỏ ngoài nhiễm sắc thể, thường được sử dụng làm vector trong công nghệ gene."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Đâu là vector phổ biến nhất trong công nghệ gene?",
+            "options": [
+              "Virus",
+              "Plasmid",
+              "Cosmid",
+              "BAC"
+            ],
+            "correct": 1,
+            "explanation": "Plasmid là vector phổ biến nhất trong công nghệ gene do dễ sử dụng và có khả năng tự nhân bản trong vi khuẩn."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Enzyme ligase có chức năng gì?",
+            "options": [
+              "Cắt DNA",
+              "Nhân đôi DNA",
+              "Nối các đoạn DNA",
+              "Tổng hợp RNA"
+            ],
+            "correct": 2,
+            "explanation": "Enzyme ligase có chức năng nối các đoạn DNA lại với nhau, tạo DNA tái tổ hợp."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Ứng dụng nào của công nghệ gene trong y học?",
+            "options": [
+              "Tạo cây trồng kháng sâu",
+              "Sản xuất insulin",
+              "Vi khuẩn phân giải dầu",
+              "Cây trồng tăng dinh dưỡng"
+            ],
+            "correct": 1,
+            "explanation": "Công nghệ gene được ứng dụng để sản xuất insulin nhân tạo trong vi khuẩn E. coli."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các vector thường dùng trong công nghệ gene:",
+            "options": [
+              "Plasmid",
+              "Phage",
+              "Cosmid",
+              "Retrovector"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Plasmid phổ biến nhất. B ✓: Bacteriophage dùng để chuyển gene vào vi khuẩn. C ✓: Cosmid kết hợp plasmid và phage. D ✗: Không phải vector thông dụng."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các phương pháp đưa DNA vào tế bào:",
+            "options": [
+              "Biến nạp (transformation)",
+              "Điện biến nạp (electroporation)",
+              "Microinjection",
+              "PCR"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Dùng CaCl2 và nhiệt sốc. B ✓: Dùng điện trường tạo lỗ màng. C ✓: Tiêm trực tiếp vào tế bào. D ✗: PCR là phương pháp nhân đôi DNA, không phải đưa vào tế bào."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một plasmid 3 kb chứa gene kháng ampicillin. Khi chèn thêm gene 1,2 kb, kích thước plasmid tái tổ hợp là bao nhiêu kb? Nhập số 2 chữ số. (Ví dụ: 04)",
+            "correct": "42",
+            "explanation": "Plasmid = 3 kb, gene = 1,2 kb. Tổng = 3 + 1,2 = 4,2 kb."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Nếu hiệu suất chuyển gene là 1% và cần 1000 tế bào chuyển gene thành công, cần bao nhiêu tế bào ban đầu? Nhập số 5 chữ số. (Ví dụ: 10000)",
+            "correct": "100000",
+            "explanation": "Số tế bào cần = 1000 / 0,01 = 100000 tế bào."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định các bước trong quy trình công nghệ gene",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Nắm vững trình tự các bước: Cắt → Nối → Chuyển → Chọn lọc.</li><li>Bước 1: Dùng enzyme cắt giới hạn cắt DNA và vector.</li><li>Bước 2: Dùng ligase nối DNA vào vector.</li><li>Bước 3: Đưa vector vào tế bào nhận.</li><li>Bước 4: Chọn lọc tế bào chứa gene mong muốn.</li></ol>",
+            "examples": [
+              {
+                "question": "Trình tự nào đúng trong quy trình tạo sinh vật chuyển gene?",
+                "solution": "<p><strong>Giải:</strong></p><p>Quy trình đúng:</p><ol><li>Tách gene từ tế bào cho</li><li>Cắt gene và plasmid bằng enzyme cắt giới hạn</li><li>Nối gene vào plasmid bằng ligase</li><li>Đưa plasmid tái tổ hợp vào tế bào nhận (biến nạp)</li><li>Chọn lọc tế bào chuyển gene</li></ol>"
+              },
+              {
+                "question": "Để tạo insulin bằng công nghệ gene, bước đầu tiên cần làm gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Bước 1: <strong>Tách gene mã hóa insulin</strong> từ tế bào tuyến tụy người (hoặc tổng hợp nhân tạo).</p><p>Sau đó mới thực hiện các bước tiếp theo: cắt, nối, chuyển vào vi khuẩn, chọn lọc.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính kích thước DNA tái tổ hợp",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định kích thước vector và gene cần chuyển.</li><li>Kích thước DNA tái tổ hợp = kích thước vector + kích thước gene.</li><li>Nhớ công thức: Chiều dài (bp) × 3.4 Å = kích thước vật lý.</li><li>Chú ý đơn vị: kb = 1000 bp.</li></ol>",
+            "examples": [
+              {
+                "question": "Một plasmid có kích thước 5 kb. Người ta chèn một gene có kích thước 1,5 kb vào plasmid. Kích thước DNA tái tổ hợp là bao nhiêu?",
+                "solution": "<p><strong>Giải:</strong></p><p>Kích thước plasmid = 5 kb</p><p>Kích thước gene = 1,5 kb</p><p>Kích thước DNA tái tổ hợp = 5 + 1,5 = <strong>6,5 kb</strong></p>"
+              },
+              {
+                "question": "Một gene có 600 cặp bazơ. Khi chèn vào plasmid 4 kb, kích thước plasmid tái tổ hợp là bao nhiêu?",
+                "solution": "<p><strong>Giải:</strong></p><p>Gene = 600 bp = 0,6 kb</p><p>Plasmid = 4 kb</p><p>Kích thước plasmid tái tổ hợp = 4 + 0,6 = <strong>4,6 kb</strong></p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

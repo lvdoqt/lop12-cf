@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_20",
+      "name": "Giao thông vận tải và bưu chính viễn thông",
+      "slug": "giao-thong-van-tai-va-buu-chinh-vien-thong",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 20,
+      "description": "Vai trò của giao thông vận tải và bưu chính viễn thông trong phát triển kinh tế - xã hội; hệ thống và phân bố; các thách thức và giải pháp.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Giao thông và bưu chính viễn thông: trục kết nối nền kinh tế",
+          "summary": "Giao thông vận tải kết nối hàng hóa, con người và thị trường; bưu chính viễn thông kết nối thông tin. Cả hai đóng vai trò quan trọng trong liên kết vùng, thương mại và phát triển dịch vụ số.",
+          "sections": [
+            { "heading": "Hệ thống giao thông", "content": "Gồm đường bộ, đường sắt, đường thủy nội địa, cảng biển và hàng không; mỗi loại có vai trò và phân bố khác nhau." },
+            { "heading": "Bưu chính viễn thông", "content": "Hạ tầng viễn thông, internet, dịch vụ bưu chính; nền tảng cho thương mại điện tử và dịch vụ hiện đại." },
+            { "heading": "Thách thức và giải pháp", "content": "Quy hoạch tích hợp, nâng cấp hạ tầng, số hóa dịch vụ và quản lý môi trường, an ninh mạng." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Nêu hai loại hình giao thông quan trọng cho xuất khẩu?", "a_hint": "Cảng biển và hàng không (vận tải quốc tế)." },
+            { "q": "Một lợi ích của phát triển viễn thông?", "a_hint": "Thúc đẩy thương mại điện tử và tiếp cận dịch vụ trực tuyến." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Loại hình giao thông nào quan trọng cho vận tải hàng nặng quốc tế?", "options": ["Cảng biển","Đường mòn nhỏ","Xe đạp","Đường ngầm"], "correct": 0, "explanation": "Cảng biển là trục chính vận chuyển hàng hóa nặng quốc tế." },
+          { "id": 2, "type": "mcq", "question": "Bưu chính viễn thông hỗ trợ mạnh nhất cho ngành nào?", "options": ["Thương mại điện tử và dịch vụ số","Khai khoáng thủ công","Trồng trọt truyền thống","Nuôi gia súc"], "correct": 0, "explanation": "Viễn thông là nền tảng cho thương mại điện tử và dịch vụ số." },
+          { "id": 3, "type": "mcq", "question": "Một thách thức của giao thông là?", "options": ["Ùn tắc giao thông và hạ tầng quá tải","Tăng năng suất nông nghiệp","Tăng số trường học","Giảm dân số"], "correct": 0, "explanation": "Ùn tắc và hạ tầng quá tải là thách thức đô thị lớn." },
+          { "id": 4, "type": "mcq", "question": "Giải pháp để nâng cao năng lực cảng biển là?", "options": ["Mở rộng bến, tự động hóa và kết nối logistic","Giảm số lượng tàu","Ngừng hoạt động cảng","Không đầu tư"], "correct": 0, "explanation": "Mở rộng hạ tầng và tự động hóa nâng cao năng lực cảng." },
+          { "id": 5, "type": "mcq", "question": "Yếu tố nào thúc đẩy phát triển mạng internet vùng sâu vùng xa?", "options": ["Đầu tư hạ tầng viễn thông và chính sách hỗ trợ","Tăng thuế viễn thông","Cấm thiết bị","Không có yếu tố"], "correct": 0, "explanation": "Đầu tư hạ tầng và chính sách giúp mở rộng mạng internet." },
+          { "id": 6, "type": "mcq", "question": "Hệ thống giao thông tích hợp cần chú trọng?", "options": ["Kết nối giữa đường bộ, đường sắt và cảng biển","Chỉ phát triển đường bộ","Chỉ phát triển hàng không","Không kết nối"], "correct": 0, "explanation": "Tích hợp giúp tối ưu hóa vận tải và giảm chi phí logistics." },
+          { "id": 7, "type": "mcq", "question": "An ninh mạng liên quan tới bưu chính viễn thông vì?", "options": ["Dữ liệu và giao dịch trực tuyến cần được bảo vệ","Không liên quan","Chỉ là vấn đề thời tiết","Không có lý do"], "correct": 0, "explanation": "Bảo vệ dữ liệu và giao dịch trực tuyến là yêu cầu then chốt." },
+          { "id": 8, "type": "mcq", "question": "Phát triển giao thông bền vững nên chú trọng?", "options": ["Vận tải công cộng và giảm phát thải","Tăng xe cá nhân","Bê tông hóa toàn bộ","Tăng xả thải"], "correct": 0, "explanation": "Vận tải công cộng giảm ách tắc và ô nhiễm môi trường." },
+          { "id": 9, "type": "mcq", "question": "Một chỉ tiêu đánh giá hạ tầng giao thông là?", "options": ["Khả năng thông quan hàng hóa và năng suất cảng","Số cửa hàng bán lẻ","Diện tích rừng","Số trường học"], "correct": 0, "explanation": "Khả năng thông quan và năng suất cảng phản ánh hiệu quả hạ tầng logistics." },
+          { "id": 10, "type": "mcq", "question": "Thương mại điện tử phụ thuộc nhiều vào?", "options": ["Bưu chính viễn thông và logistics","Số lượng nông trại","Loại đất trồng","Không phụ thuộc gì"], "correct": 0, "explanation": "Thương mại điện tử cần hạ tầng viễn thông và logistics để giao hàng." }
+        ]
+      }
+    }
+  ]
+}

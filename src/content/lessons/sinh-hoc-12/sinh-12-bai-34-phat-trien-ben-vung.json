@@ -1,0 +1,192 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-34",
+      "name": "Bài 34. Phát triển bền vững",
+      "slug": "phat-trien-ben-vung",
+      "chapter": "Chương 8. Sinh thái học phục hồi, bảo tồn và phát triển bền vững",
+      "chapter_id": "S12-8",
+      "lesson_id": 34,
+      "description": "Tìm hiểu về phát triển bền vững và các mục tiêu phát triển bền vững.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Phát triển bền vững",
+          "sections": [
+            {
+              "heading": "1. Khái niệm phát triển bền vững",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Phát triển bền vững</strong> là phát triển kinh tế - xã hội đáp ứng nhu cầu hiện tại mà không ảnh hưởng đến khả năng đáp ứng nhu cầu của các thế hệ tương lai.</li><li>Ba trụ cột: Kinh tế - Xã hội - Môi trường.</li></ul><h4>b) Đặc điểm</h4><ul><li>Khai thác hợp lý tài nguyên thiên nhiên.</li><li>Bảo vệ môi trường sống.</li><li>Đảm bảo công bằng xã hội.</li><li>Duy trì tăng trưởng kinh tế.</li></ul>"
+            },
+            {
+              "heading": "2. Mục tiêu phát triển bền vững (SDGs)",
+              "content": "<h4>a) 17 Mục tiêu SDGs</h4><ul><li><strong>1.</strong> Xóa đói nghèo.</li><li><strong>2.</strong> Xóa đói, đảm bảo an ninh lương thực.</li><li><strong>3.</strong> Sức khỏe và phúc lợi.</li><li><strong>4.</strong> Giáo dục chất lượng.</li><li><strong>5.</strong> Bình đẳng giới.</li><li><strong>6.</strong> Nước sạch và vệ sinh.</li><li><strong>7.</strong> Năng lượng sạch và giá cả phải chăng.</li><li><strong>8.</strong> Việc làm bền vững và kinh tế.</li><li><strong>9.</strong> Công nghiệp, đổi mới sáng tạo.</li><li><strong>10.</strong> Giảm bất bình đẳng.</li><li><strong>11.</strong> Đô thị và cộng đồng bền vững.</li><li><strong>12.</strong> Tiêu dùng và sản xuất có trách nhiệm.</li><li><strong>13.</strong> Hành động về khí hậu.</li><li><strong>14.</strong> Đại dương và biển.</li><li><strong>15.</strong> Hệ sinh thái trên cạn.</li><li><strong>16.</strong> Hòa bình, công lý và thể chế.</li><li><strong>17.</strong> Quan hệ đối tác để đạt mục tiêu.</li></ul>"
+            },
+            {
+              "heading": "3. Nền kinh tế tuần hoàn",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Kinh tế tuần hoàn</strong> là mô hình kinh tế tái sử dụng và tái chế tài nguyên, giảm thiểu chất thải và ô nhiễm.</li></ul><h4>b) Nguyên tắc</h4><ul><li><strong>Giảm (Reduce):</strong> Giảm tiêu thụ nguyên liệu.</li><li><strong>Tái sử dụng (Reuse):</strong> Dùng lại sản phẩm.</li><li><strong>Tái chế (Recycle):</strong> Chế biến từ nguyên liệu phế thải.</li><li><strong>Phục hồi (Recover):</strong> Thu hồi năng lượng từ chất thải.</li></ul><h4>c) Lợi ích</h4><ul><li>Giảm ô nhiễm môi trường.</li><li>Tiết kiệm tài nguyên.</li><li>Tạo việc làm mới.</li><li>Giảm chi phí sản xuất.</li></ul>"
+            },
+            {
+              "heading": "4. Ứng dụng phát triển bền vững",
+              "content": "<h4>a) Nông nghiệp bền vững</h4><ul><li><strong>Nông nghiệp hữu cơ:</strong> Không sử dụng hóa chất độc hại.</li><li><strong>Nông nghiệp thông minh:</strong> Ứng dụng công nghệ cao.</li><li><strong>Tuần hoàn nước:</strong> Tưới tiêu tiết kiệm.</li></ul><h4>b) Năng lượng tái tạo</h4><ul><li><strong>Năng lượng mặt trời:</strong> Pin năng lượng mặt trời.</li><li><strong>Năng lượng gió:</strong> Turbin gió.</li><li><strong>Năng lượng sinh khối:</strong> Từ phế thải nông nghiệp.</li></ul><h4>c) Giao thông xanh</h4><ul><li><strong>Xe điện:</strong> Giảm khí thải.</li><li><strong>Giao thông công cộng:</strong> Giảm phương tiện cá nhân.</li><li><strong>Đi bộ, xe đạp:</strong> Thân thiện môi trường.</li></ul>"
+            },
+            {
+              "heading": "5. Vai trò của cá nhân và cộng đồng",
+              "content": "<h4>a) Hành động của cá nhân</h4><ul><li>Tiết kiệm điện, nước.</li><li>Giảm sử dụng nhựa một lần.</li><li>Phân loại rác thải.</li><li>Sử dụng phương tiện công cộng.</li><li>Trồng cây xanh.</li></ul><h4>b) Vai trò cộng đồng</h4><ul><li>Tuyên truyền, giáo dục.</li><li>Tổ chức hoạt động bảo vệ môi trường.</li><li>Kiểm tra, giám sát ô nhiễm.</li><li>Phát triển mô hình kinh tế tuần hoàn địa phương.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Phát triển bền vững là gì?",
+            "options": [
+              "Phát triển kinh tế nhanh",
+              "Phát triển đáp ứng nhu cầu hiện tại không ảnh hưởng tương lai",
+              "Phát triển công nghiệp",
+              "Phát triển nông nghiệp"
+            ],
+            "correct": 1,
+            "explanation": "Phát triển bền vững là phát triển đáp ứng nhu cầu hiện tại mà không ảnh hưởng đến khả năng đáp ứng nhu cầu của thế hệ tương lai."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Kinh tế tuần hoàn dựa trên nguyên tắc nào?",
+            "options": [
+              "Sản xuất nhiều",
+              "Giảm - Tái sử dụng - Tái chế",
+              "Khai thác t",
+              "Tiêu dùài nguyênng nhiều"
+            ],
+            "correct": 1,
+            "explanation": "Kinh tế tuần hoàn dựa trên 3R: Giảm (Reduce), Tái sử dụng (Reuse), Tái chế (Recycle)."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Mục tiêu SDGs gồm bao nhiêu mục tiêu?",
+            "options": [
+              "10",
+              "12",
+              "15",
+              "17"
+            ],
+            "correct": 3,
+            "explanation": "Có 17 Mục tiêu Phát triển Bền vững (SDGs) được Liên Hợp Quốc thông qua năm 2015."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Năng lượng tái tạo nào không thải khí CO₂?",
+            "options": [
+              "Năng lượng than đá",
+              "Năng lượng mặt trời",
+              "Năng lượng dầu mỏ",
+              "Năng lượng khí đốt"
+            ],
+            "correct": 1,
+            "explanation": "Năng lượng mặt trời là năng lượng sạch, không thải khí CO₂ khi vận hành."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Hành động nào góp phần phát triển bền vững?",
+            "options": [
+              "Sử dụng túi ni lông",
+              "Phân loại rác thải",
+              "Đốt rác thải",
+              "Khai thác cạn lực lượng"
+            ],
+            "correct": 1,
+            "explanation": "Phân loại rác thải giúp tái chế, giảm ô nhiễm, góp phần phát triển bền vững."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các năng lượng tái tạo:",
+            "options": [
+              "Năng lượng mặt trời",
+              "Năng lượng gió",
+              "Năng lượng than đá",
+              "Năng lượng sinh khối"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Mặt trời, gió, sinh khối là năng lượng tái tạo. Than đá là nhiên liệu hóa thạch, không tái tạo."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các hành động tiết kiệm tài nguyên:",
+            "options": [
+              "Tiết kiệm điện",
+              "Tiết kiệm nước",
+              "Sử dụng túi ni lông",
+              "Tái sử dụng đồ cũ"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Tiết kiệm điện, nước, tái sử dụng đồ cũ đều tiết kiệm tài nguyên. Túi ni lông gây ô nhiễm."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Kinh tế tuần hoàn dựa trên mấy nguyên tắc 3R? Nhập số 1 chữ số.",
+            "correct": "3"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Phát triển bền vững có mấy trụ cột chính? Nhập số 1 chữ số.",
+            "correct": "3"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân tích các nguyên tắc 3R",
+            "method": "<h3>Phương pháp giải</h3><ol><li><strong>Reduce (Giảm):</strong> Giảm tiêu thụ, giảm chất thải ngay từ đầu.</li><li><strong>Reuse (Tái sử dụng):</strong> Dùng lại sản phẩm cho mục đích khác.</li><li><strong>Recycle (Tái chế):</strong> Chế biến từ nguyên liệu phế thải thành sản phẩm mới.</li></ol>",
+            "examples": [
+              {
+                "question": "Hành động nào thuộc Reduce?",
+                "solution": "<p><strong>Giải:</strong></p><p>Mua ít hơn, sử dụng sản phẩm có bao bì ít hơn → Giảm tiêu dùng.</p>"
+              },
+              {
+                "question": "Tái chế giấy vụn thành giấy mới thuộc nguyên tắc nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Recycle (Tái chế) - chế biến từ phế thải thành sản phẩm mới.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Đánh giá tính bền vững của các hoạt động",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định hoạt động đang thực hiện.</li><li>Đánh giá tác động đến: Kinh tế, Xã hội, Môi trường.</li><li>Kết luận có bền vững không:</li><li>- Nếu đáp ứng cả 3 yếu tố → Bền vững.</li><li>- Nếu chỉ đáp ứng 1-2 yếu tố → Không bền vững.</li></ol>",
+            "examples": [
+              {
+                "question": "Xây dựng nhà máy thủy điện có bền vững không?",
+                "solution": "<p><strong>Giải:</strong></p><p>- Kinh tế: Tạo điện, việc làm (+)</p><p>- Xã hội: Cung cấp điện (+)</p><p>- Môi trường: Ảnh hưởng hệ sinh thái, di dời dân cư (-)</p><p>→ Cần đánh giá kỹ, có thể không bền vững.</p>"
+              },
+              {
+                "question": "Trồng rừng phục hồi có bền vững không?",
+                "solution": "<p><strong>Giải:</strong></p><p>- Kinh tế: Có thể tạo việc làm (+)</p><p>- Xã hội: Cải thiện môi trường sống (+)</p><p>- Môi trường: Phục hồi hệ sinh thái (+)</p><p>→ Bền vững.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

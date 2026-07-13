@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_04",
+      "name": "An sinh xã hội",
+      "slug": "an-sinh-xa-hoi",
+      "chapter": "Bảo hiểm và an sinh xã hội",
+      "chapter_id": "GDCD12",
+      "lesson_id": 4,
+      "description": "Tìm hiểu hệ thống các chính sách của Nhà nước nhằm trợ giúp và bảo vệ các thành viên trong xã hội trước các rủi ro.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "An sinh xã hội",
+          "summary": "An sinh xã hội là trụ cột chính giúp duy trì ổn định đời sống dân cư và thúc đẩy công bằng xã hội.",
+          "sections": [
+            { "heading": "Khái niệm", "content": "Hệ thống các chính sách bảo đảm thu nhập và dịch vụ thiết yếu cho người dân (y tế, giáo dục) khi họ gặp sự cố làm giảm hoặc mất thu nhập." },
+            { "heading": "Các trụ cột chính", "content": "Bảo hiểm xã hội, Trợ giúp xã hội (người nghèo, người già neo đơn), Ưu đãi xã hội (người có công) và các dịch vụ xã hội cơ bản." },
+            { "heading": "Ý nghĩa", "content": "Giảm nghèo, thu hẹp khoảng cách giàu nghèo và đảm bảo mọi người dân đều có cuộc sống tối thiểu." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "An sinh xã hội nhằm mục đích chủ yếu nào?", "options": ["Làm giàu cho doanh nghiệp", "Bảo đảm cuộc sống ổn định và an toàn cho mọi người dân", "Tăng thuế", "Phát triển vũ khí"], "correct": 1, "explanation": "Mục tiêu là bảo vệ con người trước các rủi ro kinh tế - xã hội." },
+          { "id": 2, "type": "mcq", "question": "Đối tượng nào sau đây được nhận trợ giúp xã hội?", "options": ["Người giàu có", "Người già neo đơn, trẻ em mồ côi, người khuyết tật", "Những người đang có công việc thu nhập cao", "Chủ các tập đoàn lớn"], "correct": 1, "explanation": "Trợ giúp xã hội dành cho những đối tượng yếu thế, không tự lo được cuộc sống." },
+          { "id": 3, "type": "mcq", "question": "Chính sách ưu đãi xã hội dành cho đối tượng nào?", "options": ["Người có công với cách mạng", "Tất cả mọi người", "Người mới ra tù", "Người nước ngoài du lịch"], "correct": 0, "explanation": "Đây là sự đền ơn đáp nghĩa của Nhà nước với người có công." },
+          { "id": 4, "type": "mcq", "question": "Dịch vụ xã hội cơ bản bao gồm?", "options": ["Giáo dục, y tế, nước sạch, thông tin", "Dịch vụ spa làm đẹp", "Dịch vụ cho thuê xe sang", "Dịch vụ tổ chức tiệc cưới"], "correct": 0, "explanation": "Đây là các nhu cầu tối thiểu cần được đảm bảo cho mọi người dân." },
+          { "id": 5, "type": "mcq", "question": "An sinh xã hội đóng vai trò là?", "options": ["Lưới đỡ cho các thành viên trong xã hội khi gặp rủi ro", "Phần thưởng cho người chăm chỉ", "Một loại phí phạt", "Rào cản kinh tế"], "correct": 0, "explanation": "Nó giúp ngăn chặn người dân rơi vào cảnh nghèo đói cùng cực." },
+          { "id": 6, "type": "mcq", "question": "Tại sao an sinh xã hội góp phần ổn định chính trị?", "options": ["Vì nó làm mọi người sợ hãi", "Vì nó giảm bớt bất công và mâu thuẫn xã hội", "Vì nó cấm biểu tình", "Vì nó làm máy tính chạy nhanh"], "correct": 1, "explanation": "Sự công bằng và được bảo vệ giúp người dân tin tưởng vào chế độ." },
+          { "id": 7, "type": "mcq", "question": "Trợ cấp thường xuyên cho người già trên 80 tuổi không có lương hưu là hình thức?", "options": ["Bảo hiểm xã hội", "Trợ giúp xã hội", "Ưu đãi người có công", "Bảo hiểm thương mại"], "correct": 1, "explanation": "Đây là tiền hỗ trợ trực tiếp từ ngân sách cho đối tượng yếu thế." },
+          { "id": 8, "type": "mcq", "question": "Nguồn lực chính để thực hiện an sinh xã hội lấy từ đâu?", "options": ["Ngân sách nhà nước và sự đóng góp của cộng đồng", "Đi vay hoàn toàn từ nước ngoài", "Tiền của một cá nhân duy nhất", "Không cần kinh phí"], "correct": 0, "explanation": "Nhà nước chủ trì kết hợp với huy động xã hội hóa." },
+          { "id": 9, "type": "mcq", "question": "Trong các trụ cột an sinh, bảo hiểm xã hội dựa trên nguyên tắc?", "options": ["Cấp phát miễn phí", "Đóng - hưởng", "Xin - cho", "May rủi"], "correct": 1, "explanation": "Bạn đóng góp trong thời gian làm việc để hưởng khi về già hoặc đau ốm." },
+          { "id": 10, "type": "mcq", "question": "Mục tiêu phát triển bền vững về an sinh xã hội ở Việt Nam là?", "options": ["Không ai bị bỏ lại phía sau", "Chỉ bảo vệ người ở thành phố", "Chỉ bảo vệ người biết dùng mạng", "Tăng số lượng người nghèo"], "correct": 0, "explanation": "Khẩu hiệu này khẳng định tính nhân văn của hệ thống an sinh xã hội." }
+        ]
+      }
+    }
+  ]
+}

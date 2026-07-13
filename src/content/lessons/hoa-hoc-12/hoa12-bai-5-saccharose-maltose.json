@@ -1,0 +1,79 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-5-saccharose-maltose",
+      "name": "Bài 5. Saccharose và maltose",
+      "slug": "bai-5-saccharose-maltose",
+      "chapter": "Chương 2: Carbohydrate",
+      "chapter_id": "H12-1002",
+      "lesson_id": 5,
+      "description": "Tìm hiểu về cấu tạo, tính chất và ứng dụng của saccharose và maltose.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [{"id": "saccharose-maltose-1", "name": "Saccharose và Maltose", "slug": "saccharose-maltose", "difficulty": "medium"}],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Saccharose và Maltose",
+          "sections": [
+            {
+              "heading": "1. Saccharose (C₁₂H₂₂O₁₁)",
+              "content": "<h3>a) Cấu tạo</h3><p><strong>Công thức phân tử:</strong> C₁₂H₂₂O₁₁</p><p><strong>Cấu tạo:</strong> Disaccharide tạo từ α-glucose và β-fructose</p><p>Glucose (α) - O - Fructose (β)</p><p>Liên kết glycoside giữa C₁ của glucose và C₂ của fructose</p><h3>b) Tính chất vật lý</h3><ul><li>Chất rắn kết tinh, không màu</li><li>Vị ngọt (đường ăn)</li><li>Tan tốt trong nước</li><li>Nhiệt độ nóng chảy: 185°C</li><li>Quay mặt phẳng phân cực ánh sáng (phải)</li></ul><h3>c) Tính chất hóa học</h3><p><strong>1. Không có tính khử:</strong></p><ul><li>Không tráng gương</li><li>Không tạo Cu₂O với Cu(OH)₂</li><li>Nhóm -CHO và >C=O đã tham gia liên kết</li></ul><p><strong>2. Phản ứng thủy phân:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₁₂H₂₂O₁₁ + H₂O → C₆H₁₂O₆ (glucose) + C₆H₁₂O₆ (fructose) (H⁺, t°)</p><p>Sản phẩm có tính khử (glucose và fructose)</p><p><strong>Đường invertose:</strong> Hỗn hợp glucose và fructose sau thủy phân</p><h3>d) Ứng dụng</h3><ul><li>Thực phẩm: Đường ăn chính</li><li>Công nghiệp: Sản xuất bánh kẹo</li><li>Y tế: Truyền dịch</li><li>Nguồn: Mía, củ cải đường</li></ul>"
+            },
+            {
+              "heading": "2. Maltose (C₁₂H₂₂O₁₁)",
+              "content": "<h3>a) Cấu tạo</h3><p><strong>Công thức phân tử:</strong> C₁₂H₂₂O₁₁</p><p><strong>Cấu tạo:</strong> Disaccharide tạo từ 2 phân tử α-glucose</p><p>Glucose (α) - O - Glucose (α)</p><p>Liên kết glycoside giữa C₁ của glucose thứ nhất và C₄ của glucose thứ hai</p><h3>b) Tính chất vật lý</h3><ul><li>Chất rắn kết tinh, không màu</li><li>Vị ngọt (ít ngọt hơn saccharose)</li><li>Tan tốt trong nước</li><li>Quay mặt phẳng phân cực ánh sáng (phải)</li></ul><h3>c) Tính chất hóa học</h3><p><strong>1. Có tính khử:</strong></p><p><strong>a) Tráng gương:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₁₂H₂₂O₁₁ + 2AgNO₃ + 3NH₃ + H₂O → C₁₂H₂₂O₁₂ + 2Ag↓ + 2NH₄NO₃</p><p><strong>b) Với Cu(OH)₂:</strong></p><p>Tạo phức xanh lam (thường), Cu₂O đỏ gạch (đun nóng)</p><p><strong>2. Phản ứng thủy phân:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₁₂H₂₂O₁₁ + H₂O → 2C₆H₁₂O₆ (glucose) (H⁺, t°)</p><h3>d) So sánh Saccharose và Maltose</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Đặc điểm</th><th class='border border-gray-300 p-2'>Saccharose</th><th class='border border-gray-300 p-2'>Maltose</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Công thức</td><td class='border border-gray-300 p-2'>C₁₂H₂₂O₁₁</td><td class='border border-gray-300 p-2'>C₁₂H₂₂O₁₁</td></tr><tr><td class='border border-gray-300 p-2'>Cấu tạo</td><td class='border border-gray-300 p-2'>Glucose + Fructose</td><td class='border border-gray-300 p-2'>2 Glucose</td></tr><tr><td class='border border-gray-300 p-2'>Tính khử</td><td class='border border-gray-300 p-2'>Không</td><td class='border border-gray-300 p-2'>Có</td></tr><tr><td class='border border-gray-300 p-2'>Tráng gương</td><td class='border border-gray-300 p-2'>Không</td><td class='border border-gray-300 p-2'>Có</td></tr><tr><td class='border border-gray-300 p-2'>Vị ngọt</td><td class='border border-gray-300 p-2'>Ngọt hơn</td><td class='border border-gray-300 p-2'>Ít ngọt hơn</td></tr><tr><td class='border border-gray-300 p-2'>Nguồn</td><td class='border border-gray-300 p-2'>Mía, củ cải</td><td class='border border-gray-300 p-2'>Mầm lúa, bia</td></tr><tr><td class='border border-gray-300 p-2'>Thủy phân</td><td class='border border-gray-300 p-2'>→ Glucose + Fructose</td><td class='border border-gray-300 p-2'>→ 2 Glucose</td></tr></tbody></table><h3>e) Ứng dụng Maltose</h3><ul><li>Sản xuất bia (từ mầm lúa mạch)</li><li>Thực phẩm dinh dưỡng</li><li>Công nghiệp bánh kẹo</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân biệt saccharose và maltose",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Dùng AgNO₃/NH₃ (tráng gương)</li><li>Dùng Cu(OH)₂ đun nóng</li><li>Maltose có tính khử, saccharose không</li></ul>",
+            "examples": [{"question": "<strong>Ví dụ:</strong> Có 2 lọ mất nhãn chứa saccharose và maltose. Chỉ dùng một thuốc thử, hãy phân biệt.", "solution": "<p><strong>Thuốc thử: AgNO₃/NH₃ (hoặc Cu(OH)₂)</strong></p><p><strong>Maltose:</strong></p><p>C₁₂H₂₂O₁₁ + 2AgNO₃ + 3NH₃ + H₂O → 2Ag↓ (tráng bạc)</p><p><strong>Saccharose:</strong></p><p>Không phản ứng (không tráng bạc)</p><p><strong>Kết luận:</strong> Chất tráng bạc là maltose</p>"}]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán thủy phân disaccharide",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH thủy phân</li><li>Tính mol sản phẩm</li><li>Tính khối lượng hoặc tráng gương</li></ul>",
+            "examples": [{"question": "<strong>Ví dụ:</strong> Thủy phân 34.2g saccharose (hiệu suất 80%). a) Tính khối lượng glucose và fructose. b) Cho sản phẩm tráng gương, tính khối lượng Ag.", "solution": "<p><strong>a) Thủy phân:</strong></p><p>C₁₂H₂₂O₁₁ + H₂O → C₆H₁₂O₆ + C₆H₁₂O₆</p><p>n(saccharose) = 34.2/342 = 0.1 mol</p><p>n(glucose) = n(fructose) = 0.1×80% = 0.08 mol</p><p>m(glucose) = m(fructose) = 0.08×180 = 14.4g</p><p><strong>b) Tráng gương:</strong></p><p>Cả glucose và fructose đều tráng gương</p><p>n(Ag) = 2×(0.08 + 0.08) = 0.32 mol</p><p>m(Ag) = 0.32×108 = 34.56g</p>"}]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Sản xuất đường từ mía",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Tính saccharose từ mía</li><li>Tính hiệu suất sản xuất</li><li>Đánh giá kinh tế</li></ul>",
+            "examples": [{"question": "<strong>Ví dụ:</strong> Nhà máy đường từ 100 tấn mía (chứa 15% saccharose). a) Tính khối lượng đường tinh luyện (hiệu suất 85%). b) Tính lợi nhuận (giá: mía 1,000đ/kg, đường 20,000đ/kg). c) Đề xuất tận dụng phụ phẩm.", "solution": "<p><strong>a) Tính đường:</strong></p><p>m(saccharose) = 100,000×15% = 15,000 kg</p><p>m(đường tinh luyện) = 15,000×85% = 12,750 kg</p><p><strong>b) Lợi nhuận:</strong></p><p>Chi phí: 100,000×1,000 + 50,000,000 (chế biến) = 150,000,000 đ</p><p>Doanh thu: 12,750×20,000 = 255,000,000 đ</p><p>Lợi nhuận: 105,000,000 đ (70%)</p><p><strong>c) Phụ phẩm:</strong></p><ul><li>Bã mía: Sản xuất giấy, nhiên liệu sinh học</li><li>Mật rỉ: Sản xuất ethanol, thức ăn gia súc</li><li>Tăng thêm 20-30% lợi nhuận</li></ul>"}]
+          }
+        ],
+        "exercises": [
+          {"id": "ex1", "type": "mcq", "question": "Saccharose có công thức:", "options": ["C₆H₁₂O₆", "C₁₂H₂₂O₁₁", "C₆H₁₀O₅", "(C₆H₁₀O₅)ₙ"], "correct": 1, "explanation": "Saccharose có công thức C₁₂H₂₂O₁₁."},
+          {"id": "ex2", "type": "mcq", "question": "Saccharose có tính khử:", "options": ["Có", "Không", "Yếu", "Mạnh"], "correct": 1, "explanation": "Saccharose không có tính khử."},
+          {"id": "ex3", "type": "mcq", "question": "Maltose có tính khử:", "options": ["Có", "Không", "Yếu", "Không xác định"], "correct": 0, "explanation": "Maltose có tính khử."},
+          {"id": "ex4", "type": "mcq", "question": "Thủy phân saccharose thu được:", "options": ["2 Glucose", "Glucose + Fructose", "2 Fructose", "Glucose + Galactose"], "correct": 1, "explanation": "Saccharose → Glucose + Fructose."},
+          {"id": "ex5", "type": "mcq", "question": "Thủy phân maltose thu được:", "options": ["2 Glucose", "Glucose + Fructose", "2 Fructose", "Glucose + Galactose"], "correct": 0, "explanation": "Maltose → 2 Glucose."},
+          {"id": "ex6", "type": "mcq", "question": "Phản ứng phân biệt saccharose và maltose:", "options": ["Thủy phân", "Tráng gương", "Lên men", "Với NaOH"], "correct": 1, "explanation": "Maltose tráng gương, saccharose không."},
+          {"id": "ex7", "type": "mcq", "question": "Đường ăn là:", "options": ["Glucose", "Fructose", "Saccharose", "Maltose"], "correct": 2, "explanation": "Đường ăn là saccharose."},
+          {"id": "ex8", "type": "mcq", "question": "Maltose có trong:", "options": ["Mía", "Mầm lúa mạch", "Sữa", "Hoa quả"], "correct": 1, "explanation": "Maltose có trong mầm lúa mạch."},
+          {"id": "ex9", "type": "mcq", "question": "Disaccharide là:", "options": ["Glucose", "Saccharose", "Tinh bột", "Cellulose"], "correct": 1, "explanation": "Saccharose là disaccharide."},
+          {"id": "ex10", "type": "mcq", "question": "Saccharose + AgNO₃/NH₃:", "options": ["Tráng bạc", "Không phản ứng", "Tạo Cu₂O", "Tạo CO₂"], "correct": 1, "explanation": "Saccharose không tráng bạc."},
+          {"id": "ex11", "type": "mcq", "question": "Maltose + AgNO₃/NH₃:", "options": ["Tráng bạc", "Không phản ứng", "Tạo Cu₂O", "Tạo CO₂"], "correct": 0, "explanation": "Maltose tráng bạc."},
+          {"id": "ex12", "type": "mcq", "question": "M(saccharose) = ?", "options": ["180", "342", "162", "360"], "correct": 1, "explanation": "M(C₁₂H₂₂O₁₁) = 342 g/mol."},
+          {"id": "ex13", "type": "msq", "question": "Tính chất của saccharose:", "options": ["Tan trong nước", "Vị ngọt", "Không tính khử", "Thủy phân được"], "correct": [0, 1, 2, 3], "explanation": "Saccharose có tất cả các tính chất trên."},
+          {"id": "ex14", "type": "msq", "question": "Disaccharide:", "options": ["Saccharose", "Maltose", "Glucose", "Lactose"], "correct": [0, 1, 3], "explanation": "Saccharose, maltose, lactose là disaccharide. Glucose là monosaccharide."},
+          {"id": "ex15", "type": "msq", "question": "Có tính khử:", "options": ["Glucose", "Maltose", "Saccharose", "Fructose"], "correct": [0, 1, 3], "explanation": "Glucose, maltose, fructose có tính khử. Saccharose không."},
+          {"id": "ex16", "type": "msq", "question": "Ứng dụng saccharose:", "options": ["Thực phẩm", "Y tế", "Công nghiệp", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Saccharose có nhiều ứng dụng."},
+          {"id": "ex17", "type": "sa", "question": "Thủy phân 34.2g saccharose thu được bao nhiêu gam glucose? Làm tròn đến 1 chữ số thập phân.", "correct": "18.0", "explanation": "n = 34.2/342 = 0.1 mol. n(glucose) = 0.1 mol. m = 0.1×180 = 18g. Đáp án: 18.0"},
+          {"id": "ex18", "type": "sa", "question": "Thủy phân 34.2g maltose thu được bao nhiêu gam glucose? Làm tròn đến 1 chữ số thập phân.", "correct": "36.0", "explanation": "n = 34.2/342 = 0.1 mol. n(glucose) = 0.2 mol. m = 0.2×180 = 36g. Đáp án: 36.0"},
+          {"id": "ex19", "type": "sa", "question": "Maltose có khối lượng phân tử là bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "342", "explanation": "M(C₁₂H₂₂O₁₁) = 342 g/mol. Đáp án: 342"},
+          {"id": "ex20", "type": "sa", "question": "Thủy phân 1 mol saccharose thu được bao nhiêu mol monosaccharide? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "1 mol saccharose → 2 mol monosaccharide. Đáp án: 2"},
+          {"id": "ex21", "type": "sa", "question": "Tráng gương 34.2g maltose thu được bao nhiêu gam Ag? Làm tròn đến 1 chữ số thập phân.", "correct": "21.6", "explanation": "n(maltose) = 0.1 mol. n(Ag) = 0.2 mol. m = 0.2×108 = 21.6g. Đáp án: 21.6"},
+          {"id": "ex22", "type": "sa", "question": "Saccharose có bao nhiêu carbon? Làm tròn đến hàng đơn vị.", "correct": "12", "explanation": "C₁₂H₂₂O₁₁ có 12 carbon. Đáp án: 12"}
+        ]
+      }
+    }
+  ]
+}

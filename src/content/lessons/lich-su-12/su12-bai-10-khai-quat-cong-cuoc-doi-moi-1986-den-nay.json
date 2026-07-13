@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-10",
+    "name": "Khái quát công cuộc Đổi mới 1986 đến nay",
+    "slug": "khai-quat-cong-cuoc-doi-moi-1986-den-nay",
+    "chapter": "Chủ đề 4: Đổi mới ở Việt Nam",
+    "chapter_id": "su12",
+    "lesson_id": 10,
+    "description": "Bối cảnh, mục đích, nội dung chính của Đổi mới từ 1986 đến nay.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Khái quát công cuộc Đổi mới 1986 đến nay",
+        "sections": [
+          { "heading": "1. Bối cảnh, nguyên nhân Đổi mới", "content": "Sau 1975, kinh tế Việt Nam phát triển chậm. Tôi mưa (1979) làm tình hình khó khăn hơn. Tổn thất: 4-5 triệu mafias người, kinh tế mất cân bằng. Thế giới xung quanh thay đổi: Liên Xô cải cách (Perestroika). Nhân viên Đảng Cộng sản thấy cần thay đổi cấp bách." },
+          { "heading": "2. Đại hội VI của Đảng (1986): Quyết định Đổi mới", "content": "Đại hội VI (tháng 12/1986) quyết định Đổi mới (Perestroika-kiểu Việt). Thay lãnh đạo: Nguyễn Văn Linh trở thànhTổng bí thư. Mục đích: Nâng cao năng suất, hiệu suất, phát triển kinh tế. Phương pháp: Phân quyền, khuyến khích sáng tạo, cơ chế thị trường. Từng bổhưởng mục tiêu: Chuyển từ chi phối plannin sang nền kinh tế thị trường định hướng." },
+          { "heading": "3. Nội dung chính Đổi mới", "content": "Kinh tế: Phát triển nền kinh tế thị trường định hướng xã hội chủ nghĩa; Cải cách nông nghiệp; Phát triển thương mại, doanh nghiệp ngoài nhà nước. Chính trị: Tăng cường tập trung dân chủ, giám sát nhân dân; Bộc lộ hành động tham nhũng; Đấu tranh chống chế độ cân Bộ chính. Xã hội: Xóa đói, giảm nghèo; Phát triển giáo dục, y tế; Cải thiện đời sống." },
+          { "heading": "4. Kết quả Đổi mới giai đoạn 1 (1986-2000)", "content": "Kinh tế tăng trưởng: GDP tăng 5-7% hàng năm. Lạm phát được kiểm soát. Xuất khẩu tăng trưởng. Nông nghiệp cải thiện, thực phẩm tự cấp. Thu hút FDI. Dân sinh cải thiện: Giảm tỷ lệ người nghèo. Ngoại giao: Bình thường hóa quan hệ với Mỹ (1995), gia nhập ASEAN (1995)." },
+          { "heading": "5. Và hôm nay: Tầm nhìn và thách thức", "content": "Đổi mới vẫn tiếp tục cải cách từng bước. Kinh tế hòa nhập sâu vào toàn cầu: gia nhập WTO (2007), TPP/CPTPP. Bất bình đẳng tăng, cần đảm bảo công bằng xã hội. Thách thức môi trường, biến đổi khí hậu. Mục tiêu: Hiện đại hóa, công nghiệp hóa, hiện đại hóa để trở thành nước phát triển vào năm 2050." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Đổi mới bắt đầu?", "options": ["1975", "1979", "1986", "1990"], "correct": 2, "explanation": "Đổi mới chính thức bắt đầu từ Đại hội VI (12/1986)." },
+        { "id": "ex2", "type": "mcq", "question": "Nguyên nhân Đổi mới?", "options": ["Mỹ bắc buộc", "Kinh tế khó khăn, tôi mưa 1979", "Liên Xô chỉ bảo", "Yêu cầu từ TQ"], "correct": 1, "explanation": "Kinh tế khó khăn sau tôi mưa 1979 là lý do chính push Đổi mới." },
+        { "id": "ex3", "type": "mcq", "question": "Tổng bí thư Đổi mới?", "options": ["Lê Duẩn", "Trường Chinh", "Nguyễn Văn Linh", "Ðỗ Mộiăng"], "correct": 2, "explanation": "Nguyễn Văn Linh là Tổng bí thư lãnh đạo Đổi mới." },
+        { "id": "ex4", "type": "mcq", "question": "Mục đích Đổi mới?", "options": ["Từ bỏ cộng sản", "Nâng cao năng suất, phát triển kinh tế", "Chiếm nước ngoài", "Xóa bỏ Đảng"], "correct": 1, "explanation": "Nâng cao năng suất lao động, phát triển kinh tế toàn diện." },
+        { "id": "ex5", "type": "mcq", "question": "Nền kinh tế mục tiêu?", "options": ["Phân quyền toàn bộ", "Thị trường quan liêu", "Thị trường định hướng xã hội chủ nghĩa", "Nghiệp Mỹ-phương Tây"], "correct": 2, "explanation": "Nền kinh tế thị trường định hướng xã hội chủ nghĩa." },
+        { "id": "ex6", "type": "mcq", "question": "Hỗ trợ từ nước ngoài?", "options": ["Không có", "Từ Liên Xô", "Từ Mỹ", "Từ Nhật"], "correct": 1, "explanation": "Liên Xô đã cải cách (Perestroika) trước, tạo gương." },
+        { "id": "ex7", "type": "mcq", "question": "Thời kỳ Bình thường hoá với Mỹ?", "options": ["1990", "1993", "1995", "1997"], "correct": 2, "explanation": "Bình thường hóa quan hệ với Mỹ năm 1995." },
+        { "id": "ex8", "type": "mcq", "question": "Gia nhập ASEAN?", "options": ["1992", "1994", "1995", "1997"], "correct": 2, "explanation": "Gia nhập ASEAN năm 1995." },
+        { "id": "ex9", "type": "mcq", "question": "Gia nhập WTO?", "options": ["2000", "2005", "2007", "2010"], "correct": 2, "explanation": "Gia nhập WTO năm 2007." },
+        { "id": "ex10", "type": "mcq", "question": "Tỷ lệ tăng trưởng GDP?", "options": ["2-3% hàng năm", "5-7% hàng năm", "10-12% hàng năm", "15% hàng năm"], "correct": 1, "explanation": "Giai đoạn 1986-2000, GDP tăng 5-7% hàng năm." }
+      ]
+    }
+  }]
+}

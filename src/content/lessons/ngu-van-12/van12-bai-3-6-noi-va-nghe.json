@@ -1,0 +1,201 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-3-6-noi-va-nghe",
+      "name": "Nói và nghe: Thuyết trình về một vấn đề liên quan đến tuổi trẻ",
+      "slug": "noi-va-nghe-thuyet-trinh-tuoi-tre",
+      "chapter": "Lập luận trong văn bản nghị luận",
+      "chapter_id": "V12-3",
+      "lesson_id": 6,
+      "description": "Phát triển kỹ năng nói và nghe để thuyết trình, trình bày quan điểm về các vấn đề liên quan đến tuổi trẻ một cách thuyết phục.",
+      "duration_minutes": 50,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "spk1",
+          "name": "Kỹ năng thuyết trình",
+          "slug": "ky-nang-thuyet-trinh",
+          "difficulty": "medium"
+        },
+        {
+          "id": "lst1",
+          "name": "Kỹ năng lắng nghe",
+          "slug": "ky-nang-lang-nghe",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Nói và nghe: Thuyết trình về vấn đề liên quan đến tuổi trẻ",
+          "sections": [
+            {
+              "heading": "1. Kỹ năng chuẩn bị bài thuyết trình",
+              "content": "<h4>a) Lựa chọn chủ đề</h4><ul><li><strong>Tiêu chí:</strong><br/>- Chủ đề phải là vấn đề mà bản thân quan tâm, có kiến thức<br/>- Chủ đề phải phù hợp với đông đảo khán giả (học sinh, giáo viên)\n- Chủ đề phải có giá trị thảo luận, có nhiều khía cạnh</li><li><strong>Ví dụ các chủ đề:</strong> Sức ép học tập, mạng xã hội và sức khỏe tâm lý, tự tin và khẳng định bản thân, ước mơ của tuổi trẻ và cách đạt được, bạn bè và tình cảm, trách nhiệm xã hội của tuổi trẻ</li></ul><h4>b) Tìm tài liệu, đoạn trích chứng minh</h4><ul><li><strong>Các loại tài liệu:</strong><br/>- Thống kê con số liên quan<br/>- Trích dẫn từ các chuyên gia, nhân vật nổi tiếng<br/>- Ví dụ cụ thể từ cuộc sống, tin tức\n- Các bài viết, nghiên cứu khoa học</li><li><strong>Cách sử dụng:</strong><br/>- Ghi chú rõ ràng nguồn tài liệu\n- Chọn những dẫn chứng mạnh mẽ, thuyết phục nhất\n- Chuẩn bị cách trình bày dẫn chứng một cách sống động</li></ul><h4>c) Xây dựng outline (dàn bài)</h4><ul><li><strong>Mở đầu:</strong><br/>- Chào hỏi khán giả, tự giới thiệu<br/>- Nêu rõ chủ đề sẽ nói<br/>- Nêu tại sao chủ đề này quan trọng<br/>- Thời gian: 1-2 phút</li><li><strong>Phần chính:</strong><br/>- Chia thành 3-4 ý chính\n- Mỗi ý có giải thích, ví dụ, dẫn chứng<br/>- Thời gian: 7-10 phút</li><li><strong>Kết luận:</strong><br/>- Tóm tắt lại những ý chính<br/>- Nêu quan điểm cá nhân, kêu gọi hành động\n- Mở cửa cho câu hỏi/thảo luận<br/>- Thời gian: 1-2 phút</li></ul>"
+            },
+            {
+              "heading": "2. Kỹ năng nói trong thuyết trình",
+              "content": "<h4>a) Kỹ năng giọng nói (Voice Skills)</h4><ul><li><strong>Độ to nhỏ:</strong><br/>- Nên nói đủ to để cả lớp nghe rõ<br/>- Nhấn mạnh những ý quan trọng bằng cách nói to hơn hoặc chậm hơn\n- Tránh nói một mực, nhàm chán</li><li><strong>Nhanh chậm:</strong><br/>- Nên nói với tốc độ vừa phải, không quá nhanh\n- Khi nêu ý quan trọng, nên nói chậm hơn\n- Thỉnh thoảng tạm dừng để cho khán giả tiếp nhận ý tưởng</li><li><strong>Tông điệu:</strong><br/>- Thay đổi tông điệu để giữ sự chú ý của khán giả\n- Tránh nói một mực, không có cảm xúc\n- Phù hợp tông điệu với nội dung (vui, buồn, phẫn nộ...)</li><li><strong>Phát âm:</strong><br/>- Nên phát âm rõ, chính xác\n- Tránh lạp ơ, uốn lưỡi\n- Nên luyện tập phát âm các từ khó trước khi thuyết trình</li></ul><h4>b) Ngôn ngữ cơ thể (Body Language)</h4><ul><li><strong>Tư thế đứng:</strong><br/>- Đứng thẳng, tự tin (không cau mày, không co vai)\n- Đứng ở vị trí tốt: không ở quá gần hoặc quá xa khán giả<br/>- Đôi chân đặt ngang vai, phân bố trọng lượng đều</li><li><strong>Cử chỉ tay:</strong><br/>- Sử dụng cử chỉ tay để minh họa ý tưởng\n- Cử chỉ nên tự nhiên, không quá cồng kềnh<br/>- Tránh cử chỉ phân tán sự chú ý: xoay tay, chỉa tay vô định hướng</li><li><strong>Liên hệ mắt:</strong><br/>- Nhìn sang các phía của lớp học\n- Tránh chỉ nhìn vào một người hoặc vào mặt đất<br/>- Liên hệ mắt tạo sự kết nối với khán giả</li><li><strong>Biểu cảm mặt:</strong><br/>- Nên có biểu cảm phù hợp với nội dung\n- Tránh biểu cảm cứng nhắc hoặc quá thể hiện</li></ul><h4>c) Tổ chức bài thuyết trình</h4><ul><li><strong>Sử dụng từ nối:</strong> \"Trước hết\", \"Thứ hai\", \"Bên cạnh đó\", \"Ví dụ như\", \"Tóm lại\"</li><li><strong>Chia rõ ý:</strong> Mỗi ý nên độc lập, rõ ràng\n<li><strong>Kết nối ý:</strong> Liên kết các ý lại với nhau để tạo sự liên tục</li><li><strong>Nhấn mạnh ý quan trọng:</strong> Lặp lại, sử dụng từ mạnh, tạo hiệu ứng</li></ul>"
+            },
+            {
+              "heading": "3. Kỹ năng nghe khi người khác thuyết trình",
+              "content": "<h4>a) Cách lắng nghe tích cực</h4><ul><li><strong>Tập trung:</strong><br/>- Loại bỏ mọi sự phân tâm\n- Chú ý vào những gì người nói đang trình bày<br/>- Đừng bắt đầu suy nghĩ về câu hỏi của bạn trước khi người nói kết thúc</li><li><strong>Ghi chú:</strong><br/>- Ghi lại những ý chính\n- Ghi chú những điểm bạn không hiểu hoặc không đồng ý\n- Ghi chú những câu hỏi muốn đặt</li><li><strong>Ngôn ngữ cơ thể:</strong><br/>- Gật đầu để thể hiện bạn đang lắng nghe\n- Duy trì liên hệ mắt với người nói\n- Tránh những hành động khiêu khích như nhìn điện thoại, ngoái đầu</li></ul><h4>b) Chiến lược lắng nghe hiệu quả</h4><ul><li><strong>Dự đoán nội dung:</strong> Trước khi nghe, dự đoán người nói sẽ nêu những ý gì</li><li><strong>Xác định luận điểm chính:</strong> Khi nghe, tìm ra luận điểm chính của bài thuyết trình</li><li><strong>Theo dõi dẫn chứng:</strong> Ghi chú những ví dụ, dẫn chứng được nêu</li><li><strong>Đánh giá logic:</strong> Xem xét liệu lập luận có logic không, dẫn chứng có thuyết phục không</li><li><strong>Hình thành quan điểm:</strong> Dựa trên những gì nghe, hình thành ý kiến của bản thân</li></ul><h4>c) Xử lý khó khăn khi nghe</h4><ul><li><strong>Nếu không hiểu:</strong> Yêu cầu người nói làm rõ, giải thích lại\n<li><strong>Nếu bị gián đoạn:</strong> Cố gắng quay lại những ý chính đã nghe trước đó</li><li><strong>Nếu nói quá nhanh:</strong> Yêu cầu nhân vật nói chậm hơn hoặc cuối bài hỏi thêm chi tiết</li></ul>"
+            },
+            {
+              "heading": "4. Kỹ năng thảo luận sau thuyết trình",
+              "content": "<h4>a) Cách đặt câu hỏi hiệu quả</h4><ul><li><strong>Câu hỏi mở (Open-ended questions):</strong> Yêu cầu câu trả lời dài\n- \"Bạn có thể giải thích thêm về...?\"\n- \"Tại sao bạn lại có quan điểm...?\"</li><li><strong>Câu hỏi đóng (Closed-ended questions):</strong> Yêu cầu câu trả lời ngắn\n- \"Theo bạn, có giải pháp nào khác không?\"\n- \"Tác dụng của điều này là gì?\"</li><li><strong>Câu hỏi tuân thủ (Follow-up questions):</strong> Hỏi sâu hơn\n- \"Bạn có thể cho ví dụ cụ thể không?\"\n- \"Điều đó có ảnh hưởng gì đến...?\"</li></ul><h4>b) Cách phát biểu ý kiến trong thảo luận</h4><ul><li><strong>Đồng ý:</strong><br/>- \"Tôi hoàn toàn đồng ý với ý kiến của bạn\"<br/>- \"Điều bạn nói rất hợp lý\"</li><li><strong>Không hoàn toàn đồng ý:</strong><br/>- \"Tôi đồng ý một phần, nhưng...\"\n- \"Ý kiến của bạn rất hay, tuy nhiên...\"</li><li><strong>Phản bác lịch sự:</strong><br/>- \"Theo tôi, có thể xem xét vấn đề từ góc độ khác\"\n- \"Ngoài điểm bạn nêu, còn một số khía cạnh khác...\"</li></ul><h4>c) Quản lý cuộc thảo luận</h4><ul><li><strong>Tôn trọng người khác:</strong> Đừng gián đoạn khi người khác nói</li><li><strong>Giữ thời gian:</strong> Đảm bảo mỗi người có cơ hội phát biểu</li><li><strong>Tập trung vấn đề:</strong> Tránh rơi vào những chủ đề không liên quan</li><li><strong>Tìm kiếm sự nhất trí:</strong> Nếu trái chiều, hãy tìm những điểm chung</li></ul>"
+            },
+            {
+              "heading": "5. Những lỗi thường gặp trong thuyết trình",
+              "content": "<ul><li><strong>Lỗi chuẩn bị:</strong><br/>- Không chuẩn bị đủ, phải vắng vẻ\n- Sử dụng slide hoặc hình ảnh quá phức tạp, gây phân tâm\n- Không kiểm tra hoặc luyện tập trước</li><li><strong>Lỗi diễn đạt:</strong><br/>- Nói quá nhanh hoặc quá chậm\n- Nói một mực, không thay đổi tông điệu\n- Sử dụng quá nhiều từ \"ừ\", \"hừ\", \"cái\", \"tia\"</li><li><strong>Lỗi về ngôn ngữ cơ thể:</strong><br/>- Đứng không tự tin, co vai, cau mày\n- Tránh liên hệ mắt với khán giả\n- Cử chỉ tay quá cồng kềnh hoặc thiếu tự nhiên</li><li><strong>Lỗi nội dung:</strong><br/>- Nội dung không rõ ràng, lẫn lộn\n- Thiếu dẫn chứng hoặc dẫn chứng không thuyết phục\n- Logic không chặt chẽ</li></ul>"
+            },
+            {
+              "heading": "6. Cách chuẩn bị bài thuyết trình - từng bước",
+              "content": "<ul><li><strong>Bước 1: Lựa chọn chủ đề (5 phút)</strong></li><li><strong>Bước 2: Tìm tài liệu, dẫn chứng (15 phút)</strong></li><li><strong>Bước 3: Xây dựng outline (15 phút)</strong></li><li><strong>Bước 4: Viết bài thuyết trình (30 phút)</strong></li><li><strong>Bước 5: Luyện tập (20-30 phút)</strong><br/>- Nên luyện tập nhiều lần, không nên đọc từng chữ\n- Luyện tập trước gương để kiểm tra ngôn ngữ cơ thể\n- Luyện tập với bạn bè để nhận feedback</li><li><strong>Bước 6: Chuẩn bị tài liệu, slide (10 phút)</strong></li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex3-6-1",
+              "type": "mcq",
+              "question": "Trong bài thuyết trình, phần nào chiếm thời gian dài nhất?",
+              "options": [
+                "Mở đầu (1-2 phút)",
+                "Phần chính (7-10 phút)",
+                "Kết luận (1-2 phút)",
+                "Phần hỏi đáp"
+              ],
+              "correct": 1,
+              "explanation": "Phần chính chiếm thời gian dài nhất (7-10 phút) vì đây là phần trình bày 3-4 ý chính với giải thích, ví dụ và dẫn chứng chi tiết."
+            },
+            {
+              "id": "ex3-6-2",
+              "type": "mcq",
+              "question": "Kỹ năng giọng nói nào giúp nhấn mạnh những ý quan trọng trong thuyết trình?",
+              "options": [
+                "Nói to hơn hoặc chậm hơn",
+                "Nói nhanh liên tục",
+                "Nói nhỏ và thì thầm",
+                "Nói một mực không thay đổi"
+              ],
+              "correct": 0,
+              "explanation": "Để nhấn mạnh ý quan trọng, người thuyết trình nên nói to hơn hoặc chậm hơn, giúp khán giả chú ý và ghi nhớ những điểm chính."
+            },
+            {
+              "id": "ex3-6-3",
+              "type": "mcq",
+              "question": "Trong ngôn ngữ cơ thể, tại sao liên hệ mắt với khán giả lại quan trọng?",
+              "options": [
+                "Để tránh nhìn vào giấy tờ",
+                "Để tạo sự kết nối với khán giả",
+                "Để kiểm tra xem ai đang ngủ",
+                "Để thể hiện sự tự tin thái quá"
+              ],
+              "correct": 1,
+              "explanation": "Liên hệ mắt tạo sự kết nối với khán giả, giúp họ cảm thấy được chú ý và tăng tính thuyết phục của bài thuyết trình."
+            },
+            {
+              "id": "ex3-6-4",
+              "type": "mcq",
+              "question": "Chiến lược lắng nghe nào giúp xác định những điểm chính của bài thuyết trình?",
+              "options": [
+                "Dự đoán nội dung trước khi nghe",
+                "Xác định luận điểm chính khi nghe",
+                "Theo dõi dẫn chứng được nêu",
+                "Tất cả các đáp án trên"
+              ],
+              "correct": 3,
+              "explanation": "Tất cả các chiến lược này đều quan trọng: dự đoán nội dung giúp chuẩn bị, xác định luận điểm giúp nắm bắt ý chính, theo dõi dẫn chứng giúp đánh giá tính thuyết phục."
+            },
+            {
+              "id": "ex3-6-5",
+              "type": "mcq",
+              "question": "Loại câu hỏi nào yêu cầu câu trả lời dài và chi tiết?",
+              "options": [
+                "Câu hỏi đóng (Closed-ended)",
+                "Câu hỏi mở (Open-ended)",
+                "Câu hỏi tuân thủ (Follow-up)",
+                "Câu hỏi có/không"
+              ],
+              "correct": 1,
+              "explanation": "Câu hỏi mở như 'Bạn có thể giải thích thêm về...?' yêu cầu câu trả lời dài, chi tiết, giúp hiểu sâu hơn về vấn đề."
+            },
+            {
+              "id": "ex3-6-6",
+              "type": "mcq",
+              "question": "Lỗi nào sau đây thuộc về lỗi chuẩn bị trong thuyết trình?",
+              "options": [
+                "Nói quá nhanh hoặc quá chậm",
+                "Không kiểm tra hoặc luyện tập trước",
+                "Đứng không tự tin, co vai",
+                "Nội dung không rõ ràng"
+              ],
+              "correct": 1,
+              "explanation": "Không kiểm tra hoặc luyện tập trước là lỗi chuẩn bị. Các lỗi khác thuộc về diễn đạt, ngôn ngữ cơ thể, và nội dung."
+            },
+            {
+              "id": "ex3-6-7",
+              "type": "mcq",
+              "question": "Khi phát biểu ý kiến không hoàn toàn đồng ý, nên sử dụng cách nào?",
+              "options": [
+                "Phản đối trực tiếp và gay gắt",
+                "Im lặng không nói gì",
+                "'Tôi đồng ý một phần, nhưng...'",
+                "Chỉ trích người nói"
+              ],
+              "correct": 2,
+              "explanation": "Cách phát biểu 'Tôi đồng ý một phần, nhưng...' thể hiện sự tôn trọng người nói trong khi vẫn bày tỏ quan điểm khác biệt một cách lịch sự."
+            },
+            {
+              "id": "ex3-6-8",
+              "type": "mcq",
+              "question": "Trong quá trình chuẩn bị bài thuyết trình, bước nào nên thực hiện cuối cùng?",
+              "options": [
+                "Lựa chọn chủ đề",
+                "Xây dựng outline",
+                "Luyện tập nhiều lần",
+                "Chuẩn bị tài liệu, slide"
+              ],
+              "correct": 3,
+              "explanation": "Chuẩn bị tài liệu, slide nên thực hiện cuối cùng (bước 6) sau khi đã luyện tập, để đảm bảo tài liệu phù hợp với nội dung đã hoàn thiện."
+            },
+            {
+              "id": "ex6-1",
+              "question": "Chọn một vấn đề liên quan đến tuổi trẻ và xây dựng outline cho bài thuyết trình 10 phút về vấn đề này.",
+              "type": "essay",
+              "difficulty": "medium",
+              "answer_guide": "Outline nên bao gồm: (1) Mở bài, (2) 3-4 ý chính, (3) Kết luận. Mỗi ý nên có giải thích và dẫn chứng cụ thể."
+            },
+            {
+              "id": "ex6-2",
+              "question": "Hãy nêu những kỹ năng giọng nói cần thiết cho một bài thuyết trình hiệu quả.",
+              "type": "essay",
+              "difficulty": "medium",
+              "answer_guide": "Kỹ năng giọng nói: độ to nhỏ phù hợp, tốc độ vừa phải, thay đổi tông điệu, phát âm rõ ràng, biết cách tạm dừng."
+            },
+            {
+              "id": "ex6-3",
+              "question": "Thuyết trình về một vấn đề liên quan đến tuổi trẻ trong 3-5 phút trước lớp. Sau đó, lớp sẽ đặt câu hỏi, phát biểu ý kiến.",
+              "type": "essay",
+              "difficulty": "hard",
+              "answer_guide": "Học sinh nên: (1) Chuẩn bị outline rõ ràng, (2) Luyện tập trước, (3) Nói rõ, tự tin, (4) Sử dụng cử chỉ tay, liên hệ mắt, (5) Trả lời câu hỏi hỏi t lịch sự."
+            },
+            {
+              "id": "ex6-4",
+              "question": "Lắng nghe bài thuyết trình của bạn cùng lớp và đặt 2-3 câu hỏi theo hình thức: 1 câu hỏi mở, 1 câu hỏi tuân thủ, 1 phát biểu ý kiến.",
+              "type": "essay",
+              "difficulty": "hard",
+              "answer_guide": "Câu hỏi nên rõ ràng, lịch sự, liên quan đến nội dung bài thuyết trình. Phát biểu ý kiến nên thể hiện sự tôn trọng người nói. Nên ghi chú những ý chính khi lắng nghe."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

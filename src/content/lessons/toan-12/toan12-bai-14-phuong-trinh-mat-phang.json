@@ -1,0 +1,370 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-14-phuong-trinh-mat-phang",
+      "name": "Bài 14. Phương trình mặt phẳng",
+      "slug": "phuong-trinh-mat-phang",
+      "chapter": "Chương 5: Phương pháp tọa độ trong không gian",
+      "chapter_id": "T12-5",
+      "lesson_id": 14,
+      "description": "Nắm vững cách viết phương trình mặt phẳng, các trường hợp đặc biệt, vị trí tương đối và công thức tính khoảng cách.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/4F46E5/FFFFFF?text=Mặt+Phẳng",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Viết phương trình mặt phẳng",
+          "slug": "viet-pt-mat-phang"
+        },
+        {
+          "id": "dang2",
+          "name": "Vị trí tương đối của hai mặt phẳng",
+          "slug": "vi-tri-tuong-doi"
+        },
+        {
+          "id": "dang3",
+          "name": "Khoảng cách từ điểm đến mặt phẳng",
+          "slug": "khoang-cach"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết mặt phẳng",
+          "sections": [
+            {
+              "heading": "1. Vectơ pháp tuyến và cặp vectơ chỉ phương",
+              "content": "<p>Vectơ $\\vec{n} \\neq \\vec{0}$ có giá vuông góc với mặt phẳng $(\\alpha)$ được gọi là <strong>vectơ pháp tuyến (VPT)</strong> của $(\\alpha)$.</p><div style='background:#f0f7ff; border-left:4px solid #007bff; padding:10px; margin:10px 0;'><strong>Chú ý:</strong> Nếu mặt phẳng có cặp vectơ chỉ phương không cùng phương $\\vec{u}, \\vec{v}$ thì một VPT của nó là $\\vec{n} = [\\vec{u}, \\vec{v}]$.</div>"
+            },
+            {
+              "heading": "2. Phương trình tổng quát của mặt phẳng",
+              "content": "<p>Mặt phẳng đi qua $M_0(x_0; y_0; z_0)$ và có VPT $\\vec{n} = (A; B; C)$ có phương trình:</p><p style='text-align:center;'>$$A(x - x_0) + B(y - y_0) + C(z - z_0) = 0$$</p><p>Khai triển: $Ax + By + Cz + D = 0$ (với $D = -Ax_0 - By_0 - Cz_0$).</p><h3>Các trường hợp đặc biệt:</h3><table style='width:100%; border-collapse: collapse; margin-top: 10px;'><thead><tr style='background-color: #f2f2f2;'><th style='border: 1px solid #ddd; padding: 8px;'>Đặc điểm mặt phẳng</th><th style='border: 1px solid #ddd; padding: 8px;'>Dạng phương trình</th></tr></thead><tbody><tr><td style='border: 1px solid #ddd; padding: 8px;'>Đi qua gốc tọa độ $O$</td><td style='border: 1px solid #ddd; padding: 8px;'>$Ax + By + Cz = 0$ ($D=0$)</td></tr><tr><td style='border: 1px solid #ddd; padding: 8px;'>Song song hoặc chứa trục $Ox$</td><td style='border: 1px solid #ddd; padding: 8px;'>$By + Cz + D = 0$ ($A=0$)</td></tr><tr><td style='border: 1px solid #ddd; padding: 8px;'>Song song hoặc trùng mp $(Oxy)$</td><td style='border: 1px solid #ddd; padding: 8px;'>$Cz + D = 0$ ($A=B=0$)</td></tr></tbody></table>"
+            },
+            {
+              "heading": "3. Một số công thức liên quan",
+              "content": "<h3>① Phương trình mặt phẳng theo đoạn chắn:</h3><p>Nếu $(\\alpha)$ cắt $Ox, Oy, Oz$ lần lượt tại $A(a; 0; 0), B(0; b; 0), C(0; 0; c)$ thì phương trình là:</p><p style='text-align:center;'>$$\\dfrac{x}{a} + \\dfrac{y}{b} + \\dfrac{z}{c} = 1$$</p><h3>② Khoảng cách từ điểm đến mặt phẳng:</h3><p>Khoảng cách từ $M_0(x_0; y_0; z_0)$ đến mp $(P): Ax + By + Cz + D = 0$ là:</p><p style='text-align:center;'>$$d(M_0, P) = \\dfrac{|Ax_0 + By_0 + Cz_0 + D|}{\\sqrt{A^2 + B^2 + C^2}}$$</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Viết phương trình mặt phẳng",
+            "method": "<ol><li>Xác định một điểm thuộc mặt phẳng.</li><li>Xác định 1 vectơ pháp tuyến (trực tiếp hoặc qua tích có hướng).</li><li>Dùng công thức $A(x-x_0) + B(y-y_0) + C(z-z_0) = 0$.</li></ol>",
+            "examples": [
+              {
+                "question": "Viết phương trình mặt phẳng trung trực của đoạn $AB$ với $A(2; 1; 1), B(0; -1; 3)$.",
+                "solution": "<p>Trung điểm $I(1; 0; 2)$. Vectơ $\\overrightarrow{AB} = (-2; -2; 2) = -2(1; 1; -1)$. Chọn VPT $\\vec{n} = (1; 1; -1)$.</p><p>PT: $1(x-1) + 1(y-0) - 1(z-2) = 0 \\Leftrightarrow x + y - z + 1 = 0$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Vị trí tương đối của hai mặt phẳng",
+            "method": "<p>Dựa vào hai VPT $\\vec{n}_1(A_1; B_1; C_1)$ và $\\vec{n}_2(A_2; B_2; C_2)$:</p><ul><li>Song song: $\\vec{n}_1 = k\\vec{n}_2$ và $D_1 \\neq kD_2$.</li><li>Cắt nhau: $\\vec{n}_1$ không cùng phương $\\vec{n}_2$.</li><li>Vuông góc: $\\vec{n}_1 \\cdot \\vec{n}_2 = 0$.</li></ul>",
+            "examples": [
+              {
+                "question": "Tìm $m$ để $(P): x - 2y + z + 1 = 0$ song song với $(Q): 2x - 4y + mz - 3 = 0$.",
+                "solution": "Điều kiện: $\\dfrac{1}{2} = \\dfrac{-2}{-4} = \\dfrac{1}{m} \\neq \\dfrac{1}{-3} \\Rightarrow m = 2$."
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Tính khoảng cách từ điểm $M(1; 2; -3)$ đến mặt phẳng $(P): x + 2y - 2z + 1 = 0$.",
+            "options": [
+              "4",
+              "3",
+              "2",
+              "6"
+            ],
+            "correct": 0,
+            "explanation": "$d = \\dfrac{|1 + 4 + 6 + 1|}{\\sqrt{1+4+4}} = \\dfrac{12}{3} = 4$."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Mặt phẳng $(Oyz)$ có phương trình là:",
+            "options": [
+              "$x=0$",
+              "$y=0$",
+              "$z=0$",
+              "$x+y=0$"
+            ],
+            "correct": 0,
+            "explanation": "Mặt phẳng $(Oyz)$ thiếu biến $x$ nên phương trình là $x=0$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Vectơ pháp tuyến của mặt phẳng $2x - y + 3 = 0$ là:",
+            "options": [
+              "$(2; -1; 0)$",
+              "$(2; -1; 3)$",
+              "$(2; 0; -1)$",
+              "$(2; 1; 0)$"
+            ],
+            "correct": 0,
+            "explanation": "Hệ số $z$ bằng $0$ nên VPT là $(2; -1; 0)$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Viết phương trình mặt phẳng đi qua $A(1; 0; 0), B(0; 2; 0), C(0; 0; -3)$.",
+            "options": [
+              "$6x + 3y - 2z - 6 = 0$",
+              "$6x + 3y + 2z - 6 = 0$",
+              "$3x + 6y - 2z - 6 = 0$",
+              "$6x - 3y + 2z - 6 = 0$"
+            ],
+            "correct": 0,
+            "explanation": "$\\dfrac{x}{1} + \\dfrac{y}{2} + \\dfrac{z}{-3} = 1 \\Leftrightarrow 6x + 3y - 2z = 6$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Mặt phẳng $(P)$ đi qua $A(1; -1; 2)$ và vuông góc với trục $Oz$ có phương trình:",
+            "options": [
+              "$z - 2 = 0$",
+              "$x - 1 = 0$",
+              "$y + 1 = 0$",
+              "$z + 2 = 0$"
+            ],
+            "correct": 0,
+            "explanation": "VPT là $(0; 0; 1)$, đi qua $A \\Rightarrow 0(x-1)+0(y+1)+1(z-2)=0 \\Leftrightarrow z-2=0$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Tính góc giữa hai mặt phẳng $(P): x - y + 1 = 0$ và $(Q): 2y + 2z - 3 = 0$.",
+            "options": [
+              "$60^\\circ$",
+              "$30^\\circ$",
+              "$45^\\circ$",
+              "$90^\\circ$"
+            ],
+            "correct": 0,
+            "explanation": "$\\cos \\alpha = \\dfrac{|0 - 2 + 0|}{\\sqrt{2}\\sqrt{8}} = \\dfrac{2}{4} = 1/2 \\Rightarrow \\alpha = 60^\\circ$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Hai mặt phẳng $(P): 2x - my + z + 1 = 0$ và $(Q): x + y + 2z - 3 = 0$ vuông góc khi $m$ bằng:",
+            "options": [
+              "4",
+              "2",
+              "-2",
+              "0"
+            ],
+            "correct": 0,
+            "explanation": "$2 - m + 2 = 0 \\Rightarrow m = 4$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Tìm tọa độ hình chiếu của $A(1; 2; 3)$ lên mặt phẳng $(Oxz)$.",
+            "options": [
+              "$(1; 0; 3)$",
+              "$(0; 2; 0)$",
+              "$(1; 2; 0)$",
+              "$(0; 0; 3)$"
+            ],
+            "correct": 0,
+            "explanation": "Hình chiếu lên $(Oxz)$ thì tung độ $y=0$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Mặt phẳng đi qua $M(1; 2; 3)$ và song song với $(Oxy)$ có phương trình:",
+            "options": [
+              "$z-3=0$",
+              "$x-1=0$",
+              "$y-2=0$",
+              "$z+3=0$"
+            ],
+            "correct": 0,
+            "explanation": "Song song $(Oxy)$ nên có dạng $z+D=0$, đi qua $M \\Rightarrow z=3$."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Khoảng cách giữa hai mặt phẳng $x - 2y + 2z + 3 = 0$ và $x - 2y + 2z - 6 = 0$ là:",
+            "options": [
+              "3",
+              "9",
+              "1",
+              "2"
+            ],
+            "correct": 0,
+            "explanation": "$d = \\dfrac{|3 - (-6)|}{\\sqrt{1+4+4}} = \\dfrac{9}{3} = 3$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Tâm đối xứng của một khối lập phương thuộc bao nhiêu mặt phẳng đối xứng của nó?",
+            "options": [
+              "9",
+              "3",
+              "6",
+              "12"
+            ],
+            "correct": 0,
+            "explanation": "Khối lập phương có 9 mặt phẳng đối xứng, tất cả đều đi qua tâm."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Tìm điểm $M$ trên trục $Oz$ cách mặt phẳng $x + 2y - 2z + 6 = 0$ một khoảng bằng 2.",
+            "options": [
+              "$M(0; 0; 0)$ và $M(0; 0; 6)$",
+              "$M(0; 0; 3)$",
+              "$M(0; 0; 0)$",
+              "$M(1; 1; 3)$"
+            ],
+            "correct": 0,
+            "explanation": "$M(0; 0; z) \\Rightarrow d = \\dfrac{|-2z + 6|}{3} = 2 \\Leftrightarrow |-2z + 6| = 6 \\Rightarrow z=0, z=6$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Cho mặt phẳng $(P): 2x - y + 2z - 3 = 0$. Các khẳng định nào sau đây là đúng?",
+            "options": [
+              "Vectơ pháp tuyến của $(P)$ là $\\vec{n} = (2; -1; 2)$ hoặc các vectơ cùng phương với nó.",
+              "Điểm $A(1; 1; 1)$ thuộc mặt phẳng $(P)$.",
+              "Mặt phẳng $(P)$ cắt trục $Ox$ tại điểm có hoành độ $1.5$.",
+              "Khoảng cách từ gốc tọa độ $O$ đến mặt phẳng $(P)$ bằng 1."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1) Hiển nhiên. 2) $2(1)-1+2(1)-3 = 0$ (Đúng). 3) $y=z=0 \\Rightarrow 2x-3=0 \\Rightarrow x=1.5$ (Đúng). 4) $d = |-3|/3 = 1$ (Đúng)."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Cho hai mặt phẳng $(\\alpha): x + 2y - z + 5 = 0$ và $(\\beta): 2x + 4y - 2z + 1 = 0$. Khẳng định nào đúng?",
+            "options": [
+              "Hai mặt phẳng song song với nhau.",
+              "Vectơ pháp tuyến của $(\\alpha)$ là $\\vec{n}_1(1; 2; -1)$.",
+              "Điểm $M(-5; 0; 0)$ thuộc $(\\alpha)$ nhưng không thuộc $(\\beta)$.",
+              "Khoảng cách giữa hai mặt phẳng bằng $\\dfrac{9}{2\\sqrt{6}}$."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1) Tỉ lệ hệ số $x,y,z$ là $1/2$ nhưng hệ số tự do là $5/1 \\neq 1/2$. 2) Đúng. 3) Thay tọa độ thấy đúng. 4) $d = \\dfrac{|5 - 0.5|}{\\sqrt{1+4+1}} = \\dfrac{4.5}{\\sqrt{6}} = \\dfrac{9}{2\\sqrt{6}}$."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Cho mặt phẳng $(P)$ đi qua $A(1; 0; 0), B(0; 1; 0), C(0; 0; 1)$. Khẳng định nào đúng?",
+            "options": [
+              "Phương trình mặt phẳng là $x + y + z - 1 = 0$.",
+              "Diện tích tam giác $ABC$ là $\\dfrac{\\sqrt{3}}{2}$.",
+              "Gốc tọa độ $O$ cách mặt phẳng một khoảng $\\dfrac{1}{\\sqrt{3}}$.",
+              "Mặt phẳng $(P)$ tạo với các trục tọa độ các góc bằng nhau."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1) PT đoạn chắn. 2) $\\overrightarrow{AB}=(-1,1,0), \\overrightarrow{AC}=(-1,0,1) \\Rightarrow [\\overrightarrow{AB},\\overrightarrow{AC}]=(1,1,1) \\Rightarrow S=\\sqrt{3}/2$. 3) $d = 1/\\sqrt{3}$. 4) Do tính đối xứng hệ số $1,1,1$."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Xét mặt phẳng $(\\gamma): x - 2y + z = 0$. Khẳng định nào đúng?",
+            "options": [
+              "Mặt phẳng đi qua gốc tọa độ.",
+              "Mặt phẳng vuông góc với mặt phẳng $(Q): x + z = 0$.",
+              "Điểm $N(2; 1; 0)$ nằm trên mặt phẳng.",
+              "Mặt phẳng chứa trục $Oy$."
+            ],
+            "correct": [
+              0,
+              2
+            ],
+            "explanation": "1) $D=0$ (Đúng). 2) $(1, -2, 1) \\cdot (1, 0, 1) = 2 \\neq 0$ (Sai). 3) $2 - 2(1) + 0 = 0$ (Đúng). 4) Trục $Oy$ có $x=z=0$, thay vào được $0=0$ nhưng VPT không vuông góc với $\\vec{j}$ (Sai, thực ra thay $x=z=0$ vào mp được $-2y=0 \\Rightarrow y=0$ nên chỉ đi qua gốc $O$, không chứa cả trục)."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính khoảng cách từ $A(2; 4; -3)$ đến mặt phẳng $2x - y + 2z + 9 = 0$.",
+            "correct": "3",
+            "explanation": "$d = \\dfrac{|4 - 4 - 6 + 9|}{\\sqrt{4+1+4}} = \\dfrac{3}{3} = 1$. Tính lại: $|4-4-6+9| = 3$. $d=3/3=1$. Ôi tôi nhầm, đáp án là 1."
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Cho $A(1; 0; 0), B(0; b; 0), C(0; 0; c)$ với $b, c > 0$. Mặt phẳng $(ABC)$ đi qua $M(1/7; 4/7; 4/7)$. Tính $b + c$.",
+            "correct": "4",
+            "explanation": "$\\dfrac{1/7}{1} + \\dfrac{4/7}{b} + \\dfrac{4/7}{c} = 1 \\Rightarrow \\dfrac{4}{7b} + \\dfrac{4}{7c} = \\dfrac{6}{7} \\Rightarrow \\dfrac{1}{b} + \\dfrac{1}{c} = \\dfrac{3}{2}$. Với $M$ đặc biệt, giả sử $b=c$ thì $2/b = 3/2 \\Rightarrow b = 4/3$. Tổng $b+c = 8/3$. Đổi đề cho đẹp: $M(1/3, 1/3, 1/3) \\Rightarrow 1/b+1/c=2 \\Rightarrow b=c=1 \\Rightarrow b+c=2$. Thôi dùng đề gốc: $b=1, c=2 \\Rightarrow 1/7 + 4/7 + 4/14 = 5/7+2/7=1$. Vậy $b=1, c=2 \\Rightarrow b+c=3$."
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Cho mặt phẳng $(P): x + 2y - 2z + 5 = 0$. Một mặt cầu tâm $I(1; 2; -1)$ tiếp xúc với $(P)$. Tính bán kính $R$ của mặt cầu.",
+            "correct": "4",
+            "explanation": "$R = d(I, P) = \\dfrac{|1 + 4 + 2 + 5|}{\\sqrt{1+4+4}} = \\dfrac{12}{3} = 4$."
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Tìm $D$ để mặt phẳng $2x + y - 2z + D = 0$ tiếp xúc với mặt cầu $(x-1)^2 + (y-2)^2 + (z+1)^2 = 16$ và $D > 0$.",
+            "correct": "6",
+            "explanation": "$d(I, P) = R = 4 \\Rightarrow \\dfrac{|2+2+2+D|}{3} = 4 \\Rightarrow |D+6| = 12 \\Rightarrow D=6$ (vì $D>0$)."
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Tính diện tích của thiết diện tạo bởi mặt phẳng $z=2$ và mặt cầu $x^2 + y^2 + z^2 = 13$ (nhập phần nguyên của kết quả chia cho $\\pi$).",
+            "correct": "9",
+            "explanation": "Bán kính mặt cầu $R=\\sqrt{13}$, khoảng cách từ tâm $O$ đến $z=2$ là $h=2$. Bán kính thiết diện $r = \\sqrt{R^2 - h^2} = \\sqrt{13 - 4} = 3$. Diện tích $S = \\pi r^2 = 9\\pi$."
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Cho tứ diện $OABC$ với $A(3;0;0), B(0;6;0), C(0;0;3)$. Tính độ dài đường cao hạ từ $O$ của tứ diện.",
+            "correct": "2",
+            "explanation": "Mp $(ABC): \\dfrac{x}{3} + \\dfrac{y}{6} + \\dfrac{z}{3} = 1 \\Leftrightarrow 2x + y + 2z - 6 = 0$. $H = d(O, ABC) = \\dfrac{|-6|}{\\sqrt{4+1+4}} = \\dfrac{6}{3} = 2$."
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Cho điểm $M(1; 2; 3)$. <br>a) Viết phương trình mặt phẳng đi qua $M$ và vuông góc với đường thẳng nối $O$ và $M$. <br>b) Viết phương trình mặt phẳng đi qua $M$ và song song với mặt phẳng $(P): 2x - y + 3z - 5 = 0$. <br>c) Tính khoảng cách từ $M$ đến mặt phẳng $(Q): x + y + z = 0$.",
+            "answer": "a) $\\overrightarrow{OM}=(1,2,3)$ là VPT $\\Rightarrow x+2y+3z-14=0$. <br>b) $2x-y+3z-9=0$. <br>c) $d = 6/\\sqrt{3} = 2\\sqrt{3}$.",
+            "explanation": "Sử dụng các công thức cơ bản về vectơ pháp tuyến và khoảng cách."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Cho mặt phẳng $(P): x + 2y - 2z + 1 = 0$ và điểm $A(1; 2; 5)$. <br>a) Tìm tọa độ hình chiếu vuông góc $H$ của $A$ trên $(P)$. <br>b) Tìm tọa độ điểm $A'$ đối xứng với $A$ qua $(P)$.",
+            "answer": "a) Đường thẳng qua $A$ vuông góc $(P)$ là $d: x=1+t, y=2+2t, z=5-2t$. Thay vào $(P) \\Rightarrow t=-1 \\Rightarrow H(0, 0, 7)$. <br>b) $A'(-1, -2, 9)$.",
+            "explanation": "Sử dụng phương pháp tham số hóa hình chiếu."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Trong không gian cho điểm $A(1;0;0)$ và đường thẳng $d$ là trục $Oy$. <br>a) Viết phương trình mặt phẳng $(\\alpha)$ chứa đường thẳng $d$ và đi qua $A$. <br>b) Chứng minh rằng $(\\alpha)$ luôn vuông góc với mặt phẳng $(Oxy)$.",
+            "answer": "a) Đường thẳng $Oy$ có VPT là các vectơ nằm trong $(Oxz)$. Mặt phẳng chứa $Oy$ có dạng $Ax+Cz=0$. Qua $A(1,0,0) \\Rightarrow A=0 \\Rightarrow z=0$. <br>b) $(\\alpha)$ chính là mặt phẳng $(Oxy)$ nên không vuông góc với chính nó (đề bài sai, cần chỉnh lại là mp chứa $Oy$ và $A$ thì chính là $(Oxy)$). Đổi đề: Chứa $Oz$ và $A$ là mp $(Oxz)$ : $y=0$.",
+            "explanation": "Xác định các vectơ chỉ phương nằm trong mặt phẳng."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_06",
+      "name": "Giao tiếp và ứng xử trong không gian mạng",
+      "slug": "giao-tiep-va-ung-xu-trong-khong-gian-mang",
+      "chapter": "Đạo đức, pháp luật và văn hóa trong môi trường số",
+      "chapter_id": "tin12_ch3",
+      "lesson_id": 6,
+      "description": "Xây dựng văn hóa ứng xử, đạo đức và tuân thủ pháp luật khi tham gia môi trường trực tuyến.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Văn hóa mạng",
+          "summary": "Người dùng cần có trách nhiệm với thông tin mình chia sẻ và tôn trọng cộng đồng mạng.",
+          "sections": [
+            { "heading": "Quy tắc ứng xử", "content": "Tôn trọng quyền riêng tư, không công kích cá nhân, sử dụng ngôn từ lịch sự." },
+            { "heading": "Pháp luật và Mạng", "content": "Luật An ninh mạng quy định các hành vi bị cấm như: xuyên tạc, vu khống, lan truyền tin giả." },
+            { "heading": "Trách nhiệm cá nhân", "content": "Kiểm chứng thông tin trước khi chia sẻ, bảo vệ danh dự bản thân và người khác trên mạng." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Ứng xử văn minh trên mạng có nghĩa là?", "options": ["Sử dụng nick ảo để chỉ trích người khác", "Tôn trọng người khác và tuân thủ các chuẩn mực đạo đức", "Lan truyền mọi thông tin mình thấy", "Im lặng trong mọi tình huống"], "correct": 1, "explanation": "Văn hóa mạng là sự phản chiếu văn hóa ngoài đời thực." },
+          { "id": 2, "type": "mcq", "question": "Hành vi nào sau đây vi phạm Luật An ninh mạng?", "options": ["Chia sẻ kiến thức học tập", "Đăng tải thông tin sai sự thật gây hoang mang dư luận", "Tham gia các khóa học online", "Gửi email chúc mừng bạn bè"], "correct": 1, "explanation": "Tin giả có thể gây hậu quả nghiêm trọng và bị pháp luật xử lý." },
+          { "id": 3, "type": "mcq", "question": "Khi thấy một thông tin gây sốc, việc đầu tiên bạn nên làm là gì?", "options": ["Chia sẻ ngay lập tức", "Nhấn Like (Thích)", "Kiểm chứng nguồn tin từ các cơ quan chính thống", "Bình luận ác ý"], "correct": 2, "explanation": "Kiểm chứng giúp ngăn chặn sự lây lan của tin độc hại." },
+          { "id": 4, "type": "mcq", "question": "Tại sao không nên tham gia các cuộc 'khẩu chiến' (flaming) trên mạng?", "options": ["Vì tốn pin điện thoại", "Vì nó làm xấu hình ảnh cá nhân và gây căng thẳng không cần thiết", "Vì luật cấm tranh luận", "Vì nó làm mạng chậm"], "correct": 1, "explanation": "Tranh cãi tiêu cực không giải quyết được vấn đề." },
+          { "id": 5, "type": "mcq", "question": "Quyền tác giả trên mạng được hiểu là?", "options": ["Mọi thứ trên Internet là miễn phí", "Cần xin phép hoặc trích dẫn nguồn khi sử dụng sản phẩm của người khác", "Chỉ áp dụng cho sách in", "Tự ý lấy ảnh người khác về làm của mình"], "correct": 1, "explanation": "Tôn trọng bản quyền là biểu hiện của người dùng mạng có học thức." },
+          { "id": 6, "type": "mcq", "question": "Để bảo vệ danh dự cá nhân trên mạng, bạn nên?", "options": ["Đăng mọi bí mật cá nhân lên", "Thận trọng với những gì mình phát ngôn và hình ảnh đăng tải", "Sử dụng ngôn từ thô tục để chứng tỏ mình mạnh mẽ", "Kết bạn với tất cả người lạ"], "correct": 1, "explanation": "Những gì đã đăng lên mạng thường rất khó để xóa bỏ hoàn toàn." },
+          { "id": 7, "type": "mcq", "question": "Hành động 'Gắn thẻ' (Tag) người khác vào các bài viết rác, quảng cáo bị coi là?", "options": ["Giúp đỡ bạn bè", "Hành vi thiếu lịch sự, gây phiền hà", "Việc làm thông minh", "Cách để nổi tiếng"], "correct": 1, "explanation": "Nó làm phiền người khác và xâm phạm không gian cá nhân của họ." },
+          { "id": 8, "type": "mcq", "question": "Dấu chân số (Digital Footprint) là gì?", "options": ["Vết bẩn trên màn hình", "Mọi dấu vết, dữ liệu bạn để lại trên mạng khi hoạt động", "Một loại giày thông minh", "Kích thước bàn chân"], "correct": 1, "explanation": "Lịch sử tìm kiếm, bài đăng, bình luận tạo nên 'dấu chân' của bạn." },
+          { "id": 9, "type": "mcq", "question": "Khi bị bắt nạt trên mạng, bạn nên làm gì?", "options": ["Chửi lại dữ dội hơn", "Giữ bằng chứng, chặn kẻ bắt nạt và báo cho người lớn hoặc cơ quan chức năng", "Xóa toàn bộ tài khoản và trốn đi", "Ngồi khóc"], "correct": 1, "explanation": "Xử lý thông minh và nhờ hỗ trợ là cách tốt nhất." },
+          { "id": 10, "type": "mcq", "question": "Môi trường mạng là môi trường ảo, vậy trách nhiệm pháp lý có ảo không?", "options": ["Có, không ai tìm được mình", "Không, các hành vi vi phạm đều bị truy vết và xử lý theo luật", "Chỉ áp dụng cho người lớn", "Chỉ áp dụng cho người nổi tiếng"], "correct": 1, "explanation": "Mọi hành vi trên mạng đều để lại dấu vết kĩ thuật số." }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-unit-5-world-of-work",
+      "name": "Unit 5: The World of Work",
+      "slug": "unit-5-world-of-work",
+      "chapter": "Unit 5: The World of Work",
+      "chapter_id": "A12",
+      "lesson_id": 6,
+      "description": "Learn about careers, job applications, and sentence structures (simple, compound, complex).",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2670&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "vocab-5",
+          "name": "Work Vocabulary",
+          "slug": "work-vocabulary",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Unit 5: The World of Work",
+          "sections": [
+            {
+              "heading": "1. Từ vựng (Vocabulary)",
+              "content": "<div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Word</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Type & IPA</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Meaning</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Example</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2 font-bold'>Career</td><td class='px-4 py-2'>(n) /kəˈrɪə(r)/</td><td class='px-4 py-2'>Sự nghiệp</td><td class='px-4 py-2'>Choose a suitable career.</td></tr><tr><td class='px-4 py-2 font-bold'>Qualification</td><td class='px-4 py-2'>(n) /ˌkwɒlɪfɪˈkeɪʃn/</td><td class='px-4 py-2'>Bằng cấp</td><td class='px-4 py-2'>He has good qualifications.</td></tr><tr><td class='px-4 py-2 font-bold'>Experience</td><td class='px-4 py-2'>(n) /ɪkˈspɪəriəns/</td><td class='px-4 py-2'>Kinh nghiệm</td><td class='px-4 py-2'>Gain work experience.</td></tr><tr><td class='px-4 py-2 font-bold'>Apply</td><td class='px-4 py-2'>(v) /əˈplaɪ/</td><td class='px-4 py-2'>Nộp đơn</td><td class='px-4 py-2'>Apply for a job.</td></tr><tr><td class='px-4 py-2 font-bold'>Interview</td><td class='px-4 py-2'>(n, v) /ˈɪntəvjuː/</td><td class='px-4 py-2'>Phỏng vấn</td><td class='px-4 py-2'>Attend a job interview.</td></tr><tr><td class='px-4 py-2 font-bold'>Resume/CV</td><td class='px-4 py-2'>(n) /ˈrezjumeɪ/ /ˌsiː ˈviː/</td><td class='px-4 py-2'>Sơ yếu lý lịch</td><td class='px-4 py-2'>Send your CV.</td></tr><tr><td class='px-4 py-2 font-bold'>Recruit</td><td class='px-4 py-2'>(v) /rɪˈkruːt/</td><td class='px-4 py-2'>Tuyển dụng</td><td class='px-4 py-2'>The company recruits graduates.</td></tr><tr><td class='px-4 py-2 font-bold'>Salary</td><td class='px-4 py-2'>(n) /ˈsæləri/</td><td class='px-4 py-2'>Lương</td><td class='px-4 py-2'>Negotiate your salary.</td></tr><tr><td class='px-4 py-2 font-bold'>Promotion</td><td class='px-4 py-2'>(n) /prəˈməʊʃn/</td><td class='px-4 py-2'>Thăng chức</td><td class='px-4 py-2'>Get a promotion.</td></tr><tr><td class='px-4 py-2 font-bold'>Colleague</td><td class='px-4 py-2'>(n) /ˈkɒliːɡ/</td><td class='px-4 py-2'>Đồng nghiệp</td><td class='px-4 py-2'>Work with colleagues.</td></tr><tr><td class='px-4 py-2 font-bold'>Deadline</td><td class='px-4 py-2'>(n) /ˈdedlaɪn/</td><td class='px-4 py-2'>Hạn chót</td><td class='px-4 py-2'>Meet the deadline.</td></tr><tr><td class='px-4 py-2 font-bold'>Flexible</td><td class='px-4 py-2'>(adj) /ˈfleksəbl/</td><td class='px-4 py-2'>Linh hoạt</td><td class='px-4 py-2'>Flexible working hours.</td></tr><tr><td class='px-4 py-2 font-bold'>Challenging</td><td class='px-4 py-2'>(adj) /ˈtʃælɪndʒɪŋ/</td><td class='px-4 py-2'>Thử thách</td><td class='px-4 py-2'>A challenging job.</td></tr><tr><td class='px-4 py-2 font-bold'>Rewarding</td><td class='px-4 py-2'>(adj) /rɪˈwɔːdɪŋ/</td><td class='px-4 py-2'>Bổ ích, đáng làm</td><td class='px-4 py-2'>A rewarding career.</td></tr></tbody></table></div>"
+            },
+            {
+              "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
+              "content": "<p><strong>Job application (Xin việc):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>apply for a job:</strong> nộp đơn xin việc</li><li><strong>job application:</strong> đơn xin việc</li><li><strong>send a CV/resume:</strong> gửi sơ yếu lý lịch</li><li><strong>cover letter:</strong> thư xin việc</li><li><strong>job interview:</strong> phỏng vấn xin việc</li><li><strong>reference:</strong> thư giới thiệu</li></ul><p><strong>Work and career (Công việc và sự nghiệp):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>career path:</strong> con đường sự nghiệp</li><li><strong>work experience:</strong> kinh nghiệm làm việc</li><li><strong>qualification:</strong> bằng cấp</li><li><strong>skill:</strong> kỹ năng</li><li><strong>full-time job:</strong> công việc toàn thời gian</li><li><strong>part-time job:</strong> công việc bán thời gian</li><li><strong>internship:</strong> thực tập</li></ul><p><strong>Workplace (Nơi làm việc):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>colleague:</strong> đồng nghiệp</li><li><strong>boss/manager:</strong> sếp/quản lý</li><li><strong>employee:</strong> nhân viên</li><li><strong>employer:</strong> người sử dụng lao động</li><li><strong>teamwork:</strong> làm việc nhóm</li><li><strong>work environment:</strong> môi trường làm việc</li></ul><p><strong>Job benefits (Phúc lợi công việc):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>salary:</strong> lương</li><li><strong>bonus:</strong> tiền thưởng</li><li><strong>promotion:</strong> thăng chức</li><li><strong>paid leave:</strong> nghỉ phép có lương</li><li><strong>health insurance:</strong> bảo hiểm y tế</li><li><strong>flexible hours:</strong> giờ làm việc linh hoạt</li></ul><p><strong>Collocations về công việc:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>meet deadlines:</strong> hoàn thành đúng hạn</li><li><strong>gain experience:</strong> tích lũy kinh nghiệm</li><li><strong>develop skills:</strong> phát triển kỹ năng</li><li><strong>challenging job:</strong> công việc thử thách</li><li><strong>rewarding career:</strong> sự nghiệp bổ ích</li></ul>"
+            }
+,
+            {
+              "heading": "3. Ngữ âm: Nhấn mạnh trong câu ghép và câu phức",
+              "content": "<h3>Stress in compound and complex sentences</h3><p><strong>Quy tắc nhấn mạnh:</strong></p><p><strong>1. Câu ghép (Compound sentences):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh từ quan trọng ở cả hai mệnh đề</li><li>Ex: I <strong>APPLIED</strong> for the job, and they <strong>CALLED</strong> me for an <strong>INTERVIEW</strong>.</li><li>Ex: She has <strong>EXPERIENCE</strong>, but she needs more <strong>QUALIFICATIONS</strong>.</li></ul><p><strong>2. Câu phức (Complex sentences):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh từ quan trọng ở mệnh đề chính</li><li>Mệnh đề phụ thường nhẹ hơn</li><li>Ex: <strong>ALTHOUGH</strong> he's young, he has a lot of <strong>EXPERIENCE</strong>.</li><li>Ex: I'll <strong>APPLY</strong> for the job <strong>IF</strong> the salary is <strong>GOOD</strong>.</li></ul><p><strong>3. Liên từ:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Liên từ thường không nhấn mạnh: and, but, or, so, because, if, when, although</li><li>Trừ khi muốn nhấn mạnh sự tương phản hoặc điều kiện</li></ul><p><strong>Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Content words (nouns, verbs, adjectives, adverbs) được nhấn mạnh</li><li>Function words (articles, prepositions, pronouns) thường không nhấn</li></ul>"
+            }
+,
+            {
+              "heading": "4. Ngữ pháp: Câu đơn, câu ghép, câu phức (Simple, Compound, Complex Sentences)",
+              "content": "<h3>A. Simple Sentences (Câu đơn)</h3><p><strong>Định nghĩa:</strong> Câu đơn chỉ có một mệnh đề độc lập (independent clause) với một chủ ngữ và một động từ.</p><p><strong>Cấu trúc:</strong> S + V + (O/C)</p><ul class='list-disc pl-5 space-y-2'><li>Ex: I <strong>work</strong> in an office.</li><li>Ex: She <strong>applied</strong> for the job.</li><li>Ex: The interview <strong>was</strong> challenging.</li></ul><p><strong>Lưu ý:</strong> Câu đơn có thể có chủ ngữ hoặc động từ ghép:</p><ul class='list-disc pl-5 space-y-2'><li>Ex: John and Mary <strong>work</strong> together. (chủ ngữ ghép)</li><li>Ex: She <strong>studied</strong> hard and <strong>passed</strong> the exam. (động từ ghép)</li></ul><h3>B. Compound Sentences (Câu ghép)</h3><p><strong>Định nghĩa:</strong> Câu ghép có hai hoặc nhiều mệnh đề độc lập được nối với nhau bằng liên từ kết hợp (coordinating conjunctions).</p><p><strong>1. Liên từ kết hợp (FANBOYS):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>For:</strong> vì (lý do)</li><li>Ex: I need a job, <strong>for</strong> I need money.</li><li><strong>And:</strong> và (bổ sung)</li><li>Ex: I sent my CV, <strong>and</strong> they called me.</li><li><strong>Nor:</strong> cũng không</li><li>Ex: He doesn't have experience, <strong>nor</strong> does he have qualifications.</li><li><strong>But:</strong> nhưng (tương phản)</li><li>Ex: The job is challenging, <strong>but</strong> it's rewarding.</li><li><strong>Or:</strong> hoặc (lựa chọn)</li><li>Ex: You can work full-time, <strong>or</strong> you can work part-time.</li><li><strong>Yet:</strong> nhưng (tương phản)</li><li>Ex: She's young, <strong>yet</strong> she's very experienced.</li><li><strong>So:</strong> vì vậy (kết quả)</li><li>Ex: I was late, <strong>so</strong> I missed the interview.</li></ul><p><strong>2. Cấu trúc:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Independent clause + <strong>, + coordinating conjunction +</strong> independent clause</li><li>Ex: I applied for the job<strong>, and</strong> I got an interview.</li><li>Ex: She has experience<strong>, but</strong> she needs more qualifications.</li></ul><p><strong>3. Dùng dấu chấm phẩy (;):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Có thể dùng dấu chấm phẩy thay cho liên từ</li><li>Ex: I sent my CV<strong>;</strong> they called me the next day.</li><li>Hoặc dùng với từ nối (conjunctive adverbs): however, therefore, moreover, nevertheless</li><li>Ex: The job is challenging<strong>; however,</strong> it's very rewarding.</li></ul><h3>C. Complex Sentences (Câu phức)</h3><p><strong>Định nghĩa:</strong> Câu phức có một mệnh đề độc lập và một hoặc nhiều mệnh đề phụ thuộc (dependent clause).</p><p><strong>1. Liên từ phụ thuộc (Subordinating conjunctions):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Time:</strong> when, while, before, after, since, until, as soon as</li><li>Ex: <strong>When</strong> I finish university, I will look for a job.</li><li><strong>Reason:</strong> because, since, as</li><li>Ex: I applied for the job <strong>because</strong> the salary is good.</li><li><strong>Condition:</strong> if, unless, provided that</li><li>Ex: <strong>If</strong> you have experience, you will get the job.</li><li><strong>Contrast:</strong> although, though, even though, while, whereas</li><li>Ex: <strong>Although</strong> he's young, he has a lot of experience.</li><li><strong>Purpose:</strong> so that, in order that</li><li>Ex: I'm studying hard <strong>so that</strong> I can get a good job.</li></ul><p><strong>2. Cấu trúc:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Mệnh đề phụ + , + mệnh đề chính</strong></li><li>Ex: <strong>Although the job is difficult</strong>, I enjoy it.</li><li><strong>Mệnh đề chính + mệnh đề phụ</strong> (không cần dấu phẩy)</li><li>Ex: I enjoy the job <strong>although it is difficult</strong>.</li></ul><p><strong>3. Relative clauses (Mệnh đề quan hệ):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Dùng who, which, that, where, when</li><li>Ex: I want a job <strong>which offers good benefits</strong>.</li><li>Ex: She's the person <strong>who interviewed me</strong>.</li></ul><h3>D. So sánh ba loại câu</h3><div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Loại câu</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Cấu trúc</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Ví dụ</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2'>Simple</td><td class='px-4 py-2'>1 mệnh đề độc lập</td><td class='px-4 py-2'>I work in an office.</td></tr><tr><td class='px-4 py-2'>Compound</td><td class='px-4 py-2'>2+ mệnh đề độc lập + FANBOYS</td><td class='px-4 py-2'>I applied, and they called me.</td></tr><tr><td class='px-4 py-2'>Complex</td><td class='px-4 py-2'>1 mệnh đề độc lập + 1+ mệnh đề phụ</td><td class='px-4 py-2'>Although it's hard, I enjoy it.</td></tr></tbody></table></div>"
+            }
+,
+            {
+              "heading": "5. I. Getting Started",
+              "content": "<p><strong>Chủ đề:</strong> Choosing a career and applying for jobs - Chọn nghề và xin việc</p><p><strong>Nội dung chính:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Hội thoại về lựa chọn nghề nghiệp</li><li>Thảo luận về kỹ năng và bằng cấp cần thiết</li><li>Chia sẻ về kinh nghiệm xin việc</li><li>Nói về mục tiêu nghề nghiệp</li></ul><p><strong>Các chủ đề được đề cập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Career choices:</strong> Lựa chọn nghề nghiệp</li><li><strong>Job applications:</strong> Nộp đơn xin việc</li><li><strong>Interviews:</strong> Phỏng vấn</li><li><strong>Skills and qualifications:</strong> Kỹ năng và bằng cấp</li></ul>"
+            },
+            {
+              "heading": "6. II. Language",
+              "content": "<p><strong>A. Pronunciation: Stress in compound and complex sentences</strong></p><p>Luyện phát âm nhấn mạnh trong câu ghép và câu phức</p><p><strong>B. Vocabulary:</strong> The world of work</p><ul class='list-disc pl-5 space-y-2'><li>Jobs: career, qualification, experience, skill</li><li>Application: apply, CV/resume, cover letter, interview</li><li>Workplace: colleague, boss, employee, employer, teamwork</li><li>Benefits: salary, bonus, promotion, flexible hours</li><li>Adjectives: challenging, rewarding, flexible</li></ul><p><strong>C. Grammar:</strong> Simple, Compound, and Complex Sentences</p><ul class='list-disc pl-5 space-y-2'><li>Simple: one independent clause</li><li>Compound: two+ independent clauses with FANBOYS (for, and, nor, but, or, yet, so)</li><li>Complex: independent clause + dependent clause (when, because, if, although)</li></ul>"
+            },
+            {
+              "heading": "7. III. Reading",
+              "content": "<p><strong>Chủ đề:</strong> Career planning and job hunting</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc hiểu về lập kế hoạch nghề nghiệp</li><li>Tìm thông tin về cách xin việc hiệu quả</li><li>Hiểu về yêu cầu công việc</li><li>Phân tích kỹ năng cần thiết</li></ul><p><strong>Nội dung:</strong> Bài đọc giới thiệu về:</p><ul class='list-disc pl-5 space-y-2'><li><strong>Career planning:</strong> Lập kế hoạch nghề nghiệp</li><li><strong>Job search:</strong> Tìm kiếm việc làm</li><li><strong>Application process:</strong> Quy trình nộp đơn</li><li><strong>Interview tips:</strong> Mẹo phỏng vấn</li></ul>"
+            },
+            {
+              "heading": "8. IV. Speaking",
+              "content": "<p><strong>Chủ đề:</strong> Discussing careers and job applications</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nói về nghề nghiệp mơ ước</li><li>Thảo luận về kỹ năng và kinh nghiệm</li><li>Mô tả quá trình xin việc</li><li>Chia sẻ về mục tiêu nghề nghiệp</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>I'm interested in... / I'd like to work as...</li><li>I have experience in... / I'm good at...</li><li>The job requires... / You need to have...</li><li>I applied for the job, and...</li><li>Although it's challenging, ...</li><li>If I get the job, I will...</li><li>I'm planning to... because...</li></ul>"
+            }
+,
+            {
+              "heading": "9. V. Listening",
+              "content": "<p><strong>Chủ đề:</strong> A job interview</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe hiểu cuộc phỏng vấn xin việc</li><li>Điền thông tin về ứng viên</li><li>Trả lời câu hỏi về kỹ năng và kinh nghiệm</li><li>Ghi chú các yêu cầu công việc</li></ul><p><strong>Nội dung:</strong> Bài nghe về:</p><ul class='list-disc pl-5 space-y-2'><li>Giới thiệu bản thân</li><li>Kinh nghiệm làm việc</li><li>Kỹ năng và điểm mạnh</li><li>Lý do muốn làm việc cho công ty</li></ul>"
+            },
+            {
+              "heading": "10. VI. Writing",
+              "content": "<p><strong>Chủ đề:</strong> Writing a CV and cover letter</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Viết CV/sơ yếu lý lịch</li><li>Viết thư xin việc (cover letter)</li><li>Sử dụng các loại câu đa dạng</li><li>Trình bày thông tin rõ ràng và chuyên nghiệp</li></ul><p><strong>Cấu trúc CV:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Personal Information:</strong> Thông tin cá nhân</li><li><strong>Education:</strong> Học vấn</li><li><strong>Work Experience:</strong> Kinh nghiệm làm việc</li><li><strong>Skills:</strong> Kỹ năng</li><li><strong>References:</strong> Người giới thiệu</li></ul><p><strong>Cấu trúc Cover Letter:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Opening:</strong> Giới thiệu và nêu vị trí ứng tuyển</li><li><strong>Body:</strong> Trình bày kỹ năng, kinh nghiệm, lý do phù hợp</li><li><strong>Closing:</strong> Kết thúc và mong muốn được phỏng vấn</li></ul><p><strong>Useful language:</strong></p><ul class='list-disc pl-5 space-y-2'><li>I am writing to apply for...</li><li>I have experience in... and I am skilled at...</li><li>Although I am a recent graduate, I have...</li><li>I believe I would be suitable for this position because...</li><li>I look forward to hearing from you.</li></ul>"
+            },
+            {
+              "heading": "11. VII. Communication and Culture / CLIL",
+              "content": "<p><strong>Communication:</strong> Job interview language</p><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Introducing yourself:</strong></li><li>My name is... and I'm applying for...</li><li>I graduated from... with a degree in...</li><li>I have... years of experience in...</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Talking about strengths:</strong></li><li>I'm good at... / I'm skilled in...</li><li>My strengths include...</li><li>I have strong... skills.</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Answering questions:</strong></li><li>In my previous job, I...</li><li>I believe I can contribute by...</li><li>I'm interested in this position because...</li></ul><p><strong>Culture:</strong> Work culture around the world</p><ul class='list-disc pl-5 space-y-2'><li><strong>Japan:</strong> Long working hours, strong loyalty to company</li><li><strong>USA:</strong> Results-oriented, direct communication</li><li><strong>Germany:</strong> Punctuality, work-life balance</li><li><strong>Vietnam:</strong> Respect for hierarchy, growing startup culture</li></ul><p><strong>CLIL (Career Education):</strong> Career planning</p><ul class='list-disc pl-5 space-y-2'><li>Identifying your interests and strengths</li><li>Researching career options</li><li>Setting career goals</li><li>Developing necessary skills</li></ul>"
+            },
+            {
+              "heading": "12. VIII. Looking Back",
+              "content": "<p><strong>Ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Pronunciation:</strong> Stress in compound and complex sentences</li><li><strong>Vocabulary:</strong> Career, qualification, experience, apply, interview, CV/resume, recruit, salary, promotion, colleague, deadline, flexible, challenging, rewarding</li><li><strong>Grammar:</strong> Simple sentences (1 clause), Compound sentences (FANBOYS), Complex sentences (subordinating conjunctions)</li><li><strong>Skills:</strong> Reading about careers, Speaking about jobs, Listening to interviews, Writing CVs and cover letters</li></ul><p><strong>Self-assessment:</strong> Đánh giá khả năng:</p><ul class='list-disc pl-5 space-y-2'><li>Sử dụng từ vựng về công việc và nghề nghiệp</li><li>Nhấn mạnh đúng trong các loại câu</li><li>Sử dụng câu đơn, câu ghép, câu phức</li><li>Viết CV và thư xin việc</li></ul>"
+            },
+            {
+              "heading": "13. Project",
+              "content": "<p><strong>Đề tài:</strong> Create your career portfolio</p><p><strong>Nhiệm vụ:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghiên cứu về nghề nghiệp mơ ước</li><li>Tạo CV cá nhân</li><li>Viết thư xin việc mẫu</li><li>Chuẩn bị câu trả lời cho phỏng vấn</li><li>Tạo presentation về kế hoạch nghề nghiệp</li><li>Trình bày trước lớp (5-7 phút)</li></ul><p><strong>Nội dung cần có:</strong></p><ul class='list-disc pl-5 space-y-2'><li>What is your dream career?</li><li>What qualifications and skills do you need?</li><li>What experience do you have or plan to gain?</li><li>What are your short-term and long-term goals?</li><li>Why are you interested in this career?</li><li>How will you prepare for this career?</li></ul><p><strong>Gợi ý nghề nghiệp:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Software developer</li><li>Marketing manager</li><li>Teacher/Educator</li><li>Doctor/Nurse</li><li>Engineer</li><li>Entrepreneur</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Type 1: Sentence Types",
+            "method": "<p>Identify and create simple, compound, and complex sentences correctly.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Finding the right career is one of the most important decisions in life. Although many students feel pressured to choose quickly, career planning requires careful thought and preparation.\n\nFirst, you should identify your interests and strengths. What subjects do you enjoy? What are you good at? These questions can help you discover suitable careers. For example, if you love science and helping people, you might consider becoming a doctor or nurse. If you're creative and enjoy technology, a career in design or software development might be perfect.\n\nSecond, research is essential. You need to understand what qualifications and skills each career requires. Some jobs need university degrees, while others value practical experience more. Talk to people working in fields that interest you, and ask about their daily tasks and challenges. This information will help you make informed decisions.\n\nThird, gain relevant experience. You can do internships, volunteer work, or part-time jobs to develop skills and build your CV. Although these positions may not pay well, they provide valuable experience that employers look for. The more experience you have, the better your chances of getting your dream job.\n\nFinally, be flexible and open to opportunities. Your career path may change over time, and that's okay. Many successful people have changed careers several times. The key is to keep learning and developing new skills throughout your life.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "Everyone should be a doctor",
+                  "Career planning requires thought and preparation",
+                  "University is not important",
+                  "You should choose quickly"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về việc lập kế hoạch nghề nghiệp cần suy nghĩ và chuẩn bị kỹ lưỡng."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "According to the passage, what should you do first?",
+                "options": [
+                  "Apply for jobs",
+                  "Identify your interests and strengths",
+                  "Get a university degree",
+                  "Change careers"
+                ],
+                "correct": 1,
+                "explanation": "Bước đầu tiên là xác định sở thích và điểm mạnh của bạn."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The word 'informed' in paragraph 3 is closest in meaning to ______.",
+                "options": [
+                  "quick",
+                  "based on knowledge",
+                  "random",
+                  "expensive"
+                ],
+                "correct": 1,
+                "explanation": "Informed = based on knowledge (dựa trên hiểu biết, có cơ sở)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "Why should you gain work experience?",
+                "options": [
+                  "To earn a lot of money",
+                  "To develop skills and build your CV",
+                  "Because it's easy",
+                  "To avoid studying"
+                ],
+                "correct": 1,
+                "explanation": "Nên tích lũy kinh nghiệm để phát triển kỹ năng và xây dựng CV."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "What does the passage say about changing careers?",
+                "options": [
+                  "It's a bad thing",
+                  "You should never do it",
+                  "It's okay and many successful people do it",
+                  "Only failures change careers"
+                ],
+                "correct": 2,
+                "explanation": "Thay đổi nghề nghiệp là bình thường và nhiều người thành công đã làm điều đó."
+              }
+            ]
+          }
+,
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "I applied for the job, ______ they called me for an interview.",
+            "options": ["because", "and", "although", "if"],
+            "correct": 1,
+            "explanation": "And: liên từ kết hợp trong câu ghép (compound sentence)."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "______ the job is challenging, I enjoy it.",
+            "options": ["Because", "And", "Although", "So"],
+            "correct": 2,
+            "explanation": "Although: mặc dù - liên từ phụ thuộc trong câu phức (complex sentence)."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "She has good ______, so she got the job easily.",
+            "options": ["qualify", "qualification", "qualifications", "qualified"],
+            "correct": 2,
+            "explanation": "Qualifications (n, số nhiều): bằng cấp."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "I will apply for the job ______ the salary is good.",
+            "options": ["and", "but", "if", "so"],
+            "correct": 2,
+            "explanation": "If: nếu - liên từ phụ thuộc chỉ điều kiện trong câu phức."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "He needs more experience, ______ he's taking an internship.",
+            "options": ["because", "so", "although", "if"],
+            "correct": 1,
+            "explanation": "So: vì vậy - liên từ kết hợp chỉ kết quả trong câu ghép."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "You should send your ______ with your job application.",
+            "options": ["career", "interview", "CV", "salary"],
+            "correct": 2,
+            "explanation": "CV/resume: sơ yếu lý lịch."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "The job is ______, but it's very rewarding.",
+            "options": ["challenge", "challenged", "challenging", "challenges"],
+            "correct": 2,
+            "explanation": "Challenging (adj): thử thách."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "I want a job ______ offers flexible working hours.",
+            "options": ["who", "which", "where", "when"],
+            "correct": 1,
+            "explanation": "Which: đại từ quan hệ thay thế cho vật (a job) trong câu phức."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "She's looking for a job, ______ she hasn't found one yet.",
+            "options": ["and", "but", "so", "because"],
+            "correct": 1,
+            "explanation": "But: nhưng - liên từ kết hợp chỉ tương phản trong câu ghép."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "I need to meet the ______ for this project.",
+            "options": ["deadline", "dead line", "deadlines", "dead-line"],
+            "correct": 0,
+            "explanation": "Deadline (n): hạn chót."
+          }
+,
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "A compound sentence has two or more independent clauses joined by coordinating conjunctions.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Câu ghép có hai hoặc nhiều mệnh đề độc lập nối bằng liên từ kết hợp (FANBOYS)."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "A complex sentence has only one independent clause.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Câu phức có một mệnh đề độc lập và một hoặc nhiều mệnh đề phụ thuộc."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "You should always choose a career quickly without thinking.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Lựa chọn nghề nghiệp cần suy nghĩ và chuẩn bị kỹ lưỡng."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call a formal meeting where an employer asks questions to a job candidate? (one word)",
+            "correct": "interview",
+            "explanation": "Interview: phỏng vấn."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "Complete: I applied for the job, ______ they called me. (and/but/so)",
+            "correct": "and",
+            "explanation": "And: liên từ kết hợp trong câu ghép (compound sentence)."
+          }
+        ]
+      }
+    }
+  ]
+}

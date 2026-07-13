@@ -1,0 +1,189 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-6",
+      "name": "Bài 6. Thực hành tách chiết DNA",
+      "slug": "thuc-hanh-tach-chiet-dna",
+      "chapter": "Chương 1. Di truyền phân tử",
+      "chapter_id": "S12-1",
+      "lesson_id": 6,
+      "description": "Tìm hiểu quy trình tách chiết DNA từ tế bào sinh vật.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2690&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Thực hành tách chiết DNA",
+          "sections": [
+            {
+              "heading": "1. Nguyên tắc tách chiết DNA",
+              "content": "<h4>a) Mục đích</h4><ul><li>Tách chiết DNA từ tế bào để phục vụ nghiên cứu và ứng dụng công nghệ gene.</li></ul><h4>b) Nguyên tắc</h4><ul><li>Phá vỡ màng tế bào và nhân tế bào để giải phóng DNA.</li><li>Loại bỏ protein và các tạp chất khác.</li><li>Tinh chế và cô đặc DNA.</li></ul>"
+            },
+            {
+              "heading": "2. Quy trình tách chiết DNA",
+              "content": "<h4>a) Bước 1: Chuẩn bị mẫu</h4><ul><li>Lấy mẫu mô hoặc tế bào (ví dụ: bạch cầu, mô thực vật, vi khuẩn).</li><li>Nghiền nhỏ mẫu (nếu cần) để phá vỡ thành tế bào.</li></ul><h4>b) Bước 2: Ly giải tế bào</h4><ul><li>Sử dụng dung dịch ly giải (lysis buffer) chứa:</li><ul><li>SDS hoặc Triton X-100: phá vỡ màng.</li><li>NaCl: duy trì tính tan của DNA.</li><li>EDTA: ức chế enzyme phân giải DNA (DNase).</li></ul><li>Đun nóng nhẹ hoặc vortex để ly giải hoàn toàn.</li></ul><h4>c) Bước 3: Loại bỏ protein</h4><ul><li>Thêm proteinase K để phân giải protein.</li><li>Thêm dung dịch phenol-chloroform để loại bỏ protein (hòa tan trong phenol).</li><li>Ly tâm để tách pha.</li></ul><h4>d) Bước 4: Kết tủa DNA</h4><ul><li>Thêm isopropanol hoặc ethanol lạnh vào dịch nổi chứa DNA.</li><li>DNA sẽ kết tủa thành sợi trắng.</li><li>Ly tâm thu lấy kết tủa DNA.</li></ul><h4>e) Bước 5: Rửa và hòa tan DNA</h4><ul><li>Rửa kết tủa bằng ethanol 70% để loại bỏ tạp chất.</li><li>Để khô ethanol, hòa tan DNA trong nước hoặc TE buffer.</li></ul>"
+            },
+            {
+              "heading": "3. Các chất dùng trong tách chiết DNA",
+              "content": "<h4>a) Dung dịch ly giải (Lysis buffer)</h4><ul><li>SDS (Sodium dodecyl sulfate): chất hoạt động bề mặt, phá vỡ màng tế bào.</li><li>NaCl: duy trì nồng độ ion, giữ DNA hòa tan.</li><li>EDTA: chelat hóa Mg²⁺ và Ca²+, ức chế DNase.</li><li>Tris-HCl: duy trì pH ổn định.</li></ul><h4>b) Enzyme</h4><ul><li>Proteinase K: phân giải protein trong mẫu.</li><li>RNase: phân giải RNA (nếu cần DNA tinh khiết).</li></ul><h4>c) Dung môi hữu cơ</h4><ul><li>Phenol: phân giải và loại bỏ protein.</li><li>Chloroform: loại bỏ phenol còn sót.</li><li>Isopropanol/Ethanol: kết tủa DNA.</li></ul>"
+            },
+            {
+              "heading": "4. Kiểm tra chất lượng DNA",
+              "content": "<h4>a) Phương pháp điện di trên gel agarose</h4><ul><li>DNA di chuyển trong gel theo kích thước.</li><li>Dùng thuốc nhuộm EB hoặc SYBR Green để quan sát.</li><li>DNA nguyên vẹn xuất hiện dưới dạng một band rõ.</li></ul><h4>b) Đo quang phổ</h4><ul><li>Đo OD260 để xác định nồng độ DNA.</li><li>Tỷ lệ OD260/OD280 ≈ 1.8 cho thấy DNA tinh khiết.</li><li>Tỷ lệ < 1.8 cho thấy còn protein, > 1.8 cho thấy còn RNA.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Thành phần nào trong dung dịch ly giải có tác dụng phá vỡ màng tế bào?",
+            "options": [
+              "NaCl",
+              "EDTA",
+              "SDS",
+              "Tris-HCl"
+            ],
+            "correct": 2,
+            "explanation": "SDS (Sodium dodecyl sulfate) là chất hoạt động bề mặt, có tác dụng phá vỡ màng tế bào và nhân tế bào."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Chức năng của EDTA trong tách chiết DNA là gì?",
+            "options": [
+              "Phá vỡ màng tế bào",
+              "Ức chế enzyme phân giải DNA",
+              "Kết tủa DNA",
+              "Hòa tan protein"
+            ],
+            "correct": 1,
+            "explanation": "EDTA chelat hóa Mg²⁺ và Ca²+ cần thiết cho hoạt động của DNase, do đó ức chế enzyme phân giải DNA."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Dung môi nào dùng để kết tủa DNA?",
+            "options": [
+              "Phenol",
+              "Chloroform",
+              "Ethanol lạnh",
+              "SDS"
+            ],
+            "correct": 2,
+            "explanation": "Ethanol hoặc isopropanol lạnh được dùng để kết tủa DNA từ dung dịch sau khi đã loại bỏ protein."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Tỷ lệ OD260/OD280 bao nhiêu là lý tưởng cho DNA tinh khiết?",
+            "options": [
+              "1.0",
+              "1.5",
+              "1.8",
+              "2.0"
+            ],
+            "correct": 2,
+            "explanation": "Tỷ lệ OD260/OD280 ≈ 1.8 được coi là lý tưởng cho DNA tinh khiết. Tỷ lệ thấp hơn cho thấy còn protein, cao hơn cho thấy còn RNA."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Enzyme nào dùng để phân giải protein trong quá trình tách chiết DNA?",
+            "options": [
+              "DNase",
+              "RNase",
+              "Proteinase K",
+              "Lipase"
+            ],
+            "correct": 2,
+            "explanation": "Proteinase K là enzyme có khả năng phân giải protein, thường được sử dụng trong quá trình tách chiết DNA để loại bỏ protein."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các thành phần của dung dịch ly giải (lysis buffer):",
+            "options": [
+              "SDS",
+              "NaCl",
+              "EDTA",
+              "Proteinase K"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: SDS phá vỡ màng. B ✓: NaCl duy trì tính tan. C ✓: EDTA ức chế DNase. D ✗: Proteinase K dùng để loại protein, không có trong lysis buffer."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các phương pháp kiểm tra chất lượng DNA:",
+            "options": [
+              "Điện di gel agarose",
+              "Đo quang phổ",
+              "PCR",
+              "Sequencing"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "A ✓: Điện di gel agarose đánh giá kích thước và độ nguyên vẹn. B ✓: Đo quang phổ đánh giá nồng độ và độ tinh khiết. C,D ✗: PCR và sequencing là phương pháp phân tích, không phải kiểm tra chất lượng."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Kết quả đo quang phổ: OD260 = 0.8, hệ số pha loãng = 20. Tính nồng độ DNA (μg/ml). Nhập số 4 chữ số. (Ví dụ: 0800)",
+            "correct": "0800",
+            "explanation": "Nồng độ = OD260 × 50 × hệ số pha loãng = 0.8 × 50 × 20 = 800 μg/ml."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Mẫu DNA có OD260 = 2.0 và OD280 = 1.0. Tính tỷ lệ OD260/OD280 (nhân 10, lấy 2 chữ số). Ví dụ: 18 có nghĩa là 1.8. Nhập số 2 chữ số.",
+            "correct": "20",
+            "explanation": "Tỷ lệ = 2.0 / 1.0 = 2.0 → 20 (khi nhân 10). Tỷ lệ cao cho thấy còn RNA."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định các bước trong quy trình tách chiết DNA",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Nắm vững trình tự các bước: Ly giải → Loại protein → Kết tủa → Rửa → Hòa tan.</li><li>Bước 1: Phá vỡ tế bào bằng dung dịch ly giải.</li><li>Bước 2: Loại bỏ protein bằng phenol-chloroform hoặc proteinase K.</li><li>Bước 3: Kết tủa DNA bằng ethanol/isopropanol.</li><li>Bước 4: Rửa và hòa tan DNA trong nước/TE.</li></ol>",
+            "examples": [
+              {
+                "question": "Trình tự nào đúng trong quy trình tách chiết DNA?",
+                "solution": "<p><strong>Giải:</strong></p><ol><li><strong>Ly giải tế bào:</strong> Dùng dung dịch chứa SDS, NaCl, EDTA để phá vỡ màng.</li><li><strong>Loại protein:</strong> Thêm proteinase K, phenol-chloroform.</li><li><strong>Kết tủa DNA:</strong> Thêm ethanol/isopropanol lạnh.</li><li><strong>Ly tâm và thu kết tủa.</li><li><strong>Rửa và hòa tan:</strong> Rửa ethanol 70%, hòa tan trong nước/TE.</li></ol>"
+              },
+              {
+                "question": "Sau khi ly giải tế bào, bước tiếp theo cần làm gì để loại bỏ protein?",
+                "solution": "<p><strong>Giải:</strong></p><p>Sau khi ly giải, cần loại bỏ protein bằng một trong các cách:</p><ol><li>Thêm <strong>proteinase K</strong> để phân giải protein.</li><li>Thêm hỗn hợp <strong>phenol-chloroform</strong>, lắc đều và ly tâm để tách pha.</li><li>Protein sẽ tan trong phenol (pha dưới), DNA ở pha trên (dịch nổi).</li></ol>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính nồng độ DNA từ kết quả đo quang phổ",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Công thức tính nồng độ DNA: Nồng độ (μg/ml) = OD260 × 50 × hệ số pha loãng.</li><li>OD260 = 1 tương đương 50 μg/ml DNA (cho đường cong song song).</li><li>Kiểm tra độ tinh khiết: OD260/OD280.</li></ol>",
+            "examples": [
+              {
+                "question": "Kết quả đo quang phổ: OD260 = 0.5, hệ số pha loãng = 10. Tính nồng độ DNA.",
+                "solution": "<p><strong>Giải:</strong></p><p>Nồng độ DNA = OD260 × 50 × hệ số pha loãng</p><p>= 0.5 × 50 × 10 = <strong>250 μg/ml</strong></p>"
+              },
+              {
+                "question": "Một mẫu DNA có OD260 = 1.2 và OD280 = 0.7. Hỏi mẫu DNA có tinh khiết không?",
+                "solution": "<p><strong>Giải:</strong></p><p>Tỷ lệ OD260/OD280 = 1.2 / 0.7 ≈ 1.71</p><p>DNA tinh khiết có tỷ lệ ≈ 1.8</p><p>Tỷ lệ 1.71 < 1.8 → Mẫu DNA còn <strong>nhiều protein</strong>, chưa tinh khiết.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

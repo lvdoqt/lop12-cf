@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_33",
+      "name": "Phân tích tài nguyên biển và đời sống của cư dân ven biển Nam Trung bộ",
+      "slug": "phan-tich-tai-nguyen-bien-va-doi-song-o-duyen-hai-nam_trung_bo",
+      "chapter": "Địa lí các vùng kinh tế",
+      "chapter_id": "dia12_part4",
+      "lesson_id": 33,
+      "description": "Nghiên cứu hệ tài nguyên biển (thuỷ sản, rạn san hô, muối, tảo) và mối quan hệ giữa tài nguyên biển với sinh kế cộng đồng ven biển ở Nam Trung bộ.",
+      "duration_minutes": 60,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Tài nguyên biển và sinh kế địa phương",
+          "summary": "Tài nguyên biển cung cấp nguồn lợi thuỷ sản, vật liệu và du lịch; quản lý bền vững là cần thiết để duy trì sinh kế lâu dài cho cộng đồng ven biển.",
+          "sections": [
+            { "heading": "Các nguồn tài nguyên", "content": "Thủy sản, rạn san hô, muối biển, tảo biển và nguồn năng lượng biển như gió và sóng." },
+            { "heading": "Sinh kế", "content": "Ngư nghiệp, nghề nuôi trồng thủy sản, du lịch cộng đồng và dịch vụ ven biển." }
+          ]
+        },
+        "exercises": { "fieldwork": [ { "q": "Ghi chép 5 loài thủy sản quan trọng địa phương và cách khai thác bền vững.", "a_hint": "Tìm hiểu thời vụ, công cụ khai thác và quy định bảo vệ." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Một nguồn tài nguyên biển là?", "options": ["Thuỷ sản","Than đá nội địa","Lâm nghiệp","Không có gì"], "correct": 0, "explanation": "Thuỷ sản là nguồn tài nguyên biển quan trọng." },
+          { "id": 2, "type": "mcq", "question": "Rạn san hô quan trọng vì?", "options": ["Hỗ trợ đa dạng sinh học và ngư nghiệp","Không quan trọng","Làm ô nhiễm","Giúp giảm nuôi trồng"], "correct": 0, "explanation": "Rạn san hô là môi trường sống của nhiều loài và hỗ trợ ngư nghiệp." },
+          { "id": 3, "type": "mcq", "question": "Một phương thức khai thác bền vững thủy sản là?", "options": ["Hạn chế khai thác mùa sinh sản và dùng ngư cụ chọn lọc","Khai thác ồ ạt","Không sử dụng quy định","Dùng chất nổ"], "correct": 0, "explanation": "Hạn chế khai thác mùa sinh sản giúp bảo tồn nguồn lợi." },
+          { "id": 4, "type": "mcq", "question": "Tài nguyên biển hỗ trợ sinh kế bằng cách?", "options": ["Cung cấp nguồn thực phẩm, thu nhập và dịch vụ du lịch","Làm giảm cơ hội nghề nghiệp","Không hỗ trợ gì","Tạo độc lập hoàn toàn"], "correct": 0, "explanation": "Tài nguyên biển đóng góp đa dạng cho sinh kế ven biển." },
+          { "id": 5, "type": "mcq", "question": "Một rủi ro ảnh hưởng đến tài nguyên biển là?", "options": ["Biến đổi khí hậu và ô nhiễm","Tăng đa dạng sinh học","Ổn định nguồn lợi","Không có rủi ro"], "correct": 0, "explanation": "Biến đổi khí hậu và ô nhiễm làm suy giảm tài nguyên biển." },
+          { "id": 6, "type": "mcq", "question": "Biện pháp bảo vệ rạn san hô là?", "options": ["Thiết lập vùng bảo tồn và hạn chế du lịch không kiểm soát","Xây dựng bến du thuyền lớn trong rạn","Không làm gì","Khai thác san hô"], "correct": 0, "explanation": "Vùng bảo tồn giúp phục hồi và bảo vệ rạn san hô." },
+          { "id": 7, "type": "mcq", "question": "Nuôi trồng thủy sản bền vững cần?", "options": ["Quản lý thức ăn, mật độ và kiểm soát dịch bệnh","Không quản lý","Cho phép mọi thứ","Sử dụng hóa chất độc hại"], "correct": 0, "explanation": "Quản lý tốt giúp giảm tác động môi trường và tăng năng suất bền vững." },
+          { "id": 8, "type": "mcq", "question": "Du lịch cộng đồng giúp?", "options": ["Tăng thu nhập cho cư dân và khuyến khích bảo tồn môi trường","Giảm lợi ích địa phương","Làm tổn hại hoàn toàn","Không liên quan"], "correct": 0, "explanation": "Du lịch cộng đồng kết hợp bảo tồn và kinh tế địa phương." },
+          { "id": 9, "type": "mcq", "question": "Một chỉ tiêu để đánh giá trạng thái nguồn lợi biển là?", "options": ["Sản lượng đánh bắt so với ngư trường và thời vụ sinh sản","Số lượng khách du lịch","Độ dài bờ biển","Không có chỉ tiêu"], "correct": 0, "explanation": "Sản lượng đánh bắt kết hợp yếu tố sinh sản giúp đánh giá bền vững." },
+          { "id": 10, "type": "mcq", "question": "Quản lý bền vững nguồn lợi biển cần sự tham gia của?", "options": ["Chính quyền, ngư dân, nhà khoa học và tổ chức xã hội","Chỉ doanh nghiệp","Chỉ khách du lịch","Không cần ai"], "correct": 0, "explanation": "Sự tham gia đa bên đảm bảo giải pháp phù hợp và khả thi." }
+        ]
+      }
+    }
+  ]
+}

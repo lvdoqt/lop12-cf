@@ -1,0 +1,155 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-6-6-viet-bao-cao-du-an",
+      "name": "Viết báo cáo kết quả của bài tập dự án",
+      "slug": "viet-bao-cao-du-an",
+      "chapter": "Hồ Chí Minh - Văn hóa phải soi đường cho quốc dân đi",
+      "chapter_id": "V12-6",
+      "lesson_id": 6,
+      "description": "Học cách viết báo cáo kết quả của bài tập dự án, trình bày quá trình thực hiện và kết quả đạt được một cách khoa học và có hệ thống.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "project-report",
+          "name": "Báo cáo dự án",
+          "slug": "bao-cao-du-an",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Viết báo cáo kết quả bài tập dự án",
+          "sections": [
+            {
+              "heading": "1. Khái niệm báo cáo dự án",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Báo cáo dự án:</strong> Văn bản trình bày quá trình thực hiện và kết quả của một dự án cụ thể</li><li><strong>Mục đích:</strong> Tổng kết, đánh giá hiệu quả, rút kinh nghiệm</li><li><strong>Đối tượng:</strong> Giáo viên, bạn học, ban giám khảo</li></ul><h4>b) Đặc điểm</h4><ul><li><strong>Tính thực tiễn:</strong> Dựa trên hoạt động thực tế</li><li><strong>Tính hệ thống:</strong> Trình bày có logic, mạch lạc</li><li><strong>Tính khách quan:</strong> Đánh giá trung thực, có căn cứ</li></ul>"
+            },
+            {
+              "heading": "2. Cấu trúc báo cáo dự án",
+              "content": "<h4>a) Phần mở đầu</h4><ul><li><strong>Trang bìa:</strong> Tên dự án, thành viên, thời gian</li><li><strong>Mục lục:</strong> Danh sách các phần</li><li><strong>Giới thiệu:</strong> Lý do chọn dự án, mục tiêu</li></ul><h4>b) Phần nội dung chính</h4><ul><li><strong>Kế hoạch thực hiện:</strong> Các bước, phân công nhiệm vụ</li><li><strong>Quá trình thực hiện:</strong> Các hoạt động đã làm</li><li><strong>Kết quả đạt được:</strong> Sản phẩm, thành tựu cụ thể</li><li><strong>Khó khăn và cách giải quyết:</strong> Vấn đề gặp phải</li></ul><h4>c) Phần kết luận</h4><ul><li><strong>Đánh giá chung:</strong> Ưu điểm, hạn chế</li><li><strong>Bài học kinh nghiệm:</strong> Những gì học được</li><li><strong>Hướng phát triển:</strong> Đề xuất cải tiến</li></ul>"
+            },
+            {
+              "heading": "3. Quy trình viết báo cáo dự án",
+              "content": "<h4>a) Bước 1: Thu thập tài liệu</h4><ul><li><strong>Kế hoạch ban đầu</strong></li><li><strong>Nhật ký thực hiện</strong></li><li><strong>Hình ảnh, video minh họa</strong></li><li><strong>Phản hồi từ người tham gia</strong></li></ul><h4>b) Bước 2: Phân tích, đánh giá</h4><ul><li><strong>So sánh kế hoạch và thực tế</strong></li><li><strong>Xác định thành công và thất bại</strong></li><li><strong>Tìm nguyên nhân</strong></li></ul><h4>c) Bước 3: Viết báo cáo</h4><ul><li><strong>Soạn thảo theo cấu trúc</strong></li><li><strong>Sử dụng ngôn ngữ rõ ràng, chính xác</strong></li><li><strong>Bổ sung hình ảnh, biểu đồ</strong></li></ul><h4>d) Bước 4: Hoàn thiện</h4><ul><li><strong>Kiểm tra lỗi chính tả, ngữ pháp</strong></li><li><strong>Xin ý kiến thành viên nhóm</strong></li><li><strong>Chỉnh sửa, hoàn thiện</strong></li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex6-6-1",
+              "type": "mcq",
+              "question": "Báo cáo dự án có mục đích chính là gì?",
+              "options": [
+                "Kể chuyện vui",
+                "Tổng kết, đánh giá hiệu quả, rút kinh nghiệm",
+                "Miêu tả cảnh vật",
+                "Bày tỏ cảm xúc"
+              ],
+              "correct": 1,
+              "explanation": "Báo cáo dự án có mục đích tổng kết quá trình thực hiện, đánh giá hiệu quả và rút ra bài học kinh nghiệm."
+            },
+            {
+              "id": "ex6-6-2",
+              "type": "mcq",
+              "question": "Phần nào KHÔNG thuộc cấu trúc báo cáo dự án?",
+              "options": [
+                "Giới thiệu dự án",
+                "Quá trình thực hiện",
+                "Thơ ca",
+                "Kết luận"
+              ],
+              "correct": 2,
+              "explanation": "Thơ ca không thuộc cấu trúc báo cáo dự án. Báo cáo dự án cần có: giới thiệu, quá trình thực hiện, kết quả, đánh giá."
+            },
+            {
+              "id": "ex6-6-3",
+              "type": "mcq",
+              "question": "Bước đầu tiên khi viết báo cáo dự án là gì?",
+              "options": [
+                "Viết ngay",
+                "Thu thập tài liệu: kế hoạch, nhật ký, hình ảnh",
+                "Đánh giá",
+                "Hoàn thiện"
+              ],
+              "correct": 1,
+              "explanation": "Bước đầu tiên là thu thập đầy đủ tài liệu liên quan đến dự án: kế hoạch, nhật ký thực hiện, hình ảnh minh họa."
+            },
+            {
+              "id": "ex6-6-4",
+              "type": "mcq",
+              "question": "Trong phần 'Kết quả đạt được', nên trình bày nội dung gì?",
+              "options": [
+                "Chỉ nêu khó khăn",
+                "Sản phẩm, thành tựu cụ thể của dự án",
+                "Chỉ nêu kế hoạch",
+                "Không cần nêu gì"
+              ],
+              "correct": 1,
+              "explanation": "Phần 'Kết quả đạt được' cần trình bày cụ thể các sản phẩm, thành tựu mà dự án đã đạt được."
+            },
+            {
+              "id": "ex6-6-5",
+              "type": "mcq",
+              "question": "Đặc điểm nào quan trọng nhất của báo cáo dự án?",
+              "options": [
+                "Tưởng tượng",
+                "Tính thực tiễn, hệ thống, khách quan",
+                "Cảm xúc",
+                "Hài hước"
+              ],
+              "correct": 1,
+              "explanation": "Báo cáo dự án cần có tính thực tiễn (dựa trên hoạt động thực tế), tính hệ thống (trình bày logic) và tính khách quan (đánh giá trung thực)."
+            },
+            {
+              "id": "ex6-6-6",
+              "type": "mcq",
+              "question": "Phần 'Khó khăn và cách giải quyết' có vai trò gì?",
+              "options": [
+                "Không quan trọng",
+                "Trình bày vấn đề gặp phải và cách khắc phục",
+                "Chỉ than phiền",
+                "Đổ lỗi cho người khác"
+              ],
+              "correct": 1,
+              "explanation": "Phần này giúp trình bày trung thực các vấn đề gặp phải và cách nhóm đã giải quyết, thể hiện khả năng xử lý tình huống."
+            },
+            {
+              "id": "ex6-6-7",
+              "type": "mcq",
+              "question": "Khi viết báo cáo dự án, nên sử dụng ngôn ngữ như thế nào?",
+              "options": [
+                "Hoa mỹ, phức tạp",
+                "Rõ ràng, chính xác, dễ hiểu",
+                "Văn vẻ, khó hiểu",
+                "Tùy hứng"
+              ],
+              "correct": 1,
+              "explanation": "Báo cáo dự án cần sử dụng ngôn ngữ rõ ràng, chính xác và dễ hiểu để người đọc nắm bắt nội dung một cách nhanh chóng."
+            },
+            {
+              "id": "ex6-6-8",
+              "type": "mcq",
+              "question": "Phần 'Bài học kinh nghiệm' trong kết luận nên bao gồm nội dung gì?",
+              "options": [
+                "Chỉ khen ngợi",
+                "Những gì học được từ quá trình thực hiện dự án",
+                "Chỉ chỉ trích",
+                "Không cần viết"
+              ],
+              "correct": 1,
+              "explanation": "Phần 'Bài học kinh nghiệm' cần tổng kết những gì nhóm đã học được, kỹ năng phát triển và những điều cần cải thiện."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

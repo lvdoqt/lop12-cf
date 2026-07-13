@@ -1,0 +1,41 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_22",
+      "name": "Tìm hiểu thiết bị mạng",
+      "slug": "tim-hieu-thiet-bi-mang",
+      "chapter": "Mạng máy tính và internet",
+      "chapter_id": "tin12_ch6",
+      "lesson_id": 22,
+      "description": "Nghiên cứu sâu hơn về các thiết bị mạng lớp 2 và lớp 3, cách thức hoạt động của Switch và Router.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thiết bị mạng nâng cao",
+          "summary": "Hiểu rõ sự khác biệt giữa các thiết bị mạng dựa trên mô hình OSI và vai trò của chúng trong việc chuyển mạch và định tuyến.",
+          "sections": [
+            { "heading": "Switch và địa chỉ MAC", "content": "Switch hoạt động ở tầng liên kết dữ liệu, sử dụng bảng địa chỉ MAC để chuyển khung dữ liệu (frame) chính xác đến thiết bị đích." },
+            { "heading": "Router và địa chỉ IP", "content": "Router hoạt động ở tầng mạng, sử dụng địa chỉ IP và bảng định tuyến để kết nối các mạng khác nhau." },
+            { "heading": "Các thiết bị kết nối khác", "content": "Bridge, Gateway và các loại Modem quang hiện đại tích hợp nhiều chức năng." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Thiết bị nào sau đây hoạt động ở tầng mạng (Layer 3)?", "options": ["Hub", "Switch", "Router", "Repeater"], "correct": 2, "explanation": "Router là thiết bị tầng mạng chính để định tuyến gói tin." },
+          { "id": 2, "type": "mcq", "question": "Bảng MAC trong Switch dùng để làm gì?", "options": ["Lưu tên người dùng", "Ánh xạ địa chỉ MAC với cổng tương ứng", "Cấp địa chỉ IP", "Lọc virus"], "correct": 1, "explanation": "Bảng MAC giúp Switch biết cổng nào kết nối với thiết bị nào." },
+          { "id": 3, "type": "mcq", "question": "Gateway có vai trò gì trong mạng?", "options": ["Để trang trí", "Kết nối các mạng sử dụng giao thức khác nhau", "Làm dây mạng dài hơn", "Chỉ dùng để phát Wi-Fi"], "correct": 1, "explanation": "Gateway là cửa ngõ chuyển đổi giao thức giữa các mạng." },
+          { "id": 4, "type": "mcq", "question": "Sự khác biệt lớn nhất giữa Switch và Hub là gì?", "options": ["Switch đắt hơn", "Switch gửi dữ liệu thông minh đến đúng đích, Hub gửi cho tất cả", "Hub có nhiều cổng hơn", "Switch dùng cho mạng không dây"], "correct": 1, "explanation": "Switch tối ưu hóa băng thông nhờ chuyển mạch chính xác." },
+          { "id": 5, "type": "mcq", "question": "Thiết bị nào giúp khuếch đại tín hiệu khi truyền đi xa?", "options": ["Router", "Repeater", "Gateway", "Firewall"], "correct": 1, "explanation": "Repeater nhận tín hiệu yếu và phát lại ở cường độ mạnh hơn." },
+          { "id": 6, "type": "mcq", "question": "Địa chỉ MAC gồm bao nhiêu bit?", "options": ["32 bit", "48 bit", "64 bit", "128 bit"], "correct": 1, "explanation": "Địa chỉ MAC gồm 48 bit (6 nhóm 2 chữ số hexa)." },
+          { "id": 7, "type": "mcq", "question": "Router tìm đường đi tốt nhất cho gói tin dựa trên?", "options": ["Kích thước gói tin", "Bảng định tuyến (Routing table)", "Màu sắc dây cáp", "Thời gian trong ngày"], "correct": 1, "explanation": "Bảng định tuyến chứa các quy tắc về đường đi trong mạng." },
+          { "id": 8, "type": "mcq", "question": "Access Point đóng vai trò gì?", "options": ["Thay thế Router", "Cấp kết nối không dây cho các thiết bị di động", "Lưu trữ dữ liệu web", "Cấp điện cho mạng"], "correct": 1, "explanation": "Access Point tạo điểm truy cập Wi-Fi từ mạng có dây." },
+          { "id": 9, "type": "mcq", "question": "Trong mạng gia đình, Modem thường kết nối trực tiếp với?", "options": ["Máy tính xách tay", "Đường truyền của nhà cung cấp dịch vụ (ISP)", "Bóng đèn", "Máy in"], "correct": 1, "explanation": "Modem là cầu nối giữa nhà bạn và hạ tầng của ISP." },
+          { "id": 10, "type": "mcq", "question": "Mô hình OSI có mấy tầng?", "options": ["4", "5", "7", "8"], "correct": 2, "explanation": "Mô hình OSI có 7 tầng tiêu chuẩn." }
+        ]
+      }
+    }
+  ]
+}

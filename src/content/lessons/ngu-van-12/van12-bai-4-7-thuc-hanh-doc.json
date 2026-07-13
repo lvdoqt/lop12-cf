@@ -1,0 +1,167 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-4-7-thuc-hanh-doc",
+      "name": "Thực hành đọc: Bên trần gian",
+      "slug": "thuc-hanh-doc-ben-tran-gian",
+      "chapter": "Yếu tố kì ảo trong truyện kể",
+      "chapter_id": "V12-4",
+      "lesson_id": 7,
+      "author": "Lưu Sơn Minh",
+      "description": "Rèn luyện kỹ năng đọc hiểu, phân tích tác phẩm 'Bên trần gian' để nhận diện và phân tích yếu tố kì ảo, hiểu ý tưởng sâu sắc của tác giả.",
+      "duration_minutes": 50,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507842211343-583f20270319?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "read2",
+          "name": "Đọc hiểu",
+          "slug": "doc-hieu",
+          "difficulty": "medium"
+        },
+        {
+          "id": "analyze3",
+          "name": "Phân tích sâu",
+          "slug": "phan-tich-sau",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Thực hành đọc: Bên trần gian - Lưu Sơn Minh",
+          "sections": [
+            {
+              "heading": "1. Tác giả Lưu Sơn Minh",
+              "content": "<p><strong>Lưu Sơn Minh</strong> là một nhà văn, tác giả có những suy tú sâu sắc về cuộc sống, tâm lý con người. Tác phẩm \"Bên trần gian\" là một ví dụ điển hình về cách sử dụng yếu tố kì ảo để thể hiện những vấn đề sâu sắc của cuộc sống.</p><ul><li><strong>Thời kỳ hoạt động:</strong> Văn học hiện đại Việt Nam</li><li><strong>Phong cách:</strong> Tâm lý, sâu sắc, sử dụng biểu tượng</li><li><strong>Chủ đề thường gặp:</strong> Cuộc sống, cô đơn, hy vọng, thất vọng</li></ul>"
+            },
+            {
+              "heading": "2. Tóm tắt nội dung 'Bên trần gian'",
+              "content": "<h4>a) Cốt truyện chính</h4><ul><li><strong>Bối cảnh:</strong> Thế giới từng trải gian (không rõ là nơi nào - thực tại hay mirage)</li><li><strong>Nhân vật chính:</strong> Những con người sống ở đó</li><li><strong>Xung đột:</strong> Mâu thuẫn giữa cái mong muốn và cái thực tại</li><li><strong>Kết cục:</strong> Những con người khám phá ra sự thật về cuộc sống của họ</li></ul><h4>b) Những yếu tố kì ảo nổi bật</h4><ul><li><strong>Không định rõ ranh giới:</strong> Không rõ mọi người đang ở đâu - bên dưới (trần gian hay trần trời)</li><li><strong>Sự lặp lại:</strong> Những sự kiện, cảm xúc lặp lại nhiều lần</li><li><strong>Sự biến đổi thời gian:</strong> Thời gian có vẻ không tuyến tính, có lặp lại hoặc đảo ngược</li><li><strong>Những gặp gỡ huyền ảo:</strong> Những sự gặp gỡ có vẻ không thực tế hay có ý nghĩa kỳ lạ</li></ul>"
+            },
+            {
+              "heading": "3. Phân tích yếu tố kì ảo",
+              "content": "<h4>a) Yếu tố kì ảo về không gian</h4><ul><li><strong>Không gian mơ hồ:</strong> Tác giả cố tình không xác định rõ không gian</li><li><strong>Tác dụng:</strong> Tạo sự bất an, mơ mộng, giống như một giấc mơ</li><li><strong>Ý nghĩa:</strong> Phản ánh cảm giác của con người: không biết mình đang ở đâu, mọi thứ có vẻ quen nhưng lạ</li></ul><h4>b) Yếu tố kì ảo về sự kiện</h4><ul><li><strong>Sự lặp lại vô tận:</strong> Những sự kiện cũ lặp lại trong những tình huống mới</li><li><strong>Tác dụng:</strong> Tạo cảm giác tuyệt vọng, bất lực</li><li><strong>Ý nghĩa:</strong> Phản ánh tính lặp lại của cuộc sống, cách con người bị kẹt trong những vòng lặp của thói quen, định mệnh</li></ul><h4>c) Yếu tố kì ảo về thời gian</h4><ul><li><strong>Thời gian không tuyến tính:</strong> Có những khoảnh khắc xảy ra nhiều lần, hoặc không rõ trình tự</li><li><strong>Tác dụng:</strong> Tạo sự bối rối, khó theo dõi</li><li><strong>Ý nghĩa:</strong> Phản ánh cách con người cảm nhận thời gian không bằng cách chiếc đồng hồ đo được</li></ul>"
+            },
+            {
+              "heading": "4. Ý tưởng chính của tác phẩm",
+              "content": "<h4>a) Thông điệp về cuộc sống</h4><ul><li><strong>Cuộc sống là một vòng lặp:</strong> Con người thường làm những điều tương tự, giặp phải những hoàn cảnh tương tự</li><li><strong>Cô đơn và kết nối:</strong> Dù ở cạnh những người khác, con người vẫn cảm thấy cô đơn</li><li><strong>Hy vọng và thất vọng:</strong> Những ny vọng thường bị vỡ, dẫn đến thất vọng</li></ul><h4>b) Phê bình xã hội ẩn chứa</h4><ul><li><strong>Có thể là phê bình vê:</strong><br/>- Tính lặp lại, nhàm chán của cuộc sống hiện đại<br/>- Sự mất tự do, sự bị kiểm soát<br/>- Sự cách biệt giữa con người</li></ul><h4>c) Câu hỏi triết học</h4><ul><li><strong>Thực tại là gì?</strong> Liệu những gì ta thấy có phải là thực tế không?</li><li><strong>Tự do là gì?</strong> Nous ta thực sự tự do hay chỉ là nô lệ?</li><li><strong>Ý nghĩa của cuộc sống là gì?</strong> Liệu cuộc sống có ý nghĩa nếu nó chỉ là những vòng lặp?</li></ul>"
+            },
+            {
+              "heading": "5. Cách đọc hiểu và phân tích bài viết",
+              "content": "<h4>a) Lần đầu tiên: Đọc để hiểu cốt truyện</h4><ul><li><strong>Nhiệm vụ:</strong> Nắm được những sự kiện chính, xác định nhân vật, bối cảnh</li><li><strong>Câu hỏi để trả lời:</strong><br/>- Tác phẩm kể về cái gì?<br/>- Những nhân vật chính là ai?<br/>- Xung đột chính là gì?</li></ul><h4>b) Lần thứ hai: Đọc để nhận diện yếu tố kì ảo</h4><ul><li><strong>Nhiệm vụ:</strong> Tìm ra những yếu tố vượt ra ngoài quy luật thiên nhiên</li><li><strong>Câu hỏi để trả lời:</strong><br/>- Những yếu tố nào kì ảo?<br/>- Chúng nằm ở đâu trong tác phẩm?<br/>- Tác giả sử dụng chúng để làm gì?</li></ul><h4>c) Lần thứ ba: Đọc để phân tích ý tưởng sâu sắc</h4><ul><li><strong>Nhiệm vụ:</strong> Tìm hiểu ý tưởng chính, ý nghĩa biểu tượng</li><li><strong>Câu hỏi để trả lời:</strong><br/>- Ý tưởng chính của tác phẩm là gì?<br/>- Yếu tố kì ảo gắn liền với ý tưởng nào?<br/>- Tác giả muốn nói gì thông qua những yếu tố kì ảo?</li></ul><h4>d) Lần thứ tư: Đánh giá, phê bình</h4><ul><li><strong>Nhiệm vụ:</strong> Phát biểu ý kiến cá nhân, đánh giá cách thực hiện</li><li><strong>Câu hỏi để trả lời:</strong><br/>- Cách sử dụng yếu tố kì ảo có hiệu quả không?<br/>- Bạn đồng ý hay không đồng ý với ý tưởng tác giả?<br/>- Tác phẩm có ý nghĩa gì cho bạn?</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex4-7-1",
+            "type": "mcq",
+            "question": "Tác giả Lưu Sơn Minh viết 'Bên trần gian' để thể hiện điều gì?",
+            "options": [
+              "Những sự kiện lịch sử",
+              "Yếu tố kì ảo để diễn tả cuộc sống, tâm lý con người một cách sâu sắc",
+              "Chỉ để giải trí độc giả",
+              "Những thống kê xã hội"
+            ],
+            "correct": 1,
+            "explanation": "Lưu Sơn Minh sử dụng yếu tố kì ảo (không gian mơ hồ, sự lặp lại, thời gian không tuyến tính) để diễn tả những vấn đề sâu sắc của cuộc sống."
+          },
+          {
+            "id": "ex4-7-2",
+            "type": "mcq",
+            "question": "Yếu tố kì ảo nào được sử dụng chủ yếu trong 'Bên trần gian'?",
+            "options": [
+              "Nhân vật siêu phàm",
+              "Không gian mơ hồ, sự lặp lại sự kiện, thời gian không tuyến tính",
+              "Phép thuật phức tạp",
+              "Những con vật kỳ bí"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm chủ yếu dùng: không gian mơ hồ (không biết ở đâu), sự lặp lại vô tận, thời gian không tuyến tính để tạo cảm giác bất an, bối rối."
+          },
+          {
+            "id": "ex4-7-3",
+            "type": "mcq",
+            "question": "Không gian mơ hồ trong 'Bên trần gian' biểu tượng cho cái gì?",
+            "options": [
+              "Một nơi an toàn, yên tĩnh",
+              "Cảm giác không biết mình đang ở đâu, mọi thứ quen nhưng lạ, tương tự như một giấc mơ",
+              "Một địa điểm lịch sử",
+              "Không có ý nghĩa gì"
+            ],
+            "correct": 1,
+            "explanation": "Không gian mơ hồ phản ánh cảm giác mơ mộng, bối rối của con người, giống như trong một giấc mơ không thề phân biệt được hiện thực."
+          },
+          {
+            "id": "ex4-7-4",
+            "type": "mcq",
+            "question": "Ý tưởng chính của 'Bên trần gian' là gì?",
+            "options": [
+              "Cuộc sống là hoàn hảo và không có vấn đề",
+              "Cuộc sống là những vòng lặp, cô đơn con người, mất tự do",
+              "Con người luôn vui vẻ hạnh phúc",
+              "Không có ý tưởng chính"
+            ],
+            "correct": 1,
+            "explanation": "Ý tưởng chính: cuộc sống là những vòng lặp, con người cảm thấy cô đơn mặc dù ở cạnh người khác, mất tự do hoặc bị kẹt trong định mệnh."
+          },
+          {
+            "id": "ex4-7-5",
+            "type": "mcq",
+            "question": "Sự lặp lại sự kiện trong tác phẩm có tác dụng gì?",
+            "options": [
+              "Làm cho câu chuyện buồn tẻ",
+              "Tạo cảm giác tuyệt vọng, bất lực, phản ánh tính lặp lại của cuộc sống",
+              "Không có tác dụng gì",
+              "Chỉ là sai sót của tác giả"
+            ],
+            "correct": 1,
+            "explanation": "Sự lặp lại tạo cảm giác tuyệt vọng, bất lực - phản ánh cách con người bị kẹt trong những vòng lặp của thói quen, định mệnh, hoặc cấu trúc xã hội."
+          },
+          {
+            "id": "ex4-7-6",
+            "type": "mcq",
+            "question": "Khi đọc 'Bên trần gian' lần đầu, nên tập trung vào điều gì?",
+            "options": [
+              "Phân tích yếu tố kì ảo ngay",
+              "Hiểu cốt truyện, nhân vật, bối cảnh",
+              "Đánh giá phê bình",
+              "Bỏ qua nội dung"
+            ],
+            "correct": 1,
+            "explanation": "Lần đầu đọc nên tập trung hiểu cốt truyện, nhân vật, bối cảnh trước khi phân tích sâu hơn."
+          },
+          {
+            "id": "ex4-7-7",
+            "type": "mcq",
+            "question": "Thời gian không tuyến tính trong tác phẩm phản ánh điều gì?",
+            "options": [
+              "Tác giả không biết viết",
+              "Cách con người cảm nhận thời gian không theo đồng hồ, mà theo cảm xúc",
+              "Chỉ là kỹ thuật viết",
+              "Không có ý nghĩa"
+            ],
+            "correct": 1,
+            "explanation": "Thời gian không tuyến tính phản ánh cách con người cảm nhận thời gian theo cảm xúc, ký ức, không phải theo trình tự khách quan."
+          },
+          {
+            "id": "ex4-7-8",
+            "type": "mcq",
+            "question": "Câu hỏi triết học nào được đặt ra trong 'Bên trần gian'?",
+            "options": [
+              "Làm thế nào để giàu có?",
+              "Thực tại là gì? Tự do là gì? Ý nghĩa cuộc sống là gì?",
+              "Ai là người thông minh nhất?",
+              "Không có câu hỏi triết học"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm đặt ra những câu hỏi triết học sâu sắc về bản chất thực tại, tự do con người, và ý nghĩa của cuộc sống."
+          }
+        ]
+      }
+    }
+  ]
+}

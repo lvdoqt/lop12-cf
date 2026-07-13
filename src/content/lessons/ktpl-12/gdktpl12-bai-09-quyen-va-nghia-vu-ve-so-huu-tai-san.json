@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_09",
+      "name": "Quyền và nghĩa vụ của công dân về sở hữu tài sản và nghĩa vụ tôn trọng tài sản của người khác",
+      "slug": "quyen-va-nghia-vu-ve-so-huu-tai-san",
+      "chapter": "Một số quyền và nghĩa vụ của công dân về kinh tế",
+      "chapter_id": "GDCD12",
+      "lesson_id": 9,
+      "description": "Các quy định pháp luật về quyền sở hữu và trách nhiệm bảo vệ tài sản công cộng cũng như cá nhân.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Quyền Sở hữu tài sản",
+          "summary": "Quyền sở hữu bao gồm quyền chiếm hữu, quyền sử dụng và quyền định đoạt tài sản hợp pháp của mình.",
+          "sections": [
+            { "heading": "Các quyền của chủ sở hữu", "content": "Chiếm hữu (nắm giữ), Sử dụng (khai thác công năng) và Định đoạt (bán, tặng, thừa kế)." },
+            { "heading": "Nghĩa vụ tôn trọng tài sản người khác", "content": "Không xâm phạm, không làm hư hỏng, nếu nhặt được của rơi phải tìm cách trả lại hoặc báo cơ quan chức năng." },
+            { "heading": "Bảo vệ tài sản công cộng", "content": "Tài sản của Nhà nước (đất đai, tài nguyên, hạ tầng) thuộc sở hữu toàn dân, mọi người có nghĩa vụ gìn giữ." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Quyền sở hữu tài sản của công dân bao gồm mấy quyền thành phần?", "options": ["1 quyền", "2 quyền", "3 quyền", "4 quyền"], "correct": 2, "explanation": "Gồm: Chiếm hữu, Sử dụng và Định đoạt." },
+          { "id": 2, "type": "mcq", "question": "Việc bạn dùng chiếc xe máy để đi học là thực hiện quyền nào?", "options": ["Quyền chiếm hữu", "Quyền sử dụng", "Quyền định đoạt", "Quyền thu thuế"], "correct": 1, "explanation": "Sử dụng là việc khai thác tính năng, công dụng của tài sản." },
+          { "id": 3, "type": "mcq", "question": "Người chủ tài sản đem bán hoặc tặng chiếc áo của mình là thực hiện quyền?", "options": ["Quyền sử dụng", "Quyền định đoạt", "Quyền chiếm hữu", "Quyền quản lý"], "correct": 1, "explanation": "Định đoạt là quyền quyết định số phận pháp lý của tài sản." },
+          { "id": 4, "type": "mcq", "question": "Tài sản nào sau đây thuộc sở hữu toàn dân do Nhà nước đại diện chủ sở hữu?", "options": ["Chiếc điện thoại cá nhân", "Đất đai, tài nguyên khoáng sản", "Tiền tiết kiệm trong ngân hàng", "Quần áo của học sinh"], "correct": 1, "explanation": "Theo Hiến pháp, đất đai và tài nguyên thuộc sở hữu toàn dân." },
+          { "id": 5, "type": "mcq", "question": "Khi nhặt được của rơi, hành vi nào sau đây là đúng pháp luật?", "options": ["Giấu đi để sử dụng", "Bán lấy tiền tiêu xài", "Tìm cách trả lại hoặc báo cho cơ quan công an", "Vứt đi chỗ khác"], "correct": 2, "explanation": "Trả lại tài sản cho chủ cũ là nghĩa vụ đạo đức và pháp lý." },
+          { "id": 6, "type": "mcq", "question": "Nghĩa vụ tôn trọng tài sản của người khác thể hiện ở?", "options": ["Tự ý mượn không hỏi", "Giữ gìn cẩn thận khi mượn và trả lại đúng hạn", "Làm hỏng rồi im lặng", "Sử dụng quá mức cho phép"], "correct": 1, "explanation": "Tôn trọng tài sản người khác là nền tảng của sự ổn định xã hội." },
+          { "id": 7, "type": "mcq", "question": "Hành vi phá hoại công trình công cộng (như ghế đá, đèn đường) bị coi là?", "options": ["Trò đùa vô hại", "Hành vi vi phạm pháp luật xâm phạm tài sản Nhà nước", "Sáng tạo nghệ thuật", "Việc cá nhân"], "correct": 1, "explanation": "Xâm phạm tài sản công cộng gây thiệt hại cho toàn xã hội." },
+          { "id": 8, "type": "mcq", "question": "Người không phải chủ sở hữu có quyền chiếm hữu tài sản khi nào?", "options": ["Mọi lúc", "Khi được chủ sở hữu ủy quyền quản lý hoặc mượn hợp pháp", "Khi trộm cắp được", "Khi tìm thấy ở ngoài đường"], "correct": 1, "explanation": "Chiếm hữu hợp pháp phải có căn cứ từ ý chí của chủ sở hữu hoặc pháp luật." },
+          { "id": 9, "type": "mcq", "question": "Để bảo vệ quyền sở hữu, khi mua tài sản có giá trị lớn (nhà, xe), ta cần làm gì?", "options": ["Cứ mang về dùng", "Đăng ký quyền sở hữu tại cơ quan nhà nước", "Viết giấy tay rồi cất đi", "Không cần làm gì"], "correct": 1, "explanation": "Đăng ký giúp xác lập bằng chứng pháp lý bảo vệ chủ sở hữu khi có tranh chấp." },
+          { "id": 10, "type": "mcq", "question": "Nếu mượn đồ của bạn mà làm mất, bạn có trách nhiệm gì?", "options": ["Im lặng", "Bồi thường giá trị tương đương hoặc theo thỏa thuận", "Chửi lại bạn", "Không có trách nhiệm vì là bạn bè"], "correct": 1, "explanation": "Bồi thường thiệt hại là nghĩa vụ dân sự khi xâm phạm tài sản người khác." }
+        ]
+      }
+    }
+  ]
+}

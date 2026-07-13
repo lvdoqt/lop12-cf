@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_15",
+      "name": "Nguyên tắc cơ bản của tổ chức thương mại thế giới và hợp đồng thương mại quốc tế",
+      "slug": "nguyen-tac-wto-va-hop-dong-thuong-mai-quoc-te",
+      "chapter": "Một số vấn đề cơ bản của luật quốc tế",
+      "chapter_id": "GDCD12",
+      "lesson_id": 15,
+      "description": "Các quy tắc giao dịch thương mại toàn cầu và cách thức xây dựng hợp đồng kinh doanh quốc tế hợp pháp.",
+      "duration_minutes": 50,
+      "difficulty_level": "khó",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thương mại quốc tế",
+          "summary": "WTO thiết lập sân chơi bình đẳng cho thương mại toàn cầu, trong khi hợp đồng quốc tế là cơ sở pháp lý cho các giao dịch cụ thể.",
+          "sections": [
+            { "heading": "Các nguyên tắc của WTO", "content": "Đối xử tối huệ quốc (MFN), Đối xử quốc gia (NT), Mở cửa thị trường và Cạnh tranh công bằng." },
+            { "heading": "Hợp đồng thương mại quốc tế", "content": "Thỏa thuận giữa các bên có trụ sở ở các quốc gia khác nhau. Cần quy định rõ: đối tượng, giá cả, thanh toán, giải quyết tranh chấp." },
+            { "heading": "Incoterms", "content": "Các điều kiện thương mại quốc tế quy định về trách nhiệm, chi phí và chuyển giao rủi ro giữa người bán và người mua." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "WTO là tên viết tắt của tổ chức nào?", "options": ["Tổ chức Y tế Thế giới", "Tổ chức Thương mại Thế giới", "Tổ chức Lao động Quốc tế", "Tổ chức Du lịch Thế giới"], "correct": 1, "explanation": "WTO (World Trade Organization) quản lý các quy tắc thương mại toàn cầu." },
+          { "id": 2, "type": "mcq", "question": "Nguyên tắc 'Đối xử tối huệ quốc' (MFN) trong WTO nghĩa là gì?", "options": ["Dành ưu đãi cho nước giàu nhất", "Dành cho tất cả các thành viên sự ưu đãi thương mại như nhau", "Chỉ ưu tiên nước láng giềng", "Không cho nước khác vào thị trường"], "correct": 1, "explanation": "MFN đảm bảo không có sự phân biệt đối xử giữa các thành viên WTO." },
+          { "id": 3, "type": "mcq", "question": "Hợp đồng thương mại quốc tế khác hợp đồng trong nước ở điểm nào?", "options": ["Màu sắc của giấy", "Các bên chủ thể có trụ sở thương mại ở các quốc gia khác nhau", "Chỉ dùng để mua bán vàng", "Không cần chữ ký"], "correct": 1, "explanation": "Yếu tố nước ngoài (xuyên quốc gia) là đặc điểm cơ bản." },
+          { "id": 4, "type": "mcq", "question": "Nguyên tắc 'Đối xử quốc gia' (NT) yêu cầu?", "options": ["Hàng nhập khẩu phải được đối xử không kém hơn hàng nội địa cùng loại", "Phải yêu nước", "Hàng nội địa phải đắt hơn hàng ngoại", "Chỉ dùng hàng trong nước"], "correct": 0, "explanation": "Đảm bảo sự bình đẳng giữa hàng ngoại và hàng nội trên thị trường nội địa." },
+          { "id": 5, "type": "mcq", "question": "Thành phần nào không thể thiếu trong một hợp đồng thương mại quốc tế?", "options": ["Tên sản phẩm, số lượng, giá cả", "Ảnh chụp của người bán", "Danh sách các bộ phim yêu thích", "Chữ ký của mọi người dân"], "correct": 0, "explanation": "Đây là những điều khoản cốt lõi xác định nghĩa vụ của các bên." },
+          { "id": 6, "type": "mcq", "question": "Incoterms dùng để làm gì trong thương mại quốc tế?", "options": ["Mã hóa tệp tin", "Quy định rõ trách nhiệm, chi phí và thời điểm giao rủi ro hàng hóa", "Để tính thuế thu nhập", "Dịch ngôn ngữ"], "correct": 1, "explanation": "Incoterms giúp các bên thống nhất về điều kiện giao hàng." },
+          { "id": 7, "type": "mcq", "question": "Đồng tiền thanh toán trong hợp đồng quốc tế thường là?", "options": ["Chỉ dùng tiền Việt Nam", "Đồng tiền do các bên thỏa thuận (thường là ngoại tệ mạnh như USD, EUR)", "Không dùng tiền", "Bất kỳ loại giấy tờ nào"], "correct": 1, "explanation": "Sự thỏa thuận về tiền tệ rất quan trọng để tránh rủi ro tỉ giá." },
+          { "id": 8, "type": "mcq", "question": "Khi xảy ra tranh chấp hợp đồng quốc tế, các bên thường ưu tiên giải quyết qua?", "options": ["Sử dụng vũ lực", "Thương lượng, hòa giải hoặc Trọng tài thương mại quốc tế", "Im lặng", "Cấm vận nước đó"], "correct": 1, "explanation": "Trọng tài là phương thức phổ biến vì tính chuyên môn và bảo mật." },
+          { "id": 9, "type": "mcq", "question": "Việc Việt Nam gia nhập WTO (2007) đã mang lại điều gì?", "options": ["Làm giảm sản xuất", "Thúc đẩy xuất khẩu và thu hút đầu tư nước ngoài mạnh mẽ", "Tự cung tự cấp hoàn toàn", "Mất độc lập kinh tế"], "correct": 1, "explanation": "WTO mở cửa thị trường thế giới cho hàng hóa Việt Nam." },
+          { "id": 10, "type": "mcq", "question": "Hợp đồng thương mại quốc tế thường được lập bằng ngôn ngữ nào?", "options": ["Chỉ dùng tiếng mẹ đẻ", "Ngôn ngữ do các bên thỏa thuận (thường là tiếng Anh)", "Chỉ dùng tiếng Pháp", "Dùng bất cứ thứ tiếng nào mà máy tính dịch được"], "correct": 1, "explanation": "Tiếng Anh là ngôn ngữ phổ biến nhất trong kinh doanh quốc tế." }
+        ]
+      }
+    }
+  ]
+}

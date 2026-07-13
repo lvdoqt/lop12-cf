@@ -1,0 +1,52 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-1-5-noi-nghe-trinh-bay-y-kien",
+      "name": "Nói và nghe: Trình bày ý kiến về một vấn đề xã hội",
+      "slug": "noi-nghe-trinh-bay-y-kien",
+      "chapter": "Khả năng thay đổi thế giới của văn học",
+      "chapter_id": "V12-1",
+      "lesson_id": 5,
+      "description": "Kỹ năng nói: trình bày rõ ràng, thuyết phục. Kỹ năng nghe: lắng nghe tích cực, thảo luận xây dựng, phản biện tôn trọng.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {"id": "tq-sp-1", "name": "Kỹ năng nói và thảo luận", "slug": "ky-nang-noi", "difficulty": "hard"}
+      ],
+      "content": {
+        "theory": {
+          "title": "Nói và nghe: Trình bày ý kiến về vấn đề xã hội",
+          "sections": [
+            {"heading": "1. Kỹ năng nói (Trình bày ý kiến)", "content": "<h4>I. Chuẩn bị trước</h4><ul><li>Chọn chủ đề (vấn đề xã hội thiết thực)</li><li>Tìm hiểu vấn đề từ nhiều nguồn</li><li>Lên kế hoạch trình bày</li><li>Luyện tập nhiều lần</li></ul><h4>II. Cấu trúc trình bày</h4><ul><li><strong>Mở (1-2 phút):</strong> Chào hỏi, nêu vấn đề, ý chính</li><li><strong>Thân (5-7 phút):</strong> Lập luận 1, 2, 3 với bằng chứ</li><li><strong>Kết (1-2 phút):</strong> Tóm tắt, ý nghĩa, cảm ơn</li></ul><h4>III. Kỹ năng nói</h4><ul><li><strong>Giọng:</strong> Rõ ràng, tốc độ vừa, tôn cao thấp tự nhiên</li><li><strong>Cơ thể:</strong> Đứng thẳng, nhìn mắt người nghe, cử chỉ tự nhiên</li><li><strong>Nội dung:</strong> Rõ ràng, liên kết, bằng chứ thuyết phục</li></ul>"},
+            {"heading": "2. Kỹ năng nghe (Lắng nghe tích cực)", "content": "<h4>Trước khi nghe</h4><ul><li>Tư tưởng tích cực, mở lòng</li><li>Tập trung (gác điện thoại, nháp không liên quan)</li><li>Tìm hiểu chủ đề sơ bộ</li></ul><h4>Trong khi nghe</h4><ul><li>Lắng nghe toàn bộ (không cắt ngang)</li><li>Ghi chú những ý chính</li><li>Phản ứng nonverbal (gật đầu, nét mặt tỏ ra quan tâm)</li></ul><h4>Sau khi nghe</h4><ul><li>Xác nhận tôi hiểu: 'Nếu tôi hiểu đúng, bạn đang nói...'</li><li>Đặt câu hỏi để làm rõ</li><li>Phản biện xây dựng (không chỉ trích)</li></ul>"},
+            {"heading": "3. Kỹ năng phản biện xây dựng", "content": "<h4>Nguyên tắc</h4><ul><li>Tôn trọng, không cá nhân hóa</li><li>Nghe kỹ trước (không cắt ngang)</li><li>Dựa vào bằng chứ, không cảm xúc</li></ul><h4>Công thức XYZ</h4><ul><li><strong>X:</strong> Xác nhận điểm tốt trong ý kiến khác</li><li><strong>Y:</strong> Nhưng (nhận định khác)</li><li><strong>Z:</strong> Giải thích lý do, bằng chứ của mình</li></ul><h4>Ví dụ phản biện</h4><p><strong>Sai:</strong> 'Bạn nói sai hoàn toàn!'</p><p><strong>Đúng:</strong> 'Tôi đồng ý giáo dục rất quan trọng. Tuy nhiên, tôi nghĩ nó là một trong nhiều yếu tố. Chẳng hạn, Steve Jobs không hoàn thành đại học nhưng lại thành công.'</p>"},
+            {"heading": "4. Cách mở rộng thảo luận", "content": "<ul><li><strong>Đặt câu hỏi mở:</strong> 'Bạn cho rằng thế nào về...?', 'Có thế nào nếu...?'</li><li><strong>Chia sẻ kinh nghiệm:</strong> Kể một câu chuyện liên quan</li><li><strong>Nêu hệ quả:</strong> 'Nếu chúng ta làm như thế, điều gì sẽ xảy ra?'</li><li><strong>Liên kết:</strong> Tìm những điểm chung giữa các quan điểm</li></ul>"},
+            {"heading": "5. Các vấn đề xã hội thường thảo luận", "content": "<h4>Giáo dục</h4><p>'Nên giảm áp lực thi cử', 'Học trực tuyến hay trực tiếp tốt hơn?'</p><h4>Công nghệ</h4><p>'Trẻ em nên sử dụng mạng xã hội như thế nào?', 'AI sẽ thay thế con người?'</p><h4>Môi trường</h4><p>'Biến đổi khí hậu là ai chịu trách nhiệm?', 'Cấm nhựa một lần?'</p><h4>Xã hội</h4><p>'Bình đẳng giới', 'Thời gian chơi điện tử cho trẻ', 'Gia đình truyền thống hay hiện đại?'</p>"},
+            {"heading": "6. Hình thức thảo luận trong lớp", "content": "<h4>Thảo luận nhóm nhỏ</h4><p>Chia nhóm 5-6 người. Mỗi thành viên trình bày ý kiến, nhóm thảo luận, báo cáo kết quả.</p><h4>Tranh luận hai đội</h4><p>Đội pro vs đội con. Lần lượt trình bày, phản biện. Cả lớp đánh giá lập luận tốt nhất.</p><h4>Thảo luận toàn lớp</h4><p>Một người/nhóm trình bày. Cả lớp hỏi, bình luận. Rút ra kết luận chung hoặc thừa nhận đa góc nhìn.</p>"}
+          ]
+        },
+        "problemTypes": [
+          {"id": "dang1", "name": "Dạng 1: Kỹ năng trình bày", "method": "<p>Lắng nghe → xác định ý chính, lập luận, bằng chứ → đánh giá: rõ ràng? Tự tin? Thuyết phục?</p>", "examples": [{"question": "Đánh giá: 'Giáo dục rất quan trọng. Nó nâng chất lượng con người. Google, Apple đều bắt đầu từ đại học. Do đó cần đầu tư vào giáo dục.'", "answer": "✓ Ý chính rõ ràng | ✓ 1 lập luận + bằng chứ | ✓ Kết luận logic | Cần: thêm lập luận, bằng chứ chi tiết hơn"}]},
+          {"id": "dang2", "name": "Dạng 2: Nghe tích cực và phản biện", "method": "<p>Nghe kỹ → xác nhận điểm tốt → đưa quan điểm khác → giải thích bằng chứ</p>", "examples": [{"question": "Phản biện: 'Mạng xã hội hại bạn tuyệt đối'", "answer": "Tôi đồng ý mạng xã hội có hại nếu dùng quá lâu. Tuy nhiên, nó cũng giúp kết nối bạn bè, học hỏi. Chìa khóa là sử dụng hợp lý."}]},
+          {"id": "dang3", "name": "Dạng 3: Mở rộng thảo luận", "method": "<p>Đặt câu hỏi mở → chia sẻ kinh nghiệm → liên kết các quan điểm</p>", "examples": [{"question": "Mở rộng: Vừa nghe bạn nói về giáo dục", "answer": "Sau khi nghe bạn, tôi muốn hỏi: với bạn, yếu tố nào quan trọng nhất? Chất lượng hay công bằng?"}]}
+        ],
+        "exercises": [
+          {"id": "ex1", "type": "mcq", "question": "Mở bài trình bày nên dài bao lâu?", "options": ["30 giây", "1-2 phút", "5 phút", "15 phút"], "correct": 1, "explanation": "1-2 phút (khoảng 3-5 câu) để giới thiệu vấn đề, nêu ý chính"},
+          {"id": "ex2", "type": "mcq", "question": "Khi lắng nghe, nên làm gì?", "options": ["Chuẩn bị câu trả lời", "Lắng nghe kỹ, ghi chú, không cắt ngang", "Tỏ vẻ bất bình", "Nhìn xuống"], "correct": 1, "explanation": "Lắng nghe tích cực: tập trung toàn bộ, ghi ý chính, phản ứng tích cực"},
+          {"id": "ex3", "type": "mcq", "question": "Phản biện tốt bắt đầu bằng gì?", "options": ["Chỉ trích kịch liệt", "Xác nhận điểm tốt", "Từ chối hết", "Giữ im lặng"], "correct": 1, "explanation": "Phản biện xây dựng bắt đầu bằng công thức XYZ: xác nhận điểm tốt → nhưng → lý do/bằng chứ khác"},
+          {"id": "ex4", "type": "mcq", "question": "Nên đặt loại câu hỏi nào?", "options": ["Câu hỏi đóng (yes/no)", "Câu hỏi mở (gợi suy ngẫm)", "Không hỏi", "Câu hỏi có phán xét"], "correct": 1, "explanation": "Câu hỏi mở gợi suy ngẫm, mở rộng thảo luận: 'Bạn cho rằng...?', 'Có thế nào nếu...?'"},
+          {"id": "ex5", "type": "mcq", "question": "Trong trình bày, khi nào dùng cử chỉ?", "options": ["Không dùng", "Dùng quá nhiều", "Dùng tự nhiên, hỗ trợ ý chính", "Dùng để phô trương"], "correct": 2, "explanation": "Cử chỉ tự nhiên giúp minh họa ý, tăng sự lôi cuốn, nhưng không quá nhiều"},
+          {"id": "ex6", "type": "mcq", "question": "Lỗi thường gặp khi lắng nghe là gì?", "options": ["Tập trung quá nhiều", "Chuẩn bị câu trả lời trong lúc nghe", "Ghi quá kỹ", "Yêu cầu lặp lại"], "correct": 1, "explanation": "Tập trung chuẩn bị câu trả lời làm mất tập trung vào nội dung người nói"},
+          {"id": "ex7", "type": "mcq", "question": "Khi phản biện, nên tránh gì?", "options": ["Dữ liệu", "Lý lẽ", "Cá nhân hóa, chỉ trích cá nhân", "Tôn trọng"], "correct": 2, "explanation": "Phản biện vấn đề, không phải người. Tránh 'bạn sai' mà nên 'tôi thấy khác'"},
+          {"id": "ex8", "type": "mcq", "question": "Nhận biết lắng nghe tích cực ở dấu hiệu nào?", "options": ["Im lặng, không gật đầu", "Gật đầu, biểu cảm tỏ ra quan tâm", "Nhìn điện thoại", "Cắt ngang nói"], "correct": 1, "explanation": "Lắng nghe tích cực thể hiện qua: tập trung, gật đầu, nét mặt quan tâm, không cắt ngang"},
+          {"id": "ex9", "type": "essay", "question": "Viết kịch bản trình bày ngắn (1.5 phút) về chủ đề 'Nên hạn chế thời gian chơi điện tử'", "answer_guide": "Mở (30 giây): Giới thiệu vấn đề + ý chính\nThân (1 phút): 1 lập luận + ví dụ cụ thể\nKết (15 giây): Tóm tắt + cảm ơn\n\nMẫu: 'Hiện nay trẻ em chơi quá lâu. Tôi muốn nói rằng nên hạn chế. Lý do: ảnh hưởng sức khỏe. Theo nghiên cứu...Do đó cần quy định. Cảm ơn các bạn.'"},
+          {"id": "ex10", "type": "essay", "question": "Rôle play: Nghe bạn nói 'Công bằng giới không cần thiết'. Viết phản biện xây dựng.", "answer_guide": "Phản biện:\n1. Xác nhận điểm tốt: 'Tôi hiểu bạn lo lắng...' hoặc 'Bạn có những điểm thú vị'\n2. Nhưng: 'Tuy nhiên tôi lại thấy...'\n3. Lý do/bằng chứ: 'Chẳng hạn, ở một số nước...'\n\nVí dụ:\n'Tôi hiểu bạn lo về những thay đổi. Nhưng tôi nghĩ bình đẳng giới là cần thiết vì nó cho phép mọi người phát triển hết khả năng, bất kể giới tính. Chẳng hạn, ở các nước phát triển, bình đẳng giới dẫn đến phát triển kinh tế tốt hơn.'"}
+        ]
+      }
+    }
+  ]
+}

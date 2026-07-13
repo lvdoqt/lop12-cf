@@ -1,0 +1,152 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-5-1-nhan-vat-quan-trong",
+      "name": "Nhân vật quan trọng (trích Quan thanh tra - Nikolai Gogol)",
+      "slug": "nhan-vat-quan-trong-quan-thanh-tra",
+      "chapter": "Tiếng cười của hài kịch",
+      "chapter_id": "V12-5",
+      "lesson_id": 1,
+      "author": "Nikolai Gogol",
+      "description": "Phân tích tác phẩm hài kịch Quan thanh tra của Nikolai Gogol, tìm hiểu nghệ thuật xây dựng nhân vật, tình huống hài hước và ý nghĩa phê phán xã hội của tác phẩm.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "analyze-comedy",
+          "name": "Phân tích hài kịch",
+          "slug": "phan-tich-hai-kich",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Nhân vật quan trọng (trích Quan thanh tra)",
+          "sections": [
+            {
+              "heading": "1. Tác giả Nikolai Gogol",
+              "content": "<h4>a) Tiểu sử</h4><ul><li><strong>Thời kỳ:</strong> 1809-1852, nhà văn Nga thế kỷ XIX</li><li><strong>Xuất thân:</strong> Gia đình quý tộc nhỏ ở Ukraina</li><li><strong>Sự nghiệp:</strong> Nhà văn, nhà viết kịch nổi tiếng của văn học Nga</li><li><strong>Phong cách:</strong> Hiện thực phê phán, châm biếm sắc sảo</li></ul><h4>b) Tác phẩm tiêu biểu</h4><ul><li><strong>Quan thanh tra (1836):</strong> Hài kịch nổi tiếng nhất</li><li><strong>Những linh hồn chết:</strong> Tiểu thuyết châm biếm</li><li><strong>Áo choàng:</strong> Truyện ngắn hiện thực</li><li><strong>Đặc điểm:</strong> Phê phán tham nhũng, quan liêu trong xã hội Nga</li></ul>"
+            },
+            {
+              "heading": "2. Tác phẩm Quan thanh tra",
+              "content": "<h4>a) Bối cảnh sáng tác</h4><ul><li><strong>Thời kỳ:</strong> Nga thế kỷ XIX dưới chế độ Nga hoàng</li><li><strong>Xã hội:</strong> Tham nhũng, quan liêu tràn lan</li><li><strong>Mục đích:</strong> Phê phán thói tham nhũng của giới quan lại</li></ul><h4>b) Nội dung chính</h4><ul><li><strong>Tình huống:</strong> Một thanh niên nghèo Khlestakov bị nhầm là quan thanh tra</li><li><strong>Xung đột:</strong> Các quan chức địa phương hoảng sợ, tìm cách hối lộ</li><li><strong>Cao trào:</strong> Khlestakov lợi dụng tình huống để hưởng thụ</li><li><strong>Kết thúc:</strong> Sự thật bại lộ, quan thanh tra thật xuất hiện</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex5-1-1",
+              "type": "mcq",
+              "question": "Nikolai Gogol là nhà văn của nước nào?",
+              "options": [
+                "Pháp",
+                "Nga",
+                "Anh",
+                "Đức"
+              ],
+              "correct": 1,
+              "explanation": "Nikolai Gogol (1809-1852) là nhà văn, nhà viết kịch nổi tiếng của văn học Nga thế kỷ XIX."
+            },
+            {
+              "id": "ex5-1-2",
+              "type": "mcq",
+              "question": "Tác phẩm Quan thanh tra thuộc thể loại nào?",
+              "options": [
+                "Bi kịch",
+                "Hài kịch",
+                "Kịch lịch sử",
+                "Kịch tâm lý"
+              ],
+              "correct": 1,
+              "explanation": "Quan thanh tra là một tác phẩm hài kịch nổi tiếng, sử dụng yếu tố hài hước để phê phán xã hội."
+            },
+            {
+              "id": "ex5-1-3",
+              "type": "mcq",
+              "question": "Tình huống hài hước chính trong Quan thanh tra là gì?",
+              "options": [
+                "Một thanh niên nghèo bị nhầm là quan thanh tra",
+                "Quan thanh tra thật bị lừa",
+                "Các quan chức tranh giành quyền lực",
+                "Một vụ án hình sự phức tạp"
+              ],
+              "correct": 0,
+              "explanation": "Tình huống hài hước chính là Khlestakov, một thanh niên nghèo, bị nhầm là quan thanh tra và lợi dụng tình huống này."
+            },
+            {
+              "id": "ex5-1-4",
+              "type": "mcq",
+              "question": "Mục đích chính của Gogol khi viết Quan thanh tra là gì?",
+              "options": [
+                "Giải trí cho khán giả",
+                "Phê phán tham nhũng, quan liêu trong xã hội Nga",
+                "Tôn vinh các quan chức",
+                "Kể về cuộc sống thường ngày"
+              ],
+              "correct": 1,
+              "explanation": "Gogol viết Quan thanh tra với mục đích phê phán thói tham nhũng, quan liêu tràn lan trong xã hội Nga thế kỷ XIX."
+            },
+            {
+              "id": "ex5-1-5",
+              "type": "mcq",
+              "question": "Phong cách sáng tác của Gogol được gọi là gì?",
+              "options": [
+                "Lãng mạn",
+                "Hiện thực phê phán",
+                "Tượng trưng",
+                "Hiện đại"
+              ],
+              "correct": 1,
+              "explanation": "Gogol nổi tiếng với phong cách hiện thực phê phán, sử dụng châm biếm sắc sảo để phê phán xã hội."
+            },
+            {
+              "id": "ex5-1-6",
+              "type": "mcq",
+              "question": "Kết thúc của Quan thanh tra như thế nào?",
+              "options": [
+                "Khlestakov trở thành quan chức thật",
+                "Sự thật bại lộ, quan thanh tra thật xuất hiện",
+                "Các quan chức bị bắt giam",
+                "Mọi người sống hạnh phúc"
+              ],
+              "correct": 1,
+              "explanation": "Kết thúc của vở kịch là sự thật bại lộ, quan thanh tra thật xuất hiện, khiến các quan chức hoảng sợ."
+            },
+            {
+              "id": "ex5-1-7",
+              "type": "mcq",
+              "question": "Yếu tố nào tạo nên tiếng cười trong hài kịch Quan thanh tra?",
+              "options": [
+                "Chỉ có lời thoại hài hước",
+                "Tình huống nhầm lẫn và hành động của các nhân vật",
+                "Chỉ có trang phục buồn cười",
+                "Không có yếu tố hài hước"
+              ],
+              "correct": 1,
+              "explanation": "Tiếng cười trong Quan thanh tra đến từ tình huống nhầm lẫn kết hợp với hành động, lời nói của các nhân vật."
+            },
+            {
+              "id": "ex5-1-8",
+              "type": "mcq",
+              "question": "Hài kịch Quan thanh tra được sáng tác vào năm nào?",
+              "options": [
+                "1826",
+                "1836",
+                "1846",
+                "1856"
+              ],
+              "correct": 1,
+              "explanation": "Quan thanh tra được Gogol sáng tác và công diễn lần đầu vào năm 1836, trở thành tác phẩm hài kịch nổi tiếng nhất của ông."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

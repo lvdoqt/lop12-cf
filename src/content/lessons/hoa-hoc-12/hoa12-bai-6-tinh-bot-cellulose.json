@@ -1,0 +1,79 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-6-tinh-bot-cellulose",
+      "name": "Bài 6. Tinh bột và cellulose",
+      "slug": "bai-6-tinh-bot-cellulose",
+      "chapter": "Chương 2: Carbohydrate",
+      "chapter_id": "H12-1002",
+      "lesson_id": 6,
+      "description": "Tìm hiểu về cấu tạo, tính chất và ứng dụng của tinh bột và cellulose.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [{"id": "tinh-bot-cellulose-1", "name": "Tinh bột và Cellulose", "slug": "tinh-bot-cellulose", "difficulty": "medium"}],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Tinh bột và Cellulose",
+          "sections": [
+            {
+              "heading": "1. Tinh bột (C₆H₁₀O₅)ₙ",
+              "content": "<h3>a) Cấu tạo</h3><p><strong>Công thức:</strong> (C₆H₁₀O₅)ₙ với n = 1000-6000</p><p><strong>Cấu trúc:</strong> Polymer của α-glucose</p><p><strong>Thành phần:</strong></p><ul><li>Amylose (20-30%): Mạch thẳng, n = 200-1000</li><li>Amylopectin (70-80%): Mạch phân nhánh, n = 2000-6000</li></ul><h3>b) Tính chất vật lý</h3><ul><li>Chất rắn vô định hình, màu trắng</li><li>Không tan trong nước lạnh</li><li>Tan trong nước nóng tạo hồ tinh bột</li><li>Không có vị ngọt</li></ul><h3>c) Tính chất hóa học</h3><p><strong>1. Phản ứng với iod:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Tinh bột + I₂ → Phức màu xanh tím</p><p>Nhận biết tinh bột (đặc trưng)</p><p><strong>2. Phản ứng thủy phân:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>(C₆H₁₀O₅)ₙ + nH₂O → nC₆H₁₂O₆ (H⁺, t°)</p><p>Tinh bột → Glucose</p><p><strong>Các giai đoạn:</strong></p><p>Tinh bột → Dextrin → Maltose → Glucose</p><h3>d) Ứng dụng</h3><ul><li>Thực phẩm: Gạo, ngô, khoai, sắn</li><li>Công nghiệp: Sản xuất glucose, ethanol</li><li>Dược phẩm: Chất độn viên thuốc</li><li>Keo dán: Keo tinh bột</li></ul>"
+            },
+            {
+              "heading": "2. Cellulose (C₆H₁₀O₅)ₙ",
+              "content": "<h3>a) Cấu tạo</h3><p><strong>Công thức:</strong> (C₆H₁₀O₅)ₙ với n = 10,000-14,000</p><p><strong>Cấu trúc:</strong> Polymer của β-glucose, mạch thẳng</p><p>Phân tử lớn hơn tinh bột nhiều</p><h3>b) Tính chất vật lý</h3><ul><li>Chất rắn dạng sợi, màu trắng</li><li>Không tan trong nước và dung môi thông thường</li><li>Tan trong thuốc thử Schweizer: [Cu(NH₃)₄](OH)₂</li><li>Bền với nhiệt, hóa chất</li></ul><h3>c) Tính chất hóa học</h3><p><strong>1. Phản ứng thủy phân:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>(C₆H₁₀O₅)ₙ + nH₂O → nC₆H₁₂O₆ (H₂SO₄ đặc, t°, p)</p><p>Khó thủy phân hơn tinh bột</p><p><strong>2. Phản ứng este hóa:</strong></p><p><strong>a) Với HNO₃:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>[C₆H₇O₂(OH)₃]ₙ + 3nHNO₃ → [C₆H₇O₂(ONO₂)₃]ₙ + 3nH₂O</p><p>Tạo cellulose trinitrate (thuốc súng không khói)</p><p><strong>b) Với CH₃COOH:</strong></p><p>[C₆H₇O₂(OH)₃]ₙ + 3nCH₃COOH → [C₆H₇O₂(OCOCH₃)₃]ₙ + 3nH₂O</p><p>Tạo cellulose triacetate (tơ axetat)</p><h3>d) So sánh Tinh bột và Cellulose</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Đặc điểm</th><th class='border border-gray-300 p-2'>Tinh bột</th><th class='border border-gray-300 p-2'>Cellulose</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Công thức</td><td class='border border-gray-300 p-2'>(C₆H₁₀O₅)ₙ</td><td class='border border-gray-300 p-2'>(C₆H₁₀O₅)ₙ</td></tr><tr><td class='border border-gray-300 p-2'>Monomer</td><td class='border border-gray-300 p-2'>α-glucose</td><td class='border border-gray-300 p-2'>β-glucose</td></tr><tr><td class='border border-gray-300 p-2'>Giá trị n</td><td class='border border-gray-300 p-2'>1000-6000</td><td class='border border-gray-300 p-2'>10,000-14,000</td></tr><tr><td class='border border-gray-300 p-2'>Cấu trúc</td><td class='border border-gray-300 p-2'>Phân nhánh</td><td class='border border-gray-300 p-2'>Mạch thẳng</td></tr><tr><td class='border border-gray-300 p-2'>Độ tan</td><td class='border border-gray-300 p-2'>Tan nước nóng</td><td class='border border-gray-300 p-2'>Không tan</td></tr><tr><td class='border border-gray-300 p-2'>Với I₂</td><td class='border border-gray-300 p-2'>Màu xanh tím</td><td class='border border-gray-300 p-2'>Không màu</td></tr><tr><td class='border border-gray-300 p-2'>Thủy phân</td><td class='border border-gray-300 p-2'>Dễ</td><td class='border border-gray-300 p-2'>Khó</td></tr><tr><td class='border border-gray-300 p-2'>Nguồn</td><td class='border border-gray-300 p-2'>Gạo, ngô, khoai</td><td class='border border-gray-300 p-2'>Gỗ, bông, cây cỏ</td></tr><tr><td class='border border-gray-300 p-2'>Vai trò</td><td class='border border-gray-300 p-2'>Dự trữ năng lượng</td><td class='border border-gray-300 p-2'>Cấu trúc tế bào</td></tr></tbody></table><h3>e) Ứng dụng Cellulose</h3><ul><li>Sản xuất giấy: Từ gỗ</li><li>Sản xuất tơ: Tơ nhân tạo (rayon, axetat)</li><li>Thuốc súng: Cellulose trinitrate</li><li>Phim ảnh: Cellulose acetate</li><li>Xây dựng: Gỗ, tre, nứa</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán thủy phân tinh bột/cellulose",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH thủy phân</li><li>Tính mol glucose</li><li>Tính khối lượng hoặc tráng gương</li></ul>",
+            "examples": [{"question": "<strong>Ví dụ:</strong> Thủy phân 162g tinh bột (hiệu suất 75%). a) Tính khối lượng glucose. b) Cho glucose tráng gương, tính khối lượng Ag.", "solution": "<p><strong>a) Thủy phân:</strong></p><p>(C₆H₁₀O₅)ₙ + nH₂O → nC₆H₁₂O₆</p><p>162n → 180n</p><p>162g → x</p><p>x = 162×180/162 = 180g (lý thuyết)</p><p>m(glucose) = 180×75% = 135g</p><p><strong>b) Tráng gương:</strong></p><p>n(glucose) = 135/180 = 0.75 mol</p><p>n(Ag) = 1.5 mol</p><p>m(Ag) = 1.5×108 = 162g</p>"}]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán este hóa cellulose",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định số nhóm -OH</li><li>Tính mol HNO₃ hoặc CH₃COOH</li><li>Tính khối lượng sản phẩm</li></ul>",
+            "examples": [{"question": "<strong>Ví dụ:</strong> Este hóa hoàn toàn 16.2g cellulose bằng HNO₃. a) Tính khối lượng HNO₃. b) Tính khối lượng cellulose trinitrate.", "solution": "<p><strong>a) Tính HNO₃:</strong></p><p>[C₆H₇O₂(OH)₃]ₙ + 3nHNO₃ → [C₆H₇O₂(ONO₂)₃]ₙ + 3nH₂O</p><p>n(cellulose) = 16.2/162 = 0.1 mol đơn vị</p><p>n(HNO₃) = 0.3 mol</p><p>m(HNO₃) = 0.3×63 = 18.9g</p><p><strong>b) Tính sản phẩm:</strong></p><p>M(sản phẩm) = 297 g/mol đơn vị</p><p>m = 0.1×297 = 29.7g</p>"}]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Sản xuất giấy từ gỗ",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Tính cellulose từ gỗ</li><li>Tính khối lượng giấy</li><li>Đánh giá môi trường</li></ul>",
+            "examples": [{"question": "<strong>Ví dụ:</strong> Sản xuất giấy từ 10 tấn gỗ (50% cellulose). a) Tính khối lượng giấy (hiệu suất 80%). b) Đánh giá tác động môi trường. c) Đề xuất giải pháp bền vững.", "solution": "<p><strong>a) Tính giấy:</strong></p><p>m(cellulose) = 10,000×50% = 5,000 kg</p><p>m(giấy) = 5,000×80% = 4,000 kg</p><p><strong>b) Tác động môi trường:</strong></p><ul><li>Phá rừng: Mất 10 tấn gỗ</li><li>Hóa chất: NaOH, Cl₂ (tẩy trắng)</li><li>Nước thải: Ô nhiễm sông, hồ</li><li>Năng lượng: Tiêu tốn nhiều</li></ul><p><strong>c) Giải pháp:</strong></p><ul><li>Tái chế giấy: Giảm 60% gỗ</li><li>Trồng rừng: Bù đắp gỗ khai thác</li><li>Công nghệ sạch: Giảm hóa chất</li><li>Giấy từ tre, nứa: Thay thế gỗ</li></ul>"}]
+          }
+        ],
+        "exercises": [
+          {"id": "ex1", "type": "mcq", "question": "Tinh bột có công thức:", "options": ["C₆H₁₂O₆", "(C₆H₁₀O₅)ₙ", "C₁₂H₂₂O₁₁", "C₆H₁₀O₅"], "correct": 1, "explanation": "Tinh bột có công thức (C₆H₁₀O₅)ₙ."},
+          {"id": "ex2", "type": "mcq", "question": "Cellulose có công thức:", "options": ["C₆H₁₂O₆", "(C₆H₁₀O₅)ₙ", "C₁₂H₂₂O₁₁", "C₆H₁₀O₅"], "correct": 1, "explanation": "Cellulose có công thức (C₆H₁₀O₅)ₙ."},
+          {"id": "ex3", "type": "mcq", "question": "Tinh bột + I₂ tạo màu:", "options": ["Xanh tím", "Đỏ", "Vàng", "Không màu"], "correct": 0, "explanation": "Tinh bột + I₂ → Màu xanh tím."},
+          {"id": "ex4", "type": "mcq", "question": "Cellulose + I₂:", "options": ["Màu xanh", "Màu đỏ", "Không màu", "Màu vàng"], "correct": 2, "explanation": "Cellulose + I₂ → Không màu."},
+          {"id": "ex5", "type": "mcq", "question": "Thủy phân tinh bột thu được:", "options": ["Fructose", "Glucose", "Saccharose", "Maltose"], "correct": 1, "explanation": "Tinh bột → Glucose."},
+          {"id": "ex6", "type": "mcq", "question": "Cellulose trinitrate dùng làm:", "options": ["Giấy", "Tơ", "Thuốc súng", "Thực phẩm"], "correct": 2, "explanation": "Cellulose trinitrate là thuốc súng không khói."},
+          {"id": "ex7", "type": "mcq", "question": "Tinh bột tan trong:", "options": ["Nước lạnh", "Nước nóng", "Ether", "Benzene"], "correct": 1, "explanation": "Tinh bột tan trong nước nóng."},
+          {"id": "ex8", "type": "mcq", "question": "Cellulose tan trong:", "options": ["Nước", "Thuốc thử Schweizer", "Ether", "Benzene"], "correct": 1, "explanation": "Cellulose tan trong thuốc thử Schweizer."},
+          {"id": "ex9", "type": "mcq", "question": "Polysaccharide là:", "options": ["Glucose", "Saccharose", "Tinh bột", "Maltose"], "correct": 2, "explanation": "Tinh bột là polysaccharide."},
+          {"id": "ex10", "type": "mcq", "question": "Tinh bột có trong:", "options": ["Gỗ", "Gạo", "Bông", "Tre"], "correct": 1, "explanation": "Tinh bột có trong gạo."},
+          {"id": "ex11", "type": "mcq", "question": "Cellulose có trong:", "options": ["Gạo", "Ngô", "Gỗ", "Khoai"], "correct": 2, "explanation": "Cellulose có trong gỗ."},
+          {"id": "ex12", "type": "mcq", "question": "M của đơn vị (C₆H₁₀O₅):", "options": ["180", "162", "342", "360"], "correct": 1, "explanation": "M(C₆H₁₀O₅) = 162 g/mol."},
+          {"id": "ex13", "type": "msq", "question": "Tính chất tinh bột:", "options": ["Tan nước nóng", "Với I₂ màu xanh", "Thủy phân được", "Không tan nước"], "correct": [0, 1, 2], "explanation": "Tinh bột tan nước nóng, với I₂ màu xanh, thủy phân được."},
+          {"id": "ex14", "type": "msq", "question": "Polysaccharide:", "options": ["Tinh bột", "Cellulose", "Glucose", "Glycogen"], "correct": [0, 1, 3], "explanation": "Tinh bột, cellulose, glycogen là polysaccharide."},
+          {"id": "ex15", "type": "msq", "question": "Ứng dụng cellulose:", "options": ["Giấy", "Tơ", "Thuốc súng", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Cellulose có nhiều ứng dụng."},
+          {"id": "ex16", "type": "msq", "question": "Phản ứng của cellulose:", "options": ["Thủy phân", "Este hóa", "Lên men", "Với I₂"], "correct": [0, 1], "explanation": "Cellulose thủy phân, este hóa. Không lên men, không với I₂."},
+          {"id": "ex17", "type": "sa", "question": "Thủy phân 162g tinh bột thu được bao nhiêu gam glucose (hiệu suất 100%)? Làm tròn đến hàng đơn vị.", "correct": "180", "explanation": "162g → 180g glucose. Đáp án: 180"},
+          {"id": "ex18", "type": "sa", "question": "Este hóa 16.2g cellulose cần bao nhiêu mol HNO₃? Làm tròn đến 1 chữ số thập phân.", "correct": "0.3", "explanation": "n = 16.2/162 = 0.1 mol. n(HNO₃) = 0.3 mol. Đáp án: 0.3"},
+          {"id": "ex19", "type": "sa", "question": "Đơn vị (C₆H₁₀O₅) có M là bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "162", "explanation": "M(C₆H₁₀O₅) = 162 g/mol. Đáp án: 162"},
+          {"id": "ex20", "type": "sa", "question": "Thủy phân 1 mol (C₆H₁₀O₅)ₙ thu được bao nhiêu mol glucose? Làm tròn đến hàng đơn vị.", "correct": "1", "explanation": "1 mol đơn vị → 1 mol glucose. Đáp án: 1"},
+          {"id": "ex21", "type": "sa", "question": "Cellulose có bao nhiêu nhóm -OH trên mỗi đơn vị? Làm tròn đến hàng đơn vị.", "correct": "3", "explanation": "Mỗi đơn vị cellulose có 3 nhóm -OH. Đáp án: 3"},
+          {"id": "ex22", "type": "sa", "question": "Tinh bột có giá trị n trung bình là bao nhiêu? Làm tròn đến hàng nghìn.", "correct": "3000", "explanation": "Tinh bột có n = 1000-6000, trung bình ~3000. Đáp án: 3000"}
+        ]
+      }
+    }
+  ]
+}

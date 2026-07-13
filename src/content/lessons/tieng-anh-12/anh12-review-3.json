@@ -1,0 +1,509 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-review-3",
+      "name": "Review 3 (Units 6 - 8)",
+      "slug": "review-3-units-6-8",
+      "chapter": "Review 3",
+      "chapter_id": "A12",
+      "lesson_id": 11,
+      "description": "Consolidation of vocabulary and grammar from Units 6, 7, and 8.",
+      "duration_minutes": 60,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2673&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "review-3-mixed",
+          "name": "Mixed Review",
+          "slug": "mixed-review",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Review 3: Units 6-8",
+          "sections": [
+            {
+              "heading": "I. Language - Ôn tập ngôn ngữ",
+              "content": "<h3>A. Pronunciation (Phát âm)</h3><p><strong>Unit 6:</strong> Stress in causative sentences</p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ chính và tân ngữ</li><li>Ex: I <strong>HAD</strong> my computer <strong>REPAIRED</strong>.</li><li>Ex: She <strong>GOT</strong> AI to <strong>ANALYZE</strong> the data.</li></ul><p><strong>Unit 7:</strong> Stress in adverbial clauses</p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ chính và cách thức/kết quả</li><li>Ex: She reported <strong>AS IF</strong> she was <strong>THERE</strong>.</li><li>Ex: The news was <strong>SO SHOCKING</strong> that everyone <strong>TALKED</strong>.</li></ul><p><strong>Unit 8:</strong> Stress in conditional and comparative clauses</p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ chính và điều kiện</li><li>Ex: <strong>IF</strong> we <strong>PROTECT</strong> habitats, animals will <strong>SURVIVE</strong>.</li><li>Ex: The <strong>MORE</strong> we protect, the <strong>BETTER</strong> it is.</li></ul><h3>B. Vocabulary (Từ vựng)</h3><p><strong>Unit 6: Artificial Intelligence</strong></p><ul class='list-disc pl-5 space-y-2'><li>Technology: AI, algorithm, machine learning, robot, automation, data</li><li>Actions: process, recognize, predict, analyze</li><li>Applications: virtual assistant, facial recognition, autonomous vehicle</li><li>Adjectives: intelligent, efficient, accurate, autonomous</li></ul><p><strong>Unit 7: Mass Media</strong></p><ul class='list-disc pl-5 space-y-2'><li>Types: mass media, broadcast, journalism, print media, digital media</li><li>People: journalist, reporter, editor, broadcaster, influencer</li><li>Content: news, headline, article, report, post</li><li>Issues: fake news, bias, misinformation, viral</li></ul><p><strong>Unit 8: Wildlife Conservation</strong></p><ul class='list-disc pl-5 space-y-2'><li>Animals: wildlife, species, endangered, extinct, habitat</li><li>Threats: poaching, deforestation, pollution, climate change</li><li>Actions: protect, preserve, conserve, restore</li><li>Places: sanctuary, national park, ecosystem, biodiversity</li></ul><h3>C. Grammar (Ngữ pháp)</h3><p><strong>Unit 6: Active and Passive Causatives</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Active:</strong> have/get + person + (to) V</li><li>Ex: I <strong>have</strong> my assistant <strong>check</strong> the data.</li><li>Ex: I <strong>got</strong> AI <strong>to translate</strong> documents.</li><li><strong>Passive:</strong> have/get + thing + V3/ed</li><li>Ex: I <strong>have</strong> my computer <strong>repaired</strong>.</li><li>Ex: I <strong>got</strong> my phone <strong>fixed</strong>.</li></ul><p><strong>Unit 7: Adverbial Clauses of Manner and Result</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Manner:</strong> as if/as though, as, the way</li><li>Ex: She talks <strong>as if</strong> she knew everything.</li><li>Ex: Do <strong>as</strong> I say.</li><li><strong>Result:</strong> so...that, such...that</li><li>Ex: The news was <strong>so shocking that</strong> everyone talked.</li><li>Ex: It was <strong>such shocking news that</strong> everyone talked.</li></ul><p><strong>Unit 8: Adverbial Clauses of Condition and Comparison</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Condition:</strong> if, unless, provided that, as long as, in case</li><li>Ex: <strong>If</strong> we protect habitats, animals will survive.</li><li>Ex: <strong>Unless</strong> we act now, species will disappear.</li><li><strong>Comparison:</strong> as...as, than, the...the</li><li>Ex: Tigers are <strong>as endangered as</strong> rhinos.</li><li>Ex: <strong>The more</strong> we protect, <strong>the more</strong> species survive.</li></ul>"
+            },
+            {
+              "heading": "II. Skills - Ôn tập kỹ năng",
+              "content": "<h3>A. Reading (Đọc hiểu)</h3><p><strong>Kỹ năng cần ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc lướt để nắm ý chính (skimming)</li><li>Đọc kỹ để tìm thông tin chi tiết (scanning)</li><li>Đoán nghĩa từ vựng qua ngữ cảnh</li><li>Hiểu ý chính và ý phụ của đoạn văn</li><li>Xác định thông tin đúng/sai</li><li>Suy luận và rút ra kết luận</li></ul><p><strong>Chủ đề đã đọc:</strong></p><ul class='list-disc pl-5 space-y-2'><li>AI impact on society</li><li>Mass media influence</li><li>Endangered species and conservation</li></ul><h3>B. Speaking (Nói)</h3><p><strong>Chủ đề đã học:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Discussing AI and its applications</li><li>Talking about mass media and fake news</li><li>Discussing wildlife conservation</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>I have AI help me with...</li><li>The news spread so quickly that...</li><li>If we protect habitats, animals will survive.</li><li>Unless we act now, species will disappear.</li><li>The more we care, the more species survive.</li></ul><h3>C. Listening (Nghe hiểu)</h3><p><strong>Kỹ năng cần ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe để nắm ý chính</li><li>Nghe để tìm thông tin cụ thể</li><li>Điền thông tin còn thiếu (gap-filling)</li><li>Trả lời câu hỏi chi tiết</li><li>Ghi chú các ý quan trọng (note-taking)</li><li>Hiểu thái độ và ý kiến của người nói</li></ul><p><strong>Chủ đề đã nghe:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Talks about AI technology</li><li>Discussions about social media</li><li>Presentations about wildlife conservation</li></ul><h3>D. Writing (Viết)</h3><p><strong>Dạng bài đã học:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Writing essays about AI</li><li>Writing articles about mass media</li><li>Writing about wildlife conservation</li></ul><p><strong>Kỹ năng viết:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Tổ chức bài viết: Introduction - Body - Conclusion</li><li>Sử dụng causative forms</li><li>Sử dụng adverbial clauses of manner and result</li><li>Sử dụng conditional and comparative clauses</li><li>Viết câu mạch lạc và logic</li></ul><p><strong>Cấu trúc bài viết mẫu:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Introduction:</strong> Giới thiệu chủ đề (1-2 câu)</li><li><strong>Body:</strong> Trình bày ý chính (2-3 đoạn với supporting details)</li><li><strong>Conclusion:</strong> Kết luận và nhấn mạnh ý chính (1-2 câu)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Mixed Exercise",
+            "method": "<p>Review all grammar points and vocabulary from Units 6-8.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Artificial Intelligence has become such a transformative technology that it affects nearly every industry. From healthcare to transportation, AI systems are changing how we work and live. Machine learning algorithms can analyze data so quickly that they identify patterns humans might miss. For example, AI helps doctors diagnose diseases more accurately, and autonomous vehicles navigate roads as if they had human intelligence.\n\nHowever, AI also raises important concerns. Many people worry that AI will replace human workers, leading to unemployment. The technology is developing so rapidly that society struggles to adapt. Some experts warn that if we don't regulate AI carefully, it could be misused. Unless we establish ethical guidelines, AI systems might make biased decisions or invade privacy.\n\nDespite these challenges, AI offers tremendous benefits. The more we invest in AI research, the more applications we discover. Provided that we develop AI responsibly, it can improve healthcare, education, and environmental protection. As long as humans remain in control, AI will be a powerful tool for progress.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "AI is perfect",
+                  "AI brings both benefits and challenges",
+                  "AI will destroy humanity",
+                  "AI is not important"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về AI mang lại cả lợi ích và thách thức."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "According to the passage, what is one benefit of AI?",
+                "options": [
+                  "It replaces all workers",
+                  "It helps doctors diagnose diseases",
+                  "It creates unemployment",
+                  "It invades privacy"
+                ],
+                "correct": 1,
+                "explanation": "AI giúp bác sĩ chẩn đoán bệnh chính xác hơn."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The word 'tremendous' in paragraph 3 is closest in meaning to ______.",
+                "options": [
+                  "very small",
+                  "very large",
+                  "terrible",
+                  "average"
+                ],
+                "correct": 1,
+                "explanation": "Tremendous = very large (rất lớn, to lớn)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "What concern about AI is mentioned?",
+                "options": [
+                  "It's too slow",
+                  "It might replace human workers",
+                  "It's too expensive",
+                  "It doesn't work"
+                ],
+                "correct": 1,
+                "explanation": "Lo ngại được đề cập là AI có thể thay thế lao động con người."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "According to the passage, what is necessary for AI development?",
+                "options": [
+                  "No regulation",
+                  "Responsible development and ethical guidelines",
+                  "Stopping all research",
+                  "Ignoring concerns"
+                ],
+                "correct": 1,
+                "explanation": "Cần phát triển AI có trách nhiệm và thiết lập hướng dẫn đạo đức."
+              }
+            ]
+          },
+          {
+            "id": "reading2",
+            "type": "reading",
+            "passage": "Mass media has such a powerful influence on society that it shapes public opinion and behavior. Social media platforms have grown so rapidly that billions of people now use them daily. Information spreads so quickly online that a news story can reach millions within minutes. However, this speed creates problems - fake news can go viral just as fast as accurate information.\n\nJournalists report news as if they are providing objective facts, but media bias exists everywhere. Some outlets present information in such a way that it supports their political views. The more sensational a headline, the more clicks it receives, so media companies sometimes prioritize attention over accuracy. Unless readers develop critical thinking skills, they may believe misinformation.\n\nDespite these challenges, mass media plays a vital role in democracy. If people have access to reliable information, they can make informed decisions. The key is media literacy - the ability to evaluate sources critically. As long as we question what we read and verify facts, we can benefit from mass media while avoiding its pitfalls.",
+            "questions": [
+              {
+                "id": "reading2-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "All media is fake",
+                  "Mass media has both positive and negative impacts",
+                  "Social media should be banned",
+                  "Journalists are always objective"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về tác động tích cực và tiêu cực của truyền thông đại chúng."
+              },
+              {
+                "id": "reading2-q2",
+                "question": "What problem does the passage mention about social media?",
+                "options": [
+                  "It's too slow",
+                  "Fake news can spread quickly",
+                  "Nobody uses it",
+                  "It's too expensive"
+                ],
+                "correct": 1,
+                "explanation": "Vấn đề được đề cập là tin giả có thể lan truyền nhanh chóng."
+              },
+              {
+                "id": "reading2-q3",
+                "question": "The word 'sensational' in paragraph 2 is closest in meaning to ______.",
+                "options": [
+                  "boring",
+                  "shocking or exciting",
+                  "accurate",
+                  "quiet"
+                ],
+                "correct": 1,
+                "explanation": "Sensational = shocking or exciting (gây sốc, giật gân)."
+              },
+              {
+                "id": "reading2-q4",
+                "question": "According to the passage, what is media literacy?",
+                "options": [
+                  "Reading newspapers",
+                  "The ability to evaluate sources critically",
+                  "Watching TV",
+                  "Using social media"
+                ],
+                "correct": 1,
+                "explanation": "Media literacy là khả năng đánh giá nguồn tin một cách phê phán."
+              },
+              {
+                "id": "reading2-q5",
+                "question": "What does the passage suggest readers should do?",
+                "options": [
+                  "Believe everything",
+                  "Question what they read and verify facts",
+                  "Avoid all media",
+                  "Only read one source"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn gợi ý độc giả nên đặt câu hỏi về những gì họ đọc và xác minh sự thật."
+              }
+            ]
+          },
+          {
+            "id": "reading3",
+            "type": "reading",
+            "passage": "Wildlife conservation has become more urgent than ever. Many species are disappearing so quickly that scientists cannot study them in time. If we don't take immediate action, countless species will become extinct within our lifetime.\n\nThe main threats are habitat loss, poaching, and climate change. Deforestation destroys animal homes so extensively that entire ecosystems collapse. Tigers are more endangered now than 50 years ago because their habitats have shrunk dramatically. Unless we stop destroying forests, many species will disappear forever.\n\nPoaching remains a serious problem. Illegal hunters kill elephants for ivory and rhinos for horns. The demand for wildlife products is as high as it has ever been. If governments enforced stricter laws, fewer animals would be killed. Some countries have made progress - provided that anti-poaching patrols are well-funded, they can protect animals effectively.\n\nClimate change affects wildlife in ways that are not always obvious. As temperatures rise, animals must adapt or move. However, many species cannot move fast enough. The faster the climate changes, the harder it is for animals to survive. Despite these challenges, there are success stories. Giant pandas have recovered thanks to conservation efforts. This shows that if we invest in conservation, species can recover. The more people understand biodiversity's importance, the more support conservation receives. As long as we work together, there is hope for wildlife.",
+            "questions": [
+              {
+                "id": "reading3-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "All animals are safe",
+                  "Wildlife conservation is urgent and requires action",
+                  "Climate change doesn't affect animals",
+                  "Poaching has stopped"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về sự cấp thiết của bảo tồn động vật hoang dã và cần hành động."
+              },
+              {
+                "id": "reading3-q2",
+                "question": "What are the main threats to wildlife mentioned?",
+                "options": [
+                  "Only climate change",
+                  "Habitat loss, poaching, and climate change",
+                  "Only poaching",
+                  "Natural disasters"
+                ],
+                "correct": 1,
+                "explanation": "Ba mối đe dọa chính là: mất môi trường sống, săn bắt trái phép, và biến đổi khí hậu."
+              },
+              {
+                "id": "reading3-q3",
+                "question": "The word 'extensively' in paragraph 2 is closest in meaning to ______.",
+                "options": [
+                  "slightly",
+                  "widely or greatly",
+                  "rarely",
+                  "slowly"
+                ],
+                "correct": 1,
+                "explanation": "Extensively = widely or greatly (rộng rãi, trên diện rộng)."
+              },
+              {
+                "id": "reading3-q4",
+                "question": "What success story is mentioned?",
+                "options": [
+                  "Tigers have recovered",
+                  "Giant pandas have recovered",
+                  "All species are safe",
+                  "Poaching has ended"
+                ],
+                "correct": 1,
+                "explanation": "Câu chuyện thành công được đề cập là gấu trúc khổng lồ đã phục hồi."
+              },
+              {
+                "id": "reading3-q5",
+                "question": "According to the passage, what gives hope for wildlife?",
+                "options": [
+                  "Doing nothing",
+                  "Working together and investing in conservation",
+                  "Ignoring the problem",
+                  "Only government action"
+                ],
+                "correct": 1,
+                "explanation": "Hy vọng đến từ việc làm việc cùng nhau và đầu tư vào bảo tồn."
+              }
+            ]
+          },
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "I ______ my assistant check the AI data every day.",
+            "options": ["have", "get", "make", "let"],
+            "correct": 0,
+            "explanation": "Have + person + V (bare infinitive) - thể sai khiến chủ động."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "She ______ her computer repaired yesterday.",
+            "options": ["have", "has", "had", "having"],
+            "correct": 2,
+            "explanation": "Had + thing + V3/ed - thể sai khiến bị động ở quá khứ."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "The news spread ______ quickly that everyone heard it.",
+            "options": ["so", "such", "as", "than"],
+            "correct": 0,
+            "explanation": "So + adv + that - mệnh đề trạng ngữ chỉ kết quả."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "It was ______ shocking news that everyone talked about it.",
+            "options": ["so", "such", "as", "than"],
+            "correct": 1,
+            "explanation": "Such + adj + noun + that - mệnh đề trạng ngữ chỉ kết quả."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "______ we protect habitats, animals will survive.",
+            "options": ["Unless", "If", "Although", "Because"],
+            "correct": 1,
+            "explanation": "If - mệnh đề điều kiện loại 1 (điều kiện có thật)."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "______ we act now, many species will become extinct.",
+            "options": ["If", "Unless", "When", "Because"],
+            "correct": 1,
+            "explanation": "Unless = If...not - trừ khi, nếu không."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "Tigers are ______ endangered ______ rhinos.",
+            "options": ["more / than", "as / as", "so / as", "such / as"],
+            "correct": 1,
+            "explanation": "As...as - so sánh bằng."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "______ more we protect wildlife, ______ more species survive.",
+            "options": ["A / a", "The / the", "A / the", "The / a"],
+            "correct": 1,
+            "explanation": "The...the... - cấu trúc so sánh kép (càng...càng...)."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "She talks ______ she knew everything about AI.",
+            "options": ["as", "as if", "so", "such"],
+            "correct": 1,
+            "explanation": "As if - mệnh đề trạng ngữ chỉ cách thức (như thể)."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "I got my phone ______ last week.",
+            "options": ["fix", "fixed", "to fix", "fixing"],
+            "correct": 1,
+            "explanation": "Got + thing + V3/ed - thể sai khiến bị động."
+          },
+          {
+            "id": "mcq11",
+            "type": "mcq",
+            "question": "The video went viral ______ fast that millions saw it.",
+            "options": ["so", "such", "as", "than"],
+            "correct": 0,
+            "explanation": "So + adv + that - chỉ kết quả."
+          },
+          {
+            "id": "mcq12",
+            "type": "mcq",
+            "question": "______ that we preserve habitats, biodiversity will thrive.",
+            "options": ["Unless", "If", "Provided", "Although"],
+            "correct": 2,
+            "explanation": "Provided (that) = miễn là, với điều kiện."
+          },
+          {
+            "id": "mcq13",
+            "type": "mcq",
+            "question": "AI is ______ efficient than traditional methods.",
+            "options": ["as", "so", "more", "such"],
+            "correct": 2,
+            "explanation": "More...than - so sánh hơn."
+          },
+          {
+            "id": "mcq14",
+            "type": "mcq",
+            "question": "I have AI ______ documents for me.",
+            "options": ["translate", "to translate", "translated", "translating"],
+            "correct": 0,
+            "explanation": "Have + person/thing + V (bare infinitive) - thể sai khiến chủ động."
+          },
+          {
+            "id": "mcq15",
+            "type": "mcq",
+            "question": "______ long as we work together, we can save wildlife.",
+            "options": ["If", "Unless", "As", "Although"],
+            "correct": 2,
+            "explanation": "As long as = miễn là - mệnh đề điều kiện."
+          },
+          {
+            "id": "mcq16",
+            "type": "mcq",
+            "question": "She is ______ a good journalist that everyone trusts her.",
+            "options": ["so", "such", "as", "than"],
+            "correct": 1,
+            "explanation": "Such + a/an + adj + noun + that - chỉ kết quả."
+          },
+          {
+            "id": "mcq17",
+            "type": "mcq",
+            "question": "He reported the news ______ he was there.",
+            "options": ["as", "as if", "so", "such"],
+            "correct": 1,
+            "explanation": "As if - mệnh đề trạng ngữ chỉ cách thức."
+          },
+          {
+            "id": "mcq18",
+            "type": "mcq",
+            "question": "______ we stop deforestation, habitats will be destroyed.",
+            "options": ["If", "Unless", "When", "Because"],
+            "correct": 1,
+            "explanation": "Unless = If...not - nếu không."
+          },
+          {
+            "id": "mcq19",
+            "type": "mcq",
+            "question": "I got my assistant ______ help me with the project.",
+            "options": ["help", "to help", "helped", "helping"],
+            "correct": 1,
+            "explanation": "Got + person + to V - thể sai khiến chủ động với 'get'."
+          },
+          {
+            "id": "mcq20",
+            "type": "mcq",
+            "question": "______ faster we act, ______ better the results.",
+            "options": ["A / a", "The / the", "A / the", "The / a"],
+            "correct": 1,
+            "explanation": "The...the... - so sánh kép."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "Active causative uses: have/get + person + (to) V.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Have + person + V (bare), Get + person + to V."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "Passive causative uses: have/get + thing + V3/ed.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Thể sai khiến bị động dùng have/get + thing + past participle."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "'As if' and 'as though' are used for adverbial clauses of manner.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. As if/as though dùng trong mệnh đề trạng ngữ chỉ cách thức."
+          },
+          {
+            "id": "msq4",
+            "type": "msq",
+            "question_text": "'So...that' is used with adjectives/adverbs, while 'such...that' is used with nouns.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. So + adj/adv + that, Such + (a/an) + adj + noun + that."
+          },
+          {
+            "id": "msq5",
+            "type": "msq",
+            "question_text": "'Unless' means 'if not' and is used with negative verbs.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Unless = if not nhưng luôn dùng với động từ khẳng định, không dùng 'not'."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call false information spread through media? (two words)",
+            "correct": "fake news",
+            "explanation": "Fake news: tin giả, thông tin sai lệch được lan truyền qua truyền thông."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "What do we call species at risk of extinction? (one word)",
+            "correct": "endangered",
+            "explanation": "Endangered: có nguy cơ tuyệt chủng."
+          },
+          {
+            "id": "sa3",
+            "type": "sa",
+            "question_text": "Complete: I ______ my computer ______ yesterday. (have/repair - passive causative)",
+            "correct": "had repaired",
+            "explanation": "Had + thing + V3/ed - thể sai khiến bị động ở quá khứ."
+          },
+          {
+            "id": "sa4",
+            "type": "sa",
+            "question_text": "What is the abbreviation for Artificial Intelligence? (two letters)",
+            "correct": "AI",
+            "explanation": "AI = Artificial Intelligence (Trí tuệ nhân tạo)."
+          },
+          {
+            "id": "essay1",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about the benefits and challenges of AI. Use causative forms and result clauses (so...that, such...that).",
+            "sample_answer": "Artificial Intelligence has become such a powerful technology that it transforms many industries. Companies have AI analyze large amounts of data, which helps them make better decisions. I have my phone recognize my face to unlock it, and I get AI to translate foreign languages instantly. AI is so efficient that it can perform tasks faster than humans. However, AI also raises concerns. The technology is developing so rapidly that many workers worry about losing their jobs. Some people fear that AI systems might make biased decisions. Despite these challenges, if we develop AI responsibly, it will bring tremendous benefits to society.",
+            "explanation": "Bài viết sử dụng: Causative forms (have AI analyze, have my phone recognize, get AI to translate), Result clauses (such...that, so...that), Conditional clause (if we develop)."
+          },
+          {
+            "id": "essay2",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about the influence of mass media. Use adverbial clauses of manner (as if/as though) and result (so...that, such...that).",
+            "sample_answer": "Mass media has such a powerful influence that it shapes how we think and behave. Social media platforms have grown so rapidly that billions of people use them daily. Information spreads so quickly online that news can reach millions within minutes. Some journalists report stories as if they were providing completely objective facts, but media bias exists everywhere. Fake news is such a serious problem that many people don't know what to believe. The media's influence is so strong that it can affect elections and public policy. Unless we develop critical thinking skills, we may be easily manipulated by biased or false information.",
+            "explanation": "Bài viết sử dụng: Result clauses (such...that, so...that), Manner clause (as if), Conditional clause (unless)."
+          },
+          {
+            "id": "essay3",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about wildlife conservation. Use conditional clauses (if, unless, provided that) and comparative clauses (as...as, the...the).",
+            "sample_answer": "Wildlife conservation is as important as ever because many species face extinction. If we don't protect animal habitats, countless species will disappear forever. Deforestation is destroying ecosystems so extensively that entire animal populations are at risk. Tigers are more endangered now than they were 50 years ago. Unless we stop poaching and habitat destruction, many animals will become extinct. However, there is hope. Provided that we invest in conservation programs, species can recover. The more people understand the importance of biodiversity, the more support conservation efforts receive. As long as we work together, we can save wildlife for future generations.",
+            "explanation": "Bài viết sử dụng: Conditional clauses (if, unless, provided that, as long as), Comparative clauses (as...as, more...than, the...the)."
+          },
+          {
+            "id": "essay4",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) comparing AI, mass media, and wildlife conservation in terms of their importance to society. Use various grammar structures from Units 6-8.",
+            "sample_answer": "AI, mass media, and wildlife conservation are all crucial for modern society, though in different ways. AI is developing so rapidly that it transforms how we work and live. I have AI help me with daily tasks, making life more efficient. Mass media is as influential as it has ever been, shaping public opinion so powerfully that it affects democracy itself. However, journalists sometimes report news as if they were completely objective, when bias actually exists. Wildlife conservation is more urgent than many people realize. Unless we protect endangered species, we will lose biodiversity forever. The more we invest in these three areas, the better our future will be. If we balance technological progress with environmental protection and media literacy, society will thrive.",
+            "explanation": "Bài viết kết hợp: Causative (have AI help), Result clauses (so...that), Comparative clauses (as...as, more...than, the...the), Manner clause (as if), Conditional clauses (unless, if)."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_13",
+      "name": "Tổ chức lãnh thổ nông nghiệp",
+      "slug": "to-chuc-lanh-tho-nong-nghiep",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 13,
+      "description": "Nguyên tắc tổ chức lãnh thổ nông nghiệp, mô hình canh tác, vùng chuyên canh và hạ tầng nông thôn.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Tổ chức lãnh thổ nông nghiệp và vùng chuyên canh",
+          "summary": "Tổ chức lãnh thổ nông nghiệp hướng tới tối ưu hóa sử dụng đất theo điều kiện tự nhiên và kinh tế: vùng chuyên canh, hệ thống thủy lợi, giao thông nông thôn và các chuỗi cung ứng.",
+          "sections": [
+            { "heading": "Vùng chuyên canh", "content": "Phân bố theo điều kiện đất, khí hậu và thị trường (ví dụ vùng lúa, cao su, cà phê)." },
+            { "heading": "Hạ tầng nông thôn", "content": "Cần hệ thống giao thông, thủy lợi, kho lạnh và dịch vụ hỗ trợ để phát triển lãnh thổ nông nghiệp." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Nêu ví dụ một vùng chuyên canh ở Việt Nam?", "a_hint": "Vùng trồng lúa châu thổ sông Hồng hoặc cà phê Tây Nguyên." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Vùng chuyên canh được xác định dựa trên?", "options": ["Điều kiện tự nhiên và thị trường","Sở thích cá nhân","Ngẫu nhiên","Không có tiêu chí"], "correct": 0, "explanation": "Dựa trên điều kiện tự nhiên và yêu cầu thị trường." },
+          { "id": 2, "type": "mcq", "question": "Hạ tầng nào quan trọng cho nông nghiệp?", "options": ["Thủy lợi và giao thông nông thôn","Sân bay quốc tế","Tuyến tàu vũ trụ","Không cần hạ tầng"], "correct": 0, "explanation": "Thủy lợi và giao thông phục vụ sản xuất và vận chuyển nông sản." },
+          { "id": 3, "type": "mcq", "question": "Một mục tiêu của tổ chức lãnh thổ nông nghiệp là?", "options": ["Tối ưu hóa sử dụng đất và tăng hiệu quả sản xuất","Phân tán sản xuất vô nghĩa","Tăng phá rừng","Không mục tiêu"], "correct": 0, "explanation": "Mục tiêu là sử dụng đất hiệu quả và bền vững." },
+          { "id": 4, "type": "mcq", "question": "Vùng chuyên canh cà phê ở Việt Nam thường là?", "options": ["Tây Nguyên","Đồng bằng sông Hồng","Miền núi Bắc cực","Biển"], "correct": 0, "explanation": "Tây Nguyên là vùng chuyên canh cà phê chính." },
+          { "id": 5, "type": "mcq", "question": "Một yếu tố ảnh hưởng đến lựa chọn cây trồng là?", "options": ["Đất và khí hậu","Số hiệu xe","Màu cờ","Không yếu tố"], "correct": 0, "explanation": "Đất và khí hậu quyết định phù hợp cây trồng." },
+          { "id": 6, "type": "mcq", "question": "Kho lạnh quan trọng vì?", "options": ["Bảo quản sau thu hoạch và giảm tổn thất","Tăng mất mát sản phẩm","Không cần thiết","Giảm chất lượng"], "correct": 0, "explanation": "Kho lạnh giảm tổn thất và giữ chất lượng nông sản." },
+          { "id": 7, "type": "mcq", "question": "Quy hoạch nông nghiệp cần tính đến?", "options": ["Đặc điểm tự nhiên, kinh tế và xã hội","Chỉ sở thích lãnh đạo","Không cần tính toán","Chỉ làm theo truyền thống"], "correct": 0, "explanation": "Quy hoạch cần cân nhắc tự nhiên, kinh tế và xã hội." },
+          { "id": 8, "type": "mcq", "question": "Một hệ quả tích cực của vùng chuyên canh hiệu quả?", "options": ["Tăng năng suất và thu nhập nông dân","Giảm thu nhập","Mất đất","Không có gì"], "correct": 0, "explanation": "Vùng chuyên canh hợp lý giúp tăng năng suất và thu nhập." },
+          { "id": 9, "type": "mcq", "question": "Tổ chức lãnh thổ nông nghiệp cần chú trọng?", "options": ["Bảo vệ đất, quản lý nước và hạ tầng hậu cần","Không chú trọng gì","Tăng phá rừng","Loại bỏ thị trường"], "correct": 0, "explanation": "Các yếu tố bảo vệ tài nguyên và hạ tầng là cần thiết." },
+          { "id": 10, "type": "mcq", "question": "Một biện pháp hỗ trợ nông dân trong vùng chuyên canh là?", "options": ["Hỗ trợ kỹ thuật, tín dụng và thị trường tiêu thụ","Cấm bán sản phẩm","Bỏ qua kỹ thuật","Không hỗ trợ"], "correct": 0, "explanation": "Hỗ trợ kỹ thuật và tiếp cận thị trường là cần thiết." }
+        ]
+      }
+    }
+  ]
+}

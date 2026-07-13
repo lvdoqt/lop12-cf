@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-15",
+    "name": "Khái quát cuộc đời và sự nghiệp của Hồ Chí Minh",
+    "slug": "khai-quat-cuoc-doi-su-nghiep-ho-chi-minh",
+    "chapter": "Chủ đề 6: Hồ Chí Minh - cuộc đời và sự nghiệp",
+    "chapter_id": "su12",
+    "lesson_id": 15,
+    "description": "Cuộc đời, sự nghiệp, đóng góp của Hồ Chí Minh cho nước Việt Nam.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Khái quát cuộc đời và sự nghiệp của Hồ Chí Minh",
+        "sections": [
+          { "heading": "1. Thời thơ ấu và con đường tìm cứu quốc", "content": "Sinh ngày 19/5/1890 (hoặc 20/5) tại Nghệ An, tên thật là Nguyễn Sinh Cung. Cha là Nguyễn Ác (Phan Bội Châu thân cân). Học ở trường thực dân Huế, tìm hiểu Phan Bội Châu. Đi xuất khẩu Pháp (1911) tìm cách cứu quốc. Phan Bội Châu bị bắt, Hồ thích học thêm." },
+          { "heading": "2. Giai đoạn tìm đường cứu quốc ở nước ngoài (1911-1930)", "content": "Ở Pháp (1917-1923) tìm hiểu chủ nghĩa cộng sản. Tham gia Đảng Xã hội Pháp. 1919: Trình 'Yêu sách 8 điểm' tại Versailes. Phi Liên Xô (1923), Sơ vn Trung Quốc (1924) tổ chức Việt Nam Thanh niên Cộng sản Đảng. Tháng 2/1930: Cộng sản Đảng Việt Nam thành lập tại Hội nghị Hồng Kông." },
+          { "heading": "3. Kỳ 1930-1938: Bị bắt, xít giam nhưng bất khuất", "content": "Pháp bắt Hồ Chí Minh tại Hồng Kông, giam 14 năm. Từng 'chết' ở Sơ-viết do khó định (1940). Tháng 1/1944: Trung Quốc thả Hồ vì cần liên minh chống Nhật. Hồ xuất hiện với tên mới 'Hồ Chí Minh'." },
+          { "heading": "4. Cuộc kháng chiến dưới lãnh đạo Hồ (1941-1945)", "content": "1941: Hội nghị Tuyên bố thành lập Việt Minh dưới lãnh đạo Hồ. Hợp tác Trung Quốc, Mỹ chống Nhật. Tháng 8/1945: Cách mạng tháng tám giành thắng lợi. Tháng 9/1945: Hồ tuyên bố độc lập Việt Nam từ Hà Nội." },
+          { "heading": "5. Lãnh đạo Việt Nam độc lập (1945-1969)", "content": "Hồ Chí Minh là Chủ tịch Hội Chính phủ lâm thời (1945-1946). Chỉ đạo kháng chiến chống Pháp (1946-1954). Chỉ đạo kháng chiến chống Mỹ (1955-1969). Tư tưởng Hồ: 'Không có gì quý hơn độc lập, tự do'. Qua đời 2/9/1969, để lại legacy vĩ đại cho dân tộc." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Sinh ngày Hồ Chí Minh?", "options": ["19/5/1880", "19/5/1890", "20/5/1890", "15/5/1891"], "correct": 1, "explanation": "Hồ Chí Minh sinh ngày 19/5/1890 (hoặc 20/5)." },
+        { "id": "ex2", "type": "mcq", "question": "Tên lúc nhỏ?", "options": ["Hồ Chí Minh", "Nguyễn Sinh Cung", "Nguyễn Ni An", "Trần Tấn"], "correct": 1, "explanation": "Tên thật là Nguyễn Sinh Cung." },
+        { "id": "ex3", "type": "mcq", "question": "Ở Pháp khi nào?", "options": ["1905-1915", "1911-1923", "1920-1930", "1925-1935"], "correct": 1, "explanation": "Hồ sống ở Pháp (1917-1923) tìm hiểu cộng sản." },
+        { "id": "ex4", "type": "mcq", "question": "Yêu sách năm?", "options": ["1915", "1917", "1919", "1921"], "correct": 2, "explanation": "Trình 'Yêu sách 8 điểm' tại Versailes năm 1919." },
+        { "id": "ex5", "type": "mcq", "question": "Liên Xô, Trung Quốc?", "options": ["1920", "1923-1924", "1926", "1930"], "correct": 1, "explanation": "Tới Liên Xô (1923), Sơ vn Trung Quốc (1924)." },
+        { "id": "ex6", "type": "mcq", "question": "Đảng thành lập?", "options": ["1927", "1928", "1929", "1930"], "correct": 3, "explanation": "Đảng Cộng sản Việt Nam thành lập tháng 2/1930." },
+        { "id": "ex7", "type": "mcq", "question": "Bị bắt bao lâu?", "options": ["5 năm", "10 năm", "14 năm", "20 năm"], "correct": 2, "explanation": "Hồ bị bắt tại Hồng Kông, giam 14 năm." },
+        { "id": "ex8", "type": "mcq", "question": "Thả năm?", "options": ["1939", "1940", "1941", "1944"], "correct": 3, "explanation": "Năm 1944 Trung Quốc thả Hồ Chí Minh." },
+        { "id": "ex9", "type": "mcq", "question": "Tuyên bố độc lập?", "options": ["1/9/1945", "2/9/1945", "15/8/1945", "30/8/1945"], "correct": 1, "explanation": "2/9/1945: Hồ tuyên bố độc lập Việt Nam." },
+        { "id": "ex10", "type": "mcq", "question": "Qua đời?", "options": ["1967", "1968", "1969", "1970"], "correct": 2, "explanation": "Hồ Chí Minh qua đời 2/9/1969." }
+      ]
+    }
+  }]
+}

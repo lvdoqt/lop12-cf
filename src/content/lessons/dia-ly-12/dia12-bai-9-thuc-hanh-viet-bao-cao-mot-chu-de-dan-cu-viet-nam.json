@@ -1,0 +1,47 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_9",
+      "name": "Thực hành: Viết báo cáo về một chủ đề dân cư Việt Nam",
+      "slug": "thuc-hanh-viet-bao-cao-ve-mot-chu-de-dan-cu-viet-nam",
+      "chapter": "Địa lí dân cư",
+      "chapter_id": "dia12_part2",
+      "lesson_id": 9,
+      "description": "Hướng dẫn viết báo cáo thực hành về các vấn đề dân cư như dân số, lao động, đô thị hóa hoặc phân bố dân cư tại một địa phương.",
+      "duration_minutes": 60,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Hướng dẫn thực hành: Viết báo cáo dân cư",
+          "summary": "Hướng dẫn chi tiết các bước thực hiện một báo cáo địa lý về dân cư: lựa chọn đề tài, thu thập và xử lý số liệu, phân tích cơ cấu và phân bố dân cư, trình bày bằng bản đồ và biểu đồ, và đề xuất chính sách phù hợp với địa phương.",
+          "sections": [
+            { "heading": "Lựa chọn đề tài", "content": "Chọn chủ đề cụ thể như tăng dân số, di cư, cơ cấu tuổi, thất nghiệp hoặc đô thị hóa tại một địa phương cụ thể." },
+            { "heading": "Thu thập dữ liệu và phương pháp", "content": "Sử dụng tổng điều tra dân số, số liệu thống kê, phỏng vấn, khảo sát thực địa, và phương pháp biểu đồ/bản đồ để phân tích." },
+            { "heading": "Trình bày kết quả", "content": "Minh họa bằng biểu đồ dân số, bản đồ phân bố, bảng số liệu và kết luận đi kèm đề xuất chính sách thực tế." }
+          ]
+        },
+        "exercises": {
+          "short_answers": [
+            { "q": "Nêu một nguồn số liệu dân cư chính?", "a_hint": "Tổng điều tra dân số, cục thống kê." },
+            { "q": "Một biểu đồ phù hợp để thể hiện cơ cấu tuổi?", "a_hint": "Pyramid dân số (hình tháp tuổi)." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Phần nào của báo cáo thường nêu đề xuất chính sách?", "options": ["Mở bài","Phương pháp","Kết luận và đề xuất","Minh họa"], "correct": 2, "explanation": "Kết luận và đề xuất nêu các giải pháp." },
+          { "id": 2, "type": "mcq", "question": "Biểu đồ nào thường dùng để thể hiện cơ cấu tuổi?", "options": ["Biểu đồ hình tháp dân số","Biểu đồ đường","Biểu đồ tròn","Biểu đồ cột chồng"], "correct": 0, "explanation": "Hình tháp dân số thể hiện cơ cấu tuổi theo giới." },
+          { "id": 3, "type": "mcq", "question": "Nguồn số liệu chính để nghiên cứu dân cư là?", "options": ["Tổng điều tra dân số","Mạng xã hội","Báo cáo thương mại","Không có dữ liệu"], "correct": 0, "explanation": "Tổng điều tra dân số là nguồn cơ bản và chính xác." },
+          { "id": 4, "type": "mcq", "question": "Một phương pháp thu thập tại chỗ là?", "options": ["Khảo sát thực địa và phỏng vấn","Chỉ đọc sách","Xem phim","Không làm gì"], "correct": 0, "explanation": "Khảo sát thực địa và phỏng vấn cung cấp dữ liệu thực tế." },
+          { "id": 5, "type": "mcq", "question": "Khi trình bày bản đồ phân bố dân cư cần chú ý?", "options": ["Chọn thang màu, chú thích rõ ràng","Không ghi chú","Dùng màu ngẫu nhiên","Ẩn nguồn"], "correct": 0, "explanation": "Bản đồ cần chú thích, thang màu rõ ràng để đọc chính xác." },
+          { "id": 6, "type": "mcq", "question": "Một đề xuất nhằm giảm di cư cơ học là?", "options": ["Phát triển cơ hội việc làm tại địa phương","Cấm di cư","Tăng thuế cư trú","Không có đề xuất"], "correct": 0, "explanation": "Phát triển kinh tế địa phương giảm áp lực di cư." },
+          { "id": 7, "type": "mcq", "question": "Kết luận báo cáo nên bao gồm?", "options": ["Tóm tắt chính phát hiện và đề xuất giải pháp","Danh sách tất cả số liệu thô","Chỉ hình ảnh","Không có gì"], "correct": 0, "explanation": "Kết luận tóm tắt phát hiện và nêu đề xuất rõ ràng." },
+          { "id": 8, "type": "mcq", "question": "Kỹ thuật biểu đồ phù hợp để so sánh tỷ lệ giới tính?", "options": ["Biểu đồ cột so sánh cho nam và nữ theo nhóm tuổi","Biểu đồ nhiệt","Biểu đồ mạng","Không dùng biểu đồ"], "correct": 0, "explanation": "Biểu đồ cột so sánh thể hiện tỷ lệ giới tính theo nhóm tuổi rõ ràng." },
+          { "id": 9, "type": "mcq", "question": "Khi phân tích dữ liệu, cần kiểm tra điều gì?", "options": ["Độ tin cậy và tính cập nhật của số liệu","Chỉ số cảm tính","Không cần kiểm tra","Dùng dữ liệu ngẫu nhiên"], "correct": 0, "explanation": "Kiểm tra độ tin cậy và tính cập nhật là cần thiết." },
+          { "id": 10, "type": "mcq", "question": "Một kết quả mong đợi của báo cáo dân cư là?", "options": ["Đề xuất chính sách thực tế cho địa phương","Báo cáo dài nhưng vô ích","Sao chép báo cáo khác","Không có kết quả"], "correct": 0, "explanation": "Báo cáo nên đưa ra đề xuất phù hợp, khả thi cho địa phương." }
+        ]
+      }
+    }
+  ]
+}

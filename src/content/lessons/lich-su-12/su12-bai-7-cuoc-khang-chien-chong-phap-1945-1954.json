@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-7",
+    "name": "Cuộc kháng chiến chống thực dân Pháp (1945-1954)",
+    "slug": "cuoc-khang-chien-chong-phap-1945-1954",
+    "chapter": "Chủ đề 3: Cách mạng tháng tám, chiến tranh giải phóng dân tộc",
+    "chapter_id": "su12",
+    "lesson_id": 7,
+    "description": "Quá trình kháng chiến chống thực dân Pháp, nguyên nhân, diễn tiến, kết quả.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Cuộc kháng chiến chống thực dân Pháp (1945-1954)",
+        "sections": [
+          { "heading": "1. Nguyên nhân kháng chiến", "content": "Pháp cố gắng trở lại Đông Dương. Người Việt quyết bảo vệ độc lập. Chính phủ Việt Nam Dân chủ Cộng hòa tuyên bố độc lập. Đảng Cộng sản lãnh đạo. Nhân dân Việt Nam sẵn sàng chiến đấu." },
+          { "heading": "2. Giai đoạn (1945-1950): Chiến tranh du kích", "content": "Quân Việt Minh không có vũ khí nặng. Sử dụng chiến tranh du kích. Pháp tại chiếm các thành phố lớn. Việt Minh kiểm soát nông thôn. Nhân dân hỗ trợ quân Việt Minh. Một Pháp gây tổn thất nặng." },
+          { "heading": "3. Giai đoạn (1950-1954): Chiến tranh chính quy hóa", "content": "Võ Nguyên Giáp nâng cấp quân đội. Giải phóng các căn cứ quân sự. Chiến dịch Hoa Lư thắng lợi; Chiến dịch Điện Biên Phủ (1954). Võ Nguyên Giáp áp dụng chiến thuật bao vây. Quân Pháp bị bao vây và phải đầu hàng." },
+          { "heading": "4. Chiến dịch Điện Biên Phủ (1954)", "content": "Quân Pháp xây dựng căn cứi. Quân Việt Minh bao vây, pháo kích liên tục. Giao tranh kéo dài 56 ngày (13/3-7/5/1954). Quân Pháp thiệt hại 2,400 người, 10,000 bị thương. Quân Việt Minh cũng thiệt hại nặng. Kết quả: Pháp phải đầu hàng, quyền lực Pháp sụp đổ." },
+          { "heading": "5. Kết quả Hội Nghị Ghi Nước", "content": "Ký Hiệp định Ghi Nước (1954). Pháp công nhận độc lập Việt Nam. Chia Việt Nam tạm thời (17 độ) cho đó là bầu cử. Xây dựng nước Việt Nam độc lập. Mở đầu cho chiến tranh chống Mỹ sau this (1955-1975)." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Kình khác chính của kháng chiến?", "options": ["Khôi phục chủ nghĩa Pháp", "Pháp trở lại xâm lược", "Bảo vệ độc lập Việt Nam", "Chinh phục nước ngoài"], "correct": 2, "explanation": "Bảo vệ độc lập từ thực dân Pháp xâm lược." },
+        { "id": "ex2", "type": "mcq", "question": "Giai đoạn (1945-1950) tên?", "options": ["Chiến tranh chính quy", "Chiến tranh du kích", "Tấn công trực tiếp", "Đình chiến"], "correct": 1, "explanation": "Giai đoạn chiến tranh du kích." },
+        { "id": "ex3", "type": "mcq", "question": "Ai lãnh đạo quân sự?", "options": ["Hồ Chí Minh", "Võ Nguyên Giáp", "Trần Hưng Đạo", "Trần Phú"], "correct": 1, "explanation": "Võ Nguyên Giáp lãnh đạo quân đội Việt Minh." },
+        { "id": "ex4", "type": "mcq", "question": "Chiến dịch nào quen?", "options": ["Hà Nội", "Sài Gòn", "Điện Biên Phủ", "Huế"], "correct": 2, "explanation": "Chiến dịch Điện Biên Phủ nổi tiếng nhất (1954)." },
+        { "id": "ex5", "type": "mcq", "question": "Điện Biên Phủ kéo dài?", "options": ["10 ngày", "56 ngày", "100 ngày", "6 tháng"], "correct": 1, "explanation": "Chiến dịch Điện Biên Phủ kéo dài 56 ngày." },
+        { "id": "ex6", "type": "mcq", "question": "Năm kết thúc?", "options": ["1950", "1952", "1954", "1956"], "correct": 2, "explanation": "Kháng chiến kết thúc năm 1954 với Hiệp định Ghi Nước." },
+        { "id": "ex7", "type": "mcq", "question": "Hiệp định ghi nhận?", "options": ["Mất độc lập", "Công nhận độc lập Việt Nam", "Pháp chiếm lại", "Chia vĩnh viễn"], "correct": 1, "explanation": "Hiệp định Ghi Nước công nhận độc lập." },
+        { "id": "ex8", "type": "mcq", "question": "Chia Việt Nam?", "options": ["Vĩnh viễn", "Tạm thời theo độ 17", "Vĩnh viễn theo độ 17", "Thành ba phần"], "correct": 1, "explanation": "Chia tạm thời theo độ 17 để chờ bầu cử." },
+        { "id": "ex9", "type": "mcq", "question": "Hậu quả tiếp theo?", "options": ["Hòa bình", "Chiến tranh chống Mỹ", "Liên kết Pháp", "Hợp nhất ngay"], "correct": 1, "explanation": "Nếu bầu cử hợp pháp sẽ là chiến tranh chống Mỹ." },
+        { "id": "ex10", "type": "mcq", "question": "Ý nghĩa lịch sử?", "options": ["Pháp tồn tại", "Giành độc lập từ thực dân", "Xayed phát triển", "Thay đổi hệ phái"], "correct": 1, "explanation": "Giành độc lập hoàn toàn từ chủ nghĩa thực dân Pháp." }
+      ]
+    }
+  }]
+}

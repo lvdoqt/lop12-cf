@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_08",
+      "name": "Quyền và nghĩa vụ của công dân về kinh doanh và nộp thuế",
+      "slug": "quyen-va-nghia-vu-cua-cong-dan-ve-kinh-doanh-va-nop-thue",
+      "chapter": "Một số quyền và nghĩa vụ của công dân về kinh tế",
+      "chapter_id": "GDCD12",
+      "lesson_id": 8,
+      "description": "Tìm hiểu về quyền tự do kinh doanh và trách nhiệm nộp thuế của công dân đối với quốc gia.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Kinh doanh và Nộp thuế",
+          "summary": "Công dân có quyền tự do lựa chọn hình thức kinh doanh nhưng phải tuân thủ pháp luật và có nghĩa vụ nộp thuế đầy đủ cho Nhà nước.",
+          "sections": [
+            { "heading": "Quyền tự do kinh doanh", "content": "Công dân được tự do lựa chọn ngành nghề, hình thức, quy mô kinh doanh trong những lĩnh vực mà pháp luật không cấm." },
+            { "heading": "Nghĩa vụ của người kinh doanh", "content": "Đăng ký kinh doanh, đảm bảo chất lượng hàng hóa, bảo vệ môi trường và tuân thủ các quy định về an ninh, trật tự xã hội." },
+            { "heading": "Nghĩa vụ nộp thuế", "content": "Thuế là nguồn thu chính của ngân sách nhà nước. Nộp thuế vừa là nghĩa vụ, vừa là quyền lợi để Nhà nước xây dựng hạ tầng, phúc lợi xã hội." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Quyền tự do kinh doanh của công dân có nghĩa là?", "options": ["Kinh doanh bất cứ thứ gì mình muốn", "Kinh doanh các mặt hàng mà pháp luật không cấm", "Không cần đăng ký với nhà nước", "Không cần nộp thuế"], "correct": 1, "explanation": "Tự do kinh doanh phải nằm trong khuôn khổ pháp luật cho phép." },
+          { "id": 2, "type": "mcq", "question": "Nghĩa vụ quan trọng nhất của công dân khi tham gia kinh doanh là gì?", "options": ["Nâng cao giá bán", "Nộp thuế đầy đủ theo quy định", "Cạnh tranh bằng mọi giá", "Thuê thật nhiều nhân viên"], "correct": 1, "explanation": "Nộp thuế là nghĩa vụ hiến định của mọi cá nhân, tổ chức kinh doanh." },
+          { "id": 3, "type": "mcq", "question": "Thuế đóng vai trò gì đối với quốc gia?", "options": ["Làm người dân nghèo đi", "Nguồn thu chủ yếu của ngân sách nhà nước", "Làm tốn thời gian kế toán", "Chỉ để nuôi bộ máy chính quyền"], "correct": 1, "explanation": "Thuế dùng để chi cho giáo dục, y tế, an ninh và hạ tầng đất nước." },
+          { "id": 4, "type": "mcq", "question": "Hành vi trốn thuế sẽ bị xử lý như thế nào?", "options": ["Được khen thưởng", "Bị xử phạt hành chính hoặc xử lý hình sự tùy mức độ", "Không có ảnh hưởng gì", "Chỉ cần nhắc nhở"], "correct": 1, "explanation": "Trốn thuế là hành vi vi phạm pháp luật nghiêm trọng." },
+          { "id": 5, "type": "mcq", "question": "Nội dung nào sau đây KHÔNG thuộc quyền tự do kinh doanh?", "options": ["Tự lựa chọn ngành nghề", "Tự lựa chọn hình thức tổ chức", "Kinh doanh ma túy, vũ khí trái phép", "Tự lựa chọn quy mô kinh doanh"], "correct": 2, "explanation": "Đây là những ngành nghề bị pháp luật cấm kinh doanh." },
+          { "id": 6, "type": "mcq", "question": "Thuế thu nhập cá nhân áp dụng cho đối tượng nào?", "options": ["Mọi trẻ em", "Người có thu nhập cao vượt mức quy định", "Người không có việc làm", "Người đi du lịch"], "correct": 1, "explanation": "Đây là loại thuế trực thu đánh vào thu nhập thực tế của cá nhân." },
+          { "id": 7, "type": "mcq", "question": "Tại sao phải bảo vệ quyền lợi người tiêu dùng trong kinh doanh?", "options": ["Để làm khó doanh nghiệp", "Đảm bảo tính công bằng và an toàn cho xã hội", "Để nhà nước thu nhiều thuế hơn", "Không cần thiết"], "correct": 1, "explanation": "Kinh doanh có trách nhiệm phải tôn trọng và bảo vệ khách hàng." },
+          { "id": 8, "type": "mcq", "question": "Người kinh doanh có nghĩa vụ bảo vệ môi trường không?", "options": ["Không cần quan tâm", "Là nghĩa vụ bắt buộc trong hoạt động sản xuất kinh doanh", "Chỉ khi bị kiểm tra mới làm", "Tùy vào loại hình kinh doanh"], "correct": 1, "explanation": "Phát triển kinh tế phải đi đôi với bảo vệ môi trường bền vững." },
+          { "id": 9, "type": "mcq", "question": "Giấy chứng nhận đăng ký kinh doanh do ai cấp?", "options": ["Cảnh sát giao thông", "Cơ quan quản lý nhà nước có thẩm quyền", "Ủy ban mặt trận tổ quốc", "Ngân hàng"], "correct": 1, "explanation": "Cơ quan đăng ký kinh doanh cấp phép hoạt động hợp pháp." },
+          { "id": 10, "type": "mcq", "question": "Khẩu hiệu 'Nộp thuế là quyền và nghĩa vụ của mỗi công dân' khẳng định điều gì?", "options": ["Nộp thuế là việc bắt ép", "Nộp thuế là đóng góp vào sự phát triển chung và hưởng thụ phúc lợi", "Chỉ người giàu mới phải nộp", "Nộp thuế để làm đẹp hồ sơ"], "correct": 1, "explanation": "Khẳng định trách nhiệm gắn liền với quyền lợi của công dân." }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-13-bai-tap-khi-li-tuong",
+      "name": "Bài 13. Bài tập về khí lí tưởng",
+      "slug": "bai-13-bai-tap-khi-li-tuong",
+      "chapter": "Chương 2. Khí lí tưởng",
+      "chapter_id": "LY12-2",
+      "lesson_id": 13,
+      "description": "Ôn tập và luyện tập tổng hợp các kiến thức về khí lí tưởng: mô hình động học, các định luật, phương trình trạng thái, áp suất và động năng.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "btkl-1",
+          "name": "Mô hình động học phân tử",
+          "slug": "mo-hinh-dong-hoc-phan-tu",
+          "difficulty": "easy"
+        },
+        {
+          "id": "btkl-2",
+          "name": "Các định luật khí",
+          "slug": "cac-dinh-luat-khi",
+          "difficulty": "medium"
+        },
+        {
+          "id": "btkl-3",
+          "name": "Phương trình trạng thái",
+          "slug": "phuong-trinh-trang-thai",
+          "difficulty": "medium"
+        },
+        {
+          "id": "btkl-4",
+          "name": "Áp suất và động năng",
+          "slug": "ap-suat-va-dong-nang",
+          "difficulty": "hard"
+        },
+        {
+          "id": "btkl-5",
+          "name": "Bài toán tổng hợp",
+          "slug": "bai-toan-tong-hop",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Tổng hợp kiến thức Khí lí tưởng",
+          "sections": [
+            {
+              "heading": "1. Mô hình động học phân tử",
+              "content": "<p><strong>Khí lí tưởng:</strong></p><ul><li>Các phân tử coi là chất điểm</li><li>Không tương tác với nhau</li><li>Va chạm đàn hồi</li></ul><p><strong>Các thông số:</strong></p><ul><li>n = m/M = N/NA: số mol</li><li>NA = 6,022.10²³ mol⁻¹: số Avogadro</li><li>R = 8,314 J/(mol.K): hằng số khí</li><li>kB = 1,38.10⁻²³ J/K: hằng số Boltzmann</li></ul>"
+            },
+            {
+              "heading": "2. Các định luật khí",
+              "content": "<p><strong>Định luật Boyle (đẳng nhiệt):</strong> pV = const</p><p><strong>Định luật Charles (đẳng áp):</strong> V/T = const</p><p><strong>Định luật Gay-Lussac (đẳng tích):</strong> p/T = const</p><p><strong>Định luật Avogadro:</strong> Ở cùng T, p → cùng V có cùng n</p>"
+            },
+            {
+              "heading": "3. Phương trình trạng thái",
+              "content": "<p><strong>Phương trình Clayperon:</strong></p><p>$$pV = nRT$$</p><p><strong>Phương trình 2 trạng thái:</strong></p><p>$$\\frac{p_1 V_1}{T_1} = \\frac{p_2 V_2}{T_2}$$</p><p><strong>Điều kiện tiêu chuẩn:</strong></p><ul><li>p₀ = 1 atm = 101325 Pa</li><li>T₀ = 273 K</li><li>V₀ = 22,4 lít/mol</li></ul>"
+            },
+            {
+              "heading": "4. Áp suất và động năng",
+              "content": "<p><strong>Áp suất:</strong> p = (1/3)nmv²</p><p><strong>Động năng trung bình:</strong></p><p>$$\\overline{W_d} = \\frac{3}{2} k_B T$$</p><p><strong>Vận tốc căn quân phương:</strong></p><p>$$v = \\sqrt{\\frac{3RT}{M}}$$</p><p><strong>Nội năng khí lí tưởng:</strong></p><p>$$U = \\frac{3}{2} nRT$$</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Câu hỏi lý thuyết",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Nắm vững các định nghĩa</li><li>Hiểu bản chất hiện tượng</li><li>Phân biệt các khái niệm</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 1:</strong> Tại sao áp suất khí tăng khi nhiệt độ tăng (V không đổi)?",
+                "solution": "<p><strong>Giải:</strong></p><p>Vì động năng trung bình của phân tử tăng, dẫn đến tần suất và lực va chạm với thành bình tăng.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán các định luật khí",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định quá trình</li><li>Chọn công thức phù hợp</li><li>Đổi đơn vị về SI</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 2:</strong> Khí ở 27°C, thể tích 6 lít được đun nóng đẳng áp đến 127°C. Tính thể tích mới.",
+                "solution": "<p><strong>Giải:</strong></p><p>T₁ = 300K, T₂ = 400K</p><p>V₁/T₁ = V₂/T₂ → 6/300 = V₂/400 → V₂ = 8 lít</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán phương trình trạng thái",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Sử dụng pV = nRT</li><li>Áp dụng cho 2 trạng thái</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 3:</strong> Khí có p₁ = 2 atm, V₁ = 5 lít, T₁ = 300K. Tính T₂ khi p₂ = 4 atm, V₂ = 10 lít.",
+                "solution": "<p><strong>Giải:</strong></p><p>p₁V₁/T₁ = p₂V₂/T₂ → 2.5/300 = 4.10/T₂ → T₂ = 1200 K</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Khí lí tưởng là khí trong đó các phân tử:",
+            "options": [
+              "Không chuyển động",
+              "Chỉ có tương tác đàn hồi",
+              "Không tương tác",
+              "Chuyển động cùng hướng"
+            ],
+            "correct": 2,
+            "explanation": "Khí lí tưởng: không tương tác, va chạm đàn hồi"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Trong quá trình đẳng nhiệt:",
+            "options": [
+              "pV = const",
+              "V/T = const",
+              "p/T = const",
+              "p + V = const"
+            ],
+            "correct": 0,
+            "explanation": "Đẳng nhiệt: pV = const (Boyle)"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Số Avogadro NA có giá trị:",
+            "options": [
+              "6,022.10²³ mol⁻¹",
+              "8,314 J/(mol.K)",
+              "1,38.10⁻²³ J/K",
+              "22,4 l/mol"
+            ],
+            "correct": 0,
+            "explanation": "NA = 6,022.10²³ mol⁻¹"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Định luật Boyle còn gọi là:",
+            "options": [
+              "Định luật Mariotte",
+              "Định luật Charles",
+              "Định luật Gay-Lussac",
+              "Định luật Avogadro"
+            ],
+            "correct": 0,
+            "explanation": "Boyle = Mariotte"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Phương trình trạng thái khí lí tưởng:",
+            "options": [
+              "pV = nRT",
+              "pV = mRT/M",
+              "pV = NkBT",
+              "Tất cả đều đúng"
+            ],
+            "correct": 3,
+            "explanation": "Các dạng đều đúng, tương đương nhau"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Thể tích 1 mol khí ở đkc:",
+            "options": [
+              "22,4 lít",
+              "24,0 lít",
+              "20,0 lít",
+              "25,0 lít"
+            ],
+            "correct": 0,
+            "explanation": "V₀ = 22,4 l/mol"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Động năng trung bình của phân tử phụ thuộc:",
+            "options": [
+              "Chỉ nhiệt độ",
+              "Chỉ khối lượng phân tử",
+              "Chỉ vận tốc",
+              "Chỉ áp suất"
+            ],
+            "correct": 0,
+            "explanation": "Wđ = (3/2)kBT, chỉ phụ thuộc T"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Nội năng khí lí tưởng phụ thuộc:",
+            "options": [
+              "Chỉ nhiệt độ",
+              "Chỉ thể tích",
+              "Chỉ áp suất",
+              "Cả T, p, V"
+            ],
+            "correct": 0,
+            "explanation": "U = (3/2)nRT, chỉ phụ thuộc T"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Khi nén khí đẳng nhiệt, thể tích giảm 3 lần thì áp suất:",
+            "options": [
+              "Giảm 3 lần",
+              "Tăng 3 lần",
+              "Không đổi",
+              "Tăng 9 lần"
+            ],
+            "correct": 1,
+            "explanation": "pV = const → p tăng 3 lần khi V giảm 3 lần"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Nhiệt độ 127°C tương đương:",
+            "options": [
+              "127K",
+              "400K",
+              "-146K",
+              "350K"
+            ],
+            "correct": 1,
+            "explanation": "T = 127 + 273 = 400 K"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các quá trình khí:",
+            "options": [
+              "Đẳng nhiệt: T = const",
+              "Đẳng áp: p = const",
+              "Đẳng tích: V = const",
+              "Đẳng năng lượng: U = const"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Đẳng năng lượng không phải quá trình cơ bản"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Từ pV = nRT suy ra:",
+            "options": [
+              "Định luật Boyle",
+              "Định luật Charles",
+              "Định luật Gay-Lussac",
+              "Định luật Avogadro"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Tất cả đều suy ra từ pV = nRT"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Khi nhiệt độ tăng (đẳng tích):",
+            "options": [
+              "Áp suất tăng",
+              "Động năng tăng",
+              "Vận tốc trung bình tăng",
+              "Nội năng tăng"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Tất cả đều tăng theo nhiệt độ"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính số mol trong 44,8 lít khí ở đkc.",
+            "correct": "2",
+            "explanation": "n = V/V₀ = 44,8/22,4 = 2 mol"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Khí ở 27°C, 2 atm có V = 5 lít. Đun nóng đẳng áp đến 127°C. Tính V₂ (lít).",
+            "correct": "6.67",
+            "explanation": "T₁=300K, T₂=400K → 5/300 = V₂/400 → V₂ = 6,67 lít"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Tính động năng trung bình của phân tử ở 600K (J).",
+            "correct": "1.24E-20",
+            "explanation": "Wđ = (3/2)kBT = 1,5.1,38.10⁻²³.600 = 1,24.10⁻²⁰ J"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Nén khí đẳng nhiệt từ 6 lít xuống 2 lít. Áp suất tăng bao nhiêu lần?",
+            "correct": "3",
+            "explanation": "pV = const → V giảm 3 lần → p tăng 3 lần"
+          }
+        ]
+      }
+    }
+  ]
+}

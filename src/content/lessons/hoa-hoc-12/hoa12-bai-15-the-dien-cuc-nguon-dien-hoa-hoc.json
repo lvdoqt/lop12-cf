@@ -1,0 +1,105 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-15-the-dien-cuc-nguon-dien-hoa-hoc",
+      "name": "Bài 15. Thế điện cực và nguồn điện hóa học",
+      "slug": "bai-15-the-dien-cuc-nguon-dien-hoa-hoc",
+      "chapter": "Chương 5: Pin điện và điện phân",
+      "chapter_id": "H12-1005",
+      "lesson_id": 15,
+      "description": "Tìm hiểu về thế điện cực, pin điện hóa học và ứng dụng.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "pin-dien-1",
+          "name": "Pin điện và Thế điện cực",
+          "slug": "pin-dien-the-dien-cuc",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Thế điện cực và Pin điện",
+          "sections": [
+            {
+              "heading": "1. Thế điện cực chuẩn",
+              "content": "<h3>a) Định nghĩa</h3><p><strong>Thế điện cực chuẩn (E°):</strong> Hiệu điện thế giữa điện cực kim loại và dung dịch ion của nó ở điều kiện chuẩn (25°C, 1M, 1 atm).</p><p><strong>Quy ước:</strong> E°(H⁺/H₂) = 0V (điện cực hydro chuẩn)</p><h3>b) Dãy thế điện cực chuẩn</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Cặp oxi hóa - khử</th><th class='border border-gray-300 p-2'>E° (V)</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Li⁺/Li</td><td class='border border-gray-300 p-2'>-3.05</td></tr><tr><td class='border border-gray-300 p-2'>K⁺/K</td><td class='border border-gray-300 p-2'>-2.93</td></tr><tr><td class='border border-gray-300 p-2'>Ca²⁺/Ca</td><td class='border border-gray-300 p-2'>-2.87</td></tr><tr><td class='border border-gray-300 p-2'>Na⁺/Na</td><td class='border border-gray-300 p-2'>-2.71</td></tr><tr><td class='border border-gray-300 p-2'>Mg²⁺/Mg</td><td class='border border-gray-300 p-2'>-2.37</td></tr><tr><td class='border border-gray-300 p-2'>Al³⁺/Al</td><td class='border border-gray-300 p-2'>-1.66</td></tr><tr><td class='border border-gray-300 p-2'>Zn²⁺/Zn</td><td class='border border-gray-300 p-2'>-0.76</td></tr><tr><td class='border border-gray-300 p-2'>Fe²⁺/Fe</td><td class='border border-gray-300 p-2'>-0.44</td></tr><tr><td class='border border-gray-300 p-2'>Ni²⁺/Ni</td><td class='border border-gray-300 p-2'>-0.25</td></tr><tr><td class='border border-gray-300 p-2'>Sn²⁺/Sn</td><td class='border border-gray-300 p-2'>-0.14</td></tr><tr><td class='border border-gray-300 p-2'>Pb²⁺/Pb</td><td class='border border-gray-300 p-2'>-0.13</td></tr><tr><td class='border border-gray-300 p-2'>H⁺/H₂</td><td class='border border-gray-300 p-2'>0.00</td></tr><tr><td class='border border-gray-300 p-2'>Cu²⁺/Cu</td><td class='border border-gray-300 p-2'>+0.34</td></tr><tr><td class='border border-gray-300 p-2'>Fe³⁺/Fe²⁺</td><td class='border border-gray-300 p-2'>+0.77</td></tr><tr><td class='border border-gray-300 p-2'>Ag⁺/Ag</td><td class='border border-gray-300 p-2'>+0.80</td></tr><tr><td class='border border-gray-300 p-2'>Au³⁺/Au</td><td class='border border-gray-300 p-2'>+1.50</td></tr></tbody></table><h3>c) Ý nghĩa</h3><ul><li>E° càng âm: Kim loại càng hoạt động, dễ bị oxi hóa</li><li>E° càng dương: Kim loại càng kém hoạt động, khó bị oxi hóa</li><li>Dự đoán chiều phản ứng oxi hóa - khử</li></ul>"
+            },
+            {
+              "heading": "2. Pin điện hóa học",
+              "content": "<h3>a) Định nghĩa</h3><p><strong>Pin điện hóa học:</strong> Thiết bị chuyển hóa năng lượng hóa học thành điện năng thông qua phản ứng oxi hóa - khử tự diễn ra.</p><h3>b) Cấu tạo pin Zn-Cu (pin Daniell)</h3><p><strong>Cực âm (Anode):</strong> Zn | Zn²⁺ (E° = -0.76V)</p><p>Phản ứng: Zn → Zn²⁺ + 2e⁻ (oxi hóa)</p><p><strong>Cực dương (Cathode):</strong> Cu | Cu²⁺ (E° = +0.34V)</p><p>Phản ứng: Cu²⁺ + 2e⁻ → Cu (khử)</p><p><strong>Phản ứng chung:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Zn + Cu²⁺ → Zn²⁺ + Cu</p><p><strong>Suất điện động (E°pin):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>E°pin = E°(cathode) - E°(anode) = 0.34 - (-0.76) = 1.10V</p><h3>c) Nguyên tắc hoạt động</h3><ul><li>Cực âm: Kim loại hoạt động hơn, bị oxi hóa</li><li>Cực dương: Kim loại kém hoạt động hơn, ion bị khử</li><li>Electron di chuyển từ cực âm → cực dương (mạch ngoài)</li><li>Ion di chuyển trong dung dịch (mạch trong)</li></ul><h3>d) Ký hiệu pin</h3><p>(-) Zn | Zn²⁺ || Cu²⁺ | Cu (+)</p><ul><li>| : Ranh giới pha</li><li>|| : Cầu muối</li></ul>"
+            },
+            {
+              "heading": "3. Các loại pin thực tế",
+              "content": "<h3>a) Pin khô (Pin Leclanché)</h3><p><strong>Cực âm:</strong> Zn</p><p><strong>Cực dương:</strong> Than chì (C) + MnO₂</p><p><strong>Chất điện ly:</strong> NH₄Cl, ZnCl₂</p><p><strong>Điện áp:</strong> 1.5V</p><p><strong>Ứng dụng:</strong> Đồ chơi, đèn pin, remote</p><h3>b) Pin kiềm (Alkaline)</h3><p><strong>Cực âm:</strong> Zn</p><p><strong>Cực dương:</strong> MnO₂</p><p><strong>Chất điện ly:</strong> KOH</p><p><strong>Điện áp:</strong> 1.5V</p><p><strong>Ưu điểm:</strong> Dung lượng cao hơn pin khô, tuổi thọ dài</p><h3>c) Pin lithium</h3><p><strong>Cực âm:</strong> Li</p><p><strong>Cực dương:</strong> MnO₂, FeS₂</p><p><strong>Điện áp:</strong> 3V</p><p><strong>Ưu điểm:</strong> Nhẹ, điện áp cao, tuổi thọ lâu</p><p><strong>Ứng dụng:</strong> Máy ảnh, đồng hồ, thiết bị y tế</p><h3>d) Ắc quy chì</h3><p><strong>Cực âm:</strong> Pb</p><p><strong>Cực dương:</strong> PbO₂</p><p><strong>Chất điện ly:</strong> H₂SO₄ 37%</p><p><strong>Điện áp:</strong> 2V/cell (12V = 6 cells)</p><p><strong>Phản ứng phóng điện:</strong></p><p>Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O</p><p><strong>Ưu điểm:</strong> Sạc lại được, dòng điện lớn</p><p><strong>Ứng dụng:</strong> Xe máy, ô tô, UPS</p><h3>e) Pin nhiên liệu (Fuel cell)</h3><p><strong>Nguyên liệu:</strong> H₂ + O₂</p><p><strong>Sản phẩm:</strong> H₂O + Điện năng</p><p><strong>Phản ứng:</strong></p><p>2H₂ + O₂ → 2H₂O</p><p><strong>Ưu điểm:</strong> Sạch, hiệu suất cao (60%)</p><p><strong>Ứng dụng:</strong> Xe điện, tàu vũ trụ</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính suất điện động của pin",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định cực âm (E° nhỏ hơn)</li><li>Xác định cực dương (E° lớn hơn)</li><li>E°pin = E°(cathode) - E°(anode)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Pin điện hóa gồm Zn (E° = -0.76V) và Ag (E° = +0.80V). a) Xác định cực âm, cực dương. b) Viết phản ứng xảy ra. c) Tính E°pin.",
+                "solution": "<p><strong>a) Xác định cực:</strong></p><p><strong>Cực âm (Anode):</strong> Zn (E° nhỏ hơn = -0.76V)</p><p><strong>Cực dương (Cathode):</strong> Ag (E° lớn hơn = +0.80V)</p><p><strong>b) Phản ứng:</strong></p><p><strong>Cực âm:</strong> Zn → Zn²⁺ + 2e⁻</p><p><strong>Cực dương:</strong> 2Ag⁺ + 2e⁻ → 2Ag</p><p><strong>Phản ứng chung:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Zn + 2Ag⁺ → Zn²⁺ + 2Ag</p><p><strong>c) Tính E°pin:</strong></p><p>E°pin = E°(cathode) - E°(anode)</p><p>E°pin = 0.80 - (-0.76) = 1.56V</p><p><strong>Đáp án:</strong> a) Cực âm: Zn, Cực dương: Ag; c) 1.56V</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính khối lượng kim loại thay đổi",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết phản ứng điện cực</li><li>Tính mol electron</li><li>Tính khối lượng kim loại</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Pin Zn-Cu hoạt động, cực Zn giảm 6.5g. a) Tính mol electron. b) Tính khối lượng Cu tăng. c) Tính điện lượng (F = 96500 C/mol).",
+                "solution": "<p><strong>a) Tính mol electron:</strong></p><p><strong>Cực âm (Zn):</strong></p><p>Zn → Zn²⁺ + 2e⁻</p><p>n(Zn) = 6.5 / 65 = 0.1 mol</p><p>n(e⁻) = 2 × 0.1 = 0.2 mol</p><p><strong>b) Tính khối lượng Cu:</strong></p><p><strong>Cực dương (Cu):</strong></p><p>Cu²⁺ + 2e⁻ → Cu</p><p>n(Cu) = n(e⁻) / 2 = 0.2 / 2 = 0.1 mol</p><p>m(Cu) = 0.1 × 64 = 6.4g</p><p><strong>c) Tính điện lượng:</strong></p><p>Q = n(e⁻) × F = 0.2 × 96500 = 19,300 C</p><p><strong>Đáp án:</strong> a) 0.2 mol; b) 6.4g; c) 19,300 C</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Pin lithium-ion trong xe điện",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích đặc tính pin Li-ion</li><li>Tính toán dung lượng, quãng đường</li><li>So sánh với động cơ đốt trong</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Xe điện Tesla Model 3 có pin Li-ion 75 kWh. a) Tính quãng đường (tiêu thụ 15 kWh/100km). b) So sánh chi phí với xe xăng (điện 2,000đ/kWh, xăng 25,000đ/lít, tiêu thụ 6 lít/100km). c) Đánh giá môi trường và tương lai pin.",
+                "solution": "<p><strong>a) Tính quãng đường:</strong></p><p>Quãng đường = 75 / 15 × 100 = 500 km</p><p><strong>b) So sánh chi phí (cho 100 km):</strong></p><p><strong>Xe điện:</strong></p><ul><li>Điện năng: 15 kWh</li><li>Chi phí: 15 × 2,000 = 30,000 đ</li></ul><p><strong>Xe xăng:</strong></p><ul><li>Xăng: 6 lít</li><li>Chi phí: 6 × 25,000 = 150,000 đ</li></ul><p><strong>Tiết kiệm:</strong> 150,000 - 30,000 = 120,000 đ/100km (80%)</p><p><strong>Cho 500 km:</strong></p><ul><li>Xe điện: 150,000 đ</li><li>Xe xăng: 750,000 đ</li><li>Tiết kiệm: 600,000 đ</li></ul><p><strong>c) Đánh giá:</strong></p><p><strong>1. Ưu điểm pin Li-ion:</strong></p><ul><li>✓ Mật độ năng lượng cao (250 Wh/kg)</li><li>✓ Tuổi thọ dài (1000-2000 chu kỳ sạc)</li><li>✓ Hiệu suất cao (90-95%)</li><li>✓ Không khí thải trực tiếp</li><li>✓ Chi phí vận hành thấp (80% rẻ hơn)</li></ul><p><strong>2. Nhược điểm:</strong></p><ul><li>⚠️ Giá cao (300-400 triệu đồng/bộ pin)</li><li>⚠️ Thời gian sạc lâu (30 phút - 8 giờ)</li><li>⚠️ Giảm hiệu suất ở nhiệt độ thấp</li><li>⚠️ Nguy cơ cháy nổ (nếu hư hỏng)</li><li>⚠️ Khai thác lithium gây ô nhiễm</li></ul><p><strong>3. Tác động môi trường:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Tiêu chí</th><th class='border border-gray-300 p-2'>Xe điện</th><th class='border border-gray-300 p-2'>Xe xăng</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>CO₂ (g/km)</td><td class='border border-gray-300 p-2'>50-100*</td><td class='border border-gray-300 p-2'>150-200</td></tr><tr><td class='border border-gray-300 p-2'>Khí độc</td><td class='border border-gray-300 p-2'>0</td><td class='border border-gray-300 p-2'>CO, NOx, HC</td></tr><tr><td class='border border-gray-300 p-2'>Tiếng ồn</td><td class='border border-gray-300 p-2'>Thấp</td><td class='border border-gray-300 p-2'>Cao</td></tr></tbody></table><p>*Phụ thuộc nguồn điện (than, thủy điện, mặt trời...)</p><p><strong>4. Tương lai pin:</strong></p><p><strong>a) Pin thể rắn (Solid-state):</strong></p><ul><li>Mật độ năng lượng: 400-500 Wh/kg (+60%)</li><li>An toàn hơn (không cháy nổ)</li><li>Sạc nhanh hơn (10 phút đầy 80%)</li><li>Dự kiến: 2025-2030</li></ul><p><strong>b) Pin lithium-sulfur:</strong></p><ul><li>Mật độ năng lượng: 500-600 Wh/kg</li><li>Rẻ hơn (sulfur dồi dào)</li><li>Thách thức: Tuổi thọ ngắn</li></ul><p><strong>c) Pin lithium-air:</strong></p><ul><li>Mật độ năng lượng: 1000+ Wh/kg</li><li>Nhẹ nhất</li><li>Thách thức: Công nghệ chưa hoàn thiện</li></ul><p><strong>5. Tái chế pin:</strong></p><ul><li>Hiện tại: Chỉ 5% pin được tái chế</li><li>Mục tiêu 2030: 70% tái chế</li><li>Thu hồi: Li, Co, Ni, Mn</li><li>Giảm 50% tác động môi trường</li></ul><p><strong>6. Lộ trình phát triển:</strong></p><ul><li>2025: Pin thể rắn thương mại</li><li>2030: 50% xe mới là xe điện</li><li>2035: Cấm bán xe xăng mới (EU, California)</li><li>2040: 80% xe trên đường là xe điện</li></ul><p><strong>Kết luận:</strong></p><p>Pin Li-ion giúp xe điện tiết kiệm 80% chi phí nhiên liệu và giảm 50-70% khí thải. Với công nghệ pin mới (thể rắn, Li-S), xe điện sẽ rẻ hơn, sạc nhanh hơn và thân thiện môi trường hơn. Đây là tương lai của giao thông bền vững.</p><p><strong>Đáp án:</strong> a) 500 km; b) Tiết kiệm 600,000 đ (80%); c) Đã phân tích chi tiết</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {"id": "ex1", "type": "mcq", "question": "Thế điện cực chuẩn của H⁺/H₂ là:", "options": ["-1V", "0V", "+1V", "+2V"], "correct": 1, "explanation": "E°(H⁺/H₂) = 0V (quy ước)."},
+          {"id": "ex2", "type": "mcq", "question": "Kim loại hoạt động nhất có E°:", "options": ["Dương nhất", "Âm nhất", "Bằng 0", "Gần 0"], "correct": 1, "explanation": "Kim loại hoạt động nhất có E° âm nhất."},
+          {"id": "ex3", "type": "mcq", "question": "Trong pin Zn-Cu, cực âm là:", "options": ["Zn", "Cu", "Zn²⁺", "Cu²⁺"], "correct": 0, "explanation": "Cực âm là Zn (E° nhỏ hơn)."},
+          {"id": "ex4", "type": "mcq", "question": "Trong pin, electron di chuyển:", "options": ["Cực âm → Cực dương", "Cực dương → Cực âm", "Không di chuyển", "Hai chiều"], "correct": 0, "explanation": "Electron di chuyển từ cực âm → cực dương."},
+          {"id": "ex5", "type": "mcq", "question": "Pin khô có điện áp:", "options": ["1.0V", "1.5V", "2.0V", "3.0V"], "correct": 1, "explanation": "Pin khô có điện áp 1.5V."},
+          {"id": "ex6", "type": "mcq", "question": "Ắc quy chì có điện áp mỗi cell:", "options": ["1V", "2V", "6V", "12V"], "correct": 1, "explanation": "Ắc quy chì có 2V/cell."},
+          {"id": "ex7", "type": "mcq", "question": "Pin nhiên liệu sử dụng:", "options": ["Zn + Cu", "H₂ + O₂", "Pb + PbO₂", "Li + MnO₂"], "correct": 1, "explanation": "Pin nhiên liệu sử dụng H₂ + O₂."},
+          {"id": "ex8", "type": "mcq", "question": "E°(Zn²⁺/Zn) = -0.76V, E°(Cu²⁺/Cu) = +0.34V. E°pin Zn-Cu là:", "options": ["0.42V", "1.10V", "-0.42V", "-1.10V"], "correct": 1, "explanation": "E°pin = 0.34 - (-0.76) = 1.10V."},
+          {"id": "ex9", "type": "mcq", "question": "Ở cực âm xảy ra:", "options": ["Oxi hóa", "Khử", "Không phản ứng", "Cả hai"], "correct": 0, "explanation": "Cực âm xảy ra oxi hóa."},
+          {"id": "ex10", "type": "mcq", "question": "Ở cực dương xảy ra:", "options": ["Oxi hóa", "Khử", "Không phản ứng", "Cả hai"], "correct": 1, "explanation": "Cực dương xảy ra khử."},
+          {"id": "ex11", "type": "mcq", "question": "Pin lithium có điện áp:", "options": ["1.5V", "2V", "3V", "12V"], "correct": 2, "explanation": "Pin lithium có điện áp 3V."},
+          {"id": "ex12", "type": "mcq", "question": "Ắc quy 12V có bao nhiêu cell?", "options": ["2", "4", "6", "12"], "correct": 2, "explanation": "Ắc quy 12V có 6 cells (6 × 2V = 12V)."},
+          {"id": "ex13", "type": "msq", "question": "Đặc điểm pin điện hóa:", "options": ["Chuyển hóa học → điện", "Phản ứng tự diễn ra", "E°pin > 0", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Pin có tất cả các đặc điểm trên."},
+          {"id": "ex14", "type": "msq", "question": "Loại pin sạc lại được:", "options": ["Pin khô", "Ắc quy chì", "Pin lithium-ion", "Pin kiềm"], "correct": [1, 2], "explanation": "Ắc quy chì và pin lithium-ion sạc lại được."},
+          {"id": "ex15", "type": "msq", "question": "Ưu điểm pin nhiên liệu:", "options": ["Sạch", "Hiệu suất cao", "Không ô nhiễm", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Pin nhiên liệu có nhiều ưu điểm."},
+          {"id": "ex16", "type": "msq", "question": "Kim loại có E° âm:", "options": ["Zn", "Cu", "Fe", "Ag"], "correct": [0, 2], "explanation": "Zn và Fe có E° âm."},
+          {"id": "ex17", "type": "sa", "question": "Pin Zn-Cu: E°(Zn) = -0.76V, E°(Cu) = +0.34V. Tính E°pin (V). Làm tròn đến 2 chữ số thập phân.", "correct": "1.10", "explanation": "E°pin = 0.34 - (-0.76) = 1.10V. Đáp án: 1.10"},
+          {"id": "ex18", "type": "sa", "question": "Pin Zn-Cu, cực Zn giảm 6.5g. Tính mol electron. Làm tròn đến 1 chữ số thập phân.", "correct": "0.2", "explanation": "n(Zn) = 6.5/65 = 0.1 mol. n(e⁻) = 0.2 mol. Đáp án: 0.2"},
+          {"id": "ex19", "type": "sa", "question": "Pin Zn-Cu, cực Zn giảm 6.5g. Tính khối lượng Cu tăng (g). Làm tròn đến 1 chữ số thập phân.", "correct": "6.4", "explanation": "n(Cu) = 0.1 mol. m = 0.1×64 = 6.4g. Đáp án: 6.4"},
+          {"id": "ex20", "type": "sa", "question": "Ắc quy 12V có bao nhiêu cell? Làm tròn đến hàng đơn vị.", "correct": "6", "explanation": "12V / 2V = 6 cells. Đáp án: 6"},
+          {"id": "ex21", "type": "sa", "question": "Pin khô có điện áp bao nhiêu (V)? Làm tròn đến 1 chữ số thập phân.", "correct": "1.5", "explanation": "Pin khô có 1.5V. Đáp án: 1.5"},
+          {"id": "ex22", "type": "sa", "question": "Pin lithium có điện áp bao nhiêu (V)? Làm tròn đến hàng đơn vị.", "correct": "3", "explanation": "Pin lithium có 3V. Đáp án: 3"}
+        ]
+      }
+    }
+  ]
+}

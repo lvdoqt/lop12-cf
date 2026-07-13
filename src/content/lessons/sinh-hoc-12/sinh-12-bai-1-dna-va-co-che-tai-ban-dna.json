@@ -1,0 +1,190 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-1",
+      "name": "Bài 1. DNA và cơ chế tái bản DNA",
+      "slug": "dna-va-co-che-tai-ban-dna",
+      "chapter": "Chương 1. Di truyền phân tử",
+      "chapter_id": "S12-1",
+      "lesson_id": 1,
+      "description": "Tìm hiểu về cấu trúc DNA và cơ chế tái bản DNA.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "DNA và cơ chế tái bản DNA",
+          "sections": [
+            {
+              "heading": "1. Cấu trúc của DNA",
+              "content": "<h4>a) Thành phần hóa học</h4><ul><li>DNA (Deoxyribonucleic Acid) là đại phân tử mang thông tin di truyền.</li><li>Cấu tạo từ các đơn phân gọi là nucleotit, mỗi nucleotit gồm: đường deoxyribose, nhóm phosphat và một bazơ nitơ.</li><li>Có 4 loại bazơ nitơ: Adenin (A), Thymine (T), Guanin (G), Cytosine (C).</li></ul><h4>b) Cấu trúc xoắn kép Watson-Crick</h4><ul><li>DNA gồm 2 mạch polynucleotide xoắn quanh nhau theo hướng ngược chiều (5' → 3' và 3' → 5').</li><li>Hai mạch liên kết với nhau bằng liên kết hydro giữa các cặp bazơ: A ≡ T (2 liên kết), G ≡ C (3 liên kết).</li><li>Nguyên tắc bổ sung: A luôn liên kết với T, G luôn liên kết với C.</li></ul>"
+            },
+            {
+              "heading": "2. Chức năng của DNA",
+              "content": "<h4>a) Lưu trữ thông tin di truyền</h4><ul><li>DNA mang trình tự nucleotit quy định trình tự axit amin trong protein.</li><li>Thứ tự sắp xếp của các bazơ nitơ tạo nên mã di truyền.</li></ul><h4>b) Truyền đạt thông tin di truyền</h4><ul><li>DNA tự nhân đôi (tái bản) để truyền thông tin cho thế hệ sau.</li><li>DNA làm khuôn tổng hợp RNA trong quá trình phiên mã.</li></ul>"
+            },
+            {
+              "heading": "3. Cơ chế tái bản DNA",
+              "content": "<h4>a) Khái niệm</h4><ul><li>Tái bản DNA (nhân đôi DNA) là quá trình tạo ra 2 phân tử DNA con từ 1 phân tử DNA mẹ.</li><li>Diễn ra trong nhân tế bào, trước khi tế bào phân chia.</li></ul><h4>b) Đặc điểm</h4><ul><li><strong>Bán bảo toàn:</strong> Mỗi DNA con gồm 1 mạch cũ (từ DNA mẹ) và 1 mạch mới được tổng hợp.</li><li><strong>Hai chiều:</strong> Tái bản diễn ra đồng thời theo 2 hướng từ điểm khởi đầu (Ori).</li><li><strong>Liên tục và gián đoạn:</strong> Mạch dẫn được tổng hợp liên tục, mạch klag được tổng hợừng đp theo toạn Okazaki.</li></ul><h4>c) Các enzyme tham gia</h4><ul><li><strong>Helicase:</strong> Tháo xoắn DNA, tách 2 mạch.</li><li><strong>DNA polymerase III:</strong> Tổng hợp mạch mới theo nguyên tắc bổ sung.</li><li><strong>DNA ligase:</strong> Nối các đoạn Okazaki thành mạch hoàn chỉnh.</li><li><strong>Topoisomerase:</strong> Giảm căng xoắn phía trước chạc chữ Y.</li></ul>"
+            },
+            {
+              "heading": "4. Ý nghĩa của tái bản DNA",
+              "content": "<ul><li>Đảm bảo thông tin di truyền được truyền nguyên vẹn từ thế hệ tế bào này sang thế hệ tế bào khác.</li><li>Là cơ sở của sự sinh sản, sinh trưởng và phát triển của sinh vật.</li><li>Tạo cơ sở cho các quá trình di truyền và biến dị.</li><li>Là nền tảng của công nghệ sinh học hiện đại.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Cấu trúc xoắn kép của DNA được phát hiện bởi ai?",
+            "options": [
+              "Friedrich Miescher",
+              "Watson và Crick",
+              "Rosalind Franklin",
+              "Gregor Mendel"
+            ],
+            "correct": 1,
+            "explanation": "Năm 1953, James Watson và Francis Crick đã đề xuất mô hình cấu trúc DNA xoắn kép dựa trên dữ liệu tinh thể hóa của Rosalind Franklin."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Liên kết hydro giữa cặp G-C có bao nhiêu liên kết?",
+            "options": [
+              "1 liên kết",
+              "2 liên kết",
+              "3 liên kết",
+              "4 liên kết"
+            ],
+            "correct": 2,
+            "explanation": "Giữa G và C có 3 liên kết hydro, trong khi giữa A và T có 2 liên kết hydro."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Nguyên tắc bổ sung trong DNA là gì?",
+            "options": [
+              "A liên kết với G, T liên kết với C",
+              "A liên kết với T, G liên kết với C",
+              "A liên kết với C, T liên kết với G",
+              "Tất cả đều liên kết tự do"
+            ],
+            "correct": 1,
+            "explanation": "Theo nguyên tắc bổ sung, Adenin (A) luôn liên kết với Thymine (T), Guanin (G) luôn liên kết với Cytosine (C)."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Đặc điểm nào không đúng về tái bản DNA?",
+            "options": [
+              "Bán bảo toàn",
+              "Hai chiều",
+              "Liên tục trên cả hai mạch",
+              "Cần enzyme helicase"
+            ],
+            "correct": 2,
+            "explanation": "Mạch dẫn được tổng hợp liên tục, mạch klag được tổng hợp gián đoạn theo từng đoạn Okazaki."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Enzyme nào tháo xoắn DNA trong quá trình tái bản?",
+            "options": [
+              "DNA polymerase",
+              "Helicase",
+              "Ligase",
+              "Topoisomerase"
+            ],
+            "correct": 1,
+            "explanation": "Helicase có chức năng tháo xoắn và tách 2 mạch của DNA tại điểm khởi đầu sao chép."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các phát biểu đúng về cấu trúc DNA:",
+            "options": [
+              "DNA có cấu trúc xoắn kép do Watson và Crick phát hiện",
+              "Hai mạch DNA xoắn cùng chiều",
+              "Liên kết hydro giữa A-T có 2 liên kết",
+              "Nucleotit gồm đường, phosphat và bazơ nitơ"
+            ],
+            "correct": [
+              0,
+              2,
+              3
+            ],
+            "explanation": "A ✓: Watson và Crick phát hiện cấu trúc xoắn kép năm 1953. B ✗: Hai mạch xoắn ngược chiều (5'→3' và 3'→5'). C ✓: A-T có 2 liên kết, G-C có 3. D ✓: Cấu tạo đúng của nucleotit."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các enzyme tham gia trực tiếp vào quá trình tái bản DNA:",
+            "options": [
+              "Helicase",
+              "DNA polymerase III",
+              "RNA polymerase",
+              "DNA ligase"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "A ✓: Tháo xoắn DNA. B ✓: Tổng hợp mạch mới. C ✗: Là enzyme phiên mã, không tham gia tái bản. D ✓: Nối các đoạn Okazaki."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một phân tử DNA có chiều dài 5100 Å. Tính số cặp nucleotit. Nhập số 4 chữ số. (Ví dụ: 1500)",
+            "correct": "1500",
+            "explanation": "Chiều dài = 5100 Å. Số cặp nucleotit = 5100 / 3.4 = 1500 cặp."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Một đoạn DNA có 600 nucleotit, trong đó A chiếm 20%. Tính số liên kết hydro. Nhập số 4 chữ số. (Ví dụ: 2400)",
+            "correct": "1680",
+            "explanation": "Tổng nucleotit = 600 → Số cặp = 300. A = 20% × 300 = 60 → T = 60. G + C = 300 - 120 = 180. Số liên kết hydro = 2×(A+T) + 3×(G+C) = 2×120 + 3×180 = 240 + 540 = 1680."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính số nucleotit trong DNA",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định các dữ kiện đề bài cho: chiều dài DNA, số liên kết hydro, tổng số nucleotit...</li><li>Áp dụng công thức: Chiều dài DNA = số cặp base × 3.4 Å</li><li>Số liên kết hydro = 2×(A+T) + 3×(G+C)</li><li>Tổng số nucleotit = A+T+G+C</li></ol>",
+            "examples": [
+              {
+                "question": "Một phân tử DNA có chiều dài 0,408 micromet. Tính số nucleotit của phân tử DNA này.",
+                "solution": "<p><strong>Giải:</strong></p><p>Chiều dài = 0,408 μm = 4080 Å</p><p>Số cặp nucleotit = 4080 / 3.4 = 1200 cặp</p><p>Số nucleotit = 1200 × 2 = 2400 nucleotit</p>"
+              },
+              {
+                "question": "Phân tử DNA có tổng số 3000 nucleotit, trong đó số G chiếm 30%. Tính số liên kết hydro trong DNA.",
+                "solution": "<p><strong>Giải:</strong></p><p>Tổng nucleotit = 3000 → Số cặp = 1500</p><p>G = 30% × 1500 = 450</p><p>C = G = 450</p><p>A + T = 1500 - 900 = 600 → A = T = 300</p><p>Số liên kết hydro = 2×(A+T) + 3×(G+C) = 2×600 + 3×900 = 1200 + 2700 = 3900</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định trình tự DNA dựa trên nguyên tắc bổ sung",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Nếu biết trình tự một mạch, xác định mạch bổ sung theo nguyên tắc: A↔T, G↔C.</li><li>Chú ý chiều 5'→3' của mạch bổ sung ngược chiều với mạch khuôn.</li><li>Đọc trình tự mạch mới theo chiều 5'→3'.</li></ol>",
+            "examples": [
+              {
+                "question": "Cho một mạch đơn của DNA có trình tự: 5'-AAGTXGTATG-3'. Xác định trình tự mạch bổ sung.",
+                "solution": "<p><strong>Giải:</strong></p><p>Mạch khuôn: 5'-AAGTXGTATG-3'</p><p>Mạch bổ sung: 3'-TTCAXGATAC-5'</p><p>Đổi chiều sang 5'→3': 5'-GTATXGCAAT-3'</p>"
+              },
+              {
+                "question": "Một đoạn DNA mạch khuôn có trình tự: 3'-ATGXGCAAT-5'. Xác định trình tự mạch mới được tổng hợp.",
+                "solution": "<p><strong>Giải:</strong></p><p>Mạch khuôn: 3'-ATGXGCAAT-5'</p><p>Mạch mới (bổ sung): 5'-TAXCGTTA-3'</p><p>Trình tự mạch mới: TAXCGTTA</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

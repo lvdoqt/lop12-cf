@@ -1,0 +1,302 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-20-bai-tap-ve-tu-truong",
+      "name": "Bài 20. Bài tập về từ trường",
+      "slug": "bai-20-bai-tap-ve-tu-truong",
+      "chapter": "Chương 3. Từ trường",
+      "chapter_id": "LY12-3",
+      "lesson_id": 20,
+      "description": "Ôn tập và luyện tập tổng hợp các kiến thức về từ trường, lực từ, cảm ứng điện từ và sóng điện từ.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "btt-1",
+          "name": "Từ trường và đường sức từ",
+          "slug": "tu-truong-duong-suc-tu",
+          "difficulty": "easy"
+        },
+        {
+          "id": "btt-2",
+          "name": "Lực từ và lực Lorenxơ",
+          "slug": "luc-tu-luc-lorenxo",
+          "difficulty": "medium"
+        },
+        {
+          "id": "btt-3",
+          "name": "Cảm ứng điện từ",
+          "slug": "cam-ung-dien-tu",
+          "difficulty": "medium"
+        },
+        {
+          "id": "btt-4",
+          "name": "Sóng điện từ",
+          "slug": "song-dien-tu",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Tổng hợp kiến thức Từ trường",
+          "sections": [
+            {
+              "heading": "1. Từ trường",
+              "content": "<p><strong>Định nghĩa:</strong> Từ trường là dạng vật chất tồn tại xung quanh nam châm và dòng điện.</p><p><strong>Cảm ứng từ:</strong> B = 2.10⁻⁷.I/r (dây thẳng)</p><p><strong>Đường sức từ:</strong> Tiếp tuyến là hướng của B</p>"
+            },
+            {
+              "heading": "2. Lực từ",
+              "content": "<p><strong>Lực từ lên dây dẫn:</strong></p><p>F = BIl sinα</p><p><strong>Lực Lorenxơ:</strong></p><p>f = qvB sinα</p><p><strong>Bán kính quỹ đạo:</strong></p><p>R = mv/(|q|B)</p>"
+            },
+            {
+              "heading": "3. Cảm ứng điện từ",
+              "content": "<p><strong>Từ thông:</strong> Φ = BS cosα (Wb)</p><p><strong>Suất điện động cảm ứng:</strong></p><p>e_c = -ΔΦ/Δt</p><p><strong>Định luật Lenz:</strong> Dòng điện cảm ứng chống lại sự biến thiên từ thông</p>"
+            },
+            {
+              "heading": "4. Sóng điện từ",
+              "content": "<p><strong>Tốc độ:</strong> c = 3.10⁸ m/s</p><p><strong>Bước sóng:</strong> λ = c/f</p><p><strong>Các loại sóng:</strong> Vô tuyến → Hồng ngoại → Ánh sáng → Tử ngoại → Tia X → Gamma</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài tập từ trường",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Tính B theo công thức</li><li>Xác định chiều bằng quy tắc</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 1:</strong> Tính B tại điểm cách dây 5cm, I = 10A.",
+                "solution": "<p><strong>Giải:</strong></p><p>B = 2.10⁻⁷.10/0,05 = 4.10⁻⁵ T</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài tập lực từ",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>F = BIl sinα</li><li>Dùng bàn tay trái</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 2:</strong> Dây dẫn l = 0,5m, I = 4A, B = 0,2T vuông góc. Tính F.",
+                "solution": "<p><strong>Giải:</strong></p><p>F = 0,2.4.0,5.1 = 0,4 N</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài tập cảm ứng điện từ",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>e_c = |ΔΦ/Δt|</li><li>Áp dụng định luật Lenz</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Câu 3:</strong> Φ tăng 0,5Wb trong 0,1s. Tính e_c.",
+                "solution": "<p><strong>Giải:</strong></p><p>e_c = |ΔΦ/Δt| = 0,5/0,1 = 5 V</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Từ trường không tác dụng lên:",
+            "options": [
+              "Nam châm",
+              "Dòng điện",
+              "Điện tích đứng yên",
+              "Điện tích chuyển động"
+            ],
+            "correct": 2,
+            "explanation": "Từ trường chỉ tác dụng lên nam châm và dòng điện"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Lực từ F = BIl sinα, trong đó α là góc:",
+            "options": [
+              "Giữa dây và B",
+              "Giữa I và B",
+              "Giữa S và B",
+              "Giữa v và B"
+            ],
+            "correct": 0,
+            "explanation": "α là góc giữa dây dẫn và đường sức từ"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Suất điện động cảm ứng:",
+            "options": [
+              "e_c = -ΔΦ/Δt",
+              "e_c = ΔΦ/Δt",
+              "e_c = Φ.Δt",
+              "e_c = Φ/Δt"
+            ],
+            "correct": 0,
+            "explanation": "e_c = -ΔΦ/Δt theo định luật Faraday"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Tốc độ sóng điện từ trong chân không:",
+            "options": [
+              "3.10⁸ m/s",
+              "3.10⁶ m/s",
+              "3.10⁴ m/s",
+              "3.10² m/s"
+            ],
+            "correct": 0,
+            "explanation": "c = 3.10⁸ m/s"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Quy tắc bàn tay trái dùng để xác định:",
+            "options": [
+              "Chiều lực từ",
+              "Chiều đường sức từ",
+              "Chiều dòng điện",
+              "Chiều từ thông"
+            ],
+            "correct": 0,
+            "explanation": "Quy tắc bàn tay trái xác định chiều lực từ"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Lực Lorenxơ cực đại khi:",
+            "options": [
+              "v ⊥ B",
+              "v // B",
+              "v = 0",
+              "B = 0"
+            ],
+            "correct": 0,
+            "explanation": "f = qvB sinα, max khi sinα = 1 (v ⊥ B)"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Từ thông đơn vị là:",
+            "options": [
+              "Weber (Wb)",
+              "Tesla (T)",
+              "Vôn (V)",
+              "Ampe (A)"
+            ],
+            "correct": 0,
+            "explanation": "Đơn vị từ thông là Weber (Wb)"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Định luật Lenz cho biết:",
+            "options": [
+              "Chiều dòng điện cảm ứng",
+              "Độ lớn e_c",
+              "Cường độ dòng điện",
+              "Công suất"
+            ],
+            "correct": 0,
+            "explanation": "Định luật Lenz xác định chiều dòng điện cảm ứng"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Dòng điện Fu-cô là:",
+            "options": [
+              "Dòng cảm ứng trong kim loại",
+              "Dòng điện một chiều",
+              "Dòng điện xoay chiều",
+              "Dòng điện trong chân không"
+            ],
+            "correct": 0,
+            "explanation": "Dòng Fu-cô là dòng cảm ứng trong khối kim loại"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Sóng điện từ truyền được trong:",
+            "options": [
+              "Mọi môi trường",
+              "Chỉ trong chân không",
+              "Chỉ trong kim loại",
+              "Chỉ trong điện môi"
+            ],
+            "correct": 0,
+            "explanation": "Sóng điện từ truyền được trong mọi môi trường"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các đại lượng đặc trưng cho từ trường:",
+            "options": [
+              "Cảm ứng từ B",
+              "Từ thông Φ",
+              "Lực từ F",
+              "Cường độ dòng điện I"
+            ],
+            "correct": [0, 1],
+            "explanation": "B và Φ đặc trưng cho từ trường"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Lực từ tác dụng lên dây dẫn phụ thuộc:",
+            "options": [
+              "Cường độ dòng điện I",
+              "Chiều dài dây l",
+              "Cảm ứng từ B",
+              "Góc α"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "F = BIl sinα phụ thuộc tất cả"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Điều kiện xuất hiện dòng điện cảm ứng:",
+            "options": [
+              "Mạch kín",
+              "Từ thông biến thiên",
+              "Có nguồn điện",
+              "Đặt trong từ trường"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Dòng cảm ứng không cần nguồn điện"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính B tại điểm cách dây 10cm, I = 5A (T).",
+            "correct": "1E-5",
+            "explanation": "B = 2.10⁻⁷.5/0,1 = 10⁻⁵ T"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Tính F biết B = 0,1T, I = 2A, l = 0,3m, vuông góc (N).",
+            "correct": "0.06",
+            "explanation": "F = 0,1.2.0,3 = 0,06 N"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Φ tăng từ 0,2Wb lên 0,7Wb trong 0,1s. Tính e_c (V).",
+            "correct": "5",
+            "explanation": "e_c = |ΔΦ/Δt| = |0,7-0,2|/0,1 = 5V"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính bước sóng f = 15MHz (m).",
+            "correct": "20",
+            "explanation": "λ = c/f = 3.10⁸/1,5.10⁷ = 20m"
+          }
+        ]
+      }
+    }
+  ]
+}

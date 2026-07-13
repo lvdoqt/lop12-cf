@@ -1,0 +1,442 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-review-4",
+      "name": "Review 4 (Units 9 - 10)",
+      "slug": "review-4-units-9-10",
+      "chapter": "Review 4",
+      "chapter_id": "A12",
+      "lesson_id": 14,
+      "description": "Consolidation of vocabulary and grammar from Units 9 and 10.",
+      "duration_minutes": 60,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2673&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "review-4-mixed",
+          "name": "Mixed Review",
+          "slug": "mixed-review",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Review 4: Units 9-10",
+          "sections": [
+            {
+              "heading": "I. Language - Ôn tập ngôn ngữ",
+              "content": "<h3>A. Pronunciation (Phát âm)</h3><p><strong>Unit 9:</strong> Stress in three-word phrasal verbs</p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh vào từ cuối cùng (giới từ thứ hai)</li><li>Ex: look <strong>FORWARD TO</strong></li><li>Ex: I'm <strong>LOOKING FORWARD TO</strong> the interview.</li><li>Ex: She <strong>CAME UP WITH</strong> a great idea.</li></ul><p><strong>Unit 10:</strong> Stress in reported speech</p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ tường thuật và động từ chính</li><li>Ex: She <strong>TOLD</strong> me to <strong>STUDY</strong> harder.</li><li>Ex: He <strong>ADVISED</strong> me to <strong>TAKE</strong> the course.</li><li>Ex: She <strong>OFFERED</strong> to <strong>HELP</strong> me.</li></ul><h3>B. Vocabulary (Từ vựng)</h3><p><strong>Unit 9: Career Paths</strong></p><ul class='list-disc pl-5 space-y-2'><li>Career terms: career path, profession, qualification, experience, skill, promotion</li><li>Job application: apply, recruit, CV, interview, reference, job offer</li><li>Workplace: colleague, supervisor, employee, employer, team, department</li><li>Work conditions: full-time, part-time, remote work, flexible hours, overtime</li><li>Adjectives: ambitious, flexible, challenging, rewarding</li></ul><p><strong>Unit 10: Lifelong Learning</strong></p><ul class='list-disc pl-5 space-y-2'><li>Learning types: lifelong learning, self-study, online course, distance learning</li><li>Resources: MOOC, e-learning platform, webinar, workshop, seminar, certificate</li><li>Activities: enroll, attend, complete, earn, acquire, update</li><li>Skills: digital literacy, critical thinking, time management, self-discipline</li><li>Adjectives: continuous, accessible, flexible, motivated</li></ul><h3>C. Grammar (Ngữ pháp)</h3><p><strong>Unit 9: Three-word Phrasal Verbs</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>look forward to + V-ing:</strong> mong chờ</li><li>Ex: I'm <strong>looking forward to</strong> starting my new job.</li><li><strong>come up with:</strong> nghĩ ra, đưa ra</li><li>Ex: She <strong>came up with</strong> a brilliant idea.</li><li><strong>get on with:</strong> hòa hợp với</li><li>Ex: I <strong>get on with</strong> my colleagues well.</li><li><strong>catch up with / keep up with:</strong> bắt kịp / theo kịp</li><li>Ex: I need to <strong>catch up with</strong> my work.</li><li>Ex: It's hard to <strong>keep up with</strong> technology.</li><li><strong>put up with:</strong> chịu đựng</li><li>Ex: I can't <strong>put up with</strong> this stress.</li><li><strong>run out of:</strong> hết, cạn kiệt</li><li>Ex: We're <strong>running out of</strong> time.</li><li><strong>look up to / look down on:</strong> ngưỡng mộ / coi thường</li><li>Ex: I <strong>look up to</strong> my mentor.</li><li><strong>face up to / live up to:</strong> đối mặt với / đáp ứng</li><li>Ex: You must <strong>face up to</strong> challenges.</li><li>Ex: He <strong>lives up to</strong> expectations.</li><li><strong>make up for:</strong> bù đắp</li><li>Ex: Hard work can <strong>make up for</strong> lack of experience.</li></ul><p><strong>Unit 10: Reported Speech (Commands, Requests, Offers, Advice)</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Commands:</strong> tell/order + O + (not) to V</li><li>Ex: She <strong>told</strong> me <strong>to study</strong> harder.</li><li>Ex: He <strong>ordered</strong> us <strong>not to be</strong> late.</li><li><strong>Requests:</strong> ask/request + O + (not) to V</li><li>Ex: She <strong>asked</strong> me <strong>to help</strong> her.</li><li>Ex: He <strong>requested</strong> us <strong>not to make</strong> noise.</li><li><strong>Offers:</strong> offer/volunteer + to V</li><li>Ex: She <strong>offered to help</strong> me.</li><li>Ex: He <strong>volunteered to teach</strong> me.</li><li><strong>Invitations:</strong> invite + O + to V</li><li>Ex: She <strong>invited</strong> me <strong>to join</strong> them.</li><li><strong>Advice:</strong> advise/recommend/warn + O + (not) to V</li><li>Ex: She <strong>advised</strong> me <strong>to take</strong> the course.</li><li>Ex: He <strong>warned</strong> me <strong>not to waste</strong> time.</li><li><strong>Suggestions:</strong> suggest + V-ing / that S (should) V</li><li>Ex: She <strong>suggested studying</strong> together.</li><li>Ex: He <strong>suggested that I (should) enroll</strong>.</li></ul>"
+            },
+            {
+              "heading": "II. Skills - Ôn tập kỹ năng",
+              "content": "<h3>A. Reading (Đọc hiểu)</h3><p><strong>Kỹ năng cần ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc lướt để nắm ý chính (skimming)</li><li>Đọc kỹ để tìm thông tin chi tiết (scanning)</li><li>Đoán nghĩa từ vựng qua ngữ cảnh</li><li>Hiểu ý chính và ý phụ của đoạn văn</li><li>Xác định thông tin đúng/sai</li><li>Suy luận và rút ra kết luận</li></ul><p><strong>Chủ đề đã đọc:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Career planning and development</li><li>Lifelong learning in the modern world</li><li>Skills for the future</li></ul><h3>B. Speaking (Nói)</h3><p><strong>Chủ đề đã học:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Discussing career plans and goals</li><li>Talking about learning experiences</li><li>Giving and reporting advice</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>I'm looking forward to starting my career...</li><li>I came up with a plan to...</li><li>I need to keep up with industry changes.</li><li>My teacher told me to study harder.</li><li>She advised me to take online courses.</li><li>He suggested enrolling in a MOOC.</li></ul><h3>C. Listening (Nghe hiểu)</h3><p><strong>Kỹ năng cần ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe để nắm ý chính</li><li>Nghe để tìm thông tin cụ thể</li><li>Điền thông tin còn thiếu (gap-filling)</li><li>Trả lời câu hỏi chi tiết</li><li>Ghi chú các ý quan trọng (note-taking)</li><li>Hiểu thái độ và ý kiến của người nói</li></ul><p><strong>Chủ đề đã nghe:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Talks about career development</li><li>Discussions about online learning</li><li>Career and learning advice</li></ul><h3>D. Writing (Viết)</h3><p><strong>Dạng bài đã học:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Writing about career plans</li><li>Writing about learning experiences</li><li>Giving advice using reported speech</li></ul><p><strong>Kỹ năng viết:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Tổ chức bài viết: Introduction - Body - Conclusion</li><li>Sử dụng three-word phrasal verbs</li><li>Sử dụng reported speech</li><li>Viết câu mạch lạc và logic</li></ul><p><strong>Cấu trúc bài viết mẫu:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Introduction:</strong> Giới thiệu chủ đề (1-2 câu)</li><li><strong>Body:</strong> Trình bày ý chính (2-3 đoạn với supporting details)</li><li><strong>Conclusion:</strong> Kết luận và nhấn mạnh ý chính (1-2 câu)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Mixed Exercise",
+            "method": "<p>Review all grammar points and vocabulary from Units 9-10.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Career planning is essential for success in today's competitive job market. Many young professionals look forward to building rewarding careers, but they often struggle to come up with clear strategies. My career counselor told me to start planning early and advised me to develop both hard and soft skills.\n\nSuccessful people emphasize the importance of continuous learning. Technology changes so rapidly that you need to keep up with new developments constantly. My mentor recommended that I should take online courses regularly and suggested joining professional networks. He also offered to help me create a learning plan. This advice proved invaluable - I enrolled in several MOOCs and earned certificates that significantly improved my career prospects.\n\nBuilding relationships is equally important. You should get on with your colleagues and look up to experienced professionals who can guide you. Don't look down on any job or task - every experience helps you grow. When facing challenges, you must face up to them rather than avoid them. My manager told me not to give up when things get difficult and encouraged me to stay persistent.\n\nWork-life balance matters too. While ambition is important, you shouldn't put up with excessive stress. Some people run out of energy because they work too hard without rest. Remember that you need to live up to your potential while maintaining your health and happiness. Hard work can make up for lack of experience, but sustainable success requires balance.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "Career planning is unnecessary",
+                  "Career success requires planning, learning, relationships, and balance",
+                  "Only hard work matters",
+                  "Experience is not important"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về thành công trong sự nghiệp cần lập kế hoạch, học tập, mối quan hệ và sự cân bằng."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "What did the career counselor advise?",
+                "options": [
+                  "To avoid planning",
+                  "To start planning early and develop skills",
+                  "To focus only on hard skills",
+                  "To ignore soft skills"
+                ],
+                "correct": 1,
+                "explanation": "Người tư vấn nghề nghiệp khuyên nên bắt đầu lập kế hoạch sớm và phát triển kỹ năng."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The phrase 'keep up with' in paragraph 2 is closest in meaning to ______.",
+                "options": [
+                  "ignore",
+                  "stay current with",
+                  "fall behind",
+                  "avoid"
+                ],
+                "correct": 1,
+                "explanation": "Keep up with = stay current with (theo kịp, bắt kịp)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "According to the passage, what should you do when facing challenges?",
+                "options": [
+                  "Avoid them",
+                  "Face up to them",
+                  "Give up",
+                  "Ignore them"
+                ],
+                "correct": 1,
+                "explanation": "Khi đối mặt với thách thức, bạn nên đối mặt với chúng (face up to them)."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "What does the passage say about work-life balance?",
+                "options": [
+                  "It's not important",
+                  "Only work matters",
+                  "Balance is necessary for sustainable success",
+                  "Rest is a waste of time"
+                ],
+                "correct": 2,
+                "explanation": "Sự cân bằng là cần thiết cho thành công bền vững."
+              }
+            ]
+          },
+          {
+            "id": "reading2",
+            "type": "reading",
+            "passage": "Lifelong learning has become more important than ever in our rapidly changing world. My professor once told me that education doesn't end with graduation. He advised me to embrace continuous learning and recommended that I should read widely beyond my field. This advice changed my perspective on education.\n\nOnline learning platforms have revolutionized education. Websites like Coursera, edX, and Udemy offer thousands of courses on virtually any topic. My manager asked me to complete a data analysis course last year, and it significantly improved my performance. The instructor told us to practice daily and encouraged us not to give up when facing difficulties. She also suggested joining online study groups to stay motivated.\n\nHowever, lifelong learning requires discipline and motivation. My mentor warned me not to take on too many courses at once. He advised me to focus on quality rather than quantity and offered to help me create a realistic learning schedule. He also recommended that I should set specific goals and track my progress regularly.\n\nThe benefits extend beyond career advancement. Learning new skills boosts confidence, keeps the mind sharp, and opens doors to opportunities. Whether you're learning a language, mastering a technical skill, or exploring a hobby, the key is to stay curious and committed. As my teacher used to say, 'Never stop learning, because life never stops teaching.'",
+            "questions": [
+              {
+                "id": "reading2-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "School education is enough",
+                  "Lifelong learning is essential and beneficial",
+                  "Online courses are expensive",
+                  "Learning is only for young people"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về học tập suốt đời là cần thiết và có lợi."
+              },
+              {
+                "id": "reading2-q2",
+                "question": "What did the professor advise?",
+                "options": [
+                  "To stop learning after graduation",
+                  "To embrace continuous learning and read widely",
+                  "To focus only on one field",
+                  "To avoid online courses"
+                ],
+                "correct": 1,
+                "explanation": "Giáo sư khuyên nên đón nhận việc học liên tục và đọc rộng rãi."
+              },
+              {
+                "id": "reading2-q3",
+                "question": "The word 'revolutionized' in paragraph 2 is closest in meaning to ______.",
+                "options": [
+                  "destroyed",
+                  "completely changed",
+                  "slightly modified",
+                  "ignored"
+                ],
+                "correct": 1,
+                "explanation": "Revolutionized = completely changed (cách mạng hóa, thay đổi hoàn toàn)."
+              },
+              {
+                "id": "reading2-q4",
+                "question": "What did the mentor warn about?",
+                "options": [
+                  "Learning is useless",
+                  "Not to take on too many courses at once",
+                  "Online courses don't work",
+                  "To avoid all learning"
+                ],
+                "correct": 1,
+                "explanation": "Người cố vấn cảnh báo không nên tham gia quá nhiều khóa học cùng lúc."
+              },
+              {
+                "id": "reading2-q5",
+                "question": "According to the passage, what are the benefits of lifelong learning?",
+                "options": [
+                  "Only career advancement",
+                  "Boosts confidence, keeps mind sharp, opens opportunities",
+                  "Nothing important",
+                  "Only financial benefits"
+                ],
+                "correct": 1,
+                "explanation": "Lợi ích bao gồm: tăng sự tự tin, giữ trí óc minh mẫn, mở ra cơ hội."
+              }
+            ]
+          },
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "I'm really looking forward ______ my new job next month.",
+            "options": ["to start", "to starting", "start", "starting"],
+            "correct": 1,
+            "explanation": "Look forward to + V-ing (mong chờ làm gì)."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "\"Study harder!\" → She ______ me ______ harder.",
+            "options": ["told / to study", "told / study", "said / to study", "asked / study"],
+            "correct": 0,
+            "explanation": "Tell + O + to V - tường thuật mệnh lệnh."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "She ______ a brilliant solution to the problem.",
+            "options": ["came up with", "came with up", "came up", "up came with"],
+            "correct": 0,
+            "explanation": "Come up with = nghĩ ra, đưa ra (giải pháp, ý tưởng)."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "\"Please help me.\" → She ______ me ______ her.",
+            "options": ["told / to help", "asked / to help", "ordered / help", "said / to help"],
+            "correct": 1,
+            "explanation": "Ask + O + to V - tường thuật yêu cầu (có 'please')."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "I ______ my colleagues very well.",
+            "options": ["get with on", "get on with", "get on", "on get with"],
+            "correct": 1,
+            "explanation": "Get on with = hòa hợp với, có quan hệ tốt với."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "\"Don't be late!\" → He ______ us ______ late.",
+            "options": ["told / not to be", "told / to not be", "said / not be", "asked / not be"],
+            "correct": 0,
+            "explanation": "Tell + O + not to V - tường thuật mệnh lệnh phủ định."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "We need to ______ the latest technology trends.",
+            "options": ["keep up with", "keep with up", "keep up", "up keep with"],
+            "correct": 0,
+            "explanation": "Keep up with = theo kịp, bắt kịp."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "\"I'll help you.\" → She ______ to help me.",
+            "options": ["told", "asked", "offered", "ordered"],
+            "correct": 2,
+            "explanation": "Offer + to V - tường thuật lời đề nghị."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "I can't ______ this stressful work environment anymore.",
+            "options": ["put with up", "put up with", "put up", "up put with"],
+            "correct": 1,
+            "explanation": "Put up with = chịu đựng."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "\"You should take this course.\" → She ______ me ______ that course.",
+            "options": ["told / to take", "advised / to take", "ordered / take", "asked / take"],
+            "correct": 1,
+            "explanation": "Advise + O + to V - tường thuật lời khuyên."
+          },
+          {
+            "id": "mcq11",
+            "type": "mcq",
+            "question": "We're ______ time to finish the project.",
+            "options": ["running out of", "running of out", "running out", "out running of"],
+            "correct": 0,
+            "explanation": "Run out of = hết, cạn kiệt."
+          },
+          {
+            "id": "mcq12",
+            "type": "mcq",
+            "question": "\"Let's study together.\" → She ______ studying together.",
+            "options": ["told", "asked", "suggested", "ordered"],
+            "correct": 2,
+            "explanation": "Suggest + V-ing - tường thuật lời đề nghị."
+          },
+          {
+            "id": "mcq13",
+            "type": "mcq",
+            "question": "Young people ______ successful entrepreneurs.",
+            "options": ["look to up", "look up to", "look up", "up look to"],
+            "correct": 1,
+            "explanation": "Look up to = kính trọng, ngưỡng mộ."
+          },
+          {
+            "id": "mcq14",
+            "type": "mcq",
+            "question": "\"Please don't tell anyone.\" → She ______ me ______ tell anyone.",
+            "options": ["asked / not to", "asked / to not", "told / not", "said / not to"],
+            "correct": 0,
+            "explanation": "Ask + O + not to V - yêu cầu phủ định."
+          },
+          {
+            "id": "mcq15",
+            "type": "mcq",
+            "question": "You must ______ the challenges in your career.",
+            "options": ["face up to", "face to up", "face up", "up face to"],
+            "correct": 0,
+            "explanation": "Face up to = đối mặt với."
+          },
+          {
+            "id": "mcq16",
+            "type": "mcq",
+            "question": "\"You shouldn't waste time.\" → She ______ me ______ waste time.",
+            "options": ["advised / not to", "advised / to not", "told / not", "asked / not"],
+            "correct": 0,
+            "explanation": "Advise + O + not to V - lời khuyên phủ định."
+          },
+          {
+            "id": "mcq17",
+            "type": "mcq",
+            "question": "She always ______ her promises.",
+            "options": ["lives to up", "lives up to", "lives up", "up lives to"],
+            "correct": 1,
+            "explanation": "Live up to = đáp ứng, sống theo (kỳ vọng, lời hứa)."
+          },
+          {
+            "id": "mcq18",
+            "type": "mcq",
+            "question": "\"Why don't you enroll?\" → He ______ me ______ enroll.",
+            "options": ["told / to", "asked / to", "recommended / to", "ordered / to"],
+            "correct": 2,
+            "explanation": "Recommend + O + to V - tường thuật lời khuyên."
+          },
+          {
+            "id": "mcq19",
+            "type": "mcq",
+            "question": "Hard work can ______ lack of experience.",
+            "options": ["make for up", "make up for", "make up", "up make for"],
+            "correct": 1,
+            "explanation": "Make up for = bù đắp."
+          },
+          {
+            "id": "mcq20",
+            "type": "mcq",
+            "question": "\"Would you like to join us?\" → She ______ me ______ join them.",
+            "options": ["told / to", "invited / to", "ordered / to", "asked / to"],
+            "correct": 1,
+            "explanation": "Invite + O + to V - tường thuật lời mời."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "Three-word phrasal verbs cannot be separated.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Cụm động từ có 3 từ không thể tách rời, tân ngữ luôn đứng sau."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "We use 'tell' for commands and 'ask' for requests.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Tell dùng cho mệnh lệnh, ask dùng cho yêu cầu."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "After 'look forward to', we use V-ing, not to-infinitive.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Look forward to + V-ing (to là giới từ, không phải to-infinitive)."
+          },
+          {
+            "id": "msq4",
+            "type": "msq",
+            "question_text": "After 'suggest', we use to-infinitive.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Sau suggest dùng V-ing hoặc that + S + (should) + V, không dùng to-infinitive."
+          },
+          {
+            "id": "msq5",
+            "type": "msq",
+            "question_text": "'Look up to' and 'look down on' have opposite meanings.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Look up to = ngưỡng mộ, look down on = coi thường (nghĩa trái ngược)."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call the route someone takes through their working life? (two words)",
+            "correct": "career path",
+            "explanation": "Career path: con đường sự nghiệp."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "What do we call learning that continues throughout life? (two words)",
+            "correct": "lifelong learning",
+            "explanation": "Lifelong learning: học tập suốt đời."
+          },
+          {
+            "id": "sa3",
+            "type": "sa",
+            "question_text": "Complete: \"Study harder!\" → She ______ me to study harder.",
+            "correct": "told",
+            "explanation": "Tell + O + to V - tường thuật mệnh lệnh."
+          },
+          {
+            "id": "sa4",
+            "type": "sa",
+            "question_text": "What phrasal verb means 'to think of or produce an idea'? (three words)",
+            "correct": "come up with",
+            "explanation": "Come up with = nghĩ ra, đưa ra (ý tưởng)."
+          },
+          {
+            "id": "essay1",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about your career and learning plans. Use three-word phrasal verbs and reported speech.",
+            "sample_answer": "I'm looking forward to pursuing a career in software engineering. My career counselor told me to start planning early and advised me to develop both technical and soft skills. She recommended that I should take online courses and suggested joining professional networks. I came up with a learning plan that includes completing MOOCs on Coursera. I need to keep up with the latest programming languages and technologies. My mentor offered to help me and encouraged me not to give up when facing challenges. I look up to successful developers and want to live up to my potential. I know I must face up to difficulties, but I'm ready to make up for my lack of experience through hard work and continuous learning.",
+            "explanation": "Bài viết sử dụng: looking forward to, told me to, advised me to, recommended that I should, suggested, came up with, keep up with, offered to, encouraged me not to, look up to, live up to, face up to, make up for."
+          },
+          {
+            "id": "essay2",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about advice you received about career and learning. Use reported speech.",
+            "sample_answer": "Throughout my education, I've received valuable advice about career and learning. My teacher told me to study regularly and advised me not to procrastinate. She recommended that I should develop time management skills and suggested joining study groups. My parents asked me to focus on both academic and practical skills. They encouraged me to pursue my interests and warned me not to choose a career just for money. A mentor offered to help me create a career plan and advised me to take online courses. He told me that lifelong learning is essential and suggested that I should earn professional certificates. This advice has shaped my approach to career planning and continuous education.",
+            "explanation": "Bài viết sử dụng: told me to, advised me not to, recommended that I should, suggested, asked me to, encouraged me to, warned me not to, offered to, told me that, suggested that I should."
+          },
+          {
+            "id": "essay3",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) giving advice to someone starting their career. Use three-word phrasal verbs and commands/suggestions.",
+            "sample_answer": "If you're starting your career, here's my advice. First, look forward to learning, not just earning. Come up with clear goals but stay flexible. Get on with people from different backgrounds - networking is crucial. Keep up with industry changes through continuous learning. Don't put up with jobs that make you miserable, but also don't look down on any honest work. Face up to your weaknesses and work to improve them. Look up to successful professionals and learn from them. Remember that you can make up for lack of experience with enthusiasm and dedication. Don't run out of patience - building a career takes time. Finally, live up to your commitments and never stop learning.",
+            "explanation": "Bài viết sử dụng các cụm động từ: look forward to, come up with, get on with, keep up with, put up with, look down on, face up to, look up to, make up for, run out of, live up to."
+          },
+          {
+            "id": "essay4",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about the importance of lifelong learning for career success. Use both three-word phrasal verbs and reported speech.",
+            "sample_answer": "Lifelong learning is essential for career success in today's rapidly changing world. My professor once told me that education never stops and advised me to embrace continuous learning. He recommended that I should keep up with industry trends and suggested taking online courses regularly. Successful professionals emphasize that you need to come up with strategies for continuous development. They warn us not to run out of motivation and encourage us to face up to new challenges. Employers look up to workers who can adapt and learn. My mentor offered to help me create a learning plan and told me that those who live up to their learning commitments will succeed. Remember, you must make up for any skill gaps through dedicated learning.",
+            "explanation": "Bài viết kết hợp: told me that, advised me to, recommended that I should, suggested, keep up with, come up with, run out of, face up to, look up to, offered to, live up to, make up for."
+          }
+        ]
+      }
+    }
+  ]
+}

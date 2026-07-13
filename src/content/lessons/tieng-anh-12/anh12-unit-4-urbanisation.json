@@ -1,0 +1,287 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-unit-4-urbanisation",
+      "name": "Unit 4: Urbanisation",
+      "slug": "unit-4-urbanisation",
+      "chapter": "Unit 4: Urbanisation",
+      "chapter_id": "A12",
+      "lesson_id": 5,
+      "description": "Learn about urbanisation, present perfect tense, and double comparatives.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2670&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "vocab-4",
+          "name": "Urbanisation Vocabulary",
+          "slug": "urbanisation-vocabulary",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Unit 4: Urbanisation",
+          "sections": [
+            {
+              "heading": "1. Từ vựng (Vocabulary)",
+              "content": "<div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Word</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Type & IPA</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Meaning</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Example</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2 font-bold'>Urbanisation</td><td class='px-4 py-2'>(n) /ˌɜːbənaɪˈzeɪʃn/</td><td class='px-4 py-2'>Đô thị hóa</td><td class='px-4 py-2'>Urbanisation is happening rapidly.</td></tr><tr><td class='px-4 py-2 font-bold'>Rural</td><td class='px-4 py-2'>(adj) /ˈrʊərəl/</td><td class='px-4 py-2'>Thuộc nông thôn</td><td class='px-4 py-2'>People move from rural areas.</td></tr><tr><td class='px-4 py-2 font-bold'>Urban</td><td class='px-4 py-2'>(adj) /ˈɜːbən/</td><td class='px-4 py-2'>Thuộc đô thị</td><td class='px-4 py-2'>Urban areas are crowded.</td></tr><tr><td class='px-4 py-2 font-bold'>Migrate</td><td class='px-4 py-2'>(v) /maɪˈɡreɪt/</td><td class='px-4 py-2'>Di cư</td><td class='px-4 py-2'>People migrate to cities.</td></tr><tr><td class='px-4 py-2 font-bold'>Infrastructure</td><td class='px-4 py-2'>(n) /ˈɪnfrəstrʌktʃə(r)/</td><td class='px-4 py-2'>Cơ sở hạ tầng</td><td class='px-4 py-2'>Improve city infrastructure.</td></tr><tr><td class='px-4 py-2 font-bold'>Overcrowding</td><td class='px-4 py-2'>(n) /ˌəʊvəˈkraʊdɪŋ/</td><td class='px-4 py-2'>Quá đông đúc</td><td class='px-4 py-2'>Overcrowding causes problems.</td></tr><tr><td class='px-4 py-2 font-bold'>Slum</td><td class='px-4 py-2'>(n) /slʌm/</td><td class='px-4 py-2'>Khu ổ chuột</td><td class='px-4 py-2'>Many people live in slums.</td></tr><tr><td class='px-4 py-2 font-bold'>Congestion</td><td class='px-4 py-2'>(n) /kənˈdʒestʃən/</td><td class='px-4 py-2'>Tắc nghẽn</td><td class='px-4 py-2'>Traffic congestion is terrible.</td></tr><tr><td class='px-4 py-2 font-bold'>Sanitation</td><td class='px-4 py-2'>(n) /ˌsænɪˈteɪʃn/</td><td class='px-4 py-2'>Vệ sinh công cộng</td><td class='px-4 py-2'>Improve sanitation systems.</td></tr><tr><td class='px-4 py-2 font-bold'>Affordable</td><td class='px-4 py-2'>(adj) /əˈfɔːdəbl/</td><td class='px-4 py-2'>Có khả năng chi trả</td><td class='px-4 py-2'>Housing should be affordable.</td></tr><tr><td class='px-4 py-2 font-bold'>Unemployment</td><td class='px-4 py-2'>(n) /ˌʌnɪmˈplɔɪmənt/</td><td class='px-4 py-2'>Thất nghiệp</td><td class='px-4 py-2'>Unemployment is rising.</td></tr><tr><td class='px-4 py-2 font-bold'>Poverty</td><td class='px-4 py-2'>(n) /ˈpɒvəti/</td><td class='px-4 py-2'>Nghèo đói</td><td class='px-4 py-2'>Reduce urban poverty.</td></tr><tr><td class='px-4 py-2 font-bold'>Expand</td><td class='px-4 py-2'>(v) /ɪkˈspænd/</td><td class='px-4 py-2'>Mở rộng</td><td class='px-4 py-2'>Cities continue to expand.</td></tr><tr><td class='px-4 py-2 font-bold'>Densely</td><td class='px-4 py-2'>(adv) /ˈdensli/</td><td class='px-4 py-2'>Dày đặc</td><td class='px-4 py-2'>Densely populated areas.</td></tr></tbody></table></div>"
+            },
+            {
+              "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
+              "content": "<p><strong>Urban and rural (Đô thị và nông thôn):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>urbanisation:</strong> đô thị hóa</li><li><strong>urban area:</strong> khu vực đô thị</li><li><strong>rural area:</strong> khu vực nông thôn</li><li><strong>migrate to cities:</strong> di cư đến thành phố</li><li><strong>urban population:</strong> dân số đô thị</li><li><strong>city dweller:</strong> cư dân thành phố</li></ul><p><strong>Urban problems (Vấn đề đô thị):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>overcrowding:</strong> quá đông đúc</li><li><strong>traffic congestion:</strong> tắc nghẽn giao thông</li><li><strong>air pollution:</strong> ô nhiễm không khí</li><li><strong>housing shortage:</strong> thiếu nhà ở</li><li><strong>slum:</strong> khu ổ chuột</li><li><strong>unemployment:</strong> thất nghiệp</li><li><strong>poverty:</strong> nghèo đói</li><li><strong>crime rate:</strong> tỷ lệ tội phạm</li></ul><p><strong>Infrastructure and services (Cơ sở hạ tầng và dịch vụ):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>infrastructure:</strong> cơ sở hạ tầng</li><li><strong>public transport:</strong> phương tiện công cộng</li><li><strong>sanitation:</strong> vệ sinh công cộng</li><li><strong>water supply:</strong> cung cấp nước</li><li><strong>healthcare facilities:</strong> cơ sở y tế</li><li><strong>educational facilities:</strong> cơ sở giáo dục</li></ul><p><strong>Solutions (Giải pháp):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>urban planning:</strong> quy hoạch đô thị</li><li><strong>affordable housing:</strong> nhà ở giá phải chăng</li><li><strong>improve infrastructure:</strong> cải thiện cơ sở hạ tầng</li><li><strong>create jobs:</strong> tạo việc làm</li><li><strong>expand public transport:</strong> mở rộng phương tiện công cộng</li></ul><p><strong>Collocations về đô thị hóa:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>rapid urbanisation:</strong> đô thị hóa nhanh</li><li><strong>densely populated:</strong> dân cư đông đúc</li><li><strong>urban sprawl:</strong> sự lan rộng đô thị</li><li><strong>sustainable development:</strong> phát triển bền vững</li><li><strong>quality of life:</strong> chất lượng cuộc sống</li></ul>"
+            }
+,
+            {
+              "heading": "3. Ngữ âm: Nhấn mạnh từ trong câu",
+              "content": "<h3>Sentence stress for emphasis</h3><p><strong>Quy tắc nhấn mạnh từ trong câu:</strong></p><p><strong>1. Nhấn mạnh từ quan trọng (Content words):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Thường nhấn: nouns, main verbs, adjectives, adverbs, question words</li><li>Ex: <strong>CITIES</strong> are becoming <strong>MORE</strong> and <strong>MORE CROWDED</strong>.</li><li>Ex: <strong>URBANISATION</strong> has <strong>INCREASED</strong> <strong>RAPIDLY</strong>.</li></ul><p><strong>2. Không nhấn (Function words):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Thường không nhấn: articles, prepositions, pronouns, auxiliary verbs</li><li>Ex: The city has become more crowded.</li><li>Chỉ nhấn: <strong>CITY</strong>, <strong>BECOME</strong>, <strong>MORE</strong>, <strong>CROWDED</strong></li></ul><p><strong>3. Nhấn mạnh để tương phản hoặc sửa lỗi:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Có thể nhấn bất kỳ từ nào để nhấn mạnh</li><li>Ex: I said <strong>URBAN</strong>, not rural. (nhấn để tương phản)</li><li>Ex: The problem is getting <strong>WORSE</strong>, not better.</li></ul><p><strong>4. Ví dụ trong Unit 4:</strong></p><ul class='list-disc pl-5 space-y-2'><li>The <strong>MORE</strong> people migrate, the <strong>MORE CROWDED</strong> cities become.</li><li><strong>TRAFFIC CONGESTION</strong> has become <strong>WORSE</strong> and <strong>WORSE</strong>.</li><li>We need to <strong>IMPROVE INFRASTRUCTURE</strong>.</li></ul><p><strong>Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh đúng giúp truyền đạt ý nghĩa rõ ràng</li><li>Trong so sánh kép, nhấn mạnh cả hai phần: The MORE... the MORE...</li></ul>"
+            }
+,
+            {
+              "heading": "4. Ngữ pháp: Thì hiện tại hoàn thành & So sánh kép",
+              "content": "<h3>A. Present Perfect Tense (Thì hiện tại hoàn thành)</h3><p><strong>1. Cấu trúc:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Khẳng định:</strong> S + have/has + V3/ed</li><li>Ex: Urbanisation <strong>has increased</strong> rapidly.</li><li>Ex: Many people <strong>have moved</strong> to cities.</li><li><strong>Phủ định:</strong> S + have/has not (haven't/hasn't) + V3/ed</li><li>Ex: The government <strong>hasn't solved</strong> the problem yet.</li><li><strong>Nghi vấn:</strong> Have/Has + S + V3/ed?</li><li>Ex: <strong>Have</strong> you <strong>visited</strong> the new urban area?</li></ul><p><strong>2. Cách dùng:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Hành động bắt đầu trong quá khứ, tiếp tục đến hiện tại:</strong></li><li>Ex: I <strong>have lived</strong> in this city <strong>for</strong> 10 years. (vẫn đang sống)</li><li>Ex: Traffic congestion <strong>has been</strong> a problem <strong>since</strong> 2010.</li><li><strong>Hành động vừa mới xảy ra (just, recently, lately):</strong></li><li>Ex: The city <strong>has just opened</strong> a new metro line.</li><li><strong>Kinh nghiệm đến hiện tại (ever, never, before):</strong></li><li>Ex: <strong>Have</strong> you <strong>ever been</strong> to a slum area?</li><li><strong>Hành động đã hoàn thành, kết quả còn ở hiện tại (already, yet):</strong></li><li>Ex: They <strong>have already built</strong> new housing. (nhà đã xây xong)</li><li>Ex: We <strong>haven't finished</strong> the project <strong>yet</strong>.</li></ul><p><strong>3. Dấu hiệu nhận biết:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>For + khoảng thời gian:</strong> for 5 years, for a long time</li><li><strong>Since + mốc thời gian:</strong> since 2010, since last year</li><li><strong>Already, yet, just, recently, lately, ever, never, before, so far, up to now</strong></li></ul><h3>B. Double Comparatives (So sánh kép)</h3><p><strong>1. Cấu trúc:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>The + comparative + S + V, the + comparative + S + V</strong></li><li>Nghĩa: Càng... thì càng...</li></ul><p><strong>2. Với tính từ/trạng từ ngắn:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>The + adj/adv-er + S + V, the + adj/adv-er + S + V</strong></li><li>Ex: <strong>The bigger</strong> the city is, <strong>the more crowded</strong> it becomes.</li><li>Ex: <strong>The faster</strong> urbanisation happens, <strong>the worse</strong> the problems get.</li></ul><p><strong>3. Với tính từ/trạng từ dài:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>The more + adj/adv + S + V, the more + adj/adv + S + V</strong></li><li>Ex: <strong>The more expensive</strong> housing becomes, <strong>the harder</strong> it is to afford.</li><li>Ex: <strong>The more rapidly</strong> cities expand, <strong>the more difficult</strong> planning becomes.</li></ul><p><strong>4. Với danh từ:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>The more + noun + S + V, the more + noun + S + V</strong></li><li>Ex: <strong>The more people</strong> migrate, <strong>the more problems</strong> arise.</li><li>Ex: <strong>The more infrastructure</strong> we build, <strong>the better</strong> life becomes.</li></ul><p><strong>5. Các trường hợp đặc biệt:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>good → better:</strong> The better the planning, the better the results.</li><li><strong>bad → worse:</strong> The worse the traffic, the more stressed people feel.</li><li><strong>many/much → more:</strong> The more money invested, the faster development happens.</li><li><strong>little → less:</strong> The less space available, the higher the prices.</li></ul><h3>C. Kết hợp Present Perfect và Double Comparatives</h3><ul class='list-disc pl-5 space-y-2'><li>Ex: Urbanisation <strong>has increased</strong>, and <strong>the more</strong> it increases, <strong>the more</strong> problems we face.</li><li>Ex: Cities <strong>have become</strong> larger, and <strong>the larger</strong> they become, <strong>the harder</strong> they are to manage.</li></ul>"
+            }
+,
+            {
+              "heading": "5. I. Getting Started",
+              "content": "<p><strong>Chủ đề:</strong> Urbanisation and its effects - Đô thị hóa và tác động</p><p><strong>Nội dung chính:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Hội thoại về sự phát triển của thành phố</li><li>Thảo luận về lý do người dân di cư đến thành phố</li><li>Chia sẻ về các vấn đề đô thị</li><li>Nói về những thay đổi trong thành phố</li></ul><p><strong>Các chủ đề được đề cập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Migration:</strong> Di cư từ nông thôn ra thành phố</li><li><strong>Urban growth:</strong> Sự phát triển đô thị</li><li><strong>Problems:</strong> Tắc nghẽn, ô nhiễm, thiếu nhà ở</li><li><strong>Changes:</strong> Những thay đổi trong cuộc sống đô thị</li></ul>"
+            },
+            {
+              "heading": "6. II. Language",
+              "content": "<p><strong>A. Pronunciation: Sentence stress for emphasis</strong></p><p>Luyện phát âm nhấn mạnh từ trong câu</p><p><strong>B. Vocabulary:</strong> Urbanisation</p><ul class='list-disc pl-5 space-y-2'><li>Urban/Rural: urbanisation, urban area, rural area, migrate</li><li>Problems: overcrowding, congestion, slum, poverty, unemployment</li><li>Infrastructure: infrastructure, sanitation, public transport</li><li>Solutions: affordable housing, urban planning, expand</li></ul><p><strong>C. Grammar:</strong> Present Perfect and Double Comparatives</p><ul class='list-disc pl-5 space-y-2'><li>Present Perfect: have/has + V3/ed (for, since, already, yet, just)</li><li>Double Comparatives: The + comparative..., the + comparative...</li><li>The bigger..., the more crowded...</li><li>The more people..., the more problems...</li></ul>"
+            },
+            {
+              "heading": "7. III. Reading",
+              "content": "<p><strong>Chủ đề:</strong> Urbanisation: benefits and challenges</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc hiểu về quá trình đô thị hóa</li><li>Tìm thông tin về lợi ích và thách thức</li><li>Hiểu về nguyên nhân di cư</li><li>Phân tích các giải pháp đô thị</li></ul><p><strong>Nội dung:</strong> Bài đọc giới thiệu về:</p><ul class='list-disc pl-5 space-y-2'><li><strong>Causes:</strong> Nguyên nhân của đô thị hóa</li><li><strong>Benefits:</strong> Cơ hội việc làm, giáo dục, y tế tốt hơn</li><li><strong>Challenges:</strong> Quá tải, ô nhiễm, khu ổ chuột</li><li><strong>Solutions:</strong> Quy hoạch đô thị, cải thiện cơ sở hạ tầng</li></ul>"
+            },
+            {
+              "heading": "8. IV. Speaking",
+              "content": "<p><strong>Chủ đề:</strong> Discussing urbanisation and city life</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nói về sự thay đổi của thành phố</li><li>Thảo luận về ưu và nhược điểm của đô thị hóa</li><li>So sánh cuộc sống thành phố và nông thôn</li><li>Đề xuất giải pháp cho vấn đề đô thị</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>The city has become... / has changed...</li><li>More and more people have moved to...</li><li>The bigger the city, the more...</li><li>One advantage/disadvantage is...</li><li>The more... the more...</li><li>I think we should...</li><li>It's important to improve...</li></ul>"
+            }
+,
+            {
+              "heading": "9. V. Listening",
+              "content": "<p><strong>Chủ đề:</strong> A talk about urban development</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe hiểu về phát triển đô thị</li><li>Điền thông tin về dân số và cơ sở hạ tầng</li><li>Trả lời câu hỏi về vấn đề và giải pháp</li><li>Ghi chú các số liệu thống kê</li></ul><p><strong>Nội dung:</strong> Bài nghe về:</p><ul class='list-disc pl-5 space-y-2'><li>Tốc độ đô thị hóa</li><li>Sự gia tăng dân số đô thị</li><li>Các dự án cải thiện cơ sở hạ tầng</li><li>Kế hoạch phát triển bền vững</li></ul>"
+            },
+            {
+              "heading": "10. VI. Writing",
+              "content": "<p><strong>Chủ đề:</strong> Writing an essay about urbanisation</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Viết bài luận về đô thị hóa</li><li>Sử dụng Present Perfect và Double Comparatives</li><li>Trình bày nguyên nhân, tác động và giải pháp</li><li>Phân tích ưu và nhược điểm</li></ul><p><strong>Cấu trúc bài luận:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Introduction:</strong> Giới thiệu đô thị hóa</li><li><strong>Body Paragraph 1:</strong> Nguyên nhân và lợi ích</li><li><strong>Body Paragraph 2:</strong> Thách thức và vấn đề</li><li><strong>Body Paragraph 3:</strong> Giải pháp</li><li><strong>Conclusion:</strong> Kết luận</li></ul><p><strong>Useful language:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Urbanisation has increased/grown rapidly...</li><li>More and more people have moved to cities...</li><li>The more people migrate, the more...</li><li>One of the main benefits/problems is...</li><li>The bigger cities become, the harder...</li><li>To address this issue, we should...</li><li>In conclusion, ...</li></ul>"
+            },
+            {
+              "heading": "11. VII. Communication and Culture / CLIL",
+              "content": "<p><strong>Communication:</strong> Expressing opinions about city life</p><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Expressing opinions:</strong></li><li>In my opinion, ...</li><li>I think/believe that...</li><li>From my perspective, ...</li><li>It seems to me that...</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Agreeing/Disagreeing:</strong></li><li>I agree/disagree with...</li><li>That's true/right.</li><li>I see your point, but...</li><li>On the other hand, ...</li></ul><p><strong>Culture:</strong> Urbanisation around the world</p><ul class='list-disc pl-5 space-y-2'><li><strong>Tokyo:</strong> Largest metropolitan area, efficient public transport</li><li><strong>Singapore:</strong> Successful urban planning, green city</li><li><strong>Mumbai:</strong> Rapid urbanisation, slum challenges</li><li><strong>New York:</strong> Diverse urban culture, economic hub</li><li><strong>Ho Chi Minh City:</strong> Fast-growing Vietnamese city</li></ul><p><strong>CLIL (Geography/Social Studies):</strong> Urban geography</p><ul class='list-disc pl-5 space-y-2'><li>Push and pull factors of migration</li><li>Urban sprawl and its effects</li><li>Sustainable urban development</li><li>Smart city concepts</li></ul>"
+            },
+            {
+              "heading": "12. VIII. Looking Back",
+              "content": "<p><strong>Ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Pronunciation:</strong> Sentence stress for emphasis (content words vs. function words)</li><li><strong>Vocabulary:</strong> Urbanisation, rural, urban, migrate, infrastructure, overcrowding, slum, congestion, sanitation, affordable, unemployment, poverty, expand, densely</li><li><strong>Grammar:</strong> Present Perfect (have/has + V3/ed) and Double Comparatives (The + comparative..., the + comparative...)</li><li><strong>Skills:</strong> Reading about urbanisation, Speaking about city life, Listening to urban development, Writing essays</li></ul><p><strong>Self-assessment:</strong> Đánh giá khả năng:</p><ul class='list-disc pl-5 space-y-2'><li>Sử dụng từ vựng về đô thị hóa</li><li>Nhấn mạnh từ đúng trong câu</li><li>Sử dụng Present Perfect và Double Comparatives</li><li>Thảo luận và viết về đô thị hóa</li></ul>"
+            },
+            {
+              "heading": "13. Project",
+              "content": "<p><strong>Đề tài:</strong> Create a presentation about urbanisation in your city/region</p><p><strong>Nhiệm vụ:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghiên cứu về sự phát triển đô thị ở địa phương</li><li>Thu thập số liệu về dân số và cơ sở hạ tầng</li><li>Phân tích các vấn đề đô thị hiện tại</li><li>Đề xuất giải pháp cải thiện</li><li>Tạo presentation với biểu đồ và hình ảnh</li><li>Trình bày trước lớp (5-7 phút)</li></ul><p><strong>Nội dung cần có:</strong></p><ul class='list-disc pl-5 space-y-2'><li>How has your city changed over the years?</li><li>What is the current population?</li><li>Why do people move to your city?</li><li>What are the main urban problems?</li><li>What infrastructure improvements have been made?</li><li>What solutions do you propose?</li><li>How can the city develop sustainably?</li></ul><p><strong>Gợi ý thành phố:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Hanoi: rapid growth, traffic congestion</li><li>Ho Chi Minh City: economic hub, infrastructure challenges</li><li>Da Nang: smart city development</li><li>Can Tho: Mekong Delta urbanisation</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Type 1: Present Perfect and Double Comparatives",
+            "method": "<p>Use Present Perfect for actions from past to present and Double Comparatives to show proportional relationships.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Urbanisation has become one of the most significant trends of the 21st century. More and more people have moved from rural areas to cities in search of better opportunities. This rapid migration has transformed cities around the world, bringing both benefits and challenges.\n\nThe main reason people migrate to cities is economic opportunity. Cities offer more jobs, higher salaries, and better access to education and healthcare. For example, in Vietnam, millions of people have relocated to Ho Chi Minh City and Hanoi over the past two decades. The more people move to cities, the more diverse and dynamic these urban centers become.\n\nHowever, rapid urbanisation has created serious problems. The bigger cities grow, the more crowded they become. Traffic congestion has worsened significantly. Many cities have struggled with inadequate infrastructure - the more rapidly cities expand, the harder it is to provide sufficient housing, water, and sanitation services. Slums have appeared in many urban areas where poor migrants cannot afford proper housing.\n\nTo address these challenges, governments must invest in urban planning and infrastructure. The more money invested in public transportation, the less traffic congestion there will be. Building affordable housing and improving sanitation systems are also essential. With proper planning, cities can continue to grow while maintaining a good quality of life for all residents.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "Cities are perfect places to live",
+                  "Urbanisation brings both benefits and challenges",
+                  "Everyone should move to cities",
+                  "Rural areas are better than cities"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về đô thị hóa mang lại cả lợi ích và thách thức."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "Why do people migrate to cities?",
+                "options": [
+                  "Because they like crowds",
+                  "For economic opportunities and better services",
+                  "Because rural life is boring",
+                  "To escape from family"
+                ],
+                "correct": 1,
+                "explanation": "Người dân di cư đến thành phố vì cơ hội kinh tế và dịch vụ tốt hơn."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The word 'inadequate' in paragraph 3 is closest in meaning to ______.",
+                "options": [
+                  "sufficient",
+                  "not enough",
+                  "excellent",
+                  "modern"
+                ],
+                "correct": 1,
+                "explanation": "Inadequate = not enough (không đủ, thiếu)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "What problem is mentioned in the passage?",
+                "options": [
+                  "Too many parks",
+                  "Traffic congestion and inadequate infrastructure",
+                  "Too much money",
+                  "Too few people"
+                ],
+                "correct": 1,
+                "explanation": "Các vấn đề được đề cập là tắc nghẽn giao thông và cơ sở hạ tầng không đủ."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "According to the passage, what is one solution to urban problems?",
+                "options": [
+                  "Stop people from moving to cities",
+                  "Invest in urban planning and infrastructure",
+                  "Build more slums",
+                  "Do nothing"
+                ],
+                "correct": 1,
+                "explanation": "Một giải pháp là đầu tư vào quy hoạch đô thị và cơ sở hạ tầng."
+              }
+            ]
+          }
+,
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "Urbanisation ______ rapidly over the past decade.",
+            "options": ["increase", "increased", "has increased", "is increasing"],
+            "correct": 2,
+            "explanation": "Has increased (Present Perfect) - hành động bắt đầu trong quá khứ, liên quan đến hiện tại."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "The ______ the city grows, the ______ crowded it becomes.",
+            "options": ["more / more", "bigger / more", "big / crowded", "most / most"],
+            "correct": 1,
+            "explanation": "The bigger..., the more... (so sánh kép): Càng lớn thì càng đông đúc."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "Many people ______ to the city since 2010.",
+            "options": ["move", "moved", "have moved", "are moving"],
+            "correct": 2,
+            "explanation": "Have moved (Present Perfect) - với 'since 2010' chỉ thời gian bắt đầu."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "Traffic ______ has become a serious problem.",
+            "options": ["congest", "congestion", "congested", "congesting"],
+            "correct": 1,
+            "explanation": "Congestion (n): sự tắc nghẽn."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "The more people ______, the more problems arise.",
+            "options": ["migrate", "migrates", "migrated", "migrating"],
+            "correct": 0,
+            "explanation": "Migrate (động từ nguyên thể) - trong cấu trúc so sánh kép."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "We ______ in this city for five years.",
+            "options": ["live", "lived", "have lived", "are living"],
+            "correct": 2,
+            "explanation": "Have lived (Present Perfect) - với 'for five years' chỉ khoảng thời gian."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "The government should provide ______ housing for poor people.",
+            "options": ["afford", "affordable", "affording", "afforded"],
+            "correct": 1,
+            "explanation": "Affordable (adj): có khả năng chi trả."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "The ______ money invested, the ______ the infrastructure.",
+            "options": ["more / better", "much / good", "many / well", "most / best"],
+            "correct": 0,
+            "explanation": "The more..., the better... (so sánh kép): Càng nhiều tiền đầu tư thì cơ sở hạ tầng càng tốt."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "The city ______ significantly over the last 20 years.",
+            "options": ["expand", "expanded", "has expanded", "is expanding"],
+            "correct": 2,
+            "explanation": "Has expanded (Present Perfect) - với 'over the last 20 years'."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "______ areas are less crowded than urban areas.",
+            "options": ["Rural", "Rurally", "Rurals", "Rurality"],
+            "correct": 0,
+            "explanation": "Rural (adj): thuộc nông thôn."
+          }
+,
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "Present Perfect is used with 'for' and 'since' to show duration from past to present.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Present Perfect dùng với 'for' (khoảng thời gian) và 'since' (mốc thời gian)."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "In double comparatives, we always use 'more' for both parts.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Có thể dùng -er cho tính từ ngắn: The bigger..., the better..."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "Urbanisation only brings problems with no benefits.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Đô thị hóa mang lại cả lợi ích (việc làm, giáo dục) và thách thức."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call the process of cities growing and more people living in urban areas? (one word)",
+            "correct": "urbanisation",
+            "explanation": "Urbanisation: đô thị hóa."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "Complete: I ______ (live) here for 10 years. (Present Perfect)",
+            "correct": "have lived",
+            "explanation": "Have lived (Present Perfect) - với 'for 10 years'."
+          }
+        ]
+      }
+    }
+  ]
+}

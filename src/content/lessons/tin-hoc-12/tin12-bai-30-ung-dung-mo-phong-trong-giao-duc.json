@@ -1,0 +1,41 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_30",
+      "name": "Ứng dụng mô phỏng trong giáo dục",
+      "slug": "ung-dung-mo-phong-trong-giao-duc",
+      "chapter": "Giải quyết vấn đề với sự trợ giúp của máy tính",
+      "chapter_id": "tin12_ch7",
+      "lesson_id": 30,
+      "description": "Khám phá cách sử dụng các phần mềm mô phỏng để nâng cao hiệu quả dạy và học.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Mô phỏng trong Giáo dục",
+          "summary": "Mô phỏng biến những lý thuyết trừu tượng thành các hình ảnh trực quan, giúp học sinh dễ dàng tiếp thu kiến thức.",
+          "sections": [
+            { "heading": "Thí nghiệm ảo", "content": "Thực hiện các thí nghiệm hóa học cháy nổ, thí nghiệm vật lý khó quan sát hoặc sinh học vi mô trên máy tính." },
+            { "heading": "Tương tác học tập", "content": "Người học có thể thay đổi các tham số và quan sát kết quả ngay lập tức, từ đó hiểu sâu bản chất vấn đề." },
+            { "heading": "Thực tế ảo (VR) và Thực tế tăng cường (AR)", "content": "Công nghệ mới giúp học sinh 'nhập vai' vào các không gian lịch sử, địa lý hoặc cấu trúc cơ thể người." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Ưu điểm của thí nghiệm ảo trong trường học là gì?", "options": ["Không tốn hóa chất, an toàn tuyệt đối, có thể làm lại nhiều lần", "Luôn cho kết quả sai", "Rất đắt đỏ", "Học sinh không cần suy nghĩ"], "correct": 0, "explanation": "Thí nghiệm ảo giải quyết được các hạn chế về vật tư và độ nguy hiểm." },
+          { "id": 2, "type": "mcq", "question": "Mô phỏng giúp học sinh hiểu bài tốt hơn vì?", "options": ["Làm cho bài học ngắn lại", "Biến kiến thức trừu tượng thành hình ảnh trực quan và sinh động", "Máy tính học hộ học sinh", "Không có bài tập về nhà"], "correct": 1, "explanation": "Quan sát trực quan giúp bộ não ghi nhớ và hiểu quy luật nhanh hơn." },
+          { "id": 3, "type": "mcq", "question": "Khi sử dụng mô phỏng vật lý, học sinh có thể làm gì?", "options": ["Chỉ được xem video", "Thay đổi các thông số (như khối lượng, vận tốc) và xem sự thay đổi kết quả", "Xóa code của phần mềm", "Vẽ thêm hình vào phần mềm"], "correct": 1, "explanation": "Tính tương tác (Interaction) là ưu thế của mô phỏng giáo dục." },
+          { "id": 4, "type": "mcq", "question": "Công nghệ AR (Augmented Reality) giúp gì cho giáo dục?", "options": ["Tạo ra thế giới hoàn toàn giả", "Chèn các mô hình 3D ảo vào hình ảnh thực qua camera điện thoại", "Làm máy tính chạy chậm", "Chụp ảnh đẹp hơn"], "correct": 1, "explanation": "AR giúp 'số hóa' thế giới thực bằng các thông tin bổ sung sinh động." },
+          { "id": 5, "type": "mcq", "question": "Phần mềm mô phỏng bầu trời Stellarum dùng cho môn học nào?", "options": ["Toán học", "Thiên văn học / Địa lý", "Ngữ văn", "Thể dục"], "correct": 1, "explanation": "Stellarum cho phép quan sát các vì sao và hành tinh từ bất kỳ vị trí nào." },
+          { "id": 6, "type": "mcq", "question": "Sử dụng mô phỏng trong dạy học giúp giáo viên?", "options": ["Không cần lên lớp", "Minh họa các hiện tượng khó giải thích bằng lời hoặc phấn bảng", "Tắt máy tính sớm", "Giảm lương"], "correct": 1, "explanation": "Mô phỏng là công cụ hỗ trợ giảng dạy đắc lực." },
+          { "id": 7, "type": "mcq", "question": "Mô phỏng cấu trúc phân tử DNA thuộc lĩnh vực nào?", "options": ["Vật lý", "Sinh học", "Lịch sử", "Âm nhạc"], "correct": 1, "explanation": "Giúp học sinh 'nhìn' thấy những thứ quá nhỏ bé trong mắt thường." },
+          { "id": 8, "type": "mcq", "question": "Hạn chế của mô phỏng trong giáo dục có thể là?", "options": ["Không có hạn chế nào", "Có thể làm học sinh nhầm lẫn giữa mô hình ảo và thực tế nếu không giải thích kĩ", "Làm tốn điện trường", "Làm học sinh thông minh quá mức"], "correct": 1, "explanation": "Cần kết hợp giữa mô phỏng và kiến thức lý thuyết thực tế." },
+          { "id": 9, "type": "mcq", "question": "Hệ thống VR (Virtual Reality) yêu cầu thiết bị gì?", "options": ["Bàn phím", "Kính thực tế ảo", "Máy in", "Loa thùng"], "correct": 1, "explanation": "Kính VR tạo ra môi trường bao quanh người dùng hoàn toàn." },
+          { "id": 10, "type": "mcq", "question": "Tại sao mô phỏng giáo dục ngày càng phổ biến?", "options": ["Vì học sinh thích chơi game", "Do sự phát triển của công nghệ và nhu cầu đổi mới phương pháp dạy học", "Vì giáo viên lười soạn bài", "Vì nó rẻ hơn sách giáo khoa"], "correct": 1, "explanation": "Chuyển đổi số trong giáo dục đang diễn ra mạnh mẽ." }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [{
+    "id": "hoa12-bai-16-dien-phan",
+    "name": "Bài 16. Điện phân",
+    "slug": "bai-16-dien-phan",
+    "chapter": "Chương 5: Pin điện và điện phân",
+    "chapter_id": "H12-1005",
+    "lesson_id": 16,
+    "description": "Tìm hiểu về quá trình điện phân và ứng dụng.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+    "question_types": [{"id": "dien-phan-1", "name": "Điện phân", "slug": "dien-phan", "difficulty": "medium"}],
+    "content": {
+      "theory": {
+        "title": "Lý thuyết Điện phân",
+        "sections": [{
+          "heading": "1. Khái niệm và nguyên tắc",
+          "content": "<h3>a) Định nghĩa</h3><p><strong>Điện phân:</strong> Quá trình oxi hóa - khử xảy ra khi có dòng điện một chiều đi qua chất điện ly nóng chảy hoặc dung dịch.</p><p><strong>Bản chất:</strong> Chuyển điện năng → Hóa năng</p><h3>b) Nguyên tắc</h3><ul><li>Cathode (-): Xảy ra khử (nhận e⁻)</li><li>Anode (+): Xảy ra oxi hóa (nhường e⁻)</li><li>Cation di chuyển về cathode</li><li>Anion di chuyển về anode</li></ul><h3>c) Định luật Faraday</h3><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>m = (A × I × t) / (n × F)</p><ul><li>m: Khối lượng chất (g)</li><li>A: Khối lượng mol (g/mol)</li><li>I: Cường độ dòng điện (A)</li><li>t: Thời gian (s)</li><li>n: Số electron trao đổi</li><li>F: Hằng số Faraday = 96500 C/mol</li></ul>"
+        }, {
+          "heading": "2. Điện phân nóng chảy",
+          "content": "<h3>a) Điện phân NaCl nóng chảy</h3><p><strong>Cathode (-):</strong> 2Na⁺ + 2e⁻ → 2Na</p><p><strong>Anode (+):</strong> 2Cl⁻ → Cl₂ + 2e⁻</p><p><strong>Phản ứng chung:</strong> 2NaCl → 2Na + Cl₂</p><h3>b) Điện phân Al₂O₃ nóng chảy</h3><p><strong>Cathode:</strong> Al³⁺ + 3e⁻ → Al</p><p><strong>Anode:</strong> 2O²⁻ → O₂ + 4e⁻</p><p><strong>Ứng dụng:</strong> Sản xuất nhôm công nghiệp"
+        }, {
+          "heading": "3. Điện phân dung dịch",
+          "content": "<h3>a) Thứ tự điện phân</h3><p><strong>Cathode (-):</strong></p><ol><li>Kim loại hoạt động yếu (Cu²⁺, Ag⁺...)</li><li>H⁺ (từ H₂O)</li><li>Kim loại hoạt động mạnh (không bị khử)</li></ol><p><strong>Anode (+):</strong></p><ol><li>Anion gốc acid không có oxi (Cl⁻, Br⁻, I⁻)</li><li>OH⁻ (từ H₂O)</li><li>Anion gốc acid có oxi (SO₄²⁻, NO₃⁻...)</li></ol><h3>b) Ví dụ</h3><p><strong>1. Điện phân CuSO₄ (anode trơ):</strong></p><p>Cathode: Cu²⁺ + 2e⁻ → Cu</p><p>Anode: 2H₂O → O₂ + 4H⁺ + 4e⁻</p><p><strong>2. Điện phân NaCl (anode trơ):</strong></p><p>Cathode: 2H₂O + 2e⁻ → H₂ + 2OH⁻</p><p>Anode: 2Cl⁻ → Cl₂ + 2e⁻</p><h3>c) Ứng dụng</h3><ul><li>Sản xuất kim loại (Al, Na, Cu...)</li><li>Sản xuất hóa chất (Cl₂, NaOH, H₂...)</li><li>Tinh chế kim loại</li><li>Mạ điện</li></ul>"
+        }]
+      },
+      "problemTypes": [{
+        "id": "dang1",
+        "name": "Dạng 1: Tính khối lượng chất điện phân",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết phản ứng điện cực</li><li>Áp dụng định luật Faraday</li><li>m = (A × I × t) / (n × F)</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Điện phân CuSO₄ với I = 5A trong 1930s. Tính khối lượng Cu bám cathode.", "solution": "<p><strong>Phản ứng cathode:</strong></p><p>Cu²⁺ + 2e⁻ → Cu</p><p><strong>Áp dụng Faraday:</strong></p><p>m = (A × I × t) / (n × F)</p><p>m = (64 × 5 × 1930) / (2 × 96500)</p><p>m = 617,600 / 193,000 = 3.2g</p><p><strong>Đáp án:</strong> 3.2g</p>"}]
+      }, {
+        "id": "dang2",
+        "name": "Dạng 2: Điện phân dung dịch hỗn hợp",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định thứ tự điện phân</li><li>Tính lượng chất từng giai đoạn</li><li>Áp dụng bảo toàn electron</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Điện phân dung dịch chứa CuSO₄ 0.1M và AgNO₃ 0.1M (500ml) đến hết ion kim loại. Tính khối lượng kim loại bám cathode.", "solution": "<p><strong>Thứ tự khử:</strong> Ag⁺ trước, Cu²⁺ sau</p><p>n(Ag⁺) = 0.1 × 0.5 = 0.05 mol</p><p>n(Cu²⁺) = 0.1 × 0.5 = 0.05 mol</p><p><strong>Ag⁺:</strong> Ag⁺ + e⁻ → Ag</p><p>m(Ag) = 0.05 × 108 = 5.4g</p><p><strong>Cu²⁺:</strong> Cu²⁺ + 2e⁻ → Cu</p><p>m(Cu) = 0.05 × 64 = 3.2g</p><p><strong>Tổng:</strong> 5.4 + 3.2 = 8.6g</p><p><strong>Đáp án:</strong> 8.6g</p>"}]
+      }, {
+        "id": "dang3",
+        "name": "Dạng 3: Bài toán thực tế - Sản xuất nhôm bằng điện phân",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Tính điện năng tiêu thụ</li><li>Tính chi phí sản xuất</li><li>Đánh giá môi trường</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Sản xuất 1 tấn nhôm bằng điện phân Al₂O₃. a) Tính điện năng (hiệu suất 50%, điện áp 5V). b) Tính chi phí điện (2,000đ/kWh). c) Đánh giá và đề xuất cải tiến.", "solution": "<p><strong>a) Tính điện năng:</strong></p><p>Al³⁺ + 3e⁻ → Al</p><p>n(Al) = 1,000,000 / 27 = 37,037 mol</p><p>n(e⁻) = 3 × 37,037 = 111,111 mol</p><p>Q = 111,111 × 96,500 = 10.72 × 10⁹ C</p><p>W lý thuyết = Q × U = 10.72 × 10⁹ × 5 = 53.6 × 10⁹ J = 14,889 kWh</p><p>W thực tế = 14,889 / 50% = 29,778 kWh</p><p><strong>b) Chi phí điện:</strong></p><p>Chi phí = 29,778 × 2,000 = 59,556,000 đ ≈ 60 triệu đồng</p><p><strong>c) Đánh giá:</strong></p><p><strong>Ưu điểm:</strong></p><ul><li>Nhôm tinh khiết cao (99.5-99.9%)</li><li>Sản xuất quy mô lớn</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>Tiêu tốn điện năng lớn (15 kWh/kg)</li><li>Phát thải CO₂ (nếu điện từ than)</li><li>Chi phí cao</li></ul><p><strong>Cải tiến:</strong></p><ul><li>Sử dụng điện tái tạo (thủy điện, mặt trời)</li><li>Tăng hiệu suất lên 60-70%</li><li>Tái chế nhôm (tiết kiệm 95% năng lượng)</li></ul><p><strong>Đáp án:</strong> a) 29,778 kWh; b) 60 triệu đồng</p>"}]
+      }],
+      "exercises": [
+        {"id": "ex1", "type": "mcq", "question": "Điện phân chuyển:", "options": ["Hóa năng → Điện năng", "Điện năng → Hóa năng", "Nhiệt năng → Điện năng", "Cơ năng → Điện năng"], "correct": 1, "explanation": "Điện phân chuyển điện năng → hóa năng."},
+        {"id": "ex2", "type": "mcq", "question": "Ở cathode xảy ra:", "options": ["Oxi hóa", "Khử", "Không phản ứng", "Cả hai"], "correct": 1, "explanation": "Cathode xảy ra khử."},
+        {"id": "ex3", "type": "mcq", "question": "Ở anode xảy ra:", "options": ["Oxi hóa", "Khử", "Không phản ứng", "Cả hai"], "correct": 0, "explanation": "Anode xảy ra oxi hóa."},
+        {"id": "ex4", "type": "mcq", "question": "Hằng số Faraday F =", "options": ["96500 C/mol", "96500 J/mol", "96500 V", "96500 A"], "correct": 0, "explanation": "F = 96500 C/mol."},
+        {"id": "ex5", "type": "mcq", "question": "Điện phân CuSO₄, ở cathode thu được:", "options": ["Cu", "O₂", "H₂", "SO₂"], "correct": 0, "explanation": "Cathode thu được Cu."},
+        {"id": "ex6", "type": "mcq", "question": "Điện phân NaCl nóng chảy thu được:", "options": ["Na + Cl₂", "NaOH + H₂", "Na + O₂", "NaOH + Cl₂"], "correct": 0, "explanation": "Điện phân NaCl nóng chảy → Na + Cl₂."},
+        {"id": "ex7", "type": "mcq", "question": "Điện phân dung dịch NaCl, ở cathode thu được:", "options": ["Na", "H₂", "Cl₂", "O₂"], "correct": 1, "explanation": "Cathode thu được H₂ (Na⁺ không bị khử)."},
+        {"id": "ex8", "type": "mcq", "question": "Sản xuất nhôm bằng điện phân:", "options": ["Al₂O₃ nóng chảy", "AlCl₃ dung dịch", "Al(OH)₃", "Al₂(SO₄)₃"], "correct": 0, "explanation": "Sản xuất Al bằng điện phân Al₂O₃ nóng chảy."},
+        {"id": "ex9", "type": "mcq", "question": "Mạ điện là ứng dụng của:", "options": ["Pin điện", "Điện phân", "Ăn mòn", "Tất cả"], "correct": 1, "explanation": "Mạ điện là ứng dụng của điện phân."},
+        {"id": "ex10", "type": "mcq", "question": "Cation di chuyển về:", "options": ["Cathode", "Anode", "Không di chuyển", "Hai cực"], "correct": 0, "explanation": "Cation di chuyển về cathode (-)."},
+        {"id": "ex11", "type": "mcq", "question": "Anion di chuyển về:", "options": ["Cathode", "Anode", "Không di chuyển", "Hai cực"], "correct": 1, "explanation": "Anion di chuyển về anode (+)."},
+        {"id": "ex12", "type": "mcq", "question": "Điện phân CuSO₄ (anode trơ), ở anode thu được:", "options": ["Cu", "O₂", "H₂", "SO₂"], "correct": 1, "explanation": "Anode thu được O₂ (từ H₂O)."},
+        {"id": "ex13", "type": "msq", "question": "Ứng dụng điện phân:", "options": ["Sản xuất kim loại", "Sản xuất hóa chất", "Mạ điện", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Điện phân có nhiều ứng dụng."},
+        {"id": "ex14", "type": "msq", "question": "Kim loại sản xuất bằng điện phân:", "options": ["Al", "Na", "Cu (tinh chế)", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Nhiều kim loại được sản xuất bằng điện phân."},
+        {"id": "ex15", "type": "msq", "question": "Điện phân dung dịch NaCl thu được:", "options": ["H₂", "Cl₂", "NaOH", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Điện phân NaCl dd → H₂ + Cl₂ + NaOH."},
+        {"id": "ex16", "type": "msq", "question": "Yếu tố ảnh hưởng khối lượng điện phân:", "options": ["Cường độ dòng điện", "Thời gian", "Số electron", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "m phụ thuộc I, t, n."},
+        {"id": "ex17", "type": "sa", "question": "Điện phân CuSO₄ với I=5A trong 1930s. Tính khối lượng Cu (g). Làm tròn đến 1 chữ số thập phân.", "correct": "3.2", "explanation": "m = (64×5×1930)/(2×96500) = 3.2g. Đáp án: 3.2"},
+        {"id": "ex18", "type": "sa", "question": "Hằng số Faraday F = ? (C/mol). Làm tròn đến hàng trăm.", "correct": "96500", "explanation": "F = 96500 C/mol. Đáp án: 96500"},
+        {"id": "ex19", "type": "sa", "question": "Điện phân Al³⁺, 1 mol Al cần bao nhiêu mol electron? Làm tròn đến hàng đơn vị.", "correct": "3", "explanation": "Al³⁺ + 3e⁻ → Al. Đáp án: 3"},
+        {"id": "ex20", "type": "sa", "question": "Điện phân Cu²⁺, 1 mol Cu cần bao nhiêu mol electron? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "Cu²⁺ + 2e⁻ → Cu. Đáp án: 2"},
+        {"id": "ex21", "type": "sa", "question": "Điện phân 1 mol Al cần điện lượng bao nhiêu (×10⁵ C)? Làm tròn đến 1 chữ số thập phân.", "correct": "2.9", "explanation": "Q = 3×96500 = 289,500 C ≈ 2.9×10⁵ C. Đáp án: 2.9"},
+        {"id": "ex22", "type": "sa", "question": "M(Cu) = 64. Điện phân 1 mol Cu²⁺ thu được bao nhiêu gam Cu? Làm tròn đến hàng đơn vị.", "correct": "64", "explanation": "m = 1×64 = 64g. Đáp án: 64"}
+      ]
+    }
+  }]
+}

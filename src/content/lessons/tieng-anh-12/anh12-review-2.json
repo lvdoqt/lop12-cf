@@ -1,0 +1,410 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-review-2",
+      "name": "Review 2 (Units 4 - 5)",
+      "slug": "review-2-units-4-5",
+      "chapter": "Review 2",
+      "chapter_id": "A12",
+      "lesson_id": 7,
+      "description": "Consolidation of vocabulary and grammar from Units 4 and 5.",
+      "duration_minutes": 60,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2673&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "review-2-mixed",
+          "name": "Mixed Review",
+          "slug": "mixed-review",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Review 2: Units 4-5",
+          "sections": [
+            {
+              "heading": "I. Language - Ôn tập ngôn ngữ",
+              "content": "<h3>A. Pronunciation (Phát âm)</h3><p><strong>Unit 4:</strong> Sentence stress for emphasis</p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh content words (nouns, verbs, adjectives, adverbs)</li><li>Ex: <strong>CITIES</strong> are becoming <strong>MORE</strong> and <strong>MORE CROWDED</strong>.</li><li>Ex: <strong>URBANISATION</strong> has <strong>INCREASED RAPIDLY</strong>.</li></ul><p><strong>Unit 5:</strong> Stress in compound and complex sentences</p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh từ quan trọng ở cả hai mệnh đề trong câu ghép</li><li>Ex: I <strong>APPLIED</strong> for the job, and they <strong>CALLED</strong> me.</li><li>Mệnh đề chính được nhấn mạnh hơn trong câu phức</li><li>Ex: <strong>ALTHOUGH</strong> he's young, he has <strong>EXPERIENCE</strong>.</li></ul><h3>B. Vocabulary (Từ vựng)</h3><p><strong>Unit 4: Urbanisation</strong></p><ul class='list-disc pl-5 space-y-2'><li>Urban/Rural: urbanisation, urban area, rural area, migrate</li><li>Problems: overcrowding, congestion, slum, poverty, unemployment</li><li>Infrastructure: infrastructure, sanitation, public transport, affordable housing</li><li>Development: expand, densely populated</li></ul><p><strong>Unit 5: The World of Work</strong></p><ul class='list-disc pl-5 space-y-2'><li>Career: career, qualification, experience, skill</li><li>Application: apply, CV/resume, cover letter, interview, recruit</li><li>Workplace: colleague, boss, employee, employer, salary, promotion</li><li>Adjectives: challenging, rewarding, flexible, deadline</li></ul><h3>C. Grammar (Ngữ pháp)</h3><p><strong>Unit 4: Present Perfect & Double Comparatives</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Present Perfect:</strong> have/has + V3/ed (for, since, already, yet, just)</li><li>Ex: Urbanisation <strong>has increased</strong> rapidly.</li><li>Ex: I <strong>have lived</strong> here <strong>for</strong> 10 years.</li><li><strong>Double Comparatives:</strong> The + comparative..., the + comparative...</li><li>Ex: <strong>The bigger</strong> the city, <strong>the more crowded</strong> it becomes.</li><li>Ex: <strong>The more people</strong> migrate, <strong>the more problems</strong> arise.</li></ul><p><strong>Unit 5: Simple, Compound, Complex Sentences</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Simple:</strong> 1 mệnh đề độc lập</li><li>Ex: I work in an office.</li><li><strong>Compound:</strong> 2+ mệnh đề độc lập + FANBOYS (for, and, nor, but, or, yet, so)</li><li>Ex: I applied for the job<strong>, and</strong> they called me.</li><li><strong>Complex:</strong> 1 mệnh đề độc lập + 1+ mệnh đề phụ (when, because, if, although)</li><li>Ex: <strong>Although</strong> it's challenging, I enjoy it.</li></ul>"
+            },
+            {
+              "heading": "II. Skills - Ôn tập kỹ năng",
+              "content": "<h3>A. Reading (Đọc hiểu)</h3><p><strong>Kỹ năng cần ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc lướt để nắm ý chính (skimming)</li><li>Đọc kỹ để tìm thông tin chi tiết (scanning)</li><li>Đoán nghĩa từ vựng qua ngữ cảnh</li><li>Hiểu ý chính và ý phụ của đoạn văn</li><li>Xác định thông tin đúng/sai</li><li>Suy luận và rút ra kết luận</li></ul><p><strong>Chủ đề đã đọc:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Urbanisation: benefits and challenges</li><li>Career planning and job hunting</li><li>Urban development and infrastructure</li></ul><h3>B. Speaking (Nói)</h3><p><strong>Chủ đề đã học:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Discussing urbanisation and city life</li><li>Talking about careers and job applications</li><li>Comparing urban and rural life</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>The city has become... / has changed...</li><li>The more..., the more...</li><li>I'm interested in... / I'd like to work as...</li><li>Although it's challenging, ...</li><li>I applied for the job, and...</li></ul><h3>C. Listening (Nghe hiểu)</h3><p><strong>Kỹ năng cần ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe để nắm ý chính</li><li>Nghe để tìm thông tin cụ thể</li><li>Điền thông tin còn thiếu (gap-filling)</li><li>Trả lời câu hỏi chi tiết</li><li>Ghi chú các ý quan trọng (note-taking)</li><li>Hiểu thái độ và ý kiến của người nói</li></ul><p><strong>Chủ đề đã nghe:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Talks about urban development</li><li>Job interviews</li><li>Discussions about career choices</li></ul><h3>D. Writing (Viết)</h3><p><strong>Dạng bài đã học:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Writing essays about urbanisation</li><li>Writing CVs and cover letters</li><li>Using different sentence structures</li></ul><p><strong>Kỹ năng viết:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Tổ chức bài viết: Introduction - Body - Conclusion</li><li>Sử dụng Present Perfect và Double Comparatives</li><li>Sử dụng câu đơn, câu ghép, câu phức đa dạng</li><li>Viết CV và thư xin việc chuyên nghiệp</li><li>Viết câu mạch lạc và logic</li></ul><p><strong>Cấu trúc bài viết mẫu:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Introduction:</strong> Giới thiệu chủ đề (1-2 câu)</li><li><strong>Body:</strong> Trình bày ý chính (2-3 đoạn với supporting details)</li><li><strong>Conclusion:</strong> Kết luận và nhấn mạnh ý chính (1-2 câu)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Mixed Exercise",
+            "method": "<p>Review all grammar points and vocabulary from Units 4-5.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Urbanisation has transformed cities worldwide over the past few decades. More and more people have moved from rural areas to urban centers in search of better opportunities. This rapid migration has created both exciting possibilities and serious challenges.\n\nThe main attraction of cities is economic opportunity. Urban areas offer more jobs, higher salaries, and better access to education and healthcare. For example, in Vietnam, Ho Chi Minh City and Hanoi have become major economic hubs. The more people move to these cities, the more diverse and dynamic they become. Young people, in particular, are drawn to cities because they want to pursue their careers and gain valuable work experience.\n\nHowever, rapid urbanisation has created significant problems. The bigger cities grow, the more crowded they become. Traffic congestion has worsened dramatically, and many cities struggle with inadequate infrastructure. Although governments have invested in public transportation, the demand continues to exceed supply. Housing has become increasingly expensive, and many low-income workers cannot afford decent accommodation.\n\nTo address these challenges, cities need better urban planning. The more money invested in infrastructure, the better the quality of life will be. Governments should build affordable housing and improve public services. If cities can manage growth effectively, they will continue to be engines of economic development while maintaining livability for all residents.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "Cities are perfect places",
+                  "Urbanisation brings both opportunities and challenges",
+                  "Everyone should move to cities",
+                  "Rural life is better"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về đô thị hóa mang lại cả cơ hội và thách thức."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "Why do young people move to cities?",
+                "options": [
+                  "Because they like crowds",
+                  "To pursue careers and gain work experience",
+                  "To escape family",
+                  "Because rural life is boring"
+                ],
+                "correct": 1,
+                "explanation": "Người trẻ chuyển đến thành phố để theo đuổi sự nghiệp và tích lũy kinh nghiệm làm việc."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The word 'inadequate' in paragraph 3 is closest in meaning to ______.",
+                "options": [
+                  "sufficient",
+                  "not enough",
+                  "excellent",
+                  "modern"
+                ],
+                "correct": 1,
+                "explanation": "Inadequate = not enough (không đủ, thiếu)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "What problem is mentioned in the passage?",
+                "options": [
+                  "Too many parks",
+                  "Traffic congestion and expensive housing",
+                  "Too much money",
+                  "Too few people"
+                ],
+                "correct": 1,
+                "explanation": "Các vấn đề được đề cập là tắc nghẽn giao thông và nhà ở đắt đỏ."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "According to the passage, what is one solution?",
+                "options": [
+                  "Stop urbanisation",
+                  "Better urban planning and infrastructure investment",
+                  "Build more slums",
+                  "Do nothing"
+                ],
+                "correct": 1,
+                "explanation": "Một giải pháp là quy hoạch đô thị tốt hơn và đầu tư vào cơ sở hạ tầng."
+              }
+            ]
+          }
+,
+          {
+            "id": "reading2",
+            "type": "reading",
+            "passage": "Finding the right career is one of the most important decisions young people make. The job market has changed dramatically in recent years, and traditional career paths are no longer the only options. Today's graduates need to be flexible and adaptable.\n\nWhen choosing a career, consider your interests and skills. If you enjoy working with people, careers in education, healthcare, or customer service might suit you. If you prefer working with technology, consider IT, engineering, or data analysis. Research different fields and talk to professionals to understand what each job involves.\n\nPreparing a strong CV is essential. Your CV should highlight your education, work experience, and relevant skills. Keep it concise and professional. A well-written cover letter is equally important because it shows your motivation and explains why you're suitable for the position. Although many people find writing cover letters challenging, they significantly improve your chances of getting an interview.\n\nDuring job interviews, be confident and honest. Employers want to see that you're enthusiastic and prepared. Research the company beforehand, and prepare answers to common questions. Remember that interviews are also opportunities for you to ask questions and learn whether the job is right for you. The more prepared you are, the more confident you'll feel.",
+            "questions": [
+              {
+                "id": "reading2-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "All jobs are the same",
+                  "Career planning and job application tips",
+                  "Only traditional careers exist",
+                  "CVs are not important"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về lập kế hoạch nghề nghiệp và các mẹo xin việc."
+              },
+              {
+                "id": "reading2-q2",
+                "question": "What should you consider when choosing a career?",
+                "options": [
+                  "Only salary",
+                  "Your interests and skills",
+                  "What your parents want",
+                  "Nothing important"
+                ],
+                "correct": 1,
+                "explanation": "Bạn nên xem xét sở thích và kỹ năng của mình khi chọn nghề."
+              },
+              {
+                "id": "reading2-q3",
+                "question": "The word 'concise' in paragraph 3 is closest in meaning to ______.",
+                "options": [
+                  "very long",
+                  "brief and clear",
+                  "complicated",
+                  "boring"
+                ],
+                "correct": 1,
+                "explanation": "Concise = brief and clear (ngắn gọn và rõ ràng)."
+              },
+              {
+                "id": "reading2-q4",
+                "question": "Why is a cover letter important?",
+                "options": [
+                  "It's not important",
+                  "It shows motivation and suitability",
+                  "It replaces the CV",
+                  "It's just decoration"
+                ],
+                "correct": 1,
+                "explanation": "Thư xin việc thể hiện động lực và sự phù hợp của bạn với vị trí."
+              },
+              {
+                "id": "reading2-q5",
+                "question": "According to the passage, what helps you feel more confident in interviews?",
+                "options": [
+                  "Not preparing",
+                  "Being more prepared",
+                  "Lying about experience",
+                  "Avoiding questions"
+                ],
+                "correct": 1,
+                "explanation": "Chuẩn bị kỹ càng giúp bạn tự tin hơn trong phỏng vấn."
+              }
+            ]
+          },
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "Urbanisation ______ rapidly over the past decade.",
+            "options": ["increased", "has increased", "is increasing", "increases"],
+            "correct": 1,
+            "explanation": "Has increased (Present Perfect) - hành động bắt đầu trong quá khứ và liên quan đến hiện tại, có 'over the past decade'."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "______ bigger the city, ______ more crowded it becomes.",
+            "options": ["A / a", "The / the", "A / the", "The / a"],
+            "correct": 1,
+            "explanation": "The...the... (Double Comparative) - cấu trúc so sánh kép."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "I applied for the job, ______ they called me for an interview.",
+            "options": ["but", "and", "or", "so"],
+            "correct": 1,
+            "explanation": "And: nối hai mệnh đề độc lập trong câu ghép (compound sentence)."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "______ it's challenging, I enjoy my work.",
+            "options": ["Because", "Although", "If", "When"],
+            "correct": 1,
+            "explanation": "Although: mặc dù - tạo câu phức (complex sentence) với mệnh đề nhượng bộ."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "She ______ in this city for five years.",
+            "options": ["lives", "lived", "has lived", "is living"],
+            "correct": 2,
+            "explanation": "Has lived (Present Perfect) - hành động bắt đầu trong quá khứ và tiếp tục đến hiện tại, có 'for five years'."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "______ more people migrate to cities, ______ more problems arise.",
+            "options": ["The / the", "A / a", "The / a", "A / the"],
+            "correct": 0,
+            "explanation": "The...the... (Double Comparative) - càng nhiều người di cư, càng nhiều vấn đề phát sinh."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "I want to work in marketing ______ I'm creative.",
+            "options": ["but", "because", "although", "or"],
+            "correct": 1,
+            "explanation": "Because: bởi vì - chỉ lý do trong câu phức."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "Traffic congestion ______ worse in recent years.",
+            "options": ["got", "has got", "gets", "is getting"],
+            "correct": 1,
+            "explanation": "Has got (Present Perfect) - tình trạng thay đổi từ quá khứ đến hiện tại, có 'in recent years'."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "She studied hard, ______ she passed the exam.",
+            "options": ["but", "or", "so", "yet"],
+            "correct": 2,
+            "explanation": "So: vì vậy - chỉ kết quả trong câu ghép."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "______ I finish my degree, I'll look for a job.",
+            "options": ["When", "But", "And", "Or"],
+            "correct": 0,
+            "explanation": "When: khi - tạo câu phức với mệnh đề thời gian."
+          },
+          {
+            "id": "mcq11",
+            "type": "mcq",
+            "question": "They ______ never ______ to such a big city before.",
+            "options": ["have / been", "has / been", "had / been", "are / being"],
+            "correct": 0,
+            "explanation": "Have been (Present Perfect) - kinh nghiệm đến hiện tại, có 'never' và 'before'."
+          },
+          {
+            "id": "mcq12",
+            "type": "mcq",
+            "question": "______ more money invested, ______ better the infrastructure.",
+            "options": ["The / the", "A / the", "The / a", "A / a"],
+            "correct": 0,
+            "explanation": "The...the... (Double Comparative) - càng đầu tư nhiều tiền, cơ sở hạ tầng càng tốt."
+          },
+          {
+            "id": "mcq13",
+            "type": "mcq",
+            "question": "I like the job ______ the salary is low.",
+            "options": ["because", "although", "so", "and"],
+            "correct": 1,
+            "explanation": "Although: mặc dù - chỉ sự tương phản trong câu phức."
+          },
+          {
+            "id": "mcq14",
+            "type": "mcq",
+            "question": "He ______ his CV to five companies already.",
+            "options": ["sent", "has sent", "sends", "is sending"],
+            "correct": 1,
+            "explanation": "Has sent (Present Perfect) - hành động đã hoàn thành đến hiện tại, có 'already'."
+          },
+          {
+            "id": "mcq15",
+            "type": "mcq",
+            "question": "I work hard ______ I want a promotion.",
+            "options": ["but", "because", "or", "so"],
+            "correct": 1,
+            "explanation": "Because: bởi vì - chỉ lý do."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "Present Perfect is used with 'for', 'since', 'already', 'yet', 'just'.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Present Perfect thường đi với các từ này để chỉ thời gian."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "Double comparatives use the structure: The + comparative..., the + comparative...",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Cấu trúc so sánh kép: The bigger..., the better..."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "A compound sentence has one independent clause and one dependent clause.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Câu ghép có 2+ mệnh đề độc lập. Câu phức mới có mệnh đề độc lập + mệnh đề phụ thuộc."
+          },
+          {
+            "id": "msq4",
+            "type": "msq",
+            "question_text": "FANBOYS stands for: for, and, nor, but, or, yet, so.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. FANBOYS là các liên từ nối trong câu ghép."
+          },
+          {
+            "id": "msq5",
+            "type": "msq",
+            "question_text": "Complex sentences use subordinating conjunctions like 'when', 'because', 'if', 'although'.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Câu phức sử dụng các liên từ phụ thuộc này."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call the process of cities growing larger? (one word)",
+            "correct": "urbanisation",
+            "explanation": "Urbanisation: quá trình đô thị hóa."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "What do we call a document listing your education and work experience? (two words or abbreviation)",
+            "correct": "CV",
+            "explanation": "CV (Curriculum Vitae) hoặc resume: sơ yếu lý lịch."
+          },
+          {
+            "id": "sa3",
+            "type": "sa",
+            "question_text": "Complete: She ______ (live) here for 10 years. (Present Perfect)",
+            "correct": "has lived",
+            "explanation": "Has lived (Present Perfect) - hành động bắt đầu trong quá khứ và tiếp tục đến hiện tại."
+          },
+          {
+            "id": "sa4",
+            "type": "sa",
+            "question_text": "What do we call housing that people can afford to pay for? (two words)",
+            "correct": "affordable housing",
+            "explanation": "Affordable housing: nhà ở giá phải chăng."
+          },
+          {
+            "id": "essay1",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about the advantages and disadvantages of urbanisation. Use Present Perfect and Double Comparatives.",
+            "sample_answer": "Urbanisation has brought both benefits and challenges to modern society. On the positive side, cities have become centers of economic opportunity. People have gained access to better jobs, education, and healthcare. The more developed cities become, the more opportunities they offer. However, rapid urbanisation has also created serious problems. The bigger cities grow, the more crowded they become. Traffic congestion has worsened, and housing has become increasingly expensive. Many people have struggled to find affordable accommodation. In conclusion, while urbanisation has improved living standards, cities need better planning to manage growth effectively.",
+            "explanation": "Bài viết sử dụng Present Perfect (has brought, have become, have gained, has worsened) và Double Comparatives (The more...the more, The bigger...the more)."
+          },
+          {
+            "id": "essay2",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about your career plans. Use different sentence structures (simple, compound, complex).",
+            "sample_answer": "I have clear plans for my future career. I want to become a software engineer because I'm passionate about technology. Although the field is competitive, I'm determined to succeed. I'm currently studying computer science at university, and I'm also learning programming languages independently. When I graduate, I'll apply for internships to gain practical experience. I know the job market is challenging, but I believe my skills will help me. The more I learn now, the better prepared I'll be. I'm excited about my future, and I'm ready to work hard to achieve my goals.",
+            "explanation": "Bài viết kết hợp: Simple (I have clear plans), Compound (I'm studying..., and I'm learning...), Complex (because I'm passionate, Although the field is competitive, When I graduate)."
+          },
+          {
+            "id": "essay3",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about how cities have changed in your country. Use Present Perfect.",
+            "sample_answer": "Cities in Vietnam have changed dramatically over the past two decades. Ho Chi Minh City and Hanoi have grown rapidly and become major economic centers. The government has invested heavily in infrastructure, and new roads, bridges, and metro systems have been built. Many international companies have opened offices here, creating thousands of jobs. However, urbanisation has also brought challenges. Traffic congestion has become worse, and air pollution has increased significantly. Housing prices have risen sharply, making it difficult for young people to buy homes. Despite these problems, cities have continued to attract people seeking better opportunities.",
+            "explanation": "Bài viết sử dụng Present Perfect để mô tả những thay đổi từ quá khứ đến hiện tại: have changed, have grown, has invested, have been built, have opened, has become, has increased, have risen, have continued."
+          },
+          {
+            "id": "essay4",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) giving advice to someone preparing for a job interview. Use compound and complex sentences.",
+            "sample_answer": "Preparing for a job interview requires careful planning. First, research the company thoroughly, and learn about their products and values. Although you might feel nervous, try to stay calm and confident. Practice answering common interview questions, but don't memorize responses because you'll sound unnatural. Prepare questions to ask the interviewer, and this shows you're genuinely interested. Dress professionally, and arrive 10-15 minutes early. When you answer questions, be honest and specific. If you don't know something, admit it rather than making up answers. Remember that interviews are learning experiences, so don't worry if you make mistakes.",
+            "explanation": "Bài viết sử dụng Compound sentences (research..., and learn; Prepare..., and this shows) và Complex sentences (Although you might feel nervous; because you'll sound unnatural; When you answer; If you don't know)."
+          },
+          {
+            "id": "essay5",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) comparing life in urban and rural areas. Use double comparatives and various sentence structures.",
+            "sample_answer": "Urban and rural areas offer very different lifestyles, and each has unique advantages. Cities provide more job opportunities, but rural areas offer a peaceful environment. The bigger the city, the more facilities it has, yet the more stressful life becomes. Although cities have better infrastructure and services, they're often crowded and polluted. In contrast, rural areas have clean air and strong communities. However, they lack modern amenities. The more people move to cities, the more rural areas lose their young population. In my opinion, the ideal solution is balanced development because both urban and rural areas are important for society.",
+            "explanation": "Bài viết kết hợp Double Comparatives (The bigger...the more, The more...the more), Compound sentences (Cities provide..., but rural areas offer), và Complex sentences (Although cities have, because both areas are important)."
+          }
+        ]
+      }
+    }
+  ]
+}

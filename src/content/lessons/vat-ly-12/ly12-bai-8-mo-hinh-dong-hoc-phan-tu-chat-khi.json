@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-8-mo-hinh-dong-hoc-phan-tu-chat-khi",
+      "name": "Bài 8. Mô hình động học phân tử chất khí",
+      "slug": "bai-8-mo-hinh-dong-hoc-phan-tu-chat-khi",
+      "chapter": "Chương 2. Khí lí tưởng",
+      "chapter_id": "LY12-2",
+      "lesson_id": 8,
+      "description": "Nghiên cứu mô hình động học phân tử chất khí, các đặc điểm và tính chất của khí lí tưởng.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "mhdh-1",
+          "name": "Khái niệm khí lí tưởng",
+          "slug": "khai-niem-khi-li-tuong",
+          "difficulty": "easy"
+        },
+        {
+          "id": "mhdh-2",
+          "name": "Mô hình động học phân tử",
+          "slug": "mo-hinh-dong-hoc-phan-tu",
+          "difficulty": "medium"
+        },
+        {
+          "id": "mhdh-3",
+          "name": "Các thông số trạng thái",
+          "slug": "cac-thong-so-trang-thai",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Mô hình động học phân tử chất khí",
+          "sections": [
+            {
+              "heading": "1. Khí lí tưởng và khí thực",
+              "content": "<p><strong>Khí lí tưởng:</strong> Là mô hình chất khí trong đó các phân tử được coi là các chất điểm, không tương tác với nhau (trừ khi va chạm), và va chạm đàn hồi.</p><p><strong>Khí thực:</strong> Chất khí tồn tại trong thực tế, có tương tác giữa các phân tử. Ở điều kiện nhiệt độ cao và áp suất thấp, khí thực gần như khí lí tưởng.</p><p><strong>Đặc điểm khí lí tưởng:</strong></p><ul><li>Kích thước phân tử rất nhỏ so với khoảng cách giữa chúng</li><li>Không có thế năng tương tác, chỉ có động năng</li><li>Va chạm đàn hồi</li></ul>"
+            },
+            {
+              "heading": "2. Mô hình động học phân tử",
+              "content": "<p><strong>Các giả thuyết cơ bản:</strong></p><ol><li>Chất khí gồm các phân tử riêng biệt</li><li>Các phân tử chuyển động hỗn loạn không ngừng</li><li>Các phân tử va chạm đàn hồi với thành bình và với nhau</li><li>Thể tích phân tử không đáng kể so với thể tích bình</li></ol><p><strong>Nhiệt độ:</strong> Đặc trưng cho chuyển động hỗn loạn của các phân tử. Nhiệt độ càng cao, vận tốc trung bình của phân tử càng lớn.</p>"
+            },
+            {
+              "heading": "3. Các thông số trạng thái",
+              "content": "<p><strong>Khối lượng mol (M):</strong> Khối lượng của 1 mol chất, đơn vị kg/mol</p><p><strong>Số mol (n):</strong> $$n = \\frac{m}{M} = \\frac{N}{N_A}$$</p><p>Trong đó:</p><ul><li>m: khối lượng chất (kg)</li><li>N: số phân tử</li><li>N_A = 6,022.10²³ mol⁻¹: số Avogadro</li></ul><p><strong>Thể tích riêng (V):</strong> Thể tích của khối khí, đơn vị m³</p><p><strong>Áp suất (p):</strong> Lực tác dụng lên đơn vị diện tích, đơn vị Pa (1 atm = 101325 Pa)</p><p><strong>Nhiệt độ (T):</strong> Nhiệt độ tuyệt đối, đơn vị K (K = °C + 273)</p>"
+            },
+            {
+              "heading": "4. Phương trình Clayperon (phương trình trạng thái khí)",
+              "content": "<p>$$pV = nRT$$</p><p>Hoặc: $$pV = N k_B T$$</p><p>Trong đó:</p><ul><li>p: áp suất (Pa)</li><li>V: thể tích (m³)</li><li>n: số mol</li><li>R = 8,314 J/(mol.K): hằng số khí</li><li>T: nhiệt độ tuyệt đối (K)</li><li>k_B = 1,38.10⁻²³ J/K: hằng số Boltzmann</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính số mol và số phân tử",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>n = m/M</li><li>N = n.NA</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tính số mol trong 44g CO₂. Biết M_CO₂ = 44 g/mol.",
+                "solution": "<p><strong>Giải:</strong></p><p>n = m/M = 44/44 = 1 mol</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán về các thông số trạng thái",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Sử dụng pV = nRT</li><li>Chú ý đổi đơn vị về SI</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Tính thể tích của 2 mol khí ở điều kiện tiêu chuẩn (p = 1 atm, T = 273K).",
+                "solution": "<p><strong>Giải:</strong></p><p>V = nRT/p = 2.8,314.273/101325 = 0,0448 m³ = 44,8 lít</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Trong mô hình khí lí tưởng, các phân tử:",
+            "options": [
+              "Không chuyển động",
+              "Chuyển động hỗn loạn",
+              "Chuyển động thẳng đều",
+              "Đứng yên"
+            ],
+            "correct": 1,
+            "explanation": "Các phân tử khí chuyển động hỗn loạn không ngừng"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Đặc điểm nào không đúng với khí lí tưởng?",
+            "options": [
+              "Kích thước phân tử nhỏ",
+              "Không có tương tác",
+              "Va chạm đàn hồi",
+              "Có thế năng tương tác"
+            ],
+            "correct": 3,
+            "explanation": "Khí lí tưởng không có thế năng tương tác"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Số Avogadro NA có giá trị:",
+            "options": [
+              "6,022.10²⁰ mol⁻¹",
+              "6,022.10²³ mol⁻¹",
+              "6,022.10²⁶ mol⁻¹",
+              "6,022.10³ mol⁻¹"
+            ],
+            "correct": 1,
+            "explanation": "NA = 6,022.10²³ mol⁻¹"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Hằng số khí R có giá trị:",
+            "options": [
+              "8,314 J/(mol.K)",
+              "6,67.10⁻¹¹ N.m²/kg²",
+              "1,38.10⁻²³ J/K",
+              "9,8 m/s²"
+            ],
+            "correct": 0,
+            "explanation": "R = 8,314 J/(mol.K)"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Nhiệt độ tuyệt đối T = 300K tương đương:",
+            "options": [
+              "27°C",
+              "300°C",
+              "573K",
+              "-27°C"
+            ],
+            "correct": 0,
+            "explanation": "T(K) = t(°C) + 273 → T = 300K = 27°C"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Phương trình trạng thái khí lí tưởng:",
+            "options": [
+              "pV = nRT",
+              "pV = const.T",
+              "p/T = const.V",
+              "VT = const.p"
+            ],
+            "correct": 0,
+            "explanation": "pV = nRT là phương trình Clayperon"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Khi nhiệt độ tăng, vận tốc trung bình của phân tử:",
+            "options": [
+              "Giảm",
+              "Không đổi",
+              "Tăng",
+              "Bằng không"
+            ],
+            "correct": 2,
+            "explanation": "Nhiệt độ đặc trưng cho chuyển động hỗn loạn, T tăng thì v tăng"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Khối lượng mol của O₂ là:",
+            "options": [
+              "16 g/mol",
+              "32 g/mol",
+              "28 g/mol",
+              "44 g/mol"
+            ],
+            "correct": 1,
+            "explanation": "M_O₂ = 32 g/mol (O = 16)"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Hằng số Boltzmann kB liên hệ với R qua:",
+            "options": [
+              "kB = R/NA",
+              "kB = R.NA",
+              "kB = R + NA",
+              "kB = R - NA"
+            ],
+            "correct": 0,
+            "explanation": "kB = R/NA = 1,38.10⁻²³ J/K"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Điều kiện tiêu chuẩn (đkc):",
+            "options": [
+              "p = 1 atm, T = 273K",
+              "p = 1 atm, T = 298K",
+              "p = 2 atm, T = 273K",
+              "p = 1 atm, T = 0K"
+            ],
+            "correct": 0,
+            "explanation": "Đkc: p = 1 atm = 101325 Pa, T = 273 K, V = 22,4 l/mol"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các đặc điểm của khí lí tưởng:",
+            "options": [
+              "Phân tử coi là chất điểm",
+              "Không có tương tác giữa các phân tử",
+              "Va chạm đàn hồi",
+              "Có thế năng tương tác"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Khí lí tưởng không có thế năng tương tác"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các đại lượng nào là thông số trạng thái:",
+            "options": [
+              "Áp suất p",
+              "Thể tích V",
+              "Nhiệt độ T",
+              "Khối lượng m"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "p, V, T là 3 thông số trạng thái"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Khi nén khí đẳng nhiệt:",
+            "options": [
+              "Nhiệt độ không đổi",
+              "Áp suất tăng",
+              "Thể tích giảm",
+              "Nội năng tăng"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Đẳng nhiệt: T không đổi, pV = const"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính số mol trong 88g CO₂. Biết M = 44 g/mol.",
+            "correct": "2",
+            "explanation": "n = m/M = 88/44 = 2 mol"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Tính số phân tử trong 1 mol khí.",
+            "correct": "602200000000000000000000",
+            "explanation": "N = n.NA = 1.6,022.10²³ = 6,022.10²³"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Đổi 27°C sang Kelvin.",
+            "correct": "300",
+            "explanation": "T = 27 + 273 = 300 K"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính thể tích 1 mol khí ở đkc (V = 22,4 l/mol). Đổi ra m³.",
+            "correct": "0.0224",
+            "explanation": "V = 22,4 l = 22,4.10⁻³ m³ = 0,0224 m³"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_28",
+      "name": "Phát triển dịch vụ du lịch biển Nam Trung bộ",
+      "slug": "phat-trien-dich-vu-du-lich-bien-nam-trung_bo",
+      "chapter": "Địa lí các vùng kinh tế",
+      "chapter_id": "dia12_part4",
+      "lesson_id": 28,
+      "description": "Tìm hiểu tiềm năng, rào cản và định hướng phát triển du lịch biển tại vùng Nam Trung bộ (vịnh, biển đảo, cảnh quan), kèm phân tích tác động kinh tế - xã hội và môi trường.",
+      "duration_minutes": 60,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Tiềm năng và hướng phát triển du lịch biển",
+          "summary": "Nam Trung bộ có bờ biển dài, nhiều vịnh, đảo và cảnh quan đa dạng; du lịch biển cần được phát triển bền vững để tối ưu lợi ích kinh tế, giảm tác động môi trường và hỗ trợ cộng đồng địa phương.",
+          "sections": [
+            { "heading": "Tiềm năng du lịch", "content": "Bãi biển đẹp, hệ sinh thái biển phong phú, di sản văn hóa, khí hậu thuận lợi cho du lịch quanh năm." },
+            { "heading": "Rào cản", "content": "Cơ sở hạ tầng chưa đồng bộ, ô nhiễm biển, quản lý du lịch yếu, mùa vụ và biến đổi khí hậu." }
+          ]
+        },
+        "exercises": { "discuss": [ { "q": "Nêu 2 biện pháp để phát triển du lịch bền vững ở Nam Trung bộ?", "a_hint": "Quy hoạch, kiểm soát phát triển cơ sở lưu trú, giáo dục cộng đồng, quản lý rác thải." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Một lợi thế lớn của du lịch biển Nam Trung bộ là?", "options": ["Bờ biển dài và cảnh quan đa dạng","Khí hậu băng giá","Thiếu tài nguyên du lịch","Không có lợi thế"], "correct": 0, "explanation": "Bờ biển dài và cảnh quan là lợi thế phát triển du lịch biển." },
+          { "id": 2, "type": "mcq", "question": "Yếu tố nào là rào cản lớn cho du lịch bền vững?", "options": ["Ô nhiễm và hạ tầng yếu","Lợi thế cảnh quan","Nguồn du khách lớn","Sự đa dạng sinh học"], "correct": 0, "explanation": "Ô nhiễm và hạ tầng yếu cản trở phát triển bền vững." },
+          { "id": 3, "type": "mcq", "question": "Một giải pháp quản lý rác thải du lịch hiệu quả là?", "options": ["Thiết lập hệ thống thu gom, tái chế và giáo dục du khách","Bỏ rác ra biển","Không quản lý","Khuyến khích xả thải"], "correct": 0, "explanation": "Thu gom và tái chế kết hợp giáo dục là giải pháp hiệu quả." },
+          { "id": 4, "type": "mcq", "question": "Tác động tích cực của du lịch biển tới cộng đồng địa phương là?", "options": ["Tạo việc làm và thu nhập cho cư dân","Giảm thu nhập","Làm suy yếu cộng đồng","Không có tác động"], "correct": 0, "explanation": "Du lịch tạo việc làm và thu nhập nếu quản lý tốt." },
+          { "id": 5, "type": "mcq", "question": "Một chỉ tiêu đánh giá du lịch bền vững là?", "options": ["Tỷ lệ rác thải được thu gom tái chế","Số lượng khách tăng không kiểm soát","Xây dựng bừa bãi","Không có tiêu chí"], "correct": 0, "explanation": "Quản lý chất thải là chỉ tiêu quan trọng của du lịch bền vững." },
+          { "id": 6, "type": "mcq", "question": "Phát triển du lịch cần kết hợp với?", "options": ["Bảo vệ môi trường và phát triển cộng đồng","Chỉ lợi ích doanh nghiệp","Phá hoại môi trường","Không cần kết hợp"], "correct": 0, "explanation": "Kết hợp bảo tồn và lợi ích cộng đồng là cần thiết." },
+          { "id": 7, "type": "mcq", "question": "Một hoạt động du lịch nên hạn chế ở vùng nhạy cảm sinh thái là?", "options": ["Xây dựng quy mô lớn trong khu vực rạn san hô","Tham quan có kiểm soát","Nghiên cứu khoa học","Hoạt động giáo dục"], "correct": 0, "explanation": "Hạn chế xây dựng lớn để tránh phá hủy rạn san hô." },
+          { "id": 8, "type": "mcq", "question": "Nguồn vốn quan trọng để phát triển du lịch là?", "options": ["Đầu tư công + tư nhân cho hạ tầng và dịch vụ","Không cần vốn","Chỉ vốn nước ngoài không hợp tác địa phương","Chỉ vốn nhỏ lẻ"], "correct": 0, "explanation": "Kết hợp đầu tư công và tư nhân giúp phát triển bền vững." },
+          { "id": 9, "type": "mcq", "question": "Một dấu hiệu cho thấy du lịch phát triển bền vững là?", "options": ["Cộng đồng địa phương có lợi ích và môi trường được bảo tồn","Môi trường bị hủy hoại","Dân cư di cư khỏi vùng","Không có thay đổi"], "correct": 0, "explanation": "Cộng đồng hưởng lợi và môi trường được bảo tồn là dấu hiệu bền vững." },
+          { "id": 10, "type": "mcq", "question": "Kế hoạch phát triển du lịch cần có?", "options": ["Quy hoạch phân vùng, quy định xây dựng và quản lý môi trường","Không cần kế hoạch","Xây mọi nơi","Bỏ quy định"], "correct": 0, "explanation": "Quy hoạch và quy định là nền tảng cho phát triển có kiểm soát." }
+        ]
+      }
+    }
+  ]
+}

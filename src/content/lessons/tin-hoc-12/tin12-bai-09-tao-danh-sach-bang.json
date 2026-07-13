@@ -1,0 +1,41 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_09",
+      "name": "Tạo danh sách, bảng",
+      "slug": "tao-danh-sach-bang",
+      "chapter": "Giải quyết vấn đề với sự trợ giúp của máy tính",
+      "chapter_id": "tin12_ch4",
+      "lesson_id": 9,
+      "description": "Cách tổ chức thông tin dưới dạng danh sách liệt kê và bảng dữ liệu chuyên nghiệp.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Danh sách và Bảng",
+          "summary": "HTML cung cấp các thẻ đặc thù để trình bày thông tin có cấu trúc phức tạp.",
+          "sections": [
+            { "heading": "Danh sách (List)", "content": "<ul> (không thứ tự, dùng dấu chấm), <ol> (có thứ tự, dùng số/chữ). Mỗi mục con nằm trong <li>." },
+            { "heading": "Bảng (Table)", "content": "<table> (khai báo bảng), <tr> (hàng), <td> (ô dữ liệu), <th> (ô tiêu đề)." },
+            { "heading": "Thuộc tính của bảng", "content": "border (đường viền), colspan (gộp cột), rowspan (gộp hàng)." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Thẻ nào dùng để tạo danh sách có thứ tự (đánh số 1, 2, 3...)?", "options": ["<ul>", "<ol>", "<li>", "<list>"], "correct": 1, "explanation": "<ol> là Ordered List." },
+          { "id": 2, "type": "mcq", "question": "Thẻ nào dùng để tạo danh sách không thứ tự (đánh dấu chấm tròn)?", "options": ["<ol>", "<ul>", "<li>", "<dl>"], "correct": 1, "explanation": "<ul> là Unordered List." },
+          { "id": 3, "type": "mcq", "question": "Các mục nhỏ bên trong danh sách phải nằm trong thẻ nào?", "options": ["<item>", "<li>", "<ol>", "<p>"], "correct": 1, "explanation": "<li> là List Item, dùng cho cả <ul> và <ol>." },
+          { "id": 4, "type": "mcq", "question": "Cặp thẻ nào dùng để khai báo một hàng trong bảng?", "options": ["<td>", "<th>", "<tr>", "<table>"], "correct": 2, "explanation": "<tr> là Table Row." },
+          { "id": 5, "type": "mcq", "question": "Thẻ <th> khác thẻ <td> ở điểm nào?", "options": ["<th> dùng cho ô tiêu đề, chữ thường in đậm và căn giữa", "<th> dùng cho ô dữ liệu bình thường", "<td> dùng cho tiêu đề", "Không có sự khác biệt"], "correct": 0, "explanation": "<th> (Table Header) giúp phân biệt hàng/cột tiêu đề." },
+          { "id": 6, "type": "mcq", "question": "Để gộp 2 ô theo chiều ngang (gộp cột), ta dùng thuộc tính nào?", "options": ["rowspan", "colspan", "merge", "align"], "correct": 1, "explanation": "colspan (column span) xác định số cột một ô chiếm." },
+          { "id": 7, "type": "mcq", "question": "Để gộp 2 ô theo chiều dọc (gộp hàng), ta dùng thuộc tính nào?", "options": ["colspan", "rowspan", "valign", "height"], "correct": 1, "explanation": "rowspan (row span) xác định số hàng một ô chiếm." },
+          { "id": 8, "type": "mcq", "question": "Cấu trúc tối thiểu của một bảng gồm những thẻ nào theo đúng thứ tự lồng nhau?", "options": ["table > td > tr", "table > tr > td", "tr > table > td", "td > tr > table"], "correct": 1, "explanation": "Bảng chứa hàng, hàng chứa các ô." },
+          { "id": 9, "type": "mcq", "question": "Muốn danh sách <ol> bắt đầu bằng chữ cái A, B, C thay vì 1, 2, 3, ta dùng thuộc tính?", "options": ["start", "type=\"A\"", "style", "alphabet"], "correct": 1, "explanation": "Thuộc tính type xác định kiểu đánh số." },
+          { "id": 10, "type": "mcq", "question": "Để thêm chú thích cho bảng (hiển thị ngay phía trên bảng), dùng thẻ?", "options": ["<title>", "<header>", "<caption>", "<summary>"], "correct": 2, "explanation": "<caption> dùng để đặt tên cho bảng." }
+        ]
+      }
+    }
+  ]
+}

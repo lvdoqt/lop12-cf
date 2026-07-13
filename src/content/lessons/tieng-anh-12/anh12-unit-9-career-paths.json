@@ -1,0 +1,380 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-unit-9-career-paths",
+      "name": "Unit 9: Career Paths",
+      "slug": "unit-9-career-paths",
+      "chapter": "Unit 9: Career Paths",
+      "chapter_id": "A12",
+      "lesson_id": 12,
+      "description": "Learn about career paths, job skills, and three-word phrasal verbs.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2670&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "vocab-9",
+          "name": "Career Vocabulary",
+          "slug": "career-vocabulary",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Unit 9: Career Paths",
+          "sections": [
+            {
+              "heading": "1. Từ vựng (Vocabulary)",
+              "content": "<div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Word</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Type & IPA</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Meaning</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Example</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2 font-bold'>Career path</td><td class='px-4 py-2'>(n) /kəˈrɪə pɑːθ/</td><td class='px-4 py-2'>Con đường sự nghiệp</td><td class='px-4 py-2'>Choose your career path carefully.</td></tr><tr><td class='px-4 py-2 font-bold'>Profession</td><td class='px-4 py-2'>(n) /prəˈfeʃn/</td><td class='px-4 py-2'>Nghề nghiệp</td><td class='px-4 py-2'>Teaching is a noble profession.</td></tr><tr><td class='px-4 py-2 font-bold'>Qualification</td><td class='px-4 py-2'>(n) /ˌkwɒlɪfɪˈkeɪʃn/</td><td class='px-4 py-2'>Bằng cấp, trình độ</td><td class='px-4 py-2'>She has good qualifications.</td></tr><tr><td class='px-4 py-2 font-bold'>Experience</td><td class='px-4 py-2'>(n) /ɪkˈspɪəriəns/</td><td class='px-4 py-2'>Kinh nghiệm</td><td class='px-4 py-2'>He has five years of experience.</td></tr><tr><td class='px-4 py-2 font-bold'>Skill</td><td class='px-4 py-2'>(n) /skɪl/</td><td class='px-4 py-2'>Kỹ năng</td><td class='px-4 py-2'>Communication skills are important.</td></tr><tr><td class='px-4 py-2 font-bold'>Promotion</td><td class='px-4 py-2'>(n) /prəˈməʊʃn/</td><td class='px-4 py-2'>Thăng chức</td><td class='px-4 py-2'>She got a promotion.</td></tr><tr><td class='px-4 py-2 font-bold'>Salary</td><td class='px-4 py-2'>(n) /ˈsæləri/</td><td class='px-4 py-2'>Lương</td><td class='px-4 py-2'>The salary is competitive.</td></tr><tr><td class='px-4 py-2 font-bold'>Benefit</td><td class='px-4 py-2'>(n) /ˈbenɪfɪt/</td><td class='px-4 py-2'>Phúc lợi</td><td class='px-4 py-2'>The job offers good benefits.</td></tr><tr><td class='px-4 py-2 font-bold'>Opportunity</td><td class='px-4 py-2'>(n) /ˌɒpəˈtjuːnəti/</td><td class='px-4 py-2'>Cơ hội</td><td class='px-4 py-2'>This is a great opportunity.</td></tr><tr><td class='px-4 py-2 font-bold'>Challenge</td><td class='px-4 py-2'>(n) /ˈtʃælɪndʒ/</td><td class='px-4 py-2'>Thách thức</td><td class='px-4 py-2'>The job presents many challenges.</td></tr><tr><td class='px-4 py-2 font-bold'>Apply</td><td class='px-4 py-2'>(v) /əˈplaɪ/</td><td class='px-4 py-2'>Nộp đơn, ứng tuyển</td><td class='px-4 py-2'>I applied for the position.</td></tr><tr><td class='px-4 py-2 font-bold'>Recruit</td><td class='px-4 py-2'>(v) /rɪˈkruːt/</td><td class='px-4 py-2'>Tuyển dụng</td><td class='px-4 py-2'>The company recruits graduates.</td></tr><tr><td class='px-4 py-2 font-bold'>Train</td><td class='px-4 py-2'>(v) /treɪn/</td><td class='px-4 py-2'>Đào tạo</td><td class='px-4 py-2'>They train new employees.</td></tr><tr><td class='px-4 py-2 font-bold'>Ambitious</td><td class='px-4 py-2'>(adj) /æmˈbɪʃəs/</td><td class='px-4 py-2'>Tham vọng</td><td class='px-4 py-2'>She is very ambitious.</td></tr><tr><td class='px-4 py-2 font-bold'>Flexible</td><td class='px-4 py-2'>(adj) /ˈfleksəbl/</td><td class='px-4 py-2'>Linh hoạt</td><td class='px-4 py-2'>The job offers flexible hours.</td></tr></tbody></table></div>"
+            },
+            {
+              "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
+              "content": "<p><strong>Career-related Terms (Thuật ngữ về nghề nghiệp):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>career path:</strong> con đường sự nghiệp</li><li><strong>career development:</strong> phát triển nghề nghiệp</li><li><strong>career goal:</strong> mục tiêu nghề nghiệp</li><li><strong>career change:</strong> thay đổi nghề nghiệp</li><li><strong>career advancement:</strong> thăng tiến trong sự nghiệp</li><li><strong>career counseling:</strong> tư vấn nghề nghiệp</li><li><strong>career prospects:</strong> triển vọng nghề nghiệp</li></ul><p><strong>Job Application (Xin việc):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>apply for a job:</strong> nộp đơn xin việc</li><li><strong>CV/resume:</strong> sơ yếu lý lịch</li><li><strong>cover letter:</strong> thư xin việc</li><li><strong>job interview:</strong> phỏng vấn xin việc</li><li><strong>reference:</strong> thư giới thiệu</li><li><strong>job offer:</strong> lời mời làm việc</li><li><strong>probation period:</strong> thời gian thử việc</li></ul><p><strong>Skills (Kỹ năng):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>hard skills:</strong> kỹ năng chuyên môn (technical skills, computer skills)</li><li><strong>soft skills:</strong> kỹ năng mềm (communication, teamwork, problem-solving)</li><li><strong>leadership skills:</strong> kỹ năng lãnh đạo</li><li><strong>time management:</strong> quản lý thời gian</li><li><strong>critical thinking:</strong> tư duy phản biện</li><li><strong>adaptability:</strong> khả năng thích nghi</li></ul><p><strong>Workplace (Nơi làm việc):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>colleague:</strong> đồng nghiệp</li><li><strong>supervisor/manager:</strong> người quản lý</li><li><strong>employee:</strong> nhân viên</li><li><strong>employer:</strong> người sử dụng lao động</li><li><strong>team:</strong> nhóm, đội</li><li><strong>department:</strong> phòng ban</li><li><strong>office:</strong> văn phòng</li></ul><p><strong>Work Conditions (Điều kiện làm việc):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>full-time job:</strong> công việc toàn thời gian</li><li><strong>part-time job:</strong> công việc bán thời gian</li><li><strong>remote work:</strong> làm việc từ xa</li><li><strong>flexible hours:</strong> giờ làm việc linh hoạt</li><li><strong>overtime:</strong> làm thêm giờ</li><li><strong>work-life balance:</strong> cân bằng công việc và cuộc sống</li></ul><p><strong>Collocations về Career:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>pursue a career:</strong> theo đuổi sự nghiệp</li><li><strong>build a career:</strong> xây dựng sự nghiệp</li><li><strong>advance one's career:</strong> thăng tiến trong sự nghiệp</li><li><strong>change careers:</strong> thay đổi nghề nghiệp</li><li><strong>gain experience:</strong> tích lũy kinh nghiệm</li><li><strong>develop skills:</strong> phát triển kỹ năng</li><li><strong>get promoted:</strong> được thăng chức</li><li><strong>earn a salary:</strong> kiếm lương</li></ul>"
+            }
+,
+            {
+              "heading": "3. Ngữ âm: Nhấn mạnh trong cụm động từ có 3 từ",
+              "content": "<h3>Stress in three-word phrasal verbs</h3><p><strong>Quy tắc nhấn mạnh:</strong></p><p><strong>1. Cụm động từ có 3 từ (Three-word phrasal verbs):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh vào từ cuối cùng (giới từ thứ hai)</li><li>Ex: look <strong>FORWARD TO</strong></li><li>Ex: get <strong>ON WITH</strong></li><li>Ex: come <strong>UP WITH</strong></li></ul><p><strong>2. Trong câu:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ chính và giới từ cuối</li><li>Ex: I'm <strong>LOOKING FORWARD TO</strong> the interview.</li><li>Ex: She <strong>CAME UP WITH</strong> a great idea.</li><li>Ex: We need to <strong>CATCH UP WITH</strong> the deadline.</li></ul><p><strong>3. Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Động từ chính thường nhấn nhẹ hơn</li><li>Giới từ đầu tiên nhấn vừa phải</li><li>Giới từ cuối cùng được nhấn mạnh nhất</li></ul>"
+            },
+            {
+              "heading": "4. Ngữ pháp: Cụm động từ có 3 từ (Three-word Phrasal Verbs)",
+              "content": "<h3>A. Cụm động từ có 3 từ (Three-word Phrasal Verbs)</h3><p><strong>Định nghĩa:</strong> Cụm động từ có 3 từ gồm động từ + giới từ/trạng từ + giới từ. Chúng có nghĩa đặc biệt, khác với nghĩa gốc của động từ.</p><p><strong>Đặc điểm:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Không thể tách rời các thành phần</li><li>Tân ngữ luôn đứng sau cụm động từ</li><li>Có nghĩa cố định, không thể đoán từ các từ riêng lẻ</li></ul><h3>B. Các cụm động từ phổ biến về Career</h3><p><strong>1. LOOK FORWARD TO + V-ing/noun (mong chờ):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: I'm <strong>looking forward to</strong> starting my new job.</li><li>Ex: She <strong>looks forward to</strong> the interview.</li><li>Ex: We <strong>look forward to</strong> hearing from you.</li></ul><p><strong>2. COME UP WITH (nghĩ ra, đưa ra):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: He <strong>came up with</strong> a brilliant idea.</li><li>Ex: We need to <strong>come up with</strong> a solution.</li><li>Ex: She <strong>came up with</strong> a new strategy.</li></ul><p><strong>3. GET ON WITH (hòa hợp với, tiếp tục làm):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: I <strong>get on with</strong> my colleagues well.</li><li>Ex: Let's <strong>get on with</strong> the work.</li><li>Ex: He doesn't <strong>get on with</strong> his boss.</li></ul><p><strong>4. CATCH UP WITH (bắt kịp):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: I need to <strong>catch up with</strong> my work.</li><li>Ex: She's trying to <strong>catch up with</strong> the team.</li><li>Ex: We must <strong>catch up with</strong> the deadline.</li></ul><p><strong>5. KEEP UP WITH (theo kịp, bắt kịp):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: It's hard to <strong>keep up with</strong> technology changes.</li><li>Ex: She <strong>keeps up with</strong> industry trends.</li><li>Ex: Can you <strong>keep up with</strong> the pace?</li></ul><p><strong>6. PUT UP WITH (chịu đựng):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: I can't <strong>put up with</strong> this stress anymore.</li><li>Ex: She has to <strong>put up with</strong> long hours.</li><li>Ex: Workers won't <strong>put up with</strong> poor conditions.</li></ul><p><strong>7. RUN OUT OF (hết, cạn kiệt):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: We're <strong>running out of</strong> time.</li><li>Ex: The company <strong>ran out of</strong> money.</li><li>Ex: Don't <strong>run out of</strong> ideas.</li></ul><p><strong>8. LOOK UP TO (kính trọng, ngưỡng mộ):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: I <strong>look up to</strong> my mentor.</li><li>Ex: Young people <strong>look up to</strong> successful entrepreneurs.</li><li>Ex: She <strong>looks up to</strong> her manager.</li></ul><p><strong>9. LOOK DOWN ON (coi thường):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: Don't <strong>look down on</strong> any profession.</li><li>Ex: He <strong>looks down on</strong> manual workers.</li><li>Ex: Never <strong>look down on</strong> others.</li></ul><p><strong>10. GET AWAY WITH (thoát khỏi hình phạt):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: You can't <strong>get away with</strong> being late.</li><li>Ex: He won't <strong>get away with</strong> poor performance.</li><li>Ex: Don't think you'll <strong>get away with</strong> it.</li></ul><p><strong>11. FACE UP TO (đối mặt với):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: You must <strong>face up to</strong> challenges.</li><li>Ex: She <strong>faced up to</strong> her mistakes.</li><li>Ex: We need to <strong>face up to</strong> the problem.</li></ul><p><strong>12. LIVE UP TO (đáp ứng, sống theo):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: He <strong>lives up to</strong> expectations.</li><li>Ex: Can you <strong>live up to</strong> the standards?</li><li>Ex: She <strong>lived up to</strong> her promises.</li></ul><p><strong>13. GO THROUGH WITH (thực hiện đến cùng):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: She decided to <strong>go through with</strong> the career change.</li><li>Ex: Will you <strong>go through with</strong> the plan?</li><li>Ex: He <strong>went through with</strong> the interview.</li></ul><p><strong>14. CUT DOWN ON (cắt giảm):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: We need to <strong>cut down on</strong> expenses.</li><li>Ex: The company <strong>cut down on</strong> overtime.</li><li>Ex: Try to <strong>cut down on</strong> stress.</li></ul><p><strong>15. MAKE UP FOR (bù đắp):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Ex: Hard work can <strong>make up for</strong> lack of experience.</li><li>Ex: She <strong>made up for</strong> lost time.</li><li>Ex: How can I <strong>make up for</strong> the mistake?</li></ul><h3>C. Lưu ý quan trọng</h3><ul class='list-disc pl-5 space-y-2'><li><strong>Không tách rời:</strong> Tân ngữ luôn đứng sau cụm động từ hoàn chỉnh</li><li>ĐÚNG: I look forward to the meeting.</li><li>SAI: I look the meeting forward to.</li><li><strong>Giới từ TO:</strong> Sau 'look forward to', 'get down to', 'face up to' dùng V-ing (không phải to-infinitive)</li><li>ĐÚNG: I look forward to working with you.</li><li>SAI: I look forward to work with you.</li><li><strong>Nghĩa cố định:</strong> Không thể đoán nghĩa từ các từ riêng lẻ</li><li>'Come up with' ≠ 'come' + 'up' + 'with'</li><li><strong>Formal vs Informal:</strong> Một số cụm động từ có từ đồng nghĩa trang trọng hơn</li><li>put up with = tolerate</li><li>come up with = devise/create</li></ul>"
+            },
+            {
+              "heading": "5. I. Getting Started",
+              "content": "<p><strong>Chủ đề:</strong> Choosing a career path - Chọn con đường sự nghiệp</p><p><strong>Nội dung chính:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Hội thoại về lựa chọn nghề nghiệp</li><li>Thảo luận về kỹ năng cần thiết</li><li>Chia sẻ về mục tiêu nghề nghiệp</li><li>Nói về thách thức trong công việc</li></ul><p><strong>Các chủ đề được đề cập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Career choices:</strong> Lựa chọn nghề nghiệp</li><li><strong>Skills needed:</strong> Kỹ năng cần thiết</li><li><strong>Career goals:</strong> Mục tiêu nghề nghiệp</li><li><strong>Challenges:</strong> Thách thức</li></ul>"
+            },
+            {
+              "heading": "6. II. Language",
+              "content": "<p><strong>A. Pronunciation: Stress in three-word phrasal verbs</strong></p><p>Luyện phát âm nhấn mạnh trong cụm động từ có 3 từ</p><p><strong>B. Vocabulary:</strong> Career Paths</p><ul class='list-disc pl-5 space-y-2'><li>Career terms: career path, profession, qualification, experience, skill</li><li>Job application: apply, recruit, CV, interview, reference</li><li>Workplace: colleague, supervisor, employee, employer, team</li><li>Work conditions: full-time, part-time, remote work, flexible hours</li><li>Adjectives: ambitious, flexible, challenging, rewarding</li></ul><p><strong>C. Grammar:</strong> Three-word Phrasal Verbs</p><ul class='list-disc pl-5 space-y-2'><li>look forward to, come up with, get on with</li><li>catch up with, keep up with, put up with</li><li>run out of, look up to, face up to</li><li>live up to, make up for</li></ul>"
+            },
+            {
+              "heading": "7. III. Reading",
+              "content": "<p><strong>Chủ đề:</strong> Career planning and development</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc hiểu về lập kế hoạch nghề nghiệp</li><li>Tìm thông tin về kỹ năng cần thiết</li><li>Hiểu về phát triển sự nghiệp</li><li>Phân tích lời khuyên về nghề nghiệp</li></ul><p><strong>Nội dung:</strong> Bài đọc giới thiệu về:</p><ul class='list-disc pl-5 space-y-2'><li><strong>Career planning:</strong> Lập kế hoạch nghề nghiệp</li><li><strong>Essential skills:</strong> Kỹ năng cần thiết (hard skills, soft skills)</li><li><strong>Career development:</strong> Phát triển sự nghiệp</li><li><strong>Work-life balance:</strong> Cân bằng công việc và cuộc sống</li></ul>"
+            },
+            {
+              "heading": "8. IV. Speaking",
+              "content": "<p><strong>Chủ đề:</strong> Discussing career plans and goals</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nói về kế hoạch nghề nghiệp</li><li>Thảo luận về kỹ năng và kinh nghiệm</li><li>Bày tỏ mục tiêu và tham vọng</li><li>Chia sẻ về thách thức trong công việc</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>I'm looking forward to starting my career in...</li><li>I came up with a plan to...</li><li>I get on with my colleagues well.</li><li>I need to catch up with the latest trends.</li><li>It's important to keep up with technology.</li><li>I look up to successful professionals.</li><li>I want to live up to expectations.</li><li>My goal is to...</li></ul>"
+            },
+            {
+              "heading": "9. V. Listening",
+              "content": "<p><strong>Chủ đề:</strong> A talk about career development</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe hiểu bài nói về phát triển nghề nghiệp</li><li>Điền thông tin về kỹ năng và kinh nghiệm</li><li>Trả lời câu hỏi về lời khuyên nghề nghiệp</li><li>Ghi chú các ý chính</li></ul><p><strong>Nội dung:</strong> Bài nghe về:</p><ul class='list-disc pl-5 space-y-2'><li>Cách chọn nghề nghiệp phù hợp</li><li>Kỹ năng cần phát triển</li><li>Cách xây dựng sự nghiệp</li><li>Lời khuyên từ chuyên gia</li></ul>"
+            },
+            {
+              "heading": "10. VI. Writing",
+              "content": "<p><strong>Chủ đề:</strong> Writing about career plans</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Viết về kế hoạch nghề nghiệp</li><li>Mô tả kỹ năng và kinh nghiệm</li><li>Sử dụng cụm động từ có 3 từ</li><li>Trình bày mục tiêu và kế hoạch hành động</li></ul><p><strong>Cấu trúc bài viết:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Introduction:</strong> Giới thiệu về sự quan tâm đến nghề nghiệp</li><li><strong>Body 1:</strong> Kỹ năng và kinh nghiệm hiện tại</li><li><strong>Body 2:</strong> Mục tiêu và kế hoạch phát triển</li><li><strong>Conclusion:</strong> Kết luận và cam kết</li></ul><p><strong>Useful language:</strong></p><ul class='list-disc pl-5 space-y-2'><li>I'm looking forward to pursuing a career in...</li><li>I came up with a plan to develop my skills.</li><li>I need to keep up with industry changes.</li><li>I look up to professionals who...</li><li>I want to live up to my potential.</li><li>My goal is to make up for my lack of experience by...</li></ul>"
+            },
+            {
+              "heading": "11. VII. Communication and Culture / CLIL",
+              "content": "<p><strong>Communication:</strong> Talking about career aspirations</p><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Expressing goals:</strong></li><li>I'm looking forward to...</li><li>My goal is to...</li><li>I hope to...</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Discussing challenges:</strong></li><li>I need to catch up with...</li><li>It's hard to keep up with...</li><li>I have to put up with...</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Talking about relationships:</strong></li><li>I get on with my team.</li><li>I look up to my mentor.</li><li>I came up with this idea with my colleagues.</li></ul><p><strong>Culture:</strong> Career paths around the world</p><ul class='list-disc pl-5 space-y-2'><li><strong>USA:</strong> Emphasis on entrepreneurship and career changes</li><li><strong>Japan:</strong> Lifetime employment tradition (changing)</li><li><strong>Germany:</strong> Strong vocational training system</li><li><strong>Vietnam:</strong> Growing focus on skills and lifelong learning</li></ul><p><strong>CLIL (Career Education):</strong> Career planning</p><ul class='list-disc pl-5 space-y-2'><li>Self-assessment: identifying strengths and interests</li><li>Goal setting: short-term and long-term goals</li><li>Skill development: hard skills and soft skills</li><li>Networking: building professional relationships</li><li>Continuous learning: staying relevant</li></ul>"
+            },
+            {
+              "heading": "12. VIII. Looking Back",
+              "content": "<p><strong>Ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Pronunciation:</strong> Stress in three-word phrasal verbs</li><li><strong>Vocabulary:</strong> Career path, profession, qualification, experience, skill, promotion, salary, benefit, opportunity, challenge, apply, recruit, train, ambitious, flexible</li><li><strong>Grammar:</strong> Three-word phrasal verbs (look forward to, come up with, get on with, catch up with, keep up with, put up with, run out of, look up to, look down on, get away with, face up to, live up to, go through with, cut down on, make up for)</li><li><strong>Skills:</strong> Reading about career planning, Speaking about career goals, Listening to career advice, Writing about career plans</li></ul><p><strong>Self-assessment:</strong> Đánh giá khả năng:</p><ul class='list-disc pl-5 space-y-2'><li>Sử dụng từ vựng về nghề nghiệp</li><li>Nhấn mạnh đúng trong cụm động từ có 3 từ</li><li>Sử dụng cụm động từ có 3 từ trong giao tiếp</li><li>Thảo luận về kế hoạch và mục tiêu nghề nghiệp</li></ul>"
+            },
+            {
+              "heading": "13. Project",
+              "content": "<p><strong>Đề tài:</strong> My career plan</p><p><strong>Nhiệm vụ:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghiên cứu về một nghề nghiệp bạn quan tâm</li><li>Phân tích kỹ năng và trình độ cần thiết</li><li>Lập kế hoạch phát triển sự nghiệp</li><li>Tạo presentation hoặc portfolio</li><li>Trình bày trước lớp (5-7 phút)</li></ul><p><strong>Nội dung cần có:</strong></p><ul class='list-disc pl-5 space-y-2'><li>What career are you interested in?</li><li>Why did you choose this career?</li><li>What qualifications and skills are needed?</li><li>What are your current strengths and weaknesses?</li><li>What is your action plan to achieve your goals?</li><li>What challenges do you expect and how will you overcome them?</li></ul><p><strong>Gợi ý nghề nghiệp:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Software engineer / IT specialist</li><li>Doctor / Nurse / Healthcare professional</li><li>Teacher / Education specialist</li><li>Business manager / Entrepreneur</li><li>Designer / Creative professional</li><li>Engineer (various fields)</li><li>Journalist / Content creator</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Type 1: Three-word Phrasal Verbs",
+            "method": "<p>Use three-word phrasal verbs correctly in context.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Choosing the right career path is one of the most important decisions young people face. Many students look forward to starting their professional lives, but they often struggle to come up with a clear plan. Career planning requires careful thought about your interests, skills, and goals.\n\nSuccessful professionals emphasize the importance of developing both hard skills and soft skills. Hard skills are technical abilities specific to your field, such as programming, accounting, or medical knowledge. Soft skills include communication, teamwork, and problem-solving. Employers look for candidates who can keep up with industry changes and adapt to new challenges. You need to face up to the reality that learning never stops - continuous education is essential in today's fast-paced world.\n\nBuilding a career also means building relationships. You should get on with your colleagues and supervisors, as good working relationships lead to better opportunities. Many young professionals look up to mentors who guide them through career challenges. A mentor can help you come up with solutions when you face difficulties and can make up for your lack of experience with their wisdom.\n\nWork-life balance is another crucial factor. While ambition is important, you shouldn't put up with excessive stress or unreasonable working conditions. Some people run out of energy because they work too hard without taking breaks. Remember that a sustainable career is one where you can live up to your potential while maintaining your health and happiness.\n\nFinally, don't be afraid to change direction if needed. Many successful people have gone through with career changes that initially seemed risky. The key is to keep learning, stay flexible, and never look down on any honest work. Every experience helps you grow professionally.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "Career planning is easy",
+                  "Career planning requires thought about skills, relationships, and balance",
+                  "Only hard skills matter",
+                  "Career changes are impossible"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về việc lập kế hoạch nghề nghiệp cần suy nghĩ về kỹ năng, mối quan hệ và sự cân bằng."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "According to the passage, what are hard skills?",
+                "options": [
+                  "Communication and teamwork",
+                  "Technical abilities specific to your field",
+                  "Problem-solving skills",
+                  "Relationship building"
+                ],
+                "correct": 1,
+                "explanation": "Hard skills là kỹ năng kỹ thuật cụ thể cho lĩnh vực của bạn."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The phrase 'keep up with' in paragraph 2 is closest in meaning to ______.",
+                "options": [
+                  "ignore",
+                  "stay current with",
+                  "fall behind",
+                  "avoid"
+                ],
+                "correct": 1,
+                "explanation": "Keep up with = stay current with (theo kịp, bắt kịp)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "Why is having a mentor important?",
+                "options": [
+                  "They do your work",
+                  "They help you find solutions and compensate for lack of experience",
+                  "They give you money",
+                  "They are not important"
+                ],
+                "correct": 1,
+                "explanation": "Người cố vấn giúp bạn tìm giải pháp và bù đắp cho sự thiếu kinh nghiệm."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "What does the passage say about career changes?",
+                "options": [
+                  "They should be avoided",
+                  "They are always easy",
+                  "They can be successful even if initially risky",
+                  "They never work"
+                ],
+                "correct": 2,
+                "explanation": "Thay đổi nghề nghiệp có thể thành công ngay cả khi ban đầu có vẻ rủi ro."
+              }
+            ]
+          },
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "I'm really looking forward ______ my new job next month.",
+            "options": ["to start", "to starting", "start", "starting"],
+            "correct": 1,
+            "explanation": "Look forward to + V-ing (mong chờ làm gì)."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "She ______ a brilliant solution to the problem.",
+            "options": ["came up with", "came with up", "came up", "up came with"],
+            "correct": 0,
+            "explanation": "Come up with = nghĩ ra, đưa ra (giải pháp, ý tưởng)."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "I ______ my colleagues very well.",
+            "options": ["get with on", "get on with", "get on", "on get with"],
+            "correct": 1,
+            "explanation": "Get on with = hòa hợp với, có quan hệ tốt với."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "We need to ______ the latest technology trends.",
+            "options": ["keep up with", "keep with up", "keep up", "up keep with"],
+            "correct": 0,
+            "explanation": "Keep up with = theo kịp, bắt kịp."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "I can't ______ this stressful work environment anymore.",
+            "options": ["put with up", "put up with", "put up", "up put with"],
+            "correct": 1,
+            "explanation": "Put up with = chịu đựng."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "We're ______ time to finish the project.",
+            "options": ["running out of", "running of out", "running out", "out running of"],
+            "correct": 0,
+            "explanation": "Run out of = hết, cạn kiệt."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "Young people ______ successful entrepreneurs.",
+            "options": ["look to up", "look up to", "look up", "up look to"],
+            "correct": 1,
+            "explanation": "Look up to = kính trọng, ngưỡng mộ."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "You must ______ the challenges in your career.",
+            "options": ["face up to", "face to up", "face up", "up face to"],
+            "correct": 0,
+            "explanation": "Face up to = đối mặt với."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "She always ______ her promises.",
+            "options": ["lives to up", "lives up to", "lives up", "up lives to"],
+            "correct": 1,
+            "explanation": "Live up to = đáp ứng, sống theo (kỳ vọng, lời hứa)."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "I need to ______ my missed work.",
+            "options": ["catch up with", "catch with up", "catch up", "up catch with"],
+            "correct": 0,
+            "explanation": "Catch up with = bắt kịp."
+          },
+          {
+            "id": "mcq11",
+            "type": "mcq",
+            "question": "Hard work can ______ lack of experience.",
+            "options": ["make for up", "make up for", "make up", "up make for"],
+            "correct": 1,
+            "explanation": "Make up for = bù đắp."
+          },
+          {
+            "id": "mcq12",
+            "type": "mcq",
+            "question": "We decided to ______ the career change plan.",
+            "options": ["go through with", "go with through", "go through", "through go with"],
+            "correct": 0,
+            "explanation": "Go through with = thực hiện đến cùng."
+          },
+          {
+            "id": "mcq13",
+            "type": "mcq",
+            "question": "The company needs to ______ unnecessary expenses.",
+            "options": ["cut down on", "cut on down", "cut down", "down cut on"],
+            "correct": 0,
+            "explanation": "Cut down on = cắt giảm."
+          },
+          {
+            "id": "mcq14",
+            "type": "mcq",
+            "question": "Don't ______ any profession.",
+            "options": ["look down on", "look on down", "look down", "down look on"],
+            "correct": 0,
+            "explanation": "Look down on = coi thường."
+          },
+          {
+            "id": "mcq15",
+            "type": "mcq",
+            "question": "You can't ______ being late to work.",
+            "options": ["get away with", "get with away", "get away", "away get with"],
+            "correct": 0,
+            "explanation": "Get away with = thoát khỏi hình phạt."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "Three-word phrasal verbs cannot be separated.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Cụm động từ có 3 từ không thể tách rời, tân ngữ luôn đứng sau."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "After 'look forward to', we use V-ing, not to-infinitive.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Look forward to + V-ing (to là giới từ, không phải to-infinitive)."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "'Come up with' means to think of or produce an idea.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Come up with = nghĩ ra, đưa ra (ý tưởng, giải pháp)."
+          },
+          {
+            "id": "msq4",
+            "type": "msq",
+            "question_text": "'Look up to' and 'look down on' have similar meanings.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. Look up to = ngưỡng mộ, look down on = coi thường (nghĩa trái ngược)."
+          },
+          {
+            "id": "msq5",
+            "type": "msq",
+            "question_text": "Soft skills include communication, teamwork, and problem-solving.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Soft skills (kỹ năng mềm) bao gồm giao tiếp, làm việc nhóm, giải quyết vấn đề."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call the route someone takes through their working life? (two words)",
+            "correct": "career path",
+            "explanation": "Career path: con đường sự nghiệp."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "Complete the phrasal verb: I'm looking ______ ______ the interview. (mong chờ)",
+            "correct": "forward to",
+            "explanation": "Look forward to = mong chờ."
+          },
+          {
+            "id": "sa3",
+            "type": "sa",
+            "question_text": "What phrasal verb means 'to think of or produce an idea'? (three words)",
+            "correct": "come up with",
+            "explanation": "Come up with = nghĩ ra, đưa ra (ý tưởng)."
+          },
+          {
+            "id": "sa4",
+            "type": "sa",
+            "question_text": "What do we call abilities like programming or accounting? (two words)",
+            "correct": "hard skills",
+            "explanation": "Hard skills: kỹ năng chuyên môn, kỹ năng kỹ thuật."
+          },
+          {
+            "id": "essay1",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about your career plans. Use at least 5 three-word phrasal verbs.",
+            "sample_answer": "I'm looking forward to pursuing a career in software engineering. I came up with this plan after realizing my passion for technology. To succeed, I need to keep up with the latest programming languages and industry trends. I look up to successful developers who have built innovative applications. Currently, I'm trying to catch up with my peers by taking online courses. I know I'll face challenges, but I'm ready to face up to them. I want to get on with professionals in the field and learn from their experiences. My goal is to live up to my potential and make up for my lack of experience through hard work and dedication.",
+            "explanation": "Bài viết sử dụng các cụm động từ: looking forward to, came up with, keep up with, look up to, catch up with, face up to, get on with, live up to, make up for."
+          },
+          {
+            "id": "essay2",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about the challenges of starting a career. Use three-word phrasal verbs.",
+            "sample_answer": "Starting a career presents many challenges that young people must face up to. First, you need to keep up with rapidly changing technology and industry standards. Many graduates run out of confidence when they realize how much they still need to learn. It's important not to put up with poor working conditions just because you're new. Instead, you should come up with strategies to develop your skills. Building relationships is crucial - you must get on with your colleagues and look up to experienced mentors. Don't look down on entry-level positions; they help you gain valuable experience. Remember that you can make up for inexperience through enthusiasm and hard work.",
+            "explanation": "Bài viết sử dụng: face up to, keep up with, run out of, put up with, come up with, get on with, look up to, look down on, make up for."
+          },
+          {
+            "id": "essay3",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) about the importance of work-life balance. Use three-word phrasal verbs.",
+            "sample_answer": "Work-life balance is essential for a sustainable career. Many professionals put up with excessive stress because they fear falling behind. However, if you constantly run out of energy, your performance will suffer. You need to face up to the fact that overworking is counterproductive. Successful people come up with strategies to manage their time effectively. They cut down on unnecessary tasks and prioritize what matters. While it's important to keep up with work demands, you shouldn't look down on the need for rest and recreation. A balanced life helps you live up to your potential at work while maintaining your health and relationships. Remember, you're looking forward to a long career, not a quick burnout.",
+            "explanation": "Bài viết sử dụng: put up with, run out of, face up to, come up with, cut down on, keep up with, look down on, live up to, looking forward to."
+          },
+          {
+            "id": "essay4",
+            "type": "essay",
+            "question_text": "Write a short paragraph (80-100 words) giving career advice to younger students. Use three-word phrasal verbs.",
+            "sample_answer": "If you're planning your career, here's my advice. First, look forward to learning, not just earning. Come up with clear goals but stay flexible. Look up to successful people in your field and learn from them, but don't try to copy them exactly. Get on with people from different backgrounds - networking is crucial. Keep up with industry changes through continuous learning. Don't put up with jobs that make you miserable, but also don't look down on any honest work. Face up to your weaknesses and work to improve them. Remember that you can make up for lack of experience with enthusiasm and dedication. Finally, don't run out of patience - building a career takes time.",
+            "explanation": "Bài viết sử dụng: look forward to, come up with, look up to, get on with, keep up with, put up with, look down on, face up to, make up for, run out of."
+          }
+        ]
+      }
+    }
+  ]
+}

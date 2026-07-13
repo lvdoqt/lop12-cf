@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-12-ap-suat-khi-dong-nang-phan-tu",
+      "name": "Bài 12. Áp suất khí theo mô hình động học phân tử. Quan hệ giữa động năng phân tử và nhiệt độ",
+      "slug": "bai-12-ap-suat-khi-dong-nang-phan-tu",
+      "chapter": "Chương 2. Khí lí tưởng",
+      "chapter_id": "LY12-2",
+      "lesson_id": 12,
+      "description": "Nghiên cứu áp suất khí theo mô hình động học phân tử và mối quan hệ giữa động năng phân tử với nhiệt độ.",
+      "duration_minutes": 45,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "asdk-1",
+          "name": "Áp suất khí theo mô hình động học",
+          "slug": "ap-suat-khi-theo-mo-hinh-dong-hoc",
+          "difficulty": "medium"
+        },
+        {
+          "id": "asdk-2",
+          "name": "Động năng phân tử",
+          "slug": "dong-nang-phan-tu",
+          "difficulty": "medium"
+        },
+        {
+          "id": "asdk-3",
+          "name": "Nhiệt độ và động năng",
+          "slug": "nhiet-do-va-dong-nang",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Áp suất khí và Động năng phân tử",
+          "sections": [
+            {
+              "heading": "1. Áp suất khí theo mô hình động học",
+              "content": "<p><strong>Công thức áp suất:</strong></p><p>$$p = \\frac{1}{3} n m \\overline{v^2}$$</p><p>Hoặc: $$p = \\frac{2}{3} n \\overline{W_d}$$</p><p>Trong đó:</p><ul><li>n: mật độ phân tử (số phân tử/m³)</li><li>m: khối lượng một phân tử (kg)</li><li>$\\overline{v^2}$: bình phương vận tốc trung bình</li><li>$\\overline{W_d}$: động năng trung bình của một phân tử</li></ul><p><strong>Ý nghĩa:</strong> Áp suất khí do va chạm của các phân tử lên thành bình.</p>"
+            },
+            {
+              "heading": "2. Động năng trung bình của phân tử",
+              "content": "<p><strong>Động năng tịnh tiến trung bình:</strong></p><p>$$\\overline{W_d} = \\frac{1}{2} m \\overline{v^2}$$</p><p><strong>Vận tốc căn quân phương (vận tốc hiệu dụng):</strong></p><p>$$v_{rms} = \\sqrt{\\overline{v^2}}$$</p><p>Công thức tính vận tốc căn quân phương:</p><p>$$v_{rms} = \\sqrt{\\frac{3k_B T}{m}} = \\sqrt{\\frac{3RT}{M}}$$</p><p>Trong đó:</p><ul><li>k_B = 1,38.10⁻²³ J/K: hằng số Boltzmann</li><li>M: khối lượng mol (kg/mol)</li><li>R = 8,314 J/(mol.K)</li></ul>"
+            },
+            {
+              "heading": "3. Quan hệ giữa động năng và nhiệt độ",
+              "content": "<p><strong>Định lý về phân bố động năng:</strong></p><p>$$\\overline{W_d} = \\frac{3}{2} k_B T$$</p><p><strong>Nhiệt độ là số đo động năng tịnh tiến trung bình của các phân tử.</strong></p><p><strong>Hệ quả:</strong></p><ul><li>Nhiệt độ càng cao → động năng trung bình càng lớn</li><li>Các phân tử khác nhau ở cùng nhiệt độ có cùng động năng trung bình</li><li>Không phụ thuộc vào khối lượng phân tử</li></ul>"
+            },
+            {
+              "heading": "4. Nội năng khí lí tưởng",
+              "content": "<p><strong>Nội năng khí lí tưởng:</strong></p><p>$$U = N \\overline{W_d} = \\frac{3}{2} nRT$$</p><p>Với n là số mol.</p><p><strong>Đặc điểm:</strong></p><ul><li>Chỉ có động năng chuyển động nhiệt</li><li>Không có thế năng tương tác</li><li>Tỉ lệ thuận với nhiệt độ</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính áp suất theo mô hình động học",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>p = (1/3)nmv²</li><li>Hoặc p = (2/3)nWđ</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tính áp suất của khí có n = 2,7.10²⁵ phân tử/m³, m = 5.10⁻²⁶ kg, v² = 9.10⁵ m²/s².",
+                "solution": "<p><strong>Giải:</strong></p><p>p = (1/3).n.m.v² = (1/3).2,7.10²⁵.5.10⁻²⁶.9.10⁵ = 40500 Pa</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính động năng và vận tốc",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Wđ = (3/2)kBT</li><li>v = √(3RT/M)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Tính động năng trung bình của phân tử ở 300K.",
+                "solution": "<p><strong>Giải:</strong></p><p>Wđ = (3/2)kBT = 1,5.1,38.10⁻²³.300 = 6,21.10⁻²¹ J</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Áp suất khí được tạo ra do:",
+            "options": [
+              "Lực hấp dẫn",
+              "Va chạm của phân tử lên thành bình",
+              "Lực tĩnh điện",
+              "Trọng lực"
+            ],
+            "correct": 1,
+            "explanation": "Áp suất do va chạm của các phân tử"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Công thức áp suất theo mô hình động học:",
+            "options": [
+              "p = (1/3)nmv²",
+              "p = nmv²",
+              "p = (2/3)nmv²",
+              "p = nmv"
+            ],
+            "correct": 0,
+            "explanation": "p = (1/3)nmv²"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Động năng trung bình của phân tử tỉ lệ với:",
+            "options": [
+              "v",
+              "v²",
+              "T",
+              "p"
+            ],
+            "correct": 2,
+            "explanation": "Wđ = (3/2)kBT, tỉ lệ với T"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Khi nhiệt độ tăng gấp đôi, động năng trung bình:",
+            "options": [
+              "Tăng 2 lần",
+              "Tăng 4 lần",
+              "Giảm 2 lần",
+              "Không đổi"
+            ],
+            "correct": 0,
+            "explanation": "Wđ tỉ lệ với T"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Vận tốc căn quân phương phụ thuộc vào:",
+            "options": [
+              "Khối lượng mol M",
+              "Nhiệt độ T",
+              "Cả M và T",
+              "Chỉ áp suất"
+            ],
+            "correct": 2,
+            "explanation": "v = √(3RT/M)"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Nhiệt độ là đại lượng đặc trưng cho:",
+            "options": [
+              "Áp suất khí",
+              "Động năng trung bình",
+              "Thể tích khí",
+              "Mật độ phân tử"
+            ],
+            "correct": 1,
+            "explanation": "Nhiệt độ đặc trưng cho động năng trung bình"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Hằng số Boltzmann có giá trị:",
+            "options": [
+              "1,38.10⁻²³ J/K",
+              "8,314 J/(mol.K)",
+              "6,022.10²³ mol⁻¹",
+              "1,6.10⁻¹⁹ C"
+            ],
+            "correct": 0,
+            "explanation": "kB = 1,38.10⁻²³ J/K"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Nội năng khí lí tưởng:",
+            "options": [
+              "Chỉ phụ thuộc nhiệt độ",
+              "Chỉ phụ thuộc thể tích",
+              "Chỉ phụ thuộc áp suất",
+              "Không phụ thuộc gì"
+            ],
+            "correct": 0,
+            "explanation": "U = (3/2)nRT, chỉ phụ thuộc T"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Tính vận tốc căn quân phương của phân tử H₂ ở 300K (M = 2 g/mol):",
+            "options": [
+              "1930 m/s",
+              "1700 m/s",
+              "2400 m/s",
+              "3000 m/s"
+            ],
+            "correct": 0,
+            "explanation": "v = √(3RT/M) = √(3.8,314.300/0,002) = 1930 m/s"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Các phân tử khác nhau ở cùng nhiệt độ có:",
+            "options": [
+              "Cùng vận tốc",
+              "Cùng động năng trung bình",
+              "Cùng khối lượng",
+              "Cùng áp suất"
+            ],
+            "correct": 1,
+            "explanation": "Wđ = (3/2)kBT không phụ thuộc khối lượng"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Áp suất khí phụ thuộc:",
+            "options": [
+              "Mật độ phân tử n",
+              "Khối lượng phân tử m",
+              "Vận tốc trung bình v",
+              "Thể tích bình"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "p = (1/3)nmv²"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Khi nhiệt độ tăng:",
+            "options": [
+              "Động năng tăng",
+              "Vận tốc tăng",
+              "Áp suất tăng (V không đổi)",
+              "Nội năng tăng"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Tất cả đều tăng theo nhiệt độ"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Nội năng khí lí tưởng:",
+            "options": [
+              "Chỉ có động năng",
+              "Tỉ lệ với nhiệt độ",
+              "Không có thế năng",
+              "Phụ thuộc thể tích"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "U chỉ phụ thuộc T, không phụ thuộc V"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính động năng trung bình của phân tử ở 300K (J).",
+            "correct": "6.21E-21",
+            "explanation": "Wđ = (3/2)kBT = 1,5.1,38.10⁻²³.300 = 6,21.10⁻²¹ J"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Tính vận tốc căn quân phương của N₂ (M=28 g/mol) ở 300K (m/s).",
+            "correct": "517",
+            "explanation": "v = √(3RT/M) = √(3.8,314.300/0,028) = 517 m/s"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Nếu nhiệt độ tăng từ 300K lên 600K, động năng tăng bao nhiêu lần?",
+            "correct": "2",
+            "explanation": "Wđ tỉ lệ với T → tăng 2 lần"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính nội năng của 1 mol khí lí tưởng ở 300K (J).",
+            "correct": "3741",
+            "explanation": "U = (3/2)nRT = 1,5.1.8,314.300 = 3741,3 J"
+          }
+        ]
+      }
+    }
+  ]
+}

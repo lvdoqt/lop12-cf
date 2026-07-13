@@ -1,0 +1,156 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-6-1-tac-gia-ho-chi-minh",
+      "name": "Tác giả Hồ Chí Minh",
+      "slug": "tac-gia-ho-chi-minh",
+      "chapter": "Hồ Chí Minh - Văn hóa phải soi đường cho quốc dân đi",
+      "chapter_id": "V12-6",
+      "lesson_id": 1,
+      "author": "Hồ Chí Minh",
+      "description": "Tìm hiểu về cuộc đời, sự nghiệp và di sản văn hóa của Chủ tịch Hồ Chí Minh - lãnh tụ vĩ đại của dân tộc Việt Nam, nhà văn hóa kiệt xuất.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1509023464722-18d996393ca8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "ho-chi-minh-biography",
+          "name": "Tiểu sử Hồ Chí Minh",
+          "slug": "tieu-su-ho-chi-minh",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Tác giả Hồ Chí Minh",
+          "sections": [
+            {
+              "heading": "1. Tiểu sử",
+              "content": "<h4>a) Thời niên thiếu</h4><ul><li><strong>Tên khai sinh:</strong> Nguyễn Sinh Cung</li><li><strong>Ngày sinh:</strong> 19/5/1890 tại làng Kim Liên, Nam Đàn, Nghệ An</li><li><strong>Gia đình:</strong> Cha là Nguyễn Sinh Sắc - nhà nho yêu nước</li><li><strong>Giáo dục:</strong> Học trường Quốc học Huế</li></ul><h4>b) Thời kỳ ra nước ngoài</h4><ul><li><strong>1911:</strong> Rời Tổ quốc tìm đường cứu nước</li><li><strong>Bút danh:</strong> Nguyễn Ái Quốc</li><li><strong>Hoạt động:</strong> Đi nhiều nước, tìm hiểu phong trào cách mạng</li><li><strong>1920:</strong> Tham gia sáng lập Đảng Cộng sản Pháp</li></ul><h4>c) Thời kỳ lãnh đạo cách mạng</h4><ul><li><strong>1930:</strong> Thành lập Đảng Cộng sản Việt Nam</li><li><strong>1941:</strong> Về nước lãnh đạo cách mạng</li><li><strong>1945:</strong> Lãnh đạo Cách mạng Tháng Tám thành công</li><li><strong>1945-1969:</strong> Chủ tịch nước Việt Nam Dân chủ Cộng hòa</li></ul>"
+            },
+            {
+              "heading": "2. Sự nghiệp văn hóa",
+              "content": "<h4>a) Tư tưởng văn hóa</h4><ul><li><strong>Quan điểm:</strong> 'Văn hóa phải soi đường cho quốc dân đi'</li><li><strong>Vai trò:</strong> Văn hóa là nền tảng tinh thần của dân tộc</li><li><strong>Mục tiêu:</strong> Xây dựng nền văn hóa dân tộc, dân chủ, đại중</li></ul><h4>b) Tác phẩm văn học</h4><ul><li><strong>Chính luận:</strong> Tuyên ngôn độc lập, Di chúc</li><li><strong>Thơ:</strong> Nhật ký trong tù, các bài thơ chữ Hán</li><li><strong>Báo chí:</strong> Nhiều bài viết trên các báo</li><li><strong>Phong cách:</strong> Giản dị, sâu sắc, dễ hiểu</li></ul><h4>c) Đóng góp văn hóa</h4><ul><li><strong>Ngôn ngữ:</strong> Sử dụng tiếng Việt giản dị, gần dân</li><li><strong>Tư tưởng:</strong> Kết hợp truyền thống và hiện đại</li><li><strong>Giáo dục:</strong> Phát động phong trào xóa mù chữ</li></ul>"
+            },
+            {
+              "heading": "3. Phong cách sáng tác",
+              "content": "<h4>a) Đặc điểm ngôn ngữ</h4><ul><li><strong>Giản dị:</strong> Dễ hiểu, gần gũi với nhân dân</li><li><strong>Súc tích:</strong> Ngắn gọn nhưng đầy đủ ý</li><li><strong>Chân thành:</strong> Xuất phát từ tâm huyết</li></ul><h4>b) Nội dung</h4><ul><li><strong>Yêu nước:</strong> Tình yêu sâu sắc với Tổ quốc</li><li><strong>Yêu dân:</strong> Quan tâm đến đời sống nhân dân</li><li><strong>Nhân văn:</strong> Tôn trọng con người, giá trị nhân văn</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex6-1-1",
+              "type": "mcq",
+              "question": "Chủ tịch Hồ Chí Minh sinh năm nào?",
+              "options": [
+                "1880",
+                "1890",
+                "1900",
+                "1910"
+              ],
+              "correct": 1,
+              "explanation": "Chủ tịch Hồ Chí Minh sinh ngày 19/5/1890 tại làng Kim Liên, Nam Đàn, Nghệ An."
+            },
+            {
+              "id": "ex6-1-2",
+              "type": "mcq",
+              "question": "Bút danh Nguyễn Ái Quốc có ý nghĩa gì?",
+              "options": [
+                "Người yêu nước",
+                "Người yêu dân",
+                "Người yêu hòa bình",
+                "Người yêu tự do"
+              ],
+              "correct": 0,
+              "explanation": "Nguyễn Ái Quốc có nghĩa là 'Người yêu nước', thể hiện tình yêu sâu sắc với Tổ quốc của Người."
+            },
+            {
+              "id": "ex6-1-3",
+              "type": "mcq",
+              "question": "Năm nào Hồ Chí Minh rời Tổ quốc tìm đường cứu nước?",
+              "options": [
+                "1905",
+                "1911",
+                "1920",
+                "1930"
+              ],
+              "correct": 1,
+              "explanation": "Năm 1911, Người rời Tổ quốc trên con tàu Amiral Latouche Tréville để tìm đường cứu nước."
+            },
+            {
+              "id": "ex6-1-4",
+              "type": "mcq",
+              "question": "Quan điểm văn hóa nổi tiếng của Hồ Chí Minh là gì?",
+              "options": [
+                "Văn hóa là tiền đề",
+                "Văn hóa phải soi đường cho quốc dân đi",
+                "Văn hóa là tất cả",
+                "Văn hóa là sức mạnh"
+              ],
+              "correct": 1,
+              "explanation": "Quan điểm 'Văn hóa phải soi đường cho quốc dân đi' thể hiện vai trò định hướng của văn hóa đối với sự phát triển dân tộc."
+            },
+            {
+              "id": "ex6-1-5",
+              "type": "mcq",
+              "question": "Đảng Cộng sản Việt Nam được thành lập năm nào?",
+              "options": [
+                "1920",
+                "1925",
+                "1930",
+                "1941"
+              ],
+              "correct": 2,
+              "explanation": "Đảng Cộng sản Việt Nam được Người thành lập ngày 3/2/1930, mở ra kỷ nguyên mới cho cách mạng Việt Nam."
+            },
+            {
+              "id": "ex6-1-6",
+              "type": "mcq",
+              "question": "Phong cách ngôn ngữ của Hồ Chí Minh có đặc điểm gì?",
+              "options": [
+                "Phức tạp, khó hiểu",
+                "Giản dị, súc tích, chân thành",
+                "Hoa mỹ, rườm rà",
+                "Trừu tượng, xa dân"
+              ],
+              "correct": 1,
+              "explanation": "Ngôn ngữ của Hồ Chí Minh giản dị, dễ hiểu, súc tích và chân thành, gần gũi với nhân dân."
+            },
+            {
+              "id": "ex6-1-7",
+              "type": "mcq",
+              "question": "Tác phẩm thơ nổi tiếng của Hồ Chí Minh là gì?",
+              "options": [
+                "Truyện Kiều",
+                "Nhật ký trong tù",
+                "Lục Vân Tiên",
+                "Chinh phụ ngâm"
+              ],
+              "correct": 1,
+              "explanation": "'Nhật ký trong tù' là tập thơ nổi tiếng của Hồ Chí Minh, viết bằng chữ Hán khi bị giam ở Trung Quốc."
+            },
+            {
+              "id": "ex6-1-8",
+              "type": "mcq",
+              "question": "Hồ Chí Minh đọc Tuyên ngôn độc lập vào ngày nào?",
+              "options": [
+                "19/8/1945",
+                "2/9/1945",
+                "30/4/1975",
+                "1/5/1975"
+              ],
+              "correct": 1,
+              "explanation": "Ngày 2/9/1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

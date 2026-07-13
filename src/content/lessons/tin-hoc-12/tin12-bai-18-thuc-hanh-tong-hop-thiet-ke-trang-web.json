@@ -1,0 +1,41 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_18",
+      "name": "Thực hành tổng hợp thiết kế trang web",
+      "slug": "thuc-hanh-tong-hop-thiet-ke-trang-web",
+      "chapter": "Giải quyết vấn đề với sự trợ giúp của máy tính",
+      "chapter_id": "tin12_ch4",
+      "lesson_id": 18,
+      "description": "Kết hợp HTML và CSS để xây dựng một giao diện trang web hoàn chỉnh, có bố cục và màu sắc hài hòa.",
+      "duration_minutes": 50,
+      "difficulty_level": "khó",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Tổng hợp Thiết kế Web",
+          "summary": "Quy trình xây dựng trang web từ ý tưởng, phác thảo đến thực thi mã nguồn.",
+          "sections": [
+            { "heading": "Phân tích bố cục", "content": "Xác định các phần: Header (đầu trang), Navigation (thanh điều hướng), Main Content (nội dung chính), Sidebar (thanh bên) và Footer (chân trang)." },
+            { "heading": "Xây dựng khung HTML", "content": "Sử dụng các thẻ ngữ nghĩa (Semantic tags) như <header>, <nav>, <main>, <section>, <article>, <footer>." },
+            { "heading": "Làm đẹp với CSS", "content": "Thiết lập màu sắc chủ đạo, font chữ thống nhất, căn chỉnh vị trí các khối và tạo hiệu ứng tương tác cơ bản." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Thẻ ngữ nghĩa (Semantic tag) giúp ích gì cho trang web?", "options": ["Làm trang web load nhanh hơn", "Giúp công cụ tìm kiếm và trình đọc màn hình hiểu rõ cấu trúc nội dung", "Thay thế hoàn toàn CSS", "Làm trang web bảo mật hơn"], "correct": 1, "explanation": "Các thẻ như <nav>, <article> cho biết ý nghĩa của nội dung bên trong nó." },
+          { "id": 2, "type": "mcq", "question": "Thành phần 'Navigation' trên trang web thường chứa gì?", "options": ["Thông tin bản quyền", "Các liên kết chính để di chuyển giữa các trang hoặc các phần", "Nội dung bài viết chi tiết", "Địa chỉ liên hệ"], "correct": 1, "explanation": "Navigation (thanh điều hướng) giúp người dùng biết mình có thể đi đâu trên website." },
+          { "id": 3, "type": "mcq", "question": "Footer của trang web thường đặt ở đâu?", "options": ["Phía trên cùng", "Bên trái", "Dưới cùng của trang", "Ở giữa"], "correct": 2, "explanation": "Footer chứa các thông tin kết thúc trang như bản quyền, liên hệ." },
+          { "id": 4, "type": "mcq", "question": "Tại sao nên dùng file CSS bên ngoài (External) cho dự án thực hành tổng hợp?", "options": ["Để dễ quản lý và áp dụng đồng nhất cho nhiều trang HTML", "Vì bắt buộc", "Để file HTML nặng hơn", "Để không ai thấy được code CSS"], "correct": 0, "explanation": "Giúp mã nguồn sạch sẽ và dễ chỉnh sửa tập trung." },
+          { "id": 5, "type": "mcq", "question": "Bước đầu tiên khi bắt tay vào thiết kế một trang web là gì?", "options": ["Viết code ngay", "Phác thảo ý tưởng giao diện (Wireframe/Mockup)", "Mua tên miền", "Cài đặt máy chủ"], "correct": 1, "explanation": "Phác thảo giúp xác định bố cục trước khi hiện thực hóa bằng mã." },
+          { "id": 6, "type": "mcq", "question": "Thuộc tính CSS nào thường được dùng để chia cột cho trang web hiện đại?", "options": ["border", "display: flex; hoặc display: grid;", "font-weight", "text-align"], "correct": 1, "explanation": "Flexbox và Grid là hai công cụ mạnh nhất để dàn trang hiện nay." },
+          { "id": 7, "type": "mcq", "question": "Để đảm bảo trang web hiển thị tốt trên cả máy tính và điện thoại, ta cần kỹ thuật gì?", "options": ["Vẽ hai trang web khác nhau", "Thiết kế đáp ứng (Responsive Web Design)", "Chỉ dùng chữ, không dùng ảnh", "Cấm dùng điện thoại vào web"], "correct": 1, "explanation": "Responsive giúp giao diện tự co giãn phù hợp với màn hình." },
+          { "id": 8, "type": "mcq", "question": "Kí hiệu UTF-8 trong thẻ <meta> có tác dụng gì?", "options": ["Làm trang web chạy nhanh", "Hiển thị đúng tiếng Việt và các kí tự đặc biệt", "Mã hóa mật khẩu", "Tạo liên kết"], "correct": 1, "explanation": "UTF-8 là bảng mã kí tự đa ngôn ngữ chuẩn cho web." },
+          { "id": 9, "type": "mcq", "question": "Khi thiết kế, việc chọn màu sắc cần lưu ý điều gì?", "options": ["Dùng càng nhiều màu càng tốt", "Chọn màu hài hòa, có độ tương phản tốt giữa chữ và nền", "Chỉ dùng màu đen trắng", "Chọn màu theo sở thích ngẫu nhiên"], "correct": 1, "explanation": "Màu sắc ảnh hưởng trực tiếp đến trải nghiệm đọc của người dùng." },
+          { "id": 10, "type": "mcq", "question": "Để kiểm tra trang web hiển thị như thế nào, ta dùng phần mềm gì?", "options": ["Notepad", "Trình duyệt web (Chrome, Edge, Firefox...)", "Photoshop", "Excel"], "correct": 1, "explanation": "Trình duyệt là môi trường thực thi và hiển thị mã HTML/CSS." }
+        ]
+      }
+    }
+  ]
+}

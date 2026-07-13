@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_02",
+      "name": "Hội nhập kinh tế quốc tế",
+      "slug": "hoi-nhap-kinh-te-quoc-te",
+      "chapter": "Hội nhập kinh tế quốc tế",
+      "chapter_id": "GDCD12",
+      "lesson_id": 2,
+      "description": "Khái niệm, các cấp độ và tầm quan trọng của việc hội nhập kinh tế thế giới đối với sự phát triển đất nước.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Hội nhập kinh tế quốc tế",
+          "summary": "Hội nhập kinh tế quốc tế là quá trình gắn kết nền kinh tế một quốc gia với kinh tế thế giới thông qua các hoạt động thương mại và đầu tư.",
+          "sections": [
+            { "heading": "Khái niệm hội nhập", "content": "Là việc thực hiện các biện pháp để mở cửa nền kinh tế, tham gia vào các tổ chức kinh tế và thực hiện các cam kết quốc tế." },
+            { "heading": "Các cấp độ hội nhập", "content": "Song phương (giữa 2 nước), Khu vực (ví dụ ASEAN, EU), Toàn cầu (ví dụ WTO)." },
+            { "heading": "Tác động của hội nhập", "content": "Mở rộng thị trường, thu hút đầu tư, chuyển giao công nghệ nhưng cũng tạo ra sự cạnh tranh gay gắt." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Hội nhập kinh tế quốc tế là quá trình?", "options": ["Đóng cửa nền kinh tế", "Gắn kết kinh tế quốc gia với kinh tế khu vực và thế giới", "Ngăn chặn hàng ngoại nhập", "Chỉ xuất khẩu không nhập khẩu"], "correct": 1, "explanation": "Hội nhập là mở cửa để giao lưu và hợp tác kinh tế." },
+          { "id": 2, "type": "mcq", "question": "Việc Việt Nam gia nhập WTO là cấp độ hội nhập nào?", "options": ["Song phương", "Khu vực", "Toàn cầu", "Đa phương hẹp"], "correct": 2, "explanation": "WTO là Tổ chức Thương mại Thế giới, đại diện cho cấp độ hội nhập toàn cầu." },
+          { "id": 3, "type": "mcq", "question": "Lợi ích nào sau đây là của hội nhập kinh tế?", "options": ["Mở rộng thị trường xuất khẩu hàng hóa", "Làm cho hàng nội địa bị đào thải hết", "Tăng sự phụ thuộc vào nước ngoài", "Không phải đóng thuế"], "correct": 0, "explanation": "Hội nhập giúp hàng hóa trong nước vươn ra thị trường thế giới." },
+          { "id": 4, "type": "mcq", "question": "ASEAN là tổ chức hội nhập ở cấp độ nào?", "options": ["Toàn cầu", "Khu vực", "Song phương", "Gia đình"], "correct": 1, "explanation": "ASEAN là Hiệp hội các quốc gia Đông Nam Á." },
+          { "id": 5, "type": "mcq", "question": "Một trong những thách thức của hội nhập kinh tế là?", "options": ["Hàng hóa đa dạng hơn", "Sự cạnh tranh quyết liệt từ các doanh nghiệp nước ngoài", "Giá cả hàng hóa giảm", "Có thêm nhiều việc làm"], "correct": 1, "explanation": "Doanh nghiệp trong nước phải đối mặt với các tập đoàn mạnh của thế giới." },
+          { "id": 6, "type": "mcq", "question": "Để hội nhập thành công, chúng ta cần làm gì?", "options": ["Nâng cao chất lượng nguồn nhân lực và sản phẩm", "Cấm hàng ngoại nhập", "Chờ đợi sự giúp đỡ của nước khác", "Không cần thay đổi gì"], "correct": 0, "explanation": "Năng lực cạnh tranh cốt lõi nằm ở chất lượng con người và hàng hóa." },
+          { "id": 7, "type": "mcq", "question": "FTA là viết tắt của cụm từ nào?", "options": ["Hiệp định thương mại tự do", "Tổ chức tiền tệ quốc tế", "Quỹ cứu trợ quốc tế", "Hiệp định an ninh"], "correct": 0, "explanation": "FTA (Free Trade Agreement) là cam kết cắt giảm rào cản thương mại giữa các bên." },
+          { "id": 8, "type": "mcq", "question": "Hội nhập kinh tế giúp thu hút điều gì từ nước ngoài?", "options": ["Vốn đầu tư và công nghệ tiên tiến", "Các thói quen xấu", "Hàng hóa kém chất lượng", "Sự bảo hộ"], "correct": 0, "explanation": "Dòng vốn FDI và tri thức kĩ thuật là lợi ích lớn của hội nhập." },
+          { "id": 9, "type": "mcq", "question": "Hội nhập kinh tế có ảnh hưởng đến chủ quyền quốc gia không?", "options": ["Làm mất hoàn toàn chủ quyền", "Cần giữ vững độc lập tự chủ đi đôi với hợp tác", "Hội nhập là từ bỏ chủ quyền", "Không có liên quan"], "correct": 1, "explanation": "Hội nhập phải dựa trên nguyên tắc bình đẳng, cùng có lợi và giữ vững độc lập." },
+          { "id": 10, "type": "mcq", "question": "Việc giao lưu văn hóa trong hội nhập kinh tế có ý nghĩa gì?", "options": ["Làm mất bản sắc dân tộc", "Tăng cường hiểu biết và thúc đẩy quan hệ kinh tế", "Làm tốn kém tiền bạc", "Không cần thiết"], "correct": 1, "explanation": "Văn hóa là cầu nối giúp các hoạt động kinh tế diễn ra thuận lợi hơn." }
+        ]
+      }
+    }
+  ]
+}

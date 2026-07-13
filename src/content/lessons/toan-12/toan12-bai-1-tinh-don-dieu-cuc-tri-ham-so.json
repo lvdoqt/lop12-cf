@@ -1,0 +1,413 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-1-tinh-don-dieu-cuc-tri-ham-so",
+      "name": "Bài 1. Tính đơn điệu và cực trị của hàm số",
+      "slug": "bai-1-tinh-don-dieu-cuc-tri-ham-so",
+      "chapter": "Chương 1: Ứng dụng đạo hàm để khảo sát và vẽ đồ thị hàm số",
+      "chapter_id": "T12-1",
+      "lesson_id": 1,
+      "description": "Tìm hiểu về tính đơn điệu và cực trị của hàm số thông qua đạo hàm. Nắm vững cách xét dấu đạo hàm để xác định khoảng đơn điệu và các điểm cực trị của hàm số.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/4F46E5/FFFFFF?text=Tính+đơn+điệu+và+Cực+trị",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Xét tính đơn điệu của hàm số",
+          "slug": "xet-tinh-don-dieu-ham-so",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Tìm cực trị của hàm số",
+          "slug": "tim-cuc-tri-ham-so",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: Đọc bảng biến thiên và đồ thị",
+          "slug": "doc-bang-bien-thien-do-thi",
+          "difficulty": "easy"
+        },
+        {
+          "id": "dang4",
+          "name": "Dạng 4: Bài toán thực tế ứng dụng cực trị",
+          "slug": "bai-toan-thuc-te-ung-dung-cuc-tri",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Tính đơn điệu của hàm số",
+              "content": "<h3>Định nghĩa</h3><p>Hàm số $y = f(x)$ <strong>đồng biến</strong> trên $K$ nếu $\\forall x_1, x_2 \\in K, x_1 < x_2 \\Rightarrow f(x_1) < f(x_2)$.</p><p>Hàm số $y = f(x)$ <strong>nghịch biến</strong> trên $K$ nếu $\\forall x_1, x_2 \\in K, x_1 < x_2 \\Rightarrow f(x_1) > f(x_2)$.</p><h3>Điều kiện cần và đủ</h3><ul><li>Nếu $f'(x) > 0, \\forall x \\in K$ thì hàm số <strong>đồng biến</strong> trên $K$.</li><li>Nếu $f'(x) < 0, \\forall x \\in K$ thì hàm số <strong>nghịch biến</strong> trên $K$.</li><li>Nếu $f'(x) = 0, \\forall x \\in K$ thì hàm số <strong>không đổi</strong> (hàm hằng) trên $K$.</li></ul><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 1:</strong> Nếu $f'(x) \\geq 0$ (hoặc $\\leq 0$) trên $K$ và chỉ bằng 0 tại <em>hữu hạn điểm</em>, hàm số vẫn đồng biến (hoặc nghịch biến) trên $K$. Ví dụ: $y = x^3$ có $y'(0)=0$ nhưng vẫn đồng biến trên $\\mathbb{R}$.</div><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 2:</strong> Hàm số đơn điệu trên từng khoảng trong tập xác định <strong>không</strong> có nghĩa là đơn điệu trên toàn bộ $\\mathbb{R}$. Ví dụ: $y = \\dfrac{1}{x}$ nghịch biến trên $(-\\infty;0)$ và trên $(0;+\\infty)$, nhưng <em>không</em> nghịch biến trên $\\mathbb{R}\\setminus\\{0\\}$.</div><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 3 – Quy trình chuẩn:</strong> (1) Tìm TXĐ → (2) Tính $f'(x)$ → (3) Giải $f'(x)=0$ và tìm điểm không xác định của $f'$ → (4) Lập bảng xét dấu $f'(x)$ → (5) Kết luận khoảng đơn điệu.</div>"
+            },
+            {
+              "heading": "2. Cực trị của hàm số",
+              "content": "<h3>Định nghĩa</h3><p>Điểm $x_0$ gọi là <strong>điểm cực đại</strong> của hàm số $f$ nếu tồn tại $(a; b)$ chứa $x_0$ sao cho $f(x) < f(x_0), \\forall x \\in (a; b) \\setminus \\{x_0\\}$. Giá trị $f(x_0)$ gọi là <strong>giá trị cực đại</strong>.</p><p>Điểm $x_0$ gọi là <strong>điểm cực tiểu</strong> của hàm số $f$ nếu tồn tại $(a; b)$ chứa $x_0$ sao cho $f(x) > f(x_0), \\forall x \\in (a; b) \\setminus \\{x_0\\}$. Giá trị $f(x_0)$ gọi là <strong>giá trị cực tiểu</strong>.</p><h3>Điều kiện cần (Định lý Fermat)</h3><p>Nếu hàm số đạt cực trị tại $x_0$ và có đạo hàm tại đó thì $f'(x_0) = 0$.</p><h3>Điều kiện đủ</h3><p><strong>Quy tắc 1 (Dấu hiệu 1):</strong></p><ul><li>Nếu $f'(x)$ đổi dấu từ <strong>dương sang âm</strong> qua $x_0$ thì $x_0$ là điểm <strong>cực đại</strong>.</li><li>Nếu $f'(x)$ đổi dấu từ <strong>âm sang dương</strong> qua $x_0$ thì $x_0$ là điểm <strong>cực tiểu</strong>.</li><li>Nếu $f'(x)$ <strong>không đổi dấu</strong> qua $x_0$ thì $x_0$ <em>không phải là điểm cực trị</em>.</li></ul><p><strong>Quy tắc 2 (Dấu hiệu 2):</strong> Giả sử $f'(x_0) = 0$ và có đạo hàm cấp hai:</p><ul><li>Nếu $f''(x_0) < 0$ thì $x_0$ là điểm <strong>cực đại</strong>.</li><li>Nếu $f''(x_0) > 0$ thì $x_0$ là điểm <strong>cực tiểu</strong>.</li><li>Nếu $f''(x_0) = 0$ thì <em>không kết luận được</em>, phải dùng Quy tắc 1.</li></ul><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 4:</strong> $f'(x_0) = 0$ là <em>điều kiện cần</em>, không phải điều kiện đủ để có cực trị. Ví dụ $f(x)=x^3$ có $f'(0)=0$ nhưng $x=0$ không phải cực trị (vì $f'$ không đổi dấu).</div><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 5:</strong> Với hàm số bậc ba $y = ax^3 + bx^2 + cx + d$ ($a \\neq 0$):<br>• Hàm số có <strong>2 điểm cực trị</strong> $\\Leftrightarrow$ $y' = 0$ có hai nghiệm phân biệt $\\Leftrightarrow \\Delta' = b^2 - 3ac > 0$.<br>• Hàm số <strong>không có cực trị</strong> $\\Leftrightarrow$ $\\Delta' \\leq 0$.</div><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 6 – Lưu ý với hàm phân thức:</strong> Hàm phân thức tuyến tính $y = \\dfrac{ax+b}{cx+d}$ (với $ad-bc \\neq 0$) có đạo hàm $y' = \\dfrac{ad-bc}{(cx+d)^2}$ không đổi dấu nên <strong>không có cực trị</strong>, đơn điệu trên từng khoảng của TXĐ.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xét tính đơn điệu của hàm số",
+            "method": "<h3>Phương pháp</h3><ol><li>Tìm tập xác định.</li><li>Tính $f'(x)$. Tìm các điểm $x_i$ làm $f'(x)=0$ hoặc không xác định.</li><li>Lập bảng biến thiên xét dấu $f'(x)$.</li><li>Kết luận khoảng đồng biến (dấu +), nghịch biến (dấu -).</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Xét tính đơn điệu của hàm số $y = x^3 - 3x^2 + 2$.",
+                "solution": "<p><strong>Giải:</strong></p><p>TXĐ: $D = \\mathbb{R}$.</p><p>$y' = 3x^2 - 6x = 3x(x-2)$. $y' = 0 \\Leftrightarrow x=0$ hoặc $x=2$.</p><p>Bảng biến thiên: $y'$ dương trên $(-\\infty; 0)$ và $(2; +\\infty)$; âm trên $(0; 2)$.</p><p><strong>Kết luận:</strong> Đồng biến trên $(-\\infty; 0)$ và $(2; +\\infty)$, nghịch biến trên $(0; 2)$."
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Xét tính đơn điệu của hàm số $y = \\dfrac{2x-3}{x-1}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>TXĐ: $D = \\mathbb{R}\\setminus\\{1\\}$.</p><p>$y' = \\dfrac{2(x-1) - (2x-3)}{(x-1)^2} = \\dfrac{-1}{(x-1)^2} < 0$ với mọi $x \\neq 1$.</p><p><strong>Kết luận:</strong> Hàm số nghịch biến trên $(-\\infty; 1)$ và $(1; +\\infty)$.</p><p><em>Chú ý: không được nói nghịch biến trên $\\mathbb{R}\\setminus\\{1\\}$ vì hai khoảng không liên thông.</em></p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tìm cực trị của hàm số",
+            "method": "<h3>Phương pháp</h3><p>Sử dụng quy tắc 1 (Bảng biến thiên) hoặc quy tắc 2 ($f''$).</p><ul><li><strong>Quy tắc 1:</strong> Tính $f'$, tìm nghiệm, lập bảng xét dấu. Đổi dấu $\\rightarrow$ cực trị.</li><li><strong>Quy tắc 2:</strong> Giải $f'(x)=0$, thay nghiệm vào $f''(x)$.</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tìm cực trị của hàm số $y = x^3 - 3x + 2$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$y' = 3x^2 - 3 = 3(x-1)(x+1)$. $y'=0 \\Leftrightarrow x = \\pm 1$.</p><p>Bảng xét dấu: $y' > 0$ trên $(-\\infty; -1)$ và $(1; +\\infty)$; $y' < 0$ trên $(-1; 1)$.</p><ul><li>$y'$ đổi từ $+$ sang $-$ tại $x=-1$ $\\Rightarrow$ <strong>Cực đại:</strong> $y(-1) = -1+3+2 = 4$.</li><li>$y'$ đổi từ $-$ sang $+$ tại $x=1$ $\\Rightarrow$ <strong>Cực tiểu:</strong> $y(1) = 1-3+2 = 0$.</li></ul>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Tìm cực trị của hàm số $y = \\dfrac{x^2+2}{x-1}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>TXĐ: $\\mathbb{R}\\setminus\\{1\\}$.</p><p>$y' = \\dfrac{2x(x-1)-(x^2+2)}{(x-1)^2} = \\dfrac{x^2-2x-2}{(x-1)^2}$. $y'=0 \\Leftrightarrow x^2-2x-2=0 \\Leftrightarrow x = 1\\pm\\sqrt{3}$.</p><p>$x_1 = 1-\\sqrt{3} \\approx -0{,}73$: $y'$ đổi từ $+$ sang $-$ → <strong>cực đại</strong>.</p><p>$x_2 = 1+\\sqrt{3} \\approx 2{,}73$: $y'$ đổi từ $-$ sang $+$ → <strong>cực tiểu</strong>.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Đọc bảng biến thiên và đồ thị",
+            "method": "<h3>Phương pháp</h3><ul><li>Đơn điệu: Đồ thị đi lên (đồng biến), đi xuống (nghịch biến). $f'>0$ (đồng biến), $f'<0$ (nghịch biến).</li><li>Cực trị: Điểm \"đỉnh núi\" (cực đại), \"đáy thung lũng\" (cực tiểu). Điểm làm $f'$ đổi dấu.</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Cho bảng biến thiên... Hỏi hàm số đạt cực đại tại đâu?",
+                "solution": "<p>Nhìn vào bảng biến thiên, tìm điểm mà $y'$ đổi dấu từ dương sang âm.</p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Hàm số $f(x)$ có bảng xét dấu $f'$: dương trên $(-\\infty; -2)$, âm trên $(-2; 1)$, dương trên $(1; +\\infty)$. Tìm các điểm cực trị.",
+                "solution": "<p><strong>Giải:</strong></p><ul><li>Tại $x = -2$: $f'$ đổi từ $+$ sang $-$ nên $x=-2$ là <strong>điểm cực đại</strong>.</li><li>Tại $x = 1$: $f'$ đổi từ $-$ sang $+$ nên $x=1$ là <strong>điểm cực tiểu</strong>.</li></ul>"
+              }
+            ]
+          },
+          {
+            "id": "dang4",
+            "name": "Dạng 4: Bài toán thực tế ứng dụng cực trị",
+            "method": "<h3>Phương pháp</h3><ol><li>Đặt ẩn phụ hợp lý cho yếu tố cần tối ưu hóa, xác định điều kiện ràng buộc.</li><li>Biểu diễn hàm mục tiêu (diện tích, thể tích, lợi nhuận, chi phí...) theo ẩn phụ đó.</li><li>Tính đạo hàm, giải phương trình đạo hàm bằng 0 trên miền xác định của bài toán.</li><li>Kết luận giá trị cực trị và trả lời câu hỏi bài toán (kèm đơn vị).</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Người ta muốn làm một cái hộp không nắp hình hộp chữ nhật có thể tích $32\\text{ cm}^3$, đáy hình vuông. Tìm cạnh đáy $a$ (cm) để diện tích tôn dùng là ít nhất.",
+                "solution": "<p><strong>Giải:</strong></p><p>Gọi cạnh đáy là $a > 0$, chiều cao là $h > 0$. Thể tích: $a^2 h = 32 \\Rightarrow h = \\dfrac{32}{a^2}$.</p><p>Diện tích 5 mặt: $S = a^2 + 4ah = a^2 + \\dfrac{128}{a}$.</p><p>$S' = 2a - \\dfrac{128}{a^2} = 0 \\Leftrightarrow a^3 = 64 \\Leftrightarrow a = 4$.</p><p>$S''(4) = 2 + \\dfrac{256}{64} = 6 > 0$ → cực tiểu. <strong>Vậy $a = 4$ cm, $S_{min} = 48$ cm².</strong></p>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Lợi nhuận bán hàng (triệu đồng) theo số lượng $x$ sản phẩm: $P(x) = -x^3 + 6x^2 + 15x - 20$, $0 \\leq x \\leq 8$. Tìm số sản phẩm để lợi nhuận lớn nhất.",
+                "solution": "<p><strong>Giải:</strong></p><p>$P'(x) = -3x^2 + 12x + 15 = -3(x-5)(x+1)$. Trên $[0;8]$: $P'=0 \\Leftrightarrow x=5$.</p><p>$P'$ đổi từ $+$ sang $-$ tại $x=5$ → cực đại. $P(5) = -125+150+75-20 = 80$ triệu đồng.</p><p><strong>Vậy bán 5 sản phẩm/ngày đạt lợi nhuận lớn nhất là 80 triệu đồng.</strong></p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Hàm số $y = x^3 - 3x + 1$ đồng biến trên khoảng nào?",
+            "options": [
+              "$(-\\infty; -1)$ và $(1; +\\infty)$",
+              "$(-1; 1)$",
+              "$(-\\infty; +\\infty)$",
+              "$(-1; 0)$ và $(0; 1)$"
+            ],
+            "correct": 0,
+            "explanation": "$y' = 3x^2 - 3 = 3(x-1)(x+1)$. $y'=0 \\Leftrightarrow x = \\pm 1$. $y'>0$ khi $x < -1$ hoặc $x > 1$."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Hàm số $y = -x^3 + 3x^2 - 4$ nghịch biến trên khoảng nào?",
+            "options": [
+              "$(0; 2)$",
+              "$(-\\infty; 0)$ và $(2; +\\infty)$",
+              "$(-\\infty; +\\infty)$",
+              "$(2; +\\infty)$"
+            ],
+            "correct": 1,
+            "explanation": "$y' = -3x^2 + 6x = -3x(x-2)$. $y'<0$ khi $x<0$ hoặc $x>2$, tức là trên $(-\\infty;0)$ và $(2;+\\infty)$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Hàm số $y = \\dfrac{x+2}{x-1}$ nghịch biến trên các khoảng:",
+            "options": [
+              "$(-\\infty; 1)$ và $(1; +\\infty)$",
+              "$\\mathbb{R} \\setminus \\{1\\}$",
+              "$(-\\infty; 1)$ mà thôi",
+              "$(0; 1)$"
+            ],
+            "correct": 0,
+            "explanation": "$y' = \\dfrac{(x-1)-(x+2)}{(x-1)^2} = \\dfrac{-3}{(x-1)^2} < 0$ với mọi $x \\neq 1$. Nghịch biến trên từng khoảng của TXĐ: $(-\\infty;1)$ và $(1;+\\infty)$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Cho hàm số $y=f(x)$ có đạo hàm $f'(x)=x(x-2)^2$. Khẳng định nào đúng?",
+            "options": [
+              "Hàm số đồng biến trên $(0; +\\infty)$",
+              "Hàm số nghịch biến trên $(2; +\\infty)$",
+              "Hàm số đồng biến trên $\\mathbb{R}$",
+              "Hàm số nghịch biến trên $(-\\infty; 2)$"
+            ],
+            "correct": 0,
+            "explanation": "$f'(x)=0 \\Leftrightarrow x=0, x=2$. Vì $(x-2)^2 \\geq 0$, dấu của $f'(x)$ là dấu của $x$. Nên $f'(x)>0$ khi $x>0$ (kể cả $x>2$) → đồng biến trên $(0;+\\infty)$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Điểm cực đại của hàm số $y = -x^3 + 3x + 1$ là:",
+            "options": [
+              "$x = -1$",
+              "$x = 1$",
+              "$x = 0$",
+              "$x = 3$"
+            ],
+            "correct": 1,
+            "explanation": "$y' = -3x^2 + 3 = -3(x-1)(x+1)$. $y'=0 \\Leftrightarrow x = \\pm 1$. $y'>0$ trên $(-1;1)$, $y'<0$ ngoài. Tại $x=1$: $y'$ đổi từ $+$ sang $-$ → cực đại."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Giá trị cực tiểu của hàm số $y = \\dfrac{1}{3}x^3 - x^2 + x + 1$ là:",
+            "options": [
+              "$\\frac{4}{3}$",
+              "$1$",
+              "Không có cực tiểu",
+              "$\\frac{2}{3}$"
+            ],
+            "correct": 2,
+            "explanation": "$y' = x^2 - 2x + 1 = (x-1)^2 \\geq 0$ với mọi $x$; $y'=0$ duy nhất tại $x=1$ nhưng không đổi dấu. Hàm số luôn đồng biến, không có cực trị."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Cho bảng biến thiên của hàm số $y=f(x)$ có $y'$ đổi dấu từ dương sang âm tại $x=2$. Giá trị cực đại của hàm số là:",
+            "options": [
+              "$f(2)$",
+              "$2$",
+              "$f'(2)$",
+              "$0$"
+            ],
+            "correct": 0,
+            "explanation": "Tại $x=2$ đạo hàm đổi từ $+$ sang $-$ nên $x=2$ là điểm cực đại. Giá trị cực đại là $f(2)$ (giá trị của hàm số, không phải hoành độ)."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Hàm số nào sau đây không có cực trị?",
+            "options": [
+              "$y = x^3 - 3x$",
+              "$y = x^3 + 3x$",
+              "$y = \\dfrac{2x-1}{x+1}$",
+              "Cả B và C"
+            ],
+            "correct": 3,
+            "explanation": "B: $y' = 3x^2+3 > 0$ luôn, không đổi dấu → không có cực trị. C: $y' = \\frac{3}{(x+1)^2} > 0$ luôn → không có cực trị. A: có cực trị tại $x=\\pm1$. Vậy cả B và C không có cực trị."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Cho hàm số $y=f(x)$ có đạo hàm $f'(x) = (x-1)(x+2)(x-3)$. Số điểm cực trị của hàm số là:",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "0"
+            ],
+            "correct": 2,
+            "explanation": "$f'(x)=0$ có 3 nghiệm phân biệt $x=-2; 1; 3$ đều là bội lẻ nên $f'$ đổi dấu qua cả 3 nghiệm → 3 điểm cực trị."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Điểm cực trị (tọa độ) của đồ thị hàm số $y = x^3 - 3x + 1$ là:",
+            "options": [
+              "$(1; -1)$ và $(-1; 3)$",
+              "$(1; 1)$ và $(-1; 3)$",
+              "$(1; -1)$ và $(-1; 1)$",
+              "$(0; 1)$ và $(2; -1)$"
+            ],
+            "correct": 0,
+            "explanation": "$y' = 3x^2-3 = 0 \\Leftrightarrow x=\\pm1$. $y(1) = 1-3+1=-1$; $y(-1)=-1+3+1=3$. Điểm cực tiểu $(1;-1)$, cực đại $(-1;3)$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Cho hàm số $y=f(x)$ có đồ thị như hình vẽ, với cực đại tại điểm $A(x_A; y_A)$ và cực tiểu tại điểm $B(x_B; y_B)$. Mệnh đề nào sau đây đúng?",
+            "options": [
+              "Giá trị cực đại của hàm số bằng $y_A$",
+              "Giá trị cực đại của hàm số bằng $x_A$",
+              "Điểm cực đại của hàm số là $y_A$",
+              "Hàm số đạt cực tiểu tại điểm $y_B$"
+            ],
+            "correct": 0,
+            "explanation": "Điểm cực đại là $x_A$ (hoành độ), giá trị cực đại là $y_A$ (tung độ = $f(x_A)$). Đáp án A đúng."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Hàm số $y = x^3 - 3x^2 - 9x + 5$ có cực tiểu tại $x = x_0$, tìm $x_0$:",
+            "options": [
+              "$x_0 = -1$",
+              "$x_0 = 3$",
+              "$x_0 = 0$",
+              "$x_0 = 9$"
+            ],
+            "correct": 1,
+            "explanation": "$y' = 3x^2-6x-9 = 3(x-3)(x+1)$. Nghiệm $x=-1$ và $x=3$. Tại $x=-1$: $y'$ đổi $+\\to-$ → cực đại. Tại $x=3$: $y'$ đổi $-\\to+$ → cực tiểu. Vậy $x_0 = 3$."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Cho hàm số $y = x^3 - 3x^2 - 9x + 2$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số đồng biến trên $(-\\infty; -1)$ và $(3; +\\infty)$",
+              "Hàm số nghịch biến trên $(-1; 3)$",
+              "Hàm số có cực đại tại $x = -1$, giá trị cực đại bằng $7$",
+              "Hàm số có cực tiểu tại $x = 3$, giá trị cực tiểu bằng $-25$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$y' = 3x^2-6x-9 = 3(x+1)(x-3)$. $y'>0$ trên $(-\\infty;-1)$ và $(3;+\\infty)$ (A ✓). $y'<0$ trên $(-1;3)$ (B ✓). Cực đại tại $x=-1$: $y(-1)=-1-3+9+2=7$ (C ✓). Cực tiểu tại $x=3$: $y(3)=27-27-27+2=-25$ (D ✓)."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Cho hàm số $y = \\dfrac{x^2 - x + 1}{x - 1}$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "TXĐ của hàm số là $\\mathbb{R}\\setminus\\{1\\}$",
+              "Hàm số có đúng 2 điểm cực trị",
+              "Cực đại của hàm số bằng $-1$",
+              "Hàm số nghịch biến trên $(0; 1)$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "TXĐ: $\\mathbb{R}\\setminus\\{1\\}$ (A ✓). $y' = \\dfrac{x(x-2)}{(x-1)^2}$. $y'=0 \\Leftrightarrow x=0$ hoặc $x=2$ → 2 cực trị (B ✓). $x=0$: $y'$ đổi $+\\to-$ → cực đại, $y(0)=\\frac{0-0+1}{0-1}=-1$ (C ✓). Trên $(0;1)$: $x(x-2)<0$ và $(x-1)^2>0$ → $y'<0$ → nghịch biến (D ✓)."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Hàm số $y = x^3 - 6x^2 + 9x + 1$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số có 2 điểm cực trị",
+              "Giá trị cực đại bằng $5$",
+              "Giá trị cực tiểu bằng $1$",
+              "Hàm số đồng biến trên $(1; 3)$"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "$y' = 3x^2-12x+9 = 3(x-1)(x-3)$. Nghiệm $x=1$ và $x=3$ → 2 cực trị (A ✓). Tại $x=1$ ($y'$ đổi $+\\to-$): cực đại, $y(1)=1-6+9+1=5$ (B ✓). Tại $x=3$ ($y'$ đổi $-\\to+$): cực tiểu, $y(3)=27-54+27+1=1$ (C ✓). Trên $(1;3)$: $y'<0$ → nghịch biến, không đồng biến (D sai)."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Hàm số $y = 2x^3 - 3x^2 - 12x + 5$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số đồng biến trên $(-\\infty; -1)$ và $(2; +\\infty)$",
+              "Hàm số có cực đại tại $x = -1$, giá trị cực đại bằng $12$",
+              "Hàm số có cực tiểu tại $x = 2$, giá trị cực tiểu bằng $-15$",
+              "Hàm số không có cực trị"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "$y' = 6x^2-6x-12 = 6(x-2)(x+1)$. $y'>0$ ngoài $(-1;2)$ (A ✓). Cực đại tại $x=-1$: $y(-1)=-2-3+12+5=12$ (B ✓). Cực tiểu tại $x=2$: $y(2)=16-12-24+5=-15$ (C ✓). D sai vì có 2 cực trị."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính giá trị cực đại của hàm số $y = -x^3 + 3x^2 + 9x - 5$. Nhập kết quả là số nguyên.",
+            "explanation": "$y' = -3x^2+6x+9 = -3(x-3)(x+1)$. $y'=0 \\Leftrightarrow x=3$ hoặc $x=-1$. Tại $x=-1$: $y'$ đổi $-\\to+$ → cực tiểu. Tại $x=3$: $y'$ đổi $+\\to-$ → cực đại. $y(3) = -27+27+27-5 = 22$.",
+            "correct": "22"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Hàm số $y = \\dfrac{1}{3}x^3 - 2x^2 + 3x - 1$ có cực tiểu tại $x = x_0$. Tính $y(x_0)$ (nhập số nguyên).",
+            "explanation": "$y' = x^2-4x+3 = (x-1)(x-3)$. Tại $x=1$: $y'$ đổi $+\\to-$ → cực đại. Tại $x=3$: $y'$ đổi $-\\to+$ → cực tiểu, $x_0=3$. $y(3) = \\frac{27}{3}-18+9-1 = 9-18+9-1 = -1$.",
+            "correct": "-1"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Hàm số $y = x^3 - 3x^2 - 9x + 2$ đạt cực đại tại $x = a$ và cực tiểu tại $x = b$. Tính $a + b$ (nhập số nguyên).",
+            "explanation": "$y' = 3x^2-6x-9 = 3(x+1)(x-3)$. Cực đại tại $x=-1$ (vì $y'$ đổi $+\\to-$), cực tiểu tại $x=3$ (vì $y'$ đổi $-\\to+$). Vậy $a=-1$, $b=3$, $a+b = -1+3 = 2$.",
+            "correct": "2"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Hàm số $y = \\dfrac{x^2 + 3}{x - 1}$ có cực tiểu tại $x = x_0 > 0$. Tính giá trị cực tiểu $y(x_0)$ (nhập số nguyên).",
+            "explanation": "$y' = \\dfrac{2x(x-1)-(x^2+3)}{(x-1)^2} = \\dfrac{x^2-2x-3}{(x-1)^2} = \\dfrac{(x-3)(x+1)}{(x-1)^2}$. $y'=0 \\Leftrightarrow x=3$ hoặc $x=-1$. Với $x_0 > 0$: chọn $x_0=3$. Xét dấu: $y'<0$ trên $(1;3)$, $y'>0$ trên $(3;+\\infty)$ → $x_0=3$ là cực tiểu. $y(3) = \\dfrac{9+3}{3-1} = \\dfrac{12}{2} = 6$.",
+            "correct": "6"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "🌍 [Thực tế] Một người dùng 40 m hàng rào để quây 3 mặt của một mảnh vườn hình chữ nhật (mặt thứ 4 tựa vào tường). Diện tích lớn nhất (m²) mảnh vườn đạt được là bao nhiêu?",
+            "explanation": "Gọi chiều rộng là $x$ (m, $0 < x < 20$), chiều dài là $y$ (m). Ràng buộc: $2x + y = 40 \\Rightarrow y = 40-2x$. Diện tích: $S(x) = x(40-2x) = 40x-2x^2$. $S'(x) = 40-4x = 0 \\Leftrightarrow x=10$. $S''=-4<0$ → cực đại. $S_{max} = S(10) = 10 \\times 20 = 200$ m².",
+            "correct": "200"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "🌍 [Thực tế] Lợi nhuận (triệu đồng) khi bán $x$ sản phẩm/ngày: $P(x) = -x^3 + 6x^2 + 15x - 20$ với $0 \\leq x \\leq 8$. Lợi nhuận lớn nhất đạt được (triệu đồng) là bao nhiêu?",
+            "explanation": "$P'(x) = -3x^2+12x+15 = -3(x-5)(x+1)$. Trên $[0;8]$: $P'=0 \\Leftrightarrow x=5$. $P'$ đổi $+\\to-$ tại $x=5$ → cực đại. $P(5) = -125+150+75-20 = 80$ triệu đồng. Kiểm tra biên: $P(0)=-20 < 0$; $P(8)=-512+384+120-20=-28 < 0$. Vậy lợi nhuận lớn nhất là 80 triệu đồng.",
+            "correct": "80"
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Cho hàm số $y = f(x)$ liên tục trên $\\mathbb{R}$ và có đạo hàm $f'(x) = x(x-1)^2(x+2)$. <br>a) Lập bảng biến thiên của hàm số. <br>b) Tìm các khoảng đơn điệu của hàm số. <br>c) Xác định các điểm cực trị của hàm số.",
+            "answer": "a) Bảng biến thiên (SV trình bày).<br>b) Đồng biến trên $(-2; 0)$ và $(1; +\\infty)$, nghịch biến trên $(-\\infty; -2)$ và $(0; 1)$.<br>c) Cực tiểu tại $x=-2$, cực đại tại $x=0$.",
+            "explanation": "Xét dấu $f'(x)$ và lập bảng biến thiên theo quy tắc."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Chứng minh rằng hàm số $y = \\dfrac{x-1}{x+1}$ luôn đồng biến trên từng khoảng xác định của nó.",
+            "answer": "$y' = \\dfrac{2}{(x+1)^2} > 0$ với mọi $x \\neq -1$.",
+            "explanation": "Tính đạo hàm và chứng minh đạo hàm luôn dương."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Tìm các giá trị của tham số $m$ để hàm số $y = x^3 - 3x^2 + mx + 1$ đồng biến trên $\\mathbb{R}$.",
+            "answer": "$m \\ge 3$.",
+            "explanation": "Yêu cầu $y' = 3x^2 - 6x + m \\ge 0$ với mọi $x \\in \\mathbb{R}$, tương đương $\\Delta' = 9 - 3m \\le 0$."
+          }
+        ]
+      }
+    }
+  ]
+}

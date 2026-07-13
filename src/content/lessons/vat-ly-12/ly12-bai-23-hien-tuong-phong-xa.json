@@ -1,0 +1,281 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-23-hien-tuong-phong-xa",
+      "name": "Bài 23. Hiện tượng phóng xạ",
+      "slug": "bai-23-hien-tuong-phong-xa",
+      "chapter": "Chương 4. Vật lí hạt nhân",
+      "chapter_id": "LY12-4",
+      "lesson_id": 23,
+      "description": "Nghiên cứu về hiện tượng phóng xạ, các loại tia phóng xạ và định luật phóng xạ.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "htpx-1",
+          "name": "Khái niệm phóng xạ",
+          "slug": "khai-niem-phong-xa",
+          "difficulty": "easy"
+        },
+        {
+          "id": "htpx-2",
+          "name": "Các loại tia phóng xạ",
+          "slug": "cac-loai-tia-phong-xa",
+          "difficulty": "medium"
+        },
+        {
+          "id": "htpx-3",
+          "name": "Định luật phóng xạ",
+          "slug": "dinh-luat-phong-xa",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Hiện tượng phóng xạ",
+          "sections": [
+            {
+              "heading": "1. Hiện tượng phóng xạ",
+              "content": "<p><strong>Định nghĩa:</strong> Phóng xạ là hiện tượng hạt nhân không bền tự động phát ra các bức xạ và biến đổi thành hạt nhân khác.</p><p><strong>Đặc điểm:</strong></p><ul><li>Xảy ra tự nhiên hoặc nhân tạo</li><li>Không phụ thuộc vào điều kiện bên ngoài (nhiệt độ, áp suất...)</li><li>Tuân theo định luật phóng xạ</li></ul><p><strong>Chu kỳ bán rã (T):</strong> Là thời gian để một nửa số hạt nhân phóng xạ bị phân rã.</p>"
+            },
+            {
+              "heading": "2. Các loại tia phóng xạ",
+              "content": "<p><strong>a) Tia alpha (α):</strong></p><ul><li>Là hạt nhân ^4_2He</li><li>Mang điện dương +2e</li><li>Khả năng ion hóa mạnh, đâm xuyên yếu</li><li>Phương trình: $$^A_ZX \\rightarrow ^{A-4}_{Z-2}Y + ^4_2He$$</li></ul><p><strong>b) Tia beta (β):</strong></p><ul><li>β⁻: electron, mang điện âm</li><li>β⁺: positron, mang điện dương</li><li>Đâm xuyên mạnh hơn α</li><li>Phương trình β⁻: $$^A_ZX \\rightarrow ^{A}_{Z+1}Y + ^0_{-1}e + \\bar{\\nu}_e$$</li></ul><p><strong>c) Tia gamma (γ):</strong></p><ul><li>Là sóng điện từ năng lượng cao</li><li>Không mang điện</li><li>Đâm xuyên rất mạnh</li><li>Thường đi kèm phóng xạ α hoặc β</li></ul>"
+            },
+            {
+              "heading": "3. Định luật phóng xạ",
+              "content": "<p><strong>Số hạt nhân còn lại:</strong></p><p>$$N = N_0.2^{-t/T} = N_0.e^{-\\lambda t}$$</p><p>Trong đó λ = ln2/T là hằng số phóng xạ</p><p><strong>Số hạt nhân đã phân rã:</strong></p><p>$$\\Delta N = N_0 - N = N_0(1 - 2^{-t/T})$$</p><p><strong>Hoạt động phóng xạ:</strong></p><p>$$A = \\frac{\\Delta N}{\\Delta t} = \\lambda N = A_0.2^{-t/T}$$</p><p>Đơn vị: Becqueren (Bq), Curie (Ci)</p><p>1 Ci = 3,7.10¹⁰ Bq</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính số hạt còn lại",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>N = N₀.2^(-t/T)</li><li>Chú ý đơn vị T</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Chất phóng xạ có chu kỳ bán rã T = 5 năm. Sau 15 năm, còn bao nhiêu %?",
+                "solution": "<p><strong>Giải:</strong></p><p>t/T = 15/5 = 3</p><p>N/N₀ = 2^(-3) = 1/8 = 12,5%</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính hoạt động phóng xạ",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>A = A₀.2^(-t/T)</li><li>A = λN</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Ban đầu A₀ = 100 Bq, T = 10 ngày. Sau 30 ngày, A = ?",
+                "solution": "<p><strong>Giải:</strong></p><p>t/T = 30/10 = 3</p><p>A = 100.2^(-3) = 12,5 Bq</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Phóng xạ là hiện tượng:",
+            "options": [
+              "Hạt nhân tự phát ra bức xạ",
+              "Tạo ra hạt nhân mới",
+              "Cả A và B đều đúng",
+              "Cả A và B đều sai"
+            ],
+            "correct": 2,
+            "explanation": "Phóng xạ vừa phát bức xạ vừa tạo hạt nhân mới"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Tia alpha là:",
+            "options": [
+              "Hạt nhân ^4_2He",
+              "Electron",
+              "Sóng điện từ",
+              "Neutron"
+            ],
+            "correct": 0,
+            "explanation": "Tia α là hạt nhân Heli"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Tia beta là:",
+            "options": [
+              "Electron hoặc positron",
+              "Hạt nhân Heli",
+              "Sóng điện từ",
+              "Proton"
+            ],
+            "correct": 0,
+            "explanation": "β⁻ là electron, β⁺ là positron"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Tia gamma là:",
+            "options": [
+              "Sóng điện từ",
+              "Electron",
+              "Hạt nhân Heli",
+              "Proton"
+            ],
+            "correct": 0,
+            "explanation": "Tia γ là sóng điện từ năng lượng cao"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Chu kỳ bán rã T là:",
+            "options": [
+              "Thời gian để 1/2 hạt nhân phân rã",
+              "Thời gian để tất cả phân rã",
+              "Thời gian để hạt nhân tăng gấp đôi",
+              "Thời gian sống trung bình"
+            ],
+            "correct": 0,
+            "explanation": "T là thời gian để 50% hạt nhân phân rã"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Định luật phóng xạ: N = N₀.2^(-t/T). T là:",
+            "options": [
+              "Chu kỳ bán rã",
+              "Hằng số phóng xạ",
+              "Thời gian phóng xạ",
+              "Số hạt nhân"
+            ],
+            "correct": 0,
+            "explanation": "T là chu kỳ bán rã"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Tia có khả năng đâm xuyên mạnh nhất:",
+            "options": [
+              "Gamma",
+              "Beta",
+              "Alpha",
+              "Không xác định"
+            ],
+            "correct": 0,
+            "explanation": "Gamma có đâm xuyên mạnh nhất"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Tia có khả năng ion hóa mạnh nhất:",
+            "options": [
+              "Alpha",
+              "Beta",
+              "Gamma",
+              "Cả ba như nhau"
+            ],
+            "correct": 0,
+            "explanation": "Alpha ion hóa mạnh nhất"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Đơn vị hoạt động phóng xạ:",
+            "options": [
+              "Becquerel (Bq)",
+              "Curie (Ci)",
+              "Cả A và B đều đúng",
+              "Newton (N)"
+            ],
+            "correct": 2,
+            "explanation": "Bq và Ci đều là đơn vị hoạt động phóng xạ"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Sau 2 chu kỳ bán rã, số hạt nhân còn lại:",
+            "options": [
+              "25%",
+              "50%",
+              "75%",
+              "0%"
+            ],
+            "correct": 0,
+            "explanation": "N/N₀ = 1/2² = 1/4 = 25%"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các tia phóng xạ:",
+            "options": [
+              "Tia alpha",
+              "Tia beta",
+              "Tia gamma",
+              "Tia tử ngoại"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Phóng xạ có α, β, γ"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Đặc điểm của phóng xạ:",
+            "options": [
+              "Xảy ra tự nhiên",
+              "Không phụ thuộc điều kiện bên ngoài",
+              "Tuân theo định luật phóng xạ",
+              "Cần kích thích bên ngoài"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Phóng xạ tự nhiên không cần kích thích"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Tính chất của tia alpha:",
+            "options": [
+              "Là hạt nhân Heli",
+              "Mang điện dương",
+              "Ion hóa mạnh",
+              "Đâm xuyên yếu"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Tất cả đều là tính chất của tia α"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Chất phóng xạ có T = 5 ngày. Sau 15 ngày, còn bao nhiêu %?",
+            "correct": "12.5",
+            "explanation": "t/T = 15/5 = 3; N/N₀ = 2^(-3) = 12,5%"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Tính hằng số phóng xạ λ nếu T = 10 ngày.",
+            "correct": "0.0693",
+            "explanation": "λ = ln2/T = 0,693/10 = 0,0693 ngày⁻¹"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "A₀ = 80 Bq, sau 2 chu kỳ T = 5 ngày. Tính A (Bq).",
+            "correct": "20",
+            "explanation": "A = 80.2^(-2) = 20 Bq"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Đổi 1 Ci ra Bq.",
+            "correct": "3.7E10",
+            "explanation": "1 Ci = 3,7.10¹⁰ Bq"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-7-6-cung-co-mo-rong",
+      "name": "Củng cố, mở rộng",
+      "slug": "cung-co-mo-rong",
+      "chapter": "Sự thật trong tác phẩm kí",
+      "chapter_id": "V12-7",
+      "lesson_id": 6,
+      "description": "Củng cố kiến thức về văn kí và mở rộng hiểu biết về thể loại văn học này trong văn học Việt Nam.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "consolidation",
+          "name": "Củng cố kiến thức",
+          "slug": "cung-co-kien-thuc",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Củng cố và mở rộng về văn kí",
+          "sections": [
+            {
+              "heading": "1. Tổng kết về văn kí",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Định nghĩa:</strong> Thể loại văn học ghi chép sự việc có thật</li><li><strong>Đặc điểm:</strong> Chân thực, có tính chủ quan</li><li><strong>Phân loại:</strong> Hồi ký, nhật ký, truyện ký, tùy bút</li></ul><h4>b) Đặc điểm nghệ thuật</h4><ul><li><strong>Tính chân thực:</strong> Dựa trên sự việc có thật</li><li><strong>Tính chủ quan:</strong> Qua góc nhìn cá nhân</li><li><strong>Phong cách:</strong> Đa dạng, tùy tác giả</li></ul><h4>c) Giá trị</h4><ul><li><strong>Tư liệu:</strong> Lịch sử, văn hóa, xã hội</li><li><strong>Nghệ thuật:</strong> Kỹ thuật viết, ngôn ngữ</li><li><strong>Giáo dục:</strong> Bài học cuộc sống</li></ul>"
+            },
+            {
+              "heading": "2. Các tác giả văn kí tiêu biểu",
+              "content": "<h4>a) Ngô Tất Tố</h4><ul><li><strong>Tác phẩm:</strong> Việc làng, Nghệ thuật băm thịt gà</li><li><strong>Phong cách:</strong> Giản dị, hài hước</li><li><strong>Đề tài:</strong> Đời sống làng quê</li></ul><h4>b) Đào Duy Anh</h4><ul><li><strong>Tác phẩm:</strong> Nhớ nghĩ chiều hôm</li><li><strong>Phong cách:</strong> Chân thành, sâu sắc</li><li><strong>Đề tài:</strong> Hồi ký trí thức</li></ul><h4>c) Tô Hoài</h4><ul><li><strong>Tác phẩm:</strong> Vì sao tôi không quên, Trên đảo xa</li><li><strong>Phong cách:</strong> Trữ tình, giàu cảm xúc</li><li><strong>Đề tài:</strong> Chiến tranh, con người</li></ul>"
+            },
+            {
+              "heading": "3. Kỹ năng viết văn kí",
+              "content": "<h4>a) Chọn đề tài</h4><ul><li><strong>Có thật:</strong> Sự việc đã trải qua</li><li><strong>Ý nghĩa:</strong> Bài học, giá trị</li><li><strong>Độc đáo:</strong> Góc nhìn riêng</li></ul><h4>b) Kỹ thuật viết</h4><ul><li><strong>Chân thực:</strong> Ghi chép trung thực</li><li><strong>Sinh động:</strong> Miêu tả chi tiết</li><li><strong>Cảm xúc:</strong> Thể hiện tâm tư</li></ul><h4>c) Ngôn ngữ</h4><ul><li><strong>Tự nhiên:</strong> Không gượng ép</li><li><strong>Giàu hình ảnh:</strong> Dễ hình dung</li><li><strong>Cá nhân:</strong> Mang dấu ấn riêng</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex7-6-1",
+              "type": "mcq",
+              "question": "Đặc điểm quan trọng nhất của văn kí là gì?",
+              "options": [
+                "Tưởng tượng",
+                "Tính chân thực, dựa trên sự việc có thật",
+                "Hư cấu",
+                "Nghị luận"
+              ],
+              "correct": 1,
+              "explanation": "Đặc điểm quan trọng nhất của văn kí là tính chân thực, ghi chép những sự việc có thật đã xảy ra."
+            },
+            {
+              "id": "ex7-6-2",
+              "type": "mcq",
+              "question": "Văn kí có thể phân thành những loại nào?",
+              "options": [
+                "Chỉ có hồi ký",
+                "Hồi ký, nhật ký, truyện ký, tùy bút",
+                "Chỉ có nhật ký",
+                "Chỉ có truyện ký"
+              ],
+              "correct": 1,
+              "explanation": "Văn kí bao gồm nhiều loại: hồi ký, nhật ký, truyện ký, tùy bút, mỗi loại có đặc điểm riêng."
+            },
+            {
+              "id": "ex7-6-3",
+              "type": "mcq",
+              "question": "Tác phẩm 'Việc làng' của Ngô Tất Tố thuộc thể loại nào?",
+              "options": [
+                "Tiểu thuyết",
+                "Văn kí (truyện ký)",
+                "Thơ",
+                "Kịch"
+              ],
+              "correct": 1,
+              "explanation": "'Việc làng' là tập truyện ký của Ngô Tất Tố, ghi chép đời sống làng quê có thật."
+            },
+            {
+              "id": "ex7-6-4",
+              "type": "mcq",
+              "question": "Giá trị của văn kí là gì?",
+              "options": [
+                "Chỉ giải trí",
+                "Tư liệu lịch sử, văn hóa và bài học cuộc sống",
+                "Không có giá trị",
+                "Chỉ để đọc"
+              ],
+              "correct": 1,
+              "explanation": "Văn kí có giá trị như tư liệu lịch sử, văn hóa, xã hội và mang lại bài học cuộc sống quý báu."
+            },
+            {
+              "id": "ex7-6-5",
+              "type": "mcq",
+              "question": "Khi viết văn kí, cần chọn đề tài như thế nào?",
+              "options": [
+                "Tưởng tượng ra",
+                "Sự việc có thật đã trải qua, có ý nghĩa",
+                "Chép từ người khác",
+                "Bất kỳ đề tài nào"
+              ],
+              "correct": 1,
+              "explanation": "Cần chọn đề tài từ sự việc có thật đã trải qua, có ý nghĩa và góc nhìn độc đáo."
+            },
+            {
+              "id": "ex7-6-6",
+              "type": "mcq",
+              "question": "Phong cách của Ngô Tất Tố trong văn kí có đặc điểm gì?",
+              "options": [
+                "Hoa mỹ, phức tạp",
+                "Giản dị, hài hước, gần gũi",
+                "Khô khan, máy móc",
+                "Trừu tượng"
+              ],
+              "correct": 1,
+              "explanation": "Phong cách của Ngô Tất Tố giản dị, có tính hài hước và rất gần gũi với đời sống."
+            },
+            {
+              "id": "ex7-6-7",
+              "type": "mcq",
+              "question": "Ngôn ngữ trong văn kí cần có đặc điểm gì?",
+              "options": [
+                "Gượng ép, máy móc",
+                "Tự nhiên, giàu hình ảnh, mang dấu ấn cá nhân",
+                "Khô khan",
+                "Phức tạp"
+              ],
+              "correct": 1,
+              "explanation": "Ngôn ngữ trong văn kí cần tự nhiên, giàu hình ảnh, dễ hình dung và mang dấu ấn cá nhân của tác giả."
+            },
+            {
+              "id": "ex7-6-8",
+              "type": "mcq",
+              "question": "Tác giả nào nổi tiếng với hồi ký 'Nhớ nghĩ chiều hôm'?",
+              "options": [
+                "Ngô Tất Tố",
+                "Đào Duy Anh",
+                "Tô Hoài",
+                "Nam Cao"
+              ],
+              "correct": 1,
+              "explanation": "'Nhớ nghĩ chiều hôm' là tác phẩm hồi ký nổi tiếng của Đào Duy Anh, phản ánh tâm tư trí thức."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

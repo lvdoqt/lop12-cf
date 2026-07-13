@@ -1,0 +1,213 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-2-4-thuc-hanh-tien-viet-bien-phap-tu-tu",
+      "name": "Thực hành tiếng Việt: Tác dụng của các biện pháp tu từ trong thơ",
+      "slug": "bien-phap-tu-tu-trong-tho",
+      "chapter": "Những thế giới thơ",
+      "chapter_id": "V12-2",
+      "lesson_id": 4,
+      "description": "Học và thực hành các biện pháp tu từ phổ biến trong thơ ca: ẩn dụ, so sánh, nhân hóa, hoán dụ, điệp âu... và phân tích tác dụng của từng biện pháp trong việc biểu hiện cảm xúc, tâm tư.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507842211343-583f20270319?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tq-bp-1",
+          "name": "Xác định và phân tích biện pháp tu từ",
+          "slug": "xac-dinh-phan-tich-bien-phap",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Tác dụng của các biện pháp tu từ trong thơ",
+          "sections": [
+            {
+              "heading": "1. Khái niệm biện pháp tu từ",
+              "content": "<h4>a) Biện pháp tu từ là gì</h4><ul><li><strong>Định nghĩa:</strong> Biện pháp tu từ là những cách viết, cách dùng từ, cấu trúc câu chữ để làm cho lời nói/viết trở nên sinh động, cuốn hút, hàm chứa nhiều tầng ý nghĩa</li><li><strong>Mục đích:</strong> Giúp biểu hiện ý tưởng, cảm xúc một cách mạnh mẽ, sâu sắc, gây ấn tượng với người đọc</li><li><strong>Tầm quan trọng:</strong> Đặc biệt quan trọng trong thơ ca, nơi mà từ ngữ phải \"ghi gọn\" được những ý tưởng phức tạp</li></ul><h4>b) Phân loại biện pháp tu từ</h4><ul><li><strong>Biện pháp dùng từ:</strong> Ẩn dụ, so sánh, nhân hóa, hoán dụ...</li><li><strong>Biện pháp dùng câu:</strong> Điệp âu, câu hỏi tu từ, câu paralelel...</li><li><strong>Biện pháp âm vun:</strong> Alliteration (lặp âm), assonance (lặp vần)...</li></ul><h4>c) Tại sao thơ cần biện pháp tu từ</h4><ul><li><strong>Thơ đặc thù:</strong> Thơ có số từ ít, cần tối ưu hóa từng từ để truyền tải ý tưởng</li><li><strong>Sâu sắc:</strong> Biện pháp tu từ giúp thơ biểu hiện những cảm xúc, ý tưởng mà lời nói thường khó thể hiện</li><li><strong>Sáng tạo:</strong> Biện pháp tu từ tạo ra cách nhìn mới, cách cảm nhận mớinối với đề tài quen thuộc</li></ul>"
+            },
+            {
+              "heading": "2. Ẩn dụ (Metaphor)",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Khái niệm:</strong> Ẩn dụ là cách 蜀代 một vật/sự việc bằng cách gọi nó là vật/sự việc khác, mà không dùng từ so sánh (như, giống...)</li><li><strong>Công thức:</strong> A là B (chứ không phải \"A giống B\" hay \"A như B\")</li><li><strong>Đặc điểm:</strong> Gần, gây sâu ấn tượng, đôi khi phức tạp cần người đọc suy suy</li></ul><h4>b) Ví dụ</h4><ul><li>\"Cuộc sống là hành trình\" (chứ không phải \"Cuộc sống giống như hành trình\")</li><li>\"Tình yêu là ánh sáng\" (chứ không phải \"Tình yêu như ánh sáng\")</li><li>\"Đêm là biển tối\" (chứ không phải \"Đêm giống như biển tối\")</li></ul><h4>c) Tác dụng</h4><ul><li><strong>Sâu sắc:</strong> Thay đổi cách nhìn nhận người đọc về sự vật</li><li><strong>Gần gũi:</strong> Dùng những hình ảnh quen thuộc để diễn đạt những khái niệm trừu tượng</li><li><strong>Tạo ấn tượng:</strong> Thay đổi logic dự kiến, tạo bất ngờ</li><li><strong>Tiết kiệm từ:</strong> Một cụm từ nói lên nhiều ý tưởng</li></ul>"
+            },
+            {
+              "heading": "3. So sánh (Simile)",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Khái niệm:</strong> So sánh là cách lấy một vật/sự việc quen thuộc để so với vật/sự việc cần thể hiện, dùng từ so sánh như \"như\", \"giống\", \"tựa\", \"bằng\"</li><li><strong>Công thức:</strong> A như B, A giống B, A bằng B...</li><li><strong>Đặc điểm:</strong> Rõ ràng, dễ hiểu, giúp độc giả hình dung rõ</li></ul><h4>b) Ví dụ</h4><ul><li>\"Con đường cuộc sống dài như hành trình không điểm kết\"</li><li>\"Tình yêu như ánh sáng soi đường đi\"</li><li>\"Đêm tối như một cái chăn che phủ thế giới\"</li></ul><h4>c) Tác dụng</h4><ul><li><strong>Dễ hiểu:</strong> So sánh giúp độc giả hình dung hình ảnh rõ ràng</li><li><strong>Tính cách:</strong> Khiến hình ảng trở nên sinh động, cụ thể</li><li><strong>Tạo sự đồng yêu:</strong> Lấy những hình ảng quen thuộc để tạo kết nối với độc giả</li><li><strong>Mở rộng ý tưởng:</strong> Từ một vật dẫn đến cách hiểu toàn diện hơn</li></ul>"
+            },
+            {
+              "heading": "4. Nhân hóa (Personification)",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Khái niệm:</strong> Nhân hóa là cách tặng những tính chất con người cho vật chất, tự nhiên, hay những khái niệm trừu tượng</li><li><strong>Công thức:</strong> Vật/Tự nhiên được miêu tả với những từ/hành động của con người</li><li><strong>Đặc điểm:</strong> Làm cho vật vô tri trở thành có tri, có tâm hồn</li></ul><h4>b) Ví dụ</h4><ul><li>\"Gió thổi má\"\" (gió được tặng hành động con người: thổi)</li><li>\"Nước chảy khóc\" (nước được tặng cảm xúc con người: khóc)</li><li>\"Cây cầu chìm trong suy tư\" (cây cầu được tặng khả năng suy tư)</li></ul><h4>c) Tác dụng</h4><ul><li><strong>Làm sinh động:</strong> Vật vô tri trở lên sống động, có sinh lực</li><li><strong>Tạo sự gần gũi:</strong> Dùng những từ con người để tạo kết nối</li><li><strong>Thể hiện cảm xúc:</strong> Qua nhân hóa, tác giả biểu hiện cảm xúc của mình đối với vật chất</li><li><strong>Tạo không khí:</strong> Nhân hóa tạo nên những không khí, mood riêng biệt</li></ul>"
+            },
+            {
+              "heading": "5. Hoán dụ (Metonymy)",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Khái niệm:</strong> Hoán dụ là cách dùng một từ để chỉ một vật khác có liên quan chặt chẽ đến nó</li><li><strong>Công thức:</strong> Dùng từ A để chỉ B, trong khi A và B có quan hệ gần gũi</li><li><strong>Đặc điểm:</strong> Thay thế từ này bằng từ liên quan khác</li></ul><h4>b) Ví dụ</h4><ul><li>\"Cả trường lên tiếng phản đối\" (chỉ học sinh của trường, dùng \"trường\" để chỉ con người ở đó)</li><li>\"Tờ báo tố cáo tham nhũng\" (chỉ những phóng viên báo tố cáo, dùng \"báo\" để chỉ người)</li><li>\"Máu và mủ\" (chỉ những người từ những giai tầng khác nhau, dùng máu mủ để chỉ loại người)</li></ul><h4>c) Tác dụng</h4><ul><li><strong>Lóng, sáng tạo:</strong> Tạo cách nói mới, lạ</li><li><strong>Tiết kiệm từ:</strong> Một từ thay thế cả cụm từ dài</li><li><strong>Tạo effect:</strong> Của surat lại sự chú ý từ vật chất sang ý tưởng</li></ul>"
+            },
+            {
+              "heading": "6. Điệp âu (Repetition)",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Khái niệm:</strong> Điệp âu là cách lặp lại từ, cụm từ, câu chữ hoặc cấu trúc để tạo nhịp điệu, nhấn mạnh</li><li><strong>Công thức:</strong> Lặp từ A, từ A, từ A</li><li><strong>Đặc điểm:</strong> Tạo sự nhấn mạnh, có tính chất gợi mở cảm xúc</li></ul><h4>b) Ví dụ</h4><ul><li>\"Gió, gió, gió, gió mãi không ngừng\" (lặp từ \"gió\")</li><li>\"Anh, anh ơi, anh còn chứ?\" (lặp \"Anh\")</li><li>\"Cơm, canh, mất hết, cơm canh, mất hết\" (lặp cum từ)</li></ul><h4>c) Tác dụng</h4><ul><li><strong>Nhấn mạnh:</strong> Làm cho điều gì đó nổi bật, quan trọng</li><li><strong>Tạo nhịp điệu:</strong> Giúp bài thơ có nhịp, dạo dào</li><li><strong>Thể hiện cảm xúc:</strong> Lặp lại có thể thể hiện sự nôn nao, mong chờ, buồn bã...</li><li><strong>Tạo sự liên kết:</strong> Giúp bài thơ kết nối, không bị rời rạc</li></ul>"
+            },
+            {
+              "heading": "7. Câu hỏi tu từ (Rhetorical Questions)",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Khái niệm:</strong> Câu hỏi tu từ là cách đặt ra một câu hỏi không để tìm câu trả lời, mà để nhấn mạnh một ý tưởng hoặc kích thích cảm xúc</li><li><strong>Công thức:</strong> Câu hỏi nhưng không chờ câu trả lời</li><li><strong>Đặc điểm:</strong> Thường là những câu hỏi sâu sắc, khó trả lời</li></ul><h4>b) Ví dụ</h4><ul><li>\"Anh có nhớ tình yêu lần đầu không?\" (không chờ câu trả lời mà để kích thích nhớ lại)</li><li>\"Còn ai sẽ yêu chúng ta khi thành già?\" (không phải hỏi tuý mà là thốt ra nỗi lo)</li><li>\"Tại sao con người phải chết?\" (không phải hỏi khoa học mà là câu hỏi triết học)</li></ul><h4>c) Tác dụng</h4><ul><li><strong>Kích thích cảm xúc:</strong> Đặt ra những câu hỏi sâu sắc để kích động độc giả</li><li><strong>Nhấn mạnh ý tưởng:</strong> Thay vì nói trực tiếp, hỏi để làm cho ý tưởng sâu hơn</li><li><strong>Tao giảng ngộ:</strong> Giúp độc giả tự suy ngẫm, tự tìm câu trả lời</li></ul>"
+            },
+            {
+              "heading": "8. Các biện pháp khác",
+              "content": "<h4>a) Hyperbole (Phóng đại)</h4><ul><li><strong>Khái niệm:</strong> Phóng đại vật chất, tính chất, cảm xúc để tạo hiệu ứng</li><li><strong>Ví dụ:</strong> \"Chảy máu từ đôi mắt\" (không phải thực sự chảy máu mà chỉ là buồn)</li><li><strong>Tác dụng:</strong> Tạo hiệu ứng mạnh mẽ, khiến cảm xúc trở nên rõ ràng</li></ul><h4>b) Contrast/Đối lập</h4><ul><li><strong>Khái niệm:</strong> Đặt hai sự vật đối lập nhau để tạo sự nổi bật</li><li><strong>Ví dụ:</strong> \"Sáng ra tôi vui, tối đến tôi buồn\" (sáng vs tối, vui vs buồn)</li><li><strong>Tác dụng:</strong> Giúp mỗi yếu tố nổi bật hơn, tạo sự cân bằng</li></ul><h4>c) Paradox (Mâu thuẫn logic)</h4><ul><li><strong>Khái niệm:</strong> Nói hay viết những điều mâu thuẫn logic nhưng có ý nghĩa sâu sắc</li><li><strong>Ví dụ:</strong> \"Yêu thương là tòa tháp Babel của cuộc sống\" (yêu thương vừa là tháp rồi vừa là sự lẫn lộn)</li><li><strong>Tác dụng:</strong> Kích thích suy ngẫm, biểu hiện những khái niệm phức tạp</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Xác định biện pháp tu từ và giải thích",
+            "slug": "xac-dinh-bien-phap",
+            "description": "Xác định loại biện pháp tu từ được sử dụng và giải thích ý nghĩa của nó",
+            "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Đọc câu/chuỗi từ kỹ:</strong> Chú ý những từ, cầu trúc khác lạ</li><li><strong>So sánh với các loại biện pháp:</strong><ul><li>Có từ so sánh (như, giống) → So sánh</li><li>Không có từ so sánh mà gọi A là B → Ẩn dụ</li><li>Vật được tặng hành động con người → Nhân hóa</li><li>Lặp từ/câu → Điệp âu</li></ul></li><li><strong>Nêu tên biện pháp:</strong> Rõ ràng, không nghi ngờ</li><li><strong>Giải thích:</strong> Biện pháp này có tác dụng gì (làm sinh động, nhấn mạnh, tạo ấn tượng...)</li><li><strong>Ví dụ cụ thể:</strong> Chỉ ra đoạn văn bản nào sử dụng, phần nào</li></ol>",
+            "examples": "<h4>Ví dụ:</h4><p><strong>Câu: \"Gió thổi má tôi\"</strong><br/>- Biện pháp: Nhân hóa<br/>- Giải thích: Gió (vật vô tri) được tặng hành động \"thổi\" như con người, làm cho gió trở nên sống động, gần gũi<br/>- Tác dụng: Tạo cảm giác gió không chỉ là hiện tượng tự nhiên mà có như có ý định, cô đặc thương<p><strong>Câu: \"Tình yêu như ánh sáng soi đường\"</strong><br/>- Biện pháp: So sánh<br/>- Giải thích: Sử dụng từ \"như\" để so sánh tình yêu với ánh sáng<br/>- Tác dụng: Giúp độc giả hình dung rõ tình yêu – nó có thể dẫn lối, soi sáng con đường</p>"
+          },
+          {
+            "id": "dang2",
+            "name": "Phân tích tác dụng của biện pháp tu từ",
+            "slug": "phan-tich-tac-dung",
+            "description": "Phân tích tác dụng mà một biện pháp tu từ mang lại trong việc biểu hiện cảm xúc, ý tưởng",
+            "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Xác định biện pháp:</strong> Loại biện pháp nào được sử dụng</li><li><strong>Phân tích thành phần:</strong><ul><li>Điều gì được dùng làm so sánh/ẩn dụ</li><li>Điều gì được so sánh/ẩn dụ</li><li>Điểm nào giống nhau</li></ul></li><li><strong>Tác dụng từ các góc độ:</strong><ul><li>Về hình ảng: Làm hình ảng.như thế nào</li><li>Về cảm xúc: Kích thích cảm xúc nào</li><li>Về ý tưởng: Làm rõ hay che giấu ý tưởng nào</li><li>Về ấn tượng: Tạo ấn tượng nào với độc giả</li></ul></li><li><strong>Kết luận:</strong> Tác dụng chính là gì</li></ol>",
+            "examples": "<h4>Ví dụ phân tích tác dụng:</h4><p><strong>Nhân hóa: \"Nước chảy khóc\"</strong><br/>- Thành phần: Nước (vật vô tri) được tặng hành động \"khóc\" (của con người)<br/>- Tác dụng:<br/>  + Về hình ảng: Nước trở nên sống động, gần gũi với con người<br/>  + Về cảm xúc: Kích thích cảm xúc buồn bã, xót xa<br/>  + Về ý tưởng: Nền là hiện tượng tự nhiên thường thường trở thành biểu tượng của buồn bã, unsung song<br/>  + Về ấn tượng: Tạo ấn tượng sâu sắc, khiến độc giả cảm thấy hiểu được, không cô đơn"
+          },
+          {
+            "id": "dang3",
+            "name": "So sánh tác dụng của các biện pháp khác nhau",
+            "slug": "so-sanh-tac-dung-bien-phap",
+            "description": "So sánh cách sử dụng các biện pháp khác nhau trong cùng một bài thơ hoặc giữa các bài thơ khác nhau",
+            "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Xác định các biện pháp:</strong> Những biện pháp nào được sử dụng</li><li><strong>Liệt kê tác dụng của từng biện pháp</strong></li><li><strong>So sánh:</strong><ul><li>Giống nhau: Cả chúng có tác dụng gì chung</li><li>Khác nhau: Từng biện pháp có tác dụng riêng biệt</li><li>Sự kết hợp: Khi kết hợp lại, chúng tạo hiệu ứng nào</li></ul></li><li><strong>Nhận xét tổng thể:</strong> Cách sử dụng các biện pháp phạt đặc cho phong cách nào</li></ol>",
+            "examples": "<h4>Ví dụ so sánh:</h4><p><strong>Nhân hóa vs So sánh trong bài thơ từ gió</strong><br/>- Nhân hóa: \"Gió thổi\" → Tạo cảm giác gió có ý chí, mạnh mẽ<br/>- So sánh: \"Gió như sóng đại dương\" → Giúp hình ảng rõ ràng, dễ tưởng tưởng<br/>- Kết hợp: Khi dùng cả hai, bài thơ vừa có sức lôi cuốn vừa dễ hiểu<br/>- Nhận xét: Bài thơ sử dụng cả hai biện pháp được xem là có kỹ thuật cao"
+          }
+        ],
+        "exercises": {
+          "title": "Bài tập",
+          "items": [
+            {
+              "id": "ex1",
+              "type": "mcq",
+              "question": "Biện pháp tu từ là gì?",
+              "options": [
+                "Cách viết những câu văn sai ngữ pháp",
+                "Những cách viết/dùng từ để làm cho lời nói trở nên sinh động, sâu sắc",
+                "Cách viết những từ khó",
+                "Cách kể chuyện dạo dào"
+              ],
+              "correct": 1,
+              "explanation": "Biện pháp tu từ là những cách viết, dùng từ, cấu trúc câu để làm cho lời nói/viết trở nên sinh động, cuốn hút, hàm chứa nhiều tầng ý nghĩa."
+            },
+            {
+              "id": "ex2",
+              "type": "mcq",
+              "question": "Ẩn dụ khác so sánh ở điểm nào?",
+              "options": [
+                "Ẩn dụ dùng \"như\", so sánh không",
+                "So sánh dùng \"như\", ẩn dụ không dùng \"như\"",
+                "Không có khác biệt gì",
+                "Ẩn dụ là viết thơ, so sánh là viết văn"
+              ],
+              "correct": 1,
+              "explanation": "So sánh dùng từ so sánh (như, giống...), còn ẩn dụ gọi A là B mà không dùng từ so sánh."
+            },
+            {
+              "id": "ex3",
+              "type": "mcq",
+              "question": "Câu \"Gió thổi má tôi\" sử dụng biện pháp gì?",
+              "options": [
+                "So sánh",
+                "Nhân hóa",
+                "Ẩn dụ",
+                "Hoán dụ"
+              ],
+              "correct": 1,
+              "explanation": "Gió (vật vô tri) được tặng hành động \"thổi\" như con người → đây là nhân hóa."
+            },
+            {
+              "id": "ex4",
+              "type": "mcq",
+              "question": "Tác dụng chính của nhân hóa là gì?",
+              "options": [
+                "Làm cho câu văn trở nên buồn bã",
+                "Làm cho vật vô tri trở nên sống động, gần gũi",
+                "Giữ cho câu từ đơn giản",
+                "Kết nối với tự nhiên"
+              ],
+              "correct": 1,
+              "explanation": "Nhân hóa tặng những tính chất con người cho vật chất, làm cho chúng trở nên sống động, gần gũi, có tâm hồn."
+            },
+            {
+              "id": "ex5",
+              "type": "mcq",
+              "question": "Điệp âu là biện pháp gì?",
+              "options": [
+                "Lặp lại từ, cụm từ hoặc cấu trúc",
+                "So sánh hai vật",
+                "Dùng những từ khó",
+                "Nói những điều vô lý"
+              ],
+              "correct": 0,
+              "explanation": "Điệp âu là cách lặp lại từ, cụm từ, câu chữ hoặc cấu trúc để tạo nhịp điệu, nhấn mạnh."
+            },
+            {
+              "id": "ex6",
+              "type": "mcq",
+              "question": "Tác dụng của điệp âu là gì?",
+              "options": [
+                "Làm bài thơ trở nên ngắn",
+                "Làm bài thơ boring",
+                "Nhấn mạnh, tạo nhịp điệu, thể hiện cảm xúc",
+                "Làm cho câu văn sai ngữ pháp"
+              ],
+              "correct": 2,
+              "explanation": "Điệp âu tạo sự nhấn mạnh, có tính chất gợi mở cảm xúc, giúp bài thơ có nhịp, dạo dào."
+            },
+            {
+              "id": "ex7",
+              "type": "mcq",
+              "question": "Câu hỏi tu từ dùng để làm gì?",
+              "options": [
+                "Để thực sự hỏi người khác",
+                "Để nhấn mạnh ý tưởng hoặc kích thích cảm xúc",
+                "Để làm bài thơ dài hơn",
+                "Để chứng minh câu hỏi của người khác"
+              ],
+              "correct": 1,
+              "explanation": "Câu hỏi tu từ là cách đặt ra một câu hỏi không để tìm câu trả lời, mà để nhấn mạnh một ý tưởng hoặc kích thích cảm xúc."
+            },
+            {
+              "id": "ex8",
+              "type": "mcq",
+              "question": "Biện pháp nào giúp độc giả hình dung hình ảng rõ ràng nhất?",
+              "options": [
+                "Nhân hóa",
+                "Ẩn dụ",
+                "So sánh",
+                "Hoán dụ"
+              ],
+              "correct": 2,
+              "explanation": "So sánh dùng \"như\" để so sánh với những hình ảng quen thuộc, giúp độc giả hình dung rõ ràng dễ dàng."
+            },
+            {
+              "id": "ex9",
+              "type": "essay",
+              "question": "Hãy phân tích tác dụng của cả ba biện pháp: so sánh, ẩn dụ, và nhân hóa. Nêu ví dụ cụ thể thể nào người ta nên sử dụng biện pháp nào. Kệp hợp ba biện pháp này sẽ tạo ra hiệu ứng gì?",
+              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Phân tích từng biện pháp:\n  + So sánh: Dùng \"như\", giúp hình ảng rõ ràng, dễ hiểu (ví dụ: \"Tình yêu như ánh sáng\")\n  + Ẩn dụ: Không dùng \"như\", gọi A là B, tạo ấn tượng mạnh (ví dụ: \"Tình yêu là ánh sáng\")\n  + Nhân hóa: Tặng tính chất con người cho vật, làm sống động (ví dụ: \"Tình yêu thì thầm\")\n- Khi nào nên dùng biện pháp nào:\n  + So sánh: Khi muốn dễ hiểu, khi độc giả cần hình dung cụ thể\n  + Ẩn dụ: Khi muốn tạo ấn tượng mạnh, khi độc giả có đủ trí tuệ suy tư\n  + Nhân hóa: Khi muốn làm cho vật trở nên sống động, gần gũi\n- Kết hợp ba biện pháp:\n  + Tạo ra hiệu ứng kép: Vừa dễ hiểu (so sánh) vừa sâu sắc (ẩn dụ) vừa sống động (nhân hóa)\n  + Bài thơ sẽ lôi cuốn hơn, thuyết phục hơn\n  + Ví dụ: \"Tình yêu như ánh sáng (so sánh) mà là ánh sáng (ẩn dụ) thì thầm (nhân hóa) xuyên qua đêm tối\"\n- Kết luận: Những biện pháp tu từ là công cụ mạnh mẽ giúp thơ ca thể hiện cảm xúc, ý tưởng một cách thuyết phục"
+            },
+            {
+              "id": "ex10",
+              "type": "essay",
+              "question": "Hãy lấy một bài thơ từ các bài học trước (Cảm hoài, Tây Tiến hoặc Đàn ghi ta) và phân tích những biện pháp tu từ được sử dụng. Giải thích tại sao tác giả lại chọn những biện pháp này để biểu hiện cảm xúc.",
+              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Chọn một bài thơ từ các bài trước\n- Xác định ít nhất 2-3 biện pháp tu từ được sử dụng:\n  + Nêu rõ từng biện pháp (tên đúng)\n  + Chỉ ra đoạn văn bản cụ thể\n  + Giải thích loại biện pháp đó\n- Phân tích tác dụng:\n  + Mỗi biện pháp có tác dụng gì\n  + Chúng cùng nhau tạo ra hiệu ứng gì\n- Phân tích lý do tác giả chọn:\n  + Cảm xúc tác giả muốn thể hiện\n  + Tại sao lại chọn những hình ảng, biện pháp này\n  + Có hiệu quả không\n- Ví dụ: Nếu chọn Cảm hoài của Đặng Dung:\n  + Ẩn dụ: \"Lá bay\" = tuổi trẻ, thời gian\n  + Nhân hóa: \"Gió thổi\" = vận mệnh\n  + So sánh: \"Buồn bã như nước mưa\"\n  + Tác dụng: Các biện pháp cùng nhau tạo bức tranh về sự trôi qua của thời gian\n  + Lý do: Đặng Dung muốn thể hiện cảm xúc buồn bã nhẹ nhàng nhưng sâu sắc\n- Kết luận: Các biện pháp tu từ không phải trang trí mà là cách biểu hiện chính yếu của thơ ca"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_14",
+      "name": "Một số vấn đề chung về pháp luật quốc tế",
+      "slug": "mot-so-van-de-chung-ve-phap-luat-quoc-te",
+      "chapter": "Một số vấn đề cơ bản của luật quốc tế",
+      "chapter_id": "GDCD12",
+      "lesson_id": 14,
+      "description": "Khái niệm, đặc điểm và vai trò của pháp luật quốc tế trong quan hệ giữa các quốc gia.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Pháp luật quốc tế",
+          "summary": "Pháp luật quốc tế là hệ thống các nguyên tắc và quy phạm pháp luật được các quốc gia thỏa thuận để điều chỉnh quan hệ quốc tế.",
+          "sections": [
+            { "heading": "Khái niệm và Đặc điểm", "content": "Đối tượng điều chỉnh là quan hệ giữa các quốc gia. Được hình thành trên cơ sở thỏa thuận tự nguyện, không có cơ quan lập pháp chung." },
+            { "heading": "Các nguyên tắc cơ bản", "content": "Bình đẳng chủ quyền, không dùng vũ lực, không can thiệp nội bộ, tôn trọng các cam kết quốc tế (Pacta sunt servanda)." },
+            { "heading": "Vai trò", "content": "Duy trì hòa bình, an ninh thế giới và thúc đẩy hợp tác phát triển bền vững giữa các dân tộc." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Chủ thể chủ yếu của pháp luật quốc tế là?", "options": ["Cá nhân công dân", "Các quốc gia có chủ quyền", "Các công ty tư nhân", "Các nhóm bạn bè"], "correct": 1, "explanation": "Luật quốc tế điều chỉnh quan hệ giữa các thực thể có chủ quyền (quốc gia)." },
+          { "id": 2, "type": "mcq", "question": "Pháp luật quốc tế được hình thành dựa trên cơ sở nào?", "options": ["Mệnh lệnh của một nước mạnh", "Sự thỏa thuận tự nguyện giữa các quốc gia", "Quyết định của một cá nhân", "Sự ngẫu nhiên"], "correct": 1, "explanation": "Tính thỏa thuận là đặc trưng cốt lõi của luật quốc tế." },
+          { "id": 3, "type": "mcq", "question": "Nguyên tắc 'Bình đẳng chủ quyền giữa các quốc gia' nghĩa là?", "options": ["Nước to có quyền hơn nước nhỏ", "Mọi quốc gia đều có quyền và nghĩa vụ ngang nhau trước pháp luật quốc tế", "Chỉ những nước giàu mới bình đẳng", "Nước ở gần nhau mới bình đẳng"], "correct": 1, "explanation": "Đây là nguyên tắc nền tảng của quan hệ quốc tế hiện đại." },
+          { "id": 4, "type": "mcq", "question": "Pacta sunt servanda là nguyên tắc gì?", "options": ["Sẵn sàng chiến tranh", "Tôn trọng các cam kết quốc tế", "Phá bỏ các hiệp ước", "Không cần thực hiện lời hứa"], "correct": 1, "explanation": "Nguyên tắc này bắt buộc các quốc gia phải thực hiện tận tâm các nghĩa vụ quốc tế của mình." },
+          { "id": 5, "type": "mcq", "question": "Văn bản nào sau đây là nguồn của pháp luật quốc tế?", "options": ["Hiệp ước, Công ước quốc tế", "Nội quy một trường học", "Sổ tay cá nhân", "Luật giao thông đường bộ một nước"], "correct": 0, "explanation": "Điều ước quốc tế là nguồn quan trọng nhất của pháp luật quốc tế." },
+          { "id": 6, "type": "mcq", "question": "Khi có xung đột giữa các nước, pháp luật quốc tế ưu tiên giải quyết bằng?", "options": ["Chiến tranh tổng lực", "Biện pháp hòa bình (đàm phán, trung gian, tòa án quốc tế)", "Sử dụng vũ khí hạt nhân", "Mặc kệ xung đột"], "correct": 1, "explanation": "Giải quyết hòa bình là nguyên tắc bắt buộc để duy trì an ninh thế giới." },
+          { "id": 7, "type": "mcq", "question": "Liên Hợp Quốc (UN) có vai trò gì đối với pháp luật quốc tế?", "options": ["Là người cai quản thế giới", "Trung tâm điều phối các nỗ lực quốc tế và thúc đẩy tuân thủ luật pháp quốc tế", "Chỉ là một diễn đàn cho vui", "Không có vai trò gì"], "correct": 1, "explanation": "UN là tổ chức đa phương lớn nhất bảo vệ trật tự pháp luật toàn cầu." },
+          { "id": 8, "type": "mcq", "question": "Hành vi can thiệp vào công việc nội bộ của quốc gia khác là?", "options": ["Hành động giúp đỡ", "Vi phạm nghiêm trọng nguyên tắc của pháp luật quốc tế", "Việc làm được khuyến khích", "Không có quy định"], "correct": 1, "explanation": "Mỗi quốc gia có quyền tự quyết định vận mệnh của mình." },
+          { "id": 9, "type": "mcq", "question": "Việc Việt Nam ký kết Công ước Liên hợp quốc về Luật Biển 1982 thể hiện?", "options": ["Sự ép buộc", "Trách nhiệm và sự tuân thủ pháp luật quốc tế của Việt Nam", "Chỉ làm theo nước khác", "Không có ý nghĩa"], "correct": 1, "explanation": "Việt Nam luôn chủ động tham gia và thượng tôn luật pháp quốc tế." },
+          { "id": 10, "type": "mcq", "question": "Pháp luật quốc tế có quan hệ như thế nào với pháp luật quốc gia?", "options": ["Không liên quan", "Có tác động qua lại và quốc gia cần nội luật hóa các cam kết quốc tế", "Luật quốc gia luôn to hơn", "Luật quốc tế thay thế hoàn toàn luật quốc gia"], "correct": 1, "explanation": "Quốc gia phải điều chỉnh luật trong nước để thực thi các cam kết quốc tế đã ký." }
+        ]
+      }
+    }
+  ]
+}

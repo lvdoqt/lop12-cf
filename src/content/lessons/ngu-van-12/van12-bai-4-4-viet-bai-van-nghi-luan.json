@@ -1,0 +1,160 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-4-4-viet-bai-van-nghi-luan",
+      "name": "Viết bài văn nghị luận về việc vay mượn – cải biến – sáng tạo",
+      "slug": "viet-bai-van-nghi-luan-vay-muon",
+      "chapter": "Yếu tố kì ảo trong truyện kể",
+      "chapter_id": "V12-4",
+      "lesson_id": 4,
+      "description": "Phát triển kỹ năng viết bài văn nghị luận về mối quan hệ giữa vay mượn, cải biến và sáng tạo trong một tác phẩm văn học cụ thể.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1516979187457-635ffe35ff15?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "write2",
+          "name": "Viết bài nghị luận",
+          "slug": "viet-bai-nghi-luan",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Viết bài văn nghị luận về vay mượn – cải biến – sáng tạo",
+          "sections": [
+            {
+              "heading": "1. Khái niệm: Vay mượn, cải biến, sáng tạo",
+              "content": "<h4>a) Vay mượn</h4><ul><li><strong>Định nghĩa:</strong> Là khi tác giả lấy những yếu tố (câu chuyện, nhân vật, hình ảnh...) từ những tác phẩm, truyền thuyết, lịch sử khác vào tác phẩm mới</li><li><strong>Đặc điểm:</strong><br/>- Được lấy từ nguồn đã tồn tại<br/>- Có tính hợp pháp trong văn học<br/>- Là một phần của quá trình sáng tạo</li></ul><h4>b) Cải biến</h4><ul><li><strong>Định nghĩa:</strong> Là khi tác giả thay đổi, sửa đổi những yếu tố được vay mượn để phù hợp với tác phẩm mới</li><li><strong>Đặc điểm:</strong><br/>- Giữ lại những điểm chính nhưng thay đổi chi tiết<br/>- Thay đổi thời gian, không gian, hoàn cảnh<br/>- Thay đổi ý tưởng, thông điệp</li></ul><h4>c) Sáng tạo</h4><ul><li><strong>Định nghĩa:</strong> Là khi tác giả tạo ra những yếu tố hoàn toàn mới, không có trong nguồn được vay mượn</li><li><strong>Đặc điểm:</strong><br/>- Độc đáo, không giống bất kỳ tác phẩm nào trước đây<br/>- Phản ánh cá tính, quan điểm độc đáo của tác giả<br/>- Có khả năng gây ảnh hưởng đến những tác phẩm sau này</li></ul>"
+            },
+            {
+              "heading": "2. Mối quan hệ giữa vay mượn, cải biến và sáng tạo",
+              "content": "<h4>a) Vay mượn → Cải biến → Sáng tạo</h4><ul><li><strong>Mô hình phát triển:</strong> Mỗi bước đều cần bước trước đó</li><li><strong>Vay mượn:</strong> Là cơ sở, là điểm xuất phát</li><li><strong>Cải biến:</strong> Làm mới những yếu tố cơ bản</li><li><strong>Sáng tạo:</strong> Là kết quả cuối cùng, tác phẩm độc đáo</li></ul><h4>b) Sáng tạo không có nghĩa là không vay mượn</h4><ul><li><strong>Mọi sáng tạo đều bắt đầu từ vay mượn:</strong> Không có tác phẩm nào ra đời mà không chịu ảnh hưởng từ những tác phẩm trước đó</li><li><strong>Sáng tạo thực sự là cách vận dụng những yếu tố vay mượn:</strong> Không phải tạo từ không có, mà là biến đổi, tổ hợp lại các yếu tố cũ</li></ul><h4>c) Cải biến là chìa khóa</h4><ul><li><strong>Cải biến quyết định tính sáng tạo:</strong> Cách vay mượn và cải biến quyết định liệu kết quả là một tác phẩm sáng tạo hay chỉ là bản sao</li><li><strong>Cải biến phải đạt được mục đích:</strong> Cải biến không chỉ vì cải biến, mà phải hướng đến một tác phẩm mới có ý nghĩa riêng</li></ul>"
+            },
+            {
+              "heading": "3. Ví dụ cụ thể từ văn học",
+              "content": "<h4>a) Từ 'Muối của rừng' - Nguyễn Huy Thiệp</h4><ul><li><strong>Vay mượn:</strong> Những yếu tố từ truyền thuyết, những câu chuyện dân gian về rừng có linh</li><li><strong>Cải biến:</strong> Truyền thuyết được đặt trong bối cảnh hiện đại, những nhân vật truyền thuyết trở thành những con người thực tế</li><li><strong>Sáng tạo:</strong> Tác phẩm mới có một ý tưởng độc đáo về tham vọng con người, mất mát bản ngã</li></ul><h4>b) Từ 'Hải khẩu linh từ' - Đoàn Thị Điểm</h4><ul><li><strong>Vay mượn:</strong> Những truyền thuyết dân gian về đền thiêng</li><li><strong>Cải biến:</strong> Tác giả nữ thay đổi góc nhìn, thêm vào những cảm xúc cá nhân</li><li><strong>Sáng tạo:</strong> Tác phẩm trở thành một bài thơ tình độc đáo xen lẫn với những yếu tố truyền thuyết</li></ul>"
+            },
+            {
+              "heading": "4. Tại sao vay mượn - cải biến - sáng tạo lại quan trọng?",
+              "content": "<ul><li><strong>Về phát triển văn học:</strong> Từng tác phẩm đều xây dựng trên nền tảng của những tác phẩm trước. Di sản văn học được phát triển bằng cách vay mượn và cải biến</li><li><strong>Về phát triển cá nhân:</strong> Mỗi tác giả học hỏi từ những tác giả trước, sau đó tạo ra tiếng nói riêng</li><li><strong>Về ý nghĩa xã hội:</strong> Những ý tưởng cũ được làm mới, phù hợp với thời hiện tại, giúp áp dụng những bài học cũ vào hoàn cảnh mới</li></ul>"
+            },
+            {
+              "heading": "5. Cấu trúc bài văn nghị luận về chủ đề này",
+              "content": "<h4>a) Mở bài</h4><ul><li><strong>Nêu vấn đề:</strong> Tầm quan trọng của vay mươn, cải biến, sáng tạo trong văn học</li><li><strong>Hoặc:</strong> Một tác phẩm cụ thể làm ví dụ, giới thiệu nó là một bằng chứng sinh động</li></ul><h4>b) Thân bài</h4><ul><li><strong>Luận điểm 1:</strong> Giải thích vay mượn, cải biến, sáng tạo là gì. Chứng tỏ rằng đây là quá trình bình thường, hợp pháp</li><li><strong>Luận điểm 2:</strong> Phân tích một tác phẩm cụ thể, chỉ ra những yếu tố được vay mượn, cách chúng được cải biến, và kết quả sáng tạo</li><li><strong>Luận điểm 3:</strong> Nêu lên ý nghĩa, tác dụng của quá trình này</li></ul><h4>c) Kết luận</h4><ul><li><strong>Tóm tắt:</strong> Những ý kiến chính đã nêu</li><li><strong>Khẳng định:</strong> Vay mượn - cải biến - sáng tạo là con đường tất yếu của phát triển văn học</li><li><strong>Mở rộng:</strong> Ứng dụng của nguyên tắc này vào các lĩnh vực khác</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex4-4-1",
+            "type": "mcq",
+            "question": "Vay mươn trong văn học là gì?",
+            "options": [
+              "Sao chép trực tiếp tác phẩm khác",
+              "Lấy những yếu tố (câu chuyện, nhân vật, hình ảnh) từ tác phẩm, truyền thuyết, lịch sử khác vào tác phẩm mới",
+              "Tạo ra những yếu tố hoàn toàn mới",
+              "Không sử dụng bất kỳ ảnh hưởng nào"
+            ],
+            "correct": 1,
+            "explanation": "Vay mượn là khi tác giả lấy những yếu tố từ những nguồn đã tồn tại vào tác phẩm mới, điều này là hợp pháp và phổ biến trong văn học."
+          },
+          {
+            "id": "ex4-4-2",
+            "type": "mcq",
+            "question": "Cải biến trong quá trình sáng tạo có nghĩa là gì?",
+            "options": [
+              "Thay đổi hoàn toàn ý nghĩa của tác phẩm gốc",
+              "Lặp lại đúng như tác phẩm gốc",
+              "Thay đổi, sửa đổi những yếu tố được vay mượn để phù hợp với tác phẩm mới",
+              "Xóa bỏ tất cả những gì từ tác phẩm gốc"
+            ],
+            "correct": 2,
+            "explanation": "Cải biến là sửa đổi detalle, thay đổi thời gian, không gian, hoàn cảnh hoặc ý tưởng của những yếu tố được vay mượn."
+          },
+          {
+            "id": "ex4-4-3",
+            "type": "mcq",
+            "question": "Mối quan hệ giữa vay mượn, cải biến và sáng tạo là gì?",
+            "options": [
+              "Chúng không liên quan gì đến nhau",
+              "Vay mươn → Cải biến → Sáng tạo là một quá trình liên tiếp",
+              "Sáng tạo không cần vay mượn",
+              "Chỉ tác giả tài ba mới có thể kết hợp ba yếu tố"
+            ],
+            "correct": 1,
+            "explanation": "Vay mượn cung cấp cơ sở, cải biến làm mới những yếu tố, sáng tạo là kết quả cuối cùng - một tác phẩm độc đáo."
+          },
+          {
+            "id": "ex4-4-4",
+            "type": "mcq",
+            "question": "Liệu sáng tạo có nghĩa là không vay mượn?",
+            "options": [
+              "Có, sáng tạo phải là hoàn toàn mới",
+              "Không, sáng tạo không có nghĩa là không vay mượn, mà là cách vận dụng những yếu tố vay mượn",
+              "Sáng tạo và vay mượn là hai khái niệm hoàn toàn khác",
+              "Không có định nghĩa chính xác về sáng tạo"
+            ],
+            "correct": 1,
+            "explanation": "Mọi sáng tạo đều bắt đầu từ vay mượn. Sáng tạo thực sự là cách kết hợp, cải biến những yếu tố cũ một cách độc đáo."
+          },
+          {
+            "id": "ex4-4-5",
+            "type": "mcq",
+            "question": "Trong tác phẩm 'Muối của rừng', yếu tố gì được vay mượn từ truyền thuyết dân gian?",
+            "options": [
+              "Tên nhân vật chính",
+              "Yếu tố rừng có linh, những sự kiện kì bí",
+              "Cấu trúc câu chuyện",
+              "Không có gì được vay mượn"
+            ],
+            "correct": 1,
+            "explanation": "Nguyễn Huy Thiệp vay mượn từ truyền thuyết dân gian về rừng có linh, những sự kiện kì lạ, sau đó cải biến và sáng tạo thành tác phẩm hiện đại."
+          },
+          {
+            "id": "ex4-4-6",
+            "type": "mcq",
+            "question": "Cải biến quyết định điều gì trong quá trình sáng tạo?",
+            "options": [
+              "Không quyết định gì cả",
+              "Quyết định liệu kết quả là tác phẩm sáng tạo hay chỉ là bản sao",
+              "Chỉ quyết định độ dài tác phẩm",
+              "Quyết định tác giả có nổi tiếng không"
+            ],
+            "correct": 1,
+            "explanation": "Cách vay mượn và cải biến quyết định tính sáng tạo của tác phẩm - liệu nó có độc đáo hay chỉ là bản sao."
+          },
+          {
+            "id": "ex4-4-7",
+            "type": "mcq",
+            "question": "Tại sao vay mượn - cải biến - sáng tạo lại quan trọng với phát triển văn học?",
+            "options": [
+              "Không quan trọng",
+              "Từng tác phẩm xây dựng trên nền tảng tác phẩm trước, di sản văn học được phát triển",
+              "Chỉ quan trọng với tác giả mới",
+              "Chỉ áp dụng cho văn học cổ"
+            ],
+            "correct": 1,
+            "explanation": "Mỗi tác phẩm đều xây dựng trên nền tảng của những tác phẩm trước, di sản văn học được phát triển qua quá trình vay mượn và cải biến."
+          },
+          {
+            "id": "ex4-4-8",
+            "type": "mcq",
+            "question": "Trong bài văn nghị luận về chủ đề này, thân bài nên có mấy luận điểm chính?",
+            "options": [
+              "1 luận điểm",
+              "2-3 luận điểm",
+              "Nhiều luận điểm không giới hạn",
+              "Không cần luận điểm"
+            ],
+            "correct": 1,
+            "explanation": "Thân bài thường có 2-3 luận điểm: giải thích khái niệm, phân tích tác phẩm cụ thể, nêu ý nghĩa."
+          }
+        ]
+      }
+    }
+  ]
+}

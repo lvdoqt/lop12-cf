@@ -1,0 +1,42 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_01",
+      "name": "Tăng trưởng và phát triển kinh tế",
+      "slug": "tang-truong-va-phat-trien-kinh-te",
+      "chapter": "Tăng trưởng và phát triển kinh tế",
+      "chapter_id": "GDCD12",
+      "lesson_id": 1,
+      "description": "Khái niệm, chỉ tiêu đo lường và mối quan hệ giữa tăng trưởng kinh tế và phát triển bền vững.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Tăng trưởng và phát triển kinh tế",
+          "summary": "Tăng trưởng kinh tế là sự gia tăng sản lượng hàng hóa, dịch vụ. Phát triển kinh tế bao gồm tăng trưởng kèm theo thay đổi cơ cấu và tiến bộ xã hội.",
+          "sections": [
+            { "heading": "Khái niệm tăng trưởng kinh tế", "content": "Là sự gia tăng về tổng sản lượng hàng hóa và dịch vụ của một quốc gia trong một khoảng thời gian nhất định. Được đo lường bằng GDP, GDP/người, GNI, GNI/người." },
+            { "heading": "Vai trò của tăng trưởng kinh tế", "content": "Tạo việc làm, tăng thu nhập, nâng cao chất lượng cuộc sống, củng cố vị thế quốc gia, tạo điều kiện thoát khỏi nghèo đói." },
+            { "heading": "Khái niệm phát triển kinh tế", "content": "Là quá trình gia tăng quy mô sản lượng đi đôi với thay đổi cơ cấu kinh tế và tiến bộ xã hội. Tiêu chí: GDP/GNI tăng, cơ cấu ngành chuyển dịch, HDI tăng, hệ số Gini giảm." },
+            { "heading": "Mối quan hệ tăng trưởng và phát triển bền vững", "content": "Tăng trưởng là nền tảng của phát triển bền vững. Phát triển bền vững kết hợp chính sách kinh tế, xã hội và môi trường hợp lý." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Tăng trưởng kinh tế là sự gia tăng về?", "options": ["Số lượng dân số", "Tổng sản lượng hàng hóa và dịch vụ", "Diện tích đất đai", "Số lượng doanh nghiệp"], "correct": 1, "explanation": "Tăng trưởng kinh tế được đo lường bằng sự gia tăng sản lượng hàng hóa, dịch vụ." },
+          { "id": 2, "type": "mcq", "question": "Chỉ tiêu nào sau đây dùng để đo lường tăng trưởng kinh tế?", "options": ["HDI", "Gini", "GDP", "Hệ số sinh"], "correct": 2, "explanation": "GDP (Tổng sản phẩm quốc nội) là chỉ tiêu phổ biến nhất đo lường tăng trưởng kinh tế." },
+          { "id": 3, "type": "mcq", "question": "GDP bình quân đầu người phản ánh điều gì?", "options": ["Tổng sản lượng nền kinh tế", "Mức sống trung bình của người dân", "Tốc độ lạm phát", "Dân số quốc gia"], "correct": 1, "explanation": "GDP/người = GDP chia cho dân số, phản ánh mức sống trung bình." },
+          { "id": 4, "type": "mcq", "question": "Phát triển kinh tế bao gồm những yếu tố nào?", "options": ["Chỉ có tăng trưởng sản lượng", "Tăng trưởng + Thay đổi cơ cấu + Tiến bộ xã hội", "Chỉ có thay đổi cơ cấu", "Chỉ có tiến bộ xã hội"], "correct": 1, "explanation": "Phát triển kinh tế là quá trình toàn diện hơn tăng trưởng đơn thuần." },
+          { "id": 5, "type": "mcq", "question": "HDI là viết tắt của chỉ số nào?", "options": ["Chỉ số giá tiêu dùng", "Chỉ số phát triển con người", "Chỉ số bất bình đẳng", "Chỉ số tăng trưởng"], "correct": 1, "explanation": "HDI (Human Development Index) là chỉ số phát triển con người." },
+          { "id": 6, "type": "mcq", "question": "Hệ số Gini được dùng để đo lường điều gì?", "options": ["Tốc độ tăng trưởng", "Mức độ bất bình đẳng thu nhập", "Tỷ lệ lạm phát", "Tỷ lệ thất nghiệp"], "correct": 1, "explanation": "Hệ số Gini càng thấp thì phân phối thu nhập càng công bằng." },
+          { "id": 7, "type": "mcq", "question": "Vai trò nào sau đây của tăng trưởng kinh tế là đúng?", "options": ["Làm tăng tỷ lệ thất nghiệp", "Tạo việc làm và tăng thu nhập", "Giảm vị thế quốc gia", "Tăng nghèo đói"], "correct": 1, "explanation": "Tăng trưởng kinh tế giúp tạo việc làm, nâng cao đời sống người dân." },
+          { "id": 8, "type": "mcq", "question": "GNI khác với GDP ở điểm nào?", "options": ["GNI bao gồm thu nhập từ nước ngoài", "GNI không tính thu nhập từ nước ngoài", "GNI chỉ tính hàng hóa", "GNI không tính dịch vụ"], "correct": 0, "explanation": "GNI là tổng thu nhập quốc dân, bao gồm cả thu nhập từ nước ngoài." },
+          { "id": 9, "type": "mcq", "question": "Mối quan hệ giữa tăng trưởng và phát triển bền vững là?", "options": ["Tăng trưởng là nền tảng của phát triển bền vững", "Phát triển bền vững không liên quan tăng trưởng", "Tăng trưởng làm giảm phát triển", "Hai khái niệm hoàn toàn giống nhau"], "correct": 0, "explanation": "Tăng trưởng tạo ra nguồn lực để thực hiện phát triển bền vững." },
+          { "id": 10, "type": "mcq", "question": "Để phát triển bền vững cần kết hợp những yếu tố nào?", "options": ["Chỉ có kinh tế", "Kinh tế - Xã hội - Môi trường", "Chỉ có xã hội", "Chỉ có môi trường"], "correct": 1, "explanation": "Phát triển bền vững cân bằng giữa tăng trưởng kinh tế, công bằng xã hội và bảo vệ môi trường." }
+        ]
+      }
+    }
+  ]
+}

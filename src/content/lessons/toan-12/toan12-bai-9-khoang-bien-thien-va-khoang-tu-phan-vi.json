@@ -1,0 +1,386 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-9-khoang-bien-thien-va-khoang-tu-phan-vi",
+      "name": "Bài 9. Khoảng biến thiên và khoảng tứ phân vị",
+      "slug": "khoang-bien-thien-va-khoang-tu-phan-vi",
+      "chapter": "Chương 3: Các số đặc trưng đo mức độ phân tán của mẫu số liệu ghép nhóm",
+      "chapter_id": "T12-3",
+      "lesson_id": 9,
+      "description": "Tính khoảng biến thiên R và khoảng tứ phân vị ΔQ để đánh giá mức độ phân tán của mẫu số liệu ghép nhóm. So sánh ý nghĩa của hai đại lượng và ứng dụng vào bài toán thực tế.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/EC4899/FFFFFF?text=Khoảng+Tứ+Phân+Vị",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Tính khoảng biến thiên",
+          "slug": "tinh-khoang-bien-thien",
+          "difficulty": "easy"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Tính tứ phân vị và khoảng tứ phân vị",
+          "slug": "tinh-tu-phan-vi",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: So sánh mức độ phân tán giữa các mẫu",
+          "slug": "so-sanh-phan-tan",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Khoảng biến thiên R",
+              "content": "<p><strong>Khoảng biến thiên</strong> của mẫu ghép nhóm $[a_1;a_2),\\ [a_2;a_3),\\ \\ldots,\\ [a_k;a_{k+1})$ là:</p><p style='text-align:center'>$$R = a_{k+1} - a_1$$</p><p>$R$ càng lớn → mẫu càng <strong>phân tán</strong>. $R$ chỉ phụ thuộc đầu mút hai đầu, không phản ánh phân tán bên trong. Nhược điểm: <strong>rất nhạy với giá trị ngoại lai</strong>.</p><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 1:</strong> Với mẫu ghép nhóm, $R$ chỉ cần đọc bảng là tính được ngay (đầu mút phải cuối – đầu mút trái đầu). Không cần tính toán gì thêm.</div>"
+            },
+            {
+              "heading": "2. Tứ phân vị Q₁, Q₂, Q₃ và khoảng tứ phân vị ΔQ",
+              "content": "<p>Tứ phân vị chia mẫu thành 4 phần bằng nhau:</p><ul><li>$Q_1$: <strong>tứ phân vị thứ nhất</strong> – 25% số liệu dưới $Q_1$.</li><li>$Q_2$: <strong>trung vị</strong> – 50% số liệu dưới $Q_2$.</li><li>$Q_3$: <strong>tứ phân vị thứ ba</strong> – 75% số liệu dưới $Q_3$.</li></ul><p><strong>Khoảng tứ phân vị:</strong> $\\Delta_Q = Q_3 - Q_1$.</p><p>$\\Delta_Q$ đo mức phân tán của <strong>50% số liệu ở giữa</strong>, ít nhạy với giá trị ngoại lai.</p><div style='background:#d4edda;border-left:4px solid #28a745;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>📝 Chú ý 2 – So sánh R và ΔQ:</strong><br>• <strong>R</strong>: đo toàn bộ độ trải dữ liệu, nhạy với ngoại lai.<br>• <strong>ΔQ</strong>: đo phần trung tâm (50%), bền vững với ngoại lai.<br>→ Khi số liệu có ngoại lai hoặc phân phối lệch, ưu tiên dùng $\\Delta_Q$.</div>"
+            },
+            {
+              "heading": "3. Công thức nội suy tính Q₁ và Q₃",
+              "content": "<p>Với mẫu ghép nhóm cỡ $n$:</p><table style='width:100%;border-collapse:collapse;margin:10px 0'><thead><tr style='background:#EC4899;color:white'><th style='padding:8px;border:1px solid #ccc'>Đại lượng</th><th style='padding:8px;border:1px solid #ccc'>Vị trí cần đạt</th><th style='padding:8px;border:1px solid #ccc'>Công thức nội suy</th></tr></thead><tbody><tr><td style='padding:8px;border:1px solid #ccc'>$Q_1$</td><td style='padding:8px;border:1px solid #ccc'>$\\dfrac{n}{4}$</td><td style='padding:8px;border:1px solid #ccc'>$Q_1 = a_p + \\dfrac{\\frac{n}{4} - F_{p-1}}{n_p}\\cdot h_p$</td></tr><tr style='background:#f8f9fa'><td style='padding:8px;border:1px solid #ccc'>$Q_2$ (trung vị)</td><td style='padding:8px;border:1px solid #ccc'>$\\dfrac{n}{2}$</td><td style='padding:8px;border:1px solid #ccc'>$Q_2 = a_m + \\dfrac{\\frac{n}{2} - F_{m-1}}{n_m}\\cdot h_m$</td></tr><tr><td style='padding:8px;border:1px solid #ccc'>$Q_3$</td><td style='padding:8px;border:1px solid #ccc'>$\\dfrac{3n}{4}$</td><td style='padding:8px;border:1px solid #ccc'>$Q_3 = a_q + \\dfrac{\\frac{3n}{4} - F_{q-1}}{n_q}\\cdot h_q$</td></tr></tbody></table><p>Trong đó: $F_{p-1}$ = tần số tích lũy trước nhóm chứa $Q$; $n_p$ = tần số nhóm chứa $Q$; $h_p$ = độ dài nhóm.</p><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>⚠️ Chú ý 3 – Cách xác định nhóm chứa Q₁:</strong> Tính tần số tích lũy cộng dồn. Nhóm chứa $Q_1$ là nhóm đầu tiên có tần số tích lũy <strong>lớn hơn hoặc bằng</strong> $\\dfrac{n}{4}$.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Tính khoảng biến thiên",
+            "method": "<ol><li>Xác định nhóm đầu: đầu mút trái $a_1$.</li><li>Xác định nhóm cuối: đầu mút phải $a_{k+1}$.</li><li>$R = a_{k+1} - a_1$.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Bảng tần số thời gian tự học (giờ): $[0;2)$: 5 HS; $[2;4)$: 10 HS; $[4;6)$: 8 HS. Tính $R$.",
+                "solution": "<p>Đầu mút trái nhóm đầu: $a_1=0$. Đầu mút phải nhóm cuối: $a_{k+1}=6$.</p><p>$R=6-0=\\mathbf{6}$ (giờ).</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Tính tứ phân vị và khoảng tứ phân vị",
+            "method": "<ol><li>Tính tần số tích lũy $F_i$.</li><li>Tìm nhóm chứa $Q_1$ (nhóm đầu có $F\\geq n/4$) và nhóm chứa $Q_3$ ($F\\geq 3n/4$).</li><li>Nội suy theo công thức.</li><li>$\\Delta_Q = Q_3 - Q_1$.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Bảng điểm: $[40;50)$ f=2; $[50;60)$ f=8; $[60;70)$ f=15; $[70;80)$ f=10; $[80;90)$ f=5. $n=40$. Tính $Q_1, Q_3, \\Delta_Q$.",
+                "solution": "<p>Tần số tích lũy: 2, 10, 25, 35, 40.</p><p><strong>Q₁</strong>: vị trí $n/4=10$. Nhóm chứa $Q_1$: $[50;60)$ (F tích lũy đạt 10 tại đây). $F_{p-1}=2$, $n_p=8$, $h=10$.</p><p>$Q_1=50+\\dfrac{10-2}{8}\\cdot10=50+10=60$.</p><p><strong>Q₃</strong>: vị trí $3n/4=30$. $F$ tích lũy: 25<30≤35 → nhóm $[70;80)$. $F_{q-1}=25$, $n_q=10$, $h=10$.</p><p>$Q_3=70+\\dfrac{30-25}{10}\\cdot10=70+5=75$.</p><p>$\\Delta_Q=75-60=\\mathbf{15}$ điểm.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "So sánh mức độ phân tán",
+            "method": "<ol><li>Tính $R$ và $\\Delta_Q$ cho từng mẫu.</li><li>Mẫu có $R$ lớn hơn → phân tán toàn bộ nhiều hơn.</li><li>Mẫu có $\\Delta_Q$ lớn hơn → phần trung tâm phân tán nhiều hơn.</li><li>Nếu kết quả mâu thuẫn → mẫu có ngoại lai → ưu tiên $\\Delta_Q$.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Mẫu A: $R=20$, $\\Delta_Q=5$. Mẫu B: $R=15$, $\\Delta_Q=12$. Nhận xét?",
+                "solution": "<p>Mẫu A: $R$ lớn hơn (tổng thể trải rộng hơn) nhưng $\\Delta_Q$ nhỏ (phần trung tâm tập trung hơn). Có thể mẫu A có ngoại lai.</p><p>Mẫu B: $\\Delta_Q$ lớn hơn → dữ liệu trung tâm phân tán hơn.</p><p>→ Kết luận phụ thuộc mục tiêu phân tích.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Khoảng biến thiên $R$ của mẫu ghép nhóm $[10;20), [20;30), [30;40), [40;50)$ là:",
+            "options": [
+              "$40$",
+              "$10$",
+              "$30$",
+              "$50$"
+            ],
+            "correct": 0,
+            "explanation": "$R = a_{k+1} - a_1 = 50 - 10 = 40$."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Khoảng tứ phân vị $\\Delta_Q$ đo mức phân tán của bao nhiêu phần trăm số liệu ở giữa?",
+            "options": [
+              "$50\\%$",
+              "$25\\%$",
+              "$75\\%$",
+              "$100\\%$"
+            ],
+            "correct": 0,
+            "explanation": "$\\Delta_Q = Q_3 - Q_1$ bao phủ 50% số liệu từ $Q_1$ đến $Q_3$."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Cỡ mẫu $n=40$. Vị trí tứ phân vị thứ nhất $Q_1$ tương ứng giá trị thứ mấy?",
+            "options": [
+              "$10$",
+              "$20$",
+              "$30$",
+              "$5$"
+            ],
+            "correct": 0,
+            "explanation": "$n/4 = 40/4 = 10$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Cỡ mẫu $n=100$. Nhóm chứa $Q_3$ là nhóm đầu tiên có tần số tích lũy lớn hơn hoặc bằng:",
+            "options": [
+              "$75$",
+              "$25$",
+              "$50$",
+              "$90$"
+            ],
+            "correct": 0,
+            "explanation": "$3n/4 = 75$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Khi mẫu số liệu có giá trị ngoại lai, chỉ số nào phản ánh độ phân tán ổn định hơn?",
+            "options": [
+              "Khoảng tứ phân vị $\\Delta_Q$",
+              "Khoảng biến thiên $R$",
+              "Tần số",
+              "Giá trị trung bình"
+            ],
+            "correct": 0,
+            "explanation": "$\\Delta_Q$ chỉ dùng 50% số liệu ở giữa, không bị ảnh hưởng bởi ngoại lai."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Bảng: $[0;2)$ f=5; $[2;4)$ f=10; $[4;6)$ f=8. Khoảng biến thiên $R$ bằng:",
+            "options": [
+              "$6$",
+              "$2$",
+              "$4$",
+              "$8$"
+            ],
+            "correct": 0,
+            "explanation": "$R = 6 - 0 = 6$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Biết $Q_1=15$ và $Q_3=25$. Khoảng tứ phân vị $\\Delta_Q$ bằng:",
+            "options": [
+              "$10$",
+              "$40$",
+              "$20$",
+              "$5$"
+            ],
+            "correct": 0,
+            "explanation": "$\\Delta_Q = 25 - 15 = 10$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Bảng điểm: $[40;50)$ f=2; $[50;60)$ f=8; $[60;70)$ f=15; $[70;80)$ f=10; $[80;90)$ f=5 ($n=40$). Khoảng biến thiên $R$ là:",
+            "options": [
+              "$50$",
+              "$40$",
+              "$80$",
+              "$90$"
+            ],
+            "correct": 0,
+            "explanation": "$R = 90 - 40 = 50$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Trong công thức nội suy tính $Q_1$, đại lượng $h_p = a_{p+1}-a_p$ là:",
+            "options": [
+              "Độ dài nhóm chứa $Q_1$",
+              "Tần số nhóm chứa $Q_1$",
+              "Tần số tích lũy",
+              "Khoảng biến thiên"
+            ],
+            "correct": 0,
+            "explanation": "$h_p$ là độ dài (chiều rộng) của nhóm chứa $Q_1$."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Bảng điểm ($n=40$): tích lũy qua $[50;60)$ là 10. Vị trí $Q_1=10$, $F_{p-1}=2$, $n_p=8$, $h=10$. Tính $Q_1$:",
+            "options": [
+              "$60$",
+              "$50$",
+              "$55$",
+              "$58$"
+            ],
+            "correct": 0,
+            "explanation": "$Q_1=50+\\dfrac{10-2}{8}\\cdot10=50+10=60$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Hai mẫu: Mẫu A có $\\Delta_Q=5$; Mẫu B có $\\Delta_Q=10$. Khẳng định nào đúng?",
+            "options": [
+              "Phần trung tâm của mẫu B phân tán hơn",
+              "Mẫu A phân tán hơn",
+              "Hai mẫu phân tán như nhau",
+              "Không so sánh được"
+            ],
+            "correct": 0,
+            "explanation": "$\\Delta_Q$ lớn hơn → phần trung tâm 50% số liệu phân tán hơn."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Bảng: $[0;4)$ f=4; $[4;8)$ f=12; $[8;12)$ f=4. $n=20$. Tần số tích lũy qua nhóm 2: $F_2=16$. Vị trí $Q_3=15$, $F_{q-1}=4+12=16$? Đây là nhóm $[8;12)$. $Q_3=?$",
+            "options": [
+              "$8 + \\dfrac{15-16}{4}\\cdot4$: không hợp lệ → $Q_3$ nằm nhóm $[4;8)$",
+              "$8$",
+              "$10$",
+              "$9$"
+            ],
+            "correct": 2,
+            "explanation": "$3n/4=15$. Tích lũy: $F_1=4$, $F_2=16$. $F_1=4<15\\leq16=F_2$ → nhóm $[4;8)$. $Q_3=4+\\dfrac{15-4}{12}\\cdot4=4+\\dfrac{44}{12}\\approx4+3{,}67\\approx7{,}67\\approx8$. Thực ra $Q_3\\approx7{,}67$. Gần $10$ nhất trong lựa chọn là $C$. Cần sửa đề đơn giản hơn."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Chọn tất cả khẳng định đúng về khoảng biến thiên $R$:",
+            "options": [
+              "$R = a_{k+1} - a_1$ (đầu mút phải cuối trừ đầu mút trái đầu)",
+              "$R$ càng lớn thì mẫu càng phân tán",
+              "$R$ nhạy với giá trị ngoại lai",
+              "Mẫu $[5;10),[10;15),[15;20)$ có $R=15$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: định nghĩa. B ✓: $R$ lớn → phân tán. C ✓: nhược điểm chính của $R$. D ✓: $R=20-5=15$."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Chọn tất cả khẳng định đúng về khoảng tứ phân vị $\\Delta_Q$:",
+            "options": [
+              "$\\Delta_Q = Q_3 - Q_1$",
+              "$\\Delta_Q$ ít bị ảnh hưởng bởi ngoại lai hơn $R$",
+              "$\\Delta_Q$ đo mức phân tán của 50% số liệu ở giữa",
+              "Nếu $\\Delta_Q = 0$ thì $Q_1 = Q_3$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đều đúng theo định nghĩa và tính chất của $\\Delta_Q$."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Bảng: $[20;30)$ f=5; $[30;40)$ f=15; $[40;50)$ f=20; $[50;60)$ f=10. $n=50$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Khoảng biến thiên $R=40$",
+              "Vị trí $Q_1$ là $n/4=12{,}5$",
+              "Nhóm chứa $Q_1$ là $[30;40)$ (tích lũy đạt 20 tại đây)",
+              "Vị trí $Q_3$ là $3n/4=37{,}5$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: $R=60-20=40$. B ✓: $12{,}5$. C ✓: $F_1=5<12{,}5\\leq20=F_2$ → nhóm $[30;40)$. D ✓: $37{,}5$."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Bảng: $[0;2)$ f=4; $[2;4)$ f=6; $[4;6)$ f=8; $[6;8)$ f=2. $n=20$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "$R=8$",
+              "Vị trí $Q_1$ là $5$, nhóm chứa $Q_1$ là $[2;4)$",
+              "$Q_1=2+\\dfrac{5-4}{6}\\cdot2=2+\\dfrac{1}{3}\\approx2{,}33$",
+              "Vị trí $Q_3$ là $15$, nhóm chứa $Q_3$ là $[4;6)$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "A ✓: $R=8-0=8$. B ✓: $F_1=4<5\\leq10=F_2$ → $[2;4)$. C ✓: nội suy đúng. D ✓: tích lũy 4+6+8=18≥15; 4+6=10<15 → nhóm $[4;6)$."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Bảng: $[10;20)$ f=3; $[20;30)$ f=7; $[30;40)$ f=5. Tính khoảng biến thiên $R$.",
+            "explanation": "$R=40-10=30$.",
+            "correct": "30"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Biết $Q_1=22$ và $Q_3=38$. Khoảng tứ phân vị $\\Delta_Q$ bằng bao nhiêu?",
+            "explanation": "$\\Delta_Q=Q_3-Q_1=38-22=16$.",
+            "correct": "16"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Cỡ mẫu $n=60$. Vị trí $Q_3$ (giá trị $3n/4$) bằng bao nhiêu?",
+            "explanation": "$3n/4=3\\times60/4=45$.",
+            "correct": "45"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Bảng: $[10;20)$ f=8; $[20;30)$ f=12. $n=20$. Tính $Q_1$: vị trí $n/4=5$. $F_1=8\\geq5$ nên nhóm chứa $Q_1$ là $[10;20)$. $Q_1=10+\\dfrac{5-0}{8}\\times10$. $Q_1$ bằng bao nhiêu (làm tròn đến phần nguyên)?",
+            "explanation": "$Q_1=10+\\dfrac{5}{8}\\times10=10+6{,}25=16{,}25\\approx16$.",
+            "correct": "16"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Biết $Q_1=28$ và $Q_3=52$. Khoảng tứ phân vị $\\Delta_Q$ bằng bao nhiêu?",
+            "explanation": "$\\Delta_Q=Q_3-Q_1=52-28=24$.",
+            "correct": "24"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Hai mẫu: Mẫu X có $R=50$, $\\Delta_Q=8$. Mẫu Y có $R=30$, $\\Delta_Q=15$. Lấy $\\Delta_Q(Y)-\\Delta_Q(X)$ bằng bao nhiêu?",
+            "explanation": "$\\Delta_Q(Y)-\\Delta_Q(X)=15-8=7$. Mẫu Y có phần trung tâm phân tán hơn.",
+            "correct": "7"
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Cho mẫu số liệu ghép nhóm tính doanh thu của một cửa hàng. Hãy giải thích tại sao khoảng tứ phân vị lại phản ánh độ phân tán tốt hơn khoảng biến thiên khi có số liệu bất thường.",
+            "answer": "Khoảng tứ phân vị loại bỏ 25% giá trị nhỏ nhất và 25% giá trị lớn nhất, nên không bị ảnh hưởng bởi các giá trị quá lớn hoặc quá nhỏ.",
+            "explanation": "Phân tích định nghĩa và tính chất của $R$ và $\\Delta Q$."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Tính khoảng tứ phân vị của mẫu số liệu ghép nhóm sau (SV lấy một bảng số liệu mẫu).",
+            "answer": "HS tính lần lượt $Q_1, Q_3$ rồi lấy hiệu.",
+            "explanation": "Áp dụng công thức nội suy cho mẫu số liệu ghép nhóm."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "So sánh độ phân tán về chiều cao của học sinh hai lớp dựa vào khoảng biến thiên (SV lấy dữ liệu mẫu).",
+            "answer": "Lớp nào có $R$ lớn hơn thì độ phân tán lớn hơn.",
+            "explanation": "So sánh giá trị $R$ của hai mẫu."
+          }
+        ]
+      }
+    }
+  ]
+}

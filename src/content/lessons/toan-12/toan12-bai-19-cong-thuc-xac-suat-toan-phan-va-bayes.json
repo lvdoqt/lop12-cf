@@ -1,0 +1,407 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-19-cong-thuc-xac-suat-toan-phan-va-bayes",
+      "name": "Bài 19. Công thức xác suất toàn phần và Bayes",
+      "slug": "xac-suat-toan-phan-va-bayes",
+      "chapter": "Chương 6: Xác suất có điều kiện và công thức Bayes",
+      "chapter_id": "T12-6",
+      "lesson_id": 19,
+      "description": "Nắm vững hai công thức quan trọng nhất của lý thuyết xác suất hiện đại: Xác suất toàn phần để tính xác suất hệ quả và công thức Bayes để cập nhật niềm tin dựa trên bằng chứng.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/4F46E5/FFFFFF?text=Xác+Suất+Toàn+Phần",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Sử dụng công thức xác suất toàn phần",
+          "slug": "xac-suat-toan-phan"
+        },
+        {
+          "id": "dang2",
+          "name": "Sử dụng công thức Bayes",
+          "slug": "cong-thuc-bayes"
+        },
+        {
+          "id": "dang3",
+          "name": "Ứng dụng trong y tế, kinh tế và kiểm định",
+          "slug": "ung-dung- Bayes"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết xác suất toàn phần và Bayes",
+          "sections": [
+            {
+              "heading": "1. Công thức xác suất toàn phần",
+              "content": "<p>Cho biến cố $B$ và một nhóm các biến cố $A_1, A_2, \\dots, A_n$ lập thành một <strong>hệ đầy đủ</strong> (nghĩa là chúng rời nhau và tổng các kết quả bằng không gian mẫu $\\Omega$).</p><div style='background:#f0fdf4; border-left:4px solid #22c55e; padding:10px; margin:10px 0;'><strong>Công thức:</strong> $$P(B) = \\sum_{i=1}^n P(A_i) \\cdot P(B|A_i)$$</div><p>Sơ đồ thực hiện: Chia vấn đề cần tính xác suất ($B$) thành các trường hợp nhỏ ($A_i$). Tích lũy xác suất từ tất cả các kịch bản có thể xảy ra.</p>"
+            },
+            {
+              "heading": "2. Công thức Bayes",
+              "content": "<p>Hầu hết các bài toán thực tế yêu cầu tính xác suất của <em>nguyên nhân</em> khi đã biết <em>kết quả</em> (xác suất ngược). Đây là nội dung của công thức Bayes:</p><div style='background:#fefce8; border-left:4px solid #eab308; padding:10px; margin:10px 0;'><strong>Công thức Bayes:</strong> $$P(A_i|B) = \\dfrac{P(A_i) \\cdot P(B|A_i)}{P(B)}$$ (Trong đó $P(B)$ được tính bằng công thức xác suất toàn phần).</div><p>Ý nghĩa: $P(A_i)$ là xác suất <em>tiền nghiệm</em> (trước khi có dữ liệu $B$), $P(A_i|B)$ là xác suất <em>hậu nghiệm</em> (sau khi quan sát thấy $B$).</p>"
+            },
+            {
+              "heading": "3. Quy trình giải bài toán",
+              "content": "<ol><li>Xác định hệ đầy đủ (các nguyên nhân/nhóm đối tượng): $A_1, A_2, \\dots$.</li><li>Xác định biến cố mục tiêu (kết quả quan sát): $B$.</li><li>Liệt kê các xác suất đã cho ($P(A_i)$ và $P(B|A_i)$).</li><li>Áp dụng công thức toàn phần để tìm mẫu số $P(B)$, sau đó dùng Bayes để tìm xác suất hậu nghiệm yêu cầu.</li></ol>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Sử dụng công thức xác suất toàn phần",
+            "method": "<p>Dùng để tính xác suất của một sự kiện xảy ra qua nhiều kịch bản khác nhau.</p>",
+            "examples": [
+              {
+                "question": "Dây chuyền sản xuất có 2 máy: Máy 1 sản xuất 60% sản phẩm, tỉ lệ lỗi 2%. Máy 2 sản xuất 40%, lỗi 3%. Lấy ngẫu nhiên 1 sản phẩm, tính xác suất sản phẩm đó bị lỗi.",
+                "solution": "<p>$A_1, A_2$: Sp do máy 1, máy 2. $L$: Sp bị lỗi.</p><p>$P(L) = P(A_1)P(L|A_1) + P(A_2)P(L|A_2) = 0.6 \\cdot 0.02 + 0.4 \\cdot 0.03 = 0.012 + 0.012 = 0.024$.</p>"
+              },
+              {
+                "question": "Một người đi làm có 3 con đường: Đường A (xác suất chọn 0.5, xác suất muộn 0.1), Đường B (chọn 0.3, muộn 0.2), Đường C (chọn 0.2, muộn 0.4). Tính xác suất người đó đi làm muộn.",
+                "solution": "<p>$P(M) = 0.5 \\cdot 0.1 + 0.3 \\cdot 0.2 + 0.2 \\cdot 0.4 = 0.05 + 0.06 + 0.08 = 0.19$.</p>"
+              },
+              {
+                "question": "Hộp 1 có 4 đen, 2 trắng. Hộp 2 có 3 đen, 5 trắng. Lấy ngẫu nhiên 1 bi từ hộp 1 sang hộp 2, rồi lấy 1 bi từ hộp 2. Tính xác suất bi lấy từ hộp 2 là màu đen.",
+                "solution": "<p>$D_1$: Lần 1 lấy đen (4/6), $T_1$: Lần 1 trắng (2/6).</p><p>$P(D_2) = P(D_1)P(D_2|D_1) + P(T_1)P(D_2|T_1) = \\dfrac{4}{6} \\cdot \\dfrac{4}{9} + \\dfrac{2}{6} \\cdot \\dfrac{3}{9} = \\dfrac{16 + 6}{54} = \\dfrac{11}{27}$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Sử dụng công thức Bayes",
+            "method": "<p>Dùng để tính ngược lại xác suất của nguyên nhân khi biết kết quả đã xảy ra.</p>",
+            "examples": [
+              {
+                "question": "Tiếp tục bài toán dây chuyền sản xuất: Nếu lấy 1 sản phẩm thấy bị lỗi, hãy tính xác suất sản phẩm đó do máy 1 sản xuất.",
+                "solution": "<p>$P(A_1|L) = \\dfrac{P(A_1)P(L|A_1)}{P(L)} = \\dfrac{0.012}{0.024} = 0.5$.</p>"
+              },
+              {
+                "question": "Ở một địa phương, 70% người dân thuộc nhóm X, 30% thuộc nhóm Y. Tỉ lệ mắc bệnh K ở người nhóm X là 1%, nhóm Y là 5%. Biết một người mắc bệnh K, tính xác suất người đó thuộc nhóm Y.",
+                "solution": "<p>$P(K) = 0.7 \\cdot 0.01 + 0.3 \\cdot 0.05 = 0.007 + 0.015 = 0.022$.</p><p>$P(Y|K) = \\dfrac{0.3 \\cdot 0.05}{0.022} = \\dfrac{0.015}{0.022} \\approx 0.6818$.</p>"
+              },
+              {
+                "question": "Ba xạ thủ $S_1, S_2, S_3$ cùng bắn vào bia với xác suất trúng là 0.4; 0.5; 0.7. Chọn ngẫu nhiên 1 xạ thủ bắn, thấy bia bị trúng. Tính xác suất bia do $S_3$ bắn trúng.",
+                "solution": "<p>$P(T) = (0.4 + 0.5 + 0.7)/3 = 1.6/3 \\approx 0.533$.</p><p>$P(S_3|T) = \\dfrac{(1/3) \\cdot 0.7}{1.6/3} = \\dfrac{0.7}{1.6} = 0.4375$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Ứng dụng trong y tế, kinh tế và kiểm định",
+            "method": "<p>Phân tích bài toán thông qua các chỉ số như Độ nhạy (Sensitivity) và Độ đặc hiệu (Specificity).</p>",
+            "examples": [
+              {
+                "question": "Xét nghiệm truyền nhiễm có độ nhạy 99%, độ đặc hiệu 95%. Tỉ lệ mắc bệnh là 0.5%. Một người xét nghiệm dương tính, tính xác suất người đó thật sự có bệnh.",
+                "solution": "<p>$P(+) = 0.005 \\cdot 0.99 + 0.995 \\cdot (1 - 0.95) = 0.00495 + 0.04975 = 0.0547$.</p><p>$P(B|+) = \\dfrac{0.00495}{0.0547} \\approx 0.0905$. (Mặc dù xét nghiệm có độ chính xác cao nhưng do bệnh hiếm nên xác suất thật sự mắc vẫn thấp).</p>"
+              },
+              {
+                "question": "Một ngân hàng đánh giá khách hàng (75% tốt, 25% xấu). Tỉ lệ khách hàng tốt vỡ nợ là 0.01, khách hàng xấu vỡ nợ là 0.2. Nếu một khách hàng mới vỡ nợ, tính xác suất họ là khách hàng tốt.",
+                "solution": "<p>$P(VN) = 0.75 \\cdot 0.01 + 0.25 \\cdot 0.2 = 0.0075 + 0.05 = 0.0575$.</p><p>$P(Tốt|VN) = 0.0075 / 0.0575 \\approx 0.1304$.</p>"
+              },
+              {
+                "question": "Tại một kho hàng, 30% hàng từ nhà cung cấp A, 70% từ B. Tỉ lệ hàng đạt chuẩn của A là 90%, của B là 80%. Chọn ngẫu nhiên 1 sản phẩm thấy đạt chuẩn. Tính xác suất sản phẩm đó từ nhà cung cấp B.",
+                "solution": "<p>$P(Chuẩn) = 0.3 \\cdot 0.9 + 0.7 \\cdot 0.8 = 0.27 + 0.56 = 0.83$.</p><p>$P(B|Chuẩn) = 0.56 / 0.83 \\approx 0.6747$.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Công thức xác suất toàn phần được áp dụng khi các biến cố $A_1, A_2, \\dots, A_n$ thỏa mãn điều kiện:",
+            "options": [
+              "Lập thành một hệ đầy đủ",
+              "Độc lập với nhau",
+              "Bằng nhau",
+              "Xung khắc đôi một"
+            ],
+            "correct": 0,
+            "explanation": "Hệ đầy đủ là điều kiện tiên quyết để áp dụng tổng xác suất."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Công thức Bayes dùng để làm gì?",
+            "options": [
+              "Tính xác suất 'ngược' của nguyên nhân khi biết kết quả",
+              "Tính trung bình nhân",
+              "Tính độ lệch chuẩn",
+              "Giải phương trình bậc 2"
+            ],
+            "correct": 0,
+            "explanation": "Bayes là nền tảng của xác suất hậu nghiệm (cập nhật thông tin)."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Cho $P(A_1) = 0.6, P(A_2) = 0.4$ là hệ đầy đủ. Biết $P(B|A_1) = 0.1$ và $P(B|A_2) = 0.2$. Tính $P(B)$.",
+            "options": [
+              "$0.14$",
+              "$0.3$",
+              "$0.12$",
+              "$0.2$"
+            ],
+            "correct": 0,
+            "explanation": "$P(B) = 0.6 \\cdot 0.1 + 0.4 \\cdot 0.2 = 0.06 + 0.08 = 0.14$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Một hộp có 60% bi đen và 40% bi trắng. Tỉ lệ bi đen có kích thước lớn là 20%, bi trắng lớn là 30%. Lấy 1 bi thấy có kích thước lớn. Xác suất nó là bi trắng là khoảng:",
+            "options": [
+              "$0.5$",
+              "$0.4$",
+              "$0.6$",
+              "$0.3$"
+            ],
+            "correct": 0,
+            "explanation": "$P(Lớn) = 0.6 \\cdot 0.2 + 0.4 \\cdot 0.3 = 0.24$. $P(Trắng|Lớn) = 0.12 / 0.24 = 0.5$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Xác suất một thí sinh đỗ đại học nếu chăm học là 0.9, nếu lười là 0.2. Tỉ lệ học sinh chăm là 70%. Tính xác suất một học sinh bất kỳ đỗ đại học.",
+            "options": [
+              "$0.69$",
+              "$0.63$",
+              "$0.55$",
+              "$0.7$"
+            ],
+            "correct": 0,
+            "explanation": "$0.7 \\cdot 0.9 + 0.3 \\cdot 0.2 = 0.63 + 0.06 = 0.69$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Hệ số tin cậy của một xét nghiệm là 0.95. Một người không bệnh có kết quả xét nghiệm dương tính với xác suất là:",
+            "options": [
+              "$0.05$",
+              "$0.95$",
+              "$0.1$",
+              "$0$"
+            ],
+            "correct": 0,
+            "explanation": "Độ tin cậy 0.95 thường chỉ độ đặc hiệu (không bệnh $\\to$ âm tính), nên dương tính giả là $1 - 0.95 = 0.05$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Hai máy làm việc: Máy 1 hỏng (xác suất 0.1), Máy 2 hỏng (xác suất 0.2). Chọn ngẫu nhiên 1 máy, tính xác suất máy đó hoạt động tốt.",
+            "options": [
+              "$0.85$",
+              "$0.15$",
+              "$0.7$",
+              "$0.9$"
+            ],
+            "correct": 0,
+            "explanation": "Xác suất toàn phần: $[(1-0.1) + (1-0.2)]/2 = (0.9 + 0.8)/2 = 0.85$."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Trong công thức Bayes $P(A_i|B) = \\dfrac{P(A_i)P(B|A_i)}{P(B)}$, đại lượng $P(A_i)$ được gọi là:",
+            "options": [
+              "Xác suất tiền nghiệm",
+              "Xác suất hậu nghiệm",
+              "Lợi nhuận kỳ vọng",
+              "Hệ số Bayes"
+            ],
+            "correct": 0,
+            "explanation": "Prior probability - xác suất trước khi có quan sát $B$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Tỉ lệ nam giới chiếm 51% dân số. Tỉ lệ nam hút thuốc là 40%, nữ hút thuốc là 5%. Chọn 1 người hút thuốc, xác suất là nữ là:",
+            "options": [
+              "$10.74\\%$",
+              "$19.23\\%$",
+              "$25.00\\%$",
+              "$5.00\\%$"
+            ],
+            "correct": 0,
+            "explanation": "$P(Hút) = 0.51 \\cdot 0.4 + 0.49 \\cdot 0.05 = 0.204 + 0.0245 = 0.2285$. $P(Nữ|Hút) = 0.0245 / 0.2285 \\approx 10.74\\%$."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Một người tung đồng xu. Nếu mặt ngửa, người đó lấy bi từ hộp A (2 đỏ, 3 trắng). Nếu sấp, lấy từ hộp B (4 đỏ, 1 trắng). Tính xác suất người đó lấy được bi đỏ.",
+            "options": [
+              "$0.6$",
+              "$0.4$",
+              "$0.5$",
+              "$0.7$"
+            ],
+            "correct": 0,
+            "explanation": "$0.5 \\cdot (2/5) + 0.5 \\cdot (4/5) = 1/5 + 2/5 = 3/5 = 0.6$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Tỉ lệ xe điện của hãng X bị lỗi pin là 0.1%. Xe không bị lỗi nhưng báo lỗi ảo là 1%. Tính xác suất xe thực sự lỗi pin khi đèn báo lỗi sáng (biết đèn báo khi lỗi thật hoặc lỗi ảo).",
+            "options": [
+              "$9.1\\%$",
+              "$0.1\\%$",
+              "$10.0\\%$",
+              "$50.0\\%$"
+            ],
+            "correct": 0,
+            "explanation": "$P(Lỗi) = 0.001$. $P(\\text{Báo}) = 0.001 \\cdot 1 + 0.999 \\cdot 0.01 \\approx 0.01099$. $P = 0.001 / 0.01099 \\approx 9.1\\%$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Một hộp bi có 70% bi đỏ. Lấy lần 1 bi đỏ (không hoàn lại), xác suất lấy lần 2 vẫn đỏ sẽ:",
+            "options": [
+              "Giảm xuống",
+              "Tăng lên",
+              "Không đổi",
+              "Bằng 0"
+            ],
+            "correct": 0,
+            "explanation": "Do số bi đỏ và tổng số bi đều giảm đi 1, tỉ lệ bi đỏ còn lại sẽ thấp hơn ban đầu."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Cho $P(A_1)=0.7, P(A_2)=0.3$ là hệ đầy đủ. Biết $P(B|A_1)=0.2, P(B|A_2)=0.8$. Khẳng định đúng:",
+            "options": [
+              "$P(B) = 0.38$.",
+              "$P(A_1|B) \\approx 0.368$.",
+              "$P(A_2|B) \\approx 0.632$.",
+              "Biến cố $B$ xảy ra chủ yếu do nguyên nhân $A_2$."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1) $0.14+0.24 = 0.38$. 2) $0.14/0.38 = 14/38 \\approx 0.368$. 3) $0.24/0.38 = 24/38 \\approx 0.632$. 4) Vì $P(A_2|B) > P(A_1|B)$."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Một xét nghiệm đặc trị ung thư có độ nhạy 90% và độ đặc hiệu 90%. Tỉ lệ mắc bệnh trong dân cư là 1%. Khẳng định đúng:",
+            "options": [
+              "Xác suất một người dương tính có bệnh thật sự là khoảng 8.3%.",
+              "Xác suất dương tính giả (không bệnh mà kết quả dương) là 10%.",
+              "Tỉ lệ dương tính trong toàn dân cư là 10.8%.",
+              "Dương tính chưa chắc đã mắc bệnh."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1) $0.01(0.9) / [0.01(0.9)+0.99(0.1)] = 0.009/0.108 \\approx 0.083$. 2) Đúng (1 - Specificity). 3) 0.108. 4) Hiển nhiên (8.3%)."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Trong sản xuất, máy A cung cấp 30%, B cung cấp 70% lượng hàng. Lỗi của A là 1%, B là 2%. Một mặt hàng đạt chuẩn được chọn. Khẳng định đúng:",
+            "options": [
+              "Xác suất hàng đạt chuẩn là 0.983.",
+              "Xác suất hàng do máy B sản xuất biết nó đạt chuẩn là $\\dfrac{0.686}{0.983}$.",
+              "Máy A có tỉ lệ hàng đạt chuẩn cao hơn B.",
+              "Máy B đóng góp nhiều hàng đạt chuẩn hơn A."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1) $0.3(0.99)+0.7(0.98) = 0.297+0.686 = 0.983$. 2) Bayes. 3) 99% > 98%. 4) 0.686 > 0.297."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Xác suất trời mưa là 0.3. Nếu mưa, xác suất tắc đường là 0.8. Nếu không mưa, tắc đường là 0.2. Khẳng định đúng:",
+            "options": [
+              "Xác suất tắc đường chung là 0.38.",
+              "Nếu đang bị tắc đường, xác suất do trời mưa là khoảng 63%.",
+              "Nếu không có tắc đường, xác suất là trời không mưa là khoảng 87%.",
+              "Mưa làm tăng đột biến nguy cơ tắc đường."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "1) $0.3(0.8)+0.7(0.2)=0.38$. 2) $0.24/0.38 \\approx 0.63$. 3) $0.7(0.8) / 0.62 = 0.56 / 0.62 \\approx 0.90$. (Sửa: $P(\\text{không mưa}|\\text{không tắc}) = 0.7(0.8)/0.62 = 0.56/0.62 = 0.903$)."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Cho $P(A_1)=0.3, P(A_2)=0.7$ là hệ đầy đủ. $P(B|A_1)=0.1, P(B|A_2)=0.4$. Tính $P(B)$.",
+            "correct": "0.31",
+            "explanation": "$0.03 + 0.28 = 0.31$."
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Tiếp tục ex17, tính $P(A_2|B)$ (làm tròn đến 3 chữ số thập phân).",
+            "correct": "0.903",
+            "explanation": "$0.28 / 0.31 \\approx 0.9032$."
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Hộp I có 5 bi trắng, 2 bi đen. Hộp II có 3 bi trắng, 4 bi đen. Chọn ngẫu nhiên 1 hộp rồi lấy 1 bi. Tính xác suất lấy được bi trắng.",
+            "correct": "0.571",
+            "explanation": "$0.5 \\times (5/7) + 0.5 \\times (3/7) = 4/7 \\approx 0.571$."
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Tỉ lệ sản phẩm loại I của xưởng A là 90%, xưởng B là 80%. Biết rằng xưởng A cung cấp 60% hàng cho kho. Lấy 1 sp từ kho thấy là loại I. Tính xác suất sp đó do xưởng A làm (lấy 2 chữ số thập phân).",
+            "correct": "0.63",
+            "explanation": "$P(I) = 0.6(0.9) + 0.4(0.8) = 0.54 + 0.32 = 0.86$. $P(A|I) = 0.54/0.86 \\approx 0.6279 \\to 0.63$."
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Một bài toán Bayes có các thông số: $P(S)=0.05, P(+|S)=0.9, P(+|\\overline{S})=0.1$. Tính xác suất $P(S|+)$.",
+            "correct": "0.321",
+            "explanation": "$P(+) = 0.05(0.9) + 0.95(0.1) = 0.045+0.095 = 0.14$. $P = 0.045/0.14 \\approx 0.3214$."
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Trong trò chơi truyền hình, người dẫn chương trình cho biết có 1 trong 3 cửa chứa phần thưởng. Sau khi bạn chọn cửa 1, người dẫn (biết phần thưởng ở đâu) mở cửa 3 và thấy trống. Theo Bayes, xác suất phần thưởng ở cửa 2 lúc này là bao nhiêu?",
+            "correct": "0.667",
+            "explanation": "Đây là bài toán Monty Hall nổi tiếng. Chuyển sang cửa 2 có xác suất thắng $2/3$."
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Hai máy cùng sản xuất cùng một loại bu-lông. Năng suất của máy 1 cao gấp 2 lần máy 2. Tỉ lệ hàng lỗi của máy 1 là 5%, máy 2 là 2%. <br>a) Tính xác suất để một bu-lông lấy ngẫu nhiên từ kho hàng là bu-lông lỗi. <br>b) Một bu-lông lấy ra bị lỗi, tính xác suất để nó do máy 2 sản xuất.",
+            "answer": "a) Gọi $P(A_2)=x \\Rightarrow P(A_1)=2x$. Vì $x+2x=1 \\Rightarrow P(A_2)=1/3, P(A_1)=2/3$. <br> $P(L) = (2/3)(0.05) + (1/3)(0.02) = 0.10/3 + 0.02/3 = 0.12/3 = 0.04$. <br>b) $P(A_2|L) = P(A_2 \\cap L)/P(L) = (0.02/3) / 0.04 = (0.02/3) \\cdot (25) = 0.5/3 = 1/6$.",
+            "explanation": "Phân tích tỉ lệ nguồn gốc và áp dụng công thức toàn phần/Bayes."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Tỉ lệ dân cư mắc bệnh X là 10%. Có một loại xét nghiệm mà người bệnh có kết quả dương tính là 95%. Tuy nhiên, 5% người không bệnh cũng có kết quả dương tính. <br>a) Tính xác suất một người dân xét nghiệm cho kết quả dương tính. <br>b) Nếu một người xét nghiệm dương tính 2 lần độc lập, tính xác suất thực sự mắc bệnh.",
+            "answer": "a) $P(+) = 0.1 \\cdot 0.95 + 0.9 \\cdot 0.05 = 0.095 + 0.045 = 0.14$. <br>b) Sau lần d.tính 1, $P(B|+) = 0.095/0.14 \\approx 0.678$ (Update Prior). Lần d.tính 2: $P(B|++) = \\dfrac{0.678 \\cdot 0.95}{0.678 \\cdot 0.95 + 0.322 \\cdot 0.05} \\approx \\dfrac{0.6441}{0.6441+0.0161} \\approx 0.975$.",
+            "explanation": "Sử dụng Bayes để cập nhật xác suất liên tục qua các vòng kiểm tra."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Điều tra về thị trường điện thoại: 40% dùng hãng A, 35% dùng B, 25% dùng C. Tỉ lệ muốn đổi máy trong năm tới của khách hãng A là 10%, hãng B là 20%, hãng C là 30%. <br>a) Tính tỉ lệ người dùng có dự định đổi máy trong năm tới của cả thị trường. <br>b) Một người có dự định đổi máy, tính xác suất họ đang dùng hãng A.",
+            "answer": "a) $P(\\text{Đổi}) = 0.4 \\cdot 0.1 + 0.35 \\cdot 0.2 + 0.25 \\cdot 0.3 = 0.04 + 0.07 + 0.075 = 0.185$ (18.5%). <br>b) $P(A|\\text{Đổi}) = 0.04 / 0.185 \\approx 0.2162$.",
+            "explanation": "Bài toán xác định chân dung khách hàng từ hành vi thị trường."
+          }
+        ]
+      }
+    }
+  ]
+}

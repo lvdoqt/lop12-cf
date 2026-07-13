@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-13",
+    "name": "Hoạt động đối ngoại Việt Nam trong kháng chiến chống Pháp và Mỹ (1945-1975)",
+    "slug": "hoat-dong-doi-ngoai-vietnam-1945-1975",
+    "chapter": "Chủ đề 5: Đối ngoại Việt Nam qua các giai đoạn lịch sử",
+    "chapter_id": "su12",
+    "lesson_id": 13,
+    "description": "Ngoại giao Việt Nam trong kháng chiến chống Pháp và Mỹ, quan hệ với Liên Xô, Trung Quốc, các nước khác.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Hoạt động đối ngoại Việt Nam trong kháng chiến chống Pháp và Mỹ (1945-1975)",
+        "sections": [
+          { "heading": "1. Ngoại giao kháng chiến chống Pháp (1945-1954)", "content": "Việt Nam Dân chủ Cộng hòa tìm kiếm công nhận quốc tế. Liên Xô công nhận đầu tiên (1950). Các nước Đông Âu (Trung Quốc, Triều Tiên) công nhận. Pháp cố gắng bao vây ngoại giao. Hội nghị Ghi Nước (1954): Công nhận độc lập Việt Nam (tạm thời chia đôi)." },
+          { "heading": "2. Giai đoạn xây dựng nước (1954-1965)", "content": "Bắc Việt: khoá mật liên minh với Liên Xô, Trung Quốc. Hợp tác kinh tế, quân sự. Thuê lão lãnh tụ: Hồ Chí Minh được coi là lãnh tụ cộng sản Đông Nam Á. Nam Việt: Mỹ hỗ trợ, tạo chính quyền Sài Gòn. Hạn chế ngoại giao: Bắc Việt bị cô lập toàn cầu nhưng được Xô-Viết, TQ hỗ trợ." },
+          { "heading": "3. Kháng chiến chống Mỹ, hỗ trợ quốc tế (1965-1975)", "content": "Liên Xô gửi vũ khí, cố vấn quân sự cho Bắc Việt. Trung Quốc gửi quân nhân, vũ khí, hỗ trợ đường đi. Các nước khối Đông: Đông Đức, Ba Lan, Tiệp Khắc hỗ trợ. Phwoãn: Hanhoi từng chuẩn bị hoạt động, nhưng tỉnh cách. Cuba (Castro) tuyên bố hỗ trợ tinh thần. Hội chị: Các phong trào chống chiến tranh Mỹ thế giới hỗ trợ qua ngoại giao văn hóa." },
+          { "heading": "4. Cuộc chiến giữa Liên Xô và Trung Quốc", "content": "Thế kỷ 1960: Liên Xô - TQ lục soát mâu thuẫn trong chủ nghĩa cộng sản. Việt Nam loại trường chịu ảnh hưởng. Bắc Việt cố gắng giữ cân bằng. Salina công gây áp lực, nhưng Bắc Việt bị Trung Quốc hạn chế vì nằm yểm bị Trung Quốc. Thời gian, Bắc Việt gần gũi Liên Xô hơn." },
+          { "heading": "5. Kết thúc kháng chiến, ngoài ngữ Bắc Việt toàn thắng", "content": "1973: Hiệp định Paris, Mỹ rút quân. 1975: Giải phóng miền Nam, thống nhất đất nước. Cộng hòa Xã hội chủ nghĩa Việt Nam thành lập. Liên Xô công nhận chính thức. Trung Quốc gây cải cách (thủ tiêu Mỹ hoá). Ngoài ngữ Việt Nam trong khối Xô-Viết và các nước xã hội chủ nghĩa." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Liên Xô công nhận khi nào?", "options": ["1945", "1950", "1954", "1960"], "correct": 1, "explanation": "Liên Xô công nhận Việt Nam Dân chủ Cộng hòa năm 1950." },
+        { "id": "ex2", "type": "mcq", "question": "Hiệp định kết thúc kháng Pháp?", "options": ["Paris 1950", "Ghi Nước 1954", "Genève 1956", "Hà Nội 1955"], "correct": 1, "explanation": "Hiệp định Ghi Nước (1954) kết thúc kháng chiến chống Pháp." },
+        { "id": "ex3", "type": "mcq", "question": "Giai đoạn 1954-1965?", "options": ["Xây dựng chiến tranh", "Xây dựng nước, gây căng thẳng", "Hợp tác quốc tế", "Yếu đi"], "correct": 1, "explanation": "Giai đoạn xây dựng nước, hợp tác Liên Xô - TQ, tạm gió dầu nhoảng." },
+        { "id": "ex4", "type": "mcq", "question": "Liên Xô hỗ trợ gì?", "options": ["Tiền bạc", "Vũ khí, cố vấn quân", "Thực phẩm", "Giáo dục"], "correct": 1, "explanation": "Liên Xô gửi vũ khí, cố vấn quân sự hỗ trợ Bắc Việt." },
+        { "id": "ex5", "type": "mcq", "question": "Trung Quốc cung cấp?", "options": ["Tài chính", "Quân nhân, vũ khí, đường đi", "Giáo dục", "Lương thực"], "correct": 1, "explanation": "Trung Quốc gửi quân, vũ khí, hỗ trợ đường chiến lược." },
+        { "id": "ex6", "type": "mcq", "question": "Cuộc tranh chấp?", "options": ["Liên Xô-Pháp", "Liên Xô-Trung Quốc", "Trung Quốc-Mỹ", "Lào-Việt"], "correct": 1, "explanation": "1960s: Liên Xô - Trung Quốc tranh chấp ảnh hưởng ở Việt Nam." },
+        { "id": "ex7", "type": "mcq", "question": "Bắc Việt phụ thuộc?", "options": ["Chỉ Liên Xô", "Chỉ Trung Quốc", "Cân bằng, gần Liên Xô hơn", "Độc lập hoàn toàn"], "correct": 2, "explanation": "Bắc Việt giữ cân bằng nhưng gần gũi Liên Xô hơn theo thời gian." },
+        { "id": "ex8", "type": "mcq", "question": "Hiệp định Paris năm?", "options": ["1970", "1971", "1972", "1973"], "correct": 3, "explanation": "Hiệp định Paris (1/1/1973) Mỹ rút quân." },
+        { "id": "ex9", "type": "mcq", "question": "Giải phóng miền Nam?", "options": ["1973", "1974", "1975", "1976"], "correct": 2, "explanation": "Giải phóng miền Nam, thống nhất (30/4/1975)." },
+        { "id": "ex10", "type": "mcq", "question": "Nước thành lập?", "options": ["Việt Nam Cộng hòa", "Liên bang Đông Dương", "Cộng hòa Xã hội Chủ nghĩa Việt Nam", "Việt Nam Nhân dân"], "correct": 2, "explanation": "Cộng hòa Xã hội chủ nghĩa Việt Nam (1976) được Liên Xô công nhận." }
+      ]
+    }
+  }]
+}

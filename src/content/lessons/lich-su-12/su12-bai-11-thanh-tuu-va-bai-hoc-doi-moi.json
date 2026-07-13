@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-11",
+    "name": "Thành tựu và bài học của công cuộc Đổi mới",
+    "slug": "thanh-tuu-va-bai-hoc-doi-moi",
+    "chapter": "Chủ đề 4: Đổi mới ở Việt Nam",
+    "chapter_id": "su12",
+    "lesson_id": 11,
+    "description": "Thành tựu kinh tế, chính trị, xã hội đạt được từ Đổi mới và bài học kinh nghiệm.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Thành tựu và bài học của công cuộc Đổi mới",
+        "sections": [
+          { "heading": "1. Thành tựu kinh tế", "content": "Tăng trưởng GDP năm 5-7% bình quân hàng năm (1986-2000). Nông sản: thực phẩm tự cấp, xuất khẩu lúa gạo. Công nghiệp phát triển: từ máy móc đơn giản đến công nghiệp hiện đại. Xây dựng cơ sở hạ tầng: giao thông, năng lượng, thông tin. Thu hút đầu tư nước ngoài (FDI) hàng tỷ USD. Thương mại tăng, có thể xuất khẩu sản phẩm công nghiệp." },
+          { "heading": "2. Thành tựu xã hội, đời sống", "content": "Giảm tỷ lệ người sống dưới mức nghèo (từ 50% xuống dưới 20%). Lao động việc làm ổn định hơn. Cơ sở y tế, giáo dục cải thiện: Thế hệ trẻ tiếp cận giáo dục tốt hơn. Lương thực, thực phẩm dồi dào: không còn tình trạng mất mủa. Nhà cửa, điện nước, viễn thông phổ biến. Cuộc sống nhân dân nâng cao rõ rệt." },
+          { "heading": "3. Thành tựu chính trị, ngoại giao", "content": "Ổn định chính trị: Việt Nam từ nước bị cô lập trở thành phối hợp quốc tế. Bình thường hóa quan hệ chính phủ những quốc gia chính: Mỹ (1995), Trung Quốc (1996). Gia nhập ASEAN (1995), trở thành thành viên tích cực. Gia nhập WTO (2007), thúc đẩy hòa nhập kinh tế. Nâng cao uy tín quốc tế: Việt Nam là nước phát triển tương đối, có tiếng nói trong khu vực." },
+          { "heading": "4. Bài học kinh nghiệm từ Đổi mới", "content": "Tầm quan trọng của cải cách: Đổi mới chính sách khi bị động, chậm hiệu quả. Đoàn kết Đảng, Nhà nước, Nhân dân: Thành công đổi mới nhờ sự nhất trí, quyết tâm. Phát huy tiềm năng, sáng tạo, khuyến khích doanh nhân. Đúc kết từ thực tiễn: Đổi mới từng bước, thử nghiệm, rút kinh nghiệm. Cân bằng giữa tự chủ và mở cửa: không bao đóng nhưng cũng phải tự bảo vệ." },
+          { "heading": "5. Thách thức và triển vọng tương lai", "content": "Thách thức: Bất bình đẳng tăng; ô nhiễm môi trường; biến đổi khí hậu. Cần tiếp tục cải cách thể chế, chống tham nhũng. Nâng cao chất lượng giáo dục, khoa học - công nghệ. Phát triển bền vững, bảo vệ môi trường. Mục tiêu 2030: Lâu dài trở thành nước phát triển vào 2050." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Tăng trưởng GDP bao nhiêu?", "options": ["3-4%", "5-7%", "8-10%", "12-15%"], "correct": 1, "explanation": "GDP tăng 5-7% bình quân hằng năm (1986-2000)." },
+        { "id": "ex2", "type": "mcq", "question": "Nông sản Việt Nam?", "options": ["Thực phẩm thiếu hụt", "Tự cấp, có xuất khẩu", "Tấp Mỹ, phải nhập", "Xấu, cần cải thiện"], "correct": 1, "explanation": "Nước Việt naam tự cấp thực phẩm, có xuất khẩu lúa gạo." },
+        { "id": "ex3", "type": "mcq", "question": "Người sống dưới mức nghèo giảm?", "options": ["Không giảm", "50% xuống 20%", "20% xuống 5%", "Tăng 50%"], "correct": 1, "explanation": "Giảm từ khoảng 50% xuống dưới 20%." },
+        { "id": "ex4", "type": "mcq", "question": "Bình thường hóa với Mỹ, lỵ nào?", "options": ["1992", "1995", "1998", "2000"], "correct": 1, "explanation": "Bình thường hóa quan hệ với Mỹ năm 1995." },
+        { "id": "ex5", "type": "mcq", "question": "Gia nhập ASEAN?", "options": ["1990", "1992", "1995", "1998"], "correct": 2, "explanation": "Gia nhập ASEAN năm 1995." },
+        { "id": "ex6", "type": "mcq", "question": "WTO gia nhập?", "options": ["2000", "2004", "2007", "2010"], "correct": 2, "explanation": "Gia nhập WTO năm 2007." },
+        { "id": "ex7", "type": "mcq", "question": "Giáo dục, y tế?", "options": ["Không cải thiện", "Cơ sở xảy cơ bản", "Cơ sở cải thiện, phổ biến", "Y thế, giáo dục xấu"], "correct": 2, "explanation": "Giáo dục, y tế cơ sở cải thiện, phổ biến để dân." },
+        { "id": "ex8", "type": "mcq", "question": "Bài học gì từ Đổi mới?", "options": ["Từ bỏ cộng sản", "Cải cách từng bước, đoàn kết", "Phục tùng phương Tây", "Không cần thay đổi"], "correct": 1, "explanation": "Đổi mới từng bước, nhất trí đoàn kết Đảng, Nhà nước, nhân dân." },
+        { "id": "ex9", "type": "mcq", "question": "Thách thức hiện đại?", "options": ["Không có", "Thiếu hụt thực phẩm", "Bất bình đẳng, môi trường, khí hậu", "Quá giàu"], "correct": 2, "explanation": "Thách thức: bất bình đẳng tăng, ô nhiễm, khí hậu." },
+        { "id": "ex10", "type": "mcq", "question": "Triển vọng 2050?", "options": ["Vẫn phát triển chậm", "Trở thành nước phát triển", "Suy thoái", "Tôi lệ Trung Quốc"], "correct": 1, "explanation": "Mục tiêu trở thành nước phát triển vào năm 2050." }
+      ]
+    }
+  }]
+}

@@ -1,0 +1,205 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-2-5-viet-van-nghi-luan-so-sanh",
+      "name": "Viết bài văn nghị luận so sánh, đánh giá hai tác phẩm thơ",
+      "slug": "viet-van-nghi-luan-so-sanh-tho",
+      "chapter": "Những thế giới thơ",
+      "chapter_id": "V12-2",
+      "lesson_id": 5,
+      "description": "Học cách viết bài văn nghị luận để so sánh, đánh giá hai tác phẩm thơ. Tìm hiểu cấu trúc bài viết, các tiêu chí so sánh, cách xây dựng luận điểm và cách trình bày ý kiến một cách thuyết phục.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507842211343-583f20270319?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tq-vn-1",
+          "name": "Xây dựng bài văn so sánh và đánh giá",
+          "slug": "xay-dung-bai-van-so-sanh",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Viết bài văn nghị luận so sánh, đánh giá hai tác phẩm thơ",
+          "sections": [
+            {
+              "heading": "1. Khái niệm bài văn nghị luận so sánh",
+              "content": "<h4>a) Bài văn nghị luận so sánh là gì</h4><ul><li><strong>Định nghĩa:</strong> Bài văn nghị luận so sánh là loại bài viết trong đó tác giả đặt hai (hoặc nhiều) sự vật, sự việc, tác phẩm của cạnh nhau để phát hiện những điểm giống nhau, khác nhau, từ đó rút ra nhận xét, đánh giá về chúng</li><li><strong>Đặc điểm:</strong> Kết hợp giữa so sánh (tìm điểm giống/khác) và lập luận (đánh giá, nêu luận điểm)</li><li><strong>Mục đích:</strong> Giúp độc giả nhìn thấy sâu hơn các khía cạnh của hai tác phẩm thông qua sự so sánh</li></ul><h4>b) Tầm quan trọng của so sánh trong tiếp cận tác phẩm</h4><ul><li><strong>Phát hiện điểm độc đáo:</strong> So sánh giúp ta nhận ra những điểm độc đáo của từng tác phẩm</li><li><strong>Sâu hơn hiểu biết:</strong> Thay vì phân tích từng tác phẩm riêng rẽ, so sánh giúp hiểu biết sâu hơn</li><li><strong>Phát triển tư duy:</strong> So sánh rèn luyện khả năng phân tích, tư duy logic</li></ul><h4>c) Loại bài so sánh</h4><ul><li><strong>So sánh theo điểm:</strong> Chọn một tiêu chí, so sánh hai tác phẩm theo tiêu chí đó, rồi chọn tiêu chí khác...<br/>Ví dụ: So sánh chủ đề, sau đó so sánh hình ảng, sau đó so sánh cảm xúc</li><li><strong>So sánh theo cấu trúc:</strong> Trình bày từng tác phẩm hoàn chỉnh, rồi sau đó so sánh<br/>Ví dụ: Phân tích Cảm hoài, sau đó phân tích Tây Tiến, rồi so sánh chúng</li><li><strong>So sánh xen kẽ:</strong> Xen kẽ nhận xét giữa hai tác phẩm <br/>Ví dụ: Nói về chủ đề của cả hai, nói về hình ảng của cả hai, v. v.</li></ul>"
+            },
+            {
+              "heading": "2. Cấu trúc bài văn so sánh, đánh giá two tác phẩm thơ",
+              "content": "<h4>a) Phần mở bài (Paragraf 1)</h4><ul><li><strong>Nêu vấn đề:</strong> Giới thiệu hai tác phẩm, hai tác giả, hoặc chủ đề so sánh</li><li><strong>Gợi mở suy nghĩ:</strong> Tạo hứng thú cho độc giả</li><li><strong>Nêu luận điểm chính:</strong> Tác giả sẽ so sánh những gì (chủ đề, phong cách, cảm xúc...)</li><li><strong>Dài:</strong> 3-4 câu, không quá dài</li></ul><h4>b) Phần thân bài (Paragraf 2-3-4...)</h4><ul><li><strong>Lựa chọn tiêu chí so sánh:</strong> Chọn 2-3 tiêu chí chính (chủ đề, cảm xúc, hình ảng, phong cách...)</li><li><strong>Mỗi tiêu chí một đoạn:</strong> Dành một đoạn text để so sánh theo từng tiêu chí<br/>Ví dụ:<br/>- Đoạn 1: So sánh chủ đề (giống/khác như thế nào)<br/>- Đoạn 2: So sánh cảm xúc (của cả hai tác phẩm, giống/khác)<br/>- Đoạn 3: So sánh hình ảng, phong cách...</li><li><strong>Cấu trúc mỗi đoạn:</strong><br/>- Topic sentence (nêu tiêu chí so sánh)<br/>- Điểm giống nhau (nếu có)<br/>- Điểm khác nhau<br/>- Nhận xét/Đánh giá</li></ul><h4>c) Phần kết bài (Paragraf cuối)</h4><ul><li><strong>Tổng kết những điểm so sánh:</strong> Nhắc lại những gì đã so sánh</li><li><strong>Nêu những đặc điểm chung:</strong> Những yếu tố chung của hai tác phẩm</li><li><strong>Đánh giá tổng thể:</strong> Giá trị, ý nghĩa của cả hai tác phẩm</li><li><strong>Mở rộng ý tưởng:</strong> Liên hệ với những vấn đề rộng hơn (nếu cần)</li></ul>"
+            },
+            {
+              "heading": "3. Tiêu chí so sánh trong việc đánh giá tác phẩm thơ",
+              "content": "<h4>a) Chủ đề (Theme)</h4><ul><li><strong>Định nghĩa:</strong> Những ý tưởng, chủ để chính mà tác phẩm muốn thể hiện</li><li><strong>Cách so sánh:</strong><br/>- Cảm hoài của Đặng Dung: Chủ đề về cảm xúc cá nhân, suy tư nhân sinh<br/>- Tây Tiến của Quang Dũng: Chủ đề về lịch sử, anh hùng<br/>- Lập luận: Hai tác phẩm có chủ để khác nhau</li><li><strong>Ý nghĩa:</strong> So sánh chủ đề giúp ta hiểu rằng thơ ca có thể thể hiện nhiều khía cạnh của cuộc sống</li></ul><h4>b) Cảm xúc (Emotion)</h4><ul><li><strong>Định nghĩa:</strong> Những cảm xúc chủ đạo của tác phẩm</li><li><strong>Cách so sánh:</strong><br/>- Cảm hoài: Buồn bã nhẹ nhàng, lạc lõng, suy tư<br/>- Tây Tiến: Sôi nổi, hùng tráng, tự hào<br/>- Lập luận: Hai tác phẩm khác nhau về cảm xúc</li><li><strong>Ý nghĩa:</strong> So sánh cảm xúc giúp ta nhận ra rằng con người có nhiều lớp cảm xúc, và thơ ca thể hiện được tất cả</li></ul><h4>c) Hình ảng (Imagery)</h4><ul><li><strong>Định nghĩa:</strong> Những hình ảng thơ được sử dụng để biểu hiện ý tưởng</li><li><strong>Cách so sánh:</strong><br/>- Cảm hoài: Hình ảnh tự nhiên (gió, mưa, lá, ánh sáng) để biểu hiện cảm xúc<br/>- Tây Tiến: Hình ảnh chiến trường (máu, vũ khí, cờ) để ca tụng anh hùng<br/>- Lập luận: Lựa chọn hình ảng khác nhau phục vụ cho các mục đích khác nhau</li><li><strong>Ý nghĩa:</strong> So sánh hình ảng giúp ta hiểu cách tác giả sáng tạo, lựa chọn hình ảng phù hợp</li></ul><h4>d) Phong cách (Style)</h4><ul><li><strong>Định nghĩa:</strong> Cách viết, dùng từ, cấu trúc câu độc đáo của tác giả</li><li><strong>Cách so sánh:</strong><br/>- Cảm hoài: Phong cách tinh tế, dịu dàng, dùng ẩn dụ mềm mại<br/>- Tây Tiến: Phong cách mạnh mẽ, trực tiếp, dùng hình ảng to lớn<br/>- Lập luận: Từng tác giả có phong cách riêng biệt</li><li><strong>Ý nghĩa:</strong> So sánh phong cách giúp ta hiểu cá tính sáng tạo của tác giả</li></ul><h4>e) Ý giáo dục/Bài học (Message)</h4><ul><li><strong>Định nghĩa:</strong> Những bài học, ý nghĩa mà tác phẩm muốn gửi đến độc giả</li><li><strong>Cách so sánh:</strong><br/>- Cảm hoài: Dạy con người chấp nhận sự thay đổi, suy tư sâu sắc<br/>- Tây Tiến: Dạy con người về hy sinh, anh hùng, lòng yêu nước<br/>- Lập luận: Hai tác phẩm có bài học khác nhau nhưng cùng có giá trị</li><li><strong>Ý nghĩa:</strong> So sánh ý de dụng giúp ta cảm nhân rằng tác phẩm là những bài học sống</li></ul>"
+            },
+            {
+              "heading": "4. Cách xây dựng luận điểm so sánh",
+              "content": "<h4>a) Topic sentence (Câu chủ đề)</h4><ul><li><strong>Chức năng:</strong> Giới thiệu tiêu chí so sánh</li><li><strong>Cách viết:</strong> Nên rõ ràng, tập trung<br/>Ví dụ: \"Về chủ đề, Cảm hoài và Tây Tiến khác nhau hoàn toàn\"</li><li><strong>Lạc thứ dự kiến:</strong> Không nên quá cồng kềnh, quá dài</li></ul><h4>b) Supporting sentences (Câu lập luận)</h4><ul><li><strong>Chức năng:</strong> Nêu chi tiết, ví dụ, giải thích</li><li><strong>Cách viết:</strong> Nên cụ thể, có ví dụ\n<ul><li>So sánh điểm giống: \"Cảm hoài như Tây Tiến đều thể hiện cảm xúc sâu sắc của con người\"</li><li>So sánh điểm khác: \"Nhưng Cảm hoài là cảm xúc cá nhân, trong khi Tây Tiến là cảm xúc công cộng\"}}</li></ul><li><strong>Lạc thứ dự kiến:</strong> Nên có ít nhất 2-3 supporting sentences cho mỗi topic sentence</li></ul><h4>c) Dẫn chứng (Evidence)</h4><ul><li><strong>Chức năng:</strong> Chứng minh luận điểm</li><li><strong>Cách viết:</strong> Lấy từ text, có dẫn từ cụ thể\n<ul><li>Trực tiếp: Ghi từ text: \"Trong bài Cảm hoài, Đặng Dung viết 'gió thổi' để biểu hiện..\"</li><li>Gián tiếp: Nói lại nội dung, giải thích ý nghĩa</li></ul><li><strong>Lạc thứ dự kiến:</strong> Không nên dẫn quá dài, nên chỉ dẫn các đoạn chính</li></ul><h4>d) Nhận xét/Đánh giá (Analysis)</h4><ul><li><strong>Chức năng:</strong> Nêu ý kiến của mình về sự so sánh</li><li><strong>Cách viết:</strong> Nên đánh giá công bằng cả hai tác phẩm\n<ul><li>Điểm mạnh của tác phẩm A vs tác phẩm B</li><li>Tác phẩm A phù hợp cho ai, tác phẩm B phù hợp cho ai</li></ul><li><strong>Lạc thứ dự kiến:</strong> Tránh quá tiêu cực, quá máy móc, nên công bằng, nhân văn</li></ul>"
+            },
+            {
+              "heading": "5. Tiêu chí đánh giá chất lượng bài văn so sánh",
+              "content": "<h4>a) Nội dung (Content)</h4><ul><li><strong>Tiêu chí:</strong><br/>- Có nêu rõ tiêu chí so sánh không<br/>- Có phát hiện điểm giống/khác không<br/>- Có đủ dẫn chứng, ví dụ không<br/>- Có lập luận logic, thuyết phục không</li><li><strong>Đặc biệt:</strong> So sánh nên cân bằng giữa giống/khác, không nên quá thiên vị một tác phẩm</li></ul><h4>b) Kết cấu (Structure)</h4><ul><li><strong>Tiêu chí:</strong><br/>- Có mở bài rõ ràng não<br/>- Các đoạn văn có topic sentence không<br/>- Có kết hợp logic giữa các đoạn không<br/>- Có kết bài hoàn chỉnh không</li><li><strong>Đặc biệt:</strong> Mỗi đoạn nên chỉ đề cập một tiêu chí (chủ đề, cảm xúc, hình ảng v. v.)</li></ul><h4>c) Ngôn ngữ (Language)</h4><ul><li><strong>Tiêu chí:</strong><br/>- Từ vựng phù hợp, không quá subjeive không<br/>- Cấu trúc câu rõ ràng, không lẫn lộn<br/>- Có áp dụng các biện pháp tu từ không quá sai<br/>- Thêm các từ nối phù hợp (giống như, khác với, tuy vậy...)</li><li><strong>Đặc biệt:</strong> Nên dùng thì hiện tại, không nên rồi rắc cảm xúc cá nhân quá</li></ul><h4>d) Sáng tạo (Creativity)</h4><ul><li><strong>Tiêu chí:</strong><br/>- Có nêu những góc nhìn mới không<br/>- Có liên hệ với những vấn đề rộng không<br/>- Có phát triển ý tưởng sâu sắc không</li><li><strong>Đặc biệt:</strong> Không nên chỉ nhớ lại những gì đã học, nên suy tư cá nhân</li></ul>"
+            },
+            {
+              "heading": "6. Lỗi thường gặp khi viết bài so sánh",
+              "content": "<h4>a) Lỗi về nội dung</h4><ul><li><strong>Thiên vị một tác phẩm:</strong> Chỉ khen một tác phẩm, sát báo tác phẩm khác → Nên công bằng</li><li><strong>So sánh không rõ:</strong> Nói tác phẩm A giống/khác tác phẩm B nhưng không giải thích → Nên nêu rõ lý do</li><li><strong>Thiếu dẫn chứng:</strong> Nêu luận điểm nhưng không có ví dụ → Nên có dẫn chứng rõ</li></ul><h4>b) Lỗi về cấu trúc</h4><ul><li><strong>Không có mở bài/kết bài:</strong> Chỉ viết thân bài → Nên có mở bài nêu vấn đề, kết bài tổng kết</li><li><strong>Các đoạn văn không liên kết:</strong> Mỗi đoạn viết riêng rẽ → Nên có từ nối giữa các đoạn</li><li><strong>Cấu trúc không rõ:</strong> Không biết tiêu chí so sánh là gì → Nên nêu rõ từng tiêu chí</li></ul><h4>c) Lỗi về ngôn ngữ</h4><ul><li><strong>Dùng từ vựng quá khó hoặc quá đơn giản:</strong> → Nên dùng từ vựng phù hợp cấp độ</li><li><strong>Cấu trúc câu phức tạp, khó hiểu:</strong> → Nên viết câu đơn giản, rõ ràng</li><li><strong>Không dùng từ nối phù hợp:</strong> Giống như, khác với, tuy vậy, bên cạnh đó... → Nên dùng từ nối để kết nối câu/đoạn</li></ul><h4>d) Lỗi về tư duy</h4><ul><li><strong>So sánh không logic:</strong> Lấy những tiêu chí quá khác nhau để so sánh → Nên chọn tiêu chí liên quan, so sánh logic</li><li><strong>Không suy tư sâu:</strong> Chỉ nêu những điều bề ngoài → Nên suy tư sâu hơn, liên hệ rộng hơn</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Lựa chọn tiêu chí so sánh phù hợp",
+            "slug": "lua-chon-tieu-chi-so-sanh",
+            "description": "Nhận diện những tiêu chí so sánh phù hợp và phát triển luận điểm xung quanh mỗi tiêu chí",
+            "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Phân tích hai tác phẩm:</strong> Xác định đặc điểm chính của mỗi tác phẩm</li><li><strong>Lựa chọn tiêu chí:</strong> Chọn 2-3 tiêu chí chính (chủ đề, cảm xúc, hình ảng, phong cách...)</li><li><strong>So sánh từng tiêu chí:</strong><ul><li>Điểm giống nhau (nếu có)</li><li>Điểm khác nhau</li><li>Ý nghĩa của sự khác/giống</li></ul></li><li><strong>Viết thành đoạn text:</strong> Với topic sentence, supporting sentences, dẫn chứng</li></ol>",
+            "examples": "<h4>Ví dụ:</h4><p><strong>So sánh Cảm hoài và Tây Tiến</strong><br/>- Tiêu chí 1: Chủ đề<br/>  + Topic sentence: \"Về chủ đề, Cảm hoài viết về cảm xúc cá nhân, còn Tây Tiến viết về sự kiện lịch sử anh hùng\"<br/>  + Supporting: \"Cảm hoài là những suy tư của một cá nhân về vận mệnh, thời gian, trong khi Tây Tiến ca tụng Chiến dịch Tây Tiến\"<br/>  + Nhận xét: \"Sự khác biệt này cho thấy thơ ca có thể thể hiện nhiều khía cạnh của cuộc sống\"}}<br/>- Tiêu chí 2: Cảm xúc<br/>  + Topic sentence: \"Cảm xúc của hai bài thơ cũng khác nhau\"<br/>  + Supporting: \"Cảm hoài mang cảm xúc buồn bã nhẹ nhàng, lạc lõng; Tây Tiến mang cảm xúc sôi nổi, hùng tráng\"}}<br/>- Tiêu chí 3: Hình ảng<br/>  + Topic sentence: \"Hình ảng được lựa chọn cũng khác nhau\"}}<br/>  + Dẫn chứng cụ thể từ từng bài thơ"
+          },
+          {
+            "id": "dang2",
+            "name": "Xây dựng luận điểm với dẫn chứng thích hợp",
+            "slug": "xay-dung-luan-diem",
+            "description": "Phát triển một luận điểm rõ ràng và hỗ trợ nó bằng các dẫn chứng, ví dụ cụ thể từ text",
+            "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Nêu topic sentence:</strong> Luận điểm rõ ràng, cụ thể, có thể chứng minh được</li><li><strong>Nêu các supporting sentences:</strong> Giải thích tại sao topic sentence đó là đúng</li><li><strong>Dẫn chứng:</strong> Trích dẫn từ text hoặc đề cập đến nội dung text có liên quan</li><li><strong>Nhận xét:</strong> Giải thích ý nghĩa của dẫn chứng đó, liên hệ với topic sentence</li></ol>",
+            "examples": "<h4>Ví dụ:</h4><p><strong>Luận điểm: \"Đặng Dung sử dụng hình ảng tự nhiên để biểu hiện cảm xúc nội tâm\"</strong><br/>1. Topic sentence: \"Trong bài Cảm hoài, Đặng Dung chủ yếu lựa chọn những hình ảng từ thiên nhiên để biểu hiện cảm xúc cá nhân\"<br/>2. Supporting:\n   - \"Những hình ảng như gió, mưa, lá, ánh sáng không chỉ là hiền tượng tự nhiên mà còn biểu tượng cho các trạng thái tâm lý\"<br/>   - \"Lựa chọn này giúp bài thơ trở nên gần gũi, dễ cảm nhận\"<br/>3. Dẫn chứng:\n   - \"Gió thổi\" não → biểu tượng cho vận mệnh\n   - \"Lá bay\" → biểu tượng cho thời gian, tuổi trẻ trôi đi\n   - \"Mưa rơi\" → biểu tượng cho nước mắt, buồn bã<br/>4. Nhận xét: \"Thông qua việc lựa chọn những hình ảng tự nhiên quen thuộc, tác giả đã giúp độc giả cảm thấy những cảm xúc sâu kín không phải là của riêng tác giả mà là chung của tất cả con người\""
+          },
+          {
+            "id": "dang3",
+            "name": "Phát triển bài viết từ so sánh đơn giản đến so sánh sâu sắc",
+            "slug": "phat-trien-bai-viet",
+            "description": "Cách nâng cấp bài viết so sánh từ những nhân xét bề ngoài đến những phân tích sâu sắc hơn",
+            "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>So sánh bề ngoài:</strong> Nêu những điểm giống/khác rõ ràng (chủ đề, cảm xúc, hình ảng...)</li><li><strong>So sánh sâu hơn:</strong> <ul><li>Tại sao tác giả lại chọn những hình ảng này</li><li>Tục dụng của những lựa chọn này đối với độc giả</li><li>Giá trị, ý nghĩa của từng lựa chọn</li></ul></li><li><strong>Liên hệ với bối cảnh lớn:</strong><ul><li>Những lựa chọn này có liên hệ với nền văn hóa, thời đại không</li><li>Những bài học rộng hơn từ sự so sánh</li><li>Ý nghĩa với độc giả hiện đại</li></ul></li></ol>",
+            "examples": "<h4>Ví dụ:</h4><p><strong>So sánh bề ngoài:</strong> \"Cảm hoài của Đặng Dung và Tây Tiến của Quang Dũng khác nhau về chủ đề\"<p><strong>So sánh sâu hơn:</strong> <br/>\"Sự khác biệt về chủ đề phản ánh những quan điểm khác nhau về con người và cuộc sống. Đặng Dung nhấn mạnh rằng con người cần sâu sắc suy tư về bản thân, cuộc sống, trong khi Quang Dũng khẳng định giá trị của hành động, của việc hy sinh vì mục đích cao cả. Hai quan điểm này không mâu thuẫn mà bổ sung cho nhau.\"<p><strong>Liên hệ với bối cảnh:</strong> <br/>\"Cả hai tác phẩm đều viết vào thế kỷ XX, thời kỳ Việt Nam đang đi qua những biến cố lớn. Nhưng trong khi Tây Tiến ca tụng những hành động anh hùng, Cảm hoài lại nhập mạnh tầm quan trọng của sâu sắc suy tư. Điều này cho cô có, rằng thơ ca không chỉ phác tự lịch sử, mà còn giúp con người tìm được ý nghĩa riêng cho cuộc sống của mình.\""
+          }
+        ],
+        "exercises": {
+          "title": "Bài tập",
+          "items": [
+            {
+              "id": "ex1",
+              "type": "mcq",
+              "question": "Bài văn nghị luận so sánh hai tác phẩm là gì?",
+              "options": [
+                "Bài viết nêu ưu điểm của tác phẩm thứ nhất",
+                "Bài viết nêu những điểm giống/khác giữa hai tác phẩm để rút ra nhận xét, đánh giá",
+                "Bài viết chỉ nêu những điểm khác",
+                "Bài viết tô đen lên sai sót của một tác phẩm"
+              ],
+              "correct": 1,
+              "explanation": "Bài văn so sánh là việc tìm những điểm giống, khác giữa hai tác phẩm, rồi rút ra nhận xét, đánh giá để giúp độc giả hiểu sâu hơn."
+            },
+            {
+              "id": "ex2",
+              "type": "mcq",
+              "question": "Tiêu chí so sánh nào là quan trọng nhất khi đánh giá hai bài thơ?",
+              "options": [
+                "Chỉ cần so sánh chủ đề",
+                "Chỉ cần so sánh cảm xúc",
+                "Nên so sánh 2-3 tiêu chí chính như chủ đề, cảm xúc, hình ảng, phong cách",
+                "Không cần có tiêu chí cụ thể"
+              ],
+              "correct": 2,
+              "explanation": "Nên chọn 2-3 tiêu chí chính để so sánh, mỗi tiêu chí một đoạn, giúp bài viết toàn diện hơn."
+            },
+            {
+              "id": "ex3",
+              "type": "mcq",
+              "question": "Mở bài bài văn so sánh nên bao gồm những gì?",
+              "options": [
+                "Chỉ giới thiệu tác phẩm thứ nhất",
+                "Giới thiệu hai tác phẩm, nêu vấn đề, gợi mở suy nghĩ, nêu tiêu chí so sánh chính",
+                "Nêu kết luận cuối cùng",
+                "Nêu chi tiết từng điểm so sánh"
+              ],
+              "correct": 1,
+              "explanation": "Mở bài nên giới thiệu hai tác phẩm, nêu rõ sẽ so sánh những gì, và tạo hứng thú cho độc giả."
+            },
+            {
+              "id": "ex4",
+              "type": "mcq",
+              "question": "Mỗi đoạn văn trong phần thân bài nên bao gồm những yếu tố nào?",
+              "options": [
+                "Chỉ nêu điểm giống nhau",
+                "Topic sentence, giải thích, dẫn chứng, nhận xét/đánh giá",
+                "Chỉ dẫn chứng",
+                "Chỉ kết luận"
+              ],
+              "correct": 1,
+              "explanation": "Mỗi đoạn nên có: topic sentence (nêu tiêu chí), giải thích, dẫn chứng cụ thể, và nhận xét/đánh giá."
+            },
+            {
+              "id": "ex5",
+              "type": "mcq",
+              "question": "Lỗi thường gặp khi viết bài so sánh là gì?",
+              "options": [
+                "Dùng từ nối phù hợp",
+                "Thiên vị một tác phẩm, không công bằng với cả hai",
+                "Có dẫn chứng rõ",
+                "Cấu trúc rõ ràng"
+              ],
+              "correct": 1,
+              "explanation": "Lỗi thường gặp là thiên vị một tác phẩm, sát báo tác phẩm khác. Nên công bằng, khách quan với cả hai."
+            },
+            {
+              "id": "ex6",
+              "type": "mcq",
+              "question": "Khi viết bài so sánh, nên dùng những từ nối nào?",
+              "options": [
+                "Chỉ dùng \"và\"",
+                "Giống như, khác với, tuy vậy, bên cạnh đó, ngược lại...",
+                "Không cần từ nối",
+                "Chỉ dùng \"nhưng\""
+              ],
+              "correct": 1,
+              "explanation": "Nên dùng những từ nối thích hợp: \"giống như\" (so sánh), \"khác với\", \"tuy vậy\", \"ngược lại\", \"bên cạnh đó\" để kết nối các ý."
+            },
+            {
+              "id": "ex7",
+              "type": "mcq",
+              "question": "Phần kết bài bài văn so sánh nên bao gồm những gì?",
+              "options": [
+                "Chỉ nêu điểm giống nhau",
+                "Tổng kết những điểm so sánh, nêu những đặc điểm chung, đánh giá tổng thể",
+                "Nêu chi tiết tất cả các points",
+                "Nêu những điểm chỉ báo tác phẩm khác"
+              ],
+              "correct": 1,
+              "explanation": "Kết bài nên tổng kết lại các điểm so sánh, nêu những điểm chung, và nêu đánh giá tổng thể về giá trị của hai tác phẩm."
+            },
+            {
+              "id": "ex8",
+              "type": "mcq",
+              "question": "Dẫn chứng trong bài so sánh nên như thế nào?",
+              "options": [
+                "Dẫn quá dài, gần như toàn bộ passage",
+                "Không cần dẫn chứng",
+                "Dẫn những đoạn ngắn, cụ thể từ text, giúp chứng minh luận điểm",
+                "Dẫn chứng bằng những câu chỉ có trong đầu"
+              ],
+              "correct": 2,
+              "explanation": "Nên dẫn những đoạn ngắn, cụ thể từ text để chứng minh luận điểm. Không nên dẫn quá dài."
+            },
+            {
+              "id": "ex9",
+              "type": "essay",
+              "question": "Hãy viết bài văn so sánh Cảm hoài (Đặng Dung) và Tây Tiến (Quang Dũng) bằng cách chọn 3 tiêu chí chính: chủ đề, cảm xúc, hình ảng. Mỗi tiêu chí một đoạn, có dẫn chứng cụ thể và nhận xét.",
+              "answer_guide": "Câu trả lời tốt neon bao gồm:\n- Mở bài: Giới thiệu hai bài thơ, nêu tiêu chí so sánh chính sẽ là 3 tiêu chí: chủ đề, cảm xúc, hình ảng\n- Đoạn 1 (Chủ đề):\n  + Topic sentence: \"Về chủ đề, Cảm hoài viết về cảm xúc cá nhân, còn Tây Tiến viết về sự kiện lịch sử anh hùng\"\n  + Supporting: Giải thích chi tiết\n  + Dẫn chứng/Ví dụ: Nêu cụ thể nội dung từng bài\n  + Nhận xét: \"Sự khác biệt này cho thấy thơ ca thể hiện được nhiều khía cạnh của cuộc sống\"\n- Đoạn 2 (Cảm xúc):\n  + Topic sentence tương tự\n  + Cảm hoài: buồn bã nhẹ nhàng, lạc lõng, suy tư\n  + Tây Tiến: sôi nổi, hùng tráng, tự hào\n  + Dẫn chứng: Những từ, cụm từ thể hiện cảm xúc\n  + Nhận xét: \"Cảm xúc khác nhau phục vụ các mục đích khác nhau của tác giả\"\n- Đoạn 3 (Hình ảng):\n  + Topic sentence về sự khác nhau về hình ảng\n  + Cảm hoài: hình ảng tự nhiên (gió, mưa, lá, ánh sáng)\n  + Tây Tiến: hình ảng chiến trường (máu, vũ khí, cờ, lính chiến)\n  + Dẫn chứng cụ thể\n  + Nhận xét: \"Lựa chọn hình ảng phản ánh cách tiếp cận khác nhau của hai tác giả\"\n- Kết bài: \n  + Tổng kết 3 tiêu chí\n  + Nêu những điểm chung (cả hai đều là thơ hiện đại, đều thể hiện cảm xúc sâu sắc)\n  + Đánh giá tổng thể (cở hai tác phẩm có giá trị bằng nhau, chỉ khác nhau về cách tiếp cận)"
+            },
+            {
+              "id": "ex10",
+              "type": "essay",
+              "question": "Viết bài văn so sánh từ: Hãy so sánh Cảm hoài với bài thơ mà bạn chọn từ ba bài còn lại (Tây Tiến, Đàn ghi ta, hoặc Bài thơ số 28). Ngoài việc nêu giống/khác, hãy cố gắng phân tích tại sao những lựa chọn này của tác giả là hợp lý, và bài học mà bạn rút ra từ sự so sánh.",
+              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Chọn một bài thơ để so sánh với Cảm hoài\n- Mở bài rõ ràng, nêu tiêu chí so sánh chính\n- Phần thân bài:\n  + Tiêu chí 1: So sánh chi tiết, có dẫn chứng, có nhận xét tại sao tác giả chọn như vậy\n  + Tiêu chí 2: Tương tự\n  + Tiêu chí 3 (nếu có): Tương tự\n  + Mỗi đoạn nên phân tích:\n    - Những lựa chọn này phản ánh điều gì\n    - Tác giả tại sao lại chọn như vậy (từ nền văn hóa, từ ý định sáng tác)\n    - Hiệu quả đối với độc giả\n- Kết bài:\n  + Tổng kết các điểm so sánh\n  + Bài học chung: Cả hai bài thơ giáo dục chúng ta về những khía cạnh khác nhau của cuộc sống, con người\n  + Ý nghĩa với độc giả hiện đại\n- Điểm cộng nếu:\n  + Liên hệ với bối cảnh thời đại\n  + Có suy tư sâu sắc\n  + Phân tích kỹ tại sao những lựa chọn là hợp lý\n  + Có ý kiến cá nhân rõ ràng"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

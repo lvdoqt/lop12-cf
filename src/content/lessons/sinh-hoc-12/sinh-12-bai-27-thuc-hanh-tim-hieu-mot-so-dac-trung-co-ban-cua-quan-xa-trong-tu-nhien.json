@@ -1,0 +1,192 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-27",
+      "name": "Bài 27. Thực hành: Tìm hiểu một số đặc trưng cơ bản của quần xã trong tự nhiên",
+      "slug": "thuc-hanh-tim-hieu-mot-so-dac-trung-co-ban-cua-quan-xa-trong-tu-nhien",
+      "chapter": "Chương 7. Sinh thái học quần xã",
+      "chapter_id": "S12-7",
+      "lesson_id": 27,
+      "description": "Thực hành tìm hiểu các đặc trưng cơ bản của quần xã sinh vật trong tự nhiên.",
+      "duration_minutes": 45,
+      "difficulty_level": "easy",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Thực hành: Tìm hiểu một số đặc trưng cơ bản của quần xã trong tự nhiên",
+          "sections": [
+            {
+              "heading": "1. Mục đích thực hành",
+              "content": "<ul><li>Nhận biết các thành phần của quần xã sinh vật.</li><li>Xác định độ đa dạng loài của quần xã.</li><li>Phân tích cấu trúc tầng của quần xã thực vật.</li><li>Quan sát các mối quan hệ giữa các loài trong quần xã.</li></ul>"
+            },
+            {
+              "heading": "2. Chuẩn bị",
+              "content": "<h4>a) Dụng cụ</h4><ul><li>Kính lúp, kính hiển vi.</li><li>Bảng ghi chép, thước đo.</li><li>Cuốn tra cứu thực vật.</li></ul><h4>b) Vật liệu</h4><ul><li>Mẫu thực vật thu được từ khu vực khảo sát.</li><li>Hình ảnh, video về quần xã sinh vật.</li></ul>"
+            },
+            {
+              "heading": "3. Nội dung và cách tiến hành",
+              "content": "<h4>a) Khảo sát thành phần loài</h4><ul><li>Liệt kê các loài sinh vật quan sát được.</li><li>Ghi nhận số lượng mỗi loài.</li><li>Chụp ảnh, đặt tên loài (nếu biết).</li></ul><h4>b) Đánh giá độ đa dạng</h4><ul><li>Đếm số loài trong khu vực khảo sát.</li><li>Tính tỷ lệ số lượng cá thể mỗi loài.</li><li>So sánh với các quần xã khác.</li></ul><h4>c) Quan sát cấu trúc tầng</h4><ul><li>Đo chiều cao các loài thực vật.</li><li>Xác định các tầng: cao, trung, thấp.</li><li>Ghi nhận các loài động vật ở mỗi tầng.</li></ul>"
+            },
+            {
+              "heading": "4. Kết quả và xử lý",
+              "content": "<h4>a) Lập bảng thành phần loài</h4><table><tr><th>STT</th><th>Tên loài</th><th>Số cá thể</th><th>Tầng</th></tr><tr><td>1</td><td>?</td><td>?</td><td>?</td></tr></table><h4>b) Tính chỉ số đa dạng</h4><ul><li>Độ đa dạng = Số loài / Diện tích khảo sát.</li><li>Quần xã đa dạng cao khi có nhiều loài với số lượng cân bằng.</li></ul>"
+            },
+            {
+              "heading": "5. Kết luận",
+              "content": "<ul><li>Quần xã được tạo bởi nhiều thành phần: SV sản xuất, SV tiêu thụ, SV phân giải.</li><li>Độ đa dạng loài phản ánh trạng thái của quần xã.</li><li>Cấu trúc tầng là đặc điểm quan trọng của quần xã thực vật.</li><li>Các mối quan hệ trong quần xã tạo nên sự cân bằng sinh thái.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Mục đích chính của thực hành tìm hiểu quần xã là gì?",
+            "options": [
+              "Thu thập mẫu vật",
+              "Nhận biết thành phần và đặc trưng của quần xã",
+              "Phân loại sinh vật",
+              "Nuôi cấy vi sinh vật"
+            ],
+            "correct": 1,
+            "explanation": "Thực hành giúp nhận biết các thành phần của quần xã và xác định các đặc trưng cơ bản."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Khi khảo sát quần xã, cần xác định yếu tố nào trước?",
+            "options": [
+              "Số lượng cá thể",
+              "Thành phần loài",
+              "Nguồn nước",
+              "Nhiệt độ"
+            ],
+            "correct": 1,
+            "explanation": "Cần xác định thành phần loài trước để biết quần xã có những loài nào."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Độ đa dạng của quần xã được đánh giá dựa trên yếu tố nào?",
+            "options": [
+              "Số lượng cá thể một loài",
+              "Số lượng loài và số lượng cá thể mỗi loài",
+              "Kích thước cơ thể",
+              "Màu sắc"
+            ],
+            "correct": 1,
+            "explanation": "Độ đa dạng loài phụ thuộc vào số lượng loài và sự phân bố số lượng cá thể."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Cấu trúc tầng của quần xã thực vật được xác định bằng cách nào?",
+            "options": [
+              "Đo chiều cao các loài",
+              "Đếm số lá",
+              "Cân khối lượng",
+              "Đo diện tích lá"
+            ],
+            "correct": 0,
+            "explanation": "Cấu trúc tầng được xác định bằng cách đo chiều cao các loài thực vật."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Trong bảng thành phần loài, cần ghi nhận thông tin nào?",
+            "options": [
+              "Chỉ tên loài",
+              "Tên loài, số cá thể, tầng",
+              "Chỉ số lượng cá thể",
+              "Chỉ tầng"
+            ],
+            "correct": 1,
+            "explanation": "Bảng thành phần loài cần ghi: tên loài, số cá thể, tầng phân bố."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các dụng cụ cần thiết cho thực hành khảo sát quần xã:",
+            "options": [
+              "Kính lúp",
+              "Bảng ghi chép",
+              "Thước đo",
+              "Máy tính"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Kính lúp, bảng ghi chép, thước đo là dụng cụ cần thiết. Máy tính không bắt buộc."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các đặc trưng cơ bản của quần xã cần khảo sát:",
+            "options": [
+              "Thành phần loài",
+              "Độ đa dạng",
+              "Cấu trúc tầng",
+              "Màu sắc"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Các đặc trưng cơ bản: thành phần loài, độ đa dạng, cấu trúc tầng. Màu sắc không quan trọng."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Quần xã có 10 loài, mỗi loài có 5 cá thể. Tính tổng số cá thể. Nhập số 2 chữ số.",
+            "correct": "50"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Một quần xã có 3 tầng: cao (5m), trung (3m), thấp (1m). Tầng cao nhất cao hơn tầng thấp nhất bao nhiêu mét? Nhập số 1 chữ số.",
+            "correct": "4"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân tích thành phần loài của quần xã",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Liệt kê tất cả loài quan sát được.</li><li>Đếm số cá thể mỗi loài.</li><li>Xác định vai trò của mỗi loài (sản xuất, tiêu thụ, phân giải).</li><li>Lập bảng tổng hợp.</li></ol>",
+            "examples": [
+              {
+                "question": "Quần xã vườn có: 20 cây xoài, 15 cây ổi, 10 cây chuối, 5 cây me. Có bao nhiêu loài?",
+                "solution": "<p><strong>Giải:</strong></p><p>Có 4 loài: xoài, ổi, chuối, me.</p>"
+              },
+              {
+                "question": "Trong quần xã có: 50 cá thể loài A, 30 cá thể loài B, 20 cá thể loài C. Loài nào có số lượng lớn nhất?",
+                "solution": "<p><strong>Giải:</strong></p><p>Loài A có 50 cá thể, lớn nhất.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính độ đa dạng của quần xã",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Đếm số loài có trong quần xã (S).</li><li>Tính tổng số cá thể (N).</li><li>Độ đa dạng = S / N (tỷ lệ loài trên tổng cá thể).</li><li>Quần xã đa dạng cao khi có nhiều loài với số lượng cân bằng.</li></ol>",
+            "examples": [
+              {
+                "question": "Quần xã có 5 loài, tổng 100 cá thể. Tính độ đa dạng?",
+                "solution": "<p><strong>Giải:</strong></p><p>Độ đa dạng = 5 / 100 = 0.05</p>"
+              },
+              {
+                "question": "Quần xã A: 10 loài, mỗi loài 10 cá thể. Quần xã B: 5 loài, 2 loài 40 cá thể, 3 loài 5 cá thể. Quần xã nào đa dạng hơn?",
+                "solution": "<p><strong>Giải:</strong></p><p>A: 10 loài, mỗi loài 10 cá thể → Phân bố đều → Đa dạng cao hơn.</p><p>B: Phân bố không đều.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

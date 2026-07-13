@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_05",
+      "name": "Lập kế hoạch kinh doanh",
+      "slug": "lap-ke-hoach-kinh-doanh",
+      "chapter": "Lập kế hoạch kinh doanh",
+      "chapter_id": "GDCD12",
+      "lesson_id": 5,
+      "description": "Các bước cơ bản để xây dựng một bản kế hoạch kinh doanh khả thi và chuyên nghiệp.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Kế hoạch kinh doanh",
+          "summary": "Kế hoạch kinh doanh là bản lộ trình chi tiết mô tả mục tiêu và các giải pháp thực hiện để đạt được mục tiêu đó.",
+          "sections": [
+            { "heading": "Sự cần thiết", "content": "Giúp xác định rõ hướng đi, huy động vốn, giảm thiểu rủi ro và quản lý công việc hiệu quả." },
+            { "heading": "Các bước lập kế hoạch", "content": "1. Xác định ý tưởng. 2. Phân tích thị trường (SWOT). 3. Kế hoạch marketing. 4. Kế hoạch sản xuất/vận hành. 5. Kế hoạch tài chính." },
+            { "heading": "Yêu cầu", "content": "Tính thực tế, khả thi, cụ thể và linh hoạt trước sự thay đổi của thị trường." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Kế hoạch kinh doanh là gì?", "options": ["Một bức vẽ phong cảnh", "Bản mô tả mục tiêu và cách thức đạt được mục tiêu của dự án kinh doanh", "Bản danh sách các khách hàng cũ", "Phiếu thu tiền hàng"], "correct": 1, "explanation": "Nó đóng vai trò là kim chỉ nam cho hoạt động kinh doanh." },
+          { "id": 2, "type": "mcq", "question": "Bước đầu tiên trong việc lập kế hoạch kinh doanh là gì?", "options": ["Thuê nhân viên", "Xác định ý tưởng kinh doanh", "Vay tiền ngân hàng", "Mua sắm trang thiết bị"], "correct": 1, "explanation": "Mọi kế hoạch đều bắt nguồn từ một ý tưởng cụ thể." },
+          { "id": 3, "type": "mcq", "question": "Trong phân tích SWOT, chữ 'W' đại diện cho yếu tố nào?", "options": ["Cơ hội", "Điểm yếu (Weaknesses)", "Thách thức", "Thế mạnh"], "correct": 1, "explanation": "SWOT: Strengths (Mạnh), Weaknesses (Yếu), Opportunities (Cơ hội), Threats (Thách thức)." },
+          { "id": 4, "type": "mcq", "question": "Nội dung nào thuộc về kế hoạch Marketing?", "options": ["Giá bán và các chương trình khuyến mãi", "Quy trình lắp đặt máy móc", "Tiền lương cho giám đốc", "Số lượng bàn ghế trong văn phòng"], "correct": 0, "explanation": "Marketing tập trung vào khách hàng, sản phẩm, giá cả và phân phối." },
+          { "id": 5, "type": "mcq", "question": "Kế hoạch tài chính nhằm mục đích gì?", "options": ["Để cho đẹp hồ sơ", "Dự báo doanh thu, chi phí và lợi nhuận", "Để giấu thuế", "Để mua thêm quà tặng"], "correct": 1, "explanation": "Giúp doanh nghiệp biết được cần bao nhiêu vốn và khả năng sinh lời." },
+          { "id": 6, "type": "mcq", "question": "Tại sao kế hoạch kinh doanh cần có tính 'khả thi'?", "options": ["Để có thể thực hiện được trong điều kiện nguồn lực cho phép", "Để người khác ngưỡng mộ", "Để viết thật dài", "Để tăng giá sản phẩm"], "correct": 0, "explanation": "Kế hoạch xa vời thực tế sẽ dẫn đến thất bại." },
+          { "id": 7, "type": "mcq", "question": "Khi thị trường thay đổi, bản kế hoạch kinh doanh cần phải?", "options": ["Giữ nguyên tuyệt đối", "Điều chỉnh linh hoạt cho phù hợp với tình hình thực tế", "Hủy bỏ hoàn toàn kinh doanh", "Mặc kệ sự thay đổi"], "correct": 1, "explanation": "Tính linh hoạt giúp doanh nghiệp thích nghi để tồn tại." },
+          { "id": 8, "type": "mcq", "question": "Đối tượng nào sau đây là 'khách hàng mục tiêu'?", "options": ["Tất cả mọi người trên thế giới", "Nhóm khách hàng có nhu cầu và khả năng chi trả cho sản phẩm cụ thể của mình", "Những người không thích dùng sản phẩm", "Chỉ những người trong gia đình"], "correct": 1, "explanation": "Kinh doanh cần tập trung vào một phân khúc thị trường nhất định." },
+          { "id": 9, "type": "mcq", "question": "Việc nghiên cứu đối thủ cạnh tranh giúp ích gì?", "options": ["Để bắt chước 100%", "Để tìm ra điểm khác biệt và lợi thế cạnh tranh của mình", "Để xin tiền đối thủ", "Để đóng cửa hàng"], "correct": 1, "explanation": "Biết người biết ta giúp xây dựng chiến lược tốt hơn." },
+          { "id": 10, "type": "mcq", "question": "Một bản kế hoạch kinh doanh chuyên nghiệp giúp?", "options": ["Tăng độ tin cậy khi kêu gọi vốn đầu tư", "Giảm thuế phải nộp", "Không bao giờ gặp thất bại", "Mua hàng rẻ hơn"], "correct": 0, "explanation": "Nhà đầu tư dựa vào kế hoạch để đánh giá tiềm năng dự án." }
+        ]
+      }
+    }
+  ]
+}

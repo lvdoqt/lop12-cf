@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-17",
+    "name": "Dấu ấn Hồ Chí Minh trong lòng nhân dân thế giới và Việt Nam",
+    "slug": "dau-an-ho-chi-minh-nhan-dan-the-gioi-va-viet-nam",
+    "chapter": "Chủ đề 6: Hồ Chí Minh - cuộc đời và sự nghiệp",
+    "chapter_id": "su12",
+    "lesson_id": 17,
+    "description": "Ảnh hưởng, di sản vĩ đại của Hồ Chí Minh đối với nhân dân thế giới và Việt Nam.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Dấu ấn Hồ Chí Minh trong lòng nhân dân thế giới và Việt Nam",
+        "sections": [
+          { "heading": "1. Tư tưởng Hồ Chí Minh - Đạo đức cách mạng", "content": "Tư tưởng: Độc lập, tự do, xã hội chủ nghĩa, yêu thương nhân dân. Đạo đức: Sống kham khổ, tự soi xét quy tắc. Quên bản thân vì độc lập quốc gia. Công bằng xã hội cho tất cả nhân dân. Phát triển bền vững, yêu thiên nhiên. Thái độ: Chân thành, không giả dối, sống thực tế." },
+          { "heading": "2. Ảnh hưởng đối với nhân dân Việt Nam", "content": "Hồ Chí Minh là lãnh tụ, hình mẫu của cách mạng Việt. Nhân dân yêu quý Hồ vì tính chân thành, tâm lý phục vụ. Hành động của Hồ truyền cảm hứng cho thế hệ chiến sĩ. Sau qua đời, Hồ được ghi danh Lãnh tụ hàng đầu của dân tộc. Giáo dục cách mạng cho thế hệ trẻ. Xây dựng Hồ Chí Minh thành biểu tượng quốc gia." },
+          { "heading": "3. Ảnh hưởng toàn cầu - Anh hùng tư bản toàn cầu", "content": "Hồ Chí Minh được công nhận anh hùng giải phóng dân tộc toàn thế giới. Phong trào giải phóng dân tộc Châu Á, Châu Phi, Nam Mỹ lấy Hồ làm gương. Các tổng thống, lãnh tụ nước ngoài tôn trọng Hồ. Cuba (Fidel Castro) coi Hồ là anh hùng cộng sản. Sau 1975, Hồ được coi là biểu tượng chiến thắng." },
+          { "heading": "4. Để lại di sản văn hóa, chính trị", "content": "Lời dạy: 'Học để làm, học để phục vụ dân'. Ưu tiên giáo dục, khoa học. Xây dựng nền tảng đạo đức cộng sản. Quy tắc 'Đoàn kết, kỷ luật, chiến thắng' truyền từ thế hệ này sang thế hệ khác. Phong trào 'Làm theo lời Bác' kéo dài hàng thập kỷ. Mô hình 'Người tốt, việc tốt' của Hồ còn sống trong lòng dân." },
+          { "heading": "5. Của cải các_nước tôn kính Hồ Chí Minh", "content": "Lục xứ này Hồ Chí Minh: Anh hùng độc lập, sáng lập gia, hòa bình gia, nhân đạo gia. Tài liệu, sách báo, phim ảnh, tượng đài được xây dựng khắp nước Việt Nam. Những di tích lịch sử (Khu Tổng thống, Nhà Rường Hồ) trở thành di sản thế giới. Lao động quốc tế thường công nhận Hồ Chí Minh là một trong những vĩ nhân lớn nhất thế kỷ 20." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Tư tưởng Hồ chính?", "options": ["Giàu sang", "Độc lập, tự do, xã hội chủ nghĩa", "Chinh phục bộp bồi", "Lợi ích cá nhân"], "correct": 1, "explanation": "Tư tưởng Hồ: Độc lập, tự do, xã hội chủ nghĩa, yêu thương nhân dân." },
+        { "id": "ex2", "type": "mcq", "question": "Đạo đức cách mạng?", "options": ["Lợi kỷ", "Sống kham khổ, quên bản thân, phục vụ", "Tham lam", "Nhẹ dạ"], "correct": 1, "explanation": "Đạo đức: Sống kham khổ, quên bản thân vì độc lập, xã hội." },
+        { "id": "ex3", "type": "mcq", "question": "Nhân dân Việt yêu?", "options": ["Không", "Yêu quý vì chân thành, tâm lý phục vụ", "Sợ", "Cách xa"], "correct": 1, "explanation": "Nhân dân yêu Hồ vì tính chân thành, chính trực, tâm lý phục vụ." },
+        { "id": "ex4", "type": "mcq", "question": "Ghi danh?", "options": ["Bình thường", "Lãnh tụ hàng đầu dân tộc, anh hùng", "Kẻ tàn bạo", "Không được tôn trọng"], "correct": 1, "explanation": "Được ghi danh Lãnh tụ hàng đầu, anh hùng của dân tộc." },
+        { "id": "ex5", "type": "mcq", "question": "Ảnh hưởng toàn cầu?", "options": ["Chỉ Việt Nam", "Anh hùng giải phóng toàn thế giới", "Không ảnh hưởng", "Phương Tây ghê sợ"], "correct": 1, "explanation": "Công nhận anh hùng giải phóng dân tộc toàn thế giới." },
+        { "id": "ex6", "type": "mcq", "question": "Fidel Castro?", "options": ["Phản đối Hồ", "Coi Hồ là anh hùng cộng sản", "Không biết Hồ", "Đối địch"], "correct": 1, "explanation": "Fidel Castro coi Hồ là anh hùng cộng sản, biểu tượng." },
+        { "id": "ex7", "type": "mcq", "question": "Lời dạy nổi tiếng?", "options": ["Làm giàu kỳ lộ", "Học để làm, học để phục vụ", "Chi tiêu để vui", "Bất chấp luật"], "correct": 1, "explanation": "'Học để làm, học để phục vụ dân' là lời dạy kinh điển." },
+        { "id": "ex8", "type": "mcq", "question": "Phong trào 'Làm theo lời Bác'?", "options": ["Hiếm hoi", "Kéo dài hàng thập kỷ, sống đến nay", "Không tồn tại", "Chỉ tạm thời"], "correct": 1, "explanation": "Phong trào 'Làm theo lời Bác' kéo dài từ thập kỷ qua." },
+        { "id": "ex9", "type": "mcq", "question": "Tượng đài, di tích?", "options": ["Không có", "Xây khắp Việt Nam, di sản thế giới", "Chỉ ở Hà Nội", "Bị phá hủy"], "correct": 1, "explanation": "Tượng đài, di tích xây khắp Việt Nam, trở thành di sản." },
+        { "id": "ex10", "type": "mcq", "question": "Vị trí lịch sử?", "options": ["Bình thường", "Một trong vĩ nhân lớn thế kỷ 20", "Không có tầm vóc", "Nhân vật bé nhỏ"], "correct": 1, "explanation": "Công nhận Hồ Chí Minh là vĩ nhân lớn nhất thế kỷ 20." }
+      ]
+    }
+  }]
+}

@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_15",
+      "name": "Chuyển dịch cơ cấu ngành công nghiệp",
+      "slug": "chuyen-dich-co-cau-nganh-cong-nghiep",
+      "chapter": "Địa lí các ngành kinh tế",
+      "chapter_id": "dia12_part3",
+      "lesson_id": 15,
+      "description": "Sự chuyển dịch giữa các ngành công nghiệp: công nghiệp nặng, nhẹ, chế biến; yếu tố thúc đẩy và ảnh hưởng đến phân bố công nghiệp.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Chuyển dịch cơ cấu ngành công nghiệp",
+          "summary": "Công nghiệp chuyển dịch từ dựa vào nguyên liệu thô sang chế biến sâu, công nghiệp công nghệ cao; điều này ảnh hưởng đến cơ cấu lao động, phân bố công nghiệp và yêu cầu về hạ tầng." ,
+          "sections": [
+            { "heading": "Các loại công nghiệp", "content": "Công nghiệp khai thác, sản xuất, chế biến, công nghiệp công nghệ cao và công nghiệp sử dụng nhiều lao động." },
+            { "heading": "Yếu tố thúc đẩy", "content": "Đầu tư, chính sách, năng lực công nghệ, nguồn nguyên liệu và thị trường." }
+          ]
+        },
+        "exercises": { "short_answers": [ { "q": "Nêu một xu hướng trong chuyển dịch ngành công nghiệp?", "a_hint": "Tăng chế biến sâu và công nghệ cao." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Ngành công nghiệp nào thường tăng khi nền kinh tế phát triển?", "options": ["Công nghiệp chế biến và công nghệ cao","Chỉ khai thác nguyên liệu thô","Không thay đổi","Giảm tất cả"], "correct": 0, "explanation": "Khi phát triển, chế biến sâu và công nghệ cao tăng lên." },
+          { "id": 2, "type": "mcq", "question": "Yếu tố nào hỗ trợ phân bố công nghiệp?", "options": ["Cảng biển, nguồn nguyên liệu, điện và lao động","Chỉ màu cờ","Không có yếu tố","Số lượng trường học"], "correct": 0, "explanation": "Hạ tầng và nguồn lực quyết định phân bố công nghiệp." },
+          { "id": 3, "type": "mcq", "question": "Một hệ quả của chuyển dịch công nghiệp là?", "options": ["Tạo thêm việc làm chất lượng cao","Giảm cơ hội việc làm","Không có tác động","Tăng đói nghèo"], "correct": 0, "explanation": "Chuyển dịch hướng tới công nghệ cao tạo việc làm chất lượng hơn." },
+          { "id": 4, "type": "mcq", "question": "Yếu tố nào không ảnh hưởng đến lựa chọn địa điểm nhà máy?", "options": ["Sở thích cá nhân của chủ nhà máy","Nguồn nguyên liệu, thị trường, lao động","Hạ tầng giao thông","Nguồn điện ổn định"], "correct": 0, "explanation": "Sở thích cá nhân không phải yếu tố chính; các yếu tố kỹ thuật và kinh tế mới quyết định." },
+          { "id": 5, "type": "mcq", "question": "Chính sách nào thu hút công nghiệp công nghệ cao?", "options": ["Ưu đãi thuế, khu công nghệ, đào tạo nguồn nhân lực","Tăng rào cản nhập khẩu","Cấm đầu tư nước ngoài","Không có chính sách"], "correct": 0, "explanation": "Ưu đãi và hạ tầng thu hút công nghệ cao." },
+          { "id": 6, "type": "mcq", "question": "Một ngành công nghiệp sử dụng nhiều lao động là?", "options": ["Dệt may, da giày","Sản xuất vi mạch","Công nghiệp chế tạo máy công cụ cao","Nghiên cứu thuần túy"], "correct": 0, "explanation": "Dệt may và da giày là ngành sử dụng nhiều lao động." },
+          { "id": 7, "type": "mcq", "question": "Phát triển công nghiệp cần lưu ý điều gì về môi trường?", "options": ["Kiểm soát ô nhiễm và xử lý chất thải","Tăng phát thải","Không cần kiểm soát","Phá hoại môi trường"], "correct": 0, "explanation": "Kiểm soát ô nhiễm là yếu tố bắt buộc trong công nghiệp hiện đại." },
+          { "id": 8, "type": "mcq", "question": "Một chỉ tiêu đánh giá công nghiệp là?", "options": ["Tỷ trọng công nghiệp trong GDP","Số lượng công viên","Diện tích rừng","Số chợ địa phương"], "correct": 0, "explanation": "Tỷ trọng công nghiệp trong GDP thể hiện quy mô ngành." },
+          { "id": 9, "type": "mcq", "question": "Phân bố công nghiệp thường tập trung ở đâu?", "options": ["Gần nguồn nguyên liệu, cảng biển và các đô thị lớn","Miền núi hẻo lánh","Giữa sa mạc","Không phân bố"], "correct": 0, "explanation": "Gần nguyên liệu và cảng biển giúp giảm chi phí vận chuyển." },
+          { "id": 10, "type": "mcq", "question": "Một yếu tố thúc đẩy chuyển dịch sang công nghệ cao là?", "options": ["Đầu tư vào R&D và đào tạo chất lượng cao","Giảm đầu tư","Tăng thuế R&D","Không làm gì"], "correct": 0, "explanation": "Đầu tư vào R&D thúc đẩy công nghiệp công nghệ cao." }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-21",
+      "name": "Bài 21. Học thuyết tiến hóa tổng hợp hiện đại",
+      "slug": "hoc-thuyet-tien-hoa-tong-hop-hien-dai",
+      "chapter": "Chương 5. Bằng chứng và các học thuyết tiến hóa",
+      "chapter_id": "S12-5",
+      "lesson_id": 21,
+      "description": "Tìm hiểu về học thuyết tiến hóa tổng hợp hiện đại.",
+      "duration_minutes": 45,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Học thuyết tiến hóa tổng hợp hiện đại",
+          "sections": [
+            {
+              "heading": "1. Sự ra đời của học thuyết tổng hợp",
+              "content": "<h4>a) Hạn chế của Darwin</h4><ul><li>Darwin không giải thích được cơ chế di truyền biến d<li>Khôngị.</li> giải thích được sự xuất hiện biến dị di truyền.</li></ul><h4>b) Học thuyết tổng hợp</h4><ul><li>Kết hợp thuyết tiến hóa Darwin với di truyền học Mendel.</li><li>Giải thích cơ chế di truyền biến dị.</li><li>Hoàn thiện vào những năm 1930-1940.</li></ul><h4>c) Người đóng góp</h4><ul><li>Fisher, Haldane, Wright: Di truyền học quần thể.</li><li>Dobzhansky, Mayr, Simpson: Tiến hóa và loài.</li><li>Watson và Crick: Cấu trúc DNA.</li></ul>"
+            },
+            {
+              "heading": "2. Nguồn biến dị di truyền",
+              "content": "<h4 biến>a) Đột</h4><ul><li>Nguồn nguyên liệu chính của tiến hóa.</li><li>Tạo allele mới và biến dị di truyền.</li><li>Tần số đột biến rất thấp nhưng tích lũy qua thời gian.</li></ul><h4>b) Lai giống và tổ hợp gen</h4><ul><li>Tạo tổ hợp gen mới từ các allele có sẵn.</li><li>Là nguồn biến dị quan trọng ở sinh vật giao phối.</li></ul><h4>c) Di cư gene</h4><ul><li>Đưa allele mới vào quần thể.</li><li>Làm tăng đa dạng di truyền.</li></ul>"
+            },
+            {
+              "heading": "3. Các cơ chế tiến hóa",
+              "content": "<h4>a) Chọn lọc tự nhiên</h4><ul><li>Cơ chế chính của tiến hóa.</li><li>Tăng tần số allele có lợi, giảm allele có hại.</li><li>Các dạng: Chọn lọc định hướng, chọn lọc phân hóa, chọn lọc ổn định.</li></ul><h4>b) Trôi di truyền genetic drift</h4><ul><li>Thay đổi tần số allele ngẫu nhiên trong quần thể nhỏ.</li><li>Hiệu ứngFounder: Quần thể sáng lập.</li><li>Hiệu ứngBottleneck: Cổ chai di truyền.</li></ul><h4>c) Cách ly</h4><ul><li>Cơ chế hình thành loài.</li><li>Cách ly trước và sau hợp tử.</li></ul>"
+            },
+            {
+              "heading": "4. Đơn vị tiến hóa và loài",
+              "content": "<h4>a) Đơn vị tiến hóa</h4><ul><li><strong>Quần thể</strong> là đơn vị tiến hóa nhỏ nhất.</li><li>Tiến hóa là sự thay đổi tần số allele trong quần thể.</li></ul><h4>b) Hình thành loài</h4><ul><li>Quần thể bị cách ly sinh sản → tiến hóa khác nhau.</li><li>Tích lũy đủ khác biệt → hình thành loài mới.</li><li>Đồng hồ phân tử định tuổi phân ly loài.</li></ul><h4>c) Tiến hóa lớn và tiến hóa nhỏ</h4><ul><li><strong>Tiến hóa nhỏ:</strong> Thay đổi tần số allele trong quần thể.</li><li><strong>Tiến hóa lớn:</strong> Hình thành loài mới và các nhóm lớn hơn.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Học thuyết tiến hóa tổng hợp kết hợp những gì?",
+            "options": [
+              "Darwin và Mendel",
+              "Darwin và Lamarck",
+              "Mendel và Lamarck",
+              "Wallace và Mendel"
+            ],
+            "correct": 0,
+            "explanation": "Học thuyết tiến hóa tổng hợp kết hợp thuyết tiến hóa của Darwin với di truyền học của Mendel."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Nguồn nguyên liệu của tiến hóa là gì?",
+            "options": [
+              "Đột biến",
+              "Lai giống",
+              "Môi trường",
+              "Tất cả đều đúng"
+            ],
+            "correct": 3,
+            "explanation": "Đột biến, lai giống và tổ hợp gen là nguồn biến dị di truyền cho tiến hóa."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Trôi di truyền genetic drift xảy ra trong quần thể nào?",
+            "options": [
+              "Quần thể lớn",
+              "Quần thể nhỏ",
+              "Quần thể ngẫu phối",
+              "Quần thể ổn định"
+            ],
+            "correct": 1,
+            "explanation": "Trôi di truyền xảy ra chủ yếu trong quần thể nhỏ, khi tần số allele thay đổi ngẫu nhiên."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Đơn vị tiến hóa nhỏ nhất là gì?",
+            "options": [
+              "Cá thể",
+              "Quần thể",
+              "Loài",
+              "Chi"
+            ],
+            "correct": 1,
+            "explanation": "Quần thể là đơn vị tiến hóa nhỏ nhất, tiến hóa là sự thay đổi tần số allele trong quần thể."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Hiệu ứng Founder xảy ra khi nào?",
+            "options": [
+              "Quần thể giảm mạnh",
+              "Một nhóm nhỏ lập quần thể mới",
+              "Có sự di cư",
+              "Không có giao phối"
+            ],
+            "correct": 1,
+            "explanation": "Hiệu ứng Founder xảy ra khi một nhóm nhỏ tách ra lập quần thể mới."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các cơ chế tiến hóa:",
+            "options": [
+              "Chọn lọc tự nhiên",
+              "Trôi di truyền",
+              "Đột biến",
+              "Hình thành loài"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Chọn lọc tự nhiên. B ✓: Trôi di truyền. C ✓: Đột biến. D ✗: Hình thành loài là kết quả."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các dạng chọn lọc tự nhiên:",
+            "options": [
+              "Chọn lọc định hướng",
+              "Chọn lọc phân hóa",
+              "Chọn lọc ổn định",
+              "Chọn lọc nhân tạo"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Chọn lọc định hướng. B ✓: Chọn lọc phân hóa. C ✓: Chọn lọc ổn định. D ✗: Chọn lọc nhân tạo do con người."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Quần thể ban đầu 100 cá thể có p=0.5. Sau trôi di truyền, còn 10 cá thể có p=0.8. Tính % thay đổi p. Nhập số 3 chữ số.",
+            "correct": "060",
+            "explanation": "Thay đổi = |0.8-0.5| = 0.3 = 30%."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Tần số đột biến 10^-5. Trong 1000000 cá thể, có bao nhiêu đột biến mới? Nhập số 2 chữ số.",
+            "correct": "10"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân biệt các cơ chế tiến hóa",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Chọn lọc tự nhiên: Thay đổi có hướng theo môi trường.</li><li>Trôi di truyền: Thay đổi ngẫu nhiên, không theo hướng.</li><li>Đột biến: Tạo allele mới.</li><li>Di cư: Đưa allele mới vào.</li></ol>",
+            "examples": [
+              {
+                "question": "Quần thể cá trong hồ nhỏ có tần số allele thay đổi ngẫu nhiên. Đây là cơ chế gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Thay đổi ngẫu nhiên trong quần thể nhỏ → <strong>Trôi di truyền</strong>.</p>"
+              },
+              {
+                "question": "Côn trùng kháng thuốc trừ sâu tăng nhanh. Đây là cơ chế gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Thay đổi theo hướng có lợi → <strong>Chọn lọc tự nhiên</strong>.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính tần số allele sau các cơ chế",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Chọn lọc: Tính theo fitness.</li><li>Trôi di truyền: Tính ngẫu nhiên.</li><li>Đột biến: p' = p(1-μ) + qμ.</li></ol>",
+            "examples": [
+              {
+                "question": "p=0.5, μ=10^-5. Tính p' sau đột biến?",
+                "solution": "<p><strong>Giải:</strong></p><p>p' = 0.5×(1-10^-5) + 0.5×10^-5 = 0.499995 + 0.000005 = 0.5</p><p>Gần như không đổi</p>"
+              },
+              {
+                "question": "Quần thể 20 cá thể, p=0.5. Sau trôi di truyền ngẫu nhiên, có 16 A, 4 a. Tính p mới?",
+                "solution": "<p><strong>Giải:</strong></p><p>Tổng allele = 40</p><p>Allele A = 16×2 = 32</p><p>p = 32/40 = 0.8</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

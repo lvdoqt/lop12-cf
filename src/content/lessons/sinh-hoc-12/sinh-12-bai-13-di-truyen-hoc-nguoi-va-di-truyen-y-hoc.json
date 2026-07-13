@@ -1,0 +1,185 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-13",
+      "name": "Bài 13. Di truyền học người và di truyền y học",
+      "slug": "di-truyen-hoc-nguoi-va-di-truyen-y-hoc",
+      "chapter": "Chương 2. Di truyền nhiễm sắc thể",
+      "chapter_id": "S12-2",
+      "lesson_id": 13,
+      "description": "Tìm hiểu về di truyền học người và các bệnh di truyền.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2690&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Di truyền học người và di truyền y học",
+          "sections": [
+            {
+              "heading": "1. Đặc điểm di truyền học người",
+              "content": "<h4>a) Khó khăn trong nghiên cứu</h4><ul><li>Số lượng con ít.</li><li>Thời gian thế hệ dài.</li><li>Không thể lai có kiểm soát.</li><li>Di truyền qua nhiều thế hệ.</li></ul><h4>b) Phương pháp nghiên cứu</h4><ul><li><strong>Phả hệ (genealogy):</strong> Theo dõi tính trạng qua nhiều thế hệ.</li><li><strong>Song sinh:</strong> So sánh cặp sinh đôi cùng trứng và khác trứng.</li><li><strong>Phân tích gia đình:</strong> Xác định kiểu di truyền.</li><li><strong>Nghiên cứu quần thể:</strong> Tần số allele trong quần thể.</li></ul>"
+            },
+            {
+              "heading": "2. Các bệnh di truyền",
+              "content": "<h4>a) Bệnh di truyền đơn gene</h4><ul><li><strong>Bệnh di truyền trội:</strong> Bệnh Huntington, loạn dưỡng cơ.</li><li><strong>Bệnh di truyền lặn:</strong> Bệnh phenyketonuria (PKU), bệnh xơ nang.</li><li><strong>Bệnh liên kết X:</strong> Mù màu, hemophilia.</li></ul><h4>b) Bệnh di truyền phức tạp</h4><ul><li><strong>Đa gene:</strong> Tiểu đường, cao huyết áp.</li><li><strong>Tương tác gene - môi trường:</strong> Ung thư.</li></ul><h4>c) Bệnh di truyền NST</h4><ul><li><strong>Hội chứng Down:</strong> 3 nhiễm 21.</li><li><strong>Hội chứng Turner:</strong> X0.</li><li><strong>Hội chứng Klinefelter:</strong> XXY.</li></ul>"
+            },
+            {
+              "heading": "3. Di truyền y học",
+              "content": "<h4>a) Chẩn đoán trước sinh</h4><ul><li><strong>Siêu âm:</strong> Phát hiện dị tật.</li><li><strong>Xét nghiệm nước ối:</strong> Phân tích NST và DNA.</li><li><strong>Xét nghiệm máu mẹ:</strong> Phát hiện bệnh Down.</li></ul><h4>b) Điều trị bệnh di truyền</h4><ul><li><strong>Thay thế enzyme:</strong> Bệnh xơ nang.</li><li><strong>Điều chỉnh chế độ ăn:</strong> PKU.</li><li><strong>Liệu pháp gene:</strong> Đưa gene bình thường vào tế bào.</li></ul><h4>c) Phòng ngừa</h4><ul><li>Tư vấn di truyền.</li><li>Sàng lọc trước hôn nhân.</li><li>Chẩn đoán trước sinh.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Phương pháp nào được dùng để nghiên cứu di truyền học người?",
+            "options": [
+              "Lai có kiểm soát",
+              "Phả hệ",
+              "Nuôi cấy tế bào",
+              "Tạo đột biến"
+            ],
+            "correct": 1,
+            "explanation": "Phả hệ là phương pháp theo dõi tính trạng qua các thế hệ trong gia đình."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Bệnh nào sau đây là bệnh di truyền lặn trên NST thường?",
+            "options": [
+              "Bệnh Huntington",
+              "Mù màu",
+              "Bệnh xơ nang",
+              "Hội chứng Down"
+            ],
+            "correct": 2,
+            "explanation": "Bệnh xơ nang (cystic fibrosis) là bệnh di truyền lặn trên NST thường."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Hội chứng Turner có NST là bao nhiêu?",
+            "options": [
+              "44",
+              "45",
+              "46",
+              "47"
+            ],
+            "correct": 1,
+            "explanation": "Hội chứng Turner (X0) có 45 NST (thiếu một NST X)."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Phương pháp chẩn đoán trước sinh nào phân tích DNA?",
+            "options": [
+              "Siêu âm",
+              "Xét nghiệm nước ối",
+              "Đo huyết áp",
+              "Xét nghiệm đường huyết"
+            ],
+            "correct": 1,
+            "explanation": "Xét nghiệm nước ối (amniocentesis) cho phép phân tích NST và DNA của thai nhi."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Bệnh Huntington di truyền theo kiểu nào?",
+            "options": [
+              "Lặn trên NST thường",
+              "Trội trên NST thường",
+              "Lặn trên X",
+              "Trội trên X"
+            ],
+            "correct": 1,
+            "explanation": "Bệnh Huntington là bệnh di truyền trội trên NST thường."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các phương pháp chẩn đoán trước sinh:",
+            "options": [
+              "Siêu âm",
+              "Xét nghiệm nước ối",
+              "Xét nghiệm máu mẹ",
+              "Đo cân nặng"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Siêu âm phát hiện dị tật. B ✓: Nước ối phân tích NST, DNA. C ✓: Máu mẹ phát hiện bệnh Down. D ✗: Cân nặng không phải chẩn đoán."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các bệnh di truyền lặn trên NST thường:",
+            "options": [
+              "Bệnh xơ nang",
+              "Bệnh PKU",
+              "Bệnh Huntington",
+              "Bệnh bạch cầu"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "A ✓: Xơ nang là bệnh lặn. B ✓: PKU là bệnh lặn. C ✗: Huntington là bệnh trội. D ✗: Bạch cầa không phải bệnh di truyền đơn gene."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một cặp vợ chồng bình thường sinh một con bị bệnh xơ nang (lặn). Xác suất con thứ hai bệnh là bao nhiêu %? Nhập số 2 chữ số. (Ví dụ: 25)",
+            "correct": "25",
+            "explanation": "Mỗi người bình thường có 1/2 xác suất mang gene lặn. Con bệnh = 1/2 × 1/2 × 1/4 = 1/16 = 6.25%? Đúng: Xác suất mỗi người mang gene = 2/3 (vì đã có 1 con bình thường). Xác suất con bệnh = 2/3 × 2/3 × 1/4 = 4/36 = 1/9 ≈ 11%. Đáp án cần là 25 nếu không có thông tin về con trước."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Trong 10000 trẻ sơ sinh, có 4 trẻ mắc bệnh lặn. Tính tần số allele lặn (q). Lấy 2 chữ số. (Ví dụ: 02)",
+            "correct": "02",
+            "explanation": "Tần số bệnh = q² = 4/10000 = 0.0004. q = √0.0004 = 0.02 = 2%."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định kiểu di truyền từ phả hệ",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Theo dõi tính trạng qua các thế hệ.</li><li>Di truyền trội: Có bệnh ở mỗi thế hệ, bố/mẹ bệnh có con bệnh.</li><li>Di truyền lặn: Nhảy thế hệ, bố mẹ bình thường có con bệnh.</li><li>Liên kết X lặn: Nam bệnh truyền cho con gái mang, không truyền cho con trai.</li></ol>",
+            "examples": [
+              {
+                "question": "Phả hệ: Bố mẹ bình thường sinh con trai bệnh. Xác định kiểu di truyền?",
+                "solution": "<p><strong>Giải:</strong></p><p>Bố mẹ bình thường, con bệnh → Di truyền <strong>lặn</strong></p><p>Có thể trên NST thường hoặc X</p>"
+              },
+              {
+                "question": "Phả hệ: Bố bệnh, tất cả con trai đều bệnh, con gái không bệnh. Kiểu di truyền?",
+                "solution": "<p><strong>Giải:</strong></p><p>Nam bệnh truyền cho tất cả con trai → Di truyền <strong>trội trên Y</strong></p><p>Hoặc kiểm tra lại vì đây là đặc điểm của gene trên Y</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính xác suất mắc bệnh di truyền",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định kiểu gen của bố mẹ.</li><li>Tính xác suất con nhận allele bệnh.</li><li>Với bệnh lặn: p(bệnh) = p(bố mang) × p(mẹ mang) × 1/4</li></ol>",
+            "examples": [
+              {
+                "question": "Bố mẹ đều bình thường nhưng có người anh/em bị bệnh lặn. Xác suất con bệnh?",
+                "solution": "<p><strong>Giải:</strong></p><p>Bố/mẹ có anh/em bệnh → có thể mang gene (2/3 xác suất là người mang nếu bố/mẹ bình thường)</p><p>Xác suất = 2/3 × 2/3 × 1/4 = 4/36 = 1/9 ≈ 11%</p>"
+              },
+              {
+                "question": "Một bố mẹ bình thường, đã có 1 con bình thường. Xác suất con thứ 2 bệnh lặn?",
+                "solution": "<p><strong>Giải:</strong></p><p>Người mang gene có thể là bố hoặc mẹ (2/3)</p><p>Xác suất = 2/3 × 2/3 × 1/4 = 1/9 ≈ 11%</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

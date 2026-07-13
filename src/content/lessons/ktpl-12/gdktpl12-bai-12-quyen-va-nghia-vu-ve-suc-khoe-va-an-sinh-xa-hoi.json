@@ -1,0 +1,41 @@
+{
+  "subject": "Giáo dục Kinh tế và Pháp luật",
+  "subject_id": 90,
+  "lessons": [
+    {
+      "id": "gdktpl12_12",
+      "name": "Quyền và nghĩa vụ của công dân trong bảo vệ, chăm sóc sức khỏe và bảo đảm an sinh xã hội",
+      "slug": "quyen-va-nghia-vu-ve-suc-khoe-va-an-sinh-xa-hoi",
+      "chapter": "Quyền và nghĩa vụ của công dân về văn hóa, xã hội",
+      "chapter_id": "GDCD12",
+      "lesson_id": 12,
+      "description": "Các quy định pháp luật về quyền được chăm sóc y tế và hưởng thụ chính sách an sinh của công dân.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Bảo vệ sức khỏe và An sinh xã hội",
+          "summary": "Mọi công dân đều có quyền được bảo vệ, chăm sóc sức khỏe và hưởng thụ các dịch vụ an sinh xã hội cơ bản theo quy định.",
+          "sections": [
+            { "heading": "Quyền về chăm sóc sức khỏe", "content": "Được hưởng các dịch vụ y tế, khám chữa bệnh công bằng. Phụ nữ, trẻ em, người nghèo và người có công được ưu tiên hỗ trợ." },
+            { "heading": "Nghĩa vụ trong bảo vệ sức khỏe", "content": "Tuân thủ quy định về phòng chống dịch bệnh, giữ gìn vệ sinh chung, không làm tổn hại đến sức khỏe người khác." },
+            { "heading": "Bảo đảm an sinh xã hội", "content": "Quyền được hỗ trợ khi gặp rủi ro (thất nghiệp, tai nạn, già yếu) thông qua các quỹ bảo hiểm và trợ giúp xã hội." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Công dân có quyền được chăm sóc sức khỏe thể hiện rõ nhất ở việc nào?", "options": ["Tự chữa bệnh ở nhà", "Được khám, chữa bệnh tại các cơ sở y tế theo quy định", "Không phải tập thể dục", "Được ăn uống miễn phí"], "correct": 1, "explanation": "Nhà nước bảo đảm quyền tiếp cận dịch vụ y tế cho mọi người dân." },
+          { "id": 2, "type": "mcq", "question": "Nghĩa vụ của công dân trong phòng chống dịch bệnh là?", "options": ["Che giấu thông tin bệnh", "Tuân thủ các biện pháp phòng ngừa và chỉ dẫn y tế của nhà nước", "Tự ý đi lại trong vùng dịch", "Không cần tiêm chủng"], "correct": 1, "explanation": "Tuân thủ quy định giúp bảo vệ sức khỏe cộng đồng và cá nhân." },
+          { "id": 3, "type": "mcq", "question": "Đối tượng nào sau đây được Nhà nước ưu tiên hỗ trợ về y tế?", "options": ["Chỉ những người giàu", "Trẻ em, người già, người nghèo và người có công với cách mạng", "Người đi du lịch", "Những người không đi làm"], "correct": 1, "explanation": "Đây là chính sách nhân văn nhằm đảm bảo công bằng trong chăm sóc sức khỏe." },
+          { "id": 4, "type": "mcq", "question": "Quyền hưởng an sinh xã hội giúp công dân khi gặp rủi ro gì?", "options": ["Bị điểm kém", "Mất việc làm, ốm đau, tai nạn lao động hoặc khi già yếu", "Khi muốn mua xe mới", "Khi đi chơi xa"], "correct": 1, "explanation": "An sinh xã hội là 'lưới đỡ' tài chính khi thu nhập bị ảnh hưởng." },
+          { "id": 5, "type": "mcq", "question": "Hành vi nào vi phạm pháp luật về bảo vệ sức khỏe người khác?", "options": ["Vứt rác đúng nơi quy định", "Cố ý lây truyền bệnh truyền nhiễm cho người khác", "Tuyên truyền lối sống lành mạnh", "Khám sức khỏe định kỳ"], "correct": 1, "explanation": "Xâm phạm sức khỏe người khác là hành vi bị nghiêm cấm." },
+          { "id": 6, "type": "mcq", "question": "Bảo hiểm y tế đóng vai trò gì đối với người dân?", "options": ["Làm giảm chi phí khám chữa bệnh khi gặp sự cố sức khỏe", "Làm cho bác sĩ giàu hơn", "Bắt buộc người dân phải ốm", "Không có tác dụng gì"], "correct": 0, "explanation": "Bảo hiểm y tế san sẻ gánh nặng tài chính y tế." },
+          { "id": 7, "type": "mcq", "question": "Công dân có nghĩa vụ gì đối với môi trường sống xung quanh?", "options": ["Phá hoại cây xanh", "Giữ gìn vệ sinh, tạo cảnh quan môi trường trong sạch để bảo vệ sức khỏe", "Xả nước thải bừa bãi", "Mặc kệ môi trường"], "correct": 1, "explanation": "Môi trường trong sạch là tiền đề cho sức khỏe tốt." },
+          { "id": 8, "type": "mcq", "question": "Việc Nhà nước đầu tư xây dựng các trạm y tế xã, phường nhằm?", "options": ["Để cho đẹp khu dân cư", "Tạo điều kiện để công dân thực hiện quyền chăm sóc sức khỏe cơ bản", "Để thu nhiều tiền hơn", "Chỉ để làm văn phòng"], "correct": 1, "explanation": "Y tế cơ sở giúp người dân tiếp cận dịch vụ nhanh chóng nhất." },
+          { "id": 9, "type": "mcq", "question": "Chế độ trợ cấp xã hội cho người khuyết tật nặng thuộc về?", "options": ["Bảo hiểm thương mại", "Chính sách an sinh xã hội của Nhà nước", "Sự đóng góp cá nhân", "Một loại tiền phạt"], "correct": 1, "explanation": "Đây là sự hỗ trợ từ ngân sách cho các đối tượng yếu thế." },
+          { "id": 10, "type": "mcq", "question": "Tại sao việc bảo vệ sức khỏe lại là nghĩa vụ của mỗi công dân?", "options": ["Để không bị công an phạt", "Vì sức khỏe mỗi người là vốn quý của cá nhân và quốc gia", "Để được khen thưởng", "Vì mọi người đều thích khỏe"], "correct": 1, "explanation": "Sức khỏe nhân dân là nền tảng của sức mạnh đất nước." }
+        ]
+      }
+    }
+  ]
+}

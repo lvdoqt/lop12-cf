@@ -1,0 +1,192 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-29",
+      "name": "Bài 29. Trao đổi vật chất và chuyển hóa năng lượng trong hệ sinh thái",
+      "slug": "trao-doi-vat-chat-va-chuyen-hoa-nang-luong-trong-he-sinh-thai",
+      "chapter": "Chương 7. Sinh thái học quần xã",
+      "chapter_id": "S12-7",
+      "lesson_id": 29,
+      "description": "Tìm hiểu về trao đổi vật chất và chuyển hóa năng lượng trong hệ sinh thái.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Trao đổi vật chất và chuyển hóa năng lượng trong hệ sinh thái",
+          "sections": [
+            {
+              "heading": "1. Năng lượng trong hệ sinh thái",
+              "content": "<h4>a) Nguồn năng lượng</h4><ul><li><strong>Nguồn năng lượng chính:</strong> Ánh sáng Mặt Trời.</li><li>Năng lượng Mặt Trời được chuyển hóa thành hóa năng qua quang hợp.</li><li>Một phần nhỏ (khoảng 1%) được quang hợp sử dụng.</li></ul><h4>b) Đặc điểm năng lượng</h4><ul><li><strong>Truyền một chiều:</strong> Mặt Trời → SV sản xuất → SV tiêu thụ → Môi trường.</li><li><strong>Hiệu suất thấp:</strong> Khoảng 10% giữa các bậc.</li><li><strong>Mất dần:</strong> Năng lượng bị tiêu hao qua hô hấp, trao đổi nhiệt.</li></ul>"
+            },
+            {
+              "heading": "2. Chuỗi thức ăn và lưới thức ăn",
+              "content": "<h4>a) Chuỗi thức ăn</h4><ul><li>Là dãy các loài sinh vật liên quan đến dinh dưỡng.</li><li>Mỗi loài là một bậc dinh dưỡng.</li><li>Ví dụ: Cỏ → Châu chấu → Ếch → Rắn → Nấm.</li></ul><h4>b) Lưới thức ăn</h4><ul><li>Là tập hợp nhiều chuỗi thức ăn liên kết.</li><li>Phản ánh mối quan hệ phức tạp hơn trong tự nhiên.</li><li>Giúp hệ sinh thái ổn định khi một nguồn thức ăn bị thiếu.</li></ul><h4>c) Các bậc dinh dưỡng</h4><ul><li><strong>Bậc 1:</strong> Sinh vật sản xuất (thực vật).</li><li><strong>Bậc 2:</strong> SV tiêu thụ bậc 1 (ăn thực vật).</li><li><strong>Bậc 3:</strong> SV tiêu thụ bậc 2 (ăn thịt bậc 1).</li><li><strong>Bậc 4:</strong> SV tiêu thụ bậc 3 (ăn thịt bậc 2).</li></ul>"
+            },
+            {
+              "heading": "3. Hiệu suất chuyển hóa năng lượng",
+              "content": "<h4>a) Hiệu suất quang hợp</h4><ul><li>Chỉ khoảng 1-2% năng lượng ánh sáng được chuyển thành hóa năng.</li><li>Phần lớn năng lượng bị phản xạ, truyền nhiệt.</li></ul><h4>b) Hiệu suất truyền qua các bậc</h4><ul><li>Khoảng 10% năng lượng được truyền lên bậc dinh dưỡng cao hơn.</li><li>90% còn lại bị mất qua hô hấp, bài tiết, nhiệt.</li></ul><h4>c) Sản lượng sinh vật sản xuất</h4><ul><li><strong>Sản lượng sơ cấp:</strong> Tổng năng lượng thực vật tạo ra.</li><li><strong>Sản lượng thứ cấp:</strong> Năng lượng tích lũy ở SV tiêu thụ.</li></ul>"
+            },
+            {
+              "heading": "4. Tuần hoàn vật chất",
+              "content": "<h4>a) Đặc điểm</h4><ul><li>Vật chất được sử dụng nhiều lần.</li><li>Tuần hoàn trong hệ sinh thái và sinh quyển.</li><li>Các nguyên tố: C, N, P, S, nước...</li></ul><h4>b) Chu trình carbon</h4><ul><li>CO₂ trong khí quyển → Quang hợp (thực vật) → Thức ăn → Hô hấp (giải phóng CO₂).</li><li>Đốt nhiên liệu hóa thạch → Giải phóng CO₂.</li></ul><h4>c) Chu trình nitơ</h4><ul><li>Khí quyển (N₂) → Đạm cố định (vi khuẩn) → Thực vật → Động vật → Phân giải → Đất.</li><li>Vi khuẩn phản nitrat hóa giải phóng N₂ về khí quyển.</li></ul><h4>d) Chu trình nước</h4><ul><li>Bốc hơi → Ngưng tụ → Mưa → Thấm vào đất → Sông biển → Bốc hơi...</li></ul>"
+            },
+            {
+              "heading": "5. So sánh năng lượng và vật chất",
+              "content": "<table><tr><th>Đặc điểm</th><th>Năng lượng</th><th>Vật chất</th></tr><tr><td>Hướng</td><td>Một chiều</td><td>Tuần hoàn</td></tr><tr><td>Nguồn</td><td>Mặt Trời</td><td>Trong hệ sinh thái</td></tr><tr><td>Sử dụng</td><td>Một lần</td><td>Nhiều lần</td></tr><tr><td>Mất mát</td><td>Có (nhiệt)</td><td>Không</td></tr></table>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Nguồn năng lượng chính của hệ sinh thái là gì?",
+            "options": [
+              "Nhiệt từ lòng Trái Đất",
+              "Ánh sáng Mặt Trời",
+              "Năng lượng gió",
+              "Năng lượng thủy triều"
+            ],
+            "correct": 1,
+            "explanation": "Ánh sáng Mặt Trời là nguồn năng lượng chính được quang hợp chuyển thành hóa năng."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Năng lượng trong hệ sinh thái được truyền theo hướng nào?",
+            "options": [
+              "Tuần hoàn",
+              "Một chiều",
+              "Hai chiều",
+              "Không xác định"
+            ],
+            "correct": 1,
+            "explanation": "Năng lượng truyền một chiều từ sinh vật sản xuất qua các bậc dinh dưỡng và mất dần ra ngoài."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Hiệu suất truyền năng lượng giữa các bậc dinh dưỡng khoảng bao nhiêu phần trăm?",
+            "options": [
+              "5%",
+              "10%",
+              "50%",
+              "100%"
+            ],
+            "correct": 1,
+            "explanation": "Khoảng 10% năng lượng được truyền lên bậc dinh dưỡng cao hơn, 90% còn lại mất qua hô hấp."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Trong chuỗi thức cỏ → châu chấu → ếch → rắn, rắn thuộc bậc dinh dưỡng nào?",
+            "options": [
+              "Bậc 2",
+              "Bậc 3",
+              "Bậc 4",
+              "Bậc 5"
+            ],
+            "correct": 2,
+            "explanation": "Cỏ (bậc 1) → châu chấu (bậc 2) → ếch (bậc 3) → rắn (bậc 4)."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Vật chất trong hệ sinh thái được truyền theo hướng nào?",
+            "options": [
+              "Một chiều",
+              "Tuần hoàn",
+              "Ngẫu nhiên",
+              "Không thay đổi"
+            ],
+            "correct": 1,
+            "explanation": "Vật chất được tuần hoàn, sử dụng nhiều lần qua chu trình carbon, nitơ, nước..."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các bậc dinh dưỡng trong chuỗi thức ăn:",
+            "options": [
+              "Sinh vật sản xuất",
+              "Sinh vật tiêu thụ bậc 1",
+              "Sinh vật tiêu thụ bậc 2",
+              "Môi trường vô sinh"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Các bậc dinh dưỡng gồm: SV sản xuất, SV tiêu thụ bậc 1, 2, 3... Môi trường vô sinh không phải bậc dinh dưỡng."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các chu trình tuần hoàn vật chất:",
+            "options": [
+              "Chu trình carbon",
+              "Chu trình nitơ",
+              "Chu trình năng lượng",
+              "Chu trình nước"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Carbon, nitơ, nước được tuần hoàn. Năng lượng truyền một chiều, không tuần hoàn."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Năng lượng bậc 1 là 100000J. Tính năng lượng bậc 2 (J) với hiệu suất 10%. Nhập số 5 chữ số.",
+            "correct": "10000"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Một chuỗi thức ăn có 5 bậc dinh dưỡng. Điền số 1 chữ số.",
+            "correct": "5"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính năng lượng qua các bậc dinh dưỡng",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Bậc 1: SV sản xuất (năng lượng ban đầu).</li><li>Bậc 2 = Bậc 1 × 10%.</li><li>Bậc n = Bậc 1 × (10%)^(n-1).</li><li>Lưu ý: Mỗi lần chuyển bậc nhân với 10%.</li></ol>",
+            "examples": [
+              {
+                "question": "Năng lượng thực vật (bậc 1) là 80000J. Tính năng lượng bậc 3?",
+                "solution": "<p><strong>Giải:</strong></p><p>Bậc 2: 80000 × 10% = 8000J</p><p>Bậc 3: 8000 × 10% = 800J</p>"
+              },
+              {
+                "question": "Năng lượng bậc 1 là 500000J. Tính năng lượng bậc 4?",
+                "solution": "<p><strong>Giải:</strong></p><p>Bậc 4 = 500000 × (10%)³ = 500000 × 0.001 = 500J</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định bậc dinh dưỡng trong chuỗi thức ăn",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định thứ tự trong chuỗi: SV sản xuất → bậc 1.</li><li>Mỗi bước chuyển lên bậc tiêu thụ +1.</li><li>SV phân giải không tính vào chuỗi dinh dưỡng chính.</li></ol>",
+            "examples": [
+              {
+                "question": "Chuỗi: Tảo → Giáp xác → Cá → Chim ăn cá. Xác định bậc dinh dưỡng của chim.",
+                "solution": "<p><strong>Giải:</strong></p><p>Tảo: Bậc 1</p><p>Giáp xác: Bậc 2</p><p>Cá: Bậc 3</p><p>Chim: Bậc 4</p>"
+              },
+              {
+                "question": "Trong chuỗi: Nấm → ruồi → nhện. Nhện thuộc bậc nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Nấm (phân giải) - ruồi (bậc 1) - nhện (bậc 2)</p><p>Nhện là SV tiêu thụ bậc 2.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

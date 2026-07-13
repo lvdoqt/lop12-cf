@@ -1,0 +1,253 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-18-cau-tao-lien-ket-tinh-the-kim-loai",
+      "name": "Bài 18. Cấu tạo và liên kết trong tinh thể kim loại",
+      "slug": "bai-18-cau-tao-lien-ket-tinh-the-kim-loai",
+      "chapter": "Chương 6: Đại cương về kim loại",
+      "chapter_id": "H12-1006",
+      "lesson_id": 18,
+      "description": "Tìm hiểu về cấu tạo tinh thể kim loại và liên kết kim loại.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1611171711912-e0a0e0a1f97f?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tinh-the-kim-loai-1",
+          "name": "Cấu tạo tinh thể kim loại",
+          "slug": "cau-tao-tinh-the-kim-loai",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Cấu tạo và Liên kết Kim loại",
+          "sections": [
+            {
+              "heading": "1. Cấu tạo tinh thể kim loại",
+              "content": "<h3>a) Định nghĩa</h3><p><strong>Tinh thể kim loại:</strong> Cấu trúc rắn trong đó các nguyên tử kim loại sắp xếp theo trật tự nhất định trong không gian ba chiều.</p><h3>b) Các kiểu mạng tinh thể</h3><p><strong>1. Mạng lập phương đơn giản:</strong></p><ul><li>Nguyên tử ở 8 đỉnh của hình lập phương</li><li>Số phối trí: 6</li><li>Ví dụ: Po (Polonium)</li></ul><p><strong>2. Mạng lập phương tâm khối (BCC):</strong></p><ul><li>Nguyên tử ở 8 đỉnh + 1 tâm khối</li><li>Số phối trí: 8</li><li>Ví dụ: Fe, Cr, Na, K</li></ul><p><strong>3. Mạng lập phương tâm diện (FCC):</strong></p><ul><li>Nguyên tử ở 8 đỉnh + 6 tâm mặt</li><li>Số phối trí: 12</li><li>Ví dụ: Cu, Ag, Au, Al, Ni</li></ul><p><strong>4. Mạng lục giác:</strong></p><ul><li>Cấu trúc lục giác chặt</li><li>Số phối trí: 12</li><li>Ví dụ: Mg, Zn, Ti</li></ul><h3>c) Số phối trí</h3><p><strong>Số phối trí:</strong> Số nguyên tử gần nhất bao quanh một nguyên tử trong tinh thể.</p><ul><li>Càng cao → Cấu trúc càng chặt → Mật độ càng lớn</li></ul>"
+            },
+            {
+              "heading": "2. Liên kết kim loại",
+              "content": "<h3>a) Định nghĩa</h3><p><strong>Liên kết kim loại:</strong> Liên kết được hình thành do lực hút tĩnh điện giữa các ion dương kim loại và electron tự do (electron hóa trị).</p><h3>b) Đặc điểm</h3><ul><li>Electron hóa trị di chuyển tự do trong mạng tinh thể</li><li>Tạo thành 'biển electron' bao quanh các ion dương</li><li>Liên kết không định hướng, không bão hòa</li><li>Độ bền trung bình đến cao</li></ul><h3>c) Mô hình biển electron</h3><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>M → M⁺ + e⁻ (electron tự do)</p><p>Các ion M⁺ cố định trong mạng tinh thể, electron di chuyển tự do.</p><h3>d) So sánh các loại liên kết</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Liên kết</th><th class='border border-gray-300 p-2'>Đặc điểm</th><th class='border border-gray-300 p-2'>Ví dụ</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Ion</td><td class='border border-gray-300 p-2'>Lực hút ion (+) và ion (-)</td><td class='border border-gray-300 p-2'>NaCl</td></tr><tr><td class='border border-gray-300 p-2'>Cộng hóa trị</td><td class='border border-gray-300 p-2'>Dùng chung electron</td><td class='border border-gray-300 p-2'>H₂, O₂</td></tr><tr><td class='border border-gray-300 p-2'>Kim loại</td><td class='border border-gray-300 p-2'>Ion (+) và electron tự do</td><td class='border border-gray-300 p-2'>Fe, Cu, Al</td></tr></tbody></table>"
+            },
+            {
+              "heading": "3. Tính chất do cấu tạo",
+              "content": "<h3>a) Tính dẫn điện</h3><p><strong>Nguyên nhân:</strong> Electron tự do di chuyển có hướng khi có điện trường.</p><ul><li>Kim loại dẫn điện tốt nhất: Ag > Cu > Au > Al</li><li>Nhiệt độ tăng → Dẫn điện giảm (ion dao động mạnh)</li></ul><h3>b) Tính dẫn nhiệt</h3><p><strong>Nguyên nhân:</strong> Electron tự do truyền năng lượng nhiệt nhanh.</p><ul><li>Kim loại dẫn nhiệt tốt nhất: Ag > Cu > Au > Al</li></ul><h3>c) Tính dẻo, tính dễ rèn</h3><p><strong>Nguyên nhân:</strong> Liên kết kim loại không định hướng, các lớp nguyên tử có thể trượt lên nhau mà không đứt liên kết.</p><ul><li>Kim loại dẻo nhất: Au > Ag > Cu > Al</li></ul><h3>d) Ánh kim</h3><p><strong>Nguyên nhân:</strong> Electron tự do hấp thụ và phản xạ ánh sáng.</p><ul><li>Kim loại có ánh sáng đặc trưng (vàng, đỏ...)</li></ul><h3>e) Nhiệt độ nóng chảy</h3><p><strong>Phụ thuộc:</strong></p><ul><li>Độ bền liên kết kim loại</li><li>Số electron hóa trị</li><li>Bán kính nguyên tử</li></ul><p><strong>Nhiệt độ nóng chảy:</strong></p><ul><li>Cao nhất: W (3422°C), Mo (2623°C)</li><li>Thấp nhất: Hg (-39°C), Cs (28.5°C)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định cấu trúc tinh thể",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định kiểu mạng tinh thể</li><li>Tính số nguyên tử trong ô mạng</li><li>Tính khối lượng riêng</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Cu có cấu trúc FCC, cạnh ô mạng a = 3.61 Å. a) Tính số nguyên tử Cu trong ô mạng. b) Tính khối lượng riêng của Cu (M = 64 g/mol).",
+                "solution": "<p><strong>a) Số nguyên tử trong ô mạng FCC:</strong></p><p><strong>Cấu trúc FCC:</strong></p><ul><li>8 đỉnh: 8 × 1/8 = 1 nguyên tử</li><li>6 mặt: 6 × 1/2 = 3 nguyên tử</li><li>Tổng: 1 + 3 = 4 nguyên tử</li></ul><p><strong>b) Tính khối lượng riêng:</strong></p><p><strong>Thể tích ô mạng:</strong></p><p>V = a³ = (3.61 × 10⁻⁸)³ = 4.7 × 10⁻²³ cm³</p><p><strong>Khối lượng 4 nguyên tử Cu:</strong></p><p>m = (4 × 64) / (6.02 × 10²³) = 4.25 × 10⁻²² g</p><p><strong>Khối lượng riêng:</strong></p><p>ρ = m / V = (4.25 × 10⁻²²) / (4.7 × 10⁻²³) = 9.04 g/cm³</p><p><strong>Đáp án:</strong> a) 4 nguyên tử; b) 9.04 g/cm³</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Giải thích tính chất dựa vào cấu tạo",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Liên hệ cấu tạo với tính chất</li><li>Giải thích dựa vào liên kết kim loại</li><li>So sánh các kim loại</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> a) Giải thích tại sao kim loại dẫn điện tốt. b) Tại sao nhiệt độ tăng, tính dẫn điện giảm. c) So sánh tính dẫn điện của Ag, Cu, Al.",
+                "solution": "<p><strong>a) Kim loại dẫn điện tốt:</strong></p><p><strong>Nguyên nhân:</strong></p><ul><li>Có electron tự do trong mạng tinh thể</li><li>Khi có điện trường, electron di chuyển có hướng</li><li>Tạo dòng điện</li></ul><p><strong>b) Nhiệt độ tăng, dẫn điện giảm:</strong></p><p><strong>Nguyên nhân:</strong></p><ul><li>Nhiệt độ tăng → Ion dao động mạnh hơn</li><li>Cản trở chuyển động của electron</li><li>Dẫn điện giảm</li></ul><p><strong>c) So sánh tính dẫn điện:</strong></p><p><strong>Thứ tự:</strong> Ag > Cu > Al</p><p><strong>Giải thích:</strong></p><ul><li>Ag: Electron tự do nhiều nhất, di chuyển dễ nhất</li><li>Cu: Electron tự do nhiều, dẫn điện tốt</li><li>Al: Electron tự do ít hơn, dẫn điện kém hơn</li></ul><p><strong>Ứng dụng:</strong></p><ul><li>Ag: Thiết bị điện tử cao cấp</li><li>Cu: Dây điện phổ biến (rẻ hơn Ag)</li><li>Al: Dây điện cao thế (nhẹ)</li></ul><p><strong>Đáp án:</strong> Đã giải thích chi tiết</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Vật liệu siêu dẫn",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích đặc tính vật liệu siêu dẫn</li><li>So sánh với kim loại thường</li><li>Đánh giá ứng dụng và triển vọng</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Vật liệu siêu dẫn YBa₂Cu₃O₇ có điện trở bằng 0 ở nhiệt độ dưới -180°C. a) So sánh với Cu thường. b) Tính tiết kiệm điện năng khi dùng dây siêu dẫn (dây Cu 1000m, I = 100A, R = 0.1Ω). c) Đánh giá triển vọng ứng dụng.",
+                "solution": "<p><strong>a) So sánh siêu dẫn vs Cu thường:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Đặc điểm</th><th class='border border-gray-300 p-2'>Cu thường</th><th class='border border-gray-300 p-2'>Siêu dẫn</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Điện trở</td><td class='border border-gray-300 p-2'>R > 0</td><td class='border border-gray-300 p-2'>R = 0</td></tr><tr><td class='border border-gray-300 p-2'>Tổn hao điện năng</td><td class='border border-gray-300 p-2'>Có (I²R)</td><td class='border border-gray-300 p-2'>Không</td></tr><tr><td class='border border-gray-300 p-2'>Nhiệt độ hoạt động</td><td class='border border-gray-300 p-2'>Thường</td><td class='border border-gray-300 p-2'>< -180°C</td></tr><tr><td class='border border-gray-300 p-2'>Dòng điện tối đa</td><td class='border border-gray-300 p-2'>Hạn chế</td><td class='border border-gray-300 p-2'>Rất lớn</td></tr><tr><td class='border border-gray-300 p-2'>Chi phí</td><td class='border border-gray-300 p-2'>Thấp</td><td class='border border-gray-300 p-2'>Cao</td></tr></tbody></table><p><strong>b) Tính tiết kiệm điện năng:</strong></p><p><strong>Dây Cu thường:</strong></p><p>Công suất tổn hao: P = I²R = 100² × 0.1 = 1000W = 1 kW</p><p>Điện năng tổn hao/năm: E = 1 × 24 × 365 = 8760 kWh</p><p>Chi phí (2000đ/kWh): 8760 × 2000 = 17,520,000 đ/năm</p><p><strong>Dây siêu dẫn:</strong></p><p>Công suất tổn hao: P = 0W (R = 0)</p><p>Tiết kiệm: 17,520,000 đ/năm</p><p><strong>Nhưng:</strong></p><ul><li>Chi phí làm lạnh: ~5,000,000 đ/năm</li><li>Tiết kiệm thực: 12,520,000 đ/năm</li></ul><p><strong>c) Đánh giá triển vọng:</strong></p><p><strong>1. Ưu điểm:</strong></p><ul><li>✓ Không tổn hao điện năng</li><li>✓ Dòng điện lớn (gấp 100 lần Cu)</li><li>✓ Từ trường mạnh (nam châm siêu dẫn)</li><li>✓ Tiết kiệm năng lượng</li></ul><p><strong>2. Nhược điểm:</strong></p><ul><li>⚠️ Cần làm lạnh sâu (-180°C)</li><li>⚠️ Chi phí cao</li><li>⚠️ Công nghệ phức tạp</li><li>⚠️ Vật liệu giòn, khó gia công</li></ul><p><strong>3. Ứng dụng hiện tại:</strong></p><ul><li>MRI (chụp cộng hưởng từ): Nam châm siêu dẫn</li><li>Tàu đệm từ (Maglev): Tốc độ 600 km/h</li><li>Máy gia tốc hạt (LHC): Từ trường 8 Tesla</li><li>Lưu trữ năng lượng: Pin siêu dẫn</li></ul><p><strong>4. Nghiên cứu phát triển:</strong></p><p><strong>a) Siêu dẫn nhiệt độ cao:</strong></p><ul><li>Mục tiêu: Hoạt động ở nhiệt độ phòng</li><li>Hiện tại: -70°C (HgBa₂Ca₂Cu₃O₈)</li><li>Đột phá 2020: -23°C (LaH₁₀ ở áp suất cao)</li><li>Dự kiến 2030: 0°C</li></ul><p><strong>b) Giảm chi phí:</strong></p><ul><li>Vật liệu rẻ hơn (thay Y, Ba bằng Fe, S)</li><li>Làm lạnh bằng N₂ lỏng (-196°C, rẻ)</li><li>Sản xuất quy mô lớn</li></ul><p><strong>5. Triển vọng ứng dụng:</strong></p><p><strong>a) Truyền tải điện (2030):</strong></p><ul><li>Cáp siêu dẫn thay Cu</li><li>Tiết kiệm 30% điện năng</li><li>Giảm 50% kích thước cáp</li><li>Chi phí: Giảm 50% so với hiện tại</li></ul><p><strong>b) Giao thông (2035):</strong></p><ul><li>Tàu Maglev phổ biến (1000 km/h)</li><li>Máy bay điện (động cơ siêu dẫn)</li><li>Ô tô điện (động cơ nhỏ, mạnh)</li></ul><p><strong>c) Y tế (2025):</strong></p><ul><li>MRI rẻ hơn 70%</li><li>Thiết bị y tế di động</li><li>Chẩn đoán chính xác hơn</li></ul><p><strong>d) Năng lượng (2040):</strong></p><ul><li>Pin siêu dẫn (lưu trữ vô hạn)</li><li>Lưới điện thông minh</li><li>Nhà máy điện hạt nhân nhỏ gọn</li></ul><p><strong>6. Tác động kinh tế - xã hội:</strong></p><ul><li>Tiết kiệm 1000 tỷ USD/năm (toàn cầu)</li><li>Giảm 20% phát thải CO₂ (điện)</li><li>Tạo 10 triệu việc làm mới</li><li>Cách mạng công nghệ lần 4</li></ul><p><strong>Kết luận:</strong></p><p>Vật liệu siêu dẫn có tiềm năng cách mạng hóa truyền tải điện, giao thông, y tế. Với nghiên cứu siêu dẫn nhiệt độ cao, chi phí sẽ giảm và ứng dụng rộng rãi vào 2030-2040. Đây là công nghệ then chốt cho tương lai bền vững.</p><p><strong>Đáp án:</strong> a) Đã so sánh; b) Tiết kiệm 12.5 triệu đồng/năm; c) Triển vọng rất lớn</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Liên kết kim loại là liên kết giữa:",
+            "options": ["Ion dương và electron tự do", "Nguyên tử và nguyên tử", "Ion dương và ion âm", "Phân tử và phân tử"],
+            "correct": 0,
+            "explanation": "Liên kết kim loại giữa ion dương và electron tự do."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Cấu trúc FCC có số phối trí:",
+            "options": ["6", "8", "12", "14"],
+            "correct": 2,
+            "explanation": "FCC có số phối trí 12."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Kim loại dẫn điện tốt nhất:",
+            "options": ["Cu", "Ag", "Au", "Al"],
+            "correct": 1,
+            "explanation": "Ag dẫn điện tốt nhất."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Kim loại dẻo nhất:",
+            "options": ["Fe", "Cu", "Au", "Al"],
+            "correct": 2,
+            "explanation": "Au dẻo nhất."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Nhiệt độ nóng chảy cao nhất:",
+            "options": ["Fe", "Cu", "W", "Al"],
+            "correct": 2,
+            "explanation": "W có nhiệt độ nóng chảy cao nhất (3422°C)."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Kim loại lỏng ở nhiệt độ phòng:",
+            "options": ["Na", "Hg", "Cs", "Ga"],
+            "correct": 1,
+            "explanation": "Hg lỏng ở nhiệt độ phòng."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Tính dẫn điện của kim loại khi nhiệt độ tăng:",
+            "options": ["Tăng", "Giảm", "Không đổi", "Tùy kim loại"],
+            "correct": 1,
+            "explanation": "Nhiệt độ tăng → Dẫn điện giảm."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Nguyên nhân kim loại có ánh kim:",
+            "options": ["Ion dương", "Electron tự do", "Mạng tinh thể", "Liên kết mạnh"],
+            "correct": 1,
+            "explanation": "Electron tự do phản xạ ánh sáng."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Cấu trúc BCC có số nguyên tử trong ô mạng:",
+            "options": ["1", "2", "4", "6"],
+            "correct": 1,
+            "explanation": "BCC có 2 nguyên tử (8×1/8 + 1 = 2)."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Cấu trúc FCC có số nguyên tử trong ô mạng:",
+            "options": ["1", "2", "4", "6"],
+            "correct": 2,
+            "explanation": "FCC có 4 nguyên tử (8×1/8 + 6×1/2 = 4)."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Kim loại có cấu trúc FCC:",
+            "options": ["Fe", "Cu", "Na", "Mg"],
+            "correct": 1,
+            "explanation": "Cu có cấu trúc FCC."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Kim loại có cấu trúc BCC:",
+            "options": ["Cu", "Ag", "Fe", "Al"],
+            "correct": 2,
+            "explanation": "Fe có cấu trúc BCC."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Tính chất do liên kết kim loại:",
+            "options": ["Dẫn điện", "Dẫn nhiệt", "Dẻo", "Tất cả"],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Liên kết kim loại tạo nhiều tính chất."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Kim loại dẫn điện tốt:",
+            "options": ["Ag", "Cu", "Au", "Fe"],
+            "correct": [0, 1, 2],
+            "explanation": "Ag, Cu, Au dẫn điện tốt."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Kiểu mạng tinh thể kim loại:",
+            "options": ["Lập phương đơn giản", "BCC", "FCC", "Lục giác"],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Có nhiều kiểu mạng tinh thể."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Ứng dụng của Cu:",
+            "options": ["Dây điện", "Thiết bị điện", "Hợp kim", "Tất cả"],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Cu có nhiều ứng dụng."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "FCC có bao nhiêu nguyên tử trong ô mạng? Làm tròn đến hàng đơn vị.",
+            "correct": "4",
+            "explanation": "FCC: 8×1/8 + 6×1/2 = 4. Đáp án: 4"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "BCC có bao nhiêu nguyên tử trong ô mạng? Làm tròn đến hàng đơn vị.",
+            "correct": "2",
+            "explanation": "BCC: 8×1/8 + 1 = 2. Đáp án: 2"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "FCC có số phối trí bao nhiêu? Làm tròn đến hàng đơn vị.",
+            "correct": "12",
+            "explanation": "FCC có số phối trí 12. Đáp án: 12"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "BCC có số phối trí bao nhiêu? Làm tròn đến hàng đơn vị.",
+            "correct": "8",
+            "explanation": "BCC có số phối trí 8. Đáp án: 8"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "W có nhiệt độ nóng chảy bao nhiêu (°C)? Làm tròn đến hàng nghìn.",
+            "correct": "3000",
+            "explanation": "W: 3422°C ≈ 3000°C. Đáp án: 3000"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Hg có nhiệt độ nóng chảy bao nhiêu (°C)? Làm tròn đến hàng chục.",
+            "correct": "-40",
+            "explanation": "Hg: -39°C ≈ -40°C. Đáp án: -40"
+          }
+        ]
+      }
+    }
+  ]
+}

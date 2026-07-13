@@ -1,0 +1,414 @@
+{
+  "subject": "Toán 12",
+  "subject_id": 3,
+  "lessons": [
+    {
+      "id": "toan12-bai-4-khao-sat-va-ve-do-thi-ham-so",
+      "name": "Bài 4. Khảo sát và vẽ đồ thị hàm số",
+      "slug": "bai-4-khao-sat-va-ve-do-thi-ham-so",
+      "chapter": "Chương 1: Ứng dụng đạo hàm để khảo sát và vẽ đồ thị hàm số",
+      "chapter_id": "T12-1",
+      "lesson_id": 4,
+      "description": "Tổng hợp khảo sát toàn diện và vẽ đồ thị hàm bậc ba, bậc bốn trùng phương và hàm phân thức. Nhận dạng đồ thị qua hình vẽ và ứng dụng tìm số nghiệm phương trình.",
+      "duration_minutes": 120,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://via.placeholder.com/800x450/F59E0B/FFFFFF?text=Khảo+sát+đồ+thị",
+      "question_types": [
+        {
+          "id": "dang1",
+          "name": "Dạng 1: Khảo sát hàm bậc ba",
+          "slug": "khao-sat-bac-ba",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang2",
+          "name": "Dạng 2: Khảo sát hàm bậc bốn trùng phương",
+          "slug": "khao-sat-bac-bon",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang3",
+          "name": "Dạng 3: Khảo sát hàm phân thức bậc 1/bậc 1",
+          "slug": "khao-sat-phan-thuc-11",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dang4",
+          "name": "Dạng 4: Đọc đồ thị – số nghiệm phương trình",
+          "slug": "doc-do-thi-so-nghiem",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết",
+          "sections": [
+            {
+              "heading": "1. Sơ đồ khảo sát hàm số (5 bước)",
+              "content": "<ol><li><strong>TXĐ</strong>: Tìm tập xác định.</li><li><strong>Sự biến thiên</strong>: Tính $y'$, giải $y'=0$, xét dấu $y'$, tìm cực trị, tính giới hạn/tiệm cận, lập bảng biến thiên.</li><li><strong>Điểm đặc biệt</strong>: Giao $Oy$ (cho $x=0$), giao $Ox$ (giải $y=0$).</li><li><strong>Vẽ đồ thị</strong>: Vẽ tiệm cận (nét đứt), đánh dấu cực trị, vẽ đường cong trơn theo bảng biến thiên.</li><li><strong>Kết luận</strong>: Ghi nhận tính chất (đồng biến, nghịch biến, cực trị, tiệm cận).</li></ol><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:12px 16px;border-radius:6px;margin:12px 0'><strong>💡 Chú ý 1:</strong> Đồ thị phải <em>trơn, không gấp khúc</em>. Chiều đường cong phải khớp với dấu $y'$ trong bảng biến thiên.</div>"
+            },
+            {
+              "heading": "2. Hàm bậc ba: $y = ax^3 + bx^2 + cx + d$",
+              "content": "<div style='display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap'><div style='flex:1;min-width:200px'><h3>Tính chất</h3><ul><li><strong>TXĐ:</strong> $\\mathbb{R}$</li><li><strong>$y'$:</strong> $3ax^2+2bx+c$ (bậc 2)</li><li><strong>Cực trị:</strong> Nếu $\\Delta'>0$: có 2 cực trị; $\\Delta'\\leq0$: không có cực trị</li><li><strong>Giới hạn:</strong> $a>0$: $-\\infty\\to+\\infty$; $a<0$: $+\\infty\\to-\\infty$</li><li><strong>Đồ thị:</strong> Dạng chữ S, đối xứng qua <em>điểm uốn</em></li></ul></div><div style='flex:0 0 220px'><svg viewBox='-3 -5 6 10' width='200' height='160' style='border:1px solid #e5e7eb;border-radius:8px;background:#fafafa'><defs><marker id='ah4' markerWidth='6' markerHeight='6' refX='3' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#6b7280'/></marker></defs><line x1='-3' y1='0' x2='2.8' y2='0' stroke='#6b7280' stroke-width='0.08' marker-end='url(#ah4)'/><line x1='0' y1='4.8' x2='0' y2='-4.8' stroke='#6b7280' stroke-width='0.08' marker-end='url(#ah4)'/><path d='M-2.5,-4 C-1.5,-1 -0.8,2 0,1 C0.8,0 1.5,-2 2.5,4' stroke='#4F46E5' stroke-width='0.12' fill='none'/><circle cx='-1' cy='1.5' r='0.15' fill='#10b981'/><circle cx='1' cy='-1.5' r='0.15' fill='#ef4444'/><text x='-1.6' y='1.2' font-size='0.5' fill='#10b981'>CĐ</text><text x='1.1' y='-1.2' font-size='0.5' fill='#ef4444'>CT</text><text x='2.6' y='0.3' font-size='0.45' fill='#6b7280'>x</text><text x='0.1' y='-4.5' font-size='0.45' fill='#6b7280'>y</text></svg><p style='font-size:0.75em;text-align:center;color:#6b7280;margin-top:4px'>Hình 1: $a>0$, có 2 cực trị</p></div></div><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:10px 14px;border-radius:6px;margin:10px 0'><strong>⚠️ Chú ý 2 – Nhận dạng nhanh từ đồ thị:</strong><br>• Nhánh $x\\to+\\infty$ đi lên → $a>0$; đi xuống → $a<0$.<br>• Có 1 đỉnh CĐ + 1 đáy CT → hàm bậc 3 có 2 cực trị.<br>• Không có CĐ, CT → $\\Delta'\\leq0$, hàm đơn điệu.</div>"
+            },
+            {
+              "heading": "3. Hàm bậc bốn trùng phương: $y = ax^4 + bx^2 + c$",
+              "content": "<div style='display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap'><div style='flex:1;min-width:200px'><h3>Tính chất</h3><ul><li><strong>TXĐ:</strong> $\\mathbb{R}$; <strong>Hàm chẵn</strong> → đối xứng qua $Oy$</li><li><strong>$y'$:</strong> $4ax^3+2bx=2x(2ax^2+b)$</li><li><strong>Cực trị tại $x=0$</strong> luôn xảy ra</li><li>$ab<0$: có thêm $x=\\pm\\sqrt{-\\frac{b}{2a}}$ → 3 cực trị</li><li>$ab\\geq0$: chỉ 1 cực trị tại $x=0$</li></ul></div><div style='flex:0 0 220px'><svg viewBox='-3 -2 6 6' width='200' height='130' style='border:1px solid #e5e7eb;border-radius:8px;background:#fafafa'><defs><marker id='ah4b' markerWidth='6' markerHeight='6' refX='3' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#6b7280'/></marker></defs><line x1='-3' y1='0' x2='2.8' y2='0' stroke='#6b7280' stroke-width='0.08' marker-end='url(#ah4b)'/><line x1='0' y1='3.8' x2='0' y2='-1.8' stroke='#6b7280' stroke-width='0.08' marker-end='url(#ah4b)'/><path d='M-2.5,4 C-2,2 -1.2,-1 0,-1.5 C1.2,-1 2,2 2.5,4' stroke='#4F46E5' stroke-width='0.12' fill='none'/><circle cx='0' cy='-1.5' r='0.15' fill='#ef4444'/><text x='0.2' y='-1.2' font-size='0.5' fill='#ef4444'>CT(0;c)</text><text x='2.6' y='0.3' font-size='0.45' fill='#6b7280'>x</text><text x='0.1' y='-1.5' font-size='0.45' fill='#6b7280'>y</text></svg><p style='font-size:0.75em;text-align:center;color:#6b7280;margin-top:4px'>Hình 2: $a>0,ab>0$ – dạng chữ U</p></div></div><div style='background:#d4edda;border-left:4px solid #28a745;padding:10px 14px;border-radius:6px;margin:10px 0'><strong>📝 Chú ý 3:</strong> Khi $a>0, ab<0$ đồ thị có dạng chữ <strong>W</strong> (3 cực trị). Khi $a<0, ab<0$ có dạng chữ <strong>M</strong>.</div>"
+            },
+            {
+              "heading": "4. Hàm phân thức bậc 1/bậc 1: $y = \\dfrac{ax+b}{cx+d}$",
+              "content": "<div style='display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap'><div style='flex:1;min-width:200px'><h3>Tính chất nhanh</h3><ul><li><strong>TXĐ:</strong> $\\mathbb{R}\\setminus\\{-d/c\\}$</li><li><strong>$y'$:</strong> $\\dfrac{ad-bc}{(cx+d)^2}$ — không đổi dấu → không có cực trị</li><li><strong>TCĐ:</strong> $x=-d/c$; <strong>TCN:</strong> $y=a/c$</li><li><strong>Tâm đối xứng:</strong> $I(-d/c;\\ a/c)$</li><li>$ad-bc>0$: đồng biến; $ad-bc<0$: nghịch biến (trên mỗi nhánh)</li></ul></div><div style='flex:0 0 220px'><svg viewBox='-4 -4 8 8' width='200' height='160' style='border:1px solid #e5e7eb;border-radius:8px;background:#fafafa'><defs><marker id='ah4c' markerWidth='6' markerHeight='6' refX='3' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#6b7280'/></marker></defs><line x1='-4' y1='0' x2='3.8' y2='0' stroke='#6b7280' stroke-width='0.1' marker-end='url(#ah4c)'/><line x1='0' y1='3.8' x2='0' y2='-3.8' stroke='#6b7280' stroke-width='0.1' marker-end='url(#ah4c)'/><line x1='2' y1='-4' x2='2' y2='4' stroke='#ef4444' stroke-width='0.08' stroke-dasharray='0.2,0.2'/><line x1='-4' y1='1' x2='4' y2='1' stroke='#ef4444' stroke-width='0.08' stroke-dasharray='0.2,0.2'/><path d='M-3.5,0.4 C-2,0.7 0,0.9 1.3,3.5' stroke='#4F46E5' stroke-width='0.12' fill='none'/><path d='M2.7,-3.5 C3,-1 3.5,0.8 4,0.96' stroke='#4F46E5' stroke-width='0.12' fill='none'/><text x='2.1' y='3.5' font-size='0.45' fill='#ef4444'>x=2</text><text x='3.2' y='0.7' font-size='0.45' fill='#ef4444'>y=1</text><text x='3.6' y='0.3' font-size='0.45' fill='#6b7280'>x</text><text x='0.1' y='-3.5' font-size='0.45' fill='#6b7280'>y</text></svg><p style='font-size:0.75em;text-align:center;color:#6b7280;margin-top:4px'>Hình 3: $y=\\frac{ax+b}{cx+d}$, 2 nhánh hyperbola</p></div></div><div style='background:#fff3cd;border-left:4px solid #ffc107;padding:10px 14px;border-radius:6px;margin:10px 0'><strong>⚠️ Chú ý 4 – Nhận dạng từ đồ thị:</strong><br>• Có 2 nhánh, không cắt nhau → phân thức bậc 1/bậc 1.<br>• Tiệm cận đứng phải → $-d/c>0$ → $c,d$ trái dấu.<br>• Tiệm cận ngang trên $Ox$ → $a/c>0$ → $a,c$ cùng dấu.</div>"
+            },
+            {
+              "heading": "5. Ứng dụng: Số nghiệm phương trình $f(x) = m$",
+              "content": "<h3>Phương pháp</h3><p>Số nghiệm của $f(x)=m$ bằng <strong>số giao điểm</strong> của đồ thị $y=f(x)$ với đường thẳng $y=m$ (nằm ngang).</p><ul><li>Nếu $m$ nằm giữa cực tiểu và cực đại → 3 nghiệm (hàm bậc 3 có 2 cực trị).</li><li>Nếu $m=y_{CT}$ hoặc $m=y_{CĐ}$ → 2 nghiệm.</li><li>Nếu $m>y_{CĐ}$ hoặc $m<y_{CT}$ → 1 nghiệm.</li></ul><div style='background:#d1ecf1;border-left:4px solid #17a2b8;padding:10px 14px;border-radius:6px;margin:10px 0'><strong>💡 Chú ý 5:</strong> Đây là dạng bài thường gặp trong đề thi. Bước then chốt là tìm đúng $y_{CĐ}$ và $y_{CT}$ bằng cách thay $x$ vào hàm số.</div>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Khảo sát hàm bậc ba $y=ax^3+bx^2+cx+d$",
+            "method": "<ol><li>TXĐ: $\\mathbb{R}$.</li><li>$y'=3ax^2+2bx+c$; giải $y'=0$, lập bảng biến thiên.</li><li>Tìm $y_{CĐ}$, $y_{CT}$ bằng cách thay $x$ vào $y$.</li><li>Giao $Oy$: $(0;d)$; giao $Ox$: giải $y=0$.</li><li>Vẽ đồ thị dạng chữ S.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Khảo sát hàm số $y = x^3 - 3x + 2$.",
+                "solution": "<p><strong>1. TXĐ:</strong> $\\mathbb{R}$.</p><p><strong>2. Biến thiên:</strong> $y'=3x^2-3=3(x-1)(x+1)=0 \\Leftrightarrow x=\\pm1$.</p><p>$\\lim_{x\\to-\\infty}y=-\\infty$; $\\lim_{x\\to+\\infty}y=+\\infty$.</p><table style='border-collapse:collapse;font-size:0.9em;margin:8px 0'><tr><td style='border:1px solid #ccc;padding:4px 8px'>$x$</td><td style='border:1px solid #ccc;padding:4px 8px'>$-\\infty$</td><td style='border:1px solid #ccc;padding:4px 8px'>$-1$</td><td style='border:1px solid #ccc;padding:4px 8px'></td><td style='border:1px solid #ccc;padding:4px 8px'>$1$</td><td style='border:1px solid #ccc;padding:4px 8px'>$+\\infty$</td></tr><tr><td style='border:1px solid #ccc;padding:4px 8px'>$y'$</td><td style='border:1px solid #ccc;padding:4px 8px'>+</td><td style='border:1px solid #ccc;padding:4px 8px'>0</td><td style='border:1px solid #ccc;padding:4px 8px'>−</td><td style='border:1px solid #ccc;padding:4px 8px'>0</td><td style='border:1px solid #ccc;padding:4px 8px'>+</td></tr><tr><td style='border:1px solid #ccc;padding:4px 8px'>$y$</td><td style='border:1px solid #ccc;padding:4px 8px'>$-\\infty$↗</td><td style='border:1px solid #ccc;padding:4px 8px;background:#d4edda'><strong>4</strong></td><td style='border:1px solid #ccc;padding:4px 8px'>↘</td><td style='border:1px solid #ccc;padding:4px 8px;background:#fff3cd'><strong>0</strong></td><td style='border:1px solid #ccc;padding:4px 8px'>↗$+\\infty$</td></tr></table><p>CĐ tại $(-1;4)$; CT tại $(1;0)$.</p><p><strong>3. Điểm đặc biệt:</strong> Giao $Oy$: $(0;2)$. Giao $Ox$: $y=0 \\Rightarrow (x-1)^2(x+2)=0 \\Rightarrow x=1$ hoặc $x=-2$.</p><svg viewBox='-3 -1 6 6' width='220' height='165' style='display:block;margin:8px auto;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa'><defs><marker id='dang1ex1' markerWidth='6' markerHeight='6' refX='3' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#6b7280'/></marker></defs><line x1='-2.8' y1='0' x2='2.8' y2='0' stroke='#6b7280' stroke-width='0.08' marker-end='url(#dang1ex1)'/><line x1='0' y1='5.2' x2='0' y2='-0.8' stroke='#6b7280' stroke-width='0.08' marker-end='url(#dang1ex1)'/><path d='M-2.5,-0.8 C-2,1 -1.4,3.8 -1,4 C-0.6,4.2 0.4,1.5 1,0 C1.4,-0.5 2,0.8 2.5,5' stroke='#4F46E5' stroke-width='0.1' fill='none'/><circle cx='-1' cy='4' r='0.1' fill='#10b981'/><circle cx='1' cy='0' r='0.1' fill='#ef4444'/><circle cx='0' cy='2' r='0.08' fill='#6b7280'/><circle cx='-2' cy='0' r='0.08' fill='#6b7280'/><text x='-1.8' y='4.3' font-size='0.38' fill='#10b981'>(-1;4)</text><text x='1.1' y='-0.1' font-size='0.38' fill='#ef4444'>(1;0)</text><text x='0.1' y='2.1' font-size='0.38' fill='#6b7280'>(0;2)</text><text x='-2.4' y='-0.2' font-size='0.38' fill='#6b7280'>(-2;0)</text><text x='2.6' y='0.2' font-size='0.38' fill='#6b7280'>x</text><text x='0.1' y='-0.6' font-size='0.38' fill='#6b7280'>y</text></svg>"
+              },
+              {
+                "question": "<strong>Ví dụ 2:</strong> Khảo sát hàm số $y = -x^3 + 3x^2$.",
+                "solution": "<p><strong>1. TXĐ:</strong> $\\mathbb{R}$.</p><p><strong>2. Biến thiên:</strong> $y'=-3x^2+6x=-3x(x-2)=0 \\Leftrightarrow x=0$ hoặc $x=2$.</p><p>$\\lim_{x\\to-\\infty}y=+\\infty$; $\\lim_{x\\to+\\infty}y=-\\infty$ (vì $a=-1<0$).</p><table style='border-collapse:collapse;font-size:0.9em;margin:8px 0'><tr><td style='border:1px solid #ccc;padding:4px 8px'>$x$</td><td style='border:1px solid #ccc;padding:4px 8px'>$-\\infty$</td><td style='border:1px solid #ccc;padding:4px 8px'>$0$</td><td style='border:1px solid #ccc;padding:4px 8px'></td><td style='border:1px solid #ccc;padding:4px 8px'>$2$</td><td style='border:1px solid #ccc;padding:4px 8px'>$+\\infty$</td></tr><tr><td style='border:1px solid #ccc;padding:4px 8px'>$y'$</td><td style='border:1px solid #ccc;padding:4px 8px'>−</td><td style='border:1px solid #ccc;padding:4px 8px'>0</td><td style='border:1px solid #ccc;padding:4px 8px'>+</td><td style='border:1px solid #ccc;padding:4px 8px'>0</td><td style='border:1px solid #ccc;padding:4px 8px'>−</td></tr><tr><td style='border:1px solid #ccc;padding:4px 8px'>$y$</td><td style='border:1px solid #ccc;padding:4px 8px'>$+\\infty$↘</td><td style='border:1px solid #ccc;padding:4px 8px;background:#fff3cd'><strong>0</strong></td><td style='border:1px solid #ccc;padding:4px 8px'>↗</td><td style='border:1px solid #ccc;padding:4px 8px;background:#d4edda'><strong>4</strong></td><td style='border:1px solid #ccc;padding:4px 8px'>↘$-\\infty$</td></tr></table><p>CT tại $(0;0)$; CĐ tại $(2;4)$. Giao $Ox$: $x=0$ hoặc $x=3$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Khảo sát hàm bậc bốn trùng phương $y=ax^4+bx^2+c$",
+            "method": "<ol><li>TXĐ: $\\mathbb{R}$; hàm chẵn → xét $x\\geq0$ rồi đối xứng.</li><li>$y'=4ax^3+2bx=2x(2ax^2+b)$.</li><li>Xét dấu tích $ab$: $ab<0$ → 3 cực trị; $ab\\geq0$ → 1 cực trị.</li><li>Vẽ đồ thị chữ U (nếu $a>0$) hoặc chữ M, W tương ứng.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Khảo sát hàm số $y = x^4 - 2x^2 + 1$.",
+                "solution": "<p><strong>1. TXĐ:</strong> $\\mathbb{R}$; hàm chẵn, đối xứng $Oy$.</p><p><strong>2. Biến thiên:</strong> $y'=4x^3-4x=4x(x^2-1)=4x(x-1)(x+1)=0 \\Leftrightarrow x\\in\\{-1;0;1\\}$.</p><p>$ab=(1)(-2)=-2<0$ → có 3 cực trị. $a=1>0$ → $\\lim_{x\\to\\pm\\infty}y=+\\infty$.</p><p>$y(-1)=0$ (CT); $y(0)=1$ (CĐ); $y(1)=0$ (CT). Đồ thị dạng chữ W.</p><svg viewBox='-3 -0.5 6 4' width='220' height='130' style='display:block;margin:8px auto;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa'><defs><marker id='dang2ex1' markerWidth='6' markerHeight='6' refX='3' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#6b7280'/></marker></defs><line x1='-2.8' y1='0' x2='2.8' y2='0' stroke='#6b7280' stroke-width='0.08' marker-end='url(#dang2ex1)'/><line x1='0' y1='3.8' x2='0' y2='-0.3' stroke='#6b7280' stroke-width='0.08' marker-end='url(#dang2ex1)'/><path d='M-2.5,3.5 C-2,1 -1.3,-0.1 -1,0 C-0.7,0.1 -0.3,0.9 0,1 C0.3,0.9 0.7,0.1 1,0 C1.3,-0.1 2,1 2.5,3.5' stroke='#4F46E5' stroke-width='0.1' fill='none'/><circle cx='-1' cy='0' r='0.1' fill='#ef4444'/><circle cx='1' cy='0' r='0.1' fill='#ef4444'/><circle cx='0' cy='1' r='0.1' fill='#10b981'/><text x='-1.8' y='-0.1' font-size='0.38' fill='#ef4444'>(-1;0)</text><text x='0.7' y='-0.1' font-size='0.38' fill='#ef4444'>(1;0)</text><text x='0.1' y='0.85' font-size='0.38' fill='#10b981'>(0;1)</text><text x='2.6' y='0.2' font-size='0.38' fill='#6b7280'>x</text></svg>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Khảo sát hàm phân thức $y=\\dfrac{ax+b}{cx+d}$",
+            "method": "<ol><li>TXĐ: $\\mathbb{R}\\setminus\\{-d/c\\}$.</li><li>$y'=\\frac{ad-bc}{(cx+d)^2}$: không có nghiệm → không có cực trị.</li><li>TCĐ: $x=-d/c$; TCN: $y=a/c$; tâm đối xứng $I(-d/c;\\ a/c)$.</li><li>Giao trục tọa độ, vẽ 2 nhánh hyperbola.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Khảo sát hàm số $y = \\dfrac{2x+1}{x-1}$.",
+                "solution": "<p><strong>1. TXĐ:</strong> $\\mathbb{R}\\setminus\\{1\\}$.</p><p><strong>2. Biến thiên:</strong> $y'=\\frac{2\\cdot(-1)-1\\cdot1}{(x-1)^2}=\\frac{-3}{(x-1)^2}<0$, $\\forall x\\neq1$. Hàm nghịch biến trên mỗi nhánh.</p><p><strong>Tiệm cận:</strong> TCĐ: $x=1$; TCN: $y=2$. Tâm $I(1;2)$.</p><p><strong>3. Giao trục:</strong> $Oy$: $(0;-1)$; $Ox$: $-1/2;0$.</p><svg viewBox='-3 -3 6 7' width='200' height='170' style='display:block;margin:8px auto;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa'><defs><marker id='dang3ex1' markerWidth='6' markerHeight='6' refX='3' refY='3' orient='auto'><path d='M0,0 L6,3 L0,6 Z' fill='#6b7280'/></marker></defs><line x1='-2.8' y1='0' x2='2.8' y2='0' stroke='#6b7280' stroke-width='0.08' marker-end='url(#dang3ex1)'/><line x1='0' y1='3.8' x2='0' y2='-2.8' stroke='#6b7280' stroke-width='0.08' marker-end='url(#dang3ex1)'/><line x1='1' y1='-3' x2='1' y2='4' stroke='#ef4444' stroke-width='0.07' stroke-dasharray='0.2,0.15'/><line x1='-3' y1='2' x2='3' y2='2' stroke='#ef4444' stroke-width='0.07' stroke-dasharray='0.2,0.15'/><path d='M-2.5,1.8 C-1,1.9 0,1.8 0.5,0 C0.6,-0.5 0.7,-2 0.8,-2.8' stroke='#4F46E5' stroke-width='0.1' fill='none'/><path d='M1.2,4 C1.3,3 1.4,2.5 2,2.2 C2.5,2.05 2.8,2.02 3,2.01' stroke='#4F46E5' stroke-width='0.1' fill='none'/><circle cx='0' cy='-1' r='0.09' fill='#6b7280'/><circle cx='-0.5' cy='0' r='0.09' fill='#6b7280'/><text x='0.1' y='-0.85' font-size='0.35' fill='#6b7280'>(0;-1)</text><text x='1.05' y='3.6' font-size='0.35' fill='#ef4444'>x=1</text><text x='2.2' y='1.85' font-size='0.35' fill='#ef4444'>y=2</text></svg>"
+              }
+            ]
+          },
+          {
+            "id": "dang4",
+            "name": "Dạng 4: Đọc đồ thị – Tìm số nghiệm phương trình $f(x)=m$",
+            "method": "<p>Số nghiệm của $f(x)=m$ = số giao điểm của $y=f(x)$ và đường thẳng $y=m$.</p><ol><li>Xác định $y_{CĐ}$ và $y_{CT}$ từ bảng biến thiên hoặc đồ thị.</li><li>So sánh $m$ với $y_{CĐ}$, $y_{CT}$.</li><li>Kết luận số nghiệm.</li></ol>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Tìm $m$ để $f(x)=x^3-3x+1=m$ có 3 nghiệm phân biệt.",
+                "solution": "<p>$f'(x)=3x^2-3=0 \\Rightarrow x=\\pm1$. $f(-1)=3$ (CĐ); $f(1)=-1$ (CT).</p><p>Để 3 nghiệm: $y_{CT}<m<y_{CĐ}$, tức $-1<m<3$.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Hàm số $y = x^3 - 3x^2$ có bao nhiêu điểm cực trị?",
+            "options": [
+              "$2$",
+              "$1$",
+              "$0$",
+              "$3$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=3x^2-6x=3x(x-2)=0 \\Leftrightarrow x\\in\\{0;2\\}$. Cả 2 đều là cực trị → 2 điểm cực trị."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Đồ thị hàm số $y = x^4 - 2x^2 + 1$ có bao nhiêu điểm cực trị?",
+            "options": [
+              "$3$",
+              "$1$",
+              "$2$",
+              "$0$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=4x^3-4x=4x(x-1)(x+1)=0 \\Leftrightarrow x\\in\\{-1;0;1\\}$. Cả 3 đều là cực trị."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Đồ thị hàm số $y = \\dfrac{x+2}{x-3}$ có tiệm cận đứng là:",
+            "options": [
+              "$x=3$",
+              "$x=-2$",
+              "$x=0$",
+              "$x=1$"
+            ],
+            "correct": 0,
+            "explanation": "Mẫu $=0 \\Leftrightarrow x=3$; tử tại $x=3$: $5\\neq0$. TCĐ: $x=3$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Hàm số $y = -x^3+3x-1$ đồng biến trên khoảng nào?",
+            "options": [
+              "$(-1;\\ 1)$",
+              "$(-\\infty;\\ -1)$ và $(1;\\ +\\infty)$",
+              "$(-\\infty;\\ +\\infty)$",
+              "$(0;\\ 2)$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=-3x^2+3=-3(x^2-1)>0 \\Leftrightarrow -1<x<1$."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Đồ thị hàm số $y = \\dfrac{-x+3}{x+1}$ có tâm đối xứng là:",
+            "options": [
+              "$(-1;\\ -1)$",
+              "$(1;\\ 1)$",
+              "$(3;\\ 0)$",
+              "$(0;\\ 3)$"
+            ],
+            "correct": 0,
+            "explanation": "TCĐ: $x=-1$; TCN: $y=\\frac{-1}{1}=-1$. Tâm $I(-1;-1)$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Cho hàm số $y=x^3-3x^2+1$. Để phương trình $y=m$ có 3 nghiệm phân biệt, $m$ thuộc khoảng nào?",
+            "options": [
+              "$(-3;\\ 1)$",
+              "$m<-3$",
+              "$m>1$",
+              "$(-3;\\ 0)$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=3x^2-6x=0 \\Rightarrow x=0, x=2$. $y(0)=1$ (CĐ); $y(2)=-3$ (CT). 3 nghiệm $\\Leftrightarrow -3<m<1$."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Hàm số $y = ax^4 + bx^2 + c$ ($a>0$) có đồ thị dạng chữ W khi nào?",
+            "options": [
+              "$b<0$",
+              "$b>0$",
+              "$b=0$",
+              "$c<0$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=2x(2ax^2+b)$. Nghiệm ngoài $x=0$: $2ax^2+b=0 \\Leftrightarrow x^2=-b/(2a)>0 \\Leftrightarrow b<0$ (vì $a>0$). Khi $b<0$ có 3 cực trị → dạng chữ W."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Cho đồ thị hàm $y=\\dfrac{ax+b}{cx+d}$ có TCĐ $x=2>0$ và TCN $y=-1<0$. Kết luận nào đúng?",
+            "options": [
+              "$cd<0$ và $ac<0$",
+              "$cd>0$ và $ac>0$",
+              "$cd<0$ và $ac>0$",
+              "$ad>0$ và $bc>0$"
+            ],
+            "correct": 0,
+            "explanation": "TCĐ $x=-d/c=2>0 \\Rightarrow d/c<0 \\Rightarrow cd<0$. TCN $y=a/c=-1<0 \\Rightarrow a/c<0 \\Rightarrow ac<0$."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Hàm số nào sau đây có đồ thị đối xứng qua trục $Oy$?",
+            "options": [
+              "$y=x^4-2x^2+3$",
+              "$y=x^3-3x$",
+              "$y=\\dfrac{x+1}{x-1}$",
+              "$y=x^2+x$"
+            ],
+            "correct": 0,
+            "explanation": "$f(-x)=(-x)^4-2(-x)^2+3=x^4-2x^2+3=f(x)$. Đây là hàm chẵn → đối xứng $Oy$."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Tiếp tuyến của $y=\\dfrac{2x}{x-1}$ tại điểm có hoành độ $x_0=2$ có hệ số góc bằng:",
+            "options": [
+              "$-2$",
+              "$2$",
+              "$-1$",
+              "$4$"
+            ],
+            "correct": 0,
+            "explanation": "$y'=\\dfrac{-2}{(x-1)^2}$. $k=y'(2)=\\dfrac{-2}{1}=-2$."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Hàm số $y=\\dfrac{x^2+2x+2}{x+1}$ có cực đại tại $x$ bằng bao nhiêu?",
+            "options": [
+              "$-2$",
+              "$0$",
+              "$1$",
+              "$-1$"
+            ],
+            "correct": 0,
+            "explanation": "$y=x+1+\\dfrac{1}{x+1}$. $y'=1-\\dfrac{1}{(x+1)^2}=0 \\Rightarrow x=0$ hoặc $x=-2$. Lập BBT: CĐ tại $x=-2$ (y'$: +0-$); CT tại $x=0$."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Đồ thị hàm số $y=-x^3+3x^2$ đi qua điểm nào trong các điểm sau?",
+            "options": [
+              "$(3;\\ 0)$",
+              "$(1;\\ 3)$",
+              "$(2;\\ 0)$",
+              "$(-1;\\ 4)$"
+            ],
+            "correct": 0,
+            "explanation": "Thử $x=3$: $y=-27+27=0$ ✓. Kiểm tra các điểm còn lại đều không thỏa."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Hàm số $y = x^3 - 3x + 2$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số có cực đại tại $x=-1$, cực tiểu tại $x=1$",
+              "Giá trị cực đại là $4$, giá trị cực tiểu là $0$",
+              "Đồ thị đi qua điểm $(0;\\ 2)$",
+              "Đồ thị cắt trục $Ox$ tại $x=-2$ và $x=1$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$y'=3x^2-3=0 \\Rightarrow x=\\pm1$. CĐ tại $x=-1$: $y(-1)=4$ (A ✓, B ✓). $y(0)=2$ (C ✓). $y=0 \\Rightarrow (x-1)^2(x+2)=0 \\Rightarrow x=1$ hoặc $x=-2$ (D ✓)."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Hàm số $y = \\dfrac{2x+1}{x-1}$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số nghịch biến trên $(-\\infty;\\ 1)$ và $(1;\\ +\\infty)$",
+              "Tâm đối xứng của đồ thị là $I(1;\\ 2)$",
+              "Đồ thị đi qua $(0;\\ -1)$",
+              "Hàm số không có cực trị"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$y'=\\frac{-3}{(x-1)^2}<0$ → nghịch biến (A ✓). Tâm $I=(1;2)$ (B ✓). $y(0)=-1$ (C ✓). Không có $y'=0$ → không có cực trị (D ✓)."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Hàm số $y = x^4 - 2x^2 + 1$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số là hàm chẵn",
+              "Đồ thị có tâm đối xứng là gốc tọa độ $O$",
+              "Hàm số có 3 cực trị",
+              "Giá trị cực đại là $1$ tại $x=0$"
+            ],
+            "correct": [
+              0,
+              2,
+              3
+            ],
+            "explanation": "Hàm chẵn $f(-x)=f(x)$ → đối xứng trục $Oy$, không phải tâm $O$ (B ✗). Ba cực trị tại $x\\in\\{-1;0;1\\}$ (A ✓, C ✓). CĐ tại $x=0$: $y(0)=1$ (D ✓)."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Đồ thị hàm số $y = -x^3+3x^2$. Chọn tất cả các khẳng định đúng:",
+            "options": [
+              "Hàm số có cực tiểu tại $x=0$, cực đại tại $x=2$",
+              "Giá trị cực đại là $4$",
+              "Đồ thị cắt trục $Ox$ tại $x=0$ và $x=3$",
+              "$\\lim_{x\\to+\\infty}y=-\\infty$"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "$y'=-3x^2+6x=-3x(x-2)=0 \\Rightarrow x=0$ (CT, $y=0$) và $x=2$ (CĐ, $y=4$) (A ✓, B ✓). $y=0 \\Rightarrow x^2(-x+3)=0 \\Rightarrow x=0$ hoặc $x=3$ (C ✓). $a=-1<0 \\Rightarrow \\lim_{+\\infty}y=-\\infty$ (D ✓)."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Hàm số $y = x^3 - 3x + 1$ có cực đại $M$ và cực tiểu $m$. Tính $M + m$.",
+            "explanation": "$y'=3x^2-3=0 \\Rightarrow x=\\pm1$. CĐ tại $x=-1$: $y(-1)=(-1)^3-3(-1)+1=-1+3+1=3$. CT tại $x=1$: $y(1)=1-3+1=-1$. $M+m=3+(-1)=2$.",
+            "correct": "2"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Hàm số $y = x^3 - 3x^2 + 1$ có giá trị cực tiểu $m$. Tính $m$.",
+            "explanation": "$y'=3x^2-6x=3x(x-2)=0 \\Rightarrow x=0$ (CĐ) hoặc $x=2$ (CT). CT tại $x=2$: $y(2)=8-12+1=-3$.",
+            "correct": "-3"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Hàm số $y = -x^3 + 3x + 2$ có cực đại tại $x = a$. Tính $a$.",
+            "explanation": "$y'=-3x^2+3=-3(x^2-1)=0 \\Rightarrow x=\\pm1$. $y''=-6x$. $y''(-1)=6>0$? Sai, ta dùng BBT. $y'=+$ khi $|x|<1$: CĐ tại $x=-1$? Kiểm tra: $y'$ đổi từ $-$ sang $+$ tại $x=-1$? $y'(-2)=-3(4-1)<0$; $y'(0)=3>0$ → CĐ tại $x=-1$. Vậy $a=-1$.",
+            "correct": "-1"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Đồ thị hàm số $y = \\dfrac{3x-2}{x+1}$ có tâm đối xứng $I(a;\\ b)$. Tính $a + b$.",
+            "explanation": "TCĐ: $x+1=0 \\Rightarrow x=-1$ → $a=-1$. TCN: $y=3/1=3$ → $b=3$. $a+b=-1+3=2$.",
+            "correct": "2"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Hàm số $y = x^4 - 8x^2 + 7$ có giá trị cực đại $M$. Tính $M$.",
+            "explanation": "$y'=4x^3-16x=4x(x^2-4)=4x(x-2)(x+2)=0 \\Rightarrow x\\in\\{-2;0;2\\}$. $a=1>0, b=-8<0 \\Rightarrow ab<0$ → 3 cực trị. $y(0)=7$ (CĐ); $y(\\pm2)=16-32+7=-9$ (CT). $M=7$.",
+            "correct": "7"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Tìm số nguyên $m$ nhỏ nhất để phương trình $x^3-3x^2+1=m$ có đúng 1 nghiệm thực.",
+            "explanation": "$y'=3x^2-6x=0 \\Rightarrow x=0$ (CĐ, $y=1$) và $x=2$ (CT, $y=-3$). Để đúng 1 nghiệm: $m>y_{CĐ}=1$ hoặc $m<y_{CT}=-3$. Số nguyên $m$ nhỏ nhất mà $m>1$ là $m=2$.",
+            "correct": "2"
+          },
+          {
+            "id": "ex23",
+            "type": "essay",
+            "question": "Khảo sát sự biến thiên và vẽ đồ thị hàm số $y = x^3 - 3x^2 + 2$.",
+            "answer": "HS trình bày các bước khảo sát (TXĐ, Đạo hàm, Cực trị, Tiệm cận nếu có, Bảng biến thiên, Đồ thị).",
+            "explanation": "Làm theo đúng quy trình 3 bước khảo sát hàm số."
+          },
+          {
+            "id": "ex24",
+            "type": "essay",
+            "question": "Dựa vào đồ thị hàm số $y = x^4 - 2x^2$, biện luận theo $m$ số nghiệm của phương trình $x^4 - 2x^2 = m$.",
+            "answer": "$m < -1$: vô nghiệm; $m = -1$: 2 nghiệm; $-1 < m < 0$: 4 nghiệm; $m = 0$: 3 nghiệm; $m > 0$: 2 nghiệm.",
+            "explanation": "Sử dụng sự giao thoa giữa đồ thị và đường thẳng ngang $y=m$."
+          },
+          {
+            "id": "ex25",
+            "type": "essay",
+            "question": "Tìm tọa độ giao điểm của đồ thị hàm số $y = \\dfrac{2x+1}{x-1}$ và đường thẳng $y = x + 2$.",
+            "answer": "$(3; 5)$ và $(-1; 1)$.",
+            "explanation": "Giải phương trình hoành độ giao điểm."
+          }
+        ]
+      }
+    }
+  ]
+}

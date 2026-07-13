@@ -1,0 +1,300 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-2-noi-nang-dinh-luat-1-nhiet-dong",
+      "name": "Bài 2. Nội năng. Định luật I của nhiệt động lực học",
+      "slug": "bai-2-noi-nang-dinh-luat-1-nhiet-dong",
+      "chapter": "Chương 1. Vật lí nhiệt",
+      "chapter_id": "LY12-1",
+      "lesson_id": 2,
+      "description": "Nghiên cứu về nội năng, các cách làm thay đổi nội năng và định luật I nhiệt động lực học.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "nn-1",
+          "name": "Nội năng",
+          "slug": "noi-nang",
+          "difficulty": "easy"
+        },
+        {
+          "id": "nn-2",
+          "name": "Các cách làm thay đổi nội năng",
+          "slug": "cach-lam-thay-doi-noi-nang",
+          "difficulty": "medium"
+        },
+        {
+          "id": "nn-3",
+          "name": "Định luật I nhiệt động",
+          "slug": "dinh-luat-1-nhiet-dong",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Nội năng. Định luật I nhiệt động lực học",
+          "sections": [
+            {
+              "heading": "1. Nội năng",
+              "content": "<p><strong>Nội năng (U):</strong> là tổng động năng và thế năng tương tác giữa các phân tử, nguyên tử cấu tạo nên vật.</p><p><strong>Đặc điểm:</strong></p><ul><li>Nội năng phụ thuộc vào nhiệt độ và thể tích của vật</li><li>Đơn vị: Jun (J)</li><li>Ký hiệu: U</li></ul><p><strong>Đối với khí lý tưởng:</strong></p><p>Chỉ phụ thuộc vào nhiệt độ: U = f(T)</p><p>U = (3/2)NkT = (3/2)nRT với n là số mol</p>"
+            },
+            {
+              "heading": "2. Các cách làm thay đổi nội năng",
+              "content": "<p><strong>a) Thực hiện công:</strong></p><ul><li>Quạt quay → không khí nóng lên</li><li>Cọ xát vật → vật nóng lên</li><li>Nén khí → khí nóng lên</li></ul><p><b) Truyền nhiệt:</b></p><ul><li>Đặt vật nóng vào lửa → vật nóng lên</li><li>Cho nước đá vào nước → nước đá tan</li><li>Đặt cốc nước vào nước nóng</li></ul><p><strong>Kết luận:</strong> Có hai cách làm thay đổi nội năng: thực hiện công và truyền nhiệt.</p>"
+            },
+            {
+              "heading": "3. Nhiệt lượng",
+              "content": "<p><strong>Nhiệt lượng (Q):</strong> là phần nội năng mà vật nhận được hoặc mất đi trong quá trình truyền nhiệt.</p><p><strong>Công thức tính nhiệt lượng:</strong></p><p>$$Q = mc\\Delta t$$</p><p>Trong đó:</p><ul><li>Q: nhiệt lượng (J)</li><li>m: khối lượng (kg)</li><li>c: nhiệt dung riêng (J/kg.K)</li><li>Δt: độ biến thiên nhiệt độ (K hoặc °C)</li></ul><p><strong>Ý nghĩa c:</strong> Nhiệt dung riêng cho biết nhiệt lượng cần thiết để 1 kg chất tăng thêm 1°C.</p>"
+            },
+            {
+              "heading": "4. Định luật I nhiệt động lực học",
+              "content": "<p><strong>Phát biểu:</strong> Độ biến thiên nội năng của vật bằng tổng công và nhiệt lượng mà vật nhận được.</p><p><strong>Công thức:</strong></p><p>$$\\Delta U = A + Q$$</p><p>Quy ước dấu:</p><ul><li>Q > 0: vật nhận nhiệt lượng</li><li>Q < 0: vật tỏa nhiệt lượng</li><li>A > 0: vật nhận công</li><li>A < 0: vật thực hiện công</li></ul><p><strong>Ứng dụng:</strong> Tính toán các quá trình biến đổi năng lượng trong nhiệt động lực học.</p>"
+            },
+            {
+              "heading": "5. Phương trình cân bằng nhiệt",
+              "content": "<p>Khi hai vật trao đổi nhiệt với nhau:</p><p>$$Q_{toa} = Q_{thu}$$</p><p><strong>Nguyên lý:</strong> Nhiệt lượng tỏa ra của vật nóng bằng nhiệt lượng thu vào của vật lạnh.</p><p><strong>Lưu ý:</strong> Trong cân bằng nhiệt, nhiệt độ cuối cùng của hai vật bằng nhau.</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính nhiệt lượng",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Q = mcΔt</li><li>Δt = t₂ - t₁</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Đun nóng 2 kg nước từ 20°C đến 80°C. Tính nhiệt lượng cần thiết. Biết c_nước = 4200 J/kg.K",
+                "solution": "<p><strong>Giải:</strong></p><p>Δt = 80 - 20 = 60°C</p><p>Q = mcΔt = 2 × 4200 × 60 = 504000 J</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Cân bằng nhiệt",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Q_tỏa = Q_thu</li><li>m₁c₁(t₁ - t) = m₂c₂(t - t₂)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Thả 0,5 kg nước đá ở 0°C vào 2 kg nước ở 50°C. Tính nhiệt độ cân bằng.",
+                "solution": "<p><strong>Giải:</strong></p><p>Nước 50°C tỏa nhiệt, nước đá thu nhiệt để tan chảy</p><p>Giải phương trình cân bằng nhiệt để tìm t</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Dạng toán thực tế",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Đọc đề, xác định vật cần tính</li><li>Áp dụng công thức phù hợp</li><li>Chú ý các giai đoạn</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ thực tế:</strong> Một ấm điện có công suất 2000W đun 2kg nước từ 20°C đến sôi (100°C). Tính thời gian cần thiết. Bỏ qua hao phí.",
+                "solution": "<p><strong>Giải:</strong></p><p>Q = mcΔt = 2 × 4200 × 80 = 672000 J</p><p>t = Q/P = 672000/2000 = 336 s = 5,6 phút</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Nội năng của vật phụ thuộc vào:",
+            "options": [
+              "Chỉ nhiệt độ",
+              "Chỉ thể tích",
+              "Nhiệt độ và thể tích",
+              "Khối lượng"
+            ],
+            "correct": 2,
+            "explanation": "Nội năng phụ thuộc vào nhiệt độ và thể tích"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Các cách làm thay đổi nội năng:",
+            "options": [
+              "Thực hiện công",
+              "Truyền nhiệt",
+              "Cả A và B",
+              "Đốt cháy"
+            ],
+            "correct": 2,
+            "explanation": "Hai cách: thực hiện công và truyền nhiệt"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Định luật I nhiệt động lực học:",
+            "options": [
+              "ΔU = Q - A",
+              "ΔU = A + Q",
+              "ΔU = Q",
+              "ΔU = A"
+            ],
+            "correct": 1,
+            "explanation": "ΔU = A + Q theo định luật bảo toàn năng lượng"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Nhiệt lượng Q = mcΔt, trong đó c là:",
+            "options": [
+              "Nhiệt độ",
+              "Khối lượng",
+              "Nhiệt dung riêng",
+              "Độ biến thiên nhiệt"
+            ],
+            "correct": 2,
+            "explanation": "c là nhiệt dung riêng"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Khi vật tỏa nhiệt ra ngoài thì:",
+            "options": [
+              "Q > 0",
+              "Q < 0",
+              "Q = 0",
+              "Q không đổi"
+            ],
+            "correct": 1,
+            "explanation": "Q < 0 khi vật tỏa nhiệt"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Nhiệt dung riêng của nước là:",
+            "options": [
+              "4200 J/kg.K",
+              "2100 J/kg.K",
+              "8400 J/kg.K",
+              "1900 J/kg.K"
+            ],
+            "correct": 0,
+            "explanation": "c_nước = 4200 J/kg.K"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Trong cân bằng nhiệt:",
+            "options": [
+              "Q_tỏa = Q_thu",
+              "Q_tỏa > Q_thu",
+              "Q_tỏa < Q_thu",
+              "Q_tỏa + Q_thu = 0"
+            ],
+            "correct": 0,
+            "explanation": "Nhiệt tỏa ra bằng nhiệt thu vào"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Đơn vị của nội năng là:",
+            "options": [
+              "W",
+              "J",
+              "N",
+              "Pa"
+            ],
+            "correct": 1,
+            "explanation": "Nội năng có đơn vị là Jun (J)"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Khi nén khí đẳng nhiệt, nội năng:",
+            "options": [
+              "Tăng",
+              "Giảm",
+              "Không đổi",
+              "Bằng 0"
+            ],
+            "correct": 2,
+            "explanation": "Khí lý tưởng: U chỉ phụ thuộc T, nhiệt độ không đổi nên U không đổi"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Cọ xát vật trên mặt bàn là cách làm thay đổi nội năng bằng:",
+            "options": [
+              "Truyền nhiệt",
+              "Thực hiện công",
+              "Đốt cháy",
+              "Điện"
+            ],
+            "correct": 1,
+            "explanation": "Cọ xát là thực hiện công"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Đại lượng nào sau đây làm thay đổi nội năng:",
+            "options": [
+              "Thực hiện công",
+              "Truyền nhiệt",
+              "Đốt cháy nhiên liệu",
+              "Đặt vật trong điện trường"
+            ],
+            "correct": [0, 1],
+            "explanation": "Hai cách chính: thực hiện công và truyền nhiệt"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Trong định luật I nhiệt động lực học:",
+            "options": [
+              "ΔU là độ biến thiên nội năng",
+              "A là công vật nhận được",
+              "Q là nhiệt lượng vật tỏa",
+              "ΔU = A + Q"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Định luật I: ΔU = A + Q với quy ước dấu"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Yếu tố ảnh hưởng đến nhiệt lượng vật thu vào:",
+            "options": [
+              "Khối lượng",
+              "Nhiệt dung riêng",
+              "Độ biến thiên nhiệt độ",
+              "Thể tích"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Q = mcΔt phụ thuộc m, c, Δt"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính nhiệt lượng cần thiết để đun nóng 3kg nước từ 20°C đến 60°C. Cho c=4200J/kg.K",
+            "correct": "504000",
+            "explanation": "Q = mcΔt = 3 × 4200 × 40 = 504000 J"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Một ấm có công suất 1000W đun 1kg nước từ 25°C đến 100°C. Bỏ qua hao phí. Tính thời gian (s).",
+            "correct": "315",
+            "explanation": "Q = mcΔt = 1×4200×75 = 315000 J; t = Q/P = 315000/1000 = 315 s"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Tính nhiệt lượng tỏa ra khi hạ nhiệt độ 2kg đồng từ 80°C xuống 20°C. Cho c_đồng=380J/kg.K",
+            "correct": "45600",
+            "explanation": "Q = mcΔt = 2 × 380 × (80-20) = 45600 J"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Một quả cầu nhôm khối lượng 0,5kg được nung nóng từ 20°C lên 120°C. Tính Q (J). Biết c_nhôm=880J/kg.K",
+            "correct": "44000",
+            "explanation": "Q = 0,5 × 880 × 100 = 44000 J"
+          }
+        ]
+      }
+    }
+  ]
+}

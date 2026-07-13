@@ -1,0 +1,73 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [{
+    "id": "hoa12-bai-13-vat-lieu-polymer",
+    "name": "Bài 13. Vật liệu polymer",
+    "slug": "bai-13-vat-lieu-polymer",
+    "chapter": "Chương 4: Polymer",
+    "chapter_id": "H12-1004",
+    "lesson_id": 13,
+    "description": "Tìm hiểu về các loại vật liệu polymer: nhựa, sợi, cao su.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?q=80&w=2600&auto=format&fit=crop",
+    "question_types": [{"id": "vat-lieu-polymer-1", "name": "Vật liệu Polymer", "slug": "vat-lieu-polymer", "difficulty": "medium"}],
+    "content": {
+      "theory": {
+        "title": "Lý thuyết Vật liệu Polymer",
+        "sections": [{
+          "heading": "1. Nhựa (Plastic)",
+          "content": "<h3>a) Định nghĩa</h3><p><strong>Nhựa:</strong> Vật liệu polymer có thể đúc, ép thành các sản phẩm khác nhau.</p><h3>b) Phân loại</h3><p><strong>1. Nhựa nhiệt dẻo:</strong></p><ul><li>PE: Túi nilon, màng bọc</li><li>PVC: Ống nước, dây điện</li><li>PS: Hộp xốp, đồ dùng</li><li>PP: Chai nước, đồ gia dụng</li></ul><p><strong>2. Nhựa nhiệt rắn:</strong></p><ul><li>Bakelite: Công tắc điện</li><li>Nhựa phenolic: Keo dán gỗ</li></ul><h3>c) Ưu nhược điểm</h3><p><strong>Ưu điểm:</strong></p><ul><li>Nhẹ, bền, rẻ</li><li>Chống ăn mòn</li><li>Cách điện, cách nhiệt</li><li>Dễ gia công</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>Khó phân hủy (100-1000 năm)</li><li>Gây ô nhiễm môi trường</li><li>Đốt tạo khí độc</li></ul>"
+        }, {
+          "heading": "2. Sợi (Fiber)",
+          "content": "<h3>a) Sợi tổng hợp</h3><p><strong>1. Nylon:</strong></p><ul><li>Bền, dai, đàn hồi</li><li>Ứng dụng: Quần áo, dây cáp, lưới</li></ul><p><strong>2. Polyester:</strong></p><ul><li>Bền, không nhăn</li><li>Ứng dụng: Vải may, chăn màn</li></ul><h3>b) Sợi bán tổng hợp</h3><p><strong>1. Tơ visco (Rayon):</strong></p><ul><li>Từ cellulose</li><li>Mềm, mát, thấm hút tốt</li></ul><p><strong>2. Tơ axetat:</strong></p><ul><li>Từ cellulose acetate</li><li>Bóng, mịn</li></ul><h3>c) So sánh sợi</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Loại</th><th class='border border-gray-300 p-2'>Ưu điểm</th><th class='border border-gray-300 p-2'>Nhược điểm</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Nylon</td><td class='border border-gray-300 p-2'>Bền, dai</td><td class='border border-gray-300 p-2'>Không thấm hút</td></tr><tr><td class='border border-gray-300 p-2'>Polyester</td><td class='border border-gray-300 p-2'>Không nhăn</td><td class='border border-gray-300 p-2'>Không thoáng</td></tr><tr><td class='border border-gray-300 p-2'>Rayon</td><td class='border border-gray-300 p-2'>Mát, thấm hút</td><td class='border border-gray-300 p-2'>Dễ nhăn</td></tr></tbody></table>"
+        }, {
+          "heading": "3. Cao su (Rubber)",
+          "content": "<h3>a) Cao su thiên nhiên</h3><p><strong>Thành phần:</strong> Polyisoprene</p><p><strong>Tính chất:</strong></p><ul><li>Đàn hồi, dẻo</li><li>Không bền với nhiệt, dầu mỡ</li></ul><p><strong>Lưu hóa cao su:</strong></p><p>Cao su + S (140-160°C) → Cao su lưu hóa</p><ul><li>Tăng độ bền, đàn hồi</li><li>Chịu nhiệt, dầu mỡ tốt hơn</li></ul><h3>b) Cao su tổng hợp</h3><p><strong>1. Cao su buna:</strong></p><ul><li>Từ butadiene</li><li>Bền, rẻ</li></ul><p><strong>2. Cao su buna-S:</strong></p><ul><li>Từ butadiene + styrene</li><li>Bền hơn buna</li></ul><h3>c) Ứng dụng</h3><ul><li>Lốp xe</li><li>Dây curoa</li><li>Găng tay</li><li>Gioăng kín</li></ul>"
+        }]
+      },
+      "problemTypes": [{
+        "id": "dang1",
+        "name": "Dạng 1: Nhận biết và phân loại vật liệu polymer",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Dựa vào tính chất vật lý</li><li>Dựa vào ứng dụng</li><li>Dựa vào phản ứng hóa học</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Có 3 mẫu polymer: A (PE), B (PVC), C (Nylon). Chỉ dùng phương pháp vật lý, hãy phân biệt.", "solution": "<p><strong>Phương pháp:</strong></p><p><strong>1. Đốt cháy:</strong></p><ul><li>A (PE): Cháy sáng, mùi nến</li><li>B (PVC): Cháy khó, mùi hắc (HCl)</li><li>C (Nylon): Cháy chậm, mùi tóc cháy</li></ul><p><strong>2. Thả vào nước:</strong></p><ul><li>A (PE): Nổi (d < 1)</li><li>B (PVC): Chìm (d > 1)</li><li>C (Nylon): Chìm (d > 1)</li></ul><p><strong>Kết luận:</strong> A là PE (nổi), B và C chìm. Đốt B và C: B mùi hắc (PVC), C mùi tóc cháy (Nylon)</p>"}]
+      }, {
+        "id": "dang2",
+        "name": "Dạng 2: Tính toán lưu hóa cao su",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết PTHH lưu hóa</li><li>Tính mol S cần dùng</li><li>Tính khối lượng sản phẩm</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Lưu hóa 100 kg cao su thiên nhiên với 3% S (theo khối lượng). a) Tính khối lượng S. b) Tính khối lượng cao su lưu hóa. c) Giải thích tại sao cao su lưu hóa bền hơn.", "solution": "<p><strong>a) Tính S:</strong></p><p>m(S) = 100 × 3% = 3 kg</p><p><strong>b) Tính cao su lưu hóa:</strong></p><p>m(cao su lưu hóa) = 100 + 3 = 103 kg</p><p><strong>c) Giải thích:</strong></p><p>Lưu hóa tạo cầu nối -S-S- giữa các mạch polymer:</p><ul><li>Tăng độ bền cơ học</li><li>Tăng độ đàn hồi</li><li>Chịu nhiệt tốt hơn</li><li>Chống dầu mỡ</li></ul><p><strong>Đáp án:</strong> a) 3 kg; b) 103 kg</p>"}]
+      }, {
+        "id": "dang3",
+        "name": "Dạng 3: Bài toán thực tế - Ô nhiễm nhựa và giải pháp",
+        "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích tác hại nhựa</li><li>Đề xuất giải pháp</li><li>Tính toán hiệu quả</li></ul>",
+        "examples": [{"question": "<strong>Ví dụ:</strong> Việt Nam thải 1.8 triệu tấn nhựa/năm, chỉ 27% được tái chế. a) Tính lượng nhựa không tái chế. b) Nếu tăng tỉ lệ tái chế lên 50%, tính lượng nhựa giảm. c) Đề xuất 5 giải pháp giảm ô nhiễm nhựa.", "solution": "<p><strong>a) Nhựa không tái chế:</strong></p><p>m = 1.8 × (100% - 27%) = 1.8 × 73% = 1.314 triệu tấn</p><p><strong>b) Nếu tái chế 50%:</strong></p><p>m(không tái chế mới) = 1.8 × 50% = 0.9 triệu tấn</p><p>Giảm: 1.314 - 0.9 = 0.414 triệu tấn (31.5%)</p><p><strong>c) 5 giải pháp:</strong></p><p><strong>1. Giảm sử dụng nhựa dùng 1 lần:</strong></p><ul><li>Cấm túi nilon mỏng (<50 micron)</li><li>Thuế cao cho sản phẩm nhựa dùng 1 lần</li><li>Khuyến khích túi vải, hộp tái sử dụng</li><li>Mục tiêu: Giảm 30% nhựa dùng 1 lần</li></ul><p><strong>2. Tăng tỉ lệ tái chế:</strong></p><ul><li>Xây dựng 100 nhà máy tái chế mới</li><li>Phân loại rác tại nguồn (bắt buộc)</li><li>Trợ giá cho sản phẩm tái chế</li><li>Mục tiêu: Tái chế 50% vào 2030</li></ul><p><strong>3. Phát triển nhựa sinh học:</strong></p><ul><li>Nhựa từ tinh bột (PLA)</li><li>Phân hủy trong 6-12 tháng</li><li>Thay thế 20% nhựa truyền thống</li><li>Hỗ trợ nghiên cứu, sản xuất</li></ul><p><strong>4. Kinh tế tuần hoàn:</strong></p><ul><li>Thu hồi chai nhựa (đặt cọc)</li><li>Tái sử dụng bao bì</li><li>Sản xuất từ nguyên liệu tái chế</li><li>Giảm 40% nhựa nguyên sinh</li></ul><p><strong>5. Giáo dục và truyền thông:</strong></p><ul><li>Chiến dịch \"Nói không với nhựa\"</li><li>Giáo dục môi trường trong trường học</li><li>Tuyên truyền tác hại vi nhựa</li><li>Thay đổi hành vi tiêu dùng</li></ul><p><strong>Tính toán hiệu quả tổng hợp:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Giải pháp</th><th class='border border-gray-300 p-2'>Giảm (triệu tấn)</th><th class='border border-gray-300 p-2'>%</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Giảm dùng 1 lần</td><td class='border border-gray-300 p-2'>0.54</td><td class='border border-gray-300 p-2'>30%</td></tr><tr><td class='border border-gray-300 p-2'>Tăng tái chế</td><td class='border border-gray-300 p-2'>0.414</td><td class='border border-gray-300 p-2'>23%</td></tr><tr><td class='border border-gray-300 p-2'>Nhựa sinh học</td><td class='border border-gray-300 p-2'>0.36</td><td class='border border-gray-300 p-2'>20%</td></tr><tr><td class='border border-gray-300 p-2'>Kinh tế tuần hoàn</td><td class='border border-gray-300 p-2'>0.27</td><td class='border border-gray-300 p-2'>15%</td></tr><tr><td class='border border-gray-300 p-2'>Giáo dục</td><td class='border border-gray-300 p-2'>0.18</td><td class='border border-gray-300 p-2'>10%</td></tr><tr><td class='border border-gray-300 p-2'>Tổng</td><td class='border border-gray-300 p-2'>1.764</td><td class='border border-gray-300 p-2'>98%</td></tr></tbody></table><p><strong>Lộ trình thực hiện:</strong></p><ul><li>2025: Cấm túi nilon mỏng, tái chế 35%</li><li>2027: Nhựa sinh học 10%, tái chế 40%</li><li>2030: Tái chế 50%, nhựa sinh học 20%</li><li>2035: Giảm 98% ô nhiễm nhựa</li></ul><p><strong>Kết luận:</strong></p><p>Với 5 giải pháp đồng bộ, Việt Nam có thể giảm 98% ô nhiễm nhựa, tương đương 1.764 triệu tấn/năm. Cần quyết tâm chính trị, đầu tư công nghệ và thay đổi hành vi người dân.</p><p><strong>Đáp án:</strong> a) 1.314 triệu tấn; b) Giảm 0.414 triệu tấn; c) Đã đề xuất 5 giải pháp chi tiết</p>"}]
+      }],
+      "exercises": [
+        {"id": "ex1", "type": "mcq", "question": "Nhựa nhiệt dẻo là:", "options": ["PE", "Bakelite", "Cao su lưu hóa", "Tất cả"], "correct": 0, "explanation": "PE là nhựa nhiệt dẻo."},
+        {"id": "ex2", "type": "mcq", "question": "Sợi tổng hợp là:", "options": ["Bông", "Len", "Nylon", "Tơ tằm"], "correct": 2, "explanation": "Nylon là sợi tổng hợp."},
+        {"id": "ex3", "type": "mcq", "question": "Cao su thiên nhiên là:", "options": ["Polyethylene", "Polyisoprene", "PVC", "Nylon"], "correct": 1, "explanation": "Cao su thiên nhiên là polyisoprene."},
+        {"id": "ex4", "type": "mcq", "question": "Lưu hóa cao su dùng:", "options": ["O₂", "S", "Cl₂", "N₂"], "correct": 1, "explanation": "Lưu hóa cao su dùng S (lưu huỳnh)."},
+        {"id": "ex5", "type": "mcq", "question": "Tơ visco là sợi:", "options": ["Thiên nhiên", "Tổng hợp", "Bán tổng hợp", "Vô cơ"], "correct": 2, "explanation": "Tơ visco là sợi bán tổng hợp (từ cellulose)."},
+        {"id": "ex6", "type": "mcq", "question": "PVC ứng dụng làm:", "options": ["Túi nilon", "Ống nước", "Hộp xốp", "Lốp xe"], "correct": 1, "explanation": "PVC ứng dụng làm ống nước, dây điện."},
+        {"id": "ex7", "type": "mcq", "question": "Nhựa khó phân hủy trong:", "options": ["1 năm", "10 năm", "100-1000 năm", "Vô hạn"], "correct": 2, "explanation": "Nhựa khó phân hủy trong 100-1000 năm."},
+        {"id": "ex8", "type": "mcq", "question": "Polyester là:", "options": ["Nhựa", "Sợi", "Cao su", "Keo"], "correct": 1, "explanation": "Polyester là sợi tổng hợp."},
+        {"id": "ex9", "type": "mcq", "question": "Bakelite là nhựa:", "options": ["Nhiệt dẻo", "Nhiệt rắn", "Thiên nhiên", "Sinh học"], "correct": 1, "explanation": "Bakelite là nhựa nhiệt rắn."},
+        {"id": "ex10", "type": "mcq", "question": "Cao su buna từ:", "options": ["Isoprene", "Butadiene", "Ethylene", "Styrene"], "correct": 1, "explanation": "Cao su buna từ butadiene."},
+        {"id": "ex11", "type": "mcq", "question": "PE nổi trên nước vì:", "options": ["d < 1", "d > 1", "d = 1", "Không tan"], "correct": 0, "explanation": "PE nổi vì d < 1 g/cm³."},
+        {"id": "ex12", "type": "mcq", "question": "Nylon ứng dụng làm:", "options": ["Túi nilon", "Quần áo", "Ống nước", "Lốp xe"], "correct": 1, "explanation": "Nylon ứng dụng làm quần áo, dây cáp."},
+        {"id": "ex13", "type": "msq", "question": "Nhựa nhiệt dẻo:", "options": ["PE", "PVC", "Bakelite", "PS"], "correct": [0, 1, 3], "explanation": "PE, PVC, PS là nhựa nhiệt dẻo. Bakelite là nhựa nhiệt rắn."},
+        {"id": "ex14", "type": "msq", "question": "Sợi tổng hợp:", "options": ["Nylon", "Polyester", "Bông", "Len"], "correct": [0, 1], "explanation": "Nylon, Polyester là sợi tổng hợp. Bông, Len là sợi thiên nhiên."},
+        {"id": "ex15", "type": "msq", "question": "Ứng dụng cao su:", "options": ["Lốp xe", "Dây curoa", "Găng tay", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Cao su có nhiều ứng dụng."},
+        {"id": "ex16", "type": "msq", "question": "Nhược điểm nhựa:", "options": ["Khó phân hủy", "Ô nhiễm", "Đốt tạo khí độc", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Nhựa có nhiều nhược điểm về môi trường."},
+        {"id": "ex17", "type": "sa", "question": "Lưu hóa 100 kg cao su với 3% S. Tính khối lượng S (kg). Làm tròn đến hàng đơn vị.", "correct": "3", "explanation": "m(S) = 100 × 3% = 3 kg. Đáp án: 3"},
+        {"id": "ex18", "type": "sa", "question": "Lưu hóa 100 kg cao su với 3 kg S. Tính khối lượng cao su lưu hóa (kg). Làm tròn đến hàng đơn vị.", "correct": "103", "explanation": "m = 100 + 3 = 103 kg. Đáp án: 103"},
+        {"id": "ex19", "type": "sa", "question": "Việt Nam thải 1.8 triệu tấn nhựa, tái chế 27%. Tính lượng không tái chế (triệu tấn). Làm tròn đến 2 chữ số thập phân.", "correct": "1.31", "explanation": "m = 1.8 × 73% = 1.314 triệu tấn. Đáp án: 1.31"},
+        {"id": "ex20", "type": "sa", "question": "Nhựa phân hủy trong bao nhiêu năm (tối thiểu)? Làm tròn đến hàng trăm.", "correct": "100", "explanation": "Nhựa phân hủy trong 100-1000 năm. Đáp án: 100"},
+        {"id": "ex21", "type": "sa", "question": "PE có mật độ nhỏ hơn bao nhiêu (g/cm³)? Làm tròn đến hàng đơn vị.", "correct": "1", "explanation": "PE có d < 1 g/cm³. Đáp án: 1"},
+        {"id": "ex22", "type": "sa", "question": "Nylon-6,6 được tổng hợp từ bao nhiêu loại monomer? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "Nylon-6,6 từ 2 monomer. Đáp án: 2"}
+      ]
+    }
+  }]
+}

@@ -1,0 +1,171 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-4-2-muoi-cua-rung",
+      "name": "Muối của rừng",
+      "slug": "muoi-cua-rung",
+      "chapter": "Yếu tố kì ảo trong truyện kể",
+      "chapter_id": "V12-4",
+      "lesson_id": 2,
+      "author": "Nguyễn Huy Thiệp",
+      "description": "Phân tích yếu tố kì ảo trong tác phẩm hiện đại 'Muối của rừng' của Nguyễn Huy Thiệp. Hiểu cách tác giả dùng huyền ảo để diễn tả sâu sắc hơn thực tại.",
+      "duration_minutes": 50,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507842211343-583f20270319?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "magic2",
+          "name": "Phân tích yếu tố kì ảo",
+          "slug": "phan-tich-ki-ao",
+          "difficulty": "hard"
+        },
+        {
+          "id": "compare1",
+          "name": "So sánh tác phẩm",
+          "slug": "so-sanh-tac-pham",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Muối của rừng - Nguyễn Huy Thiệp",
+          "sections": [
+            {
+              "heading": "1. Tác giả Nguyễn Huy Thiệp",
+              "content": "<p><strong>Nguyễn Huy Thiệp</strong> (1955-2014) là một nhà văn hiện đại tiêu biểu của Việt Nam, được biết đến với phong cách viết độc đáo, sử dụng các yếu tố huyền ảo để diễn tả những sự thật xã hội phức tạp.</p><ul><li><strong>Thời kỳ hoạt động:</strong> Từ những năm 1980 đến khi mất năm 2014</li><li><strong>Tác phẩm nổi tiếng:</strong> 'Những tuổi trẻ', 'Chuyện Mạn Thường', 'Muối của rừng'</li><li><strong>Phong cách:</strong> Kỳ bí, tâm lý, sử dụng ẩn dụ, yếu tố siêu hiện thực</li></ul>"
+            },
+            {
+              "heading": "2. Yếu tố kì ảo trong tác phẩm hiện đại",
+              "content": "<h4>a) Khác biệt so với truyện cổ</h4><ul><li><strong>Trong truyện cổ:</strong> Yếu tố kì ảo thường là những điều kỳ lạ có thật, có sự đồng ý của độc giả</li><li><strong>Trong tác phẩm hiện đại:</strong> Yếu tố kì ảo thường là biểu tượng của những cảm xúc, trạng thái tâm lý, hoặc những vấn đề xã hội</li></ul><h4>b) Chức năng của yếu tố kì ảo trong văn học hiện đại</h4><ul><li><strong>Thể hiện nội tâm nhân vật:</strong> Những sự kiện kì lạ phản ánh trạng thái tâm lý, cảm xúc sâu kín của nhân vật</li><li><strong>Phản ánh sự thật xã hội:</strong> Những yếu tố huyền ảo giúp diễn tả những hiện thực phức tạp, không thể nêu trực tiếp</li><li><strong>Tạo cách nhìn mới:</strong> Yếu tố kì ảo giúp ta nhìn lại thế giới từ một góc độ khác</li></ul>"
+            },
+            {
+              "heading": "3. Nội dung và yếu tố kì ảo trong 'Muối của rừng'",
+              "content": "<h4>a) Sơ lược nội dung</h4><ul><li><strong>Bối cảnh:</strong> Rừng sâu, có những sự kiện lạ lẫm liên tiếp xảy ra</li><li><strong>Nhân vật:</strong> Những người bước vào rừng gặp phải những điều kỳ lạ</li><li><strong>Xung đột:</strong> Cuộc đối đầu giữa những điều hứa hẹn và thực tại, giữa tham vọng và hiện thực</li></ul><h4>b) Những yếu tố kì ảo chính</h4><ul><li><strong>Rừng có tiếng gọi:</strong> Rừng có khả năng gọi, dụ dỗ những con người bước vào</li><li><strong>Muối của rừng:</strong> Một chất thần kỳ, có khả năng thay đổi vận mệnh người sở hữu</li><li><strong>Sự biến hóa của nhân vật:</strong> Những nhân vật thay đổi, mất đi bản ngã trong rừng</li><li><strong>Thời gian biến hóa:</strong> Thời gian trong rừng có vẻ không theo quy luật bình thường</li></ul>"
+            },
+            {
+              "heading": "4. Phân tích ý nghĩa của yếu tố kì ảo",
+              "content": "<h4>a) Rừng và muối - Biểu tượng của cái gì?</h4><ul><li><strong>Rừng:</strong> Có thể là biểu tượng của cuộc sống phức tạp, nguy hiểm, đầy ẩn số</li><li><strong>Muối:</strong> Có thể là biểu tượng của sự giàu có, quyền lực, khát vọng con người</li><li><strong>Sự mất mát:</strong> Những nhân vật mất đi bản ngã trong quá trình tìm kiếm muối - biểu tượng của sự mất mát đạo đức khi đuổi theo quyền lực</li></ul><h4>b) Nhân vật và sự biến hóa</h4><ul><li><strong>Bước vào rừng:</strong> Bước vào những hoàn cảnh mới, những tham vọng mới</li><li><strong>Gặp muối:</strong> Gặp phải những cơ hội, những hy vọng</li><li><strong>Mất bản ngã:</strong> Động cơ, tham vọng thay đổi bản chất con người</li></ul><h4>c) Mối quan hệ giữa yếu tố kì ảo và thực tại</h4><ul><li><strong>Không rõ ranh giới:</strong> Trong tác phẩm, khó có thể phân biệt rõ giữa những gì là thực tế và những gì là ảo</li><li><strong>Nội tâm thành ngoại tâm:</strong> Những gì trong tâm hồn nhân vật dần trở thành những sự kiện thực tế</li></ul>"
+            },
+            {
+              "heading": "5. Kỹ thuật sử dụng yếu tố kì ảo",
+              "content": "<h4>a) Sự mơ hồ, không rõ ràng</h4><ul><li><strong>Tác giả không giải thích rõ:</strong> Những sự kiện kì lạ không được giải thích đầy đủ, để độc giả khỏ tự diễn giải</li><li><strong>Tác dụng:</strong> Tạo sự bí ẩn, gợi tưởng tượng của độc giả</li></ul><h4>b) Sự lặp lại và tăng cường</h4><ul><li><strong>Những yếu tố kì ảo xuất hiện liên tiếp:</strong> Từng bước làm rõ, tăng cường ảnh hưởng</li><li><strong>Tác dụng:</strong> Tạo sự chắc chắn về thế giới kỳ lạ này</li></ul><h4>c) Sự trộn lẫn giữa bình thường và bất thường</h4><ul><li><strong>Những sự kiện bình thường xen kẽ với sự kiện kỳ lạ:</strong> Làm cho yếu tố kì ảo trở nên gần gũi, tin cậy hơn</li><li><strong>Tác dụng:</strong> Giảm khoảng cách giữa thế giới bình thường và thế giới kỳ lạ</li></ul>"
+            },
+            {
+              "heading": "6. Ý nghĩa và bài học từ tác phẩm",
+              "content": "<ul><li><strong>Về tham vọng con người:</strong> Tác phẩm cảnh báo về những mục đích không cân xứng có thể dẫn đến mất mát nội tâm</li><li><strong>Về bản sắc con người:</strong> Bản sắc con người là điều dễ bị thay đổi khi đặt trong hoàn cảnh mới</li><li><strong>Về việc diễn tả hiện thực:</strong> Yếu tố kì ảo giúp ta nhìn thấy những sự thật ẩn khuất trong thực tại</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex4-2-1",
+            "type": "mcq",
+            "question": "Yếu tố kì ảo trong tác phẩm hiện đại khác với truyện cổ ở điểm nào?",
+            "options": [
+              "Tác phẩm hiện đại không sử dụng yếu tố kì ảo",
+              "Trong truyện cổ, yếu tố kì ảo là sự kiện thực; trong hiện đại, là biểu tượng tâm lý",
+              "Truyện cổ có yếu tố kì ảo nhiều hơn",
+              "Không có khác biệt"
+            ],
+            "correct": 1,
+            "explanation": "Truyện cổ dùng yếu tố kì ảo để tạo kỳ lạ; tác phẩm hiện đại dùng để biểu tượng các trạng thái tâm lý, vấn đề xã hội sâu sắc."
+          },
+          {
+            "id": "ex4-2-2",
+            "type": "mcq",
+            "question": "'Muối của rừng' có thể được coi là tác phẩm gì?",
+            "options": [
+              "Truyện cũi điểm đơn thuần",
+              "Tác phẩm hiện đại sử dụng yếu tố kì ảo như biểu tượng",
+              "Tiểu thuyết lịch sử",
+              "Tranh luận triết học"
+            ],
+            "correct": 1,
+            "explanation": "Nguyễn Huy Thiệp sử dụng yếu tố siêu hiện thực (yếu tố kì ảo) để thể hiện những vấn đề tâm lý, tham vọng, sự thay đổi con người."
+          },
+          {
+            "id": "ex4-2-3",
+            "type": "mcq",
+            "question": "Rừng trong tác phẩm 'Muối của rừng' biểu tượng cho cái gì?",
+            "options": [
+              "Một nơi an toàn, yên tĩnh",
+              "Cuộc sống phức tạp, nguy hiểm, đầy ẩn số và tham vọng",
+              "Chỉ là một cảnh vật tự nhiên",
+              "Một địa điểm lịch sử quan trọng"
+            ],
+            "correct": 1,
+            "explanation": "Rừng là biểu tượng của cuộc sống phức tạp, đầy các tham vọng và nguy hiểm ẩn giấu, nơi con người có thể mất đi bản ngã."
+          },
+          {
+            "id": "ex4-2-4",
+            "type": "mcq",
+            "question": "Tác giả Nguyễn Huy Thiệp là viết trong thời kỳ nào?",
+            "options": [
+              "Thế kỷ 17-18",
+              "Từ những năm 1980 đến 2014",
+              "Thế kỷ 19 đầu",
+              "Thế kỷ 20 sớm"
+            ],
+            "correct": 1,
+            "explanation": "Nguyễn Huy Thiệp (1955-2014) là nhà văn hiện đại, hoạt động từ những năm 1980 đến khi mất năm 2014."
+          },
+          {
+            "id": "ex4-2-5",
+            "type": "mcq",
+            "question": "Sự thay đổi nhân vật trong 'Muối của rừng' phản ánh điều gì?",
+            "options": [
+              "Sự phát triển bình thường của con người",
+              "Cách tham vọng, động cơ thay đổi bản chất con người khi đuổi theo quyền lực, giàu có",
+              "Sự trưởng thành qua năm tháng",
+              "Tác dụng của thiên nhiên lên con người"
+            ],
+            "correct": 1,
+            "explanation": "Nhân vật mất đi bản ngã khi đuổi theo muối (biểu tượng quyền lực, giàu có), phản ánh cách tham vọng quái trở có thể thay đổi con người."
+          },
+          {
+            "id": "ex4-2-6",
+            "type": "mcq",
+            "question": "Kỹ thuật nào Nguyễn Huy Thiệp sử dụng để tạo sự bí ẩn?",
+            "options": [
+              "Giải thích rõ ràng mọi sự kiện kì lạ",
+              "Để mơ hồ, không giải thích rõ các sự kiện kì lạ",
+              "Chỉ viết về sự kiện bình thường",
+              "Tránh sử dụng yếu tố kì ảo"
+            ],
+            "correct": 1,
+            "explanation": "Tác giả không giải thích đầy đủ các sự kiện kì lạ, để độc giả tự diễn giải, tạo sự bí ẩn và gợi tưởng tượng."
+          },
+          {
+            "id": "ex4-2-7",
+            "type": "mcq",
+            "question": "Mối quan hệ giữa yếu tố kì ảo và thực tại trong 'Muối của rừng' như thế nào?",
+            "options": [
+              "Rõ ràng, dễ phân biệt",
+              "Không rõ ranh giới, khó phân biệt giữa thực và ảo",
+              "Hoàn toàn tách biệt",
+              "Chỉ có thực tại, không có yếu tố kì ảo"
+            ],
+            "correct": 1,
+            "explanation": "Trong tác phẩm, ranh giới giữa thực tế và ảo không rõ ràng, nội tâm nhân vật dần trở thành sự kiện thực tế."
+          },
+          {
+            "id": "ex4-2-8",
+            "type": "mcq",
+            "question": "Bài học chính từ 'Muối của rừng' là gì?",
+            "options": [
+              "Nên tìm kiếm muối trong rừng",
+              "Tham vọng không cân xứng có thể dẫn đến mất mát nội tâm và bản sắc",
+              "Rừng là nơi nguy hiểm cần tránh",
+              "Không có bài học gì"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm cảnh báo về những tham vọng quá mức có thể khiến con người mất đi bản sắc và nội tâm của mình."
+          }
+        ]
+      }
+    }
+  ]
+}

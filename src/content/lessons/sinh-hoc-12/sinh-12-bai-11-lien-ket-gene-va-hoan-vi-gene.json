@@ -1,0 +1,184 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-11",
+      "name": "Bài 11. Liên kết gene và hoán vị gene",
+      "slug": "lien-ket-gene-va-hoan-vi-gene",
+      "chapter": "Chương 2. Di truyền nhiễm sắc thể",
+      "chapter_id": "S12-2",
+      "lesson_id": 11,
+      "description": "Tìm hiểu về liên kết gene và hoán vị gene.",
+      "duration_minutes": 45,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Liên kết gene và hoán vị gene",
+          "sections": [
+            {
+              "heading": "1. Liên kết gene",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Liên kết gene:</strong> Các gene cùng nằm trên một NST và di truyền cùng nhau.</li><li>Các gene liên kết không phân li độc lập.</li></ul><h4>b) Thí nghiệm của Morgan</h4><ul><li>Lai ruồi giấm: Thân xám, cánh dài (B+ V+) × Thân đen, cánh cụt (b v)</li><li>F1: 100% B+ V+ (liên kết)</li><li>F2: Tỷ lệ 3:1 thay vì 9:3:3:1 → Xác nhận liên kết gene</li></ul><h4>c) Đặc điểm</h4><ul><li>Các gene cùng NST di truyền cùng nhau.</li><li>Số nhóm liên kết = số NST trong bộ đơn bội (n).</li><li>Khoảng cách càng lớn → tần số hoán vị càng cao.</li></ul>"
+            },
+            {
+              "heading": "2. Hoán vị gene",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Hoán vị gene:</strong> Trao đổi đoạn giữa các NST tương đồng trong giảm phân.</li><li>Tạo ra tổ hợp gen mới → nguồn biến dị di truyền.</li></ul><h4>b) Cơ chế</h4><ul><li>Xảy ra trong kỳ đầu giảm phân I (chiasmata).</li><li>Các NST tương đồng bắt cặp và trao đổi đoạn.</li><li>Hoán vị tạo giao tử tái tổ hợp.</li></ul><h4>c) Tần số hoán vị</h4><ul><li>Khoảng cách gene (map unit) = % giao tử hoán vị.</li><li>1% hoán vị = 1 centiMorgan (cM).</li><li>Gene cách xa 50 cM → hoán vị ngẫu nhiên (50%).</li></ul>"
+            },
+            {
+              "heading": "3. Bản đồ di truyền",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Bản đồ di truyền (bản đồ gen):</strong> Sơ đồ vị trí các gene trên NST.</li><li>Thể hiện khoảng cách tương đối giữa các gene.</li></ul><h4>b) Cách lập bản đồ</h4><ul><li>Dựa vào tần số hoán vị giữa các cặp gene.</li><li>Gene càng gần → tần số hoán vị càng thấp.</li><li>Đơn vị bản đồ = centiMorgan (cM).</li></ul><h4>c) Ý nghĩa</h4><ul><li>Xác định vị trí gene trên NST.</li><li>Dự đoán tổ hợp gene ở thế hệ sau.</li><li>Cơ sở cho việc chọn tạo giống.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Liên kết gene là hiện tượng gì?",
+            "options": [
+              "Gene nằm trên các NST khác nhau",
+              "Gene cùng nằm trên một NST di truyền cùng nhau",
+              "Gene hoán vị vị trí",
+              "Gene tương tác với nhau"
+            ],
+            "correct": 1,
+            "explanation": "Liên kết gene là hiện tượng các gene cùng nằm trên một NST và di truyền cùng nhau."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Hoán vị gene xảy ra ở kỳ nào của giảm phân?",
+            "options": [
+              "Kỳ đầu I",
+              "Kỳ giữa I",
+              "Kỳ đầu II",
+              "Kỳ giữa II"
+            ],
+            "correct": 0,
+            "explanation": "Hoán vị gene xảy ra trong kỳ đầu giảm phân I, tại vị trí chiasmata."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Tần số hoán vị phản ánh điều gì?",
+            "options": [
+              "Số NST",
+              "Khoảng cách giữa các gene",
+              "Số allele",
+              "Tỷ lệ đột biến"
+            ],
+            "correct": 1,
+            "explanation": "Tần số hoán vị phản ánh khoảng cách giữa các gene trên NST."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "1 centiMorgan bằng bao nhiêu phần trăm hoán vị?",
+            "options": [
+              "0.1%",
+              "1%",
+              "10%",
+              "50%"
+            ],
+            "correct": 1,
+            "explanation": "1 centiMorgan (cM) = 1% tần số hoán vị gene."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Bản đồ di truyền thể hiện gì?",
+            "options": [
+              "Cấu trúc DNA",
+              "Vị trí các gene trên NST",
+              "Các phản ứng sinh hóa",
+              "Quá trình tiến hóa"
+            ],
+            "correct": 1,
+            "explanation": "Bản đồ di truyền thể hiện vị trí tương đối của các gene trên NST."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các đặc điểm của liên kết gene:",
+            "options": [
+              "Gene cùng nằm trên một NST",
+              "Di truyền cùng nhau",
+              "Tạo tổ hợp mới",
+              "Tần số hoán vị cao"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "A ✓: Các gene liên kết cùng NST. B ✓: Di truyền cùng nhau. C ✗: Tạo tổ hợp mới là do hoán vị. D ✗: Liên kết có tần số hoán vị thấp."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các yếu tố ảnh hưởng đến tần số hoán vị:",
+            "options": [
+              "Khoảng cách giữa các gene",
+              "Vị trí trên NST",
+              "Nhiệt độ môi trường",
+              "Tuổi của cá thể"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "A ✓: Gene càng xa tần số hoán vị càng cao. B ✓: Vị trí ảnh hưởng đến khả năng trao đổi. C,D ✗: Không ảnh hưởng đáng kể."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Hai gene A và B cách nhau 20 cM. Tính tỷ lệ % giao tử hoán vị. Nhập số 2 chữ số. (Ví dụ: 20)",
+            "correct": "20",
+            "explanation": "1 cM = 1% hoán vị. Khoảng cách 20 cM = 20% giao tử hoán vị."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Hai gene cách nhau 10 cM. Trong 1000 giao tử, có bao nhiêu giao tử hoán vị? Nhập số 3 chữ số. (Ví dụ: 100)",
+            "correct": "100",
+            "explanation": "10 cM = 10% hoán vị. Số giao tử hoán vị = 1000 × 10% = 100."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính tần số hoán vị và khoảng cách gene",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Tần số hoán vị = (Số giao tử hoán vị / Tổng giao tử) × 100%.</li><li>Khoảng cách gene (cM) = % giao tử hoán vị.</li><li>1% = 1 cM.</li></ol>",
+            "examples": [
+              {
+                "question": "Trong 2000 giao tử, có 200 giao tử hoán vị. Tính khoảng cách gene?",
+                "solution": "<p><strong>Giải:</strong></p><p>Tần số hoán vị = 200/2000 = 10%</p><p>Khoảng cách = 10 cM</p>"
+              },
+              {
+                "question": "Hai gene cách nhau 15 cM. Tính % giao tử tái tổ hợp?",
+                "solution": "<p><strong>Giải:</strong></p><p>15 cM = 15% hoán vị</p><p>% giao tử tái tổ hợp = 15%</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định kiểu gen và tỷ lệ giao tử",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Liên kết hoàn toàn: Chỉ tạo 2 loại giao tử (parentals).</li><li>Hoán vị không hoàn toàn: Tạo 4 loại giao tử.</li><li>Tỷ lệ giao tử tái tổ hợp = tần số hoán vị / 2.</li></ol>",
+            "examples": [
+              {
+                "question": "Cá thể Aa Bb liên kết hoàn toàn (AB/ab). Tính tỷ lệ giao tử?",
+                "solution": "<p><strong>Giải:</strong></p><p>Liên kết hoàn toàn: Chỉ tạo 2 loại giao tử</p><p>AB = 50%, ab = 50%</p>"
+              },
+              {
+                "question": "Cá thể Aa Bb cách nhau 20 cM (AB/ab). Tính % giao tử Ab?",
+                "solution": "<p><strong>Giải:</strong></p><p>Hoán vị 20% → 10% Ab + 10% aB</p><p>% giao tử Ab = 10%</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

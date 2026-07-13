@@ -1,0 +1,41 @@
+{
+  "subject": "Lịch Sử 12",
+  "subject_id": 7,
+  "lessons": [{
+    "id": "su12-bai-9",
+    "name": "Cuộc đấu tranh bảo vệ tổ quốc từ 1975 đến nay",
+    "slug": "cuoc-dau-tranh-bao-ve-to-quoc-tu-1975-den-nay",
+    "chapter": "Chủ đề 3: Cách mạng tháng tám, chiến tranh giải phóng dân tộc",
+    "chapter_id": "su12",
+    "lesson_id": 9,
+    "description": "Các hoạt động bảo vệ chủ quyền, lãnh thổ Việt Nam sau 1975 đến thời đại.",
+    "duration_minutes": 45,
+    "difficulty_level": "medium",
+    "is_published": true,
+    "thumbnail_url": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=2574&auto=format&fit=crop",
+    "content": {
+      "theory": {
+        "title": "Cuộc đấu tranh bảo vệ tổ quốc từ 1975 đến nay",
+        "sections": [
+          { "heading": "1. Bối cảnh sau 1975", "content": "Việt Nam thành lập Cộng hòa Xã hội chủ nghĩa (1976). Xây dựng đất nước sau chiến tranh. Vẫn đối mặt nhiều thách thức: Thế Giới Tây phương không công nhận; Biên giới chưa giải quyết. Nước ngoài can thiệp bộp bồi. Phải bảo vệ chủ quyền, lãnh thổ." },
+          { "heading": "2. Giai đoạn (1975-1979): Thơm Kampuchea, biên giới Tây", "content": "Sau 1975, Khmer Đỏ (Kampuchea) áp bức dân tộc Việt. Việt Nam và Liên Xô ký hiệp ước liên minh. Lần thoát Khmer Đỏ (1978-1979), Việt Nam vào Kampuchea. Giải phóng Phnom Penh (1979). Biên giới phía Tây ổn định." },
+          { "heading": "3. Giai đoạn năm 1979: Chiến tranh biên giới Bắc", "content": "Trung Quốc tấn công biên giới Bắc (17/2/1979 - 16/3/1979). Tấn công 4 khu vực: Lạng Sơn, Cao Bằng, Điện Biên Phủ, Hà tĩnh. Quân Việt Nam kháng cứ quyết liệt. Tổn thất: Trung Quốc hơn 25,000 người, Việt Nam 4,000-5,000 người. Rút khỏi Việt Nam, nhưng căng thẳng tiếp tục." },
+          { "heading": "4. Giai đoạn (1979 - giữa 1980): Quân Trung Quốc rời Việt Nam, nhưng tiếp tục gây căng thẳng", "content": "Sau khi rút quân (16/3), quân Trung Quốc lại tấn công (1981-1987) nhiều lần ở biên giới. Giao tranh nhỏ lẻ xảy ra liên tục. Khủng hoảng người tị nạn: Hàng triệu người Việt tìm cách rời đất nước. Tình hình kinh tế khó khăn nặng." },
+          { "heading": "5. Bảo vệ chủ quyền lãnh thổ hiện tại", "content": "Việt Nam bảo vệ quyền lợi ở Biển Đông, Quần đảo Hoàng Sa, Trường Sa. Xây dựng mực tính pháp lý: UNCLOS (1982), Convention on Law of the Sea. Phát triển hải quân, không quân để bảo vệ. Tăng cường ngoại giao, hợp tác khu vực. Tuân thủ luật pháp quốc tế không phổ biến bạo lực." }
+        ]
+      },
+      "exercises": [
+        { "id": "ex1", "type": "mcq", "question": "Thách thức chính sau 1975?", "options": ["Chiếm Sài Gòn", "Biên giới chưa giải quyết, bảo vệ chủ quyền", "Xây dựng quân đội", "Kinh tế phát triển"], "correct": 1, "explanation": "Phải bảo vệ chủ quyền lãnh thổ trước những can thiệp ngoại." },
+        { "id": "ex2", "type": "mcq", "question": "Kampuchea xảy ra năm?", "options": ["1975", "1976", "1978-1979", "1980"], "correct": 2, "explanation": "Việt Nam vào Kampuchea năm 1978-1979 để thơm Khmer Đỏ." },
+        { "id": "ex3", "type": "mcq", "question": "Ai tấn công biên giới Bắc?", "options": ["Pháp", "Mỹ", "Trung Quốc", "Liên Xô"], "correct": 2, "explanation": "Trung Quốc tấn công biên giới Bắc Việt (2/1979)." },
+        { "id": "ex4", "type": "mcq", "question": "Khi nào chiến tranh biên giới Bắc?", "options": ["1975", "1977", "Tháng 2-3/1979", "1980"], "correct": 2, "explanation": "Chiến tranh biên giới Bắc: 17/2-16/3/1979." },
+        { "id": "ex5", "type": "mcq", "question": "Tổn thất Trung Quốc?", "options": ["5,000 người", "10,000 người", "25,000 người", "50,000 người"], "correct": 2, "explanation": "Trung Quốc tổn thất hơn 25,000 người." },
+        { "id": "ex6", "type": "mcq", "question": "Tổn thất Việt Nam?", "options": ["1,000 người", "4-5,000 người", "15,000 người", "30,000 người"], "correct": 1, "explanation": "Việt Nam tổn thất khoảng 4-5,000 người." },
+        { "id": "ex7", "type": "mcq", "question": "Vấn đề tị nạn?", "options": ["Ít nhân viên", "Hàng triệu người rời đất nước", "Tuy luyến lại", "Không đáng kể"], "correct": 1, "explanation": "Hàng triệu người Việt tỵ nạn sau 1979." },
+        { "id": "ex8", "type": "mcq", "question": "Biển Đông bảo vệ?", "options": ["Không cần", "Hoàng Sa, Trường Sa", "Vịnh Bắc bộ", "Toàn bộ biển"], "correct": 1, "explanation": "Bảo vệ quyền lợi ở Hoàng Sa, Trường Sa, Biển Đông." },
+        { "id": "ex9", "type": "mcq", "question": "Luật pháp quốc tế?", "options": ["Không cần", "UNCLOS (1982)", "Liên Hiệp Quốc toàn bộ", "Pháp Luật Âu Châu"], "correct": 1, "explanation": "Áp dụng UNCLOS (1982) để bảo vệ quyền lợi biển." },
+        { "id": "ex10", "type": "mcq", "question": "Mục đích bảo vệ tổ quốc?", "options": ["Tấn công nước ngoài", "Duy trì chủ quyền lãnh thổ, hòa bình", "Mở rộng lãnh thổ", "Chiếm bộp bồi"], "correct": 1, "explanation": "Bảo vệ chủ quyền, lãnh thổ, duy trì hòa bình ổn định." }
+      ]
+    }
+  }]
+}

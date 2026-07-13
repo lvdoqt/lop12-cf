@@ -1,0 +1,162 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-4-3-thuc-hanh-tieng-viet",
+      "name": "Thực hành tiếng Việt: Nghệ thuật sử dụng điển cố trong tác phẩm văn học",
+      "slug": "thuc-hanh-tieng-viet-dien-co",
+      "chapter": "Yếu tố kì ảo trong truyện kể",
+      "chapter_id": "V12-4",
+      "lesson_id": 3,
+      "description": "Rèn luyện kỹ năng sử dụng điển cố trong tác phẩm văn học. Hiểu được cách điển cố tạo thêm chiều sâu, tinh tế cho tác phẩm.",
+      "duration_minutes": 50,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1516979187457-635ffe35ff15?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "vocab1",
+          "name": "Nhận biết điển cố",
+          "slug": "nhan-biet-dien-co",
+          "difficulty": "medium"
+        },
+        {
+          "id": "usage1",
+          "name": "Sử dụng điển cố",
+          "slug": "su-dung-dien-co",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Nghệ thuật sử dụng điển cố trong tác phẩm văn học",
+          "sections": [
+            {
+              "heading": "1. Điển cố là gì?",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Điển cố:</strong> Là những tham chiếu, những trích dẫn từ đất nước, lịch sử, truyền thuyết, tác phẩm văn học được sử dụng để làm phong phú, tinh tế ý tưởng của tác giả</li><li><strong>Đặc điểm:</strong><br/>- Mang tính dân tộc, văn hóa<br/>- Gợi lên những ý tưởng, cảm xúc liên quan<br/>- Tạo sự kết nối giữa tác phẩm và truyền thống<br/>- Giúp tác phẩm trở nên sâu sắc hơn</li></ul><h4>b) Loại điển cố</h4><ul><li><strong>Điển cố lịch sử:</strong> Tham chiếu từ những sự kiện, nhân vật lịch sử<br/>- Ví dụ: \"trở thành Lý Công Uẩn\" (từ vị vua cận lược nước Việt)</li><li><strong>Điển cố từ truyền thuyết, thần thoại:</strong> Tham chiếu từ các truyện cổ, truyền thuyết dân gian<br/>- Ví dụ: \"như gió qua đầu chim\", \"như một nàng Tiên Cô Gái\"</li><li><strong>Điển cố từ tác phẩm văn học:</strong> Trích dẫn, tham chiếu từ những tác phẩm nổi tiếng<br/>- Ví dụ: \"thơm dạo bếp lửa\", \"đông về thấm lạnh\"</li><li><strong>Điển cố từ khẩm ngôn, tục ngữ:</strong> Sử dụng các ca dao, tục ngữ<br/>- Ví dụ: \"già nái có tình\", \"con chim non tập bay\"</li></ul>"
+            },
+            {
+              "heading": "2. Tác dụng của điển cố",
+              "content": "<h4>a) Tác dụng thể hiện ý tưởng, giá trị</h4><ul><li><strong>Làm rõ ý tưởng:</strong> Điển cố giúp biểu đạt ý tưởng một cách tập trung, nhân đạo</li><li><strong>Thể hiện giá trị đạo đức:</strong> Những hình mẫu lạc quan, anh hùng từ lịch sử được gợi lại</li><li><strong>Tỏ lòng tôn trọng:</strong> Sử dụng điển cố là cách nêu lòng kính trọng đối với những điều lớn lao trước đây</li></ul><h4>b) Tác dụng thẩm mỹ</h4><ul><li><strong>Làm lغني có hình ảnh:</strong> Điển cố cung cấp những hình ảnh sống động từ quá khứ</li><li><strong>Tạo sự du động:</strong> Sự kết nối với quá khứ tạo ra chiều sâu thời gian</li><li><strong>Nâng cao vẻ đẹp ngôn từ:</strong> Cách sử dụng từ lựa chọn những điển cố hay làm ngôn từ trở nên thanh thoát, tinh tế</li></ul><h4>c) Tác dụng truyền thông, kết nối</h4><ul><li><strong>Tạo sự đồng cảm:</strong> Những độc giả am hiểu lịch sử sẽ nhanh chóng bắt được ý tác giả</li><li><strong>Gợi hồi ức:</strong> Những người đã quen với lịch sử, truyền thống sẽ cảm thấy quen thuộc</li><li><strong>Tạo sự kỳ vọng:</strong> Những bạn tinh tế sẽ tìm kiếm sâu hơn những ý tưởng ẩn khuất trong điển cố</li></ul>"
+            },
+            {
+              "heading": "3. Cách sử dụng điển cố hiệu quả",
+              "content": "<h4>a) Điều kiện để sử dụng điển cố hiệu quả</h4><ul><li><strong>Điển cố phải phù hợp với ngữ cảnh:</strong> Điển cố được sử dụng phải liên quan đến nội dung đang viết</li><li><strong>Điển cố phải được lựa chọn cẩn thận:</strong> Không nên lạm dụng quá nhiều điển cố<li><strong>Điển cố phải được hiểu rõ:</strong> Tác giả phải am hiểu rõ về ý nghĩa, bối cảnh của điển cố</li><li><strong>Điển cố phải phù hợp với độc giả:</strong> Chọn những điển cố mà độc giả có khả năng hiểu được</li></ul><h4>b) Cách trình bày điển cố</h4><ul><li><strong>Trực tiếp:</strong> Nêu rõ tên người, sự kiện, tác phẩm được tham chiếu</li><li><strong>Gián tiếp:</strong> Chỉ nêu hình ảnh, cảm xúc liên quan mà không nêu tên gọi trực tiếp</li><li><strong>Hỗn hợp:</strong> Kết hợp nêu tên và hình ảnh liên quan</li></ul><h4>c) Những lỗi thường gặp</h4><ul><li><strong>Lạm dụng điển cố:</strong> Quá nhiều điển cố làm cho bài viết trở nên khó hiểu, cô lập</li><li><strong>Sử dụng sai điển cố:</strong> Điển cố không phù hợp với ngữ cảnh hoặc bị nhầm lẫn</li><li><strong>Không giải thích:</strong> Tác giả không giải thích rõ điển cố, để độc giả bối rối</li></ul>"
+            },
+            {
+              "heading": "4. Ví dụ sử dụng điển cố trong các tác phẩm điển hình",
+              "content": "<ul><li><strong>Từ Trích Đức Vụ:</strong> \"Chớp mắt ghen với Từ Thiện\" (tham chiếu từ nhân vật Từ Thiên có lòng từ)</li><li><strong>Từ Tây Du Ký:</strong> \"Như Tôn Ngộ Không vũ trụ\", \"Như Trư Bát Giới ăn cơm\"</li><li><strong>Từ thơ Nguyễn Đữ:</strong> \"Thơm dạo bếp lửa\" (có thể tham chiếu từ những giai thoại về mụ mẹ)</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex4-3-1",
+            "type": "mcq",
+            "question": "Điển cố là gì?",
+            "options": [
+              "Những từ đặc biệt trong tiếng Việt",
+              "Những tham chiếu từ lịch sử, truyền thuyết, tác phẩm văn học",
+              "Những từ ngoại lai trong tiếng Việt",
+              "Những từ có từ gốc"
+            ],
+            "correct": 1,
+            "explanation": "Điển cố là những tham chiếu từ những nguồn như lịch sử, truyền thuyết, tác phẩm văn học được sử dụng để làm phong phú ý tưởng."
+          },
+          {
+            "id": "ex4-3-2",
+            "type": "mcq",
+            "question": "Tác dụng chính của điển cố là gì?",
+            "options": [
+              "Làm giảm giá trị thẩm mỹ",
+              "Làm rõ ý tưởng, tạo sự du động, nâng cao vẻ đẹp ngôn từ",
+              "Tạo sự nhàm chán cho độc giả",
+              "Giúp làm ngôn từ khó hiểu hơn"
+            ],
+            "correct": 1,
+            "explanation": "Điển cố giúp làm rõ ý tưởng, tạo chiều sâu thời gian, nâng cao vẻ đẹp, tính tinh tế của ngôn từ."
+          },
+          {
+            "id": "ex4-3-3",
+            "type": "mcq",
+            "question": "Trong câu 'Anh ấy trở thành một nhân vật Lý Công Uẩn của thời đại này', điển cố là gì?",
+            "options": [
+              "Điển cố từ truyền thuyết",
+              "Điển cố từ tác phẩm văn học",
+              "Điển cố từ lịch sử (vị vua cận lược nước Việt)",
+              "Điển cố từ tục ngữ"
+            ],
+            "correct": 2,
+            "explanation": "Lý Công Uẩn là một vị vua trong lịch sử Việt Nam, được tham chiếu để miêu tả nhân vật hiện tại."
+          },
+          {
+            "id": "ex4-3-4",
+            "type": "mcq",
+            "question": "Lỗi thường gặp khi sử dụng điển cố là gì?",
+            "options": [
+              "Sử dụng quá ít điển cố",
+              "Lạm dụng quá nhiều điển cố hoặc sử dụng sai điển cố",
+              "Chỉ sử dụng điển cố từ lịch sử",
+              "Không có lỗi khi sử dụng điển cố"
+            ],
+            "correct": 1,
+            "explanation": "Những lỗi thường gặp: lạm dụng quá nhiều điển cố, sử dụng sai điển cố, không giải thích điển cố khiến độc giả bối rối."
+          },
+          {
+            "id": "ex4-3-5",
+            "type": "mcq",
+            "question": "Để sử dụng điển cố hiệu quả, cần phải:",
+            "options": [
+              "Chỉ sử dụng các điển cố cổ xưa",
+              "Lạm dụng càng nhiều càng tốt",
+              "Chọn điển cố phù hợp ngữ cảnh, được hiểu rõ, phù hợp độc giả",
+              "Không cần quan tâm đến ý nghĩa của điển cố"
+            ],
+            "correct": 2,
+            "explanation": "Điều kiện sử dụng điển cố hiệu quả: phù hợp ngữ cảnh, được lựa chọn cẩn thận, tác giả hiểu rõ ý nghĩa, phù hợp với độc giả, không lạm dụng."
+          },
+          {
+            "id": "ex4-3-6",
+            "type": "mcq",
+            "question": "Điển cố từ tục ngữ, ca dao có đặc điểm gì?",
+            "options": [
+              "Chỉ dùng trong văn học cổ",
+              "Gần gũi, dễ hiểu, mang tính dân gian",
+              "Khó hiểu và ít được sử dụng",
+              "Chỉ dùng trong thơ"
+            ],
+            "correct": 1,
+            "explanation": "Điển cố từ tục ngữ, ca dao thường gần gũi, dễ hiểu vì xuất phát từ đời sống dân gian, dễ tạo sự đồng cảm với độc giả."
+          },
+          {
+            "id": "ex4-3-7",
+            "type": "mcq",
+            "question": "Cách trình bày điển cố nào là gián tiếp?",
+            "options": [
+              "Nêu rõ tên người, sự kiện được tham chiếu",
+              "Chỉ nêu hình ảnh, cảm xúc liên quan mà không nêu tên trực tiếp",
+              "Không sử dụng điển cố",
+              "Giải thích chi tiết nguồn gốc"
+            ],
+            "correct": 1,
+            "explanation": "Trình bày gián tiếp là khi chỉ gợi lên hình ảnh, cảm xúc liên quan đến điển cố mà không nêu tên gọi trực tiếp."
+          },
+          {
+            "id": "ex4-3-8",
+            "type": "mcq",
+            "question": "Tác dụng thẩm mỹ của điển cố là gì?",
+            "options": [
+              "Làm giảm giá trị nghệ thuật",
+              "Làm giàu hình ảnh, tạo sự du dương, nâng cao vẻ đẹp ngôn từ",
+              "Chỉ để khoe học thức",
+              "Không có tác dụng thẩm mỹ"
+            ],
+            "correct": 1,
+            "explanation": "Điển cố cung cấp hình ảnh sống động, tạo chiều sâu thời gian, làm ngôn từ trở nên thanh thoát và tinh tế hơn."
+          }
+        ]
+      }
+    }
+  ]
+}

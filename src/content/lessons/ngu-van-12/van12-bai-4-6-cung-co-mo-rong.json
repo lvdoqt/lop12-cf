@@ -1,0 +1,121 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-4-6-cung-co-mo-rong",
+      "name": "Củng cố mở rộng - Trang 123",
+      "slug": "cung-co-mo-rong-trang-123",
+      "chapter": "Yếu tố kì ảo trong truyện kể",
+      "chapter_id": "V12-4",
+      "lesson_id": 6,
+      "description": "Ôn tập, củng cố những kiến thức chính về yếu tố kì ảo trong truyện kể. Mở rộng hiểu biết thông qua các bài tập, phân tích so sánh.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1516979187457-635ffe35ff15?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "review2",
+          "name": "Ôn tập kiến thức",
+          "slug": "on-tap-kien-thuc",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Củng cố mở rộng - Yếu tố kì ảo trong truyện kể",
+          "sections": [
+            {
+              "heading": "1. Tóm tắt kiến thức trọng tâm",
+              "content": "<h4>a) Yếu tố kì ảo - Khái niệm chính</h4><ul><li><strong>Định nghĩa:</strong> Những sự kiện, nhân vật, hiện tượng vượt ra ngoài quy luật tự nhiên</li><li><strong>Các loại:</strong> Nhân vật siêu phàm, vật phẩm kỳ diệu, sự kiện vô lý, thời gian-không gian biến hóa</li><li><strong>Chức năng:</strong> Trong truyện cổ: tạo sự kỳ lạ; trong tác phẩm hiện đại: biểu tượng của nội tâm</li></ul><h4>b) Điển cố - Một cách sử dụng yếu tố kì ảo</h4><ul><li><strong>Định nghĩa:</strong> Tham chiếu từ lịch sử, truyền thuyết, tác phẩm khác</li><li><strong>Loại:</strong> Điển cố lịch sử, truyền thuyết, văn học, tục ngữ</li><li><strong>Tác dụng:</strong> Làm rõ ý tưởng, tạo sự du động, nâng cao vẻ đẹp ngôn từ</li></ul><h4>c) Vay mượn - Cải biến - Sáng tạo</h4><ul><li><strong>Định nghĩa:</strong> Vay mượn: lấy từ nguồn có sẵn; Cải biến: thay đổi; Sáng tạo: tạo ra cái mới</li><li><strong>Mối quan hệ:</strong> Vay mượn → Cải biến → Sáng tạo là một quá trình</li><li><strong>Ý nghĩa:</strong> Sáng tạo không có nghĩa không vay mượn, mà là cách vận dụng những yếu tố vay mượn</li></ul>"
+            },
+            {
+              "heading": "2. Các bài học từ những tác phẩm điển hình",
+              "content": "<h4>a) Từ 'Hải khẩu linh từ' (Đoàn Thị Điểm)</h4><ul><li><strong>Yếu tố kì ảo:</strong> Đền thiêng, gặp gỡ thần linh</li><li><strong>Tác dụng:</strong> Tạo không khí huyền ảo, giáo dục đạo đức thông qua phép thử của thần linh</li><li><strong>Bài học:</strong> Yếu tố kì ảo trong truyện cổ tạo sự kỳ lạ, hấp dẫn</li></ul><h4>b) Từ 'Muối của rừng' (Nguyễn Huy Thiệp)</h4><ul><li><strong>Yếu tố kì ảo:</strong> Rừng gọi, muối thần kỳ, sự biến hóa nhân vật</li><li><strong>Tác dụng:</strong> Biểu tượng của tham vọng, sự mất mát bản ngã</li><li><strong>Bài học:</strong> Yếu tố kì ảo trong tác phẩm hiện đại là công cụ để thể hiện nội tâm, vấn đề xã hội</li></ul>"
+            },
+            {
+              "heading": "3. Phương pháp phân tích yếu tố kì ảo",
+              "content": "<h4>a) Bước 1: Nhận diện yếu tố kì ảo</h4><ul><li><strong>Đặt câu hỏi:</strong> Trong tác phẩm, những sự kiện nào vượt ra ngoài quy luật tự nhiên?</li><li><strong>Liệt kê:</strong> Những nhân vật, đồ vật, sự kiện kì lạ là gì?</li></ul><h4>b) Bước 2: Phân loại yếu tố kì ảo</h4><ul><li><strong>Yếu tố kì ảo về nhân vật?</strong> Về sự vật? Về sự kiện?</li><li><strong>Mức độ kì ảo:</strong> Nhẹ (hơi kỳ lạ) hay nặng (hoàn toàn siêu thường)?</li></ul><h4>c) Bước 3: Tìm hiểu nguyên nhân, mục đích</h4><ul><li><strong>Tác giả sử dụng yếu tố kì ảo để làm gì?</strong> Tạo sự bất ngờ? Giáo dục? Biểu tượng?</li><li><strong>Yếu tố kì ảo gắn liền với ý tưởng chính nào của tác phẩm?</strong></li></ul><h4>d) Bước 4: Đánh giá tác dụng</h4><ul><li><strong>Hiệu quả:</strong> Yếu tố kì ảo có thuyết phục không? Có hợp lý trong thế giới tác phẩm không?</li><li><strong>Ý nghĩa:</strong> Yếu tố kì ảo giúp tác phẩm mang lại điều gì?</li></ul>"
+            },
+            {
+              "heading": "4. So sánh yếu tố kì ảo giữa các tác phẩm",
+              "content": "<h4>a) Hải khẩu linh từ vs Muối của rừng</h4><ul><li><strong>Cùng điểm:</strong> Cả hai đều sử dụng yếu tố kì ảo, có liên quan đến thiên nhiên</li><li><strong>Khác điểm:</strong> Truyện cổ tập trung vào sự kỳ lạ; tác phẩm hiện đại tập trung vào ý tưởng sâu sắc</li></ul><h4>b) Yếu tố kì ảo trong văn học cổ vs hiện đại</h4><ul><li><strong>Truyện cổ:</strong> Yếu tố kì ảo là những điều thực sự xảy ra trong thế giới tác phẩm</li><li><strong>Tác phẩm hiện đại:</strong> Yếu tố kì ảo thường là biểu tượng, cách thể hiện tâm lý, không nhất thiết phải có thực</li></ul>"
+            },
+            {
+              "heading": "5. Ứng dụng kiến thức vào đọc hiểu tác phẩm",
+              "content": "<ul><li><strong>Khi đọc một tác phẩm:</strong><br/>1. Nhận diện những yếu tố kì ảo<br/>2. Phân tích vì sao tác giả lại sử dụng những yếu tố này<br/>3. Tìm hiểu ý tưởng chính của tác phẩm<br/>4. Đánh giá cách sử dụng yếu tố kì ảo có hiệu quả không</li><li><strong>Khi viết bài phân tích:</strong><br/>1. Nêu rõ những yếu tố kì ảo trong tác phẩm<br/>2. Phân tích mối liên hệ giữa yếu tố kì ảo và ý tưởng chính<br/>3. Đánh giá tác dụng của yếu tố kì ảo<br/>4. Rút ra kết luận về ý tưởng tác phẩm</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex4-6-1",
+            "type": "mcq",
+            "question": "Yếu tố kì ảo trong truyện cổ có tác dụng chính là gì?",
+            "options": [
+              "Làm giảm giá trị giáo dục",
+              "Tạo sự kỳ lạ, hấp dẫn và giáo dục đạo đức",
+              "Chỉ để thoái hiện thực",
+              "Làm cho tác phẩm khó hiểu"
+            ],
+            "correct": 1,
+            "explanation": "Trong truyện cổ, yếu tố kì ảo vừa tạo sự bất ngờ hấp dẫn, vừa giáo dục đạo đức thông qua những phép thử, sự trừng phạt hoặc thưởng công."
+          },
+          {
+            "id": "ex4-6-2",
+            "type": "mcq",
+            "question": "Khác biệt giữa yếu tố kì ảo trong truyện cổ và tác phẩm hiện đại là gì?",
+            "options": [
+              "Truyện cổ sử dụng yếu tố kì ảo nhiều hơn",
+              "Tác phẩm hiện đại không sử dụng yếu tố kì ảo",
+              "Trong truyện cổ, yếu tố kì ảo là sự kiện thực; trong hiện đại, là biểu tượng tâm lý",
+              "Không có khác biệt"
+            ],
+            "correct": 2,
+            "explanation": "Truyện cổ dùng yếu tố kì ảo như sự kiện thực trong thế giới; tác phẩm hiện đại dùng chúng làm biểu tượng của trạng thái tâm lý, vấn đề xã hội."
+          },
+          {
+            "id": "ex4-6-3",
+            "type": "mcq",
+            "question": "Mối quan hệ giữa vay mượn, cải biến, sáng tạo trong văn học là gì?",
+            "options": [
+              "Chúng không liên quan",
+              "Vay mượn → Cải biến → Sáng tạo là một quá trình liên tiếp",
+              "Sáng tạo không cần vay mượn",
+              "Chỉ tác giả tài ba mới sáng tạo"
+            ],
+            "correct": 1,
+            "explanation": "Vay mượn cung cấp cơ sở, cải biến làm mới những yếu tố, sáng tạo là kết quả cuối cùng - một tác phẩm độc đáo mới."
+          },
+          {
+            "id": "ex4-6-4",
+            "type": "mcq",
+            "question": "Phương pháp nào để phân tích yếu tố kì ảo trong tác phẩm?",
+            "options": [
+              "Chỉ liệt kê những yếu tố kì ảo",
+              "Nhận diện → Phân loại → Tìm nguyên nhân/mục đích → Đánh giá tác dụng",
+              "Không cần phân tích",
+              "Chỉ nêu ý kiến cá nhân"
+            ],
+            "correct": 1,
+            "explanation": "Phân tích hiệu quả yêu cầu: 1) Nhận diện yếu tố kì ảo, 2) Phân loại chúng, 3) Tìm hiểu nguyên nhân/mục đích, 4) Đánh giá tác dụng."
+          },
+          {
+            "id": "ex4-6-5",
+            "type": "mcq",
+            "question": "Ý nghĩa của việc học về yếu tố kì ảo là gì?",
+            "options": [
+              "Chỉ để giải trí",
+              "Hiểu cách tác giả sử dụng công cụ để thể hiện ý tưởng, giáo dục độc giả, tạo giá trị thẩm mỹ",
+              "Không có ý nghĩa gì",
+              "Chỉ áp dụng cho truyện cổ"
+            ],
+            "correct": 1,
+            "explanation": "Học về yếu tố kì ảo giúp ta hiểu sâu sắc tác phẩm, nhận biết được cách tác giả sử dụng các công cụ để thể hiện ý tưởng, giáo dục, tạo giá trị."
+          }
+        ]
+      }
+    }
+  ]
+}

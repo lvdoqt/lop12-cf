@@ -157,10 +157,10 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
         }
         
         return (
-          <div class={`flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border transition-all gap-3 ${statusStyle}`}>
+          <div class={`flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border transition-all gap-3 msq-row ${statusStyle}`} data-answer-id={answer.id}>
             <div class="flex items-start flex-1 min-w-0">
-              <span class="w-6 h-6 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-450 flex items-center justify-center font-bold text-xs mr-3 shrink-0">{optionLetter}</span>
-              <div class="text-sm md:text-base font-medium text-gray-700 dark:text-slate-300 leading-relaxed [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1" set:html={parseMarkdownWithMath(answer.content || '', true)} />
+              <span class="msq-letter w-6 h-6 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-450 flex items-center justify-center font-bold text-xs mr-3 shrink-0 transition-colors">{optionLetter}</span>
+              <div class="msq-text text-sm md:text-base font-medium text-gray-700 dark:text-slate-300 leading-relaxed transition-colors [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1" set:html={parseMarkdownWithMath(answer.content || '', true)} />
             </div>
             
             <div class="flex items-center gap-3 shrink-0 self-end sm:self-center">
@@ -440,6 +440,24 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
         if (sibling) {
           sibling.classList.remove('bg-blue-600', 'border-blue-600', 'text-white');
           sibling.classList.add('bg-gray-50', 'border-gray-200', 'text-gray-600', 'dark:bg-slate-800', 'dark:border-slate-700', 'dark:text-slate-400');
+        }
+
+        // Add blue text and border to the row
+        const row = btn.closest('.msq-row');
+        if (row) {
+          const textDiv = row.querySelector('.msq-text');
+          if (textDiv) {
+            textDiv.classList.remove('text-gray-700', 'dark:text-slate-300');
+            textDiv.classList.add('text-blue-700', 'dark:text-blue-400');
+          }
+          row.classList.remove('border-gray-200', 'dark:border-slate-800/80', 'bg-white', 'dark:bg-slate-900');
+          row.classList.add('border-blue-500', 'bg-blue-50/30', 'dark:border-blue-500', 'dark:bg-blue-950/20');
+          
+          const letter = row.querySelector('.msq-letter');
+          if (letter) {
+            letter.classList.remove('bg-gray-100', 'text-gray-500', 'dark:bg-slate-800', 'dark:text-slate-450');
+            letter.classList.add('bg-blue-600', 'text-white', 'dark:bg-blue-600');
+          }
         }
       });
     });

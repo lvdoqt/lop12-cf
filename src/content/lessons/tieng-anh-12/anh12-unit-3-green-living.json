@@ -1,0 +1,288 @@
+{
+  "subject": "Tiếng Anh 12",
+  "subject_id": 42,
+  "lessons": [
+    {
+      "id": "anh12-unit-3-green-living",
+      "name": "Unit 3: Green Living",
+      "slug": "unit-3-green-living",
+      "chapter": "Unit 3: Green Living",
+      "chapter_id": "A12",
+      "lesson_id": 3,
+      "description": "Learn about environmental protection, phrasal verbs with prepositions, and relative pronoun 'which'.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2613&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "vocab-3",
+          "name": "Green Living Vocabulary",
+          "slug": "green-living-vocabulary",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Unit 3: Green Living",
+          "sections": [
+            {
+              "heading": "1. Từ vựng (Vocabulary)",
+              "content": "<div class='overflow-x-auto'><table class='min-w-full divide-y divide-gray-200'><thead><tr><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Word</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Type & IPA</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Meaning</th><th class='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase'>Example</th></tr></thead><tbody class='divide-y divide-gray-200'><tr><td class='px-4 py-2 font-bold'>Sustainable</td><td class='px-4 py-2'>(adj) /səˈsteɪnəbl/</td><td class='px-4 py-2'>Bền vững</td><td class='px-4 py-2'>Use sustainable energy sources.</td></tr><tr><td class='px-4 py-2 font-bold'>Renewable</td><td class='px-4 py-2'>(adj) /rɪˈnjuːəbl/</td><td class='px-4 py-2'>Có thể tái tạo</td><td class='px-4 py-2'>Solar power is renewable energy.</td></tr><tr><td class='px-4 py-2 font-bold'>Recycle</td><td class='px-4 py-2'>(v) /ˌriːˈsaɪkl/</td><td class='px-4 py-2'>Tái chế</td><td class='px-4 py-2'>Recycle plastic bottles.</td></tr><tr><td class='px-4 py-2 font-bold'>Reduce</td><td class='px-4 py-2'>(v) /rɪˈdjuːs/</td><td class='px-4 py-2'>Giảm thiểu</td><td class='px-4 py-2'>Reduce waste and pollution.</td></tr><tr><td class='px-4 py-2 font-bold'>Reuse</td><td class='px-4 py-2'>(v) /ˌriːˈjuːz/</td><td class='px-4 py-2'>Tái sử dụng</td><td class='px-4 py-2'>Reuse shopping bags.</td></tr><tr><td class='px-4 py-2 font-bold'>Carbon footprint</td><td class='px-4 py-2'>(n) /ˈkɑːbən ˈfʊtprɪnt/</td><td class='px-4 py-2'>Dấu chân carbon</td><td class='px-4 py-2'>Reduce your carbon footprint.</td></tr><tr><td class='px-4 py-2 font-bold'>Emission</td><td class='px-4 py-2'>(n) /ɪˈmɪʃn/</td><td class='px-4 py-2'>Khí thải</td><td class='px-4 py-2'>Cut carbon emissions.</td></tr><tr><td class='px-4 py-2 font-bold'>Eco-friendly</td><td class='px-4 py-2'>(adj) /ˌiːkəʊ ˈfrendli/</td><td class='px-4 py-2'>Thân thiện môi trường</td><td class='px-4 py-2'>Use eco-friendly products.</td></tr><tr><td class='px-4 py-2 font-bold'>Conserve</td><td class='px-4 py-2'>(v) /kənˈsɜːv/</td><td class='px-4 py-2'>Bảo tồn</td><td class='px-4 py-2'>Conserve water and energy.</td></tr><tr><td class='px-4 py-2 font-bold'>Biodegradable</td><td class='px-4 py-2'>(adj) /ˌbaɪəʊdɪˈɡreɪdəbl/</td><td class='px-4 py-2'>Phân hủy sinh học</td><td class='px-4 py-2'>Use biodegradable packaging.</td></tr><tr><td class='px-4 py-2 font-bold'>Compost</td><td class='px-4 py-2'>(n, v) /ˈkɒmpɒst/</td><td class='px-4 py-2'>Phân compost</td><td class='px-4 py-2'>Make compost from food waste.</td></tr><tr><td class='px-4 py-2 font-bold'>Solar panel</td><td class='px-4 py-2'>(n) /ˈsəʊlə ˈpænl/</td><td class='px-4 py-2'>Tấm pin mặt trời</td><td class='px-4 py-2'>Install solar panels.</td></tr><tr><td class='px-4 py-2 font-bold'>Organic</td><td class='px-4 py-2'>(adj) /ɔːˈɡænɪk/</td><td class='px-4 py-2'>Hữu cơ</td><td class='px-4 py-2'>Buy organic food.</td></tr><tr><td class='px-4 py-2 font-bold'>Landfill</td><td class='px-4 py-2'>(n) /ˈlændfɪl/</td><td class='px-4 py-2'>Bãi rác</td><td class='px-4 py-2'>Reduce waste sent to landfills.</td></tr></tbody></table></div>"
+            },
+            {
+              "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
+              "content": "<p><strong>The 3Rs (Ba chữ R):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Reduce:</strong> giảm thiểu (reduce waste, reduce consumption)</li><li><strong>Reuse:</strong> tái sử dụng (reuse bags, reuse containers)</li><li><strong>Recycle:</strong> tái chế (recycle paper, recycle plastic)</li></ul><p><strong>Energy and environment (Năng lượng và môi trường):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>renewable energy:</strong> năng lượng tái tạo</li><li><strong>solar power:</strong> năng lượng mặt trời</li><li><strong>wind power:</strong> năng lượng gió</li><li><strong>carbon footprint:</strong> dấu chân carbon</li><li><strong>carbon emissions:</strong> khí thải carbon</li><li><strong>greenhouse gases:</strong> khí nhà kính</li></ul><p><strong>Green products (Sản phẩm xanh):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>eco-friendly products:</strong> sản phẩm thân thiện môi trường</li><li><strong>biodegradable packaging:</strong> bao bì phân hủy sinh học</li><li><strong>organic food:</strong> thực phẩm hữu cơ</li><li><strong>reusable bags:</strong> túi tái sử dụng</li></ul><p><strong>Actions for green living (Hành động sống xanh):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>conserve energy:</strong> tiết kiệm năng lượng</li><li><strong>save water:</strong> tiết kiệm nước</li><li><strong>plant trees:</strong> trồng cây</li><li><strong>use public transport:</strong> sử dụng phương tiện công cộng</li><li><strong>turn off lights:</strong> tắt đèn</li><li><strong>avoid single-use plastic:</strong> tránh nhựa dùng một lần</li></ul><p><strong>Collocations về môi trường:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>sustainable lifestyle:</strong> lối sống bền vững</li><li><strong>environmental protection:</strong> bảo vệ môi trường</li><li><strong>green living:</strong> sống xanh</li><li><strong>climate change:</strong> biến đổi khí hậu</li><li><strong>ecological balance:</strong> cân bằng sinh thái</li></ul>"
+            }
+,
+            {
+              "heading": "3. Ngữ âm: Liên kết âm",
+              "content": "<h3>Linking sounds</h3><p><strong>Quy tắc liên kết âm trong tiếng Anh:</strong></p><p><strong>1. Consonant + Vowel (Phụ âm + Nguyên âm):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Khi từ kết thúc bằng phụ âm và từ tiếp theo bắt đầu bằng nguyên âm, ta liên kết chúng</li><li>Ex: turn <strong>off</strong> → tur<strong>noff</strong> /tɜːnɒf/</li><li>Ex: pick <strong>up</strong> → pi<strong>ckup</strong> /pɪkʌp/</li><li>Ex: an <strong>apple</strong> → a<strong>napple</strong> /ənæpl/</li></ul><p><strong>2. Vowel + Vowel (Nguyên âm + Nguyên âm):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Khi hai nguyên âm gặp nhau, thêm âm /w/ hoặc /j/ để liên kết</li><li>Ex: go <strong>out</strong> → go<strong>/w/</strong>out /ɡəʊwaʊt/</li><li>Ex: see <strong>it</strong> → see<strong>/j/</strong>it /siːjɪt/</li></ul><p><strong>3. Ví dụ trong Unit 3:</strong></p><ul class='list-disc pl-5 space-y-2'><li>turn <strong>off</strong> the lights → tur<strong>noff</strong> the lights</li><li>pick <strong>up</strong> litter → pi<strong>ckup</strong> litter</li><li>cut <strong>down</strong> on waste → cu<strong>tdown</strong> on waste</li><li>give <strong>up</strong> plastic → gi<strong>veup</strong> plastic</li></ul><p><strong>Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Liên kết âm giúp nói tiếng Anh tự nhiên và trôi chảy hơn</li><li>Luyện tập với phrasal verbs để quen với liên kết âm</li><li>Nghe và bắt chước người bản ngữ</li></ul>"
+            }
+,
+            {
+              "heading": "4. Ngữ pháp: Động từ với giới từ & Đại từ quan hệ which",
+              "content": "<h3>A. Phrasal Verbs with Prepositions (Động từ với giới từ)</h3><p><strong>Định nghĩa:</strong> Phrasal verbs là động từ kết hợp với giới từ hoặc trạng từ tạo thành nghĩa mới.</p><p><strong>1. Common Phrasal Verbs về môi trường:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>turn off:</strong> tắt (đèn, thiết bị)</li><li>Ex: <strong>Turn off</strong> the lights when you leave.</li><li><strong>turn on:</strong> bật</li><li>Ex: Don't <strong>turn on</strong> the air conditioner unnecessarily.</li><li><strong>cut down on:</strong> cắt giảm</li><li>Ex: We should <strong>cut down on</strong> plastic use.</li><li><strong>give up:</strong> từ bỏ</li><li>Ex: <strong>Give up</strong> single-use plastic bags.</li><li><strong>pick up:</strong> nhặt lên</li><li>Ex: <strong>Pick up</strong> litter in the park.</li><li><strong>throw away:</strong> vứt bỏ</li><li>Ex: Don't <strong>throw away</strong> recyclable materials.</li><li><strong>run out of:</strong> hết, cạn kiệt</li><li>Ex: We're <strong>running out of</strong> natural resources.</li><li><strong>come up with:</strong> nghĩ ra</li><li>Ex: Scientists <strong>came up with</strong> new solutions.</li></ul><p><strong>2. Vị trí của Object (tân ngữ):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Separable phrasal verbs:</strong> có thể tách rời</li><li>Ex: Turn <strong>off</strong> the light = Turn the light <strong>off</strong></li><li>Ex: Pick <strong>up</strong> litter = Pick litter <strong>up</strong></li><li><strong>Với đại từ:</strong> phải đặt giữa động từ và giới từ</li><li>Ex: Turn <strong>it</strong> off (NOT: Turn off it)</li><li>Ex: Pick <strong>them</strong> up (NOT: Pick up them)</li><li><strong>Inseparable phrasal verbs:</strong> không thể tách rời</li><li>Ex: We must <strong>look after</strong> the environment. (NOT: look the environment after)</li><li>Ex: She <strong>came up with</strong> a great idea. (NOT: came a great idea up with)</li></ul><h3>B. Relative Pronoun 'WHICH' (Đại từ quan hệ which)</h3><p><strong>1. Cách dùng WHICH:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Thay thế cho danh từ chỉ vật, sự việc</strong></li><li>Ex: Solar panels, <strong>which</strong> convert sunlight to energy, are eco-friendly.</li><li>Ex: Recycling is a process <strong>which</strong> helps reduce waste.</li></ul><p><strong>2. Defining Relative Clauses (Mệnh đề quan hệ xác định):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Cung cấp thông tin cần thiết để xác định danh từ</li><li>Không có dấu phẩy</li><li>Ex: The energy <strong>which comes from the sun</strong> is renewable.</li><li>Ex: Products <strong>which are biodegradable</strong> are better for the environment.</li></ul><p><strong>3. Non-defining Relative Clauses (Mệnh đề quan hệ không xác định):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Cung cấp thông tin bổ sung, không cần thiết</li><li>Có dấu phẩy ngăn cách</li><li>Ex: Solar energy, <strong>which is renewable</strong>, is becoming more popular.</li><li>Ex: Plastic bags, <strong>which take hundreds of years to decompose</strong>, harm the environment.</li></ul><p><strong>4. WHICH thay thế cả mệnh đề:</strong></p><ul class='list-disc pl-5 space-y-2'><li>WHICH có thể thay thế cho cả câu/ý trước đó</li><li>Ex: He recycles all his waste, <strong>which</strong> is very responsible. (which = việc anh ấy tái chế)</li><li>Ex: They installed solar panels, <strong>which</strong> reduced their electricity bills. (which = việc lắp tấm pin)</li></ul><p><strong>5. Preposition + WHICH:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Giới từ có thể đứng trước WHICH</li><li>Ex: The problem <strong>about which</strong> we are talking is serious.</li><li>Ex: The solution <strong>in which</strong> we are interested is renewable energy.</li><li>Hoặc đặt giới từ ở cuối (thông dụng hơn):</li><li>Ex: The problem <strong>which</strong> we are talking <strong>about</strong> is serious.</li></ul>"
+            }
+,
+            {
+              "heading": "5. I. Getting Started",
+              "content": "<p><strong>Chủ đề:</strong> Green living and environmental protection - Sống xanh và bảo vệ môi trường</p><p><strong>Nội dung chính:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Hội thoại về lối sống xanh</li><li>Thảo luận về các hành động bảo vệ môi trường</li><li>Chia sẻ về thói quen thân thiện môi trường</li><li>Nói về tầm quan trọng của phát triển bền vững</li></ul><p><strong>Các chủ đề được đề cập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>The 3Rs:</strong> Reduce, Reuse, Recycle</li><li><strong>Energy conservation:</strong> Tiết kiệm năng lượng</li><li><strong>Sustainable living:</strong> Sống bền vững</li><li><strong>Eco-friendly products:</strong> Sản phẩm thân thiện môi trường</li></ul>"
+            },
+            {
+              "heading": "6. II. Language",
+              "content": "<p><strong>A. Pronunciation: Linking sounds</strong></p><p>Luyện phát âm liên kết âm trong phrasal verbs</p><p><strong>B. Vocabulary:</strong> Green living</p><ul class='list-disc pl-5 space-y-2'><li>The 3Rs: reduce, reuse, recycle</li><li>Energy: sustainable, renewable, solar panel, emission</li><li>Products: eco-friendly, biodegradable, organic</li><li>Actions: conserve, turn off, cut down on, pick up</li><li>Environment: carbon footprint, landfill, compost</li></ul><p><strong>C. Grammar:</strong> Phrasal verbs and Relative pronoun 'which'</p><ul class='list-disc pl-5 space-y-2'><li>Phrasal verbs: turn off, cut down on, give up, pick up</li><li>Separable vs. inseparable phrasal verbs</li><li>Which for things/ideas</li><li>Defining and non-defining relative clauses</li><li>Which replacing a whole clause</li></ul>"
+            },
+            {
+              "heading": "7. III. Reading",
+              "content": "<p><strong>Chủ đề:</strong> Green living and sustainable development</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Đọc hiểu về lối sống xanh</li><li>Tìm thông tin về các giải pháp môi trường</li><li>Hiểu về năng lượng tái tạo</li><li>Phân tích lợi ích của sống bền vững</li></ul><p><strong>Nội dung:</strong> Bài đọc giới thiệu về:</p><ul class='list-disc pl-5 space-y-2'><li><strong>Environmental problems:</strong> Ô nhiễm, biến đổi khí hậu</li><li><strong>Green solutions:</strong> Năng lượng tái tạo, tái chế</li><li><strong>Individual actions:</strong> Hành động cá nhân có thể làm</li><li><strong>Benefits:</strong> Lợi ích của sống xanh</li></ul>"
+            },
+            {
+              "heading": "8. IV. Speaking",
+              "content": "<p><strong>Chủ đề:</strong> Discussing green living practices</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nói về thói quen sống xanh của bạn</li><li>Thảo luận về cách bảo vệ môi trường</li><li>Đề xuất giải pháp cho vấn đề môi trường</li><li>Chia sẻ về sản phẩm thân thiện môi trường</li></ul><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li>I try to... / I always...</li><li>We should/must/need to...</li><li>It's important to...</li><li>One way to protect the environment is...</li><li>Instead of..., we can...</li><li>By doing this, we can...</li><li>This helps reduce/save...</li><li>I think/believe that...</li></ul>"
+            }
+,
+            {
+              "heading": "9. V. Listening",
+              "content": "<p><strong>Chủ đề:</strong> A talk about green living tips</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nghe hiểu về các mẹo sống xanh</li><li>Điền thông tin về hành động bảo vệ môi trường</li><li>Trả lời câu hỏi về lợi ích</li><li>Ghi chú các giải pháp được đề xuất</li></ul><p><strong>Nội dung:</strong> Bài nghe về:</p><ul class='list-disc pl-5 space-y-2'><li>Cách tiết kiệm năng lượng tại nhà</li><li>Giảm thiểu rác thải nhựa</li><li>Sử dụng sản phẩm thân thiện môi trường</li><li>Lợi ích của tái chế</li></ul>"
+            },
+            {
+              "heading": "10. VI. Writing",
+              "content": "<p><strong>Chủ đề:</strong> Writing a proposal about green living</p><p><strong>Kỹ năng:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Viết đề xuất về sống xanh</li><li>Sử dụng phrasal verbs và relative clauses</li><li>Trình bày vấn đề và giải pháp</li><li>Thuyết phục người đọc</li></ul><p><strong>Cấu trúc đề xuất:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Title:</strong> Tiêu đề đề xuất</li><li><strong>Introduction:</strong> Giới thiệu vấn đề môi trường</li><li><strong>Body Paragraph 1:</strong> Đề xuất giải pháp 1</li><li><strong>Body Paragraph 2:</strong> Đề xuất giải pháp 2</li><li><strong>Body Paragraph 3:</strong> Lợi ích và kết quả mong đợi</li><li><strong>Conclusion:</strong> Kêu gọi hành động</li></ul><p><strong>Useful language:</strong></p><ul class='list-disc pl-5 space-y-2'><li>This proposal aims to...</li><li>I would like to propose...</li><li>One solution is to...</li><li>We should turn off/cut down on/give up...</li><li>This will help reduce/save...</li><li>By implementing this, we can...</li><li>I strongly recommend that...</li></ul>"
+            },
+            {
+              "heading": "11. VII. Communication and Culture / CLIL",
+              "content": "<p><strong>Communication:</strong> Making suggestions for green living</p><p><strong>Useful expressions:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Making suggestions:</strong></li><li>Why don't we...?</li><li>How about + V-ing...?</li><li>Let's...</li><li>We could/should...</li><li>I suggest that we...</li></ul><ul class='list-disc pl-5 space-y-2'><li><strong>Responding:</strong></li><li>That's a good/great idea.</li><li>I agree. / I think so too.</li><li>That sounds good.</li><li>I'm not sure about that.</li></ul><p><strong>Culture:</strong> Green living around the world</p><ul class='list-disc pl-5 space-y-2'><li><strong>Denmark:</strong> Cycling culture, wind energy leader</li><li><strong>Japan:</strong> Advanced recycling system, eco-technology</li><li><strong>Costa Rica:</strong> 99% renewable energy, eco-tourism</li><li><strong>Singapore:</strong> Green buildings, urban gardens</li><li><strong>Vietnam:</strong> Growing awareness, plastic reduction campaigns</li></ul><p><strong>CLIL (Science):</strong> Renewable energy sources</p><ul class='list-disc pl-5 space-y-2'><li>Solar energy: how solar panels work</li><li>Wind energy: wind turbines</li><li>Hydroelectric power: water energy</li><li>Biomass energy: organic materials</li></ul>"
+            }
+,
+            {
+              "heading": "12. VIII. Looking Back",
+              "content": "<p><strong>Ôn tập:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Pronunciation:</strong> Linking sounds in phrasal verbs (turn off, pick up, cut down on)</li><li><strong>Vocabulary:</strong> Sustainable, renewable, recycle, reduce, reuse, carbon footprint, emission, eco-friendly, conserve, biodegradable, compost, solar panel, organic, landfill</li><li><strong>Grammar:</strong> Phrasal verbs (separable/inseparable) and Relative pronoun 'which' (defining/non-defining clauses)</li><li><strong>Skills:</strong> Reading about green living, Speaking about environmental actions, Listening to green tips, Writing proposals</li></ul><p><strong>Self-assessment:</strong> Đánh giá khả năng:</p><ul class='list-disc pl-5 space-y-2'><li>Sử dụng từ vựng về sống xanh</li><li>Phát âm liên kết âm trong phrasal verbs</li><li>Sử dụng phrasal verbs và đại từ quan hệ which</li><li>Thảo luận và viết về bảo vệ môi trường</li></ul>"
+            },
+            {
+              "heading": "13. Project",
+              "content": "<p><strong>Đề tài:</strong> Create a green living campaign for your school</p><p><strong>Nhiệm vụ:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Xác định vấn đề môi trường trong trường</li><li>Nghiên cứu các giải pháp xanh khả thi</li><li>Thiết kế chiến dịch với slogan và poster</li><li>Lập kế hoạch hành động cụ thể</li><li>Tạo presentation để trình bày</li><li>Thuyết trình trước lớp (5-7 phút)</li></ul><p><strong>Nội dung cần có:</strong></p><ul class='list-disc pl-5 space-y-2'><li>What environmental problems exist in your school?</li><li>What are your campaign goals?</li><li>What actions do you propose? (use phrasal verbs)</li><li>How will students participate?</li><li>What materials/resources are needed?</li><li>What are the expected benefits?</li><li>How will you measure success?</li></ul><p><strong>Gợi ý chiến dịch:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Plastic-Free School Week</li><li>Energy Saving Challenge</li><li>School Recycling Program</li><li>Green Garden Project</li><li>Bike to School Campaign</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Type 1: Phrasal Verbs and Which",
+            "method": "<p>Use correct phrasal verbs and relative pronoun 'which' in sentences.</p>",
+            "examples": []
+          }
+        ],
+        "exercises": [
+          {
+            "id": "reading1",
+            "type": "reading",
+            "passage": "Green living is a lifestyle that aims to reduce an individual's or society's use of Earth's natural resources. It involves making choices that are better for the environment, which includes reducing waste, conserving energy, and using sustainable products.\n\nOne of the most important principles of green living is the 3Rs: Reduce, Reuse, and Recycle. We should cut down on consumption and avoid buying unnecessary items. Instead of throwing away items, we can reuse them or give them to others. Recycling materials like paper, plastic, and glass helps reduce the amount of waste sent to landfills, which take up valuable land and pollute the environment.\n\nAnother key aspect is energy conservation. We should turn off lights and appliances when not in use. Installing solar panels, which convert sunlight into electricity, is an excellent way to use renewable energy. Using public transportation or cycling instead of driving also helps reduce carbon emissions, which contribute to climate change.\n\nMany people are now choosing eco-friendly products, which are made from sustainable materials and are biodegradable. Organic food, which is grown without harmful chemicals, is better for both our health and the environment. By making these small changes in our daily lives, we can make a big difference in protecting our planet for future generations.",
+            "questions": [
+              {
+                "id": "reading1-q1",
+                "question": "What is the main idea of the passage?",
+                "options": [
+                  "Green living is too difficult",
+                  "Green living involves making environmentally-friendly choices",
+                  "Only rich people can live green",
+                  "Recycling is the only solution"
+                ],
+                "correct": 1,
+                "explanation": "Đoạn văn nói về sống xanh là việc đưa ra các lựa chọn thân thiện với môi trường."
+              },
+              {
+                "id": "reading1-q2",
+                "question": "What are the 3Rs mentioned in the passage?",
+                "options": [
+                  "Read, Write, Remember",
+                  "Reduce, Reuse, Recycle",
+                  "Run, Rest, Relax",
+                  "Remove, Replace, Repair"
+                ],
+                "correct": 1,
+                "explanation": "Ba chữ R là: Reduce (giảm), Reuse (tái sử dụng), Recycle (tái chế)."
+              },
+              {
+                "id": "reading1-q3",
+                "question": "The word 'convert' in paragraph 3 is closest in meaning to ______.",
+                "options": [
+                  "destroy",
+                  "change into",
+                  "waste",
+                  "hide"
+                ],
+                "correct": 1,
+                "explanation": "Convert = change into (chuyển đổi thành)."
+              },
+              {
+                "id": "reading1-q4",
+                "question": "According to the passage, what helps reduce carbon emissions?",
+                "options": [
+                  "Driving more cars",
+                  "Using public transportation or cycling",
+                  "Buying more products",
+                  "Wasting energy"
+                ],
+                "correct": 1,
+                "explanation": "Sử dụng phương tiện công cộng hoặc đi xe đạp giúp giảm khí thải carbon."
+              },
+              {
+                "id": "reading1-q5",
+                "question": "What is true about organic food according to the passage?",
+                "options": [
+                  "It's grown with harmful chemicals",
+                  "It's bad for health",
+                  "It's grown without harmful chemicals",
+                  "It's more expensive than regular food"
+                ],
+                "correct": 2,
+                "explanation": "Thực phẩm hữu cơ được trồng không có hóa chất độc hại."
+              }
+            ]
+          }
+,
+          {
+            "id": "mcq1",
+            "type": "mcq",
+            "question": "Please ______ the lights when you leave the room.",
+            "options": ["turn off", "turn on", "turn up", "turn down"],
+            "correct": 0,
+            "explanation": "Turn off: tắt (đèn, thiết bị)."
+          },
+          {
+            "id": "mcq2",
+            "type": "mcq",
+            "question": "We should ______ plastic bags and use reusable ones.",
+            "options": ["give in", "give up", "give away", "give out"],
+            "correct": 1,
+            "explanation": "Give up: từ bỏ."
+          },
+          {
+            "id": "mcq3",
+            "type": "mcq",
+            "question": "Solar panels, ______ convert sunlight to energy, are becoming popular.",
+            "options": ["who", "which", "where", "when"],
+            "correct": 1,
+            "explanation": "Which: đại từ quan hệ thay thế cho vật (solar panels)."
+          },
+          {
+            "id": "mcq4",
+            "type": "mcq",
+            "question": "We need to ______ our consumption of natural resources.",
+            "options": ["reduce", "reduction", "reducing", "reduced"],
+            "correct": 0,
+            "explanation": "Reduce (v): giảm thiểu - động từ nguyên thể sau 'need to'."
+          },
+          {
+            "id": "mcq5",
+            "type": "mcq",
+            "question": "Don't ______ recyclable materials. Put them in the recycling bin.",
+            "options": ["throw away", "throw up", "throw in", "throw out"],
+            "correct": 0,
+            "explanation": "Throw away: vứt bỏ."
+          },
+          {
+            "id": "mcq6",
+            "type": "mcq",
+            "question": "Plastic bags, ______ take hundreds of years to decompose, harm the environment.",
+            "options": ["who", "which", "where", "whose"],
+            "correct": 1,
+            "explanation": "Which: đại từ quan hệ trong mệnh đề không xác định (có dấu phẩy)."
+          },
+          {
+            "id": "mcq7",
+            "type": "mcq",
+            "question": "We should ______ on energy consumption.",
+            "options": ["cut down", "cut off", "cut in", "cut out"],
+            "correct": 0,
+            "explanation": "Cut down on: cắt giảm."
+          },
+          {
+            "id": "mcq8",
+            "type": "mcq",
+            "question": "______ energy sources like solar and wind power are better for the environment.",
+            "options": ["Renew", "Renewable", "Renewal", "Renewing"],
+            "correct": 1,
+            "explanation": "Renewable (adj): có thể tái tạo."
+          },
+          {
+            "id": "mcq9",
+            "type": "mcq",
+            "question": "He recycles all his waste, ______ is very responsible.",
+            "options": ["who", "which", "that", "what"],
+            "correct": 1,
+            "explanation": "Which: thay thế cho cả mệnh đề trước đó (việc anh ấy tái chế)."
+          },
+          {
+            "id": "mcq10",
+            "type": "mcq",
+            "question": "We're ______ natural resources. We must use them wisely.",
+            "options": ["running out of", "running into", "running after", "running over"],
+            "correct": 0,
+            "explanation": "Run out of: hết, cạn kiệt."
+          }
+,
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question_text": "Phrasal verbs with pronouns must have the pronoun between the verb and preposition.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Với đại từ phải đặt giữa: Turn it off (NOT: Turn off it)."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question_text": "'Which' can only replace nouns, not whole clauses.",
+            "options": ["True", "False"],
+            "correct": 1,
+            "explanation": "Sai. 'Which' có thể thay thế cả mệnh đề: He recycles, which is good."
+          },
+          {
+            "id": "msq3",
+            "type": "msq",
+            "question_text": "The 3Rs stand for Reduce, Reuse, and Recycle.",
+            "options": ["True", "False"],
+            "correct": 0,
+            "explanation": "Đúng. Ba chữ R là Reduce, Reuse, Recycle."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question_text": "What do we call energy that can be replaced naturally? (one word)",
+            "correct": "renewable",
+            "explanation": "Renewable energy: năng lượng tái tạo."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question_text": "Complete: Turn ______ the lights. (off/on)",
+            "correct": "off",
+            "explanation": "Turn off: tắt đèn (để tiết kiệm năng lượng)."
+          }
+        ]
+      }
+    }
+  ]
+}

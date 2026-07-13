@@ -1,0 +1,186 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-12",
+      "name": "Bài 12. Đột biến nhiễm sắc thể",
+      "slug": "dot-bien-nhiem-sac-the",
+      "chapter": "Chương 2. Di truyền nhiễm sắc thể",
+      "chapter_id": "S12-2",
+      "lesson_id": 12,
+      "description": "Tìm hiểu về các dạng đột biến nhiễm sắc thể.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Đột biến nhiễm sắc thể",
+          "sections": [
+            {
+              "heading": "1. Khái niệm đột biến nhiễm sắc thể",
+              "content": "<h4>a) Định nghĩa</h4><ul><li><strong>Đột biến nhiễm sắc thể:</strong> Những biến đổi trong cấu trúc hoặc số lượng NST.</li><li>Thường xảy ra trong nguyên phân hoặc giảm phân.</li></ul><h4>b) Đặc điểm</h4><ul><li>Có thể quan sát được dưới kính hiển vi.</li><li>Thường gây hậu quả nghiêm trọng.</li><li>Có thể di truyền cho thế hệ sau.</li></ul>"
+            },
+            {
+              "heading": "2. Đột biến cấu trúc nhiễm sắc thể",
+              "content": "<h4>a) Mất đoạn (deletion)</h4><ul><li>Một đoạn NST bị mất.</li><li>Gây hậu quả nghiêm trọng (mất gene).</li><li>Ví dụ: Hội chứng mèo kêu (mất đoạn NST 5).</li></ul><h4>b) Lặp đoạn (duplication)</h4><ul><li>Một đoạn NST được nhân đôi.</li><li>Tăng lượng gene → có thể có lợi.</li></ul><h4>c) Đảo đoạn (inversion)</h4><ul><li>Một đoạn NST bị đảo ngược 180°.</li><li>Có thể gây vô sinh do cặp đôi khó khăn.</li></ul><h4>d) Chuyển đoạn (translocation)</h4><ul><li>Một đoạn NST chuyển sang NST khác.</li><li>Chuyển đoạn tương hợp: giữa 2 NST tương đồng.</li><li>Chuyển đoạn không tương hợp: giữa các NST không tương đồng.</li></ul>"
+            },
+            {
+              "heading": "3. Đột biến số lượng nhiễm sắc thể",
+              "content": "<h4>a) Đột biến lệch bội</h4><ul><li>Số lượng NST lệch so với bộ đơn bội.</li><li><strong>Thể lệch bội (aneuploid):</strong> 2n ± 1 (ba nhiễm, đơn nhiễm).</li><li><strong>Thể đa bội:</strong> Số NST là bội số của n (3n, 4n).</li></ul><h4>b) Đột biến đa bội</h4><ul><li><strong>Tự đa bội:</strong> NST nhân đôi nhưng không phân ly.</li><li><strong>Dị đa bội:</strong> Lai tạo thể lai có nhiều bộ NST.</li><li>Thường có quả to, ngọt hơn (cà chua, dưa hấu).</li></ul><h4>c) Các hội chứng</h4><ul><li><strong>Hội chứng Down (3 nhiễm 21):</strong> 47 NST, chậm phát triển.</li><li><strong>Hội chứng Turner (X0):</strong> 45 NST, nữ.</li><li><strong>Hội chứng Klinefelter (XXY):</strong> 47 NST, nam.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Đột biến mất đoạn NST là gì?",
+            "options": [
+              "Một đoạn NST bị mất",
+              "Một đoạn NST được nhân đôi",
+              "Một đoạn NST bị đảo ngược",
+              "Một đoạn NST chuyển sang NST khác"
+            ],
+            "correct": 0,
+            "explanation": "Mất đoạn (deletion) là hiện tượng một đoạn NST bị mất đi."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Hội chứng Down có bao nhiêu NST?",
+            "options": [
+              "45",
+              "46",
+              "47",
+              "48"
+            ],
+            "correct": 2,
+            "explanation": "Hội chứng Down (3 nhiễm 21) có 47 NST (2n+1)."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Đột biến lệch bội là gì?",
+            "options": [
+              "Số lượng NST là bội số của n",
+              "Số lượng NST lệch so với 2n",
+              "NST bị biến dạng",
+              "NST bị vỡ"
+            ],
+            "correct": 1,
+            "explanation": "Đột biến lệch bội là số lượng NST lệch so với bộ lưỡng bội (2n±1)."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Thể đa bội là gì?",
+            "options": [
+              "2n+1 NST",
+              "2n-1 NST",
+              "3n, 4n NST",
+              "n NST"
+            ],
+            "correct": 2,
+            "explanation": "Thể đa bội có số NST là bội số của n (3n, 4n, 5n...)."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Chuyển đoạn là gì?",
+            "options": [
+              "Mất đoạn NST",
+              "Lặp đoạn NST",
+              "Đoạn NST chuyển sang NST khác",
+              "Đảo ngược đoạn NST"
+            ],
+            "correct": 2,
+            "explanation": "Chuyển đoạn là hiện tượng một đoạn NST chuyển từ NST này sang NST khác."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các dạng đột biến cấu trúc NST:",
+            "options": [
+              "Mất đoạn",
+              "Lặp đoạn",
+              "Đảo đoạn",
+              "Lệch bội"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Mất đoạn (deletion). B ✓: Lặp đoạn (duplication). C ✓: Đảo đoạn (inversion). D ✗: Lệch bội là đột biến số lượng."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các hội chứng liên quan đến đột biến số lượng NST:",
+            "options": [
+              "Hội chứng Down",
+              "Hội chứng Turner",
+              "Hội chứng Klinefelter",
+              "Bệnh ung thư"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: 3 nhiễm 21. B ✓: X0 (45 NST). C ✓: XXY (47 NST). D ✗: Ung thư không phải hội chứng NST."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Một tế bào có 2n=20 bị đột biến thành 2n+1. Tính số NST. Nhập số 2 chữ số.",
+            "correct": "21",
+            "explanation": "2n+1 = 20+1 = 21 NST."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Một tế bào người (2n=46) bị đột biến thành thể ba nhiễm. Tính số NST. Nhập số 2 chữ số.",
+            "correct": "47",
+            "explanation": "Thể ba nhiễm = 2n+1 = 46+1 = 47 NST."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định số NST trong các dạng đột biến",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Đơn nhiễm: 2n-1</li><li>Ba nhiễm: 2n+1</li><li>Ba nhiễm kép: 2n+2</li><li>Thể đa bội: 3n, 4n</li></ol>",
+            "examples": [
+              {
+                "question": "Tế bào người bị đột biến thể ba nhiễm (2n+1). Tính số NST?",
+                "solution": "<p><strong>Giải:</strong></p><p>2n+1 = 46+1 = 47 NST</p>"
+              },
+              {
+                "question": "Tế bào 2n=12 tự đa bội thành 4n. Tính số NST?",
+                "solution": "<p><strong>Giải:</strong></p><p>4n = 2n × 2 = 12 × 2 = 24 NST</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định loại đột biến",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Mất đoạn: Số NST giảm, có đoạn bị mất.</li><li>Lặp đoạn: Số NST không đổi, có đoạn lặp.</li><li>Đảo đoạn: Số NST không đổi, thứ tự gene thay đổi.</li><li>Chuyển đoạn: Số NST không đổi, đoạn chuyển sang NST khác.</li></ol>",
+            "examples": [
+              {
+                "question": "Một NST có vị trí gene A-B-C-D-E, sau đột biến thành A-D-C-B-E. Đây là dạng nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Thứ tự gene thay đổi (D, C, B đảo)</p><p>Đây là <strong>đảo đoạn</strong></p>"
+              },
+              {
+                "question": "NST có vị trí A-B-C-D-E, sau đột biến thành A-B-C-C-D-E. Đây là dạng nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Gene C xuất hiện 2 lần</p><p>Đây là <strong>lặp đoạn</strong></p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

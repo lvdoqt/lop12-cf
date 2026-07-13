@@ -1,0 +1,156 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-8-2-giao-duc-khai-phong",
+      "name": "Giáo dục khai phóng Việt Nam nhìn từ Đông Kinh Nghĩa Thục",
+      "slug": "giao-duc-khai-phong",
+      "chapter": "Dữ liệu trong văn bản thông tin",
+      "chapter_id": "V12-8",
+      "lesson_id": 2,
+      "author": "Nguyễn Nam",
+      "description": "Tìm hiểu về phong trào Đông Kinh Nghĩa Thục và vai trò của giáo dục khai phóng trong lịch sử Việt Nam đầu thế kỷ 20.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "historical-analysis",
+          "name": "Phân tích lịch sử",
+          "slug": "phan-tich-lich-su",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Giáo dục khai phóng và Đông Kinh Nghĩa Thục",
+          "sections": [
+            {
+              "heading": "1. Đông Kinh Nghĩa Thục",
+              "content": "<h4>a) Bối cảnh ra đời</h4><ul><li><strong>Thời gian:</strong> 1907 tại Hà Nội</li><li><strong>Hoàn cảnh:</strong> Việt Nam dưới ách đô hộ Pháp</li><li><strong>Mục đích:</strong> Phổ biến học vấn mới, đánh thức dân trí</li></ul><h4>b) Người sáng lập</h4><ul><li><strong>Lương Văn Can:</strong> Người khởi xướng</li><li><strong>Nguyễn Quyền:</strong> Đồng sáng lập</li><li><strong>Nhiều trí thức:</strong> Tham gia giảng dạy</li></ul><h4>c) Hoạt động</h4><ul><li><strong>Giảng dạy:</strong> Quốc văn, quốc sử, khoa học mới</li><li><strong>Xuất bản:</strong> Sách báo tiếng Việt</li><li><strong>Tuyên truyền:</strong> Tư tưởng yêu nước, dân quyền</li></ul>"
+            },
+            {
+              "heading": "2. Giáo dục khai phóng",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Định nghĩa:</strong> Giáo dục giải phóng tư tưởng, đánh thức dân trí</li><li><strong>Mục tiêu:</strong> Phổ cập kiến thức, nâng cao nhận thức</li><li><strong>Phương pháp:</strong> Dạy học mới, tiếng Việt, khoa học</li></ul><h4>b) Nội dung giảng dạy</h4><ul><li><strong>Quốc văn:</strong> Tiếng Việt, văn học dân tộc</li><li><strong>Quốc sử:</strong> Lịch sử Việt Nam</li><li><strong>Khoa học mới:</strong> Toán, lý, hóa, địa lý</li><li><strong>Tư tưởng:</strong> Dân quyền, tự do, tiến bộ</li></ul><h4>c) Ý nghĩa</h4><ul><li><strong>Đánh thức:</strong> Tinh thần dân tộc</li><li><strong>Chuẩn bị:</strong> Lực lượng cách mạng</li><li><strong>Ảnh hưởng:</strong> Phong trào yêu nước sau này</li></ul>"
+            },
+            {
+              "heading": "3. Giá trị lịch sử",
+              "content": "<h4>a) Đối với thời đại</h4><ul><li><strong>Phá vỡ:</strong> Nền giáo dục cũ</li><li><strong>Khơi dậy:</strong> Ý thức dân tộc</li><li><strong>Truyền bá:</strong> Tư tưởng tiến bộ</li></ul><h4>b) Đối với hiện tại</h4><ul><li><strong>Bài học:</strong> Vai trò giáo dục trong giải phóng dân tộc</li><li><strong>Gương mẫu:</strong> Tinh thần yêu nước, cống hiến</li><li><strong>Truyền thống:</strong> Đổi mới giáo dục</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex8-2-1",
+              "type": "mcq",
+              "question": "Đông Kinh Nghĩa Thục được thành lập năm nào?",
+              "options": [
+                "1900",
+                "1907",
+                "1920",
+                "1930"
+              ],
+              "correct": 1,
+              "explanation": "Đông Kinh Nghĩa Thục được thành lập năm 1907 tại Hà Nội."
+            },
+            {
+              "id": "ex8-2-2",
+              "type": "mcq",
+              "question": "Ai là người khởi xướng Đông Kinh Nghĩa Thục?",
+              "options": [
+                "Phan Bội Châu",
+                "Lương Văn Can",
+                "Nguyễn Ái Quốc",
+                "Hồ Chí Minh"
+              ],
+              "correct": 1,
+              "explanation": "Lương Văn Can là người khởi xướng thành lập Đông Kinh Nghĩa Thục."
+            },
+            {
+              "id": "ex8-2-3",
+              "type": "mcq",
+              "question": "Mục đích chính của Đông Kinh Nghĩa Thục là gì?",
+              "options": [
+                "Kinh doanh",
+                "Phổ biến học vấn mới, đánh thức dân trí",
+                "Giải trí",
+                "Du lịch"
+              ],
+              "correct": 1,
+              "explanation": "Mục đích chính là phổ biến học vấn mới, đánh thức dân trí và tinh thần yêu nước."
+            },
+            {
+              "id": "ex8-2-4",
+              "type": "mcq",
+              "question": "Giáo dục khai phóng là gì?",
+              "options": [
+                "Giáo dục truyền thống",
+                "Giáo dục giải phóng tư tưởng, đánh thức dân trí",
+                "Giáo dục ngoại ngữ",
+                "Giáo dục thể chất"
+              ],
+              "correct": 1,
+              "explanation": "Giáo dục khai phóng là giáo dục giải phóng tư tưởng, đánh thức dân trí, nâng cao nhận thức dân tộc."
+            },
+            {
+              "id": "ex8-2-5",
+              "type": "mcq",
+              "question": "Đông Kinh Nghĩa Thục giảng dạy những môn gì?",
+              "options": [
+                "Chỉ có Hán văn",
+                "Quốc văn, quốc sử, khoa học mới, tư tưởng tiến bộ",
+                "Chỉ có ngoại ngữ",
+                "Không giảng dạy gì"
+              ],
+              "correct": 1,
+              "explanation": "Đông Kinh Nghĩa Thục giảng dạy quốc văn, quốc sử, khoa học mới và truyền bá tư tưởng dân quyền, tiến bộ."
+            },
+            {
+              "id": "ex8-2-6",
+              "type": "mcq",
+              "question": "Ý nghĩa của Đông Kinh Nghĩa Thục là gì?",
+              "options": [
+                "Không có ý nghĩa",
+                "Đánh thức tinh thần dân tộc, chuẩn bị lực lượng cách mạng",
+                "Chỉ dạy chữ",
+                "Chỉ kinh doanh"
+              ],
+              "correct": 1,
+              "explanation": "Đông Kinh Nghĩa Thục có ý nghĩa lớn trong việc đánh thức tinh thần dân tộc và chuẩn bị lực lượng cho phong trào cách mạng."
+            },
+            {
+              "id": "ex8-2-7",
+              "type": "mcq",
+              "question": "Bài học từ Đông Kinh Nghĩa Thục là gì?",
+              "options": [
+                "Không có bài học",
+                "Vai trò quan trọng của giáo dục trong giải phóng dân tộc",
+                "Chỉ học là đủ",
+                "Không cần giáo dục"
+              ],
+              "correct": 1,
+              "explanation": "Bài học quan trọng là vai trò của giáo dục trong việc giải phóng tư tưởng và giải phóng dân tộc."
+            },
+            {
+              "id": "ex8-2-8",
+              "type": "mcq",
+              "question": "Đông Kinh Nghĩa Thục ảnh hưởng đến điều gì?",
+              "options": [
+                "Không ảnh hưởng gì",
+                "Các phong trào yêu nước và cách mạng sau này",
+                "Chỉ ảnh hưởng đến giáo dục",
+                "Chỉ ảnh hưởng đến văn hóa"
+              ],
+              "correct": 1,
+              "explanation": "Đông Kinh Nghĩa Thục có ảnh hưởng sâu rộng đến các phong trào yêu nước và cách mạng Việt Nam sau này."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

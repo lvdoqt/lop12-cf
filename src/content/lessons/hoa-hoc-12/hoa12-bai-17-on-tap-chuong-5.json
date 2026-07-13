@@ -1,0 +1,253 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-17-on-tap-chuong-5",
+      "name": "Bài 17. Ôn tập chương 5",
+      "slug": "bai-17-on-tap-chuong-5",
+      "chapter": "Chương 5: Pin điện và điện phân",
+      "chapter_id": "H12-1005",
+      "lesson_id": 17,
+      "description": "Tổng hợp và ôn tập kiến thức về pin điện và điện phân.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "on-tap-chuong-5",
+          "name": "Ôn tập chương 5",
+          "slug": "on-tap-chuong-5",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Tổng hợp kiến thức Chương 5",
+          "sections": [
+            {
+              "heading": "1. Bảng tổng hợp Pin điện và Điện phân",
+              "content": "<h3>a) So sánh Pin điện và Điện phân</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Đặc điểm</th><th class='border border-gray-300 p-2'>Pin điện</th><th class='border border-gray-300 p-2'>Điện phân</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Bản chất</td><td class='border border-gray-300 p-2'>Hóa năng → Điện năng</td><td class='border border-gray-300 p-2'>Điện năng → Hóa năng</td></tr><tr><td class='border border-gray-300 p-2'>Phản ứng</td><td class='border border-gray-300 p-2'>Tự diễn ra</td><td class='border border-gray-300 p-2'>Không tự diễn ra</td></tr><tr><td class='border border-gray-300 p-2'>E°pin</td><td class='border border-gray-300 p-2'>> 0</td><td class='border border-gray-300 p-2'>< 0 (cần năng lượng)</td></tr><tr><td class='border border-gray-300 p-2'>Cực âm (Anode)</td><td class='border border-gray-300 p-2'>Oxi hóa, E° nhỏ hơn</td><td class='border border-gray-300 p-2'>Khử (Cathode)</td></tr><tr><td class='border border-gray-300 p-2'>Cực dương (Cathode)</td><td class='border border-gray-300 p-2'>Khử, E° lớn hơn</td><td class='border border-gray-300 p-2'>Oxi hóa (Anode)</td></tr><tr><td class='border border-gray-300 p-2'>Electron</td><td class='border border-gray-300 p-2'>Từ cực âm → cực dương</td><td class='border border-gray-300 p-2'>Từ cathode → anode</td></tr><tr><td class='border border-gray-300 p-2'>Ứng dụng</td><td class='border border-gray-300 p-2'>Nguồn điện di động</td><td class='border border-gray-300 p-2'>Sản xuất kim loại, hóa chất</td></tr></tbody></table><h3>b) Công thức quan trọng</h3><p><strong>1. Suất điện động pin:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>E°pin = E°(cathode) - E°(anode)</p><p>Điều kiện: E°pin > 0 (phản ứng tự diễn ra)</p><p><strong>2. Định luật Faraday (điện phân):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>m = (A × I × t) / (n × F)</p><ul><li>m: Khối lượng chất (g)</li><li>A: Khối lượng mol (g/mol)</li><li>I: Cường độ dòng điện (A)</li><li>t: Thời gian (s)</li><li>n: Số electron</li><li>F = 96500 C/mol</li></ul><p><strong>3. Điện lượng:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Q = I × t = n(e⁻) × F</p><p><strong>4. Khối lượng kim loại trong pin:</strong></p><p>Cực âm: m giảm = n(e⁻) × M / n</p><p>Cực dương: m tăng = n(e⁻) × M / n</p><h3>c) Dãy thế điện cực chuẩn (quan trọng)</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Cặp oxi hóa - khử</th><th class='border border-gray-300 p-2'>E° (V)</th><th class='border border-gray-300 p-2'>Tính chất</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Li⁺/Li</td><td class='border border-gray-300 p-2'>-3.05</td><td class='border border-gray-300 p-2'>Hoạt động mạnh nhất</td></tr><tr><td class='border border-gray-300 p-2'>K⁺/K</td><td class='border border-gray-300 p-2'>-2.93</td><td class='border border-gray-300 p-2'>Hoạt động rất mạnh</td></tr><tr><td class='border border-gray-300 p-2'>Na⁺/Na</td><td class='border border-gray-300 p-2'>-2.71</td><td class='border border-gray-300 p-2'>Hoạt động mạnh</td></tr><tr><td class='border border-gray-300 p-2'>Mg²⁺/Mg</td><td class='border border-gray-300 p-2'>-2.37</td><td class='border border-gray-300 p-2'>Hoạt động mạnh</td></tr><tr><td class='border border-gray-300 p-2'>Al³⁺/Al</td><td class='border border-gray-300 p-2'>-1.66</td><td class='border border-gray-300 p-2'>Hoạt động mạnh</td></tr><tr><td class='border border-gray-300 p-2'>Zn²⁺/Zn</td><td class='border border-gray-300 p-2'>-0.76</td><td class='border border-gray-300 p-2'>Hoạt động trung bình</td></tr><tr><td class='border border-gray-300 p-2'>Fe²⁺/Fe</td><td class='border border-gray-300 p-2'>-0.44</td><td class='border border-gray-300 p-2'>Hoạt động trung bình</td></tr><tr><td class='border border-gray-300 p-2'>H⁺/H₂</td><td class='border border-gray-300 p-2'>0.00</td><td class='border border-gray-300 p-2'>Chuẩn</td></tr><tr><td class='border border-gray-300 p-2'>Cu²⁺/Cu</td><td class='border border-gray-300 p-2'>+0.34</td><td class='border border-gray-300 p-2'>Hoạt động yếu</td></tr><tr><td class='border border-gray-300 p-2'>Ag⁺/Ag</td><td class='border border-gray-300 p-2'>+0.80</td><td class='border border-gray-300 p-2'>Hoạt động rất yếu</td></tr><tr><td class='border border-gray-300 p-2'>Au³⁺/Au</td><td class='border border-gray-300 p-2'>+1.50</td><td class='border border-gray-300 p-2'>Hoạt động yếu nhất</td></tr></tbody></table><h3>d) Thứ tự điện phân</h3><p><strong>Cathode (-):</strong> Kim loại yếu → H⁺ → Kim loại mạnh (không khử)</p><p><strong>Anode (+):</strong> Anion không có O (Cl⁻, Br⁻, I⁻) → OH⁻ → Anion có O (SO₄²⁻, NO₃⁻)</p>"
+            },
+            {
+              "heading": "2. Phương pháp giải các dạng bài tập",
+              "content": "<h3>a) Dạng 1: Bài toán pin điện</h3><p><strong>Phương pháp:</strong></p><ul><li>Xác định cực âm (E° nhỏ hơn) và cực dương (E° lớn hơn)</li><li>Viết phản ứng điện cực</li><li>Tính E°pin = E°(cathode) - E°(anode)</li><li>Tính khối lượng kim loại thay đổi</li></ul><p><strong>Công thức nhanh:</strong></p><p>n(e⁻) = Δm(cực âm) × n / M(cực âm)</p><p>Δm(cực dương) = n(e⁻) × M(cực dương) / n</p><h3>b) Dạng 2: Bài toán điện phân</h3><p><strong>Phương pháp:</strong></p><ul><li>Xác định thứ tự điện phân (cathode và anode)</li><li>Viết phản ứng điện cực</li><li>Áp dụng định luật Faraday: m = (A × I × t) / (n × F)</li><li>Tính sản phẩm từng giai đoạn (nếu có nhiều chất)</li></ul><p><strong>Lưu ý:</strong></p><ul><li>Cathode: Kim loại yếu bị khử trước</li><li>Anode: Anion không có O bị oxi hóa trước</li><li>Kim loại mạnh (Na⁺, K⁺, Ca²⁺...) không bị khử trong dung dịch</li></ul><h3>c) Dạng 3: Bài toán tổng hợp</h3><p><strong>Kết hợp pin và điện phân:</strong></p><ul><li>Pin cung cấp điện cho điện phân</li><li>Tính điện lượng từ pin</li><li>Tính sản phẩm điện phân</li><li>Áp dụng bảo toàn electron</li></ul><p><strong>Phương pháp:</strong></p><ul><li>Bước 1: Tính n(e⁻) từ pin</li><li>Bước 2: Dùng n(e⁻) để tính sản phẩm điện phân</li><li>Bước 3: Kiểm tra bảo toàn khối lượng</li></ul>"
+            },
+            {
+              "heading": "3. Sơ đồ tư duy chương 5",
+              "content": "<h3>a) Sơ đồ chuyển hóa năng lượng</h3><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>PIN ĐIỆN: Hóa năng → Điện năng (E°pin > 0)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>ĐIỆN PHÂN: Điện năng → Hóa năng (cần năng lượng)</p><h3>b) Mối quan hệ giữa các khái niệm</h3><pre>Thế điện cực (E°)\n         ↓\n    Pin điện (E°pin > 0)\n    - Cực âm: Oxi hóa\n    - Cực dương: Khử\n         ↓\n    Điện năng\n         ↓\n    Điện phân\n    - Cathode: Khử\n    - Anode: Oxi hóa\n         ↓\n    Sản phẩm (Kim loại, Khí...)</pre><h3>c) Ứng dụng thực tế</h3><p><strong>1. Pin điện:</strong></p><ul><li>Pin khô: Đồ chơi, đèn pin (1.5V)</li><li>Pin kiềm: Thiết bị điện tử (1.5V)</li><li>Pin lithium: Máy ảnh, đồng hồ (3V)</li><li>Ắc quy chì: Xe máy, ô tô (12V)</li><li>Pin lithium-ion: Điện thoại, laptop, xe điện</li><li>Pin nhiên liệu: Xe điện, tàu vũ trụ (H₂ + O₂)</li></ul><p><strong>2. Điện phân:</strong></p><ul><li>Sản xuất kim loại: Al, Na, Mg, Cu (tinh chế)</li><li>Sản xuất hóa chất: Cl₂, NaOH, H₂</li><li>Mạ điện: Mạ Ni, Cr, Au, Ag</li><li>Tinh chế kim loại: Cu, Ag, Au</li><li>Sản xuất nước Javel: NaClO</li></ul><h3>d) Lưu ý quan trọng</h3><p><strong>1. Phân biệt pin và điện phân:</strong></p><ul><li>Pin: Phản ứng tự diễn ra, tạo điện</li><li>Điện phân: Cần điện, phản ứng không tự diễn ra</li></ul><p><strong>2. Cực trong pin và điện phân:</strong></p><ul><li>Pin: Cực âm (Anode) oxi hóa, Cực dương (Cathode) khử</li><li>Điện phân: Cathode (-) khử, Anode (+) oxi hóa</li></ul><p><strong>3. Thứ tự điện phân:</strong></p><ul><li>Cathode: Ag⁺ > Cu²⁺ > H⁺ > Fe²⁺ > Zn²⁺ > Na⁺ (không khử)</li><li>Anode: I⁻ > Br⁻ > Cl⁻ > OH⁻ > SO₄²⁻ (không oxi hóa)</li></ul><p><strong>4. Hiệu suất:</strong></p><ul><li>Pin: 40-95% (tùy loại)</li><li>Điện phân: 50-90% (tùy điều kiện)</li></ul><p><strong>5. Môi trường:</strong></p><ul><li>Pin: Cần tái chế (chứa kim loại nặng)</li><li>Điện phân: Tiêu tốn điện năng lớn</li><li>Ưu tiên năng lượng tái tạo</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán tổng hợp pin điện và điện phân",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích pin và điện phân</li><li>Tính E°pin và khối lượng</li><li>Áp dụng định luật Faraday</li><li>Kết hợp bảo toàn electron</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Pin Zn-Cu (E°Zn = -0.76V, E°Cu = +0.34V) hoạt động, cực Zn giảm 13g. a) Tính E°pin. b) Tính khối lượng Cu tăng. c) Dùng pin này điện phân dung dịch AgNO₃, tính khối lượng Ag bám cathode.",
+                "solution": "<p><strong>a) Tính E°pin:</strong></p><p><strong>Xác định cực:</strong></p><p>Cực âm (Anode): Zn (E° = -0.76V, nhỏ hơn)</p><p>Cực dương (Cathode): Cu (E° = +0.34V, lớn hơn)</p><p><strong>Tính E°pin:</strong></p><p>E°pin = E°(cathode) - E°(anode)</p><p>E°pin = 0.34 - (-0.76) = 1.10V</p><p><strong>b) Tính khối lượng Cu:</strong></p><p><strong>Phản ứng cực âm (Zn):</strong></p><p>Zn → Zn²⁺ + 2e⁻</p><p>n(Zn) = 13 / 65 = 0.2 mol</p><p>n(e⁻) = 2 × 0.2 = 0.4 mol</p><p><strong>Phản ứng cực dương (Cu):</strong></p><p>Cu²⁺ + 2e⁻ → Cu</p><p>n(Cu) = n(e⁻) / 2 = 0.4 / 2 = 0.2 mol</p><p>m(Cu) = 0.2 × 64 = 12.8g</p><p><strong>c) Điện phân AgNO₃:</strong></p><p><strong>Electron từ pin:</strong> n(e⁻) = 0.4 mol</p><p><strong>Phản ứng cathode (điện phân):</strong></p><p>Ag⁺ + e⁻ → Ag</p><p>n(Ag) = n(e⁻) = 0.4 mol</p><p>m(Ag) = 0.4 × 108 = 43.2g</p><p><strong>Đáp án:</strong> a) 1.10V; b) 12.8g; c) 43.2g</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán điện phân hỗn hợp ion kim loại",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định thứ tự khử ở cathode</li><li>Tính mol electron từng giai đoạn</li><li>Tính khối lượng kim loại bám cathode</li><li>Xác định thời điểm chuyển giai đoạn</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Điện phân dung dịch chứa Cu²⁺ 0.1M và Ag⁺ 0.2M (thể tích 500ml) với I = 3.86A. a) Xác định thứ tự khử. b) Tính thời gian để Ag⁺ hết. c) Tính khối lượng kim loại bám cathode sau 5000s.",
+                "solution": "<p><strong>a) Thứ tự khử:</strong></p><p>E°(Ag⁺/Ag) = +0.80V > E°(Cu²⁺/Cu) = +0.34V</p><p><strong>Thứ tự:</strong> Ag⁺ khử trước, Cu²⁺ khử sau</p><p><strong>b) Thời gian để Ag⁺ hết:</strong></p><p><strong>Số mol Ag⁺:</strong></p><p>n(Ag⁺) = 0.2 × 0.5 = 0.1 mol</p><p><strong>Phản ứng:</strong> Ag⁺ + e⁻ → Ag</p><p>n(e⁻) cần = 0.1 mol</p><p><strong>Tính thời gian:</strong></p><p>Q = n(e⁻) × F = 0.1 × 96500 = 9650 C</p><p>t = Q / I = 9650 / 3.86 = 2500s</p><p><strong>c) Khối lượng kim loại sau 5000s:</strong></p><p><strong>Giai đoạn 1 (0 - 2500s): Khử Ag⁺</strong></p><p>n(Ag) = 0.1 mol</p><p>m(Ag) = 0.1 × 108 = 10.8g</p><p><strong>Giai đoạn 2 (2500s - 5000s): Khử Cu²⁺</strong></p><p>Δt = 5000 - 2500 = 2500s</p><p>Q = I × Δt = 3.86 × 2500 = 9650 C</p><p>n(e⁻) = 9650 / 96500 = 0.1 mol</p><p><strong>Phản ứng:</strong> Cu²⁺ + 2e⁻ → Cu</p><p>n(Cu) = 0.1 / 2 = 0.05 mol</p><p>m(Cu) = 0.05 × 64 = 3.2g</p><p><strong>Tổng khối lượng:</strong></p><p>m(tổng) = 10.8 + 3.2 = 14g</p><p><strong>Kiểm tra:</strong></p><p>n(Cu²⁺) ban đầu = 0.1 × 0.5 = 0.05 mol</p><p>Cu²⁺ vừa hết sau 2500s nữa (tổng 5000s)</p><p><strong>Đáp án:</strong> a) Ag⁺ trước, Cu²⁺ sau; b) 2500s; c) 14g</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Hệ thống lưu trữ năng lượng tái tạo",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Phân tích hệ thống pin + điện phân</li><li>Tính hiệu suất lưu trữ năng lượng</li><li>Đánh giá kinh tế và môi trường</li><li>Đề xuất giải pháp tối ưu</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Hệ thống năng lượng mặt trời + pin lithium-ion + điện phân nước. Ban ngày: Điện mặt trời (100 kWh) → Sạc pin (80 kWh) + Điện phân H₂O (20 kWh). Ban đêm: Pin (60 kWh) + H₂ đốt (15 kWh). a) Tính hiệu suất lưu trữ. b) Tính lượng H₂ và O₂ (điện phân 20 kWh, hiệu suất 70%, điện áp 2V). c) Đánh giá và đề xuất cải tiến.",
+                "solution": "<p><strong>a) Hiệu suất lưu trữ:</strong></p><p><strong>Năng lượng đầu vào (ban ngày):</strong> 100 kWh</p><p><strong>Năng lượng đầu ra (ban đêm):</strong></p><ul><li>Pin: 60 kWh</li><li>H₂ đốt: 15 kWh</li><li>Tổng: 75 kWh</li></ul><p><strong>Hiệu suất tổng:</strong></p><p>H = 75 / 100 × 100% = 75%</p><p><strong>Phân tích chi tiết:</strong></p><ul><li>Pin: 80 kWh → 60 kWh (hiệu suất 75%)</li><li>Điện phân: 20 kWh → 15 kWh H₂ (hiệu suất 75%)</li></ul><p><strong>b) Tính lượng H₂ và O₂:</strong></p><p><strong>Năng lượng điện phân:</strong> 20 kWh = 20,000 Wh = 72 × 10⁶ J</p><p><strong>Điện lượng:</strong></p><p>Q = W / U = 72 × 10⁶ / 2 = 36 × 10⁶ C</p><p><strong>Số mol electron (lý thuyết):</strong></p><p>n(e⁻) lý thuyết = 36 × 10⁶ / 96500 = 373 mol</p><p><strong>Số mol electron (thực tế, hiệu suất 70%):</strong></p><p>n(e⁻) thực tế = 373 × 70% = 261 mol</p><p><strong>Phản ứng điện phân nước:</strong></p><p>Cathode: 2H₂O + 2e⁻ → H₂ + 2OH⁻</p><p>Anode: 2H₂O → O₂ + 4H⁺ + 4e⁻</p><p><strong>Tổng:</strong> 2H₂O → 2H₂ + O₂</p><p><strong>Tính H₂:</strong></p><p>n(H₂) = n(e⁻) / 2 = 261 / 2 = 130.5 mol</p><p>V(H₂) = 130.5 × 22.4 = 2923 lít (đktc)</p><p>m(H₂) = 130.5 × 2 = 261g</p><p><strong>Tính O₂:</strong></p><p>n(O₂) = n(e⁻) / 4 = 261 / 4 = 65.25 mol</p><p>V(O₂) = 65.25 × 22.4 = 1462 lít (đktc)</p><p>m(O₂) = 65.25 × 32 = 2088g</p><p><strong>Năng lượng từ H₂:</strong></p><p>H₂ + ½O₂ → H₂O (ΔH = -286 kJ/mol)</p><p>E = 130.5 × 286 = 37,323 kJ = 10.4 kWh (lý thuyết)</p><p>E thực tế = 10.4 × 70% ≈ 7.3 kWh (gần với 15 kWh nếu dùng pin nhiên liệu)</p><p><strong>c) Đánh giá và đề xuất:</strong></p><p><strong>1. Ưu điểm hệ thống:</strong></p><ul><li>✓ Lưu trữ năng lượng mặt trời (không ổn định)</li><li>✓ Sử dụng 24/7 (ban ngày + ban đêm)</li><li>✓ Hiệu suất tốt (75%)</li><li>✓ Sạch, không khí thải</li><li>✓ H₂ có thể lưu trữ lâu dài</li></ul><p><strong>2. Nhược điểm:</strong></p><ul><li>⚠️ Chi phí đầu tư cao (pin + điện phân)</li><li>⚠️ H₂ khó lưu trữ (áp suất cao, nguy hiểm)</li><li>⚠️ Hiệu suất chưa tối ưu (75%)</li><li>⚠️ Tuổi thọ pin hạn chế (10-15 năm)</li></ul><p><strong>3. So sánh các phương án lưu trữ:</strong></p><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Phương án</th><th class='border border-gray-300 p-2'>Hiệu suất</th><th class='border border-gray-300 p-2'>Chi phí</th><th class='border border-gray-300 p-2'>Tuổi thọ</th><th class='border border-gray-300 p-2'>Ưu điểm</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Pin Li-ion</td><td class='border border-gray-300 p-2'>85-95%</td><td class='border border-gray-300 p-2'>Cao</td><td class='border border-gray-300 p-2'>10-15 năm</td><td class='border border-gray-300 p-2'>Hiệu suất cao, phản ứng nhanh</td></tr><tr><td class='border border-gray-300 p-2'>H₂ (điện phân)</td><td class='border border-gray-300 p-2'>60-70%</td><td class='border border-gray-300 p-2'>Trung bình</td><td class='border border-gray-300 p-2'>20-30 năm</td><td class='border border-gray-300 p-2'>Lưu trữ lâu, quy mô lớn</td></tr><tr><td class='border border-gray-300 p-2'>Thủy điện bơm</td><td class='border border-gray-300 p-2'>70-85%</td><td class='border border-gray-300 p-2'>Thấp</td><td class='border border-gray-300 p-2'>50-100 năm</td><td class='border border-gray-300 p-2'>Rẻ, tuổi thọ cao</td></tr><tr><td class='border border-gray-300 p-2'>Khí nén</td><td class='border border-gray-300 p-2'>40-60%</td><td class='border border-gray-300 p-2'>Trung bình</td><td class='border border-gray-300 p-2'>20-40 năm</td><td class='border border-gray-300 p-2'>An toàn, đơn giản</td></tr></tbody></table><p><strong>4. Đề xuất cải tiến:</strong></p><p><strong>a) Nâng cao hiệu suất:</strong></p><ul><li>Pin thể rắn: Hiệu suất 95%, tuổi thọ 20 năm</li><li>Điện phân PEM: Hiệu suất 80-90%</li><li>Pin nhiên liệu: Hiệu suất 60% (H₂ → điện)</li><li>Mục tiêu: Hiệu suất tổng 85%</li></ul><p><strong>b) Giảm chi phí:</strong></p><ul><li>Sản xuất pin quy mô lớn (-50% chi phí)</li><li>Điện phân kiềm (rẻ hơn PEM)</li><li>Lưu trữ H₂ dạng hydride kim loại (an toàn hơn)</li><li>Mục tiêu: Giảm 40% chi phí</li></ul><p><strong>c) Mô hình tối ưu:</strong></p><p><strong>Ngày nắng (100 kWh):</strong></p><ul><li>Sử dụng trực tiếp: 30 kWh</li><li>Sạc pin Li-ion: 50 kWh (hiệu suất 90% → 45 kWh)</li><li>Điện phân H₂: 20 kWh (hiệu suất 80% → 16 kWh H₂)</li></ul><p><strong>Ban đêm/Ngày mưa:</strong></p><ul><li>Pin Li-ion: 45 kWh (đủ 1 đêm)</li><li>Pin nhiên liệu H₂: 16 kWh × 60% = 9.6 kWh (dự phòng)</li><li>Tổng: 54.6 kWh</li></ul><p><strong>Hiệu suất tổng:</strong> 54.6 / 100 = 54.6% (ngắn hạn) + H₂ dự trữ dài hạn</p><p><strong>5. Lộ trình phát triển:</strong></p><ul><li>2025: Pin Li-ion + Điện phân kiềm (hiệu suất 70%)</li><li>2030: Pin thể rắn + Điện phân PEM (hiệu suất 85%)</li><li>2035: Hệ thống tích hợp AI tối ưu (hiệu suất 90%)</li><li>2040: Phổ biến rộng rãi, giá rẻ</li></ul><p><strong>6. Tác động môi trường:</strong></p><ul><li>Giảm 100% khí thải (so với nhiệt điện)</li><li>Không ô nhiễm không khí</li><li>Tái chế pin: 90% vật liệu</li><li>Phát triển bền vững</li></ul><p><strong>Kết luận:</strong></p><p>Hệ thống lưu trữ năng lượng mặt trời bằng pin + H₂ có hiệu suất 75%, đủ cung cấp điện 24/7. Với công nghệ mới (pin thể rắn, điện phân PEM), hiệu suất có thể đạt 85-90%. Đây là giải pháp then chốt cho năng lượng tái tạo, giúp giảm phụ thuộc nhiên liệu hóa thạch và bảo vệ môi trường.</p><p><strong>Đáp án:</strong> a) 75%; b) 2923 lít H₂, 1462 lít O₂; c) Đã phân tích chi tiết</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Pin điện chuyển:",
+            "options": ["Hóa năng → Điện năng", "Điện năng → Hóa năng", "Nhiệt năng → Điện năng", "Cơ năng → Điện năng"],
+            "correct": 0,
+            "explanation": "Pin điện chuyển hóa năng → điện năng."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Điện phân chuyển:",
+            "options": ["Hóa năng → Điện năng", "Điện năng → Hóa năng", "Nhiệt năng → Điện năng", "Cơ năng → Điện năng"],
+            "correct": 1,
+            "explanation": "Điện phân chuyển điện năng → hóa năng."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Trong pin, cực âm là:",
+            "options": ["Kim loại hoạt động mạnh hơn", "Kim loại hoạt động yếu hơn", "Không xác định", "Tùy điều kiện"],
+            "correct": 0,
+            "explanation": "Cực âm là kim loại hoạt động mạnh hơn (E° nhỏ hơn)."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Trong pin, ở cực âm xảy ra:",
+            "options": ["Oxi hóa", "Khử", "Không phản ứng", "Cả hai"],
+            "correct": 0,
+            "explanation": "Cực âm xảy ra oxi hóa."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Trong điện phân, ở cathode xảy ra:",
+            "options": ["Oxi hóa", "Khử", "Không phản ứng", "Cả hai"],
+            "correct": 1,
+            "explanation": "Cathode xảy ra khử."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "E°(Zn) = -0.76V, E°(Cu) = +0.34V. E°pin Zn-Cu là:",
+            "options": ["0.42V", "1.10V", "-0.42V", "-1.10V"],
+            "correct": 1,
+            "explanation": "E°pin = 0.34 - (-0.76) = 1.10V."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Hằng số Faraday F =",
+            "options": ["96500 C/mol", "96500 J/mol", "96500 V", "96500 A"],
+            "correct": 0,
+            "explanation": "F = 96500 C/mol."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Điện phân CuSO₄ (anode trơ), ở cathode thu được:",
+            "options": ["Cu", "O₂", "H₂", "SO₂"],
+            "correct": 0,
+            "explanation": "Cathode thu được Cu."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Điện phân dung dịch NaCl, ở cathode thu được:",
+            "options": ["Na", "H₂", "Cl₂", "O₂"],
+            "correct": 1,
+            "explanation": "Cathode thu được H₂ (Na⁺ không bị khử)."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Thứ tự khử ở cathode:",
+            "options": ["Ag⁺ > Cu²⁺ > H⁺", "H⁺ > Cu²⁺ > Ag⁺", "Cu²⁺ > Ag⁺ > H⁺", "Ag⁺ > H⁺ > Cu²⁺"],
+            "correct": 0,
+            "explanation": "Thứ tự khử: Ag⁺ > Cu²⁺ > H⁺ (E° giảm dần)."
+          },
+          {
+            "id": "ex11",
+            "type": "mcq",
+            "question": "Pin Zn-Cu, cực Zn giảm 6.5g. Khối lượng Cu tăng:",
+            "options": ["3.2g", "6.4g", "12.8g", "32g"],
+            "correct": 1,
+            "explanation": "n(Zn) = 0.1 mol → n(e⁻) = 0.2 mol → n(Cu) = 0.1 mol → m = 6.4g."
+          },
+          {
+            "id": "ex12",
+            "type": "mcq",
+            "question": "Điện phân Cu²⁺ với I=5A trong 1930s. Khối lượng Cu:",
+            "options": ["1.6g", "3.2g", "6.4g", "12.8g"],
+            "correct": 1,
+            "explanation": "m = (64×5×1930)/(2×96500) = 3.2g."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Đặc điểm pin điện:",
+            "options": ["Hóa năng → Điện năng", "Phản ứng tự diễn ra", "E°pin > 0", "Tất cả"],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Pin có tất cả các đặc điểm trên."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Ứng dụng điện phân:",
+            "options": ["Sản xuất kim loại", "Sản xuất hóa chất", "Mạ điện", "Tất cả"],
+            "correct": [0, 1, 2, 3],
+            "explanation": "Điện phân có nhiều ứng dụng."
+          },
+          {
+            "id": "ex15",
+            "type": "msq",
+            "question": "Kim loại có E° âm:",
+            "options": ["Zn", "Cu", "Fe", "Ag"],
+            "correct": [0, 2],
+            "explanation": "Zn và Fe có E° âm."
+          },
+          {
+            "id": "ex16",
+            "type": "msq",
+            "question": "Loại pin sạc lại được:",
+            "options": ["Pin khô", "Ắc quy chì", "Pin lithium-ion", "Pin kiềm"],
+            "correct": [1, 2],
+            "explanation": "Ắc quy chì và pin lithium-ion sạc lại được."
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Pin Zn-Ag: E°(Zn) = -0.76V, E°(Ag) = +0.80V. Tính E°pin (V). Làm tròn đến 2 chữ số thập phân.",
+            "correct": "1.56",
+            "explanation": "E°pin = 0.80 - (-0.76) = 1.56V. Đáp án: 1.56"
+          },
+          {
+            "id": "ex18",
+            "type": "sa",
+            "question": "Pin Zn-Cu, cực Zn giảm 13g. Tính mol electron. Làm tròn đến 1 chữ số thập phân.",
+            "correct": "0.4",
+            "explanation": "n(Zn) = 13/65 = 0.2 mol. n(e⁻) = 2×0.2 = 0.4 mol. Đáp án: 0.4"
+          },
+          {
+            "id": "ex19",
+            "type": "sa",
+            "question": "Pin Zn-Cu, cực Zn giảm 13g. Tính khối lượng Cu tăng (g). Làm tròn đến 1 chữ số thập phân.",
+            "correct": "12.8",
+            "explanation": "n(e⁻) = 0.4 mol. n(Cu) = 0.2 mol. m = 0.2×64 = 12.8g. Đáp án: 12.8"
+          },
+          {
+            "id": "ex20",
+            "type": "sa",
+            "question": "Điện phân Cu²⁺ với I=10A trong 1930s. Tính khối lượng Cu (g). Làm tròn đến 1 chữ số thập phân.",
+            "correct": "6.4",
+            "explanation": "m = (64×10×1930)/(2×96500) = 6.4g. Đáp án: 6.4"
+          },
+          {
+            "id": "ex21",
+            "type": "sa",
+            "question": "Điện phân Ag⁺ với I=3.86A trong 2500s. Tính khối lượng Ag (g). Làm tròn đến 1 chữ số thập phân.",
+            "correct": "10.8",
+            "explanation": "m = (108×3.86×2500)/(1×96500) = 10.8g. Đáp án: 10.8"
+          },
+          {
+            "id": "ex22",
+            "type": "sa",
+            "question": "Điện phân Al³⁺, 1 mol Al cần bao nhiêu mol electron? Làm tròn đến hàng đơn vị.",
+            "correct": "3",
+            "explanation": "Al³⁺ + 3e⁻ → Al. Đáp án: 3"
+          }
+        ]
+      }
+    }
+  ]
+}

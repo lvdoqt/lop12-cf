@@ -1,0 +1,156 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-9-1-voi-vang",
+      "name": "Vội vàng",
+      "slug": "voi-vang",
+      "chapter": "Văn học và cuộc đời",
+      "chapter_id": "V12-9",
+      "lesson_id": 1,
+      "author": "Xuân Diệu",
+      "description": "Tìm hiểu bài thơ 'Vội vàng' của Xuân Diệu, khám phá nỗi trăn trở về thời gian và cuộc đời qua ngôn ngữ thơ đầy cảm xúc.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1501139083538-0139583c060f?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "poetry-analysis",
+          "name": "Phân tích thơ",
+          "slug": "phan-tich-tho",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Vội vàng - Xuân Diệu",
+          "sections": [
+            {
+              "heading": "1. Tác giả Xuân Diệu",
+              "content": "<h4>a) Tiểu sử</h4><ul><li><strong>Năm sinh:</strong> 1916 tại Hà Tĩnh</li><li><strong>Nghề nghiệp:</strong> Nhà thơ, dịch giả</li><li><strong>Biệt danh:</strong> 'Vua thơ tình'</li></ul><h4>b) Tác phẩm</h4><ul><li><strong>Thơ tình:</strong> Thơ thơ, Gửi lại cho em</li><li><strong>Thơ cách mạng:</strong> Gió lộng, Đất nước</li><li><strong>Phong cách:</strong> Lãng mạn, trữ tình</li></ul>"
+            },
+            {
+              "heading": "2. Nội dung bài thơ",
+              "content": "<h4>a) Chủ đề</h4><ul><li><strong>Thời gian:</strong> Trôi nhanh, vội vàng</li><li><strong>Cuộc đời:</strong> Ngắn ngủi, phù du</li><li><strong>Tình yêu:</strong> Trân trọng từng khoảnh khắc</li></ul><h4>b) Nội dung chính</h4><ul><li><strong>Cảm nhận:</strong> Thời gian trôi vội vã</li><li><strong>Trăn trở:</strong> Cuộc đời ngắn ngủi</li><li><strong>Khát khao:</strong> Giữ lại khoảnh khắc đẹp</li></ul><h4>c) Hình ảnh</h4><ul><li><strong>Thời gian:</strong> Vội vàng, chạy, trôi</li><li><strong>Thiên nhiên:</strong> Mùa xuân, hoa, lá</li><li><strong>Con người:</strong> Yêu thương, trân trọng</li></ul>"
+            },
+            {
+              "heading": "3. Nghệ thuật",
+              "content": "<h4>a) Ngôn ngữ thơ</h4><ul><li><strong>Từ ngữ:</strong> Giàu cảm xúc, âm nhạc</li><li><strong>Hình ảnh:</strong> Sinh động, gợi cảm</li><li><strong>Nhịp điệu:</strong> Nhanh, vội vã</li></ul><h4>b) Biện pháp nghệ thuật</h4><ul><li><strong>Nhân hóa:</strong> Thời gian như con người</li><li><strong>So sánh:</strong> Cuộc đời như mùa xuân</li><li><strong>Lặp:</strong> Nhấn mạnh sự vội vàng</li></ul><h4>c) Giá trị</h4><ul><li><strong>Triết lý:</strong> Về thời gian, cuộc đời</li><li><strong>Cảm xúc:</strong> Sâu sắc, chân thành</li><li><strong>Nghệ thuật:</strong> Ngôn ngữ thơ tinh tế</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex9-1-1",
+              "type": "mcq",
+              "question": "Tác giả của bài thơ 'Vội vàng' là ai?",
+              "options": [
+                "Huy Cận",
+                "Xuân Diệu",
+                "Hàn Mặc Tử",
+                "Thế Lữ"
+              ],
+              "correct": 1,
+              "explanation": "'Vội vàng' là bài thơ nổi tiếng của Xuân Diệu, được mệnh danh là 'Vua thơ tình'."
+            },
+            {
+              "id": "ex9-1-2",
+              "type": "mcq",
+              "question": "Chủ đề chính của bài thơ là gì?",
+              "options": [
+                "Tình yêu đôi lứa",
+                "Thời gian trôi nhanh, cuộc đời ngắn ngủi",
+                "Thiên nhiên",
+                "Chiến tranh"
+              ],
+              "correct": 1,
+              "explanation": "Bài thơ thể hiện nỗi trăn trở về thời gian trôi vội vã và cuộc đời ngắn ngủi."
+            },
+            {
+              "id": "ex9-1-3",
+              "type": "mcq",
+              "question": "Hình ảnh nào thể hiện sự vội vàng của thời gian?",
+              "options": [
+                "Thời gian đứng yên",
+                "Thời gian chạy, trôi vội vã",
+                "Thời gian chậm rãi",
+                "Thời gian không tồn tại"
+              ],
+              "correct": 1,
+              "explanation": "Thơ sử dụng hình ảnh thời gian chạy, trôi vội vã để thể hiện sự nhanh chóng của thời gian."
+            },
+            {
+              "id": "ex9-1-4",
+              "type": "mcq",
+              "question": "Biện pháp nghệ thuật chính trong bài thơ là gì?",
+              "options": [
+                "Ẩn dụ",
+                "Nhân hóa thời gian",
+                "Hoán dụ",
+                "Nói giảm nói tránh"
+              ],
+              "correct": 1,
+              "explanation": "Bài thơ sử dụng biện pháp nhân hóa, thời gian được miêu tả như con người đang chạy vội."
+            },
+            {
+              "id": "ex9-1-5",
+              "type": "mcq",
+              "question": "Cảm xúc chủ đạo trong bài thơ là gì?",
+              "options": [
+                "Vui vẻ",
+                "Trăn trở, tiếc nuối về thời gian",
+                "Tức giận",
+                "Bình thản"
+              ],
+              "correct": 1,
+              "explanation": "Bài thơ thể hiện sự trăn trở, tiếc nuối về thời gian trôi nhanh và cuộc đời ngắn ngủi."
+            },
+            {
+              "id": "ex9-1-6",
+              "type": "mcq",
+              "question": "Xuân Diệu được mệnh danh là gì?",
+              "options": [
+                "Vua thơ",
+                "Vua thơ tình",
+                "Nhà thơ cách mạng",
+                "Nhà thơ hiện đại"
+              ],
+              "correct": 1,
+              "explanation": "Xuân Diệu được mệnh danh là 'Vua thơ tình' với những bài thơ tình yêu đầy cảm xúc."
+            },
+            {
+              "id": "ex9-1-7",
+              "type": "mcq",
+              "question": "Ngôn ngữ thơ Xuân Diệu có đặc điểm gì?",
+              "options": [
+                "Khô khan, máy móc",
+                "Giàu cảm xúc, âm nhạc, sinh động",
+                "Đơn giản, bình dị",
+                "Khó hiểu"
+              ],
+              "correct": 1,
+              "explanation": "Ngôn ngữ thơ Xuân Diệu giàu cảm xúc, có tính âm nhạc cao và hình ảnh sinh động."
+            },
+            {
+              "id": "ex9-1-8",
+              "type": "mcq",
+              "question": "Giá trị của bài thơ là gì?",
+              "options": [
+                "Chỉ giải trí",
+                "Triết lý sâu sắc về thời gian và cuộc đời",
+                "Không có giá trị",
+                "Chỉ miêu tả cảnh vật"
+              ],
+              "correct": 1,
+              "explanation": "Bài thơ có giá trị triết lý sâu sắc về thời gian, cuộc đời và cách trân trọng từng khoảnh khắc."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

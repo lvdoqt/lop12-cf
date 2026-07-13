@@ -1,0 +1,296 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-1-cau-truc-chat-chuyen-the",
+      "name": "Bài 1. Cấu trúc của chất. Sự chuyển thể",
+      "slug": "bai-1-cau-truc-chat-su-chuyen-the",
+      "chapter": "Chương 1. Vật lí nhiệt",
+      "chapter_id": "LY12-1",
+      "lesson_id": 1,
+      "description": "Nghiên cứu về cấu trúc của chất, các thể (rắn, lỏng, khí) và sự chuyển thể giữa các thể.",
+      "duration_minutes": 45,
+      "difficulty_level": "easy",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "ct-1",
+          "name": "Cấu trúc chất",
+          "slug": "cau-truc-chat",
+          "difficulty": "easy"
+        },
+        {
+          "id": "ct-2",
+          "name": "Các thể của chất",
+          "slug": "cac-the-chat",
+          "difficulty": "easy"
+        },
+        {
+          "id": "ct-3",
+          "name": "Sự chuyển thể",
+          "slug": "su-chuyen-the",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Cấu trúc của chất. Sự chuyển thể",
+          "sections": [
+            {
+              "heading": "1. Cấu trúc của chất",
+              "content": "<p><strong>Cấu trúc phân tử của vật chất:</strong></p><p>Mọi chất đều được cấu tạo từ các phân tử hoặc nguyên tử. Khoảng cách giữa các phân tử và động năng phân tử xác định trạng thái của chất.</p><p><strong>Các đặc điểm cấu trúc:</strong></p><ul><li>Khoảng cách giữa các phân tử: rắn < lỏng < khí</li><li>Tương tác giữa các phân tử: rắn mạnh nhất, khí yếu nhất</li><li>Chuyển động nhiệt: phân tử chuyển động hỗn loạn không ngừng</li></ul>"
+            },
+            {
+              "heading": "2. Các thể của chất",
+              "content": "<p><strong>a) Chất rắn kết tinh:</strong></p><ul><li>Cấu trúc tinh thể với các phân tử sắp xếp có trật tự theo nút mạng</li><li>Có nhiệt độ nóng chảy xác định</li><li>Ví dụ: nước đá, kim loại, muối ăn</li></ul><p><strong>b) Chất rắn vô định hình:</strong></p><ul><li>Cấu trúc không có trật tự xa</li><li>Không có nhiệt độ nóng chảy xác định</li><li>Ví dụ: thủy tinh, nhựa, cao su</li></ul><p><strong>c) Chất lỏng:</strong></p><ul><li>Khoảng cách phân tử trung bình</li><li>Chuyển động tự do trong phạm vi giới hạn</li><li>Có thể tích xác định, không có hình dạng xác định</li></ul><p><strong>d) Chất khí:</strong></p><ul><li>Khoảng cách phân tử rất lớn</li><li>Chuyển động hỗn loạn không ngừng</li><li>Chiếm toàn bộ thể tích bình chứa</li></ul>"
+            },
+            {
+              "heading": "3. Sự chuyển thể",
+              "content": "<p><strong>Các quá trình chuyển thể:</strong></p><ul><li><strong>Nóng chảy:</strong> rắn → lỏng (nhận nhiệt)</li><li><strong>Đông đặc:</strong> lỏng → rắn (tỏa nhiệt)</li><li><strong>Hóa hơi:</strong> lỏng → khí (nhận nhiệt)</li><li><strong>Ngưng tụ:</strong> khí → lỏng (tỏa nhiệt)</li><li><strong>Thăng hoa:</strong> rắn → khí (nhận nhiệt)</li><li><strong>Deposition:</strong> khí → rắn (tỏa nhiệt)</li></ul><p><strong>Nhiệt độ nóng chảy và đông đặc:</strong></p><ul><li>Mỗi chất rắn kết tinh có nhiệt độ nóng chảy xác định ở áp suất cho trước</li><li>Nhiệt độ nóng chảy = nhiệt độ đông đặc</li><li>Trong quá trình nóng chảy/đông đặc, nhiệt độ không đổi</li></ul>"
+            },
+            {
+              "heading": "4. Nhiệt nóng chảy",
+              "content": "<p><strong>Nhiệt nóng chảy (L):</strong></p><p>Là nhiệt lượng cần thiết để chuyển 1 kg chất rắn từ thể rắn sang thể lỏng ở nhiệt độ nóng chảy.</p><p><strong>Công thức:</strong></p><p>$$Q = mL$$</p><p>Trong đó:</p><ul><li>Q: nhiệt nóng chảy (J)</li><li>m: khối lượng chất (kg)</li><li>L: nhiệt nóng chảy riêng (J/kg)</li></ul><p><strong>Đặc điểm:</strong></p><ul><li>Mỗi chất có nhiệt nóng chảy riêng xác định</li><li>Nước đá: L = 3,34.10⁵ J/kg</li><li>Chì: L = 0,25.10⁵ J/kg</li><li>Đồng: L = 1,34.10⁵ J/kg</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán nhiệt nóng chảy",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Q = mL</li><li>Chú ý đổi đơn vị: m(kg), L(J/kg), Q(J)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Tính nhiệt lượng cần thiết để làm nóng chảy 2 kg nước đá ở 0°C. Biết L = 3,34.10⁵ J/kg.",
+                "solution": "<p><strong>Giải:</strong></p><p>Q = mL = 2 × 3,34.10⁵ = 6,68.10⁵ J</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Dạng toán thực tế",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định khối lượng chất</li><li>Xác định nhiệt nóng chảy riêng</li><li>Áp dụng Q = mL</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ thực tế:</strong> Một bình chứa 500g nước đá. Tính nhiệt lượng cần để làm tan chảy hoàn toàn nước đá. Đổi đơn vị và tính toán.",
+                "solution": "<p><strong>Giải:</strong></p><p>m = 500g = 0,5 kg</p><p>L = 3,34.10⁵ J/kg</p><p>Q = mL = 0,5 × 3,34.10⁵ = 1,67.10⁵ J</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Cân bằng nhiệt khi có chuyển thể",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Nhiệt tỏa = Nhiệt thu</li><li>Chú ý các giai đoạn: nóng lên, nóng chảy, hóa hơi</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Thả 1 kg nước đá ở -10°C vào 2 kg nước ở 50°C. Tính nhiệt độ cuối cùng. Cho c_nước = 4200 J/kgK, c_nước đá = 2100 J/kgK, L = 3,34.10⁵ J/kg.",
+                "solution": "<p><strong>Giải:</strong></p><p>Quá trình: nước đá nóng lên 0°C → tan chảy → nước nóng lên</p><p>Nước nguội từ 50°C xuống</p><p>Giải cân bằng nhiệt để tìm nhiệt độ cuối</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Khoảng cách giữa các phân tử trong chất rắn so với chất khí:",
+            "options": [
+              "Lớn hơn",
+              "Nhỏ hơn",
+              "Bằng nhau",
+              "Không xác định"
+            ],
+            "correct": 1,
+            "explanation": "Khoảng cách phân tử trong rắn nhỏ hơn nhiều so với khí"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Chất rắn kết tinh có đặc điểm:",
+            "options": [
+              "Không có nhiệt độ nóng chảy xác định",
+              "Có cấu trúc tinh thể",
+              "Không có hình dạng xác định",
+              "Chỉ có một dạng"
+            ],
+            "correct": 1,
+            "explanation": "Chất rắn kết tinh có cấu trúc tinh thể và nhiệt độ nóng chảy xác định"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Trong quá trình nóng chảy, nhiệt độ của chất:",
+            "options": [
+              "Tăng liên tục",
+              "Giảm liên tục",
+              "Không đổi",
+              "Thay đổi bất kỳ"
+            ],
+            "correct": 2,
+            "explanation": "Nhiệt độ không đổi trong quá trình nóng chảy"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Nhiệt nóng chảy riêng của một chất là:",
+            "options": [
+              "Nhiệt lượng cần để nóng chảy 1 kg",
+              "Nhiệt lượng cần để tăng 1°C",
+              "Nhiệt độ nóng chảy",
+              "Nhiệt dung riêng"
+            ],
+            "correct": 0,
+            "explanation": "L là nhiệt lượng cần thiết để chuyển 1 kg chất từ rắn sang lỏng"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Thủy tinh là chất:",
+            "options": [
+              "Kết tinh",
+              "Vô định hình",
+              "Lỏng",
+              "Khí"
+            ],
+            "correct": 1,
+            "explanation": "Thủy tinh là chất rắn vô định hình"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Quá trình chuyển từ lỏng sang khí gọi là:",
+            "options": [
+              "Ngưng tụ",
+              "Hóa hơi",
+              "Nóng chảy",
+              "Đông đặc"
+            ],
+            "correct": 1,
+            "explanation": "Hóa hơi là quá trình lỏng → khí"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Nhiệt nóng chảy riêng của nước đá là:",
+            "options": [
+              "2,26.10⁶ J/kg",
+              "3,34.10⁵ J/kg",
+              "4,2.10³ J/kg",
+              "1,34.10⁵ J/kg"
+            ],
+            "correct": 1,
+            "explanation": "L_nước đá = 3,34.10⁵ J/kg"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Chất khí có đặc điểm:",
+            "options": [
+              "Có thể tích xác định",
+              "Chiếm toàn bộ thể tích bình",
+              "Khoảng cách phân tử nhỏ",
+              "Không chuyển động nhiệt"
+            ],
+            "correct": 1,
+            "explanation": "Chất khí chiếm toàn bộ thể tích bình chứa"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Quá trình chuyển từ khí sang lỏng gọi là:",
+            "options": [
+              "Hóa hơi",
+              "Ngưng tụ",
+              "Thăng hoa",
+              "Nóng chảy"
+            ],
+            "correct": 1,
+            "explanation": "Ngưng tụ là quá trình khí → lỏng"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Trong các chất sau, chất nào là chất kết tinh?",
+            "options": [
+              "Thủy tinh",
+              "Cao su",
+              "Muối ăn",
+              "Nhựa"
+            ],
+            "correct": 2,
+            "explanation": "Muối ăn (NaCl) là chất rắn kết tinh"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các yếu tố ảnh hưởng đến tốc độ bay hơi:",
+            "options": [
+              "Nhiệt độ",
+              "Diện tích mặt thoáng",
+              "Áp suất",
+              "Khối lượng chất lỏng"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Tốc độ bay hơi phụ thuộc nhiệt độ, diện tích mặt thoáng, áp suất"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Đặc điểm của chất rắn kết tinh:",
+            "options": [
+              "Có cấu trúc tinh thể",
+              "Có nhiệt độ nóng chảy xác định",
+              "Có dạng hình học xác định",
+              "Không có hình dạng"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Rắn kết tinh có cấu trúc tinh thể, nhiệt độ nóng chảy xác định"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Các quá trình nhận nhiệt:",
+            "options": [
+              "Nóng chảy",
+              "Hóa hơi",
+              "Thăng hoa",
+              "Ngưng tụ"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Nóng chảy, hóa hơi, thăng hoa đều nhận nhiệt"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính nhiệt lượng cần thiết để làm nóng chảy 1 kg nhôm ở nhiệt độ nóng chảy. Biết L_nhôm = 3,97.10⁵ J/kg.",
+            "correct": "397000",
+            "explanation": "Q = mL = 1 × 3,97.10⁵ = 3,97.10⁵ J"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Một ấm nhôm khối lượng 500g chứa đầy nước đá ở 0°C. Tính nhiệt lượng cần để làm tan chảy hoàn toàn nước đá (kg = 0,5).",
+            "correct": "167000",
+            "explanation": "Q = mL = 0,5 × 3,34.10⁵ = 1,67.10⁵ J = 167000 J"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Tính nhiệt lượng cần để nóng chảy 2 kg chì có nhiệt nóng chảy riêng 0,25.10⁵ J/kg.",
+            "correct": "50000",
+            "explanation": "Q = mL = 2 × 0,25.10⁵ = 0,5.10⁵ = 50000 J"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Một khối đồng khối lượng 3 kg có nhiệt nóng chảy riêng 1,34.10⁵ J/kg. Tính nhiệt lượng cần (J).",
+            "correct": "402000",
+            "explanation": "Q = mL = 3 × 1,34.10⁵ = 4,02.10⁵ J = 402000 J"
+          }
+        ]
+      }
+    }
+  ]
+}

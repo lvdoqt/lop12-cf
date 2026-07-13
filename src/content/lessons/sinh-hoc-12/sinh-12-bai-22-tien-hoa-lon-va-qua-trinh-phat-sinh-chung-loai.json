@@ -1,0 +1,188 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-22",
+      "name": "Bài 22. Tiến hóa lớn và quá trình phát sinh chủng loại",
+      "slug": "tien-hoa-lon-va-qua-trinh-phat-sinh-chung-loai",
+      "chapter": "Chương 5. Bằng chứng và các học thuyết tiến hóa",
+      "chapter_id": "S12-5",
+      "lesson_id": 22,
+      "description": "Tìm hiểu về tiến hóa lớn và quá trình phát sinh chủng loại.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Tiến hóa lớn và quá trình phát sinh chủng loại",
+          "sections": [
+            {
+              "heading": "1. Tiến hóa nhỏ và tiến hóa lớn",
+              "content": "<h4>a) Tiến hóa nhỏ</h4><ul><li>Thay đổi tần số allele trong quần thể.</li><li>Xảy ra trong thời gian ngắn.</li><li>Ví dụ: Kháng thuốc trở sâu, thay đổi màu sắc bướm.</li></ul><h4>b) Tiến hóa lớn</h4><ul><li>Hình thành loài mới và các nhóm loài lớn hơn.</li><li>Đòi hỏi thời gian dài và cách ly sinh sản.</li><li>Ví dụ: Hình thành các chi, các họ, các ngành.</li></ul><h4>c) Mối quan hệ</h4><ul><li>Tiến hóa nhỏ tích lũy → tiến hóa lớn.</li><li>Quần thể tiến hóa → loài mới → nhóm loài.</li></ul>"
+            },
+            {
+              "heading": "2. Quá trình phát sinh chủng loại",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Phát sinh chủng loại (speciation):</strong> Quá trình hình thành loài mới từ loài ban đầu.</li><li>Là kết quả của tiến hóa lớn.</li></ul><h4>b) Các bước</h4><ul><li>Biến dị di truyền xuất hiện trong quần thể.</li><li>Chọn lọc tự nhiên hoặc trôi di truyền tạo sự khác biệt.</li><li>Cách ly sinh sản hình thành.</li><li>Loài mới ra đời.</li></ul><h4>c) Thời gian</h4><ul><li>Thời gian khác nhau: Vài năm đến hàng triệu năm.</li><li>Ở sinh vật nhân sơ: Vài năm.</li><li>Ở động vật có vú: Hàng triệu năm.</li></ul>"
+            },
+            {
+              "heading": "3. Các cơ chế hình thành loài",
+              "content": "<h4>a) Hình thành loài allopatric (địa lý)</h4><ul><li>Quần thể bị chia cắt bởi rào cản địa lý (núi, sông, biển).</li><li>Mỗi nhóm tiến hóa riêng.</li><li>Khi gặp lại đã không giao phối được.</li><li>Ví dụ: Các loài chim sẻ trên quần đảo Galapagos.</li></ul><h4>b) Hình thành loài sympatric (cùng khu vực)</h4><ul><li>Loài mới hình thành trong cùng khu vực.</li><li>Thường do cách ly sinh thái, mùa, tập tính.</li><li>Ví dụ: Các loài cò trên cùng hồ.</li></ul><h4>c) Hình thành loài qua lai</h4><ul><li>Lai giữa hai loài tạo loài lai.</li><li>Loài lai thường không có khả năng sinh sản.</li><li>Ví dụ: Lúa mì, lúa mì durum.</li></ul>"
+            },
+            {
+              "heading": "4. Đồng hồ phân tử và cây tiến hóa",
+              "content": "<h4>a) Đồng hồ phân tử</h4><ul><li>Dựa trên tốc độ đột biến tương đối đều của DNA/protein.</li><li>Ước tính thời gian phân ly giữa các loài.</li><li>Ví dụ: Cytochrome C, hemoglobin.</li></ul><h4>b) Cây tiến hóa</h4><ul><li>Sơ đồ thể hiện quan hệ tiến hóa giữa các loài.</li><li>Cành càng gần → loài càng gần gũi.</li><li>Có thể dựng từ hình thái hoặc phân tử.</li></ul><h4>c) Bằng chứng phân tử</h4><ul><li>Loài càng xa → trình tự càng khác nhau.</li><li>Đồng hồ phân tử giúp định tuổi phân ly.</li><li>Người và tinh tinh phân ly ~6 triệu năm.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Tiến hóa nhỏ là gì?",
+            "options": [
+              "Hình thành loài mới",
+              "Thay đổi tần số allele trong quần thể",
+              "Tạo chi mới",
+              "Tạo ngành mới"
+            ],
+            "correct": 1,
+            "explanation": "Tiến hóa nhỏ là thay đổi tần số allele trong quần thể qua các thế hệ."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Phát sinh chủng loại là gì?",
+            "options": [
+              "Quá trình thay đổi tần số allele",
+              "Quá trình hình thành loài mới",
+              "Quá trình biến dị",
+              "Quá trình chọn lọc"
+            ],
+            "correct": 1,
+            "explanation": "Phát sinh chủng loại là quá trình hình thành loài mới từ loài ban đầu."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Hình thành loài allopatric là gì?",
+            "options": [
+              "Hình thành trong cùng khu vực",
+              "Hình thành do cách ly địa lý",
+              "Hình thành qua lai",
+              "Hình thành do đột biến"
+            ],
+            "correct": 1,
+            "explanation": "Hình thành loài allopatric (địa lý) là do quần thể bị chia cắt bởi rào cản địa lý."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Đồng hồ phân tử dựa trên cơ sở nào?",
+            "options": [
+              "Tốc độ đột biến",
+              "Kích thước gene",
+              "Số lượng NST",
+              "Tuổi của loài"
+            ],
+            "correct": 0,
+            "explanation": "Đồng hồ phân tử dựa trên tốc độ đột biến tương đối đều của DNA/protein."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Người và tinh tinh phân ly cách đây bao nhiêu năm?",
+            "options": [
+              "1 triệu năm",
+              "3 triệu năm",
+              "6 triệu năm",
+              "10 triệu năm"
+            ],
+            "correct": 2,
+            "explanation": "Người và tinh tinh phân ly cách đây khoảng 6 triệu năm theo đồng hồ phân tử"
+            },
+         {"id": "msq1",
+            "type": "msq",
+            "question": "Chọn các cơ chế hình thành loài:",
+            "options": [
+              "Hình thành loài địa lý (allopatric)",
+              "Hình thành loài cùng khu vực (sympatric)",
+              "Hình thành qua lai",
+              "Chọn lọc tự nhiên"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Allopatric speciation. B ✓: Sympatric speciation. C ✓: Lai tạo loài. D ✗: Chọn lọc tự nhiên là cơ chế tiến hóa."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các bằng chứng dùng để dựng cây tiến hóa:",
+            "options": [
+              "So sánh DNA",
+              "So sánh protein",
+              "Giải phẫu so sánh",
+              "Số lượng NST"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: DNA. B ✓: Protein. C ✓: Giải phẫu. D ✗: Số lượng NST không phải bằng chứng chính."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Hai loài A và B có 2% khác biệt DNA, tốc độ 1% / triệu năm. Tính thời gian phân ly (triệu năm). Nhập số 2 chữ số.",
+            "correct": "02",
+            "explanation": "Thời gian = 2% / 1% = 2 triệu năm."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Quần thể ban đầu 1000 cá thể, sau 100 năm có 5 loài mới. Tính t hình thàốc độnh loài (loài/năm). Nhập số 3 chữ số.",
+            "correct": "050"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân biệt tiến hóa nhỏ và tiến hóa lớn",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Tiến hóa nhỏ: Thay đổi tần số allele trong quần thể.</li><li>Tiến hóa lớn: Hình thành loài mới và các nhóm lớn hơn.</li><li>Tiến hóa nhỏ tích lũy → tiến hóa lớn.</li></ol>",
+            "examples": [
+              {
+                "question": "Kháng thuốc trở sâu là tiến hóa nhỏ hay lớn?",
+                "solution": "<p><strong>Giải:</strong></p><p>Kháng thuốc là thay đổi tần số allele trong quần thể → <strong>Tiến hóa nhỏ</strong>.</p>"
+              },
+              {
+                "question": "Hình thành các loài chim trên đảo là tiến hóa gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Hình thành loài mới → <strong>Tiến hóa lớn</strong>.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính thời gian phân ly từ đồng hồ phân tử",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Tính % khác biệt DNA/protein.</li><li>Thời gian = % khác biệt / (2 × tốc độ đột biến).</li><li>Hoặc: Thời gian = % khác biệt / tốc độ (nếu tính cho cả 2 phía).</li></ol>",
+            "examples": [
+              {
+                "question": "Hai loài có 4% khác biệt DNA, tốc độ 1%/triệu năm. Tính thời gian phân ly?",
+                "solution": "<p><strong>Giải:</strong></p><p>Thời gian = 4% / (2×1%) = 2 triệu năm</p>"
+              },
+              {
+                "question": "Người và khỉ có 2% khác biệt hemoglobin. Tính thời gian phân ly (tốc độ 0.5%/triệu năm)?",
+                "solution": "<p><strong>Giải:</strong></p><p>Thời gian = 2% / 0.5% = 4 triệu năm</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

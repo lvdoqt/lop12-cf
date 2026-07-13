@@ -1,0 +1,41 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_29",
+      "name": "Mô phỏng trong giải quyết vấn đề",
+      "slug": "mo-phong-trong-giai-quyet-van-de",
+      "chapter": "Giải quyết vấn đề với sự trợ giúp của máy tính",
+      "chapter_id": "tin12_ch7",
+      "lesson_id": 29,
+      "description": "Sử dụng máy tính để tạo ra các mô hình ảo mô phỏng các hiện tượng thực tế.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Kĩ thuật Mô phỏng",
+          "summary": "Mô phỏng giúp nghiên cứu các hệ thống phức tạp, nguy hiểm hoặc tốn kém trong môi trường ảo an toàn.",
+          "sections": [
+            { "heading": "Khái niệm mô phỏng", "content": "Sử dụng phần mềm máy tính để thể hiện sự vận hành của một hệ thống thực theo thời gian." },
+            { "heading": "Lợi ích của mô phỏng", "content": "Tiết kiệm chi phí, an toàn, có thể thử nghiệm nhiều kịch bản khác nhau và quan sát các hiện tượng diễn ra quá nhanh hoặc quá chậm." },
+            { "heading": "Các bước xây dựng mô phỏng", "content": "Xây dựng mô hình toán học -> Thiết kế chương trình -> Chạy mô phỏng -> Phân tích kết quả." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Mô phỏng máy tính (Computer Simulation) là gì?", "options": ["Việc chụp ảnh hệ thống thực", "Sử dụng phần mềm để bắt chước hoạt động của một hệ thống thực tế", "Việc thay thế hoàn toàn thực tế", "Một loại phim hoạt hình"], "correct": 1, "explanation": "Mô phỏng là tạo ra một môi trường giả lập hoạt động theo các quy luật thực tế." },
+          { "id": 2, "type": "mcq", "question": "Lợi ích nào sau đây là của mô phỏng?", "options": ["Cho phép thử nghiệm các tình huống nguy hiểm mà không gây thiệt hại thật", "Làm tốn nhiều thời gian hơn thực tế", "Bắt buộc phải có máy tính siêu mạnh mới làm được", "Không có giá trị thực tiễn"], "correct": 0, "explanation": "An toàn là ưu điểm hàng đầu của mô phỏng (ví dụ mô phỏng rơi máy bay)." },
+          { "id": 3, "type": "mcq", "question": "Lĩnh vực nào thường sử dụng mô phỏng để huấn luyện?", "options": ["Hàng không (tập lái máy bay)", "Y tế (phẫu thuật ảo)", "Quân sự (diễn tập)", "Tất cả các ý trên"], "correct": 3, "explanation": "Mô phỏng giúp rèn luyện kĩ năng mà không sợ rủi ro." },
+          { "id": 4, "type": "mcq", "question": "Tại sao mô phỏng giúp tiết kiệm chi phí?", "options": ["Vì phần mềm luôn miễn phí", "Vì không phải xây dựng các mô hình thật đắt tiền và tốn vật liệu", "Vì máy tính không tốn điện", "Vì không cần chuyên gia"], "correct": 1, "explanation": "Thử nghiệm trên máy tính rẻ hơn nhiều so với thử nghiệm trên sản phẩm thật." },
+          { "id": 5, "type": "mcq", "question": "Một mô hình mô phỏng tốt cần?", "options": ["Có hình ảnh thật đẹp", "Phản ánh chính xác các quy luật vật lý/logic của hệ thống thực", "Chạy thật nhanh", "Nhiều màu sắc"], "correct": 1, "explanation": "Tính chính xác của mô hình quyết định giá trị của kết quả mô phỏng." },
+          { "id": 6, "type": "mcq", "question": "Mô phỏng thời tiết giúp chúng ta?", "options": ["Điều khiển được mưa nắng", "Dự báo các hiện tượng thiên tai để chủ động phòng tránh", "Làm sạch bầu khí quyển", "Thay đổi khí hậu"], "correct": 1, "explanation": "Các siêu máy tính chạy mô phỏng khí quyển để đưa ra dự báo." },
+          { "id": 7, "type": "mcq", "question": "Trong mô phỏng, yếu tố 'Thời gian' có đặc điểm gì?", "options": ["Bắt buộc phải bằng thời gian thực", "Có thể đẩy nhanh hoặc làm chậm lại để dễ quan sát", "Không tồn tại", "Luôn chạy ngược"], "correct": 1, "explanation": "Bạn có thể mô phỏng quá trình tiến hóa hàng triệu năm trong vài phút." },
+          { "id": 8, "type": "mcq", "question": "Mô hình toán học trong mô phỏng là gì?", "options": ["Các bức vẽ nghệ thuật", "Hệ thống các phương trình, quy luật mô tả mối quan hệ giữa các thành phần", "Các con số ngẫu nhiên", "Tên của mô phỏng"], "correct": 1, "explanation": "Toán học là 'linh hồn' định hướng hoạt động của mô phỏng." },
+          { "id": 9, "type": "mcq", "question": "Phần mềm nào sau đây có thể dùng để mô phỏng vật lý cơ bản?", "options": ["Word", "PhET Interactive Simulations", "Paint", "Calculator"], "correct": 1, "explanation": "PhET là trang web nổi tiếng về các mô phỏng giáo dục." },
+          { "id": 10, "type": "mcq", "question": "Mô phỏng có thể thay thế hoàn toàn thực tế không?", "options": ["Có, trong mọi trường hợp", "Không, nó chỉ là một công cụ hỗ trợ và cần được kiểm chứng bằng thực tế", "Chỉ thay thế được trong game", "Có, nếu máy tính đủ mạnh"], "correct": 1, "explanation": "Mô phỏng vẫn là một sự xấp xỉ, cần đối chiếu với thực nghiệm." }
+        ]
+      }
+    }
+  ]
+}

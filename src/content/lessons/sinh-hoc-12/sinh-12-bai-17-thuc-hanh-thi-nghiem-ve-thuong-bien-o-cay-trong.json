@@ -1,0 +1,194 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-17",
+      "name": "Bài 17. Thực hành: Thí nghiệm về thường biến ở cây trồng",
+      "slug": "thuc-hanh-thi-nghiem-ve-thuong-bien-o-cay-trong",
+      "chapter": "Chương 3. Mở rộng học thuyết di truyền nhiễm sắc thể",
+      "chapter_id": "S12-3",
+      "lesson_id": 17,
+      "description": "Thực hành quan sát và nghiên cứu thường biến ở cây trồng.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2690&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Thực hành: Thí nghiệm về thường biến ở cây trồng",
+          "sections": [
+            {
+              "heading": "1. Mục đích và yêu cầu",
+              "content": "<h4>a) Mục đích</h4><ul><li>Chứng minh sự ảnh hưởng của môi trường đến kiểu hình.</li><li>Phân biệt thường biến với đột biến di truyền.</li><li>Rèn luyện kỹ năng thực hành.</li></ul><h4>b) Yêu cầu</h4><ul><li>Quan sát sự biến đổi của cây trồng theo điều kiện môi trường.</li><li>Ghi nhận và phân tích kết quả.</li><li>Rút ra kết luận về bản chất của thường biến.</li></ul>"
+            },
+            {
+              "heading": "2. Thí nghiệm ảnh hưởng của ánh sáng",
+              "content": "<h4>a) Bố trí thí nghiệm</h4><ul><li>Chuẩn bị 2 cây đậu Hà Lan (hoặc cây có lá).</li><li>Đặt 1 cây nơi có ánh sáng, 1 cây nơi tối.</li><li>Giữ các điều kiện khác như nhau.</li></ul><h4>b) Dự đoán kết quả</h4><ul><li>Cây có ánh sáng: Lá xanh đậm, cây cứng cáp.</li><li>Cây thiếu ánh sáng: Lá vàng, cây yếu (etiolation).</li></ul><h4>c) Giải thích</h4><ul><li>Ánh sáng ảnh hưởng đến quang hợp → tổng hợp diệp lục.</li><li>Đây là thường biến vì không thay đổi kiểu gen.</li></ul>"
+            },
+            {
+              "heading": "3. Thí nghiệm ảnh hưởng của nước",
+              "content": "<h4>a) Bố trí thí nghiệm</h4><ul><li>Chuẩn bị 3 cây rau muống (hoặc cây cải).</li><li>Tưới nước với 3 mức: ít, trung bình, nhiều.</li><li>Giữ các điều kiện khác như nhau.</li></ul><h4>b) Dự đoán</h4><ul><li>Nước ít: Lá nhỏ, cây còi.</li><li>Nước đủ: Cây phát triển bình thường.</li><li>Nước quá nhiều: Rễ có thể bị thối, lá vàng.</li></ul><h4>c) Giải thích</h4><ul><li>Nước ảnh hưởng đến dinh dưỡng và quang hợp.</li><li>Biến đổi này không di truyền.</li></ul>"
+            },
+            {
+              "heading": "4. Thí nghiệm ảnh hưởng của nhiệt độ",
+              "content": "<h4>a) Bố trí thí nghiệm</h4><ul><li>Chuẩn bị cây hoa mười giờ hoặc hoa dạ quỳnh.</li><li>Đặt ở 2 nhiệt độ khác nhau.</li><li>Quan sát màu hoa, thời gian nở.</li></ul><h4>b) Ví dụ thường biến</h4><ul><li>Cây hoa mười giờ: Nở hoa theo ánh sáng.</li><li>Cây dạ quỳnh: Hoa nở ban đêm,关闭ban ngày.</li></ul><h4>c) Ý nghĩa</h4><ul><li>Giúp cây thích nghi với điều kiện.</li><li>Cơ sở cho chọn lọc tự nhiên.</li></ul>"
+            },
+            {
+              "heading": "5. Báo cáo thực hành",
+              "content": "<h4>a) Nội dung báo cáo</h4><ul><li>Mục đích thí nghiệm.</li><li>Cách bố trí thí nghiệm.</li><li>Kết quả quan sát.</li><li>Giải thích kết quả.</li><li>Kết luận về thường biến.</li></ul><h4>b) Đánh giá</h4><ul><li>Khả năng quan sát và ghi nhận.</li><li>Kỹ năng phân tích kết quả.</li><li>Kết luận khoa học.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Thường biến có đặc điểm gì?",
+            "options": [
+              "Di truyền được",
+              "Không thay đổi kiểu gen",
+              "Do đột biến",
+              "Không thể quan sát"
+            ],
+            "correct": 1,
+            "explanation": "Thường biến là biến đổi kiểu hình do môi trường, không thay đổi kiểu gen."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Ánh sáng ảnh hưởng đến cây như thế nào?",
+            "options": [
+              "Không ảnh hưởng",
+              "Ảnh hưởng đến màu lá và quang hợp",
+              "Chỉ ảnh hưởng đến hoa",
+              "Gây đột biến"
+            ],
+            "correct": 1,
+            "explanation": "Ánh sáng ảnh hưởng đến quang hợp và tổng hợp diệp lục, làm thay đổi màu lá."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Cây đặt trong tối có hiện tượng gì?",
+            "options": [
+              "Lá xanh hơn",
+              "Lá vàng, cây yếu (etiolation)",
+              "Ra hoa nhiều",
+              "Không thay đổi"
+            ],
+            "correct": 1,
+            "explanation": "Cây thiếu ánh sáng sẽ bị etiolation: lá vàng, thân yếu, vươn dài tìm ánh sáng."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Thường biến có giá trị gì trong tiến hóa?",
+            "options": [
+              "Tạo nguồn biến dị cho chọn lọc",
+              "Làm thay đổi kiểu gen",
+              "Gây đột biến",
+              "Không có ý nghĩa"
+            ],
+            "correct": 0,
+            "explanation": "Thường biến tạo biến đổi có hướng, cung cấp vật liệu cho chọn lọc tự nhiên."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Làm thế nào để phân biệt thường biến với đột biến?",
+            "options": [
+              "Quan sát bằng kính hiển vi",
+              "Thay đổi điều kiện môi trường và quan sát",
+              "Đếm NST",
+              "Lai giống"
+            ],
+            "correct": 1,
+            "explanation": "Nếu biến đổi mất khi thay đổi môi trường → thường biến. Nếu vẫn giữ → đột biến."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các yếu tố môi trường ảnh hưởng đến cây trồng:",
+            "options": [
+              "Ánh sáng",
+              "Nước",
+              "Nhiệt độ",
+              "Đột biến"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Ánh sáng ảnh hưởng quang hợp. B ✓: Nước cần cho sinh trưởng. C ✓: Nhiệt độ ảnh hưởng enzyme. D ✗: Đột biến không phải yếu tố môi trường."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các hiện tượng thường biến ở cây:",
+            "options": [
+              "Lá vàng khi thiếu ánh sáng",
+              "Lá to khi đủ nước",
+              "Cây cao vươn khi thiếu sáng",
+              "Đột biến màu hoa"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "A ✓: Thiếu ánh sáng → lá vàng. B ✓: Đủ nước → lá to. C ✓: Etiolation. D ✗: Đột biến màu hoa di truyền được."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Cây A cao 20cm trong điều kiện thiếu ánh sáng, 40cm trong điều kiện đủ ánh sáng. Tính % tăng trưởng. Nhập số 2 chữ số.",
+            "correct": "100",
+            "explanation": "Tăng = (40-20)/20 × 100% = 100%."
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Hai cây giống nhau, 1 đặt nắng (lá xanh 5), 1 đặt râm (lá vàng 3). Tính tỷ lệ độ xanh lá. Nhập số 2 chữ số. (Ví dụ: 05 nghĩa là 0.5)",
+            "correct": "60",
+            "explanation": "Tỷ lệ = 3/5 × 100% = 60%."
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Thiết kế thí nghiệm về thường biến",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Chọn cây trồng phù hợp.</li><li>Thay đổi một yếu tố môi trường, giữ các yếu tố khác không đổi.</li><li>Quan sát và ghi nhận biến đổi.</li><li>Kiểm chứng: Nếu biến mất khi trả về điều kiện ban đầu → thường biến.</li></ol>",
+            "examples": [
+              {
+                "question": "Làm thế nào để chứng minh màu lá phụ thuộc ánh sáng?",
+                "solution": "<p><strong>Giải:</strong></p><ol><li>Chuẩn bị 2 cây giống nhau.</li><li>1 cây đặt nơi sáng, 1 cây đặt nơi tối.</li><li>Quan sát sau 1-2 tuần.</li><li>Kết quả: Cây tối có lá vàng → chứng minh ánh sáng ảnh hưởng.</li></ol>"
+              },
+              {
+                "question": "Làm thế nào để phân biệt thường biến với đột biến?",
+                "solution": "<p><strong>Giải:</strong></p><ol><li>Đưa cây về điều kiện bình thường.</li><li>Nếu biến đổi mất → thường biến.</li><li>Nếu biến đổi vẫn giữ → đột biến di truyền.</li></ol>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Phân tích kết quả thí nghiệm",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Ghi nhận các thông số quan sát được.</li><li>So sánh giữa các nhóm thí nghiệm.</li><li>Rút ra kết luận về ảnh hưởng của môi trường.</li></ol>",
+            "examples": [
+              {
+                "question": "Cây thí nghiệm: Nhóm 1 (nắng) lá xanh đậm, nhóm 2 (tối) lá vàng. Kết luận?",
+                "solution": "<p><strong>Giải:</strong></p><p>Ánh sáng ảnh hưởng đến màu lá.</p><p>Đây là thường biến vì không thay đổi kiểu gen.</p>"
+              },
+              {
+                "question": "Cây tưới ít nước cao 10cm, tưới đủ nước cao 25cm. Tính % chênh lệch?",
+                "solution": "<p><strong>Giải:</strong></p><p>% chênh lệch = (25-10)/10 × 100% = 150%</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

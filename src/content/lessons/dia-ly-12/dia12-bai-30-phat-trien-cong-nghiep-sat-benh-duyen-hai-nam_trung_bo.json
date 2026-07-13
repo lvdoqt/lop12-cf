@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_30",
+      "name": "Phát triển công nghiệp ven biển và liên kết vùng ở Nam Trung bộ",
+      "slug": "phat-trien-cong-nghiep-sat-ben-duyen-hai-nam_trung_bo",
+      "chapter": "Địa lí các vùng kinh tế",
+      "chapter_id": "dia12_part4",
+      "lesson_id": 30,
+      "description": "Vai trò công nghiệp ven biển, các hình thức liên kết vùng và yêu cầu về quy hoạch, môi trường, lao động khi phát triển công nghiệp gần bờ ở Nam Trung bộ.",
+      "duration_minutes": 60,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Công nghiệp ven biển: lợi thế và thách thức",
+          "summary": "Công nghiệp ven biển tận dụng cảng, nguồn lao động và nguyên liệu biển; tuy nhiên cần cân nhắc ô nhiễm, quản lý chất thải và an ninh môi trường biển khi lập kế hoạch phát triển.",
+          "sections": [
+            { "heading": "Hình thức công nghiệp ven biển", "content": "Nhà máy chế biến thủy sản, đóng tàu nhỏ, logistics, lắp ráp xuất khẩu; liên kết với cảng và khu công nghiệp ven biển." },
+            { "heading": "Thách thức", "content": "Ô nhiễm biển, xung đột sử dụng đất, nhu cầu lao động kỹ thuật và điều kiện hạ tầng." }
+          ]
+        },
+        "exercises": { "case_study": [ { "q": "Đề xuất 3 biện pháp giảm ô nhiễm từ khu công nghiệp ven biển?", "a_hint": "Công nghệ xử lý nước thải, giám sát khí thải, vùng đệm sinh thái." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Một lợi thế của công nghiệp ven biển là?", "options": ["Gần cảng và dễ tiếp cận nguyên liệu","Xa nguồn nguyên liệu","Ít lao động","Không có lợi thế"], "correct": 0, "explanation": "Gần cảng giúp giảm chi phí vận chuyển và tiếp cận thị trường." },
+          { "id": 2, "type": "mcq", "question": "Một thách thức lớn khi phát triển công nghiệp ven biển là?", "options": ["Ô nhiễm môi trường biển","Tăng diện tích rừng","Giảm dân số","Không có thách thức"], "correct": 0, "explanation": "Ô nhiễm là thách thức khiến cần biện pháp quản lý môi trường." },
+          { "id": 3, "type": "mcq", "question": "Liên kết vùng trong công nghiệp ven biển bao gồm?", "options": ["Kết nối cảng - khu công nghiệp - hệ thống giao thông","Chỉ xây dựng riêng lẻ","Tránh kết nối","Không cần liên kết"], "correct": 0, "explanation": "Liên kết giúp tối ưu chuỗi cung ứng và logistics." },
+          { "id": 4, "type": "mcq", "question": "Một biện pháp giảm ô nhiễm là?", "options": ["Xây hệ thống xử lý nước thải theo tiêu chuẩn","Tăng xả thải ra biển","Không quản lý","Khai thác vật liệu san lấp"], "correct": 0, "explanation": "Xử lý nước thải là biện pháp cơ bản để giảm ô nhiễm." },
+          { "id": 5, "type": "mcq", "question": "Công nghiệp ven biển cần nhân lực với kỹ năng gì?", "options": ["Kỹ thuật vận hành và quản lý môi trường","Chỉ lao động phổ thông","Không cần kỹ năng","Chỉ quản lý"], "correct": 0, "explanation": "Kỹ năng kỹ thuật và quản lý môi trường là cần thiết." },
+          { "id": 6, "type": "mcq", "question": "Một lợi ích kinh tế là?", "options": ["Tăng xuất khẩu và hoạt động logistics","Làm giảm xuất khẩu","Tăng đói nghèo","Không thay đổi"], "correct": 0, "explanation": "Công nghiệp ven biển thường thúc đẩy xuất khẩu và logistics." },
+          { "id": 7, "type": "mcq", "question": "Vấn đề an ninh liên quan đến công nghiệp ven biển là?", "options": ["Bảo vệ tài sản quan trọng và an toàn hàng hải","Không liên quan","Tăng du lịch","Giảm an ninh"], "correct": 0, "explanation": "Cần bảo vệ cơ sở hạ tầng và đảm bảo an toàn hàng hải." },
+          { "id": 8, "type": "mcq", "question": "Quy hoạch công nghiệp ven biển cần tránh?", "options": ["Xây trên vùng ngập mặn quan trọng và rạn san hô","Xây trên vùng hoang vắng","Không cần tránh gì","Chỉ quan tâm lợi ích ngắn hạn"], "correct": 0, "explanation": "Tránh khu vực nhạy cảm sinh thái để giảm tác động môi trường." },
+          { "id": 9, "type": "mcq", "question": "Một chính sách hỗ trợ công nghiệp ven biển hiệu quả là?", "options": ["Đầu tư kết nối cảng và hỗ trợ đào tạo nghề","Không đầu tư","Cấm mọi hoạt động công nghiệp","Chỉ thuế cao"], "correct": 0, "explanation": "Đầu tư hạ tầng và đào tạo giúp phát triển bền vững." },
+          { "id": 10, "type": "mcq", "question": "Đo lường thành công công nghiệp ven biển có thể dùng chỉ tiêu?", "options": ["Tổng giá trị xuất khẩu và tỷ lệ việc làm khu vực ven biển","Số lượng tàu cá","Số du khách","Không có chỉ tiêu"], "correct": 0, "explanation": "Giá trị xuất khẩu và việc làm là chỉ tiêu thực tế để đánh giá hiệu quả." }
+        ]
+      }
+    }
+  ]
+}

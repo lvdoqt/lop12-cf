@@ -1,0 +1,285 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-17-may-phat-dien-xoay-chieu",
+      "name": "Bài 17. Máy phát điện xoay chiều",
+      "slug": "bai-17-may-phat-dien-xoay-chieu",
+      "chapter": "Chương 3. Từ trường",
+      "chapter_id": "LY12-3",
+      "lesson_id": 17,
+      "description": "Nghiên cứu về máy phát điện xoay chiều, nguyên tắc hoạt động và cấu tạo.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "mpd-1",
+          "name": "Nguyên tắc hoạt động",
+          "slug": "nguyen-tac-hoat-dong",
+          "difficulty": "easy"
+        },
+        {
+          "id": "mpd-2",
+          "name": "Cấu tạo máy phát điện",
+          "slug": "cau-tao-may-phat-dien",
+          "difficulty": "medium"
+        },
+        {
+          "id": "mpd-3",
+          "name": "Suất điện động xoay chiều",
+          "slug": "suat-dien-dong-xoay-chieu",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Máy phát điện xoay chiều",
+          "sections": [
+            {
+              "heading": "1. Nguyên tắc hoạt động",
+              "content": "<p><strong>Nguyên tắc:</strong> Dựa trên hiện tượng cảm ứng điện từ. Khi cho khung dây quay trong từ trường, từ thông qua khung biến thiên tạo suất điện động cảm ứng xoay chiều.</p><p><strong>Từ thông qua khung:</strong></p><p>$$\\Phi = N B S \\cos(\\omega t + \\varphi_0)$$</p><p>Trong đó:</p><ul><li>N: số vòng dây</li><li>ω: tốc độ góc (rad/s)</li><li>φ₀: pha ban đầu</li></ul>"
+            },
+            {
+              "heading": "2. Suất điện động xoay chiều",
+              "content": "<p><strong>Suất điện động cảm ứng:</strong></p><p>$$e = E_0 \\sin(\\omega t + \\varphi_0)$$</p><p>Trong đó E₀ là biên độ suất điện động:</p><p>$$E_0 = N B S \\omega$$</p><p><strong>Tần số góc và tần số:</strong></p><p>$$\\omega = 2\\pi f = \\frac{2\\pi}{T}$$</p><p>Trong đó:</p><ul><li>f: tần số (Hz)</li><li>T: chu kỳ (s)</li></ul>"
+            },
+            {
+              "heading": "3. Cấu tạo máy phát điện xoay chiều",
+              "content": "<p><strong>Phần cảm (nam châm):</strong> Tạo ra từ trường, có thể là nam châm vĩnh cửu hoặc nam châm điện.</p><p><strong>Phần ứng (khung dây):</strong> Quay trong từ trường, trên khung có nhiều vòng dây.</p><p><strong>Hai loại máy phát điện:</strong></p><ul><li><strong>Máy phát điện có rôto quay:</strong> Phần ứng đứng yên, phần cảm quay</li><li><strong>Máy phát điện có stato quay:</strong> Phần cảm đứng yên, phần ứng quay</li></ul><p><strong>Công suất và hiệu điện thế:</strong></p><p>Ở nhà máy điện, công suất có thể đạt hàng nghìn MW, hiệu điện thế đến hàng nghìn kV.</p>"
+            },
+            {
+              "heading": "4. Dòng điện xoay chiều",
+              "content": "<p><strong>Cường độ dòng điện:</strong></p><p>$$i = I_0 \\sin(\\omega t + \\varphi_i)$$</p><p><strong>Giá trị hiệu dụng:</strong></p><p>$$I = \\frac{I_0}{\\sqrt{2}}, \\quad U = \\frac{U_0}{\\sqrt{2}}, \\quad E = \\frac{E_0}{\\sqrt{2}}$$</p><p><strong>Công suất trung bình:</strong></p><p>$$P = UI\\cos\\varphi$$</p><p>Trong đó cosφ là hệ số công suất.</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính suất điện động cảm ứng",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>E₀ = NBSω</li><li>e = E₀ sin(ωt)</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Khung dây 100 vòng, diện tích 200cm² quay trong B = 0,1T với ω = 100π rad/s. Tính E₀.",
+                "solution": "<p><strong>Giải:</strong></p><p>S = 200cm² = 2.10⁻² m²</p><p>E₀ = NBSω = 100.0,1.2.10⁻².100π = 20π ≈ 62,8 V</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính tần số và chu kỳ",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>ω = 2πf</li><li>T = 1/f</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Máy phát điện có tần số 50Hz. Tính ω.",
+                "solution": "<p><strong>Giải:</strong></p><p>ω = 2πf = 2π.50 = 100π rad/s</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Máy phát điện xoay chiều hoạt động dựa trên:",
+            "options": [
+              "Hiện tượng cảm ứng điện từ",
+              "Lực từ tác dụng lên dòng điện",
+              "Tương tác từ",
+              "Định luật Ohm"
+            ],
+            "correct": 0,
+            "explanation": "Hoạt động dựa trên hiện tượng cảm ứng điện từ"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Suất điện động cực đại của máy phát:",
+            "options": [
+              "E₀ = NBSω",
+              "E₀ = NBS/ω",
+              "E₀ = NB/Sω",
+              "E₀ = BS/Nω"
+            ],
+            "correct": 0,
+            "explanation": "E₀ = NBSω"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Tần số f liên hệ với ω:",
+            "options": [
+              "ω = 2πf",
+              "ω = f/2π",
+              "ω = πf",
+              "ω = fπ/2"
+            ],
+            "correct": 0,
+            "explanation": "ω = 2πf"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Điện áp hiệu dụng U và biên độ U₀ liên hệ:",
+            "options": [
+              "U = U₀/√2",
+              "U = U₀√2",
+              "U = U₀/2",
+              "U = 2U₀"
+            ],
+            "correct": 0,
+            "explanation": "U = U₀/√2"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Tần số dòng điện ở Việt Nam là:",
+            "options": [
+              "50 Hz",
+              "60 Hz",
+              "100 Hz",
+              "40 Hz"
+            ],
+            "correct": 0,
+            "explanation": "Tần số ở Việt Nam là 50 Hz"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Trong máy phát điện, bộ phận tạo từ trường gọi là:",
+            "options": [
+              "Phần ứng",
+              "Phần cảm",
+              "Rôto",
+              "Stato"
+            ],
+            "correct": 1,
+            "explanation": "Phần cảm tạo từ trường, phần ứng tạo dòng điện"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Khung dây quay với tốc độ góc ω, từ thông biến thiên với tần số:",
+            "options": [
+              "f = ω",
+              "f = ω/2π",
+              "f = 2ω",
+              "f = 2πω"
+            ],
+            "correct": 1,
+            "explanation": "f = ω/2π"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Cường độ dòng điện hiệu dụng I liên hệ với I₀:",
+            "options": [
+              "I = I₀/√2",
+              "I = I₀√2",
+              "I = I₀/2",
+              "I = 2I₀"
+            ],
+            "correct": 0,
+            "explanation": "I = I₀/√2"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Máy phát điện 3 pha có:",
+            "options": [
+              "3 cuộn dây đặt lệch nhau 120°",
+              "3 nam châm",
+              "3 rôto",
+              "3 stato"
+            ],
+            "correct": 0,
+            "explanation": "Máy phát 3 pha có 3 cuộn dây lệch nhau 120°"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Nếu tăng tốc độ quay lên 2 lần thì E₀:",
+            "options": [
+              "Tăng 2 lần",
+              "Giảm 2 lần",
+              "Tăng 4 lần",
+              "Không đổi"
+            ],
+            "correct": 0,
+            "explanation": "E₀ = NBSω, tỉ lệ với ω"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các bộ phận chính của máy phát điện xoay chiều:",
+            "options": [
+              "Phần cảm (nam châm)",
+              "Phần ứng (khung dây)",
+              "Bộ góp điện",
+              "Tụ điện"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Tụ điện không phải bộ phận của máy phát điện"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Suất điện động E₀ phụ thuộc:",
+            "options": [
+              "Số vòng dây N",
+              "Cảm ứng từ B",
+              "Diện tích S",
+              "Tốc độ góc ω"
+            ],
+            "correct": [0, 1, 2, 3],
+            "explanation": "E₀ = NBSω phụ thuộc tất cả"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Để tăng E₀ của máy phát điện có thể:",
+            "options": [
+              "Tăng số vòng dây",
+              "Tăng cảm ứng từ",
+              "Tăng tốc độ quay",
+              "Giảm diện tích"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Giảm S sẽ làm giảm E₀"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Tính E₀ biết N=500, S=0,1m², B=0,2T, ω=100π rad/s.",
+            "correct": "3140",
+            "explanation": "E₀ = NBSω = 500.0,2.0,1.100π = 1000π ≈ 3140 V"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Tính tần số f biết ω = 100π rad/s.",
+            "correct": "50",
+            "explanation": "f = ω/2π = 100π/2π = 50 Hz"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Nếu E₀ = 220√2 V, tính giá trị hiệu dụng E (V).",
+            "correct": "220",
+            "explanation": "E = E₀/√2 = 220√2/√2 = 220 V"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Tính chu kỳ T biết f = 60 Hz.",
+            "correct": "0.0167",
+            "explanation": "T = 1/f = 1/60 = 0,0167 s"
+          }
+        ]
+      }
+    }
+  ]
+}

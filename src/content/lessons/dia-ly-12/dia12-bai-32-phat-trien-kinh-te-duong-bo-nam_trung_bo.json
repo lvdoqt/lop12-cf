@@ -1,0 +1,41 @@
+{
+  "subject": "Địa Lý",
+  "subject_id": 9,
+  "lessons": [
+    {
+      "id": "dia12_32",
+      "name": "Phát triển hạ tầng giao thông đường bộ và liên vùng ở Nam Trung bộ",
+      "slug": "phat-trien-kinh-te-duong-bo-nam_trung_bo",
+      "chapter": "Địa lí các vùng kinh tế",
+      "chapter_id": "dia12_part4",
+      "lesson_id": 32,
+      "description": "Vai trò giao thông đường bộ trong kết nối vùng, thúc đẩy thương mại và du lịch ở Nam Trung bộ; phân tích các hướng đầu tư hạ tầng và tác động xã hội - kinh tế.",
+      "duration_minutes": 60,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Giao thông đường bộ: huyết mạch kết nối vùng",
+          "summary": "Hệ thống đường bộ đóng vai trò quan trọng trong kết nối cảng, khu công nghiệp, trung tâm dịch vụ và phục vụ lưu thông hàng hóa; đầu tư giao thông làm giảm chi phí vận chuyển và thúc đẩy phát triển kinh tế địa phương.",
+          "sections": [
+            { "heading": "Tác động kinh tế", "content": "Cải thiện giao thông làm tăng tiếp cận thị trường, giảm chi phí, tạo thuận lợi cho đầu tư và du lịch." },
+            { "heading": "Hậu quả xã hội", "content": "Tạo việc làm, thay đổi cơ cấu dân cư nhưng có thể gây áp lực lên môi trường và hạ tầng đô thị." }
+          ]
+        },
+        "exercises": { "short_tasks": [ { "q": "Nêu 2 lợi ích trực tiếp của nâng cấp đường bộ ven biển?", "a_hint": "Giảm thời gian vận chuyển và tăng tiếp cận du lịch." } ] },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Một tác động của đường bộ tốt là?", "options": ["Giảm chi phí vận chuyển","Tăng thời gian giao thông","Cản trở thương mại","Không có tác động"], "correct": 0, "explanation": "Đường bộ tốt giảm chi phí vận chuyển và thời gian." },
+          { "id": 2, "type": "mcq", "question": "Giao thông giúp phát triển ngành nào?", "options": ["Thương mại và du lịch","Trồng trọt trên núi","Ngành khai khoáng nằm xa cảng","Không giúp ngành nào"], "correct": 0, "explanation": "Giao thông kết nối thúc đẩy thương mại và du lịch." },
+          { "id": 3, "type": "mcq", "question": "Khi đầu tư đường bộ cần lưu ý?", "options": ["Tác động môi trường và quy hoạch đô thị","Không cần ý kiến cộng đồng","Chỉ tập trung vào tốc độ xây dựng","Bỏ qua an toàn giao thông"], "correct": 0, "explanation": "Cân nhắc môi trường và quy hoạch để giảm tác động tiêu cực." },
+          { "id": 4, "type": "mcq", "question": "Một biện pháp giảm thiểu tác động xã hội của xây dựng đường là?", "options": ["Tham vấn cộng đồng và bồi thường hợp lý","Không thông báo","Bắt buộc di dời cưỡng chế","Không bồi thường"], "correct": 0, "explanation": "Tham vấn và bồi thường giúp giảm xung đột xã hội." },
+          { "id": 5, "type": "mcq", "question": "Đầu tư liên vùng cần tập trung vào?", "options": ["Nút giao chính kết nối cảng, sân bay và khu công nghiệp","Chỉ đường nhỏ trong làng","Không cần kết nối","Chỉ đường rừng"], "correct": 0, "explanation": "Kết nối đa phương tiện tối ưu hóa lợi ích kinh tế." },
+          { "id": 6, "type": "mcq", "question": "Một chỉ tiêu đánh giá hạ tầng đường là?", "options": ["Tốc độ lưu thông trung bình và năng lực hàng hóa mỗi ngày","Số cây dọc đường","Số ngã tư","Không có chỉ tiêu"], "correct": 0, "explanation": "Tốc độ lưu thông và năng lực vận chuyển là chỉ tiêu thực tế." },
+          { "id": 7, "type": "mcq", "question": "Nâng cấp đường bộ giúp gì cho nông sản?", "options": ["Rút ngắn thời gian đưa hàng ra cảng và thị trường","Làm hỏng nông sản","Không giúp gì","Tăng chi phí"], "correct": 0, "explanation": "Giảm thời gian vận chuyển giúp nông sản tươi hơn và giảm hỏng hóc." },
+          { "id": 8, "type": "mcq", "question": "Khi kết nối khu công nghiệp với cảng cần chú ý?", "options": ["Khả năng chuyên chở hàng nặng và an toàn giao thông","Chỉ thời tiết","Không cần chú ý","Chỉ cảnh quan"], "correct": 0, "explanation": "Tải trọng và an toàn là yếu tố cần thiết cho vận chuyển hàng nặng." },
+          { "id": 9, "type": "mcq", "question": "Phát triển đường bộ có thể gây ra?", "options": ["Áp lực đô thị hóa và thay đổi sử dụng đất","Giảm dân số","Giảm thương mại","Không gây gì"], "correct": 0, "explanation": "Hạ tầng mới có thể thúc đẩy đô thị hóa và thay đổi sử dụng đất." },
+          { "id": 10, "type": "mcq", "question": "Để đảm bảo bền vững, đầu tư hạ tầng cần?", "options": ["Tính đến môi trường, bảo tồn và phát triển cộng đồng","Chỉ tối ưu chi phí ngắn hạn","Không quan tâm cộng đồng","Chỉ ưu tiên lợi nhuận"], "correct": 0, "explanation": "Đầu tư bền vững cân bằng kinh tế, xã hội và môi trường." }
+        ]
+      }
+    }
+  ]
+}

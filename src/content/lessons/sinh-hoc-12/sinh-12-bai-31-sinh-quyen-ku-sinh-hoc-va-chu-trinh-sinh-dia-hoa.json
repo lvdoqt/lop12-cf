@@ -1,0 +1,192 @@
+{
+  "subject": "Sinh học 12",
+  "subject_id": 22,
+  "lessons": [
+    {
+      "id": "sinh12-bai-31",
+      "name": "Bài 31. Sinh quyển, khu sinh học và chu trình sinh - địa - hóa",
+      "slug": "sinh-quyen-ku-sinh-hoc-va-chu-trinh-sinh-dia-hoa",
+      "chapter": "Chương 7. Sinh thái học quần xã",
+      "chapter_id": "S12-7",
+      "lesson_id": 31,
+      "description": "Tìm hiểu về sinh quyển, khu sinh học và các chu trình sinh - địa - hóa.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [],
+      "content": {
+        "theory": {
+          "title": "Sinh quyển, khu sinh học và chu trình sinh - địa - hóa",
+          "sections": [
+            {
+              "heading": "1. Sinh quyển",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Sinh quyển</strong> là toàn bộ các vùng của Trái Đất có sự sống.</li><li>Bao gồm: Tầng khí quyển, thủy quyển, thạch quyển có sinh vật.</li></ul><h4>b) Giới hạn</h4><ul><li><strong>Trên cạn:</strong> Độ cao đến 10km (tầng đối lưu).</li><li><strong>Dưới nước:</strong> Độ sâu đến 11km (đáy đại dương).</li><li><strong>Trong đất:</strong> Độ sâu 2-3km.</li></ul><h4>c) Đặc điểm</h4><ul><li>Chứa tất cả hệ sinh thái trên Trái Đất.</li><li>Là hệ thống sinh thái lớn nhất.</li><li>Có sự tuần hoàn vật chất và trao đổi năng lượng liên tục.</li></ul>"
+            },
+            {
+              "heading": "2. Khu sinh học (Biome)",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Khu sinh học</strong> là vùng sinh thái lớn có khí hậu, thảm thực vật và động vật đặc trưng.</li><li>Phân bố chủ yếu theo vĩ độ và độ cao.</li></ul><h4>b) Các khu sinh học trên cạn</h4><ul><li><strong>Rừng nhiệt đới:</strong> Nóng ẩm, mưa nhiều, đa dạng loài cao.</li><li><strong>Rừng ôn đới:</strong> 4 mùa, cây rụng lá mùa đông.</li><li><strong>Rừng taiga:</strong> Khí hậu lạnh, cây lá kim.</li><li><strong>Thảo nguyên:</strong> Cây cỏ, ít mưa, động vật ăn cỏ.</li><li><strong>Sa mạc:</strong> Khô hạn, động thực vật thích nghi.</li><li><strong>Tundra:</strong> Lạnh quanh năm, thực vật địa y, rêu.</li></ul><h4>c) Khu sinh học dưới nước</h4><ul><li><strong>Biển:</strong> Vùng ven bờ, vùng mở, vùng sâu.</li><li><strong>Nước ngọt:</strong> Hồ, sông, đầm.</li><li><strong>Đầm lầy:</strong> Vùng ngập nước.</li></ul>"
+            },
+            {
+              "heading": "3. Chu trình sinh - địa - hóa",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Chu trình sinh - địa - hóa</strong> là sự tuần hoàn các nguyên tố hóa học giữa sinh quyển, thạch quyển, khí quyển, thủy quyển.</li><li>Các chất được sử dụng nhiều lần, không mất đi.</li></ul><h4>b) Chu trình nước (thủy văn)</h4><ul><li><strong>Bốc hơi:</strong> Từ mặt biển, mặt đất.</li><li><strong>Ngưng tụ:</strong> Tạo mây, sương mù.</li><li><strong>Mưa:</strong> Nước rơi xuống.</li><li><strong>Thấm:</strong> Nước ngầm, nước sông, hồ.</li><li><strong>Quay về biển:</strong> Qua sông, chảy ngầm.</li></ul><h4>c) Chu trình carbon</h4><ul><li><strong>Nguồn carbon:</strong> CO₂ trong khí quyển, trong đại dương.</li><li><strong>Đi vào sinh quyển:</strong> Quang hợp tạo glucose.</li><li><strong>Trong chuỗi thức ăn:</strong> Carbon di chuyển qua các bậc dinh dưỡng.</li><li><strong>Giải phóng:</strong> Hô hấp, đốt cháy, phân hủy.</li><li><strong>Tích lũy:</strong> Than đá, dầu mỏ (cacbon hóa thạch).</li></ul><h4>d) Chu trình nitơ</h4><ul><li><strong>Cố định đạm:</strong> Vi khuẩn, tảo lam chuyển N₂ thành NH₃.</li><li><strong>Nitrificat:</strong> NH₃ → NO₂⁻ → NO₃⁻ (đạm nitrat).</li><li><strong>Đồng hóa:</strong> Thực vật hấp thụ NO₃⁻ tạo protein.</li><li><strong>Phân hủy:</strong> Protein → NH₃.</li><li><strong>Khử nitrat:</strong> NO₃⁻ → N₂ (giải phóng về khí quyển).</li></ul>"
+            },
+            {
+              "heading": "4. Các chu trình khác",
+              "content": "<h4>a) Chu trình lưu huỳnh (S)</h4><ul><li>Khí quyển (SO₂) → Mưa axit → Đất → Thực vật → Động vật → Phân hủy → H₂S → SO₂.</li></ul><h4>b) Chu trình phốtpho (P)</h4><ul><li>Đá phong hóa → Đất → Thực vật → Động vật → Phân hủy → Đất.</li><li>Khác carbon và nitơ: Không có dạng khí, tuần hoàn chậm hơn.</li></ul><h4>c) Chu trình oxy (O)</h4><ul><li>Quang hợp giải phóng O₂ → Hô hấp tiêu thụ O₂.</li><li>Cân bằng O₂ trong khí quyển nhờ thực vật xanh.</li></ul>"
+            },
+            {
+              "heading": "5. Vai trò của con người",
+              "content": "<h4>a) Tác động tích cực</h4><ul><li>Bảo tồn đa dạng sinh học.</li><li>Phục hồi hệ sinh thái.</li><li>Quản lý bền vững tài nguyên.</li></ul><h4>b) Tác động tiêu cực</h4><ul><li>Phá rừng → Mất cân bằng carbon.</li><li>Đốt nhiên liệu hóa thạch → Tăng CO₂.</li><li>Sử dụng phân bón → Ô nhiễm nước, mất cân bằng nitơ.</li><li>Hiệu ứng nhà kính, biến đổi khí hậu.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Sinh quyển là gì?",
+            "options": [
+              "Một hệ sinh thái cụ thể",
+              "Toàn bộ vùng có sự sống trên Trái Đất",
+              "Một khu vực địa lý",
+              "Một quần xã sinh vật"
+            ],
+            "correct": 1,
+            "explanation": "Sinh quyển là toàn bộ các vùng của Trái Đất có sự sống."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Khu sinh học được phân loại dựa trên yếu tố nào?",
+            "options": [
+              "Diện tích",
+              "Khí hậu và thảm thực vật",
+              "Số lượng loài",
+              "Khoảng cách"
+            ],
+            "correct": 1,
+            "explanation": "Khu sinh học được phân loại theo khí hậu, thảm thực vật và động vật đặc trưng."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Trong chu trình carbon, carbon đi vào sinh quyển qua quá trình nào?",
+            "options": [
+              "Hô hấp",
+              "Quang hợp",
+              "Đốt cháy",
+              "Phân hủy"
+            ],
+            "correct": 1,
+            "explanation": "Quang hợp lấy CO₂ từ khí quyển, chuyển thành carbon hữu cơ."
+            },
+          {
+           "id":"ex4",
+            "type": "mcq",
+            "question": "Vi khuẩn nào có vai trò cố định nitơ trong chu trình nitơ?",
+            "options": [
+              "Vi khuẩn nitrat hóa",
+              "Vi khuẩn phản nitrat hóa",
+              "Vi khuẩn cố định đạm",
+              "Vi khuẩn phân giải"
+            ],
+            "correct": 2,
+            "explanation": "Vi khuẩn cố định đạm chuyển N₂ từ khí quyển thành dạng có thể sử dụng."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Chu trình nước bao gồm các giai đoạn nào?",
+            "options": [
+              "Bốc hơi, ngưng tụ, mưa, thấm",
+              "Chỉ bốc hơi và mưa",
+              "Chỉ ngưng tụ và thấm",
+              "Chỉ chảy trên sông"
+            ],
+            "correct": 0,
+            "explanation": "Chu trình nước gồm: bốc hơi → ngưng tụ → mưa → thấm → chảy → bốc hơi."
+          },
+          {
+            "id": "msq1",
+            "type": "msq",
+            "question": "Chọn các khu sinh học trên cạn:",
+            "options": [
+              "Rừng nhiệt đới",
+              "Sa mạc",
+              "Biển",
+              "Thảo nguyên"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Rừng nhiệt đới, sa mạc, thảo nguyên là khu sinh học trên cạn. Biển là khu sinh học dưới nước."
+          },
+          {
+            "id": "msq2",
+            "type": "msq",
+            "question": "Chọn các giai đoạn trong chu trình nitơ:",
+            "options": [
+              "Cố định đạm",
+              "Nitrat hóa",
+              "Quang hợp",
+              "Phản nitrat hóa"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Cố định đạm, nitrat hóa, phản nitrat hóa là các giai đoạn của chu trình nitơ. Quang hợp thuộc chu trình carbon."
+          },
+          {
+            "id": "sa1",
+            "type": "sa",
+            "question": "Có bao nhiêu khu sinh học trên cạn chính đã học? Nhập số 1 chữ số.",
+            "correct": "6"
+          },
+          {
+            "id": "sa2",
+            "type": "sa",
+            "question": "Chu trình nước có 4 giai đoạn chính (bốc hơi, ngưng tụ, mưa, thấm/chảy). Nhập số 1 chữ số.",
+            "correct": "4"
+          }
+        ],
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Xác định các giai đoạn trong chu trình",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Nhớ các giai đoạn chính của mỗi chu trình:</li><li>- Nước: Bốc hơi → Ngưng tụ → Mưa → Thấm/Chảy</li><li>- Carbon: CO₂ → Quang hợp → Thức ăn → Hô hấp/Phân hủy → CO₂</li><li>- Nitơ: N₂ → Cố định → NO₃⁻ → Đồng hóa → Phân hủy → NH₃ → Nitrat hóa → NO₃⁻ → Phản nitrat → N₂</li></ol>",
+            "examples": [
+              {
+                "question": "Trong chu trình nitơ, giai đoạn nào chuyển NH₃ thành NO₃⁻?",
+                "solution": "<p><strong>Giải:</strong></p><p>Đó là giai đoạn nitrat hóa (nitrification).</p>"
+              },
+              {
+                "question": "Giai đoạn nào trong chu trình carbon giải phóng CO₂ về khí quyển?",
+                "solution": "<p><strong>Giải:</strong></p><p>Hô hấp và phân hủy giải phóng CO₂.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Phân biệt các khu sinh học",
+            "method": "<h3>Phương pháp giải</h3><ol><li>Xác định đặc điểm khí hậu:</li><li>- Nhiệt đới: Nóng ẩm quanh năm → Rừng nhiệt đới</li><li>- Ôn đới: 4 mùa → Rừng rụng lá</li><li>- Lạnh: Taiga, Tundra</li><li>- Khô: Thảo nguyên, Sa mạc</li></ol>",
+            "examples": [
+              {
+                "question": "Khu vực có khí hậu lạnh, cây lá kim là khu sinh học nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Rừng taiga với cây lá kim (thông, tùng).</p>"
+              },
+              {
+                "question": "Khu vực khô hạn, thực vật ít, động vật thích nghi là khu sinh học nào?",
+                "solution": "<p><strong>Giải:</strong></p><p>Sa mạc với điều kiện khô hạn.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

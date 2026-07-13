@@ -1,0 +1,281 @@
+{
+  "subject": "Vật Lý 12",
+  "subject_id": 29,
+  "lessons": [
+    {
+      "id": "ly12-bai-9-dinh-luat-boyle",
+      "name": "Bài 9. Định luật Boyle",
+      "slug": "bai-9-dinh-luat-boyle",
+      "chapter": "Chương 2. Khí lí tưởng",
+      "chapter_id": "LY12-2",
+      "lesson_id": 9,
+      "description": "Nghiên cứu định luật Boyle về quá trình đẳng nhiệt của khí lí tưởng.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "dlb-1",
+          "name": "Phát biểu định luật Boyle",
+          "slug": "phat-bieu-dinh-luat-boyle",
+          "difficulty": "easy"
+        },
+        {
+          "id": "dlb-2",
+          "name": "Đường đẳng nhiệt",
+          "slug": "duong-dang-nhiet",
+          "difficulty": "medium"
+        },
+        {
+          "id": "dlb-3",
+          "name": "Bài toán đẳng nhiệt",
+          "slug": "bai-toan-dang-nhiet",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Định luật Boyle",
+          "sections": [
+            {
+              "heading": "1. Phát biểu định luật",
+              "content": "<p><strong>Định luật Boyle (định luật Mariotte):</strong></p><p>Trong quá trình đẳng nhiệt (nhiệt độ không đổi), áp suất của một lượng khí xác định tỉ lệ nghịch với thể tích.</p><p><strong>Công thức:</strong></p><p>$$p \\cdot V = \\text{const}$$</p><p>Hay: $$p_1 V_1 = p_2 V_2$$</p><p>Trong đó:</p><ul><li>p₁, V₁: áp suất và thể tích ban đầu</li><li>p₂, V₂: áp suất và thể tích cuối</li></ul>"
+            },
+            {
+              "heading": "2. Đường đẳng nhiệt",
+              "content": "<p>Đồ thị p = f(V) trong quá trình đẳng nhiệt là một <strong>đường cong hypebol</strong>.</p><p>Đối với các nhiệt độ khác nhau, ta có các đường đẳng nhiệt khác nhau. Đường đẳng nhiệt nào ở xa gốc tọa độ hơn thì có nhiệt độ cao hơn.</p><p><strong>Đặc điểm:</strong></p><ul><li>Tại mỗi điểm trên đường đẳng nhiệt, tích pV không đổi</li><li>Khi V tăng 2 lần thì p giảm 2 lần</li></ul>"
+            },
+            {
+              "heading": "3. Điều kiện áp dụng",
+              "content": "<p>Định luật Boyle áp dụng chính xác cho:</p><ul><li>Khí lí tưởng</li><li>Khí thực ở nhiệt độ cao và áp suất thấp</li></ul><p><strong>Lưu ý:</strong> Khi áp suất cao, khí thực không tuân theo định luật này do có tương tác giữa các phân tử.</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính áp suất hoặc thể tích",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Sử dụng p₁V₁ = p₂V₂</li><li>Giữ nguyên nhiệt độ và lượng khí</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Khí ban đầu có V₁ = 4 lít, p₁ = 3 atm. Nén đẳng nhiệt đến V₂ = 2 lít. Tính p₂.",
+                "solution": "<p><strong>Giải:</strong></p><p>p₁V₁ = p₂V₂ → 3.4 = p₂.2 → p₂ = 6 atm</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán thực tế",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định các trạng thái</li><li>Áp dụng p₁V₁ = p₂V₂</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 2:</strong> Một bơm xe đạp có thể tích 0,5 lít. Tính áp suất khí trong bánh xe khi đẩy hết không khí vào. Biết áp suất ban đầu trong bánh là 2 atm, thể tích bánh 3 lít.",
+                "solution": "<p><strong>Giải:</strong></p><p>Thể tích ban đầu: V₁ = 3 lít, p₁ = 2 atm</p><p>Thể tích cuối: V₂ = 3 + 0,5 = 3,5 lít</p><p>p₁V₁ = p₂V₂ → 2.3 = p₂.3,5 → p₂ = 1,71 atm</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Quá trình đẳng nhiệt là quá trình:",
+            "options": [
+              "Nhiệt độ không đổi",
+              "Áp suất không đổi",
+              "Thể tích không đổi",
+              "Công không đổi"
+            ],
+            "correct": 0,
+            "explanation": "Đẳng nhiệt = nhiệt độ không đổi"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Trong quá trình đẳng nhiệt, tích pV:",
+            "options": [
+              "Tăng",
+              "Giảm",
+              "Không đổi",
+              "Bằng không"
+            ],
+            "correct": 2,
+            "explanation": "Theo Boyle: pV = const"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Khi thể tích tăng 2 lần (đẳng nhiệt), áp suất:",
+            "options": [
+              "Tăng 2 lần",
+              "Giảm 2 lần",
+              "Không đổi",
+              "Tăng 4 lần"
+            ],
+            "correct": 1,
+            "explanation": "p tỉ lệ nghịch với V"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Đồ thị p-V trong quá trình đẳng nhiệt là:",
+            "options": [
+              "Đường thẳng",
+              "Đường parabôn",
+              "Đường hypebol",
+              "Đường tròn"
+            ],
+            "correct": 2,
+            "explanation": "Đường đẳng nhiệt là hypebol"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Công thức định luật Boyle:",
+            "options": [
+              "p₁V₁ = p₂V₂",
+              "V₁/T₁ = V₂/T₂",
+              "p₁/T₁ = p₂/T₂",
+              "pV = nRT"
+            ],
+            "correct": 0,
+            "explanation": "p₁V₁ = p₂V₂ cho quá trình đẳng nhiệt"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Nếu nén khí đẳng nhiệt để thể tích giảm một nửa, áp suất:",
+            "options": [
+              "Giảm một nửa",
+              "Tăng gấp đôi",
+              "Không đổi",
+              "Tăng 4 lần"
+            ],
+            "correct": 1,
+            "explanation": "V giảm 2 → p tăng 2"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Định luật Boyle còn gọi là:",
+            "options": [
+              "Định luật Mariotte",
+              "Định luật Charles",
+              "Định luật Gay-Lussac",
+              "Định luật Avogadro"
+            ],
+            "correct": 0,
+            "explanation": "Boyle = Mariotte"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Trong quá trình đẳng nhiệt, nội năng khí:",
+            "options": [
+              "Tăng",
+              "Giảm",
+              "Không đổi",
+              "Bằng không"
+            ],
+            "correct": 2,
+            "explanation": "Nội năng chỉ phụ thuộc nhiệt độ, T không đổi nên U không đổi"
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Khi p = 2 atm, V = 6 lít. Tính p khi V = 3 lít (đẳng nhiệt):",
+            "options": [
+              "1 atm",
+              "2 atm",
+              "3 atm",
+              "4 atm"
+            ],
+            "correct": 3,
+            "explanation": "p₁V₁ = p₂V₂ → 2.6 = p₂.3 → p₂ = 4 atm"
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Định luật Boyle áp dụng cho:",
+            "options": [
+              "Khí lí tưởng",
+              "Khí thực ở áp suất cao",
+              "Hơi bão hòa",
+              "Chất rắn"
+            ],
+            "correct": 0,
+            "explanation": "Áp dụng chính xác cho khí lí tưởng"
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Trong quá trình đẳng nhiệt:",
+            "options": [
+              "Nhiệt độ không đổi",
+              "Áp suất tỉ lệ nghịch thể tích",
+              "pV = hằng số",
+              "Nội năng thay đổi"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Nội năng không đổi vì nhiệt độ không đổi"
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các đại lượng không đổi trong quá trình đẳng nhiệt:",
+            "options": [
+              "Nhiệt độ T",
+              "Số mol n",
+              "Áp suất p",
+              "Tích pV"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Áp suất thay đổi theo thể tích"
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Khi nén khí đẳng nhiệt:",
+            "options": [
+              "Thể tích giảm",
+              "Áp suất tăng",
+              "Nhiệt độ tăng",
+              "Nội năng không đổi"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Đẳng nhiệt nên T không đổi, U không đổi"
+          },
+          {
+            "id": "ex14",
+            "type": "sa",
+            "question": "Khí có V₁ = 5 lít, p₁ = 2 atm. Nén đẳng nhiệt đến V₂ = 2 lít. Tính p₂ (atm).",
+            "correct": "5",
+            "explanation": "p₁V₁ = p₂V₂ → 2.5 = p₂.2 → p₂ = 5 atm"
+          },
+          {
+            "id": "ex15",
+            "type": "sa",
+            "question": "Áp suất ban đầu 3 atm, thể tích 4 lít. Giãn đẳng nhiệt đến 8 lít. Tính áp suất mới (atm).",
+            "correct": "1.5",
+            "explanation": "3.4 = p₂.8 → p₂ = 1,5 atm"
+          },
+          {
+            "id": "ex16",
+            "type": "sa",
+            "question": "Thể tích khí giảm từ 6 lít xuống 2 lít. Áp suất tăng bao nhiêu lần?",
+            "correct": "3",
+            "explanation": "V giảm 3 lần → p tăng 3 lần"
+          },
+          {
+            "id": "ex17",
+            "type": "sa",
+            "question": "Khí ở áp suất 5 atm, thể tích 10 lít. Tính thể tích khi áp suất 2,5 atm (đẳng nhiệt).",
+            "correct": "20",
+            "explanation": "5.10 = 2,5.V → V = 20 lít"
+          }
+        ]
+      }
+    }
+  ]
+}

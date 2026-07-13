@@ -1,0 +1,41 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_28",
+      "name": "Thực hành trải nghiệm trích rút thông tin và tri thức",
+      "slug": "thuc-hanh-trai-nghiem-trich-rut-thong-tin-va-tri-thuc",
+      "chapter": "Giải quyết vấn đề với sự trợ giúp của máy tính",
+      "chapter_id": "tin12_ch7",
+      "lesson_id": 28,
+      "description": "Sử dụng các công cụ đơn giản để phân tích dữ liệu thực tế và rút ra nhận xét.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thực hành Dữ liệu",
+          "summary": "Trải nghiệm quy trình từ dữ liệu thô đến thông tin có ích thông qua các bước lọc, sắp xếp và biểu diễn đồ thị.",
+          "sections": [
+            { "heading": "Chuẩn bị dữ liệu", "content": "Sử dụng các bảng dữ liệu có sẵn (ví dụ: bảng điểm, dữ liệu thời tiết, dữ liệu bán hàng)." },
+            { "heading": "Thực hiện phân tích", "content": "Tìm giá trị lớn nhất, nhỏ nhất, trung bình. Sử dụng Pivot Table hoặc các hàm thống kê." },
+            { "heading": "Nhận xét tri thức", "content": "Từ các con số đã xử lý, đưa ra dự báo hoặc giải pháp cho vấn đề thực tế." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Công cụ nào đơn giản nhất để thực hành xử lý dữ liệu bảng?", "options": ["Notepad", "Microsoft Excel hoặc Google Sheets", "Paint", "Calculator"], "correct": 1, "explanation": "Các phần mềm bảng tính cung cấp đầy đủ các tính năng phân tích cơ bản." },
+          { "id": 2, "type": "mcq", "question": "Thao tác nào giúp loại bỏ các dòng dữ liệu không cần thiết?", "options": ["Sắp xếp (Sort)", "Lọc (Filter)", "Gộp ô", "Đổi màu"], "correct": 1, "explanation": "Filter giúp tập trung vào dữ liệu thỏa mãn điều kiện mong muốn." },
+          { "id": 3, "type": "mcq", "question": "Để tìm xu hướng tăng/giảm của dữ liệu theo thời gian, biểu đồ nào là phù hợp nhất?", "options": ["Biểu đồ tròn", "Biểu đồ đường (Line chart)", "Biểu đồ cột chồng", "Biểu đồ phân tán"], "correct": 1, "explanation": "Biểu đồ đường thể hiện rõ sự biến thiên liên tục." },
+          { "id": 4, "type": "mcq", "question": "Giá trị 'Trung bình cộng' cho biết thông tin gì về tập dữ liệu?", "options": ["Giá trị xuất hiện nhiều nhất", "Mức độ trung tâm, đại diện của tập dữ liệu", "Khoảng cách giữa số lớn nhất và nhỏ nhất", "Số lượng bản ghi"], "correct": 1, "explanation": "Trung bình cộng là một thông số thống kê mô tả quan trọng." },
+          { "id": 5, "type": "mcq", "question": "Tri thức (Knowledge) khác Dữ liệu (Data) ở điểm nào?", "options": ["Dữ liệu đắt hơn", "Tri thức là kết quả của việc hiểu và áp dụng thông tin vào thực tiễn", "Tri thức là các con số", "Không có sự khác biệt"], "correct": 1, "explanation": "Data -> Information -> Knowledge -> Wisdom." },
+          { "id": 6, "type": "mcq", "question": "Tại sao phải vẽ biểu đồ khi báo cáo kết quả dữ liệu?", "options": ["Cho đẹp báo cáo", "Giúp người xem nắm bắt thông tin nhanh và trực quan hơn", "Vì quy định bắt buộc", "Để che giấu các con số sai"], "correct": 1, "explanation": "Trực quan hóa là chìa khóa để truyền tải thông điệp từ dữ liệu." },
+          { "id": 7, "type": "mcq", "question": "Lệnh nào trong bảng tính giúp tính tổng nhanh một cột?", "options": ["AVERAGE", "SUM", "COUNT", "MAX"], "correct": 1, "explanation": "SUM là hàm tính tổng." },
+          { "id": 8, "type": "mcq", "question": "Nếu dữ liệu có quá nhiều sai sót (bẩn), kết quả phân tích sẽ?", "options": ["Vẫn đúng", "Sai lệch và không thể tin cậy", "Tự động được máy sửa lại", "Trở nên bí ẩn"], "correct": 1, "explanation": "Chất lượng đầu vào quyết định tính đúng đắn của đầu ra." },
+          { "id": 9, "type": "mcq", "question": "Phân tích dữ liệu bán hàng giúp chủ cửa hàng biết điều gì?", "options": ["Mặt hàng nào đang bán chạy", "Thời điểm nào đông khách nhất", "Cần nhập thêm hàng gì", "Tất cả các ý trên"], "correct": 3, "explanation": "Đây là ứng dụng thực tế giúp tối ưu kinh doanh." },
+          { "id": 10, "type": "mcq", "question": "Sau khi có kết quả phân tích, bước cuối cùng là?", "options": ["Xóa dữ liệu", "Đưa ra kết luận và đề xuất hành động", "Tắt máy tính", "Gửi dữ liệu cho người khác"], "correct": 1, "explanation": "Mục tiêu cuối cùng là dùng tri thức để giải quyết vấn đề." }
+        ]
+      }
+    }
+  ]
+}

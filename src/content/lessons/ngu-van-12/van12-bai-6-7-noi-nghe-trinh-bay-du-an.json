@@ -1,0 +1,155 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-6-7-noi-nghe-trinh-bay-du-an",
+      "name": "Nói và nghe: Trình bày kết quả của bài tập dự án",
+      "slug": "noi-nghe-trinh-bay-du-an",
+      "chapter": "Hồ Chí Minh - Văn hóa phải soi đường cho quốc dân đi",
+      "chapter_id": "V12-6",
+      "lesson_id": 7,
+      "description": "Phát triển kỹ năng trình bày kết quả dự án trước đám đông, kỹ năng lắng nghe và phản hồi trong buổi báo cáo dự án.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "presentation-skills",
+          "name": "Kỹ năng thuyết trình",
+          "slug": "ky-nang-thuyet-trinh",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Nói và nghe: Trình bày kết quả dự án",
+          "sections": [
+            {
+              "heading": "1. Chuẩn bị trình bày dự án",
+              "content": "<h4>a) Xác định nội dung trọng tâm</h4><ul><li><strong>Mục tiêu dự án:</strong> Giải quyết vấn đề gì?</li><li><strong>Quá trình thực hiện:</strong> Các bước chính</li><li><strong>Kết quả nổi bật:</strong> Thành tựu đạt được</li><li><strong>Bài học kinh nghiệm:</strong> Những gì học được</li></ul><h4>b) Chuẩn bị tài liệu hỗ trợ</h4><ul><li><strong>Slide thuyết trình:</strong> Ngắn gọn, trực quan</li><li><strong>Video, hình ảnh:</strong> Minh họa quá trình thực hiện</li><li><strong>Sản phẩm thực tế:</strong> Nếu có thể mang đến</li><li><strong>Tài liệu phát tay:</strong> Tóm tắt dự án</li></ul><h4>c) Phân công vai trò</h4><ul><li><strong>Người mở đầu:</strong> Giới thiệu dự án</li><li><strong>Người trình bày chính:</strong> Quá trình và kết quả</li><li><strong>Người kết luận:</strong> Đánh giá và bài học</li><li><strong>Người trả lời câu hỏi:</strong> Tùy chuyên môn</li></ul>"
+            },
+            {
+              "heading": "2. Kỹ năng trình bày dự án",
+              "content": "<h4>a) Mở đầu ấn tượng</h4><ul><li><strong>Giới thiệu ngắn gọn:</strong> Tên dự án, thành viên</li><li><strong>Nêu vấn đề:</strong> Tại sao chọn dự án này?</li><li><strong>Thu hút sự chú ý:</strong> Câu hỏi, số liệu thú vị</li></ul><h4>b) Trình bày nội dung chính</h4><ul><li><strong>Theo trình tự logic:</strong> Từ kế hoạch đến kết quả</li><li><strong>Nhấn mạnh điểm quan trọng:</strong> Thành tựu nổi bật</li><li><strong>Sử dụng ví dụ cụ thể:</strong> Minh họa bằng hình ảnh, video</li><li><strong>Thể hiện sự hợp tác:</strong> Vai trò của từng thành viên</li></ul><h4>c) Kết thúc hiệu quả</h4><ul><li><strong>Tóm tắt kết quả:</strong> Những gì đạt được</li><li><strong>Chia sẻ bài học:</strong> Kinh nghiệm quý báu</li><li><strong>Cảm ơn:</strong> Người hỗ trợ, khán giả</li><li><strong>Mở phần hỏi đáp</strong></li></ul>"
+            },
+            {
+              "heading": "3. Kỹ năng lắng nghe và phản hồi",
+              "content": "<h4>a) Lắng nghe báo cáo dự án</h4><ul><li><strong>Tập trung vào nội dung:</strong> Mục tiêu, quá trình, kết quả</li><li><strong>Ghi chú điểm quan trọng</strong></li><li><strong>Đánh giá:</strong> Tính sáng tạo, khả thi, hiệu quả</li></ul><h4>b) Đặt câu hỏi</h4><ul><li><strong>Câu hỏi về quá trình:</strong> Khó khăn gặp phải?</li><li><strong>Câu hỏi về kết quả:</strong> Đo lường hiệu quả như thế nào?</li><li><strong>Câu hỏi về ứng dụng:</strong> Có thể mở rộng không?</li></ul><h4>c) Đưa ra phản hồi</h4><ul><li><strong>Nhận xét tích cực:</strong> Điểm mạnh của dự án</li><li><strong>Góp ý xây dựng:</strong> Cách cải thiện</li><li><strong>Khuyến khích:</strong> Động viên nhóm thực hiện</li></ul>"
+            }
+          ]
+        },
+        "exercises": {
+          "title": "Bài tập luyện tập",
+          "items": [
+            {
+              "id": "ex6-7-1",
+              "type": "mcq",
+              "question": "Khi trình bày dự án, nên bắt đầu bằng cách nào?",
+              "options": [
+                "Kể chuyện vui",
+                "Giới thiệu ngắn gọn và nêu vấn đề dự án giải quyết",
+                "Đọc toàn bộ báo cáo",
+                "Không cần mở đầu"
+              ],
+              "correct": 1,
+              "explanation": "Nên bắt đầu bằng giới thiệu ngắn gọn về dự án và nêu rõ vấn đề mà dự án hướng đến giải quyết để thu hút sự chú ý."
+            },
+            {
+              "id": "ex6-7-2",
+              "type": "mcq",
+              "question": "Tài liệu nào hữu ích nhất khi trình bày dự án?",
+              "options": [
+                "Chỉ có văn bản",
+                "Slide, video, hình ảnh minh họa quá trình",
+                "Không cần tài liệu",
+                "Chỉ có sách giáo khoa"
+              ],
+              "correct": 1,
+              "explanation": "Slide, video và hình ảnh giúp minh họa trực quan quá trình thực hiện, làm cho bài trình bày sinh động và dễ hiểu hơn."
+            },
+            {
+              "id": "ex6-7-3",
+              "type": "mcq",
+              "question": "Khi trình bày nhóm, tại sao cần phân công vai trò?",
+              "options": [
+                "Không cần phân công",
+                "Để mỗi người có trách nhiệm rõ ràng, trình bày mạch lạc",
+                "Để tốn thời gian",
+                "Để gây rối"
+              ],
+              "correct": 1,
+              "explanation": "Phân công vai trò giúp mỗi thành viên có trách nhiệm rõ ràng, bài trình bày được tổ chức mạch lạc và chuyên nghiệp hơn."
+            },
+            {
+              "id": "ex6-7-4",
+              "type": "mcq",
+              "question": "Điều gì nên nhấn mạnh khi trình bày nội dung chính?",
+              "options": [
+                "Tất cả các chi tiết nhỏ",
+                "Thành tựu nổi bật và kết quả quan trọng",
+                "Chỉ khó khăn",
+                "Không cần nhấn mạnh gì"
+              ],
+              "correct": 1,
+              "explanation": "Nên nhấn mạnh các thành tựu nổi bật và kết quả quan trọng để khán giả hiểu rõ giá trị của dự án."
+            },
+            {
+              "id": "ex6-7-5",
+              "type": "mcq",
+              "question": "Khi lắng nghe báo cáo dự án, nên chú ý điều gì?",
+              "options": [
+                "Chỉ chú ý slide đẹp",
+                "Mục tiêu, quá trình thực hiện và kết quả đạt được",
+                "Trang phục của người trình bày",
+                "Không cần chú ý"
+              ],
+              "correct": 1,
+              "explanation": "Cần chú ý đến mục tiêu, quá trình thực hiện và kết quả để hiểu đầy đủ về dự án và có thể đánh giá, đặt câu hỏi."
+            },
+            {
+              "id": "ex6-7-6",
+              "type": "mcq",
+              "question": "Loại câu hỏi nào phù hợp khi nghe báo cáo dự án?",
+              "options": [
+                "Câu hỏi về đời tư",
+                "Câu hỏi về quá trình, kết quả, khả năng ứng dụng",
+                "Câu hỏi về thời tiết",
+                "Không nên hỏi gì"
+              ],
+              "correct": 1,
+              "explanation": "Nên hỏi về quá trình thực hiện, cách đo lường kết quả và khả năng ứng dụng, mở rộng dự án."
+            },
+            {
+              "id": "ex6-7-7",
+              "type": "mcq",
+              "question": "Khi đưa ra phản hồi về dự án, nên làm gì?",
+              "options": [
+                "Chỉ chỉ trích",
+                "Nhận xét tích cực và góp ý xây dựng",
+                "Không nói gì",
+                "Chỉ khen ngợi"
+              ],
+              "correct": 1,
+              "explanation": "Phản hồi hiệu quả cần cân bằng giữa nhận xét tích cực về điểm mạnh và góp ý xây dựng để cải thiện."
+            },
+            {
+              "id": "ex6-7-8",
+              "type": "mcq",
+              "question": "Phần kết thúc bài trình bày dự án nên bao gồm nội dung gì?",
+              "options": [
+                "Chỉ nói 'Hết'",
+                "Tóm tắt kết quả, chia sẻ bài học, cảm ơn và mở phần hỏi đáp",
+                "Không cần kết thúc",
+                "Chỉ cảm ơn"
+              ],
+              "correct": 1,
+              "explanation": "Phần kết thúc cần tóm tắt kết quả, chia sẻ bài học kinh nghiệm, cảm ơn và mở phần hỏi đáp để tương tác với khán giả."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

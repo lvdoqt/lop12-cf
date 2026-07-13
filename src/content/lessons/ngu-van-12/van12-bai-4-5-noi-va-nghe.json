@@ -1,0 +1,156 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-4-5-noi-va-nghe",
+      "name": "Nói và nghe: Trình bày về việc vay mượn – cải biến – sáng tạo",
+      "slug": "noi-va-nghe-vay-muon-sang-tao",
+      "chapter": "Yếu tố kì ảo trong truyện kể",
+      "chapter_id": "V12-4",
+      "lesson_id": 5,
+      "description": "Phát triển kỹ năng nói và nghe để thuyết trình, trình bày quan điểm về quá trình vay mượn, cải biến, sáng tạo trong một tác phẩm văn học.",
+      "duration_minutes": 50,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "spk2",
+          "name": "Kỹ năng thuyết trình",
+          "slug": "ky-nang-thuyet-trinh",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Nói và nghe: Thuyết trình về vay mượn – cải biến – sáng tạo",
+          "sections": [
+            {
+              "heading": "1. Chuẩn bị nội dung cho bài thuyết trình",
+              "content": "<h4>a) Lựa chọn tác phẩm cần phân tích</h4><ul><li><strong>Tiêu chí:</strong><br/>- Tác phẩm phải là sự kết hợp rõ ràng giữa vay mượn và sáng tạo<br/>- Tác phẩm mà bản thân am hiểu, có thể giải thích rõ<br/>- Tác phẩm mà độc giả (lớp học) có thể chấp nhận</li><li><strong>Những tác phẩm phù hợp:</strong><br/>- Muối của rừng (Nguyễn Huy Thiệp)<br/>- Hải khẩu linh từ (Đoàn Thị Điểm)<br/>- Những chuyện cổ tích được viết lại hiện đại</li></ul><h4>b) Tìm hiểu sâu về tác phẩm</h4><ul><li><strong>Cần am hiểu:</strong><br/>- Nguồn gốc của tác phẩm (vay mượn từ đâu?)<br/>- Cách tác giả cải biến (thay đổi những gì?)<br/>- Ý tưởng sáng tạo (thêm vào điều gì mới?)<br/>- Tác dụng của những thay đổi này</li><li><strong>Chuẩn bị dẫn chứng:</strong><br/>- Những đoạn trích từ tác phẩm gốc<br/>- Những đoạn trích từ tác phẩm mới<br/>- So sánh giữa hai</li></ul><h4>c) Xây dựng outline</h4><ul><li><strong>Mở đầu (1-2 phút):</strong><br/>- Giới thiệu tác phẩm sẽ nói<br/>- Nêu rõ nguồn gốc (vay mượn từ đâu)<br/>- Nêu ý tưởng chính: tác giả đã thay đổi gì?</li><li><strong>Phần chính (7-10 phút):</strong><br/>- Phần 1: Nguyên bản, những yếu tố được vay mượn<br/>- Phần 2: Cách cải biến (thay đổi chi tiết)<br/>- Phần 3: Ý tưởng sáng tạo mới (<br/>- Phần 4: Tác dụng, ý nghĩa</li><li><strong>Kết luận (1-2 phút):</strong><br/>- Tóm tắt lại những ý chính<br/>- Nêu quan điểm về quá trình vay mượn-cải biến-sáng tạo<br/>- Mở cửa cho câu hỏi</li></ul>"
+            },
+            {
+              "heading": "2. Kỹ năng trình bày hiệu quả",
+              "content": "<h4>a) Sử dụng so sánh để minh họa</h4><ul><li><strong>Phương pháp 1: Đọc trích dẫn so sánh</strong><br/>- Đọc một đoạn từ tác phẩm gốc<br/>- Đọc đoạn tương ứng từ tác phẩm mới<br/>- Giải thích sự thay đổi</li><li><strong>Phương pháp 2: Mô tả so sánh</strong><br/>- Mô tả tác phẩm gốc là như thế nào<br/>- Mô tả tác phẩm mới là như thế nào<br/>- Nêu rõ sự khác biệt</li></ul><h4>b) Sử dụng câu hỏi để gợi suy tư</h4><ul><li><strong>Ví dụ:</strong><br/>- \"Bạn có biết 'Muối của rừng' được lấy cảm hứng từ những truyên thuyết dân gian không?\"<br/>- \"Tại sao Nguyễn Huy Thiệp lại chọn thay đổi những yếu tố này?\"<br/>- \"Nếu tác giả không cải biến, tác phẩm sẽ như thế nào?\"</li></ul><h4>c) Sử dụng ví dụ cụ thể</h4><ul><li><strong>Không nên quá trừu tượng:</strong> \"Tác giả đã cải biến...\"</li><li><strong>Nên nêu ví dụ cụ thể:</strong> \"Ví dụ như trong tác phẩm gốc, rừng là một nơi có thần linh bảo vệ con người. Nhưng Nguyễn Huy Thiệp lại biến nó thành một nơi nguy hiểm, gỗi dũ những tham vọng con người...\"</li></ul>"
+            },
+            {
+              "heading": "3. Kỹ năng lắng nghe khi người khác thuyết trình",
+              "content": "<h4>a) Ghi chú những điểm quan trọng</h4><ul><li><strong>Ghi chú:</strong><br/>- Tác phẩm được nói (tên, tác giả, thời kỳ)<br/>- Nguồn vay mươn<br/>- Cách cải biến (những thay đổi cụ thể)<br/>- Ý tưởng sáng tạo mới</li></ul><h4>b) Xác định những điểm chưa rõ</h4><ul><li><strong>Lắng nghe cẩn thận để:</strong><br/>- Xác định những gì bạn không hiểu<br/>- Chuẩn bị câu hỏi tìm hiểu thêm<br/>- Xác định điểm không đồng ý (nếu có)</li></ul>"
+            },
+            {
+              "heading": "4. Kỹ năng thảo luận sau thuyết trình",
+              "content": "<h4>a) Đặt câu hỏi để hiểu sâu hơn</h4><ul><li><strong>Câu hỏi mở:</strong><br/>- \"Tại sao tác giá lại chọn cách cải biến này?\"<br/>- \"Tác phẩm này giúp bạn hiểu về quá trình sáng tạo như thế nào?\"<br/>- \"Bạn có sáng tác giả khác cũng làm tương tự không?\"</li><li><strong>Câu hỏi tuân thủ:</strong><br/>- \"Bạn có thể nêu thêm ví dụ cụ thể không?\"<br/>- \"Sự cải biến này có tác dụng gì?\"</li></ul><h4>b) Phát biểu ý kiến cá nhân</h4><ul><li><strong>Đồng ý:</strong> \"Tôi hoàn toàn đồng ý, cách phân tích của bạn rất rõ ràng\"</li><li><strong>Không hoàn toàn đồng ý:</strong> \"Bạn nói hay, nhưng theo tôi, còn một khả năng khác là...\"</li><li><strong>Bổ sung:</strong> \"Bạn đã nêu ra những điểm rất hay, tôi muốn bổ sung thêm...\"</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex4-5-1",
+            "type": "mcq",
+            "question": "Trong một bài thuyết trình về vay mượn - cải biến - sáng tạo, nên bắt đầu bằng cách gì?",
+            "options": [
+              "Trực tiếp nêu ra những yếu tố sáng tạo",
+              "Giới thiệu tác phẩm sẽ nói, nêu rõ nguồn gốc (vay mượn từ đâu)",
+              "Kết thúc với những bài học rút ra",
+              "Bỏ qua phần mở đầu"
+            ],
+            "correct": 1,
+            "explanation": "Mở đầu tốt giúp độc giả/khán giả hiểu được bối cảnh, từ đó ít tiếp nhận những ý kiến sau này."
+          },
+          {
+            "id": "ex4-5-2",
+            "type": "mcq",
+            "question": "Kỹ năng nào là quan trọng nhất khi thuyết trình?",
+            "options": [
+              "Chỉ nên đọc từng chữ từ bản viết",
+              "Nên nói rõ, tự tin, có dẫn chứng cụ thể, sử dụng giọng và cử chỉ phù hợp",
+              "Nên nói nhanh để tiết kiệm thời gian",
+              "Không cần chuẩn bị gì cả"
+            ],
+            "correct": 1,
+            "explanation": "Thuyết trình hiệu quả cần sự chuẩn bị kỹ lưỡng, nói rõ ràng, tự tin, có dẫn chứng, sử dụng ngôn ngữ cơ thể và giọng nói hiệu quả."
+          },
+          {
+            "id": "ex4-5-3",
+            "type": "mcq",
+            "question": "Cách nào để so sánh giữa tác phẩm gốc và tác phẩm cải biến trong thuyết trình?",
+            "options": [
+              "Chỉ kể câu chuyện gốc",
+              "Đọc trích dẫn so sánh từ cả hai tác phẩm, hoặc mô tả so sánh chi tiết",
+              "Bỏ qua phần so sánh",
+              "Chỉ nêu ý góp của phê bình giáo"
+            ],
+            "correct": 1,
+            "explanation": "So sánh trực tiếp thông qua trích dẫn hoặc mô tả chi tiết giúp khán giả dễ hình dung sự khác biệt."
+          },
+          {
+            "id": "ex4-5-4",
+            "type": "mcq",
+            "question": "Khi lắng nghe bài thuyết trình, nên ghi chú những gì?",
+            "options": [
+              "Không cần ghi chú gì",
+              "Những ý chính: tác phẩm, nguồn vay mượn, cách cải biến, ý tưởng sáng tạo",
+              "Tất cả từ mà người nói phát âm",
+              "Chỉ ghi chú những điểm không đồng ý"
+            ],
+            "correct": 1,
+            "explanation": "Ghi chú những ý chính giúp bạn theo dõi, chuẩn bị câu hỏi, và tiếp nhận thông tin hiệu quả hơn."
+          },
+          {
+            "id": "ex4-5-5",
+            "type": "mcq",
+            "question": "Câu hỏi tốt để đặt sau khi nghe thuyết trình là câu hỏi gì?",
+            "options": [
+              "Câu hỏi có câu trả lời 'có' hoặc 'không'",
+              "Câu hỏi mở yêu cầu giải thích thêm hoặc câu hỏi tuân thủ để hiểu sâu hơn",
+              "Câu hỏi tiêu cực",
+              "Không nên đặt câu hỏi gì cả"
+            ],
+            "correct": 1,
+            "explanation": "Câu hỏi mở giúp người thuyết trình giải thích chi tiết hơn, câu hỏi tuân thủ giúp hiểu sâu sắc hơn nội dung."
+          },
+          {
+            "id": "ex4-5-6",
+            "type": "mcq",
+            "question": "Phần chính của bài thuyết trình nên kéo dài bao lâu?",
+            "options": [
+              "1-2 phút",
+              "7-10 phút",
+              "20-30 phút",
+              "Không giới hạn thời gian"
+            ],
+            "correct": 1,
+            "explanation": "Phần chính thường kéo dài 7-10 phút, đủ để trình bày chi tiết các ý chính mà không quá dài gây mất tập trung."
+          },
+          {
+            "id": "ex4-5-7",
+            "type": "mcq",
+            "question": "Khi phát biểu ý kiến sau thuyết trình, nên làm gì nếu không hoàn toàn đồng ý?",
+            "options": [
+              "Phê bình gay gắt",
+              "Nói: 'Bạn nói hay, nhưng theo tôi, còn một khả năng khác là...'",
+              "Không nói gì",
+              "Chỉ nói điểm yếu"
+            ],
+            "correct": 1,
+            "explanation": "Nên thể hiện ý kiến một cách lịch sự, công nhận điểm tốt trước khi đưa ra quan điểm khác."
+          },
+          {
+            "id": "ex4-5-8",
+            "type": "mcq",
+            "question": "Tại sao cần sử dụng câu hỏi trong thuyết trình?",
+            "options": [
+              "Để làm mất thời gian",
+              "Để gợi suy tư, tạo sự tương tác với khán giả",
+              "Để khoe kiến thức",
+              "Không nên sử dụng câu hỏi"
+            ],
+            "correct": 1,
+            "explanation": "Câu hỏi giúp gợi suy tư, tạo sự tương tác, giữ sự chú ý của khán giả và làm bài thuyết trình sinh động hơn."
+          }
+        ]
+      }
+    }
+  ]
+}

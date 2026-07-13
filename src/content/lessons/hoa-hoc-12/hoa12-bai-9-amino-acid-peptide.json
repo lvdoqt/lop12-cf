@@ -1,0 +1,105 @@
+{
+  "subject": "Hóa Học 12",
+  "subject_id": 26,
+  "lessons": [
+    {
+      "id": "hoa12-bai-9-amino-acid-peptide",
+      "name": "Bài 9. Amino acid và peptide",
+      "slug": "bai-9-amino-acid-peptide",
+      "chapter": "Chương 3: Hợp chất chứa nitrogen",
+      "chapter_id": "H12-1003",
+      "lesson_id": 9,
+      "description": "Tìm hiểu về cấu tạo, tính chất của amino acid và peptide.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "amino-acid-peptide-1",
+          "name": "Amino acid và Peptide",
+          "slug": "amino-acid-peptide",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Amino acid và Peptide",
+          "sections": [
+            {
+              "heading": "1. Amino acid",
+              "content": "<h3>a) Định nghĩa và phân loại</h3><p><strong>Amino acid:</strong> Hợp chất hữu cơ tạp chức, phân tử có chứa đồng thời nhóm amino (-NH₂) và nhóm carboxyl (-COOH).</p><p><strong>Công thức chung:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>H₂N-R-COOH</p><p><strong>α-Amino acid:</strong> Nhóm -NH₂ gắn vào carbon α (kế bên -COOH)</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>H₂N-CH(R)-COOH</p><p><strong>Phân loại:</strong></p><ul><li>Amino acid trung tính: 1 -NH₂, 1 -COOH (glycine, alanine)</li><li>Amino acid acid: 1 -NH₂, 2 -COOH (glutamic acid)</li><li>Amino acid base: 2 -NH₂, 1 -COOH (lysine)</li></ul><h3>b) Tính chất vật lý</h3><ul><li>Chất rắn kết tinh, không màu</li><li>Tan trong nước</li><li>Vị ngọt hoặc không vị</li><li>Nhiệt độ nóng chảy cao (>200°C)</li><li>Tồn tại dạng ion lưỡng cực: H₃N⁺-CH(R)-COO⁻</li></ul><h3>c) Tính chất hóa học</h3><p><strong>1. Tính lưỡng tính (quan trọng nhất):</strong></p><p><strong>a) Với acid:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>H₂N-CH₂-COOH + HCl → Cl⁻H₃N⁺-CH₂-COOH</p><p>Nhóm -NH₂ thể hiện tính base</p><p><strong>b) Với base:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>H₂N-CH₂-COOH + NaOH → H₂N-CH₂-COONa + H₂O</p><p>Nhóm -COOH thể hiện tính acid</p><p><strong>2. Phản ứng este hóa:</strong></p><p>H₂N-CH₂-COOH + C₂H₅OH → H₂N-CH₂-COOC₂H₅ + H₂O (H⁺, t°)</p><p><strong>3. Phản ứng ngưng tụ (tạo peptide):</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>H₂N-CH₂-COOH + H₂N-CH₂-COOH → H₂N-CH₂-CO-NH-CH₂-COOH + H₂O</p><p>Tạo liên kết peptide (-CO-NH-)</p><h3>d) Amino acid quan trọng</h3><table class='table-auto border-collapse border border-gray-300 w-full'><thead><tr class='bg-gray-100'><th class='border border-gray-300 p-2'>Tên</th><th class='border border-gray-300 p-2'>Công thức</th><th class='border border-gray-300 p-2'>Ký hiệu</th></tr></thead><tbody><tr><td class='border border-gray-300 p-2'>Glycine</td><td class='border border-gray-300 p-2'>H₂N-CH₂-COOH</td><td class='border border-gray-300 p-2'>Gly</td></tr><tr><td class='border border-gray-300 p-2'>Alanine</td><td class='border border-gray-300 p-2'>H₂N-CH(CH₃)-COOH</td><td class='border border-gray-300 p-2'>Ala</td></tr><tr><td class='border border-gray-300 p-2'>Valine</td><td class='border border-gray-300 p-2'>H₂N-CH(CH(CH₃)₂)-COOH</td><td class='border border-gray-300 p-2'>Val</td></tr><tr><td class='border border-gray-300 p-2'>Glutamic acid</td><td class='border border-gray-300 p-2'>HOOC-CH₂-CH₂-CH(NH₂)-COOH</td><td class='border border-gray-300 p-2'>Glu</td></tr></tbody></table>"
+            },
+            {
+              "heading": "2. Peptide",
+              "content": "<h3>a) Định nghĩa</h3><p><strong>Peptide:</strong> Hợp chất tạo thành khi các phân tử amino acid liên kết với nhau qua liên kết peptide (-CO-NH-).</p><p><strong>Liên kết peptide:</strong> Liên kết giữa nhóm -CO của amino acid này với nhóm -NH của amino acid khác</p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>-CO-NH-</p><h3>b) Phân loại</h3><ul><li>Dipeptide: 2 amino acid (Gly-Ala)</li><li>Tripeptide: 3 amino acid (Gly-Ala-Val)</li><li>Oligopeptide: 4-10 amino acid</li><li>Polypeptide: >10 amino acid</li><li>Protein: Polypeptide lớn (>50 amino acid)</li></ul><h3>c) Tính chất hóa học</h3><p><strong>1. Phản ứng thủy phân:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Peptide + H₂O → Amino acid (H⁺ hoặc enzyme, t°)</p><p>Gly-Ala + H₂O → Gly + Ala</p><p><strong>2. Phản ứng màu biuret:</strong></p><p>Peptide (≥3 amino acid) + Cu(OH)₂ → Phức màu tím</p><p>Nhận biết peptide và protein</p><p><strong>3. Tính lưỡng tính:</strong></p><ul><li>Với acid: Nhóm -NH₂ đầu N</li><li>Với base: Nhóm -COOH đầu C</li></ul><h3>d) Ví dụ peptide</h3><p><strong>Dipeptide Gly-Ala:</strong></p><p>H₂N-CH₂-CO-NH-CH(CH₃)-COOH</p><p><strong>Tripeptide Gly-Ala-Val:</strong></p><p>H₂N-CH₂-CO-NH-CH(CH₃)-CO-NH-CH(CH(CH₃)₂)-COOH</p>"
+            },
+            {
+              "heading": "3. Ứng dụng",
+              "content": "<h3>a) Amino acid</h3><ul><li>Thực phẩm: Bột ngọt (MSG - muối natri của glutamic acid)</li><li>Y tế: Truyền dịch dinh dưỡng</li><li>Thức ăn gia súc: Bổ sung lysine, methionine</li><li>Mỹ phẩm: Dưỡng da, dưỡng tóc</li></ul><h3>b) Peptide</h3><ul><li>Hormone: Insulin (điều hòa đường huyết)</li><li>Kháng sinh: Penicillin</li><li>Thần kinh: Endorphin (giảm đau)</li><li>Mỹ phẩm: Collagen peptide (chống lão hóa)</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Bài toán tính lưỡng tính của amino acid",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Amino acid + HCl: n(HCl) = n(amino acid)</li><li>Amino acid + NaOH: n(NaOH) = n(amino acid)</li><li>Lưu ý: Amino acid có nhiều -NH₂ hoặc -COOH</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Cho 7.5g glycine (H₂N-CH₂-COOH) tác dụng với: a) Dung dịch HCl dư, tính khối lượng muối. b) Dung dịch NaOH dư, tính khối lượng muối. c) Tính thể tích HCl 1M và NaOH 1M cần dùng.",
+                "solution": "<p><strong>Tính số mol glycine:</strong></p><p>M(glycine) = 75 g/mol</p><p>n(glycine) = 7.5 / 75 = 0.1 mol</p><p><strong>a) Với HCl:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>H₂N-CH₂-COOH + HCl → Cl⁻H₃N⁺-CH₂-COOH</p><p>n(muối) = 0.1 mol</p><p>M(muối) = 111.5 g/mol</p><p>m(muối) = 0.1 × 111.5 = 11.15g</p><p><strong>b) Với NaOH:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>H₂N-CH₂-COOH + NaOH → H₂N-CH₂-COONa + H₂O</p><p>n(muối) = 0.1 mol</p><p>M(muối) = 97 g/mol</p><p>m(muối) = 0.1 × 97 = 9.7g</p><p><strong>c) Thể tích:</strong></p><p>V(HCl) = 0.1 / 1 = 0.1 lít = 100 ml</p><p>V(NaOH) = 0.1 / 1 = 0.1 lít = 100 ml</p><p><strong>Đáp án:</strong> a) 11.15g; b) 9.7g; c) 100 ml mỗi dung dịch</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Bài toán thủy phân peptide",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định số liên kết peptide</li><li>Tính mol H₂O = số liên kết peptide</li><li>Tính khối lượng amino acid</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Thủy phân hoàn toàn 18.9g tripeptide Gly-Ala-Val. a) Viết PTHH. b) Tính khối lượng mỗi amino acid thu được. c) Cho sản phẩm tác dụng với NaOH dư, tính khối lượng muối.",
+                "solution": "<p><strong>a) PTHH:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>Gly-Ala-Val + 2H₂O → Gly + Ala + Val</p><p>Tripeptide có 2 liên kết peptide → cần 2 mol H₂O</p><p><strong>Tính số mol:</strong></p><p>M(Gly-Ala-Val) = 75 + 89 + 117 - 36 = 245 g/mol</p><p>(Trừ 36 = 2×18 do mất 2 H₂O khi tạo peptide)</p><p>n(tripeptide) = 18.9 / 189 = 0.1 mol</p><p><strong>b) Khối lượng amino acid:</strong></p><p>n(Gly) = n(Ala) = n(Val) = 0.1 mol</p><p>m(Gly) = 0.1 × 75 = 7.5g</p><p>m(Ala) = 0.1 × 89 = 8.9g</p><p>m(Val) = 0.1 × 117 = 11.7g</p><p>Tổng = 28g (kiểm tra: 18.9 + 2×0.1×18 = 22.5g, cần điều chỉnh)</p><p><strong>Tính lại chính xác:</strong></p><p>M(Gly-Ala-Val) = C₁₀H₁₉N₃O₄ = 245 g/mol</p><p>n = 18.9/245 ≈ 0.077 mol</p><p>m(Gly) = 0.077 × 75 = 5.78g</p><p>m(Ala) = 0.077 × 89 = 6.85g</p><p>m(Val) = 0.077 × 117 = 9.01g</p><p><strong>c) Với NaOH:</strong></p><p>Gly + NaOH → Gly-Na + H₂O</p><p>Ala + NaOH → Ala-Na + H₂O</p><p>Val + NaOH → Val-Na + H₂O</p><p>n(NaOH) = 3 × 0.077 = 0.231 mol</p><p>m(muối) = 0.077×(97 + 111 + 139) = 26.7g</p><p><strong>Đáp án:</strong> b) 5.78g Gly, 6.85g Ala, 9.01g Val; c) 26.7g</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Bài toán thực tế - Sản xuất bột ngọt (MSG)",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Tính glutamic acid từ nguyên liệu</li><li>Tính MSG từ glutamic acid + NaOH</li><li>Đánh giá kinh tế và sức khỏe</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ:</strong> Sản xuất bột ngọt (MSG) từ 147 kg glutamic acid. Quy trình: Glutamic acid + NaOH → MSG + H₂O. a) Tính khối lượng MSG (hiệu suất 90%). b) Tính lợi nhuận (giá: glutamic acid 80,000đ/kg, MSG 150,000đ/kg, NaOH 20,000đ/kg). c) Đánh giá sức khỏe và khuyến cáo sử dụng.",
+                "solution": "<p><strong>a) Tính MSG:</strong></p><p class='text-lg font-semibold bg-blue-50 p-4 rounded-lg'>C₅H₉NO₄ + NaOH → C₅H₈NNaO₄ + H₂O</p><p>Glutamic acid → MSG (monosodium glutamate)</p><p>M(glutamic acid) = 147 g/mol</p><p>n(glutamic acid) = 147,000 / 147 = 1000 mol</p><p>n(MSG) lý thuyết = 1000 mol</p><p>M(MSG) = 169 g/mol</p><p>m(MSG) lý thuyết = 1000 × 169 = 169,000 g = 169 kg</p><p>m(MSG) thực tế = 169 × 90% = 152.1 kg</p><p><strong>b) Tính lợi nhuận:</strong></p><p><strong>Chi phí:</strong></p><ul><li>Glutamic acid: 147 × 80,000 = 11,760,000 đ</li><li>NaOH: n = 1000 mol = 40 kg → 40 × 20,000 = 800,000 đ</li><li>Năng lượng, đóng gói: ~1,000,000 đ</li><li>Tổng: 13,560,000 đ</li></ul><p><strong>Doanh thu:</strong></p><p>MSG: 152.1 × 150,000 = 22,815,000 đ</p><p><strong>Lợi nhuận:</strong></p><p>Lợi nhuận = 22,815,000 - 13,560,000 = 9,255,000 đ</p><p>Tỷ suất = 9,255,000 / 13,560,000 × 100% = 68.2%</p><p><strong>c) Đánh giá sức khỏe:</strong></p><p><strong>Lợi ích:</strong></p><ul><li>✓ Tăng vị umami (vị ngon)</li><li>✓ Giảm lượng muối cần dùng</li><li>✓ Cải thiện hương vị món ăn</li><li>✓ Nguồn gốc tự nhiên (lên men)</li></ul><p><strong>Rủi ro:</strong></p><ul><li>⚠️ Dùng nhiều: Đau đầu, buồn nôn (hội chứng nhà hàng Trung Hoa)</li><li>⚠️ Tăng huyết áp (do natri)</li><li>⚠️ Kích ứng dạ dày</li><li>⚠️ Gây nghiện vị (ăn nhiều MSG)</li></ul><p><strong>Khuyến cáo WHO:</strong></p><ul><li>Liều an toàn: <6g/ngày (người lớn)</li><li>Trẻ em: <3g/ngày</li><li>Không dùng cho trẻ <3 tuổi</li><li>Người cao huyết áp: Hạn chế</li></ul><p><strong>Cách sử dụng đúng:</strong></p><ul><li>Cho vào cuối quá trình nấu</li><li>Không đun nóng quá 120°C (phân hủy)</li><li>Kết hợp với gia vị tự nhiên</li><li>Không thay thế hoàn toàn muối</li></ul><p><strong>Xu hướng hiện nay:</strong></p><ul><li>Giảm MSG, tăng gia vị tự nhiên</li><li>Sử dụng nấm, rong biển (umami tự nhiên)</li><li>Nhãn \"không MSG\" trên sản phẩm</li><li>Giáo dục người tiêu dùng</li></ul><p><strong>Kết luận:</strong></p><p>MSG an toàn khi dùng đúng liều lượng (<6g/ngày). Tuy nhiên, nên ưu tiên gia vị tự nhiên và hạn chế MSG để bảo vệ sức khỏe lâu dài. Sản xuất MSG có lợi nhuận cao (68.2%) nhưng cần tuân thủ tiêu chuẩn an toàn thực phẩm.</p><p><strong>Đáp án:</strong> a) 152.1 kg; b) Lợi nhuận 9.26 triệu đồng (68.2%); c) An toàn khi dùng <6g/ngày</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {"id": "ex1", "type": "mcq", "question": "Amino acid có nhóm chức:", "options": ["-NH₂", "-COOH", "Cả -NH₂ và -COOH", "-OH"], "correct": 2, "explanation": "Amino acid có cả -NH₂ và -COOH."},
+          {"id": "ex2", "type": "mcq", "question": "Amino acid có tính:", "options": ["Acid", "Base", "Lưỡng tính", "Trung tính"], "correct": 2, "explanation": "Amino acid có tính lưỡng tính."},
+          {"id": "ex3", "type": "mcq", "question": "Glycine có công thức:", "options": ["H₂N-CH₂-COOH", "H₂N-CH(CH₃)-COOH", "CH₃-COOH", "C₆H₅NH₂"], "correct": 0, "explanation": "Glycine có công thức H₂N-CH₂-COOH."},
+          {"id": "ex4", "type": "mcq", "question": "Liên kết peptide là:", "options": ["-CO-NH-", "-CO-O-", "-O-", "-NH-"], "correct": 0, "explanation": "Liên kết peptide là -CO-NH-."},
+          {"id": "ex5", "type": "mcq", "question": "Dipeptide có bao nhiêu amino acid?", "options": ["1", "2", "3", "4"], "correct": 1, "explanation": "Dipeptide có 2 amino acid."},
+          {"id": "ex6", "type": "mcq", "question": "Phản ứng màu biuret nhận biết:", "options": ["Amino acid", "Peptide", "Amine", "Protein"], "correct": 1, "explanation": "Phản ứng màu biuret nhận biết peptide (≥3 amino acid) và protein."},
+          {"id": "ex7", "type": "mcq", "question": "MSG là muối của:", "options": ["Glycine", "Alanine", "Glutamic acid", "Valine"], "correct": 2, "explanation": "MSG là muối natri của glutamic acid."},
+          {"id": "ex8", "type": "mcq", "question": "Amino acid + HCl tạo:", "options": ["Muối", "Ester", "Peptide", "Amine"], "correct": 0, "explanation": "Amino acid + HCl → Muối."},
+          {"id": "ex9", "type": "mcq", "question": "Amino acid + NaOH tạo:", "options": ["Muối + H₂O", "Ester", "Peptide", "Amine"], "correct": 0, "explanation": "Amino acid + NaOH → Muối + H₂O."},
+          {"id": "ex10", "type": "mcq", "question": "Tripeptide có bao nhiêu liên kết peptide?", "options": ["1", "2", "3", "4"], "correct": 1, "explanation": "Tripeptide có 2 liên kết peptide."},
+          {"id": "ex11", "type": "mcq", "question": "M(glycine) = ?", "options": ["75", "89", "117", "147"], "correct": 0, "explanation": "M(H₂N-CH₂-COOH) = 75 g/mol."},
+          {"id": "ex12", "type": "mcq", "question": "Thủy phân peptide cần:", "options": ["H₂O", "HCl", "NaOH", "Tất cả"], "correct": 0, "explanation": "Thủy phân peptide cần H₂O (có xúc tác H⁺ hoặc enzyme)."},
+          {"id": "ex13", "type": "msq", "question": "Tính chất amino acid:", "options": ["Lưỡng tính", "Với HCl", "Với NaOH", "Este hóa"], "correct": [0, 1, 2, 3], "explanation": "Amino acid có tất cả các tính chất trên."},
+          {"id": "ex14", "type": "msq", "question": "Phản ứng của peptide:", "options": ["Thủy phân", "Màu biuret", "Lưỡng tính", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Peptide có tất cả các phản ứng trên."},
+          {"id": "ex15", "type": "msq", "question": "Ứng dụng amino acid:", "options": ["Thực phẩm (MSG)", "Y tế", "Thức ăn gia súc", "Tất cả"], "correct": [0, 1, 2, 3], "explanation": "Amino acid có nhiều ứng dụng."},
+          {"id": "ex16", "type": "msq", "question": "Amino acid thiết yếu:", "options": ["Lysine", "Methionine", "Glycine", "Valine"], "correct": [0, 1, 3], "explanation": "Lysine, methionine, valine là amino acid thiết yếu. Glycine cơ thể tự tổng hợp được."},
+          {"id": "ex17", "type": "sa", "question": "Cho 7.5g glycine tác dụng với HCl dư. Tính khối lượng muối (g). Làm tròn đến 1 chữ số thập phân.", "correct": "11.2", "explanation": "n = 7.5/75 = 0.1 mol. m(muối) = 0.1×111.5 = 11.15g. Đáp án: 11.2"},
+          {"id": "ex18", "type": "sa", "question": "Cho 7.5g glycine tác dụng với NaOH dư. Tính khối lượng muối (g). Làm tròn đến 1 chữ số thập phân.", "correct": "9.7", "explanation": "n = 7.5/75 = 0.1 mol. m(muối) = 0.1×97 = 9.7g. Đáp án: 9.7"},
+          {"id": "ex19", "type": "sa", "question": "Glycine có khối lượng phân tử là bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "75", "explanation": "M(H₂N-CH₂-COOH) = 75 g/mol. Đáp án: 75"},
+          {"id": "ex20", "type": "sa", "question": "Tripeptide có bao nhiêu liên kết peptide? Làm tròn đến hàng đơn vị.", "correct": "2", "explanation": "Tripeptide có 2 liên kết peptide. Đáp án: 2"},
+          {"id": "ex21", "type": "sa", "question": "Thủy phân 1 mol dipeptide cần bao nhiêu mol H₂O? Làm tròn đến hàng đơn vị.", "correct": "1", "explanation": "Dipeptide có 1 liên kết → cần 1 mol H₂O. Đáp án: 1"},
+          {"id": "ex22", "type": "sa", "question": "Glutamic acid có khối lượng phân tử là bao nhiêu? Làm tròn đến hàng đơn vị.", "correct": "147", "explanation": "M(C₅H₉NO₄) = 147 g/mol. Đáp án: 147"}
+        ]
+      }
+    }
+  ]
+}

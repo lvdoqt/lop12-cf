@@ -1,0 +1,41 @@
+{
+  "subject": "Tin Học",
+  "subject_id": 12,
+  "lessons": [
+    {
+      "id": "tin12_08",
+      "name": "Định dạng văn bản",
+      "slug": "dinh-dang-van-ban",
+      "chapter": "Giải quyết vấn đề với sự trợ giúp của máy tính",
+      "chapter_id": "tin12_ch4",
+      "lesson_id": 8,
+      "description": "Sử dụng các thẻ HTML cơ bản để làm nổi bật nội dung và trình bày văn bản rõ ràng.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Định dạng HTML",
+          "summary": "Mặc dù CSS là công cụ chính để định dạng, HTML vẫn cung cấp một số thẻ cơ bản để biểu thị ý nghĩa của văn bản.",
+          "sections": [
+            { "heading": "Các thẻ định dạng chữ", "content": "<b> hoặc <strong> (in đậm), <i> hoặc <em> (in nghiêng), <u> (gạch chân)." },
+            { "heading": "Căn lề và ngắt dòng", "content": "<br> (ngắt dòng), <hr> (đường kẻ ngang phân cách), <pre> (giữ nguyên định dạng gốc)." },
+            { "heading": "Chỉ số trên và dưới", "content": "<sup> (chỉ số trên, ví dụ x²), <sub> (chỉ số dưới, ví dụ H₂O)." }
+          ]
+        },
+        "quiz": [
+          { "id": 1, "type": "mcq", "question": "Thẻ nào dùng để in đậm văn bản?", "options": ["<i>", "<bold>", "<b> hoặc <strong>", "<u>"], "correct": 2, "explanation": "<b> (Bold) và <strong> dùng để in đậm, trong đó <strong> nhấn mạnh ý nghĩa nội dung." },
+          { "id": 2, "type": "mcq", "question": "Thẻ <br> dùng để làm gì?", "options": ["Kẻ đường ngang", "In đậm", "Ngắt xuống dòng", "Tạo đoạn văn"], "correct": 2, "explanation": "<br> (break) là thẻ đơn dùng để xuống hàng." },
+          { "id": 3, "type": "mcq", "question": "Để tạo văn bản in nghiêng, ta dùng thẻ?", "options": ["<i> hoặc <em>", "<b>", "<u>", "<s>"], "correct": 0, "explanation": "<i> (italic) và <em> (emphasis) dùng cho chữ in nghiêng." },
+          { "id": 4, "type": "mcq", "question": "Thẻ <hr> có tác dụng gì?", "options": ["Tạo tiêu đề", "Chèn ảnh", "Tạo một đường kẻ ngang", "Tạo liên kết"], "correct": 2, "explanation": "<hr> (horizontal rule) tạo đường kẻ phân chia các khối nội dung." },
+          { "id": 5, "type": "mcq", "question": "Để viết công thức hóa học H2O, số 2 cần nằm trong cặp thẻ nào?", "options": ["<sup>", "<sub>", "<b>", "<small>"], "correct": 1, "explanation": "<sub> (subscript) dùng cho chỉ số dưới." },
+          { "id": 6, "type": "mcq", "question": "Để viết biểu thức x2, số 2 cần nằm trong cặp thẻ nào?", "options": ["<sub>", "<sup>", "<a>", "<div>"], "correct": 1, "explanation": "<sup> (superscript) dùng cho chỉ số trên." },
+          { "id": 7, "type": "mcq", "question": "Thẻ <pre> có đặc điểm gì?", "options": ["Làm chữ to lên", "Hiển thị văn bản chính xác như khi gõ trong code (giữ khoảng trắng và xuống dòng)", "Dùng để chèn ảnh", "Làm chữ biến mất"], "correct": 1, "explanation": "Preformatted text giữ nguyên định dạng của người soạn thảo." },
+          { "id": 8, "type": "mcq", "question": "Thẻ <u> dùng để làm gì?", "options": ["In đậm", "In nghiêng", "Gạch chân văn bản", "Đổi màu chữ"], "correct": 2, "explanation": "<u> là underline (gạch chân)." },
+          { "id": 9, "type": "mcq", "question": "Thẻ <s> hoặc <del> dùng để biểu thị văn bản bị?", "options": ["Làm mờ", "Gạch ngang (xóa bỏ)", "Làm đậm", "Làm nghiêng"], "correct": 1, "explanation": "Dùng để biểu thị nội dung không còn chính xác hoặc đã bị xóa." },
+          { "id": 10, "type": "mcq", "question": "HTML5 khuyến khích dùng thẻ nào thay cho <b> để nhấn mạnh tầm quan trọng?", "options": ["<i>", "<strong>", "<em>", "<h1>"], "correct": 1, "explanation": "<strong> mang ý nghĩa ngữ nghĩa (semantic) tốt hơn <b>." }
+        ]
+      }
+    }
+  ]
+}
