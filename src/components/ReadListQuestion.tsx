@@ -109,7 +109,7 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
                   <span dangerouslySetInnerHTML={{ __html: parseMarkdownWithMath(sq.question || '', false) }} />
                 </p>
                 <div className="space-y-2">
-                  {optionLetters.slice(0, 4).map(l => {
+                  {optionLetters.filter(l => sq['option_' + l.toLowerCase()]).map(l => {
                     const text = sq['option_' + l.toLowerCase()] || '';
                     const isCorrect = l === correctLetter;
                     const isSel = sel === l;

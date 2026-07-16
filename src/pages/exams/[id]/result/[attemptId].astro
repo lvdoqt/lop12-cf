@@ -27,12 +27,12 @@ if (attempt.user_id && attempt.user_id !== user?.id) {
 
 const allQuestions = await db.getQuestionsByExamId(exam.id);
 
-const MCQ_TYPES = ['single_choice', 'multiple_choice', 'true_false'];
-
 const bySection = {
-  mcq: allQuestions.filter(q => MCQ_TYPES.includes(q.type)),
+  mcq: allQuestions.filter(q => q.type === 'single_choice'),
+  multiple_choice: allQuestions.filter(q => q.type === 'multiple_choice'),
   msq: allQuestions.filter(q => q.type === 'msq'),
   sa: allQuestions.filter(q => q.type === 'sa'),
+  true_false: allQuestions.filter(q => q.type === 'true_false'),
   tl: allQuestions.filter(q => q.type === 'tl'),
   readlist: allQuestions.filter(q => q.type === 'read' || q.type === 'list'),
 };
@@ -41,14 +41,24 @@ const prng = mulberry32(uuidToSeed(attempt.id));
 
 const shuffled = {
   mcq: shuffleArrayWithPRNG(bySection.mcq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  multiple_choice: shuffleArrayWithPRNG(bySection.multiple_choice, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   msq: shuffleArrayWithPRNG(bySection.msq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   sa: shuffleArrayWithPRNG(bySection.sa, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  true_false: shuffleArrayWithPRNG(bySection.true_false, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   tl: shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   readlist: shuffleArrayWithPRNG(bySection.readlist, prng),
 };
 
 let currentIndex = 1;
-const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled.tl, ...shuffled.readlist].map((q) => {
+const questions = [
+  ...shuffled.mcq,
+  ...shuffled.multiple_choice,
+  ...shuffled.msq,
+  ...shuffled.sa,
+  ...shuffled.true_false,
+  ...shuffled.tl,
+  ...shuffled.readlist
+].map((q) => {
   const startIndex = currentIndex;
   let count = 1;
   if (q.type === 'read' || q.type === 'list') {
@@ -58,11 +68,25 @@ const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled
   return { ...q, globalIndex: startIndex };
 });
 
-const mcqQuestions = questions.filter(q => MCQ_TYPES.includes(q.type));
+const mcqQuestions = questions.filter(q => q.type === 'single_choice');
+const multipleChoiceQuestions = questions.filter(q => q.type === 'multiple_choice');
 const msqQuestions = questions.filter(q => q.type === 'msq');
 const saQuestions = questions.filter(q => q.type === 'sa');
+const trueFalseQuestions = questions.filter(q => q.type === 'true_false');
 const tlQuestions = questions.filter(q => q.type === 'tl');
 const readlistQuestions = questions.filter(q => q.type === 'read' || q.type === 'list');
+
+const allSections = [
+  { key: 'mcq', label: 'Câu trắc nghiệm nhiều phương án lựa chọn', items: mcqQuestions },
+  { key: 'multiple_choice', label: 'Câu hỏi chọn nhiều đáp án', items: multipleChoiceQuestions },
+  { key: 'msq', label: 'Câu trắc nghiệm đúng sai', items: msqQuestions },
+  { key: 'sa', label: 'Câu trắc nghiệm trả lời ngắn', items: saQuestions },
+  { key: 'true_false', label: 'Câu trắc nghiệm đúng/sai đơn', items: trueFalseQuestions },
+  { key: 'tl', label: 'Câu tự luận', items: tlQuestions },
+  { key: 'readlist', label: 'Kỹ năng đọc hiểu & nghe', items: readlistQuestions },
+];
+const activeSections = allSections.filter(s => s.items.length > 0);
+const Roman = (n: number) => ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][n - 1] || String(n);
 
 // 1. Calculate time spent
 const timeSpentMs = attempt.finished_at 
@@ -228,64 +252,30 @@ if (score < 5.0) {
       </div>
 
       <div class="space-y-8">
-        {mcqQuestions.length > 0 && (
+        {activeSections.map((section, index) => (
           <div class="space-y-4">
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">Phần I. Câu trắc nghiệm nhiều phương án lựa chọn</h3>
-            {mcqQuestions.map(question => {
-              const submittedRaw = attempt.answers_submitted?.[question.id];
-              const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
-              return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
-            })}
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">
+              Phần {Roman(index + 1)}. {section.label}
+            </h3>
+            {section.key === 'readlist' ? (
+              section.items.map(question => (
+                <ReadListQuestion
+                  client:load
+                  question={question}
+                  index={question.globalIndex}
+                  mode="review"
+                  selectedAnswers={attempt.answers_submitted?.[question.id] || {}}
+                />
+              ))
+            ) : (
+              section.items.map(question => {
+                const submittedRaw = attempt.answers_submitted?.[question.id];
+                const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
+                return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
+              })
+            )}
           </div>
-        )}
-
-        {msqQuestions.length > 0 && (
-          <div class="space-y-4">
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">Phần II. Câu trắc nghiệm đúng sai</h3>
-            {msqQuestions.map(question => {
-              const submittedRaw = attempt.answers_submitted?.[question.id];
-              const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
-              return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
-            })}
-          </div>
-        )}
-
-        {saQuestions.length > 0 && (
-          <div class="space-y-4">
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">Phần III. Câu trắc nghiệm trả lời ngắn</h3>
-            {saQuestions.map(question => {
-              const submittedRaw = attempt.answers_submitted?.[question.id];
-              const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
-              return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
-            })}
-          </div>
-        )}
-
-        {tlQuestions.length > 0 && (
-          <div class="space-y-4">
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">Phần IV. Câu tự luận</h3>
-            {tlQuestions.map(question => {
-              const submittedRaw = attempt.answers_submitted?.[question.id];
-              const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
-              return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
-            })}
-          </div>
-        )}
-
-        {readlistQuestions.length > 0 && (
-          <div class="space-y-4">
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">Phần V. Kỹ năng đọc hiểu & nghe</h3>
-            {readlistQuestions.map(question => (
-              <ReadListQuestion
-                client:load
-                question={question}
-                index={question.globalIndex}
-                mode="review"
-                selectedAnswers={attempt.answers_submitted?.[question.id] || {}}
-              />
-            ))}
-          </div>
-        )}
+        ))}
       </div>
     </div>
 

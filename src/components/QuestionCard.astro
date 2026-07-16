@@ -111,6 +111,10 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
           }
         }
 
+        const isMultipleChoice = question.type === 'multiple_choice';
+        const isSingleChoice = question.type === 'single_choice' || question.type === 'true_false';
+        const shapeClass = isSingleChoice ? 'rounded-full' : 'rounded';
+
         return (
           <div
             data-question-id={question.id}
@@ -118,9 +122,11 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
             data-type={question.type}
             class={`flex items-center p-4 rounded-xl border-2 transition-all duration-150 select-none ${optionStyle} option-item`}
           >
-            <div class={`w-6 h-6 rounded-lg mr-3 flex items-center justify-center font-bold text-xs transition-colors border ${
+            <div class={`w-6 h-6 ${shapeClass} mr-3 flex items-center justify-center font-bold text-xs transition-colors border ${
               isSelected 
-                ? 'bg-blue-600 border-blue-600 text-white' 
+                ? (isMultipleChoice
+                    ? 'bg-blue-100 border-blue-300 text-blue-700 dark:bg-blue-900/60 dark:border-blue-800 dark:text-blue-300'
+                    : 'bg-blue-600 border-blue-600 text-white')
                 : 'bg-gray-100 border-gray-300 text-gray-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400'
             }`}>
               {optionLetter}
@@ -364,12 +370,19 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
 
           const letter = opt.querySelector('.w-6');
           if (letter) {
-            letter.classList.toggle('bg-blue-600', isSelected);
-            letter.classList.toggle('border-blue-600', isSelected);
-            letter.classList.toggle('text-white', isSelected);
+            letter.classList.toggle('bg-blue-100', isSelected);
+            letter.classList.toggle('border-blue-300', isSelected);
+            letter.classList.toggle('text-blue-700', isSelected);
+            letter.classList.toggle('dark:bg-blue-900/60', isSelected);
+            letter.classList.toggle('dark:border-blue-800', isSelected);
+            letter.classList.toggle('dark:text-blue-300', isSelected);
+            
             letter.classList.toggle('bg-gray-100', !isSelected);
             letter.classList.toggle('border-gray-300', !isSelected);
             letter.classList.toggle('text-gray-500', !isSelected);
+            letter.classList.toggle('dark:bg-slate-800', !isSelected);
+            letter.classList.toggle('dark:border-slate-700', !isSelected);
+            letter.classList.toggle('dark:text-slate-400', !isSelected);
           }
         } else {
           opt.classList.add('border-blue-500', 'bg-blue-50/50', 'dark:border-blue-500', 'dark:bg-blue-950/20', 'text-blue-700', 'dark:text-blue-400');

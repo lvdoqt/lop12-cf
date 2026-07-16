@@ -23,14 +23,24 @@ const MCQ_TYPES = ['single_choice', 'multiple_choice', 'true_false'];
 
 const SECTION_COLORS = {
   mcq: {
-    bg: 'from-blue-500 to-indigo-600',
+    bg: 'from-green-400 to-green-500',
+    light: 'bg-green-50 dark:bg-green-950/20',
+    border: 'border-green-200 dark:border-green-900/40',
+    text: 'text-green-700 dark:text-green-300',
+    badge: 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300',
+    nav: 'bg-green-500',
+    label: 'Câu trắc nghiệm nhiều phương án lựa chọn',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+  },
+  multiple_choice: {
+    bg: 'from-blue-400 to-blue-500',
     light: 'bg-blue-50 dark:bg-blue-950/20',
     border: 'border-blue-200 dark:border-blue-900/40',
     text: 'text-blue-700 dark:text-blue-300',
     badge: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
     nav: 'bg-blue-500',
-    label: 'Câu trắc nghiệm nhiều phương án lựa chọn',
-    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+    label: 'Câu hỏi chọn nhiều đáp án',
+    icon: 'M4 6h16M4 12h16M4 18h16',
   },
   msq: {
     bg: 'from-violet-500 to-purple-600',
@@ -52,6 +62,16 @@ const SECTION_COLORS = {
     label: 'Câu trắc nghiệm trả lời ngắn',
     icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
   },
+  true_false: {
+    bg: 'from-orange-500 to-red-500',
+    light: 'bg-orange-50 dark:bg-orange-950/20',
+    border: 'border-orange-200 dark:border-orange-900/40',
+    text: 'text-orange-700 dark:text-orange-300',
+    badge: 'bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300',
+    nav: 'bg-orange-500',
+    label: 'Câu trắc nghiệm đúng/sai đơn',
+    icon: 'M5 13l4 4L19 7',
+  },
   tl: {
     bg: 'from-emerald-500 to-teal-600',
     light: 'bg-emerald-50 dark:bg-emerald-950/20',
@@ -62,15 +82,25 @@ const SECTION_COLORS = {
     label: 'Câu tự luận',
     icon: 'M4 6h16M4 12h16M4 18h7',
   },
-  readlist: {
+  read: {
     bg: 'from-indigo-500 to-purple-600',
     light: 'bg-indigo-50 dark:bg-indigo-950/20',
     border: 'border-indigo-200 dark:border-indigo-900/40',
     text: 'text-indigo-700 dark:text-indigo-300',
     badge: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300',
     nav: 'bg-indigo-500',
-    label: 'Kỹ năng đọc hiểu & nghe',
+    label: 'Kỹ năng đọc hiểu',
     icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
+  },
+  list: {
+    bg: 'from-cyan-500 to-blue-600',
+    light: 'bg-cyan-50 dark:bg-cyan-950/20',
+    border: 'border-cyan-200 dark:border-cyan-900/40',
+    text: 'text-cyan-700 dark:text-cyan-300',
+    badge: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300',
+    nav: 'bg-cyan-500',
+    label: 'Kỹ năng nghe',
+    icon: 'M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z',
   },
 } as const;
 
@@ -87,10 +117,13 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
     let currentIndex = 1;
     const withIndex = questions.map((q) => {
       let section: SectionKey = 'mcq';
-      if (q.type === 'msq') section = 'msq';
+      if (q.type === 'multiple_choice') section = 'multiple_choice';
+      else if (q.type === 'true_false') section = 'true_false';
+      else if (q.type === 'msq') section = 'msq';
       else if (q.type === 'sa') section = 'sa';
       else if (q.type === 'tl') section = 'tl';
-      else if (q.type === 'read' || q.type === 'list') section = 'readlist';
+      else if (q.type === 'read') section = 'read';
+      else if (q.type === 'list') section = 'list';
       
       const startIndex = currentIndex;
       let count = 1;
@@ -102,11 +135,14 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       return { ...q, globalIndex: startIndex, section };
     });
     return {
-      mcq: withIndex.filter(q => MCQ_TYPES.includes(q.type)),
+      mcq: withIndex.filter(q => q.type === 'single_choice'),
+      multiple_choice: withIndex.filter(q => q.type === 'multiple_choice'),
       msq: withIndex.filter(q => q.type === 'msq'),
       sa: withIndex.filter(q => q.type === 'sa'),
+      true_false: withIndex.filter(q => q.type === 'true_false'),
       tl: withIndex.filter(q => q.type === 'tl'),
-      readlist: withIndex.filter(q => q.type === 'read' || q.type === 'list'),
+      read: withIndex.filter(q => q.type === 'read'),
+      list: withIndex.filter(q => q.type === 'list'),
       all: withIndex,
     };
   }, [questions]);
@@ -295,17 +331,15 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
 
         {/* Questions */}
         <div className="space-y-10">
-          {([
-            ['mcq', 'Phần I'] as const,
-            ['msq', 'Phần II'] as const,
-            ['sa', 'Phần III'] as const,
-            ['tl', 'Phần IV'] as const,
-            ['readlist', 'Phần V'] as const,
-          ] as const).map(([key, label]) => {
-            const items = classified[key];
-            if (items.length === 0) return null;
-            const color = SECTION_COLORS[key];
-            const sectionNum = key === 'mcq' ? 'I' : key === 'msq' ? 'II' : key === 'sa' ? 'III' : key === 'tl' ? 'IV' : 'V';
+          {(() => {
+            const keys: SectionKey[] = ['mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl', 'read', 'list'];
+            const activeKeys = keys.filter(key => classified[key].length > 0);
+            const Roman = (n: number) => ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][n - 1] || String(n);
+            
+            return activeKeys.map((key, index) => {
+              const items = classified[key];
+              const color = SECTION_COLORS[key];
+              const sectionNum = Roman(index + 1);
             return (
               <div key={key} className="space-y-4">
                 <div className={`rounded-2xl overflow-hidden border ${color.border}`}>
@@ -326,7 +360,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
                 </div>
                 <div className="space-y-4">
                   {items.map(q =>
-                    key === 'readlist' ? (
+                    (key === 'read' || key === 'list') ? (
                       <ReadListQuestion
                         key={q.id}
                         question={q}
@@ -343,14 +377,15 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
                         mode="take"
                         selectedAnswer={answers[q.id]}
                         onAnswer={handleAnswer}
-                        sectionKey={q.section === 'readlist' ? 'mcq' : q.section}
+                        sectionKey={(q.section === 'read' || q.section === 'list') ? 'mcq' : q.section}
                       />
                     )
                   )}
                 </div>
               </div>
             );
-          })}
+            });
+          })()}
         </div>
       </div>
 
@@ -424,34 +459,21 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
 
             {/* Legend */}
             <div className="flex items-center gap-3 mt-4 text-[10px] font-semibold text-gray-400 dark:text-slate-500 flex-wrap">
-              <span className="flex items-center gap-1">
-                <span className="w-3 h-3 rounded bg-blue-500" />
-                Phần I
-              </span>
-              {classified.msq.length > 0 && (
-                <span className="flex items-center gap-1">
-                  <span className="w-3 h-3 rounded bg-violet-500" />
-                  Phần II
-                </span>
-              )}
-              {classified.sa.length > 0 && (
-                <span className="flex items-center gap-1">
-                  <span className="w-3 h-3 rounded bg-amber-500" />
-                  Phần III
-                </span>
-              )}
-              {classified.tl.length > 0 && (
-                <span className="flex items-center gap-1">
-                  <span className="w-3 h-3 rounded bg-emerald-500" />
-                  Phần IV
-                </span>
-              )}
-              {classified.readlist.length > 0 && (
-                <span className="flex items-center gap-1">
-                  <span className="w-3 h-3 rounded bg-indigo-500" />
-                  Phần V
-                </span>
-              )}
+              {(() => {
+                const keys: SectionKey[] = ['mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl', 'read', 'list'];
+                const activeKeys = keys.filter(key => classified[key].length > 0);
+                const Roman = (n: number) => ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][n - 1] || String(n);
+                
+                return activeKeys.map((key, index) => {
+                  const color = SECTION_COLORS[key];
+                  return (
+                    <span key={key} className="flex items-center gap-1">
+                      <span className={`w-3 h-3 rounded ${color.nav}`} />
+                      Phần {Roman(index + 1)}
+                    </span>
+                  );
+                });
+              })()}
               <span className="flex items-center gap-1">
                 <span className="w-3 h-3 rounded bg-gray-200 dark:bg-slate-700" />
                 Chưa làm

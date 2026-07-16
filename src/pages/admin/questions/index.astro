@@ -10,6 +10,8 @@ if (!user || (user.role !== 'admin' && user.role !== 'teacher')) {
   return Astro.redirect('/dashboard');
 }
 
+const isAdmin = user.role === 'admin';
+
 let successMsg = '';
 let errMsg = '';
 
@@ -41,6 +43,9 @@ if (Astro.request.method === 'POST') {
 // Fetch questions and subjects
 const subjects = await db.getSubjects();
 let questions = await db.getQuestions(undefined, user.role === 'admin' ? undefined : user.id);
+
+const allUsers = isAdmin ? await db.getUsers() : [];
+const usersMap = Object.fromEntries(allUsers.map(u => [u.id, u]));
 
 // --- FILTERS ---
 const filterSubject = url.searchParams.get('subject_id') || '';
@@ -166,6 +171,7 @@ const qTypeNames: Record<string, string> = {
           <input type="checkbox" id="selectAll" class="rounded text-blue-600 focus:ring-blue-500 h-4.5 w-4.5 cursor-pointer" />
         </th>
         <th class="pb-3">Câu hỏi</th>
+        {isAdmin && <th class="pb-3">Giáo viên</th>}
         <th class="pb-3">Môn học</th>
         <th class="pb-3">Lớp</th>
         <th class="pb-3">Dạng câu hỏi</th>
@@ -201,6 +207,11 @@ const qTypeNames: Record<string, string> = {
                       }
                     </span>
                   </td>
+                  {isAdmin && (
+                    <td class="py-4 pr-3 text-xs text-gray-500 dark:text-slate-400 align-top">
+                      {usersMap[q.created_by || '']?.fullname || usersMap[q.created_by || '']?.email || 'Hệ thống'}
+                    </td>
+                  )}
                   
                    <!-- Subject -->
                    <td class="py-4 pr-3">

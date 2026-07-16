@@ -8,7 +8,7 @@ interface QuestionCardProps {
   selectedAnswer?: string | string[] | Record<string, string>;
   onAnswer: (questionId: string, answer: any) => void;
   mode: 'take' | 'review';
-  sectionKey?: 'mcq' | 'msq' | 'sa' | 'tl';
+  sectionKey?: 'mcq' | 'multiple_choice' | 'msq' | 'sa' | 'tl' | 'true_false';
 }
 
 const SECTION_ACCENT: Record<string, {
@@ -16,6 +16,20 @@ const SECTION_ACCENT: Record<string, {
   selBorder: string; selBg: string; selText: string; selNumBg: string; selNumText: string; selRing: string;
 }> = {
   mcq: {
+    border: 'border-green-200/60 dark:border-green-900/40',
+    headBg: 'bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30',
+    headText: 'text-green-700 dark:text-green-300',
+    numBg: 'bg-gradient-to-br from-green-500 to-emerald-600',
+    numText: 'text-white',
+    ring: 'ring-green-400/30',
+    selBorder: 'border-green-500',
+    selBg: 'bg-green-50/60 dark:bg-green-950/20',
+    selText: 'text-green-700 dark:text-green-400',
+    selNumBg: 'bg-green-600',
+    selNumText: 'text-white',
+    selRing: 'ring-green-400/40',
+  },
+  multiple_choice: {
     border: 'border-blue-200/60 dark:border-blue-900/40',
     headBg: 'bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30',
     headText: 'text-blue-700 dark:text-blue-300',
@@ -25,8 +39,8 @@ const SECTION_ACCENT: Record<string, {
     selBorder: 'border-blue-500',
     selBg: 'bg-blue-50/60 dark:bg-blue-950/20',
     selText: 'text-blue-700 dark:text-blue-400',
-    selNumBg: 'bg-blue-600',
-    selNumText: 'text-white',
+    selNumBg: 'bg-blue-100 dark:bg-blue-900/60',
+    selNumText: 'text-blue-700 dark:text-blue-300',
     selRing: 'ring-blue-400/40',
   },
   msq: {
@@ -59,7 +73,7 @@ const SECTION_ACCENT: Record<string, {
   },
   tl: {
     border: 'border-emerald-200/60 dark:border-emerald-900/40',
-    headBg: 'bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30',
+    headBg: 'bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-emerald-950/30',
     headText: 'text-emerald-700 dark:text-emerald-300',
     numBg: 'bg-gradient-to-br from-emerald-500 to-teal-600',
     numText: 'text-white',
@@ -70,6 +84,20 @@ const SECTION_ACCENT: Record<string, {
     selNumBg: 'bg-emerald-600',
     selNumText: 'text-white',
     selRing: 'ring-emerald-400/40',
+  },
+  true_false: {
+    border: 'border-orange-200/60 dark:border-orange-900/40',
+    headBg: 'bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30',
+    headText: 'text-orange-700 dark:text-orange-300',
+    numBg: 'bg-gradient-to-br from-orange-500 to-red-500',
+    numText: 'text-white',
+    ring: 'ring-orange-400/30',
+    selBorder: 'border-orange-500',
+    selBg: 'bg-orange-50/60 dark:bg-orange-950/20',
+    selText: 'text-orange-700 dark:text-orange-400',
+    selNumBg: 'bg-orange-600',
+    selNumText: 'text-white',
+    selRing: 'ring-orange-400/40',
   },
 };
 
@@ -224,7 +252,7 @@ export default function QuestionCard({ question, index, selectedAnswer, onAnswer
             if (mode === 'take') {
               if (selected) {
                 optStyle = `${accent.selBorder} ${accent.selBg} dark:${accent.selBorder} ${accent.selText} ring-2 ${accent.selRing}`;
-                letterStyle = `${accent.selNumBg} border-transparent ${accent.selNumText}`;
+                letterStyle = `${accent.selNumBg} ${question.type === 'multiple_choice' ? 'border-blue-300 dark:border-blue-800' : 'border-transparent'} ${accent.selNumText}`;
               }
               if (selected && question.type === 'single_choice') {
                 optStyle = `${accent.selBorder} ${accent.selBg} ${accent.selText} ring-2 ${accent.selRing}`;
@@ -251,7 +279,7 @@ export default function QuestionCard({ question, index, selectedAnswer, onAnswer
                 }}
                 className={`flex items-center p-4 rounded-xl border-2 transition-all duration-150 select-none cursor-pointer ${optStyle}`}
               >
-                <div className={`w-6 h-6 rounded-lg mr-3 flex items-center justify-center font-bold text-xs transition-colors border shrink-0 ${letterStyle}`}>
+                <div className={`w-6 h-6 ${question.type === 'single_choice' || question.type === 'true_false' ? 'rounded-full' : 'rounded'} mr-3 flex items-center justify-center font-bold text-xs transition-colors border shrink-0 ${letterStyle}`}>
                   {letter}
                 </div>
                 <div className="text-sm md:text-base font-medium flex-1 [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1" dangerouslySetInnerHTML={answerHtmlMap[answer.id]} />

@@ -33,29 +33,42 @@ if (attempt.score !== null) {
   return Astro.redirect(`/exams/${exam.slug}/result/${attempt.id}`);
 }
 
-const MCQ_TYPES = ['single_choice', 'multiple_choice', 'true_false'];
-
 const allQuestions = await db.getQuestionsByExamId(exam.id);
 
 const bySection = {
-  mcq: allQuestions.filter(q => MCQ_TYPES.includes(q.type)),
+  mcq: allQuestions.filter(q => q.type === 'single_choice'),
+  multiple_choice: allQuestions.filter(q => q.type === 'multiple_choice'),
   msq: allQuestions.filter(q => q.type === 'msq'),
   sa: allQuestions.filter(q => q.type === 'sa'),
+  true_false: allQuestions.filter(q => q.type === 'true_false'),
   tl: allQuestions.filter(q => q.type === 'tl'),
-  readlist: allQuestions.filter(q => q.type === 'read' || q.type === 'list'),
+  read: allQuestions.filter(q => q.type === 'read'),
+  list: allQuestions.filter(q => q.type === 'list'),
 };
 
 const prng = mulberry32(uuidToSeed(attempt.id));
 
 const shuffled = {
   mcq: shuffleArrayWithPRNG(bySection.mcq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  multiple_choice: shuffleArrayWithPRNG(bySection.multiple_choice, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   msq: shuffleArrayWithPRNG(bySection.msq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   sa: shuffleArrayWithPRNG(bySection.sa, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
+  true_false: shuffleArrayWithPRNG(bySection.true_false, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
   tl: shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  readlist: shuffleArrayWithPRNG(bySection.readlist, prng),
+  read: shuffleArrayWithPRNG(bySection.read, prng),
+  list: shuffleArrayWithPRNG(bySection.list, prng),
 };
 
-const questions = [...shuffled.mcq, ...shuffled.msq, ...shuffled.sa, ...shuffled.tl, ...shuffled.readlist];
+const questions = [
+  ...shuffled.mcq,
+  ...shuffled.multiple_choice,
+  ...shuffled.msq,
+  ...shuffled.sa,
+  ...shuffled.true_false,
+  ...shuffled.tl,
+  ...shuffled.read,
+  ...shuffled.list
+];
 
 console.log(`[take] exam=${exam.id} slug=${exam.slug} questions=${questions.length}`);
 

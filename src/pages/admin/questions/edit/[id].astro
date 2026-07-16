@@ -61,6 +61,9 @@ if (Astro.request.method === 'POST') {
       answers.push({ content: optB, is_correct: isCorrectB });
       answers.push({ content: optC, is_correct: isCorrectC });
       answers.push({ content: optD, is_correct: isCorrectD });
+      
+      const optE = formData.get('opt_E') as string;
+      if (optE && optE.trim()) answers.push({ content: optE.trim(), is_correct: formData.has('correct_E') });
     }
 
     // Validation
@@ -270,6 +273,22 @@ const isTFCorrectA = question.type === 'true_false' && question.answers[0]?.is_c
                 <span class="text-xs font-bold text-gray-500 dark:text-slate-450 uppercase">Đúng</span>
               </label>
             </div>
+            
+            <!-- Option E -->
+            <div id="opt-e-container" class={`flex items-center space-x-3 ${question.type === 'multiple_choice' ? '' : 'hidden'}`}>
+              <span class="w-8 h-8 rounded-lg bg-gray-150 dark:bg-slate-800 text-gray-700 dark:text-slate-350 flex items-center justify-center font-bold text-sm">E</span>
+              <input
+                type="text"
+                name="opt_E"
+                value={getAnswerContent(4)}
+                placeholder="Nội dung phương án E..."
+                class="flex-1 px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100"
+              />
+              <label class="flex items-center space-x-1.5 cursor-pointer select-none">
+                <input type="checkbox" name="correct_E" checked={isAnswerCorrect(4)} class="rounded text-blue-600 focus:ring-blue-500 h-4.5 w-4.5" />
+                <span class="text-xs font-bold text-gray-500 dark:text-slate-450 uppercase">Đúng</span>
+              </label>
+            </div>
           </div>
 
           <!-- True/False Options -->
@@ -368,7 +387,16 @@ const isTFCorrectA = question.type === 'true_false' && question.answers[0]?.is_c
       } else {
         // single_choice, multiple_choice, msq
         choicesContainer.classList.remove('hidden');
+        
+        const optEContainer = document.getElementById('opt-e-container');
+        if (val === 'multiple_choice') {
+          optEContainer?.classList.remove('hidden');
+        } else {
+          optEContainer?.classList.add('hidden');
+        }
+        
         document.querySelectorAll('#choices-container input[type="text"]').forEach(input => {
+          if ((input as HTMLInputElement).name === 'opt_E' && val !== 'multiple_choice') return;
           input.setAttribute('required', 'true');
         });
       }

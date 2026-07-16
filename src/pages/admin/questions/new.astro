@@ -50,6 +50,8 @@ if (Astro.request.method === 'POST') {
           if (q.option_b) answers.push({ content: q.option_b, is_correct: correctStr.includes('B') });
           if (q.option_c) answers.push({ content: q.option_c, is_correct: correctStr.includes('C') });
           if (q.option_d) answers.push({ content: q.option_d, is_correct: correctStr.includes('D') });
+          if (q.option_e) answers.push({ content: q.option_e, is_correct: correctStr.includes('E') });
+          if (q.option_f) answers.push({ content: q.option_f, is_correct: correctStr.includes('F') });
         }
 
         // Dạng đọc hiểu / nghe: lưu câu hỏi con vào metadata.questions
@@ -58,15 +60,20 @@ if (Astro.request.method === 'POST') {
           if (metaQuestions.length === 0) {
             throw new Error('Câu hỏi dạng read/list thiếu metadata.questions.');
           }
-          const mappedQuestions = metaQuestions.map((sq: any) => ({
-            question: sq.question || sq.content || '',
-            option_a: sq.option_a || '',
-            option_b: sq.option_b || '',
-            option_c: sq.option_c || '',
-            option_d: sq.option_d || '',
-            correct_option: (sq.correct_option || '').toUpperCase(),
-            ...(sq.explanation ? { explanation: sq.explanation } : {})
-          }));
+          const mappedQuestions = metaQuestions.map((sq: any) => {
+            const out: any = {
+              question: sq.question || sq.content || '',
+              option_a: sq.option_a || '',
+              option_b: sq.option_b || '',
+              option_c: sq.option_c || '',
+              option_d: sq.option_d || '',
+              correct_option: (sq.correct_option || '').toUpperCase(),
+              ...(sq.explanation ? { explanation: sq.explanation } : {})
+            };
+            if (sq.option_e) out.option_e = sq.option_e;
+            if (sq.option_f) out.option_f = sq.option_f;
+            return out;
+          });
           const audioUrl = q.metadata?.audio_url ? q.metadata.audio_url : undefined;
           await db.createQuestion({
             subject_id,
@@ -136,7 +143,7 @@ if (Astro.request.method === 'POST') {
           if (!optA?.trim() || !optB?.trim() || !optC?.trim() || !optD?.trim() || !correct) {
             throw new Error(`Câu hỏi con #${i + 1} cần nhập đủ 4 phương án A, B, C, D và chọn đáp án đúng.`);
           }
-          subQuestions.push({
+          const subQ: any = {
             question: qText.trim(),
             option_a: optA.trim(),
             option_b: optB.trim(),
@@ -144,7 +151,11 @@ if (Astro.request.method === 'POST') {
             option_d: optD.trim(),
             correct_option: correct,
             ...(subExp ? { explanation: subExp } : {})
-          });
+          };
+          const optE = formData.get(`sub_q_${i}_opt_E`) as string;
+          if (optE && optE.trim()) subQ.option_e = optE.trim();
+          
+          subQuestions.push(subQ);
         }
         if (subQuestions.length === 0) {
           throw new Error('Câu hỏi dạng Đọc hiểu / Nghe cần ít nhất 1 câu hỏi con.');
@@ -168,13 +179,16 @@ if (Astro.request.method === 'POST') {
         const isCorrectD = formData.has('correct_D');
 
         if (!optA || !optB || !optC || !optD) {
-          throw new Error('Cậu cần nhập đầy đủ cả 4 phương án A, B, C, D.');
+          throw new Error('Cậu cần nhập đầy đủ ít nhất 4 phương án A, B, C, D.');
         }
 
         answers.push({ content: optA, is_correct: isCorrectA });
         answers.push({ content: optB, is_correct: isCorrectB });
         answers.push({ content: optC, is_correct: isCorrectC });
         answers.push({ content: optD, is_correct: isCorrectD });
+        
+        const optE = formData.get('opt_E') as string;
+        if (optE && optE.trim()) answers.push({ content: optE.trim(), is_correct: formData.has('correct_E') });
       }
 
       const correctCount = answers.filter(a => a.is_correct).length;
@@ -447,6 +461,21 @@ const subjects = await db.getSubjects();
                 <span class="text-xs font-bold text-gray-500 dark:text-slate-450 uppercase">Đúng</span>
               </label>
             </div>
+            
+            <!-- Option E -->
+            <div id="opt-e-container" class="flex items-center space-x-3 hidden">
+              <span class="w-8 h-8 rounded-lg bg-gray-150 dark:bg-slate-800 text-gray-700 dark:text-slate-350 flex items-center justify-center font-bold text-sm">E</span>
+              <input
+                type="text"
+                name="opt_E"
+                placeholder="Nội dung phương án E..."
+                class="flex-1 px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100"
+              />
+              <label class="flex items-center space-x-1.5 cursor-pointer select-none">
+                <input type="checkbox" name="correct_E" class="rounded text-blue-600 focus:ring-blue-500 h-4.5 w-4.5" />
+                <span class="text-xs font-bold text-gray-500 dark:text-slate-450 uppercase">Đúng</span>
+              </label>
+            </div>
           </div>
 
           <!-- True/False Options (Hidden by default, shown when type === true_false) -->
@@ -665,7 +694,16 @@ const subjects = await db.getSubjects();
         if (subqList && subqList.children.length === 0) addSubQuestion();
       } else {
         choicesContainer.classList.remove('hidden');
+        
+        const optEContainer = document.getElementById('opt-e-container');
+        if (val === 'multiple_choice') {
+          optEContainer?.classList.remove('hidden');
+        } else {
+          optEContainer?.classList.add('hidden');
+        }
+        
         document.querySelectorAll('#choices-container input[type="text"]').forEach(input => {
+          if ((input as HTMLInputElement).name === 'opt_E' && val !== 'multiple_choice') return;
           input.setAttribute('required', 'true');
         });
       }

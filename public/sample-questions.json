@@ -1,5 +1,5 @@
 {
-  "title": "Câu hỏi json to bank quiz - Toán 12 & Tiếng Anh 12",
+  "title": "Câu hỏi json to bank quiz - Đầy đủ các dạng",
   "questions": [
     {
       "type": "mcq",
@@ -10,6 +10,19 @@
       "option_d": "$f'(x) = 3x^2 - 3x + 2$",
       "correct_option": "A",
       "explanation": "Áp dụng quy tắc đạo hàm: $(x^n)' = nx^{n-1}$ và $(c)' = 0$. Ta có:\\n$f'(x) = 3x^2 - 6x + 2$",
+      "difficulty_level": "easy",
+      "is_dynamic": false
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong các số sau, những số nào là số nguyên tố?",
+      "option_a": "2",
+      "option_b": "9",
+      "option_c": "11",
+      "option_d": "15",
+      "option_e": "17",
+      "correct_option": "A,C,E",
+      "explanation": "Số nguyên tố là số lớn hơn 1, chỉ chia hết cho 1 và chính nó. Vậy các số nguyên tố là 2, 11 và 17.",
       "difficulty_level": "easy",
       "is_dynamic": false
     },
@@ -26,6 +39,14 @@
       "is_dynamic": false
     },
     {
+      "type": "true_false",
+      "question": "Thành phố Hồ Chí Minh là thủ đô của Việt Nam.",
+      "correct_option": "B",
+      "explanation": "Thủ đô của Việt Nam là Hà Nội.",
+      "difficulty_level": "easy",
+      "is_dynamic": false
+    },
+    {
       "type": "sa",
       "question": "Tính giá trị đạo hàm của hàm số $f(x) = x^2 + 4x - 3$ tại điểm $x = 2$",
       "correct_option": "8",
@@ -35,9 +56,9 @@
     },
     {
       "type": "tl",
-      "question": "Câu hỏi tự luận",
+      "question": "Trình bày các nguyên nhân dẫn đến Chiến tranh thế giới thứ hai.",
       "correct_option": "",
-      "explanation": "Lời giải nếu có",
+      "explanation": "Học sinh tự trình bày phân tích các nguyên nhân sâu xa và nguyên nhân trực tiếp.",
       "difficulty_level": "medium",
       "is_dynamic": false
     },
@@ -58,22 +79,13 @@
             "explanation": "The passage explicitly states: 'Rising temperatures, caused primarily by the burning of fossil fuels...'"
           },
           {
-            "question": "What is NOT mentioned in the passage as a consequence of climate change?",
+            "question": "Which of the following is mentioned as a consequence of climate change?",
             "option_a": "Extreme weather events",
-            "option_b": "Sea level rise",
+            "option_b": "Economic boom",
             "option_c": "Acid rain",
-            "option_d": "Disruption of ecosystems",
-            "correct_option": "C",
-            "explanation": "The passage mentions extreme weather events, sea level rise, and disruption of ecosystems, but does not mention acid rain."
-          },
-          {
-            "question": "What do scientists warn about greenhouse gas emissions?",
-            "option_a": "They will naturally decrease over time.",
-            "option_b": "Without significant reductions, consequences could be irreversible.",
-            "option_c": "They are not the main driver of global warming.",
-            "option_d": "They have already reached a safe level.",
-            "correct_option": "B",
-            "explanation": "The last sentence states: 'Scientists warn that without significant reductions in greenhouse gas emissions, the consequences could be irreversible.'"
+            "option_d": "Earthquakes",
+            "correct_option": "A",
+            "explanation": "The passage mentions extreme weather events as a consequence."
           }
         ]
       }

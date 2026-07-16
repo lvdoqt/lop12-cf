@@ -95,7 +95,32 @@ let mockLessonProgress: LessonProgress[] = [];
 
 let mockBlogs: Blog[] = [];
 
-let mockUsers: User[] = [];
+let mockUsers: User[] = [
+  {
+    id: 'mock-user-student',
+    email: 'student@lop12.vn',
+    fullname: 'Học Sinh Thử Nghiệm',
+    avatar_url: null,
+    role: 'student',
+    created_at: new Date().toISOString()
+  },
+  {
+    id: 'mock-user-teacher',
+    email: 'teacher@lop12.vn',
+    fullname: 'Giáo Viên Thử Nghiệm',
+    avatar_url: null,
+    role: 'teacher',
+    created_at: new Date().toISOString()
+  },
+  {
+    id: 'mock-user-admin',
+    email: 'admin@lop12.vn',
+    fullname: 'Quản Trị Viên',
+    avatar_url: null,
+    role: 'admin',
+    created_at: new Date().toISOString()
+  }
+];
 
 function mapWPPostToBlog(post: any): Blog {
   const featuredMedia = post._embedded?.['wp:featuredmedia']?.[0];
