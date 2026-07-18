@@ -40,15 +40,20 @@ const filterType= url.searchParams.get('loai') || '';
 // Teacher only sees their own exams, admin sees all
 const exams    = await db.getExams(undefined, !isAdmin ? user.id : undefined);
 const subjects = await db.getSubjects();
+const categories = await db.getCategories();
+const categoriesMap = Object.fromEntries(categories.map(c => [c.id, c]));
 const examCounts = await db.getExamQuestionCounts(exams.map(e => e.id));
 
 const allUsers = isAdmin ? await db.getUsers() : [];
 const usersMap = Object.fromEntries(allUsers.map(u => [u.id, u]));
 
+const filterCat = url.searchParams.get('category_id') || '';
+
 const filteredExams = exams.filter(exam => {
   const matchSub  = !filterSub  || exam.subject_id === filterSub;
   const matchType = !filterType || exam.exam_type  === filterType;
-  return matchSub && matchType;
+  const matchCat  = !filterCat  || exam.category_id === filterCat;
+  return matchSub && matchType && matchCat;
 });
 
 const examTypeMeta: Record<string, { label: string; badge: string }> = {
@@ -159,7 +164,20 @@ const typeCounts = Object.keys(examTypeMeta).map(t => ({
         ))}
       </select>
 
-      {(filterSub || filterType) && (
+      {categories.length > 0 && (
+        <select
+          name="category_id"
+          onchange="this.form.submit()"
+          class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm text-ink dark:text-[#E8E0D0] focus:outline-none focus:border-blue-400 transition-colors cursor-pointer"
+        >
+          <option value="">Tất cả chuyên mục</option>
+          {categories.map(c => (
+            <option value={c.id} selected={filterCat === c.id}>{c.name}</option>
+          ))}
+        </select>
+      )}
+
+      {(filterSub || filterType || filterCat) && (
         <a href="/admin/exams" class="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 underline transition-colors">
           Xóa bộ lọc
         </a>
@@ -194,6 +212,7 @@ const typeCounts = Object.keys(examTypeMeta).map(t => ({
                 <th class="px-6 py-3">Đề thi</th>
                 {isAdmin && <th class="px-4 py-3">Giáo viên</th>}
                 <th class="px-4 py-3">Môn học</th>
+                <th class="px-4 py-3">Chuyên mục</th>
                 <th class="px-4 py-3">Loại đề</th>
                 <th class="px-4 py-3 text-center">Số câu</th>
                 <th class="px-4 py-3">Thời gian</th>
@@ -222,6 +241,15 @@ const typeCounts = Object.keys(examTypeMeta).map(t => ({
                       <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
                         {exam.subject?.name || '—'}
                       </span>
+                    </td>
+                    <td class="px-4 py-4">
+                      {exam.category_id && categoriesMap[exam.category_id] ? (
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-indigo-50 text-indigo-600 dark:bg-indigo-950/30 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900/40">
+                          {categoriesMap[exam.category_id].name}
+                        </span>
+                      ) : (
+                        <span class="text-xs text-slate-400">—</span>
+                      )}
                     </td>
                     <td class="px-4 py-4">
                       <span class={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold border ${typeMeta.badge}`}>

@@ -111,6 +111,7 @@ if (Astro.request.method === 'POST') {
                   <span class={lesson.is_published ? 'text-emerald-500' : 'text-gray-400'}>
                     {lesson.is_published ? 'Hiển thị' : 'Ẩn'}
                   </span>
+                  {lesson.is_free && <span class="text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 rounded">Học thử</span>}
                 </div>
               </div>
 

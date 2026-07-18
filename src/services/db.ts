@@ -1,5 +1,5 @@
 import { isMockMode, isMockModeForEnv, supabase, createAdminSupabase, createServerSupabase } from '../lib/supabase';
-import type { Subject, Lesson, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress } from '../types';
+import type { Subject, Lesson, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress, Category } from '../types';
 
 // Ã¢â€â‚¬Ã¢â€â‚¬ Cloudflare runtime env injection Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 // Middleware calls setRuntimeEnv() per-request with Cloudflare runtime.env.
@@ -95,6 +95,9 @@ let mockLessonProgress: LessonProgress[] = [];
 
 let mockBlogs: Blog[] = [];
 
+let mockCategories: Category[] = [];
+
+
 let mockUsers: User[] = [
   {
     id: 'mock-user-student',
@@ -152,6 +155,7 @@ function mapDbQuestionToAppQuestion(dbQ: any): Question & { answers: Answer[], s
   const explanation = metadata.explanation || null;
   const subjectId = metadata.subject_id || '';
   const createdBy = metadata.created_by || null;
+  const categoryId = metadata.category_id || null;
 
   const rawOptions = Array.isArray(dbQ.options) ? dbQ.options : [];
   const correctLetters = (dbQ.answer || '').split(',').map((l: string) => l.trim().toUpperCase());
@@ -187,7 +191,8 @@ function mapDbQuestionToAppQuestion(dbQ: any): Question & { answers: Answer[], s
     difficulty: difficulty,
     type: qType,
     answers: answers,
-    created_by: createdBy
+    created_by: createdBy,
+    category_id: categoryId
   };
 }
 
@@ -218,6 +223,53 @@ export const db = {
   },
 
 
+  // --------------------------------------------------------------------------
+  // CATEGORIES (Chuyên mục — children of subjects)
+  // --------------------------------------------------------------------------
+  async getCategories(subjectId?: string, createdBy?: string): Promise<Category[]> {
+    if (isInMockMode()) {
+      let cats = mockCategories;
+      if (subjectId) cats = cats.filter(c => c.subject_id === subjectId);
+      if (createdBy) cats = cats.filter(c => c.created_by === createdBy);
+      return cats;
+    }
+    const client = adminClient();
+    if (!client) return [];
+    let query = client.from('categories').select('*').order('name');
+    if (subjectId) query = query.eq('subject_id', subjectId);
+    if (createdBy) query = query.eq('created_by', createdBy);
+    const { data, error } = await query;
+    if (error) { console.error('[db.getCategories] error:', error); return []; }
+    return data || [];
+  },
+
+  async createCategory(cat: Omit<Category, 'id' | 'created_at'>): Promise<Category> {
+    if (isInMockMode()) {
+      const newCat: Category = {
+        ...cat,
+        id: `cat-${Date.now()}`,
+        created_at: new Date().toISOString()
+      };
+      mockCategories.push(newCat);
+      return newCat;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.createCategory] Admin client unavailable.');
+    const { data, error } = await client.from('categories').insert([cat]).select().single();
+    if (error) { console.error('[db.createCategory] error:', error); throw error; }
+    return data;
+  },
+
+  async deleteCategory(id: string): Promise<void> {
+    if (isInMockMode()) {
+      mockCategories = mockCategories.filter(c => c.id !== id);
+      return;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.deleteCategory] Admin client unavailable.');
+    const { error } = await client.from('categories').delete().eq('id', id);
+    if (error) { console.error('[db.deleteCategory] error:', error); throw error; }
+  },
 
   // --------------------------------------------------------------------------
   // EXAMS & EXAM QUESTIONS
@@ -683,7 +735,9 @@ export const db = {
       ...(question.difficulty ? { difficulty: question.difficulty } : {}),
       ...(question.type ? { type: question.type } : {}),
       ...(question.explanation !== undefined ? { explanation: question.explanation } : {}),
-      ...(question.subject_id ? { subject_id: question.subject_id } : {})
+      ...(question.subject_id ? { subject_id: question.subject_id } : {}),
+      ...(question.category_id !== undefined ? { category_id: question.category_id } : {}),
+      ...(question.metadata ? question.metadata : {})
     };
 
     const currentType = question.type || existingMetadata.type;

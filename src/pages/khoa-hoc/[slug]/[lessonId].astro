@@ -6,7 +6,6 @@ import { marked } from 'marked';
 export const prerender = false;
 
 const user = Astro.locals.user;
-if (!user) return Astro.redirect('/login');
 
 const { slug, lessonId } = Astro.params;
 if (!slug || !lessonId) return Astro.redirect('/khoa-hoc');
@@ -14,15 +13,17 @@ if (!slug || !lessonId) return Astro.redirect('/khoa-hoc');
 const course = await db.getCourseBySlug(slug);
 if (!course || !course.is_published) return Astro.redirect('/khoa-hoc');
 
-// Ensure user is enrolled
-const isEnrolled = await db.isUserEnrolled(course.id, user.id);
-if (!isEnrolled) return Astro.redirect(`/khoa-hoc/${slug}`);
-
 const lessons = await db.getCourseLessons(course.id);
 const publishedLessons = lessons.filter(l => l.is_published);
 const currentLesson = publishedLessons.find(l => l.id === lessonId);
 
 if (!currentLesson) return Astro.redirect(`/khoa-hoc/${slug}`);
+
+// Ensure user is enrolled or lesson is free
+const isEnrolled = user ? await db.isUserEnrolled(course.id, user.id) : false;
+if (!isEnrolled && !currentLesson.is_free) {
+  return Astro.redirect(`/khoa-hoc/${slug}`);
+}
 
 const currentIndex = publishedLessons.findIndex(l => l.id === lessonId);
 const prevLesson = currentIndex > 0 ? publishedLessons[currentIndex - 1] : null;
@@ -32,7 +33,7 @@ const nextLesson = currentIndex < publishedLessons.length - 1 ? publishedLessons
 const htmlContent = currentLesson.content ? marked.parse(currentLesson.content) : '';
 
 // Get progress
-const progress = await db.getLessonProgress(user.id, course.id);
+const progress = user ? await db.getLessonProgress(user.id, course.id) : [];
 const completedIds = new Set(progress.filter(p => p.completed).map(p => p.lesson_id));
 const isCompleted = completedIds.has(lessonId);
 
@@ -91,21 +92,23 @@ const ytId = currentLesson.video_url ? getYouTubeId(currentLesson.video_url) : n
             </div>
 
             <div class="w-full sm:w-auto flex flex-col sm:flex-row gap-3">
-              <button 
-                id="mark-complete-btn" 
-                data-lesson-id={currentLesson.id}
-                disabled={isCompleted}
-                class={`inline-flex items-center justify-center w-full sm:w-auto px-6 py-2.5 rounded-xl text-sm font-bold transition ${isCompleted ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 cursor-default' : 'bg-blue-600 hover:bg-blue-700 text-white shadow shadow-blue-500/20'}`}
-              >
-                {isCompleted ? (
-                  <>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                    Đã hoàn thành
-                  </>
-                ) : (
-                  'Đánh dấu hoàn thành'
-                )}
-              </button>
+              {isEnrolled && (
+                <button 
+                  id="mark-complete-btn" 
+                  data-lesson-id={currentLesson.id}
+                  disabled={isCompleted}
+                  class={`inline-flex items-center justify-center w-full sm:w-auto px-6 py-2.5 rounded-xl text-sm font-bold transition ${isCompleted ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 cursor-default' : 'bg-blue-600 hover:bg-blue-700 text-white shadow shadow-blue-500/20'}`}
+                >
+                  {isCompleted ? (
+                    <>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                      Đã hoàn thành
+                    </>
+                  ) : (
+                    'Đánh dấu hoàn thành'
+                  )}
+                </button>
+              )}
 
               {nextLesson && (
                 <a href={`/khoa-hoc/${slug}/${nextLesson.id}`} class="inline-flex items-center justify-center w-full sm:w-auto px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition">

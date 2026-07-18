@@ -20,6 +20,7 @@ if (Astro.request.method === 'POST') {
     try {
       const jsonData = formData.get('json_data') as string;
       const subjectIdJson = formData.get('subject_id_json') as string;
+      const categoryIdJson = (formData.get('category_id_json') as string) || null;
       if (!jsonData?.trim()) throw new Error('Dữ liệu JSON trống.');
       const parsed = JSON.parse(jsonData);
       const questions: any[] = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.questions) ? parsed.questions : [parsed]);
@@ -27,6 +28,7 @@ if (Astro.request.method === 'POST') {
       for (const q of questions) {
         const content = q.content || q.question;
         const subject_id = q.subject_id || subjectIdJson;
+        const category_id = q.category_id || q.metadata?.category_id || categoryIdJson;
         
         if (!subject_id || !content) {
           throw new Error(`Câu hỏi thiếu trường bắt buộc: Môn học hoặc Nội dung.`);
@@ -83,7 +85,11 @@ if (Astro.request.method === 'POST') {
             type: type as any,
             answer: null,
             created_by: user.id,
-            metadata: { questions: mappedQuestions, ...(audioUrl ? { audio_url: audioUrl } : {}) }
+            metadata: { 
+              questions: mappedQuestions, 
+              ...(audioUrl ? { audio_url: audioUrl } : {}),
+              ...(category_id ? { category_id } : {})
+            }
           }, []);
           importCount++;
           continue;
@@ -98,6 +104,7 @@ if (Astro.request.method === 'POST') {
           answer = q.correct_option;
         }
 
+        const existingMeta = q.metadata || {};
         await db.createQuestion({
           subject_id,
           content,
@@ -105,7 +112,11 @@ if (Astro.request.method === 'POST') {
           difficulty: q.difficulty_level || q.difficulty || 'medium',
           type: type as any,
           answer: answer || null,
-          created_by: user.id
+          created_by: user.id,
+          metadata: {
+            ...existingMeta,
+            ...(category_id ? { category_id } : {})
+          }
         }, answers);
         importCount++;
       }
@@ -117,6 +128,7 @@ if (Astro.request.method === 'POST') {
     // Normal question creation
     try {
       const subject_id = formData.get('subject_id') as string;
+      const category_id = (formData.get('category_id') as string) || null;
       const content = formData.get('content') as string;
       const explanation = formData.get('explanation') as string;
       const difficulty = formData.get('difficulty') as 'easy' | 'medium' | 'hard';
@@ -217,7 +229,8 @@ if (Astro.request.method === 'POST') {
         type: type as any,
         answer: type === 'sa' ? saCorrect : null,
         created_by: user.id,
-        ...(metadata ? { metadata } : {})
+        ...(metadata ? { metadata } : {}),
+        ...(category_id ? { metadata: { ...(metadata || {}), category_id } } : {})
       }, answers);
 
       return Astro.redirect('/admin/questions');
@@ -229,6 +242,7 @@ if (Astro.request.method === 'POST') {
 }
 
 const subjects = await db.getSubjects();
+const allCategories = await db.getCategories();
 ---
 
 <Layout title="Thêm câu hỏi mới">
@@ -298,6 +312,19 @@ const subjects = await db.getSubjects();
             </select>
           </div>
           <div>
+            <label for="json_category_id" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+              Chuyên mục mặc định
+              <a href="/admin/categories" target="_blank" class="ml-2 text-blue-500 hover:text-blue-700 normal-case font-semibold">➕ Quản lý</a>
+            </label>
+            <select
+              name="category_id_json"
+              id="json_category_id"
+              class="w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100"
+            >
+              <option value="">-- Không phân chuyên mục --</option>
+            </select>
+          </div>
+          <div>
             <label for="json_data" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Dữ liệu JSON</label>
             <textarea
               name="json_data"
@@ -332,7 +359,7 @@ const subjects = await db.getSubjects();
         
         <!-- Subject, Type, Difficulty Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <!-- Subject -->
+                  <!-- Subject -->
           <div>
             <label for="subject_id" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Môn học</label>
             <select
@@ -381,6 +408,21 @@ const subjects = await db.getSubjects();
               <option value="hard">Khó</option>
             </select>
           </div>
+        </div>
+
+        <!-- Category -->
+        <div>
+          <label for="q_category_id" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+            Chuyên mục
+            <a href="/admin/categories" target="_blank" class="ml-2 text-blue-500 hover:text-blue-700 normal-case font-semibold">➕ Quản lý</a>
+          </label>
+          <select
+            name="category_id"
+            id="q_category_id"
+            class="w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100"
+          >
+            <option value="">-- Không phân chuyên mục --</option>
+          </select>
         </div>
 
         <!-- Question content -->
@@ -771,4 +813,44 @@ const subjects = await db.getSubjects();
       } catch { jsonData.value = '{"title":"Mẫu","questions":[{"type":"single_choice","content":"Câu hỏi mẫu","answers":[{"content":"A","is_correct":true},{"content":"B","is_correct":false},{"content":"C","is_correct":false},{"content":"D","is_correct":false}]}]}'; }
     });
   }
+
+  // Category dropdown dynamic filter
+  const catDataEl = document.getElementById('q-categories-data');
+  const ALL_CATS = catDataEl ? JSON.parse(catDataEl.textContent || '[]') : [];
+
+  function updateCategoryDropdown(subjectId: string, dropdownId: string) {
+    const sel = document.getElementById(dropdownId) as HTMLSelectElement | null;
+    if (!sel) return;
+    const filtered = ALL_CATS.filter((c: any) => c.subject_id === subjectId);
+    sel.innerHTML = '<option value="">-- Không phân chuyên mục --</option>';
+    filtered.forEach((c: any) => {
+      const opt = document.createElement('option');
+      opt.value = c.id;
+      opt.textContent = c.name;
+      sel.appendChild(opt);
+    });
+  }
+
+  // Bind change listeners to avoid inline event scope issue
+  const subjectSelect = document.getElementById('subject_id') as HTMLSelectElement | null;
+  if (subjectSelect) {
+    subjectSelect.addEventListener('change', () => {
+      updateCategoryDropdown(subjectSelect.value, 'q_category_id');
+    });
+    if (subjectSelect.value) {
+      updateCategoryDropdown(subjectSelect.value, 'q_category_id');
+    }
+  }
+
+  const subjectSelectJson = document.getElementById('subject_id_json') as HTMLSelectElement | null;
+  if (subjectSelectJson) {
+    subjectSelectJson.addEventListener('change', () => {
+      updateCategoryDropdown(subjectSelectJson.value, 'json_category_id');
+    });
+    if (subjectSelectJson.value) {
+      updateCategoryDropdown(subjectSelectJson.value, 'json_category_id');
+    }
+  }
 </script>
+
+<script id="q-categories-data" type="application/json" set:html={JSON.stringify(allCategories)}></script>

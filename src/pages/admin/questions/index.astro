@@ -42,6 +42,8 @@ if (Astro.request.method === 'POST') {
 
 // Fetch questions and subjects
 const subjects = await db.getSubjects();
+const categories = await db.getCategories();
+const categoriesMap = Object.fromEntries(categories.map(c => [c.id, c]));
 let questions = await db.getQuestions(undefined, user.role === 'admin' ? undefined : user.id);
 
 const allUsers = isAdmin ? await db.getUsers() : [];
@@ -51,6 +53,7 @@ const usersMap = Object.fromEntries(allUsers.map(u => [u.id, u]));
 const filterSubject = url.searchParams.get('subject_id') || '';
 const filterType = url.searchParams.get('type') || '';
 const filterGrade = url.searchParams.get('grade') || '';
+const filterCat = url.searchParams.get('category_id') || '';
 
 if (filterSubject) {
   questions = questions.filter(q => q.subject_id === filterSubject);
@@ -60,6 +63,9 @@ if (filterType) {
 }
 if (filterGrade) {
   questions = questions.filter(q => q.difficulty === filterGrade);
+}
+if (filterCat) {
+  questions = questions.filter(q => q.category_id === filterCat || q.metadata?.category_id === filterCat);
 }
 
 // --- PAGINATION ---
@@ -147,6 +153,13 @@ const qTypeNames: Record<string, string> = {
           <option value="medium" selected={filterGrade === 'medium'}>Lớp 12 (Trung bình)</option>
           <option value="hard" selected={filterGrade === 'hard'}>Lớp 12 (Khó)</option>
         </select>
+
+        {categories.length > 0 && (
+          <select name="category_id" onchange="this.form.submit()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100 cursor-pointer">
+            <option value="">-- Tất cả chuyên mục --</option>
+            {categories.map(c => <option value={c.id} selected={filterCat === c.id}>{c.name}</option>)}
+          </select>
+        )}
       </form>
 
       <!-- Float action: Create Exam from Selected -->
@@ -173,6 +186,7 @@ const qTypeNames: Record<string, string> = {
         <th class="pb-3">Câu hỏi</th>
         {isAdmin && <th class="pb-3">Giáo viên</th>}
         <th class="pb-3">Môn học</th>
+        <th class="pb-3">Chuyên mục</th>
         <th class="pb-3">Lớp</th>
         <th class="pb-3">Dạng câu hỏi</th>
         <th class="pb-3">Độ khó</th>
@@ -218,6 +232,17 @@ const qTypeNames: Record<string, string> = {
                      <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-gray-100 text-gray-600 dark:bg-slate-850 dark:text-slate-300">
                        {getSubjectName(q.subject_id)}
                      </span>
+                   </td>
+
+                   <!-- Category -->
+                   <td class="py-4 pr-3">
+                     {(q.category_id || q.metadata?.category_id) && categoriesMap[q.category_id || q.metadata?.category_id] ? (
+                       <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-indigo-50 text-indigo-600 dark:bg-indigo-950/30 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900/40">
+                         {categoriesMap[(q.category_id || q.metadata?.category_id) as string].name}
+                       </span>
+                     ) : (
+                       <span class="text-xs text-slate-400">—</span>
+                     )}
                    </td>
                    
                    <!-- Grade -->

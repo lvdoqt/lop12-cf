@@ -85,7 +85,7 @@ const progressPct = publishedLessons.length > 0 ? Math.round((completedIds.size 
           <div class="divide-y divide-gray-100 dark:divide-slate-800">
             {publishedLessons.map((lesson, idx) => {
               const done = completedIds.has(lesson.id);
-              const canAccess = isEnrolled;
+              const canAccess = isEnrolled || lesson.is_free;
               return (
                 <div class={`flex items-center gap-4 px-5 py-4 transition ${canAccess ? 'hover:bg-gray-50 dark:hover:bg-slate-800/50' : 'opacity-70'}`}>
                   <!-- Status icon -->
@@ -98,7 +98,10 @@ const progressPct = publishedLessons.length > 0 ? Math.round((completedIds.size 
                   </div>
 
                   <div class="flex-1 min-w-0">
-                    <p class={`text-sm font-semibold truncate ${done ? 'text-emerald-700 dark:text-emerald-400' : 'text-gray-900 dark:text-white'}`}>{lesson.title}</p>
+                    <div class="flex items-center flex-wrap gap-2">
+                      <p class={`text-sm font-semibold truncate ${done ? 'text-emerald-700 dark:text-emerald-400' : 'text-gray-900 dark:text-white'}`}>{lesson.title}</p>
+                      {lesson.is_free && <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">Học thử</span>}
+                    </div>
                     <div class="flex items-center gap-3 mt-0.5 text-xs text-gray-400 dark:text-slate-500">
                       {lesson.duration && <span>{lesson.duration} phút</span>}
                       {lesson.video_url && <span class="text-blue-400">▶ Video</span>}
@@ -107,7 +110,7 @@ const progressPct = publishedLessons.length > 0 ? Math.round((completedIds.size 
 
                   {canAccess ? (
                     <a href={`/khoa-hoc/${slug}/${lesson.id}`} class={`shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold transition ${done ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100' : 'bg-blue-600 text-white hover:bg-blue-700'}`}>
-                      {done ? 'Xem lại' : 'Học ngay'}
+                      {done ? 'Xem lại' : (!isEnrolled && lesson.is_free ? 'Học thử' : 'Học ngay')}
                     </a>
                   ) : (
                     <span class="shrink-0 text-xs text-gray-400">

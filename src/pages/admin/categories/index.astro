@@ -1,0 +1,196 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { db } from '../../../services/db';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'admin' && user.role !== 'teacher')) {
+  return Astro.redirect('/dashboard');
+}
+
+const isAdmin = user.role === 'admin';
+
+let successMsg = '';
+let errMsg = '';
+
+// Handle POST (create / delete)
+if (Astro.request.method === 'POST') {
+  try {
+    const formData = await Astro.request.formData();
+    const action = formData.get('action') as string;
+
+    if (action === 'create') {
+      const name = (formData.get('name') as string)?.trim();
+      const subject_id = formData.get('subject_id') as string;
+      if (!name || !subject_id) throw new Error('Tên chuyên mục và môn học là bắt buộc.');
+      const slug = name
+        .toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/đ/g, 'd').replace(/Đ/g, 'd')
+        .replace(/[^a-z0-9\s-]/g, '')
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .substring(0, 80);
+      await db.createCategory({ subject_id, name, slug, created_by: user.id });
+      successMsg = `Đã tạo chuyên mục "${name}" thành công!`;
+    } else if (action === 'delete') {
+      const id = formData.get('id') as string;
+      if (!id) throw new Error('Thiếu ID chuyên mục.');
+      await db.deleteCategory(id);
+      successMsg = 'Đã xóa chuyên mục.';
+    }
+  } catch (err: any) {
+    errMsg = err.message || 'Có lỗi xảy ra.';
+  }
+}
+
+const subjects = await db.getSubjects();
+const categories = await db.getCategories(undefined, isAdmin ? undefined : user.id);
+
+// Group categories by subject
+const subjectMap = Object.fromEntries(subjects.map(s => [s.id, s]));
+
+interface CatWithSubject {
+  id: string;
+  subject_id: string;
+  name: string;
+  slug: string;
+  created_by: string | null;
+  created_at: string;
+  subject?: { name: string };
+}
+
+const categoriesBySubject: Record<string, CatWithSubject[]> = {};
+for (const cat of categories) {
+  if (!categoriesBySubject[cat.subject_id]) categoriesBySubject[cat.subject_id] = [];
+  categoriesBySubject[cat.subject_id].push(cat);
+}
+---
+
+<Layout title="Quản lý Chuyên mục">
+  <div class="max-w-4xl mx-auto space-y-6">
+
+    <!-- Header -->
+    <div>
+      <nav class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
+        <a href="/admin" class="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Quản trị</a>
+        <span>/</span>
+        <span class="text-ink dark:text-[#E8E0D0]">Chuyên mục</span>
+      </nav>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-ink dark:text-[#E8E0D0] tracking-tight">
+        📂 Quản lý Chuyên mục
+      </h1>
+      <p class="text-sm text-[#8A7E72] dark:text-[#8A8A9E] mt-1">
+        Tạo chuyên mục con của môn học để phân loại đề thi và câu hỏi.
+      </p>
+    </div>
+
+    <!-- Alerts -->
+    {successMsg && (
+      <div class="p-4 rounded-xl bg-emerald-50 text-emerald-700 text-sm font-semibold border border-emerald-100 dark:bg-emerald-950/20 dark:text-emerald-400 dark:border-emerald-900/35 flex items-center gap-2">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        {successMsg}
+      </div>
+    )}
+    {errMsg && (
+      <div class="p-4 rounded-xl bg-rose-50 text-rose-600 text-sm font-semibold border border-rose-100 dark:bg-rose-950/20 dark:text-rose-400 dark:border-rose-900/35 flex items-center gap-2">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+        {errMsg}
+      </div>
+    )}
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Create Form -->
+      <div class="md:col-span-1">
+        <div class="bg-white dark:bg-[#22223A]/80 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl shadow-sm p-6 sticky top-4">
+          <h2 class="text-base font-bold text-ink dark:text-[#E8E0D0] mb-4">➕ Tạo chuyên mục mới</h2>
+          <form method="POST" class="space-y-4">
+            <input type="hidden" name="action" value="create" />
+
+            <div>
+              <label for="subject_id" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+                Môn học <span class="text-rose-500">*</span>
+              </label>
+              <select
+                name="subject_id"
+                id="subject_id"
+                required
+                class="w-full px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] cursor-pointer"
+              >
+                <option value="" disabled selected>-- Chọn môn học --</option>
+                {subjects.map(s => <option value={s.id}>{s.name}</option>)}
+              </select>
+            </div>
+
+            <div>
+              <label for="cat_name" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+                Tên chuyên mục <span class="text-rose-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                id="cat_name"
+                required
+                placeholder="VD: Chương 1 — Hàm số..."
+                class="w-full px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] placeholder:text-slate-400"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl text-sm font-bold shadow-md shadow-blue-500/10 hover:shadow-xl transition"
+            >
+              Tạo chuyên mục
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Categories list -->
+      <div class="md:col-span-2 space-y-4">
+        {subjects.filter(s => categoriesBySubject[s.id]?.length > 0).map(subject => (
+          <div class="bg-white dark:bg-[#22223A]/80 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl shadow-sm overflow-hidden">
+            <div class="px-5 py-3.5 border-b border-slate-100 dark:border-slate-800/60 flex items-center gap-2">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-50 text-indigo-600 dark:bg-indigo-950/30 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900/40">
+                {subject.name}
+              </span>
+              <span class="text-xs text-slate-400">{categoriesBySubject[subject.id]?.length || 0} chuyên mục</span>
+            </div>
+            <ul class="divide-y divide-slate-100 dark:divide-slate-800/60">
+              {categoriesBySubject[subject.id]?.map(cat => (
+                <li class="flex items-center justify-between px-5 py-3 hover:bg-slate-50/60 dark:hover:bg-slate-800/20 transition-colors group">
+                  <div>
+                    <span class="text-sm font-semibold text-ink dark:text-[#E8E0D0]">{cat.name}</span>
+                    <span class="ml-2 text-xs text-slate-400 dark:text-slate-500 font-mono">{cat.slug}</span>
+                  </div>
+                  <form method="POST" onsubmit="return confirm('Xóa chuyên mục này? Đề thi và câu hỏi liên kết sẽ mất liên kết.')">
+                    <input type="hidden" name="action" value="delete" />
+                    <input type="hidden" name="id" value={cat.id} />
+                    <button
+                      type="submit"
+                      class="opacity-0 group-hover:opacity-100 text-xs font-semibold text-rose-500 hover:text-rose-700 dark:hover:text-rose-400 transition px-2 py-1 rounded-lg hover:bg-rose-50 dark:hover:bg-rose-950/20"
+                    >
+                      Xóa
+                    </button>
+                  </form>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
+        {categories.length === 0 && (
+          <div class="bg-white dark:bg-[#22223A]/80 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl shadow-sm p-10 text-center">
+            <div class="text-4xl mb-3">📂</div>
+            <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Chưa có chuyên mục nào.</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">Dùng form bên trái để tạo chuyên mục đầu tiên.</p>
+          </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+</Layout>

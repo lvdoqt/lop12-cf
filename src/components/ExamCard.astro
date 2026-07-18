@@ -16,10 +16,24 @@ const examTypeNames = {
   'mock_thpt': 'Thi thử THPT'
 };
 
+const subjectMap: Record<string, { icon: string; bgGrad: string; textAccent: string; hoverBorder: string; hoverShadow: string; baseColor: string }> = {
+  'toan-12': { icon: '📐', baseColor: 'blue', textAccent: 'text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300', bgGrad: 'from-blue-50/80 via-white to-cyan-50/80 dark:from-[#0A1628] dark:via-[#111827] dark:to-[#0A1628]', hoverBorder: 'hover:border-blue-300 dark:hover:border-blue-700', hoverShadow: 'hover:shadow-blue-500/10' },
+  'vat-ly-12': { icon: '⚡', baseColor: 'purple', textAccent: 'text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300', bgGrad: 'from-purple-50/80 via-white to-fuchsia-50/80 dark:from-[#1A0A2E] dark:via-[#1E1235] dark:to-[#251535]', hoverBorder: 'hover:border-purple-300 dark:hover:border-purple-700', hoverShadow: 'hover:shadow-purple-500/10' },
+  'hoa-hoc-12': { icon: '🧪', baseColor: 'emerald', textAccent: 'text-emerald-600 dark:text-emerald-400 group-hover:text-emerald-700 dark:group-hover:text-emerald-300', bgGrad: 'from-emerald-50/80 via-white to-teal-50/80 dark:from-[#051510] dark:via-[#0A1E1C] dark:to-[#051820]', hoverBorder: 'hover:border-emerald-300 dark:hover:border-emerald-700', hoverShadow: 'hover:shadow-emerald-500/10' },
+  'sinh-hoc-12': { icon: '🧬', baseColor: 'emerald', textAccent: 'text-teal-600 dark:text-teal-400 group-hover:text-teal-700 dark:group-hover:text-teal-300', bgGrad: 'from-teal-50/80 via-white to-cyan-50/80 dark:from-[#051820] dark:via-[#0A1E1C] dark:to-[#051510]', hoverBorder: 'hover:border-teal-300 dark:hover:border-teal-700', hoverShadow: 'hover:shadow-teal-500/10' },
+  'ngu-van-12': { icon: '📖', baseColor: 'vermillion', textAccent: 'text-rose-600 dark:text-rose-400 group-hover:text-rose-700 dark:group-hover:text-rose-300', bgGrad: 'from-rose-50/80 via-white to-pink-50/80 dark:from-[#251010] dark:via-[#1E0A0A] dark:to-[#251010]', hoverBorder: 'hover:border-rose-300 dark:hover:border-rose-700', hoverShadow: 'hover:shadow-rose-500/10' },
+  'lich-su-12': { icon: '🏛️', baseColor: 'amber', textAccent: 'text-orange-600 dark:text-orange-400 group-hover:text-orange-700 dark:group-hover:text-orange-300', bgGrad: 'from-orange-50/80 via-white to-amber-50/80 dark:from-[#251A08] dark:via-[#1F1405] dark:to-[#251A08]', hoverBorder: 'hover:border-orange-300 dark:hover:border-orange-700', hoverShadow: 'hover:shadow-orange-500/10' },
+  'dia-ly-12': { icon: '🌏', baseColor: 'blue', textAccent: 'text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300', bgGrad: 'from-cyan-50/80 via-white to-blue-50/80 dark:from-[#051520] dark:via-[#0A1E2C] dark:to-[#051520]', hoverBorder: 'hover:border-cyan-300 dark:hover:border-cyan-700', hoverShadow: 'hover:shadow-cyan-500/10' },
+  'ktpl-12': { icon: '⚖️', baseColor: 'amber', textAccent: 'text-yellow-600 dark:text-yellow-400 group-hover:text-yellow-700 dark:group-hover:text-yellow-300', bgGrad: 'from-yellow-50/80 via-white to-amber-50/80 dark:from-[#251A08] dark:via-[#1F1805] dark:to-[#251A08]', hoverBorder: 'hover:border-yellow-300 dark:hover:border-yellow-700', hoverShadow: 'hover:shadow-yellow-500/10' },
+  'tieng-anh-12': { icon: '🌐', baseColor: 'amber', textAccent: 'text-amber-600 dark:text-amber-400 group-hover:text-amber-700 dark:group-hover:text-amber-300', bgGrad: 'from-amber-50/80 via-white to-orange-50/80 dark:from-[#251A08] dark:via-[#1F1805] dark:to-[#251A08]', hoverBorder: 'hover:border-amber-300 dark:hover:border-amber-700', hoverShadow: 'hover:shadow-amber-500/10' },
+  'tin-hoc-12': { icon: '💻', baseColor: 'purple', textAccent: 'text-violet-600 dark:text-violet-400 group-hover:text-violet-700 dark:group-hover:text-violet-300', bgGrad: 'from-violet-50/80 via-white to-purple-50/80 dark:from-[#1A0A2E] dark:via-[#1E1235] dark:to-[#1A0A2E]', hoverBorder: 'hover:border-violet-300 dark:hover:border-violet-700', hoverShadow: 'hover:shadow-violet-500/10' },
+  'cong-nghe-12': { icon: '⚙️', baseColor: 'blue', textAccent: 'text-slate-600 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-300', bgGrad: 'from-slate-50/80 via-white to-gray-50/80 dark:from-[#1A1A2E] dark:via-[#22223A] dark:to-[#1A1A2E]', hoverBorder: 'hover:border-slate-300 dark:hover:border-slate-700', hoverShadow: 'hover:shadow-slate-500/10' },
+};
+
 const examTypeColors: Record<string, Record<string, string>> = {
   blue: {
     '15m': 'bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400 border-blue-100/50',
-    '45m': 'bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50',
+    '45m': 'bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400 border-blue-100/50',
     'semester': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50',
     'mock_thpt': 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50'
   },
@@ -49,54 +63,12 @@ const examTypeColors: Record<string, Record<string, string>> = {
   }
 };
 
-const accent: Record<string, {
-  titleHover: string;
-  btn: string;
-  btnHover: string;
-  grad: string;
-  border: string;
-  shadow: string;
-}> = {
-  blue: {
-    titleHover: 'group-hover:text-blue-600 dark:group-hover:text-blue-400',
-    btn: 'bg-blue-50 text-blue-600 dark:bg-blue-950/40 dark:text-blue-400 border-blue-100 dark:border-blue-900/30',
-    btnHover: 'hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white',
-    grad: 'from-blue-500/0 via-blue-500/40 to-blue-500/0',
-    border: 'hover:border-blue-300 dark:hover:border-blue-700',
-    shadow: 'hover:shadow-blue-500/10',
-  },
-  amber: {
-    titleHover: 'group-hover:text-amber-600 dark:group-hover:text-amber-400',
-    btn: 'bg-amber-50 text-amber-600 dark:bg-amber-950/40 dark:text-amber-400 border-amber-100 dark:border-amber-900/30',
-    btnHover: 'hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 dark:hover:text-white',
-    grad: 'from-amber-500/0 via-amber-500/40 to-amber-500/0',
-    border: 'hover:border-amber-300 dark:hover:border-amber-700',
-    shadow: 'hover:shadow-amber-500/10',
-  },
-  emerald: {
-    titleHover: 'group-hover:text-emerald-600 dark:group-hover:text-emerald-400',
-    btn: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400 border-emerald-100 dark:border-emerald-900/30',
-    btnHover: 'hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-600 dark:hover:text-white',
-    grad: 'from-emerald-500/0 via-emerald-500/40 to-emerald-500/0',
-    border: 'hover:border-emerald-300 dark:hover:border-emerald-700',
-    shadow: 'hover:shadow-emerald-500/10',
-  },
-  purple: {
-    titleHover: 'group-hover:text-purple-600 dark:group-hover:text-purple-400',
-    btn: 'bg-purple-50 text-purple-600 dark:bg-purple-950/40 dark:text-purple-400 border-purple-100 dark:border-purple-900/30',
-    btnHover: 'hover:bg-purple-600 hover:text-white dark:hover:bg-purple-600 dark:hover:text-white',
-    grad: 'from-purple-500/0 via-purple-500/40 to-purple-500/0',
-    border: 'hover:border-purple-300 dark:hover:border-purple-700',
-    shadow: 'hover:shadow-purple-500/10',
-  },
-  vermillion: {
-    titleHover: 'group-hover:text-vermillion-500 dark:group-hover:text-vermillion-400',
-    btn: 'bg-vermillion-50 text-vermillion-600 dark:bg-vermillion-900/40 dark:text-vermillion-400 border-vermillion-100 dark:border-vermillion-900/30',
-    btnHover: 'hover:bg-vermillion-500 hover:text-white dark:hover:bg-vermillion-500 dark:hover:text-white',
-    grad: 'from-vermillion-500/0 via-vermillion-500/40 to-vermillion-500/0',
-    border: 'hover:border-vermillion-300 dark:hover:border-vermillion-700',
-    shadow: 'hover:shadow-vermillion-500/10',
-  },
+const buttonColors: Record<string, string> = {
+  blue: 'bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 hover:shadow-blue-500/20',
+  amber: 'bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700 hover:shadow-amber-500/20',
+  emerald: 'bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-700 hover:shadow-emerald-500/20',
+  purple: 'bg-purple-500 hover:bg-purple-600 dark:bg-purple-600 dark:hover:bg-purple-700 hover:shadow-purple-500/20',
+  vermillion: 'bg-vermillion-500 hover:bg-vermillion-600 dark:bg-vermillion-600 dark:hover:bg-vermillion-700 hover:shadow-vermillion-500/20',
 };
 
 const cardGradients = [
@@ -105,35 +77,61 @@ const cardGradients = [
   'from-amber-50 via-orange-50 to-yellow-50 dark:from-[#1A1408] dark:via-[#1F1808] dark:to-[#251C08]',
 ];
 
-const a = accent[color] || accent.vermillion;
-const etc = examTypeColors[color] || examTypeColors.vermillion;
-const cardGradient = cardGradients[examIndex % cardGradients.length];
+const subjectTheme = exam.subject?.slug ? subjectMap[exam.subject.slug] : null;
+
+const activeBaseColor = subjectTheme ? subjectTheme.baseColor : color;
+const activeBgGrad = subjectTheme ? subjectTheme.bgGrad : cardGradients[examIndex % cardGradients.length];
+const activeTextAccent = subjectTheme ? subjectTheme.textAccent : 'text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300';
+const activeHoverBorder = subjectTheme ? subjectTheme.hoverBorder : 'hover:border-blue-300 dark:hover:border-blue-700';
+const activeHoverShadow = subjectTheme ? subjectTheme.hoverShadow : 'hover:shadow-blue-500/10';
+const activeWatermark = subjectTheme ? subjectTheme.icon : null;
+
+const etc = examTypeColors[activeBaseColor] || examTypeColors.vermillion;
+const btnClass = buttonColors[activeBaseColor] || buttonColors.vermillion;
+
 ---
 
-<div class={`bg-gradient-to-br ${cardGradient} group flex flex-col justify-between p-6 rounded-2xl relative border border-slate-200/60 dark:border-slate-700/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${a.border} ${a.shadow}`}>
-  <div class="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+<div class={`bg-gradient-to-br ${activeBgGrad} group flex flex-col justify-between p-6 rounded-2xl relative border border-slate-200/60 dark:border-slate-700/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden ${activeHoverBorder} ${activeHoverShadow}`}>
+  {activeWatermark && (
+    <div 
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[160px] md:text-[200px] pointer-events-none select-none transform group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500"
+      style="color: transparent; text-shadow: 0 0 0 rgba(167, 243, 208, 0.4);"
+    >
+      {activeWatermark}
+    </div>
+  )}
 
-  <div>
+  <div class="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-current to-transparent rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-400"></div>
+
+  <div class="relative z-10">
     <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
       {exam.subject && (
-        <span class="text-xs font-bold text-[#8A7E72] dark:text-[#8A8A9E]">
+        <span class="text-xs font-bold text-[#8A7E72] dark:text-[#8A8A9E] flex items-center gap-1">
+          {subjectTheme && <span class="text-sm mr-0.5">{subjectTheme.icon}</span>}
           Môn {exam.subject.name}
         </span>
       )}
 
-      <span class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold border ${etc[exam.exam_type] || etc['mock_thpt']}`}>
-        {examTypeNames[exam.exam_type]}
-      </span>
+      <div class="flex items-center gap-1.5">
+        {exam.password && (
+          <span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-bold bg-white/60 dark:bg-black/20 text-slate-500 dark:text-slate-400 border border-slate-200/50 dark:border-slate-700/50 shadow-sm" title="Có mật khẩu">
+            🔒
+          </span>
+        )}
+        <span class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold border ${etc[exam.exam_type] || etc['mock_thpt']}`}>
+          {examTypeNames[exam.exam_type]}
+        </span>
+      </div>
     </div>
 
-    <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 line-clamp-2 leading-snug group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors font-serif">
+    <h3 class={`text-xl font-bold line-clamp-2 leading-snug transition-colors font-serif ${activeTextAccent}`}>
       {exam.title}
     </h3>
 
     {exam.teacherName && (
       <div class="mt-3 flex items-center gap-2">
-        <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
-          <svg class="w-3.5 h-3.5 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+          <svg class="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
           </svg>
         </div>
@@ -144,7 +142,7 @@ const cardGradient = cardGradients[examIndex % cardGradients.length];
     )}
   </div>
 
-  <div class="mt-6 pt-4 border-t border-slate-200/60 dark:border-slate-700/40 flex items-center justify-between">
+  <div class="mt-6 pt-4 border-t border-slate-200/60 dark:border-slate-700/40 flex items-center justify-between relative z-10">
     <div class="flex items-center space-x-3 text-xs text-[#A89888] dark:text-[#6A6A8A]">
       <span class="flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -156,7 +154,7 @@ const cardGradient = cardGradients[examIndex % cardGradients.length];
 
     <a
       href={`/exams/${exam.id}`}
-      class="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white dark:bg-blue-600 dark:hover:bg-blue-700 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-150 shadow-sm hover:shadow-blue-500/20"
+      class={`inline-flex items-center justify-center text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-150 shadow-sm ${btnClass}`}
     >
       Vào thi
     </a>

@@ -1,0 +1,1 @@
+ALTER TABLE public.course_lessons ADD COLUMN IF NOT EXISTS is_free BOOLEAN DEFAULT false;

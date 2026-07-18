@@ -28,6 +28,7 @@ if (Astro.request.method === 'POST') {
   try {
     const formData = await Astro.request.formData();
     const subject_id = formData.get('subject_id') as string;
+    const category_id = (formData.get('category_id') as string) || null;
     const content = formData.get('content') as string;
     const explanation = formData.get('explanation') as string;
     const difficulty = formData.get('difficulty') as 'easy' | 'medium' | 'hard';
@@ -87,6 +88,7 @@ if (Astro.request.method === 'POST') {
 
     await db.updateQuestion(question.id, {
       subject_id,
+      category_id,
       content,
       explanation: explanation || null,
       difficulty,
@@ -102,6 +104,7 @@ if (Astro.request.method === 'POST') {
 }
 
 const subjects = await db.getSubjects();
+const allCategories = await db.getCategories();
 
 // Helper: safe access to existing answers
 const getAnswerContent = (index: number) => {
@@ -190,6 +193,22 @@ const isTFCorrectA = question.type === 'true_false' && question.answers[0]?.is_c
               <option value="hard" selected={question.difficulty === 'hard'}>Khó</option>
             </select>
           </div>
+        </div>
+
+        <!-- Category -->
+        <div>
+          <label for="q_category_id" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+            Chuyên mục
+            <a href="/admin/categories" target="_blank" class="ml-2 text-blue-500 hover:text-blue-700 normal-case font-semibold">➕ Quản lý</a>
+          </label>
+          <input type="hidden" id="q-initial-category" value={question.category_id || ''} />
+          <select
+            name="category_id"
+            id="q_category_id"
+            class="w-full px-4 py-3 rounded-xl border border-gray-250 dark:border-slate-800/80 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-gray-800 dark:text-slate-100"
+          >
+            <option value="">-- Không phân chuyên mục --</option>
+          </select>
         </div>
 
         <!-- Question content -->
@@ -402,4 +421,45 @@ const isTFCorrectA = question.type === 'true_false' && question.answers[0]?.is_c
       }
     });
   }
+
+  // Category dropdown dynamic filter
+  const catDataEl = document.getElementById('q-categories-data');
+  const ALL_CATS = catDataEl ? JSON.parse(catDataEl.textContent || '[]') : [];
+
+  function updateCategoryDropdown(subjectId: string, dropdownId: string) {
+    const sel = document.getElementById(dropdownId) as HTMLSelectElement | null;
+    if (!sel) return;
+    const filtered = ALL_CATS.filter((c: any) => c.subject_id === subjectId);
+    
+    const currentVal = sel.value;
+    sel.innerHTML = '<option value="">-- Không phân chuyên mục --</option>';
+    filtered.forEach((c: any) => {
+      const opt = document.createElement('option');
+      opt.value = c.id;
+      opt.textContent = c.name;
+      sel.appendChild(opt);
+    });
+    
+    if (currentVal) {
+      sel.value = currentVal;
+    }
+  }
+
+  // Bind change listeners
+  const subjectSelect = document.getElementById('subject_id') as HTMLSelectElement | null;
+  if (subjectSelect) {
+    subjectSelect.addEventListener('change', () => {
+      updateCategoryDropdown(subjectSelect.value, 'q_category_id');
+    });
+    if (subjectSelect.value) {
+      updateCategoryDropdown(subjectSelect.value, 'q_category_id');
+      const initialCat = (document.getElementById('q-initial-category') as HTMLInputElement | null)?.value;
+      const catDropdown = document.getElementById('q_category_id') as HTMLSelectElement | null;
+      if (initialCat && catDropdown) {
+        catDropdown.value = initialCat;
+      }
+    }
+  }
 </script>
+
+<script id="q-categories-data" type="application/json" set:html={JSON.stringify(allCategories)}></script>

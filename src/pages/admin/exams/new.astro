@@ -19,6 +19,7 @@ if (Astro.request.method === 'POST') {
     const title       = formData.get('title')      as string;
     const duration    = Number(formData.get('duration'));
     const subject_id  = formData.get('subject_id') as string;
+    const category_id = (formData.get('category_id') as string) || null;
     const exam_type   = formData.get('exam_type')  as '15m' | '45m' | 'semester' | 'mock_thpt';
     const password    = (formData.get('password')  as string)?.trim() || undefined;
 
@@ -43,7 +44,7 @@ if (Astro.request.method === 'POST') {
         easy: 'easy', medium: 'medium', hard: 'hard',
         dễ: 'easy', 'trung bình': 'medium', khó: 'hard',
       };
-      const typeMap: Record<string, 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl'> = {
+      const typeMap: Record<string, string> = {
         mcq: 'single_choice',
         single_choice: 'single_choice',
         msq: 'msq',
@@ -52,7 +53,9 @@ if (Astro.request.method === 'POST') {
         tf: 'true_false',
         true_false: 'true_false',
         sa: 'sa',
-        tl: 'tl'
+        tl: 'tl',
+        read: 'read',
+        list: 'list'
       };
 
       for (const q of qs) {
@@ -63,8 +66,34 @@ if (Astro.request.method === 'POST') {
         const correctStr = (q.correct_option || q.correct_answer || q.answer || '').trim();
 
         let answers: { content: string; is_correct: boolean }[] = [];
+        let metadata: any = undefined;
 
-        if (qType === 'single_choice' || qType === 'multiple_choice' || qType === 'msq') {
+        if (qType === 'read' || qType === 'list') {
+          const metaQuestions = Array.isArray(q.metadata?.questions) ? q.metadata.questions : (Array.isArray(q.questions) ? q.questions : []);
+          if (metaQuestions.length === 0) {
+            throw new Error('Câu hỏi dạng read/list thiếu metadata.questions.');
+          }
+          const mappedQuestions = metaQuestions.map((sq: any) => {
+            const out: any = {
+              question: sq.question || sq.content || '',
+              option_a: sq.option_a || '',
+              option_b: sq.option_b || '',
+              option_c: sq.option_c || '',
+              option_d: sq.option_d || '',
+              correct_option: (sq.correct_option || '').toUpperCase(),
+              ...(sq.explanation ? { explanation: sq.explanation } : {})
+            };
+            if (sq.option_e) out.option_e = sq.option_e;
+            if (sq.option_f) out.option_f = sq.option_f;
+            return out;
+          });
+          const audioUrl = q.metadata?.audio_url ? q.metadata.audio_url : undefined;
+          metadata = {
+            questions: mappedQuestions,
+            ...(audioUrl ? { audio_url: audioUrl } : {}),
+            ...(category_id ? { category_id } : {})
+          };
+        } else if (qType === 'single_choice' || qType === 'multiple_choice' || qType === 'msq') {
           const options = [
             { key: 'A', text: q.option_a },
             { key: 'B', text: q.option_b },
@@ -89,9 +118,10 @@ if (Astro.request.method === 'POST') {
           content: qContent,
           explanation: qExpl,
           difficulty: qDiff,
-          type: qType,
+          type: qType as any,
           answer: qType === 'sa' ? correctStr : null,
           created_by: user.id,
+          metadata: metadata ? metadata : (category_id ? { category_id } : undefined)
         }, answers);
         questionIds.push(created.id);
       }
@@ -101,7 +131,7 @@ if (Astro.request.method === 'POST') {
         throw new Error('Cần gán ít nhất một câu hỏi vào đề thi này.');
     }
 
-    await db.createExam({ title, duration, subject_id, exam_type, created_by: user.id, ...(password ? { password } : {}) }, questionIds);
+    await db.createExam({ title, duration, subject_id, category_id, exam_type, created_by: user.id, ...(password ? { password } : {}) }, questionIds);
     return Astro.redirect('/admin/exams');
 
   } catch (err: any) {
@@ -111,6 +141,7 @@ if (Astro.request.method === 'POST') {
 
 const subjects  = await db.getSubjects();
 const questions = await db.getQuestions(undefined, user.role === 'admin' ? undefined : user.id);
+const allCategories = await db.getCategories();
 
 // Handle pre-selected questions via GET ?q=id1,id2
 const url = new URL(Astro.request.url);
@@ -179,6 +210,17 @@ if (preselectedIds.length > 0) {
             </select>
           </div>
 
+          <!-- Category -->
+          <div>
+            <label for="exam_category_id" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+              Chuyên mục
+              <a href="/admin/categories" target="_blank" class="ml-2 text-blue-500 hover:text-blue-700 normal-case font-semibold">➕ Quản lý</a>
+            </label>
+            <select name="category_id" id="exam_category_id" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] cursor-pointer">
+              <option value="">-- Không phân chuyên mục --</option>
+            </select>
+          </div>
+
           <!-- Exam type -->
           <div>
             <label for="exam_type" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Phân loại đề thi <span class="text-rose-500">*</span></label>
@@ -238,7 +280,7 @@ if (preselectedIds.length > 0) {
             </div>
             <div id="questions-list" class="space-y-2.5 max-h-[400px] overflow-y-auto hidden pr-1">
               {questions.map(q => (
-                <label data-subject-id={q.subject_id} class="question-checkbox-item flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700 hover:bg-blue-50/30 dark:hover:bg-blue-900/10 cursor-pointer select-none transition-all duration-150">
+                <label data-subject-id={q.subject_id} data-category-id={q.metadata?.category_id || ''} class="question-checkbox-item flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700 hover:bg-blue-50/30 dark:hover:bg-blue-900/10 cursor-pointer select-none transition-all duration-150">
                   <input type="checkbox" name="question_ids" value={q.id} checked={preselectedIds.includes(q.id)} class="rounded text-blue-600 focus:ring-blue-500 h-4 w-4 mt-0.5 shrink-0" />
                   <div class="flex-1 min-w-0">
                     {q.type === 'read' || q.type === 'list' ? (
@@ -340,8 +382,9 @@ if (preselectedIds.length > 0) {
     switchTab('manual-section');
   }
 
-  // Manual select: filter by subject
-  const subjectSelect = document.getElementById('subject_id');
+  // Manual select: filter by subject and category
+  const subjectSelect = document.getElementById('subject_id') as HTMLSelectElement | null;
+  const categorySelect = document.getElementById('exam_category_id') as HTMLSelectElement | null;
   const noSubjectWarning = document.getElementById('no-subject-warning');
   const noQuestionsWarning = document.getElementById('no-questions-warning');
   const questionsList = document.getElementById('questions-list');
@@ -356,29 +399,58 @@ if (preselectedIds.length > 0) {
     }
   }
 
-  if (subjectSelect && noSubjectWarning && noQuestionsWarning && questionsList) {
-    subjectSelect.addEventListener('change', () => {
-      const selectedId = subjectSelect.value;
+  function filterQuestions() {
+    const selectedId = subjectSelect?.value;
+    const catId = categorySelect?.value;
+    
+    if (noSubjectWarning && noQuestionsWarning && questionsList) {
+      if (!selectedId) {
+        noSubjectWarning.classList.remove('hidden');
+        noQuestionsWarning.classList.add('hidden');
+        questionsList.classList.add('hidden');
+        return;
+      }
+
       noSubjectWarning.classList.add('hidden');
       let visibleCount = 0;
       questionItems.forEach(item => {
         const itemSubId = item.getAttribute('data-subject-id');
-        const checkbox = item.querySelector('input[type="checkbox"]');
-        const matches = itemSubId === selectedId;
+        const itemCatId = item.getAttribute('data-category-id');
+        const checkbox = item.querySelector('input[type="checkbox"]') as HTMLInputElement;
+        
+        let matches = itemSubId === selectedId;
+        if (catId) {
+          matches = matches && (itemCatId === catId);
+        }
+        
         item.classList.toggle('hidden', !matches);
-        // Only uncheck if it doesn't match the newly selected subject
+        // Only uncheck if it doesn't match the newly selected subject/category
         if (!matches && checkbox) checkbox.checked = false;
         if (matches) visibleCount++;
       });
       noQuestionsWarning.classList.toggle('hidden', visibleCount > 0);
       questionsList.classList.toggle('hidden', visibleCount === 0);
       updateSelectedCount();
+    }
+  }
+
+  if (subjectSelect) {
+    subjectSelect.addEventListener('change', () => {
+      const selectedId = subjectSelect.value;
+      updateCategoryDropdown(selectedId, 'exam_category_id');
+      filterQuestions();
     });
 
     // Trigger change event if a subject is pre-selected
     if (subjectSelect.value) {
+      // updateCategoryDropdown is called via change event or below
+      // But we also need to call filterQuestions
       subjectSelect.dispatchEvent(new Event('change'));
     }
+  }
+
+  if (categorySelect) {
+    categorySelect.addEventListener('change', filterQuestions);
   }
 
   document.querySelectorAll('input[name="question_ids"]').forEach(cb => {
@@ -421,4 +493,28 @@ if (preselectedIds.length > 0) {
       } catch { jsonData.value = '{"title":"Mẫu","questions":[{"type":"mcq","question":"Câu hỏi mẫu","option_a":"A","option_b":"B","option_c":"C","option_d":"D","correct_option":"A","explanation":"","difficulty_level":"easy","is_dynamic":false}]}'; }
     });
   }
+
+  // Category dropdown dynamic filter
+  const ALL_CATEGORIES = JSON.parse(document.getElementById('categories-data').textContent);
+
+  function updateCategoryDropdown(subjectId, dropdownId) {
+    const sel = document.getElementById(dropdownId);
+    if (!sel) return;
+    const filtered = ALL_CATEGORIES.filter(c => c.subject_id === subjectId);
+    sel.innerHTML = '<option value="">-- Không phân chuyên mục --</option>';
+    filtered.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c.id;
+      opt.textContent = c.name;
+      sel.appendChild(opt);
+    });
+  }
+
+  // Init category dropdown if subject is pre-selected
+  const subjectSelEl = document.getElementById('subject_id');
+  if (subjectSelEl && subjectSelEl.value) {
+    updateCategoryDropdown(subjectSelEl.value, 'exam_category_id');
+  }
 </script>
+
+<script id="categories-data" type="application/json" set:html={JSON.stringify(allCategories)}></script>

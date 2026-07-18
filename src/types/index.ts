@@ -13,6 +13,15 @@ export interface Subject {
   slug: string;
 }
 
+export interface Category {
+  id: string;
+  subject_id: string;
+  name: string;
+  slug: string;
+  created_by: string | null;
+  created_at: string;
+}
+
 export interface Lesson {
   id: string;
   subject_id: string;
@@ -41,6 +50,7 @@ export interface Question {
     type?: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list';
     explanation?: string | null;
     subject_id?: string;
+    category_id?: string | null;
     [key: string]: any;
   } | null;
   created_at?: string;
@@ -52,6 +62,7 @@ export interface Question {
   difficulty: 'easy' | 'medium' | 'hard';
   type: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list';
   created_by?: string | null;
+  category_id?: string | null;
 }
 
 export interface Answer {
@@ -67,6 +78,7 @@ export interface Exam {
   title: string;
   duration: number; // in minutes
   subject_id: string;
+  category_id?: string | null; // Chuyên mục (con của môn học)
   exam_type: '15m' | '45m' | 'semester' | 'mock_thpt';
   password?: string | null; // Optional: if set, students must enter password before taking the exam
   created_by?: string | null; // UUID of the creator (teacher/admin)
@@ -137,6 +149,7 @@ export interface CourseLesson {
   order_index: number;
   duration: number | null;  // in minutes
   is_published: boolean;
+  is_free: boolean;
   created_at: string;
 }
 
