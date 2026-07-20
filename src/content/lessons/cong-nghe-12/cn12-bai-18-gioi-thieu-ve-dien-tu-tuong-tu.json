@@ -1,0 +1,295 @@
+{
+  "subject": "Công nghệ 12",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-18-gioi-thieu-ve-dien-tu-tuong-tu",
+      "name": "Bài 18. Giới thiệu về điện tử tương tự",
+      "slug": "bai-18-gioi-thieu-ve-dien-tu-tuong-tu",
+      "chapter": "Chương 6. Điện tử tương tự",
+      "chapter_id": "CN12",
+      "lesson_id": 18,
+      "description": "Tìm hiểu khái niệm điện tử tương tự, tín hiệu tương tự, các mạch cơ bản (khuếch đại, dao động, lọc) và ứng dụng của chúng trong thực tế.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1581091226033-400dcee50f0b?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tt-1",
+          "name": "Khái niệm điện tử tương tự",
+          "slug": "khai-niem-dien-tu-tuong-tu",
+          "difficulty": "easy"
+        },
+        {
+          "id": "tt-2",
+          "name": "Tín hiệu tương tự",
+          "slug": "tin-hieu-tuong-tu",
+          "difficulty": "easy"
+        },
+        {
+          "id": "tt-3",
+          "name": "Mạch khuếch đại",
+          "slug": "mach-khuech-dai",
+          "difficulty": "medium"
+        },
+        {
+          "id": "tt-4",
+          "name": "Mạch dao động và lọc",
+          "slug": "mach-dao-dong-va-loc",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Giới thiệu về điện tử tương tự",
+          "sections": [
+            {
+              "heading": "1. Khái niệm điện tử tương tự",
+              "content": "<p><strong>Điện tử tương tự</strong> là lĩnh vực điện tử nghiên cứu và xử lý các tín hiệu tương tự (analog).</p><p><strong>Đặc điểm:</strong></p><ul><li>Tín hiệu biến thiên liên tục theo thời gian</li><li>Có thể nhận mọi giá trị trong một khoảng xác định</li><li>Biểu diễn trực tiếp các đại lượng vật lý (nhiệt độ, áp suất, âm thanh...)</li></ul><p><strong>Ví dụ:</strong> Tín hiệu âm thanh từ micro, tín hiệu hình ảnh từ camera analog.</p>"
+            },
+            {
+              "heading": "2. Tín hiệu tương tự",
+              "content": "<p><strong>Tín hiệu tương tự</strong> là tín hiệu có biên độ biến đổi liên tục theo thời gian.</p><p><strong>Phân loại tín hiệu tương tự:</strong></p><ul><li><strong>Tín hiệu điện áp:</strong> Giá trị điện áp thay đổi liên tục (ví dụ: 0-5V, -12V đến +12V)</li><li><strong>Tín hiệu dòng điện:</strong> Dòng điện thay đổi liên tục (ví dụ: 4-20mA trong công nghiệp)</li><li><strong>Tín hiệu xoay chiều:</strong> Tín hiệu hình sin, hình vuông, tam giác</li></ul><p><strong>So sánh với tín hiệu số:</strong></p><ul><li>Tín hiệu tương tự: liên tục, vô hạn giá trị</li><li>Tín hiệu số: rời rạc, hữu hạn giá trị (thường là 0 và 1)</li></ul>"
+            },
+            {
+              "heading": "3. Mạch khuếch đại",
+              "content": "<p><strong>Mạch khuếch đại</strong> là mạch điện tử làm tăng biên độ của tín hiệu đầu vào.</p><p><strong>Nguyên lý:</strong></p><ul><li>Sử dụng linh kiện tích cực (transistor, op-amp)</li><li>Nguồn cung cấp năng lượng DC</li><li>Tín hiệu đầu vào yếu → đầu ra mạnh hơn cùng dạng</li></ul><p><strong>Thông số cơ bản:</strong></p><ul><li><strong>Hệ số khuếch đại:</strong> $A = V_{out}/V_{in}$</li><li><strong>Băng thông:</strong> Dải tần số hoạt động</li><li><strong>Độ méo:</strong> Sai số dạng tín hiệu</li></ul><p><strong>Ứng dụng:</strong> Amplifier âm thanh, tiền khuếch đại micro, khuếch đại tín hiệu cảm biến.</p>"
+            },
+            {
+              "heading": "4. Mạch dao động",
+              "content": "<p><strong>Mạch dao động</strong> là mạch tạo ra tín hiệu dao động hình sin hoặc không sin từ nguồn DC.</p><p><strong>Nguyên lý:</strong></p><ul><li>Sử dụng hồi tiếp dương để duy trì dao động</li><li>Kết hợp các phần tử LC, RC hoặc thạch anh để xác định tần số</li></ul><p><strong>Các loại mạch dao động:</strong></p><ul><li><strong>Dao động hình sin:</strong> Tạo tín hiệu sin thuần túy</li><li><strong>Dao động đa hài:</strong> Tạo xung vuông</li><li><strong>Dao động thạch anh:</strong> Tần số rất ổn định</li></ul><p><strong>Ứng dụng:</strong> Tạo sóng mang trong radio, tạo xung nhịp cho vi điều khiển, tạo tín hiệu âm tần.</p>"
+            },
+            {
+              "heading": "5. Mạch lọc",
+              "content": "<p><strong>Mạch lọc</strong> là mạch cho phép một dải tần số đi qua và ngăn chặn các tần số khác.</p><p><strong>Các loại mạch lọc cơ bản:</strong></p><ul><li><strong>Mạch lọc thông thấp:</strong> Cho tần số thấp đi qua, chặn tần số cao</li><li><strong>Mạch lọc thông cao:</strong> Cho tần số cao đi qua, chặn tần số thấp</li><li><strong>Mạch lọc thông dải:</strong> Cho một dải tần số đi qua</li><li><strong>Mạch lọc chặn dải:</strong> Chặn một dải tần số</li></ul><p><strong>Phần tử cơ bản:</strong></p><ul><li>Tụ điện (C): Dung kháng $Z_C = 1/(2\\pi fC)$</li><li>Cuộn cảm (L): Cảm kháng $Z_L = 2\\pi fL$</li><li>Điện trở (R)</li></ul><p><strong>Ứng dụng:</strong> Lọc nhiễu nguồn, lọc âm thanh (equalizer), lọc tín hiệu trong viễn thông.</p>"
+            },
+            {
+              "heading": "6. Ứng dụng của điện tử tương tự",
+              "content": "<p><strong>Các ứng dụng phổ biến:</strong></p><ul><li><strong>Âm thanh:</strong> Micro, loa, amplifier, mixer âm thanh</li><li><strong>Viễn thông:</strong> Radio AM/FM, truyền hình analog, điện thoại cố định</li><li><strong>Cảm biến:</strong> Đo nhiệt độ (LM35), đo ánh sáng (quang trở), đo áp suất</li><li><strong>Y tế:</strong> ECG (điện tâm đồ), EEG (điện não đồ), máy siêu âm</li><li><strong>Tự động hóa:</strong> Bộ điều khiển PID analog, mạch điều khiển tốc độ động cơ</li></ul><p>Ngày nay, điện tử tương tự vẫn đóng vai trò quan trọng, đặc biệt trong các ứng dụng yêu cầu tốc độ cao và độ chính xác tại chỗ.</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân biệt tín hiệu tương tự và tín hiệu số",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định xem tín hiệu biến thiên liên tục (tương tự) hay rời rạc (số).</li><li>Tín hiệu tương tự có thể nhận vô hạn giá trị trong khoảng xác định.</li><li>Ví dụ: giọng nói, nhiệt độ là tương tự; dữ liệu máy tính là số.</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Phân loại tín hiệu: a) Nhiệt độ phòng đo bằng cảm biến, b) Dữ liệu từ bàn phím máy tính.",
+                "solution": "<p><strong>Giải:</strong></p><p>a) Nhiệt độ là tín hiệu tương tự (biến thiên liên tục).</p><p>b) Dữ liệu bàn phím là tín hiệu số (mỗi phím tạo mã nhị phân).</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính hệ số khuếch đại",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Hệ số khuếch đại điện áp: $A_V = V_{out}/V_{in}$</li><li>Hệ số khuếch đại dòng: $A_I = I_{out}/I_{in}$</li><li>Hệ số khuếch đại công suất: $A_P = A_V \\times A_I$</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Mạch khuếch đại có $V_{in}=50mV$, $V_{out}=2V$. Tính $A_V$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$A_V = V_{out}/V_{in} = 2V / 0,05V = 40$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Xác định loại mạch lọc",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Mạch RC thông thấp: tụ song song tải, điện trở nối tiếp</li><li>Mạch RC thông cao: tụ nối tiếp, điện trở song song tải</li><li>Xác định dựa vào cách bố trí linh kiện.</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Mạch lọc RC gồm tụ C nối tiếp và R song song với tải. Đây là loại mạch lọc gì?",
+                "solution": "<p><strong>Giải:</strong></p><p>Đây là mạch lọc thông cao — tụ nối tiếp chặn tần số thấp, R song song cho tần số cao qua tải.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Điện tử tương tự là lĩnh vực xử lý tín hiệu có đặc điểm:",
+            "options": [
+              "Tín hiệu chỉ có hai giá trị 0 và 1",
+              "Tín hiệu biến thiên liên tục theo thời gian",
+              "Tín hiệu chỉ tồn tại ở dạng xung",
+              "Tín hiệu không thay đổi theo thời gian"
+            ],
+            "correct": 1,
+            "explanation": "Điện tử tương tự xử lý tín hiệu biến thiên liên tục theo thời gian, có thể nhận vô hạn giá trị."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Ví dụ nào sau đây là tín hiệu tương tự?",
+            "options": [
+              "Mã nhị phân từ bàn phím",
+              "Nhiệt độ phòng đo bằng cảm biến",
+              "Dữ liệu trong USB",
+              "Kết quả phép tính trên máy tính"
+            ],
+            "correct": 1,
+            "explanation": "Nhiệt độ phòng là đại lượng vật lý biến thiên liên tục, là tín hiệu tương tự."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Chức năng của mạch khuếch đại là:",
+            "options": [
+              "Giảm biên độ tín hiệu đầu vào",
+              "Tăng biên độ tín hiệu đầu vào",
+              "Chuyển tín hiệu tương tự thành số",
+              "Lọc nhiễu tín hiệu"
+            ],
+            "correct": 1,
+            "explanation": "Mạch khuếch đại làm tăng biên độ tín hiệu đầu vào, tạo ra tín hiệu đầu ra lớn hơn."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Hệ số khuếch đại điện áp được tính bằng công thức:",
+            "options": [
+              "$A_V = V_{in} / V_{out}$",
+              "$A_V = V_{out} / V_{in}$",
+              "$A_V = V_{out} \\times V_{in}$",
+              "$A_V = V_{in} - V_{out}$"
+            ],
+            "correct": 1,
+            "explanation": "$A_V = V_{out} / V_{in}$ là tỉ số giữa điện áp đầu ra và đầu vào."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Mạch dao động có chức năng:",
+            "options": [
+              "Khuếch đại tín hiệu DC",
+              "Tạo tín hiệu dao động từ nguồn DC",
+              "Chỉnh lưu dòng AC thành DC",
+              "Lọc tần số cao"
+            ],
+            "correct": 1,
+            "explanation": "Mạch dao động biến đổi năng lượng DC thành tín hiệu dao động (hình sin, xung vuông...)."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Mạch lọc thông thấp cho phép:",
+            "options": [
+              "Tần số cao đi qua, chặn tần số thấp",
+              "Tần số thấp đi qua, chặn tần số cao",
+              "Một dải tần số duy nhất đi qua",
+              "Tất cả tần số đều đi qua"
+            ],
+            "correct": 1,
+            "explanation": "Mạch lọc thông thấp cho tần số thấp hơn tần số cắt đi qua, suy giảm tần số cao."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Dung kháng của tụ điện được tính bằng công thức:",
+            "options": [
+              "$Z_C = 2\\pi fC$",
+              "$Z_C = 1/(2\\pi fC)$",
+              "$Z_C = 2\\pi f/C$",
+              "$Z_C = C/(2\\pi f)$"
+            ],
+            "correct": 1,
+            "explanation": "$Z_C = 1/(2\\pi fC)$, dung kháng tỉ lệ nghịch với tần số và điện dung."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Trong mạch lọc RC thông cao, tụ điện được mắc:",
+            "options": [
+              "Song song với tải",
+              "Nối tiếp giữa nguồn và tải",
+              "Nối tiếp với điện trở xuống mass",
+              "Không sử dụng tụ điện"
+            ],
+            "correct": 1,
+            "explanation": "Trong mạch lọc thông cao RC, tụ mắc nối tiếp để chặn thành phần DC và tần số thấp."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Ứng dụng nào sau đây KHÔNG phải của điện tử tương tự?",
+            "options": [
+              "Khuếch đại âm thanh",
+              "Truyền hình analog",
+              "Bộ vi xử lý CPU",
+              "Mạch lọc tín hiệu cảm biến"
+            ],
+            "correct": 2,
+            "explanation": "CPU là thiết bị số (digital) xử lý tín hiệu nhị phân, không phải điện tử tương tự."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Mạch dao động thạch anh có ưu điểm:",
+            "options": [
+              "Giá thành rẻ nhất",
+              "Tần số rất ổn định",
+              "Công suất đầu ra lớn",
+              "Kích thước lớn"
+            ],
+            "correct": 1,
+            "explanation": "Dao động thạch anh có tần số rất ổn định, ít phụ thuộc vào nhiệt độ và điện áp."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các đặc điểm của tín hiệu tương tự:",
+            "options": [
+              "Biến thiên liên tục theo thời gian",
+              "Chỉ có hai mức 0 và 1",
+              "Có thể nhận vô hạn giá trị trong một khoảng",
+              "Được biểu diễn bằng mã nhị phân"
+            ],
+            "correct": [0, 2],
+            "explanation": "Tín hiệu tương tự biến thiên liên tục và có vô hạn giá trị, không phải chỉ có hai mức hay mã nhị phân."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các loại mạch lọc cơ bản trong điện tử tương tự:",
+            "options": [
+              "Mạch lọc thông thấp",
+              "Mạch lọc thông cao",
+              "Mạch lọc thông dải",
+              "Mạch lọc số"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Thông thấp, thông cao, thông dải và chặn dải là các loại mạch lọc cơ bản. Mạch lọc số thuộc điện tử số."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Các linh kiện thụ động trong mạch điện tử tương tự:",
+            "options": [
+              "Điện trở",
+              "Transistor",
+              "Tụ điện",
+              "Cuộn cảm"
+            ],
+            "correct": [0, 2, 3],
+            "explanation": "Điện trở, tụ điện, cuộn cảm là linh kiện thụ động. Transistor là linh kiện tích cực."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Ứng dụng của mạch khuếch đại trong thực tế:",
+            "options": [
+              "Khuếch đại tín hiệu micro",
+              "Khuếch đại tín hiệu cảm biến",
+              "Chỉnh lưu dòng AC",
+              "Amplifier loa âm thanh"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Mạch khuếch đại dùng cho micro, cảm biến và loa. Chỉnh lưu là chức năng khác."
+          }
+        ]
+      }
+    }
+  ]
+}

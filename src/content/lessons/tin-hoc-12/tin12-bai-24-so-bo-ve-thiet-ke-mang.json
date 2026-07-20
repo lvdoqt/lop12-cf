@@ -18,22 +18,220 @@
           "title": "Thiết kế mạng",
           "summary": "Thiết kế mạng đảm bảo hệ thống hoạt động ổn định, dễ mở rộng và bảo mật.",
           "sections": [
-            { "heading": "Kiến trúc mạng", "content": "Mô hình khách - chủ (Client-Server) và mô hình ngang hàng (Peer-to-Peer)." },
-            { "heading": "Sơ đồ mạng (Topology)", "content": "Dạng hình sao (Star), dạng đường thẳng (Bus), dạng vòng (Ring). Hiện nay dạng sao là phổ biến nhất." },
-            { "heading": "Quy trình thiết kế", "content": "Khảo sát nhu cầu, vẽ sơ đồ logic, sơ đồ vật lý và lựa chọn thiết bị phù hợp." }
+            {
+              "heading": "Kiến trúc mạng",
+              "content": "Mô hình khách - chủ (Client-Server) và mô hình ngang hàng (Peer-to-Peer)."
+            },
+            {
+              "heading": "Sơ đồ mạng (Topology)",
+              "content": "Dạng hình sao (Star), dạng đường thẳng (Bus), dạng vòng (Ring). Hiện nay dạng sao là phổ biến nhất."
+            },
+            {
+              "heading": "Quy trình thiết kế",
+              "content": "Khảo sát nhu cầu, vẽ sơ đồ logic, sơ đồ vật lý và lựa chọn thiết bị phù hợp."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Trong mô hình Client-Server, Server đóng vai trò gì?", "options": ["Sử dụng dịch vụ", "Cung cấp tài nguyên và dịch vụ cho các Client", "Chỉ để lưu trữ", "Kết nối Wi-Fi"], "correct": 1, "explanation": "Server là máy phục vụ, Client là máy khách." },
-          { "id": 2, "type": "mcq", "question": "Sơ đồ mạng hình sao (Star) sử dụng thiết bị trung tâm là gì?", "options": ["Dây cáp trục", "Switch hoặc Hub", "Một máy tính bất kỳ", "Chuột"], "correct": 1, "explanation": "Mọi máy tính kết nối về một điểm trung tâm duy nhất." },
-          { "id": 3, "type": "mcq", "question": "Ưu điểm của mạng hình sao là gì?", "options": ["Rẻ nhất", "Dễ lắp đặt, nếu một máy hỏng các máy khác vẫn hoạt động bình thường", "Không cần thiết bị trung tâm", "Tiết kiệm dây dẫn nhất"], "correct": 1, "explanation": "Tính độc lập của các nhánh giúp mạng hoạt động ổn định." },
-          { "id": 4, "type": "mcq", "question": "Mạng ngang hàng (Peer-to-Peer) phù hợp cho?", "options": ["Các tập đoàn lớn", "Mạng gia đình hoặc văn phòng nhỏ", "Hệ thống ngân hàng", "Mạng Internet quốc gia"], "correct": 1, "explanation": "P2P đơn giản, không cần máy chủ chuyên dụng." },
-          { "id": 5, "type": "mcq", "question": "Sơ đồ vật lý của mạng thể hiện điều gì?", "options": ["Luồng dữ liệu", "Vị trí thực tế của thiết bị và cách đi dây", "Địa chỉ IP", "Tên các phần mềm"], "correct": 1, "explanation": "Sơ đồ vật lý giúp ích cho việc thi công và bảo trì." },
-          { "id": 6, "type": "mcq", "question": "Khi thiết kế mạng cho trường học, yếu tố nào cần ưu tiên?", "options": ["Màu sắc máy tính", "Khả năng quản lý tập trung và băng thông lớn", "Dùng ít dây nhất", "Không cần bảo mật"], "correct": 1, "explanation": "Trường học cần quản lý nhiều người dùng và chia sẻ tài liệu nhanh." },
-          { "id": 7, "type": "mcq", "question": "Địa chỉ IP tĩnh (Static IP) thường được gán cho thiết bị nào khi thiết kế mạng?", "options": ["Laptop của học sinh", "Máy chủ (Server)", "Điện thoại di động", "Máy tính bảng"], "correct": 1, "explanation": "Server cần địa chỉ cố định để các máy khách luôn tìm thấy." },
-          { "id": 8, "type": "mcq", "question": "Tường lửa (Firewall) được đặt ở đâu khi thiết kế mạng?", "options": ["Bên trong mỗi máy tính", "Ở ranh giới giữa mạng nội bộ và Internet", "Gần máy in", "Dưới chân bàn"], "correct": 1, "explanation": "Firewall kiểm soát dữ liệu vào ra để bảo vệ mạng." },
-          { "id": 9, "type": "mcq", "question": "Yếu tố 'Khả năng mở rộng' trong thiết kế mạng nghĩa là gì?", "options": ["Dây mạng có thể kéo dài", "Dễ dàng thêm máy tính mới mà không phải thay đổi toàn bộ hệ thống", "Màn hình có thể phóng to", "Tăng số lượng phần mềm"], "correct": 1, "explanation": "Thiết kế tốt phải lường trước sự phát triển trong tương lai." },
-          { "id": 10, "type": "mcq", "question": "Mô hình mạng nào mà mọi máy tính đều có quyền hạn ngang nhau?", "options": ["Client-Server", "Ngang hàng (P2P)", "Mạng hình sao", "Mạng phân cấp"], "correct": 1, "explanation": "Trong P2P, mỗi máy vừa là khách vừa là chủ." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Trong mô hình Client-Server, Server đóng vai trò gì?",
+            "options": [
+              "Sử dụng dịch vụ",
+              "Cung cấp tài nguyên và dịch vụ cho các Client",
+              "Chỉ để lưu trữ",
+              "Kết nối Wi-Fi"
+            ],
+            "correct": 1,
+            "explanation": "Server là máy phục vụ, Client là máy khách."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Sơ đồ mạng hình sao (Star) sử dụng thiết bị trung tâm là gì?",
+            "options": [
+              "Dây cáp trục",
+              "Switch hoặc Hub",
+              "Một máy tính bất kỳ",
+              "Chuột"
+            ],
+            "correct": 1,
+            "explanation": "Mọi máy tính kết nối về một điểm trung tâm duy nhất."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Ưu điểm của mạng hình sao là gì?",
+            "options": [
+              "Rẻ nhất",
+              "Dễ lắp đặt, nếu một máy hỏng các máy khác vẫn hoạt động bình thường",
+              "Không cần thiết bị trung tâm",
+              "Tiết kiệm dây dẫn nhất"
+            ],
+            "correct": 1,
+            "explanation": "Tính độc lập của các nhánh giúp mạng hoạt động ổn định."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Mạng ngang hàng (Peer-to-Peer) phù hợp cho?",
+            "options": [
+              "Các tập đoàn lớn",
+              "Mạng gia đình hoặc văn phòng nhỏ",
+              "Hệ thống ngân hàng",
+              "Mạng Internet quốc gia"
+            ],
+            "correct": 1,
+            "explanation": "P2P đơn giản, không cần máy chủ chuyên dụng."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Sơ đồ vật lý của mạng thể hiện điều gì?",
+            "options": [
+              "Luồng dữ liệu",
+              "Vị trí thực tế của thiết bị và cách đi dây",
+              "Địa chỉ IP",
+              "Tên các phần mềm"
+            ],
+            "correct": 1,
+            "explanation": "Sơ đồ vật lý giúp ích cho việc thi công và bảo trì."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Khi thiết kế mạng cho trường học, yếu tố nào cần ưu tiên?",
+            "options": [
+              "Màu sắc máy tính",
+              "Khả năng quản lý tập trung và băng thông lớn",
+              "Dùng ít dây nhất",
+              "Không cần bảo mật"
+            ],
+            "correct": 1,
+            "explanation": "Trường học cần quản lý nhiều người dùng và chia sẻ tài liệu nhanh."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Địa chỉ IP tĩnh (Static IP) thường được gán cho thiết bị nào khi thiết kế mạng?",
+            "options": [
+              "Laptop của học sinh",
+              "Máy chủ (Server)",
+              "Điện thoại di động",
+              "Máy tính bảng"
+            ],
+            "correct": 1,
+            "explanation": "Server cần địa chỉ cố định để các máy khách luôn tìm thấy."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Tường lửa (Firewall) được đặt ở đâu khi thiết kế mạng?",
+            "options": [
+              "Bên trong mỗi máy tính",
+              "Ở ranh giới giữa mạng nội bộ và Internet",
+              "Gần máy in",
+              "Dưới chân bàn"
+            ],
+            "correct": 1,
+            "explanation": "Firewall kiểm soát dữ liệu vào ra để bảo vệ mạng."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Yếu tố 'Khả năng mở rộng' trong thiết kế mạng nghĩa là gì?",
+            "options": [
+              "Dây mạng có thể kéo dài",
+              "Dễ dàng thêm máy tính mới mà không phải thay đổi toàn bộ hệ thống",
+              "Màn hình có thể phóng to",
+              "Tăng số lượng phần mềm"
+            ],
+            "correct": 1,
+            "explanation": "Thiết kế tốt phải lường trước sự phát triển trong tương lai."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Mô hình mạng nào mà mọi máy tính đều có quyền hạn ngang nhau?",
+            "options": [
+              "Client-Server",
+              "Ngang hàng (P2P)",
+              "Mạng hình sao",
+              "Mạng phân cấp"
+            ],
+            "correct": 1,
+            "explanation": "Trong P2P, mỗi máy vừa là khách vừa là chủ."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Sơ bộ thiết kế mạng cần xác định?",
+            "options": [
+              "Quy mô mạng",
+              "Thiết bị cần thiết",
+              "Ngân sách",
+              "Màu sắc nội thất"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cần xác định quy mô, thiết bị và ngân sách."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Mạng LAN có đặc điểm gì?",
+            "options": [
+              "Phạm vi nhỏ",
+              "Tốc độ cao",
+              "Quản lý tập trung",
+              "Phạm vi toàn cầu"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "LAN: phạm vi nhỏ, tốc độ cao, quản lý tập trung."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "IP address planning bao gồm?",
+            "options": [
+              "Phân bổ subnet",
+              "Gán IP tĩnh",
+              "DHCP pool",
+              "DNS"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "IP planning gồm subnet, IP tĩnh, DHCP pool và DNS."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Topolog. mạng星 (Star) có ưu điểm gì?",
+            "options": [
+              "Dễ mở rộng",
+              "Dễ sửa lỗi",
+              "Chi phí cao",
+              "Độ tin cậy cao"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Topolog星 dễ mở rộng, sửa lỗi và tin cậy cao."
+          }
         ]
       }
     }

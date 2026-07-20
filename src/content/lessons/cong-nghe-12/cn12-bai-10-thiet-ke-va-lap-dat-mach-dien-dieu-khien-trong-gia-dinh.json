@@ -1,0 +1,50 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12_10",
+      "name": "Thiết kế và lắp đặt mạch điện điều khiển trong gia đình",
+      "slug": "thiet-ke-va-lap-dat-mach-dien-dieu-khien-trong-gia-dinh",
+      "chapter": "Kĩ thuật điện",
+      "chapter_id": "CN12",
+      "lesson_id": 10,
+      "description": "Quy trình thiết kế mạch điện điều khiển; nguyên lý điều khiển; lựa chọn thiết bị; sơ đồ nguyên lý và sơ đồ lắp đặt; yêu cầu kĩ thuật.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thiết kế và lắp đặt mạch điện điều khiển trong gia đình",
+          "summary": "Thiết kế mạch điện điều khiển là quy trình xác định sơ đồ nguyên lý, chọn thiết bị và lập sơ đồ lắp đặt. Quy trình gồm các bước: xác định yêu cầu, vẽ sơ đồ nguyên lý, chọn thiết bị, vẽ sơ đồ lắp đặt và kiểm tra.",
+          "sections": [
+            { "heading": "Khái niệm mạch điện điều khiển", "content": "Mạch điện điều khiển là mạch dùng để đóng/ngắt, điều chỉnh hoặc bảo vệ các thiết bị điện. Gồm hai phần: mạch điều khiển (tín hiệu) và mạch động lực (tải). Ví dụ: mạch đèn cầu thang, mạch hẹn giờ, mạch cảm biến ánh sáng." },
+            { "heading": "Quy trình thiết kế mạch điện điều khiển", "content": "Bước 1: Xác định yêu cầu (tải, vị trí lắp đặt, chức năng điều khiển). Bước 2: Vẽ sơ đồ nguyên lý (mạch điều khiển + mạch động lực). Bước 3: Lựa chọn thiết bị (CB, công tắc, rơle, cảm biến). Bước 4: Vẽ sơ đồ lắp đặt (bố trí thiết bị trên bảng điện). Bước 5: Kiểm tra và hiệu chỉnh." },
+            { "heading": "Nguyên lý điều khiển cơ bản", "content": "Nguyên lý điều khiển dựa trên tín hiệu đầu vào (công tắc, cảm biến, timer) tác động lên bộ xử lí (rơle, PLC, vi điều khiển) để điều khiển tải (đèn, quạt, máy bơm). Các phương pháp: điều khiển trực tiếp (công tắc đóng cắt tải), điều khiển gián tiếp (dùng rơle trung gian), điều khiển tự động (cảm biến + bộ điều khiển)." },
+            { "heading": "Sơ đồ nguyên lý mạch điện điều khiển", "content": "Sơ đồ nguyên lý thể hiện mối quan hệ điện giữa các phần tử, không thể hiện vị trí lắp đặt. Kí hiệu các thiết bị theo tiêu chuẩn IEC/TCVN. Ví dụ: sơ đồ mạch đèn cầu thang dùng 2 công tắc 3 chiều; sơ đồ mạch đèn tự động dùng cảm biến ánh sáng và rơle." },
+            { "heading": "Sơ đồ lắp đặt (sơ đồ đấu dây)", "content": "Sơ đồ lắp đặt thể hiện vị trí thực tế của các thiết bị trên bảng điện, tường, trần nhà và đường đi dây dẫn. Yêu cầu: rõ ràng, đúng kí hiệu, thể hiện được đường dây pha (L), dây trung tính (N) và dây tiếp đất (PE). Sơ đồ lắp đặt giúp thợ điện thi công chính xác." },
+            { "heading": "Lựa chọn thiết bị cho mạch điều khiển", "content": "Căn cứ vào: điện áp nguồn (220V/380V), công suất tải, môi trường lắp đặt, chức năng điều khiển. Ví dụ: mạch đèn cầu thang cần 2 công tắc 3 chiều; mạch máy bơm cần CB + contactor + rơle nhiệt; mạch tự động cần cảm biến + bộ điều khiển + nguồn nuôi." },
+            { "heading": "Yêu cầu kĩ thuật của mạch điện điều khiển", "content": "Đảm bảo an toàn điện (cách điện tốt, nối đất thiết bị); đảm bảo độ tin cậy (tiếp xúc chắc chắn, không phát nhiệt quá mức); dễ dàng vận hành và bảo trì; mĩ quan (đi dây gọn gàng, bảng điện bố trí hợp lí); đúng tiêu chuẩn kĩ thuật (TCVN 7447, IEC 60364)." },
+            { "heading": "Ví dụ thiết kế mạch điện điều khiển", "content": "Ví dụ: thiết kế mạch đèn tự động bật khi trời tối. Sơ đồ nguyên lí: cảm biến quang trở → bộ so sánh LM393 → rơle → đèn. Sơ đồ lắp đặt: cảm biến đặt ngoài trời, bộ điều khiển đặt trong nhà, đèn lắp trên trần. Chọn CB 6A, dây dẫn 1.5mm², rơle 12VDC." }
+          ]
+        },
+        "exercises": [
+          { "id": 1, "type": "mcq", "question": "Bước đầu tiên trong quy trình thiết kế mạch điện điều khiển là gì?", "options": ["Vẽ sơ đồ lắp đặt", "Xác định yêu cầu", "Lựa chọn thiết bị", "Kiểm tra mạch"], "correct": 1, "explanation": "Xác định yêu cầu (tải, vị trí, chức năng) là bước đầu tiên để định hướng thiết kế." },
+          { "id": 2, "type": "mcq", "question": "Sơ đồ nguyên lý mạch điện thể hiện điều gì?", "options": ["Vị trí lắp đặt thiết bị", "Mối quan hệ điện giữa các phần tử", "Đường đi dây thực tế", "Kích thước bảng điện"], "correct": 1, "explanation": "Sơ đồ nguyên lý thể hiện mối quan hệ điện giữa các phần tử, không thể hiện vị trí lắp đặt." },
+          { "id": 3, "type": "mcq", "question": "Sơ đồ lắp đặt khác sơ đồ nguyên lý ở điểm nào?", "options": ["Thể hiện vị trí thực tế của thiết bị", "Thể hiện mối quan hệ điện", "Không có kí hiệu thiết bị", "Chỉ dùng cho mạch 1 pha"], "correct": 0, "explanation": "Sơ đồ lắp đặt thể hiện vị trí thực tế của thiết bị trên bảng điện, tường, trần nhà." },
+          { "id": 4, "type": "mcq", "question": "Trong mạch điều khiển gián tiếp, bộ phận nào thực hiện đóng cắt tải?", "options": ["Cảm biến", "Rơle trung gian", "Công tắc", "Nút nhấn"], "correct": 1, "explanation": "Rơle trung gian nhận tín hiệu điều khiển và đóng cắt tải có công suất lớn hơn." },
+          { "id": 5, "type": "mcq", "question": "Khi thiết kế mạch đèn cầu thang dùng 2 công tắc 3 chiều, số dây dẫn tối thiểu giữa hai công tắc là bao nhiêu?", "options": ["1 dây", "2 dây", "3 dây", "4 dây"], "correct": 1, "explanation": "Hai công tắc 3 chiều nối với nhau bằng 2 dây (dây nối giữa các tiếp điểm động)." },
+          { "id": 6, "type": "mcq", "question": "Trong mạch điều khiển tự động, bộ phận nào có chức năng thu nhận tín hiệu từ môi trường?", "options": ["Rơle", "Cảm biến", "Contactor", "CB"], "correct": 1, "explanation": "Cảm biến thu nhận tín hiệu vật lí (ánh sáng, nhiệt độ, chuyển động) và chuyển thành tín hiệu điện." },
+          { "id": 7, "type": "mcq", "question": "Khi chọn dây dẫn cho mạch điện điều khiển, yếu tố nào quan trọng nhất?", "options": ["Màu sắc dây", "Tiết diện dây phù hợp dòng tải", "Chiều dài dây", "Thương hiệu"], "correct": 1, "explanation": "Tiết diện dây phải đủ lớn để chịu được dòng điện tải, tránh phát nhiệt quá mức." },
+          { "id": 8, "type": "mcq", "question": "Trong sơ đồ lắp đặt, kí hiệu dây pha thường dùng màu gì?", "options": ["Xanh dương", "Đen hoặc nâu", "Xanh lục", "Trắng"], "correct": 1, "explanation": "Dây pha (L) thường có màu đen, nâu hoặc đỏ; dây trung tính (N) màu xanh dương; dây tiếp đất (PE) màu xanh lục-vàng." },
+          { "id": 9, "type": "mcq", "question": "Rơle nhiệt (thermal relay) có chức năng gì trong mạch điều khiển?", "options": ["Đóng cắt tải nhanh", "Bảo vệ quá tải cho động cơ", "Chống dòng rò", "Điều khiển từ xa"], "correct": 1, "explanation": "Rơle nhiệt bảo vệ động cơ khỏi quá tải bằng cách ngắt mạch khi dòng điện vượt ngưỡng trong thời gian dài." },
+          { "id": 10, "type": "mcq", "question": "Sau khi vẽ sơ đồ lắp đặt, bước cuối cùng trong quy trình thiết kế là gì?", "options": ["Thi công lắp đặt", "Kiểm tra và hiệu chỉnh", "Mua thiết bị", "Báo giá"], "correct": 1, "explanation": "Kiểm tra và hiệu chỉnh đảm bảo mạch hoạt động đúng yêu cầu, an toàn trước khi đưa vào sử dụng." },
+          { "id": 11, "type": "msq", "question": "Những bước nào thuộc quy trình thiết kế mạch điện điều khiển?", "options": ["Xác định yêu cầu", "Vẽ sơ đồ nguyên lý", "Thi công lắp đặt", "Lựa chọn thiết bị"], "correct": [0, 1, 3], "explanation": "Quy trình gồm: xác định yêu cầu, vẽ sơ đồ nguyên lý, lựa chọn thiết bị, vẽ sơ đồ lắp đặt, kiểm tra." },
+          { "id": 12, "type": "msq", "question": "Những yếu tố nào cần xác định ở bước đầu tiên của quy trình thiết kế mạch điện điều khiển?", "options": ["Loại tải (đèn, quạt, máy bơm)", "Vị trí lắp đặt", "Giá thành thiết bị", "Chức năng điều khiển"], "correct": [0, 1, 3], "explanation": "Cần xác định loại tải, vị trí lắp đặt và chức năng điều khiển trước khi thiết kế." },
+          { "id": 13, "type": "msq", "question": "Sơ đồ lắp đặt mạch điện cần thể hiện những thông tin nào?", "options": ["Vị trí lắp đặt thiết bị", "Đường đi dây dẫn", "Kí hiệu các phần tử", "Giá thành thiết bị"], "correct": [0, 1, 2], "explanation": "Sơ đồ lắp đặt thể hiện vị trí, đường dây và kí hiệu thiết bị, không thể hiện giá thành." },
+          { "id": 14, "type": "msq", "question": "Những yêu cầu kĩ thuật nào cần đảm bảo khi lắp đặt mạch điện điều khiển?", "options": ["An toàn điện (cách điện, nối đất)", "Độ tin cậy (tiếp xúc chắc chắn)", "Mĩ quan (đi dây gọn gàng)", "Sử dụng thiết bị đắt tiền nhất"], "correct": [0, 1, 2], "explanation": "An toàn, độ tin cậy và mĩ quan là ba yêu cầu kĩ thuật cốt lõi khi lắp đặt mạch điện." }
+        ]
+      }
+    }
+  ]
+}

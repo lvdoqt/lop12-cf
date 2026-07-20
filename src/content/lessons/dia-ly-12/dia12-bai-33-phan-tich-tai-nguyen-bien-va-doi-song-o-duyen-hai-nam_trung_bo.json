@@ -4,36 +4,269 @@
   "lessons": [
     {
       "id": "dia12_33",
-      "name": "Phân tích tài nguyên biển và đời sống của cư dân ven biển Nam Trung bộ",
+      "name": "Phát triển kinh tế và đảm bảo an ninh quốc phòng ở Biển Đông và các đảo, quần đảo",
       "slug": "phan-tich-tai-nguyen-bien-va-doi-song-o-duyen-hai-nam_trung_bo",
       "chapter": "Địa lí các vùng kinh tế",
       "chapter_id": "dia12_part4",
       "lesson_id": 33,
-      "description": "Nghiên cứu hệ tài nguyên biển (thuỷ sản, rạn san hô, muối, tảo) và mối quan hệ giữa tài nguyên biển với sinh kế cộng đồng ven biển ở Nam Trung bộ.",
+      "description": "Vị trí và tài nguyên Biển Đông, ý nghĩa chiến lược của biển đảo đối với phát triển kinh tế và an ninh quốc phòng, khai thác tổng hợp gắn với bảo vệ chủ quyền Hoàng Sa và Trường Sa.",
       "duration_minutes": 60,
       "difficulty_level": "trung bình",
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Tài nguyên biển và sinh kế địa phương",
-          "summary": "Tài nguyên biển cung cấp nguồn lợi thuỷ sản, vật liệu và du lịch; quản lý bền vững là cần thiết để duy trì sinh kế lâu dài cho cộng đồng ven biển.",
+          "title": "Phát triển kinh tế và đảm bảo an ninh quốc phòng ở Biển Đông và các đảo, quần đảo",
+          "summary": "Biển Đông có vị trí địa lí, giao thông và quân sự chiến lược đặc biệt, giàu tài nguyên hải sản, dầu khí, khoáng sản và du lịch. Phát triển kinh tế biển cần gắn liền với đảm bảo an ninh quốc phòng, bảo vệ vững chắc chủ quyền hai quần đảo Hoàng Sa và Trường Sa.",
           "sections": [
-            { "heading": "Các nguồn tài nguyên", "content": "Thủy sản, rạn san hô, muối biển, tảo biển và nguồn năng lượng biển như gió và sóng." },
-            { "heading": "Sinh kế", "content": "Ngư nghiệp, nghề nuôi trồng thủy sản, du lịch cộng đồng và dịch vụ ven biển." }
+            {
+              "heading": "Vị trí và ý nghĩa chiến lược của Biển Đông",
+              "content": "Biển Đông là biển nửa kín lớn ở khu vực Đông Nam Á, nằm trên trục giao thông hàng hải quốc tế nối Thái Bình Dương với Ấn Độ Dương qua eo Malacca. Vị trí này mang ý nghĩa chiến lược về kinh tế, giao thông và quân sự, là cầu nối giữa các nước trong khu vực và thế giới. Biển Đông còn giáp với nhiều quốc gia, tạo điều kiện giao lưu kinh tế, văn hóa và hợp tác quốc tế, đồng thời là không gian sinh tồn và phát triển của Việt Nam."
+            },
+            {
+              "heading": "Tài nguyên Biển Đông",
+              "content": "Biển Đông giàu tài nguyên: hải sản với các ngư trường lớn (Hoàng Sa, Trường Sa), dầu khí tập trung ở các bể trầm tích thềm lục địa, khoáng sản biển và vật liệu xây dựng, tài nguyên du lịch với nhiều bãi biển, vịnh, đảo và quần đảo, cùng tiềm năng năng lượng tái tạo (gió, sóng, mặt trời). Các đảo và quần đảo có vị trí quan trọng trong bảo vệ chủ quyền và phát triển kinh tế biển."
+            },
+            {
+              "heading": "Phát triển kinh tế biển gắn với an ninh quốc phòng",
+              "content": "Khai thác tổng hợp, hiệu quả tài nguyên biển cần gắn chặt với bảo vệ an ninh quốc phòng và chủ quyền lãnh thải. Các hoạt động kinh tế (khai thác hải sản, dịch vụ hàng hải, du lịch, dầu khí) vừa mang lại lợi ích kinh tế vừa góp phần khẳng định và bảo vệ chủ quyền. Sự hiện diện của người dân, ngư dân và lực lượng chức năng trên biển là yếu tố quan trọng giữ gìn an ninh, trật tự và chủ quyền quốc gia trên biển."
+            },
+            {
+              "heading": "Bảo vệ chủ quyền Hoàng Sa và Trường Sa",
+              "content": "Hai quần đảo Hoàng Sa và Trường Sa là bộ phận không thể tách rời của lãnh thổ Việt Nam, có đầy đủ bằng chứng pháp lý và lịch sử. Việt Nam đã xác lập và thực thi chủ quyền một cách hòa bình, liên tục từ thế kỷ XVII qua các đội Hoàng Sa, Bắc Hải, được các nhà nước kế tiếp bảo vệ. Hiện nay huyện đảo Hoàng Sa thuộc TP. Đà Nẵng, huyện đảo Trường Sa thuộc tỉnh Khánh Hòa; việc bảo vệ chủ quyền là nhiệm vụ thiêng liêng của toàn dân tộc."
+            },
+            {
+              "heading": "Định hướng phát triển bền vững và hợp tác",
+              "content": "Chiến lược phát triển kinh tế biển bền vững kết hợp chặt chẽ với tăng cường tiềm lực quốc phòng, an ninh; xây dựng thế trận quốc phòng toàn dân gắn với thế trận an ninh nhân dân trên biển. Việt Nam chủ trương giải quyết tranh chấp bằng biện pháp hòa bình trên cơ sở luật pháp quốc tế, nhất là Công ước Luật biển UNCLOS 1982, đồng thời mở rộng hợp tác quốc tế để cùng phát triển và giữ gìn hòa bình, ổn định ở Biển Đông."
+            }
           ]
         },
-        "exercises": { "fieldwork": [ { "q": "Ghi chép 5 loài thủy sản quan trọng địa phương và cách khai thác bền vững.", "a_hint": "Tìm hiểu thời vụ, công cụ khai thác và quy định bảo vệ." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Một nguồn tài nguyên biển là?", "options": ["Thuỷ sản","Than đá nội địa","Lâm nghiệp","Không có gì"], "correct": 0, "explanation": "Thuỷ sản là nguồn tài nguyên biển quan trọng." },
-          { "id": 2, "type": "mcq", "question": "Rạn san hô quan trọng vì?", "options": ["Hỗ trợ đa dạng sinh học và ngư nghiệp","Không quan trọng","Làm ô nhiễm","Giúp giảm nuôi trồng"], "correct": 0, "explanation": "Rạn san hô là môi trường sống của nhiều loài và hỗ trợ ngư nghiệp." },
-          { "id": 3, "type": "mcq", "question": "Một phương thức khai thác bền vững thủy sản là?", "options": ["Hạn chế khai thác mùa sinh sản và dùng ngư cụ chọn lọc","Khai thác ồ ạt","Không sử dụng quy định","Dùng chất nổ"], "correct": 0, "explanation": "Hạn chế khai thác mùa sinh sản giúp bảo tồn nguồn lợi." },
-          { "id": 4, "type": "mcq", "question": "Tài nguyên biển hỗ trợ sinh kế bằng cách?", "options": ["Cung cấp nguồn thực phẩm, thu nhập và dịch vụ du lịch","Làm giảm cơ hội nghề nghiệp","Không hỗ trợ gì","Tạo độc lập hoàn toàn"], "correct": 0, "explanation": "Tài nguyên biển đóng góp đa dạng cho sinh kế ven biển." },
-          { "id": 5, "type": "mcq", "question": "Một rủi ro ảnh hưởng đến tài nguyên biển là?", "options": ["Biến đổi khí hậu và ô nhiễm","Tăng đa dạng sinh học","Ổn định nguồn lợi","Không có rủi ro"], "correct": 0, "explanation": "Biến đổi khí hậu và ô nhiễm làm suy giảm tài nguyên biển." },
-          { "id": 6, "type": "mcq", "question": "Biện pháp bảo vệ rạn san hô là?", "options": ["Thiết lập vùng bảo tồn và hạn chế du lịch không kiểm soát","Xây dựng bến du thuyền lớn trong rạn","Không làm gì","Khai thác san hô"], "correct": 0, "explanation": "Vùng bảo tồn giúp phục hồi và bảo vệ rạn san hô." },
-          { "id": 7, "type": "mcq", "question": "Nuôi trồng thủy sản bền vững cần?", "options": ["Quản lý thức ăn, mật độ và kiểm soát dịch bệnh","Không quản lý","Cho phép mọi thứ","Sử dụng hóa chất độc hại"], "correct": 0, "explanation": "Quản lý tốt giúp giảm tác động môi trường và tăng năng suất bền vững." },
-          { "id": 8, "type": "mcq", "question": "Du lịch cộng đồng giúp?", "options": ["Tăng thu nhập cho cư dân và khuyến khích bảo tồn môi trường","Giảm lợi ích địa phương","Làm tổn hại hoàn toàn","Không liên quan"], "correct": 0, "explanation": "Du lịch cộng đồng kết hợp bảo tồn và kinh tế địa phương." },
-          { "id": 9, "type": "mcq", "question": "Một chỉ tiêu để đánh giá trạng thái nguồn lợi biển là?", "options": ["Sản lượng đánh bắt so với ngư trường và thời vụ sinh sản","Số lượng khách du lịch","Độ dài bờ biển","Không có chỉ tiêu"], "correct": 0, "explanation": "Sản lượng đánh bắt kết hợp yếu tố sinh sản giúp đánh giá bền vững." },
-          { "id": 10, "type": "mcq", "question": "Quản lý bền vững nguồn lợi biển cần sự tham gia của?", "options": ["Chính quyền, ngư dân, nhà khoa học và tổ chức xã hội","Chỉ doanh nghiệp","Chỉ khách du lịch","Không cần ai"], "correct": 0, "explanation": "Sự tham gia đa bên đảm bảo giải pháp phù hợp và khả thi." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Một nguồn tài nguyên biển là?",
+            "options": [
+              "Thuỷ sản",
+              "Than đá nội địa",
+              "Lâm nghiệp",
+              "Không có gì"
+            ],
+            "correct": 0,
+            "explanation": "Thuỷ sản là nguồn tài nguyên biển quan trọng."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Rạn san hô quan trọng vì?",
+            "options": [
+              "Hỗ trợ đa dạng sinh học và ngư nghiệp",
+              "Không quan trọng",
+              "Làm ô nhiễm",
+              "Giúp giảm nuôi trồng"
+            ],
+            "correct": 0,
+            "explanation": "Rạn san hô là môi trường sống của nhiều loài và hỗ trợ ngư nghiệp."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Một phương thức khai thác bền vững thủy sản là?",
+            "options": [
+              "Hạn chế khai thác mùa sinh sản và dùng ngư cụ chọn lọc",
+              "Khai thác ồ ạt",
+              "Không sử dụng quy định",
+              "Dùng chất nổ"
+            ],
+            "correct": 0,
+            "explanation": "Hạn chế khai thác mùa sinh sản giúp bảo tồn nguồn lợi."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Tài nguyên biển hỗ trợ sinh kế bằng cách?",
+            "options": [
+              "Cung cấp nguồn thực phẩm, thu nhập và dịch vụ du lịch",
+              "Làm giảm cơ hội nghề nghiệp",
+              "Không hỗ trợ gì",
+              "Tạo độc lập hoàn toàn"
+            ],
+            "correct": 0,
+            "explanation": "Tài nguyên biển đóng góp đa dạng cho sinh kế ven biển."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Một rủi ro ảnh hưởng đến tài nguyên biển là?",
+            "options": [
+              "Biến đổi khí hậu và ô nhiễm",
+              "Tăng đa dạng sinh học",
+              "Ổn định nguồn lợi",
+              "Không có rủi ro"
+            ],
+            "correct": 0,
+            "explanation": "Biến đổi khí hậu và ô nhiễm làm suy giảm tài nguyên biển."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Biện pháp bảo vệ rạn san hô là?",
+            "options": [
+              "Thiết lập vùng bảo tồn và hạn chế du lịch không kiểm soát",
+              "Xây dựng bến du thuyền lớn trong rạn",
+              "Không làm gì",
+              "Khai thác san hô"
+            ],
+            "correct": 0,
+            "explanation": "Vùng bảo tồn giúp phục hồi và bảo vệ rạn san hô."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Nuôi trồng thủy sản bền vững cần?",
+            "options": [
+              "Quản lý thức ăn, mật độ và kiểm soát dịch bệnh",
+              "Không quản lý",
+              "Cho phép mọi thứ",
+              "Sử dụng hóa chất độc hại"
+            ],
+            "correct": 0,
+            "explanation": "Quản lý tốt giúp giảm tác động môi trường và tăng năng suất bền vững."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Du lịch cộng đồng giúp?",
+            "options": [
+              "Tăng thu nhập cho cư dân và khuyến khích bảo tồn môi trường",
+              "Giảm lợi ích địa phương",
+              "Làm tổn hại hoàn toàn",
+              "Không liên quan"
+            ],
+            "correct": 0,
+            "explanation": "Du lịch cộng đồng kết hợp bảo tồn và kinh tế địa phương."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Một chỉ tiêu để đánh giá trạng thái nguồn lợi biển là?",
+            "options": [
+              "Sản lượng đánh bắt so với ngư trường và thời vụ sinh sản",
+              "Số lượng khách du lịch",
+              "Độ dài bờ biển",
+              "Không có chỉ tiêu"
+            ],
+            "correct": 0,
+            "explanation": "Sản lượng đánh bắt kết hợp yếu tố sinh sản giúp đánh giá bền vững."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Quản lý bền vững nguồn lợi biển cần sự tham gia của?",
+            "options": [
+              "Chính quyền, ngư dân, nhà khoa học và tổ chức xã hội",
+              "Chỉ doanh nghiệp",
+              "Chỉ khách du lịch",
+              "Không cần ai"
+            ],
+            "correct": 0,
+            "explanation": "Sự tham gia đa bên đảm bảo giải pháp phù hợp và khả thi."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Tài nguyên biển chính ở duyên hải Nam Trung Bộ?",
+            "options": [
+              "Hải sản",
+              "Dầu khí",
+              "Muối",
+              "Rừng ngập mặn"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Hải sản, dầu khí và muối là tài nguyên biển chính."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Các ngành kinh tế biển phát triển ở vùng?",
+            "options": [
+              "Khai thác hải sản",
+              "Du lịch biển",
+              "Cảng biển",
+              "Trồng lúa"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Khai thác hải sản, du lịch biển và cảng biển là ngành kinh tế biển."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Tác động của biến đổi khí hậu đến đời sống ven biển?",
+            "options": [
+              "Nước biển dâng",
+              "Xâm nhập mặn",
+              "Gia tăng bão lũ",
+              "Tăng diện tích đất"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Nước biển dâng, xâm nhập mặn và bão lũ là tác động của biến đổi khí hậu."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Các biện pháp bảo vệ tài nguyên biển?",
+            "options": [
+              "Quy hoạch khai thác hợp lý",
+              "Bảo tồn đa dạng sinh học biển",
+              "Kiểm soát ô nhiễm",
+              "Khai thác tận diệt"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Quy hoạch, bảo tồn và kiểm soát ô nhiễm là biện pháp bảo vệ."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Kể tên một nguồn tài nguyên biển quan trọng ở Nam Trung Bộ?",
+            "correct": "Hải sản, dầu khí, muối",
+            "explanation": "Hải sản, dầu khí và muối là tài nguyên biển quan trọng."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Tác động của biến đổi khí hậu đến vùng ven biển?",
+            "correct": "Nước biển dâng, xâm nhập mặn, gia tăng bão lũ",
+            "explanation": "Biến đổi khí hậu gây nước biển dâng, xâm nhập mặn và bão lũ."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Một giải pháp bảo vệ tài nguyên biển?",
+            "correct": "Quy hoạch khai thác hợp lý, bảo tồn hệ sinh thái biển",
+            "explanation": "Quy hoạch khai thác và bảo tồn hệ sinh thái là giải pháp bảo vệ."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Ghi chép 5 loài thủy sản quan trọng địa phương và cách khai thác bền vững.",
+            "correct": "Tìm hiểu thời vụ, công cụ khai thác và quy định bảo vệ.",
+            "explanation": "Tìm hiểu thời vụ, công cụ khai thác và quy định bảo vệ."
+          }
         ]
       }
     }

@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-3-6-noi-va-nghe",
-      "name": "Nói và nghe: Thuyết trình về một vấn đề liên quan đến tuổi trẻ",
-      "slug": "noi-va-nghe-thuyet-trinh-tuoi-tre",
+      "id": "van12-bai-3-6-thuyet-trinh-tuoi-tre",
+      "name": "Thuyết trình về một vấn đề liên quan đến tuổi trẻ",
+      "slug": "thuyet-trinh-tuoi-tre",
       "chapter": "Lập luận trong văn bản nghị luận",
       "chapter_id": "V12-3",
       "lesson_id": 6,
-      "description": "Phát triển kỹ năng nói và nghe để thuyết trình, trình bày quan điểm về các vấn đề liên quan đến tuổi trẻ một cách thuyết phục.",
+      "description": "Hướng dẫn thuyết trình về vấn đề liên quan đến tuổi trẻ.",
       "duration_minutes": 50,
       "difficulty_level": "medium",
       "is_published": true,
@@ -30,7 +30,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Nói và nghe: Thuyết trình về vấn đề liên quan đến tuổi trẻ",
+          "title": "Thuyết trình về vấn đề liên quan đến tuổi trẻ",
           "sections": [
             {
               "heading": "1. Kỹ năng chuẩn bị bài thuyết trình",
@@ -58,143 +58,140 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex3-6-1",
-              "type": "mcq",
-              "question": "Trong bài thuyết trình, phần nào chiếm thời gian dài nhất?",
-              "options": [
-                "Mở đầu (1-2 phút)",
-                "Phần chính (7-10 phút)",
-                "Kết luận (1-2 phút)",
-                "Phần hỏi đáp"
-              ],
-              "correct": 1,
-              "explanation": "Phần chính chiếm thời gian dài nhất (7-10 phút) vì đây là phần trình bày 3-4 ý chính với giải thích, ví dụ và dẫn chứng chi tiết."
-            },
-            {
-              "id": "ex3-6-2",
-              "type": "mcq",
-              "question": "Kỹ năng giọng nói nào giúp nhấn mạnh những ý quan trọng trong thuyết trình?",
-              "options": [
-                "Nói to hơn hoặc chậm hơn",
-                "Nói nhanh liên tục",
-                "Nói nhỏ và thì thầm",
-                "Nói một mực không thay đổi"
-              ],
-              "correct": 0,
-              "explanation": "Để nhấn mạnh ý quan trọng, người thuyết trình nên nói to hơn hoặc chậm hơn, giúp khán giả chú ý và ghi nhớ những điểm chính."
-            },
-            {
-              "id": "ex3-6-3",
-              "type": "mcq",
-              "question": "Trong ngôn ngữ cơ thể, tại sao liên hệ mắt với khán giả lại quan trọng?",
-              "options": [
-                "Để tránh nhìn vào giấy tờ",
-                "Để tạo sự kết nối với khán giả",
-                "Để kiểm tra xem ai đang ngủ",
-                "Để thể hiện sự tự tin thái quá"
-              ],
-              "correct": 1,
-              "explanation": "Liên hệ mắt tạo sự kết nối với khán giả, giúp họ cảm thấy được chú ý và tăng tính thuyết phục của bài thuyết trình."
-            },
-            {
-              "id": "ex3-6-4",
-              "type": "mcq",
-              "question": "Chiến lược lắng nghe nào giúp xác định những điểm chính của bài thuyết trình?",
-              "options": [
-                "Dự đoán nội dung trước khi nghe",
-                "Xác định luận điểm chính khi nghe",
-                "Theo dõi dẫn chứng được nêu",
-                "Tất cả các đáp án trên"
-              ],
-              "correct": 3,
-              "explanation": "Tất cả các chiến lược này đều quan trọng: dự đoán nội dung giúp chuẩn bị, xác định luận điểm giúp nắm bắt ý chính, theo dõi dẫn chứng giúp đánh giá tính thuyết phục."
-            },
-            {
-              "id": "ex3-6-5",
-              "type": "mcq",
-              "question": "Loại câu hỏi nào yêu cầu câu trả lời dài và chi tiết?",
-              "options": [
-                "Câu hỏi đóng (Closed-ended)",
-                "Câu hỏi mở (Open-ended)",
-                "Câu hỏi tuân thủ (Follow-up)",
-                "Câu hỏi có/không"
-              ],
-              "correct": 1,
-              "explanation": "Câu hỏi mở như 'Bạn có thể giải thích thêm về...?' yêu cầu câu trả lời dài, chi tiết, giúp hiểu sâu hơn về vấn đề."
-            },
-            {
-              "id": "ex3-6-6",
-              "type": "mcq",
-              "question": "Lỗi nào sau đây thuộc về lỗi chuẩn bị trong thuyết trình?",
-              "options": [
-                "Nói quá nhanh hoặc quá chậm",
-                "Không kiểm tra hoặc luyện tập trước",
-                "Đứng không tự tin, co vai",
-                "Nội dung không rõ ràng"
-              ],
-              "correct": 1,
-              "explanation": "Không kiểm tra hoặc luyện tập trước là lỗi chuẩn bị. Các lỗi khác thuộc về diễn đạt, ngôn ngữ cơ thể, và nội dung."
-            },
-            {
-              "id": "ex3-6-7",
-              "type": "mcq",
-              "question": "Khi phát biểu ý kiến không hoàn toàn đồng ý, nên sử dụng cách nào?",
-              "options": [
-                "Phản đối trực tiếp và gay gắt",
-                "Im lặng không nói gì",
-                "'Tôi đồng ý một phần, nhưng...'",
-                "Chỉ trích người nói"
-              ],
-              "correct": 2,
-              "explanation": "Cách phát biểu 'Tôi đồng ý một phần, nhưng...' thể hiện sự tôn trọng người nói trong khi vẫn bày tỏ quan điểm khác biệt một cách lịch sự."
-            },
-            {
-              "id": "ex3-6-8",
-              "type": "mcq",
-              "question": "Trong quá trình chuẩn bị bài thuyết trình, bước nào nên thực hiện cuối cùng?",
-              "options": [
-                "Lựa chọn chủ đề",
-                "Xây dựng outline",
-                "Luyện tập nhiều lần",
-                "Chuẩn bị tài liệu, slide"
-              ],
-              "correct": 3,
-              "explanation": "Chuẩn bị tài liệu, slide nên thực hiện cuối cùng (bước 6) sau khi đã luyện tập, để đảm bảo tài liệu phù hợp với nội dung đã hoàn thiện."
-            },
-            {
-              "id": "ex6-1",
-              "question": "Chọn một vấn đề liên quan đến tuổi trẻ và xây dựng outline cho bài thuyết trình 10 phút về vấn đề này.",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Outline nên bao gồm: (1) Mở bài, (2) 3-4 ý chính, (3) Kết luận. Mỗi ý nên có giải thích và dẫn chứng cụ thể."
-            },
-            {
-              "id": "ex6-2",
-              "question": "Hãy nêu những kỹ năng giọng nói cần thiết cho một bài thuyết trình hiệu quả.",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Kỹ năng giọng nói: độ to nhỏ phù hợp, tốc độ vừa phải, thay đổi tông điệu, phát âm rõ ràng, biết cách tạm dừng."
-            },
-            {
-              "id": "ex6-3",
-              "question": "Thuyết trình về một vấn đề liên quan đến tuổi trẻ trong 3-5 phút trước lớp. Sau đó, lớp sẽ đặt câu hỏi, phát biểu ý kiến.",
-              "type": "essay",
-              "difficulty": "hard",
-              "answer_guide": "Học sinh nên: (1) Chuẩn bị outline rõ ràng, (2) Luyện tập trước, (3) Nói rõ, tự tin, (4) Sử dụng cử chỉ tay, liên hệ mắt, (5) Trả lời câu hỏi hỏi t lịch sự."
-            },
-            {
-              "id": "ex6-4",
-              "question": "Lắng nghe bài thuyết trình của bạn cùng lớp và đặt 2-3 câu hỏi theo hình thức: 1 câu hỏi mở, 1 câu hỏi tuân thủ, 1 phát biểu ý kiến.",
-              "type": "essay",
-              "difficulty": "hard",
-              "answer_guide": "Câu hỏi nên rõ ràng, lịch sự, liên quan đến nội dung bài thuyết trình. Phát biểu ý kiến nên thể hiện sự tôn trọng người nói. Nên ghi chú những ý chính khi lắng nghe."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex3-6-1",
+            "type": "mcq",
+            "question": "Trong bài thuyết trình, phần nào chiếm thời gian dài nhất?",
+            "options": [
+              "Mở đầu (1-2 phút)",
+              "Phần chính (7-10 phút)",
+              "Kết luận (1-2 phút)",
+              "Phần hỏi đáp"
+            ],
+            "correct": 1,
+            "explanation": "Phần chính chiếm thời gian dài nhất (7-10 phút) vì đây là phần trình bày 3-4 ý chính với giải thích, ví dụ và dẫn chứng chi tiết."
+          },
+          {
+            "id": "ex3-6-2",
+            "type": "mcq",
+            "question": "Kỹ năng giọng nói nào giúp nhấn mạnh những ý quan trọng trong thuyết trình?",
+            "options": [
+              "Nói to hơn hoặc chậm hơn",
+              "Nói nhanh liên tục",
+              "Nói nhỏ và thì thầm",
+              "Nói một mực không thay đổi"
+            ],
+            "correct": 0,
+            "explanation": "Để nhấn mạnh ý quan trọng, người thuyết trình nên nói to hơn hoặc chậm hơn, giúp khán giả chú ý và ghi nhớ những điểm chính."
+          },
+          {
+            "id": "ex3-6-3",
+            "type": "mcq",
+            "question": "Trong ngôn ngữ cơ thể, tại sao liên hệ mắt với khán giả lại quan trọng?",
+            "options": [
+              "Để tránh nhìn vào giấy tờ",
+              "Để tạo sự kết nối với khán giả",
+              "Để kiểm tra xem ai đang ngủ",
+              "Để thể hiện sự tự tin thái quá"
+            ],
+            "correct": 1,
+            "explanation": "Liên hệ mắt tạo sự kết nối với khán giả, giúp họ cảm thấy được chú ý và tăng tính thuyết phục của bài thuyết trình."
+          },
+          {
+            "id": "ex3-6-4",
+            "type": "mcq",
+            "question": "Chiến lược lắng nghe nào giúp xác định những điểm chính của bài thuyết trình?",
+            "options": [
+              "Dự đoán nội dung trước khi nghe",
+              "Xác định luận điểm chính khi nghe",
+              "Theo dõi dẫn chứng được nêu",
+              "Tất cả các đáp án trên"
+            ],
+            "correct": 3,
+            "explanation": "Tất cả các chiến lược này đều quan trọng: dự đoán nội dung giúp chuẩn bị, xác định luận điểm giúp nắm bắt ý chính, theo dõi dẫn chứng giúp đánh giá tính thuyết phục."
+          },
+          {
+            "id": "ex3-6-5",
+            "type": "mcq",
+            "question": "Loại câu hỏi nào yêu cầu câu trả lời dài và chi tiết?",
+            "options": [
+              "Câu hỏi đóng (Closed-ended)",
+              "Câu hỏi mở (Open-ended)",
+              "Câu hỏi tuân thủ (Follow-up)",
+              "Câu hỏi có/không"
+            ],
+            "correct": 1,
+            "explanation": "Câu hỏi mở như 'Bạn có thể giải thích thêm về...?' yêu cầu câu trả lời dài, chi tiết, giúp hiểu sâu hơn về vấn đề."
+          },
+          {
+            "id": "ex3-6-6",
+            "type": "mcq",
+            "question": "Lỗi nào sau đây thuộc về lỗi chuẩn bị trong thuyết trình?",
+            "options": [
+              "Nói quá nhanh hoặc quá chậm",
+              "Không kiểm tra hoặc luyện tập trước",
+              "Đứng không tự tin, co vai",
+              "Nội dung không rõ ràng"
+            ],
+            "correct": 1,
+            "explanation": "Không kiểm tra hoặc luyện tập trước là lỗi chuẩn bị. Các lỗi khác thuộc về diễn đạt, ngôn ngữ cơ thể, và nội dung."
+          },
+          {
+            "id": "ex3-6-7",
+            "type": "mcq",
+            "question": "Khi phát biểu ý kiến không hoàn toàn đồng ý, nên sử dụng cách nào?",
+            "options": [
+              "Phản đối trực tiếp và gay gắt",
+              "Im lặng không nói gì",
+              "'Tôi đồng ý một phần, nhưng...'",
+              "Chỉ trích người nói"
+            ],
+            "correct": 2,
+            "explanation": "Cách phát biểu 'Tôi đồng ý một phần, nhưng...' thể hiện sự tôn trọng người nói trong khi vẫn bày tỏ quan điểm khác biệt một cách lịch sự."
+          },
+          {
+            "id": "ex3-6-8",
+            "type": "mcq",
+            "question": "Trong quá trình chuẩn bị bài thuyết trình, bước nào nên thực hiện cuối cùng?",
+            "options": [
+              "Lựa chọn chủ đề",
+              "Xây dựng outline",
+              "Luyện tập nhiều lần",
+              "Chuẩn bị tài liệu, slide"
+            ],
+            "correct": 3,
+            "explanation": "Chuẩn bị tài liệu, slide nên thực hiện cuối cùng (bước 6) sau khi đã luyện tập, để đảm bảo tài liệu phù hợp với nội dung đã hoàn thiện."
+          },
+          {
+            "id": "ex6-1",
+            "question": "Chọn một vấn đề liên quan đến tuổi trẻ và xây dựng outline cho bài thuyết trình 10 phút về vấn đề này.",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Outline nên bao gồm: (1) Mở bài, (2) 3-4 ý chính, (3) Kết luận. Mỗi ý nên có giải thích và dẫn chứng cụ thể."
+          },
+          {
+            "id": "ex6-2",
+            "question": "Hãy nêu những kỹ năng giọng nói cần thiết cho một bài thuyết trình hiệu quả.",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Kỹ năng giọng nói: độ to nhỏ phù hợp, tốc độ vừa phải, thay đổi tông điệu, phát âm rõ ràng, biết cách tạm dừng."
+          },
+          {
+            "id": "ex6-3",
+            "question": "Thuyết trình về một vấn đề liên quan đến tuổi trẻ trong 3-5 phút trước lớp. Sau đó, lớp sẽ đặt câu hỏi, phát biểu ý kiến.",
+            "type": "essay",
+            "difficulty": "hard",
+            "answer_guide": "Học sinh nên: (1) Chuẩn bị outline rõ ràng, (2) Luyện tập trước, (3) Nói rõ, tự tin, (4) Sử dụng cử chỉ tay, liên hệ mắt, (5) Trả lời câu hỏi hỏi t lịch sự."
+          },
+          {
+            "id": "ex6-4",
+            "question": "Lắng nghe bài thuyết trình của bạn cùng lớp và đặt 2-3 câu hỏi theo hình thức: 1 câu hỏi mở, 1 câu hỏi tuân thủ, 1 phát biểu ý kiến.",
+            "type": "essay",
+            "difficulty": "hard",
+            "answer_guide": "Câu hỏi nên rõ ràng, lịch sự, liên quan đến nội dung bài thuyết trình. Phát biểu ý kiến nên thể hiện sự tôn trọng người nói. Nên ghi chú những ý chính khi lắng nghe."
+          }
+        ]
       }
     }
   ]

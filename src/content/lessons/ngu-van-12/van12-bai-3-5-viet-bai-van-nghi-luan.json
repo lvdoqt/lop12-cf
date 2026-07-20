@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-3-5-viet-bai-van-nghi-luan",
+      "id": "van12-bai-3-5-viet-bai-van-nghi-luan-tuoi-tre",
       "name": "Viết bài văn nghị luận về một vấn đề liên quan đến tuổi trẻ",
       "slug": "viet-bai-van-nghi-luan-tuoi-tre",
       "chapter": "Lập luận trong văn bản nghị luận",
       "chapter_id": "V12-3",
       "lesson_id": 5,
-      "description": "Phát triển kỹ năng viết bài văn nghị luận. Lựa chọn vấn đề liên quan đến tuổi trẻ, lập luận logic, thuyết phục độc giả.",
+      "description": "Hướng dẫn viết bài văn nghị luận về vấn đề liên quan đến tuổi trẻ trong chương Lập luận trong văn bản nghị luận.",
       "duration_minutes": 90,
       "difficulty_level": "hard",
       "is_published": true,
@@ -52,143 +52,140 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex3-5-1",
-              "type": "mcq",
-              "question": "Tiêu chí nào sau đây KHÔNG phải là tiêu chí lựa chọn vấn đề tốt cho bài văn nghị luận?",
-              "options": [
-                "Có tính thời sự, được xã hội quan tâm",
-                "Có tính khả thi, không quá to lớn",
-                "Có tính hiển nhiên, không cần bàn cãi",
-                "Có độ mở, nhiều góc độ khác nhau"
-              ],
-              "correct": 2,
-              "explanation": "Vấn đề tốt cho bài văn nghị luận cần có độ mở, có nhiều góc độ khác nhau để bàn luận, không phải là vấn đề hiển nhiên từ đầu."
-            },
-            {
-              "id": "ex3-5-2",
-              "type": "mcq",
-              "question": "Trong cấu trúc bài văn nghị luận, phần thân bài thường được chia thành bao nhiêu phần?",
-              "options": [
-                "1-2 phần",
-                "2-3 phần",
-                "3-4 phần",
-                "4-5 phần"
-              ],
-              "correct": 1,
-              "explanation": "Phần thân bài thường chia thành 2-3 phần, mỗi phần trình bày một luận điểm với giải thích và dẫn chứng cụ thể."
-            },
-            {
-              "id": "ex3-5-3",
-              "type": "mcq",
-              "question": "Loại dẫn chứng nào sau đây có tính thuyết phục cao nhất vì cung cấp bằng chứng khách quan?",
-              "options": [
-                "Dẫn chứng từ trải nghiệm cá nhân",
-                "Dẫn chứng từ con số, thống kê",
-                "Dẫn chứng từ lời nói của bạn bè",
-                "Dẫn chứng từ cảm xúc cá nhân"
-              ],
-              "correct": 1,
-              "explanation": "Dẫn chứng từ con số, thống kê có tính thuyết phục cao vì cung cấp bằng chứng khách quan, dễ kiểm chứng và đáng tin cậy."
-            },
-            {
-              "id": "ex3-5-4",
-              "type": "mcq",
-              "question": "Lỗi logic nào xảy ra khi sử dụng lập luận: 'Sau khi tôi mặc áo đỏ thì tôi thi đỗ, vậy áo đỏ giúp tôi thi đỗ'?",
-              "options": [
-                "Lập luận vòng tròn",
-                "Quá khái quát hóa",
-                "Nhầm lẫn trình tự thời gian với nhân quả",
-                "So sánh không tương xứng"
-              ],
-              "correct": 2,
-              "explanation": "Đây là lỗi nhầm lẫn trình tự thời gian với mối nhân quả. Chỉ vì hai sự kiện xảy ra liên tiếp không có nghĩa là sự kiện trước gây ra sự kiện sau."
-            },
-            {
-              "id": "ex3-5-5",
-              "type": "mcq",
-              "question": "Kỹ thuật thuyết phục nào sử dụng câu hỏi để kích thích suy nghĩ của độc giả?",
-              "options": [
-                "Kỹ thuật so sánh",
-                "Kỹ thuật đặt câu hỏi",
-                "Kỹ thuật cảnh báo",
-                "Kỹ thuật gợi cảm xúc"
-              ],
-              "correct": 1,
-              "explanation": "Kỹ thuật đặt câu hỏi sử dụng các câu hỏi như 'Bạn có tưởng tượng được...?' để kích thích suy nghĩ và thu hút sự chú ý của độc giả."
-            },
-            {
-              "id": "ex3-5-6",
-              "type": "mcq",
-              "question": "Trong quá trình viết bài văn nghị luận, bước nào chiếm nhiều thời gian nhất?",
-              "options": [
-                "Lựa chọn vấn đề và góc độ (5 phút)",
-                "Tìm tài liệu, dẫn chứng (10 phút)",
-                "Dàn bài (10 phút)",
-                "Viết bản thảo (40-50 phút)"
-              ],
-              "correct": 3,
-              "explanation": "Bước viết bản thảo chiếm nhiều thời gian nhất (40-50 phút) vì đây là lúc biến outline thành bài văn hoàn chỉnh với đầy đủ lập luận và dẫn chứng."
-            },
-            {
-              "id": "ex3-5-7",
-              "type": "mcq",
-              "question": "Quan điểm nào cho phép nhìn nhận vấn đề một cách toàn diện, có cả ưu và nhược điểm?",
-              "options": [
-                "Quan điểm tuyệt đối",
-                "Quan điểm có điều kiện",
-                "Quan điểm cân bằng",
-                "Quan điểm chủ quan"
-              ],
-              "correct": 2,
-              "explanation": "Quan điểm cân bằng cho phép nhìn nhận vấn đề toàn diện: 'Hành động A có ưu điểm nhưng cũng có nhược điểm', giúp bài viết khách quan hơn."
-            },
-            {
-              "id": "ex3-5-8",
-              "type": "mcq",
-              "question": "Hình thức mở bài nào sử dụng một tình huống cụ thể để dẫn vào vấn đề?",
-              "options": [
-                "Mở bài bằng câu hỏi",
-                "Mở bài bằng phát biểu chung",
-                "Mở bài bằng ví dụ cụ thể",
-                "Mở bài bằng câu kích động"
-              ],
-              "correct": 2,
-              "explanation": "Mở bài bằng ví dụ cụ thể sử dụng một tình huống thực tế như 'Hôm nay, khi đi trên đường, tôi nhìn thấy...' để dẫn vào vấn đề một cách sinh động."
-            },
-            {
-              "id": "ex5-1",
-              "question": "Hãy lựa chọn một vấn đề liên quan đến tuổi trẻ và nêu rõ tại sao vấn đề đó quan trọng.",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Học sinh nên chọn một vấn đề cụ thể (ví dụ: sử dụng mạng xã hội, sức ép học tập, lựa chọn ngành học) và giải thích tại sao nó lại quan trọng đối với tuổi trẻ hiện nay."
-            },
-            {
-              "id": "ex5-2",
-              "question": "Viết mở bài cho một bài văn nghị luận về vấn đề 'Quản lý thời gian'. Hãy sử dụng ít nhất một trong những kỹ thuật: câu hỏi, phát biểu chung, ví dụ, hoặc câu kích động.",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Mở bài cần hấp dẫn, dẫn vào vấn đề, nêu tầm quan trọng. Có thể sử dụng các kỹ thuật: \"Bạn có bao giờ cảm thấy...?\", \"Trong thời đại hiện nay...\", \"Tôi vẫn nhớ buổi chiều hôm đó...\""
-            },
-            {
-              "id": "ex5-3",
-              "question": "Viết một đoạn thân bài cho bài văn về 'Sử dụng mạng xã hội có nhiều tác động tiêu cực đối với tuổi trẻ'. Đoạn này nên bao gồm: câu chủ đề, giải thích, ví dụ, dẫn chứng.",
-              "type": "essay",
-              "difficulty": "hard",
-              "answer_guide": "Đoạn cần có: (1) Câu chủ đề rõ ràng về tác động tiêu cực, (2) Giải thích cụ thể, (3) Ví dụ thực tế, (4) Dẫn chứng (nếu có). Ví dụ: 'Mạng xã hội khiến tuổi trẻ bị cô lập xã hội. Khi dành quá nhiều thời gian cho các ứng dụng như TikTok, Instagram, các bạn trẻ giảm giao tiếp trực tiếp, dẫn đến khó khăn trong xây dựng mối quan hệ bình thường.'"
-            },
-            {
-              "id": "ex5-4",
-              "question": "Viết một bài văn nghị luận hoàn chỉnh (intro, 2-3 body paragraphs, conclusion) về một vấn đề liên quan đến tuổi trẻ. Độ dài: 400-500 từ.",
-              "type": "essay",
-              "difficulty": "hard",
-              "answer_guide": "Học sinh cần viết một bài hoàn chỉnh với: (1) Mở bài hấp dẫn, (2) 2-3 luận điểm rõ ràng, mỗi luận điểm có giải thích và dẫn chứng, (3) Kết luận tóm tắt lại quan điểm. Nên kiểm tra logic, sử dụng từ nối logic, tránh lỗi chính tả."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex3-5-1",
+            "type": "mcq",
+            "question": "Tiêu chí nào sau đây KHÔNG phải là tiêu chí lựa chọn vấn đề tốt cho bài văn nghị luận?",
+            "options": [
+              "Có tính thời sự, được xã hội quan tâm",
+              "Có tính khả thi, không quá to lớn",
+              "Có tính hiển nhiên, không cần bàn cãi",
+              "Có độ mở, nhiều góc độ khác nhau"
+            ],
+            "correct": 2,
+            "explanation": "Vấn đề tốt cho bài văn nghị luận cần có độ mở, có nhiều góc độ khác nhau để bàn luận, không phải là vấn đề hiển nhiên từ đầu."
+          },
+          {
+            "id": "ex3-5-2",
+            "type": "mcq",
+            "question": "Trong cấu trúc bài văn nghị luận, phần thân bài thường được chia thành bao nhiêu phần?",
+            "options": [
+              "1-2 phần",
+              "2-3 phần",
+              "3-4 phần",
+              "4-5 phần"
+            ],
+            "correct": 1,
+            "explanation": "Phần thân bài thường chia thành 2-3 phần, mỗi phần trình bày một luận điểm với giải thích và dẫn chứng cụ thể."
+          },
+          {
+            "id": "ex3-5-3",
+            "type": "mcq",
+            "question": "Loại dẫn chứng nào sau đây có tính thuyết phục cao nhất vì cung cấp bằng chứng khách quan?",
+            "options": [
+              "Dẫn chứng từ trải nghiệm cá nhân",
+              "Dẫn chứng từ con số, thống kê",
+              "Dẫn chứng từ lời nói của bạn bè",
+              "Dẫn chứng từ cảm xúc cá nhân"
+            ],
+            "correct": 1,
+            "explanation": "Dẫn chứng từ con số, thống kê có tính thuyết phục cao vì cung cấp bằng chứng khách quan, dễ kiểm chứng và đáng tin cậy."
+          },
+          {
+            "id": "ex3-5-4",
+            "type": "mcq",
+            "question": "Lỗi logic nào xảy ra khi sử dụng lập luận: 'Sau khi tôi mặc áo đỏ thì tôi thi đỗ, vậy áo đỏ giúp tôi thi đỗ'?",
+            "options": [
+              "Lập luận vòng tròn",
+              "Quá khái quát hóa",
+              "Nhầm lẫn trình tự thời gian với nhân quả",
+              "So sánh không tương xứng"
+            ],
+            "correct": 2,
+            "explanation": "Đây là lỗi nhầm lẫn trình tự thời gian với mối nhân quả. Chỉ vì hai sự kiện xảy ra liên tiếp không có nghĩa là sự kiện trước gây ra sự kiện sau."
+          },
+          {
+            "id": "ex3-5-5",
+            "type": "mcq",
+            "question": "Kỹ thuật thuyết phục nào sử dụng câu hỏi để kích thích suy nghĩ của độc giả?",
+            "options": [
+              "Kỹ thuật so sánh",
+              "Kỹ thuật đặt câu hỏi",
+              "Kỹ thuật cảnh báo",
+              "Kỹ thuật gợi cảm xúc"
+            ],
+            "correct": 1,
+            "explanation": "Kỹ thuật đặt câu hỏi sử dụng các câu hỏi như 'Bạn có tưởng tượng được...?' để kích thích suy nghĩ và thu hút sự chú ý của độc giả."
+          },
+          {
+            "id": "ex3-5-6",
+            "type": "mcq",
+            "question": "Trong quá trình viết bài văn nghị luận, bước nào chiếm nhiều thời gian nhất?",
+            "options": [
+              "Lựa chọn vấn đề và góc độ (5 phút)",
+              "Tìm tài liệu, dẫn chứng (10 phút)",
+              "Dàn bài (10 phút)",
+              "Viết bản thảo (40-50 phút)"
+            ],
+            "correct": 3,
+            "explanation": "Bước viết bản thảo chiếm nhiều thời gian nhất (40-50 phút) vì đây là lúc biến outline thành bài văn hoàn chỉnh với đầy đủ lập luận và dẫn chứng."
+          },
+          {
+            "id": "ex3-5-7",
+            "type": "mcq",
+            "question": "Quan điểm nào cho phép nhìn nhận vấn đề một cách toàn diện, có cả ưu và nhược điểm?",
+            "options": [
+              "Quan điểm tuyệt đối",
+              "Quan điểm có điều kiện",
+              "Quan điểm cân bằng",
+              "Quan điểm chủ quan"
+            ],
+            "correct": 2,
+            "explanation": "Quan điểm cân bằng cho phép nhìn nhận vấn đề toàn diện: 'Hành động A có ưu điểm nhưng cũng có nhược điểm', giúp bài viết khách quan hơn."
+          },
+          {
+            "id": "ex3-5-8",
+            "type": "mcq",
+            "question": "Hình thức mở bài nào sử dụng một tình huống cụ thể để dẫn vào vấn đề?",
+            "options": [
+              "Mở bài bằng câu hỏi",
+              "Mở bài bằng phát biểu chung",
+              "Mở bài bằng ví dụ cụ thể",
+              "Mở bài bằng câu kích động"
+            ],
+            "correct": 2,
+            "explanation": "Mở bài bằng ví dụ cụ thể sử dụng một tình huống thực tế như 'Hôm nay, khi đi trên đường, tôi nhìn thấy...' để dẫn vào vấn đề một cách sinh động."
+          },
+          {
+            "id": "ex5-1",
+            "question": "Hãy lựa chọn một vấn đề liên quan đến tuổi trẻ và nêu rõ tại sao vấn đề đó quan trọng.",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Học sinh nên chọn một vấn đề cụ thể (ví dụ: sử dụng mạng xã hội, sức ép học tập, lựa chọn ngành học) và giải thích tại sao nó lại quan trọng đối với tuổi trẻ hiện nay."
+          },
+          {
+            "id": "ex5-2",
+            "question": "Viết mở bài cho một bài văn nghị luận về vấn đề 'Quản lý thời gian'. Hãy sử dụng ít nhất một trong những kỹ thuật: câu hỏi, phát biểu chung, ví dụ, hoặc câu kích động.",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Mở bài cần hấp dẫn, dẫn vào vấn đề, nêu tầm quan trọng. Có thể sử dụng các kỹ thuật: \"Bạn có bao giờ cảm thấy...?\", \"Trong thời đại hiện nay...\", \"Tôi vẫn nhớ buổi chiều hôm đó...\""
+          },
+          {
+            "id": "ex5-3",
+            "question": "Viết một đoạn thân bài cho bài văn về 'Sử dụng mạng xã hội có nhiều tác động tiêu cực đối với tuổi trẻ'. Đoạn này nên bao gồm: câu chủ đề, giải thích, ví dụ, dẫn chứng.",
+            "type": "essay",
+            "difficulty": "hard",
+            "answer_guide": "Đoạn cần có: (1) Câu chủ đề rõ ràng về tác động tiêu cực, (2) Giải thích cụ thể, (3) Ví dụ thực tế, (4) Dẫn chứng (nếu có). Ví dụ: 'Mạng xã hội khiến tuổi trẻ bị cô lập xã hội. Khi dành quá nhiều thời gian cho các ứng dụng như TikTok, Instagram, các bạn trẻ giảm giao tiếp trực tiếp, dẫn đến khó khăn trong xây dựng mối quan hệ bình thường.'"
+          },
+          {
+            "id": "ex5-4",
+            "question": "Viết một bài văn nghị luận hoàn chỉnh (intro, 2-3 body paragraphs, conclusion) về một vấn đề liên quan đến tuổi trẻ. Độ dài: 400-500 từ.",
+            "type": "essay",
+            "difficulty": "hard",
+            "answer_guide": "Học sinh cần viết một bài hoàn chỉnh với: (1) Mở bài hấp dẫn, (2) 2-3 luận điểm rõ ràng, mỗi luận điểm có giải thích và dẫn chứng, (3) Kết luận tóm tắt lại quan điểm. Nên kiểm tra logic, sử dụng từ nối logic, tránh lỗi chính tả."
+          }
+        ]
       }
     }
   ]

@@ -1,0 +1,66 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12_11",
+      "name": "An toàn điện",
+      "slug": "an-toan-dien",
+      "chapter": "An toàn và tiết kiệm điện năng",
+      "chapter_id": "CN12",
+      "lesson_id": 11,
+      "description": "Các nguyên nhân gây tai nạn điện, biện pháp phòng tránh và kỹ năng xử lý khi gặp sự cố điện.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "An toàn điện",
+          "summary": "An toàn điện là yêu cầu hàng đầu khi làm việc với hệ thống điện. Hiểu rõ nguyên nhân gây tai nạn và biện pháp phòng tránh giúp bảo vệ tính mạng con người.",
+          "sections": [
+            {
+              "heading": "Nguyên nhân gây tai nạn điện",
+              "content": "Tai nạn điện thường do: tiếp xúc trực tiếp với phần dẫn điện; vi phạm khoảng cách an toàn với đường dây cao thế; thiết bị điện bị hư hỏng cách điện; sử dụng thiết bị không đúng quy cách; môi trường ẩm ướt dẫn đến rò rỉ điện; sét đánh trong mùa mưa bão."
+            },
+            {
+              "heading": "Tác hại của dòng điện đối với cơ thể người",
+              "content": "Dòng điện từ 10-25mA gây co cơ không thể buông thiết bị. Trên 30mA gây khó thở. Trên 50mA gây rung tim và nguy hiểm tính mạng. Dòng điện càng lớn và thời gian tác dụng càng lâu thì mức độ nguy hiểm càng cao. Điện trở cơ thể người thay đổi tùy theo độ ẩm của da và môi trường xung quanh."
+            },
+            {
+              "heading": "Biện pháp an toàn điện trong sử dụng",
+              "content": "Sử dụng thiết bị đạt chuẩn chất lượng; lắp đặt aptomat chống rò điện (ELCB); nối đất bảo vệ cho các thiết bị vỏ kim loại; kiểm tra định kỳ hệ thống điện; không sử dụng thiết bị khi tay ướt; ngắt nguồn điện trước khi sửa chữa; sử dụng dụng cụ bảo hộ như găng tay, ủng cách điện."
+            },
+            {
+              "heading": "Biện pháp an toàn điện trong sản xuất",
+              "content": "Tuân thủ quy trình an toàn lao động; trang bị bảo hộ lao động (găng tay cách điện, ủng, thảm cách điện); lắp đặt hệ thống nối đất, chống sét; biển báo và rào chắn khu vực nguy hiểm; đào tạo an toàn điện cho công nhân; cấp thẻ an toàn điện cho người làm việc."
+            },
+            {
+              "heading": "Phương pháp cứu người bị tai nạn điện",
+              "content": "Bước 1: Ngắt nhanh nguồn điện (cúp cầu dao, aptomat). Nếu không thể ngắt thì dùng vật cách điện khô (gậy gỗ, vải khô) gạt nạn nhân ra khỏi nguồn điện. Bước 2: Kiểm tra tình trạng nạn nhân (còn tỉnh, bất tỉnh, ngừng thở, ngừng tim). Bước 3: Thực hiện sơ cứu: hô hấp nhân tạo, ép tim ngoài lồng ngực, gọi cấp cứu 115."
+            },
+            {
+              "heading": "Nối đất bảo vệ và chống sét",
+              "content": "Nối đất bảo vệ là nối vỏ kim loại thiết bị với hệ thống tiếp đất, đảm bảo dòng rò thoát xuống đất, bảo vệ người khỏi điện giật. Chống sét bao gồm kim thu sét, dây dẫn sét và hệ thống tiếp địa, bảo vệ công trình khỏi tác hại của sét đánh trực tiếp."
+            }
+          ]
+        },
+        "exercises": [
+          { "id": 1, "type": "mcq", "question": "Nguyên nhân chính gây tai nạn điện là?", "options": ["Thời tiết quá nóng", "Tiếp xúc trực tiếp với phần dẫn điện hoặc hư hỏng cách điện", "Sử dụng điện thoại khi sạc", "Ngồi gần quạt điện"], "correct": 1, "explanation": "Tiếp xúc trực tiếp với nguồn điện hoặc thiết bị hỏng cách điện là nguyên nhân chính." },
+          { "id": 2, "type": "mcq", "question": "Dòng điện từ bao nhiêu mA trở lên có thể gây nguy hiểm đến tính mạng?", "options": ["10mA", "50mA", "100mA", "1A"], "correct": 1, "explanation": "Dòng điện trên 50mA gây rung tim, nguy hiểm đến tính mạng." },
+          { "id": 3, "type": "mcq", "question": "Biện pháp nào an toàn khi sử dụng điện?", "options": ["Dùng tay ướt cắm phích điện", "Ngắt nguồn trước khi sửa chữa", "Tự ý sửa chữa khi chưa ngắt điện", "Dùng dây điện trần thay dây bọc"], "correct": 1, "explanation": "Ngắt nguồn là nguyên tắc an toàn bắt buộc trước khi sửa chữa." },
+          { "id": 4, "type": "mcq", "question": "Thiết bị nào bảo vệ chống rò điện?", "options": ["Cầu chì", "Aptomat chống rò (ELCB)", "Công tắc", "Ổ cắm"], "correct": 1, "explanation": "ELCB tự động ngắt khi phát hiện dòng rò, bảo vệ người khỏi điện giật." },
+          { "id": 5, "type": "mcq", "question": "Khi cứu người bị điện giật, việc đầu tiên cần làm là?", "options": ["Gọi xe cấp cứu", "Ngắt nguồn điện", "Đưa nạn nhân đến bệnh viện", "Tưới nước lên người nạn nhân"], "correct": 1, "explanation": "Ngắt nguồn điện là ưu tiên số 1 để đảm bảo an toàn cho cả người cứu và nạn nhân." },
+          { "id": 6, "type": "mcq", "question": "Nối đất bảo vệ có tác dụng gì?", "options": ["Tăng điện áp", "Giảm hóa đơn tiền điện", "Dẫn dòng rò thoát xuống đất, bảo vệ người sử dụng", "Tăng tuổi thọ bóng đèn"], "correct": 2, "explanation": "Khi rò rỉ điện, dòng điện sẽ theo dây nối đất xuống đất thay vì qua người." },
+          { "id": 7, "type": "mcq", "question": "Hành vi nào sau đây KHÔNG an toàn?", "options": ["Sử dụng aptomat cho hệ thống điện", "Kiểm tra điện định kỳ", "Dùng dây điện trần cắm vào ổ điện", "Mang găng tay cách điện khi sửa điện"], "correct": 2, "explanation": "Dây điện trần rất nguy hiểm vì không có lớp cách điện bảo vệ." },
+          { "id": 8, "type": "mcq", "question": "Trong sản xuất, công nhân làm việc với điện cần?", "options": ["Không cần bảo hộ", "Có thẻ an toàn điện và trang bị bảo hộ", "Chỉ cần tay khô", "Làm việc một mình"], "correct": 1, "explanation": "An toàn điện yêu cầu người lao động phải được đào tạo và cấp thẻ." },
+          { "id": 9, "type": "mcq", "question": "Khi phát hiện người bị điện giật, nếu không thể ngắt nguồn điện thì?", "options": ["Dùng tay trần kéo nạn nhân ra", "Dùng vật cách điện khô gạt dây điện ra khỏi nạn nhân", "Chạy đi gọi người khác", "Chụp ảnh đăng mạng"], "correct": 1, "explanation": "Vật cách điện khô như gậy gỗ, vải khô không dẫn điện, an toàn để tách nạn nhân." },
+          { "id": 10, "type": "mcq", "question": "Hệ thống chống sét gồm các bộ phận nào?", "options": ["Kim thu sét, dây dẫn, tiếp địa", "Cầu chì và aptomat", "Công tơ điện", "Bóng đèn và dây điện"], "correct": 0, "explanation": "Kim thu sét đón sét, dây dẫn đưa sét xuống tiếp địa để tiêu tán năng lượng." },
+          { "id": 11, "type": "msq", "question": "Những nguyên nhân nào gây tai nạn điện?", "options": ["Tiếp xúc với phần dẫn điện", "Thiết bị hư hỏng cách điện", "Sử dụng điện áp thấp", "Vi phạm khoảng cách an toàn"], "correct": [0, 1, 3], "explanation": "Tiếp xúc trực tiếp, hư hỏng cách điện và vi phạm khoảng cách là nguyên nhân gây tai nạn." },
+          { "id": 12, "type": "msq", "question": "Biện pháp an toàn điện trong gia đình gồm?", "options": ["Lắp aptomat chống rò", "Nối đất thiết bị", "Dùng tay ướt cắm điện", "Kiểm tra điện định kỳ"], "correct": [0, 1, 3], "explanation": "Aptomat chống rò, nối đất và kiểm tra định kỳ đảm bảo an toàn." },
+          { "id": 13, "type": "msq", "question": "Khi cứu người bị tai nạn điện cần?", "options": ["Ngắt nguồn điện ngay", "Dùng gậy gỗ gạt dây điện", "Chạm trực tiếp vào nạn nhân", "Gọi cấp cứu 115"], "correct": [0, 1, 3], "explanation": "Ngắt nguồn, dùng vật cách điện và gọi cấp cứu là các bước đúng." },
+          { "id": 14, "type": "msq", "question": "Thiết bị bảo vệ an toàn điện gồm?", "options": ["Aptomat", "Cầu chì", "ELCB chống rò", "Bóng đèn LED"], "correct": [0, 1, 2], "explanation": "Aptomat, cầu chì, ELCB là thiết bị bảo vệ. Bóng đèn không phải thiết bị bảo vệ." }
+        ]
+      }
+    }
+  ]
+}

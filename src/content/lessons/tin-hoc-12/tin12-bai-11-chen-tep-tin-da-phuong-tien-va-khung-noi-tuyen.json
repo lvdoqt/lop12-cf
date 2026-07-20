@@ -18,22 +18,220 @@
           "title": "Đa phương tiện và Iframe",
           "summary": "HTML5 hỗ trợ mạnh mẽ việc hiển thị trực tiếp các tệp tin đa phương tiện mà không cần phần mềm bổ trợ.",
           "sections": [
-            { "heading": "Hình ảnh (Image)", "content": "<img src=\"URL\" alt=\"mô tả\">. Lưu ý các thuộc tính width, height." },
-            { "heading": "Âm thanh và Video", "content": "<audio> và <video> với thuộc tính controls để hiển thị bộ điều khiển." },
-            { "heading": "Khung nội tuyến (Iframe)", "content": "<iframe> cho phép nhúng một trang web khác vào bên trong trang web hiện tại (ví dụ nhúng bản đồ Google Maps, video YouTube)." }
+            {
+              "heading": "Hình ảnh (Image)",
+              "content": "<img src=\"URL\" alt=\"mô tả\">. Lưu ý các thuộc tính width, height."
+            },
+            {
+              "heading": "Âm thanh và Video",
+              "content": "<audio> và <video> với thuộc tính controls để hiển thị bộ điều khiển."
+            },
+            {
+              "heading": "Khung nội tuyến (Iframe)",
+              "content": "<iframe> cho phép nhúng một trang web khác vào bên trong trang web hiện tại (ví dụ nhúng bản đồ Google Maps, video YouTube)."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Thẻ nào dùng để chèn hình ảnh vào trang web?", "options": ["<image>", "<img>", "<picture>", "<src>"], "correct": 1, "explanation": "<img> là thẻ đơn dùng để hiển thị ảnh." },
-          { "id": 2, "type": "mcq", "question": "Thuộc tính 'alt' trong thẻ <img> có tác dụng gì?", "options": ["Định dạng kích thước", "Hiển thị văn bản thay thế khi ảnh bị lỗi hoặc cho người khiếm thị", "Làm ảnh nét hơn", "Tạo khung cho ảnh"], "correct": 1, "explanation": "Alt (Alternative text) rất quan trọng cho SEO và khả năng tiếp cận." },
-          { "id": 3, "type": "mcq", "question": "Để hiển thị thanh điều khiển (Play, Pause, Volume) cho video, ta dùng thuộc tính?", "options": ["play", "controls", "buttons", "show"], "correct": 1, "explanation": "Không có thuộc tính controls, người dùng sẽ không tương tác được với video." },
-          { "id": 4, "type": "mcq", "question": "Thẻ nào dùng để nhúng một trang web khác vào trang hiện tại?", "options": ["<embed>", "<object>", "<iframe>", "<frame>"], "correct": 2, "explanation": "Iframe (Inline Frame) là chuẩn để nhúng nội dung ngoại vi." },
-          { "id": 5, "type": "mcq", "question": "Để chèn âm thanh vào trang web, ta dùng thẻ?", "options": ["<sound>", "<music>", "<audio>", "<mp3>"], "correct": 2, "explanation": "<audio> là thẻ HTML5 hỗ trợ phát nhạc." },
-          { "id": 6, "type": "mcq", "question": "Thuộc tính 'autoplay' trong thẻ <video> có tác dụng gì?", "options": ["Tự động lặp lại", "Tự động phát video khi tải trang", "Tắt tiếng video", "Làm video to ra"], "correct": 1, "explanation": "Autoplay giúp video chạy ngay mà không cần nhấn Play." },
-          { "id": 7, "type": "mcq", "question": "Định dạng video nào sau đây được hỗ trợ tốt nhất trên các trình duyệt?", "options": ["MP4", "AVI", "WMV", "FLV"], "correct": 0, "explanation": "MP4 (H.264) là định dạng chuẩn cho web hiện nay." },
-          { "id": 8, "type": "mcq", "question": "Khi chèn ảnh, nếu chỉ đặt thuộc tính width mà không đặt height thì?", "options": ["Ảnh bị mất", "Ảnh tự động thay đổi height để giữ đúng tỉ lệ gốc", "Height sẽ bằng 0", "Ảnh bị méo"], "correct": 1, "explanation": "Trình duyệt tự cân đối chiều còn lại để bảo toàn tỉ lệ ảnh." },
-          { "id": 9, "type": "mcq", "question": "Thuộc tính 'src' trong các thẻ đa phương tiện viết tắt của?", "options": ["Search", "Source", "Screen", "Script"], "correct": 1, "explanation": "Source chỉ định nguồn dẫn của tệp tin." },
-          { "id": 10, "type": "mcq", "question": "Tại sao nên hạn chế nhúng quá nhiều iframe vào một trang?", "options": ["Làm trang web trông xấu", "Ảnh hưởng đến tốc độ tải trang và bảo mật", "Làm máy tính hết pin", "Làm hỏng trình duyệt"], "correct": 1, "explanation": "Mỗi iframe là một yêu cầu tải thêm một trang web hoàn chỉnh, gây nặng máy." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Thẻ nào dùng để chèn hình ảnh vào trang web?",
+            "options": [
+              "<image>",
+              "<img>",
+              "<picture>",
+              "<src>"
+            ],
+            "correct": 1,
+            "explanation": "<img> là thẻ đơn dùng để hiển thị ảnh."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Thuộc tính 'alt' trong thẻ <img> có tác dụng gì?",
+            "options": [
+              "Định dạng kích thước",
+              "Hiển thị văn bản thay thế khi ảnh bị lỗi hoặc cho người khiếm thị",
+              "Làm ảnh nét hơn",
+              "Tạo khung cho ảnh"
+            ],
+            "correct": 1,
+            "explanation": "Alt (Alternative text) rất quan trọng cho SEO và khả năng tiếp cận."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Để hiển thị thanh điều khiển (Play, Pause, Volume) cho video, ta dùng thuộc tính?",
+            "options": [
+              "play",
+              "controls",
+              "buttons",
+              "show"
+            ],
+            "correct": 1,
+            "explanation": "Không có thuộc tính controls, người dùng sẽ không tương tác được với video."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Thẻ nào dùng để nhúng một trang web khác vào trang hiện tại?",
+            "options": [
+              "<embed>",
+              "<object>",
+              "<iframe>",
+              "<frame>"
+            ],
+            "correct": 2,
+            "explanation": "Iframe (Inline Frame) là chuẩn để nhúng nội dung ngoại vi."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Để chèn âm thanh vào trang web, ta dùng thẻ?",
+            "options": [
+              "<sound>",
+              "<music>",
+              "<audio>",
+              "<mp3>"
+            ],
+            "correct": 2,
+            "explanation": "<audio> là thẻ HTML5 hỗ trợ phát nhạc."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Thuộc tính 'autoplay' trong thẻ <video> có tác dụng gì?",
+            "options": [
+              "Tự động lặp lại",
+              "Tự động phát video khi tải trang",
+              "Tắt tiếng video",
+              "Làm video to ra"
+            ],
+            "correct": 1,
+            "explanation": "Autoplay giúp video chạy ngay mà không cần nhấn Play."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Định dạng video nào sau đây được hỗ trợ tốt nhất trên các trình duyệt?",
+            "options": [
+              "MP4",
+              "AVI",
+              "WMV",
+              "FLV"
+            ],
+            "correct": 0,
+            "explanation": "MP4 (H.264) là định dạng chuẩn cho web hiện nay."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Khi chèn ảnh, nếu chỉ đặt thuộc tính width mà không đặt height thì?",
+            "options": [
+              "Ảnh bị mất",
+              "Ảnh tự động thay đổi height để giữ đúng tỉ lệ gốc",
+              "Height sẽ bằng 0",
+              "Ảnh bị méo"
+            ],
+            "correct": 1,
+            "explanation": "Trình duyệt tự cân đối chiều còn lại để bảo toàn tỉ lệ ảnh."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Thuộc tính 'src' trong các thẻ đa phương tiện viết tắt của?",
+            "options": [
+              "Search",
+              "Source",
+              "Screen",
+              "Script"
+            ],
+            "correct": 1,
+            "explanation": "Source chỉ định nguồn dẫn của tệp tin."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Tại sao nên hạn chế nhúng quá nhiều iframe vào một trang?",
+            "options": [
+              "Làm trang web trông xấu",
+              "Ảnh hưởng đến tốc độ tải trang và bảo mật",
+              "Làm máy tính hết pin",
+              "Làm hỏng trình duyệt"
+            ],
+            "correct": 1,
+            "explanation": "Mỗi iframe là một yêu cầu tải thêm một trang web hoàn chỉnh, gây nặng máy."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "HTML hỗ trợ nhúng những loại file đa phương tiện nào?",
+            "options": [
+              "Hình ảnh (img)",
+              "Video",
+              "Audio",
+              "PDF"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "HTML hỗ trợ nhúng hình ảnh, video, audio và PDF."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Thẻ <iframe> dùng để làm gì?",
+            "options": [
+              "Nhúng trang web khác",
+              "Nhúng video YouTube",
+              "Nhúng bản đồ Google Maps",
+              "Tạo danh sách"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Iframe nhúng nội dung từ nguồn bên ngoài."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Thuộc tính alt trong thẻ img dùng để?",
+            "options": [
+              "Hiển thị khi ảnh không tải được",
+              "SEO",
+              "Mô tả ảnh cho người khiếm thị",
+              "Định dạng ảnh"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Alt hiển thị khi ảnh lỗi, giúp SEO và hỗ trợ người khiếm thị."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "HTML5 hỗ trợ thẻ nhúng đa phương tiện nào mới?",
+            "options": [
+              "<video>",
+              "<audio>",
+              "<canvas>",
+              "<flash>"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "HTML5 có <video>, <audio>, <canvas>. Flash đã bị ngừng."
+          }
         ]
       }
     }

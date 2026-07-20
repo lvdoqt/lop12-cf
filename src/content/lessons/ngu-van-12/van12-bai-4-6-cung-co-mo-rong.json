@@ -4,12 +4,12 @@
   "lessons": [
     {
       "id": "van12-bai-4-6-cung-co-mo-rong",
-      "name": "Củng cố mở rộng - Trang 123",
-      "slug": "cung-co-mo-rong-trang-123",
+      "name": "Củng cố, mở rộng",
+      "slug": "cung-co-mo-rong",
       "chapter": "Yếu tố kì ảo trong truyện kể",
       "chapter_id": "V12-4",
       "lesson_id": 6,
-      "description": "Ôn tập, củng cố những kiến thức chính về yếu tố kì ảo trong truyện kể. Mở rộng hiểu biết thông qua các bài tập, phân tích so sánh.",
+      "description": "Củng cố và mở rộng kiến thức yếu tố kì ảo trong truyện kể.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Củng cố mở rộng - Yếu tố kì ảo trong truyện kể",
+          "title": "Củng cố và mở rộng kiến thức",
           "sections": [
             {
               "heading": "1. Tóm tắt kiến thức trọng tâm",
@@ -113,6 +113,71 @@
             ],
             "correct": 1,
             "explanation": "Học về yếu tố kì ảo giúp ta hiểu sâu sắc tác phẩm, nhận biết được cách tác giả sử dụng các công cụ để thể hiện ý tưởng, giáo dục, tạo giá trị."
+          },
+          {
+            "id": "ex4-6-6",
+            "type": "mcq",
+            "question": "Phân tích yếu tố kì ảo trong tác phẩm giúp người đọc hiểu được điều gì?",
+            "options": [
+              "Nội dung và thông điệp sâu sắc của tác phẩm",
+              "Chỉ để giải trí",
+              "Không có tác dụng",
+              "Làm tác phẩm khó hiểu hơn"
+            ],
+            "correct": 0,
+            "explanation": "Phân tích yếu tố kì ảo giúp khám phá ý nghĩa biểu tượng và thông điệp của tác phẩm."
+          },
+          {
+            "id": "ex4-6-7",
+            "type": "mcq",
+            "question": "Trong truyện kể, yếu tố kì ảo thường kết hợp với yếu tố nào để tạo nên giá trị tác phẩm?",
+            "options": [
+              "Yếu tố hiện thực",
+              "Chỉ có yếu tố kì ảo",
+              "Yếu tố lịch sử",
+              "Yếu tố khoa học"
+            ],
+            "correct": 0,
+            "explanation": "Yếu tố kì ảo kết hợp với hiện thực tạo nên sự hấp dẫn và chiều sâu cho tác phẩm."
+          },
+          {
+            "id": "ex4-6-8",
+            "type": "mcq",
+            "question": "Mục đích của việc sử dụng điển cố trong văn học là gì?",
+            "options": [
+              "Làm tăng sức gợi và chiều sâu văn hóa",
+              "Làm cho tác phẩm khó hiểu",
+              "Không có mục đích",
+              "Chỉ để khoe kiến thức"
+            ],
+            "correct": 0,
+            "explanation": "Điển cố làm tăng sức gợi hình, tạo chiều sâu văn hóa và tăng tính thuyết phục."
+          },
+          {
+            "id": "ex4-6-9",
+            "type": "mcq",
+            "question": "Khi viết bài văn phân tích yếu tố kì ảo, cần thực hiện theo thứ tự nào?",
+            "options": [
+              "Nhận diện - Phân loại - Tìm hiểu ý nghĩa - Đánh giá",
+              "Chỉ nhận diện",
+              "Chỉ đánh giá",
+              "Viết tự do theo cảm xúc"
+            ],
+            "correct": 0,
+            "explanation": "Phân tích yếu tố kì ảo cần thực hiện theo quy trình: nhận diện, phân loại, tìm hiểu ý nghĩa, đánh giá."
+          },
+          {
+            "id": "ex4-6-10",
+            "type": "mcq",
+            "question": "Qua các tác phẩm đã học, yếu tố kì ảo có vai trò gì trong việc giáo dục con người?",
+            "options": [
+              "Giúp con người nhận thức sâu sắc về đạo đức, nhân sinh",
+              "Không có vai trò giáo dục",
+              "Chỉ làm giảm giá trị",
+              "Gây hoang mang cho người đọc"
+            ],
+            "correct": 0,
+            "explanation": "Yếu tố kì ảo thông qua các hình tượng biểu tượng giúp giáo dục đạo đức và nhân sinh quan."
           }
         ]
       }

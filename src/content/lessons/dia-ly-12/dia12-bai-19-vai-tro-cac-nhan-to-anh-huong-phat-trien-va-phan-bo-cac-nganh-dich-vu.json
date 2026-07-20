@@ -15,21 +15,32 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Dịch vụ: vai trò và nhân tố ảnh hưởng",
-          "summary": "Dịch vụ đóng góp lớn vào GDP và tạo việc làm; phân bố dịch vụ phụ thuộc vào quy mô đô thị, thu nhập, hạ tầng giao thông và công nghệ thông tin.",
+          "title": "Vai trò, các nhân tố ảnh hưởng đến sự phát triển và phân bố các ngành dịch vụ",
+          "summary": "Dịch vụ là ngành kinh tế quan trọng, chiếm tỉ trọng lớn trong GDP và tạo nhiều việc làm. Sự phát triển, phân bố dịch vụ chịu tác động của trình độ phát triển kinh tế, phân bố dân cư, khoa học công nghệ và hội nhập quốc tế.",
           "sections": [
-            { "heading": "Vai trò của dịch vụ", "content": "Cung cấp hàng hóa vô hình, hỗ trợ sản xuất, logistics, tài chính, giáo dục, y tế và du lịch; nâng cao giá trị gia tăng cho nền kinh tế." },
-            { "heading": "Nhân tố ảnh hưởng", "content": "Quy mô dân số và đô thị, mức thu nhập, hạ tầng giao thông và viễn thông, chính sách và hội nhập quốc tế." },
-            { "heading": "Phân bố dịch vụ", "content": "Dịch vụ cao cấp (tài chính, công nghệ) tập trung ở các đô thị lớn; dịch vụ cơ bản (bán lẻ, vận tải) phân bố rộng, hướng tới thị trường tiêu thụ." }
+            {
+              "heading": "Vai trò của các ngành dịch vụ",
+              "content": "Dịch vụ kết nối và hỗ trợ sản xuất (giao thông vận tải, bưu chính viễn thông, tài chính - tín dụng, logistics), đồng thời trực tiếp thỏa mãn nhu cầu đời sống (thương mại, du lịch, y tế, giáo dục). Dịch vụ góp phần thúc đẩy chuyên môn hóa, tăng năng suất, tạo việc làm và nâng cao đời sống. Ở Việt Nam, khu vực dịch vụ chiếm tỉ trọng ngày càng lớn trong cơ cấu kinh tế và là động lực tăng trưởng."
+            },
+            {
+              "heading": "Các ngành dịch vụ chủ yếu",
+              "content": "Thương mại (bán buôn, bán lẻ, xuất nhập khẩu) là ngành dịch vụ lớn nhất, gắn với thị trường và mạng lưới phân phối. Du lịch khai thác tài nguyên tự nhiên, di tích lịch sử và văn hóa, mang lại ngoại tệ. Giao thông vận tải và bưu chính viễn thông là hạ tầng kết nối. Tài chính - ngân hàng, bảo hiểm, tư vấn, giáo dục, y tế là các dịch vụ cao cấp và thiết yếu."
+            },
+            {
+              "heading": "Các nhân tố ảnh hưởng",
+              "content": "Trình độ phát triển kinh tế quyết định quy mô và cơ cấu dịch vụ (nền kinh tế càng phát triển, tỉ trọng dịch vụ càng cao). Phân bố dân cư và mức thu nhập quyết định nhu cầu và thị trường dịch vụ. Vị trí địa lý, hạ tầng giao thông - viễn thông tạo thuận lợi cho thương mại và du lịch. Khoa học công nghệ thúc đẩy dịch vụ hiện đại (thương mại điện tử, tài chính số). Chính sách, đô thị hóa và hội nhập quốc tế cũng tác động mạnh đến phát triển dịch vụ."
+            },
+            {
+              "heading": "Sự phân bố các ngành dịch vụ",
+              "content": "Dịch vụ phân bố không đều theo không gian. Dịch vụ cao cấp (tài chính, ngân hàng, công nghệ thông tin, tư vấn) tập trung tại các đô thị lớn và trung tâm tài chính như Hà Nội, TP. Hồ Chí Minh, Đà Nẵng. Thương mại và dịch vụ cơ bản phân bố rộng khắp theo mật độ dân cư và mạng lưới giao thông. Du lịch tập trung ở những nơi có tài nguyên du lịch (Vịnh Hạ Long, Phú Quốc, Phố cổ Hội An, Đà Lạt...)."
+            },
+            {
+              "heading": "Vấn đề phát triển dịch vụ bền vững",
+              "content": "Việt Nam cần giảm khoảng cách phát triển dịch vụ giữa thành thị và nông thôn, giữa các vùng miền; hiện đại hóa hạ tầng số, phát triển dịch vụ chất lượng cao và du lịch xanh. Đồng thời tránh tập trung quá mức gây quá tải đô thị và bất bình đẳng vùng thông qua quy hoạch hạ tầng và đầu tư có định hướng."
+            }
           ]
         },
-        "exercises": {
-          "short_answers": [
-            { "q": "Nêu hai ngành dịch vụ có vai trò kinh tế lớn?", "a_hint": "Tài chính, du lịch, giao thông, y tế, giáo dục." },
-            { "q": "Yếu tố nào ảnh hưởng mạnh đến phân bố dịch vụ cao cấp?", "a_hint": "Quy mô đô thị và hạ tầng công nghệ." }
-          ]
-        },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Ngành dịch vụ nào đóng vai trò kết nối thị trường?", "options": ["Giao thông và logistics","Nông nghiệp","Khai khoáng","Chăn nuôi"], "correct": 0, "explanation": "Giao thông và logistics kết nối thị trường trong nước và quốc tế." },
           { "id": 2, "type": "mcq", "question": "Yếu tố nào làm tăng nhu cầu dịch vụ?", "options": ["Tăng thu nhập và đô thị hóa","Giảm dân số","Giảm thu nhập","Không ai dùng dịch vụ"], "correct": 0, "explanation": "Tăng thu nhập và đô thị hóa làm gia tăng nhu cầu dịch vụ." },
           { "id": 3, "type": "mcq", "question": "Dịch vụ cao cấp thường tập trung ở?", "options": ["Đô thị lớn","Khu vực nông thôn thưa dân","Vùng núi xa xôi","Giữa biển"], "correct": 0, "explanation": "Đô thị lớn cung cấp thị trường và nguồn nhân lực cho dịch vụ cao cấp." },
@@ -39,7 +50,16 @@
           { "id": 7, "type": "mcq", "question": "Một tác động tiêu cực của dịch vụ tập trung quá mức ở thành phố là?", "options": ["Bất bình đẳng vùng và quá tải hạ tầng","Giảm nguồn lao động","Tăng nông nghiệp","Không có tác động"], "correct": 0, "explanation": "Tập trung dịch vụ dẫn đến bất bình đẳng phát triển và quá tải hạ tầng đô thị." },
           { "id": 8, "type": "mcq", "question": "Chính sách nào giúp phân bổ dịch vụ công bằng hơn?", "options": ["Phát triển hạ tầng vùng và khuyến khích đầu tư vào dịch vụ khu vực","Tập trung mọi thứ vào thủ đô","Cấm dịch vụ ở vùng xa","Không có chính sách"], "correct": 0, "explanation": "Đầu tư vào hạ tầng vùng và ưu đãi giúp dịch vụ lan tỏa ra vùng phụ cận." },
           { "id": 9, "type": "mcq", "question": "Dịch vụ y tế và giáo dục thường phân bố dựa trên?", "options": ["Quy mô dân cư, năng lực tài chính địa phương và chính sách công","Loại đất","Số cảng","Màu sắc quốc kỳ"], "correct": 0, "explanation": "Sự phân bố dịch vụ y tế/giáo dục gắn với quy mô dân cư và nguồn lực ngân sách." },
-          { "id": 10, "type": "mcq", "question": "Một nhân tố toàn cầu ảnh hưởng đến dịch vụ là?", "options": ["Hội nhập kinh tế và công nghệ toàn cầu","Chỉ thời tiết địa phương","Số lượng trường đại học riêng lẻ","Không có yếu tố"], "correct": 0, "explanation": "Hội nhập và công nghệ toàn cầu thay đổi cầu và cung dịch vụ." }
+          { "id": 10, "type": "mcq", "question": "Một nhân tố toàn cầu ảnh hưởng đến dịch vụ là?", "options": ["Hội nhập kinh tế và công nghệ toàn cầu","Chỉ thời tiết địa phương","Số lượng trường đại học riêng lẻ","Không có yếu tố"], "correct": 0, "explanation": "Hội nhập và công nghệ toàn cầu thay đổi cầu và cung dịch vụ." },
+          { "id": 11, "type": "msq", "question": "Các nhân tố ảnh hưởng đến sự phát triển và phân bố ngành dịch vụ?", "options": ["Trình độ phát triển kinh tế", "Phân bố dân cư", "Khoa học công nghệ", "Màu sắc quốc kỳ"], "correct": [0,1,2], "explanation": "Kinh tế, dân cư và khoa học công nghệ ảnh hưởng đến dịch vụ." },
+          { "id": 12, "type": "msq", "question": "Các ngành dịch vụ chủ yếu gồm?", "options": ["Thương mại", "Du lịch", "Giao thông vận tải", "Khai thác mỏ"], "correct": [0,1,2], "explanation": "Thương mại, du lịch, giao thông vận tải là ngành dịch vụ chủ yếu." },
+          { "id": 13, "type": "msq", "question": "Nhân tố nào thúc đẩy phát triển ngành dịch vụ?", "options": ["Đô thị hóa", "Tăng thu nhập", "Hội nhập quốc tế", "Giảm dân số"], "correct": [0,1,2], "explanation": "Đô thị hóa, tăng thu nhập và hội nhập quốc tế thúc đẩy dịch vụ." },
+          { "id": 14, "type": "msq", "question": "Dịch vụ cao cấp thường tập trung ở đâu?", "options": ["Đô thị lớn", "Khu công nghiệp", "Trung tâm tài chính", "Vùng sâu vùng xa"], "correct": [0,1,2], "explanation": "Dịch vụ cao cấp tập trung ở đô thị lớn, khu công nghiệp và trung tâm tài chính." },
+          { "id": 15, "type": "sa", "question": "Kể tên một ngành dịch vụ quan trọng ở Việt Nam?", "correct": "Du lịch, tài chính, giao thông vận tải", "explanation": "Du lịch, tài chính, giao thông vận tải là ngành dịch vụ quan trọng." },
+          { "id": 16, "type": "sa", "question": "Yếu tố nào ảnh hưởng đến phân bố dịch vụ?", "correct": "Dân cư, thu nhập, hạ tầng giao thông", "explanation": "Phân bố dịch vụ phụ thuộc vào dân cư, thu nhập và hạ tầng." },
+          { "id": 17, "type": "sa", "question": "Vai trò của ngành dịch vụ đối với nền kinh tế?", "correct": "Đóng góp lớn vào GDP, tạo việc làm, thúc đẩy sản xuất", "explanation": "Dịch vụ đóng góp lớn vào GDP, tạo việc làm và thúc đẩy các ngành sản xuất." },
+          { "id": 18, "type": "sa", "question": "Nêu hai ngành dịch vụ có vai trò kinh tế lớn?", "correct": "Tài chính, du lịch, giao thông, y tế, giáo dục.", "explanation": "Tài chính, du lịch, giao thông, y tế, giáo dục." },
+          { "id": 19, "type": "sa", "question": "Yếu tố nào ảnh hưởng mạnh đến phân bố dịch vụ cao cấp?", "correct": "Quy mô đô thị và hạ tầng công nghệ.", "explanation": "Quy mô đô thị và hạ tầng công nghệ." }
         ]
       }
     }

@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-7-2-buoc-vao-doi",
-      "name": "Bước vào đời (trích Nhớ nghĩ chiều hôm)",
+      "name": "Bước vào đời (Trích – Phùng Quán)",
       "slug": "buoc-vao-doi",
       "chapter": "Sự thật trong tác phẩm kí",
       "chapter_id": "V12-7",
       "lesson_id": 2,
       "author": "Đào Duy Anh",
-      "description": "Tìm hiểu tác phẩm hồi ký 'Bước vào đời' của Đào Duy Anh, khám phá những trăn trở, suy tư của một trí thức trẻ đầu thế kỷ 20.",
+      "description": "Phân tích đoạn trích Bước vào đời trong tác phẩm kí.",
       "duration_minutes": 90,
       "difficulty_level": "medium",
       "is_published": true,
@@ -25,7 +25,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Bước vào đời - Đào Duy Anh",
+          "title": "Bước vào đời (Trích – Phùng Quán)",
           "sections": [
             {
               "heading": "1. Tác giả Đào Duy Anh",
@@ -41,115 +41,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex7-2-1",
-              "type": "mcq",
-              "question": "Tác giả của 'Bước vào đời' là ai?",
-              "options": [
-                "Ngô Tất Tố",
-                "Đào Duy Anh",
-                "Tô Hoài",
-                "Nam Cao"
-              ],
-              "correct": 1,
-              "explanation": "'Bước vào đời' là tác phẩm của Đào Duy Anh, trích từ hồi ký 'Nhớ nghĩ chiều hôm'."
-            },
-            {
-              "id": "ex7-2-2",
-              "type": "mcq",
-              "question": "Tác phẩm thuộc thể loại nào?",
-              "options": [
-                "Tiểu thuyết",
-                "Hồi ký",
-                "Thơ",
-                "Kịch"
-              ],
-              "correct": 1,
-              "explanation": "'Bước vào đời' là tác phẩm hồi ký, ghi lại những kỷ niệm, trải nghiệm thực của tác giả."
-            },
-            {
-              "id": "ex7-2-3",
-              "type": "mcq",
-              "question": "Chủ đề chính của tác phẩm là gì?",
-              "options": [
-                "Tình yêu",
-                "Những trăn trở của trí thức trẻ khi bước vào đời",
-                "Chiến tranh",
-                "Thiên nhiên"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm phản ánh những trăn trở, hoài bão của một trí thức trẻ khi bước vào đời."
-            },
-            {
-              "id": "ex7-2-4",
-              "type": "mcq",
-              "question": "Đào Duy Anh nổi tiếng với công trình nào?",
-              "options": [
-                "Truyện Kiều",
-                "Hán Việt từ điển",
-                "Tắt đèn",
-                "Chí Phèo"
-              ],
-              "correct": 1,
-              "explanation": "Đào Duy Anh nổi tiếng với công trình biên soạn 'Hán Việt từ điển' và nhiều sách giáo khoa."
-            },
-            {
-              "id": "ex7-2-5",
-              "type": "mcq",
-              "question": "Đặc điểm của thể loại hồi ký là gì?",
-              "options": [
-                "Tưởng tượng, hư cấu",
-                "Chân thực, ghi chép sự việc có thật qua góc nhìn cá nhân",
-                "Chỉ miêu tả cảnh vật",
-                "Chỉ nghị luận"
-              ],
-              "correct": 1,
-              "explanation": "Hồi ký có tính chân thực, ghi chép sự việc có thật nhưng qua góc nhìn và cảm nhận chủ quan của tác giả."
-            },
-            {
-              "id": "ex7-2-6",
-              "type": "mcq",
-              "question": "Bối cảnh xã hội trong tác phẩm là gì?",
-              "options": [
-                "Việt Nam độc lập",
-                "Việt Nam dưới ách đô hộ đầu thế kỷ 20",
-                "Việt Nam hiện đại",
-                "Việt Nam thời phong kiến"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm phản ánh bối cảnh Việt Nam dưới ách đô hộ đầu thế kỷ 20, khi trí thức tìm kiếm con đường cứu nước."
-            },
-            {
-              "id": "ex7-2-7",
-              "type": "mcq",
-              "question": "Ngôn ngữ trong tác phẩm có đặc điểm gì?",
-              "options": [
-                "Hoa mỹ, phức tạp",
-                "Chân thành, sâu sắc, giản dị",
-                "Khô khan, máy móc",
-                "Trừu tượng"
-              ],
-              "correct": 1,
-              "explanation": "Ngôn ngữ trong hồi ký chân thành, xuất phát từ trải nghiệm thực, sâu sắc và giản dị."
-            },
-            {
-              "id": "ex7-2-8",
-              "type": "mcq",
-              "question": "Giá trị của tác phẩm hồi ký là gì?",
-              "options": [
-                "Chỉ giải trí",
-                "Tư liệu lịch sử, giáo dục về lý tưởng và ý chí",
-                "Không có giá trị",
-                "Chỉ kể chuyện"
-              ],
-              "correct": 1,
-              "explanation": "Hồi ký có giá trị như tư liệu lịch sử, văn hóa và giáo dục về lý tưởng, ý chí sống."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex7-2-1",
+            "type": "mcq",
+            "question": "Tác giả của 'Bước vào đời' là ai?",
+            "options": [
+              "Ngô Tất Tố",
+              "Đào Duy Anh",
+              "Tô Hoài",
+              "Nam Cao"
+            ],
+            "correct": 1,
+            "explanation": "'Bước vào đời' là tác phẩm của Đào Duy Anh, trích từ hồi ký 'Nhớ nghĩ chiều hôm'."
+          },
+          {
+            "id": "ex7-2-2",
+            "type": "mcq",
+            "question": "Tác phẩm thuộc thể loại nào?",
+            "options": [
+              "Tiểu thuyết",
+              "Hồi ký",
+              "Thơ",
+              "Kịch"
+            ],
+            "correct": 1,
+            "explanation": "'Bước vào đời' là tác phẩm hồi ký, ghi lại những kỷ niệm, trải nghiệm thực của tác giả."
+          },
+          {
+            "id": "ex7-2-3",
+            "type": "mcq",
+            "question": "Chủ đề chính của tác phẩm là gì?",
+            "options": [
+              "Tình yêu",
+              "Những trăn trở của trí thức trẻ khi bước vào đời",
+              "Chiến tranh",
+              "Thiên nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm phản ánh những trăn trở, hoài bão của một trí thức trẻ khi bước vào đời."
+          },
+          {
+            "id": "ex7-2-4",
+            "type": "mcq",
+            "question": "Đào Duy Anh nổi tiếng với công trình nào?",
+            "options": [
+              "Truyện Kiều",
+              "Hán Việt từ điển",
+              "Tắt đèn",
+              "Chí Phèo"
+            ],
+            "correct": 1,
+            "explanation": "Đào Duy Anh nổi tiếng với công trình biên soạn 'Hán Việt từ điển' và nhiều sách giáo khoa."
+          },
+          {
+            "id": "ex7-2-5",
+            "type": "mcq",
+            "question": "Đặc điểm của thể loại hồi ký là gì?",
+            "options": [
+              "Tưởng tượng, hư cấu",
+              "Chân thực, ghi chép sự việc có thật qua góc nhìn cá nhân",
+              "Chỉ miêu tả cảnh vật",
+              "Chỉ nghị luận"
+            ],
+            "correct": 1,
+            "explanation": "Hồi ký có tính chân thực, ghi chép sự việc có thật nhưng qua góc nhìn và cảm nhận chủ quan của tác giả."
+          },
+          {
+            "id": "ex7-2-6",
+            "type": "mcq",
+            "question": "Bối cảnh xã hội trong tác phẩm là gì?",
+            "options": [
+              "Việt Nam độc lập",
+              "Việt Nam dưới ách đô hộ đầu thế kỷ 20",
+              "Việt Nam hiện đại",
+              "Việt Nam thời phong kiến"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm phản ánh bối cảnh Việt Nam dưới ách đô hộ đầu thế kỷ 20, khi trí thức tìm kiếm con đường cứu nước."
+          },
+          {
+            "id": "ex7-2-7",
+            "type": "mcq",
+            "question": "Ngôn ngữ trong tác phẩm có đặc điểm gì?",
+            "options": [
+              "Hoa mỹ, phức tạp",
+              "Chân thành, sâu sắc, giản dị",
+              "Khô khan, máy móc",
+              "Trừu tượng"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ trong hồi ký chân thành, xuất phát từ trải nghiệm thực, sâu sắc và giản dị."
+          },
+          {
+            "id": "ex7-2-8",
+            "type": "mcq",
+            "question": "Giá trị của tác phẩm hồi ký là gì?",
+            "options": [
+              "Chỉ giải trí",
+              "Tư liệu lịch sử, giáo dục về lý tưởng và ý chí",
+              "Không có giá trị",
+              "Chỉ kể chuyện"
+            ],
+            "correct": 1,
+            "explanation": "Hồi ký có giá trị như tư liệu lịch sử, văn hóa và giáo dục về lý tưởng, ý chí sống."
+          },
+          {
+            "id": "ex7-2-9",
+            "type": "mcq",
+            "question": "Vai trò của ngôn ngữ trong tác phẩm văn học là gì?",
+            "options": [
+              "Phương tiện thể hiện tư tưởng, cảm xúc của tác giả",
+              "Chỉ là công cụ giao tiếp",
+              "Không quan trọng",
+              "Yếu tố phụ"
+            ],
+            "correct": 0,
+            "explanation": "Ngôn ngữ là phương tiện quan trọng để thể hiện nội dung, tư tưởng và cảm xúc trong tác phẩm."
+          },
+          {
+            "id": "ex7-2-10",
+            "type": "mcq",
+            "question": "Khi viết bài văn nghị luận, cần đảm bảo yêu cầu nào?",
+            "options": [
+              "Lí lẽ rõ ràng, dẫn chứng thuyết phục, lập luận chặt chẽ",
+              "Chỉ nêu cảm xúc cá nhân",
+              "Viết dài để thuyết phục",
+              "Sử dụng nhiều từ ngữ hoa mỹ"
+            ],
+            "correct": 0,
+            "explanation": "Bài văn nghị luận cần lí lẽ rõ ràng, dẫn chứng thuyết phục và lập luận chặt chẽ."
+          }
+        ]
       }
     }
   ]

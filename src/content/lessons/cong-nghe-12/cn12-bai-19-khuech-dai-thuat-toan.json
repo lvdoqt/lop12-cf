@@ -1,0 +1,295 @@
+{
+  "subject": "Công nghệ 12",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-19-khuech-dai-thuat-toan",
+      "name": "Bài 19. Khuếch đại thuật toán",
+      "slug": "bai-19-khuech-dai-thuat-toan",
+      "chapter": "Chương 6. Điện tử tương tự",
+      "chapter_id": "CN12",
+      "lesson_id": 19,
+      "description": "Tìm hiểu khái niệm khuếch đại thuật toán (op-amp), cấu tạo, đặc điểm và các mạch cơ bản: mạch khuếch đại đảo, không đảo, so sánh và ứng dụng thực tế.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "op-1",
+          "name": "Khái niệm op-amp",
+          "slug": "khai-niem-op-amp",
+          "difficulty": "easy"
+        },
+        {
+          "id": "op-2",
+          "name": "Cấu tạo và đặc điểm op-amp",
+          "slug": "cau-tao-va-dac-diem-op-amp",
+          "difficulty": "medium"
+        },
+        {
+          "id": "op-3",
+          "name": "Mạch khuếch đại đảo và không đảo",
+          "slug": "mach-khuech-dai-dao-va-khong-dao",
+          "difficulty": "hard"
+        },
+        {
+          "id": "op-4",
+          "name": "Mạch so sánh",
+          "slug": "mach-so-sanh",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Khuếch đại thuật toán",
+          "sections": [
+            {
+              "heading": "1. Khái niệm khuếch đại thuật toán",
+              "content": "<p><strong>Khuếch đại thuật toán</strong> (Operational Amplifier — op-amp) là mạch tích hợp khuếch đại DC có hệ số khuếch đại rất lớn, dùng để thực hiện các phép toán trên tín hiệu điện áp.</p><p><strong>Ký hiệu:</strong></p><ul><li>Đầu vào không đảo (non-inverting): ký hiệu (+) — điện áp $V_+$</li><li>Đầu vào đảo (inverting): ký hiệu (-) — điện áp $V_-$</li><li>Đầu ra: $V_{out}$</li><li>Nguồn cấp: $V_{CC}+$ và $V_{EE}-$</li></ul><p><strong>Nguyên lý cơ bản:</strong></p><p>$$V_{out} = A_{OL} \\cdot (V_+ - V_-)$$</p><p>Trong đó $A_{OL}$ là hệ số khuếch đại hở mạch (rất lớn, $>10^5$).</p>"
+            },
+            {
+              "heading": "2. Cấu tạo và đặc điểm của op-amp",
+              "content": "<p><strong>Cấu tạo bên trong op-amp:</strong></p><ul><li><strong>Tầng vi sai đầu vào:</strong> Khuếch đại hiệu điện áp hai đầu vào</li><li><strong>Tầng khuếch đại trung gian:</strong> Tăng hệ số khuếch đại</li><li><strong>Tầng đệm đầu ra:</strong> Tạo trở kháng đầu ra thấp</li></ul><p><strong>Các đặc điểm lý tưởng của op-amp:</strong></p><ul><li>Hệ số khuếch đại vòng hở $A_{OL} \\to \\infty$</li><li>Trở kháng đầu vào $Z_{in} \\to \\infty$</li><li>Trở kháng đầu ra $Z_{out} \\to 0$</li><li>Băng thông vô hạn</li><li>Điện áp offset bằng 0</li></ul><p><strong>Op-amp thực tế:</strong> IC LM741, TL081, NE5532 là các op-amp thông dụng.</p>"
+            },
+            {
+              "heading": "3. Mạch khuếch đại đảo",
+              "content": "<p><strong>Sơ đồ mạch khuếch đại đảo:</strong></p><ul><li>Tín hiệu vào đưa vào đầu (-) qua điện trở $R_{in}$</li><li>Đầu (+) nối mass</li><li>Điện trở hồi tiếp $R_f$ nối từ đầu ra về đầu (-)</li></ul><p><strong>Công thức:</strong></p><p>$$V_{out} = -\\frac{R_f}{R_{in}} \\cdot V_{in}$$</p><p>Hệ số khuếch đại: $A_V = -R_f/R_{in}$ (dấu âm thể hiện đảo pha).</p><p><strong>Đặc điểm:</strong></p><ul><li>Tín hiệu ra ngược pha với tín hiệu vào (đảo 180°)</li><li>Hệ số khuếch đại chỉ phụ thuộc vào $R_f$ và $R_{in}$</li></ul>"
+            },
+            {
+              "heading": "4. Mạch khuếch đại không đảo",
+              "content": "<p><strong>Sơ đồ mạch khuếch đại không đảo:</strong></p><ul><li>Tín hiệu vào đưa vào đầu (+) qua tụ liên lạc (nếu cần)</li><li>Điện trở hồi tiếp $R_f$ từ đầu ra về đầu (-)</li><li>Điện trở $R_g$ từ đầu (-) xuống mass</li></ul><p><strong>Công thức:</strong></p><p>$$V_{out} = \\left(1 + \\frac{R_f}{R_g}\\right) \\cdot V_{in}$$</p><p>Hệ số khuếch đại: $A_V = 1 + R_f/R_g$.</p><p><strong>Đặc điểm:</strong></p><ul><li>Tín hiệu ra cùng pha với tín hiệu vào</li><li>Trở kháng đầu vào rất lớn</li><li>Hệ số khuếch đại tối thiểu bằng 1</li></ul>"
+            },
+            {
+              "heading": "5. Mạch so sánh dùng op-amp",
+              "content": "<p><strong>Mạch so sánh</strong> dùng op-amp ở chế độ vòng hở hoặc có hồi tiếp dương.</p><p><strong>Nguyên lý:</strong></p><ul><li>So sánh điện áp đầu vào $V_{in}$ với điện áp tham chiếu $V_{ref}$</li><li>Nếu $V_+ > V_-$: $V_{out} \\approx +V_{CC}$ (bão hòa dương)</li><li>Nếu $V_+ < V_-$: $V_{out} \\approx -V_{EE}$ (bão hòa âm)</li></ul><p><strong>Mạch so sánh không đảo:</strong></p><ul><li>$V_{in}$ đưa vào (+), $V_{ref}$ đưa vào (-)</li><li>Ngõ ra lên mức cao khi $V_{in} > V_{ref}$</li></ul><p><strong>Mạch so sánh đảo:</strong></p><ul><li>$V_{in}$ đưa vào (-), $V_{ref}$ đưa vào (+)</li><li>Ngõ ra xuống mức thấp khi $V_{in} > V_{ref}$</li></ul><p><strong>Ứng dụng:</strong> Chuyển đổi ADC đơn giản, mạch báo mức nhiệt độ, ngưỡng ánh sáng.</p>"
+            },
+            {
+              "heading": "6. Ứng dụng của op-amp trong thực tế",
+              "content": "<p><strong>Các ứng dụng phổ biến:</strong></p><ul><li><strong>Khuếch đại âm thanh:</strong> Preamp micro, equalizer, amplifier công suất nhỏ</li><li><strong>Mạch lọc tích cực:</strong> Lọc thông thấp, thông cao, thông dải chất lượng cao</li><li><strong>Mạch tích phân và vi phân:</strong> Dùng trong điều khiển PID, xử lý tín hiệu</li><li><strong>Mạch so sánh:</strong> Báo động, điều khiển ON/OFF, chuyển đổi tương tự-số</li><li><strong>Mạch cộng/trừ:</strong> Mixer âm thanh, xử lý tín hiệu analog</li></ul><p>IC op-amp phổ biến: LM741, LM358 (kép), LM324 (bốn), TL081, NE5532 (âm thanh).</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính điện áp ra mạch khuếch đại đảo",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Công thức: $V_{out} = -(R_f / R_{in}) \\cdot V_{in}$</li><li>Xác định $R_f$, $R_{in}$, $V_{in}$ từ đề bài</li><li>Thay vào công thức, chú ý dấu âm thể hiện đảo pha</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Mạch khuếch đại đảo có $R_{in}=1k\\Omega$, $R_f=10k\\Omega$, $V_{in}=0,5V$. Tính $V_{out}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$V_{out} = -(10/1) \\times 0,5 = -5V$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Tính điện áp ra mạch khuếch đại không đảo",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Công thức: $V_{out} = (1 + R_f/R_g) \\cdot V_{in}$</li><li>Xác định $R_f$, $R_g$, $V_{in}$</li><li>Thay vào công thức, chú ý $A_V \\ge 1$</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Mạch không đảo có $R_g=1k\\Omega$, $R_f=4k\\Omega$, $V_{in}=1V$. Tính $V_{out}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$V_{out} = (1 + 4/1) \\times 1 = 5V$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Xác định trạng thái mạch so sánh",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định $V_+$ và $V_-$ của op-amp</li><li>Nếu $V_+ > V_-$: $V_{out} \\approx +V_{CC}$</li><li>Nếu $V_+ < V_-$: $V_{out} \\approx -V_{EE}$</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Mạch so sánh có $V_{ref}=2V$ ở đầu (+), $V_{in}=3V$ ở đầu (-), nguồn ±12V. Tính $V_{out}$.",
+                "solution": "<p><strong>Giải:</strong></p><p>$V_+=2V$, $V_-=3V$, $V_+ < V_-$ nên $V_{out} \\approx -12V$ (bão hòa âm).</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Op-amp là viết tắt của:",
+            "options": [
+              "Operational Amplifier",
+              "Operated Amplifier",
+              "Optical Amplifier",
+              "Output Amplifier"
+            ],
+            "correct": 0,
+            "explanation": "Op-amp là viết tắt của Operational Amplifier (khuếch đại thuật toán)."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Đầu vào đảo của op-amp được ký hiệu bằng dấu:",
+            "options": [
+              "+",
+              "-",
+              "~",
+              "0"
+            ],
+            "correct": 1,
+            "explanation": "Đầu vào đảo được ký hiệu (-), đầu vào không đảo ký hiệu (+)."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Trong op-amp lý tưởng, trở kháng đầu vào bằng:",
+            "options": [
+              "0",
+              "Vô cùng",
+              "1 $\\Omega$",
+              "$50\\Omega$"
+            ],
+            "correct": 1,
+            "explanation": "Op-amp lý tưởng có trở kháng đầu vào vô cùng lớn, không hút dòng từ nguồn tín hiệu."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Mạch khuếch đại đảo có $R_{in}=2k\\Omega$, $R_f=10k\\Omega$, $V_{in}=1V$. $V_{out}$ bằng:",
+            "options": [
+              "5V",
+              "-5V",
+              "0,2V",
+              "-0,2V"
+            ],
+            "correct": 1,
+            "explanation": "$V_{out} = -(10/2) \\times 1 = -5V$. Dấu âm thể hiện đảo pha."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Mạch khuếch đại không đảo có $R_g=1k\\Omega$, $R_f=9k\\Omega$, $V_{in}=2V$. $V_{out}$ bằng:",
+            "options": [
+              "18V",
+              "20V",
+              "10V",
+              "-20V"
+            ],
+            "correct": 1,
+            "explanation": "$V_{out} = (1+9/1) \\times 2 = 10 \\times 2 = 20V$."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Trong mạch khuếch đại đảo, tín hiệu đầu ra so với đầu vào:",
+            "options": [
+              "Cùng pha",
+              "Ngược pha (đảo 180°)",
+              "Lệch 90°",
+              "Không xác định"
+            ],
+            "correct": 1,
+            "explanation": "Đầu ra mạch khuếch đại đảo ngược pha 180° so với đầu vào."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Mạch so sánh dùng op-amp có $V_{in}=1V$ ở đầu (-) và $V_{ref}=3V$ ở đầu (+). Trạng thái đầu ra:",
+            "options": [
+              "Bão hòa dương",
+              "Bão hòa âm",
+              "Bằng 0",
+              "Bằng $V_{in}$"
+            ],
+            "correct": 0,
+            "explanation": "$V_+=3V > V_-=1V$ nên đầu ra ở mức bão hòa dương."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Hệ số khuếch đại vòng hở ($A_{OL}$) của op-amp thực tế thường có giá trị:",
+            "options": [
+              "Từ 1 đến 10",
+              "Từ $10^3$ đến $10^5$",
+              "Từ $10^5$ đến $10^7$",
+              "Bằng 0"
+            ],
+            "correct": 2,
+            "explanation": "Op-amp thực tế có $A_{OL}$ rất lớn, thường từ $10^5$ đến $10^7$ (100.000 đến 10.000.000)."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "IC op-amp phổ biến nhất là:",
+            "options": [
+              "NE555",
+              "LM741",
+              "LM7805",
+              "ATmega328"
+            ],
+            "correct": 1,
+            "explanation": "LM741 là IC op-amp kinh điển, được sử dụng rộng rãi trong các mạch khuếch đại."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Mạch khuếch đại không đảo có hệ số khuếch đại tối thiểu bằng:",
+            "options": [
+              "0",
+              "1",
+              "$\\infty$",
+              "10"
+            ],
+            "correct": 1,
+            "explanation": "Với $R_f=0$ hoặc $R_g \\to \\infty$, $A_V = 1$. Hệ số khuếch đại tối thiểu là 1."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các đặc điểm của op-amp lý tưởng:",
+            "options": [
+              "Hệ số khuếch đại vòng hở vô cùng",
+              "Trở kháng đầu vào vô cùng",
+              "Trở kháng đầu ra bằng 0",
+              "Tiêu thụ dòng điện rất lớn"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Op-amp lý tưởng có $A_{OL} \\to \\infty$, $Z_{in} \\to \\infty$, $Z_{out} \\to 0$. Không tiêu thụ dòng lớn."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các ứng dụng của mạch so sánh dùng op-amp:",
+            "options": [
+              "Mạch báo nhiệt độ vượt ngưỡng",
+              "Mạch chuyển đổi tương tự - số (ADC)",
+              "Mạch lọc thông thấp",
+              "Mạch điều khiển đèn tự động"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "So sánh dùng trong báo ngưỡng, ADC đơn giản, điều khiển ON/OFF. Lọc thông thấp không phải chức năng của mạch so sánh."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Các tầng cơ bản bên trong op-amp:",
+            "options": [
+              "Tầng vi sai đầu vào",
+              "Tầng khuếch đại trung gian",
+              "Tầng đệm đầu ra",
+              "Tầng chỉnh lưu"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Op-amp gồm tầng vi sai đầu vào, tầng khuếch đại trung gian và tầng đệm đầu ra."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Các mạch cơ bản sử dụng op-amp:",
+            "options": [
+              "Mạch khuếch đại đảo",
+              "Mạch khuếch đại không đảo",
+              "Mạch so sánh",
+              "Mạch chỉnh lưu cầu"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Mạch khuếch đại đảo, không đảo và so sánh là các mạch cơ bản dùng op-amp. Chỉnh lưu cầu dùng diode."
+          }
+        ]
+      }
+    }
+  ]
+}

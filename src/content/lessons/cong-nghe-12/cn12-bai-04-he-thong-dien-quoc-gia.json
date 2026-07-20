@@ -1,0 +1,70 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12_04",
+      "name": "Hệ thống điện quốc gia",
+      "slug": "he-thong-dien-quoc-gia",
+      "chapter": "Hệ thống điện quốc gia",
+      "chapter_id": "CN12",
+      "lesson_id": 4,
+      "description": "Khái niệm, cấu trúc của hệ thống điện quốc gia: nguồn điện, lưới điện, tải điện; vai trò và đặc điểm của hệ thống điện quốc gia.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Hệ thống điện quốc gia",
+          "summary": "Hệ thống điện quốc gia là tập hợp các nhà máy điện, lưới điện và các hộ tiêu thụ điện được liên kết thành một hệ thống thống nhất, đảm bảo sản xuất, truyền tải, phân phối và sử dụng điện năng trên phạm vi toàn quốc. Hệ thống này có vai trò then chốt đối với an ninh năng lượng và phát triển kinh tế - xã hội.",
+          "sections": [
+            {
+              "heading": "Khái niệm hệ thống điện quốc gia",
+              "content": "Hệ thống điện quốc gia là hệ thống bao gồm tất cả các nhà máy điện, trạm biến áp, đường dây truyền tải và phân phối, cùng các thiết bị phụ trợ được kết nối với nhau để sản xuất, truyền tải, phân phối và cung cấp điện năng đến người sử dụng trên phạm vi cả nước. Hệ thống điện quốc gia hoạt động như một thể thống nhất, được điều khiển từ trung tâm để đảm bảo cân bằng cung - cầu điện năng."
+            },
+            {
+              "heading": "Cấu trúc hệ thống điện quốc gia: Nguồn điện",
+              "content": "Nguồn điện là các nhà máy sản xuất điện năng, bao gồm nhiều loại: (1) Nhiệt điện - đốt than, dầu, khí; (2) Thủy điện - sử dụng năng lượng nước; (3) Điện hạt nhân - năng lượng nguyên tử; (4) Năng lượng tái tạo - điện mặt trời, điện gió, điện sinh khối. Tại Việt Nam, thủy điện và nhiệt điện chiếm tỉ trọng chính, năng lượng tái tạo đang phát triển nhanh. Mỗi loại nhà máy có điện áp phát từ 6kV đến 22kV."
+            },
+            {
+              "heading": "Cấu trúc hệ thống điện quốc gia: Lưới điện",
+              "content": "Lưới điện là hệ thống truyền tải và phân phối điện năng. Lưới truyền tải gồm đường dây cao áp (220kV, 500kV) và các trạm biến áp tăng áp, hạ áp, vận chuyển điện năng từ nhà máy điện đến các trung tâm phụ tải. Lưới phân phối gồm đường dây trung áp (6kV, 10kV, 22kV, 35kV) và hạ áp (0,4kV; 220V) đưa điện đến các hộ tiêu thụ. Trạm biến áp có vai trò biến đổi điện áp phù hợp."
+            },
+            {
+              "heading": "Cấu trúc hệ thống điện quốc gia: Tải điện",
+              "content": "Tải điện (hộ tiêu thụ) là các thiết bị và hệ thống sử dụng điện năng, được phân thành: (1) Tải công nghiệp - nhà máy, xí nghiệp, khu công nghiệp (chiếm tỉ trọng lớn); (2) Tải nông nghiệp - trạm bơm, máy nông nghiệp; (3) Tải thương mại - tòa nhà văn phòng, trung tâm thương mại; (4) Tải dân dụng - hộ gia đình (chiếu sáng, thiết bị gia dụng). Mỗi loại tải có yêu cầu khác nhau về độ tin cậy và chất lượng điện năng."
+            },
+            {
+              "heading": "Vai trò của hệ thống điện quốc gia",
+              "content": "Hệ thống điện quốc gia có vai trò quan trọng: (1) Đảm bảo an ninh năng lượng quốc gia; (2) Cung cấp điện năng ổn định cho sản xuất công nghiệp, nông nghiệp, dịch vụ; (3) Phục vụ đời sống sinh hoạt của nhân dân; (4) Là cơ sở hạ tầng thiết yếu cho phát triển kinh tế - xã hội; (5) Đảm bảo quốc phòng - an ninh; (6) Hỗ trợ tích hợp các nguồn năng lượng tái tạo và thúc đẩy chuyển đổi năng lượng sạch."
+            },
+            {
+              "heading": "Đặc điểm của hệ thống điện quốc gia",
+              "content": "Hệ thống điện quốc gia có các đặc điểm chính: (1) Tính thống nhất - hoạt động như một thể thống nhất trên toàn quốc; (2) Tính liên tục - điện năng không thể lưu trữ với số lượng lớn, sản xuất và tiêu thụ phải cân bằng tại mọi thời điểm; (3) Tính phức tạp - bao gồm nhiều thành phần, nhiều cấp điện áp; (4) Có tính chất động - phụ tải thay đổi liên tục theo thời gian; (5) Yêu cầu độ tin cậy cao - mất điện gây thiệt hại lớn về kinh tế và xã hội."
+            },
+            {
+              "heading": "Thực trạng và phát triển hệ thống điện Việt Nam",
+              "content": "Hệ thống điện Việt Nam đã phát triển mạnh mẽ: tổng công suất đặt đạt trên 80.000 MW, lưới điện 500kV Bắc - Nam được xây dựng từ năm 1994 và không ngừng mở rộng. Việt Nam đang chuyển dịch cơ cấu nguồn điện theo hướng tăng tỉ lệ năng lượng tái tạo, giảm nhiệt điện than. Các dự án điện gió ngoài khơi, điện mặt trời mái nhà, lưới điện thông minh đang được đẩy mạnh. Tuy nhiên, hệ thống vẫn đối mặt với thách thức về hạ tầng lưới điện và hiệu quả vận hành."
+            }
+          ]
+        },
+        "exercises": [
+          { "id": 1, "type": "mcq", "question": "Hệ thống điện quốc gia bao gồm những thành phần chính nào?", "options": ["Nguồn điện và tải điện", "Nguồn điện, lưới điện và tải điện", "Nhà máy điện và đường dây", "Trạm biến áp và dây dẫn"], "correct": 1, "explanation": "Hệ thống điện quốc gia gồm: nguồn điện, lưới điện và tải điện." },
+          { "id": 2, "type": "mcq", "question": "Điện áp truyền tải của lưới điện cao áp ở Việt Nam là bao nhiêu?", "options": ["110kV và 220kV", "220kV và 500kV", "35kV và 110kV", "6kV và 22kV"], "correct": 1, "explanation": "Lưới truyền tải cao áp Việt Nam có điện áp 220kV và 500kV." },
+          { "id": 3, "type": "mcq", "question": "Điện năng có đặc điểm gì quan trọng?", "options": ["Có thể lưu trữ dễ dàng", "Không thể lưu trữ với số lượng lớn", "Không cần cân bằng sản xuất - tiêu thụ", "Luôn ổn định không đổi"], "correct": 1, "explanation": "Điện năng khó lưu trữ, sản xuất và tiêu thụ phải cân bằng tức thời." },
+          { "id": 4, "type": "mcq", "question": "Loại nhà máy điện nào chiếm tỉ trọng lớn ở Việt Nam hiện nay?", "options": ["Điện hạt nhân", "Thủy điện và nhiệt điện", "Điện gió", "Điện mặt trời"], "correct": 1, "explanation": "Thủy điện và nhiệt điện là hai nguồn chính ở Việt Nam." },
+          { "id": 5, "type": "mcq", "question": "Lưới phân phối hạ áp có điện áp bao nhiêu?", "options": ["220V và 380V (0,4kV)", "6kV", "22kV", "35kV"], "correct": 0, "explanation": "Lưới hạ áp có điện áp 220V (một pha) và 380V (ba pha)." },
+          { "id": 6, "type": "mcq", "question": "Tải công nghiệp là hộ tiêu thụ điện thuộc loại nào?", "options": ["Hộ gia đình", "Nhà máy, xí nghiệp", "Trường học", "Bệnh viện"], "correct": 1, "explanation": "Tải công nghiệp là các nhà máy, xí nghiệp, khu công nghiệp." },
+          { "id": 7, "type": "mcq", "question": "Vai trò của trạm biến áp trong hệ thống điện là gì?", "options": ["Sản xuất điện", "Biến đổi điện áp", "Tiêu thụ điện", "Đo lường điện"], "correct": 1, "explanation": "Trạm biến áp tăng hoặc hạ điện áp phù hợp." },
+          { "id": 8, "type": "mcq", "question": "Năm nào đường dây 500kV Bắc - Nam được đưa vào vận hành?", "options": ["1990", "1994", "2000", "2005"], "correct": 1, "explanation": "Đường dây 500kV Bắc - Nam vận hành từ năm 1994." },
+          { "id": 9, "type": "mcq", "question": "Đặc điểm nào sau đây đúng với hệ thống điện quốc gia?", "options": ["Hoạt động riêng rẽ từng vùng", "Có tính thống nhất và liên tục", "Chỉ phục vụ sản xuất công nghiệp", "Không yêu cầu độ tin cậy cao"], "correct": 1, "explanation": "Hệ thống điện quốc gia có tính thống nhất và liên tục." },
+          { "id": 10, "type": "mcq", "question": "Xu hướng phát triển nào của nguồn điện Việt Nam trong tương lai?", "options": ["Tăng nhiệt điện than", "Tăng năng lượng tái tạo", "Giảm thủy điện", "Phát triển điện hạt nhân"], "correct": 1, "explanation": "Việt Nam đang tăng tỉ trọng năng lượng tái tạo, giảm nhiệt điện than." },
+          { "id": 11, "type": "msq", "question": "Những thành phần nào thuộc cấu trúc hệ thống điện quốc gia?", "options": ["Nguồn điện", "Lưới điện", "Tải điện", "Trạm xăng dầu"], "correct": [0, 1, 2], "explanation": "Hệ thống điện quốc gia gồm nguồn điện, lưới điện và tải điện." },
+          { "id": 12, "type": "msq", "question": "Loại nguồn điện nào hiện có ở Việt Nam?", "options": ["Nhiệt điện", "Thủy điện", "Điện hạt nhân", "Điện mặt trời"], "correct": [0, 1, 3], "explanation": "Việt Nam có nhiệt điện, thủy điện và điện mặt trời. Điện hạt nhân chưa được xây dựng." },
+          { "id": 13, "type": "msq", "question": "Đặc điểm nào của hệ thống điện quốc gia?", "options": ["Tính thống nhất", "Tính liên tục", "Tính độc lập", "Yêu cầu độ tin cậy cao"], "correct": [0, 1, 3], "explanation": "Hệ thống điện có tính thống nhất, liên tục và yêu cầu độ tin cậy cao." },
+          { "id": 14, "type": "msq", "question": "Những loại tải điện nào thuộc hệ thống điện quốc gia?", "options": ["Tải công nghiệp", "Tải dân dụng", "Tải quân sự (doanh trại)", "Trạm biến áp"], "correct": [0, 1, 2], "explanation": "Tải công nghiệp, dân dụng và quân sự đều là hộ tiêu thụ điện. Trạm biến áp là một phần của lưới điện." }
+        ]
+      }
+    }
+  ]
+}

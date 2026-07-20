@@ -1,0 +1,254 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-05-san-xuat-dien-nang",
+      "name": "Bài 5. Sản xuất điện năng",
+      "slug": "bai-5-san-xuat-dien-nang",
+      "chapter": "Chương 1. Công nghệ Điện - Điện tử",
+      "chapter_id": "CN12",
+      "lesson_id": 5,
+      "description": "Giới thiệu các phương pháp sản xuất điện năng: nhiệt điện, thủy điện, điện hạt nhân, năng lượng tái tạo (mặt trời, gió, sinh khối); ưu nhược điểm từng loại; xu hướng phát triển.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "cn12-5-1",
+          "name": "Phương pháp sản xuất điện",
+          "slug": "phuong-phap-san-xuat-dien",
+          "difficulty": "easy"
+        },
+        {
+          "id": "cn12-5-2",
+          "name": "Năng lượng tái tạo",
+          "slug": "nang-luong-tai-tao",
+          "difficulty": "medium"
+        },
+        {
+          "id": "cn12-5-3",
+          "name": "Xu hướng phát triển",
+          "slug": "xu-huong-phat-trien",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Sản xuất điện năng",
+          "sections": [
+            {
+              "heading": "1. Vai trò của điện năng",
+              "content": "<p><strong>Điện năng:</strong> Là năng lượng của dòng điện, đóng vai trò quan trọng trong sản xuất và đời sống. Điện năng được sản xuất từ nhiều nguồn năng lượng khác nhau.</p><p><strong>Các yêu cầu:</strong></p><ul><li>Đảm bảo cung cấp điện liên tục, ổn định</li><li>Giảm thiểu tác động đến môi trường</li><li>Sử dụng hiệu quả tài nguyên năng lượng</li></ul>"
+            },
+            {
+              "heading": "2. Nhà máy nhiệt điện",
+              "content": "<p><strong>Nguyên lí hoạt động:</strong></p><p>Đốt nhiên liệu (than, dầu, khí) → đun sôi nước → hơi nước áp suất cao quay tuabin → máy phát điện quay → phát điện.</p><p><strong>Ưu điểm:</strong></p><ul><li>Công suất lớn, hoạt động ổn định</li><li>Công nghệ tương đối đơn giản</li><li>Chi phí xây dựng thấp hơn thủy điện</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>Phát thải CO₂, SO₂ gây ô nhiễm môi trường</li><li>Sử dụng nhiên liệu hóa thạch không tái tạo</li><li>Hiệu suất thấp (khoảng 35-40%)</li></ul>"
+            },
+            {
+              "heading": "3. Nhà máy thủy điện",
+              "content": "<p><strong>Nguyên lí hoạt động:</strong></p><p>Nước từ hồ chứa trên cao → ống dẫn nước → tuabin nước quay → máy phát điện quay → phát điện.</p><p><strong>Phân loại:</strong></p><ul><li>Thủy điện lớn (hồ chứa lớn)</li><li>Thủy điện vừa và nhỏ</li><li>Thủy điện tích năng</li></ul><p><strong>Ưu điểm:</strong></p><ul><li>Không phát thải khí nhà kính</li><li>Chi phí vận hành thấp</li><li>Tuổi thọ cao</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>Phải xây dựng hồ chứa lớn, di dân</li><li>Tác động đến hệ sinh thái và dòng chảy</li><li>Phụ thuộc vào lượng mưa và mùa vụ</li></ul>"
+            },
+            {
+              "heading": "4. Nhà máy điện hạt nhân",
+              "content": "<p><strong>Nguyên lí hoạt động:</strong></p><p>Phản ứng phân hạch hạt nhân trong lò phản ứng → nhiệt năng → đun sôi nước → hơi nước quay tuabin → máy phát điện.</p><p><strong>Ưu điểm:</strong></p><ul><li>Công suất rất lớn</li><li>Không phát thải CO₂</li><li>Nhiên liệu (uranium) cho năng lượng cao</li></ul><p><strong>Nhược điểm:</strong></p><ul><li>Chất thải phóng xạ nguy hiểm, khó xử lí</li><li>Nguy cơ sự cố hạt nhân (Chernobyl, Fukushima)</li><li>Chi phí xây dựng và bảo trì rất cao</li></ul>"
+            },
+            {
+              "heading": "5. Năng lượng tái tạo",
+              "content": "<p><strong>a) Điện mặt trời:</strong></p><ul><li>Pin quang điện chuyển đổi trực tiếp ánh sáng mặt trời thành điện năng</li><li>Ưu điểm: sạch, bền vững, lắp đặt linh hoạt</li><li>Nhược điểm: phụ thuộc thời tiết, hiệu suất thấp, giá thành còn cao</li></ul><p><strong>b) Điện gió:</strong></p><ul><li>Tuabin gió chuyển đổi động năng gió thành điện năng</li><li>Ưu điểm: sạch, chi phí vận hành thấp</li><li>Nhược điểm: phụ thuộc tốc độ gió, tiếng ồn, ảnh hưởng chim di cư</li></ul><p><strong>c) Điện sinh khối:</strong></p><ul><li>Đốt hoặc lên men các chất hữu cơ (rơm rạ, chất thải chăn nuôi) để phát điện</li><li>Góp phần xử lí chất thải nông nghiệp</li></ul>"
+            },
+            {
+              "heading": "6. Xu hướng phát triển điện năng",
+              "content": "<p><strong>Các xu hướng chính:</strong></p><ul><li>Phát triển năng lượng tái tạo thay thế nhiên liệu hóa thạch</li><li>Xây dựng lưới điện thông minh (Smart Grid)</li><li>Ứng dụng công nghệ lưu trữ năng lượng (pin lithium, thủy điện tích năng)</li><li>Sử dụng hydrogen xanh làm nhiên liệu</li><li>Điện khí hóa giao thông vận tải</li></ul><p><strong>Tại Việt Nam:</strong> Đẩy mạnh điện gió ngoài khơi, điện mặt trời áp mái, chuyển đổi năng lượng công bằng.</p>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Nhà máy nhiệt điện sử dụng nguồn năng lượng nào để sản xuất điện?",
+            "options": [
+              "Năng lượng gió",
+              "Nhiên liệu hóa thạch (than, dầu, khí)",
+              "Năng lượng mặt trời",
+              "Năng lượng thủy triều"
+            ],
+            "correct": 1,
+            "explanation": "Nhiệt điện đốt than, dầu hoặc khí tự nhiên để sinh nhiệt."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Nguồn năng lượng nào sau đây thuộc nhóm năng lượng tái tạo?",
+            "options": [
+              "Than đá",
+              "Dầu mỏ",
+              "Khí tự nhiên",
+              "Năng lượng mặt trời"
+            ],
+            "correct": 3,
+            "explanation": "Năng lượng mặt trời là nguồn tái tạo, không bị cạn kiệt."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Nhược điểm chính của nhà máy thủy điện là:",
+            "options": [
+              "Phát thải nhiều CO₂",
+              "Phải xây hồ chứa lớn, tác động đến hệ sinh thái",
+              "Hiệu suất rất thấp",
+              "Giá thành nhiên liệu cao"
+            ],
+            "correct": 1,
+            "explanation": "Thủy điện cần hồ chứa lớn, gây di dân và tác động đến môi trường sinh thái."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Điện hạt nhân sử dụng nguyên lí nào để sinh nhiệt?",
+            "options": [
+              "Đốt nhiên liệu hóa thạch",
+              "Phản ứng phân hạch hạt nhân",
+              "Năng lượng mặt trời",
+              "Động năng của gió"
+            ],
+            "correct": 1,
+            "explanation": "Phản ứng phân hạch uranium trong lò phản ứng tạo nhiệt lớn."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Loại nhà máy điện nào không phát thải khí CO₂ trong quá trình vận hành?",
+            "options": [
+              "Nhiệt điện than",
+              "Thủy điện",
+              "Nhiệt điện khí",
+              "Nhiệt điện dầu"
+            ],
+            "correct": 1,
+            "explanation": "Thủy điện dùng nước, không đốt nhiên liệu nên không phát thải CO₂."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Pin quang điện chuyển đổi trực tiếp:",
+            "options": [
+              "Nhiệt năng thành điện năng",
+              "Quang năng thành điện năng",
+              "Động năng thành điện năng",
+              "Hóa năng thành điện năng"
+            ],
+            "correct": 1,
+            "explanation": "Pin quang điện (solar panel) chuyển đổi ánh sáng mặt trời trực tiếp thành điện."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Nhược điểm của năng lượng gió là:",
+            "options": [
+              "Gây ô nhiễm không khí",
+              "Phụ thuộc vào tốc độ gió, không ổn định",
+              "Phát thải khí nhà kính",
+              "Chi phí vận hành rất cao"
+            ],
+            "correct": 1,
+            "explanation": "Điện gió phụ thuộc thời tiết, không phải lúc nào cũng có gió đủ mạnh."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Hiệu suất của nhà máy nhiệt điện thường khoảng:",
+            "options": [
+              "70-80%",
+              "35-40%",
+              "90-95%",
+              "10-15%"
+            ],
+            "correct": 1,
+            "explanation": "Hiệu suất nhiệt điện thấp do tổn thất nhiệt, khoảng 35-40%."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Nguồn nào sau đây là năng lượng sinh khối?",
+            "options": [
+              "Ánh sáng mặt trời",
+              "Sức gió",
+              "Rơm rạ, chất thải nông nghiệp",
+              "Uranium"
+            ],
+            "correct": 2,
+            "explanation": "Sinh khối là chất hữu cơ từ thực vật, động vật, rơm rạ, chất thải chăn nuôi."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Xu hướng phát triển điện năng hiện nay là:",
+            "options": [
+              "Tăng cường nhiệt điện than",
+              "Phát triển năng lượng tái tạo và lưới điện thông minh",
+              "Chỉ sử dụng điện hạt nhân",
+              "Giảm sản lượng điện tiêu thụ"
+            ],
+            "correct": 1,
+            "explanation": "Xu hướng toàn cầu là chuyển sang năng lượng tái tạo và lưới điện thông minh."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các nguồn năng lượng tái tạo bao gồm:",
+            "options": [
+              "Năng lượng mặt trời",
+              "Than đá",
+              "Năng lượng gió",
+              "Sinh khối"
+            ],
+            "correct": [0, 2, 3],
+            "explanation": "Mặt trời, gió và sinh khối là năng lượng tái tạo; than đá là hóa thạch."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Ưu điểm của nhà máy thủy điện:",
+            "options": [
+              "Không phát thải khí nhà kính",
+              "Chi phí vận hành thấp",
+              "Không phụ thuộc vào thời tiết",
+              "Tuổi thọ cao"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Thủy điện sạch, vận hành rẻ, tuổi thọ cao; nhưng phụ thuộc vào lượng mưa."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Nhược điểm của điện hạt nhân:",
+            "options": [
+              "Chất thải phóng xạ khó xử lí",
+              "Nguy cơ sự cố hạt nhân",
+              "Phát thải nhiều CO₂",
+              "Chi phí xây dựng và bảo trì cao"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Điện hạt nhân không phát thải CO₂ nhưng có rủi ro phóng xạ và chi phí cao."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Các yếu tố của lưới điện thông minh (Smart Grid) bao gồm:",
+            "options": [
+              "Tự động hóa và điều khiển từ xa",
+              "Tích hợp năng lượng tái tạo",
+              "Chỉ sử dụng nhiệt điện",
+              "Hệ thống lưu trữ năng lượng"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Smart Grid tích hợp tự động hóa, năng lượng tái tạo và lưu trữ năng lượng."
+          }
+        ]
+      }
+    }
+  ]
+}

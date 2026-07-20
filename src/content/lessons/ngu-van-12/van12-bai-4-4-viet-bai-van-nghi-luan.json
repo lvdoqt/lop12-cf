@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-4-4-viet-bai-van-nghi-luan",
-      "name": "Viết bài văn nghị luận về việc vay mượn – cải biến – sáng tạo",
+      "id": "van12-bai-4-4-viet-bai-van-nghi-luan-vay-muon",
+      "name": "Viết bài văn nghị luận về việc vay mượn – cải biến – sáng tạo trong một tác phẩm văn học",
       "slug": "viet-bai-van-nghi-luan-vay-muon",
       "chapter": "Yếu tố kì ảo trong truyện kể",
       "chapter_id": "V12-4",
       "lesson_id": 4,
-      "description": "Phát triển kỹ năng viết bài văn nghị luận về mối quan hệ giữa vay mượn, cải biến và sáng tạo trong một tác phẩm văn học cụ thể.",
+      "description": "Hướng dẫn viết bài văn nghị luận về việc vay mượn, cải biến, sáng tạo trong tác phẩm văn học.",
       "duration_minutes": 90,
       "difficulty_level": "hard",
       "is_published": true,
@@ -152,6 +152,32 @@
             ],
             "correct": 1,
             "explanation": "Thân bài thường có 2-3 luận điểm: giải thích khái niệm, phân tích tác phẩm cụ thể, nêu ý nghĩa."
+          },
+          {
+            "id": "ex4-4-9",
+            "type": "mcq",
+            "question": "Phân tích yếu tố kì ảo trong tác phẩm giúp người đọc hiểu được điều gì?",
+            "options": [
+              "Nội dung và thông điệp sâu sắc của tác phẩm",
+              "Chỉ để giải trí",
+              "Không có tác dụng",
+              "Làm tác phẩm khó hiểu hơn"
+            ],
+            "correct": 0,
+            "explanation": "Phân tích yếu tố kì ảo giúp khám phá ý nghĩa biểu tượng và thông điệp của tác phẩm."
+          },
+          {
+            "id": "ex4-4-10",
+            "type": "mcq",
+            "question": "Trong truyện kể, yếu tố kì ảo thường kết hợp với yếu tố nào để tạo nên giá trị tác phẩm?",
+            "options": [
+              "Yếu tố hiện thực",
+              "Chỉ có yếu tố kì ảo",
+              "Yếu tố lịch sử",
+              "Yếu tố khoa học"
+            ],
+            "correct": 0,
+            "explanation": "Yếu tố kì ảo kết hợp với hiện thực tạo nên sự hấp dẫn và chiều sâu cho tác phẩm."
           }
         ]
       }

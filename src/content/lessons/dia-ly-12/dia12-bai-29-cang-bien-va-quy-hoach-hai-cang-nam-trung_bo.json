@@ -4,36 +4,269 @@
   "lessons": [
     {
       "id": "dia12_29",
-      "name": "Cảng biển và quy hoạch hạ tầng cảng ở Nam Trung bộ",
+      "name": "Phát triển kinh tế - xã hội ở Đông Nam Bộ",
       "slug": "cang-bien-va-quy-hoach-hai-cang-nam-trung_bo",
       "chapter": "Địa lí các vùng kinh tế",
       "chapter_id": "dia12_part4",
       "lesson_id": 29,
-      "description": "Vai trò cảng biển trong phát triển kinh tế vùng, phân tích vị trí và quy hoạch các cảng lớn - vừa - nhỏ ở Nam Trung bộ, kèm đánh giá tác động môi trường và an ninh.",
+      "description": "Tìm hiểu vị trí, dân cư, thế mạnh và hạn chế, sự phát triển công nghiệp - dịch vụ và vấn đề bảo vệ môi trường của vùng Đông Nam Bộ (động lực kinh tế hàng đầu cả nước).",
       "duration_minutes": 60,
       "difficulty_level": "trung bình",
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Cảng biển: động lực phát triển kinh tế vùng",
-          "summary": "Cảng biển thúc đẩy thương mại, giao thông, công nghiệp liên quan và tạo việc làm; quy hoạch hạ tầng cảng cần cân nhắc tải trọng, giao thông kết nối và bảo vệ môi trường biển.",
+          "title": "Phát triển kinh tế - xã hội ở Đông Nam Bộ",
+          "summary": "Đông Nam Bộ gồm TP Hồ Chí Minh và 5 tỉnh Bình Dương, Bình Phước, Tây Ninh, Đồng Nai, Bà Rịa – Vũng Tàu, là vùng phát triển kinh tế hàng đầu và động lực tăng trưởng của cả nước. Vùng có GRDP và giá trị sản xuất công nghiệp, dịch vụ dẫn đầu nhờ vị trí thuận lợi, hạ tầng hiện đại, nguồn lao động dồi dào và trung tâm TP Hồ Chí Minh. Phát triển đi đôi với bảo vệ môi trường là yêu cầu bắt buộc.",
           "sections": [
-            { "heading": "Chức năng cảng", "content": "Tiếp nhận hàng hóa xuất nhập khẩu, dịch vụ logistics, hậu cần nghề cá; hỗ trợ phát triển khu công nghiệp ven biển." },
-            { "heading": "Tiêu chí quy hoạch", "content": "Vị trí an toàn, tiếp cận tuyến hàng hải, kết nối đường bộ, khả năng mở rộng và tác động môi trường." }
+            {
+              "heading": "Vị trí địa lí và dân cư",
+              "content": "Vùng gồm TP Hồ Chí Minh và 5 tỉnh: Bình Dương, Bình Phước, Tây Ninh, Đồng Nai, Bà Rịa – Vũng Tàu, diện tích 23,6 nghìn km2. Vùng tiếp giáp Cam-pu-chia, giáp Đồng bằng sông Cửu Long, Tây Nguyên và duyên hải miền Trung, có vùng biển rộng với quần đảo Côn Sơn. Năm 2021, dân số 18,3 triệu người, mật độ 778 người/km2, tỉ lệ dân thành thị 66,4% cao nhất cả nước, với nhiều dân tộc Kinh, Hoa, Khơ-me, Chăm,..."
+            },
+            {
+              "heading": "Thế mạnh và hạn chế",
+              "content": "Về tự nhiên, vùng có địa hình bằng phẳng, đất badan và đất xám phù sa cổ (80% diện tích), khí hậu cận xích đạo, hệ thống sông Đồng Nai, sông Bé, hồ Dầu Tiếng, khoáng sản dầu khí, bô-xít và vùng biển giàu tiềm năng. Về kinh tế – xã hội, lao động dồi dào, cơ sở hạ tầng đồng bộ hiện đại, vốn đầu tư nước ngoài đứng đầu, TP Hồ Chí Minh là đô thị đặc biệt. Hạn chế là mùa khô kéo dài, ngập úng triều cường, xâm nhập mặn và áp lực môi trường từ nhập cư."
+            },
+            {
+              "heading": "Công nghiệp - động lực quốc gia",
+              "content": "Khu vực công nghiệp – xây dựng chiếm tỉ trọng cao, riêng công nghiệp 37,9% GRDP năm 2021, chiếm 31,7% giá trị sản xuất công nghiệp cả nước. Cơ cấu chuyển dịch theo hướng hiện đại: công nghiệp chế biến chế tạo đạt hơn 90%. Các ngành nổi trội là khai thác chế biến dầu khí, sản xuất điện (nhiệt điện Phú Mỹ, thủy điện Trị An), điện tử, thực phẩm, dệt may, giày dép. Trung tâm công nghiệp lớn: TP Hồ Chí Minh, Biên Hòa, Thủ Dầu Một."
+            },
+            {
+              "heading": "Dịch vụ và nông - lâm - ngư nghiệp",
+              "content": "Dịch vụ chiếm tỉ trọng cao nhất trong GRDP với giao thông vận tải đa dạng (cao tốc, cảng Cát Lái, Cái Mép, sân bay Tân Sơn Nhất), thương mại đứng đầu cả nước (27% bán lẻ, 34% xuất khẩu), du lịch đô thị và sinh thái, bưu chính viễn thông đi đầu chuyển đổi số. Nông nghiệp là vùng chuyên canh cây công nghiệp hàng đầu (cao su, điều, hồ tiêu, cây ăn quả), chăn nuôi công nghiệp và thủy sản (Bà Rịa – Vũng Tàu chiếm 93,8% khai thác thủy sản vùng)."
+            },
+            {
+              "heading": "Thách thức và hướng phát triển bền vững",
+              "content": "Công nghiệp tập trung gây ô nhiễm không khí, đất, nước, biển; chuyên canh cây công nghiệp lâu năm tác động xấu môi trường đất nước. Giải pháp là phát triển theo hướng bền vững: đầu tư xử lý môi trường, giải quyết quá tải hạ tầng đô thị, bảo vệ môi trường biển, thích ứng biến đổi khí hậu và nước biển dâng. Kinh tế phát triển tạo nguồn lực bảo vệ môi trường, ngược lại môi trường tốt duy trì hiệu quả hoạt động kinh tế."
+            }
           ]
         },
-        "exercises": { "analysis": [ { "q": "Phân tích vị trí phù hợp để xây cảng quy mô vừa ở một tỉnh ven biển?", "a_hint": "Xem luồng tàu, bến tự nhiên, kết nối đường bộ, không ảnh hưởng khu bảo tồn biển." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Một chức năng chính của cảng biển là?", "options": ["Tiếp nhận và chuyển tải hàng hóa quốc tế","Trồng lúa","Sản xuất điện","Không quan trọng"], "correct": 0, "explanation": "Cảng là nơi tiếp nhận và chuyển tải hàng hóa." },
-          { "id": 2, "type": "mcq", "question": "Tiêu chí quan trọng khi quy hoạch cảng là?", "options": ["Tiếp cận tuyến hàng hải và kết nối giao thông","Chỉ coi cảnh quan","Không quan trọng","Lựa chọn ngẫu nhiên"], "correct": 0, "explanation": "Vị trí tiếp cận tuyến hàng hải và kết nối là yếu tố then chốt." },
-          { "id": 3, "type": "mcq", "question": "Một rủi ro môi trường khi xây cảng là?", "options": ["Ô nhiễm và xói mòn bờ biển","Giảm thương mại","Tăng rừng ngập mặn","Không có rủi ro"], "correct": 0, "explanation": "Xây cảng có thể gây ô nhiễm và thay đổi bờ biển." },
-          { "id": 4, "type": "mcq", "question": "Cảng hỗ trợ phát triển ngành nào gần vùng ven biển?", "options": ["Logistics và dịch vụ hậu cần","Trồng trọt ở nội địa","Sản xuất gỗ rừng sâu","Không hỗ trợ ngành nào"], "correct": 0, "explanation": "Cảng thúc đẩy logistics và dịch vụ liên quan." },
-          { "id": 5, "type": "mcq", "question": "Quy hoạch cảng cần phối hợp với?", "options": ["Giao thông đường bộ, đường sắt và khu công nghiệp ven biển","Chỉ nhà đầu tư","Không cần phối hợp","Chỉ du lịch"], "correct": 0, "explanation": "Phối hợp đa ngành giúp phát huy hiệu quả cảng." },
-          { "id": 6, "type": "mcq", "question": "Cảng an ninh quan trọng vì?", "options": ["Quản lý luồng tàu và bảo vệ chủ quyền vùng biển","Không liên quan đến an ninh","Chỉ phục vụ du lịch","Tạo xung đột"], "correct": 0, "explanation": "Cảng giúp quản lý tàu thuyền và hỗ trợ an ninh hàng hải." },
-          { "id": 7, "type": "mcq", "question": "Một biện pháp giảm tác động môi trường của cảng là?", "options": ["Kỹ thuật xử lý nước thải và bãi chứa rắn an toàn","Không xử lý","Tăng xả thải","Phá hủy rạn san hô"], "correct": 0, "explanation": "Xử lý nước thải và quản lý chất thải giúp giảm tác động." },
-          { "id": 8, "type": "mcq", "question": "Cảng ở Nam Trung bộ cần chú trọng kết nối với?", "options": ["Hệ thống đường bộ và sân bay gần đó","Chỉ biển cả","Không cần kết nối","Chỉ đường sắt"], "correct": 0, "explanation": "Kết nối đa phương tiện giúp cảng hoạt động hiệu quả." },
-          { "id": 9, "type": "mcq", "question": "Một dấu hiệu cho thấy cảng phát triển tốt là?", "options": ["Lưu lượng hàng hóa tăng và dịch vụ logistics hiệu quả","Mất khách hàng","Giảm đầu tư","Không thay đổi"], "correct": 0, "explanation": "Tăng lưu lượng hàng hóa cho thấy cảng hoạt động hiệu quả." },
-          { "id": 10, "type": "mcq", "question": "Kế hoạch phát triển cảng nên xem xét?", "options": ["Tác động môi trường, khả năng mở rộng và an ninh biển","Chỉ lợi ích ngắn hạn","Không cần xem xét","Chỉ nhu cầu du lịch"], "correct": 0, "explanation": "Đánh giá toàn diện giúp quy hoạch bền vững." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Một chức năng chính của cảng biển là?",
+            "options": [
+              "Tiếp nhận và chuyển tải hàng hóa quốc tế",
+              "Trồng lúa",
+              "Sản xuất điện",
+              "Không quan trọng"
+            ],
+            "correct": 0,
+            "explanation": "Cảng là nơi tiếp nhận và chuyển tải hàng hóa."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Tiêu chí quan trọng khi quy hoạch cảng là?",
+            "options": [
+              "Tiếp cận tuyến hàng hải và kết nối giao thông",
+              "Chỉ coi cảnh quan",
+              "Không quan trọng",
+              "Lựa chọn ngẫu nhiên"
+            ],
+            "correct": 0,
+            "explanation": "Vị trí tiếp cận tuyến hàng hải và kết nối là yếu tố then chốt."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Một rủi ro môi trường khi xây cảng là?",
+            "options": [
+              "Ô nhiễm và xói mòn bờ biển",
+              "Giảm thương mại",
+              "Tăng rừng ngập mặn",
+              "Không có rủi ro"
+            ],
+            "correct": 0,
+            "explanation": "Xây cảng có thể gây ô nhiễm và thay đổi bờ biển."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Cảng hỗ trợ phát triển ngành nào gần vùng ven biển?",
+            "options": [
+              "Logistics và dịch vụ hậu cần",
+              "Trồng trọt ở nội địa",
+              "Sản xuất gỗ rừng sâu",
+              "Không hỗ trợ ngành nào"
+            ],
+            "correct": 0,
+            "explanation": "Cảng thúc đẩy logistics và dịch vụ liên quan."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Quy hoạch cảng cần phối hợp với?",
+            "options": [
+              "Giao thông đường bộ, đường sắt và khu công nghiệp ven biển",
+              "Chỉ nhà đầu tư",
+              "Không cần phối hợp",
+              "Chỉ du lịch"
+            ],
+            "correct": 0,
+            "explanation": "Phối hợp đa ngành giúp phát huy hiệu quả cảng."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Cảng an ninh quan trọng vì?",
+            "options": [
+              "Quản lý luồng tàu và bảo vệ chủ quyền vùng biển",
+              "Không liên quan đến an ninh",
+              "Chỉ phục vụ du lịch",
+              "Tạo xung đột"
+            ],
+            "correct": 0,
+            "explanation": "Cảng giúp quản lý tàu thuyền và hỗ trợ an ninh hàng hải."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Một biện pháp giảm tác động môi trường của cảng là?",
+            "options": [
+              "Kỹ thuật xử lý nước thải và bãi chứa rắn an toàn",
+              "Không xử lý",
+              "Tăng xả thải",
+              "Phá hủy rạn san hô"
+            ],
+            "correct": 0,
+            "explanation": "Xử lý nước thải và quản lý chất thải giúp giảm tác động."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Cảng ở Nam Trung bộ cần chú trọng kết nối với?",
+            "options": [
+              "Hệ thống đường bộ và sân bay gần đó",
+              "Chỉ biển cả",
+              "Không cần kết nối",
+              "Chỉ đường sắt"
+            ],
+            "correct": 0,
+            "explanation": "Kết nối đa phương tiện giúp cảng hoạt động hiệu quả."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Một dấu hiệu cho thấy cảng phát triển tốt là?",
+            "options": [
+              "Lưu lượng hàng hóa tăng và dịch vụ logistics hiệu quả",
+              "Mất khách hàng",
+              "Giảm đầu tư",
+              "Không thay đổi"
+            ],
+            "correct": 0,
+            "explanation": "Tăng lưu lượng hàng hóa cho thấy cảng hoạt động hiệu quả."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Kế hoạch phát triển cảng nên xem xét?",
+            "options": [
+              "Tác động môi trường, khả năng mở rộng và an ninh biển",
+              "Chỉ lợi ích ngắn hạn",
+              "Không cần xem xét",
+              "Chỉ nhu cầu du lịch"
+            ],
+            "correct": 0,
+            "explanation": "Đánh giá toàn diện giúp quy hoạch bền vững."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Các cảng biển lớn ở Nam Trung Bộ gồm?",
+            "options": [
+              "Cảng Đà Nẵng",
+              "Cảng Quy Nhơn",
+              "Cảng Cam Ranh",
+              "Cảng Hải Phòng"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Đà Nẵng, Quy Nhơn, Cam Ranh là cảng biển lớn ở Nam Trung Bộ."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Yếu tố thuận lợi để phát triển cảng biển ở Nam Trung Bộ?",
+            "options": [
+              "Vịnh kín, nước sâu",
+              "Gần tuyến hàng hải quốc tế",
+              "Ít chịu ảnh hưởng bão",
+              "Địa hình đồi núi cao"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Vịnh kín, gần tuyến hàng hải và ít bão là thuận lợi."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Vai trò của hệ thống cảng biển Nam Trung Bộ?",
+            "options": [
+              "Xuất nhập khẩu hàng hóa",
+              "Phát triển du lịch",
+              "Kết nối vùng Tây Nguyên",
+              "Trồng lúa nước"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cảng biển phục vụ xuất nhập khẩu, du lịch và kết nối vùng."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Các loại hàng hóa chủ yếu qua cảng Nam Trung Bộ?",
+            "options": [
+              "Hàng container",
+              "Hàng rời",
+              "Dầu khí",
+              "Nông sản"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Container, hàng rời và dầu khí là hàng hóa chủ yếu qua cảng."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Kể tên một cảng nước sâu ở Nam Trung Bộ?",
+            "correct": "Cảng Cam Ranh, Cảng Dung Quất",
+            "explanation": "Cam Ranh và Dung Quất là cảng nước sâu."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Vai trò của cảng biển đối với phát triển vùng?",
+            "correct": "Thúc đẩy xuất nhập khẩu, thu hút đầu tư, tạo việc làm",
+            "explanation": "Cảng biển thúc đẩy xuất nhập khẩu, thu hút đầu tư và tạo việc làm."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Một yếu tố tự nhiên thuận lợi cho phát triển cảng biển?",
+            "correct": "Vịnh kín, nước sâu, ít bão",
+            "explanation": "Vịnh kín, nước sâu và ít bão là yếu tố thuận lợi."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Phân tích vị trí phù hợp để xây cảng quy mô vừa ở một tỉnh ven biển?",
+            "correct": "Xem luồng tàu, bến tự nhiên, kết nối đường bộ, không ảnh hưởng khu bảo tồn biển.",
+            "explanation": "Xem luồng tàu, bến tự nhiên, kết nối đường bộ, không ảnh hưởng khu bảo tồn biển."
+          }
         ]
       }
     }

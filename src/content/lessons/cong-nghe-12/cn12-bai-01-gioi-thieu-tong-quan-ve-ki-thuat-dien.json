@@ -1,0 +1,66 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12_01",
+      "name": "Giới thiệu tổng quan về kĩ thuật điện",
+      "slug": "gioi-thieu-tong-quan-ve-ki-thuat-dien",
+      "chapter": "Mở đầu về kĩ thuật điện",
+      "chapter_id": "CN12",
+      "lesson_id": 1,
+      "description": "Khái niệm, vai trò và ứng dụng của kĩ thuật điện trong sản xuất và đời sống; lịch sử phát triển và triển vọng của kĩ thuật điện.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Giới thiệu tổng quan về kĩ thuật điện",
+          "summary": "Kĩ thuật điện là lĩnh vực kĩ thuật liên quan đến việc nghiên cứu, thiết kế, chế tạo, vận hành và bảo trì các hệ thống, thiết bị điện. Kĩ thuật điện đóng vai trò then chốt trong mọi lĩnh vực sản xuất và đời sống, từ chiếu sáng, truyền tải năng lượng đến tự động hóa và công nghệ thông tin.",
+          "sections": [
+            {
+              "heading": "Khái niệm về kĩ thuật điện",
+              "content": "Kĩ thuật điện là ngành kĩ thuật ứng dụng các hiện tượng điện từ để sản xuất, truyền tải, phân phối và sử dụng năng lượng điện, cũng như chế tạo và vận hành các thiết bị điện, máy móc điện. Đây là lĩnh vực nền tảng của nhiều ngành công nghiệp hiện đại, bao gồm sản xuất năng lượng, tự động hóa, viễn thông và điện tử."
+            },
+            {
+              "heading": "Vai trò của kĩ thuật điện trong sản xuất",
+              "content": "Trong sản xuất công nghiệp, kĩ thuật điện cung cấp năng lượng cho máy móc, dây chuyền sản xuất và hệ thống tự động hóa. Động cơ điện, máy biến áp, hệ thống điều khiển PLC và robot công nghiệp đều thuộc lĩnh vực kĩ thuật điện. Nhờ có kĩ thuật điện, năng suất lao động tăng cao, chất lượng sản phẩm được cải thiện và chi phí sản xuất giảm đáng kể."
+            },
+            {
+              "heading": "Vai trò của kĩ thuật điện trong đời sống",
+              "content": "Kĩ thuật điện phục vụ đời sống hàng ngày qua hệ thống chiếu sáng, thiết bị gia dụng (tủ lạnh, máy giặt, điều hòa), hệ thống thông tin liên lạc và giải trí. Các thiết bị y tế như máy chụp X-quang, máy MRI, máy siêu âm cũng ứng dụng kĩ thuật điện. Hệ thống giao thông như tàu điện, xe điện, tín hiệu giao thông đều phụ thuộc vào kĩ thuật điện."
+            },
+            {
+              "heading": "Lịch sử phát triển của kĩ thuật điện",
+              "content": "Kĩ thuật điện bắt đầu từ thế kỉ XIX với các phát minh nền tảng: pin Volta (1800), định luật Ohm (1827), máy phát điện Faraday (1831). Thomas Edison phát minh bóng đèn sợi đốt (1879) và xây dựng nhà máy điện đầu tiên (1882). Nikola Tesla phát triển dòng điện xoay chiều và máy biến áp, đặt nền móng cho hệ thống điện hiện đại. Thế kỉ XX chứng kiến sự bùng nổ của điện tử, vi mạch và tự động hóa."
+            },
+            {
+              "heading": "Các lĩnh vực ứng dụng chính của kĩ thuật điện",
+              "content": "Kĩ thuật điện được ứng dụng trong nhiều lĩnh vực: (1) Hệ thống điện - sản xuất, truyền tải và phân phối điện năng; (2) Máy điện - động cơ, máy phát, máy biến áp; (3) Tự động hóa - điều khiển quá trình sản xuất; (4) Điện tử công suất - biến đổi và điều khiển năng lượng; (5) Viễn thông - truyền thông tin qua tín hiệu điện; (6) Kĩ thuật đo lường và điều khiển."
+            },
+            {
+              "heading": "Triển vọng phát triển của kĩ thuật điện",
+              "content": "Trong tương lai, kĩ thuật điện sẽ phát triển theo hướng: năng lượng tái tạo (điện mặt trời, điện gió), lưới điện thông minh (Smart Grid), xe điện và giao thông thông minh, tự động hóa và Internet vạn vật (IoT), trí tuệ nhân tạo trong điều khiển hệ thống điện. Việt Nam đang đẩy mạnh công nghiệp hóa, hiện đại hóa, tạo nhu cầu lớn về nhân lực kĩ thuật điện chất lượng cao."
+            }
+          ]
+        },
+        "exercises": [
+          { "id": 1, "type": "mcq", "question": "Kĩ thuật điện là lĩnh vực ứng dụng hiện tượng nào?", "options": ["Quang học", "Điện từ", "Cơ học", "Nhiệt học"], "correct": 1, "explanation": "Kĩ thuật điện ứng dụng các hiện tượng điện từ." },
+          { "id": 2, "type": "mcq", "question": "Ai là người phát minh ra máy phát điện đầu tiên?", "options": ["Thomas Edison", "Nikola Tesla", "Michael Faraday", "Alessandro Volta"], "correct": 2, "explanation": "Michael Faraday phát minh máy phát điện năm 1831." },
+          { "id": 3, "type": "mcq", "question": "Thomas Edison xây dựng nhà máy điện đầu tiên vào năm nào?", "options": ["1879", "1882", "1890", "1900"], "correct": 1, "explanation": "Edison xây dựng nhà máy điện đầu tiên ở New York năm 1882." },
+          { "id": 4, "type": "mcq", "question": "Lĩnh vực nào KHÔNG thuộc ứng dụng của kĩ thuật điện?", "options": ["Hệ thống điện", "Tự động hóa", "Chế biến thực phẩm", "Viễn thông"], "correct": 2, "explanation": "Chế biến thực phẩm thuộc ngành công nghệ thực phẩm, không phải kĩ thuật điện." },
+          { "id": 5, "type": "mcq", "question": "Nhà máy điện đầu tiên trên thế giới do ai xây dựng?", "options": ["Nikola Tesla", "Thomas Edison", "Alexander Graham Bell", "James Watt"], "correct": 1, "explanation": "Thomas Edison xây dựng nhà máy điện Pearl Street năm 1882." },
+          { "id": 6, "type": "mcq", "question": "Động cơ điện chuyển đổi năng lượng gì?", "options": ["Nhiệt năng thành cơ năng", "Điện năng thành cơ năng", "Cơ năng thành điện năng", "Quang năng thành nhiệt năng"], "correct": 1, "explanation": "Động cơ điện chuyển đổi điện năng thành cơ năng." },
+          { "id": 7, "type": "mcq", "question": "Smart Grid là tên gọi của hệ thống nào?", "options": ["Lưới điện thông minh", "Máy phát điện thông minh", "Động cơ điện thông minh", "Biến áp thông minh"], "correct": 0, "explanation": "Smart Grid là lưới điện thông minh, ứng dụng công nghệ số để tối ưu hóa sản xuất và sử dụng điện." },
+          { "id": 8, "type": "mcq", "question": "Nikola Tesla được biết đến nhiều nhất với phát minh về?", "options": ["Bóng đèn sợi đốt", "Dòng điện xoay chiều", "Pin Volta", "Máy điện thoại"], "correct": 1, "explanation": "Tesla phát triển hệ thống dòng điện xoay chiều và máy biến áp." },
+          { "id": 9, "type": "mcq", "question": "Trong tương lai, kĩ thuật điện phát triển theo hướng nào?", "options": ["Năng lượng hóa thạch", "Năng lượng tái tạo", "Năng lượng thủy triều", "Năng lượng địa nhiệt"], "correct": 1, "explanation": "Năng lượng tái tạo như điện mặt trời, điện gió là xu hướng phát triển chính." },
+          { "id": 10, "type": "mcq", "question": "PLC là viết tắt của thiết bị nào trong kĩ thuật điện?", "options": ["Programmable Logic Controller", "Power Line Communication", "Public Limited Company", "Personal Learning Computer"], "correct": 0, "explanation": "PLC là bộ điều khiển logic khả trình, dùng trong tự động hóa." },
+          { "id": 11, "type": "msq", "question": "Những phát minh nào sau đây đặt nền móng cho kĩ thuật điện?", "options": ["Pin Volta (1800)", "Máy phát điện Faraday (1831)", "Máy tính điện tử (1946)", "Định luật Ohm (1827)"], "correct": [0, 1, 3], "explanation": "Pin Volta, định luật Ohm và máy phát điện Faraday là các phát minh nền tảng. Máy tính điện tử ra đời sau này, thuộc kĩ thuật máy tính." },
+          { "id": 12, "type": "msq", "question": "Kĩ thuật điện có ứng dụng trong những lĩnh vực nào?", "options": ["Sản xuất công nghiệp", "Y tế", "Nông nghiệp thủy canh", "Giao thông vận tải"], "correct": [0, 1, 3], "explanation": "Kĩ thuật điện ứng dụng trong công nghiệp, y tế, giao thông. Nông nghiệp thủy canh chủ yếu thuộc lĩnh vực nông nghiệp công nghệ cao." },
+          { "id": 13, "type": "msq", "question": "Những thiết bị nào sau đây thuộc lĩnh vực kĩ thuật điện?", "options": ["Máy biến áp", "Động cơ điện", "Ống kính hiển vi", "Robot công nghiệp"], "correct": [0, 1, 3], "explanation": "Máy biến áp, động cơ điện, robot công nghiệp đều thuộc kĩ thuật điện. Ống kính hiển vi thuộc lĩnh vực quang học." },
+          { "id": 14, "type": "msq", "question": "Xu hướng phát triển nào của kĩ thuật điện trong tương lai?", "options": ["Lưới điện thông minh (Smart Grid)", "Xe điện", "Máy tính lượng tử", "Năng lượng tái tạo"], "correct": [0, 1, 3], "explanation": "Smart Grid, xe điện và năng lượng tái tạo là xu hướng chính. Máy tính lượng tử thuộc lĩnh vực công nghệ thông tin." }
+        ]
+      }
+    }
+  ]
+}

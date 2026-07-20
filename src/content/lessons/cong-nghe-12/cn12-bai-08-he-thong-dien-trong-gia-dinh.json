@@ -1,0 +1,254 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-08-he-thong-dien-trong-gia-dinh",
+      "name": "Bài 8. Hệ thống điện trong gia đình",
+      "slug": "bai-8-he-thong-dien-trong-gia-dinh",
+      "chapter": "Chương 1. Công nghệ Điện - Điện tử",
+      "chapter_id": "CN12",
+      "lesson_id": 8,
+      "description": "Trình bày hệ thống điện trong gia đình (sơ đồ tổng thể, bảng điện, aptomat, ổ cắm, công tắc); yêu cầu thiết kế; phân bố tải.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "cn12-8-1",
+          "name": "Sơ đồ hệ thống điện",
+          "slug": "so-do-he-thong-dien",
+          "difficulty": "easy"
+        },
+        {
+          "id": "cn12-8-2",
+          "name": "Thiết bị điện gia đình",
+          "slug": "thiet-bi-dien-gia-dinh",
+          "difficulty": "medium"
+        },
+        {
+          "id": "cn12-8-3",
+          "name": "Phân bố tải và thiết kế",
+          "slug": "phan-bo-tai-va-thiet-ke",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Hệ thống điện trong gia đình",
+          "sections": [
+            {
+              "heading": "1. Khái niệm hệ thống điện trong gia đình",
+              "content": "<p><strong>Hệ thống điện trong gia đình</strong> là tập hợp các thiết bị, đường dây và bảng điện được lắp đặt để cung cấp và phân phối điện năng đến các thiết bị tiêu thụ trong nhà.</p><p><strong>Yêu cầu:</strong></p><ul><li>Đáp ứng nhu cầu sử dụng điện của các thiết bị</li><li>An toàn cho người và tài sản</li><li>Dễ dàng mở rộng và nâng cấp</li><li>Đảm bảo tính thẩm mĩ</li></ul>"
+            },
+            {
+              "heading": "2. Sơ đồ tổng thể hệ thống điện gia đình",
+              "content": "<p><strong>Sơ đồ nguyên lí tổng thể:</strong></p><p>Lưới điện hạ áp → Công tơ điện → Aptomat tổng → Bảng điện chính → Các aptomat nhánh → Thiết bị tiêu thụ.</p><p><strong>Các khu vực tiêu thụ:</strong></p><ul><li>Khu vực phòng khách</li><li>Khu vực phòng ngủ</li><li>Khu vực bếp và phòng ăn</li><li>Khu vực nhà vệ sinh và phòng tắm</li><li>Khu vực phòng làm việc, giải trí</li></ul><p><strong>Sơ đồ đi dây:</strong> Dây pha (L) và dây trung tính (N) từ aptomat nhánh đến các thiết bị; dây nối đất (PE) bảo vệ cho các ổ cắm.</p>"
+            },
+            {
+              "heading": "3. Bảng điện",
+              "content": "<p><strong>Bảng điện chính (tủ điện tổng):</strong></p><ul><li>Đặt gần cửa ra vào, nơi khô ráo, dễ thao tác</li><li>Gồm: aptomat tổng, aptomat chống giật, các aptomat nhánh, thanh cái</li><li>Công suất aptomat tổng thường 40-63 A</li></ul><p><strong>Bảng điện nhánh:</strong></p><ul><li>Đặt trong từng phòng hoặc khu vực</li><li>Gồm: aptomat nhánh, công tắc, ổ cắm</li><li>Phân loại theo chức năng: chiếu sáng, ổ cắm, máy lạnh, bếp</li></ul>"
+            },
+            {
+              "heading": "4. Aptomat, ổ cắm, công tắc",
+              "content": "<p><strong>Aptomat (CB):</strong></p><ul><li>Aptomat tổng: 40-63 A, ở bảng điện chính</li><li>Aptomat nhánh chiếu sáng: 6-10 A</li><li>Aptomat nhánh ổ cắm: 15-20 A</li><li>Aptomat điều hòa, bếp: 20-32 A</li><li>Aptomat chống giật (RCCB): 30 mA, lắp sau aptomat tổng</li></ul><p><strong>Ổ cắm điện:</strong></p><ul><li>Ổ cắm đơn/đôi cho thiết bị thông thường</li><li>Ổ cắm chuyên dụng cho điều hòa, bếp từ</li><li>Dòng tối thiểu 10 A, ổ chuyên dụng 16-20 A</li></ul><p><strong>Công tắc:</strong></p><ul><li>Công tắc đơn: bật/tắt một đèn</li><li>Công tắc đôi: điều khiển hai đèn độc lập</li><li>Công tắc đảo chiều (3 cực): lắp ở đầu và cuối hành lang, cầu thang</li></ul>"
+            },
+            {
+              "heading": "5. Yêu cầu thiết kế hệ thống điện gia đình",
+              "content": "<p><strong>Các yêu cầu chính:</strong></p><ul><li><strong>An toàn:</strong> Nối đất cho các thiết bị, dùng aptomat chống giật, dây dẫn đúng tiết diện và cách điện tốt</li><li><strong>Đủ công suất:</strong> Tính toán tổng công suất thiết bị để chọn aptomat và dây dẫn phù hợp; dự phòng cho phát triển tương lai</li><li><strong>Tiện lợi:</strong> Bố trí ổ cắm, công tắc ở vị trí thuận tiện; bảng điện đặt nơi dễ thao tác</li><li><strong>Thẩm mĩ:</strong> Đi dây âm tường; bảng điện, ổ cắm đồng bộ màu sắc và kiểu dáng</li></ul>"
+            },
+            {
+              "heading": "6. Phân bố tải điện trong gia đình",
+              "content": "<p><strong>Nguyên tắc phân bố:</strong></p><ul><li>Mỗi aptomat nhánh chỉ phụ trách một khu vực hoặc một nhóm thiết bị</li><li>Tách riêng mạch chiếu sáng, mạch ổ cắm, mạch điều hòa, mạch bếp</li><li>Không dùng chung aptomat cho thiết bị công suất lớn với thiết bị nhỏ</li></ul><p><strong>Ví dụ phân bố tải:</strong></p><ul><li>Nhánh 1 (10 A): Chiếu sáng các phòng</li><li>Nhánh 2 (15 A): Ổ cắm phòng khách, phòng ngủ</li><li>Nhánh 3 (20 A): Máy lạnh (1-2 máy)</li><li>Nhánh 4 (25 A): Bếp từ, lò vi sóng, bình nóng lạnh</li><li>Nhánh 5 (15 A): Ổ cắm bếp, phòng tắm</li></ul><p><strong>Công suất dự phòng:</strong> Tổng dòng aptomat tổng ≥ 125% tổng dòng dự kiến.</p>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Aptomat tổng trong bảng điện chính của gia đình thường có dòng định mức:",
+            "options": [
+              "6-10 A",
+              "15-20 A",
+              "40-63 A",
+              "100 A"
+            ],
+            "correct": 2,
+            "explanation": "Aptomat tổng gia đình thường 40-63 A tùy tổng công suất nhà."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Công tắc đảo chiều (3 cực) thường được lắp ở:",
+            "options": [
+              "Ổ cắm điện",
+              "Đầu và cuối hành lang, cầu thang",
+              "Bảng điện chính",
+              "Máy giặt"
+            ],
+            "correct": 1,
+            "explanation": "Công tắc 3 cực cho phép bật/tắt đèn từ hai vị trí khác nhau."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Dây nối đất (PE) trong hệ thống điện gia đình có tác dụng:",
+            "options": [
+              "Truyền tín hiệu điều khiển",
+              "Bảo vệ chống điện giật khi thiết bị rò điện",
+              "Tăng điện áp",
+              "Giảm dòng điện"
+            ],
+            "correct": 1,
+            "explanation": "Dây PE dẫn dòng rò từ vỏ thiết bị xuống đất, bảo vệ người dùng."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Aptomat nhánh cho mạch chiếu sáng thường có dòng định mức:",
+            "options": [
+              "6-10 A",
+              "20-32 A",
+              "40-63 A",
+              "100 A"
+            ],
+            "correct": 0,
+            "explanation": "Mạch chiếu sáng công suất nhỏ, dùng aptomat 6-10 A."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Ổ cắm chuyên dụng cho điều hòa thường có dòng điện tối thiểu:",
+            "options": [
+              "5 A",
+              "10 A",
+              "16-20 A",
+              "32 A"
+            ],
+            "correct": 2,
+            "explanation": "Điều hòa công suất lớn cần ổ cắm chuyên dụng 16-20 A."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Vị trí đặt bảng điện chính trong nhà thường là:",
+            "options": [
+              "Trong phòng ngủ",
+              "Trên mái nhà",
+              "Gần cửa ra vào, nơi khô ráo",
+              "Trong phòng tắm"
+            ],
+            "correct": 2,
+            "explanation": "Bảng điện chính đặt nơi khô ráo, dễ thao tác, gần cửa ra vào."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Khi thiết kế hệ thống điện gia đình, tổng dòng aptomat tổng nên ≥ bao nhiêu % tổng dòng dự kiến?",
+            "options": [
+              "100%",
+              "110%",
+              "125%",
+              "150%"
+            ],
+            "correct": 2,
+            "explanation": "Dự phòng 125% để đảm bảo an toàn và khả năng mở rộng."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Nguyên tắc phân bố tải đúng là:",
+            "options": [
+              "Gộp tất cả thiết bị vào một aptomat",
+              "Tách riêng mạch chiếu sáng, ổ cắm, thiết bị lớn",
+              "Dùng aptomat 10 A cho tất cả",
+              "Không cần aptomat nhánh"
+            ],
+            "correct": 1,
+            "explanation": "Cần tách mạch riêng: chiếu sáng, ổ cắm, thiết bị công suất lớn."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Loại aptomat nào cần lắp sau aptomat tổng để bảo vệ chống rò điện?",
+            "options": [
+              "MCB",
+              "MCCB",
+              "RCCB (ELCB)",
+              "ACB"
+            ],
+            "correct": 2,
+            "explanation": "RCCB (aptomat chống giật) phát hiện dòng rò và ngắt mạch."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Mạch điện dùng riêng cho bếp từ và bình nóng lạnh nên có aptomat nhánh dòng:",
+            "options": [
+              "6 A",
+              "10 A",
+              "25 A",
+              "63 A"
+            ],
+            "correct": 2,
+            "explanation": "Thiết bị công suất lớn (bếp từ, bình nóng lạnh) cần aptomat 25 A."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các thiết bị có trong bảng điện chính của gia đình:",
+            "options": [
+              "Aptomat tổng",
+              "Aptomat chống giật (RCCB)",
+              "Công tắc đèn",
+              "Các aptomat nhánh"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Bảng điện chính gồm aptomat tổng, RCCB, aptomat nhánh; công tắc ở bảng nhánh."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Yêu cầu thiết kế hệ thống điện gia đình:",
+            "options": [
+              "An toàn (nối đất, chống giật)",
+              "Đủ công suất và dự phòng",
+              "Dùng một loại dây cho tất cả thiết bị",
+              "Tiện lợi và thẩm mĩ"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Yêu cầu thiết kế gồm an toàn, đủ công suất, tiện lợi, thẩm mĩ."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Các loại aptomat nhánh thường dùng trong gia đình:",
+            "options": [
+              "Aptomat 10 A cho chiếu sáng",
+              "Aptomat 15-20 A cho ổ cắm",
+              "Aptomat 63 A cho tất cả",
+              "Aptomat 20-32 A cho điều hòa"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Mỗi nhóm thiết bị có aptomat phù hợp: 10 A chiếu sáng, 15-20 A ổ cắm, 20-32 A điều hòa."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Ví dụ phân bố tải hợp lí trong gia đình:",
+            "options": [
+              "Nhánh chiếu sáng riêng (6-10 A)",
+              "Nhánh ổ cắm chung cho cả nhà (một aptomat)",
+              "Nhánh riêng cho máy lạnh (20 A)",
+              "Nhánh riêng cho bếp từ và bình nóng lạnh (25 A)"
+            ],
+            "correct": [0, 2, 3],
+            "explanation": "Nên tách nhánh riêng cho chiếu sáng, máy lạnh, bếp; không nên gom ổ cắm vào một aptomat quá tải."
+          }
+        ]
+      }
+    }
+  ]
+}

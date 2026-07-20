@@ -15,25 +15,258 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Phát triển kinh tế biển vùng duyên hải Nam Trung Bộ",
-          "summary": "Vùng duyên hải Nam Trung Bộ có bờ biển dài, vịnh, cảng tự nhiên và tiềm năng du lịch; phát triển cảng biển, nuôi trồng thủy sản, du lịch biển và khai thác dầu khí cần đồng bộ với bảo vệ môi trường biển.",
+          "title": "Phát triển kinh tế biển ở duyên hải Nam Trung Bộ",
+          "summary": "Duyên hải Nam Trung Bộ có bờ biển dài, nhiều vịnh kín nước sâu, thềm lục địa rộng và nguồn lợi hải sản phong phú, tạo nền tảng cho kinh tế biển tổng hợp. Vùng đang đẩy mạnh khai thác và nuôi trồng thủy sản, phát triển cảng biển, du lịch biển, giao thông vận tải và dầu khí. Phát triển cần đi đôi với bảo vệ môi trường, giữ vững chủ quyền biển đảo và khai thác bền vững nguồn lợi.",
           "sections": [
-            { "heading": "Tiềm năng biển", "content": "Cảng tự nhiên, vùng nước tương đối sâu, nguồn hải sản và cảnh quan biển phù hợp phát triển du lịch." },
-            { "heading": "Phát triển bền vững", "content": "Quy hoạch cảng, quản lý khai thác hải sản, bảo tồn rạn san hô và kiểm soát ô nhiễm từ hoạt động cảng và du lịch." }
+            {
+              "heading": "Tiềm năng phát triển kinh tế biển",
+              "content": "Vùng có bờ biển dài khoảng 600 km từ Quảng Nam đến Bình Thuận, với nhiều vịnh kín (Cam Ranh, Quy Nhơn, Vân Phong), đầm phá và thềm lục địa rộng thuận lợi cho cảng biển, nuôi trồng và khai thác hải sản. Nguồn lợi thủy sản phong phú với các ngư trường lớn, khí hậu nhiệt đới gió mùa nóng ẩm thích hợp du lịch biển quanh năm. Vị trí gần các tuyến hàng hải quốc tế và nằm sát Tây Nguyên tạo thuận lợi kết nối kinh tế biển với vùng sâu, vùng xa."
+            },
+            {
+              "heading": "Khai thác và nuôi trồng thủy sản",
+              "content": "Khai thác hải sản là thế mạnh truyền thống với các cảng cá lớn (Đà Nẵng, Quy Nhơn, Cam Ranh) và đội tàu đánh bắt xa bờ mạnh, nhất là Bình Định, Khánh Hòa, Bình Thuận. Nuôi trồng thủy sản phát triển nhanh ở đầm, vịnh và vùng ven biển với tôm, cá, ngao, kết hợp công nghệ cao. Tuy nhiên, nguồn lợi đang bị khai thác quá mức ở vùng gần bờ, đòi hỏi quy hoạch và bảo vệ nguồn lợi."
+            },
+            {
+              "heading": "Cảng biển, giao thông vận tải và dầu khí",
+              "content": "Hệ thống cảng biển phát triển mạnh gồm Đà Nẵng, Quy Nhơn, Cam Ranh, Dung Quất, Vân Phong, gắn với các khu kinh tế ven biển (Chu Lai, Dung Quất, Vân Phong, Nam Phú Yên, Bắc Bình Thuận). Vận tải biển và dịch vụ hậu cần cảng thúc đẩy xuất nhập khẩu và kết nối Tây Nguyên. Tài nguyên dầu khí ở thềm lục địa đóng góp quan trọng vào năng lượng quốc gia, với các mỏ và cơ sở khai thác, chế biến."
+            },
+            {
+              "heading": "Du lịch biển và dịch vụ",
+              "content": "Du lịch biển là ngành mũi nhọn với các bãi tắm nổi tiếng (Mỹ Khê, Nha Trang, Mũi Né, Quy Nhơn), hệ sinh thái biển đa dạng (rạn san hô, đảo) và di sản văn hóa. Các loại hình du lịch tắm biển, lặn biển, nghỉ dưỡng và du lịch sinh thái biển đảo phát triển mạnh, tạo việc làm và thu nhập lớn cho cư dân địa phương."
+            },
+            {
+              "heading": "Thách thức và hướng phát triển bền vững",
+              "content": "Vùng chịu ảnh hưởng của bão, áp thấp nhiệt đới và biến đổi khí hậu gây thiệt hại cho khai thác và nuôi trồng. Ô nhiễm môi trường biển từ đô thị, cảng, du lịch và khai thác quá mức nguồn lợi đang gia tăng. Hướng phát triển là quy hoạch tổng thể kinh tế biển, khai thác đi đôi với bảo vệ nguồn lợi, xử lý chất thải, bảo tồn hệ sinh thái và giữ vững chủ quyền biển đảo."
+            }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Nêu một hoạt động kinh tế biển quan trọng ở duyên hải Nam Trung Bộ?", "a_hint": "Du lịch biển, cảng biển hoặc nuôi trồng thủy sản." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Một lợi thế của duyên hải Nam Trung Bộ là?", "options": ["Cảng tự nhiên và bờ biển đẹp","Sa mạc trung tâm","Rừng băng hà","Không có đặc điểm"], "correct": 0, "explanation": "Vùng có cảng tự nhiên và bờ biển đẹp thích hợp du lịch và cảng biển." },
-          { "id": 2, "type": "mcq", "question": "Một quan ngại khi phát triển cảng biển là?", "options": ["Ô nhiễm nước và tác động tới hệ sinh thái ven bờ","Tăng rừng tự nhiên","Giảm du lịch","Không có quan ngại"], "correct": 0, "explanation": "Hoạt động cảng có thể gây ô nhiễm và tác động đến hệ sinh thái ven bờ nếu không quản lý." },
-          { "id": 3, "type": "mcq", "question": "Phát triển du lịch biển bền vững cần chú ý?", "options": ["Bảo tồn rạn san hô và quản lý số khách","Xây dựng vô tội vạ mọi nơi","Tăng xả thải","Không chú ý"], "correct": 0, "explanation": "Bảo tồn rạn san hô và quản lý khách là cần thiết để bền vững." },
-          { "id": 4, "type": "mcq", "question": "Một hoạt động khai thác biển đem lại ngoại tệ lớn là?", "options": ["Dầu khí và thủy sản xuất khẩu","Trồng lúa biển","Trồng rừng ngập mặn để xuất khẩu","Không có hoạt động"], "correct": 0, "explanation": "Dầu khí và thủy sản xuất khẩu đóng góp ngoại tệ cho vùng và quốc gia." },
-          { "id": 5, "type": "mcq", "question": "Một biện pháp giảm tác động cảng tới môi trường là?", "options": ["Xây trạm xử lý nước thải và quản lý chất thải rắn","Không xử lý chất thải","Tăng xả thải","Đóng cảng"], "correct": 0, "explanation": "Xử lý nước thải và quản lý chất thải giúp giảm ô nhiễm cảng." },
-          { "id": 6, "type": "mcq", "question": "Nuôi trồng thủy sản ven bờ cần tránh?", "options": ["Nuôi quá mật độ gây ô nhiễm và dịch bệnh","Xây hệ nuôi hợp lý","Kiểm soát chất lượng nước","Quản lý tốt"], "correct": 0, "explanation": "Nuôi quá mật độ gây ô nhiễm và dịch bệnh, cần quản lý mật độ và chất lượng nước." },
-          { "id": 7, "type": "mcq", "question": "Một yếu tố thu hút du lịch biển là?", "options": ["Bãi biển đẹp và hạ tầng lưu trú tốt","Sự ô nhiễm mạnh mẽ","Khí hậu băng giá","Không có yếu tố"], "correct": 0, "explanation": "Bãi biển đẹp và hạ tầng tốt thu hút du khách." },
-          { "id": 8, "type": "mcq", "question": "Vai trò của cảng biển trong phát triển vùng là?", "options": ["Kết nối thương mại, tạo việc làm và thu hút đầu tư","Chỉ làm đẹp cảnh quan","Giảm giao thương","Không vai trò"], "correct": 0, "explanation": "Cảng kết nối thương mại và tạo động lực phát triển kinh tế vùng." },
-          { "id": 9, "type": "mcq", "question": "Một nguy cơ đối với hệ sinh thái biển là?", "options": ["Ô nhiễm dầu, rác thải và phá hủy rạn san hô","Tăng chất lượng nước","Phục hồi hệ sinh thái","Không có nguy cơ"], "correct": 0, "explanation": "Ô nhiễm dầu và rác thải có thể phá hoại hệ sinh thái biển." },
-          { "id": 10, "type": "mcq", "question": "Phát triển kinh tế biển bền vững cần?", "options": ["Quy hoạch, giám sát môi trường và tham gia cộng đồng địa phương","Chỉ khai thác tối đa","Không quy hoạch","Tập trung khai thác vô hạn"], "correct": 0, "explanation": "Quy hoạch và giám sát môi trường cùng sự tham gia cộng đồng là yêu cầu thiết yếu." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Một lợi thế của duyên hải Nam Trung Bộ là?",
+            "options": [
+              "Cảng tự nhiên và bờ biển đẹp",
+              "Sa mạc trung tâm",
+              "Rừng băng hà",
+              "Không có đặc điểm"
+            ],
+            "correct": 0,
+            "explanation": "Vùng có cảng tự nhiên và bờ biển đẹp thích hợp du lịch và cảng biển."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Một quan ngại khi phát triển cảng biển là?",
+            "options": [
+              "Ô nhiễm nước và tác động tới hệ sinh thái ven bờ",
+              "Tăng rừng tự nhiên",
+              "Giảm du lịch",
+              "Không có quan ngại"
+            ],
+            "correct": 0,
+            "explanation": "Hoạt động cảng có thể gây ô nhiễm và tác động đến hệ sinh thái ven bờ nếu không quản lý."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Phát triển du lịch biển bền vững cần chú ý?",
+            "options": [
+              "Bảo tồn rạn san hô và quản lý số khách",
+              "Xây dựng vô tội vạ mọi nơi",
+              "Tăng xả thải",
+              "Không chú ý"
+            ],
+            "correct": 0,
+            "explanation": "Bảo tồn rạn san hô và quản lý khách là cần thiết để bền vững."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Một hoạt động khai thác biển đem lại ngoại tệ lớn là?",
+            "options": [
+              "Dầu khí và thủy sản xuất khẩu",
+              "Trồng lúa biển",
+              "Trồng rừng ngập mặn để xuất khẩu",
+              "Không có hoạt động"
+            ],
+            "correct": 0,
+            "explanation": "Dầu khí và thủy sản xuất khẩu đóng góp ngoại tệ cho vùng và quốc gia."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Một biện pháp giảm tác động cảng tới môi trường là?",
+            "options": [
+              "Xây trạm xử lý nước thải và quản lý chất thải rắn",
+              "Không xử lý chất thải",
+              "Tăng xả thải",
+              "Đóng cảng"
+            ],
+            "correct": 0,
+            "explanation": "Xử lý nước thải và quản lý chất thải giúp giảm ô nhiễm cảng."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Nuôi trồng thủy sản ven bờ cần tránh?",
+            "options": [
+              "Nuôi quá mật độ gây ô nhiễm và dịch bệnh",
+              "Xây hệ nuôi hợp lý",
+              "Kiểm soát chất lượng nước",
+              "Quản lý tốt"
+            ],
+            "correct": 0,
+            "explanation": "Nuôi quá mật độ gây ô nhiễm và dịch bệnh, cần quản lý mật độ và chất lượng nước."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Một yếu tố thu hút du lịch biển là?",
+            "options": [
+              "Bãi biển đẹp và hạ tầng lưu trú tốt",
+              "Sự ô nhiễm mạnh mẽ",
+              "Khí hậu băng giá",
+              "Không có yếu tố"
+            ],
+            "correct": 0,
+            "explanation": "Bãi biển đẹp và hạ tầng tốt thu hút du khách."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Vai trò của cảng biển trong phát triển vùng là?",
+            "options": [
+              "Kết nối thương mại, tạo việc làm và thu hút đầu tư",
+              "Chỉ làm đẹp cảnh quan",
+              "Giảm giao thương",
+              "Không vai trò"
+            ],
+            "correct": 0,
+            "explanation": "Cảng kết nối thương mại và tạo động lực phát triển kinh tế vùng."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Một nguy cơ đối với hệ sinh thái biển là?",
+            "options": [
+              "Ô nhiễm dầu, rác thải và phá hủy rạn san hô",
+              "Tăng chất lượng nước",
+              "Phục hồi hệ sinh thái",
+              "Không có nguy cơ"
+            ],
+            "correct": 0,
+            "explanation": "Ô nhiễm dầu và rác thải có thể phá hoại hệ sinh thái biển."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Phát triển kinh tế biển bền vững cần?",
+            "options": [
+              "Quy hoạch, giám sát môi trường và tham gia cộng đồng địa phương",
+              "Chỉ khai thác tối đa",
+              "Không quy hoạch",
+              "Tập trung khai thác vô hạn"
+            ],
+            "correct": 0,
+            "explanation": "Quy hoạch và giám sát môi trường cùng sự tham gia cộng đồng là yêu cầu thiết yếu."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Các hoạt động kinh tế biển chính ở duyên hải Nam Trung Bộ?",
+            "options": [
+              "Cảng biển",
+              "Du lịch biển",
+              "Nuôi trồng thủy sản",
+              "Trồng lúa nước"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cảng biển, du lịch biển và nuôi trồng thủy sản là hoạt động kinh tế biển chính."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Tiềm năng phát triển kinh tế biển của vùng?",
+            "options": [
+              "Bờ biển dài",
+              "Nhiều vịnh kín",
+              "Nguồn hải sản phong phú",
+              "Địa hình đồi núi cao"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Bờ biển dài, vịnh kín và hải sản phong phú là tiềm năng."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Các biện pháp bảo vệ môi trường biển?",
+            "options": [
+              "Xử lý nước thải",
+              "Bảo tồn rạn san hô",
+              "Quản lý khai thác hải sản",
+              "Tăng đánh bắt xa bờ"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Xử lý nước thải, bảo tồn rạn san hô và quản lý khai thác là biện pháp bảo vệ."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Các ngành kinh tế biển phát triển ở vùng?",
+            "options": [
+              "Khai thác dầu khí",
+              "Du lịch biển",
+              "Cảng biển",
+              "Trồng lúa"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Dầu khí, du lịch biển và cảng biển là ngành kinh tế biển."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Kể tên một cảng biển lớn ở duyên hải Nam Trung Bộ?",
+            "correct": "Cảng Đà Nẵng, Cảng Quy Nhơn, Cảng Cam Ranh",
+            "explanation": "Đà Nẵng, Quy Nhơn, Cam Ranh là cảng biển lớn."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Một bãi biển nổi tiếng ở duyên hải Nam Trung Bộ?",
+            "correct": "Bãi biển Mỹ Khê (Đà Nẵng), Nha Trang, Mũi Né",
+            "explanation": "Mỹ Khê, Nha Trang, Mũi Né là bãi biển nổi tiếng."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Vai trò của cảng biển đối với phát triển vùng?",
+            "correct": "Kết nối thương mại, thu hút đầu tư, tạo việc làm",
+            "explanation": "Cảng biển kết nối thương mại, thu hút đầu tư và tạo việc làm."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Nêu một hoạt động kinh tế biển quan trọng ở duyên hải Nam Trung Bộ?",
+            "correct": "Du lịch biển, cảng biển hoặc nuôi trồng thủy sản.",
+            "explanation": "Du lịch biển, cảng biển hoặc nuôi trồng thủy sản."
+          }
         ]
       }
     }

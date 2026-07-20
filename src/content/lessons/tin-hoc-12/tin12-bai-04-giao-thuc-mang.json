@@ -18,22 +18,217 @@
           "title": "Giao thức (Protocols)",
           "summary": "Giao thức mạng là tập hợp các quy tắc chuẩn hóa để các máy tính khác nhau có thể hiểu và trao đổi dữ liệu với nhau.",
           "sections": [
-            { "heading": "Bộ giao thức TCP/IP", "content": "Nền tảng của Internet. IP định địa chỉ và chuyển gói tin. TCP đảm bảo truyền tin tin cậy, không mất mát." },
-            { "heading": "Địa chỉ IP", "content": "Địa chỉ duy nhất định danh một thiết bị trên mạng (IPv4: 4 nhóm số, IPv6: 128 bit). Số hiệu cổng (Port) phân biệt các dịch vụ." },
-            { "heading": "Các giao thức ứng dụng", "content": "HTTP/HTTPS (Web), FTP (Truyền file), SMTP/POP3 (Email), DNS (Phân giải tên miền)." }
+            {
+              "heading": "Bộ giao thức TCP/IP",
+              "content": "Nền tảng của Internet. IP định địa chỉ và chuyển gói tin. TCP đảm bảo truyền tin tin cậy, không mất mát."
+            },
+            {
+              "heading": "Địa chỉ IP",
+              "content": "Địa chỉ duy nhất định danh một thiết bị trên mạng (IPv4: 4 nhóm số, IPv6: 128 bit). Số hiệu cổng (Port) phân biệt các dịch vụ."
+            },
+            {
+              "heading": "Các giao thức ứng dụng",
+              "content": "HTTP/HTTPS (Web), FTP (Truyền file), SMTP/POP3 (Email), DNS (Phân giải tên miền)."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Giao thức mạng là gì?", "options": ["Một loại phần cứng", "Tập hợp các quy tắc để các máy tính giao tiếp với nhau", "Một đoạn dây mạng", "Tên một trang web"], "correct": 1, "explanation": "Giao thức là ngôn ngữ chung để các hệ thống khác biệt có thể 'nói chuyện' được với nhau." },
-          { "id": 2, "type": "mcq", "question": "Bộ giao thức nào là nền tảng của mạng Internet?", "options": ["HTTP", "TCP/IP", "FTP", "DNS"], "correct": 1, "explanation": "TCP/IP là mô hình giao thức chuẩn cho mọi hoạt động trên Internet." },
-          { "id": 3, "type": "mcq", "question": "Địa chỉ IPv4 gồm bao nhiêu nhóm số?", "options": ["2", "3", "4", "5"], "correct": 2, "explanation": "IPv4 gồm 4 nhóm số thập phân cách nhau bởi dấu chấm, ví dụ: 192.168.1.1." },
-          { "id": 4, "type": "mcq", "question": "Giao thức nào dùng để truyền tải các trang Web?", "options": ["FTP", "SMTP", "HTTP", "IP"], "correct": 2, "explanation": "HTTP (Hypertext Transfer Protocol) là giao thức truyền siêu văn bản cho Web." },
-          { "id": 5, "type": "mcq", "question": "DNS (Domain Name System) dùng để làm gì?", "options": ["Lưu trữ tệp", "Phân giải tên miền thành địa chỉ IP", "Gửi email", "Mã hóa mật khẩu"], "correct": 1, "explanation": "DNS giúp người dùng dùng tên (google.com) thay vì nhớ dãy số IP khó nhớ." },
-          { "id": 6, "type": "mcq", "question": "Sự khác biệt chính giữa HTTP và HTTPS là gì?", "options": ["HTTPS chạy nhanh hơn", "HTTPS có bảo mật thông tin qua mã hóa", "HTTPS chỉ dùng cho điện thoại", "HTTP đắt tiền hơn"], "correct": 1, "explanation": "Chữ 'S' là viết tắt của Secure (An toàn)." },
-          { "id": 7, "type": "mcq", "question": "Giao thức nào đảm bảo dữ liệu được truyền đi chính xác và đầy đủ?", "options": ["UDP", "TCP", "IP", "ICMP"], "correct": 1, "explanation": "TCP có cơ chế kiểm tra và truyền lại nếu dữ liệu bị lỗi hoặc mất." },
-          { "id": 8, "type": "mcq", "question": "Cổng (Port) mặc định của dịch vụ Web HTTP là bao nhiêu?", "options": ["21", "25", "80", "443"], "correct": 2, "explanation": "Port 80 dùng cho HTTP, Port 443 dùng cho HTTPS." },
-          { "id": 9, "type": "mcq", "question": "Giao thức FTP dùng để làm gì?", "options": ["Gửi thư điện tử", "Truyền tệp tin giữa các máy tính", "Trò chuyện trực tuyến", "Duyệt web"], "correct": 1, "explanation": "FTP (File Transfer Protocol) chuyên dùng để upload/download file." },
-          { "id": 10, "type": "mcq", "question": "Lý do chính để phát triển IPv6 là gì?", "options": ["Để dễ nhớ hơn", "Vì kho địa chỉ IPv4 đã cạn kiệt", "Để máy tính chạy nhanh hơn", "Vì IPv4 quá bảo mật"], "correct": 1, "explanation": "IPv6 cung cấp không gian địa chỉ khổng lồ để đáp ứng hàng tỷ thiết bị mới." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Giao thức mạng là gì?",
+            "options": [
+              "Một loại phần cứng",
+              "Tập hợp các quy tắc để các máy tính giao tiếp với nhau",
+              "Một đoạn dây mạng",
+              "Tên một trang web"
+            ],
+            "correct": 1,
+            "explanation": "Giao thức là ngôn ngữ chung để các hệ thống khác biệt có thể 'nói chuyện' được với nhau."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Bộ giao thức nào là nền tảng của mạng Internet?",
+            "options": [
+              "HTTP",
+              "TCP/IP",
+              "FTP",
+              "DNS"
+            ],
+            "correct": 1,
+            "explanation": "TCP/IP là mô hình giao thức chuẩn cho mọi hoạt động trên Internet."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Địa chỉ IPv4 gồm bao nhiêu nhóm số?",
+            "options": [
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "correct": 2,
+            "explanation": "IPv4 gồm 4 nhóm số thập phân cách nhau bởi dấu chấm, ví dụ: 192.168.1.1."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Giao thức nào dùng để truyền tải các trang Web?",
+            "options": [
+              "FTP",
+              "SMTP",
+              "HTTP",
+              "IP"
+            ],
+            "correct": 2,
+            "explanation": "HTTP (Hypertext Transfer Protocol) là giao thức truyền siêu văn bản cho Web."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "DNS (Domain Name System) dùng để làm gì?",
+            "options": [
+              "Lưu trữ tệp",
+              "Phân giải tên miền thành địa chỉ IP",
+              "Gửi email",
+              "Mã hóa mật khẩu"
+            ],
+            "correct": 1,
+            "explanation": "DNS giúp người dùng dùng tên (google.com) thay vì nhớ dãy số IP khó nhớ."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Sự khác biệt chính giữa HTTP và HTTPS là gì?",
+            "options": [
+              "HTTPS chạy nhanh hơn",
+              "HTTPS có bảo mật thông tin qua mã hóa",
+              "HTTPS chỉ dùng cho điện thoại",
+              "HTTP đắt tiền hơn"
+            ],
+            "correct": 1,
+            "explanation": "Chữ 'S' là viết tắt của Secure (An toàn)."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Giao thức nào đảm bảo dữ liệu được truyền đi chính xác và đầy đủ?",
+            "options": [
+              "UDP",
+              "TCP",
+              "IP",
+              "ICMP"
+            ],
+            "correct": 1,
+            "explanation": "TCP có cơ chế kiểm tra và truyền lại nếu dữ liệu bị lỗi hoặc mất."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Cổng (Port) mặc định của dịch vụ Web HTTP là bao nhiêu?",
+            "options": [
+              "21",
+              "25",
+              "80",
+              "443"
+            ],
+            "correct": 2,
+            "explanation": "Port 80 dùng cho HTTP, Port 443 dùng cho HTTPS."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Giao thức FTP dùng để làm gì?",
+            "options": [
+              "Gửi thư điện tử",
+              "Truyền tệp tin giữa các máy tính",
+              "Trò chuyện trực tuyến",
+              "Duyệt web"
+            ],
+            "correct": 1,
+            "explanation": "FTP (File Transfer Protocol) chuyên dùng để upload/download file."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Lý do chính để phát triển IPv6 là gì?",
+            "options": [
+              "Để dễ nhớ hơn",
+              "Vì kho địa chỉ IPv4 đã cạn kiệt",
+              "Để máy tính chạy nhanh hơn",
+              "Vì IPv4 quá bảo mật"
+            ],
+            "correct": 1,
+            "explanation": "IPv6 cung cấp không gian địa chỉ khổng lồ để đáp ứng hàng tỷ thiết bị mới."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Giao thức TCP/IP bao gồm những lớp nào?",
+            "options": [
+              "Application",
+              "Transport",
+              "Internet",
+              "Physical"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "TCP/IP có 4 lớp: Application, Transport, Internet, Network Access."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Giao thức HTTP hoạt động ở lớp nào?",
+            "options": [
+              "Lớp Application",
+              "Lớp Transport",
+              "Lớp Internet",
+              "Lớp Network Access"
+            ],
+            "correct": [
+              0
+            ],
+            "explanation": "HTTP hoạt động ở lớp Application."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Địa chỉ IP có những phiên bản nào?",
+            "options": [
+              "IPv4",
+              "IPv6",
+              "IPv5",
+              "IPX"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "IPv4 và IPv6 là hai phiên bản đang sử dụng."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "HTTPS khác HTTP ở điểm nào?",
+            "options": [
+              "Mã hóa dữ liệu",
+              "Sử dụng cổng 443",
+              "An toàn hơn",
+              "Nhanh hơn"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "HTTPS mã hóa dữ liệu, sử dụng cổng 443 và an toàn hơn."
+          }
         ]
       }
     }

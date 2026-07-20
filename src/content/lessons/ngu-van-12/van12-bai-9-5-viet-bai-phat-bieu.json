@@ -4,12 +4,12 @@
   "lessons": [
     {
       "id": "van12-bai-9-5-viet-bai-phat-bieu",
-      "name": "Viết bài phát biểu trong lễ phát động phong trào",
+      "name": "Viết bài phát biểu trong lễ phát động một phong trào hoặc một hoạt động xã hội",
       "slug": "viet-bai-phat-bieu",
       "chapter": "Văn học và cuộc đời",
       "chapter_id": "V12-9",
       "lesson_id": 5,
-      "description": "Học cách viết bài phát biểu trong lễ phát động phong trào hoặc hoạt động xã hội một cách hiệu quả và thuyết phục.",
+      "description": "Hướng dẫn viết bài phát biểu trong lễ phát động phong trào hoặc hoạt động xã hội.",
       "duration_minutes": 90,
       "difficulty_level": "medium",
       "is_published": true,
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex9-5-1",
-              "type": "mcq",
-              "question": "Mục đích của bài phát biểu phát động phong trào là gì?",
-              "options": [
-                "Chỉ để nói chuyện",
-                "Truyền cảm hứng, kêu gọi hành động",
-                "Để giải trí",
-                "Không có mục đích"
-              ],
-              "correct": 1,
-              "explanation": "Mục đích là truyền cảm hứng và kêu gọi mọi người tham gia hành động cụ thể."
-            },
-            {
-              "id": "ex9-5-2",
-              "type": "mcq",
-              "question": "Phần mở đầu bài phát biểu cần làm gì?",
-              "options": [
-                "Kết luận ngay",
-                "Chào hỏi, giới thiệu phong trào, thu hút sự chú ý",
-                "Không cần mở đầu",
-                "Chỉ nói tên mình"
-              ],
-              "correct": 1,
-              "explanation": "Phần mở đầu cần chào hỏi lịch sự, giới thiệu phong trào và thu hút sự chú ý của khán giả."
-            },
-            {
-              "id": "ex9-5-3",
-              "type": "mcq",
-              "question": "Nội dung chính cần trình bày những gì?",
-              "options": [
-                "Chỉ kể chuyện",
-                "Ý nghĩa, mục tiêu, kế hoạch, lợi ích của phong trào",
-                "Chỉ nói về bản thân",
-                "Không cần nội dung"
-              ],
-              "correct": 1,
-              "explanation": "Nội dung chính cần trình bày ý nghĩa, mục tiêu, kế hoạch thực hiện và lợi ích của phong trào."
-            },
-            {
-              "id": "ex9-5-4",
-              "type": "mcq",
-              "question": "Ngôn ngữ trong bài phát biểu cần có đặc điểm gì?",
-              "options": [
-                "Khô khan, máy móc",
-                "Nhiệt huyết, rõ ràng, thuyết phục",
-                "Phức tạp, khó hiểu",
-                "Tùy tiện"
-              ],
-              "correct": 1,
-              "explanation": "Ngôn ngữ cần nhiệt huyết, truyền cảm, rõ ràng và có tính thuyết phục cao."
-            },
-            {
-              "id": "ex9-5-5",
-              "type": "mcq",
-              "question": "Phần kết thúc bài phát biểu nên làm gì?",
-              "options": [
-                "Chỉ nói 'Hết'",
-                "Kêu gọi hành động, cam kết, cảm ơn",
-                "Không cần kết thúc",
-                "Chỉ cảm ơn"
-              ],
-              "correct": 1,
-              "explanation": "Phần kết thúc cần kêu gọi hành động cụ thể, cam kết quyết tâm và cảm ơn sự tham gia."
-            },
-            {
-              "id": "ex9-5-6",
-              "type": "mcq",
-              "question": "Kỹ thuật nào giúp thu hút sự chú ý trong bài phát biểu?",
-              "options": [
-                "Nói nhỏ",
-                "Câu hỏi tu từ, dẫn chứng thực tế",
-                "Nói nhanh",
-                "Không nhìn khán giả"
-              ],
-              "correct": 1,
-              "explanation": "Câu hỏi tu từ và dẫn chứng thực tế giúp thu hút sự chú ý và tăng tính thuyết phục."
-            },
-            {
-              "id": "ex9-5-7",
-              "type": "mcq",
-              "question": "Khi trình bày bài phát biểu, cần chú ý điều gì?",
-              "options": [
-                "Chỉ đọc bài",
-                "Giọng rõ ràng, cử chỉ phù hợp, liên hệ mắt với khán giả",
-                "Đứng yên một chỗ",
-                "Nhìn xuống sàn"
-              ],
-              "correct": 1,
-              "explanation": "Cần chú ý giọng nói rõ ràng, cử chỉ tự nhiên và liên hệ mắt với khán giả."
-            },
-            {
-              "id": "ex9-5-8",
-              "type": "mcq",
-              "question": "Tại sao cần có dẫn chứng trong bài phát biểu?",
-              "options": [
-                "Không cần thiết",
-                "Tăng tính thuyết phục, cụ thể hóa vấn đề",
-                "Làm bài dài hơn",
-                "Để khoe khoang"
-              ],
-              "correct": 1,
-              "explanation": "Dẫn chứng giúp tăng tính thuyết phục, cụ thể hóa vấn đề và làm bài phát biểu sinh động hơn."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex9-5-1",
+            "type": "mcq",
+            "question": "Mục đích của bài phát biểu phát động phong trào là gì?",
+            "options": [
+              "Chỉ để nói chuyện",
+              "Truyền cảm hứng, kêu gọi hành động",
+              "Để giải trí",
+              "Không có mục đích"
+            ],
+            "correct": 1,
+            "explanation": "Mục đích là truyền cảm hứng và kêu gọi mọi người tham gia hành động cụ thể."
+          },
+          {
+            "id": "ex9-5-2",
+            "type": "mcq",
+            "question": "Phần mở đầu bài phát biểu cần làm gì?",
+            "options": [
+              "Kết luận ngay",
+              "Chào hỏi, giới thiệu phong trào, thu hút sự chú ý",
+              "Không cần mở đầu",
+              "Chỉ nói tên mình"
+            ],
+            "correct": 1,
+            "explanation": "Phần mở đầu cần chào hỏi lịch sự, giới thiệu phong trào và thu hút sự chú ý của khán giả."
+          },
+          {
+            "id": "ex9-5-3",
+            "type": "mcq",
+            "question": "Nội dung chính cần trình bày những gì?",
+            "options": [
+              "Chỉ kể chuyện",
+              "Ý nghĩa, mục tiêu, kế hoạch, lợi ích của phong trào",
+              "Chỉ nói về bản thân",
+              "Không cần nội dung"
+            ],
+            "correct": 1,
+            "explanation": "Nội dung chính cần trình bày ý nghĩa, mục tiêu, kế hoạch thực hiện và lợi ích của phong trào."
+          },
+          {
+            "id": "ex9-5-4",
+            "type": "mcq",
+            "question": "Ngôn ngữ trong bài phát biểu cần có đặc điểm gì?",
+            "options": [
+              "Khô khan, máy móc",
+              "Nhiệt huyết, rõ ràng, thuyết phục",
+              "Phức tạp, khó hiểu",
+              "Tùy tiện"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ cần nhiệt huyết, truyền cảm, rõ ràng và có tính thuyết phục cao."
+          },
+          {
+            "id": "ex9-5-5",
+            "type": "mcq",
+            "question": "Phần kết thúc bài phát biểu nên làm gì?",
+            "options": [
+              "Chỉ nói 'Hết'",
+              "Kêu gọi hành động, cam kết, cảm ơn",
+              "Không cần kết thúc",
+              "Chỉ cảm ơn"
+            ],
+            "correct": 1,
+            "explanation": "Phần kết thúc cần kêu gọi hành động cụ thể, cam kết quyết tâm và cảm ơn sự tham gia."
+          },
+          {
+            "id": "ex9-5-6",
+            "type": "mcq",
+            "question": "Kỹ thuật nào giúp thu hút sự chú ý trong bài phát biểu?",
+            "options": [
+              "Nói nhỏ",
+              "Câu hỏi tu từ, dẫn chứng thực tế",
+              "Nói nhanh",
+              "Không nhìn khán giả"
+            ],
+            "correct": 1,
+            "explanation": "Câu hỏi tu từ và dẫn chứng thực tế giúp thu hút sự chú ý và tăng tính thuyết phục."
+          },
+          {
+            "id": "ex9-5-7",
+            "type": "mcq",
+            "question": "Khi trình bày bài phát biểu, cần chú ý điều gì?",
+            "options": [
+              "Chỉ đọc bài",
+              "Giọng rõ ràng, cử chỉ phù hợp, liên hệ mắt với khán giả",
+              "Đứng yên một chỗ",
+              "Nhìn xuống sàn"
+            ],
+            "correct": 1,
+            "explanation": "Cần chú ý giọng nói rõ ràng, cử chỉ tự nhiên và liên hệ mắt với khán giả."
+          },
+          {
+            "id": "ex9-5-8",
+            "type": "mcq",
+            "question": "Tại sao cần có dẫn chứng trong bài phát biểu?",
+            "options": [
+              "Không cần thiết",
+              "Tăng tính thuyết phục, cụ thể hóa vấn đề",
+              "Làm bài dài hơn",
+              "Để khoe khoang"
+            ],
+            "correct": 1,
+            "explanation": "Dẫn chứng giúp tăng tính thuyết phục, cụ thể hóa vấn đề và làm bài phát biểu sinh động hơn."
+          },
+          {
+            "id": "ex9-5-9",
+            "type": "mcq",
+            "question": "Thể thơ của bài thơ thường được xác định dựa trên yếu tố nào?",
+            "options": [
+              "Số câu, số chữ, vần và nhịp điệu",
+              "Chủ đề bài thơ",
+              "Cảm xúc của tác giả",
+              "Thời gian sáng tác"
+            ],
+            "correct": 0,
+            "explanation": "Thể thơ được xác định dựa trên số câu, số chữ trong câu, vần và nhịp điệu."
+          },
+          {
+            "id": "ex9-5-10",
+            "type": "mcq",
+            "question": "Nhân vật chính trong tác phẩm kịch thường là người như thế nào?",
+            "options": [
+              "Là nhân vật trung tâm, giữ vai trò then chốt",
+              "Xuất hiện ít",
+              "Không quan trọng",
+              "Chỉ là nhân vật phụ"
+            ],
+            "correct": 0,
+            "explanation": "Nhân vật chính là trung tâm của tác phẩm, giữ vai trò then chốt trong việc thể hiện chủ đề."
+          }
+        ]
       }
     }
   ]

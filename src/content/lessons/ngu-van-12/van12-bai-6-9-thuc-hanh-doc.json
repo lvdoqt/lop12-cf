@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-6-9-thuc-hanh-doc",
-      "name": "Thực hành đọc: Vọng nguyệt + Cảnh khuya",
+      "id": "van12-bai-6-9-thuc-hanh-doc-vong-nguyet-canh-khuya",
+      "name": "Thực hành đọc: Vọng nguyệt, Cảnh khuya",
       "slug": "thuc-hanh-doc-vong-nguyet-canh-khuya",
-      "chapter": "Hồ Chí Minh - Văn hóa phải soi đường cho quốc dân đi",
+      "chapter": "Hồ Chí Minh \"văn hóa phải soi đường cho quốc dân đi\"",
       "chapter_id": "V12-6",
       "lesson_id": 9,
-      "description": "Thực hành đọc và phân tích hai bài thơ 'Vọng nguyệt' và 'Cảnh khuya' của Hồ Chí Minh, khám phá tâm tư, tình cảm của Người trong tù.",
+      "description": "Thực hành đọc hai bài thơ Vọng nguyệt và Cảnh khuya của Hồ Chí Minh.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Thực hành đọc: Vọng nguyệt + Cảnh khuya",
+          "title": "Thực hành đọc: Vọng nguyệt, Cảnh khuya",
           "sections": [
             {
               "heading": "1. Bài thơ 'Vọng nguyệt'",
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex6-9-1",
-              "type": "mcq",
-              "question": "Hai bài thơ 'Vọng nguyệt' và 'Cảnh khuya' được sáng tác trong hoàn cảnh nào?",
-              "options": [
-                "Ở quê nhà",
-                "Trong tù ở Trung Quốc (1942-1943)",
-                "Ở Hà Nội",
-                "Ở nước ngoài du lịch"
-              ],
-              "correct": 1,
-              "explanation": "Cả hai bài thơ đều được Hồ Chí Minh sáng tác trong thời gian bị giam giữ ở nhà tù Trung Quốc (1942-1943)."
-            },
-            {
-              "id": "ex6-9-2",
-              "type": "mcq",
-              "question": "Trong 'Vọng nguyệt', hình ảnh trăng tượng trưng cho điều gì?",
-              "options": [
-                "Thời gian",
-                "Quê hương, đất nước",
-                "Mùa thu",
-                "Ánh sáng"
-              ],
-              "correct": 1,
-              "explanation": "Hình ảnh trăng trong 'Vọng nguyệt' là biểu tượng của quê hương, đất nước mà Người đang nhớ da diết."
-            },
-            {
-              "id": "ex6-9-3",
-              "type": "mcq",
-              "question": "Thể thơ của 'Vọng nguyệt' và 'Cảnh khuya' là gì?",
-              "options": [
-                "Thơ lục bát",
-                "Thơ Đường luật",
-                "Thơ tự do",
-                "Thơ song thất lục bát"
-              ],
-              "correct": 1,
-              "explanation": "Cả hai bài thơ đều được viết theo thể thơ Đường luật, thể thơ cổ điển Trung Hoa mà Hồ Chí Minh thành thạo."
-            },
-            {
-              "id": "ex6-9-4",
-              "type": "mcq",
-              "question": "Tâm trạng chủ đạo trong 'Cảnh khuya' là gì?",
-              "options": [
-                "Vui vẻ",
-                "Lo lắng cho vận nước nhưng vẫn lạc quan",
-                "Tuyệt vọng",
-                "Bình thản"
-              ],
-              "correct": 1,
-              "explanation": "Trong 'Cảnh khuya', Người thể hiện sự lo lắng, trăn trở cho vận nước nhưng vẫn giữ tinh thần lạc quan, kiên cường."
-            },
-            {
-              "id": "ex6-9-5",
-              "type": "mcq",
-              "question": "Điểm chung giữa 'Vọng nguyệt' và 'Cảnh khuya' là gì?",
-              "options": [
-                "Không có điểm chung",
-                "Đều thể hiện tình yêu quê hương và tinh thần lạc quan",
-                "Chỉ miêu tả cảnh vật",
-                "Chỉ kể chuyện"
-              ],
-              "correct": 1,
-              "explanation": "Cả hai bài thơ đều thể hiện tình yêu quê hương, đất nước sâu sắc và tinh thần lạc quan, kiên cường của Người."
-            },
-            {
-              "id": "ex6-9-6",
-              "type": "mcq",
-              "question": "Âm điệu của 'Vọng nguyệt' có đặc điểm gì?",
-              "options": [
-                "Ồn ào, náo nhiệt",
-                "Nhẹ nhàng, trữ tình",
-                "Hùng hồn, khí thế",
-                "Buồn bã, tuyệt vọng"
-              ],
-              "correct": 1,
-              "explanation": "'Vọng nguyệt' có âm điệu nhẹ nhàng, trữ tình, thể hiện nỗi nhớ da diết nhưng không bi quan."
-            },
-            {
-              "id": "ex6-9-7",
-              "type": "mcq",
-              "question": "Hình ảnh nào xuất hiện trong 'Cảnh khuya'?",
-              "options": [
-                "Hoa, cỏ, nắng",
-                "Đêm, gió, mưa",
-                "Biển, sóng, thuyền",
-                "Núi, rừng, suối"
-              ],
-              "correct": 1,
-              "explanation": "'Cảnh khuya' sử dụng các hình ảnh đêm, gió, mưa để tạo nên không khí trầm, buồn của đêm khuya trong tù."
-            },
-            {
-              "id": "ex6-9-8",
-              "type": "mcq",
-              "question": "Giá trị nổi bật của hai bài thơ này là gì?",
-              "options": [
-                "Chỉ có giá trị văn học",
-                "Thể hiện nhân cách cao đẹp và tinh thần yêu nước của Hồ Chí Minh",
-                "Không có giá trị",
-                "Chỉ để giải trí"
-              ],
-              "correct": 1,
-              "explanation": "Hai bài thơ có giá trị lớn trong việc thể hiện nhân cách cao đẹp, tinh thần yêu nước và ý chí kiên cường của Hồ Chí Minh."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex6-9-1",
+            "type": "mcq",
+            "question": "Hai bài thơ 'Vọng nguyệt' và 'Cảnh khuya' được sáng tác trong hoàn cảnh nào?",
+            "options": [
+              "Ở quê nhà",
+              "Trong tù ở Trung Quốc (1942-1943)",
+              "Ở Hà Nội",
+              "Ở nước ngoài du lịch"
+            ],
+            "correct": 1,
+            "explanation": "Cả hai bài thơ đều được Hồ Chí Minh sáng tác trong thời gian bị giam giữ ở nhà tù Trung Quốc (1942-1943)."
+          },
+          {
+            "id": "ex6-9-2",
+            "type": "mcq",
+            "question": "Trong 'Vọng nguyệt', hình ảnh trăng tượng trưng cho điều gì?",
+            "options": [
+              "Thời gian",
+              "Quê hương, đất nước",
+              "Mùa thu",
+              "Ánh sáng"
+            ],
+            "correct": 1,
+            "explanation": "Hình ảnh trăng trong 'Vọng nguyệt' là biểu tượng của quê hương, đất nước mà Người đang nhớ da diết."
+          },
+          {
+            "id": "ex6-9-3",
+            "type": "mcq",
+            "question": "Thể thơ của 'Vọng nguyệt' và 'Cảnh khuya' là gì?",
+            "options": [
+              "Thơ lục bát",
+              "Thơ Đường luật",
+              "Thơ tự do",
+              "Thơ song thất lục bát"
+            ],
+            "correct": 1,
+            "explanation": "Cả hai bài thơ đều được viết theo thể thơ Đường luật, thể thơ cổ điển Trung Hoa mà Hồ Chí Minh thành thạo."
+          },
+          {
+            "id": "ex6-9-4",
+            "type": "mcq",
+            "question": "Tâm trạng chủ đạo trong 'Cảnh khuya' là gì?",
+            "options": [
+              "Vui vẻ",
+              "Lo lắng cho vận nước nhưng vẫn lạc quan",
+              "Tuyệt vọng",
+              "Bình thản"
+            ],
+            "correct": 1,
+            "explanation": "Trong 'Cảnh khuya', Người thể hiện sự lo lắng, trăn trở cho vận nước nhưng vẫn giữ tinh thần lạc quan, kiên cường."
+          },
+          {
+            "id": "ex6-9-5",
+            "type": "mcq",
+            "question": "Điểm chung giữa 'Vọng nguyệt' và 'Cảnh khuya' là gì?",
+            "options": [
+              "Không có điểm chung",
+              "Đều thể hiện tình yêu quê hương và tinh thần lạc quan",
+              "Chỉ miêu tả cảnh vật",
+              "Chỉ kể chuyện"
+            ],
+            "correct": 1,
+            "explanation": "Cả hai bài thơ đều thể hiện tình yêu quê hương, đất nước sâu sắc và tinh thần lạc quan, kiên cường của Người."
+          },
+          {
+            "id": "ex6-9-6",
+            "type": "mcq",
+            "question": "Âm điệu của 'Vọng nguyệt' có đặc điểm gì?",
+            "options": [
+              "Ồn ào, náo nhiệt",
+              "Nhẹ nhàng, trữ tình",
+              "Hùng hồn, khí thế",
+              "Buồn bã, tuyệt vọng"
+            ],
+            "correct": 1,
+            "explanation": "'Vọng nguyệt' có âm điệu nhẹ nhàng, trữ tình, thể hiện nỗi nhớ da diết nhưng không bi quan."
+          },
+          {
+            "id": "ex6-9-7",
+            "type": "mcq",
+            "question": "Hình ảnh nào xuất hiện trong 'Cảnh khuya'?",
+            "options": [
+              "Hoa, cỏ, nắng",
+              "Đêm, gió, mưa",
+              "Biển, sóng, thuyền",
+              "Núi, rừng, suối"
+            ],
+            "correct": 1,
+            "explanation": "'Cảnh khuya' sử dụng các hình ảnh đêm, gió, mưa để tạo nên không khí trầm, buồn của đêm khuya trong tù."
+          },
+          {
+            "id": "ex6-9-8",
+            "type": "mcq",
+            "question": "Giá trị nổi bật của hai bài thơ này là gì?",
+            "options": [
+              "Chỉ có giá trị văn học",
+              "Thể hiện nhân cách cao đẹp và tinh thần yêu nước của Hồ Chí Minh",
+              "Không có giá trị",
+              "Chỉ để giải trí"
+            ],
+            "correct": 1,
+            "explanation": "Hai bài thơ có giá trị lớn trong việc thể hiện nhân cách cao đẹp, tinh thần yêu nước và ý chí kiên cường của Hồ Chí Minh."
+          },
+          {
+            "id": "ex6-9-9",
+            "type": "mcq",
+            "question": "Phong cách nghệ thuật của Hồ Chí Minh có đặc điểm gì nổi bật?",
+            "options": [
+              "Giản dị, trong sáng, kết hợp trữ tình và chính luận",
+              "Hoa mỹ, cầu kỳ",
+              "Cổ điển, khó hiểu",
+              "Hiện đại, phức tạp"
+            ],
+            "correct": 0,
+            "explanation": "Phong cách Hồ Chí Minh giản dị, trong sáng, kết hợp hài hòa giữa trữ tình và chính luận."
+          },
+          {
+            "id": "ex6-9-10",
+            "type": "mcq",
+            "question": "Tuyên ngôn Độc lập (1945) có ý nghĩa lịch sử như thế nào?",
+            "options": [
+              "Khẳng định quyền độc lập, tự do của dân tộc Việt Nam",
+              "Tuyên bố chiến tranh với Pháp",
+              "Kêu gọi viện trợ quốc tế",
+              "Thành lập chính phủ mới"
+            ],
+            "correct": 0,
+            "explanation": "Tuyên ngôn Độc lập khẳng định quyền độc lập, tự do thiêng liêng của dân tộc Việt Nam trước thế giới."
+          }
+        ]
       }
     }
   ]

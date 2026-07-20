@@ -18,22 +18,51 @@
           "title": "Kế hoạch kinh doanh",
           "summary": "Kế hoạch kinh doanh là bản lộ trình chi tiết mô tả mục tiêu và các giải pháp thực hiện để đạt được mục tiêu đó.",
           "sections": [
-            { "heading": "Sự cần thiết", "content": "Giúp xác định rõ hướng đi, huy động vốn, giảm thiểu rủi ro và quản lý công việc hiệu quả." },
-            { "heading": "Các bước lập kế hoạch", "content": "1. Xác định ý tưởng. 2. Phân tích thị trường (SWOT). 3. Kế hoạch marketing. 4. Kế hoạch sản xuất/vận hành. 5. Kế hoạch tài chính." },
-            { "heading": "Yêu cầu", "content": "Tính thực tế, khả thi, cụ thể và linh hoạt trước sự thay đổi của thị trường." }
+            {
+              "heading": "Sự cần thiết phải lập kế hoạch kinh doanh",
+              "content": "Lập kế hoạch kinh doanh là bước quan trọng đầu tiên giúp nhà kinh doanh định hình ý tưởng và xác định hướng đi rõ ràng. Một bản kế hoạch bài bản giúp giảm thiểu rủi ro, hạn chế quyết định cảm tính, huy động vốn hiệu quả từ các nhà đầu tư và tổ chức tín dụng. Ngoài ra, kế hoạch kinh doanh còn là công cụ quản lý giúp chủ doanh nghiệp phân bổ nguồn lực hợp lý, theo dõi tiến độ thực hiện và điều chỉnh chiến lược kịp thời trước biến động thị trường."
+            },
+            {
+              "heading": "Khái niệm kế hoạch kinh doanh",
+              "content": "Kế hoạch kinh doanh là bản mô tả chi tiết các mục tiêu kinh doanh và các giải pháp, chiến lược cần thực hiện để đạt được những mục tiêu đó trong một khoảng thời gian nhất định. Một kế hoạch kinh doanh thường bao gồm: tóm tắt điều hành, phân tích thị trường, chiến lược marketing, kế hoạch sản xuất/vận hành, kế hoạch tài chính và kế hoạch nhân sự. Kế hoạch kinh doanh có thể được xây dựng cho doanh nghiệp mới thành lập hoặc cho các dự án mở rộng của doanh nghiệp đang hoạt động."
+            },
+            {
+              "heading": "Phân tích SWOT",
+              "content": "Phân tích SWOT là công cụ đánh giá toàn diện các yếu tố ảnh hưởng đến hoạt động kinh doanh, bao gồm bốn thành phần: Strengths (điểm mạnh) – lợi thế nội tại của doanh nghiệp như công nghệ vượt trội, thương hiệu uy tín; Weaknesses (điểm yếu) – hạn chế nội tại như thiếu vốn, nhân lực yếu; Opportunities (cơ hội) – những yếu tố bên ngoài tích cực như thị trường mới nổi, chính sách ưu đãi; Threats (thách thức) – nguy cơ từ bên ngoài như đối thủ cạnh tranh, biến động kinh tế. SWOT giúp nhà kinh doanh nhận diện rõ vị thế và xây dựng chiến lược phù hợp."
+            },
+            {
+              "heading": "Các bước lập kế hoạch kinh doanh",
+              "content": "Quy trình lập kế hoạch kinh doanh gồm năm bước cơ bản: Bước 1 – Xác định ý tưởng kinh doanh: tìm ra sản phẩm/dịch vụ đáp ứng nhu cầu thị trường. Bước 2 – Nghiên cứu và phân tích thị trường: thu thập thông tin về khách hàng mục tiêu, đối thủ cạnh tranh, xu hướng ngành và thực hiện phân tích SWOT. Bước 3 – Xây dựng chiến lược marketing: quyết định sản phẩm, giá cả, kênh phân phối và xúc tiến thương mại. Bước 4 – Xây dựng kế hoạch sản xuất và tài chính: dự kiến quy trình vận hành, nhu cầu vốn, doanh thu và chi phí. Bước 5 – Viết và trình bày kế hoạch: tổng hợp thông tin thành văn bản hoàn chỉnh với lộ trình và mốc thời gian cụ thể."
+            },
+            {
+              "heading": "Kế hoạch marketing",
+              "content": "Kế hoạch marketing là bộ phận quan trọng của kế hoạch kinh doanh, tập trung vào việc xác định và thỏa mãn nhu cầu khách hàng. Nội dung chính gồm: (1) Sản phẩm (Product) – thiết kế, chất lượng, bao bì, thương hiệu; (2) Giá cả (Price) – định giá sản phẩm dựa trên chi phí, giá trị cảm nhận và giá đối thủ; (3) Phân phối (Place) – lựa chọn kênh bán hàng trực tiếp, qua đại lý hay thương mại điện tử; (4) Xúc tiến (Promotion) – quảng cáo, khuyến mãi, quan hệ công chúng, bán hàng cá nhân. Marketing mix 4P là công cụ căn bản để triển khai các hoạt động này một cách đồng bộ."
+            },
+            {
+              "heading": "Kế hoạch sản xuất, vận hành và tài chính",
+              "content": "Kế hoạch sản xuất/vận hành mô tả quy trình tạo ra sản phẩm hoặc cung ứng dịch vụ, bao gồm: địa điểm kinh doanh, trang thiết bị, máy móc, nguyên vật liệu, quy trình sản xuất, quản lý chất lượng và nhân sự vận hành. Kế hoạch tài chính dự báo các chỉ số quan trọng: vốn đầu tư ban đầu, doanh thu dự kiến, chi phí hoạt động (cố định và biến đổi), dòng tiền và lợi nhuận ròng. Bảng cân đối kế toán và phân tích điểm hòa vốn giúp nhà kinh doanh đánh giá được khả năng sinh lời và thời gian thu hồi vốn của dự án."
+            },
+            {
+              "heading": "Yêu cầu đối với một bản kế hoạch kinh doanh",
+              "content": "Một kế hoạch kinh doanh hiệu quả cần đáp ứng các yêu cầu: (1) Tính thực tế – dựa trên dữ liệu thị trường chính xác và khả năng nguồn lực có thật; (2) Tính khả thi – các mục tiêu và chiến lược phải có thể thực hiện được trong điều kiện hiện tại; (3) Tính cụ thể – chỉ tiêu phải định lượng rõ ràng (doanh thu, thị phần, số lượng sản phẩm); (4) Tính linh hoạt – có phương án dự phòng khi thị trường thay đổi; (5) Tính thuyết phục – trình bày logic, số liệu minh bạch để thu hút nhà đầu tư và đối tác. Kế hoạch cũng cần được cập nhật định kỳ để phù hợp với bối cảnh kinh doanh thực tế."
+            }
           ]
         },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Kế hoạch kinh doanh là gì?", "options": ["Một bức vẽ phong cảnh", "Bản mô tả mục tiêu và cách thức đạt được mục tiêu của dự án kinh doanh", "Bản danh sách các khách hàng cũ", "Phiếu thu tiền hàng"], "correct": 1, "explanation": "Nó đóng vai trò là kim chỉ nam cho hoạt động kinh doanh." },
           { "id": 2, "type": "mcq", "question": "Bước đầu tiên trong việc lập kế hoạch kinh doanh là gì?", "options": ["Thuê nhân viên", "Xác định ý tưởng kinh doanh", "Vay tiền ngân hàng", "Mua sắm trang thiết bị"], "correct": 1, "explanation": "Mọi kế hoạch đều bắt nguồn từ một ý tưởng cụ thể." },
-          { "id": 3, "type": "mcq", "question": "Trong phân tích SWOT, chữ 'W' đại diện cho yếu tố nào?", "options": ["Cơ hội", "Điểm yếu (Weaknesses)", "Thách thức", "Thế mạnh"], "correct": 1, "explanation": "SWOT: Strengths (Mạnh), Weaknesses (Yếu), Opportunities (Cơ hội), Threats (Thách thức)." },
-          { "id": 4, "type": "mcq", "question": "Nội dung nào thuộc về kế hoạch Marketing?", "options": ["Giá bán và các chương trình khuyến mãi", "Quy trình lắp đặt máy móc", "Tiền lương cho giám đốc", "Số lượng bàn ghế trong văn phòng"], "correct": 0, "explanation": "Marketing tập trung vào khách hàng, sản phẩm, giá cả và phân phối." },
-          { "id": 5, "type": "mcq", "question": "Kế hoạch tài chính nhằm mục đích gì?", "options": ["Để cho đẹp hồ sơ", "Dự báo doanh thu, chi phí và lợi nhuận", "Để giấu thuế", "Để mua thêm quà tặng"], "correct": 1, "explanation": "Giúp doanh nghiệp biết được cần bao nhiêu vốn và khả năng sinh lời." },
-          { "id": 6, "type": "mcq", "question": "Tại sao kế hoạch kinh doanh cần có tính 'khả thi'?", "options": ["Để có thể thực hiện được trong điều kiện nguồn lực cho phép", "Để người khác ngưỡng mộ", "Để viết thật dài", "Để tăng giá sản phẩm"], "correct": 0, "explanation": "Kế hoạch xa vời thực tế sẽ dẫn đến thất bại." },
-          { "id": 7, "type": "mcq", "question": "Khi thị trường thay đổi, bản kế hoạch kinh doanh cần phải?", "options": ["Giữ nguyên tuyệt đối", "Điều chỉnh linh hoạt cho phù hợp với tình hình thực tế", "Hủy bỏ hoàn toàn kinh doanh", "Mặc kệ sự thay đổi"], "correct": 1, "explanation": "Tính linh hoạt giúp doanh nghiệp thích nghi để tồn tại." },
-          { "id": 8, "type": "mcq", "question": "Đối tượng nào sau đây là 'khách hàng mục tiêu'?", "options": ["Tất cả mọi người trên thế giới", "Nhóm khách hàng có nhu cầu và khả năng chi trả cho sản phẩm cụ thể của mình", "Những người không thích dùng sản phẩm", "Chỉ những người trong gia đình"], "correct": 1, "explanation": "Kinh doanh cần tập trung vào một phân khúc thị trường nhất định." },
-          { "id": 9, "type": "mcq", "question": "Việc nghiên cứu đối thủ cạnh tranh giúp ích gì?", "options": ["Để bắt chước 100%", "Để tìm ra điểm khác biệt và lợi thế cạnh tranh của mình", "Để xin tiền đối thủ", "Để đóng cửa hàng"], "correct": 1, "explanation": "Biết người biết ta giúp xây dựng chiến lược tốt hơn." },
-          { "id": 10, "type": "mcq", "question": "Một bản kế hoạch kinh doanh chuyên nghiệp giúp?", "options": ["Tăng độ tin cậy khi kêu gọi vốn đầu tư", "Giảm thuế phải nộp", "Không bao giờ gặp thất bại", "Mua hàng rẻ hơn"], "correct": 0, "explanation": "Nhà đầu tư dựa vào kế hoạch để đánh giá tiềm năng dự án." }
+          { "id": 3, "type": "mcq", "question": "Trong phân tích SWOT, chữ O đại diện cho yếu tố nào?", "options": ["Điểm yếu (Weaknesses)", "Cơ hội (Opportunities)", "Thách thức (Threats)", "Điểm mạnh (Strengths)"], "correct": 1, "explanation": "SWOT: Strengths, Weaknesses, Opportunities, Threats." },
+          { "id": 4, "type": "mcq", "question": "Nội dung nào thuộc về kế hoạch marketing?", "options": ["Giá bán và chương trình khuyến mãi", "Quy trình lắp đặt máy móc", "Tiền lương cho giám đốc", "Số lượng bàn ghế văn phòng"], "correct": 0, "explanation": "Marketing tập trung vào sản phẩm, giá cả, phân phối và xúc tiến." },
+          { "id": 5, "type": "mcq", "question": "Kế hoạch tài chính nhằm mục đích gì?", "options": ["Để cho đẹp hồ sơ xin vay vốn", "Dự báo doanh thu, chi phí và lợi nhuận", "Để trốn thuế", "Để mua quà tặng đối tác"], "correct": 1, "explanation": "Giúp doanh nghiệp biết được nhu cầu vốn và khả năng sinh lời." },
+          { "id": 6, "type": "mcq", "question": "Tại sao kế hoạch kinh doanh cần có tính khả thi?", "options": ["Để có thể thực hiện được trong điều kiện nguồn lực cho phép", "Để người khác ngưỡng mộ", "Để viết thật dài và chi tiết", "Để tăng giá sản phẩm"], "correct": 0, "explanation": "Kế hoạch xa rời thực tế sẽ dẫn đến thất bại." },
+          { "id": 7, "type": "mcq", "question": "Khi thị trường thay đổi, bản kế hoạch kinh doanh cần phải?", "options": ["Giữ nguyên tuyệt đối", "Điều chỉnh linh hoạt phù hợp tình hình thực tế", "Hủy bỏ hoàn toàn", "Mặc kệ sự thay đổi"], "correct": 1, "explanation": "Tính linh hoạt giúp doanh nghiệp thích nghi để tồn tại." },
+          { "id": 8, "type": "mcq", "question": "Đối tượng nào sau đây được gọi là khách hàng mục tiêu?", "options": ["Tất cả mọi người trên thế giới", "Nhóm khách hàng có nhu cầu và khả năng chi trả cho sản phẩm của mình", "Những người không thích dùng sản phẩm", "Chỉ những người trong gia đình"], "correct": 1, "explanation": "Kinh doanh cần tập trung vào một phân khúc thị trường nhất định." },
+          { "id": 9, "type": "mcq", "question": "Việc nghiên cứu đối thủ cạnh tranh giúp ích gì?", "options": ["Để bắt chước 100% đối thủ", "Để tìm ra điểm khác biệt và lợi thế cạnh tranh", "Để xin tiền đối thủ", "Để đóng cửa hàng"], "correct": 1, "explanation": "Biết người biết ta giúp xây dựng chiến lược tốt hơn." },
+          { "id": 10, "type": "mcq", "question": "Một bản kế hoạch kinh doanh chuyên nghiệp giúp ích gì cho việc huy động vốn?", "options": ["Tăng độ tin cậy và thuyết phục nhà đầu tư", "Giảm thuế phải nộp", "Không bao giờ gặp thất bại", "Mua hàng với giá rẻ hơn"], "correct": 0, "explanation": "Nhà đầu tư dựa vào kế hoạch để đánh giá tiềm năng dự án." },
+          { "id": 11, "type": "msq", "question": "Những nội dung nào sau đây cần có trong một kế hoạch kinh doanh?", "options": ["Phân tích thị trường", "Kế hoạch marketing", "Thực đơn bữa sáng", "Kế hoạch tài chính"], "correct": [0, 1, 3], "explanation": "Một kế hoạch kinh doanh gồm phân tích thị trường, marketing và tài chính." },
+          { "id": 12, "type": "msq", "question": "Phân tích SWOT bao gồm các yếu tố nào?", "options": ["Strengths (điểm mạnh)", "Weaknesses (điểm yếu)", "Standard (tiêu chuẩn)", "Threats (thách thức)"], "correct": [0, 1, 3], "explanation": "SWOT là viết tắt của Strengths, Weaknesses, Opportunities, Threats." },
+          { "id": 13, "type": "msq", "question": "Lập kế hoạch kinh doanh mang lại lợi ích gì?", "options": ["Giảm thiểu rủi ro", "Huy động vốn dễ dàng hơn", "Bảo đảm chắc chắn thành công", "Quản lý nguồn lực hiệu quả"], "correct": [0, 1, 3], "explanation": "KHKD giúp giảm rủi ro, huy động vốn và quản lý nguồn lực, nhưng không bảo đảm chắc chắn thành công." },
+          { "id": 14, "type": "msq", "question": "Trong marketing mix 4P, những thành tố nào được đề cập?", "options": ["Product (sản phẩm)", "Price (giá cả)", "Profit (lợi nhuận)", "Promotion (xúc tiến)"], "correct": [0, 1, 3], "explanation": "4P gồm Product, Price, Place và Promotion. Profit không phải là thành tố của 4P." }
         ]
       }
     }

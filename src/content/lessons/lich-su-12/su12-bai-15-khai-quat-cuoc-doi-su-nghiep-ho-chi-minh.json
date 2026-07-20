@@ -34,7 +34,11 @@
         { "id": "ex7", "type": "mcq", "question": "Bị bắt bao lâu?", "options": ["5 năm", "10 năm", "14 năm", "20 năm"], "correct": 2, "explanation": "Hồ bị bắt tại Hồng Kông, giam 14 năm." },
         { "id": "ex8", "type": "mcq", "question": "Thả năm?", "options": ["1939", "1940", "1941", "1944"], "correct": 3, "explanation": "Năm 1944 Trung Quốc thả Hồ Chí Minh." },
         { "id": "ex9", "type": "mcq", "question": "Tuyên bố độc lập?", "options": ["1/9/1945", "2/9/1945", "15/8/1945", "30/8/1945"], "correct": 1, "explanation": "2/9/1945: Hồ tuyên bố độc lập Việt Nam." },
-        { "id": "ex10", "type": "mcq", "question": "Qua đời?", "options": ["1967", "1968", "1969", "1970"], "correct": 2, "explanation": "Hồ Chí Minh qua đời 2/9/1969." }
+        { "id": "ex10", "type": "mcq", "question": "Qua đời?", "options": ["1967", "1968", "1969", "1970"], "correct": 2, "explanation": "Hồ Chí Minh qua đời 2/9/1969." },
+        { "id": "ex11", "type": "msq", "question": "Những địa danh gắn với hành trình tìm đường cứu nước của Hồ Chí Minh?", "options": ["Pháp (1911-1923)", "Liên Xô (1923)", "Mỹ (1920-1925)", "Trung Quốc (1924)"], "correct": [0, 1, 3], "explanation": "Hồ Chí Minh từng đến Pháp, Liên Xô và Trung Quốc trên hành trình cứu nước." },
+        { "id": "ex12", "type": "msq", "question": "Những tổ chức do Hồ Chí Minh thành lập?", "options": ["Việt Nam Thanh niên Cách mạng Đồng chí Hội", "Đảng Cộng sản Việt Nam (1930)", "Việt Nam Quốc dân Đảng", "Mặt trận Việt Minh"], "correct": [0, 1, 3], "explanation": "Hồ Chí Minh thành lập Thanh niên Cách mạng, Đảng Cộng sản Việt Nam và Việt Minh." },
+        { "id": "ex13", "type": "msq", "question": "Những sự kiện quan trọng trong sự nghiệp của Hồ Chí Minh?", "options": ["Trình 'Yêu sách 8 điểm' năm 1919", "Tuyên bố độc lập 2/9/1945", "Đi du học ở Mỹ năm 1910", "Chỉ đạo kháng chiến chống Pháp và Mỹ"], "correct": [0, 1, 3], "explanation": "Các sự kiện quan trọng: yêu sách 1919, tuyên bố độc lập 1945, chỉ đạo kháng chiến." },
+        { "id": "ex14", "type": "msq", "question": "Những đóng góp của Hồ Chí Minh cho cách mạng Việt Nam?", "options": ["Tìm ra con đường giải phóng dân tộc", "Sáng lập Đảng Cộng sản Việt Nam", "Xây dựng chính quyền phong kiến", "Lãnh đạo nhân dân giành độc lập"], "correct": [0, 1, 3], "explanation": "Hồ Chí Minh tìm đường giải phóng, sáng lập Đảng và lãnh đạo nhân dân giành độc lập." }
       ]
     }
   }]

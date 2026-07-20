@@ -15,15 +15,36 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Các ngành công nghiệp tiêu biểu",
-          "summary": "Mô tả vai trò, đầu vào và phân bố của các ngành công nghiệp quan trọng trong nền kinh tế hiện đại và ở Việt Nam.",
+          "title": "Một số ngành công nghiệp",
+          "summary": "Công nghiệp gồm nhiều ngành với vai trò, đặc điểm sản xuất và phân bố khác nhau. Ở Việt Nam, các ngành điện lực, khai khoáng, luyện kim, cơ khí, hóa chất, dệt may, chế biến thực phẩm và điện tử đều có sự phát triển và phân bố gắn liền với nguồn lực tự nhiên, thị trường, lao động và hạ tầng.",
           "sections": [
-            { "heading": "Công nghiệp khai khoáng và luyện kim", "content": "Dựa vào nguồn tài nguyên khoáng sản, có phân bố theo mỏ." },
-            { "heading": "Công nghiệp chế tạo và điện tử", "content": "Phát triển khu công nghiệp, yêu cầu lao động có kỹ năng và hạ tầng logistics." }
+            {
+              "heading": "Công nghiệp năng lượng (điện lực) và khai khoáng",
+              "content": "Công nghiệp điện lực sản xuất và truyền tải điện, đóng vai trò nền tảng cho mọi ngành kinh tế; điện được sản xuất từ nhiệt điện (than, khí), thủy điện, và ngày càng mở rộng năng lượng tái tạo (điện gió, điện mặt trời). Công nghiệp khai khoáng khai thác khoáng sản (than, dầu khí, quặng sắt, bô xít, apatit...) để làm nguyên liệu đầu vào cho luyện kim và hóa chất. Hai ngành này có phân bố gắn chặt với tài nguyên: nhiệt điện than tập trung ở Quảng Ninh, than Uông Bí; thủy điện tại các bậc thang sông Đà, sông Sesan; dầu khí ở thềm lục địa Đông Nam Bộ; khai khoáng theo vị trí mỏ (Quảng Ninh, Hà Tĩnh, Tây Nguyên, Lào Cai)."
+            },
+            {
+              "heading": "Luyện kim và cơ khí",
+              "content": "Công nghiệp luyện kim (gang, thép, kim loại màu) thường bố trí gần nguồn nguyên liệu hoặc năng lượng và thị trường tiêu thụ lớn, điển hình là khu liên hợp gang thép Thái Nguyên, Formosa Hà Tĩnh, luyện kim màu ở Lào Cai, Tĩnh Túc. Công nghiệp cơ khí sản xuất máy móc, thiết bị, phương tiện vận tải và sửa chữa; phân bố chủ yếu tại các trung tâm công nghiệp lớn như Hà Nội, TP. Hồ Chí Minh, Hải Phòng, Đà Nẵng nhờ nguồn lao động kỹ thuật và thị trường tiêu thụ rộng."
+            },
+            {
+              "heading": "Hóa chất và vật liệu xây dựng",
+              "content": "Công nghiệp hóa chất sản xuất phân bón, hóa dược, hóa dầu, cao su, nhựa, dùng nhiều nguyên liệu từ khai khoáng và dầu khí; thường đặt gần nguồn nguyên liệu hoặc cảng biển để nhập hóa chất, như khu hóa dầu Dung Quất, hóa chất tại Biên Hòa, Tp. Hồ Chí Minh. Công nghiệp vật liệu xây dựng (xi măng, gạch, kính, sứ) gắn với mỏ đá vôi và nhiên liệu, phân bố rải rác ở nhiều địa phương (xi măng Bỉm Sơn, Hoàng Thạch, Hà Tiên)."
+            },
+            {
+              "heading": "Dệt may, da giày và chế biến thực phẩm",
+              "content": "Dệt may và da giày là ngành thâm dụng lao động, sử dụng nhiều nhân công giá rẻ, nguyên liệu sợi vải và hướng mạnh tới xuất khẩu; tập trung tại các khu công nghiệp vùng đồng bằng sông Hồng, Đông Nam Bộ và các đô thị lớn. Công nghiệp chế biến thực phẩm (xay xát, chế biến thủy sản, rau quả, đường, đồ uống, sữa) gắn liền với vùng nguyên liệu nông nghiệp và thị trường tiêu thụ, phân bố rộng khắp, với các trung tâm lớn tại TP. Hồ Chí Minh, Hà Nội, Cần Thơ, Biên Hòa."
+            },
+            {
+              "heading": "Công nghiệp điện tử và công nghệ cao",
+              "content": "Công nghiệp điện tử, tin học và công nghệ cao sản xuất linh kiện, thiết bị điện tử, phần mềm; ngành này ít ô nhiễm, thâm dụng tri thức, đòi hỏi lao động kỹ thuật cao, nguồn điện ổn định và hạ tầng viễn thông tốt. Ngành tập trung tại các khu công nghệ cao (Hòa Lạc - Hà Nội, Quận 9 - TP. Hồ Chí Minh, Đà Nẵng) và các khu công nghiệp lớn thu hút đầu tư nước ngoài (Bắc Ninh, Bắc Giang, Thái Nguyên)."
+            },
+            {
+              "heading": "Xu hướng và tác động môi trường",
+              "content": "Các ngành công nghiệp Việt Nam đang chuyển dịch theo hướng hiện đại hóa, tự động hóa, công nghiệp 4.0 và phát triển bền vững. Bên cạnh đó, công nghiệp năng lượng, luyện kim, hóa chất gây tác động lớn đến môi trường (khí thải, nước thải, chất thải rắn) nên cần áp dụng công nghệ sạch, xử lý chất thải và quy hoạch hợp lý để giảm thiểu ô nhiễm."
+            }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Nêu một ngành công nghiệp sử dụng nhiều nguyên liệu khoáng sản?", "a_hint": "Luyện kim, khai khoáng." } ] },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Ngành nào dựa trên nguồn khoáng sản?", "options": ["Khai khoáng và luyện kim","Dịch vụ tài chính","Du lịch","Giáo dục"], "correct": 0, "explanation": "Khai khoáng và luyện kim phụ thuộc vào nguồn khoáng." },
           { "id": 2, "type": "mcq", "question": "Ngành nào thường tập trung tại khu công nghiệp?", "options": ["Chế tạo, điện tử, dệt may","Trồng trọt nhỏ lẻ","Rừng tự nhiên","Ngư nghiệp truyền thống"], "correct": 0, "explanation": "Công nghiệp chế tạo và điện tử thường nằm ở các khu công nghiệp." },
           { "id": 3, "type": "mcq", "question": "Một yếu tố quan trọng cho ngành điện tử là?", "options": ["Nguồn lao động có kỹ năng và cung cấp điện ổn định","Nhiệt độ trung bình cao","Số lượng ruộng lúa","Không cần yếu tố gì"], "correct": 0, "explanation": "Kỹ năng và điện ổn định quan trọng cho ngành điện tử." },
@@ -33,7 +54,15 @@
           { "id": 7, "type": "mcq", "question": "Công nghiệp nào cần ít lao động lành nghề nhất?", "options": ["Sản xuất thâm dụng lao động như dệt may","Công nghiệp công nghệ cao","Nghiên cứu công nghệ","Không có"], "correct": 0, "explanation": "Một số ngành dệt may sử dụng lao động phổ thông đông đảo." },
           { "id": 8, "type": "mcq", "question": "Phát triển ngành công nghiệp cần chú ý gì về môi trường?", "options": ["Xử lý chất thải và giảm phát thải","Không quan tâm","Tăng xả thải","Phá hoại nguồn nước"], "correct": 0, "explanation": "Xử lý chất thải là yêu cầu quan trọng khi phát triển công nghiệp." },
           { "id": 9, "type": "mcq", "question": "Một xu hướng toàn cầu trong công nghiệp là?", "options": ["Tự động hóa và công nghiệp 4.0","Quay lại thủ công hoàn toàn","Giảm sử dụng công nghệ","Không thay đổi"], "correct": 0, "explanation": "Tự động hóa và công nghệ 4.0 là xu hướng hiện nay." },
-          { "id": 10, "type": "mcq", "question": "Yếu tố nào giúp ngành công nghiệp hấp dẫn nhà đầu tư nước ngoài?", "options": ["Hạ tầng, chính sách ưu đãi và nguồn nhân lực","Không có yếu tố nào","Khó khăn thủ tục","Mục tiêu đóng cửa"], "correct": 0, "explanation": "Hạ tầng và ưu đãi thu hút đầu tư nước ngoài." }
+          { "id": 10, "type": "mcq", "question": "Yếu tố nào giúp ngành công nghiệp hấp dẫn nhà đầu tư nước ngoài?", "options": ["Hạ tầng, chính sách ưu đãi và nguồn nhân lực","Không có yếu tố nào","Khó khăn thủ tục","Mục tiêu đóng cửa"], "correct": 0, "explanation": "Hạ tầng và ưu đãi thu hút đầu tư nước ngoài." },
+          { "id": 11, "type": "msq", "question": "Các ngành công nghiệp chủ yếu ở Việt Nam gồm?", "options": ["Khai khoáng", "Luyện kim", "Cơ khí", "Du lịch"], "correct": [0,1,2], "explanation": "Khai khoáng, luyện kim, cơ khí là ngành công nghiệp chủ yếu." },
+          { "id": 12, "type": "msq", "question": "Ngành công nghiệp chế biến thực phẩm bao gồm?", "options": ["Chế biến thủy sản", "Chế biến rau quả", "Sản xuất đồ uống", "Khai thác than"], "correct": [0,1,2], "explanation": "Chế biến thủy sản, rau quả và đồ uống thuộc ngành chế biến thực phẩm." },
+          { "id": 13, "type": "msq", "question": "Các yếu tố đầu vào quan trọng cho ngành công nghiệp điện tử?", "options": ["Lao động kỹ thuật cao", "Nguồn điện ổn định", "Nguyên liệu khoáng sản", "Công nghệ hiện đại"], "correct": [0,1,3], "explanation": "Điện tử cần lao động kỹ thuật, điện ổn định và công nghệ hiện đại." },
+          { "id": 14, "type": "msq", "question": "Ngành công nghiệp dệt may phụ thuộc vào?", "options": ["Nguồn lao động dồi dào", "Nguyên liệu sợi, vải", "Thị trường xuất khẩu", "Máy móc tự động hóa cao"], "correct": [0,1,2], "explanation": "Dệt may cần lao động, nguyên liệu và thị trường xuất khẩu." },
+          { "id": 15, "type": "sa", "question": "Kể tên một ngành công nghiệp nặng ở Việt Nam?", "correct": "Luyện kim, cơ khí, hóa chất", "explanation": "Luyện kim, cơ khí, hóa chất là ngành công nghiệp nặng." },
+          { "id": 16, "type": "sa", "question": "Ngành công nghiệp nào sử dụng nhiều lao động nhất?", "correct": "Dệt may, da giày", "explanation": "Dệt may và da giày sử dụng nhiều lao động." },
+          { "id": 17, "type": "sa", "question": "Kể tên một trung tâm công nghiệp lớn ở Việt Nam?", "correct": "TP. Hồ Chí Minh, Hà Nội, Đà Nẵng", "explanation": "TP. Hồ Chí Minh, Hà Nội, Đà Nẵng là trung tâm công nghiệp lớn." },
+          { "id": 18, "type": "sa", "question": "Nêu một ngành công nghiệp sử dụng nhiều nguyên liệu khoáng sản?", "correct": "Luyện kim, khai khoáng." }
         ]
       }
     }

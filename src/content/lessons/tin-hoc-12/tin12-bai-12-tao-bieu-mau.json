@@ -18,22 +18,218 @@
           "title": "Biểu mẫu (Forms)",
           "summary": "Biểu mẫu cho phép người dùng nhập dữ liệu và gửi về máy chủ để xử lý.",
           "sections": [
-            { "heading": "Thẻ <form>", "content": "Bao quanh các thành phần nhập liệu. Các thuộc tính quan trọng: action (địa chỉ nhận dữ liệu), method (GET hoặc POST)." },
-            { "heading": "Các thành phần nhập liệu", "content": "<input> (ô nhập), <textarea> (nhập văn bản dài), <select> (danh sách chọn)." },
-            { "heading": "Các loại Input", "content": "type=\"text\", type=\"password\", type=\"checkbox\", type=\"radio\", type=\"submit\"." }
+            {
+              "heading": "Thẻ <form>",
+              "content": "Bao quanh các thành phần nhập liệu. Các thuộc tính quan trọng: action (địa chỉ nhận dữ liệu), method (GET hoặc POST)."
+            },
+            {
+              "heading": "Các thành phần nhập liệu",
+              "content": "<input> (ô nhập), <textarea> (nhập văn bản dài), <select> (danh sách chọn)."
+            },
+            {
+              "heading": "Các loại Input",
+              "content": "type=\"text\", type=\"password\", type=\"checkbox\", type=\"radio\", type=\"submit\"."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Thẻ nào dùng để bắt đầu một biểu mẫu trong HTML?", "options": ["<input>", "<form>", "<select>", "<label>"], "correct": 1, "explanation": "<form> là container chứa toàn bộ các trường nhập liệu." },
-          { "id": 2, "type": "mcq", "question": "Để tạo ô nhập mật khẩu (ẩn các kí tự), ta dùng type nào cho thẻ <input>?", "options": ["text", "hidden", "password", "secret"], "correct": 2, "explanation": "type=\"password\" hiển thị các dấu chấm thay cho kí tự thực." },
-          { "id": 3, "type": "mcq", "question": "Nút dùng để gửi dữ liệu của form đi được tạo bởi?", "options": ["<input type=\"button\">", "<input type=\"submit\">", "<input type=\"reset\">", "<input type=\"send\">"], "correct": 1, "explanation": "Submit button kích hoạt hành động gửi dữ liệu được định nghĩa trong form." },
-          { "id": 4, "type": "mcq", "question": "Để người dùng chọn một trong nhiều lựa chọn (chọn duy nhất), dùng type nào?", "options": ["checkbox", "radio", "select", "text"], "correct": 1, "explanation": "Radio button dùng cho các lựa chọn loại trừ nhau (chọn 1 trong n)." },
-          { "id": 5, "type": "mcq", "question": "Để người dùng có thể chọn nhiều lựa chọn cùng lúc, ta dùng?", "options": ["radio", "checkbox", "button", "multiple"], "correct": 1, "explanation": "Checkbox cho phép chọn nhiều mục độc lập." },
-          { "id": 6, "type": "mcq", "question": "Thẻ nào dùng để tạo ô nhập văn bản nhiều dòng (như phần góp ý)?", "options": ["<input type=\"text\">", "<textarea>", "<textblock>", "<input type=\"area\">"], "correct": 1, "explanation": "<textarea> cho phép nhập nội dung dài với nhiều dòng." },
-          { "id": 7, "type": "mcq", "question": "Thuộc tính 'placeholder' trong thẻ input dùng để làm gì?", "options": ["Lưu giá trị mặc định", "Hiển thị văn bản gợi ý mờ trong ô nhập", "Mã hóa dữ liệu", "Căn lề ô nhập"], "correct": 1, "explanation": "Placeholder biến mất khi người dùng bắt đầu gõ." },
-          { "id": 8, "type": "mcq", "question": "Thẻ <label> dùng để làm gì?", "options": ["Đổi màu chữ", "Gắn nhãn mô tả cho các ô nhập liệu", "Tạo nút bấm", "Chèn ảnh nhỏ"], "correct": 1, "explanation": "Label giúp người dùng biết ô nhập đó dùng để làm gì và tăng diện tích tương tác." },
-          { "id": 9, "type": "mcq", "question": "Để tạo danh sách thả xuống (dropdown), ta dùng cặp thẻ nào?", "options": ["<input> và <list>", "<select> và <option>", "<form> và <input>", "<ol> và <li>"], "correct": 1, "explanation": "<select> tạo khung, <option> tạo các mục lựa chọn." },
-          { "id": 10, "type": "mcq", "question": "Thuộc tính 'required' thêm vào thẻ input có tác dụng gì?", "options": ["Làm ô nhập to hơn", "Bắt buộc người dùng phải nhập dữ liệu trước khi gửi form", "Chỉ cho phép nhập số", "Tự động điền dữ liệu"], "correct": 1, "explanation": "Đây là cách kiểm tra dữ liệu đơn giản ngay phía trình duyệt." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Thẻ nào dùng để bắt đầu một biểu mẫu trong HTML?",
+            "options": [
+              "<input>",
+              "<form>",
+              "<select>",
+              "<label>"
+            ],
+            "correct": 1,
+            "explanation": "<form> là container chứa toàn bộ các trường nhập liệu."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Để tạo ô nhập mật khẩu (ẩn các kí tự), ta dùng type nào cho thẻ <input>?",
+            "options": [
+              "text",
+              "hidden",
+              "password",
+              "secret"
+            ],
+            "correct": 2,
+            "explanation": "type=\"password\" hiển thị các dấu chấm thay cho kí tự thực."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Nút dùng để gửi dữ liệu của form đi được tạo bởi?",
+            "options": [
+              "<input type=\"button\">",
+              "<input type=\"submit\">",
+              "<input type=\"reset\">",
+              "<input type=\"send\">"
+            ],
+            "correct": 1,
+            "explanation": "Submit button kích hoạt hành động gửi dữ liệu được định nghĩa trong form."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Để người dùng chọn một trong nhiều lựa chọn (chọn duy nhất), dùng type nào?",
+            "options": [
+              "checkbox",
+              "radio",
+              "select",
+              "text"
+            ],
+            "correct": 1,
+            "explanation": "Radio button dùng cho các lựa chọn loại trừ nhau (chọn 1 trong n)."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Để người dùng có thể chọn nhiều lựa chọn cùng lúc, ta dùng?",
+            "options": [
+              "radio",
+              "checkbox",
+              "button",
+              "multiple"
+            ],
+            "correct": 1,
+            "explanation": "Checkbox cho phép chọn nhiều mục độc lập."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Thẻ nào dùng để tạo ô nhập văn bản nhiều dòng (như phần góp ý)?",
+            "options": [
+              "<input type=\"text\">",
+              "<textarea>",
+              "<textblock>",
+              "<input type=\"area\">"
+            ],
+            "correct": 1,
+            "explanation": "<textarea> cho phép nhập nội dung dài với nhiều dòng."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Thuộc tính 'placeholder' trong thẻ input dùng để làm gì?",
+            "options": [
+              "Lưu giá trị mặc định",
+              "Hiển thị văn bản gợi ý mờ trong ô nhập",
+              "Mã hóa dữ liệu",
+              "Căn lề ô nhập"
+            ],
+            "correct": 1,
+            "explanation": "Placeholder biến mất khi người dùng bắt đầu gõ."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Thẻ <label> dùng để làm gì?",
+            "options": [
+              "Đổi màu chữ",
+              "Gắn nhãn mô tả cho các ô nhập liệu",
+              "Tạo nút bấm",
+              "Chèn ảnh nhỏ"
+            ],
+            "correct": 1,
+            "explanation": "Label giúp người dùng biết ô nhập đó dùng để làm gì và tăng diện tích tương tác."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Để tạo danh sách thả xuống (dropdown), ta dùng cặp thẻ nào?",
+            "options": [
+              "<input> và <list>",
+              "<select> và <option>",
+              "<form> và <input>",
+              "<ol> và <li>"
+            ],
+            "correct": 1,
+            "explanation": "<select> tạo khung, <option> tạo các mục lựa chọn."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Thuộc tính 'required' thêm vào thẻ input có tác dụng gì?",
+            "options": [
+              "Làm ô nhập to hơn",
+              "Bắt buộc người dùng phải nhập dữ liệu trước khi gửi form",
+              "Chỉ cho phép nhập số",
+              "Tự động điền dữ liệu"
+            ],
+            "correct": 1,
+            "explanation": "Đây là cách kiểm tra dữ liệu đơn giản ngay phía trình duyệt."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Biểu mẫu HTML có những trường nhập liệu nào?",
+            "options": [
+              "Text",
+              "Password",
+              "Email",
+              "Date"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Form hỗ trợ nhiều loại input."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Thẻ <form> gửi dữ liệu bằng phương pháp nào?",
+            "options": [
+              "GET",
+              "POST",
+              "PUT",
+              "DELETE"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "Form HTML hỗ trợ GET và POST."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Thuộc tính required dùng để?",
+            "options": [
+              "Bắt buộc nhập liệu",
+              "Kiểm tra định dạng",
+              "Hiển thị gợi ý",
+              "Tự động điền"
+            ],
+            "correct": [
+              0
+            ],
+            "explanation": "Required bắt buộc nhập liệu trước khi gửi form."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Form HTML chứa những thành phần nào?",
+            "options": [
+              "Input",
+              "Select",
+              "Textarea",
+              "Button"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Form có input, select, textarea và button."
+          }
         ]
       }
     }

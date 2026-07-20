@@ -18,22 +18,220 @@
           "title": "Trình bày văn bản với CSS",
           "summary": "CSS cung cấp các thuộc tính chi tiết để tùy biến văn bản vượt xa các thẻ HTML truyền thống.",
           "sections": [
-            { "heading": "Thuộc tính Font", "content": "font-family (kiểu chữ), font-size (kích thước), font-weight (độ đậm), font-style (nghiêng)." },
-            { "heading": "Định dạng đoạn văn", "content": "text-align (căn lề), text-decoration (gạch chân/xóa gạch), text-indent (thụt đầu dòng)." },
-            { "heading": "Khoảng cách", "content": "line-height (khoảng cách giữa các dòng), letter-spacing (khoảng cách giữa các chữ cái)." }
+            {
+              "heading": "Thuộc tính Font",
+              "content": "font-family (kiểu chữ), font-size (kích thước), font-weight (độ đậm), font-style (nghiêng)."
+            },
+            {
+              "heading": "Định dạng đoạn văn",
+              "content": "text-align (căn lề), text-decoration (gạch chân/xóa gạch), text-indent (thụt đầu dòng)."
+            },
+            {
+              "heading": "Khoảng cách",
+              "content": "line-height (khoảng cách giữa các dòng), letter-spacing (khoảng cách giữa các chữ cái)."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Thuộc tính nào dùng để thay đổi font chữ trong CSS?", "options": ["font-style", "font-family", "text-style", "font-type"], "correct": 1, "explanation": "font-family xác định danh sách các phông chữ ưu tiên." },
-          { "id": 2, "type": "mcq", "question": "Để căn giữa một đoạn văn bản, ta dùng thuộc tính?", "options": ["text-align: middle;", "text-align: center;", "align: center;", "vertical-align: middle;"], "correct": 1, "explanation": "center là giá trị để căn giữa theo chiều ngang." },
-          { "id": 3, "type": "mcq", "question": "Đơn vị nào thường dùng để chỉ định kích thước font chữ (font-size)?", "options": ["px", "em", "pt", "Tất cả các ý trên"], "correct": 3, "explanation": "Có thể dùng đơn vị tuyệt đối (px) hoặc tương đối (em, rem, %)." },
-          { "id": 4, "type": "mcq", "question": "Thuộc tính 'text-decoration: none;' thường dùng cho thẻ <a> để làm gì?", "options": ["Làm biến mất liên kết", "Bỏ gạch chân mặc định của liên kết", "Đổi màu liên kết", "Làm chữ liên kết to hơn"], "correct": 1, "explanation": "Mặc định thẻ <a> có gạch chân, thuộc tính này giúp xóa nó đi." },
-          { "id": 5, "type": "mcq", "question": "Để làm chữ in hoa toàn bộ, ta dùng thuộc tính?", "options": ["text-transform: uppercase;", "font-variant: small-caps;", "text-style: bold;", "text-weight: heavy;"], "correct": 0, "explanation": "text-transform quản lý việc viết hoa/thường." },
-          { "id": 6, "type": "mcq", "question": "Thuộc tính nào dùng để chỉnh độ đậm của chữ?", "options": ["font-bold", "font-weight", "text-weight", "font-thickness"], "correct": 1, "explanation": "font-weight nhận các giá trị như bold, normal hoặc con số (400, 700)." },
-          { "id": 7, "type": "mcq", "question": "Để điều chỉnh khoảng cách giữa các dòng trong đoạn văn, dùng?", "options": ["line-spacing", "line-height", "text-height", "row-distance"], "correct": 1, "explanation": "line-height giúp văn bản dễ đọc hơn khi không quá sít nhau." },
-          { "id": 8, "type": "mcq", "question": "Giá trị 'justify' của text-align có tác dụng gì?", "options": ["Căn lề trái", "Căn lề phải", "Căn đều hai bên", "Căn giữa"], "correct": 2, "explanation": "Justify làm cho các dòng văn bản có độ dài bằng nhau." },
-          { "id": 9, "type": "mcq", "question": "Thuộc tính 'font-style: italic;' dùng để làm gì?", "options": ["Làm chữ đậm", "Làm chữ in nghiêng", "Làm chữ gạch chân", "Làm chữ có bóng"], "correct": 1, "explanation": "Tương đương với thẻ <i> trong HTML nhưng dùng qua CSS." },
-          { "id": 10, "type": "mcq", "question": "Để thụt lề dòng đầu tiên của đoạn văn, dùng thuộc tính?", "options": ["padding-left", "margin-left", "text-indent", "first-line-indent"], "correct": 2, "explanation": "text-indent xác định độ thụt lề của dòng đầu." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Thuộc tính nào dùng để thay đổi font chữ trong CSS?",
+            "options": [
+              "font-style",
+              "font-family",
+              "text-style",
+              "font-type"
+            ],
+            "correct": 1,
+            "explanation": "font-family xác định danh sách các phông chữ ưu tiên."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Để căn giữa một đoạn văn bản, ta dùng thuộc tính?",
+            "options": [
+              "text-align: middle;",
+              "text-align: center;",
+              "align: center;",
+              "vertical-align: middle;"
+            ],
+            "correct": 1,
+            "explanation": "center là giá trị để căn giữa theo chiều ngang."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Đơn vị nào thường dùng để chỉ định kích thước font chữ (font-size)?",
+            "options": [
+              "px",
+              "em",
+              "pt",
+              "Tất cả các ý trên"
+            ],
+            "correct": 3,
+            "explanation": "Có thể dùng đơn vị tuyệt đối (px) hoặc tương đối (em, rem, %)."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Thuộc tính 'text-decoration: none;' thường dùng cho thẻ <a> để làm gì?",
+            "options": [
+              "Làm biến mất liên kết",
+              "Bỏ gạch chân mặc định của liên kết",
+              "Đổi màu liên kết",
+              "Làm chữ liên kết to hơn"
+            ],
+            "correct": 1,
+            "explanation": "Mặc định thẻ <a> có gạch chân, thuộc tính này giúp xóa nó đi."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Để làm chữ in hoa toàn bộ, ta dùng thuộc tính?",
+            "options": [
+              "text-transform: uppercase;",
+              "font-variant: small-caps;",
+              "text-style: bold;",
+              "text-weight: heavy;"
+            ],
+            "correct": 0,
+            "explanation": "text-transform quản lý việc viết hoa/thường."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Thuộc tính nào dùng để chỉnh độ đậm của chữ?",
+            "options": [
+              "font-bold",
+              "font-weight",
+              "text-weight",
+              "font-thickness"
+            ],
+            "correct": 1,
+            "explanation": "font-weight nhận các giá trị như bold, normal hoặc con số (400, 700)."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Để điều chỉnh khoảng cách giữa các dòng trong đoạn văn, dùng?",
+            "options": [
+              "line-spacing",
+              "line-height",
+              "text-height",
+              "row-distance"
+            ],
+            "correct": 1,
+            "explanation": "line-height giúp văn bản dễ đọc hơn khi không quá sít nhau."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Giá trị 'justify' của text-align có tác dụng gì?",
+            "options": [
+              "Căn lề trái",
+              "Căn lề phải",
+              "Căn đều hai bên",
+              "Căn giữa"
+            ],
+            "correct": 2,
+            "explanation": "Justify làm cho các dòng văn bản có độ dài bằng nhau."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Thuộc tính 'font-style: italic;' dùng để làm gì?",
+            "options": [
+              "Làm chữ đậm",
+              "Làm chữ in nghiêng",
+              "Làm chữ gạch chân",
+              "Làm chữ có bóng"
+            ],
+            "correct": 1,
+            "explanation": "Tương đương với thẻ <i> trong HTML nhưng dùng qua CSS."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Để thụt lề dòng đầu tiên của đoạn văn, dùng thuộc tính?",
+            "options": [
+              "padding-left",
+              "margin-left",
+              "text-indent",
+              "first-line-indent"
+            ],
+            "correct": 2,
+            "explanation": "text-indent xác định độ thụt lề của dòng đầu."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Thuộc tính CSS nào định dạng chữ?",
+            "options": [
+              "font-family",
+              "font-size",
+              "font-weight",
+              "color"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đều định dạng chữ."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Đơn vị đo trong CSS gồm?",
+            "options": [
+              "px",
+              "em",
+              "%",
+              "cm"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "CSS hỗ trợ px, em, %, cm."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "text-align có những giá trị nào?",
+            "options": [
+              "left",
+              "center",
+              "right",
+              "justify"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Text-align hỗ trợ left, center, right và justify."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Line-height dùng để làm gì?",
+            "options": [
+              "Điều chỉnh khoảng cách dòng",
+              "Tạo khoảng cách đoạn",
+              "Định dạng chữ in nghiêng",
+              "Tạo viền"
+            ],
+            "correct": [
+              0
+            ],
+            "explanation": "Line-height điều chỉnh khoảng cách giữa các dòng chữ."
+          }
         ]
       }
     }

@@ -18,22 +18,218 @@
           "title": "Ứng dụng của AI",
           "summary": "AI đang làm thay đổi sâu sắc các ngành y tế, giáo dục, giao thông và dịch vụ.",
           "sections": [
-            { "heading": "AI trong Y tế", "content": "Chẩn đoán hình ảnh, dự báo dịch bệnh, nghiên cứu phát triển thuốc mới và hỗ trợ phẫu thuật." },
-            { "heading": "AI trong Đời sống", "content": "Nhà thông minh (Smart Home), hệ thống gợi ý (Netflix, YouTube), lái xe tự động và trợ lý ảo." },
-            { "heading": "Tác động và thách thức", "content": "Vấn đề đạo đức, quyền riêng tư dữ liệu và sự thay đổi của thị trường việc làm." }
+            {
+              "heading": "AI trong Y tế",
+              "content": "Chẩn đoán hình ảnh, dự báo dịch bệnh, nghiên cứu phát triển thuốc mới và hỗ trợ phẫu thuật."
+            },
+            {
+              "heading": "AI trong Đời sống",
+              "content": "Nhà thông minh (Smart Home), hệ thống gợi ý (Netflix, YouTube), lái xe tự động và trợ lý ảo."
+            },
+            {
+              "heading": "Tác động và thách thức",
+              "content": "Vấn đề đạo đức, quyền riêng tư dữ liệu và sự thay đổi của thị trường việc làm."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Trong y tế, AI giúp ích gì nhiều nhất?", "options": ["Lau dọn bệnh viện", "Chẩn đoán bệnh qua hình ảnh X-quang, MRI", "Bán thuốc", "Viết hóa đơn"], "correct": 1, "explanation": "AI có khả năng phân tích hình ảnh y tế rất chính xác." },
-          { "id": 2, "type": "mcq", "question": "Hệ thống gợi ý của YouTube dựa trên AI nhằm?", "options": ["Tắt video của người dùng", "Đề xuất nội dung phù hợp với sở thích từng người", "Làm chậm mạng", "Tăng giá quảng cáo"], "correct": 1, "explanation": "AI phân tích hành vi để cá nhân hóa trải nghiệm người dùng." },
-          { "id": 3, "type": "mcq", "question": "Xe tự lái (Self-driving car) sử dụng thành phần AI nào để nhận biết chướng ngại vật?", "options": ["Bàn phím", "Cảm biến và thị giác máy tính (Computer Vision)", "Màn hình cảm ứng", "Loa phóng thanh"], "correct": 1, "explanation": "Thị giác máy tính giúp xe 'nhìn' và hiểu môi trường xung quanh." },
-          { "id": 4, "type": "mcq", "question": "AI có thể giúp gì cho giáo dục?", "options": ["Học hộ học sinh", "Tạo lộ trình học tập cá nhân hóa cho từng học sinh", "Xóa bỏ giáo viên", "Chấm điểm sai"], "correct": 1, "explanation": "AI giúp thích ứng tài liệu học tập theo tốc độ của từng cá nhân." },
-          { "id": 5, "type": "mcq", "question": "Robot Sophia là một ví dụ về thành tựu trong lĩnh vực nào?", "options": ["Máy tính bỏ túi", "Robot xã hội có AI", "Sản xuất ô tô", "Nông nghiệp"], "correct": 1, "explanation": "Sophia là robot có hình dáng người và khả năng giao tiếp nhờ AI." },
-          { "id": 6, "type": "mcq", "question": "Vấn đề đạo đức nào được quan tâm khi sử dụng AI?", "options": ["Máy tính tốn điện", "Sự minh bạch và định kiến trong các quyết định của AI", "Màu sắc của robot", "Tốc độ Internet"], "correct": 1, "explanation": "AI có thể đưa ra quyết định sai lệch nếu dữ liệu huấn luyện có định kiến." },
-          { "id": 7, "type": "mcq", "question": "AI giúp dự báo thời tiết bằng cách nào?", "options": ["Đoán mò", "Phân tích khối lượng lớn dữ liệu khí tượng trong quá khứ", "Nhìn lên bầu trời", "Hỏi ý kiến người dân"], "correct": 1, "explanation": "AI xử lý dữ liệu Big Data để đưa ra dự báo chính xác hơn." },
-          { "id": 8, "type": "mcq", "question": "Công nghệ Deepfake sử dụng AI để làm gì?", "options": ["Chỉnh sửa văn bản", "Tạo ra hình ảnh hoặc video giả mạo trông như thật", "Quét virus", "Tăng tốc máy tính"], "correct": 1, "explanation": "Deepfake là một ứng dụng gây tranh cãi của AI liên quan đến tính xác thực." },
-          { "id": 9, "type": "mcq", "question": "Tại sao AI được coi là động lực của cuộc cách mạng công nghiệp 4.0?", "options": ["Vì nó thay thế hoàn toàn điện năng", "Vì nó thông minh hóa các quy trình sản xuất và dịch vụ", "Vì nó làm cho máy tính rẻ hơn", "Vì nó không cần con người"], "correct": 1, "explanation": "Thông minh hóa là đặc trưng cốt lõi của 4.0." },
-          { "id": 10, "type": "mcq", "question": "Trong tài chính, AI dùng để?", "options": ["In tiền", "Phát hiện gian lận thẻ tín dụng", "Làm đẹp ngân hàng", "Thay thế khách hàng"], "correct": 1, "explanation": "AI phát hiện các mẫu hành vi giao dịch bất thường rất nhanh chóng." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Trong y tế, AI giúp ích gì nhiều nhất?",
+            "options": [
+              "Lau dọn bệnh viện",
+              "Chẩn đoán bệnh qua hình ảnh X-quang, MRI",
+              "Bán thuốc",
+              "Viết hóa đơn"
+            ],
+            "correct": 1,
+            "explanation": "AI có khả năng phân tích hình ảnh y tế rất chính xác."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Hệ thống gợi ý của YouTube dựa trên AI nhằm?",
+            "options": [
+              "Tắt video của người dùng",
+              "Đề xuất nội dung phù hợp với sở thích từng người",
+              "Làm chậm mạng",
+              "Tăng giá quảng cáo"
+            ],
+            "correct": 1,
+            "explanation": "AI phân tích hành vi để cá nhân hóa trải nghiệm người dùng."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Xe tự lái (Self-driving car) sử dụng thành phần AI nào để nhận biết chướng ngại vật?",
+            "options": [
+              "Bàn phím",
+              "Cảm biến và thị giác máy tính (Computer Vision)",
+              "Màn hình cảm ứng",
+              "Loa phóng thanh"
+            ],
+            "correct": 1,
+            "explanation": "Thị giác máy tính giúp xe 'nhìn' và hiểu môi trường xung quanh."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "AI có thể giúp gì cho giáo dục?",
+            "options": [
+              "Học hộ học sinh",
+              "Tạo lộ trình học tập cá nhân hóa cho từng học sinh",
+              "Xóa bỏ giáo viên",
+              "Chấm điểm sai"
+            ],
+            "correct": 1,
+            "explanation": "AI giúp thích ứng tài liệu học tập theo tốc độ của từng cá nhân."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Robot Sophia là một ví dụ về thành tựu trong lĩnh vực nào?",
+            "options": [
+              "Máy tính bỏ túi",
+              "Robot xã hội có AI",
+              "Sản xuất ô tô",
+              "Nông nghiệp"
+            ],
+            "correct": 1,
+            "explanation": "Sophia là robot có hình dáng người và khả năng giao tiếp nhờ AI."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Vấn đề đạo đức nào được quan tâm khi sử dụng AI?",
+            "options": [
+              "Máy tính tốn điện",
+              "Sự minh bạch và định kiến trong các quyết định của AI",
+              "Màu sắc của robot",
+              "Tốc độ Internet"
+            ],
+            "correct": 1,
+            "explanation": "AI có thể đưa ra quyết định sai lệch nếu dữ liệu huấn luyện có định kiến."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "AI giúp dự báo thời tiết bằng cách nào?",
+            "options": [
+              "Đoán mò",
+              "Phân tích khối lượng lớn dữ liệu khí tượng trong quá khứ",
+              "Nhìn lên bầu trời",
+              "Hỏi ý kiến người dân"
+            ],
+            "correct": 1,
+            "explanation": "AI xử lý dữ liệu Big Data để đưa ra dự báo chính xác hơn."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Công nghệ Deepfake sử dụng AI để làm gì?",
+            "options": [
+              "Chỉnh sửa văn bản",
+              "Tạo ra hình ảnh hoặc video giả mạo trông như thật",
+              "Quét virus",
+              "Tăng tốc máy tính"
+            ],
+            "correct": 1,
+            "explanation": "Deepfake là một ứng dụng gây tranh cãi của AI liên quan đến tính xác thực."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Tại sao AI được coi là động lực của cuộc cách mạng công nghiệp 4.0?",
+            "options": [
+              "Vì nó thay thế hoàn toàn điện năng",
+              "Vì nó thông minh hóa các quy trình sản xuất và dịch vụ",
+              "Vì nó làm cho máy tính rẻ hơn",
+              "Vì nó không cần con người"
+            ],
+            "correct": 1,
+            "explanation": "Thông minh hóa là đặc trưng cốt lõi của 4.0."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Trong tài chính, AI dùng để?",
+            "options": [
+              "In tiền",
+              "Phát hiện gian lận thẻ tín dụng",
+              "Làm đẹp ngân hàng",
+              "Thay thế khách hàng"
+            ],
+            "correct": 1,
+            "explanation": "AI phát hiện các mẫu hành vi giao dịch bất thường rất nhanh chóng."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "AI được ứng dụng trong khoa học như thế nào?",
+            "options": [
+              "Phân tích dữ liệu y khoa",
+              "Dự báo thời tiết",
+              "Tìm kiếm thiên thạch",
+              "Sáng tác nhạc"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "AI hỗ trợ phân tích dữ liệu, dự báo, tìm kiếm trong khoa học."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Những nguy cơ của AI trong đời sống bao gồm?",
+            "options": [
+              "Thay thế lao động",
+              "Rủi ro về bảo mật dữ liệu",
+              "Thiên vị trong ra quyết định",
+              "Tăng năng suất lao động"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "AI có thể thay thế lao động, gây rủi ro bảo mật và thiên vị."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "AI trong giáo dục có thể làm gì?",
+            "options": [
+              "Cá nhân hóa việc học",
+              "Tự động chấm bài",
+              "Thay thế hoàn toàn giáo viên",
+              "Phân tích tiến độ học tập"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "AI hỗ trợ cá nhân hóa, chấm bài, phân tích tiến độ."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Mạng nơ-ron thần kinh được mô phỏng từ?",
+            "options": [
+              "Não bộ con người",
+              "Máy tính cổ điển",
+              "Hệ thống thần kinh sinh học",
+              "Chip vi xử lý"
+            ],
+            "correct": [
+              0,
+              2
+            ],
+            "explanation": "Mạng nơ-ron được mô phỏng từ cấu trúc não bộ và hệ thống thần kinh sinh học."
+          }
         ]
       }
     }

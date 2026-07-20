@@ -1,0 +1,299 @@
+{
+  "subject": "Công nghệ 12",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-21-tin-hieu-so-va-cac-cong-logic-co-ban",
+      "name": "Bài 21. Tín hiệu số và các cổng logic cơ bản",
+      "slug": "bai-21-tin-hieu-so-va-cac-cong-logic-co-ban",
+      "chapter": "Chương 7. Điện tử số",
+      "chapter_id": "CN12",
+      "lesson_id": 21,
+      "description": "Tìm hiểu về tín hiệu số và tín hiệu tương tự, hệ đếm nhị phân, các cổng logic cơ bản (AND, OR, NOT, NAND, NOR, XOR), bảng trạng thái và ứng dụng.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "so-1",
+          "name": "Tín hiệu số và nhị phân",
+          "slug": "tin-hieu-so-va-nhi-phan",
+          "difficulty": "easy"
+        },
+        {
+          "id": "so-2",
+          "name": "Cổng logic AND, OR, NOT",
+          "slug": "cong-logic-and-or-not",
+          "difficulty": "medium"
+        },
+        {
+          "id": "so-3",
+          "name": "Cổng logic NAND, NOR, XOR",
+          "slug": "cong-logic-nand-nor-xor",
+          "difficulty": "medium"
+        },
+        {
+          "id": "so-4",
+          "name": "Bảng trạng thái và ứng dụng",
+          "slug": "bang-trang-thai-va-ung-dung",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Tín hiệu số và các cổng logic cơ bản",
+          "sections": [
+            {
+              "heading": "1. Tín hiệu số và tín hiệu tương tự",
+              "content": "<p><strong>Tín hiệu tương tự (Analog):</strong> Biến thiên liên tục, vô hạn giá trị.</p><p><strong>Tín hiệu số (Digital):</strong> Biến thiên rời rạc, chỉ có hai mức 0 (thấp) và 1 (cao).</p><p><strong>So sánh:</strong></p><ul><li>Tín hiệu tương tự: dễ bị nhiễu, khó xử lý chính xác</li><li>Tín hiệu số: chống nhiễu tốt, dễ lưu trữ và xử lý</li><li>Chuyển đổi ADC (Analog-to-Digital) và DAC (Digital-to-Analog)</li></ul><p>Ngày nay, hầu hết các thiết bị điện tử đều sử dụng tín hiệu số vì độ tin cậy và khả năng xử lý vượt trội.</p>"
+            },
+            {
+              "heading": "2. Hệ thống số nhị phân",
+              "content": "<p><strong>Hệ nhị phân (Binary):</strong> Hệ đếm cơ số 2, dùng hai ký số 0 và 1.</p><p><strong>Chuyển đổi nhị phân sang thập phân:</strong></p><p>$$(b_n b_{n-1}...b_1 b_0)_2 = \\sum_{i=0}^{n} b_i \\times 2^i$$</p><p><strong>Ví dụ:</strong> $(1011)_2 = 1\\times2^3 + 0\\times2^2 + 1\\times2^1 + 1\\times2^0 = 8 + 0 + 2 + 1 = 11$.</p><p><strong>Chuyển đổi thập phân sang nhị phân:</strong> Chia liên tiếp cho 2, lấy số dư theo thứ tự ngược.</p><p><strong>Các đơn vị thông tin:</strong></p><ul><li>1 byte = 8 bit</li><li>1 KB = 1024 byte</li><li>1 MB = 1024 KB</li></ul>"
+            },
+            {
+              "heading": "3. Cổng logic AND",
+              "content": "<p><strong>Cổng AND</strong> (và) thực hiện phép nhân logic.</p><p><strong>Ký hiệu:</strong> $Y = A \\cdot B$ hoặc $Y = A \\& B$</p><p><strong>Bảng trạng thái:</strong></p><table style='border-collapse:collapse;width:100%;max-width:300px'><tr><th style='border:1px solid #ccc;padding:6px;text-align:center'>A</th><th style='border:1px solid #ccc;padding:6px;text-align:center'>B</th><th style='border:1px solid #ccc;padding:6px;text-align:center'>Y = A·B</th></tr><tr><td style='border:1px solid #ccc;padding:6px;text-align:center'>0</td><td style='border:1px solid #ccc;padding:6px;text-align:center'>0</td><td style='border:1px solid #ccc;padding:6px;text-align:center'>0</td></tr><tr><td style='border:1px solid #ccc;padding:6px;text-align:center'>0</td><td style='border:1px solid #ccc;padding:6px;text-align:center'>1</td><td style='border:1px solid #ccc;padding:6px;text-align:center'>0</td></tr><tr><td style='border:1px solid #ccc;padding:6px;text-align:center'>1</td><td style='border:1px solid #ccc;padding:6px;text-align:center'>0</td><td style='border:1px solid #ccc;padding:6px;text-align:center'>0</td></tr><tr><td style='border:1px solid #ccc;padding:6px;text-align:center'>1</td><td style='border:1px solid #ccc;padding:6px;text-align:center'>1</td><td style='border:1px solid #ccc;padding:6px;text-align:center'>1</td></tr></table><p><strong>Nguyên tắc:</strong> Ngõ ra bằng 1 khi và chỉ khi tất cả ngõ vào đều bằng 1.</p>"
+            },
+            {
+              "heading": "4. Cổng logic OR và NOT",
+              "content": "<p><strong>Cổng OR</strong> (hoặc) thực hiện phép cộng logic.</p><p>Ký hiệu: $Y = A + B$.</p><p><strong>Bảng trạng thái OR:</strong></p><ul><li>0 + 0 = 0</li><li>0 + 1 = 1</li><li>1 + 0 = 1</li><li>1 + 1 = 1</li></ul><p>Nguyên tắc: Ngõ ra bằng 1 khi có ít nhất một ngõ vào bằng 1.</p><p><strong>Cổng NOT</strong> (đảo, đảo pha) thực hiện phép phủ định logic.</p><p>Ký hiệu: $Y = \\overline{A}$ hoặc $Y = NOT(A)$.</p><p><strong>Bảng trạng thái NOT:</strong></p><ul><li>$\\overline{0} = 1$</li><li>$\\overline{1} = 0$</li></ul><p>Nguyên tắc: Ngõ ra luôn ngược với ngõ vào.</p>"
+            },
+            {
+              "heading": "5. Cổng logic NAND và NOR",
+              "content": "<p><strong>Cổng NAND</strong> (NOT AND) là kết hợp cổng AND và NOT.</p><p>Ký hiệu: $Y = \\overline{A \\cdot B}$.</p><p><strong>Bảng trạng thái NAND:</strong></p><ul><li>$\\overline{0\\cdot0}=1$, $\\overline{0\\cdot1}=1$, $\\overline{1\\cdot0}=1$, $\\overline{1\\cdot1}=0$</li></ul><p>Nguyên tắc: Ngõ ra bằng 0 khi và chỉ khi tất cả ngõ vào đều bằng 1.</p><p><strong>Cổng NOR</strong> (NOT OR) là kết hợp cổng OR và NOT.</p><p>Ký hiệu: $Y = \\overline{A + B}$.</p><p><strong>Bảng trạng thái NOR:</strong></p><ul><li>$\\overline{0+0}=1$, $\\overline{0+1}=0$, $\\overline{1+0}=0$, $\\overline{1+1}=0$</li></ul><p>Nguyên tắc: Ngõ ra bằng 1 khi và chỉ khi tất cả ngõ vào đều bằng 0.</p><p><strong>Tính phổ dụng:</strong> Cổng NAND và NOR là cổng phổ dụng — có thể dùng để tạo ra mọi cổng logic khác.</p>"
+            },
+            {
+              "heading": "6. Cổng logic XOR",
+              "content": "<p><strong>Cổng XOR</strong> (Exclusive OR — hoặc loại trừ) cho ngõ ra 1 khi các ngõ vào khác nhau.</p><p>Ký hiệu: $Y = A \\oplus B = A\\overline{B} + \\overline{A}B$.</p><p><strong>Bảng trạng thái XOR:</strong></p><ul><li>$0 \\oplus 0 = 0$</li><li>$0 \\oplus 1 = 1$</li><li>$1 \\oplus 0 = 1$</li><li>$1 \\oplus 1 = 0$</li></ul><p><strong>Ứng dụng của XOR:</strong></p><ul><li>Mạch so sánh hai bit</li><li>Mạch cộng bán phần (half adder)</li><li>Mã hóa dữ liệu (mã hóa dòng)</li><li>Kiểm tra chẵn lẻ (parity check)</li></ul>"
+            },
+            {
+              "heading": "7. Ứng dụng của các cổng logic",
+              "content": "<p><strong>Các ứng dụng thực tế:</strong></p><ul><li><strong>Mạch khóa số:</strong> Dùng cổng AND và OR để tạo mạch mở khóa khi nhập đúng mã</li><li><strong>Mạch báo động:</strong> Dùng cổng OR để kích hoạt báo động khi có bất kỳ cảm biến nào kích hoạt</li><li><strong>Mạch điều khiển đèn:</strong> Đèn bật khi tối (NOT + AND)</li><li><strong>Bộ cộng nhị phân:</strong> Dùng XOR và AND để thực hiện phép cộng hai số nhị phân</li><li><strong>Bộ giải mã:</strong> Dùng cổng logic để giải mã địa chỉ bộ nhớ</li></ul><p>Các IC cổng logic phổ biến: 74HC08 (AND), 74HC32 (OR), 74HC04 (NOT), 74HC00 (NAND), 74HC02 (NOR), 74HC86 (XOR).</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Lập bảng trạng thái cho cổng logic",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định các ngõ vào và ngõ ra</li><li>Liệt kê tất cả tổ hợp ngõ vào (2^n tổ hợp với n ngõ vào)</li><li>Áp dụng quy tắc của từng cổng để xác định ngõ ra</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Lập bảng trạng thái cho $Y = A \\cdot \\overline{B}$ với 2 ngõ vào A, B.",
+                "solution": "<p><strong>Giải:</strong></p><p>Tính $\\overline{B}$ rồi AND với A. Kết quả: Y=1 khi A=1, B=0.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Chuyển đổi nhị phân sang thập phân",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định các bit nhị phân</li><li>Nhân mỗi bit với $2^i$ (i là vị trí bit, tính từ 0 bên phải)</li><li>Cộng tất cả kết quả</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Chuyển $(1101)_2$ sang thập phân.",
+                "solution": "<p><strong>Giải:</strong></p><p>$(1101)_2 = 1\\times8 + 1\\times4 + 0\\times2 + 1\\times1 = 13$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Xác định chức năng mạch logic",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Viết biểu thức logic từ sơ đồ mạch</li><li>Lập bảng trạng thái</li><li>Xác định chức năng dựa vào bảng trạng thái</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Cho mạch $Y = \\overline{A \\cdot B} + C$. Hãy mô tả chức năng.",
+                "solution": "<p><strong>Giải:</strong></p><p>Y=1 khi A và B không đồng thời bằng 1, hoặc C=1.</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Tín hiệu số có đặc điểm:",
+            "options": [
+              "Biến thiên liên tục",
+              "Chỉ có hai mức 0 và 1",
+              "Có vô hạn giá trị",
+              "Luôn ở dạng hình sin"
+            ],
+            "correct": 1,
+            "explanation": "Tín hiệu số chỉ có hai mức logic: mức thấp (0) và mức cao (1)."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Hệ nhị phân có cơ số:",
+            "options": [
+              "2",
+              "8",
+              "10",
+              "16"
+            ],
+            "correct": 0,
+            "explanation": "Hệ nhị phân là hệ đếm cơ số 2, chỉ dùng hai ký số 0 và 1."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Giá trị thập phân của $(1010)_2$ là:",
+            "options": [
+              "8",
+              "10",
+              "12",
+              "15"
+            ],
+            "correct": 1,
+            "explanation": "$1010_2 = 1\\times8 + 0\\times4 + 1\\times2 + 0\\times1 = 8+2 = 10$."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Ngõ ra cổng AND bằng 1 khi:",
+            "options": [
+              "Có ít nhất một ngõ vào bằng 1",
+              "Tất cả ngõ vào đều bằng 1",
+              "Tất cả ngõ vào đều bằng 0",
+              "Các ngõ vào khác nhau"
+            ],
+            "correct": 1,
+            "explanation": "Cổng AND chỉ ra 1 khi tất cả ngõ vào đều bằng 1, ngược lại ra 0."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Ngõ ra cổng OR bằng 0 khi:",
+            "options": [
+              "Tất cả ngõ vào đều bằng 0",
+              "Có ít nhất một ngõ vào bằng 1",
+              "Tất cả ngõ vào đều bằng 1",
+              "Không xác định"
+            ],
+            "correct": 0,
+            "explanation": "Cổng OR ra 0 khi và chỉ khi tất cả ngõ vào đều bằng 0."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Cổng NOT thực hiện chức năng:",
+            "options": [
+              "Phép nhân logic",
+              "Phép cộng logic",
+              "Phép phủ định (đảo)",
+              "Phép trừ logic"
+            ],
+            "correct": 2,
+            "explanation": "Cổng NOT đảo ngược trạng thái ngõ vào: 0 thành 1, 1 thành 0."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Cổng NAND có bảng trạng thái tương đương với:",
+            "options": [
+              "AND rồi NOT",
+              "OR rồi NOT",
+              "NOT rồi AND",
+              "NOT rồi OR"
+            ],
+            "correct": 0,
+            "explanation": "NAND = NOT(AND), tức là kết quả AND được đảo lại."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Ngõ ra cổng XOR bằng 1 khi:",
+            "options": [
+              "Các ngõ vào bằng nhau",
+              "Các ngõ vào khác nhau",
+              "Tất cả ngõ vào đều bằng 0",
+              "Tất cả ngõ vào đều bằng 1"
+            ],
+            "correct": 1,
+            "explanation": "XOR ra 1 khi các ngõ vào có giá trị khác nhau: 0 XOR 1 = 1, 1 XOR 0 = 1."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Cổng logic nào được coi là cổng phổ dụng?",
+            "options": [
+              "AND và OR",
+              "NAND và NOR",
+              "XOR và XNOR",
+              "NOT và AND"
+            ],
+            "correct": 1,
+            "explanation": "NAND và NOR là cổng phổ dụng — có thể kết hợp để tạo ra mọi cổng logic khác."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "$(1001)_2$ có giá trị thập phân là:",
+            "options": [
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "correct": 1,
+            "explanation": "$1001_2 = 1\\times8 + 0\\times4 + 0\\times2 + 1\\times1 = 8+1 = 9$."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các cổng logic cơ bản gồm:",
+            "options": [
+              "AND",
+              "OR",
+              "NOT",
+              "ADC"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "AND, OR, NOT là ba cổng logic cơ bản nhất. ADC là bộ chuyển đổi tương tự-số."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Ứng dụng của cổng XOR trong thực tế:",
+            "options": [
+              "Mạch so sánh hai bit",
+              "Mạch cộng bán phần",
+              "Mạch lọc tín hiệu",
+              "Mạch kiểm tra chẵn lẻ"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "XOR dùng trong so sánh bit, bộ cộng bán phần, parity check. Lọc tín hiệu không phải ứng dụng của XOR."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Đặc điểm của tín hiệu số so với tín hiệu tương tự:",
+            "options": [
+              "Chống nhiễu tốt hơn",
+              "Dễ lưu trữ và xử lý",
+              "Cần bộ chuyển đổi ADC/DAC để giao tiếp thế giới thực",
+              "Không thể truyền đi xa"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Tín hiệu số chống nhiễu tốt, dễ lưu trữ, cần ADC/DAC. Có thể truyền xa qua các kênh số."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Các IC cổng logic phổ biến trong họ 74HC:",
+            "options": [
+              "74HC00 (NAND)",
+              "74HC08 (AND)",
+              "74HC32 (OR)",
+              "LM741"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "74HC00, 74HC08, 74HC32 là các IC cổng logic. LM741 là op-amp, không phải cổng logic."
+          }
+        ]
+      }
+    }
+  ]
+}

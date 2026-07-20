@@ -1,0 +1,230 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-16-diode-transistor-va-mach-tich-hop-ic",
+      "name": "Bài 16. Diode, transistor và mạch tích hợp IC",
+      "slug": "bai-16-diode-transistor-va-mach-tich-hop-ic",
+      "chapter": "Chương 2. Linh kiện điện tử",
+      "chapter_id": "CN12",
+      "lesson_id": 16,
+      "description": "Tìm hiểu cấu tạo, nguyên lí hoạt động, phân loại và ứng dụng của diode, transistor và mạch tích hợp IC.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Diode, transistor và mạch tích hợp IC",
+          "summary": "Diode, transistor và IC là linh kiện tích cực tạo nên hầu hết các mạch điện tử hiện đại. Diode cho dòng đi theo một chiều, transistor khuếch đại và chuyển mạch, IC tích hợp hàng triệu linh kiện trên một chip bán dẫn nhỏ.",
+          "sections": [
+            {
+              "heading": "1. Diode bán dẫn",
+              "content": "<p><strong>Cấu tạo:</strong> Diode được tạo thành từ hai lớp bán dẫn loại P và N ghép lại với nhau, tạo thành tiếp giáp P-N. Hai đầu được gọi là Anot (A - lớp P) và Catot (K - lớp N).</p><p><strong>Ký hiệu:</strong> Mũi tên từ A đến K, đầu mũi tên là A, vạch ngang là K.</p><p><strong>Nguyên lí hoạt động:</strong></p><ul><li><strong>Phân cực thuận:</strong> A → (+) nguồn, K → (−) nguồn => Diode dẫn điện.</li><li><strong>Phân cực ngược:</strong> A → (−) nguồn, K → (+) nguồn => Diode không dẫn (chỉ có dòng rỉ rất nhỏ).</li></ul><p><strong>Phân loại:</strong></p><ul><li><strong>Diode chỉnh lưu:</strong> Biến dòng AC thành DC.</li><li><strong>Diode Zener:</strong> Ổn định điện áp ở chế độ phân cực ngược.</li><li><strong>Diode phát quang (LED):</strong> Phát sáng khi có dòng thuận.</li><li><strong>Diode quang (Photodiode):</strong> Nhạy với ánh sáng.</li></ul><p><strong>Ứng dụng:</strong> Chỉnh lưu điện xoay chiều, ổn áp, bảo vệ mạch, hiển thị (LED), cảm biến ánh sáng.</p>"
+            },
+            {
+              "heading": "2. Transistor",
+              "content": "<p><strong>Cấu tạo:</strong> Transistor gồm 3 lớp bán dẫn ghép lại, tạo thành hai loại:</p><ul><li><strong>Transistor NPN:</strong> Hai lớp N ở ngoài, một lớp P ở giữa.</li><li><strong>Transistor PNP:</strong> Hai lớp P ở ngoài, một lớp N ở giữa.</li></ul><p>Ba cực: <strong>Cực phát (Emitter - E)</strong>, <strong>Cực gốc (Base - B)</strong>, <strong>Cực thu (Collector - C)</strong>.</p><p><strong>Nguyên lí hoạt động:</strong></p><ul><li>Dòng điện nhỏ từ B sang E (I<sub>B</sub>) điều khiển dòng điện lớn từ C sang E (I<sub>C</sub>).</li><li>Hệ số khuếch đại dòng: $$\\beta = \\frac{I_C}{I_B}$$ với $$I_C = \\beta \\cdot I_B$$ và $$I_E = I_B + I_C$$</li></ul><p><strong>Phân loại:</strong></p><ul><li><strong>Transistor lưỡng cực (BJT):</strong> NPN và PNP (điều khiển bằng dòng).</li><li><strong>Transistor hiệu ứng trường (FET/MOSFET):</strong> Điều khiển bằng điện áp, tiêu thụ dòng rất nhỏ ở cực điều khiển.</li></ul><p><strong>Ứng dụng:</strong> Khuếch đại tín hiệu (âm thanh, radio), chuyển mạch điện tử (trong vi điều khiển, vi xử lí), tạo dao động, điều chỉnh điện áp.</p>"
+            },
+            {
+              "heading": "3. Mạch tích hợp IC (Integrated Circuit)",
+              "content": "<p><strong>Khái niệm:</strong> IC (mạch tích hợp) là một chip bán dẫn chứa hàng nghìn đến hàng tỉ linh kiện (transistor, diode, điện trở,…) được kết nối sẵn và cùng thực hiện một hoặc nhiều chức năng nhất định.</p><p><strong>Phân loại theo mức độ tích hợp:</strong></p><ul><li><strong>SSI (Small Scale Integration):</strong> &lt; 100 linh kiện.</li><li><strong>MSI (Medium Scale Integration):</strong> 100 – 1.000 linh kiện.</li><li><strong>LSI (Large Scale Integration):</strong> 1.000 – 100.000 linh kiện.</li><li><strong>VLSI (Very Large Scale Integration):</strong> 100.000 – 1.000.000 linh kiện.</li><li><strong>ULSI (Ultra Large Scale Integration):</strong> &gt; 1.000.000 linh kiện.</li></ul><p><strong>Phân loại theo chức năng:</strong></p><ul><li><strong>IC tương tự (Analog IC):</strong> Khuếch đại thuật toán (Op-amp), ổn áp LM78xx, so sánh điện áp.</li><li><strong>IC số (Digital IC):</strong> Cổng logic (AND, OR, NOT…), vi điều khiển (AVR, PIC, ARM), vi xử lí (Intel, AMD), bộ nhớ (RAM, ROM, Flash).</li><li><strong>IC hỗn hợp (Mixed-signal IC):</strong> ADC (chuyển đổi tương tự - số), DAC (chuyển đổi số - tương tự).</li></ul>"
+            },
+            {
+              "heading": "4. Ứng dụng của IC trong thực tế",
+              "content": "<p>IC có mặt trong hầu hết các thiết bị điện tử hiện đại:</p><ul><li><strong>Vi xử lí (CPU):</strong> Trái tim của máy tính, laptop, điện thoại thông minh (Intel Core, AMD Ryzen, Apple M…).</li><li><strong>Vi điều khiển (MCU):</strong> Điều khiển thiết bị thông minh, robot, ô tô (Arduino, STM32, ESP32).</li><li><strong>IC ổn áp:</strong> Cung cấp điện áp ổn định cho mạch (LM7805 cho 5V, LM7812 cho 12V).</li><li><strong>IC khuếch đại thuật toán (Op-amp):</strong> Khuếch đại tín hiệu, lọc tích cực, so sánh điện áp (LM741, LM358).</li><li><strong>IC viễn thông:</strong> Xử lí tín hiệu di động, WiFi, Bluetooth (Qualcomm Snapdragon, Broadcom).</li></ul>"
+            },
+            {
+              "heading": "5. So sánh diode, transistor và IC",
+              "content": "<table border='1' style='border-collapse:collapse;width:100%;text-align:center'><tr><th>Linh kiện</th><th>Số chân</th><th>Chức năng chính</th><th>Phân loại chính</th></tr><tr><td>Diode</td><td>2 (A, K)</td><td>Chỉnh lưu, ổn áp</td><td>Chỉnh lưu, Zener, LED, Photodiode</td></tr><tr><td>Transistor</td><td>3 (B, C, E) hoặc (G, D, S)</td><td>Khuếch đại, chuyển mạch</td><td>BJT (NPN/PNP), FET/MOSFET</td></tr><tr><td>IC</td><td>Nhiều chân (8 – 1000+)</td><td>Tích hợp đa chức năng</td><td>Tương tự, số, hỗn hợp</td></tr></table><p>Cả ba linh kiện đều chế tạo từ chất bán dẫn (silicium, germani, GaAs…) và là nền tảng của kĩ thuật điện tử hiện đại.</p>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "cn12-b16-ex1",
+            "type": "mcq",
+            "question": "Diode bán dẫn có cấu tạo gồm:",
+            "options": [
+              "Một lớp bán dẫn P",
+              "Hai lớp bán dẫn P-N ghép lại",
+              "Ba lớp bán dẫn N-P-N",
+              "Ba lớp bán dẫn P-N-P"
+            ],
+            "correct": 1,
+            "explanation": "Diode được tạo từ hai lớp bán dẫn loại P và N tạo thành tiếp giáp P-N."
+          },
+          {
+            "id": "cn12-b16-ex2",
+            "type": "mcq",
+            "question": "Transistor có bao nhiêu cực?",
+            "options": [
+              "2 cực",
+              "3 cực",
+              "4 cực",
+              "5 cực"
+            ],
+            "correct": 1,
+            "explanation": "Transistor có 3 cực: cực phát (E), cực gốc (B), cực thu (C)."
+          },
+          {
+            "id": "cn12-b16-ex3",
+            "type": "mcq",
+            "question": "LED là loại diode:",
+            "options": [
+              "Diode chỉnh lưu",
+              "Diode Zener",
+              "Diode phát quang",
+              "Diode quang"
+            ],
+            "correct": 2,
+            "explanation": "LED (Light Emitting Diode) là diode phát quang, phát sáng khi có dòng điện thuận chạy qua."
+          },
+          {
+            "id": "cn12-b16-ex4",
+            "type": "mcq",
+            "question": "Mạch tích hợp IC được viết tắt từ thuật ngữ tiếng Anh nào?",
+            "options": [
+              "Integrated Circuit",
+              "Internal Computer",
+              "Information Center",
+              "Industrial Controller"
+            ],
+            "correct": 0,
+            "explanation": "IC là viết tắt của Integrated Circuit (mạch tích hợp)."
+          },
+          {
+            "id": "cn12-b16-ex5",
+            "type": "mcq",
+            "question": "Diode Zener thường được dùng trong mạch:",
+            "options": [
+              "Chỉnh lưu",
+              "Ổn áp",
+              "Khuếch đại",
+              "Dao động"
+            ],
+            "correct": 1,
+            "explanation": "Diode Zener hoạt động ở chế độ phân cực ngược, được dùng để ổn định điện áp."
+          },
+          {
+            "id": "cn12-b16-ex6",
+            "type": "mcq",
+            "question": "Hệ số khuếch đại dòng β của transistor được tính bằng:",
+            "options": [
+              "β = Iᴇ / Iʙ",
+              "β = Iᴄ / Iʙ",
+              "β = Iʙ / Iᴄ",
+              "β = Iᴄ / Iᴇ"
+            ],
+            "correct": 1,
+            "explanation": "β = Iᴄ / Iʙ, trong đó Iᴄ là dòng collector và Iʙ là dòng base."
+          },
+          {
+            "id": "cn12-b16-ex7",
+            "type": "mcq",
+            "question": "IC nào sau đây là IC số?",
+            "options": [
+              "LM741 (Op-amp)",
+              "LM7805 (ổn áp)",
+              "Intel Core i7 (vi xử lí)",
+              "LM358 (Op-amp kép)"
+            ],
+            "correct": 2,
+            "explanation": "Intel Core i7 là vi xử lí, thuộc IC số. Op-amp và ổn áp là IC tương tự."
+          },
+          {
+            "id": "cn12-b16-ex8",
+            "type": "mcq",
+            "question": "Transistor hiệu ứng trường MOSFET điều khiển bằng:",
+            "options": [
+              "Dòng điện cực base",
+              "Điện áp cực cổng (Gate)",
+              "Dòng điện cực phát",
+              "Nhiệt độ"
+            ],
+            "correct": 1,
+            "explanation": "MOSFET là transistor hiệu ứng trường, điều khiển dòng qua kênh bằng điện áp đặt vào cực cổng (G)."
+          },
+          {
+            "id": "cn12-b16-ex9",
+            "type": "mcq",
+            "question": "IC ổn áp LM7805 cung cấp điện áp đầu ra là:",
+            "options": [
+              "3,3 V",
+              "5 V",
+              "12 V",
+              "24 V"
+            ],
+            "correct": 1,
+            "explanation": "LM7805 cho điện áp đầu ra ổn định 5V (78xx với xx = 05 là 5V)."
+          },
+          {
+            "id": "cn12-b16-ex10",
+            "type": "mcq",
+            "question": "Diode phân cực thuận khi:",
+            "options": [
+              "A nối (−) nguồn, K nối (+) nguồn",
+              "A nối (+) nguồn, K nối (−) nguồn",
+              "A và K đều nối (+) nguồn",
+              "A và K đều nối (−) nguồn"
+            ],
+            "correct": 1,
+            "explanation": "Diode phân cực thuận khi Anot (A) nối cực dương và Catot (K) nối cực âm của nguồn."
+          },
+          {
+            "id": "cn12-b16-ex11",
+            "type": "msq",
+            "question": " Loại IC nào được phân loại theo mức độ tích hợp?",
+            "options": [
+              "SSI",
+              "MSI",
+              "Op-amp",
+              "VLSI"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "SSI, MSI, VLSI là các mức tích hợp. Op-amp là IC theo chức năng, không phải mức tích hợp."
+          },
+          {
+            "id": "cn12-b16-ex12",
+            "type": "msq",
+            "question": " Ứng dụng của transistor trong thực tế:",
+            "options": [
+              "Khuếch đại âm thanh",
+              "Chuyển mạch trong vi điều khiển",
+              "Chỉnh lưu dòng xoay chiều",
+              "Tạo dao động"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Transistor dùng để khuếch đại, chuyển mạch và tạo dao động. Chỉnh lưu là chức năng của diode."
+          },
+          {
+            "id": "cn12-b16-ex13",
+            "type": "msq",
+            "question": " Đặc điểm nào đúng về mạch tích hợp IC?",
+            "options": [
+              "Tích hợp nhiều linh kiện trên một chip bán dẫn",
+              "Kích thước rất nhỏ gọn",
+              "Tiêu thụ công suất rất lớn",
+              "Độ tin cậy cao"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "IC tích hợp nhiều linh kiện trên chip nhỏ, có độ tin cậy cao và thường tiêu thụ công suất thấp."
+          },
+          {
+            "id": "cn12-b16-ex14",
+            "type": "msq",
+            "question": " Loại diode nào sau đây tồn tại?",
+            "options": [
+              "Diode chỉnh lưu",
+              "Diode Zener",
+              "Diode điện trở",
+              "Diode quang"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Diode chỉnh lưu, diode Zener và diode quang đều có thực. Không có diode điện trở."
+          }
+        ]
+      }
+    }
+  ]
+}

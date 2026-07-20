@@ -18,22 +18,217 @@
           "title": "Mô hình hộp (Box Model)",
           "summary": "Mọi phần tử HTML đều được coi là một chiếc hộp bao gồm: nội dung, đệm, viền và lề.",
           "sections": [
-            { "heading": "Các thành phần của Box Model", "content": "Content (nội dung), Padding (khoảng đệm giữa nội dung và viền), Border (viền), Margin (khoảng cách bên ngoài viền)." },
-            { "heading": "Kích thước phần tử", "content": "Chiều rộng tổng cộng = width + padding-left/right + border-left/right + margin-left/right." },
-            { "heading": "Thuộc tính Border", "content": "border-width, border-style (solid, dashed, dotted), border-color." }
+            {
+              "heading": "Các thành phần của Box Model",
+              "content": "Content (nội dung), Padding (khoảng đệm giữa nội dung và viền), Border (viền), Margin (khoảng cách bên ngoài viền)."
+            },
+            {
+              "heading": "Kích thước phần tử",
+              "content": "Chiều rộng tổng cộng = width + padding-left/right + border-left/right + margin-left/right."
+            },
+            {
+              "heading": "Thuộc tính Border",
+              "content": "border-width, border-style (solid, dashed, dotted), border-color."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Trong CSS Box Model, thành phần nào nằm ngoài cùng?", "options": ["Padding", "Border", "Margin", "Content"], "correct": 2, "explanation": "Margin là khoảng trống bên ngoài cùng dùng để tạo khoảng cách giữa các phần tử." },
-          { "id": 2, "type": "mcq", "question": "Thành phần nào nằm giữa nội dung (Content) và viền (Border)?", "options": ["Margin", "Padding", "Outline", "Space"], "correct": 1, "explanation": "Padding là khoảng đệm bên trong của phần tử." },
-          { "id": 3, "type": "mcq", "question": "Thuộc tính nào dùng để tạo đường viền nét đứt cho khung?", "options": ["border-style: solid;", "border-style: dashed;", "border-style: dotted;", "border-style: double;"], "correct": 1, "explanation": "dashed tạo ra đường viền dạng nét đứt." },
-          { "id": 4, "type": "mcq", "question": "Để bo tròn các góc của khung, ta dùng thuộc tính nào?", "options": ["border-round", "border-radius", "corner-style", "box-radius"], "correct": 1, "explanation": "border-radius dùng để bo góc phần tử (ví dụ: 10px hoặc 50%)." },
-          { "id": 5, "type": "mcq", "question": "Thuộc tính 'margin: auto;' thường dùng để làm gì?", "options": ["Làm biến mất phần tử", "Căn giữa một khối (block) theo chiều ngang", "Tự động đổi màu viền", "Tăng kích thước nội dung"], "correct": 1, "explanation": "Kết hợp với chiều rộng cụ thể, margin: auto giúp căn giữa các khối như <div>." },
-          { "id": 6, "type": "mcq", "question": "Giá trị 'border: 1px solid red;' là cách viết gì?", "options": ["Viết tường minh từng dòng", "Viết tắt (Shorthand property)", "Viết sai cú pháp", "Chỉ dùng được cho ảnh"], "correct": 1, "explanation": "Đây là cách viết gộp độ dày, kiểu viền và màu sắc trên một dòng." },
-          { "id": 7, "type": "mcq", "question": "Padding có thể có giá trị âm không?", "options": ["Có", "Không", "Chỉ với lề trên", "Tùy trình duyệt"], "correct": 1, "explanation": "Padding không bao giờ nhận giá trị âm, trong khi Margin thì có thể." },
-          { "id": 8, "type": "mcq", "question": "Thuộc tính 'box-sizing: border-box;' có tác dụng gì?", "options": ["Làm khung đẹp hơn", "Bao gồm cả padding và border vào chiều rộng (width) đã thiết lập", "Xóa bỏ viền", "Làm lề to ra"], "correct": 1, "explanation": "Giúp việc tính toán kích thước phần tử dễ dàng và chính xác hơn." },
-          { "id": 9, "type": "mcq", "question": "Để chỉ thiết lập lề cho phía trên của phần tử, dùng thuộc tính?", "options": ["margin-top", "padding-up", "border-top", "top-margin"], "correct": 0, "explanation": "margin-top xác định khoảng cách phía trên bên ngoài phần tử." },
-          { "id": 10, "type": "mcq", "question": "Trong mô hình hộp, thành phần nào chứa văn bản hoặc hình ảnh?", "options": ["Padding", "Margin", "Content", "Border"], "correct": 2, "explanation": "Content là vùng lõi chứa nội dung thực tế của phần tử." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Trong CSS Box Model, thành phần nào nằm ngoài cùng?",
+            "options": [
+              "Padding",
+              "Border",
+              "Margin",
+              "Content"
+            ],
+            "correct": 2,
+            "explanation": "Margin là khoảng trống bên ngoài cùng dùng để tạo khoảng cách giữa các phần tử."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Thành phần nào nằm giữa nội dung (Content) và viền (Border)?",
+            "options": [
+              "Margin",
+              "Padding",
+              "Outline",
+              "Space"
+            ],
+            "correct": 1,
+            "explanation": "Padding là khoảng đệm bên trong của phần tử."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Thuộc tính nào dùng để tạo đường viền nét đứt cho khung?",
+            "options": [
+              "border-style: solid;",
+              "border-style: dashed;",
+              "border-style: dotted;",
+              "border-style: double;"
+            ],
+            "correct": 1,
+            "explanation": "dashed tạo ra đường viền dạng nét đứt."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Để bo tròn các góc của khung, ta dùng thuộc tính nào?",
+            "options": [
+              "border-round",
+              "border-radius",
+              "corner-style",
+              "box-radius"
+            ],
+            "correct": 1,
+            "explanation": "border-radius dùng để bo góc phần tử (ví dụ: 10px hoặc 50%)."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Thuộc tính 'margin: auto;' thường dùng để làm gì?",
+            "options": [
+              "Làm biến mất phần tử",
+              "Căn giữa một khối (block) theo chiều ngang",
+              "Tự động đổi màu viền",
+              "Tăng kích thước nội dung"
+            ],
+            "correct": 1,
+            "explanation": "Kết hợp với chiều rộng cụ thể, margin: auto giúp căn giữa các khối như <div>."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Giá trị 'border: 1px solid red;' là cách viết gì?",
+            "options": [
+              "Viết tường minh từng dòng",
+              "Viết tắt (Shorthand property)",
+              "Viết sai cú pháp",
+              "Chỉ dùng được cho ảnh"
+            ],
+            "correct": 1,
+            "explanation": "Đây là cách viết gộp độ dày, kiểu viền và màu sắc trên một dòng."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Padding có thể có giá trị âm không?",
+            "options": [
+              "Có",
+              "Không",
+              "Chỉ với lề trên",
+              "Tùy trình duyệt"
+            ],
+            "correct": 1,
+            "explanation": "Padding không bao giờ nhận giá trị âm, trong khi Margin thì có thể."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Thuộc tính 'box-sizing: border-box;' có tác dụng gì?",
+            "options": [
+              "Làm khung đẹp hơn",
+              "Bao gồm cả padding và border vào chiều rộng (width) đã thiết lập",
+              "Xóa bỏ viền",
+              "Làm lề to ra"
+            ],
+            "correct": 1,
+            "explanation": "Giúp việc tính toán kích thước phần tử dễ dàng và chính xác hơn."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Để chỉ thiết lập lề cho phía trên của phần tử, dùng thuộc tính?",
+            "options": [
+              "margin-top",
+              "padding-up",
+              "border-top",
+              "top-margin"
+            ],
+            "correct": 0,
+            "explanation": "margin-top xác định khoảng cách phía trên bên ngoài phần tử."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Trong mô hình hộp, thành phần nào chứa văn bản hoặc hình ảnh?",
+            "options": [
+              "Padding",
+              "Margin",
+              "Content",
+              "Border"
+            ],
+            "correct": 2,
+            "explanation": "Content là vùng lõi chứa nội dung thực tế của phần tử."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "CSS border có những thuộc tính nào?",
+            "options": [
+              "border-width",
+              "border-style",
+              "border-color",
+              "border-radius"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Border có width, style, color và border-radius."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Box-shadow dùng để làm gì?",
+            "options": [
+              "Tạo đổ bóng",
+              "Tạo viền",
+              "Tạo khoảng cách",
+              "Tạo góc bo"
+            ],
+            "correct": [
+              0
+            ],
+            "explanation": "Box-shadow tạo hiệu ứng đổ bóng."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Margin và Padding khác nhau ở?",
+            "options": [
+              "Margin ở ngoài, Padding ở trong",
+              "Cả hai đều ở ngoài",
+              "Margin tạo khoảng trắng, Padding tạo đệm",
+              "Không khác nhau"
+            ],
+            "correct": [
+              0,
+              2
+            ],
+            "explanation": "Margin ở ngoài, Padding ở trong phần tử."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "CSS tạo khung bằng những thuộc tính nào?",
+            "options": [
+              "border",
+              "outline",
+              "box-shadow",
+              "background"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Border, outline và box-shadow tạo hiệu ứng khung."
+          }
         ]
       }
     }

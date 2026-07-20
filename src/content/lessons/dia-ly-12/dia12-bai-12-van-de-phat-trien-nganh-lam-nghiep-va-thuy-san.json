@@ -15,15 +15,28 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Phát triển lâm nghiệp và thủy sản bền vững",
-          "summary": "Lâm nghiệp cần cân bằng giữa khai thác và phục hồi, thủy sản cần quản lý đánh bắt và nuôi trồng để bảo đảm nguồn lợi lâu dài; các biện pháp bao gồm bảo vệ rừng, quản lý vùng biển và chuỗi giá trị thủy sản.",
+          "title": "Vấn đề phát triển ngành lâm nghiệp và ngành thủy sản",
+          "summary": "Lâm nghiệp Việt Nam chuyển dịch theo hướng quản lý, bảo vệ và phát triển rừng bền vững, tăng tỉ trọng rừng trồng và lâm sản ngoài gỗ. Thủy sản là ngành có tốc độ tăng trưởng cao với thế mạnh nuôi trồng và khai thác xa bờ, song cần giải quyết vấn đề khai thác quá mức và bảo vệ nguồn lợi ven bờ.",
           "sections": [
-            { "heading": "Vấn đề lâm nghiệp", "content": "Phá rừng, suy thoái rừng, cần phục hồi rừng, quản lý bền vững và phát triển lâm nghiệp sản xuất." },
-            { "heading": "Vấn đề thủy sản", "content": "Quản lý đánh bắt quá mức, ô nhiễm môi trường biển, phát triển nuôi trồng thủy sản bền vững và quản lý vùng bờ." }
+            {
+              "heading": "Vai trò và hiện trạng rừng Việt Nam",
+              "content": "Rừng Việt Nam được phân chia thành ba loại: rừng phòng hộ (bảo vệ đất, chống xói mòn, điều hòa nguồn nước), rừng đặc dụng (bảo tồn đa dạng sinh học, nghiên cứu khoa học) và rừng sản xuất (cung cấp gỗ và lâm sản). Độ che phủ rừng duy trì ổn định nhờ chương trình trồng mới và phủ xanh đất trống đồi núi trọc, tuy nhiên chất lượng rừng tự nhiên còn suy giảm do khai thác và chuyển đổi mục đích sử dụng đất."
+            },
+            {
+              "heading": "Phát triển ngành lâm nghiệp",
+              "content": "Lâm nghiệp chuyển từ khai thác gỗ tự nhiên sang phát triển rừng trồng, rừng nguyên liệu công nghiệp và lâm sản ngoài gỗ (tre, luồng, dược liệu, mây song). Các biện pháp trọng tâm gồm quy hoạch 3 loại rừng, giao đất giao rừng cho cộng đồng, phòng chống cháy rừng và chống khai thác trái phép. Việc phát triển công nghiệp chế biến gỗ xuất khẩu đã nâng cao giá trị ngành lâm nghiệp."
+            },
+            {
+              "heading": "Phát triển ngành thủy sản",
+              "content": "Thủy sản gồm khai thác và nuôi trồng, phân bố ở cả biển, ven bờ và vùng nước ngọt. Khai thác hải sản tập trung ở các vùng biển xa bờ với đội tàu công suất lớn, còn nuôi trồng phát triển mạnh ở Đồng bằng sông Cửu Long (tôm, cá tra), ven biển miền Trung và các hồ, đầm. Thủy sản là mặt hàng xuất khẩu chủ lực (tôm, cá ngừ, cá tra) mang lại kim ngạch lớn."
+            },
+            {
+              "heading": "Thách thức và hướng phát triển bền vững",
+              "content": "Lâm nghiệp và thủy sản đối mặt với thách thức: suy giảm rừng tự nhiên, khai thác hải sản quá mức vùng ven bờ, ô nhiễm môi trường và tác động của biến đổi khí hậu. Hướng phát triển bền vững là bảo vệ và phát triển rừng theo hướng sinh thái, quy hoạch vùng nuôi trồng thủy sản công nghệ cao, kiểm soát khai thác theo hạn ngạch và mùa vụ, xây dựng cảng cá, khu bảo tồn biển và chuỗi giá trị khép kín."
+            }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Nêu một biện pháp quản lý nguồn lợi thủy sản?", "a_hint": "Giới hạn đánh bắt, mùa cấm, khu bảo tồn biển." } ] },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Nguyên nhân chính dẫn tới suy giảm rừng?", "options": ["Khai thác gỗ trái phép và chuyển đổi mục đích sử dụng đất","Trồng rừng nhiều hơn","Bảo tồn quá mức","Không có nguyên nhân"], "correct": 0, "explanation": "Khai thác và chuyển đổi mục đích sử dụng là nguyên nhân chính." },
           { "id": 2, "type": "mcq", "question": "Biện pháp giúp phát triển thủy sản bền vững?", "options": ["Quản lý hạn ngạch đánh bắt và khu bảo tồn biển","Tăng đánh bắt bất chấp nguồn lợi","Không quản lý","Phá vỡ rạn san hô"], "correct": 0, "explanation": "Hạn ngạch và khu bảo tồn giúp bảo vệ nguồn lợi." },
           { "id": 3, "type": "mcq", "question": "Một lợi ích của rừng phòng hộ ven sông là?", "options": ["Giảm xói mòn và bảo vệ nguồn nước","Tăng xói mòn","Gây ô nhiễm","Không có lợi ích"], "correct": 0, "explanation": "Rừng phòng hộ giảm xói mòn và duy trì chất lượng nước." },
@@ -33,7 +46,15 @@
           { "id": 7, "type": "mcq", "question": "Phục hồi rừng cần làm gì?", "options": ["Trồng rừng, chống xói mòn, quản lý cháy rừng","Xóa bỏ thực vật","Tăng khai thác","Không hành động"], "correct": 0, "explanation": "Trồng rừng và bảo vệ là bước phục hồi chính." },
           { "id": 8, "type": "mcq", "question": "Một công cụ quản lý biển hiệu quả là?", "options": ["Khu bảo tồn biển và vùng cấm đánh bắt","Tăng đánh bắt nhân tạo","Giảm chính sách","Không có công cụ"], "correct": 0, "explanation": "Khu bảo tồn và vùng cấm giúp bảo vệ nguồn lợi." },
           { "id": 9, "type": "mcq", "question": "Một rủi ro khi nuôi trồng thủy sản quy mô lớn là?", "options": ["Ô nhiễm nước và dịch bệnh lây lan","Tăng đa dạng loài","Giảm sản lượng","Không có rủi ro"], "correct": 0, "explanation": "Ô nhiễm và dịch bệnh là rủi ro nuôi trồng tập trung." },
-          { "id": 10, "type": "mcq", "question": "Vai trò của cộng đồng trong quản lý tài nguyên là?", "options": ["Tham gia bảo vệ, giám sát và thực hiện quy định địa phương","Không tham gia","Hủy hoại tài nguyên","Không có vai trò"], "correct": 0, "explanation": "Cộng đồng đóng vai trò quan trọng trong bảo vệ và quản lý." }
+          { "id": 10, "type": "mcq", "question": "Vai trò của cộng đồng trong quản lý tài nguyên là?", "options": ["Tham gia bảo vệ, giám sát và thực hiện quy định địa phương","Không tham gia","Hủy hoại tài nguyên","Không có vai trò"], "correct": 0, "explanation": "Cộng đồng đóng vai trò quan trọng trong bảo vệ và quản lý." },
+          { "id": 11, "type": "msq", "question": "Các biện pháp bảo vệ rừng ở Việt Nam bao gồm?", "options": ["Trồng rừng", "Phòng chống cháy rừng", "Khai thác gỗ trái phép", "Giao đất giao rừng cho cộng đồng"], "correct": [0,1,3], "explanation": "Trồng rừng, phòng chống cháy và giao đất giao rừng là biện pháp bảo vệ rừng." },
+          { "id": 12, "type": "msq", "question": "Các loại rừng ở Việt Nam được phân chia thành?", "options": ["Rừng phòng hộ", "Rừng đặc dụng", "Rừng sản xuất", "Rừng nhân tạo"], "correct": [0,1,2], "explanation": "Rừng Việt Nam gồm rừng phòng hộ, rừng đặc dụng và rừng sản xuất." },
+          { "id": 13, "type": "msq", "question": "Nguyên nhân suy giảm nguồn lợi thủy sản ven biển?", "options": ["Đánh bắt quá mức", "Ô nhiễm môi trường biển", "Phát triển nuôi trồng bền vững", "Phá hủy rạn san hô"], "correct": [0,1,3], "explanation": "Đánh bắt quá mức, ô nhiễm và phá hủy rạn san hô làm suy giảm nguồn lợi thủy sản." },
+          { "id": 14, "type": "msq", "question": "Các loại rừng ở Việt Nam bao gồm?", "options": ["Rừng phòng hộ", "Rừng đặc dụng", "Rừng sản xuất", "Rừng nhân tạo"], "correct": [0,1,2], "explanation": "Rừng Việt Nam gồm rừng phòng hộ, rừng đặc dụng và rừng sản xuất." },
+          { "id": 15, "type": "sa", "question": "Kể tên một khu bảo tồn biển nổi tiếng ở Việt Nam?", "correct": "Vịnh Hạ Long, Côn Đảo, Nha Trang", "explanation": "Các khu bảo tồn biển nổi tiếng gồm Vịnh Hạ Long, Côn Đảo, Nha Trang." },
+          { "id": 16, "type": "sa", "question": "Rừng phòng hộ có vai trò gì?", "correct": "Bảo vệ đất, chống xói mòn, điều hòa nguồn nước", "explanation": "Rừng phòng hộ bảo vệ đất, chống xói mòn và điều hòa nguồn nước." },
+          { "id": 17, "type": "sa", "question": "Kể tên một khu bảo tồn biển ở Việt Nam?", "correct": "Vịnh Hạ Long, Côn Đảo, Nha Trang", "explanation": "Các khu bảo tồn biển nổi tiếng gồm Vịnh Hạ Long, Côn Đảo, Nha Trang." },
+          { "id": 18, "type": "sa", "question": "Nêu một biện pháp quản lý nguồn lợi thủy sản?", "correct": "Giới hạn đánh bắt, mùa cấm, khu bảo tồn biển." }
         ]
       }
     }

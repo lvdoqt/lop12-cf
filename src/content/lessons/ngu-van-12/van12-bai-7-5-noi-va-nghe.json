@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-7-5-noi-va-nghe",
-      "name": "Nói và nghe: Trình bày quan điểm về vấn đề liên quan đến tuổi trẻ",
-      "slug": "noi-va-nghe-tuoi-tre",
+      "id": "van12-bai-7-5-trinh-bay-quan-diem-tuoi-tre",
+      "name": "Trình bày quan điểm về một vấn đề liên quan đến tuổi trẻ",
+      "slug": "trinh-bay-quan-diem-tuoi-tre",
       "chapter": "Sự thật trong tác phẩm kí",
       "chapter_id": "V12-7",
       "lesson_id": 5,
-      "description": "Phát triển kỹ năng trình bày quan điểm và lắng nghe về các vấn đề liên quan đến tuổi trẻ, đặc biệt là cách ứng xử trong gia đình và xã hội.",
+      "description": "Hướng dẫn trình bày quan điểm về vấn đề liên quan đến tuổi trẻ.",
       "duration_minutes": 90,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Nói và nghe về vấn đề tuổi trẻ",
+          "title": "Trình bày quan điểm về vấn đề liên quan đến tuổi trẻ",
           "sections": [
             {
               "heading": "1. Chuẩn bị nội dung",
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex7-5-1",
-              "type": "mcq",
-              "question": "Khi chọn chủ đề trình bày, cần chú ý điều gì?",
-              "options": [
-                "Chọn chủ đề xa vời",
-                "Chọn chủ đề cụ thể, thiết thực, có ý nghĩa",
-                "Chọn chủ đề bất kỳ",
-                "Không cần chú ý"
-              ],
-              "correct": 1,
-              "explanation": "Cần chọn chủ đề cụ thể, thiết thực với đời sống và có ý nghĩa đóng góp cho cộng đồng."
-            },
-            {
-              "id": "ex7-5-2",
-              "type": "mcq",
-              "question": "Phần mở đầu bài nói cần làm gì?",
-              "options": [
-                "Kết luận ngay",
-                "Chào hỏi và giới thiệu chủ đề",
-                "Không cần mở đầu",
-                "Chỉ nói tên mình"
-              ],
-              "correct": 1,
-              "explanation": "Phần mở đầu cần chào hỏi lịch sự và giới thiệu rõ ràng chủ đề sẽ trình bày."
-            },
-            {
-              "id": "ex7-5-3",
-              "type": "mcq",
-              "question": "Khi trình bày, giọng nói cần có đặc điểm gì?",
-              "options": [
-                "Nhỏ, khó nghe",
-                "Rõ ràng, tự tin, tốc độ vừa phải",
-                "Quá nhanh",
-                "Quá chậm"
-              ],
-              "correct": 1,
-              "explanation": "Giọng nói cần rõ ràng, tự tin và tốc độ vừa phải để khán giả dễ nghe và hiểu."
-            },
-            {
-              "id": "ex7-5-4",
-              "type": "mcq",
-              "question": "Tại sao cần liên hệ mắt với khán giả?",
-              "options": [
-                "Không cần thiết",
-                "Tạo kết nối, thể hiện sự tự tin và tôn trọng",
-                "Để nhìn chằm chằm",
-                "Để làm khán giả khó chịu"
-              ],
-              "correct": 1,
-              "explanation": "Liên hệ mắt giúp tạo kết nối với khán giả, thể hiện sự tự tin và tôn trọng người nghe."
-            },
-            {
-              "id": "ex7-5-5",
-              "type": "mcq",
-              "question": "Khi lắng nghe người khác trình bày, nên làm gì?",
-              "options": [
-                "Nhìn điện thoại",
-                "Tập trung, ghi chú, không ngắt lời",
-                "Nói chuyện riêng",
-                "Ngủ"
-              ],
-              "correct": 1,
-              "explanation": "Cần tập trung lắng nghe, ghi chú các ý chính và không ngắt lời để tôn trọng người nói."
-            },
-            {
-              "id": "ex7-5-6",
-              "type": "mcq",
-              "question": "Dẫn chứng khi trình bày nên lấy từ đâu?",
-              "options": [
-                "Tưởng tượng",
-                "Ví dụ thực tế, số liệu, trích dẫn từ nguồn uy tín",
-                "Chỉ ý kiến cá nhân",
-                "Không cần dẫn chứng"
-              ],
-              "correct": 1,
-              "explanation": "Dẫn chứng nên lấy từ ví dụ thực tế, số liệu khảo sát và trích dẫn từ các nguồn uy tín."
-            },
-            {
-              "id": "ex7-5-7",
-              "type": "mcq",
-              "question": "Khi đưa ra phản hồi, nên làm như thế nào?",
-              "options": [
-                "Chỉ chỉ trích",
-                "Ghi nhận điểm hay, góp ý xây dựng, tôn trọng quan điểm khác",
-                "Không nói gì",
-                "Chỉ khen ngợi"
-              ],
-              "correct": 1,
-              "explanation": "Phản hồi hiệu quả cần ghi nhận điểm hay, góp ý xây dựng và tôn trọng quan điểm khác biệt."
-            },
-            {
-              "id": "ex7-5-8",
-              "type": "mcq",
-              "question": "Tương tác với khán giả có lợi ích gì?",
-              "options": [
-                "Không có lợi ích",
-                "Thu hút sự chú ý, tạo không khí sôi nổi",
-                "Làm mất thời gian",
-                "Gây rối"
-              ],
-              "correct": 1,
-              "explanation": "Tương tác với khán giả giúp thu hút sự chú ý, tạo không khí sôi nổi và hiệu quả trình bày cao hơn."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex7-5-1",
+            "type": "mcq",
+            "question": "Khi chọn chủ đề trình bày, cần chú ý điều gì?",
+            "options": [
+              "Chọn chủ đề xa vời",
+              "Chọn chủ đề cụ thể, thiết thực, có ý nghĩa",
+              "Chọn chủ đề bất kỳ",
+              "Không cần chú ý"
+            ],
+            "correct": 1,
+            "explanation": "Cần chọn chủ đề cụ thể, thiết thực với đời sống và có ý nghĩa đóng góp cho cộng đồng."
+          },
+          {
+            "id": "ex7-5-2",
+            "type": "mcq",
+            "question": "Phần mở đầu bài nói cần làm gì?",
+            "options": [
+              "Kết luận ngay",
+              "Chào hỏi và giới thiệu chủ đề",
+              "Không cần mở đầu",
+              "Chỉ nói tên mình"
+            ],
+            "correct": 1,
+            "explanation": "Phần mở đầu cần chào hỏi lịch sự và giới thiệu rõ ràng chủ đề sẽ trình bày."
+          },
+          {
+            "id": "ex7-5-3",
+            "type": "mcq",
+            "question": "Khi trình bày, giọng nói cần có đặc điểm gì?",
+            "options": [
+              "Nhỏ, khó nghe",
+              "Rõ ràng, tự tin, tốc độ vừa phải",
+              "Quá nhanh",
+              "Quá chậm"
+            ],
+            "correct": 1,
+            "explanation": "Giọng nói cần rõ ràng, tự tin và tốc độ vừa phải để khán giả dễ nghe và hiểu."
+          },
+          {
+            "id": "ex7-5-4",
+            "type": "mcq",
+            "question": "Tại sao cần liên hệ mắt với khán giả?",
+            "options": [
+              "Không cần thiết",
+              "Tạo kết nối, thể hiện sự tự tin và tôn trọng",
+              "Để nhìn chằm chằm",
+              "Để làm khán giả khó chịu"
+            ],
+            "correct": 1,
+            "explanation": "Liên hệ mắt giúp tạo kết nối với khán giả, thể hiện sự tự tin và tôn trọng người nghe."
+          },
+          {
+            "id": "ex7-5-5",
+            "type": "mcq",
+            "question": "Khi lắng nghe người khác trình bày, nên làm gì?",
+            "options": [
+              "Nhìn điện thoại",
+              "Tập trung, ghi chú, không ngắt lời",
+              "Nói chuyện riêng",
+              "Ngủ"
+            ],
+            "correct": 1,
+            "explanation": "Cần tập trung lắng nghe, ghi chú các ý chính và không ngắt lời để tôn trọng người nói."
+          },
+          {
+            "id": "ex7-5-6",
+            "type": "mcq",
+            "question": "Dẫn chứng khi trình bày nên lấy từ đâu?",
+            "options": [
+              "Tưởng tượng",
+              "Ví dụ thực tế, số liệu, trích dẫn từ nguồn uy tín",
+              "Chỉ ý kiến cá nhân",
+              "Không cần dẫn chứng"
+            ],
+            "correct": 1,
+            "explanation": "Dẫn chứng nên lấy từ ví dụ thực tế, số liệu khảo sát và trích dẫn từ các nguồn uy tín."
+          },
+          {
+            "id": "ex7-5-7",
+            "type": "mcq",
+            "question": "Khi đưa ra phản hồi, nên làm như thế nào?",
+            "options": [
+              "Chỉ chỉ trích",
+              "Ghi nhận điểm hay, góp ý xây dựng, tôn trọng quan điểm khác",
+              "Không nói gì",
+              "Chỉ khen ngợi"
+            ],
+            "correct": 1,
+            "explanation": "Phản hồi hiệu quả cần ghi nhận điểm hay, góp ý xây dựng và tôn trọng quan điểm khác biệt."
+          },
+          {
+            "id": "ex7-5-8",
+            "type": "mcq",
+            "question": "Tương tác với khán giả có lợi ích gì?",
+            "options": [
+              "Không có lợi ích",
+              "Thu hút sự chú ý, tạo không khí sôi nổi",
+              "Làm mất thời gian",
+              "Gây rối"
+            ],
+            "correct": 1,
+            "explanation": "Tương tác với khán giả giúp thu hút sự chú ý, tạo không khí sôi nổi và hiệu quả trình bày cao hơn."
+          },
+          {
+            "id": "ex7-5-9",
+            "type": "mcq",
+            "question": "Vai trò của ngôn ngữ trong tác phẩm văn học là gì?",
+            "options": [
+              "Phương tiện thể hiện tư tưởng, cảm xúc của tác giả",
+              "Chỉ là công cụ giao tiếp",
+              "Không quan trọng",
+              "Yếu tố phụ"
+            ],
+            "correct": 0,
+            "explanation": "Ngôn ngữ là phương tiện quan trọng để thể hiện nội dung, tư tưởng và cảm xúc trong tác phẩm."
+          },
+          {
+            "id": "ex7-5-10",
+            "type": "mcq",
+            "question": "Khi viết bài văn nghị luận, cần đảm bảo yêu cầu nào?",
+            "options": [
+              "Lí lẽ rõ ràng, dẫn chứng thuyết phục, lập luận chặt chẽ",
+              "Chỉ nêu cảm xúc cá nhân",
+              "Viết dài để thuyết phục",
+              "Sử dụng nhiều từ ngữ hoa mỹ"
+            ],
+            "correct": 0,
+            "explanation": "Bài văn nghị luận cần lí lẽ rõ ràng, dẫn chứng thuyết phục và lập luận chặt chẽ."
+          }
+        ]
       }
     }
   ]

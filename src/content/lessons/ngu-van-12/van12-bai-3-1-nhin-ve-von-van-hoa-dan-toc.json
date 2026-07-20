@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-3-1-nhin-ve-von-van-hoa-dan-toc",
-      "name": "Nhìn về vốn văn hóa dân tộc",
+      "name": "Nhìn về vốn văn hóa dân tộc (Trích – Trần Đình Hượu)",
       "slug": "nhin-ve-von-van-hoa-dan-toc",
       "chapter": "Lập luận trong văn bản nghị luận",
       "chapter_id": "V12-3",
       "lesson_id": 1,
       "author": "Trần Đình Hượu",
-      "description": "Tìm hiểu về tầm quan trọng của vốn văn hóa dân tộc, cách tác giả Trần Đình Hượu phân tích và lập luận về giá trị văn hóa của dân tộc Việt Nam.",
+      "description": "Phân tích bài viết \"Nhìn về vốn văn hóa dân tộc\" của Trần Đình Hượu, tìm hiểu về lập luận trong văn bản nghị luận.",
       "duration_minutes": 50,
       "difficulty_level": "medium",
       "is_published": true,
@@ -31,7 +31,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Nhìn về vốn văn hóa dân tộc - Trần Đình Hượu",
+          "title": "Nhìn về vốn văn hóa dân tộc (Trích – Trần Đình Hượu)",
           "sections": [
             {
               "heading": "1. Tác giả Trần Đình Hượu",
@@ -59,143 +59,140 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex3-1-1",
-              "type": "mcq",
-              "question": "Vốn văn hóa dân tộc là gì?",
-              "options": [
-                "Chỉ là những truyền thuyết cổ",
-                "Tập hợp các giá trị tinh thần, truyền thống, kiến thức tạo dựng qua các thế hệ",
-                "Chỉ là những phong tục tập quán",
-                "Chỉ là văn học nghệ thuật"
-              ],
-              "correct": 1,
-              "explanation": "Vốn văn hóa dân tộc là tập hợp các giá trị tinh thần, truyền thống, kiến thức, kinh nghiệm được tạo dựng qua nhiều thế hệ."
-            },
-            {
-              "id": "ex3-1-2",
-              "type": "mcq",
-              "question": "Theo tác giả, vốn văn hóa dân tộc có vai trò gì?",
-              "options": [
-                "Chỉ để trang trí",
-                "Tạo niềm tự hào, giáo dục nhân cách, là nguồn lực tinh thần",
-                "Không có vai trò gì",
-                "Chỉ để nghiên cứu"
-              ],
-              "correct": 1,
-              "explanation": "Vốn văn hóa dân tộc tạo niềm tự hào, giáo dục nhân cách, cung cấp hình mẫu đạo đức và là nguồn lực tinh thần cho dân tộc."
-            },
-            {
-              "id": "ex3-1-3",
-              "type": "mcq",
-              "question": "Thách thức nào đang đe dọa vốn văn hóa dân tộc?",
-              "options": [
-                "Không có thách thức",
-                "Quên lãng, áp lực hiện đại hóa, văn hóa ngoại lai",
-                "Chỉ có thách thức về kinh tế",
-                "Chỉ có vấn đề về ngôn ngữ"
-              ],
-              "correct": 1,
-              "explanation": "Các thách thức bao gồm: thế hệ trẻ quên lãng, áp lực hiện đại hóa, tác động văn hóa ngoại lai, mất kết nối với truyền thống."
-            },
-            {
-              "id": "ex3-1-4",
-              "type": "mcq",
-              "question": "Phương pháp lập luận nào tác giả sử dụng?",
-              "options": [
-                "Chỉ dùng cảm xúc",
-                "Từ khái niệm, ví dụ, so sánh, nguyên nhân-kết quả",
-                "Chỉ kể chuyện",
-                "Không có phương pháp"
-              ],
-              "correct": 1,
-              "explanation": "Tác giả sử dụng nhiều phương pháp: lập luận từ khái niệm, từ ví dụ lịch sử, so sánh, và nguyên nhân-kết quả."
-            },
-            {
-              "id": "ex3-1-5",
-              "type": "mcq",
-              "question": "Vốn văn hóa dân tộc được hình thành như thế nào?",
-              "options": [
-                "Trong một thời gian ngắn",
-                "Qua lịch sử lâu dài, qua nhiều thế hệ",
-                "Chỉ do một người tạo ra",
-                "Tự nhiên xuất hiện"
-              ],
-              "correct": 1,
-              "explanation": "Vốn văn hóa dân tộc được hình thành qua lịch sử lâu dài, là kết quả của sự tích lũy qua nhiều thế hệ."
-            },
-            {
-              "id": "ex3-1-6",
-              "type": "mcq",
-              "question": "Tác dụng của bài viết là gì?",
-              "options": [
-                "Chỉ để giải trí",
-                "Nâng cao ý thức về tầm quan trọng của vốn văn hóa, kêu gọi bảo tồn",
-                "Phê bình văn hóa truyền thống",
-                "Không có tác dụng"
-              ],
-              "correct": 1,
-              "explanation": "Bài viết có tác dụng giáo dục, nâng cao ý thức về tầm quan trọng của vốn văn hóa và kêu gọi bảo tồn, phát triển."
-            },
-            {
-              "id": "ex3-1-7",
-              "type": "mcq",
-              "question": "Vốn văn hóa dân tộc có ý nghĩa gì với giáo dục?",
-              "options": [
-                "Không liên quan đến giáo dục",
-                "Là phương tiện giáo dục hiệu quả, rèn luyện nhân cách",
-                "Chỉ dùng trong bảo tàng",
-                "Chỉ cho người lớn tuổi"
-              ],
-              "correct": 1,
-              "explanation": "Vốn văn hóa là phương tiện giáo dục hiệu quả, giúp rèn luyện nhân cách, cung cấp hình mẫu đạo đức cho thế hệ trẻ."
-            },
-            {
-              "id": "ex3-1-8",
-              "type": "mcq",
-              "question": "Trong bối cảnh toàn cầu hóa, cần làm gì với vốn văn hóa dân tộc?",
-              "options": [
-                "Bỏ đi để tiếp nhận văn hóa mới",
-                "Bảo tồn, phát triển và kết hợp với hiện đại",
-                "Chỉ giữ nguyên không thay đổi",
-                "Không cần quan tâm"
-              ],
-              "correct": 1,
-              "explanation": "Cần bảo tồn, phát triển vốn văn hóa dân tộc và biết kết hợp hài hòa với văn hóa hiện đại, tránh mất gốc."
-            },
-            {
-              "id": "ex1-1",
-              "question": "Theo tác giả Trần Đình Hượu, vốn văn hóa dân tộc bao gồm những yếu tố nào? Hãy liệt kê và giải thích.",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Vốn văn hóa dân tộc bao gồm: truyền thuyết, cổ tích; danh nhân, anh hùng; giá trị tư tưởng; kinh điển văn học; phong tục tập quán. Học sinh nên giải thích từng yếu tố và cho ví dụ cụ thể."
-            },
-            {
-              "id": "ex1-2",
-              "question": "Tác giả sử dụng những phương pháp lập luận nào để thuyết phục độc giả về tầm quan trọng của vốn văn hóa dân tộc?",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Tác giả sử dụng: lập luận từ khái niệm, từ ví dụ (lịch sử), so sánh, nguyên nhân-kết quả. Mỗi phương pháp có vai trò khác nhau trong việc thuyết phục."
-            },
-            {
-              "id": "ex1-3",
-              "question": "Theo bài viết, những thách thức nào đang đe doa vốn văn hóa dân tộc Việt Nam hiện nay?",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Các thách thức: quên lãng (thế hệ trẻ ít tìm hiểu), áp lực hiện đại hóa, tác động của văn hóa ngoại lai, không hiểu rõ gốc rễ, mất kết nối với truyền thống."
-            },
-            {
-              "id": "ex1-4",
-              "question": "Bạn có đồng ý với quan điểm của tác giả về vai trò giáo dục của vốn văn hóa dân tộc không? Giải thích lý do.",
-              "type": "essay",
-              "difficulty": "hard",
-              "answer_guide": "Học sinh nên lập luận rõ ràng, có dẫn chứng cụ thể để ủng hộ hoặc phản bác quan điểm tác giả, thể hiện tính tư duy phê phán."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex3-1-1",
+            "type": "mcq",
+            "question": "Vốn văn hóa dân tộc là gì?",
+            "options": [
+              "Chỉ là những truyền thuyết cổ",
+              "Tập hợp các giá trị tinh thần, truyền thống, kiến thức tạo dựng qua các thế hệ",
+              "Chỉ là những phong tục tập quán",
+              "Chỉ là văn học nghệ thuật"
+            ],
+            "correct": 1,
+            "explanation": "Vốn văn hóa dân tộc là tập hợp các giá trị tinh thần, truyền thống, kiến thức, kinh nghiệm được tạo dựng qua nhiều thế hệ."
+          },
+          {
+            "id": "ex3-1-2",
+            "type": "mcq",
+            "question": "Theo tác giả, vốn văn hóa dân tộc có vai trò gì?",
+            "options": [
+              "Chỉ để trang trí",
+              "Tạo niềm tự hào, giáo dục nhân cách, là nguồn lực tinh thần",
+              "Không có vai trò gì",
+              "Chỉ để nghiên cứu"
+            ],
+            "correct": 1,
+            "explanation": "Vốn văn hóa dân tộc tạo niềm tự hào, giáo dục nhân cách, cung cấp hình mẫu đạo đức và là nguồn lực tinh thần cho dân tộc."
+          },
+          {
+            "id": "ex3-1-3",
+            "type": "mcq",
+            "question": "Thách thức nào đang đe dọa vốn văn hóa dân tộc?",
+            "options": [
+              "Không có thách thức",
+              "Quên lãng, áp lực hiện đại hóa, văn hóa ngoại lai",
+              "Chỉ có thách thức về kinh tế",
+              "Chỉ có vấn đề về ngôn ngữ"
+            ],
+            "correct": 1,
+            "explanation": "Các thách thức bao gồm: thế hệ trẻ quên lãng, áp lực hiện đại hóa, tác động văn hóa ngoại lai, mất kết nối với truyền thống."
+          },
+          {
+            "id": "ex3-1-4",
+            "type": "mcq",
+            "question": "Phương pháp lập luận nào tác giả sử dụng?",
+            "options": [
+              "Chỉ dùng cảm xúc",
+              "Từ khái niệm, ví dụ, so sánh, nguyên nhân-kết quả",
+              "Chỉ kể chuyện",
+              "Không có phương pháp"
+            ],
+            "correct": 1,
+            "explanation": "Tác giả sử dụng nhiều phương pháp: lập luận từ khái niệm, từ ví dụ lịch sử, so sánh, và nguyên nhân-kết quả."
+          },
+          {
+            "id": "ex3-1-5",
+            "type": "mcq",
+            "question": "Vốn văn hóa dân tộc được hình thành như thế nào?",
+            "options": [
+              "Trong một thời gian ngắn",
+              "Qua lịch sử lâu dài, qua nhiều thế hệ",
+              "Chỉ do một người tạo ra",
+              "Tự nhiên xuất hiện"
+            ],
+            "correct": 1,
+            "explanation": "Vốn văn hóa dân tộc được hình thành qua lịch sử lâu dài, là kết quả của sự tích lũy qua nhiều thế hệ."
+          },
+          {
+            "id": "ex3-1-6",
+            "type": "mcq",
+            "question": "Tác dụng của bài viết là gì?",
+            "options": [
+              "Chỉ để giải trí",
+              "Nâng cao ý thức về tầm quan trọng của vốn văn hóa, kêu gọi bảo tồn",
+              "Phê bình văn hóa truyền thống",
+              "Không có tác dụng"
+            ],
+            "correct": 1,
+            "explanation": "Bài viết có tác dụng giáo dục, nâng cao ý thức về tầm quan trọng của vốn văn hóa và kêu gọi bảo tồn, phát triển."
+          },
+          {
+            "id": "ex3-1-7",
+            "type": "mcq",
+            "question": "Vốn văn hóa dân tộc có ý nghĩa gì với giáo dục?",
+            "options": [
+              "Không liên quan đến giáo dục",
+              "Là phương tiện giáo dục hiệu quả, rèn luyện nhân cách",
+              "Chỉ dùng trong bảo tàng",
+              "Chỉ cho người lớn tuổi"
+            ],
+            "correct": 1,
+            "explanation": "Vốn văn hóa là phương tiện giáo dục hiệu quả, giúp rèn luyện nhân cách, cung cấp hình mẫu đạo đức cho thế hệ trẻ."
+          },
+          {
+            "id": "ex3-1-8",
+            "type": "mcq",
+            "question": "Trong bối cảnh toàn cầu hóa, cần làm gì với vốn văn hóa dân tộc?",
+            "options": [
+              "Bỏ đi để tiếp nhận văn hóa mới",
+              "Bảo tồn, phát triển và kết hợp với hiện đại",
+              "Chỉ giữ nguyên không thay đổi",
+              "Không cần quan tâm"
+            ],
+            "correct": 1,
+            "explanation": "Cần bảo tồn, phát triển vốn văn hóa dân tộc và biết kết hợp hài hòa với văn hóa hiện đại, tránh mất gốc."
+          },
+          {
+            "id": "ex1-1",
+            "question": "Theo tác giả Trần Đình Hượu, vốn văn hóa dân tộc bao gồm những yếu tố nào? Hãy liệt kê và giải thích.",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Vốn văn hóa dân tộc bao gồm: truyền thuyết, cổ tích; danh nhân, anh hùng; giá trị tư tưởng; kinh điển văn học; phong tục tập quán. Học sinh nên giải thích từng yếu tố và cho ví dụ cụ thể."
+          },
+          {
+            "id": "ex1-2",
+            "question": "Tác giả sử dụng những phương pháp lập luận nào để thuyết phục độc giả về tầm quan trọng của vốn văn hóa dân tộc?",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Tác giả sử dụng: lập luận từ khái niệm, từ ví dụ (lịch sử), so sánh, nguyên nhân-kết quả. Mỗi phương pháp có vai trò khác nhau trong việc thuyết phục."
+          },
+          {
+            "id": "ex1-3",
+            "question": "Theo bài viết, những thách thức nào đang đe doa vốn văn hóa dân tộc Việt Nam hiện nay?",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Các thách thức: quên lãng (thế hệ trẻ ít tìm hiểu), áp lực hiện đại hóa, tác động của văn hóa ngoại lai, không hiểu rõ gốc rễ, mất kết nối với truyền thống."
+          },
+          {
+            "id": "ex1-4",
+            "question": "Bạn có đồng ý với quan điểm của tác giả về vai trò giáo dục của vốn văn hóa dân tộc không? Giải thích lý do.",
+            "type": "essay",
+            "difficulty": "hard",
+            "answer_guide": "Học sinh nên lập luận rõ ràng, có dẫn chứng cụ thể để ủng hộ hoặc phản bác quan điểm tác giả, thể hiện tính tư duy phê phán."
+          }
+        ]
       }
     }
   ]

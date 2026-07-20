@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-3-2-nang-luc-sang-tao",
-      "name": "Năng lực sáng tạo",
+      "name": "Năng lực sáng tạo (Trích – Phan Đình Diệu)",
       "slug": "nang-luc-sang-tao",
       "chapter": "Lập luận trong văn bản nghị luận",
       "chapter_id": "V12-3",
       "lesson_id": 2,
       "author": "Phan Đình Diệu",
-      "description": "Tìm hiểu về tầm quan trọng của năng lực sáng tạo qua bài viết nghị luận của Phan Đình Diệu. Phân tích cách tác giả lập luận để chỉ ra ý nghĩa của sáng tạo trong cuộc sống.",
+      "description": "Phân tích bài viết \"N năng lực sáng tạo\" của Phan Đình Diệu, khám phá tư duy sáng tạo trong lập luận.",
       "duration_minutes": 50,
       "difficulty_level": "medium",
       "is_published": true,
@@ -31,7 +31,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Năng lực sáng tạo - Phan Đình Diệu",
+          "title": "Năng lực sáng tạo (Trích – Phan Đình Diệu)",
           "sections": [
             {
               "heading": "1. Tác giả Phan Đình Diệu",
@@ -63,143 +63,140 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex3-2-1",
-              "type": "mcq",
-              "question": "Năng lực sáng tạo là gì?",
-              "options": [
-                "Chỉ là tài năng bẩm sinh",
-                "Khả năng tạo ra cái mới, tìm giải pháp mới, cách nhìn mới",
-                "Chỉ dành cho nghệ sĩ",
-                "Không thể học được"
-              ],
-              "correct": 1,
-              "explanation": "Năng lực sáng tạo là khả năng tạo ra cái mới, tìm ra những giải pháp mới, những cách nhìn nhận mới về vấn đề."
-            },
-            {
-              "id": "ex3-2-2",
-              "type": "mcq",
-              "question": "Theo tác giả, sáng tạo có thể học được không?",
-              "options": [
-                "Không, chỉ là bẩm sinh",
-                "Có, năng lực sáng tạo có thể được rèn luyện qua giáo dục và thực hành",
-                "Chỉ một số người có thể học",
-                "Không ai có thể học"
-              ],
-              "correct": 1,
-              "explanation": "Tác giả khẳng định năng lực sáng tạo có thể học được và phát triển được thông qua giáo dục, học tập và thực hành."
-            },
-            {
-              "id": "ex3-2-3",
-              "type": "mcq",
-              "question": "Sáng tạo có vai trò gì với phát triển dân tộc?",
-              "options": [
-                "Không có vai trò",
-                "Là chìa khóa để dân tộc độc lập, tự chủ và cạnh tranh quốc tế",
-                "Chỉ quan trọng với nghệ thuật",
-                "Chỉ cần cho khoa học"
-              ],
-              "correct": 1,
-              "explanation": "Sáng tạo là chìa khóa để dân tộc độc lập, tự chủ, cạnh tranh quốc tế và bảo tồn bản sắc trong thời đại toàn cầu hóa."
-            },
-            {
-              "id": "ex3-2-4",
-              "type": "mcq",
-              "question": "Yếu tố nào cấu thành năng lực sáng tạo?",
-              "options": [
-                "Chỉ có tưởng tượng",
-                "Tưởng tượng, kiến thức, kỹ năng, phẩm chất tâm lý, cảm xúc",
-                "Chỉ có kiến thức",
-                "Chỉ có kỹ năng"
-              ],
-              "correct": 1,
-              "explanation": "Năng lực sáng tạo là sự kết hợp của: tưởng tượng, kiến thức, kỹ năng, phẩm chất tâm lý (dám thử, không sợ thất bại) và cảm xúc (đam mê)."
-            },
-            {
-              "id": "ex3-2-5",
-              "type": "mcq",
-              "question": "Thách thức nào cản trở sự phát triển sáng tạo?",
-              "options": [
-                "Không có thách thức",
-                "Giáo dục rập khuôn, áp lực xã hội, sợ thất bại, thiếu tài nguyên",
-                "Chỉ có vấn đề kinh tế",
-                "Chỉ do con người lười biếng"
-              ],
-              "correct": 1,
-              "explanation": "Các thách thức bao gồm: giáo dục rập khuôn, áp lực xã hội khuyến khích tuân thủ, sợ hãi thất bại, và thiếu tài nguyên."
-            },
-            {
-              "id": "ex3-2-6",
-              "type": "mcq",
-              "question": "Sáng tạo có ý nghĩa gì với cá nhân?",
-              "options": [
-                "Không có ý nghĩa",
-                "Giúp phát triển tiềm năng, tự thực hiện, tạo giá trị",
-                "Chỉ để khoe khoang",
-                "Chỉ để kiếm tiền"
-              ],
-              "correct": 1,
-              "explanation": "Sáng tạo giúp cá nhân phát triển tiềm năng, tự thực hiện mong muốn và tạo ra giá trị cho bản thân cũng như xã hội."
-            },
-            {
-              "id": "ex3-2-7",
-              "type": "mcq",
-              "question": "Phương pháp lập luận nào tác giả sử dụng?",
-              "options": [
-                "Chỉ dùng cảm xúc",
-                "Từ bản chất, ví dụ lịch sử, so sánh, nguyên nhân-kết quả",
-                "Chỉ kể chuyện",
-                "Không có phương pháp"
-              ],
-              "correct": 1,
-              "explanation": "Tác giả sử dụng: lập luận từ bản chất con người, từ ví dụ lịch sử, so sánh các quốc gia, và nguyên nhân-kết quả."
-            },
-            {
-              "id": "ex3-2-8",
-              "type": "mcq",
-              "question": "Bài viết có hàm ý gì với giáo dục?",
-              "options": [
-                "Giữ nguyên giáo dục hiện tại",
-                "Cần cải cách giáo dục để phát triển năng lực sáng tạo",
-                "Bỏ giáo dục",
-                "Chỉ dạy kiến thức"
-              ],
-              "correct": 1,
-              "explanation": "Bài viết kêu gọi cải cách hệ thống giáo dục để tạo điều kiện phát triển năng lực sáng tạo thay vì chỉ dạy học thuộc."
-            },
-            {
-              "id": "ex2-1",
-              "question": "Hãy giải thích khái niệm 'năng lực sáng tạo' theo quan điểm của Phan Đình Diệu.",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Năng lực sáng tạo là khả năng tạo ra cái mới, tìm ra những giải pháp mới, những cách nhìn nhận mới. Nó là sự kết hợp của tưởng tượng, kiến thức, kỹ năng, phẩm chất tâm lý."
-            },
-            {
-              "id": "ex2-2",
-              "question": "Tác giả cho rằng sáng tạo có thể học được. Bạn có đồng ý không? Hãy giải thích.",
-              "type": "essay",
-              "difficulty": "hard",
-              "answer_guide": "Học sinh cần lập luận rõ ràng, có dẫn chứng. Có thể đồng ý hoặc không đồng ý miễn là có lý do chính đáng và dẫn chứng hỗ trợ."
-            },
-            {
-              "id": "ex2-3",
-              "question": "Theo bài viết, những thách thức nào đang cản trở sự phát triển năng lực sáng tạo ở Việt Nam?",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Giáo dục rập khuôn, áp lực xã hội, sợ hãi thất bại, thiếu tài nguyên. Học sinh nên giải thích chi tiết từng thách thức."
-            },
-            {
-              "id": "ex2-4",
-              "question": "Hãy đề xuất các giải pháp để phát triển năng lực sáng tạo cho học sinh hiện nay.",
-              "type": "essay",
-              "difficulty": "hard",
-              "answer_guide": "Học sinh nên đề xuất các giải pháp thực tế, cụ thể. Ví dụ: cải cách giáo dục, tôn trọng những nỗ lực sáng tạo, tạo môi trường an toàn để thử nghiệm."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex3-2-1",
+            "type": "mcq",
+            "question": "Năng lực sáng tạo là gì?",
+            "options": [
+              "Chỉ là tài năng bẩm sinh",
+              "Khả năng tạo ra cái mới, tìm giải pháp mới, cách nhìn mới",
+              "Chỉ dành cho nghệ sĩ",
+              "Không thể học được"
+            ],
+            "correct": 1,
+            "explanation": "Năng lực sáng tạo là khả năng tạo ra cái mới, tìm ra những giải pháp mới, những cách nhìn nhận mới về vấn đề."
+          },
+          {
+            "id": "ex3-2-2",
+            "type": "mcq",
+            "question": "Theo tác giả, sáng tạo có thể học được không?",
+            "options": [
+              "Không, chỉ là bẩm sinh",
+              "Có, năng lực sáng tạo có thể được rèn luyện qua giáo dục và thực hành",
+              "Chỉ một số người có thể học",
+              "Không ai có thể học"
+            ],
+            "correct": 1,
+            "explanation": "Tác giả khẳng định năng lực sáng tạo có thể học được và phát triển được thông qua giáo dục, học tập và thực hành."
+          },
+          {
+            "id": "ex3-2-3",
+            "type": "mcq",
+            "question": "Sáng tạo có vai trò gì với phát triển dân tộc?",
+            "options": [
+              "Không có vai trò",
+              "Là chìa khóa để dân tộc độc lập, tự chủ và cạnh tranh quốc tế",
+              "Chỉ quan trọng với nghệ thuật",
+              "Chỉ cần cho khoa học"
+            ],
+            "correct": 1,
+            "explanation": "Sáng tạo là chìa khóa để dân tộc độc lập, tự chủ, cạnh tranh quốc tế và bảo tồn bản sắc trong thời đại toàn cầu hóa."
+          },
+          {
+            "id": "ex3-2-4",
+            "type": "mcq",
+            "question": "Yếu tố nào cấu thành năng lực sáng tạo?",
+            "options": [
+              "Chỉ có tưởng tượng",
+              "Tưởng tượng, kiến thức, kỹ năng, phẩm chất tâm lý, cảm xúc",
+              "Chỉ có kiến thức",
+              "Chỉ có kỹ năng"
+            ],
+            "correct": 1,
+            "explanation": "Năng lực sáng tạo là sự kết hợp của: tưởng tượng, kiến thức, kỹ năng, phẩm chất tâm lý (dám thử, không sợ thất bại) và cảm xúc (đam mê)."
+          },
+          {
+            "id": "ex3-2-5",
+            "type": "mcq",
+            "question": "Thách thức nào cản trở sự phát triển sáng tạo?",
+            "options": [
+              "Không có thách thức",
+              "Giáo dục rập khuôn, áp lực xã hội, sợ thất bại, thiếu tài nguyên",
+              "Chỉ có vấn đề kinh tế",
+              "Chỉ do con người lười biếng"
+            ],
+            "correct": 1,
+            "explanation": "Các thách thức bao gồm: giáo dục rập khuôn, áp lực xã hội khuyến khích tuân thủ, sợ hãi thất bại, và thiếu tài nguyên."
+          },
+          {
+            "id": "ex3-2-6",
+            "type": "mcq",
+            "question": "Sáng tạo có ý nghĩa gì với cá nhân?",
+            "options": [
+              "Không có ý nghĩa",
+              "Giúp phát triển tiềm năng, tự thực hiện, tạo giá trị",
+              "Chỉ để khoe khoang",
+              "Chỉ để kiếm tiền"
+            ],
+            "correct": 1,
+            "explanation": "Sáng tạo giúp cá nhân phát triển tiềm năng, tự thực hiện mong muốn và tạo ra giá trị cho bản thân cũng như xã hội."
+          },
+          {
+            "id": "ex3-2-7",
+            "type": "mcq",
+            "question": "Phương pháp lập luận nào tác giả sử dụng?",
+            "options": [
+              "Chỉ dùng cảm xúc",
+              "Từ bản chất, ví dụ lịch sử, so sánh, nguyên nhân-kết quả",
+              "Chỉ kể chuyện",
+              "Không có phương pháp"
+            ],
+            "correct": 1,
+            "explanation": "Tác giả sử dụng: lập luận từ bản chất con người, từ ví dụ lịch sử, so sánh các quốc gia, và nguyên nhân-kết quả."
+          },
+          {
+            "id": "ex3-2-8",
+            "type": "mcq",
+            "question": "Bài viết có hàm ý gì với giáo dục?",
+            "options": [
+              "Giữ nguyên giáo dục hiện tại",
+              "Cần cải cách giáo dục để phát triển năng lực sáng tạo",
+              "Bỏ giáo dục",
+              "Chỉ dạy kiến thức"
+            ],
+            "correct": 1,
+            "explanation": "Bài viết kêu gọi cải cách hệ thống giáo dục để tạo điều kiện phát triển năng lực sáng tạo thay vì chỉ dạy học thuộc."
+          },
+          {
+            "id": "ex2-1",
+            "question": "Hãy giải thích khái niệm 'năng lực sáng tạo' theo quan điểm của Phan Đình Diệu.",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Năng lực sáng tạo là khả năng tạo ra cái mới, tìm ra những giải pháp mới, những cách nhìn nhận mới. Nó là sự kết hợp của tưởng tượng, kiến thức, kỹ năng, phẩm chất tâm lý."
+          },
+          {
+            "id": "ex2-2",
+            "question": "Tác giả cho rằng sáng tạo có thể học được. Bạn có đồng ý không? Hãy giải thích.",
+            "type": "essay",
+            "difficulty": "hard",
+            "answer_guide": "Học sinh cần lập luận rõ ràng, có dẫn chứng. Có thể đồng ý hoặc không đồng ý miễn là có lý do chính đáng và dẫn chứng hỗ trợ."
+          },
+          {
+            "id": "ex2-3",
+            "question": "Theo bài viết, những thách thức nào đang cản trở sự phát triển năng lực sáng tạo ở Việt Nam?",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Giáo dục rập khuôn, áp lực xã hội, sợ hãi thất bại, thiếu tài nguyên. Học sinh nên giải thích chi tiết từng thách thức."
+          },
+          {
+            "id": "ex2-4",
+            "question": "Hãy đề xuất các giải pháp để phát triển năng lực sáng tạo cho học sinh hiện nay.",
+            "type": "essay",
+            "difficulty": "hard",
+            "answer_guide": "Học sinh nên đề xuất các giải pháp thực tế, cụ thể. Ví dụ: cải cách giáo dục, tôn trọng những nỗ lực sáng tạo, tạo môi trường an toàn để thử nghiệm."
+          }
+        ]
       }
     }
   ]

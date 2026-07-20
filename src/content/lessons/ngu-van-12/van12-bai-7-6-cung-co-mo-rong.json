@@ -9,7 +9,7 @@
       "chapter": "Sự thật trong tác phẩm kí",
       "chapter_id": "V12-7",
       "lesson_id": 6,
-      "description": "Củng cố kiến thức về văn kí và mở rộng hiểu biết về thể loại văn học này trong văn học Việt Nam.",
+      "description": "Củng cố và mở rộng kiến thức sự thật trong tác phẩm kí.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Củng cố và mở rộng về văn kí",
+          "title": "Củng cố và mở rộng kiến thức",
           "sections": [
             {
               "heading": "1. Tổng kết về văn kí",
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex7-6-1",
-              "type": "mcq",
-              "question": "Đặc điểm quan trọng nhất của văn kí là gì?",
-              "options": [
-                "Tưởng tượng",
-                "Tính chân thực, dựa trên sự việc có thật",
-                "Hư cấu",
-                "Nghị luận"
-              ],
-              "correct": 1,
-              "explanation": "Đặc điểm quan trọng nhất của văn kí là tính chân thực, ghi chép những sự việc có thật đã xảy ra."
-            },
-            {
-              "id": "ex7-6-2",
-              "type": "mcq",
-              "question": "Văn kí có thể phân thành những loại nào?",
-              "options": [
-                "Chỉ có hồi ký",
-                "Hồi ký, nhật ký, truyện ký, tùy bút",
-                "Chỉ có nhật ký",
-                "Chỉ có truyện ký"
-              ],
-              "correct": 1,
-              "explanation": "Văn kí bao gồm nhiều loại: hồi ký, nhật ký, truyện ký, tùy bút, mỗi loại có đặc điểm riêng."
-            },
-            {
-              "id": "ex7-6-3",
-              "type": "mcq",
-              "question": "Tác phẩm 'Việc làng' của Ngô Tất Tố thuộc thể loại nào?",
-              "options": [
-                "Tiểu thuyết",
-                "Văn kí (truyện ký)",
-                "Thơ",
-                "Kịch"
-              ],
-              "correct": 1,
-              "explanation": "'Việc làng' là tập truyện ký của Ngô Tất Tố, ghi chép đời sống làng quê có thật."
-            },
-            {
-              "id": "ex7-6-4",
-              "type": "mcq",
-              "question": "Giá trị của văn kí là gì?",
-              "options": [
-                "Chỉ giải trí",
-                "Tư liệu lịch sử, văn hóa và bài học cuộc sống",
-                "Không có giá trị",
-                "Chỉ để đọc"
-              ],
-              "correct": 1,
-              "explanation": "Văn kí có giá trị như tư liệu lịch sử, văn hóa, xã hội và mang lại bài học cuộc sống quý báu."
-            },
-            {
-              "id": "ex7-6-5",
-              "type": "mcq",
-              "question": "Khi viết văn kí, cần chọn đề tài như thế nào?",
-              "options": [
-                "Tưởng tượng ra",
-                "Sự việc có thật đã trải qua, có ý nghĩa",
-                "Chép từ người khác",
-                "Bất kỳ đề tài nào"
-              ],
-              "correct": 1,
-              "explanation": "Cần chọn đề tài từ sự việc có thật đã trải qua, có ý nghĩa và góc nhìn độc đáo."
-            },
-            {
-              "id": "ex7-6-6",
-              "type": "mcq",
-              "question": "Phong cách của Ngô Tất Tố trong văn kí có đặc điểm gì?",
-              "options": [
-                "Hoa mỹ, phức tạp",
-                "Giản dị, hài hước, gần gũi",
-                "Khô khan, máy móc",
-                "Trừu tượng"
-              ],
-              "correct": 1,
-              "explanation": "Phong cách của Ngô Tất Tố giản dị, có tính hài hước và rất gần gũi với đời sống."
-            },
-            {
-              "id": "ex7-6-7",
-              "type": "mcq",
-              "question": "Ngôn ngữ trong văn kí cần có đặc điểm gì?",
-              "options": [
-                "Gượng ép, máy móc",
-                "Tự nhiên, giàu hình ảnh, mang dấu ấn cá nhân",
-                "Khô khan",
-                "Phức tạp"
-              ],
-              "correct": 1,
-              "explanation": "Ngôn ngữ trong văn kí cần tự nhiên, giàu hình ảnh, dễ hình dung và mang dấu ấn cá nhân của tác giả."
-            },
-            {
-              "id": "ex7-6-8",
-              "type": "mcq",
-              "question": "Tác giả nào nổi tiếng với hồi ký 'Nhớ nghĩ chiều hôm'?",
-              "options": [
-                "Ngô Tất Tố",
-                "Đào Duy Anh",
-                "Tô Hoài",
-                "Nam Cao"
-              ],
-              "correct": 1,
-              "explanation": "'Nhớ nghĩ chiều hôm' là tác phẩm hồi ký nổi tiếng của Đào Duy Anh, phản ánh tâm tư trí thức."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex7-6-1",
+            "type": "mcq",
+            "question": "Đặc điểm quan trọng nhất của văn kí là gì?",
+            "options": [
+              "Tưởng tượng",
+              "Tính chân thực, dựa trên sự việc có thật",
+              "Hư cấu",
+              "Nghị luận"
+            ],
+            "correct": 1,
+            "explanation": "Đặc điểm quan trọng nhất của văn kí là tính chân thực, ghi chép những sự việc có thật đã xảy ra."
+          },
+          {
+            "id": "ex7-6-2",
+            "type": "mcq",
+            "question": "Văn kí có thể phân thành những loại nào?",
+            "options": [
+              "Chỉ có hồi ký",
+              "Hồi ký, nhật ký, truyện ký, tùy bút",
+              "Chỉ có nhật ký",
+              "Chỉ có truyện ký"
+            ],
+            "correct": 1,
+            "explanation": "Văn kí bao gồm nhiều loại: hồi ký, nhật ký, truyện ký, tùy bút, mỗi loại có đặc điểm riêng."
+          },
+          {
+            "id": "ex7-6-3",
+            "type": "mcq",
+            "question": "Tác phẩm 'Việc làng' của Ngô Tất Tố thuộc thể loại nào?",
+            "options": [
+              "Tiểu thuyết",
+              "Văn kí (truyện ký)",
+              "Thơ",
+              "Kịch"
+            ],
+            "correct": 1,
+            "explanation": "'Việc làng' là tập truyện ký của Ngô Tất Tố, ghi chép đời sống làng quê có thật."
+          },
+          {
+            "id": "ex7-6-4",
+            "type": "mcq",
+            "question": "Giá trị của văn kí là gì?",
+            "options": [
+              "Chỉ giải trí",
+              "Tư liệu lịch sử, văn hóa và bài học cuộc sống",
+              "Không có giá trị",
+              "Chỉ để đọc"
+            ],
+            "correct": 1,
+            "explanation": "Văn kí có giá trị như tư liệu lịch sử, văn hóa, xã hội và mang lại bài học cuộc sống quý báu."
+          },
+          {
+            "id": "ex7-6-5",
+            "type": "mcq",
+            "question": "Khi viết văn kí, cần chọn đề tài như thế nào?",
+            "options": [
+              "Tưởng tượng ra",
+              "Sự việc có thật đã trải qua, có ý nghĩa",
+              "Chép từ người khác",
+              "Bất kỳ đề tài nào"
+            ],
+            "correct": 1,
+            "explanation": "Cần chọn đề tài từ sự việc có thật đã trải qua, có ý nghĩa và góc nhìn độc đáo."
+          },
+          {
+            "id": "ex7-6-6",
+            "type": "mcq",
+            "question": "Phong cách của Ngô Tất Tố trong văn kí có đặc điểm gì?",
+            "options": [
+              "Hoa mỹ, phức tạp",
+              "Giản dị, hài hước, gần gũi",
+              "Khô khan, máy móc",
+              "Trừu tượng"
+            ],
+            "correct": 1,
+            "explanation": "Phong cách của Ngô Tất Tố giản dị, có tính hài hước và rất gần gũi với đời sống."
+          },
+          {
+            "id": "ex7-6-7",
+            "type": "mcq",
+            "question": "Ngôn ngữ trong văn kí cần có đặc điểm gì?",
+            "options": [
+              "Gượng ép, máy móc",
+              "Tự nhiên, giàu hình ảnh, mang dấu ấn cá nhân",
+              "Khô khan",
+              "Phức tạp"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ trong văn kí cần tự nhiên, giàu hình ảnh, dễ hình dung và mang dấu ấn cá nhân của tác giả."
+          },
+          {
+            "id": "ex7-6-8",
+            "type": "mcq",
+            "question": "Tác giả nào nổi tiếng với hồi ký 'Nhớ nghĩ chiều hôm'?",
+            "options": [
+              "Ngô Tất Tố",
+              "Đào Duy Anh",
+              "Tô Hoài",
+              "Nam Cao"
+            ],
+            "correct": 1,
+            "explanation": "'Nhớ nghĩ chiều hôm' là tác phẩm hồi ký nổi tiếng của Đào Duy Anh, phản ánh tâm tư trí thức."
+          },
+          {
+            "id": "ex7-6-9",
+            "type": "mcq",
+            "question": "Vai trò của ngôn ngữ trong tác phẩm văn học là gì?",
+            "options": [
+              "Phương tiện thể hiện tư tưởng, cảm xúc của tác giả",
+              "Chỉ là công cụ giao tiếp",
+              "Không quan trọng",
+              "Yếu tố phụ"
+            ],
+            "correct": 0,
+            "explanation": "Ngôn ngữ là phương tiện quan trọng để thể hiện nội dung, tư tưởng và cảm xúc trong tác phẩm."
+          },
+          {
+            "id": "ex7-6-10",
+            "type": "mcq",
+            "question": "Khi viết bài văn nghị luận, cần đảm bảo yêu cầu nào?",
+            "options": [
+              "Lí lẽ rõ ràng, dẫn chứng thuyết phục, lập luận chặt chẽ",
+              "Chỉ nêu cảm xúc cá nhân",
+              "Viết dài để thuyết phục",
+              "Sử dụng nhiều từ ngữ hoa mỹ"
+            ],
+            "correct": 0,
+            "explanation": "Bài văn nghị luận cần lí lẽ rõ ràng, dẫn chứng thuyết phục và lập luận chặt chẽ."
+          }
+        ]
       }
     }
   ]

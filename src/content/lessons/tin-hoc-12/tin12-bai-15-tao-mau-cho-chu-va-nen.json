@@ -18,22 +18,216 @@
           "title": "Màu sắc trong CSS",
           "summary": "Màu sắc giúp phân cấp thông tin và tạo phong cách riêng cho website.",
           "sections": [
-            { "heading": "Thuộc tính màu", "content": "color (màu chữ), background-color (màu nền)." },
-            { "heading": "Các hệ màu trong CSS", "content": "Tên màu (red, blue), Mã Hex (#RRGGBB), Hệ màu RGB (rgb(255,0,0))." },
-            { "heading": "Độ trong suốt", "content": "Sử dụng RGBA để thêm kênh Alpha (độ mờ đục) cho màu sắc." }
+            {
+              "heading": "Thuộc tính màu",
+              "content": "color (màu chữ), background-color (màu nền)."
+            },
+            {
+              "heading": "Các hệ màu trong CSS",
+              "content": "Tên màu (red, blue), Mã Hex (#RRGGBB), Hệ màu RGB (rgb(255,0,0))."
+            },
+            {
+              "heading": "Độ trong suốt",
+              "content": "Sử dụng RGBA để thêm kênh Alpha (độ mờ đục) cho màu sắc."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Thuộc tính nào dùng để thay đổi màu của văn bản?", "options": ["text-color", "font-color", "color", "background-color"], "correct": 2, "explanation": "Thuộc tính color quy định màu sắc của chữ." },
-          { "id": 2, "type": "mcq", "question": "Để đặt màu nền cho một phần tử, ta dùng thuộc tính?", "options": ["bgcolor", "background-color", "color-background", "paint-bg"], "correct": 1, "explanation": "background-color dùng để tô màu nền cho khối hoặc trang." },
-          { "id": 3, "type": "mcq", "question": "Mã màu Hex bắt đầu bằng kí tự nào?", "options": ["@", "#", "$", "&"], "correct": 1, "explanation": "Mã Hex sử dụng dấu thăng, ví dụ: #FFFFFF là màu trắng." },
-          { "id": 4, "type": "mcq", "question": "Trong hệ màu rgb(r, g, b), giá trị lớn nhất của mỗi thành phần là bao nhiêu?", "options": ["100", "255", "512", "1024"], "correct": 1, "explanation": "Mỗi kênh màu (Red, Green, Blue) nhận giá trị từ 0 đến 255." },
-          { "id": 5, "type": "mcq", "question": "Mã màu #FF0000 tương ứng với màu nào?", "options": ["Xanh dương", "Xanh lá", "Đỏ", "Vàng"], "correct": 2, "explanation": "Hai chữ số đầu FF đại diện cho cường độ màu đỏ cao nhất." },
-          { "id": 6, "type": "mcq", "question": "Hệ màu RGBA khác RGB ở điểm nào?", "options": ["Nhiều màu hơn", "Có thêm kênh Alpha để điều chỉnh độ trong suốt", "Chỉ dùng cho ảnh", "Chạy nhanh hơn"], "correct": 1, "explanation": "A (Alpha) có giá trị từ 0 (trong suốt) đến 1 (mờ đục hoàn toàn)." },
-          { "id": 7, "type": "mcq", "question": "Mã màu rgb(255, 255, 255) là màu gì?", "options": ["Đen", "Trắng", "Xám", "Vàng"], "correct": 1, "explanation": "Khi cả 3 thành phần R, G, B đều cực đại sẽ tạo ra màu trắng." },
-          { "id": 8, "type": "mcq", "question": "Mã màu rgb(0, 0, 0) là màu gì?", "options": ["Đen", "Trắng", "Không màu", "Đỏ"], "correct": 0, "explanation": "Khi không có cường độ màu nào sẽ tạo ra màu đen." },
-          { "id": 9, "type": "mcq", "question": "Có thể dùng ảnh làm nền cho trang web không?", "options": ["Không, chỉ dùng được màu", "Có, bằng thuộc tính background-image", "Chỉ dùng được cho thẻ <body>", "Phải dùng thẻ <img>"], "correct": 1, "explanation": "background-image cho phép dùng file ảnh làm nền cho bất kỳ phần tử nào." },
-          { "id": 10, "type": "mcq", "question": "Để màu chữ có độ tương phản tốt, ta nên chọn?", "options": ["Màu chữ và màu nền gần giống nhau", "Màu chữ và màu nền đối lập nhau (như đen trên trắng)", "Dùng thật nhiều màu rực rỡ", "Không cần quan tâm"], "correct": 1, "explanation": "Độ tương phản cao giúp người dùng đọc nội dung dễ dàng hơn." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Thuộc tính nào dùng để thay đổi màu của văn bản?",
+            "options": [
+              "text-color",
+              "font-color",
+              "color",
+              "background-color"
+            ],
+            "correct": 2,
+            "explanation": "Thuộc tính color quy định màu sắc của chữ."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Để đặt màu nền cho một phần tử, ta dùng thuộc tính?",
+            "options": [
+              "bgcolor",
+              "background-color",
+              "color-background",
+              "paint-bg"
+            ],
+            "correct": 1,
+            "explanation": "background-color dùng để tô màu nền cho khối hoặc trang."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Mã màu Hex bắt đầu bằng kí tự nào?",
+            "options": [
+              "@",
+              "#",
+              "$",
+              "&"
+            ],
+            "correct": 1,
+            "explanation": "Mã Hex sử dụng dấu thăng, ví dụ: #FFFFFF là màu trắng."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Trong hệ màu rgb(r, g, b), giá trị lớn nhất của mỗi thành phần là bao nhiêu?",
+            "options": [
+              "100",
+              "255",
+              "512",
+              "1024"
+            ],
+            "correct": 1,
+            "explanation": "Mỗi kênh màu (Red, Green, Blue) nhận giá trị từ 0 đến 255."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Mã màu #FF0000 tương ứng với màu nào?",
+            "options": [
+              "Xanh dương",
+              "Xanh lá",
+              "Đỏ",
+              "Vàng"
+            ],
+            "correct": 2,
+            "explanation": "Hai chữ số đầu FF đại diện cho cường độ màu đỏ cao nhất."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Hệ màu RGBA khác RGB ở điểm nào?",
+            "options": [
+              "Nhiều màu hơn",
+              "Có thêm kênh Alpha để điều chỉnh độ trong suốt",
+              "Chỉ dùng cho ảnh",
+              "Chạy nhanh hơn"
+            ],
+            "correct": 1,
+            "explanation": "A (Alpha) có giá trị từ 0 (trong suốt) đến 1 (mờ đục hoàn toàn)."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Mã màu rgb(255, 255, 255) là màu gì?",
+            "options": [
+              "Đen",
+              "Trắng",
+              "Xám",
+              "Vàng"
+            ],
+            "correct": 1,
+            "explanation": "Khi cả 3 thành phần R, G, B đều cực đại sẽ tạo ra màu trắng."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Mã màu rgb(0, 0, 0) là màu gì?",
+            "options": [
+              "Đen",
+              "Trắng",
+              "Không màu",
+              "Đỏ"
+            ],
+            "correct": 0,
+            "explanation": "Khi không có cường độ màu nào sẽ tạo ra màu đen."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Có thể dùng ảnh làm nền cho trang web không?",
+            "options": [
+              "Không, chỉ dùng được màu",
+              "Có, bằng thuộc tính background-image",
+              "Chỉ dùng được cho thẻ <body>",
+              "Phải dùng thẻ <img>"
+            ],
+            "correct": 1,
+            "explanation": "background-image cho phép dùng file ảnh làm nền cho bất kỳ phần tử nào."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Để màu chữ có độ tương phản tốt, ta nên chọn?",
+            "options": [
+              "Màu chữ và màu nền gần giống nhau",
+              "Màu chữ và màu nền đối lập nhau (như đen trên trắng)",
+              "Dùng thật nhiều màu rực rỡ",
+              "Không cần quan tâm"
+            ],
+            "correct": 1,
+            "explanation": "Độ tương phản cao giúp người dùng đọc nội dung dễ dàng hơn."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Màu sắc trong CSS viết bằng?",
+            "options": [
+              "Tên màu (red, blue)",
+              "Hex (#FF0000)",
+              "RGB (rgb(255,0,0))",
+              "HSL"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "CSS hỗ trợ 4 cách viết màu: tên, hex, rgb và hsl."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "background-color dùng để?",
+            "options": [
+              "Tô màu nền",
+              "Đổi màu chữ",
+              "Tạo viền",
+              "Đổi màu ảnh"
+            ],
+            "correct": [
+              0
+            ],
+            "explanation": "Background-color tô màu nền."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "RGBA khác RGB ở điểm nào?",
+            "options": [
+              "Có thêm kênh opacity",
+              "Có thêm kênh alpha",
+              "Đậm hơn",
+              "Sáng hơn"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "RGBA thêm kênh alpha cho phép trong suốt."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Gradient trong CSS tạo bằng?",
+            "options": [
+              "linear-gradient()",
+              "radial-gradient()",
+              "background-image",
+              "box-shadow"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "Gradient dùng linear-gradient hoặc radial-gradient."
+          }
         ]
       }
     }

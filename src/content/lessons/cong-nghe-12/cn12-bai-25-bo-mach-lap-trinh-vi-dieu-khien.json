@@ -1,0 +1,239 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-25-bo-mach-lap-trinh-vi-dieu-khien",
+      "name": "Bài 25. Bo mạch lập trình vi điều khiển",
+      "slug": "bai-25-bo-mach-lap-trinh-vi-dieu-khien",
+      "chapter": "Chương 7. Mạch lập trình vi điều khiển",
+      "chapter_id": "CN12-7",
+      "lesson_id": 25,
+      "description": "Giới thiệu bo mạch lập trình vi điều khiển phổ biến như Arduino, ESP32; cấu tạo, chức năng các thành phần; môi trường lập trình Arduino IDE; ứng dụng trong tự động hóa và IoT.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1553406830-efc3452a5076?q=80&w=2600&auto=format&fit=crop",
+      "content": {
+        "theory": {
+          "title": "Bo mạch lập trình vi điều khiển",
+          "summary": "Bo mạch lập trình vi điều khiển là thiết bị tích hợp vi điều khiển và các thành phần ngoại vi trên một bo mạch, cho phép người dùng lập trình để điều khiển các thiết bị điện tử, phục vụ tự động hóa và IoT.",
+          "sections": [
+            {
+              "heading": "1. Khái niệm bo mạch lập trình vi điều khiển",
+              "content": "<p><strong>Bo mạch lập trình vi điều khiển</strong> (microcontroller development board) là một bảng mạch in tích hợp vi điều khiển (MCU) cùng các thành phần hỗ trợ như nguồn, cổng giao tiếp, đèn LED, nút nhấn, và chân cắm mở rộng.</p><p>Người dùng có thể nạp chương trình vào bo mạch qua cổng USB để thực hiện các tác vụ điều khiển, thu thập dữ liệu hoặc truyền thông.</p>"
+            },
+            {
+              "heading": "2. Các bo mạch phổ biến",
+              "content": "<p><strong>Arduino Uno:</strong> Vi điều khiển ATmega328P, 14 chân digital, 6 chân analog, 5V, 16 MHz. Phù hợp cho người mới học.</p><p><strong>Arduino Mega:</strong> ATmega2560, 54 chân digital, 16 chân analog, nhiều bộ nhớ và cổng giao tiếp hơn.</p><p><strong>ESP32:</strong> Tích hợp Wi-Fi và Bluetooth, lõi kép 32-bit Xtensa LX6, GPIO đa năng, thích hợp cho IoT.</p><p><strong>ESP8266:</strong> Wi-Fi SoC giá rẻ, thường dùng trong các dự án IoT cơ bản.</p>"
+            },
+            {
+              "heading": "3. Cấu tạo chính của bo mạch",
+              "content": "<p><strong>Vi điều khiển (MCU):</strong> Bộ xử lý trung tâm chứa CPU, RAM, ROM, và các ngoại vi tích hợp.</p><p><strong>Cổng USB:</strong> Cấp nguồn và nạp chương trình.</p><p><strong>Chân nguồn:</strong> 5V, 3.3V, GND cấp điện cho linh kiện ngoài.</p><p><strong>Chân GPIO:</strong> Chân vào/ra số có thể cấu hình làm input hoặc output.</p><p><strong>Chân analog:</strong> Đọc tín hiệu tương tự từ cảm biến.</p><p><strong>Đèn LED tích hợp:</strong> Thường nối với chân số 13 (Arduino) để kiểm tra.</p><p><strong>Nút Reset:</strong> Khởi động lại chương trình.</p>"
+            },
+            {
+              "heading": "4. Môi trường lập trình Arduino IDE",
+              "content": "<p><strong>Arduino IDE</strong> là môi trường phát triển tích hợp miễn phí, hỗ trợ ngôn ngữ C/C++ đơn giản hóa.</p><p>Giao diện gồm: trình soạn thảo mã nguồn, khu vực thông báo, thanh công cụ (Verify, Upload, Serial Monitor).</p><p><strong>Cấu trúc chương trình:</strong> Hàm <code>setup()</code> chạy một lần khi khởi động, hàm <code>loop()</code> chạy lặp vô hạn.</p><p>Thư viện (Library) mở rộng chức năng cho cảm biến, màn hình, truyền thông,...</p>"
+            },
+            {
+              "heading": "5. Kết nối và lập trình cơ bản",
+              "content": "<p><strong>Kết nối:</strong> Cắm bo mạch với máy tính qua cáp USB, chọn đúng cổng COM và board trong Arduino IDE.</p><p><strong>Viết chương trình:</strong> Sử dụng các hàm <code>pinMode()</code>, <code>digitalWrite()</code>, <code>digitalRead()</code>, <code>analogRead()</code>, <code>delay()</code>.</p><p><strong>Nạp chương trình:</strong> Nhấn nút Upload, IDE sẽ biên dịch và ghi vào bộ nhớ flash của MCU.</p><p><strong>Serial Monitor:</strong> Công cụ giao tiếp giữa máy tính và bo mạch qua cổng serial để gỡ lỗi và hiển thị dữ liệu.</p>"
+            },
+            {
+              "heading": "6. Ứng dụng thực tế",
+              "content": "<p><strong>Tự động hóa gia đình (Smart Home):</strong> Điều khiển đèn, quạt, rèm cửa tự động qua cảm biến ánh sáng, nhiệt độ.</p><p><strong>IoT (Internet of Things):</strong> ESP32/ESP8266 kết nối Wi-Fi gửi dữ liệu cảm biến lên cloud (Blynk, ThingSpeak).</p><p><strong>Robot và xe tự hành:</strong> Sử dụng Arduino với động cơ DC, servo và cảm biến siêu âm.</p><p><strong>Nông nghiệp thông minh:</strong> Hệ thống tưới tự động dùng cảm biến độ ẩm đất và module rơ-le.</p><p><strong>Trạm thời tiết:</strong> Đo nhiệt độ, độ ẩm, áp suất khí quyển, hiển thị lên LCD hoặc gửi lên web.</p>"
+            },
+            {
+              "heading": "7. Lưu ý an toàn và mở rộng",
+              "content": "<p><strong>Điện áp:</strong> Không cấp quá 5V (hoặc 3.3V tùy bo) vào chân GPIO để tránh hỏng MCU.</p><p><strong>Dòng điện:</strong> Mỗi chân GPIO chỉ cấp tối đa 20-40 mA, cần dùng transistor hoặc module rơ-le khi điều khiển tải lớn.</p><p><strong>Chống nhiễu:</strong> Dùng tụ lọc nguồn, dây cáp ngắn, và tránh đặt bo mạch gần nguồn điện từ mạnh.</p><p><strong>Mở rộng:</strong> Có thể kết hợp thêm shield (Arduino) hoặc module mở rộng để tăng chức năng.</p>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Bo mạch lập trình vi điều khiển là:",
+            "options": [
+              "Bảng mạch in tích hợp vi điều khiển và các thành phần hỗ trợ",
+              "Máy tính để bàn thông thường",
+              "Bộ nguồn điện tử",
+              "Cảm biến nhiệt độ"
+            ],
+            "correct": 0,
+            "explanation": "Bo mạch lập trình tích hợp MCU, nguồn, cổng giao tiếp và chân mở rộng trên một bảng mạch in."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Arduino Uno sử dụng vi điều khiển nào?",
+            "options": [
+              "ATmega328P",
+              "ESP32",
+              "ATmega2560",
+              "ESP8266"
+            ],
+            "correct": 0,
+            "explanation": "Arduino Uno dùng chip ATmega328P với 14 chân digital, 6 chân analog."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Bo mạch nào tích hợp sẵn Wi-Fi và Bluetooth phù hợp cho IoT?",
+            "options": [
+              "Arduino Uno",
+              "ESP32",
+              "Arduino Mega",
+              "Arduino Nano"
+            ],
+            "correct": 1,
+            "explanation": "ESP32 có Wi-Fi và Bluetooth tích hợp, lõi kép 32-bit, thích hợp cho các ứng dụng IoT."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Hàm nào trong Arduino IDE chạy lặp đi lặp lại vô hạn?",
+            "options": [
+              "setup()",
+              "loop()",
+              "main()",
+              "init()"
+            ],
+            "correct": 1,
+            "explanation": "loop() chạy liên tục sau khi setup() hoàn tất."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Chân GPIO trên bo mạch vi điều khiển dùng để:",
+            "options": [
+              "Cấp nguồn 5V cho mạch",
+              "Đọc/ghi tín hiệu số hoặc điều khiển thiết bị ngoài",
+              "Kết nối USB với máy tính",
+              "Nạp chương trình"
+            ],
+            "correct": 1,
+            "explanation": "GPIO (General Purpose Input/Output) là chân vào/ra đa năng."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Công cụ nào trong Arduino IDE dùng để hiển thị dữ liệu từ bo mạch?",
+            "options": [
+              "Serial Monitor",
+              "Plotter",
+              "Library Manager",
+              "Board Manager"
+            ],
+            "correct": 0,
+            "explanation": "Serial Monitor hiển thị dữ liệu gửi từ bo mạch qua cổng serial."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Khi muốn điều khiển thiết bị 220V AC bằng Arduino, cần sử dụng:",
+            "options": [
+              "Cấp trực tiếp 220V vào chân GPIO",
+              "Module rơ-le hoặc transistor kết hợp rơ-le",
+              "Nối tiếp bóng đèn với chân GPIO",
+              "Dùng dây điện trần"
+            ],
+            "correct": 1,
+            "explanation": "Chân GPIO chỉ chịu được 5V/20-40 mA, cần rơ-le cách ly để điều khiển tải 220V."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Thư viện (Library) trong Arduino IDE có chức năng gì?",
+            "options": [
+              "Xóa bộ nhớ chương trình",
+              "Mở rộng chức năng cho cảm biến, module ngoại vi",
+              "Tăng tốc độ vi điều khiển",
+              "Thay đổi màu sắc bo mạch"
+            ],
+            "correct": 1,
+            "explanation": "Thư viện cung cấp các hàm có sẵn giúp dễ dàng sử dụng các linh kiện ngoài."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Ứng dụng nào sau đây KHÔNG thuộc lĩnh vực IoT dùng bo mạch vi điều khiển?",
+            "options": [
+              "Hệ thống tưới cây tự động",
+              "Trạm thời tiết thông minh",
+              "Máy tính văn phòng",
+              "Điều khiển đèn qua điện thoại"
+            ],
+            "correct": 2,
+            "explanation": "Máy tính văn phòng không phải là ứng dụng IoT dùng vi điều khiển."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Điện áp tối đa an toàn cho chân GPIO trên Arduino Uno là:",
+            "options": [
+              "3.3V",
+              "5V",
+              "12V",
+              "24V"
+            ],
+            "correct": 1,
+            "explanation": "Arduino Uno hoạt động ở 5V, chân GPIO chỉ chịu được tối đa 5V."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các bo mạch lập trình vi điều khiển phổ biến hiện nay:",
+            "options": [
+              "Arduino Uno",
+              "ESP32",
+              "Raspberry Pi 4",
+              "Arduino Mega"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Raspberry Pi 4 là máy tính đơn bo (SBC) chạy hệ điều hành, không phải bo mạch vi điều khiển. Arduino Uno, ESP32, Arduino Mega đều là bo mạch vi điều khiển."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các thành phần cơ bản của bo mạch lập trình vi điều khiển:",
+            "options": [
+              "Vi điều khiển (MCU)",
+              "Cổng USB",
+              "Ổ cứng HDD",
+              "Chân GPIO"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Bo mạch có MCU, cổng USB và chân GPIO. Ổ cứng HDD không phải thành phần của bo mạch vi điều khiển."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Các ứng dụng thực tế của bo mạch lập trình vi điều khiển:",
+            "options": [
+              "Hệ thống tưới cây tự động",
+              "Điều khiển robot",
+              "Soạn thảo văn bản",
+              "Trạm thời tiết thông minh"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Soạn thảo văn bản là chức năng của máy tính, không phải ứng dụng của bo mạch vi điều khiển."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Các hàm cơ bản thường dùng trong lập trình Arduino:",
+            "options": [
+              "pinMode()",
+              "digitalWrite()",
+              "printf()",
+              "analogRead()"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "printf() là hàm của ngôn ngữ C dùng trong máy tính, không phải hàm Arduino cơ bản cho điều khiển chân."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-4-2-muoi-cua-rung",
-      "name": "Muối của rừng",
+      "name": "Muối của rừng (Trích – Nguyễn Huy Thiệp)",
       "slug": "muoi-cua-rung",
       "chapter": "Yếu tố kì ảo trong truyện kể",
       "chapter_id": "V12-4",
       "lesson_id": 2,
       "author": "Nguyễn Huy Thiệp",
-      "description": "Phân tích yếu tố kì ảo trong tác phẩm hiện đại 'Muối của rừng' của Nguyễn Huy Thiệp. Hiểu cách tác giả dùng huyền ảo để diễn tả sâu sắc hơn thực tại.",
+      "description": "Phân tích yếu tố kì ảo trong truyện \"Muối của rừng\" của Nguyễn Huy Thiệp.",
       "duration_minutes": 50,
       "difficulty_level": "medium",
       "is_published": true,
@@ -31,7 +31,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Muối của rừng - Nguyễn Huy Thiệp",
+          "title": "Muối của rừng (Trích – Nguyễn Huy Thiệp)",
           "sections": [
             {
               "heading": "1. Tác giả Nguyễn Huy Thiệp",
@@ -163,6 +163,32 @@
             ],
             "correct": 1,
             "explanation": "Tác phẩm cảnh báo về những tham vọng quá mức có thể khiến con người mất đi bản sắc và nội tâm của mình."
+          },
+          {
+            "id": "ex4-2-9",
+            "type": "mcq",
+            "question": "Phân tích yếu tố kì ảo trong tác phẩm giúp người đọc hiểu được điều gì?",
+            "options": [
+              "Nội dung và thông điệp sâu sắc của tác phẩm",
+              "Chỉ để giải trí",
+              "Không có tác dụng",
+              "Làm tác phẩm khó hiểu hơn"
+            ],
+            "correct": 0,
+            "explanation": "Phân tích yếu tố kì ảo giúp khám phá ý nghĩa biểu tượng và thông điệp của tác phẩm."
+          },
+          {
+            "id": "ex4-2-10",
+            "type": "mcq",
+            "question": "Trong truyện kể, yếu tố kì ảo thường kết hợp với yếu tố nào để tạo nên giá trị tác phẩm?",
+            "options": [
+              "Yếu tố hiện thực",
+              "Chỉ có yếu tố kì ảo",
+              "Yếu tố lịch sử",
+              "Yếu tố khoa học"
+            ],
+            "correct": 0,
+            "explanation": "Yếu tố kì ảo kết hợp với hiện thực tạo nên sự hấp dẫn và chiều sâu cho tác phẩm."
           }
         ]
       }

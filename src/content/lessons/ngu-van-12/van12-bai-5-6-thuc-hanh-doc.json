@@ -3,14 +3,14 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-5-6-thuc-hanh-doc",
-      "name": "Thực hành đọc: Cẩn thận hão (Bô-mác-se)",
+      "id": "van12-bai-5-6-thuc-hanh-doc-can-than-hao",
+      "name": "Thực hành đọc: Cẩn thận hão (Trích Thợ cạo thành Xê-vin – Bô-mác-se)",
       "slug": "thuc-hanh-doc-can-than-hao",
       "chapter": "Tiếng cười của hài kịch",
       "chapter_id": "V12-5",
       "lesson_id": 6,
       "author": "Pierre-Augustin Caron de Beaumarchais",
-      "description": "Đọc và phân tích tác phẩm hài kịch 'Cẩn thận hão' của Beaumarchais, tìm hiểu nghệ thuật hài kịch cổ điển phương Tây và ý nghĩa phê phán xã hội.",
+      "description": "Thực hành đọc đoạn trích Cẩn thận hão từ vở kịch của Bô-mác-se.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -41,115 +41,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex5-6-1",
-              "type": "mcq",
-              "question": "Beaumarchais là nhà viết kịch của nước nào?",
-              "options": [
-                "Anh",
-                "Pháp",
-                "Đức",
-                "Ý"
-              ],
-              "correct": 1,
-              "explanation": "Pierre-Augustin Caron de Beaumarchais (1732-1799) là nhà viết kịch nổi tiếng của Pháp thế kỷ XVIII."
-            },
-            {
-              "id": "ex5-6-2",
-              "type": "mcq",
-              "question": "Tác phẩm nào là đỉnh cao sáng tác của Beaumarchais?",
-              "options": [
-                "Hamlet",
-                "Đám cưới Figaro",
-                "Romeo và Juliet",
-                "Quan thanh tra"
-              ],
-              "correct": 1,
-              "explanation": "'Đám cưới Figaro' được coi là tác phẩm đỉnh cao của Beaumarchais, phê phán sâu sắc giai cấp quý tộc."
-            },
-            {
-              "id": "ex5-6-3",
-              "type": "mcq",
-              "question": "Nhân vật Figaro trong tác phẩm của Beaumarchais là ai?",
-              "options": [
-                "Một quý tộc giàu có",
-                "Một người hầu thông minh",
-                "Một vua chúa",
-                "Một thương nhân"
-              ],
-              "correct": 1,
-              "explanation": "Figaro là nhân vật người hầu thông minh, đại diện cho tầng lớp dân chúng, có trí tuệ vượt trội so với chủ quý tộc."
-            },
-            {
-              "id": "ex5-6-4",
-              "type": "mcq",
-              "question": "Thông điệp chính của 'Cẩn thận hão' là gì?",
-              "options": [
-                "Tiền bạc là tất cả",
-                "Trí tuệ quan trọng hơn địa vị",
-                "Quý tộc luôn đúng",
-                "Không có thông điệp"
-              ],
-              "correct": 1,
-              "explanation": "Thông điệp chính là trí tuệ và tài năng quan trọng hơn địa vị xã hội, phê phán đặc quyền quý tộc."
-            },
-            {
-              "id": "ex5-6-5",
-              "type": "mcq",
-              "question": "Tác phẩm của Beaumarchais được sáng tác trong bối cảnh nào?",
-              "options": [
-                "Sau Cách mạng Pháp",
-                "Trước Cách mạng Pháp 1789",
-                "Thế chiến thứ nhất",
-                "Thời Phục hưng"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm được sáng tác trước Cách mạng Pháp 1789, phản ánh mâu thuẫn giữa quý tộc và dân chúng."
-            },
-            {
-              "id": "ex5-6-6",
-              "type": "mcq",
-              "question": "Đặc điểm nào nổi bật trong lời thoại của Beaumarchais?",
-              "options": [
-                "Dài dòng, khó hiểu",
-                "Dí dỏm, sắc sảo, châm biếm",
-                "Đơn giản, nhạt nhẽo",
-                "Không có đặc điểm"
-              ],
-              "correct": 1,
-              "explanation": "Lời thoại trong tác phẩm của Beaumarchais nổi tiếng với sự dí dỏm, sắc sảo và tính châm biếm cao."
-            },
-            {
-              "id": "ex5-6-7",
-              "type": "mcq",
-              "question": "Khi đọc hài kịch, cần chú ý yếu tố nào để hiểu ý nghĩa sâu xa?",
-              "options": [
-                "Chỉ chú ý phần hài hước",
-                "Phân tích cả bề mặt (gây cười) và sâu xa (phê phán xã hội)",
-                "Chỉ đọc lướt qua",
-                "Không cần chú ý gì"
-              ],
-              "correct": 1,
-              "explanation": "Cần phân tích cả hai tầng: bề mặt là gây cười, giải trí; sâu xa là phê phán xã hội và đề cao giá trị nhân văn."
-            },
-            {
-              "id": "ex5-6-8",
-              "type": "mcq",
-              "question": "Ý nghĩa của việc học tác phẩm Beaumarchais trong chương trình Ngữ văn là gì?",
-              "options": [
-                "Chỉ để biết về văn học Pháp",
-                "Hiểu về hài kịch cổ điển và nghệ thuật phê phán xã hội",
-                "Không có ý nghĩa",
-                "Chỉ để làm bài tập"
-              ],
-              "correct": 1,
-              "explanation": "Học tác phẩm Beaumarchais giúp hiểu về hài kịch cổ điển phương Tây và nghệ thuật sử dụng hài hước để phê phán xã hội."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex5-6-1",
+            "type": "mcq",
+            "question": "Beaumarchais là nhà viết kịch của nước nào?",
+            "options": [
+              "Anh",
+              "Pháp",
+              "Đức",
+              "Ý"
+            ],
+            "correct": 1,
+            "explanation": "Pierre-Augustin Caron de Beaumarchais (1732-1799) là nhà viết kịch nổi tiếng của Pháp thế kỷ XVIII."
+          },
+          {
+            "id": "ex5-6-2",
+            "type": "mcq",
+            "question": "Tác phẩm nào là đỉnh cao sáng tác của Beaumarchais?",
+            "options": [
+              "Hamlet",
+              "Đám cưới Figaro",
+              "Romeo và Juliet",
+              "Quan thanh tra"
+            ],
+            "correct": 1,
+            "explanation": "'Đám cưới Figaro' được coi là tác phẩm đỉnh cao của Beaumarchais, phê phán sâu sắc giai cấp quý tộc."
+          },
+          {
+            "id": "ex5-6-3",
+            "type": "mcq",
+            "question": "Nhân vật Figaro trong tác phẩm của Beaumarchais là ai?",
+            "options": [
+              "Một quý tộc giàu có",
+              "Một người hầu thông minh",
+              "Một vua chúa",
+              "Một thương nhân"
+            ],
+            "correct": 1,
+            "explanation": "Figaro là nhân vật người hầu thông minh, đại diện cho tầng lớp dân chúng, có trí tuệ vượt trội so với chủ quý tộc."
+          },
+          {
+            "id": "ex5-6-4",
+            "type": "mcq",
+            "question": "Thông điệp chính của 'Cẩn thận hão' là gì?",
+            "options": [
+              "Tiền bạc là tất cả",
+              "Trí tuệ quan trọng hơn địa vị",
+              "Quý tộc luôn đúng",
+              "Không có thông điệp"
+            ],
+            "correct": 1,
+            "explanation": "Thông điệp chính là trí tuệ và tài năng quan trọng hơn địa vị xã hội, phê phán đặc quyền quý tộc."
+          },
+          {
+            "id": "ex5-6-5",
+            "type": "mcq",
+            "question": "Tác phẩm của Beaumarchais được sáng tác trong bối cảnh nào?",
+            "options": [
+              "Sau Cách mạng Pháp",
+              "Trước Cách mạng Pháp 1789",
+              "Thế chiến thứ nhất",
+              "Thời Phục hưng"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm được sáng tác trước Cách mạng Pháp 1789, phản ánh mâu thuẫn giữa quý tộc và dân chúng."
+          },
+          {
+            "id": "ex5-6-6",
+            "type": "mcq",
+            "question": "Đặc điểm nào nổi bật trong lời thoại của Beaumarchais?",
+            "options": [
+              "Dài dòng, khó hiểu",
+              "Dí dỏm, sắc sảo, châm biếm",
+              "Đơn giản, nhạt nhẽo",
+              "Không có đặc điểm"
+            ],
+            "correct": 1,
+            "explanation": "Lời thoại trong tác phẩm của Beaumarchais nổi tiếng với sự dí dỏm, sắc sảo và tính châm biếm cao."
+          },
+          {
+            "id": "ex5-6-7",
+            "type": "mcq",
+            "question": "Khi đọc hài kịch, cần chú ý yếu tố nào để hiểu ý nghĩa sâu xa?",
+            "options": [
+              "Chỉ chú ý phần hài hước",
+              "Phân tích cả bề mặt (gây cười) và sâu xa (phê phán xã hội)",
+              "Chỉ đọc lướt qua",
+              "Không cần chú ý gì"
+            ],
+            "correct": 1,
+            "explanation": "Cần phân tích cả hai tầng: bề mặt là gây cười, giải trí; sâu xa là phê phán xã hội và đề cao giá trị nhân văn."
+          },
+          {
+            "id": "ex5-6-8",
+            "type": "mcq",
+            "question": "Ý nghĩa của việc học tác phẩm Beaumarchais trong chương trình Ngữ văn là gì?",
+            "options": [
+              "Chỉ để biết về văn học Pháp",
+              "Hiểu về hài kịch cổ điển và nghệ thuật phê phán xã hội",
+              "Không có ý nghĩa",
+              "Chỉ để làm bài tập"
+            ],
+            "correct": 1,
+            "explanation": "Học tác phẩm Beaumarchais giúp hiểu về hài kịch cổ điển phương Tây và nghệ thuật sử dụng hài hước để phê phán xã hội."
+          },
+          {
+            "id": "ex5-6-9",
+            "type": "mcq",
+            "question": "Tình huống truyện có vai trò như thế nào trong việc thể hiện chủ đề tác phẩm?",
+            "options": [
+              "Bộc lộ tính cách nhân vật và làm nổi bật chủ đề",
+              "Không quan trọng",
+              "Chỉ làm câu chuyện dài hơn",
+              "Gây khó hiểu cho người đọc"
+            ],
+            "correct": 0,
+            "explanation": "Tình huống truyện có vai trò then chốt trong việc bộc lộ tính cách nhân vật và làm nổi bật chủ đề."
+          },
+          {
+            "id": "ex5-6-10",
+            "type": "mcq",
+            "question": "Nhân vật văn học thường được xây dựng qua những phương diện nào?",
+            "options": [
+              "Ngoại hình, hành động, lời nội tâm",
+              "Chỉ qua ngoại hình",
+              "Chỉ qua hành động",
+              "Chỉ qua lời nói"
+            ],
+            "correct": 0,
+            "explanation": "Nhân vật được xây dựng qua nhiều phương diện: ngoại hình, hành động, lời nói và nội tâm."
+          }
+        ]
       }
     }
   ]

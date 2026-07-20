@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-1-2-chu-nguoi-tu-tu",
-      "name": "Chữ người tử tù",
-      "slug": "chu-nguoi-tu-tu",
-      "chapter": "Khả năng thay đổi thế giới của văn học",
+      "id": "van12-bai-1-2-noi-buoi-chien-tranh",
+      "name": "Nỗi buồn chiến tranh (Trích – Bảo Ninh)",
+      "slug": "noi-buoi-chien-tranh",
+      "chapter": "Khả năng lớn lao của tiểu thuyết",
       "chapter_id": "V12-1",
       "lesson_id": 2,
-      "description": "Tìm hiểu truyện ngắn hiện đại Chữ người tử tù của Nguyễn Tuân, phân tích sức mạnh của chữ viết, tình yêu và lòng chung thủy con người.",
+      "description": "Tìm hiểu đoạn trích \"Nỗi buồn chiến tranh\" của Bảo Ninh, khám phá sức ảnh hưởng của văn học trong việc thể hiện nỗi đau chiến tranh.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Chữ người tử tù",
+          "title": "Nỗi buồn chiến tranh (Trích – Bảo Ninh)",
           "sections": [
             {
               "heading": "1. Giới thiệu tác giả và tác phẩm",

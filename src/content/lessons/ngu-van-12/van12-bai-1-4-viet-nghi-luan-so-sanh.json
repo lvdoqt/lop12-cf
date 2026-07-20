@@ -1,0 +1,211 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-1-4-viet-nghi-luan-so-sanh",
+      "name": "Viết bài văn nghị luận so sánh, đánh giá hai tác phẩm truyện",
+      "slug": "viet-nghi-luan-so-sanh",
+      "chapter": "Khả năng lớn lao của tiểu thuyết",
+      "chapter_id": "V12-1",
+      "lesson_id": 4,
+      "description": "Hướng dẫn viết bài văn nghị luận so sánh, đánh giá hai tác phẩm truyện trong chương Khả năng lớn lao của tiểu thuyết.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1507842211343-583f20270319?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tq-nl-1",
+          "name": "Phân tích cấu trúc bài văn",
+          "slug": "phan-tich",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Viết bài văn nghị luận so sánh, đánh giá hai tác phẩm truyện",
+          "sections": [
+            {
+              "heading": "1. Định nghĩa bài văn nghị luật",
+              "content": "<p>Bài văn nghị luận có mục đích thuyết phục hoặc bảo vệ một quan điểm về một vấn đề. Cần: <strong>luận điểm rõ ràng, lập luận chặt chẽ, bằng chứ thuyết phục</strong>.</p>"
+            },
+            {
+              "heading": "2. Cấu trúc 3 phần",
+              "content": "<h4>I. Mở bài (1-2 phút)</h4><p>Nêu vấn đề → giải thích tầm quan trọng → luận điểm</p><h4>II. Thân bài (2-3 lập luận)</h4><p>Mỗi lập luận: ý + lý do + ví dụ cụ thể</p><h4>III. Kết bài (1-2 phút)</h4><p>Tóm tắt → ý nghĩa → lời kêu gọi</p>"
+            },
+            {
+              "heading": "3. Luận điểm mạnh mẽ",
+              "content": "<p><strong>Tiêu chí:</strong> Rõ ràng, cụ thể, chứng minh được, có giá trị</p><p><strong>Ví dụ tốt:</strong> 'Giáo dục là chìa khóa thay đổi tương lai', 'Công nghệ vừa lợi vừa hại'</p>"
+            },
+            {
+              "heading": "4. Lập luận và bằng chứ",
+              "content": "<h4>4 loại lập luận:</h4><ul><li>Dựa sự kiện: dữ liệu, thống kê</li><li>Dựa logic: suy luận, phân tích</li><li>Dựa thực tế: kinh nghiệm, quan sát</li><li>Dựa chuyên gia: trích dẫn uy tín</li></ul><h4>Bằng chứ tốt:</h4><ul><li>Cụ thể (con số, tên, sự kiện)</li><li>Liên quan trực tiếp</li><li>Từ nguồn tin cậy, mới</li></ul>"
+            },
+            {
+              "heading": "5. Ngôn ngữ thuyết phục",
+              "content": "<p><strong>Kỹ thuật:</strong> Từ khẳng định ('rõ ràng'), so sánh ('hơn là'), nhân quả ('do đó')</p><p><strong>Tránh:</strong> Mơ hồ, cảm xúc dư thừa, phóng đại</p>"
+            },
+            {
+              "heading": "6. Quy trình viết bài",
+              "content": "<p><strong>Bước 1:</strong> Tìm hiểu vấn đề<br><strong>Bước 2:</strong> Xác định luận điểm<br><strong>Bước 3:</strong> Thu thập tài liệu<br><strong>Bước 4:</strong> Lên dàn bài<br><strong>Bước 5:</strong> Viết bản thảo<br><strong>Bước 6:</strong> Sửa chữa, hoàn thiện</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân tích cấu trúc",
+            "method": "<p>Tìm luận điểm → lập luận → bằng chứ → đánh giá</p>",
+            "examples": [
+              {
+                "question": "Phân tích: 'Giáo dục quan trọng. Nó nâng nhân lực. Google ví dụ. Nó tạo sáng tạo. Steve Jobs khởi đầu. Do đó, cần đầu tư.'",
+                "answer": "Mở (1) → Lập 1 (2-3) + Lập 2 (4-5) → Kết (6)"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xây dựng lập luận",
+            "method": "<p>Ý → lý do → bằng chứ → liên kết",
+            "examples": [
+              {
+                "question": "Lập luận cho: 'Hạn chế mạng xã hội cho trẻ'",
+                "answer": "Ý: hạn chế | Lý do: ảnh hưởng sức khỏe | Bằng chứ: nghiên cứu cho thấy... | Liên kết: vì vậy cần quy định"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Viết mở bài",
+            "method": "<p>Vấn đề → tầm quan trọng → luận điểm",
+            "examples": [
+              {
+                "question": "Mở bài: 'Cân bằng học tập và giải trí'",
+                "answer": "Hiện nay trẻ em áp lực cao...cần cân bằng...để phát triển toàn diện"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Luận điểm nêu ở phần nào?",
+            "options": [
+              "Thân bài",
+              "Mở bài",
+              "Kết bài",
+              "Bất kỳ phần"
+            ],
+            "correct": 1,
+            "explanation": "Luận điểm nêu ở cuối mở bài"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Bài văn cần có?",
+            "options": [
+              "Ý tưởng tốt",
+              "Luận điểm rõ, lập luận chặt, bằng chứ thuyết phục",
+              "Viết dài",
+              "Tránh ví dụ"
+            ],
+            "correct": 1,
+            "explanation": "Ba yếu tố: luận điểm rõ ràng, lập luận chặt chẽ, bằng chứ thuyết phục"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Mấy lập luận trong thân bài?",
+            "options": [
+              "1",
+              "2-3",
+              "Nhiều",
+              "Không cần"
+            ],
+            "correct": 1,
+            "explanation": "Thường 2-3 lập luận"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Bằng chứ tốt là?",
+            "options": [
+              "Cảm xúc",
+              "Dữ liệu, thống kê, ví dụ cụ thể",
+              "Câu chuyện dài",
+              "Chỉ ý kiến"
+            ],
+            "correct": 1,
+            "explanation": "Bằng chứ phải cụ thể, từ nguồn tin cậy"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Luận điểm OK?",
+            "options": [
+              "Mọi người yêu công viên",
+              "Mạng xã hội ảnh hưởng sâu tâm lý thanh niên",
+              "Tôi không thích",
+              "Trời đẹp"
+            ],
+            "correct": 1,
+            "explanation": "Rõ ràng, chứng minh được"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Dùng 'do đó' ở đâu?",
+            "options": [
+              "Mở bài",
+              "Kết bài liên kết",
+              "Bất kỳ",
+              "Không dùng"
+            ],
+            "correct": 1,
+            "explanation": "'Do đó' liên kết lập luận và kết luận"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Mở bài bao lâu?",
+            "options": [
+              "30%",
+              "1-2 phút",
+              "Dài",
+              "1 câu"
+            ],
+            "correct": 1,
+            "explanation": "Khoảng 3-5 câu, 1-2 phút"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Điều KHÔNG cần?",
+            "options": [
+              "Luận điểm",
+              "Bằng chứ",
+              "Cảm xúc dư thừa",
+              "Lập luận"
+            ],
+            "correct": 2,
+            "explanation": "Cảm xúc dư thừa làm yếu bài"
+          },
+          {
+            "id": "ex9",
+            "type": "essay",
+            "question": "Viết mở bài: 'Nên quy định thời gian chơi điện tử trẻ em'",
+            "answer_guide": "Nêu: trẻ em chơi quá lâu\nGiải thích: ảnh hưởng sức khỏe\nLuận: cần quy định\nVí dụ: 'Hiện nay trẻ em dành quá nhiều thời gian chơi điện tử, ảnh hưởng sức khỏe. Cần có quy định hợp lý.'"
+          },
+          {
+            "id": "ex10",
+            "type": "essay",
+            "question": "Viết lập luận cho: 'Giáo dục nâng cao chất lượng nhân lực'",
+            "answer_guide": "Ý: nâng chất lượng nhân lực\nLý do: con người học tập, phát triển kỹ năng\nBằng chứ: Quốc gia phát triển đầu tư hàng tỷ cho giáo dục\nKết nối: Do đó, nhà nước cần tiếp tục đầu tư vào giáo dục"
+          }
+        ]
+      }
+    }
+  ]
+}

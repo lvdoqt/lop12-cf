@@ -9,7 +9,7 @@
       "chapter": "Tiếng cười của hài kịch",
       "chapter_id": "V12-5",
       "lesson_id": 3,
-      "description": "Học cách viết báo cáo nghiên cứu về các vấn đề tự nhiên hoặc xã hội. Nắm vững cấu trúc, phương pháp thu thập và phân tích dữ liệu, cách trình bày kết quả nghiên cứu một cách khoa học.",
+      "description": "Hướng dẫn viết báo cáo nghiên cứu về vấn đề tự nhiên, xã hội.",
       "duration_minutes": 90,
       "difficulty_level": "hard",
       "is_published": true,
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex5-3-1",
-              "type": "mcq",
-              "question": "Báo cáo nghiên cứu là gì?",
-              "options": [
-                "Văn bản kể chuyện",
-                "Văn bản trình bày kết quả nghiên cứu về một vấn đề",
-                "Văn bản miêu tả cảnh vật",
-                "Văn bản bày tỏ cảm xúc"
-              ],
-              "correct": 1,
-              "explanation": "Báo cáo nghiên cứu là văn bản trình bày kết quả của quá trình nghiên cứu, khảo sát về một vấn đề cụ thể một cách khoa học."
-            },
-            {
-              "id": "ex5-3-2",
-              "type": "mcq",
-              "question": "Phần nào KHÔNG thuộc cấu trúc báo cáo nghiên cứu?",
-              "options": [
-                "Đặt vấn đề",
-                "Phương pháp nghiên cứu",
-                "Thơ ca",
-                "Kết luận"
-              ],
-              "correct": 2,
-              "explanation": "Thơ ca không thuộc cấu trúc báo cáo nghiên cứu. Báo cáo nghiên cứu cần có: đặt vấn đề, phương pháp, kết quả, thảo luận, kết luận."
-            },
-            {
-              "id": "ex5-3-3",
-              "type": "mcq",
-              "question": "Bước đầu tiên trong quy trình viết báo cáo nghiên cứu là gì?",
-              "options": [
-                "Thu thập dữ liệu",
-                "Chọn đề tài",
-                "Phân tích dữ liệu",
-                "Viết báo cáo"
-              ],
-              "correct": 1,
-              "explanation": "Bước đầu tiên là chọn đề tài nghiên cứu phù hợp, có ý nghĩa và khả thi."
-            },
-            {
-              "id": "ex5-3-4",
-              "type": "mcq",
-              "question": "Phương pháp nào dùng để thu thập dữ liệu trong nghiên cứu?",
-              "options": [
-                "Chỉ có khảo sát",
-                "Khảo sát, phỏng vấn, quan sát, nghiên cứu tài liệu",
-                "Chỉ có phỏng vấn",
-                "Không cần thu thập dữ liệu"
-              ],
-              "correct": 1,
-              "explanation": "Có nhiều phương pháp thu thập dữ liệu: khảo sát, phỏng vấn, quan sát, nghiên cứu tài liệu, tùy theo đặc điểm đề tài."
-            },
-            {
-              "id": "ex5-3-5",
-              "type": "mcq",
-              "question": "Tính chất quan trọng nhất của báo cáo nghiên cứu là gì?",
-              "options": [
-                "Hài hước",
-                "Khoa học, khách quan, có căn cứ",
-                "Cảm xúc",
-                "Tưởng tượng"
-              ],
-              "correct": 1,
-              "explanation": "Báo cáo nghiên cứu phải có tính khoa học, khách quan và có căn cứ, dựa trên dữ liệu thực tế."
-            },
-            {
-              "id": "ex5-3-6",
-              "type": "mcq",
-              "question": "Phần 'Thảo luận' trong báo cáo nghiên cứu có vai trò gì?",
-              "options": [
-                "Giới thiệu đề tài",
-                "Phân tích, đánh giá kết quả nghiên cứu",
-                "Thu thập dữ liệu",
-                "Viết tài liệu tham khảo"
-              ],
-              "correct": 1,
-              "explanation": "Phần 'Thảo luận' có vai trò phân tích, đánh giá, giải thích ý nghĩa của các kết quả nghiên cứu đã thu được."
-            },
-            {
-              "id": "ex5-3-7",
-              "type": "mcq",
-              "question": "Khi chọn đề tài nghiên cứu, cần chú ý tiêu chí nào?",
-              "options": [
-                "Chỉ cần thú vị",
-                "Có ý nghĩa, khả thi, phù hợp năng lực",
-                "Chỉ cần dễ làm",
-                "Không cần tiêu chí"
-              ],
-              "correct": 1,
-              "explanation": "Đề tài nghiên cứu cần có ý nghĩa thực tiễn, khả thi (có thể thực hiện được) và phù hợp với năng lực của người nghiên cứu."
-            },
-            {
-              "id": "ex5-3-8",
-              "type": "mcq",
-              "question": "Phần 'Kết luận' trong báo cáo nghiên cứu nên bao gồm nội dung gì?",
-              "options": [
-                "Chỉ tóm tắt kết quả",
-                "Tóm tắt kết quả và đề xuất giải pháp",
-                "Chỉ nêu hạn chế",
-                "Giới thiệu đề tài mới"
-              ],
-              "correct": 1,
-              "explanation": "Phần 'Kết luận' cần tóm tắt các kết quả chính, đánh giá ý nghĩa và đề xuất các giải pháp, kiến nghị liên quan."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex5-3-1",
+            "type": "mcq",
+            "question": "Báo cáo nghiên cứu là gì?",
+            "options": [
+              "Văn bản kể chuyện",
+              "Văn bản trình bày kết quả nghiên cứu về một vấn đề",
+              "Văn bản miêu tả cảnh vật",
+              "Văn bản bày tỏ cảm xúc"
+            ],
+            "correct": 1,
+            "explanation": "Báo cáo nghiên cứu là văn bản trình bày kết quả của quá trình nghiên cứu, khảo sát về một vấn đề cụ thể một cách khoa học."
+          },
+          {
+            "id": "ex5-3-2",
+            "type": "mcq",
+            "question": "Phần nào KHÔNG thuộc cấu trúc báo cáo nghiên cứu?",
+            "options": [
+              "Đặt vấn đề",
+              "Phương pháp nghiên cứu",
+              "Thơ ca",
+              "Kết luận"
+            ],
+            "correct": 2,
+            "explanation": "Thơ ca không thuộc cấu trúc báo cáo nghiên cứu. Báo cáo nghiên cứu cần có: đặt vấn đề, phương pháp, kết quả, thảo luận, kết luận."
+          },
+          {
+            "id": "ex5-3-3",
+            "type": "mcq",
+            "question": "Bước đầu tiên trong quy trình viết báo cáo nghiên cứu là gì?",
+            "options": [
+              "Thu thập dữ liệu",
+              "Chọn đề tài",
+              "Phân tích dữ liệu",
+              "Viết báo cáo"
+            ],
+            "correct": 1,
+            "explanation": "Bước đầu tiên là chọn đề tài nghiên cứu phù hợp, có ý nghĩa và khả thi."
+          },
+          {
+            "id": "ex5-3-4",
+            "type": "mcq",
+            "question": "Phương pháp nào dùng để thu thập dữ liệu trong nghiên cứu?",
+            "options": [
+              "Chỉ có khảo sát",
+              "Khảo sát, phỏng vấn, quan sát, nghiên cứu tài liệu",
+              "Chỉ có phỏng vấn",
+              "Không cần thu thập dữ liệu"
+            ],
+            "correct": 1,
+            "explanation": "Có nhiều phương pháp thu thập dữ liệu: khảo sát, phỏng vấn, quan sát, nghiên cứu tài liệu, tùy theo đặc điểm đề tài."
+          },
+          {
+            "id": "ex5-3-5",
+            "type": "mcq",
+            "question": "Tính chất quan trọng nhất của báo cáo nghiên cứu là gì?",
+            "options": [
+              "Hài hước",
+              "Khoa học, khách quan, có căn cứ",
+              "Cảm xúc",
+              "Tưởng tượng"
+            ],
+            "correct": 1,
+            "explanation": "Báo cáo nghiên cứu phải có tính khoa học, khách quan và có căn cứ, dựa trên dữ liệu thực tế."
+          },
+          {
+            "id": "ex5-3-6",
+            "type": "mcq",
+            "question": "Phần 'Thảo luận' trong báo cáo nghiên cứu có vai trò gì?",
+            "options": [
+              "Giới thiệu đề tài",
+              "Phân tích, đánh giá kết quả nghiên cứu",
+              "Thu thập dữ liệu",
+              "Viết tài liệu tham khảo"
+            ],
+            "correct": 1,
+            "explanation": "Phần 'Thảo luận' có vai trò phân tích, đánh giá, giải thích ý nghĩa của các kết quả nghiên cứu đã thu được."
+          },
+          {
+            "id": "ex5-3-7",
+            "type": "mcq",
+            "question": "Khi chọn đề tài nghiên cứu, cần chú ý tiêu chí nào?",
+            "options": [
+              "Chỉ cần thú vị",
+              "Có ý nghĩa, khả thi, phù hợp năng lực",
+              "Chỉ cần dễ làm",
+              "Không cần tiêu chí"
+            ],
+            "correct": 1,
+            "explanation": "Đề tài nghiên cứu cần có ý nghĩa thực tiễn, khả thi (có thể thực hiện được) và phù hợp với năng lực của người nghiên cứu."
+          },
+          {
+            "id": "ex5-3-8",
+            "type": "mcq",
+            "question": "Phần 'Kết luận' trong báo cáo nghiên cứu nên bao gồm nội dung gì?",
+            "options": [
+              "Chỉ tóm tắt kết quả",
+              "Tóm tắt kết quả và đề xuất giải pháp",
+              "Chỉ nêu hạn chế",
+              "Giới thiệu đề tài mới"
+            ],
+            "correct": 1,
+            "explanation": "Phần 'Kết luận' cần tóm tắt các kết quả chính, đánh giá ý nghĩa và đề xuất các giải pháp, kiến nghị liên quan."
+          },
+          {
+            "id": "ex5-3-9",
+            "type": "mcq",
+            "question": "Tình huống truyện có vai trò như thế nào trong việc thể hiện chủ đề tác phẩm?",
+            "options": [
+              "Bộc lộ tính cách nhân vật và làm nổi bật chủ đề",
+              "Không quan trọng",
+              "Chỉ làm câu chuyện dài hơn",
+              "Gây khó hiểu cho người đọc"
+            ],
+            "correct": 0,
+            "explanation": "Tình huống truyện có vai trò then chốt trong việc bộc lộ tính cách nhân vật và làm nổi bật chủ đề."
+          },
+          {
+            "id": "ex5-3-10",
+            "type": "mcq",
+            "question": "Nhân vật văn học thường được xây dựng qua những phương diện nào?",
+            "options": [
+              "Ngoại hình, hành động, lời nội tâm",
+              "Chỉ qua ngoại hình",
+              "Chỉ qua hành động",
+              "Chỉ qua lời nói"
+            ],
+            "correct": 0,
+            "explanation": "Nhân vật được xây dựng qua nhiều phương diện: ngoại hình, hành động, lời nói và nội tâm."
+          }
+        ]
       }
     }
   ]

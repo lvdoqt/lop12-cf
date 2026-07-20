@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-7-1-nghe-thuat-bam-thit-ga",
-      "name": "Nghệ thuật băm thịt gà (trích Việc làng)",
+      "name": "Nghệ thuật băm thịt gà (Trích – Nguyễn Trung Tín)",
       "slug": "nghe-thuat-bam-thit-ga",
       "chapter": "Sự thật trong tác phẩm kí",
       "chapter_id": "V12-7",
       "lesson_id": 1,
       "author": "Ngô Tất Tố",
-      "description": "Tìm hiểu tác phẩm kí 'Nghệ thuật băm thịt gà' của Ngô Tất Tố, khám phá cách tác giả miêu tả đời sống làng quê và con người Việt Nam đầu thế kỷ 20.",
+      "description": "Phân tích đoạn trích Nghệ thuật băm thịt gà trong tác phẩm kí.",
       "duration_minutes": 90,
       "difficulty_level": "medium",
       "is_published": true,
@@ -25,7 +25,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Nghệ thuật băm thịt gà - Ngô Tất Tố",
+          "title": "Nghệ thuật băm thịt gà (Trích – Nguyễn Trung Tín)",
           "sections": [
             {
               "heading": "1. Tác giả Ngô Tất Tố",
@@ -41,115 +41,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex7-1-1",
-              "type": "mcq",
-              "question": "Tác giả của 'Nghệ thuật băm thịt gà' là ai?",
-              "options": [
-                "Nam Cao",
-                "Ngô Tất Tố",
-                "Vũ Trọng Phụng",
-                "Tô Hoài"
-              ],
-              "correct": 1,
-              "explanation": "'Nghệ thuật băm thịt gà' là tác phẩm của Ngô Tất Tố, trích từ tập truyện 'Việc làng'."
-            },
-            {
-              "id": "ex7-1-2",
-              "type": "mcq",
-              "question": "Tác phẩm thuộc thể loại văn học nào?",
-              "options": [
-                "Tiểu thuyết",
-                "Văn kí (truyện ký)",
-                "Thơ",
-                "Kịch"
-              ],
-              "correct": 1,
-              "explanation": "'Nghệ thuật băm thịt gà' là tác phẩm văn kí, ghi chép lại những sự việc có thật trong đời sống."
-            },
-            {
-              "id": "ex7-1-3",
-              "type": "mcq",
-              "question": "Chủ đề chính của tác phẩm là gì?",
-              "options": [
-                "Tình yêu",
-                "Đời sống làng quê và văn hóa ẩm thực",
-                "Chiến tranh",
-                "Thiên nhiên"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm miêu tả đời sống làng quê qua nghệ thuật băm thịt gà, phản ánh văn hóa ẩm thực và tính cộng đồng."
-            },
-            {
-              "id": "ex7-1-4",
-              "type": "mcq",
-              "question": "Phương thức biểu đạt chính trong tác phẩm là gì?",
-              "options": [
-                "Nghị luận",
-                "Miêu tả chi tiết, sinh động",
-                "Biểu cảm",
-                "Thuyết minh"
-              ],
-              "correct": 1,
-              "explanation": "Tác giả sử dụng phương thức miêu tả chi tiết, sinh động để tái hiện nghệ thuật băm thịt gà."
-            },
-            {
-              "id": "ex7-1-5",
-              "type": "mcq",
-              "question": "Ngôn ngữ trong tác phẩm có đặc điểm gì?",
-              "options": [
-                "Hoa mỹ, phức tạp",
-                "Giản dị, hài hước, mang màu sắc làng quê",
-                "Khô khan, máy móc",
-                "Trừu tượng, khó hiểu"
-              ],
-              "correct": 1,
-              "explanation": "Ngôn ngữ của Ngô Tất Tố giản dị, gần gũi, có tính hài hước và mang đậm màu sắc làng quê."
-            },
-            {
-              "id": "ex7-1-6",
-              "type": "mcq",
-              "question": "Tác phẩm phản ánh điều gì về văn hóa Việt Nam?",
-              "options": [
-                "Không phản ánh gì",
-                "Phong tục làng quê và tính cộng đồng",
-                "Chỉ phản ánh ẩm thực",
-                "Chỉ phản ánh lễ hội"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm phản ánh phong tục làng quê, văn hóa ẩm thực và tinh thần cộng đồng của người Việt."
-            },
-            {
-              "id": "ex7-1-7",
-              "type": "mcq",
-              "question": "Tiểu thuyết nổi tiếng của Ngô Tất Tố là gì?",
-              "options": [
-                "Chí Phèo",
-                "Tắt đèn",
-                "Vợ nhặt",
-                "Hai đứa trẻ"
-              ],
-              "correct": 1,
-              "explanation": "'Tắt đèn' là tiểu thuyết nổi tiếng nhất của Ngô Tất Tố, phản ánh đời sống nông thôn nghèo khổ."
-            },
-            {
-              "id": "ex7-1-8",
-              "type": "mcq",
-              "question": "Giá trị của tác phẩm là gì?",
-              "options": [
-                "Chỉ có giá trị giải trí",
-                "Lưu giữ văn hóa làng quê, phản ánh đời sống cộng đồng",
-                "Không có giá trị",
-                "Chỉ dạy nấu ăn"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm có giá trị lưu giữ văn hóa làng quê, phản ánh đời sống cộng đồng và thể hiện kỹ thuật miêu tả tinh tế."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex7-1-1",
+            "type": "mcq",
+            "question": "Tác giả của 'Nghệ thuật băm thịt gà' là ai?",
+            "options": [
+              "Nam Cao",
+              "Ngô Tất Tố",
+              "Vũ Trọng Phụng",
+              "Tô Hoài"
+            ],
+            "correct": 1,
+            "explanation": "'Nghệ thuật băm thịt gà' là tác phẩm của Ngô Tất Tố, trích từ tập truyện 'Việc làng'."
+          },
+          {
+            "id": "ex7-1-2",
+            "type": "mcq",
+            "question": "Tác phẩm thuộc thể loại văn học nào?",
+            "options": [
+              "Tiểu thuyết",
+              "Văn kí (truyện ký)",
+              "Thơ",
+              "Kịch"
+            ],
+            "correct": 1,
+            "explanation": "'Nghệ thuật băm thịt gà' là tác phẩm văn kí, ghi chép lại những sự việc có thật trong đời sống."
+          },
+          {
+            "id": "ex7-1-3",
+            "type": "mcq",
+            "question": "Chủ đề chính của tác phẩm là gì?",
+            "options": [
+              "Tình yêu",
+              "Đời sống làng quê và văn hóa ẩm thực",
+              "Chiến tranh",
+              "Thiên nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm miêu tả đời sống làng quê qua nghệ thuật băm thịt gà, phản ánh văn hóa ẩm thực và tính cộng đồng."
+          },
+          {
+            "id": "ex7-1-4",
+            "type": "mcq",
+            "question": "Phương thức biểu đạt chính trong tác phẩm là gì?",
+            "options": [
+              "Nghị luận",
+              "Miêu tả chi tiết, sinh động",
+              "Biểu cảm",
+              "Thuyết minh"
+            ],
+            "correct": 1,
+            "explanation": "Tác giả sử dụng phương thức miêu tả chi tiết, sinh động để tái hiện nghệ thuật băm thịt gà."
+          },
+          {
+            "id": "ex7-1-5",
+            "type": "mcq",
+            "question": "Ngôn ngữ trong tác phẩm có đặc điểm gì?",
+            "options": [
+              "Hoa mỹ, phức tạp",
+              "Giản dị, hài hước, mang màu sắc làng quê",
+              "Khô khan, máy móc",
+              "Trừu tượng, khó hiểu"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ của Ngô Tất Tố giản dị, gần gũi, có tính hài hước và mang đậm màu sắc làng quê."
+          },
+          {
+            "id": "ex7-1-6",
+            "type": "mcq",
+            "question": "Tác phẩm phản ánh điều gì về văn hóa Việt Nam?",
+            "options": [
+              "Không phản ánh gì",
+              "Phong tục làng quê và tính cộng đồng",
+              "Chỉ phản ánh ẩm thực",
+              "Chỉ phản ánh lễ hội"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm phản ánh phong tục làng quê, văn hóa ẩm thực và tinh thần cộng đồng của người Việt."
+          },
+          {
+            "id": "ex7-1-7",
+            "type": "mcq",
+            "question": "Tiểu thuyết nổi tiếng của Ngô Tất Tố là gì?",
+            "options": [
+              "Chí Phèo",
+              "Tắt đèn",
+              "Vợ nhặt",
+              "Hai đứa trẻ"
+            ],
+            "correct": 1,
+            "explanation": "'Tắt đèn' là tiểu thuyết nổi tiếng nhất của Ngô Tất Tố, phản ánh đời sống nông thôn nghèo khổ."
+          },
+          {
+            "id": "ex7-1-8",
+            "type": "mcq",
+            "question": "Giá trị của tác phẩm là gì?",
+            "options": [
+              "Chỉ có giá trị giải trí",
+              "Lưu giữ văn hóa làng quê, phản ánh đời sống cộng đồng",
+              "Không có giá trị",
+              "Chỉ dạy nấu ăn"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm có giá trị lưu giữ văn hóa làng quê, phản ánh đời sống cộng đồng và thể hiện kỹ thuật miêu tả tinh tế."
+          },
+          {
+            "id": "ex7-1-9",
+            "type": "mcq",
+            "question": "Vai trò của ngôn ngữ trong tác phẩm văn học là gì?",
+            "options": [
+              "Phương tiện thể hiện tư tưởng, cảm xúc của tác giả",
+              "Chỉ là công cụ giao tiếp",
+              "Không quan trọng",
+              "Yếu tố phụ"
+            ],
+            "correct": 0,
+            "explanation": "Ngôn ngữ là phương tiện quan trọng để thể hiện nội dung, tư tưởng và cảm xúc trong tác phẩm."
+          },
+          {
+            "id": "ex7-1-10",
+            "type": "mcq",
+            "question": "Khi viết bài văn nghị luận, cần đảm bảo yêu cầu nào?",
+            "options": [
+              "Lí lẽ rõ ràng, dẫn chứng thuyết phục, lập luận chặt chẽ",
+              "Chỉ nêu cảm xúc cá nhân",
+              "Viết dài để thuyết phục",
+              "Sử dụng nhiều từ ngữ hoa mỹ"
+            ],
+            "correct": 0,
+            "explanation": "Bài văn nghị luận cần lí lẽ rõ ràng, dẫn chứng thuyết phục và lập luận chặt chẽ."
+          }
+        ]
       }
     }
   ]

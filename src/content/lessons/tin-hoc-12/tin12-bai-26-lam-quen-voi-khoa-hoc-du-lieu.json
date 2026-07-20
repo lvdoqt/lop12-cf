@@ -18,22 +18,219 @@
           "title": "Khoa học dữ liệu (Data Science)",
           "summary": "Khoa học dữ liệu kết hợp toán học, thống kê và máy tính để tìm ra các quy luật ẩn sau dữ liệu.",
           "sections": [
-            { "heading": "Khái niệm", "content": "Khoa học dữ liệu là lĩnh vực nghiên cứu việc quản trị và khai phá dữ liệu để hỗ trợ ra quyết định." },
-            { "heading": "Vai trò của Nhà khoa học dữ liệu", "content": "Đặt câu hỏi -> Thu thập dữ liệu -> Phân tích -> Trực quan hóa kết quả." },
-            { "heading": "Tầm quan trọng", "content": "Giúp doanh nghiệp hiểu khách hàng, giúp chính phủ dự báo xu hướng và giúp khoa học khám phá tri thức mới." }
+            {
+              "heading": "Khái niệm",
+              "content": "Khoa học dữ liệu là lĩnh vực nghiên cứu việc quản trị và khai phá dữ liệu để hỗ trợ ra quyết định."
+            },
+            {
+              "heading": "Vai trò của Nhà khoa học dữ liệu",
+              "content": "Đặt câu hỏi -> Thu thập dữ liệu -> Phân tích -> Trực quan hóa kết quả."
+            },
+            {
+              "heading": "Tầm quan trọng",
+              "content": "Giúp doanh nghiệp hiểu khách hàng, giúp chính phủ dự báo xu hướng và giúp khoa học khám phá tri thức mới."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Khoa học dữ liệu là sự kết hợp của các lĩnh vực nào?", "options": ["Toán học, Thống kê và Công nghệ thông tin", "Hội họa và Âm nhạc", "Lịch sử và Địa lý", "Chỉ có lập trình"], "correct": 0, "explanation": "Data Science cần cả kiến thức toán lý thuyết và công cụ máy tính thực hành." },
-          { "id": 2, "type": "mcq", "question": "Mục tiêu cuối cùng của khoa học dữ liệu là gì?", "options": ["Làm tốn dung lượng bộ nhớ", "Trích xuất tri thức và giá trị để đưa ra quyết định đúng đắn", "Viết mã nguồn càng dài càng tốt", "In ấn dữ liệu"], "correct": 1, "explanation": "Dữ liệu chỉ có giá trị khi nó mang lại thông tin giúp ích cho thực tế." },
-          { "id": 3, "type": "mcq", "question": "Big Data (Dữ liệu lớn) có đặc điểm 3V là gì?", "options": ["Volume (Khối lượng), Velocity (Tốc độ), Variety (Đa dạng)", "Very, Vital, Vision", "Video, Voice, Value", "Virtual, Virus, Version"], "correct": 0, "explanation": "Đây là 3 thuộc tính cơ bản định nghĩa Big Data." },
-          { "id": 4, "type": "mcq", "question": "Công việc 'Trực quan hóa dữ liệu' (Data Visualization) là làm gì?", "options": ["Viết nhật ký", "Biểu diễn dữ liệu bằng hình ảnh, biểu đồ, bản đồ", "Đọc dữ liệu thành tiếng", "Mã hóa dữ liệu"], "correct": 1, "explanation": "Hình ảnh giúp con người nắm bắt quy luật dữ liệu nhanh hơn con số khô khan." },
-          { "id": 5, "type": "mcq", "question": "Trong quy trình khoa học dữ liệu, việc 'Đặt câu hỏi' nằm ở giai đoạn nào?", "options": ["Đầu tiên", "Cuối cùng", "Khi đang viết báo cáo", "Không cần đặt câu hỏi"], "correct": 0, "explanation": "Phải xác định được vấn đề cần giải quyết trước khi thu thập dữ liệu." },
-          { "id": 6, "type": "mcq", "question": "Dữ liệu phi cấu trúc bao gồm loại nào?", "options": ["Bảng Excel", "Cơ sở dữ liệu SQL", "Hình ảnh, video, bài đăng mạng xã hội", "Danh sách số điện thoại"], "correct": 2, "explanation": "Dữ liệu phi cấu trúc không có định dạng hàng/cột sẵn có." },
-          { "id": 7, "type": "mcq", "question": "Tại sao cần phải làm sạch dữ liệu?", "options": ["Để dữ liệu trông đẹp hơn", "Loại bỏ các dữ liệu sai, thiếu hoặc không hợp lệ để tránh kết quả sai", "Để máy tính đỡ nóng", "Vì quy định của công ty"], "correct": 1, "explanation": "Dữ liệu bẩn dẫn đến những nhận định sai lầm nguy hiểm." },
-          { "id": 8, "type": "mcq", "question": "Lĩnh vực nào ứng dụng khoa học dữ liệu mạnh mẽ nhất?", "options": ["Tài chính, ngân hàng", "Y tế", "Thương mại điện tử", "Tất cả các ý trên"], "correct": 3, "explanation": "Data Science len lỏi vào mọi ngóc ngách của đời sống hiện đại." },
-          { "id": 9, "type": "mcq", "question": "Nhà khoa học dữ liệu (Data Scientist) cần kĩ năng nào?", "options": ["Lập trình (Python, R)", "Kiến thức chuyên môn về lĩnh vực cần nghiên cứu", "Kĩ năng trình bày báo cáo", "Tất cả các ý trên"], "correct": 3, "explanation": "Đây là nghề nghiệp đòi hỏi kĩ năng đa dạng (interdisciplinary)." },
-          { "id": 10, "type": "mcq", "question": "Dữ liệu có thể được coi là 'dầu mỏ' của thế kỉ 21 vì?", "options": ["Nó có thể cháy được", "Nó là tài nguyên quý giá thúc đẩy kinh tế số", "Nó có màu đen", "Nó rất nặng"], "correct": 1, "explanation": "Ai nắm giữ và xử lý được dữ liệu sẽ nắm giữ lợi thế cạnh tranh cực lớn." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Khoa học dữ liệu là sự kết hợp của các lĩnh vực nào?",
+            "options": [
+              "Toán học, Thống kê và Công nghệ thông tin",
+              "Hội họa và Âm nhạc",
+              "Lịch sử và Địa lý",
+              "Chỉ có lập trình"
+            ],
+            "correct": 0,
+            "explanation": "Data Science cần cả kiến thức toán lý thuyết và công cụ máy tính thực hành."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Mục tiêu cuối cùng của khoa học dữ liệu là gì?",
+            "options": [
+              "Làm tốn dung lượng bộ nhớ",
+              "Trích xuất tri thức và giá trị để đưa ra quyết định đúng đắn",
+              "Viết mã nguồn càng dài càng tốt",
+              "In ấn dữ liệu"
+            ],
+            "correct": 1,
+            "explanation": "Dữ liệu chỉ có giá trị khi nó mang lại thông tin giúp ích cho thực tế."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Big Data (Dữ liệu lớn) có đặc điểm 3V là gì?",
+            "options": [
+              "Volume (Khối lượng), Velocity (Tốc độ), Variety (Đa dạng)",
+              "Very, Vital, Vision",
+              "Video, Voice, Value",
+              "Virtual, Virus, Version"
+            ],
+            "correct": 0,
+            "explanation": "Đây là 3 thuộc tính cơ bản định nghĩa Big Data."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Công việc 'Trực quan hóa dữ liệu' (Data Visualization) là làm gì?",
+            "options": [
+              "Viết nhật ký",
+              "Biểu diễn dữ liệu bằng hình ảnh, biểu đồ, bản đồ",
+              "Đọc dữ liệu thành tiếng",
+              "Mã hóa dữ liệu"
+            ],
+            "correct": 1,
+            "explanation": "Hình ảnh giúp con người nắm bắt quy luật dữ liệu nhanh hơn con số khô khan."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Trong quy trình khoa học dữ liệu, việc 'Đặt câu hỏi' nằm ở giai đoạn nào?",
+            "options": [
+              "Đầu tiên",
+              "Cuối cùng",
+              "Khi đang viết báo cáo",
+              "Không cần đặt câu hỏi"
+            ],
+            "correct": 0,
+            "explanation": "Phải xác định được vấn đề cần giải quyết trước khi thu thập dữ liệu."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Dữ liệu phi cấu trúc bao gồm loại nào?",
+            "options": [
+              "Bảng Excel",
+              "Cơ sở dữ liệu SQL",
+              "Hình ảnh, video, bài đăng mạng xã hội",
+              "Danh sách số điện thoại"
+            ],
+            "correct": 2,
+            "explanation": "Dữ liệu phi cấu trúc không có định dạng hàng/cột sẵn có."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Tại sao cần phải làm sạch dữ liệu?",
+            "options": [
+              "Để dữ liệu trông đẹp hơn",
+              "Loại bỏ các dữ liệu sai, thiếu hoặc không hợp lệ để tránh kết quả sai",
+              "Để máy tính đỡ nóng",
+              "Vì quy định của công ty"
+            ],
+            "correct": 1,
+            "explanation": "Dữ liệu bẩn dẫn đến những nhận định sai lầm nguy hiểm."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Lĩnh vực nào ứng dụng khoa học dữ liệu mạnh mẽ nhất?",
+            "options": [
+              "Tài chính, ngân hàng",
+              "Y tế",
+              "Thương mại điện tử",
+              "Tất cả các ý trên"
+            ],
+            "correct": 3,
+            "explanation": "Data Science len lỏi vào mọi ngóc ngách của đời sống hiện đại."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Nhà khoa học dữ liệu (Data Scientist) cần kĩ năng nào?",
+            "options": [
+              "Lập trình (Python, R)",
+              "Kiến thức chuyên môn về lĩnh vực cần nghiên cứu",
+              "Kĩ năng trình bày báo cáo",
+              "Tất cả các ý trên"
+            ],
+            "correct": 3,
+            "explanation": "Đây là nghề nghiệp đòi hỏi kĩ năng đa dạng (interdisciplinary)."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Dữ liệu có thể được coi là 'dầu mỏ' của thế kỉ 21 vì?",
+            "options": [
+              "Nó có thể cháy được",
+              "Nó là tài nguyên quý giá thúc đẩy kinh tế số",
+              "Nó có màu đen",
+              "Nó rất nặng"
+            ],
+            "correct": 1,
+            "explanation": "Ai nắm giữ và xử lý được dữ liệu sẽ nắm giữ lợi thế cạnh tranh cực lớn."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Khoa học dữ liệu (Data Science) bao gồm?",
+            "options": [
+              "Phân tích dữ liệu",
+              "Trực quan hóa",
+              "Machine Learning",
+              "Thiết kế web"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Data Science gồm phân tích, trực quan hóa và ML."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Công cụ phân tích dữ liệu phổ biến?",
+            "options": [
+              "Python",
+              "R",
+              "Excel",
+              "Photoshop"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Python, R và Excel là công cụ phân tích dữ liệu phổ biến."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Trực quan hóa dữ liệu dùng để?",
+            "options": [
+              "Hiểu dữ liệu dễ dàng",
+              "Phát hiện xu hướng",
+              "Trình bày kết quả",
+              "Tạo game"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Trực quan hóa giúp hiểu dữ liệu, phát hiện xu hướng và trình bày kết quả."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Dữ liệu lớn (Big Data) có đặc điểm gì?",
+            "options": [
+              "Khối lượng lớn",
+              "Tốc độ xử lý nhanh",
+              "Đa dạng",
+              "Đơn giản"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Big Data có khối lượng lớn, tốc độ nhanh và đa dạng."
+          }
         ]
       }
     }

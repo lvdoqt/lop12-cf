@@ -4,12 +4,12 @@
   "lessons": [
     {
       "id": "van12-bai-2-3-dan-ghi-ta-lor-ca",
-      "name": "Đàn ghi ta của Lor-ca (Thanh Thảo) & Bài thơ số 28 (Ta-go)",
-      "slug": "dan-ghi-ta-lor-ca-tagore",
+      "name": "Đàn ghi ta của Lor-ca (Thanh Thảo)",
+      "slug": "dan-ghi-ta-lor-ca",
       "chapter": "Những thế giới thơ",
       "chapter_id": "V12-2",
       "lesson_id": 3,
-      "description": "Khám phá bài thơ Đàn ghi ta của Lor-ca (Thanh Thảo) và Bài thơ số 28 của Rabindranath Tagore, tìm hiểu cách thơ ca biểu hiện những cảm xúc sâu sắc, vượt qua ranh giới quốc gia và ngôn ngữ.",
+      "description": "Phân tích bài thơ Đàn ghi ta của Lor-ca của Thanh Thảo, khám phá thế giới thơ đầy cảm xúc và sáng tạo.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Đàn ghi ta của Lor-ca & Bài thơ số 28 (Ta-go)",
+          "title": "Đàn ghi ta của Lor-ca (Thanh Thảo)",
           "sections": [
             {
               "heading": "1. Giới thiệu tác giả, tác phẩm và bối cảnh",
@@ -63,7 +63,12 @@
             "slug": "phan-tich-bieu-tuong",
             "description": "Xác định những hình ảnh/vật chất được dùng làm biểu tượng và phân tích ý nghĩa của chúng trong bài thơ",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Xác định hình ảnh:</strong> Tìm những vật chất, hiện tượng được nhấn mạnh trong bài thơ (đàn ghi ta, âm thanh, gió, ánh sáng...)</li><li><strong>Ghi chú đặc điểm:</strong> Ghi chú những từ miêu tả hình ảnh đó (nát, buồn, mềm, dịu...)</li><li><strong>Liên hệ với con người:</strong> Những hình ảnh này liên hệ với khía cạng nào của con người</li><li><strong>Mở rộng ý nghĩa:</strong> Từ chi tiết cụ thể mở rộng định nghĩa tổng quát</li><li><strong>Kết luận:</strong> Nêu ý nghĩa biểu tượng ngắn gọn, rõ ràng</li></ol>",
-            "examples": "<h4>Ví dụ:</h4><p><strong>Hình ảnh: \"Đàn ghi ta nát, hỏng\"</strong><br/>- Đặc điểm: Không hoàn hảo, có dấu vết sống, đau thương<br/>- Liên hệ: Con người mệt mỏi, tổn thương từ cuộc sống<br/>- Ý nghĩa: Dù hỏng hóc, tổn thương, con người vẫn có giá trị, vẫn có thể tạo ra những cái đẹp<p><strong>Hình ảnh: \"Âm thanh từ đàn\"</strong><br/>- Đặc điểm: Buồn bã, sâu sắc, không phải âm thanh vô tri<br/>- Liên hệ: Cảm xúc sâu kín, linh hồn của con người<br/>- Ý nghĩa: Âm thanh biểu tượng cho những cảm xúc, tâm tư không thể nói ra được bằng lời nói"
+            "examples": [
+              {
+                "question": "<p><strong>Hình ảnh: \"Đàn ghi ta nát, hỏng\"</strong></p>",
+                "solution": "\n- Đặc điểm: Không hoàn hảo, có dấu vết sống, đau thương\n- Liên hệ: Con người mệt mỏi, tổn thương từ cuộc sống\n- Ý nghĩa: Dù hỏng hóc, tổn thương, con người vẫn có giá trị, vẫn có thể tạo ra những cái đẹp<p><strong>Hình ảnh: \"Âm thanh từ đàn\"</strong>\n- Đặc điểm: Buồn bã, sâu sắc, không phải âm thanh vô tri\n- Liên hệ: Cảm xúc sâu kín, linh hồn của con người\n- Ý nghĩa: Âm thanh biểu tượng cho những cảm xúc, tâm tư không thể nói ra được bằng lời nói"
+              }
+            ]
           },
           {
             "id": "dang2",
@@ -71,7 +76,12 @@
             "slug": "so-sanh-hai-bai-tho",
             "description": "So sánh phong cách, cách thể hiện, cảm xúc giữa bài thơ của Lor-ca và Tagore",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Xác định các khía cạnh cần so sánh:</strong><ul><li>Chủ đề, đề tài</li><li>Cảm xúc chủ đạo</li><li>Hình ảnh, biện pháp tu từ</li><li>Nhịp điệu, cấu trúc</li></ul></li><li><strong>So sánh từng khía cạnh:</strong><ul><li>Giống nhau: Cả hai do gì</li><li>Khác nhau: Khác biệt cụ thể</li></ul></li><li><strong>Phân tích nguyên nhân:</strong> Tại sao lại giống/khác (do nền văn hóa, thời kỳ, tính cách tác giả...)</li><li><strong>Kết luận:</strong> Nêu rõ đánh giá so sánh</li></ol>",
-            "examples": "<h4>Ví dụ so sánh:</h4><p><strong>Chủ đề:</strong><br/>- Lor-ca: Sự tổn thương, buồn bã, nhưng không từ bỏ<br/>- Tagore: Tìm kiếm ý nghĩa, kết nối với thế giới<p><strong>Cảm xúc:</strong><br/>- Lor-ca: Sâu sắc, máu me, có tính cách nổi loạn<br/>- Tagore: Dịu dàng, yên tĩnh, triết lý<p><strong>Hình ảnh:</strong><br/>- Lor-ca: Đàn ghi ta nát → con người tổn thương<br/>- Tagore: Gió, ánh sáng → tình yêu, hy vọng<p><strong>Kết luận:</strong> Hai bài thơ từ hai nền văn hóa khác nhau, nhưng cùng thể hiện sự sâu sắc của thế giới thơ"
+            "examples": [
+              {
+                "question": "<p><strong>Chủ đề:</strong></p>",
+                "solution": "<h4>Ví dụ so sánh:</h4><p><strong>Chủ đề:</strong>\n- Lor-ca: Sự tổn thương, buồn bã, nhưng không từ bỏ\n- Tagore: Tìm kiếm ý nghĩa, kết nối với thế giới<p><strong>Cảm xúc:</strong>\n- Lor-ca: Sâu sắc, máu me, có tính cách nổi loạn\n- Tagore: Dịu dàng, yên tĩnh, triết lý<p><strong>Hình ảnh:</strong>\n- Lor-ca: Đàn ghi ta nát → con người tổn thương\n- Tagore: Gió, ánh sáng → tình yêu, hy vọng<p><strong>Kết luận:</strong> Hai bài thơ từ hai nền văn hóa khác nhau, nhưng cùng thể hiện sự sâu sắc của thế giới thơ"
+              }
+            ]
           },
           {
             "id": "dang3",
@@ -79,130 +89,132 @@
             "slug": "gia-tri-pho-quant-tho",
             "description": "Phân tích làm thế nào mà thơ từ các quốc gia khác nhau có thể được hiểu và cảm động những người ở những nơi khác nhau",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Xác định hình ảnh, cảm xúc phổ quát:</strong> Những yếu tố nào trong bài thơ là phổ quát, được tất cả mọi người hiểu được</li><li><strong>Phân tích ngôn ngữ cảm xúc:</strong> Cảm xúc con người là như nhau, không phân biệt quốc tịch</li><li><strong>Liên hệ với độc giả:</strong> Người đọc từ một đất nước khác vẫn có thể cảm thấy được những cảm xúc được thể hiện</li><li><strong>Kết luận:</strong> Thơ ca vượt qua ranh giới, là ngôn ngữ phổ quát của con người</li></ol>",
-            "examples": "<h4>Ví dụ:</h4><p><strong>Hình ảnh phổ quát: Sự tổn thương, buồn bã</strong><br/>- Lor-ca thể hiện qua đàn ghi ta nát<br/>- Mặc dù là Tây Ban Nha, nhưng một người Việt Nam vẫn có thể hiểu được<br/>- Vì tất cả con người đều có trải nghiệm về tổn thương, buồn bã<p><strong>Hình ảnh phổ quát: Tìm kiếm ý nghĩa</strong><br/>- Tagore thể hiện qua tìm kiếm của con người<br/>- Dù là Ấn Độ, nhưng một người từ bất kỳ đâu vẫn có thể cảm nhận được<br/>- Vì tất cả con người đều muốn tìm được ý nghĩa cho cuộc sống của mình"
+            "examples": [
+              {
+                "question": "<p><strong>Hình ảnh phổ quát: Sự tổn thương, buồn bã</strong></p>",
+                "solution": "\n- Lor-ca thể hiện qua đàn ghi ta nát\n- Mặc dù là Tây Ban Nha, nhưng một người Việt Nam vẫn có thể hiểu được\n- Vì tất cả con người đều có trải nghiệm về tổn thương, buồn bã<p><strong>Hình ảnh phổ quát: Tìm kiếm ý nghĩa</strong>\n- Tagore thể hiện qua tìm kiếm của con người\n- Dù là Ấn Độ, nhưng một người từ bất kỳ đâu vẫn có thể cảm nhận được\n- Vì tất cả con người đều muốn tìm được ý nghĩa cho cuộc sống của mình"
+              }
+            ]
           }
         ],
-        "exercises": {
-          "title": "Bài tập",
-          "items": [
-            {
-              "id": "ex1",
-              "type": "mcq",
-              "question": "Thanh Thảo là ai?",
-              "options": [
-                "Nhà thơ Tây Ban Nha",
-                "Nhà thơ Ấn Độ",
-                "Nhà thơ Việt Nam, nhà dịch thuật",
-                "Nhà danh"
-              ],
-              "correct": 2,
-              "explanation": "Thanh Thảo là nhà thơ Việt Nam, người dịch và giới thiệu nhiều tác phẩm văn học thế giới sang Việt Nam."
-            },
-            {
-              "id": "ex2",
-              "type": "mcq",
-              "question": "Lor-ca là tác giả của quốc gia nào?",
-              "options": [
-                "Pháp",
-                "Tây Ban Nha",
-                "Ý",
-                "Anh"
-              ],
-              "correct": 1,
-              "explanation": "Federico García Lorca (Lor-ca) là nhà thơ nổi tiếng Tây Ban Nha, sống vào thế kỷ XX."
-            },
-            {
-              "id": "ex3",
-              "type": "mcq",
-              "question": "Bài thơ Đàn ghi ta của Lor-ca (Thanh Thảo) tượng trưng cho điều gì?",
-              "options": [
-                "Nhạc cụ của Tây Ban Nha",
-                "Sự hủy hoại hoàn toàn của con người",
-                "Con người dù tổn thương nhưng vẫn có giá trị, vẫn có thể tạo nên vẻ đẹp",
-                "Cuộc sống sang trọng"
-              ],
-              "correct": 2,
-              "explanation": "Đàn ghi ta nát biểu tượng cho con người mệt mỏi, tổn thương, nhưng vẫn có khả năng tạo ra những âm thanh đẹp, tức là những giá trị cao cả."
-            },
-            {
-              "id": "ex4",
-              "type": "mcq",
-              "question": "Phong cách của Tagore trong bài thơ số 28 là gì?",
-              "options": [
-                "Siêu thực, mạnh mẽ, nổi loạn",
-                "Trữ tình, dịu dàng, triết lý",
-                "Châm biếm, cay cú",
-                "Miêu tả chi tiết"
-              ],
-              "correct": 1,
-              "explanation": "Tagore viết những bài thơ trữ tình, dịu dàng, chứa đựng sâu sắc triết lý, khác với phong cách mạnh mẽ của Lor-ca."
-            },
-            {
-              "id": "ex5",
-              "type": "mcq",
-              "question": "Điểm giống nhau giữ hai bài thơ của Lor-ca và Tagore là gì?",
-              "options": [
-                "Cả hai đều viết về lịch sử",
-                "Cả hai đều thể hiện những cảm xúc sâu kín của con người",
-                "Cả hai đều viết bằng tiếng Anh",
-                "Cả hai đều là thơ anh hùng"
-              ],
-              "correct": 1,
-              "explanation": "Mặc dù phong cách khác nhau, cả hai bài thơ đều thể hiện những cảm xúc sâu kín, tâm tư phức tạp của con người."
-            },
-            {
-              "id": "ex6",
-              "type": "mcq",
-              "question": "Giá trị phổ quát của thơ ca được chứng minh như thế nào qua hai bài thơ này?",
-              "options": [
-                "Cả hai bài đều được viết bằng tiếng Việt",
-                "Cả hai bài đều có cùng chủ đề",
-                "Mặc dù từ các quốc gia, nền văn hóa khác nhau, nhưng chúng vẫn có thể cảm động người đọc ở bất cứ đâu",
-                "Cả hai bài đều được dạy trong trường học"
-              ],
-              "correct": 2,
-              "explanation": "Thơ ca là ngôn ngữ phổ quát - người Việt Nam có thể cảm thấy những cảm xúc được thể hiện bởi nhà thơ Tây Ban Nha hay Ấn Độ vì tất cả con người có những cảm xúc chung."
-            },
-            {
-              "id": "ex7",
-              "type": "mcq",
-              "question": "Biện pháp tu từ nào được sử dụng phổ biến trong cả hai bài thơ?",
-              "options": [
-                "Câu hỏi tu từ",
-                "Biểu tượng - sử dụng vật chất cụ thể để biểu hiện khái niệm trừu tượng",
-                "Câu đối",
-                "Lặp từ"
-              ],
-              "correct": 1,
-              "explanation": "Cả Lor-ca và Tagore đều sử dụng biểu tượng để thể hiện cảm xúc nội tâm - đàn ghi ta, gió, ánh sáng..."
-            },
-            {
-              "id": "ex8",
-              "type": "mcq",
-              "question": "Tại sao hai bài thơ này được xếp trong chương Những thế giới thơ?",
-              "options": [
-                "Vì chúng là những bài thơ kinh điển",
-                "Vì chúng mở rộng khái niệm 'thế giới thơ' - chứng tỏ thơ ca vượt qua ranh giới quốc gia, ngôn ngữ",
-                "Vì chúng dễ hiểu",
-                "Vì chúng viết về tình yêu"
-              ],
-              "correct": 1,
-              "explanation": "Hai bài thơ này chứng tỏ rằng thế giới thơ không phải của một quốc gia hay nền văn hóa cụ thể, mà là của toàn nhân loại."
-            },
-            {
-              "id": "ex9",
-              "type": "essay",
-              "question": "Hãy phân tích cách Lor-ca sử dụng hình ảng đàn ghi ta nát và âm thanh buồn bã để diễn đạt tâm sự, cảm xúc con người. Bài thơ này có ý nghĩa gì với độc giả?",
-              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Xác định hình ảng chính: đàn ghi ta nát, âm thanh, tay cầm đàn\n- Phân tích hình ảng:\n  + Đàn ghi ta nát: biểu tượng cho con người mệt mỏi, tổn thương từ cuộc sống\n  + Âm thanh buồn bã: con người vẫn có thể tạo ra những cái đẹp, những cảm xúc sâu kín\n  + Tay cầm đàn: con người không bị động, mà chủ động tìm kiếm cảm xúc, sự biểu hiện\n- Cách sử dụng hình ảng:\n  + Từ cụ thể (đàn ghi ta) mở rộng đến trừu tượng (con người)\n  + Sử dụng đối lập: nát/trot, buồn/vẫn tạo ra vẻ đẹp\n  + Tạo sự đồng cảm giữa độc giả và con người trong bài thơ\n- Ý nghĩa:\n  + Giúp độc giả hiểu rằng tổn thương không phải điều xấu hổ\n  + Con người vẫn có giá trị dù có suy yếu\n  + Cảm xúc sâu kín, buồn bã cũng có vẻ đẹp riêng của nó\n- Kết luận: Thơ giúp con người chấp nhận bản thân, hiểu rằng cái đẹp không chỉ là hoàn hảo mà cả những vết sẹo của cuộc sống"
-            },
-            {
-              "id": "ex10",
-              "type": "essay",
-              "question": "Hãy lập luận tại sao bài thơ Đàn ghi ta của Lor-ca (Thanh Thảo) và Bài thơ số 28 của Tagore lại được xếp cùng trong chương Những thế giới thơ. Chúng mở ra thế giới thơ nào cho độc giả?",
-              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Mở bài: Nêu rõ hai bài thơ từ hai quốc gia, nền văn hóa khác nhau nhưng cùng chương\n- Lập luận 1: Thế giới phổ quát của cảm xúc con người\n  + Dù là Tây Ban Nha hay Ấn Độ, băi thơ đều thể hiện những cảm xúc mà con người Việt Nam có thể cảm thấy\n  + Tổn thương, tìm kiếm ý nghĩa là những trải nghiệm chung của nhân loại\n  + Thơ ca là ngôn ngữ phổ quát\n- Lập luận 2: Cách thể hiện khác nhau nhưng cùng mục đích\n  + Lor-ca dùng hình ảng mạnh mẽ, Tagore dùng hình ảng dịu dàng\n  + Nhưng cả hai đều tìm cách diễn đạt những cảm xúc sâu kín\n  + Chứng tỏ thơ có nhiều cách để thể hiện thế giới nội tâm\n- Lập luận 3: Mở rộng định nghĩa của \"thế giới thơ\"\n  + Không phải chỉ các sự kiện lịch sử (Tây Tiến) hay cảm xúc cá nhân (Cảm hoài)\n  + Mà cả một thế giới phổ quát, vượt qua ranh giới địa lý, văn hóa\n  + Nơi mà mọi con người có thể gặp nhau thông qua cảm xúc chung\n- Lập luận 4: Giá trị giáo dục\n  + Giúp học sinh hiểu rằng vẻ đẹp tồn tại ở khắp nơi\n  + Giúp học sinh develop cảm xúc sâu sắc, khả năng cảm thông với người khác\n  + Giáo dục toàn cầu\n- Kết luận: Hai bài thơ mở ra thế giới thơ là thế giới phổ quát của con người - nơi địa quyền, quốc tịch không quan trọng mà chỉ có cảm xúc, tâm tư con người là cái cốt lõi"
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Thanh Thảo là ai?",
+            "options": [
+              "Nhà thơ Tây Ban Nha",
+              "Nhà thơ Ấn Độ",
+              "Nhà thơ Việt Nam, nhà dịch thuật",
+              "Nhà danh"
+            ],
+            "correct": 2,
+            "explanation": "Thanh Thảo là nhà thơ Việt Nam, người dịch và giới thiệu nhiều tác phẩm văn học thế giới sang Việt Nam."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Lor-ca là tác giả của quốc gia nào?",
+            "options": [
+              "Pháp",
+              "Tây Ban Nha",
+              "Ý",
+              "Anh"
+            ],
+            "correct": 1,
+            "explanation": "Federico García Lorca (Lor-ca) là nhà thơ nổi tiếng Tây Ban Nha, sống vào thế kỷ XX."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Bài thơ Đàn ghi ta của Lor-ca (Thanh Thảo) tượng trưng cho điều gì?",
+            "options": [
+              "Nhạc cụ của Tây Ban Nha",
+              "Sự hủy hoại hoàn toàn của con người",
+              "Con người dù tổn thương nhưng vẫn có giá trị, vẫn có thể tạo nên vẻ đẹp",
+              "Cuộc sống sang trọng"
+            ],
+            "correct": 2,
+            "explanation": "Đàn ghi ta nát biểu tượng cho con người mệt mỏi, tổn thương, nhưng vẫn có khả năng tạo ra những âm thanh đẹp, tức là những giá trị cao cả."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Phong cách của Tagore trong bài thơ số 28 là gì?",
+            "options": [
+              "Siêu thực, mạnh mẽ, nổi loạn",
+              "Trữ tình, dịu dàng, triết lý",
+              "Châm biếm, cay cú",
+              "Miêu tả chi tiết"
+            ],
+            "correct": 1,
+            "explanation": "Tagore viết những bài thơ trữ tình, dịu dàng, chứa đựng sâu sắc triết lý, khác với phong cách mạnh mẽ của Lor-ca."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Điểm giống nhau giữ hai bài thơ của Lor-ca và Tagore là gì?",
+            "options": [
+              "Cả hai đều viết về lịch sử",
+              "Cả hai đều thể hiện những cảm xúc sâu kín của con người",
+              "Cả hai đều viết bằng tiếng Anh",
+              "Cả hai đều là thơ anh hùng"
+            ],
+            "correct": 1,
+            "explanation": "Mặc dù phong cách khác nhau, cả hai bài thơ đều thể hiện những cảm xúc sâu kín, tâm tư phức tạp của con người."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Giá trị phổ quát của thơ ca được chứng minh như thế nào qua hai bài thơ này?",
+            "options": [
+              "Cả hai bài đều được viết bằng tiếng Việt",
+              "Cả hai bài đều có cùng chủ đề",
+              "Mặc dù từ các quốc gia, nền văn hóa khác nhau, nhưng chúng vẫn có thể cảm động người đọc ở bất cứ đâu",
+              "Cả hai bài đều được dạy trong trường học"
+            ],
+            "correct": 2,
+            "explanation": "Thơ ca là ngôn ngữ phổ quát - người Việt Nam có thể cảm thấy những cảm xúc được thể hiện bởi nhà thơ Tây Ban Nha hay Ấn Độ vì tất cả con người có những cảm xúc chung."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Biện pháp tu từ nào được sử dụng phổ biến trong cả hai bài thơ?",
+            "options": [
+              "Câu hỏi tu từ",
+              "Biểu tượng - sử dụng vật chất cụ thể để biểu hiện khái niệm trừu tượng",
+              "Câu đối",
+              "Lặp từ"
+            ],
+            "correct": 1,
+            "explanation": "Cả Lor-ca và Tagore đều sử dụng biểu tượng để thể hiện cảm xúc nội tâm - đàn ghi ta, gió, ánh sáng..."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Tại sao hai bài thơ này được xếp trong chương Những thế giới thơ?",
+            "options": [
+              "Vì chúng là những bài thơ kinh điển",
+              "Vì chúng mở rộng khái niệm 'thế giới thơ' - chứng tỏ thơ ca vượt qua ranh giới quốc gia, ngôn ngữ",
+              "Vì chúng dễ hiểu",
+              "Vì chúng viết về tình yêu"
+            ],
+            "correct": 1,
+            "explanation": "Hai bài thơ này chứng tỏ rằng thế giới thơ không phải của một quốc gia hay nền văn hóa cụ thể, mà là của toàn nhân loại."
+          },
+          {
+            "id": "ex9",
+            "type": "essay",
+            "question": "Hãy phân tích cách Lor-ca sử dụng hình ảng đàn ghi ta nát và âm thanh buồn bã để diễn đạt tâm sự, cảm xúc con người. Bài thơ này có ý nghĩa gì với độc giả?",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Xác định hình ảng chính: đàn ghi ta nát, âm thanh, tay cầm đàn\n- Phân tích hình ảng:\n  + Đàn ghi ta nát: biểu tượng cho con người mệt mỏi, tổn thương từ cuộc sống\n  + Âm thanh buồn bã: con người vẫn có thể tạo ra những cái đẹp, những cảm xúc sâu kín\n  + Tay cầm đàn: con người không bị động, mà chủ động tìm kiếm cảm xúc, sự biểu hiện\n- Cách sử dụng hình ảng:\n  + Từ cụ thể (đàn ghi ta) mở rộng đến trừu tượng (con người)\n  + Sử dụng đối lập: nát/trot, buồn/vẫn tạo ra vẻ đẹp\n  + Tạo sự đồng cảm giữa độc giả và con người trong bài thơ\n- Ý nghĩa:\n  + Giúp độc giả hiểu rằng tổn thương không phải điều xấu hổ\n  + Con người vẫn có giá trị dù có suy yếu\n  + Cảm xúc sâu kín, buồn bã cũng có vẻ đẹp riêng của nó\n- Kết luận: Thơ giúp con người chấp nhận bản thân, hiểu rằng cái đẹp không chỉ là hoàn hảo mà cả những vết sẹo của cuộc sống"
+          },
+          {
+            "id": "ex10",
+            "type": "essay",
+            "question": "Hãy lập luận tại sao bài thơ Đàn ghi ta của Lor-ca (Thanh Thảo) và Bài thơ số 28 của Tagore lại được xếp cùng trong chương Những thế giới thơ. Chúng mở ra thế giới thơ nào cho độc giả?",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Mở bài: Nêu rõ hai bài thơ từ hai quốc gia, nền văn hóa khác nhau nhưng cùng chương\n- Lập luận 1: Thế giới phổ quát của cảm xúc con người\n  + Dù là Tây Ban Nha hay Ấn Độ, băi thơ đều thể hiện những cảm xúc mà con người Việt Nam có thể cảm thấy\n  + Tổn thương, tìm kiếm ý nghĩa là những trải nghiệm chung của nhân loại\n  + Thơ ca là ngôn ngữ phổ quát\n- Lập luận 2: Cách thể hiện khác nhau nhưng cùng mục đích\n  + Lor-ca dùng hình ảng mạnh mẽ, Tagore dùng hình ảng dịu dàng\n  + Nhưng cả hai đều tìm cách diễn đạt những cảm xúc sâu kín\n  + Chứng tỏ thơ có nhiều cách để thể hiện thế giới nội tâm\n- Lập luận 3: Mở rộng định nghĩa của \"thế giới thơ\"\n  + Không phải chỉ các sự kiện lịch sử (Tây Tiến) hay cảm xúc cá nhân (Cảm hoài)\n  + Mà cả một thế giới phổ quát, vượt qua ranh giới địa lý, văn hóa\n  + Nơi mà mọi con người có thể gặp nhau thông qua cảm xúc chung\n- Lập luận 4: Giá trị giáo dục\n  + Giúp học sinh hiểu rằng vẻ đẹp tồn tại ở khắp nơi\n  + Giúp học sinh develop cảm xúc sâu sắc, khả năng cảm thông với người khác\n  + Giáo dục toàn cầu\n- Kết luận: Hai bài thơ mở ra thế giới thơ là thế giới phổ quát của con người - nơi địa quyền, quốc tịch không quan trọng mà chỉ có cảm xúc, tâm tư con người là cái cốt lõi"
+          }
+        ]
       }
     }
   ]

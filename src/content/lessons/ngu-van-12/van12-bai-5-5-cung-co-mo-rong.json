@@ -4,12 +4,12 @@
   "lessons": [
     {
       "id": "van12-bai-5-5-cung-co-mo-rong",
-      "name": "Củng cố mở rộng - Trang 153",
-      "slug": "cung-co-mo-rong-trang-153",
+      "name": "Củng cố, mở rộng",
+      "slug": "cung-co-mo-rong",
       "chapter": "Tiếng cười của hài kịch",
       "chapter_id": "V12-5",
       "lesson_id": 5,
-      "description": "Ôn tập, củng cố kiến thức về hài kịch và kỹ năng viết báo cáo nghiên cứu. Mở rộng hiểu biết thông qua các bài tập thực hành.",
+      "description": "Củng cố và mở rộng kiến thức tiếng cười của hài kịch.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Củng cố mở rộng - Tiếng cười của hài kịch",
+          "title": "Củng cố và mở rộng kiến thức",
           "sections": [
             {
               "heading": "1. Tóm tắt kiến thức về hài kịch",
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex5-5-1",
-              "type": "mcq",
-              "question": "Mục đích chính của hài kịch là gì?",
-              "options": [
-                "Chỉ để giải trí",
-                "Gây cười, giải trí và phê phán xã hội",
-                "Chỉ để phê phán",
-                "Không có mục đích cụ thể"
-              ],
-              "correct": 1,
-              "explanation": "Hài kịch có mục đích kép: vừa gây cười, giải trí cho khán giả, vừa phê phán những vấn đề xã hội qua tiếng cười."
-            },
-            {
-              "id": "ex5-5-2",
-              "type": "mcq",
-              "question": "Yếu tố nào tạo nên tiếng cười trong hài kịch?",
-              "options": [
-                "Chỉ có lời thoại",
-                "Tình huống, nhân vật, lời thoại",
-                "Chỉ có trang phục",
-                "Chỉ có âm nhạc"
-              ],
-              "correct": 1,
-              "explanation": "Tiếng cười trong hài kịch được tạo nên từ sự kết hợp của nhiều yếu tố: tình huống hài hước, nhân vật đặc trưng và lời thoại dí dỏm."
-            },
-            {
-              "id": "ex5-5-3",
-              "type": "mcq",
-              "question": "Điểm chung giữa hài kịch của Gogol và Lộng Chương là gì?",
-              "options": [
-                "Cùng quốc tịch",
-                "Đều sử dụng hài hước để phê phán xã hội",
-                "Cùng thời kỳ",
-                "Không có điểm chung"
-              ],
-              "correct": 1,
-              "explanation": "Mặc dù khác nhau về bối cảnh văn hóa, cả Gogol và Lộng Chương đều sử dụng hài hước như công cụ để phê phán các vấn đề xã hội."
-            },
-            {
-              "id": "ex5-5-4",
-              "type": "mcq",
-              "question": "Phần nào là trung tâm của báo cáo nghiên cứu?",
-              "options": [
-                "Trang bìa",
-                "Kết quả và thảo luận",
-                "Mục lục",
-                "Phụ lục"
-              ],
-              "correct": 1,
-              "explanation": "Phần kết quả và thảo luận là trung tâm của báo cáo nghiên cứu, nơi trình bày và phân tích các phát hiện chính."
-            },
-            {
-              "id": "ex5-5-5",
-              "type": "mcq",
-              "question": "Kỹ năng nào quan trọng nhất khi viết báo cáo nghiên cứu?",
-              "options": [
-                "Viết đẹp chữ",
-                "Phân tích dữ liệu khách quan",
-                "Viết nhiều trang",
-                "Sử dụng từ ngữ phức tạp"
-              ],
-              "correct": 1,
-              "explanation": "Kỹ năng phân tích dữ liệu một cách khách quan, có căn cứ là quan trọng nhất trong việc viết báo cáo nghiên cứu."
-            },
-            {
-              "id": "ex5-5-6",
-              "type": "mcq",
-              "question": "Hài kịch Việt Nam có đặc điểm gì khác với hài kịch phương Tây?",
-              "options": [
-                "Không có sự khác biệt",
-                "Gần gũi với đời sống Việt Nam, mang tính nhân văn sâu sắc",
-                "Ít hài hước hơn",
-                "Không phê phán xã hội"
-              ],
-              "correct": 1,
-              "explanation": "Hài kịch Việt Nam có đặc điểm gần gũi với đời sống thực tế của người Việt và thường mang tính nhân văn sâu sắc."
-            },
-            {
-              "id": "ex5-5-7",
-              "type": "mcq",
-              "question": "Khi trình bày báo cáo nghiên cứu, điều gì quan trọng nhất?",
-              "options": [
-                "Nói nhanh để kết thúc sớm",
-                "Trình bày rõ ràng, logic, có tương tác với khán giả",
-                "Đọc từng chữ trong báo cáo",
-                "Không cần chuẩn bị"
-              ],
-              "correct": 1,
-              "explanation": "Khi trình bày báo cáo, cần trình bày rõ ràng, logic và có tương tác với khán giả để họ hiểu và quan tâm đến nội dung."
-            },
-            {
-              "id": "ex5-5-8",
-              "type": "mcq",
-              "question": "Ý nghĩa của việc học về hài kịch trong chương trình Ngữ văn là gì?",
-              "options": [
-                "Chỉ để giải trí",
-                "Hiểu về nghệ thuật phê phán xã hội qua tiếng cười",
-                "Không có ý nghĩa",
-                "Chỉ để thi cử"
-              ],
-              "correct": 1,
-              "explanation": "Học về hài kịch giúp học sinh hiểu về nghệ thuật sử dụng tiếng cười để phê phán, phản ánh và cải thiện xã hội."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex5-5-1",
+            "type": "mcq",
+            "question": "Mục đích chính của hài kịch là gì?",
+            "options": [
+              "Chỉ để giải trí",
+              "Gây cười, giải trí và phê phán xã hội",
+              "Chỉ để phê phán",
+              "Không có mục đích cụ thể"
+            ],
+            "correct": 1,
+            "explanation": "Hài kịch có mục đích kép: vừa gây cười, giải trí cho khán giả, vừa phê phán những vấn đề xã hội qua tiếng cười."
+          },
+          {
+            "id": "ex5-5-2",
+            "type": "mcq",
+            "question": "Yếu tố nào tạo nên tiếng cười trong hài kịch?",
+            "options": [
+              "Chỉ có lời thoại",
+              "Tình huống, nhân vật, lời thoại",
+              "Chỉ có trang phục",
+              "Chỉ có âm nhạc"
+            ],
+            "correct": 1,
+            "explanation": "Tiếng cười trong hài kịch được tạo nên từ sự kết hợp của nhiều yếu tố: tình huống hài hước, nhân vật đặc trưng và lời thoại dí dỏm."
+          },
+          {
+            "id": "ex5-5-3",
+            "type": "mcq",
+            "question": "Điểm chung giữa hài kịch của Gogol và Lộng Chương là gì?",
+            "options": [
+              "Cùng quốc tịch",
+              "Đều sử dụng hài hước để phê phán xã hội",
+              "Cùng thời kỳ",
+              "Không có điểm chung"
+            ],
+            "correct": 1,
+            "explanation": "Mặc dù khác nhau về bối cảnh văn hóa, cả Gogol và Lộng Chương đều sử dụng hài hước như công cụ để phê phán các vấn đề xã hội."
+          },
+          {
+            "id": "ex5-5-4",
+            "type": "mcq",
+            "question": "Phần nào là trung tâm của báo cáo nghiên cứu?",
+            "options": [
+              "Trang bìa",
+              "Kết quả và thảo luận",
+              "Mục lục",
+              "Phụ lục"
+            ],
+            "correct": 1,
+            "explanation": "Phần kết quả và thảo luận là trung tâm của báo cáo nghiên cứu, nơi trình bày và phân tích các phát hiện chính."
+          },
+          {
+            "id": "ex5-5-5",
+            "type": "mcq",
+            "question": "Kỹ năng nào quan trọng nhất khi viết báo cáo nghiên cứu?",
+            "options": [
+              "Viết đẹp chữ",
+              "Phân tích dữ liệu khách quan",
+              "Viết nhiều trang",
+              "Sử dụng từ ngữ phức tạp"
+            ],
+            "correct": 1,
+            "explanation": "Kỹ năng phân tích dữ liệu một cách khách quan, có căn cứ là quan trọng nhất trong việc viết báo cáo nghiên cứu."
+          },
+          {
+            "id": "ex5-5-6",
+            "type": "mcq",
+            "question": "Hài kịch Việt Nam có đặc điểm gì khác với hài kịch phương Tây?",
+            "options": [
+              "Không có sự khác biệt",
+              "Gần gũi với đời sống Việt Nam, mang tính nhân văn sâu sắc",
+              "Ít hài hước hơn",
+              "Không phê phán xã hội"
+            ],
+            "correct": 1,
+            "explanation": "Hài kịch Việt Nam có đặc điểm gần gũi với đời sống thực tế của người Việt và thường mang tính nhân văn sâu sắc."
+          },
+          {
+            "id": "ex5-5-7",
+            "type": "mcq",
+            "question": "Khi trình bày báo cáo nghiên cứu, điều gì quan trọng nhất?",
+            "options": [
+              "Nói nhanh để kết thúc sớm",
+              "Trình bày rõ ràng, logic, có tương tác với khán giả",
+              "Đọc từng chữ trong báo cáo",
+              "Không cần chuẩn bị"
+            ],
+            "correct": 1,
+            "explanation": "Khi trình bày báo cáo, cần trình bày rõ ràng, logic và có tương tác với khán giả để họ hiểu và quan tâm đến nội dung."
+          },
+          {
+            "id": "ex5-5-8",
+            "type": "mcq",
+            "question": "Ý nghĩa của việc học về hài kịch trong chương trình Ngữ văn là gì?",
+            "options": [
+              "Chỉ để giải trí",
+              "Hiểu về nghệ thuật phê phán xã hội qua tiếng cười",
+              "Không có ý nghĩa",
+              "Chỉ để thi cử"
+            ],
+            "correct": 1,
+            "explanation": "Học về hài kịch giúp học sinh hiểu về nghệ thuật sử dụng tiếng cười để phê phán, phản ánh và cải thiện xã hội."
+          },
+          {
+            "id": "ex5-5-9",
+            "type": "mcq",
+            "question": "Tình huống truyện có vai trò như thế nào trong việc thể hiện chủ đề tác phẩm?",
+            "options": [
+              "Bộc lộ tính cách nhân vật và làm nổi bật chủ đề",
+              "Không quan trọng",
+              "Chỉ làm câu chuyện dài hơn",
+              "Gây khó hiểu cho người đọc"
+            ],
+            "correct": 0,
+            "explanation": "Tình huống truyện có vai trò then chốt trong việc bộc lộ tính cách nhân vật và làm nổi bật chủ đề."
+          },
+          {
+            "id": "ex5-5-10",
+            "type": "mcq",
+            "question": "Nhân vật văn học thường được xây dựng qua những phương diện nào?",
+            "options": [
+              "Ngoại hình, hành động, lời nội tâm",
+              "Chỉ qua ngoại hình",
+              "Chỉ qua hành động",
+              "Chỉ qua lời nói"
+            ],
+            "correct": 0,
+            "explanation": "Nhân vật được xây dựng qua nhiều phương diện: ngoại hình, hành động, lời nói và nội tâm."
+          }
+        ]
       }
     }
   ]

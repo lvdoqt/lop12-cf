@@ -15,25 +15,254 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Kinh tế biển và an ninh quốc phòng: mối liên hệ",
-          "summary": "Phát triển kinh tế biển cùng lúc tạo dựng cơ sở hạ tầng quan trọng (cảng, khu kinh tế biển), tạo nguồn lực vật chất và nhân lực hỗ trợ quốc phòng - an ninh biển; báo cáo cần nêu cả lợi ích kinh tế và yêu cầu an ninh để đề xuất chính sách hài hòa.",
+          "title": "Thực hành: Viết báo cáo về ý nghĩa của phát triển kinh tế biển đối với quốc phòng an ninh",
+          "summary": "Phát triển kinh tế biển ở duyên hải Nam Trung Bộ không chỉ thúc đẩy tăng trưởng mà còn gắn liền với bảo đảm quốc phòng, an ninh. Bài thực hành hướng dẫn thu thập tư liệu, phân tích mối quan hệ giữa các hoạt động kinh tế biển (cảng, thủy sản, dầu khí, du lịch) với việc giữ vững chủ quyền, an ninh hàng hải và bảo vệ biển đảo, từ đó viết báo cáo với các kiến nghị phù hợp.",
           "sections": [
-            { "heading": "Nội dung báo cáo", "content": "Xác định các yếu tố kinh tế biển (cảng, năng lực thủy sản, dầu khí), phân tích tác động đến an ninh biển và đề xuất biện pháp bảo đảm an ninh trong phát triển kinh tế." },
-            { "heading": "Phương pháp thu thập", "content": "Sử dụng số liệu thống kê, báo cáo địa phương, phỏng vấn cơ quan quản lý cảng và biên phòng; chú ý nguồn tin chính thức." }
+            {
+              "heading": "Mục tiêu và nội dung báo cáo",
+              "content": "Báo cáo cần trình bày tiềm năng, thực trạng phát triển kinh tế biển của vùng và phân tích ý nghĩa của nó đối với quốc phòng an ninh. Trọng tâm là làm rõ mối liên hệ giữa kinh tế biển và bảo vệ chủ quyền lãnh thổ, an ninh hàng hải, khẳng định chủ quyền biển đảo. Nội dung gồm ba phần: tiềm năng và thực trạng; ý nghĩa quốc phòng an ninh; giải pháp kết hợp kinh tế với quốc phòng."
+            },
+            {
+              "heading": "Ý nghĩa của kinh tế biển đối với quốc phòng an ninh",
+              "content": "Phát triển cảng biển, đội tàu đánh bắt và các cơ sở kinh tế biển tạo nền tảng hạ tầng, nguồn lực vật chất và nhân lực hỗ trợ tuần tra, kiểm soát và bảo vệ vùng biển. Hoạt động của ngư dân trên các ngư trường góp phần khẳng định và thực tế hóa chủ quyền trên biển. Kinh tế biển phát triển giúp nâng cao đời sống, ổn định dân cư ven biển – lực lượng nòng cốt bảo vệ an ninh biển đảo."
+            },
+            {
+              "heading": "Phương pháp thu thập tư liệu và viết báo cáo",
+              "content": "Thu thập số liệu từ cơ quan quản lý cảng, biên phòng, thống kê địa phương và các báo cáo chính thức về kinh tế biển, quốc phòng an ninh. Phỏng vấn đại diện chính quyền, biên phòng, ngư dân và doanh nghiệp để có tư liệu thực tế. Báo cáo cần có bố cục rõ ràng: đặt vấn đề, phân tích, kết luận và kiến nghị; có thể dùng bản đồ, biểu đồ minh họa vị trí cảng và vùng biển nhạy cảm."
+            },
+            {
+              "heading": "Giải pháp kết hợp kinh tế biển với quốc phòng an ninh",
+              "content": "Quy hoạch cảng biển và kinh tế biển theo hướng kết hợp dân sự và quốc phòng, ưu tiên các vị trí chiến lược. Tăng cường năng lực tuần tra, giám sát và xử lý vi phạm trên biển; bảo vệ an toàn hàng hải. Đẩy mạnh liên kết vùng, xây dựng thế trận quốc phòng toàn dân gắn với kinh tế biển, bảo vệ môi trường và nguồn lợi để phát triển bền vững."
+            }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Một luận điểm cần nêu trong báo cáo về kinh tế biển và an ninh?", "a_hint": "Mối liên hệ giữa cảng biển phát triển và yêu cầu bảo vệ chủ quyền/ an ninh hàng hải." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Một lợi ích kinh tế biển liên quan đến an ninh là?", "options": ["Cảng phát triển giúp tuần tra và giám sát vùng biển","Giảm khả năng tuần tra","Làm giảm an ninh" ,"Không có liên hệ"], "correct": 0, "explanation": "Cảng phát triển hỗ trợ cả mục tiêu kinh tế và năng lực tuần tra an ninh." },
-          { "id": 2, "type": "mcq", "question": "Khi viết báo cáo, nguồn dữ liệu đáng tin cậy là?", "options": ["Báo cáo chính thức của cơ quan quản lý cảng và thống kê địa phương","Tin đồn trên mạng xã hội","Không cần nguồn","Nguồn không rõ ràng"], "correct": 0, "explanation": "Các nguồn chính thức và thống kê là đáng tin cậy cho báo cáo." },
-          { "id": 3, "type": "mcq", "question": "Một đề xuất nhằm hài hòa phát triển kinh tế biển và an ninh là?", "options": ["Quy hoạch cảng kết hợp khu quân sự/ dân sự và tăng cường giám sát biển","Xây cảng không tính đến an ninh","Tách rời hoàn toàn kinh tế và an ninh","Không cần đề xuất"], "correct": 0, "explanation": "Quy hoạch tích hợp giúp cân bằng kinh tế và an ninh." },
-          { "id": 4, "type": "mcq", "question": "Trong bối cảnh này, ai là đối tượng cần tham vấn?", "options": ["Cơ quan cảng, biên phòng, chính quyền địa phương và cộng đồng ngư dân","Chỉ doanh nghiệp tư nhân","Không ai","Chỉ khách du lịch"], "correct": 0, "explanation": "Các bên liên quan đều cần được tham vấn để báo cáo toàn diện." },
-          { "id": 5, "type": "mcq", "question": "Một nguy cơ an ninh biển khi phát triển kinh tế biển ồ ạt là?", "options": ["Xung đột lợi ích, ô nhiễm và làm suy giảm môi trường ảnh hưởng đến an ninh nguồn lợi","Tăng an toàn hoàn toàn","Không có nguy cơ","Cải thiện môi trường"], "correct": 0, "explanation": "Phát triển không bền vững gây xung đột và suy giảm nguồn lợi biển." },
-          { "id": 6, "type": "mcq", "question": "Báo cáo cần nêu hành động ngắn hạn là?", "options": ["Tăng giám sát vùng cảng, kiểm soát xả thải và quy định khai thác","Không làm gì","Tăng khai thác tối đa","Bỏ qua quy hoạch"], "correct": 0, "explanation": "Tăng giám sát và kiểm soát môi trường là hành động ngắn hạn hiệu quả." },
-          { "id": 7, "type": "mcq", "question": "Một ví dụ minh họa mối liên hệ kinh tế - an ninh là?", "options": ["Cảng thương mại được bảo vệ giúp đảm bảo luồng hàng và tuần tra hàng hải","Sân bay nhỏ hỗ trợ đánh cá","Trạm xăng trên sa mạc","Không có ví dụ"], "correct": 0, "explanation": "Cảng thương mại vừa phục vụ kinh tế vừa cần năng lực bảo vệ an ninh." },
-          { "id": 8, "type": "mcq", "question": "Khi đề xuất chính sách, cần cân nhắc yếu tố nào?", "options": ["Kinh tế, môi trường, xã hội và an ninh","Chỉ lợi ích kinh tế","Chỉ an ninh quân sự","Không cân nhắc gì"], "correct": 0, "explanation": "Cần cân bằng nhiều yếu tố để chính sách khả thi và bền vững." },
-          { "id": 9, "type": "mcq", "question": "Một công cụ trực quan hữu ích cho báo cáo là?", "options": ["Bản đồ vị trí cảng, vùng biển và các điểm nhạy cảm an ninh","Chỉ văn bản dài","Ảnh không chú thích","Không cần công cụ"], "correct": 0, "explanation": "Bản đồ giúp minh họa mối liên hệ không gian giữa kinh tế và an ninh biển." },
-          { "id": 10, "type": "mcq", "question": "Mục tiêu cuối cùng của báo cáo là?", "options": ["Đề xuất giải pháp hài hòa phát triển kinh tế biển với bảo đảm an ninh quốc phòng","Chỉ miêu tả tình trạng","Kêu gọi ngừng toàn bộ hoạt động biển","Không có mục tiêu"], "correct": 0, "explanation": "Báo cáo nhằm đưa ra đề xuất thực tiễn để cân bằng cả hai mục tiêu." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Một lợi ích kinh tế biển liên quan đến an ninh là?",
+            "options": [
+              "Cảng phát triển giúp tuần tra và giám sát vùng biển",
+              "Giảm khả năng tuần tra",
+              "Làm giảm an ninh",
+              "Không có liên hệ"
+            ],
+            "correct": 0,
+            "explanation": "Cảng phát triển hỗ trợ cả mục tiêu kinh tế và năng lực tuần tra an ninh."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Khi viết báo cáo, nguồn dữ liệu đáng tin cậy là?",
+            "options": [
+              "Báo cáo chính thức của cơ quan quản lý cảng và thống kê địa phương",
+              "Tin đồn trên mạng xã hội",
+              "Không cần nguồn",
+              "Nguồn không rõ ràng"
+            ],
+            "correct": 0,
+            "explanation": "Các nguồn chính thức và thống kê là đáng tin cậy cho báo cáo."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Một đề xuất nhằm hài hòa phát triển kinh tế biển và an ninh là?",
+            "options": [
+              "Quy hoạch cảng kết hợp khu quân sự/ dân sự và tăng cường giám sát biển",
+              "Xây cảng không tính đến an ninh",
+              "Tách rời hoàn toàn kinh tế và an ninh",
+              "Không cần đề xuất"
+            ],
+            "correct": 0,
+            "explanation": "Quy hoạch tích hợp giúp cân bằng kinh tế và an ninh."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Trong bối cảnh này, ai là đối tượng cần tham vấn?",
+            "options": [
+              "Cơ quan cảng, biên phòng, chính quyền địa phương và cộng đồng ngư dân",
+              "Chỉ doanh nghiệp tư nhân",
+              "Không ai",
+              "Chỉ khách du lịch"
+            ],
+            "correct": 0,
+            "explanation": "Các bên liên quan đều cần được tham vấn để báo cáo toàn diện."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Một nguy cơ an ninh biển khi phát triển kinh tế biển ồ ạt là?",
+            "options": [
+              "Xung đột lợi ích, ô nhiễm và làm suy giảm môi trường ảnh hưởng đến an ninh nguồn lợi",
+              "Tăng an toàn hoàn toàn",
+              "Không có nguy cơ",
+              "Cải thiện môi trường"
+            ],
+            "correct": 0,
+            "explanation": "Phát triển không bền vững gây xung đột và suy giảm nguồn lợi biển."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Báo cáo cần nêu hành động ngắn hạn là?",
+            "options": [
+              "Tăng giám sát vùng cảng, kiểm soát xả thải và quy định khai thác",
+              "Không làm gì",
+              "Tăng khai thác tối đa",
+              "Bỏ qua quy hoạch"
+            ],
+            "correct": 0,
+            "explanation": "Tăng giám sát và kiểm soát môi trường là hành động ngắn hạn hiệu quả."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Một ví dụ minh họa mối liên hệ kinh tế - an ninh là?",
+            "options": [
+              "Cảng thương mại được bảo vệ giúp đảm bảo luồng hàng và tuần tra hàng hải",
+              "Sân bay nhỏ hỗ trợ đánh cá",
+              "Trạm xăng trên sa mạc",
+              "Không có ví dụ"
+            ],
+            "correct": 0,
+            "explanation": "Cảng thương mại vừa phục vụ kinh tế vừa cần năng lực bảo vệ an ninh."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Khi đề xuất chính sách, cần cân nhắc yếu tố nào?",
+            "options": [
+              "Kinh tế, môi trường, xã hội và an ninh",
+              "Chỉ lợi ích kinh tế",
+              "Chỉ an ninh quân sự",
+              "Không cân nhắc gì"
+            ],
+            "correct": 0,
+            "explanation": "Cần cân bằng nhiều yếu tố để chính sách khả thi và bền vững."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Một công cụ trực quan hữu ích cho báo cáo là?",
+            "options": [
+              "Bản đồ vị trí cảng, vùng biển và các điểm nhạy cảm an ninh",
+              "Chỉ văn bản dài",
+              "Ảnh không chú thích",
+              "Không cần công cụ"
+            ],
+            "correct": 0,
+            "explanation": "Bản đồ giúp minh họa mối liên hệ không gian giữa kinh tế và an ninh biển."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Mục tiêu cuối cùng của báo cáo là?",
+            "options": [
+              "Đề xuất giải pháp hài hòa phát triển kinh tế biển với bảo đảm an ninh quốc phòng",
+              "Chỉ miêu tả tình trạng",
+              "Kêu gọi ngừng toàn bộ hoạt động biển",
+              "Không có mục tiêu"
+            ],
+            "correct": 0,
+            "explanation": "Báo cáo nhằm đưa ra đề xuất thực tiễn để cân bằng cả hai mục tiêu."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Nội dung báo cáo về kinh tế biển gồm?",
+            "options": [
+              "Tiềm năng biển",
+              "Thực trạng khai thác",
+              "Giải pháp phát triển",
+              "Lịch sử hình thành"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Báo cáo cần đề cập tiềm năng, thực trạng và giải pháp phát triển kinh tế biển."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Các ngành kinh tế biển chính?",
+            "options": [
+              "Cảng biển",
+              "Du lịch biển",
+              "Thủy sản",
+              "Trồng lúa"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cảng biển, du lịch biển và thủy sản là ngành kinh tế biển chính."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Ý nghĩa của phát triển kinh tế biển đối với quốc phòng an ninh?",
+            "options": [
+              "Bảo vệ chủ quyền biển đảo",
+              "Tăng cường năng lực quốc phòng",
+              "Khẳng định chủ quyền lãnh thổ",
+              "Giảm an ninh biển"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Phát triển kinh tế biển góp phần bảo vệ chủ quyền, tăng cường quốc phòng và khẳng định chủ quyền."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Các giải pháp phát triển kinh tế biển bền vững?",
+            "options": [
+              "Quy hoạch tổng thể",
+              "Bảo vệ môi trường biển",
+              "Kết hợp quốc phòng - an ninh",
+              "Khai thác tận diệt"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Quy hoạch, bảo vệ môi trường và kết hợp quốc phòng - an ninh là giải pháp bền vững."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Mục đích của bài thực hành?",
+            "correct": "Viết báo cáo về ý nghĩa của phát triển kinh tế biển đối với quốc phòng an ninh",
+            "explanation": "Bài thực hành viết báo cáo về ý nghĩa của phát triển kinh tế biển đối với quốc phòng an ninh."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Kể tên một ngành kinh tế biển?",
+            "correct": "Cảng biển, du lịch biển, khai thác dầu khí",
+            "explanation": "Cảng biển, du lịch biển và khai thác dầu khí là ngành kinh tế biển."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Ý nghĩa của phát triển kinh tế biển đối với quốc phòng?",
+            "correct": "Bảo vệ chủ quyền biển đảo, tăng cường năng lực quốc phòng",
+            "explanation": "Phát triển kinh tế biển góp phần bảo vệ chủ quyền và tăng cường quốc phòng."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Một luận điểm cần nêu trong báo cáo về kinh tế biển và an ninh?",
+            "correct": "Mối liên hệ giữa cảng biển phát triển và yêu cầu bảo vệ chủ quyền/ an ninh hàng hải.",
+            "explanation": "Mối liên hệ giữa cảng biển phát triển và yêu cầu bảo vệ chủ quyền/ an ninh hàng hải."
+          }
         ]
       }
     }

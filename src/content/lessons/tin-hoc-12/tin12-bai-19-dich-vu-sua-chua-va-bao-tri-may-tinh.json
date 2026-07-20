@@ -18,22 +18,223 @@
           "title": "Nghề Sửa chữa Máy tính",
           "summary": "Nghề sửa chữa máy tính đòi hỏi kĩ năng chẩn đoán lỗi phần cứng, phần mềm và thái độ phục vụ khách hàng tận tâm.",
           "sections": [
-            { "heading": "Công việc chính", "content": "Lắp ráp máy tính, cài đặt hệ điều hành và phần mềm, khắc phục sự cố mạng, thay thế linh kiện hỏng." },
-            { "heading": "Bảo trì máy tính", "content": "Vệ sinh phần cứng, kiểm tra nhiệt độ, dọn dẹp file rác, cập nhật bản vá lỗi và quét virus định kỳ." },
-            { "heading": "Yêu cầu nghề nghiệp", "content": "Tính kiên nhẫn, sự tỉ mỉ, khả năng cập nhật kiến thức phần cứng mới và kĩ năng giao tiếp tốt." }
+            {
+              "heading": "Công việc chính",
+              "content": "Lắp ráp máy tính, cài đặt hệ điều hành và phần mềm, khắc phục sự cố mạng, thay thế linh kiện hỏng."
+            },
+            {
+              "heading": "Bảo trì máy tính",
+              "content": "Vệ sinh phần cứng, kiểm tra nhiệt độ, dọn dẹp file rác, cập nhật bản vá lỗi và quét virus định kỳ."
+            },
+            {
+              "heading": "Yêu cầu nghề nghiệp",
+              "content": "Tính kiên nhẫn, sự tỉ mỉ, khả năng cập nhật kiến thức phần cứng mới và kĩ năng giao tiếp tốt."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Công việc nào sau đây thuộc về bảo trì máy tính?", "options": ["Viết một chương trình học máy", "Vệ sinh bụi bẩn và thay keo tản nhiệt cho CPU", "Thiết kế logo công ty", "Soạn thảo văn bản hành chính"], "correct": 1, "explanation": "Bảo trì tập trung vào việc duy trì tình trạng hoạt động tốt của phần cứng." },
-          { "id": 2, "type": "mcq", "question": "Khi máy tính bật không lên màn hình nhưng quạt vẫn quay, kĩ thuật viên thường kiểm tra linh kiện nào đầu tiên?", "options": ["Bàn phím", "RAM", "Loa", "Chuột"], "correct": 1, "explanation": "Lỗi RAM là nguyên nhân phổ biến nhất khiến máy không lên hình." },
-          { "id": 3, "type": "mcq", "question": "Tại sao cần phải cập nhật hệ điều hành thường xuyên?", "options": ["Để làm máy nặng hơn", "Để vá các lỗ hổng bảo mật và sửa lỗi hệ thống", "Để xóa dữ liệu người dùng", "Để tốn dung lượng mạng"], "correct": 1, "explanation": "Cập nhật giúp bảo vệ máy tính trước các nguy cơ tấn công mới." },
-          { "id": 4, "type": "mcq", "question": "Nghề sửa chữa máy tính yêu cầu đạo đức nghề nghiệp như thế nào?", "options": ["Luôn tìm cách thay linh kiện đắt nhất cho khách", "Tôn trọng dữ liệu riêng tư của khách hàng và báo đúng bệnh", "Tự ý xem ảnh của khách", "Cài thêm phần mềm độc hại"], "correct": 1, "explanation": "Bảo mật thông tin khách hàng là yêu cầu tối thượng trong nghề dịch vụ máy tính." },
-          { "id": 5, "type": "mcq", "question": "Dụng cụ nào không thể thiếu đối với kĩ thuật viên sửa chữa máy tính?", "options": ["Bút thử điện và tua vít đa năng", "Thước kẻ gỗ", "Dao gọt hoa quả", "Bút chì màu"], "correct": 0, "explanation": "Tua vít là công cụ cơ bản nhất để mở vỏ máy và linh kiện." },
-          { "id": 6, "type": "mcq", "question": "Việc sao lưu (Backup) dữ liệu trước khi sửa chữa giúp?", "options": ["Làm máy chạy nhanh", "Đảm bảo an toàn dữ liệu cho khách nếu có sự cố trong quá trình sửa", "Tiết kiệm điện", "Tăng dung lượng ổ cứng"], "correct": 1, "explanation": "Luôn phải phòng ngừa rủi ro mất dữ liệu khi can thiệp vào hệ thống." },
-          { "id": 7, "type": "mcq", "question": "Phần mềm diệt virus là công cụ bảo trì về mặt?", "options": ["Phần cứng", "Phần mềm và dữ liệu", "Thẩm mĩ", "Năng lượng"], "correct": 1, "explanation": "Virus là phần mềm độc hại phá hoại hệ thống và dữ liệu." },
-          { "id": 8, "type": "mcq", "question": "Khi máy tính quá nóng và tự tắt, nguyên nhân có thể do?", "options": ["Thiếu RAM", "Hệ thống tản nhiệt bị bẩn hoặc hỏng quạt", "Màn hình quá sáng", "Dây chuột bị lỏng"], "correct": 1, "explanation": "Nhiệt độ cao khiến CPU tự ngắt để bảo vệ mạch điện." },
-          { "id": 9, "type": "mcq", "question": "Khái niệm 'Ghost máy' hoặc 'Cài Win' nghĩa là gì?", "options": ["Làm máy biến mất", "Khôi phục hoặc cài đặt mới lại hệ điều hành", "Làm máy chạy chậm đi", "Mua máy tính mới"], "correct": 1, "explanation": "Đây là thao tác làm sạch phần mềm phổ biến khi máy bị lỗi nặng." },
-          { "id": 10, "type": "mcq", "question": "Cơ hội việc làm của nghề sửa chữa máy tính hiện nay như thế nào?", "options": ["Đã bão hòa, không còn ai dùng máy tính", "Rất lớn vì thiết bị số hiện diện ở khắp mọi nơi", "Chỉ làm việc được ở nông thôn", "Chỉ dành cho người lớn tuổi"], "correct": 1, "explanation": "Nhu cầu hỗ trợ kĩ thuật luôn tỉ lệ thuận với số lượng thiết bị số." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Công việc nào sau đây thuộc về bảo trì máy tính?",
+            "options": [
+              "Viết một chương trình học máy",
+              "Vệ sinh bụi bẩn và thay keo tản nhiệt cho CPU",
+              "Thiết kế logo công ty",
+              "Soạn thảo văn bản hành chính"
+            ],
+            "correct": 1,
+            "explanation": "Bảo trì tập trung vào việc duy trì tình trạng hoạt động tốt của phần cứng."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Khi máy tính bật không lên màn hình nhưng quạt vẫn quay, kĩ thuật viên thường kiểm tra linh kiện nào đầu tiên?",
+            "options": [
+              "Bàn phím",
+              "RAM",
+              "Loa",
+              "Chuột"
+            ],
+            "correct": 1,
+            "explanation": "Lỗi RAM là nguyên nhân phổ biến nhất khiến máy không lên hình."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Tại sao cần phải cập nhật hệ điều hành thường xuyên?",
+            "options": [
+              "Để làm máy nặng hơn",
+              "Để vá các lỗ hổng bảo mật và sửa lỗi hệ thống",
+              "Để xóa dữ liệu người dùng",
+              "Để tốn dung lượng mạng"
+            ],
+            "correct": 1,
+            "explanation": "Cập nhật giúp bảo vệ máy tính trước các nguy cơ tấn công mới."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Nghề sửa chữa máy tính yêu cầu đạo đức nghề nghiệp như thế nào?",
+            "options": [
+              "Luôn tìm cách thay linh kiện đắt nhất cho khách",
+              "Tôn trọng dữ liệu riêng tư của khách hàng và báo đúng bệnh",
+              "Tự ý xem ảnh của khách",
+              "Cài thêm phần mềm độc hại"
+            ],
+            "correct": 1,
+            "explanation": "Bảo mật thông tin khách hàng là yêu cầu tối thượng trong nghề dịch vụ máy tính."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Dụng cụ nào không thể thiếu đối với kĩ thuật viên sửa chữa máy tính?",
+            "options": [
+              "Bút thử điện và tua vít đa năng",
+              "Thước kẻ gỗ",
+              "Dao gọt hoa quả",
+              "Bút chì màu"
+            ],
+            "correct": 0,
+            "explanation": "Tua vít là công cụ cơ bản nhất để mở vỏ máy và linh kiện."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Việc sao lưu (Backup) dữ liệu trước khi sửa chữa giúp?",
+            "options": [
+              "Làm máy chạy nhanh",
+              "Đảm bảo an toàn dữ liệu cho khách nếu có sự cố trong quá trình sửa",
+              "Tiết kiệm điện",
+              "Tăng dung lượng ổ cứng"
+            ],
+            "correct": 1,
+            "explanation": "Luôn phải phòng ngừa rủi ro mất dữ liệu khi can thiệp vào hệ thống."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Phần mềm diệt virus là công cụ bảo trì về mặt?",
+            "options": [
+              "Phần cứng",
+              "Phần mềm và dữ liệu",
+              "Thẩm mĩ",
+              "Năng lượng"
+            ],
+            "correct": 1,
+            "explanation": "Virus là phần mềm độc hại phá hoại hệ thống và dữ liệu."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Khi máy tính quá nóng và tự tắt, nguyên nhân có thể do?",
+            "options": [
+              "Thiếu RAM",
+              "Hệ thống tản nhiệt bị bẩn hoặc hỏng quạt",
+              "Màn hình quá sáng",
+              "Dây chuột bị lỏng"
+            ],
+            "correct": 1,
+            "explanation": "Nhiệt độ cao khiến CPU tự ngắt để bảo vệ mạch điện."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Khái niệm 'Ghost máy' hoặc 'Cài Win' nghĩa là gì?",
+            "options": [
+              "Làm máy biến mất",
+              "Khôi phục hoặc cài đặt mới lại hệ điều hành",
+              "Làm máy chạy chậm đi",
+              "Mua máy tính mới"
+            ],
+            "correct": 1,
+            "explanation": "Đây là thao tác làm sạch phần mềm phổ biến khi máy bị lỗi nặng."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Cơ hội việc làm của nghề sửa chữa máy tính hiện nay như thế nào?",
+            "options": [
+              "Đã bão hòa, không còn ai dùng máy tính",
+              "Rất lớn vì thiết bị số hiện diện ở khắp mọi nơi",
+              "Chỉ làm việc được ở nông thôn",
+              "Chỉ dành cho người lớn tuổi"
+            ],
+            "correct": 1,
+            "explanation": "Nhu cầu hỗ trợ kĩ thuật luôn tỉ lệ thuận với số lượng thiết bị số."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Dịch vụ sửa chữa máy tính bao gồm?",
+            "options": [
+              "Sửa chữa phần cứng",
+              "Cài đặt phần mềm",
+              "Khôi phục dữ liệu",
+              "Bảo trì định kỳ"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Dịch vụ sửa chữa gồm: phần cứng, phần mềm, khôi phục dữ liệu và bảo trì."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Lỗi phổ biến của máy tính là?",
+            "options": [
+              "Máy chạy chậm",
+              "Màn hình xanh (BSOD)",
+              "Không khởi động được",
+              "Mất kết nối mạng"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Các lỗi phổ biến: chạy chậm, BSOD, không khởi động, mất mạng."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Bảo trì máy tính gồm?",
+            "options": [
+              "Làm sạch bụi",
+              "Cập nhật phần mềm",
+              "Kiểm tra ổ cứng",
+              "Thay thế linh kiện"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Bảo trì gồm vệ sinh, cập nhật, kiểm tra và thay thế."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Công cụ diagnostic máy tính gồm?",
+            "options": [
+              "Task Manager",
+              "Device Manager",
+              "Disk Management",
+              "Registry Editor"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Các công cụ diagnostic phổ biến."
+          }
         ]
       }
     }

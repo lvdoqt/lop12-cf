@@ -15,15 +15,28 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Tổ chức lãnh thổ nông nghiệp và vùng chuyên canh",
-          "summary": "Tổ chức lãnh thổ nông nghiệp hướng tới tối ưu hóa sử dụng đất theo điều kiện tự nhiên và kinh tế: vùng chuyên canh, hệ thống thủy lợi, giao thông nông thôn và các chuỗi cung ứng.",
+          "title": "Tổ chức lãnh thổ nông nghiệp",
+          "summary": "Tổ chức lãnh thổ nông nghiệp là sắp xếp không gian sản xuất nông nghiệp hợp lý nhằm sử dụng hiệu quả tài nguyên, nâng cao năng suất và thúc đẩy phát triển nông thôn. Việc hình thành các vùng chuyên canh, vùng kinh tế trọng điểm và hệ thống hạ tầng là cơ sở để nông nghiệp phát triển bền vững.",
           "sections": [
-            { "heading": "Vùng chuyên canh", "content": "Phân bố theo điều kiện đất, khí hậu và thị trường (ví dụ vùng lúa, cao su, cà phê)." },
-            { "heading": "Hạ tầng nông thôn", "content": "Cần hệ thống giao thông, thủy lợi, kho lạnh và dịch vụ hỗ trợ để phát triển lãnh thổ nông nghiệp." }
+            {
+              "heading": "Nguyên tắc và căn cứ tổ chức lãnh thổ",
+              "content": "Tổ chức lãnh thổ nông nghiệp dựa trên các căn cứ: điều kiện tự nhiên (đất, khí hậu, nước), điều kiện kinh tế - xã hội (lao động, thị trường, cơ sở hạ tầng) và định hướng phát triển của từng vùng. Nguyên tắc cơ bản là phát huy thế mạnh so sánh của từng địa phương, tạo ra sự chuyên môn hóa và liên kết vùng để nâng cao hiệu quả kinh tế."
+            },
+            {
+              "heading": "Vùng chuyên canh và vùng kinh tế trọng điểm nông nghiệp",
+              "content": "Vùng chuyên canh là vùng tập trung sản xuất một hoặc một số ít cây trồng, vật nuôi chủ lực phù hợp với điều kiện sinh thái (ví dụ: lúa Đồng bằng sông Cửu Long, cà phê Tây Nguyên, cao su Đông Nam Bộ, chè Trung du miền núi phía Bắc). Các vùng kinh tế trọng điểm nông nghiệp được hình thành ở những nơi có điều kiện thuận lợi, tập trung vốn, công nghệ và thị trường để trở thành đầu tàu phát triển của cả nước."
+            },
+            {
+              "heading": "Hình thức tổ chức lãnh thổ nông nghiệp",
+              "content": "Các hình thức phổ biến gồm: trang trại (sản xuất quy mô lớn, thâm canh cao), hợp tác xã (liên kết hộ nông dân), vùng chuyên canh và các khu nông nghiệp công nghệ cao. Mỗi hình thức gắn với mô hình liên kết sản xuất - chế biến - tiêu thụ nhằm giảm rủi ro và tăng giá trị sản phẩm."
+            },
+            {
+              "heading": "Hạ tầng nông thôn và vai trò thủy lợi",
+              "content": "Hạ tầng nông thôn đóng vai trò quyết định, gồm giao thông nông thôn, hệ thống thủy lợi (cung cấp nước tưới, tiêu úng, cải tạo đất), kho lạnh bảo quản, cơ sở chế biến và mạng lưới điện. Đặc biệt, thủy lợi là nền tảng của sản xuất nông nghiệp, giúp chủ động nước và mở rộng hai, ba vụ trong năm. Điện và giao thông giúp rút ngắn khoảng cách từ nơi sản xuất đến thị trường."
+            }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Nêu ví dụ một vùng chuyên canh ở Việt Nam?", "a_hint": "Vùng trồng lúa châu thổ sông Hồng hoặc cà phê Tây Nguyên." } ] },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Vùng chuyên canh được xác định dựa trên?", "options": ["Điều kiện tự nhiên và thị trường","Sở thích cá nhân","Ngẫu nhiên","Không có tiêu chí"], "correct": 0, "explanation": "Dựa trên điều kiện tự nhiên và yêu cầu thị trường." },
           { "id": 2, "type": "mcq", "question": "Hạ tầng nào quan trọng cho nông nghiệp?", "options": ["Thủy lợi và giao thông nông thôn","Sân bay quốc tế","Tuyến tàu vũ trụ","Không cần hạ tầng"], "correct": 0, "explanation": "Thủy lợi và giao thông phục vụ sản xuất và vận chuyển nông sản." },
           { "id": 3, "type": "mcq", "question": "Một mục tiêu của tổ chức lãnh thổ nông nghiệp là?", "options": ["Tối ưu hóa sử dụng đất và tăng hiệu quả sản xuất","Phân tán sản xuất vô nghĩa","Tăng phá rừng","Không mục tiêu"], "correct": 0, "explanation": "Mục tiêu là sử dụng đất hiệu quả và bền vững." },
@@ -33,7 +46,15 @@
           { "id": 7, "type": "mcq", "question": "Quy hoạch nông nghiệp cần tính đến?", "options": ["Đặc điểm tự nhiên, kinh tế và xã hội","Chỉ sở thích lãnh đạo","Không cần tính toán","Chỉ làm theo truyền thống"], "correct": 0, "explanation": "Quy hoạch cần cân nhắc tự nhiên, kinh tế và xã hội." },
           { "id": 8, "type": "mcq", "question": "Một hệ quả tích cực của vùng chuyên canh hiệu quả?", "options": ["Tăng năng suất và thu nhập nông dân","Giảm thu nhập","Mất đất","Không có gì"], "correct": 0, "explanation": "Vùng chuyên canh hợp lý giúp tăng năng suất và thu nhập." },
           { "id": 9, "type": "mcq", "question": "Tổ chức lãnh thổ nông nghiệp cần chú trọng?", "options": ["Bảo vệ đất, quản lý nước và hạ tầng hậu cần","Không chú trọng gì","Tăng phá rừng","Loại bỏ thị trường"], "correct": 0, "explanation": "Các yếu tố bảo vệ tài nguyên và hạ tầng là cần thiết." },
-          { "id": 10, "type": "mcq", "question": "Một biện pháp hỗ trợ nông dân trong vùng chuyên canh là?", "options": ["Hỗ trợ kỹ thuật, tín dụng và thị trường tiêu thụ","Cấm bán sản phẩm","Bỏ qua kỹ thuật","Không hỗ trợ"], "correct": 0, "explanation": "Hỗ trợ kỹ thuật và tiếp cận thị trường là cần thiết." }
+          { "id": 10, "type": "mcq", "question": "Một biện pháp hỗ trợ nông dân trong vùng chuyên canh là?", "options": ["Hỗ trợ kỹ thuật, tín dụng và thị trường tiêu thụ","Cấm bán sản phẩm","Bỏ qua kỹ thuật","Không hỗ trợ"], "correct": 0, "explanation": "Hỗ trợ kỹ thuật và tiếp cận thị trường là cần thiết." },
+          { "id": 11, "type": "msq", "question": "Các yếu tố ảnh hưởng đến tổ chức lãnh thổ nông nghiệp?", "options": ["Điều kiện tự nhiên", "Kinh tế - xã hội", "Màu sắc quốc kỳ", "Thị trường tiêu thụ"], "correct": [0,1,3], "explanation": "Tổ chức lãnh thổ nông nghiệp phụ thuộc vào điều kiện tự nhiên, kinh tế - xã hội và thị trường." },
+          { "id": 12, "type": "msq", "question": "Các vùng chuyên canh lớn ở Việt Nam gồm?", "options": ["Vùng lúa ĐBSCL", "Vùng cà phê Tây Nguyên", "Vùng cao su Đông Nam Bộ", "Vùng chè Bắc Trung Bộ"], "correct": [0,1,2], "explanation": "Các vùng chuyên canh lớn gồm lúa ĐBSCL, cà phê Tây Nguyên, cao su Đông Nam Bộ." },
+          { "id": 13, "type": "msq", "question": "Hạ tầng nông thôn cần thiết cho phát triển nông nghiệp gồm?", "options": ["Giao thông nông thôn", "Hệ thống thủy lợi", "Kho lạnh bảo quản", "Sân bay quốc tế"], "correct": [0,1,2], "explanation": "Giao thông, thủy lợi và kho lạnh là hạ tầng quan trọng cho nông nghiệp." },
+          { "id": 14, "type": "msq", "question": "Các hình thức tổ chức lãnh thổ nông nghiệp gồm?", "options": ["Trang trại", "Hợp tác xã", "Vùng chuyên canh", "Khu công nghiệp"], "correct": [0,1,2], "explanation": "Trang trại, hợp tác xã và vùng chuyên canh là hình thức tổ chức lãnh thổ nông nghiệp." },
+          { "id": 15, "type": "sa", "question": "Kể tên một vùng chuyên canh cây công nghiệp lâu năm ở Việt Nam?", "correct": "Tây Nguyên (cà phê), Đông Nam Bộ (cao su)", "explanation": "Tây Nguyên chuyên canh cà phê, Đông Nam Bộ chuyên canh cao su." },
+          { "id": 16, "type": "sa", "question": "Hình thức tổ chức lãnh thổ nông nghiệp phổ biến ở Việt Nam?", "correct": "Trang trại, hợp tác xã, vùng chuyên canh", "explanation": "Các hình thức phổ biến gồm trang trại, hợp tác xã và vùng chuyên canh." },
+          { "id": 17, "type": "sa", "question": "Vai trò của thủy lợi trong nông nghiệp?", "correct": "Cung cấp nước tưới, tiêu úng, cải tạo đất", "explanation": "Thủy lợi cung cấp nước tưới, tiêu úng và cải tạo đất." },
+          { "id": 18, "type": "sa", "question": "Nêu ví dụ một vùng chuyên canh ở Việt Nam?", "correct": "Vùng trồng lúa châu thổ sông Hồng hoặc cà phê Tây Nguyên." }
         ]
       }
     }

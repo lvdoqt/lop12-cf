@@ -3,14 +3,14 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-4-7-thuc-hanh-doc",
-      "name": "Thực hành đọc: Bên trần gian",
+      "id": "van12-bai-4-7-thuc-hanh-doc-ben-tran-gian",
+      "name": "Thực hành đọc: Bến trần gian (Trích – Lưu Sơn Minh)",
       "slug": "thuc-hanh-doc-ben-tran-gian",
       "chapter": "Yếu tố kì ảo trong truyện kể",
       "chapter_id": "V12-4",
       "lesson_id": 7,
       "author": "Lưu Sơn Minh",
-      "description": "Rèn luyện kỹ năng đọc hiểu, phân tích tác phẩm 'Bên trần gian' để nhận diện và phân tích yếu tố kì ảo, hiểu ý tưởng sâu sắc của tác giả.",
+      "description": "Thực hành đọc truyện \"Bến trần gian\" của Lưu Sơn Minh.",
       "duration_minutes": 50,
       "difficulty_level": "medium",
       "is_published": true,
@@ -31,7 +31,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Thực hành đọc: Bên trần gian - Lưu Sơn Minh",
+          "title": "Thực hành đọc: Bến trần gian (Trích – Lưu Sơn Minh)",
           "sections": [
             {
               "heading": "1. Tác giả Lưu Sơn Minh",
@@ -159,6 +159,32 @@
             ],
             "correct": 1,
             "explanation": "Tác phẩm đặt ra những câu hỏi triết học sâu sắc về bản chất thực tại, tự do con người, và ý nghĩa của cuộc sống."
+          },
+          {
+            "id": "ex4-7-9",
+            "type": "mcq",
+            "question": "Phân tích yếu tố kì ảo trong tác phẩm giúp người đọc hiểu được điều gì?",
+            "options": [
+              "Nội dung và thông điệp sâu sắc của tác phẩm",
+              "Chỉ để giải trí",
+              "Không có tác dụng",
+              "Làm tác phẩm khó hiểu hơn"
+            ],
+            "correct": 0,
+            "explanation": "Phân tích yếu tố kì ảo giúp khám phá ý nghĩa biểu tượng và thông điệp của tác phẩm."
+          },
+          {
+            "id": "ex4-7-10",
+            "type": "mcq",
+            "question": "Trong truyện kể, yếu tố kì ảo thường kết hợp với yếu tố nào để tạo nên giá trị tác phẩm?",
+            "options": [
+              "Yếu tố hiện thực",
+              "Chỉ có yếu tố kì ảo",
+              "Yếu tố lịch sử",
+              "Yếu tố khoa học"
+            ],
+            "correct": 0,
+            "explanation": "Yếu tố kì ảo kết hợp với hiện thực tạo nên sự hấp dẫn và chiều sâu cho tác phẩm."
           }
         ]
       }

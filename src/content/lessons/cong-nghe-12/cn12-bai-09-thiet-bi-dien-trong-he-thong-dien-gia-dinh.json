@@ -1,0 +1,50 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12_09",
+      "name": "Thiết bị điện trong hệ thống điện gia đình",
+      "slug": "thiet-bi-dien-trong-he-thong-dien-gia-dinh",
+      "chapter": "Kĩ thuật điện",
+      "chapter_id": "CN12",
+      "lesson_id": 9,
+      "description": "Các thiết bị điện trong gia đình: aptomat, công tắc, ổ cắm, cầu chì, CB chống giật; công dụng, phân loại, nguyên lý hoạt động.",
+      "duration_minutes": 50,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Thiết bị điện trong hệ thống điện gia đình",
+          "summary": "Hệ thống điện gia đình gồm nhiều thiết bị đóng cắt, bảo vệ và lấy điện. Mỗi thiết bị có công dụng, cấu tạo và nguyên lý hoạt động riêng, đảm bảo vận hành an toàn và hiệu quả.",
+          "sections": [
+            { "heading": "Khái niệm chung về thiết bị điện gia đình", "content": "Thiết bị điện gia đình là các thiết bị dùng để đóng cắt, bảo vệ, điều khiển và lấy điện phục vụ sinh hoạt. Chúng được chia thành nhóm đóng cắt (công tắc, aptomat), nhóm bảo vệ (cầu chì, CB chống giật) và nhóm lấy điện (ổ cắm, phích cắm)." },
+            { "heading": "Aptomat (CB – Circuit Breaker)", "content": "Aptomat là thiết bị đóng cắt tự động khi có sự cố quá tải hoặc ngắn mạch. Phân loại: CB 1 pha, 3 pha; CB dòng cực đại, CB dòng rò (ELCB, RCCB). Nguyên lý: khi dòng vượt ngưỡng, rơle nhiệt hoặc rơle điện từ tác động làm tiếp điểm mở, ngắt mạch." },
+            { "heading": "Công tắc điện (Switch)", "content": "Công tắc dùng để đóng/ngắt mạch điện điều khiển chiếu sáng và thiết bị. Phân loại: công tắc 1 cực, 2 cực; công tắc 3 chiều (đảo chiều); công tắc xoay, công tắc giật, công tắc cảm ứng. Nguyên lý: khi thao tác, tiếp điểm động nối/ngắt với tiếp điểm tĩnh." },
+            { "heading": "Ổ cắm và phích cắm điện", "content": "Ổ cắm là thiết bị lấy điện cố định trên tường; phích cắm là đầu nối di động. Phân loại: ổ cắm 2 chấu, 3 chấu (có tiếp đất); ổ cắm thông minh (tích hợp CB, USB). Yêu cầu kĩ thuật: đúng dòng điện định mức, tiếp xúc tốt, có nắp che an toàn." },
+            { "heading": "Cầu chì (Fuse)", "content": "Cầu chì là thiết bị bảo vệ ngắn mạch và quá tải bằng dây chảy. Khi dòng điện vượt quá giá trị định mức, dây chảy nóng chảy, ngắt mạch. Phân loại: cầu chì hộp, cầu chì ống, cầu chì nút. Cầu chì được mắc nối tiếp với tải và phải chọn dòng định mức phù hợp." },
+            { "heading": "CB chống giật (RCCB/ELCB)", "content": "CB chống giật (Residual Current Circuit Breaker) phát hiện dòng rò qua người xuống đất. Khi dòng rò vượt ngưỡng (thường 30mA), CB tự động ngắt mạch trong thời gian rất ngắn, bảo vệ người khỏi điện giật. Phân loại: RCCB (dòng rò xoay chiều), RCBO (kết hợp CB chống giật và chống quá tải)." },
+            { "heading": "Thiết bị đóng cắt khác", "content": "Ngoài aptomat và công tắc, còn có cầu dao (isolator) dùng để cách ly hoàn toàn mạch điện khi sửa chữa; rơle trung gian dùng trong mạch điều khiển; contactor dùng đóng cắt mạch công suất lớn từ xa. Các thiết bị này phải được chọn đúng điện áp và dòng điện định mức." },
+            { "heading": "Lựa chọn và lắp đặt thiết bị điện", "content": "Khi chọn thiết bị điện cần căn cứ vào: điện áp và dòng điện định mức của mạng điện; môi trường lắp đặt (khô ráo, ẩm ướt, ngoài trời); nhu cầu sử dụng. Thiết bị phải có chứng nhận chất lượng, đúng tiêu chuẩn IEC/TCVN. Lắp đặt đúng sơ đồ, đảm bảo tiếp xúc tốt và an toàn." }
+          ]
+        },
+        "exercises": [
+          { "id": 1, "type": "mcq", "question": "Thiết bị nào sau đây vừa có chức năng đóng cắt vừa có chức năng bảo vệ quá tải?", "options": ["Cầu chì", "Aptomat (CB)", "Công tắc", "Ổ cắm"], "correct": 1, "explanation": "Aptomat tự động ngắt mạch khi quá tải hoặc ngắn mạch, vừa đóng cắt vừa bảo vệ." },
+          { "id": 2, "type": "mcq", "question": "Thiết bị nào dùng để bảo vệ ngắn mạch bằng cách làm nóng chảy dây dẫn?", "options": ["Aptomat", "Cầu chì", "Công tắc", "Ổ cắm"], "correct": 1, "explanation": "Cầu chì có dây chảy nóng chảy khi dòng điện vượt quá định mức, ngắt mạch." },
+          { "id": 3, "type": "mcq", "question": "CB chống giật (RCCB) có tác dụng bảo vệ khi nào?", "options": ["Quá tải", "Ngắn mạch", "Dòng rò qua người xuống đất", "Sụt áp"], "correct": 2, "explanation": "RCCB phát hiện dòng rò (chênh lệch dòng vào và ra) và ngắt mạch khi dòng rò vượt ngưỡng." },
+          { "id": 4, "type": "mcq", "question": "Công tắc 3 chiều (3-way switch) thường được dùng ở đâu?", "options": ["Điều khiển một đèn từ hai vị trí", "Điều khiển một đèn từ một vị trí", "Đóng cắt mạch công suất lớn", "Bảo vệ quá tải"], "correct": 0, "explanation": "Công tắc 3 chiều cho phép bật/tắt một đèn từ hai vị trí khác nhau, thường dùng ở cầu thang, hành lang." },
+          { "id": 5, "type": "mcq", "question": "Ổ cắm 3 chấu khác ổ cắm 2 chấu ở điểm nào?", "options": ["Có thêm chấu tiếp đất", "Có dòng điện lớn hơn", "Có cầu chì tích hợp", "Có đèn báo hiệu"], "correct": 0, "explanation": "Chấu thứ ba nối với dây tiếp đất, giúp bảo vệ an toàn khi thiết bị bị rò điện." },
+          { "id": 6, "type": "mcq", "question": "Cầu dao (isolator) có chức năng chính là gì?", "options": ["Bảo vệ quá tải", "Cách ly mạch điện khi sửa chữa", "Điều khiển chiếu sáng", "Chống dòng rò"], "correct": 1, "explanation": "Cầu dao dùng để cách ly hoàn toàn mạch điện, đảm bảo an toàn khi sửa chữa." },
+          { "id": 7, "type": "mcq", "question": "Dòng điện rò tối đa cho phép trước khi CB chống giật tác động thường là bao nhiêu?", "options": ["10 mA", "30 mA", "100 mA", "500 mA"], "correct": 1, "explanation": "CB chống giật thường được cài đặt ngưỡng 30 mA để bảo vệ người khỏi điện giật." },
+          { "id": 8, "type": "mcq", "question": "Cầu chì được mắc như thế nào trong mạch điện?", "options": ["Mắc song song với tải", "Mắc nối tiếp với tải", "Mắc giữa dây pha và dây trung tính", "Mắc sau aptomat"], "correct": 1, "explanation": "Cầu chì mắc nối tiếp với tải để toàn bộ dòng điện qua dây chảy." },
+          { "id": 9, "type": "mcq", "question": "Thiết bị nào sau đây thuộc nhóm thiết bị lấy điện?", "options": ["Cầu dao", "Aptomat", "Ổ cắm", "Công tắc"], "correct": 2, "explanation": "Ổ cắm là thiết bị lấy điện, cho phép cắm phích cắm của thiết bị sử dụng điện." },
+          { "id": 10, "type": "mcq", "question": "Khi lắp đặt thiết bị điện trong nhà tắm, yêu cầu quan trọng nhất là gì?", "options": ["Đẹp về thẩm mĩ", "Chống nước và chống ẩm", "Giá rẻ", "Dây dẫn dài"], "correct": 1, "explanation": "Môi trường ẩm ướt dễ gây rò điện, thiết bị phải có cấp bảo vệ chống nước (IP) phù hợp." },
+          { "id": 11, "type": "msq", "question": "Những thiết bị nào sau đây thuộc nhóm thiết bị bảo vệ trong hệ thống điện gia đình?", "options": ["Cầu chì", "Công tắc", "CB chống giật", "Ổ cắm"], "correct": [0, 2], "explanation": "Cầu chì và CB chống giật có chức năng bảo vệ mạch điện và người sử dụng." },
+          { "id": 12, "type": "msq", "question": "Những yếu tố nào cần xem xét khi lựa chọn aptomat cho gia đình?", "options": ["Điện áp định mức", "Dòng điện định mức", "Màu sắc sản phẩm", "Số cực (1 pha / 3 pha)"], "correct": [0, 1, 3], "explanation": "Cần chọn aptomat đúng điện áp, dòng điện và số cực phù hợp với mạng điện gia đình." },
+          { "id": 13, "type": "msq", "question": "Thiết bị nào sau đây có chức năng bảo vệ an toàn cho người sử dụng?", "options": ["CB chống giật", "Cầu chì", "Công tắc 3 chiều", "Ổ cắm 3 chấu"], "correct": [0, 1, 3], "explanation": "CB chống giật chống điện giật, cầu chì chống quá tải/ngắn mạch, ổ cắm 3 chấu có tiếp đất bảo vệ." },
+          { "id": 14, "type": "msq", "question": "Khi lắp đặt aptomat trong bảng điện gia đình, cần tuân thủ những yêu cầu nào?", "options": ["Đấu dây pha vào đầu vào của CB", "Chọn dòng định mức phù hợp với tải", "Lắp CB ở vị trí dễ thao tác", "Có thể lắp CB sau cầu chì"], "correct": [0, 1, 2], "explanation": "Dây pha vào đầu vào, chọn dòng phù hợp tải, lắp nơi dễ thao tác để thuận tiện khi cần ngắt khẩn cấp." }
+        ]
+      }
+    }
+  ]
+}

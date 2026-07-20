@@ -15,25 +15,254 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Chuyển dịch cơ cấu kinh tế: mô tả và nguyên nhân",
-          "summary": "Chuyển dịch cơ cấu kinh tế là quá trình thay đổi tỷ trọng các ngành (nông nghiệp, công nghiệp, dịch vụ) theo hướng giảm tỷ trọng nông nghiệp, tăng công nghiệp và dịch vụ, do công nghiệp hóa, đô thị hóa, và hội nhập kinh tế.",
+          "title": "Chuyển dịch cơ cấu kinh tế ở Việt Nam",
+          "summary": "Chuyển dịch cơ cấu kinh tế là quá trình thay đổi tỷ trọng các ngành và lãnh thổ trong nền kinh tế theo hướng tiến bộ. Ở Việt Nam, cơ cấu kinh tế chuyển dịch mạnh mẽ theo hướng giảm dần tỷ trọng nông nghiệp, tăng tỷ trọng công nghiệp - xây dựng và dịch vụ, cả trong GDP, lao động và cơ cấu lãnh thổ. Quá trình này do công nghiệp hóa, đô thị hóa, hội nhập quốc tế và tiến bộ khoa học công nghệ thúc đẩy, góp phần tăng trưởng kinh tế và nâng cao đời sống.",
           "sections": [
-            { "heading": "Quá trình chuyển dịch", "content": "Mô tả giai đoạn và các biểu hiện: giảm lao động nông nghiệp, tăng lao động trong công nghiệp và dịch vụ." },
-            { "heading": "Nguyên nhân và hệ quả", "content": "Nguyên nhân: tiến bộ kỹ thuật, đầu tư, chính sách; hệ quả: tăng năng suất, thay đổi việc làm và cơ cấu đô thị." }
+            {
+              "heading": "Khái niệm và biểu hiện",
+              "content": "Cơ cấu kinh tế là mối tương quan giữa các bộ phận cấu thành nền kinh tế, được xem xét trên ba góc độ: cơ cấu ngành (nông nghiệp, công nghiệp - xây dựng, dịch vụ); cơ cấu thành phần kinh tế (nhà nước, ngoài nhà nước, có vốn đầu tư nước ngoài); và cơ cấu lãnh thổ (phân bố hoạt động kinh tế theo vùng). Chuyển dịch cơ cấu kinh tế biểu hiện qua sự giảm tỷ trọng đóng góp của nông nghiệp, tăng tỷ trọng công nghiệp và dịch vụ trong GDP; giảm tỷ lệ lao động nông nghiệp, tăng lao động công nghiệp và dịch vụ; và sự hình thành các vùng kinh tế trọng điểm."
+            },
+            {
+              "heading": "Chuyển dịch cơ cấu ngành",
+              "content": "Trong GDP, tỷ trọng ngành dịch vụ hiện chiếm lớn nhất (khoảng 41-43%), tiếp đến là công nghiệp - xây dựng (khoảng 37-38%), nông nghiệp chỉ còn khoảng 12-14%. Trong cơ cấu lao động, tỷ trọng lao động nông nghiệp giảm còn khoảng 27-28%, trong khi công nghiệp và dịch vụ chiếm hơn 70%. Xu hướng này phản ánh quá trình công nghiệp hóa, hiện đại hóa đang diễn ra, song nông nghiệp vẫn giữ vai trò bảo đảm an ninh lương thực và xuất khẩu."
+            },
+            {
+              "heading": "Nguyên nhân chuyển dịch",
+              "content": "Có nhiều nguyên nhân thúc đẩy chuyển dịch cơ cấu kinh tế. Về tự nhiên - kinh tế, sự phát triển của lực lượng sản xuất và tiến bộ khoa học công nghệ làm tăng năng suất, giải phóng lao động khỏi nông nghiệp. Về chính sách, công cuộc Đổi mới (từ 1986) và đường lối công nghiệp hóa, hiện đại hóa tạo hành lang pháp lý thuận lợi. Về bên ngoài, hội nhập kinh tế quốc tế, tham gia các hiệp định thương mại tự do (WTO, EVFTA, CPTPP) và thu hút đầu tư nước ngoài (FDI) thúc đẩy phát triển công nghiệp và dịch vụ."
+            },
+            {
+              "heading": "Hệ quả và ý nghĩa",
+              "content": "Chuyển dịch cơ cấu kinh tế có ý nghĩa to lớn: thúc đẩy tăng trưởng GDP, nâng cao năng suất lao động và hiệu quả sản xuất; tạo việc làm mới, tăng thu nhập và chuyển dịch cơ cấu lao động; thúc đẩy đô thị hóa và hiện đại hóa đất nước. Tuy nhiên, quá trình này cũng đặt ra thách thức như áp lực lên hạ tầng đô thị, ô nhiễm môi trường, di cư cơ học và yêu cầu nâng cao chất lượng nguồn nhân lực. Về lãnh thổ, hình thành ba vùng kinh tế trọng điểm (Bắc Bộ, miền Trung, phía Nam) làm động lực tăng trưởng, song khoảng cách giữa các vùng cần được thu hẹp."
+            }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Nêu hai biểu hiện của chuyển dịch cơ cấu kinh tế?", "a_hint": "Giảm tỷ lệ lao động nông nghiệp; tăng tỷ trọng công nghiệp/dịch vụ." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Chuyển dịch cơ cấu kinh tế thường thấy biểu hiện nào?", "options": ["Tăng tỷ trọng nông nghiệp","Tăng tỷ trọng công nghiệp và dịch vụ","Giảm công nghiệp","Không thay đổi"], "correct": 1, "explanation": "Thường thấy tăng công nghiệp và dịch vụ." },
-          { "id": 2, "type": "mcq", "question": "Yếu tố nào thúc đẩy chuyển dịch cơ cấu?", "options": ["Công nghiệp hóa","Giảm đầu tư","Tăng nạn đói","Không thay đổi"], "correct": 0, "explanation": "Công nghiệp hóa thúc đẩy chuyển dịch cơ cấu." },
-          { "id": 3, "type": "mcq", "question": "Một hệ quả xã hội của chuyển dịch cơ cấu là?", "options": ["Tăng việc làm nông nghiệp","Di cư nông thôn - thành thị","Giảm dân số thành thị","Giảm năng suất"], "correct": 1, "explanation": "Di cư nông thôn - thành thị là hệ quả phổ biến." },
-          { "id": 4, "type": "mcq", "question": "Chính sách nào hỗ trợ chuyển dịch cơ cấu?", "options": ["Đầu tư cơ sở hạ tầng và đào tạo nghề","Ngăn chặn đầu tư","Cấm xuất khẩu","Không có chính sách"], "correct": 0, "explanation": "Đầu tư và đào tạo giúp chuyển dịch hiệu quả." },
-          { "id": 5, "type": "mcq", "question": "Chuyển dịch cơ cấu có thể dẫn đến?", "options": ["Tăng năng suất lao động","Giảm năng suất toàn bộ","Xóa bỏ công nghiệp","Không có gì"], "correct": 0, "explanation": "Nâng cao năng suất thường kèm theo chuyển dịch cơ cấu." },
-          { "id": 6, "type": "mcq", "question": "Yếu tố nào sau đây không phải là nguyên nhân của chuyển dịch?", "options": ["Thay đổi công nghệ","Chính sách kinh tế","Biến động ngôn ngữ","Mở cửa thị trường"], "correct": 2, "explanation": "Biến động ngôn ngữ không phải nguyên nhân chính." },
-          { "id": 7, "type": "mcq", "question": "Ngành nào suy giảm tỷ trọng khi chuyển dịch?", "options": ["Nông nghiệp","Dịch vụ","Công nghiệp","Du lịch"], "correct": 0, "explanation": "Tỷ trọng nông nghiệp thường giảm." },
-          { "id": 8, "type": "mcq", "question": "Một biện pháp giúp người lao động thích ứng với chuyển dịch là?", "options": ["Đào tạo nghề và chuyển đổi kỹ năng","Không hỗ trợ","Tăng giờ làm nông nghiệp","Phá sản doanh nghiệp"], "correct": 0, "explanation": "Đào tạo nghề giúp lao động thích ứng." },
-          { "id": 9, "type": "mcq", "question": "Chuyển dịch cơ cấu góp phần vào?", "options": ["Tăng trưởng kinh tế","Giảm trao đổi quốc tế","Giảm sản xuất","Không có đóng góp"], "correct": 0, "explanation": "Nó góp phần thúc đẩy tăng trưởng kinh tế." },
-          { "id": 10, "type": "mcq", "question": "Biện pháp nào hạn chế bất lợi xã hội do chuyển dịch?", "options": ["Hỗ trợ an sinh xã hội và đào tạo nghề","Phá bỏ hệ thống giáo dục","Cấm di cư","Không làm gì"], "correct": 0, "explanation": "Hỗ trợ an sinh và đào tạo giảm tác động tiêu cực." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Chuyển dịch cơ cấu kinh tế thường thấy biểu hiện nào?",
+            "options": [
+              "Tăng tỷ trọng nông nghiệp",
+              "Tăng tỷ trọng công nghiệp và dịch vụ",
+              "Giảm công nghiệp",
+              "Không thay đổi"
+            ],
+            "correct": 1,
+            "explanation": "Thường thấy tăng công nghiệp và dịch vụ."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Yếu tố nào thúc đẩy chuyển dịch cơ cấu?",
+            "options": [
+              "Công nghiệp hóa",
+              "Giảm đầu tư",
+              "Tăng nạn đói",
+              "Không thay đổi"
+            ],
+            "correct": 0,
+            "explanation": "Công nghiệp hóa thúc đẩy chuyển dịch cơ cấu."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Một hệ quả xã hội của chuyển dịch cơ cấu là?",
+            "options": [
+              "Tăng việc làm nông nghiệp",
+              "Di cư nông thôn - thành thị",
+              "Giảm dân số thành thị",
+              "Giảm năng suất"
+            ],
+            "correct": 1,
+            "explanation": "Di cư nông thôn - thành thị là hệ quả phổ biến."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Chính sách nào hỗ trợ chuyển dịch cơ cấu?",
+            "options": [
+              "Đầu tư cơ sở hạ tầng và đào tạo nghề",
+              "Ngăn chặn đầu tư",
+              "Cấm xuất khẩu",
+              "Không có chính sách"
+            ],
+            "correct": 0,
+            "explanation": "Đầu tư và đào tạo giúp chuyển dịch hiệu quả."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Chuyển dịch cơ cấu có thể dẫn đến?",
+            "options": [
+              "Tăng năng suất lao động",
+              "Giảm năng suất toàn bộ",
+              "Xóa bỏ công nghiệp",
+              "Không có gì"
+            ],
+            "correct": 0,
+            "explanation": "Nâng cao năng suất thường kèm theo chuyển dịch cơ cấu."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Yếu tố nào sau đây không phải là nguyên nhân của chuyển dịch?",
+            "options": [
+              "Thay đổi công nghệ",
+              "Chính sách kinh tế",
+              "Biến động ngôn ngữ",
+              "Mở cửa thị trường"
+            ],
+            "correct": 2,
+            "explanation": "Biến động ngôn ngữ không phải nguyên nhân chính."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Ngành nào suy giảm tỷ trọng khi chuyển dịch?",
+            "options": [
+              "Nông nghiệp",
+              "Dịch vụ",
+              "Công nghiệp",
+              "Du lịch"
+            ],
+            "correct": 0,
+            "explanation": "Tỷ trọng nông nghiệp thường giảm."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Một biện pháp giúp người lao động thích ứng với chuyển dịch là?",
+            "options": [
+              "Đào tạo nghề và chuyển đổi kỹ năng",
+              "Không hỗ trợ",
+              "Tăng giờ làm nông nghiệp",
+              "Phá sản doanh nghiệp"
+            ],
+            "correct": 0,
+            "explanation": "Đào tạo nghề giúp lao động thích ứng."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Chuyển dịch cơ cấu góp phần vào?",
+            "options": [
+              "Tăng trưởng kinh tế",
+              "Giảm trao đổi quốc tế",
+              "Giảm sản xuất",
+              "Không có đóng góp"
+            ],
+            "correct": 0,
+            "explanation": "Nó góp phần thúc đẩy tăng trưởng kinh tế."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Biện pháp nào hạn chế bất lợi xã hội do chuyển dịch?",
+            "options": [
+              "Hỗ trợ an sinh xã hội và đào tạo nghề",
+              "Phá bỏ hệ thống giáo dục",
+              "Cấm di cư",
+              "Không làm gì"
+            ],
+            "correct": 0,
+            "explanation": "Hỗ trợ an sinh và đào tạo giảm tác động tiêu cực."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Chuyển dịch cơ cấu kinh tế ở Việt Nam thể hiện qua những mặt nào?",
+            "options": [
+              "Cơ cấu ngành",
+              "Cơ cấu thành phần kinh tế",
+              "Cơ cấu lãnh thổ",
+              "Cơ cấu dân số"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Chuyển dịch cơ cấu kinh tế thể hiện qua cơ cấu ngành, thành phần và lãnh thổ."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Xu hướng chuyển dịch cơ cấu ngành kinh tế ở Việt Nam là?",
+            "options": [
+              "Giảm tỷ trọng nông nghiệp",
+              "Tăng tỷ trọng công nghiệp - xây dựng",
+              "Tăng tỷ trọng dịch vụ",
+              "Tăng tỷ trọng nông nghiệp"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Xu hướng giảm tỷ trọng nông nghiệp, tăng công nghiệp và dịch vụ."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Các vùng kinh tế trọng điểm của Việt Nam là?",
+            "options": [
+              "Vùng kinh tế trọng điểm Bắc Bộ",
+              "Vùng kinh tế trọng điểm miền Trung",
+              "Vùng kinh tế trọng điểm phía Nam",
+              "Vùng Tây Nguyên"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Ba vùng kinh tế trọng điểm là Bắc Bộ, miền Trung và phía Nam."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Yếu tố nào thúc đẩy chuyển dịch cơ cấu kinh tế ở Việt Nam?",
+            "options": [
+              "Hội nhập kinh tế quốc tế",
+              "Phát triển khoa học công nghệ",
+              "Chính sách đổi mới",
+              "Tăng tỷ lệ sinh"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Hội nhập, khoa học công nghệ và chính sách đổi mới thúc đẩy chuyển dịch cơ cấu."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Cơ cấu kinh tế là gì?",
+            "correct": "Tương quan giữa các bộ phận trong nền kinh tế theo ngành, thành phần và lãnh thổ",
+            "explanation": "Cơ cấu kinh tế phản ánh mối tương quan giữa các bộ phận của nền kinh tế."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Vai trò của chuyển dịch cơ cấu kinh tế?",
+            "correct": "Thúc đẩy tăng trưởng kinh tế, nâng cao năng suất và hiệu quả sản xuất",
+            "explanation": "Chuyển dịch cơ cấu giúp nền kinh tế phát triển hiệu quả hơn."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Ngành kinh tế nào đang chiếm tỷ trọng lớn nhất trong GDP của Việt Nam hiện nay?",
+            "correct": "Ngành dịch vụ",
+            "explanation": "Dịch vụ đang chiếm tỷ trọng lớn nhất trong cơ cấu GDP của Việt Nam."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Nêu hai biểu hiện của chuyển dịch cơ cấu kinh tế?",
+            "correct": "Giảm tỷ lệ lao động nông nghiệp; tăng tỷ trọng công nghiệp/dịch vụ.",
+            "explanation": "Giảm tỷ lệ lao động nông nghiệp; tăng tỷ trọng công nghiệp/dịch vụ."
+          }
         ]
       }
     }

@@ -16,24 +16,53 @@
       "content": {
         "theory": {
           "title": "Bảo hiểm",
-          "summary": "Bảo hiểm là phương thức san sẻ rủi ro giữa các tổ chức, cá nhân tham gia thông qua các quỹ tài chính.",
+          "summary": "Bảo hiểm là phương thức san sẻ rủi ro tài chính giữa các tổ chức và cá nhân tham gia thông qua quỹ bảo hiểm. Bảo hiểm giúp ổn định cuộc sống khi gặp sự cố và là một trụ cột quan trọng trong hệ thống an sinh xã hội của quốc gia.",
           "sections": [
-            { "heading": "Khái niệm bảo hiểm", "content": "Là hoạt động chuyển giao rủi ro từ người được bảo hiểm sang người bảo hiểm thông qua hợp đồng bảo hiểm." },
-            { "heading": "Các loại hình bảo hiểm", "content": "Bảo hiểm xã hội (nhà nước tổ chức), Bảo hiểm y tế, Bảo hiểm thất nghiệp và Bảo hiểm thương mại (tự nguyện)." },
-            { "heading": "Vai trò của bảo hiểm", "content": "Ổn định cuộc sống khi gặp sự cố, tạo nguồn vốn đầu tư và mang lại sự an tâm cho người tham gia." }
+            {
+              "heading": "Khái niệm bảo hiểm",
+              "content": "Bảo hiểm là hoạt động chuyển giao rủi ro từ người được bảo hiểm (bên mua bảo hiểm) sang người bảo hiểm (tổ chức bảo hiểm) thông qua hợp đồng bảo hiểm. Người tham gia bảo hiểm đóng phí bảo hiểm để hình thành quỹ bảo hiểm. Khi xảy ra sự kiện bảo hiểm, người bảo hiểm có trách nhiệm bồi thường hoặc trả tiền bảo hiểm cho người thụ hưởng. Bảo hiểm hoạt động dựa trên nguyên tắc số đông bù số ít: nhiều người cùng đóng góp một khoản phí nhỏ để hỗ trợ cho một số ít người không may gặp rủi ro."
+            },
+            {
+              "heading": "Bảo hiểm xã hội",
+              "content": "Bảo hiểm xã hội (BHXH) là loại hình bảo hiểm do Nhà nước tổ chức, nhằm bảo đảm thay thế hoặc bù đắp một phần thu nhập cho người lao động khi họ bị giảm hoặc mất thu nhập do ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp, hết tuổi lao động hoặc chết. BHXH bao gồm hai hình thức: BHXH bắt buộc (áp dụng với người lao động có hợp đồng từ 1 tháng trở lên) và BHXH tự nguyện (dành cho lao động tự do, không có hợp đồng lao động). Các chế độ BHXH gồm: ốm đau, thai sản, tai nạn lao động – bệnh nghề nghiệp, hưu trí và tử tuất."
+            },
+            {
+              "heading": "Bảo hiểm y tế",
+              "content": "Bảo hiểm y tế (BHYT) là loại hình bảo hiểm do Nhà nước tổ chức, nhằm thanh toán chi phí khám bệnh, chữa bệnh cho người tham gia khi ốm đau, bệnh tật. BHYT mang tính cộng đồng, không vì mục đích lợi nhuận. Đối tượng tham gia BHYT gồm: người lao động (bắt buộc), học sinh sinh viên, hộ gia đình, người nghèo, trẻ em dưới 6 tuổi (được cấp thẻ BHYT miễn phí). BHYT là một trong những chính sách an sinh xã hội quan trọng, góp phần thực hiện mục tiêu bảo vệ và nâng cao sức khỏe toàn dân."
+            },
+            {
+              "heading": "Bảo hiểm thất nghiệp",
+              "content": "Bảo hiểm thất nghiệp (BHTN) là loại hình bảo hiểm do Nhà nước tổ chức, nhằm hỗ trợ người lao động khi bị mất việc làm. BHTN bao gồm các chế độ: trợ cấp thất nghiệp hàng tháng, hỗ trợ học nghề và tư vấn giới thiệu việc làm. Điều kiện hưởng trợ cấp thất nghiệp là người lao động đã đóng BHTN từ đủ 12 tháng trở lên trong vòng 24 tháng trước khi chấm dứt hợp đồng lao động, đã đăng ký thất nghiệp và chưa tìm được việc làm. Thời gian hưởng trợ cấp thất nghiệp tùy thuộc vào thời gian đóng bảo hiểm, tối đa 12 tháng."
+            },
+            {
+              "heading": "Bảo hiểm thương mại",
+              "content": "Bảo hiểm thương mại là loại hình bảo hiểm do các doanh nghiệp bảo hiểm (tư nhân hoặc cổ phần) cung cấp, hoạt động vì mục đích lợi nhuận. Người tham gia tự nguyện mua bảo hiểm theo nhu cầu. Bảo hiểm thương mại bao gồm nhiều loại: bảo hiểm nhân thọ (bảo vệ tính mạng, sức khỏe con người), bảo hiểm phi nhân thọ (bảo hiểm tài sản, bảo hiểm xe cơ giới, bảo hiểm cháy nổ, bảo hiểm hàng hải), bảo hiểm sức khỏe. Hợp đồng bảo hiểm thương mại được ký kết giữa bên mua bảo hiểm và doanh nghiệp bảo hiểm, trong đó doanh nghiệp có trách nhiệm bồi thường khi xảy ra sự kiện bảo hiểm."
+            },
+            {
+              "heading": "Vai trò của bảo hiểm",
+              "content": "Bảo hiểm có vai trò quan trọng đối với cá nhân và xã hội. Đối với cá nhân, bảo hiểm giúp ổn định cuộc sống khi gặp rủi ro như ốm đau, tai nạn, mất việc làm, hết tuổi lao động, giảm bớt gánh nặng tài chính. Đối với xã hội, bảo hiểm góp phần ổn định trật tự và an sinh xã hội, thúc đẩy tiết kiệm và tạo nguồn vốn đầu tư dài hạn cho nền kinh tế. Các quỹ bảo hiểm lớn (đặc biệt là quỹ BHXH) là nguồn vốn quan trọng cho đầu tư phát triển. Bảo hiểm cũng giúp giảm tải gánh nặng cho ngân sách nhà nước trong việc hỗ trợ người gặp khó khăn."
+            },
+            {
+              "heading": "Nguyên tắc cơ bản của hoạt động bảo hiểm",
+              "content": "Hoạt động bảo hiểm dựa trên một số nguyên tắc cơ bản. Nguyên tắc san sẻ rủi ro: số đông cùng đóng góp phí để bù đắp cho số ít gặp rủi ro. Nguyên tắc trung thực tuyệt đối: các bên phải cung cấp thông tin chính xác, đầy đủ khi giao kết hợp đồng. Nguyên tắc bồi thường: mức bồi thường không vượt quá giá trị thiệt hại thực tế. Nguyên tắc quyền lợi có thể được bảo hiểm: người tham gia phải có quyền lợi hợp pháp đối với đối tượng bảo hiểm. Nguyên tắc tự nguyện và bắt buộc: BHXH, BHYT, BHTN mang tính bắt buộc; bảo hiểm thương mại mang tính tự nguyện."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Bản chất của bảo hiểm là gì?", "options": ["Một hình thức đánh bạc", "Sự san sẻ rủi ro tài chính", "Việc tiêu tiền vô ích", "Sự trốn thuế"], "correct": 1, "explanation": "Bảo hiểm giúp giảm bớt gánh nặng tài chính khi rủi ro không may xảy ra." },
-          { "id": 2, "type": "mcq", "question": "Bảo hiểm xã hội bắt buộc do cơ quan nào tổ chức?", "options": ["Các công ty tư nhân", "Nhà nước", "Hội chữ thập đỏ", "Ngân hàng thương mại"], "correct": 1, "explanation": "Bảo hiểm xã hội là chính sách an sinh của Nhà nước." },
-          { "id": 3, "type": "mcq", "question": "Loại bảo hiểm nào hỗ trợ chi phí khám chữa bệnh cho người dân?", "options": ["Bảo hiểm nhân thọ", "Bảo hiểm y tế", "Bảo hiểm thất nghiệp", "Bảo hiểm vật chất xe máy"], "correct": 1, "explanation": "Bảo hiểm y tế đảm bảo quyền lợi về chăm sóc sức khỏe." },
-          { "id": 4, "type": "mcq", "question": "Bảo hiểm thất nghiệp giúp gì cho người lao động?", "options": ["Làm cho họ không muốn đi làm nữa", "Hỗ trợ thu nhập và học nghề trong thời gian mất việc", "Tăng lương", "Cho vay vốn mua nhà"], "correct": 1, "explanation": "Giúp ổn định đời sống tạm thời khi chấm dứt hợp đồng lao động." },
-          { "id": 5, "type": "mcq", "question": "Bảo hiểm thương mại hoạt động dựa trên nguyên tắc nào?", "options": ["Ép buộc mọi người tham gia", "Tự nguyện và có lợi nhuận", "Cấp miễn phí", "Chỉ dành cho người giàu"], "correct": 1, "explanation": "Đây là sản phẩm của các doanh nghiệp kinh doanh bảo hiểm." },
-          { "id": 6, "type": "mcq", "question": "Khi tham gia bảo hiểm, người tham gia phải đóng gì?", "options": ["Tiền phạt", "Phí bảo hiểm", "Lãi suất", "Tiền thế chấp"], "correct": 1, "explanation": "Phí bảo hiểm là số tiền định kỳ để duy trì quyền lợi bảo hiểm." },
-          { "id": 7, "type": "mcq", "question": "Hợp đồng bảo hiểm là văn bản thỏa thuận giữa ai?", "options": ["Bên mua bảo hiểm và doanh nghiệp bảo hiểm", "Người dân và Chính phủ", "Hai người bạn", "Công ty và ngân hàng"], "correct": 0, "explanation": "Hợp đồng quy định quyền và nghĩa vụ của các bên liên quan." },
-          { "id": 8, "type": "mcq", "question": "Bảo hiểm nhân thọ là loại bảo hiểm liên quan đến đối tượng nào?", "options": ["Hàng hóa vận chuyển", "Tính mạng và sức khỏe con người", "Nhà cửa", "Vật nuôi"], "correct": 1, "explanation": "Đối tượng của bảo hiểm nhân thọ là tuổi thọ hoặc tính mạng con người." },
-          { "id": 9, "type": "mcq", "question": "Bảo hiểm giúp ích gì cho xã hội?", "options": ["Gây ra lạm phát", "Góp phần ổn định trật tự và an toàn xã hội", "Làm mọi người lo lắng hơn", "Tăng chi phí nhà nước"], "correct": 1, "explanation": "Bảo hiểm giúp giảm thiểu các cú sốc tài chính gây bất ổn đời sống." },
-          { "id": 10, "type": "mcq", "question": "Chế độ hưu trí thuộc loại bảo hiểm nào?", "options": ["Bảo hiểm y tế", "Bảo hiểm xã hội", "Bảo hiểm tài sản", "Bảo hiểm trách nhiệm dân sự"], "correct": 1, "explanation": "Lương hưu là chế độ quan trọng nhất của bảo hiểm xã hội khi hết tuổi lao động." }
+        "exercises": [
+          { "id": 1, "type": "mcq", "question": "Bản chất của bảo hiểm là", "options": ["Hình thức đánh bạc hợp pháp", "San sẻ rủi ro tài chính giữa những người tham gia", "Một loại thuế do nhà nước thu", "Hoạt động từ thiện không hoàn lại"], "correct": 1, "explanation": "Bảo hiểm là phương thức san sẻ rủi ro: nhiều người đóng phí để hỗ trợ người không may gặp rủi ro." },
+          { "id": 2, "type": "mcq", "question": "Bảo hiểm xã hội là loại bảo hiểm do ai tổ chức?", "options": ["Các công ty bảo hiểm tư nhân", "Nhà nước", "Tổ chức phi chính phủ", "Ngân hàng thương mại"], "correct": 1, "explanation": "BHXH là chính sách an sinh xã hội do Nhà nước tổ chức và quản lý, mang tính bắt buộc đối với người lao động." },
+          { "id": 3, "type": "mcq", "question": "Đối tượng của bảo hiểm y tế là", "options": ["Tài sản của cá nhân", "Chi phí khám chữa bệnh và chăm sóc sức khỏe", "Thu nhập khi về già", "Thiệt hại do tai nạn xe cộ"], "correct": 1, "explanation": "BHYT chi trả chi phí khám chữa bệnh cho người tham gia khi ốm đau, bệnh tật." },
+          { "id": 4, "type": "mcq", "question": "Bảo hiểm thất nghiệp hỗ trợ người lao động trong trường hợp nào?", "options": ["Bị ốm đau phải nghỉ việc", "Mất việc làm do chấm dứt hợp đồng lao động", "Nghỉ thai sản", "Đến tuổi nghỉ hưu"], "correct": 1, "explanation": "BHTN hỗ trợ thu nhập và tư vấn việc làm cho người lao động khi bị mất việc." },
+          { "id": 5, "type": "mcq", "question": "Bảo hiểm thương mại mang tính chất nào sau đây?", "options": ["Bắt buộc do nhà nước quy định", "Tự nguyện và vì mục đích lợi nhuận", "Miễn phí cho mọi đối tượng", "Chỉ dành cho người có thu nhập thấp"], "correct": 1, "explanation": "Bảo hiểm thương mại do các doanh nghiệp bảo hiểm cung cấp, tự nguyện tham gia và hoạt động vì lợi nhuận." },
+          { "id": 6, "type": "mcq", "question": "Số tiền mà người tham gia bảo hiểm phải đóng định kỳ được gọi là", "options": ["Phí bảo hiểm", "Tiền thuế", "Lãi suất", "Tiền phạt"], "correct": 0, "explanation": "Phí bảo hiểm là khoản tiền người tham gia phải đóng để duy trì hiệu lực của hợp đồng bảo hiểm." },
+          { "id": 7, "type": "mcq", "question": "Hợp đồng bảo hiểm là thỏa thuận giữa", "options": ["Bên mua bảo hiểm và doanh nghiệp bảo hiểm", "Người dân với nhau", "Nhà nước và người nước ngoài", "Doanh nghiệp với cơ quan thuế"], "correct": 0, "explanation": "Hợp đồng bảo hiểm là văn bản thỏa thuận giữa bên mua bảo hiểm và doanh nghiệp bảo hiểm về quyền và nghĩa vụ các bên." },
+          { "id": 8, "type": "mcq", "question": "Chế độ hưu trí thuộc loại bảo hiểm nào?", "options": ["Bảo hiểm y tế", "Bảo hiểm xã hội", "Bảo hiểm thương mại", "Bảo hiểm thất nghiệp"], "correct": 1, "explanation": "Hưu trí là một trong năm chế độ của bảo hiểm xã hội, cung cấp lương hưu cho người lao động khi hết tuổi lao động." },
+          { "id": 9, "type": "mcq", "question": "Loại bảo hiểm nào mang tính bắt buộc đối với người lao động có hợp đồng lao động?", "options": ["Bảo hiểm nhân thọ", "Bảo hiểm xã hội", "Bảo hiểm tài sản", "Bảo hiểm du lịch"], "correct": 1, "explanation": "BHXH bắt buộc áp dụng cho người lao động có hợp đồng lao động từ đủ 1 tháng trở lên theo quy định của pháp luật." },
+          { "id": 10, "type": "mcq", "question": "Mục đích chính của bảo hiểm là", "options": ["Đầu tư sinh lời cho người giàu", "Bảo vệ con người và tài sản trước những rủi ro bất ngờ", "Tạo nguồn thu cho ngân sách nhà nước", "Hạn chế tiêu dùng của người dân"], "correct": 1, "explanation": "Mục đích cốt lõi của bảo hiểm là phòng ngừa và khắc phục hậu quả tài chính khi gặp rủi ro." },
+          { "id": 11, "type": "msq", "question": "Các loại bảo hiểm nào sau đây do Nhà nước tổ chức?", "options": ["Bảo hiểm xã hội", "Bảo hiểm y tế", "Bảo hiểm nhân thọ", "Bảo hiểm thất nghiệp"], "correct": [0, 1, 3], "explanation": "BHXH, BHYT và BHTN là các loại bảo hiểm do Nhà nước tổ chức thuộc hệ thống an sinh xã hội. Bảo hiểm nhân thọ là sản phẩm của bảo hiểm thương mại do doanh nghiệp tư nhân cung cấp." },
+          { "id": 12, "type": "msq", "question": "Bảo hiểm xã hội bao gồm các chế độ nào?", "options": ["Chế độ ốm đau", "Chế độ thai sản", "Chế độ du lịch hàng năm", "Chế độ hưu trí"], "correct": [0, 1, 3], "explanation": "Các chế độ của BHXH gồm: ốm đau, thai sản, tai nạn lao động – bệnh nghề nghiệp, hưu trí và tử tuất." },
+          { "id": 13, "type": "msq", "question": "Những sản phẩm nào sau đây thuộc bảo hiểm thương mại?", "options": ["Bảo hiểm nhân thọ", "Bảo hiểm xe cơ giới", "Bảo hiểm thất nghiệp", "Bảo hiểm tài sản"], "correct": [0, 1, 3], "explanation": "Bảo hiểm nhân thọ, bảo hiểm xe cơ giới và bảo hiểm tài sản là sản phẩm của bảo hiểm thương mại. BHTN là bảo hiểm do Nhà nước tổ chức." },
+          { "id": 14, "type": "msq", "question": "Nguyên tắc cơ bản của hoạt động bảo hiểm bao gồm", "options": ["Nguyên tắc san sẻ rủi ro", "Nguyên tắc trung thực tuyệt đối", "Nguyên tắc mặc cả và thương lượng", "Nguyên tắc bồi thường"], "correct": [0, 1, 3], "explanation": "Các nguyên tắc cơ bản của bảo hiểm gồm: san sẻ rủi ro, trung thực tuyệt đối, bồi thường, quyền lợi có thể được bảo hiểm, tự nguyện và bắt buộc." }
         ]
       }
     }

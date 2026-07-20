@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-1-1-chuyen-chuc-phan-su-den-tan-vien",
-      "name": "Chuyện chức Phán sự đền Tản Viên",
-      "slug": "chuyen-chuc-phan-su-den-tan-vien",
-      "chapter": "Khả năng thay đổi thế giới của văn học",
+      "id": "van12-bai-1-1-xuan-toc-do-cuu-quoc",
+      "name": "Xuân Tóc Đỏ cứu quốc (Trích Số đỏ – Vũ Trọng Phụng)",
+      "slug": "xuan-toc-do-cuu-quoc",
+      "chapter": "Khả năng lớn lao của tiểu thuyết",
       "chapter_id": "V12-1",
       "lesson_id": 1,
-      "description": "Tìm hiểu về tác phẩm Chuyện chức Phán sự đền Tản Viên của Nguyễn Dữ, một truyện truyền kỳ thể hiện sức ảnh hưởng của văn học đối với thế giới xã hội và nhân sinh.",
+      "description": "Tìm hiểu đoạn trích \"Xuân Tóc Đỏ cứu quốc\" từ tiểu thuyết Số đỏ của Vũ Trọng Phụng, khám phá khả năng thay đổi thế giới của văn học.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Chuyện chức Phán sự đền Tản Viên",
+          "title": "Xuân Tóc Đỏ cứu quốc (Trích Số đỏ – Vũ Trọng Phụng)",
           "sections": [
             {
               "heading": "1. Giới thiệu tác giả và tác phẩm",

@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-4-3-thuc-hanh-tieng-viet",
+      "id": "van12-bai-4-3-thuc-hanh-tieng-viet-dien-co",
       "name": "Thực hành tiếng Việt: Nghệ thuật sử dụng điển cố trong tác phẩm văn học",
       "slug": "thuc-hanh-tieng-viet-dien-co",
       "chapter": "Yếu tố kì ảo trong truyện kể",
       "chapter_id": "V12-4",
       "lesson_id": 3,
-      "description": "Rèn luyện kỹ năng sử dụng điển cố trong tác phẩm văn học. Hiểu được cách điển cố tạo thêm chiều sâu, tinh tế cho tác phẩm.",
+      "description": "Tìm hiểu nghệ thuật sử dụng điển cố trong tác phẩm văn học.",
       "duration_minutes": 50,
       "difficulty_level": "medium",
       "is_published": true,
@@ -154,6 +154,32 @@
             ],
             "correct": 1,
             "explanation": "Điển cố cung cấp hình ảnh sống động, tạo chiều sâu thời gian, làm ngôn từ trở nên thanh thoát và tinh tế hơn."
+          },
+          {
+            "id": "ex4-3-9",
+            "type": "mcq",
+            "question": "Phân tích yếu tố kì ảo trong tác phẩm giúp người đọc hiểu được điều gì?",
+            "options": [
+              "Nội dung và thông điệp sâu sắc của tác phẩm",
+              "Chỉ để giải trí",
+              "Không có tác dụng",
+              "Làm tác phẩm khó hiểu hơn"
+            ],
+            "correct": 0,
+            "explanation": "Phân tích yếu tố kì ảo giúp khám phá ý nghĩa biểu tượng và thông điệp của tác phẩm."
+          },
+          {
+            "id": "ex4-3-10",
+            "type": "mcq",
+            "question": "Trong truyện kể, yếu tố kì ảo thường kết hợp với yếu tố nào để tạo nên giá trị tác phẩm?",
+            "options": [
+              "Yếu tố hiện thực",
+              "Chỉ có yếu tố kì ảo",
+              "Yếu tố lịch sử",
+              "Yếu tố khoa học"
+            ],
+            "correct": 0,
+            "explanation": "Yếu tố kì ảo kết hợp với hiện thực tạo nên sự hấp dẫn và chiều sâu cho tác phẩm."
           }
         ]
       }

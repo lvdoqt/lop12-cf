@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-6-2-tuyen-ngon-doc-lap",
-      "name": "Tuyên ngôn độc lập (Hồ Chí Minh)",
+      "name": "Tuyên ngôn độc lập",
       "slug": "tuyen-ngon-doc-lap",
-      "chapter": "Hồ Chí Minh - Văn hóa phải soi đường cho quốc dân đi",
+      "chapter": "Hồ Chí Minh \"văn hóa phải soi đường cho quốc dân đi\"",
       "chapter_id": "V12-6",
       "lesson_id": 2,
       "author": "Hồ Chí Minh",
-      "description": "Phân tích Tuyên ngôn độc lập - văn kiện lịch sử trọng đại, tuyên bố độc lập của dân tộc Việt Nam, thể hiện tài năng chính luận và tầm nhìn của Hồ Chí Minh.",
+      "description": "Phân tích Tuyên ngôn độc lập của Hồ Chí Minh.",
       "duration_minutes": 90,
       "difficulty_level": "medium",
       "is_published": true,
@@ -41,115 +41,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex6-2-1",
-              "type": "mcq",
-              "question": "Tuyên ngôn độc lập được đọc vào ngày nào?",
-              "options": [
-                "19/8/1945",
-                "2/9/1945",
-                "30/4/1975",
-                "1/1/1946"
-              ],
-              "correct": 1,
-              "explanation": "Tuyên ngôn độc lập được Chủ tịch Hồ Chí Minh đọc vào ngày 2/9/1945 tại Quảng trường Ba Đình, Hà Nội."
-            },
-            {
-              "id": "ex6-2-2",
-              "type": "mcq",
-              "question": "Tuyên ngôn độc lập trích dẫn văn kiện nào?",
-              "options": [
-                "Chỉ Tuyên ngôn Độc lập Mỹ",
-                "Tuyên ngôn Độc lập Mỹ 1776 và Tuyên ngôn Nhân quyền Pháp 1791",
-                "Chỉ Tuyên ngôn Nhân quyền Pháp",
-                "Không trích dẫn văn kiện nào"
-              ],
-              "correct": 1,
-              "explanation": "Tuyên ngôn trích dẫn cả Tuyên ngôn Độc lập Mỹ 1776 và Tuyên ngôn Nhân quyền Pháp 1791 để khẳng định chân lý phổ biến."
-            },
-            {
-              "id": "ex6-2-3",
-              "type": "mcq",
-              "question": "Câu nổi tiếng trong Tuyên ngôn độc lập là gì?",
-              "options": [
-                "Không có gì quý hơn độc lập tự do",
-                "Tất cả mọi người đều sinh ra có quyền bình đẳng",
-                "Đoàn kết, đoàn kết, đại đoàn kết",
-                "Dân tộc, dân chủ, đại đồng"
-              ],
-              "correct": 1,
-              "explanation": "Câu 'Tất cả mọi người đều sinh ra có quyền bình đẳng...' là câu mở đầu nổi tiếng, khẳng định quyền con người."
-            },
-            {
-              "id": "ex6-2-4",
-              "type": "mcq",
-              "question": "Phần thân của Tuyên ngôn chủ yếu làm gì?",
-              "options": [
-                "Kể chuyện lịch sử",
-                "Tố cáo tội ác của thực dân Pháp",
-                "Miêu tả cảnh đẹp",
-                "Bày tỏ cảm xúc cá nhân"
-              ],
-              "correct": 1,
-              "explanation": "Phần thân tố cáo cụ thể các tội ác của thực dân Pháp đối với nhân dân Việt Nam, chứng minh quyền đấu tranh giành độc lập."
-            },
-            {
-              "id": "ex6-2-5",
-              "type": "mcq",
-              "question": "Cấu trúc của Tuyên ngôn có đặc điểm gì?",
-              "options": [
-                "Rời rạc, không logic",
-                "Logic chặt chẽ, từ chân lý phổ biến đến thực tế Việt Nam",
-                "Chỉ kể chuyện",
-                "Không có cấu trúc"
-              ],
-              "correct": 1,
-              "explanation": "Tuyên ngôn có cấu trúc logic chặt chẽ: từ chân lý phổ biến về nhân quyền đến thực tế Việt Nam, rồi đến tuyên bố độc lập."
-            },
-            {
-              "id": "ex6-2-6",
-              "type": "mcq",
-              "question": "Ngôn ngữ của Tuyên ngôn có đặc điểm gì?",
-              "options": [
-                "Khó hiểu, phức tạp",
-                "Trang trọng nhưng dễ hiểu, xúc động",
-                "Hoa mỹ, rườm rà",
-                "Đơn giản, nhạt nhẽo"
-              ],
-              "correct": 1,
-              "explanation": "Ngôn ngữ vừa trang trọng phù hợp văn kiện lịch sử, vừa dễ hiểu để nhân dân tiếp nhận, và rất xúc động."
-            },
-            {
-              "id": "ex6-2-7",
-              "type": "mcq",
-              "question": "Ý nghĩa lịch sử của Tuyên ngôn độc lập là gì?",
-              "options": [
-                "Chỉ có ý nghĩa với Việt Nam",
-                "Tuyên bố nước Việt Nam Dân chủ Cộng hòa ra đời, có ý nghĩa toàn cầu",
-                "Không có ý nghĩa gì",
-                "Chỉ là văn bản hành chính"
-              ],
-              "correct": 1,
-              "explanation": "Tuyên ngôn không chỉ tuyên bố nước Việt Nam Dân chủ Cộng hòa ra đời mà còn có ý nghĩa toàn cầu về quyền dân tộc tự quyết."
-            },
-            {
-              "id": "ex6-2-8",
-              "type": "mcq",
-              "question": "Phần kết của Tuyên ngôn kêu gọi điều gì?",
-              "options": [
-                "Nghỉ ngơi",
-                "Toàn thể dân tộc đoàn kết bảo vệ độc lập",
-                "Đi du lịch",
-                "Không kêu gọi gì"
-              ],
-              "correct": 1,
-              "explanation": "Phần kết kêu gọi toàn thể dân tộc đoàn kết, quyết tâm bảo vệ độc lập, tự do vừa giành được."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex6-2-1",
+            "type": "mcq",
+            "question": "Tuyên ngôn độc lập được đọc vào ngày nào?",
+            "options": [
+              "19/8/1945",
+              "2/9/1945",
+              "30/4/1975",
+              "1/1/1946"
+            ],
+            "correct": 1,
+            "explanation": "Tuyên ngôn độc lập được Chủ tịch Hồ Chí Minh đọc vào ngày 2/9/1945 tại Quảng trường Ba Đình, Hà Nội."
+          },
+          {
+            "id": "ex6-2-2",
+            "type": "mcq",
+            "question": "Tuyên ngôn độc lập trích dẫn văn kiện nào?",
+            "options": [
+              "Chỉ Tuyên ngôn Độc lập Mỹ",
+              "Tuyên ngôn Độc lập Mỹ 1776 và Tuyên ngôn Nhân quyền Pháp 1791",
+              "Chỉ Tuyên ngôn Nhân quyền Pháp",
+              "Không trích dẫn văn kiện nào"
+            ],
+            "correct": 1,
+            "explanation": "Tuyên ngôn trích dẫn cả Tuyên ngôn Độc lập Mỹ 1776 và Tuyên ngôn Nhân quyền Pháp 1791 để khẳng định chân lý phổ biến."
+          },
+          {
+            "id": "ex6-2-3",
+            "type": "mcq",
+            "question": "Câu nổi tiếng trong Tuyên ngôn độc lập là gì?",
+            "options": [
+              "Không có gì quý hơn độc lập tự do",
+              "Tất cả mọi người đều sinh ra có quyền bình đẳng",
+              "Đoàn kết, đoàn kết, đại đoàn kết",
+              "Dân tộc, dân chủ, đại đồng"
+            ],
+            "correct": 1,
+            "explanation": "Câu 'Tất cả mọi người đều sinh ra có quyền bình đẳng...' là câu mở đầu nổi tiếng, khẳng định quyền con người."
+          },
+          {
+            "id": "ex6-2-4",
+            "type": "mcq",
+            "question": "Phần thân của Tuyên ngôn chủ yếu làm gì?",
+            "options": [
+              "Kể chuyện lịch sử",
+              "Tố cáo tội ác của thực dân Pháp",
+              "Miêu tả cảnh đẹp",
+              "Bày tỏ cảm xúc cá nhân"
+            ],
+            "correct": 1,
+            "explanation": "Phần thân tố cáo cụ thể các tội ác của thực dân Pháp đối với nhân dân Việt Nam, chứng minh quyền đấu tranh giành độc lập."
+          },
+          {
+            "id": "ex6-2-5",
+            "type": "mcq",
+            "question": "Cấu trúc của Tuyên ngôn có đặc điểm gì?",
+            "options": [
+              "Rời rạc, không logic",
+              "Logic chặt chẽ, từ chân lý phổ biến đến thực tế Việt Nam",
+              "Chỉ kể chuyện",
+              "Không có cấu trúc"
+            ],
+            "correct": 1,
+            "explanation": "Tuyên ngôn có cấu trúc logic chặt chẽ: từ chân lý phổ biến về nhân quyền đến thực tế Việt Nam, rồi đến tuyên bố độc lập."
+          },
+          {
+            "id": "ex6-2-6",
+            "type": "mcq",
+            "question": "Ngôn ngữ của Tuyên ngôn có đặc điểm gì?",
+            "options": [
+              "Khó hiểu, phức tạp",
+              "Trang trọng nhưng dễ hiểu, xúc động",
+              "Hoa mỹ, rườm rà",
+              "Đơn giản, nhạt nhẽo"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ vừa trang trọng phù hợp văn kiện lịch sử, vừa dễ hiểu để nhân dân tiếp nhận, và rất xúc động."
+          },
+          {
+            "id": "ex6-2-7",
+            "type": "mcq",
+            "question": "Ý nghĩa lịch sử của Tuyên ngôn độc lập là gì?",
+            "options": [
+              "Chỉ có ý nghĩa với Việt Nam",
+              "Tuyên bố nước Việt Nam Dân chủ Cộng hòa ra đời, có ý nghĩa toàn cầu",
+              "Không có ý nghĩa gì",
+              "Chỉ là văn bản hành chính"
+            ],
+            "correct": 1,
+            "explanation": "Tuyên ngôn không chỉ tuyên bố nước Việt Nam Dân chủ Cộng hòa ra đời mà còn có ý nghĩa toàn cầu về quyền dân tộc tự quyết."
+          },
+          {
+            "id": "ex6-2-8",
+            "type": "mcq",
+            "question": "Phần kết của Tuyên ngôn kêu gọi điều gì?",
+            "options": [
+              "Nghỉ ngơi",
+              "Toàn thể dân tộc đoàn kết bảo vệ độc lập",
+              "Đi du lịch",
+              "Không kêu gọi gì"
+            ],
+            "correct": 1,
+            "explanation": "Phần kết kêu gọi toàn thể dân tộc đoàn kết, quyết tâm bảo vệ độc lập, tự do vừa giành được."
+          },
+          {
+            "id": "ex6-2-9",
+            "type": "mcq",
+            "question": "Phong cách nghệ thuật của Hồ Chí Minh có đặc điểm gì nổi bật?",
+            "options": [
+              "Giản dị, trong sáng, kết hợp trữ tình và chính luận",
+              "Hoa mỹ, cầu kỳ",
+              "Cổ điển, khó hiểu",
+              "Hiện đại, phức tạp"
+            ],
+            "correct": 0,
+            "explanation": "Phong cách Hồ Chí Minh giản dị, trong sáng, kết hợp hài hòa giữa trữ tình và chính luận."
+          },
+          {
+            "id": "ex6-2-10",
+            "type": "mcq",
+            "question": "Tuyên ngôn Độc lập (1945) có ý nghĩa lịch sử như thế nào?",
+            "options": [
+              "Khẳng định quyền độc lập, tự do của dân tộc Việt Nam",
+              "Tuyên bố chiến tranh với Pháp",
+              "Kêu gọi viện trợ quốc tế",
+              "Thành lập chính phủ mới"
+            ],
+            "correct": 0,
+            "explanation": "Tuyên ngôn Độc lập khẳng định quyền độc lập, tự do thiêng liêng của dân tộc Việt Nam trước thế giới."
+          }
+        ]
       }
     }
   ]

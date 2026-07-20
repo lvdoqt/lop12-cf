@@ -1,0 +1,295 @@
+{
+  "subject": "Công nghệ 12",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-22-mot-so-mach-xu-li-tin-hieu-trong-dien-tu-so",
+      "name": "Bài 22. Một số mạch xử lý tín hiệu trong điện tử số",
+      "slug": "bai-22-mot-so-mach-xu-li-tin-hieu-trong-dien-tu-so",
+      "chapter": "Chương 7. Điện tử số",
+      "chapter_id": "CN12",
+      "lesson_id": 22,
+      "description": "Tìm hiểu các mạch xử lý tín hiệu số cơ bản: mạch tạo xung, mạch đếm, mạch giải mã, mạch dồn kênh; nguyên lý hoạt động và ứng dụng thực tế.",
+      "duration_minutes": 45,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "xl-1",
+          "name": "Mạch tạo xung",
+          "slug": "mach-tao-xung",
+          "difficulty": "medium"
+        },
+        {
+          "id": "xl-2",
+          "name": "Mạch đếm",
+          "slug": "mach-dem",
+          "difficulty": "hard"
+        },
+        {
+          "id": "xl-3",
+          "name": "Mạch giải mã",
+          "slug": "mach-giai-ma",
+          "difficulty": "medium"
+        },
+        {
+          "id": "xl-4",
+          "name": "Mạch dồn kênh",
+          "slug": "mach-don-kenh",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Một số mạch xử lý tín hiệu trong điện tử số",
+          "sections": [
+            {
+              "heading": "1. Mạch tạo xung",
+              "content": "<p><strong>Mạch tạo xung</strong> là mạch điện tử tạo ra các tín hiệu xung có dạng mong muốn (vuông, tam giác, răng cưa) từ nguồn DC.</p><p><strong>IC 555 — Mạch tạo xung phổ biến:</strong></p><ul><li>8 chân, hoạt động ở chế độ đơn ổn (monostable) hoặc đa hài (astable)</li><li>Chế độ đa hài: tạo xung vuông liên tục</li><li>Tần số dao động: $f = 1.44 / ((R_1 + 2R_2) \\cdot C)$</li><li>Chu kỳ: $T = 0.693 \\cdot (R_1 + 2R_2) \\cdot C$</li></ul><p><strong>Ứng dụng:</strong> Tạo xung clock, điều chế PWM, mạch định thời, mạch báo hiệu.</p>"
+            },
+            {
+              "heading": "2. Mạch đếm",
+              "content": "<p><strong>Mạch đếm</strong> là mạch số dùng để đếm số lượng xung đầu vào và biểu diễn kết quả dưới dạng mã nhị phân.</p><p><strong>Phân loại:</strong></p><ul><li><strong>Mạch đếm lên:</strong> Đếm từ 0 đến N-1</li><li><strong>Mạch đếm xuống:</strong> Đếm từ N-1 về 0</li><li><strong>Mạch đếm lên/xuống:</strong> Có thể đếm cả hai chiều</li><li><strong>Mạch đếm đồng bộ:</strong> Các flip-flop cùng chịu tác động của xung clock</li><li><strong>Mạch đếm bất đồng bộ:</strong> Flip-flop sau nhận xung từ flip-flop trước</li></ul><p><strong>Phần tử cơ bản:</strong> Flip-flop JK, D, T.</p><p><strong>Thông số:</strong> Số bit (2^n trạng thái), tần số hoạt động tối đa.</p>"
+            },
+            {
+              "heading": "3. Mạch giải mã",
+              "content": "<p><strong>Mạch giải mã</strong> (Decoder) là mạch tổ hợp chuyển mã nhị phân đầu thành một tín hiệu đầu ra duy nhất.</p><p><strong>Mạch giải mã n→2^n:</strong></p><ul><li>n ngõ vào (mã nhị phân)</li><li>2^n ngõ ra (mỗi ngõ ứng với một tổ hợp)</li><li>Tại mỗi thời điểm chỉ một ngõ ra ở mức tích cực</li></ul><p><strong>Ví dụ: Mạch giải mã 3→8:</strong></p><ul><li>3 ngõ vào A, B, C cho 8 tổ hợp 000→111</li><li>8 ngõ ra Y0 đến Y7</li><li>Khi ABC=000: Y0=1, các Y còn lại=0</li></ul><p><strong>Ứng dụng:</strong> Giải mã địa chỉ bộ nhớ, điều khiển LED 7 đoạn, chọn chip (chip select).</p>"
+            },
+            {
+              "heading": "4. Mạch dồn kênh",
+              "content": "<p><strong>Mạch dồn kênh</strong> (Multiplexer — MUX) là mạch chọn một trong nhiều ngõ vào để đưa ra ngõ ra dựa trên ngõ vào chọn.</p><p><strong>Mạch dồn kênh 2^n→1:</strong></p><ul><li>2^n ngõ vào dữ liệu</li><li>n ngõ vào chọn</li><li>1 ngõ ra</li></ul><p><strong>Ví dụ: MUX 4→1:</strong></p><ul><li>4 ngõ vào D0, D1, D2, D3</li><li>2 ngõ chọn S1, S0</li><li>Khi S1S0=00: Y=D0; 01: Y=D1; 10: Y=D2; 11: Y=D3</li></ul><p><strong>Biểu thức:</strong> $Y = \\overline{S_1}\\overline{S_0}D_0 + \\overline{S_1}S_0D_1 + S_1\\overline{S_0}D_2 + S_1S_0D_3$</p><p><strong>Ứng dụng:</strong> Chọn kênh truyền dữ liệu, chuyển mạch tín hiệu, truyền thông.</p>"
+            },
+            {
+              "heading": "5. Mạch phân kênh",
+              "content": "<p><strong>Mạch phân kênh</strong> (Demultiplexer — DEMUX) thực hiện chức năng ngược với mạch dồn kênh: đưa tín hiệu từ một ngõ vào đến một trong nhiều ngõ ra.</p><p><strong>Mạch phân kênh 1→2^n:</strong></p><ul><li>1 ngõ vào dữ liệu</li><li>n ngõ vào chọn</li><li>2^n ngõ ra</li></ul><p><strong>Ví dụ: DEMUX 1→4:</strong></p><ul><li>1 ngõ vào D, 2 ngõ chọn S1, S0, 4 ngõ ra Y0-Y3</li><li>Khi S1S0=00: Y0=D; 01: Y1=D; 10: Y2=D; 11: Y3=D</li></ul><p><strong>Ứng dụng:</strong> Phân phối dữ liệu đến nhiều thiết bị, giải mã địa chỉ.</p>"
+            },
+            {
+              "heading": "6. Ứng dụng thực tế",
+              "content": "<p><strong>Các hệ thống sử dụng mạch xử lý tín hiệu số:</strong></p><ul><li><strong>Đồng hồ số:</strong> Dùng mạch đếm và giải mã LED 7 đoạn để hiển thị giờ, phút, giây</li><li><strong>Bộ điều khiển từ xa:</strong> Mạch tạo xung mang mã lệnh, mạch giải mã nhận lệnh</li><li><strong>Hệ thống đèn giao thông:</strong> Mạch đếm và giải mã tạo chu kỳ đèn</li><li><strong>Máy tính:</strong> MUX chọn kênh dữ liệu giữa CPU và các thiết bị ngoại vi</li><li><strong>Viễn thông:</strong> MUX/DEMUX ghép/tách kênh truyền dữ liệu</li><li><strong>Bộ nhớ:</strong> Mạch giải mã địa chỉ chọn ô nhớ</li></ul><p>Các IC tiêu biểu: 74LS90 (mạch đếm), 74LS138 (giải mã 3→8), 74LS151 (MUX 8→1), NE555 (tạo xung).</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Tính tần số mạch tạo xung IC 555",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Chế độ đa hài: $f = 1.44 / ((R_1 + 2R_2) \\cdot C)$</li><li>Chu kỳ: $T = 1/f$</li><li>Thời gian xung cao: $t_h = 0.693(R_1+R_2)C$</li><li>Thời gian xung thấp: $t_l = 0.693R_2C$</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Mạch 555 có $R_1=10k\\Omega$, $R_2=10k\\Omega$, $C=10\\mu F$. Tính tần số.",
+                "solution": "<p><strong>Giải:</strong></p><p>$f = 1.44 / ((10000 + 20000) \\times 10^{-5}) = 1.44 / (30000 \\times 10^{-5}) = 4.8 Hz$.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định trạng thái mạch đếm",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định loại mạch đếm (lên/xuống, đồng bộ/bất đồng bộ)</li><li>Xác định số bit (modulo)</li><li>Liệt kê dãy trạng thái theo xung clock</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Mạch đếm 3-bit (Q2Q1Q0) đếm lên. Xác định trạng thái sau khi có 5 xung clock, biết ban đầu Q2Q1Q0=000.",
+                "solution": "<p><strong>Giải:</strong></p><p>000→001→010→011→100→101. Sau 5 xung: 101 (5).</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Xác định ngõ ra mạch giải mã",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Xác định mã nhị phân ở ngõ vào</li><li>Ngõ ra tương ứng với tổ hợp đó ở mức tích cực</li><li>IC giải mã 3→8: ngõ ra Y_i tích cực thấp (0) khi ABC=i</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Mạch giải mã 3→8 có ngõ vào A=0, B=1, C=1. Ngõ ra Y nào tích cực?",
+                "solution": "<p><strong>Giải:</strong></p><p>ABC = 011 = 3. Ngõ ra Y3 tích cực (Y3=0 nếu tích cực thấp).</p>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "IC 555 hoạt động ở chế độ nào để tạo xung vuông liên tục?",
+            "options": [
+              "Đơn ổn (monostable)",
+              "Đa hài (astable)",
+              "Đa ổn (bistable)",
+              "Ổn định"
+            ],
+            "correct": 1,
+            "explanation": "Chế độ đa hài (astable) của IC 555 tạo xung vuông liên tục không cần kích thích."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Mạch đếm 4-bit có bao nhiêu trạng thái?",
+            "options": [
+              "4",
+              "8",
+              "16",
+              "32"
+            ],
+            "correct": 2,
+            "explanation": "Mạch đếm n-bit có 2^n trạng thái. Với n=4: 2^4 = 16 trạng thái (từ 0000 đến 1111)."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Mạch giải mã 3→8 có bao nhiêu ngõ ra?",
+            "options": [
+              "3",
+              "8",
+              "16",
+              "24"
+            ],
+            "correct": 1,
+            "explanation": "Mạch giải mã n→2^n: 3 ngõ vào, 2^3 = 8 ngõ ra."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Chức năng của mạch dồn kênh (Multiplexer) là:",
+            "options": [
+              "Chia một tín hiệu ra nhiều ngõ",
+              "Chọn một trong nhiều ngõ vào đưa ra ngõ ra",
+              "Chuyển tín hiệu tương tự thành số",
+              "Đếm số xung đầu vào"
+            ],
+            "correct": 1,
+            "explanation": "MUX chọn một trong nhiều ngõ vào dữ liệu để đưa ra ngõ ra dựa trên ngõ chọn."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "MUX 4→1 cần bao nhiêu ngõ chọn?",
+            "options": [
+              "1",
+              "2",
+              "4",
+              "8"
+            ],
+            "correct": 1,
+            "explanation": "MUX 2^n→1 cần n ngõ chọn. Với 4=2^2, cần 2 ngõ chọn S1, S0."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Mạch đếm lên 3-bit từ 000, sau 7 xung clock cho kết quả:",
+            "options": [
+              "110",
+              "111",
+              "000",
+              "001"
+            ],
+            "correct": 1,
+            "explanation": "000→001→010→011→100→101→110→111. Sau 7 xung đến 111."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "IC nào sau đây là mạch giải mã 3→8?",
+            "options": [
+              "NE555",
+              "74LS138",
+              "74LS151",
+              "74LS90"
+            ],
+            "correct": 1,
+            "explanation": "74LS138 là IC giải mã 3 đường sang 8 đường."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Trong mạch giải mã 3→8, nếu ngõ vào ABC=101 thì ngõ ra nào tích cực?",
+            "options": [
+              "Y3",
+              "Y5",
+              "Y6",
+              "Y7"
+            ],
+            "correct": 1,
+            "explanation": "ABC=101 là số nhị phân 5, ngõ ra Y5 tương ứng được tích cực."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Mạch phân kênh (Demultiplexer) thực hiện chức năng:",
+            "options": [
+              "Đưa tín hiệu từ một ngõ vào đến một trong nhiều ngõ ra",
+              "Chọn một trong nhiều ngõ vào",
+              "Đếm số xung",
+              "Giải mã địa chỉ"
+            ],
+            "correct": 0,
+            "explanation": "DEMUX ngược với MUX: một ngõ vào dữ liệu được đưa đến một trong các ngõ ra tùy theo ngõ chọn."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Công thức tính tần số của mạch tạo xung dùng IC 555 (chế độ đa hài):",
+            "options": [
+              "$f = 1.44/((R_1+R_2)C)$",
+              "$f = 1.44/((R_1+2R_2)C)$",
+              "$f = 0.693/((R_1+R_2)C)$",
+              "$f = 1/(RC)$"
+            ],
+            "correct": 1,
+            "explanation": "$f = 1.44 / ((R_1 + 2R_2) \\cdot C)$ là công thức chính xác cho IC 555 chế độ astable."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các loại mạch đếm cơ bản:",
+            "options": [
+              "Mạch đếm lên",
+              "Mạch đếm xuống",
+              "Mạch đếm lên/xuống",
+              "Mạch đếm tương tự"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Mạch đếm số gồm đếm lên, đếm xuống và đếm lên/xuống. Không có mạch đếm tương tự."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Ứng dụng của mạch giải mã trong thực tế:",
+            "options": [
+              "Giải mã địa chỉ bộ nhớ",
+              "Điều khiển LED 7 đoạn",
+              "Chọn chip (chip select)",
+              "Khuếch đại âm thanh"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Mạch giải mã dùng trong địa chỉ bộ nhớ, LED 7 đoạn, chip select. Khuếch đại âm thanh dùng op-amp."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Các mạch tổ hợp cơ bản trong điện tử số:",
+            "options": [
+              "Mạch giải mã (Decoder)",
+              "Mạch dồn kênh (Multiplexer)",
+              "Mạch phân kênh (Demultiplexer)",
+              "Mạch đếm (Counter)"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Decoder, MUX, DEMUX là mạch tổ hợp (combinational). Mạch đếm là mạch tuần tự (sequential)."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Các ứng dụng của mạch tạo xung IC 555:",
+            "options": [
+              "Tạo xung clock",
+              "Điều chế PWM",
+              "Mạch định thời",
+              "Giải mã địa chỉ"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "IC 555 dùng để tạo clock, PWM, định thời. Giải mã địa chỉ cần mạch giải mã (74LS138)."
+          }
+        ]
+      }
+    }
+  ]
+}

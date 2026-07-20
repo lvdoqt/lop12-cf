@@ -9,7 +9,7 @@
       "chapter": "Dữ liệu trong văn bản thông tin",
       "chapter_id": "V12-8",
       "lesson_id": 7,
-      "description": "Củng cố kiến thức về văn bản thông tin và mở rộng hiểu biết về cách sử dụng dữ liệu trong viết và đọc.",
+      "description": "Củng cố và mở rộng kiến thức dữ liệu trong văn bản thông tin.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Củng cố về văn bản thông tin",
+          "title": "Củng cố và mở rộng kiến thức",
           "sections": [
             {
               "heading": "1. Tổng kết về văn bản thông tin",
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex8-7-1",
-              "type": "mcq",
-              "question": "Đặc điểm quan trọng nhất của văn bản thông tin là gì?",
-              "options": [
-                "Tưởng tượng",
-                "Khách quan, có dữ liệu, logic",
-                "Cảm xúc",
-                "Hư cấu"
-              ],
-              "correct": 1,
-              "explanation": "Văn bản thông tin cần có tính khách quan, dựa trên dữ liệu chính xác và trình bày logic."
-            },
-            {
-              "id": "ex8-7-2",
-              "type": "mcq",
-              "question": "Văn bản thông tin có thể phân thành những loại nào?",
-              "options": [
-                "Chỉ có báo chí",
-                "Báo chí, khoa học, giáo dục",
-                "Chỉ có khoa học",
-                "Chỉ có giáo dục"
-              ],
-              "correct": 1,
-              "explanation": "Văn bản thông tin bao gồm: báo chí (tin tức, phóng sự), khoa học (bài báo, luận văn) và giáo dục (sách giáo khoa)."
-            },
-            {
-              "id": "ex8-7-3",
-              "type": "mcq",
-              "question": "Vai trò của dữ liệu trong văn bản thông tin là gì?",
-              "options": [
-                "Không có vai trò",
-                "Minh chứng, thuyết phục, cụ thể hóa vấn đề",
-                "Chỉ để trang trí",
-                "Làm văn bản dài hơn"
-              ],
-              "correct": 1,
-              "explanation": "Dữ liệu giúp minh chứng luận điểm, tăng tính thuyết phục và cụ thể hóa vấn đề."
-            },
-            {
-              "id": "ex8-7-4",
-              "type": "mcq",
-              "question": "Loại dữ liệu nào thường dùng trong văn bản thông tin?",
-              "options": [
-                "Chỉ có tưởng tượng",
-                "Số liệu, sự kiện, trích dẫn",
-                "Chỉ có cảm xúc",
-                "Không cần dữ liệu"
-              ],
-              "correct": 1,
-              "explanation": "Các loại dữ liệu thường dùng: số liệu thống kê, sự kiện lịch sử/hiện tại, trích dẫn từ chuyên gia."
-            },
-            {
-              "id": "ex8-7-5",
-              "type": "mcq",
-              "question": "Khi sử dụng dữ liệu, cần chú ý điều gì?",
-              "options": [
-                "Không cần chú ý",
-                "Chính xác, phù hợp, ghi rõ nguồn",
-                "Tùy tiện sử dụng",
-                "Không cần ghi nguồn"
-              ],
-              "correct": 1,
-              "explanation": "Cần đảm bảo dữ liệu chính xác, phù hợp với nội dung và ghi rõ nguồn trích dẫn."
-            },
-            {
-              "id": "ex8-7-6",
-              "type": "mcq",
-              "question": "Khi đọc văn bản thông tin, cần làm gì?",
-              "options": [
-                "Chỉ đọc lướt",
-                "Xác định thông tin chính, phân tích dữ liệu, đánh giá độ tin cậy",
-                "Không cần phân tích",
-                "Chỉ ghi nhớ"
-              ],
-              "correct": 1,
-              "explanation": "Cần xác định thông tin chính, phân tích dữ liệu và luận cứ, đánh giá độ tin cậy của nguồn."
-            },
-            {
-              "id": "ex8-7-7",
-              "type": "mcq",
-              "question": "Khi viết văn bản thông tin, cần làm gì?",
-              "options": [
-                "Viết tùy hứng",
-                "Thu thập thông tin, tổ chức logic, trình bày rõ ràng",
-                "Không cần chuẩn bị",
-                "Chỉ cần ý kiến cá nhân"
-              ],
-              "correct": 1,
-              "explanation": "Cần thu thập thông tin đầy đủ, tổ chức logic và trình bày rõ ràng, chính xác."
-            },
-            {
-              "id": "ex8-7-8",
-              "type": "mcq",
-              "question": "Tại sao cần khách quan trong văn bản thông tin?",
-              "options": [
-                "Không cần khách quan",
-                "Để đảm bảo tính chính xác và tin cậy",
-                "Chỉ vì quy định",
-                "Không quan trọng"
-              ],
-              "correct": 1,
-              "explanation": "Tính khách quan đảm bảo thông tin chính xác, tin cậy và không bị thiên vị."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex8-7-1",
+            "type": "mcq",
+            "question": "Đặc điểm quan trọng nhất của văn bản thông tin là gì?",
+            "options": [
+              "Tưởng tượng",
+              "Khách quan, có dữ liệu, logic",
+              "Cảm xúc",
+              "Hư cấu"
+            ],
+            "correct": 1,
+            "explanation": "Văn bản thông tin cần có tính khách quan, dựa trên dữ liệu chính xác và trình bày logic."
+          },
+          {
+            "id": "ex8-7-2",
+            "type": "mcq",
+            "question": "Văn bản thông tin có thể phân thành những loại nào?",
+            "options": [
+              "Chỉ có báo chí",
+              "Báo chí, khoa học, giáo dục",
+              "Chỉ có khoa học",
+              "Chỉ có giáo dục"
+            ],
+            "correct": 1,
+            "explanation": "Văn bản thông tin bao gồm: báo chí (tin tức, phóng sự), khoa học (bài báo, luận văn) và giáo dục (sách giáo khoa)."
+          },
+          {
+            "id": "ex8-7-3",
+            "type": "mcq",
+            "question": "Vai trò của dữ liệu trong văn bản thông tin là gì?",
+            "options": [
+              "Không có vai trò",
+              "Minh chứng, thuyết phục, cụ thể hóa vấn đề",
+              "Chỉ để trang trí",
+              "Làm văn bản dài hơn"
+            ],
+            "correct": 1,
+            "explanation": "Dữ liệu giúp minh chứng luận điểm, tăng tính thuyết phục và cụ thể hóa vấn đề."
+          },
+          {
+            "id": "ex8-7-4",
+            "type": "mcq",
+            "question": "Loại dữ liệu nào thường dùng trong văn bản thông tin?",
+            "options": [
+              "Chỉ có tưởng tượng",
+              "Số liệu, sự kiện, trích dẫn",
+              "Chỉ có cảm xúc",
+              "Không cần dữ liệu"
+            ],
+            "correct": 1,
+            "explanation": "Các loại dữ liệu thường dùng: số liệu thống kê, sự kiện lịch sử/hiện tại, trích dẫn từ chuyên gia."
+          },
+          {
+            "id": "ex8-7-5",
+            "type": "mcq",
+            "question": "Khi sử dụng dữ liệu, cần chú ý điều gì?",
+            "options": [
+              "Không cần chú ý",
+              "Chính xác, phù hợp, ghi rõ nguồn",
+              "Tùy tiện sử dụng",
+              "Không cần ghi nguồn"
+            ],
+            "correct": 1,
+            "explanation": "Cần đảm bảo dữ liệu chính xác, phù hợp với nội dung và ghi rõ nguồn trích dẫn."
+          },
+          {
+            "id": "ex8-7-6",
+            "type": "mcq",
+            "question": "Khi đọc văn bản thông tin, cần làm gì?",
+            "options": [
+              "Chỉ đọc lướt",
+              "Xác định thông tin chính, phân tích dữ liệu, đánh giá độ tin cậy",
+              "Không cần phân tích",
+              "Chỉ ghi nhớ"
+            ],
+            "correct": 1,
+            "explanation": "Cần xác định thông tin chính, phân tích dữ liệu và luận cứ, đánh giá độ tin cậy của nguồn."
+          },
+          {
+            "id": "ex8-7-7",
+            "type": "mcq",
+            "question": "Khi viết văn bản thông tin, cần làm gì?",
+            "options": [
+              "Viết tùy hứng",
+              "Thu thập thông tin, tổ chức logic, trình bày rõ ràng",
+              "Không cần chuẩn bị",
+              "Chỉ cần ý kiến cá nhân"
+            ],
+            "correct": 1,
+            "explanation": "Cần thu thập thông tin đầy đủ, tổ chức logic và trình bày rõ ràng, chính xác."
+          },
+          {
+            "id": "ex8-7-8",
+            "type": "mcq",
+            "question": "Tại sao cần khách quan trong văn bản thông tin?",
+            "options": [
+              "Không cần khách quan",
+              "Để đảm bảo tính chính xác và tin cậy",
+              "Chỉ vì quy định",
+              "Không quan trọng"
+            ],
+            "correct": 1,
+            "explanation": "Tính khách quan đảm bảo thông tin chính xác, tin cậy và không bị thiên vị."
+          },
+          {
+            "id": "ex8-7-9",
+            "type": "mcq",
+            "question": "Văn bản thông tin thường có đặc điểm gì?",
+            "options": [
+              "Tính chính xác, khách quan, cập nhật",
+              "Tính hư cấu, tưởng tượng",
+              "Tính cảm xúc, chủ quan",
+              "Tính triết lý, sâu xa"
+            ],
+            "correct": 0,
+            "explanation": "Văn bản thông tin cần đảm bảo tính chính xác, khách quan và cập nhật."
+          },
+          {
+            "id": "ex8-7-10",
+            "type": "mcq",
+            "question": "Mục đích của việc viết thư trao đổi là gì?",
+            "options": [
+              "Trao đổi ý kiến, thuyết phục người đọc về một vấn đề",
+              "Kể chuyện giải trí",
+              "Thông báo tin tức",
+              "Bày tỏ cảm xúc cá nhân"
+            ],
+            "correct": 0,
+            "explanation": "Thư trao đổi nhằm trao đổi ý kiến và thuyết phục người đọc về một vấn đề cụ thể."
+          }
+        ]
       }
     }
   ]

@@ -1,0 +1,254 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-06-mang-dien-san-xuat-quy-mo-nho",
+      "name": "Bài 6. Mạng điện sản xuất quy mô nhỏ",
+      "slug": "bai-6-mang-dien-san-xuat-quy-mo-nho",
+      "chapter": "Chương 1. Công nghệ Điện - Điện tử",
+      "chapter_id": "CN12",
+      "lesson_id": 6,
+      "description": "Trình bày khái niệm, đặc điểm mạng điện sản xuất quy mô nhỏ; sơ đồ mạng điện; các thiết bị và yêu cầu kĩ thuật.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1563770551463-fe3601b14726?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "cn12-6-1",
+          "name": "Khái niệm mạng điện sản xuất",
+          "slug": "khai-niem-mang-dien-san-xuat",
+          "difficulty": "easy"
+        },
+        {
+          "id": "cn12-6-2",
+          "name": "Sơ đồ và thiết bị mạng điện",
+          "slug": "so-do-thiet-bi-mang-dien",
+          "difficulty": "medium"
+        },
+        {
+          "id": "cn12-6-3",
+          "name": "Yêu cầu kĩ thuật",
+          "slug": "yeu-cau-ki-thuat",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Mạng điện sản xuất quy mô nhỏ",
+          "sections": [
+            {
+              "heading": "1. Khái niệm mạng điện sản xuất quy mô nhỏ",
+              "content": "<p><strong>Mạng điện sản xuất quy mô nhỏ</strong> là hệ thống điện cung cấp cho các cơ sở sản xuất nhỏ như xưởng may, cơ khí, chế biến nông sản, trang trại.</p><p><strong>Đặc điểm:</strong></p><ul><li>Công suất tiêu thụ nhỏ (dưới 100 kVA)</li><li>Cấp điện áp thường là 0,4 kV (380/220 V)</li><li>Số lượng thiết bị điện ít, tập trung</li><li>Đường dây ngắn, đơn giản</li></ul>"
+            },
+            {
+              "heading": "2. Cấu trúc mạng điện sản xuất quy mô nhỏ",
+              "content": "<p><strong>Các thành phần chính:</strong></p><ul><li><strong>Trạm biến áp:</strong> Hạ áp từ lưới trung thế (22 kV) xuống 0,4 kV</li><li><strong>Tủ điện phân phối:</strong> Đóng cắt, bảo vệ, đo lường</li><li><strong>Đường dây chính:</strong> Cấp điện cho các khu vực sản xuất</li><li><strong>Đường dây nhánh:</strong> Cấp điện đến từng máy móc, thiết bị</li><li><strong>Thiết bị điện:</strong> Máy móc, động cơ, đèn chiếu sáng</li></ul><p><strong>Sơ đồ tổng thể:</strong> Lưới trung thế → Máy biến áp → Tủ phân phối chính → Đường dây chính → Tủ nhánh → Thiết bị tiêu thụ.</p>"
+            },
+            {
+              "heading": "3. Thiết bị trong mạng điện sản xuất",
+              "content": "<p><strong>a) Máy biến áp:</strong></p><ul><li>Giảm điện áp từ 22 kV xuống 0,4 kV</li><li>Công suất phù hợp với tải (thường 50-100 kVA)</li></ul><p><strong>b) Aptomat (CB):</strong></p><ul><li>Bảo vệ quá tải và ngắn mạch</li><li>Các loại: aptomat tổng, aptomat nhánh</li></ul><p><strong>c) Cầu dao, cầu chì:</strong></p><ul><li>Cầu dao: đóng cắt bằng tay</li><li>Cầu chì: bảo vệ ngắn mạch</li></ul><p><strong>d) Khởi động từ (contactor):</strong></p><ul><li>Đóng cắt động cơ tự động</li><li>Kết hợp rơle nhiệt bảo vệ quá tải</li></ul>"
+            },
+            {
+              "heading": "4. Yêu cầu kĩ thuật",
+              "content": "<p><strong>Các yêu cầu:</strong></p><ul><li><strong>An toàn điện:</strong> Hệ thống nối đất chắc chắn, chống giật; dây dẫn đủ tiết diện; thiết bị bảo vệ đúng quy cách</li><li><strong>Độ tin cậy:</strong> Đảm bảo cấp điện liên tục cho sản xuất; tránh quá tải và sụt áp</li><li><strong>Kinh tế:</strong> Lựa chọn thiết bị phù hợp; bố trí đường dây hợp lí; giảm tổn hao điện năng</li><li><strong>Dễ vận hành và bảo trì:</strong> Sơ đồ rõ ràng; thiết bị dễ thao tác; thuận tiện sửa chữa</li></ul>"
+            },
+            {
+              "heading": "5. Sơ đồ mạng điện sản xuất quy mô nhỏ",
+              "content": "<p><strong>Sơ đồ nguyên lí:</strong></p><p>Tủ phân phối chính nhận điện từ máy biến áp → các aptomat nhánh → đường dây cấp đến từng khu vực sản xuất → thiết bị tiêu thụ.</p><p><strong>Bảng điện:</strong></p><ul><li>Bảng điện chính: aptomat tổng, công tơ, đồng hồ đo</li><li>Bảng điện nhánh: aptomat nhánh, cầu dao, khởi động từ</li></ul><p><strong>Dây dẫn:</strong> Cáp điện bọc PVC hoặc XLPE; dây dẫn được đặt trong ống hoặc máng cáp.</p>"
+            },
+            {
+              "heading": "6. Lắp đặt và vận hành",
+              "content": "<p><strong>Lắp đặt:</strong></p><ul><li>Vị trí tủ điện khô ráo, thoáng mát</li><li>Dây dẫn đi gọn gàng, bảo đảm khoảng cách an toàn</li><li>Hệ thống nối đất có điện trở ≤ 4 Ω</li></ul><p><strong>Vận hành:</strong></p><ul><li>Kiểm tra thiết bị trước khi vận hành</li><li>Không vận hành khi có dấu hiệu bất thường</li><li>Bảo trì định kì: vệ sinh, kiểm tra mối nối, đo điện trở cách điện</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Mạng điện sản xuất quy mô nhỏ thường có cấp điện áp:",
+            "options": [
+              "110 kV",
+              "22 kV",
+              "0,4 kV (380/220 V)",
+              "6 kV"
+            ],
+            "correct": 2,
+            "explanation": "Mạng điện sản xuất quy mô nhỏ dùng điện áp 380/220 V (0,4 kV)."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Thiết bị dùng để hạ điện áp từ 22 kV xuống 0,4 kV là:",
+            "options": [
+              "Cầu dao",
+              "Aptomat",
+              "Máy biến áp",
+              "Cầu chì"
+            ],
+            "correct": 2,
+            "explanation": "Máy biến áp thực hiện chức năng biến đổi điện áp."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Aptomat trong mạng điện có chức năng:",
+            "options": [
+              "Đo điện năng tiêu thụ",
+              "Bảo vệ quá tải và ngắn mạch",
+              "Chuyển đổi dòng điện",
+              "Hạ điện áp"
+            ],
+            "correct": 1,
+            "explanation": "Aptomat (CB) tự động ngắt khi quá tải hoặc ngắn mạch."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Khởi động từ (contactor) thường được kết hợp với thiết bị nào để bảo vệ quá tải cho động cơ?",
+            "options": [
+              "Cầu chì",
+              "Rơle nhiệt",
+              "Công tơ điện",
+              "Máy biến áp"
+            ],
+            "correct": 1,
+            "explanation": "Rơle nhiệt kết hợp với contactor để bảo vệ quá tải cho động cơ."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Công suất tiêu thụ của mạng điện sản xuất quy mô nhỏ thường:",
+            "options": [
+              "Trên 1000 kVA",
+              "Trên 500 kVA",
+              "Dưới 100 kVA",
+              "Không giới hạn"
+            ],
+            "correct": 2,
+            "explanation": "Quy mô nhỏ có công suất dưới 100 kVA."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Điện trở hệ thống nối đất trong mạng điện sản xuất quy mô nhỏ cần đạt:",
+            "options": [
+              "≤ 100 Ω",
+              "≤ 4 Ω",
+              "≤ 0,1 Ω",
+              "≤ 50 Ω"
+            ],
+            "correct": 1,
+            "explanation": "Điện trở nối đất phải ≤ 4 Ω để đảm bảo an toàn."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Thành phần nào sau đây không thuộc mạng điện sản xuất quy mô nhỏ?",
+            "options": [
+              "Trạm biến áp",
+              "Tủ điện phân phối",
+              "Đường dây tải điện 500 kV",
+              "Thiết bị tiêu thụ điện"
+            ],
+            "correct": 2,
+            "explanation": "Đường dây 500 kV thuộc lưới điện truyền tải quốc gia."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Cầu dao có chức năng:",
+            "options": [
+              "Tự động đóng cắt khi quá tải",
+              "Đóng cắt bằng tay và cách ly mạch điện",
+              "Đo dòng điện",
+              "Biến đổi điện áp"
+            ],
+            "correct": 1,
+            "explanation": "Cầu dao là thiết bị đóng cắt bằng tay, dùng để cách ly mạch."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Yêu cầu kinh tế khi thiết kế mạng điện sản xuất quy mô nhỏ là:",
+            "options": [
+              "Dùng thiết bị đắt tiền nhất",
+              "Lựa chọn thiết bị phù hợp, giảm tổn hao",
+              "Tăng công suất dự phòng tối đa",
+              "Đi dây phức tạp"
+            ],
+            "correct": 1,
+            "explanation": "Yêu cầu kinh tế là chọn thiết bị phù hợp, bố trí hợp lí để giảm tổn hao."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Thiết bị nào dùng để đo điện năng tiêu thụ trong mạng điện sản xuất?",
+            "options": [
+              "Ampe kế",
+              "Vôn kế",
+              "Công tơ điện",
+              "Đồng hồ vạn năng"
+            ],
+            "correct": 2,
+            "explanation": "Công tơ điện (điện năng kế) đo lượng điện năng tiêu thụ."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Đặc điểm của mạng điện sản xuất quy mô nhỏ:",
+            "options": [
+              "Công suất tiêu thụ dưới 100 kVA",
+              "Cấp điện áp 0,4 kV",
+              "Đường dây dài hàng trăm km",
+              "Số lượng thiết bị ít, tập trung"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Mạng quy mô nhỏ có đường dây ngắn, công suất nhỏ, điện áp 0,4 kV."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các thiết bị bảo vệ trong mạng điện sản xuất quy mô nhỏ:",
+            "options": [
+              "Aptomat",
+              "Cầu chì",
+              "Công tơ điện",
+              "Rơle nhiệt"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Aptomat, cầu chì và rơle nhiệt là thiết bị bảo vệ; công tơ là đo lường."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Yêu cầu kĩ thuật đối với mạng điện sản xuất quy mô nhỏ:",
+            "options": [
+              "An toàn điện (nối đất chắc chắn)",
+              "Độ tin cậy cao",
+              "Chỉ dùng một loại dây dẫn",
+              "Dễ vận hành và bảo trì"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "An toàn, tin cậy, dễ vận hành là các yêu cầu kĩ thuật quan trọng."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Các thành phần của tủ điện phân phối chính:",
+            "options": [
+              "Aptomat tổng",
+              "Công tơ điện",
+              "Động cơ điện",
+              "Đồng hồ đo (ampe kế, vôn kế)"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Tủ điện phân phối chính gồm aptomat tổng, công tơ, đồng hồ đo."
+          }
+        ]
+      }
+    }
+  ]
+}

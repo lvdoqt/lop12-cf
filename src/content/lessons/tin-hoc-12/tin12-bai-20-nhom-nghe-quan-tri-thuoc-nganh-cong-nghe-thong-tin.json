@@ -18,22 +18,221 @@
           "title": "Nghề Quản trị CNTT",
           "summary": "Quản trị viên là người đảm bảo các hệ thống CNTT vận hành thông suốt, an toàn và hiệu quả.",
           "sections": [
-            { "heading": "Quản trị mạng (Network Administrator)", "content": "Thiết lập, cấu hình và bảo mật hệ thống mạng cho tổ chức. Giám sát lưu lượng và khắc phục sự cố kết nối." },
-            { "heading": "Quản trị cơ sở dữ liệu (DBA)", "content": "Thiết kế, bảo trì, tối ưu hóa và đảm bảo an toàn cho dữ liệu của tổ chức." },
-            { "heading": "Quản trị hệ thống (System Administrator)", "content": "Quản lý máy chủ, tài khoản người dùng, phân quyền và cài đặt các dịch vụ hệ thống." }
+            {
+              "heading": "Quản trị mạng (Network Administrator)",
+              "content": "Thiết lập, cấu hình và bảo mật hệ thống mạng cho tổ chức. Giám sát lưu lượng và khắc phục sự cố kết nối."
+            },
+            {
+              "heading": "Quản trị cơ sở dữ liệu (DBA)",
+              "content": "Thiết kế, bảo trì, tối ưu hóa và đảm bảo an toàn cho dữ liệu của tổ chức."
+            },
+            {
+              "heading": "Quản trị hệ thống (System Administrator)",
+              "content": "Quản lý máy chủ, tài khoản người dùng, phân quyền và cài đặt các dịch vụ hệ thống."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Người chịu trách nhiệm chính về sự an toàn và hiệu suất của dữ liệu là?", "options": ["Lập trình viên đồ họa", "Quản trị viên cơ sở dữ liệu (DBA)", "Kĩ thuật viên sửa máy", "Nhân viên bán hàng"], "correct": 1, "explanation": "DBA (Database Administrator) quản lý tài sản dữ liệu của doanh nghiệp." },
-          { "id": 2, "type": "mcq", "question": "Công việc của quản trị viên mạng bao gồm?", "options": ["Viết bài cho website", "Cấu hình Router, Switch và giám sát an ninh mạng", "Vẽ tranh minh họa", "Giao hàng tận nơi"], "correct": 1, "explanation": "Họ đảm bảo hạ tầng truyền thông luôn hoạt động tốt." },
-          { "id": 3, "type": "mcq", "question": "Vị trí nào thường quản lý việc cấp phát tài khoản và phân quyền cho nhân viên?", "options": ["Quản trị hệ thống (System Admin)", "Kế toán", "Bảo vệ", "Thư ký"], "correct": 0, "explanation": "System Admin quản lý quyền truy cập tài nguyên của người dùng." },
-          { "id": 4, "type": "mcq", "question": "Chứng chỉ quốc tế nào nổi tiếng trong lĩnh vực quản trị mạng?", "options": ["IELTS", "CCNA (Cisco Certified Network Associate)", "TOEFL", "MOS"], "correct": 1, "explanation": "CCNA là chứng chỉ nghề nghiệp uy tín toàn cầu cho kĩ sư mạng." },
-          { "id": 5, "type": "mcq", "question": "Một kỹ năng cực kỳ quan trọng đối với nhóm nghề quản trị là?", "options": ["Khả năng xử lý tình huống và giải quyết sự cố (Troubleshooting)", "Khả năng thêu thùa", "Khả năng hát karaoke", "Khả năng chạy bộ"], "correct": 0, "explanation": "Họ phải đối mặt và xử lý các trục trặc hệ thống phát sinh bất ngờ." },
-          { "id": 6, "type": "mcq", "question": "Tại sao công việc quản trị CNTT thường phải làm việc ngoài giờ?", "options": ["Vì họ không có việc gì làm", "Để thực hiện bảo trì, nâng cấp vào lúc hệ thống ít người dùng nhất", "Vì họ thích thức khuya", "Vì quy định bắt buộc của nhà nước"], "correct": 1, "explanation": "Tránh làm gián đoạn hoạt động kinh doanh của tổ chức trong giờ hành chính." },
-          { "id": 7, "type": "mcq", "question": "Quản trị viên CNTT cần có thái độ như thế nào?", "options": ["Cẩu thả", "Cẩn thận, trung thực và có trách nhiệm cao", "Kiêu ngạo", "Lười biếng"], "correct": 1, "explanation": "Họ nắm giữ 'chìa khóa' vận hành của cả một hệ thống lớn." },
-          { "id": 8, "type": "mcq", "question": "Lĩnh vực 'An ninh mạng' có liên quan mật thiết đến nghề quản trị không?", "options": ["Không liên quan", "Có, là một phần quan trọng để bảo vệ hệ thống khỏi tấn công", "Chỉ dành cho thám tử", "Chỉ có ở Mỹ"], "correct": 1, "explanation": "Bảo mật là một trong những nhiệm vụ hàng đầu của quản trị viên." },
-          { "id": 9, "type": "mcq", "question": "Thuật ngữ 'Server' trong nghề quản trị nghĩa là gì?", "options": ["Một loại tệp tin", "Máy chủ cung cấp dịch vụ cho các máy tính khác", "Người phục vụ trong nhà hàng", "Một đoạn code"], "correct": 1, "explanation": "Quản trị máy chủ là trọng tâm của nghề quản trị hệ thống." },
-          { "id": 10, "type": "mcq", "question": "Sự phát triển của Điện toán đám mây (Cloud) ảnh hưởng thế nào đến nghề quản trị?", "options": ["Làm nghề này biến mất", "Thay đổi cách thức quản trị sang môi trường ảo và dịch vụ", "Làm cho quản trị dễ hơn 100 lần", "Không có ảnh hưởng gì"], "correct": 1, "explanation": "Quản trị viên hiện nay cần biết thêm các kĩ năng về Cloud (AWS, Azure...)." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Người chịu trách nhiệm chính về sự an toàn và hiệu suất của dữ liệu là?",
+            "options": [
+              "Lập trình viên đồ họa",
+              "Quản trị viên cơ sở dữ liệu (DBA)",
+              "Kĩ thuật viên sửa máy",
+              "Nhân viên bán hàng"
+            ],
+            "correct": 1,
+            "explanation": "DBA (Database Administrator) quản lý tài sản dữ liệu của doanh nghiệp."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Công việc của quản trị viên mạng bao gồm?",
+            "options": [
+              "Viết bài cho website",
+              "Cấu hình Router, Switch và giám sát an ninh mạng",
+              "Vẽ tranh minh họa",
+              "Giao hàng tận nơi"
+            ],
+            "correct": 1,
+            "explanation": "Họ đảm bảo hạ tầng truyền thông luôn hoạt động tốt."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Vị trí nào thường quản lý việc cấp phát tài khoản và phân quyền cho nhân viên?",
+            "options": [
+              "Quản trị hệ thống (System Admin)",
+              "Kế toán",
+              "Bảo vệ",
+              "Thư ký"
+            ],
+            "correct": 0,
+            "explanation": "System Admin quản lý quyền truy cập tài nguyên của người dùng."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Chứng chỉ quốc tế nào nổi tiếng trong lĩnh vực quản trị mạng?",
+            "options": [
+              "IELTS",
+              "CCNA (Cisco Certified Network Associate)",
+              "TOEFL",
+              "MOS"
+            ],
+            "correct": 1,
+            "explanation": "CCNA là chứng chỉ nghề nghiệp uy tín toàn cầu cho kĩ sư mạng."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Một kỹ năng cực kỳ quan trọng đối với nhóm nghề quản trị là?",
+            "options": [
+              "Khả năng xử lý tình huống và giải quyết sự cố (Troubleshooting)",
+              "Khả năng thêu thùa",
+              "Khả năng hát karaoke",
+              "Khả năng chạy bộ"
+            ],
+            "correct": 0,
+            "explanation": "Họ phải đối mặt và xử lý các trục trặc hệ thống phát sinh bất ngờ."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Tại sao công việc quản trị CNTT thường phải làm việc ngoài giờ?",
+            "options": [
+              "Vì họ không có việc gì làm",
+              "Để thực hiện bảo trì, nâng cấp vào lúc hệ thống ít người dùng nhất",
+              "Vì họ thích thức khuya",
+              "Vì quy định bắt buộc của nhà nước"
+            ],
+            "correct": 1,
+            "explanation": "Tránh làm gián đoạn hoạt động kinh doanh của tổ chức trong giờ hành chính."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Quản trị viên CNTT cần có thái độ như thế nào?",
+            "options": [
+              "Cẩu thả",
+              "Cẩn thận, trung thực và có trách nhiệm cao",
+              "Kiêu ngạo",
+              "Lười biếng"
+            ],
+            "correct": 1,
+            "explanation": "Họ nắm giữ 'chìa khóa' vận hành của cả một hệ thống lớn."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Lĩnh vực 'An ninh mạng' có liên quan mật thiết đến nghề quản trị không?",
+            "options": [
+              "Không liên quan",
+              "Có, là một phần quan trọng để bảo vệ hệ thống khỏi tấn công",
+              "Chỉ dành cho thám tử",
+              "Chỉ có ở Mỹ"
+            ],
+            "correct": 1,
+            "explanation": "Bảo mật là một trong những nhiệm vụ hàng đầu của quản trị viên."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Thuật ngữ 'Server' trong nghề quản trị nghĩa là gì?",
+            "options": [
+              "Một loại tệp tin",
+              "Máy chủ cung cấp dịch vụ cho các máy tính khác",
+              "Người phục vụ trong nhà hàng",
+              "Một đoạn code"
+            ],
+            "correct": 1,
+            "explanation": "Quản trị máy chủ là trọng tâm của nghề quản trị hệ thống."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Sự phát triển của Điện toán đám mây (Cloud) ảnh hưởng thế nào đến nghề quản trị?",
+            "options": [
+              "Làm nghề này biến mất",
+              "Thay đổi cách thức quản trị sang môi trường ảo và dịch vụ",
+              "Làm cho quản trị dễ hơn 100 lần",
+              "Không có ảnh hưởng gì"
+            ],
+            "correct": 1,
+            "explanation": "Quản trị viên hiện nay cần biết thêm các kĩ năng về Cloud (AWS, Azure...)."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Nhóm nghề quản trị CNTT bao gồm?",
+            "options": [
+              "Quản trị mạng",
+              "Quản trị CSDL",
+              "Quản trị hệ thống",
+              "Lập trình viên"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Quản trị gồm mạng, CSDL, hệ thống."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Kỹ năng cần thiết cho quản trị mạng?",
+            "options": [
+              "Kiến thức mạng",
+              "An ninh mạng",
+              "Giải quyết sự cố",
+              "Thiết kế giao diện"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cần kiến thức mạng, an ninh và giải quyết sự cố."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Công việc hàng ngày của quản trị hệ thống?",
+            "options": [
+              "Giám sát hiệu năng",
+              "Sao lưu dữ liệu",
+              "Cập nhật bảo mật",
+              "Viết tài liệu"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Quản trị giám sát, sao lưu, cập nhật và viết tài liệu."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Chứng chỉ CNTT nào được công nhận?",
+            "options": [
+              "CompTIA A+",
+              "Cisco CCNA",
+              "Microsoft MCSA",
+              "IC3"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Các chứng chỉ: CompTIA A+, Cisco CCNA, Microsoft MCSA, IC3."
+          }
         ]
       }
     }

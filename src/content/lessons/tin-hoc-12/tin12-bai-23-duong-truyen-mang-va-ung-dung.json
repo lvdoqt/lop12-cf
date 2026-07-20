@@ -18,22 +18,219 @@
           "title": "Đường truyền mạng",
           "summary": "Phương tiện truyền dẫn quyết định tốc độ và độ ổn định của mạng máy tính.",
           "sections": [
-            { "heading": "Truyền dẫn có dây", "content": "Cáp xoắn đôi (UTP/STP), Cáp đồng trục và Cáp quang. Cáp quang là chuẩn mực cho băng thông rộng." },
-            { "heading": "Truyền dẫn không dây", "content": "Sóng vô tuyến (Wi-Fi), Sóng viba, Vệ tinh và mạng di động (4G/5G)." },
-            { "heading": "Các ứng dụng hiện đại", "content": "Điện toán đám mây, Vạn vật kết nối (IoT), Truyền thông đa phương tiện trực tuyến." }
+            {
+              "heading": "Truyền dẫn có dây",
+              "content": "Cáp xoắn đôi (UTP/STP), Cáp đồng trục và Cáp quang. Cáp quang là chuẩn mực cho băng thông rộng."
+            },
+            {
+              "heading": "Truyền dẫn không dây",
+              "content": "Sóng vô tuyến (Wi-Fi), Sóng viba, Vệ tinh và mạng di động (4G/5G)."
+            },
+            {
+              "heading": "Các ứng dụng hiện đại",
+              "content": "Điện toán đám mây, Vạn vật kết nối (IoT), Truyền thông đa phương tiện trực tuyến."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Loại cáp nào có tốc độ truyền dữ liệu nhanh nhất hiện nay?", "options": ["Cáp xoắn đôi", "Cáp đồng trục", "Cáp quang", "Cáp điện thoại"], "correct": 2, "explanation": "Cáp quang sử dụng ánh sáng, cho băng thông cực lớn và ít nhiễu." },
-          { "id": 2, "type": "mcq", "question": "Ưu điểm của mạng 5G so với 4G là gì?", "options": ["Tốc độ nhanh hơn, độ trễ thấp hơn", "Dùng ít pin hơn", "Rẻ hơn", "Không cần trạm phát"], "correct": 0, "explanation": "5G mang lại đột phá về tốc độ và khả năng kết nối hàng triệu thiết bị." },
-          { "id": 3, "type": "mcq", "question": "Sóng Wi-Fi hoạt động ở dải tần số phổ biến nào?", "options": ["2.4 GHz và 5 GHz", "10 GHz", "100 MHz", "50 Hz"], "correct": 0, "explanation": "Đây là hai băng tần chuẩn cho các mạng Wi-Fi dân dụng." },
-          { "id": 4, "type": "mcq", "question": "IoT (Internet of Things) là gì?", "options": ["Chỉ dùng cho máy tính", "Mạng kết nối vạn vật qua Internet", "Một loại trình duyệt", "Tên một hệ điều hành"], "correct": 1, "explanation": "IoT cho phép các vật dụng hàng ngày kết nối và trao đổi dữ liệu." },
-          { "id": 5, "type": "mcq", "question": "Băng thông (Bandwidth) được đo bằng đơn vị nào?", "options": ["GHz", "bps (bits per second)", "GB", "Volt"], "correct": 1, "explanation": "bps biểu thị số lượng bit được truyền đi trong một giây." },
-          { "id": 6, "type": "mcq", "question": "Tại sao cáp quang ít bị nhiễu hơn cáp đồng?", "options": ["Vì nó to hơn", "Vì nó truyền tín hiệu ánh sáng, không bị ảnh hưởng bởi điện trường", "Vì nó đắt tiền", "Vì nó được bọc nhựa"], "correct": 1, "explanation": "Sợi thủy tinh cách điện hoàn toàn với nhiễu điện từ." },
-          { "id": 7, "type": "mcq", "question": "Điện toán đám mây giúp ích gì?", "options": ["Làm máy tính đẹp hơn", "Cung cấp tài nguyên tính toán và lưu trữ qua Internet theo nhu cầu", "Làm sạch bộ nhớ", "Thay thế hoàn toàn Internet"], "correct": 1, "explanation": "Người dùng không cần sở hữu hạ tầng phức tạp mà vẫn dùng được các dịch vụ mạnh." },
-          { "id": 8, "type": "mcq", "question": "Thiết bị nào cần thiết để kết nối mạng qua vệ tinh?", "options": ["Chuột không dây", "Anten parabol (Chảo vệ tinh)", "Dây cáp mạng", "USB"], "correct": 1, "explanation": "Parabol dùng để thu phát tín hiệu cực yếu từ vệ tinh." },
-          { "id": 9, "type": "mcq", "question": "Hiện tượng 'Trễ mạng' (Latency) là gì?", "options": ["Máy tính bị hỏng", "Thời gian từ lúc gửi yêu cầu đến khi nhận được phản hồi", "Tốc độ tải file", "Dung lượng file"], "correct": 1, "explanation": "Độ trễ thấp rất quan trọng cho chơi game và phẫu thuật từ xa." },
-          { "id": 10, "type": "mcq", "question": "Ứng dụng nào sau đây là ứng dụng của IoT?", "options": ["Thành phố thông minh", "Nông nghiệp thông minh", "Nhà thông minh", "Tất cả các ý trên"], "correct": 3, "explanation": "IoT có ứng dụng vô cùng rộng rãi trong mọi lĩnh vực." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Loại cáp nào có tốc độ truyền dữ liệu nhanh nhất hiện nay?",
+            "options": [
+              "Cáp xoắn đôi",
+              "Cáp đồng trục",
+              "Cáp quang",
+              "Cáp điện thoại"
+            ],
+            "correct": 2,
+            "explanation": "Cáp quang sử dụng ánh sáng, cho băng thông cực lớn và ít nhiễu."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Ưu điểm của mạng 5G so với 4G là gì?",
+            "options": [
+              "Tốc độ nhanh hơn, độ trễ thấp hơn",
+              "Dùng ít pin hơn",
+              "Rẻ hơn",
+              "Không cần trạm phát"
+            ],
+            "correct": 0,
+            "explanation": "5G mang lại đột phá về tốc độ và khả năng kết nối hàng triệu thiết bị."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Sóng Wi-Fi hoạt động ở dải tần số phổ biến nào?",
+            "options": [
+              "2.4 GHz và 5 GHz",
+              "10 GHz",
+              "100 MHz",
+              "50 Hz"
+            ],
+            "correct": 0,
+            "explanation": "Đây là hai băng tần chuẩn cho các mạng Wi-Fi dân dụng."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "IoT (Internet of Things) là gì?",
+            "options": [
+              "Chỉ dùng cho máy tính",
+              "Mạng kết nối vạn vật qua Internet",
+              "Một loại trình duyệt",
+              "Tên một hệ điều hành"
+            ],
+            "correct": 1,
+            "explanation": "IoT cho phép các vật dụng hàng ngày kết nối và trao đổi dữ liệu."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Băng thông (Bandwidth) được đo bằng đơn vị nào?",
+            "options": [
+              "GHz",
+              "bps (bits per second)",
+              "GB",
+              "Volt"
+            ],
+            "correct": 1,
+            "explanation": "bps biểu thị số lượng bit được truyền đi trong một giây."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Tại sao cáp quang ít bị nhiễu hơn cáp đồng?",
+            "options": [
+              "Vì nó to hơn",
+              "Vì nó truyền tín hiệu ánh sáng, không bị ảnh hưởng bởi điện trường",
+              "Vì nó đắt tiền",
+              "Vì nó được bọc nhựa"
+            ],
+            "correct": 1,
+            "explanation": "Sợi thủy tinh cách điện hoàn toàn với nhiễu điện từ."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Điện toán đám mây giúp ích gì?",
+            "options": [
+              "Làm máy tính đẹp hơn",
+              "Cung cấp tài nguyên tính toán và lưu trữ qua Internet theo nhu cầu",
+              "Làm sạch bộ nhớ",
+              "Thay thế hoàn toàn Internet"
+            ],
+            "correct": 1,
+            "explanation": "Người dùng không cần sở hữu hạ tầng phức tạp mà vẫn dùng được các dịch vụ mạnh."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Thiết bị nào cần thiết để kết nối mạng qua vệ tinh?",
+            "options": [
+              "Chuột không dây",
+              "Anten parabol (Chảo vệ tinh)",
+              "Dây cáp mạng",
+              "USB"
+            ],
+            "correct": 1,
+            "explanation": "Parabol dùng để thu phát tín hiệu cực yếu từ vệ tinh."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Hiện tượng 'Trễ mạng' (Latency) là gì?",
+            "options": [
+              "Máy tính bị hỏng",
+              "Thời gian từ lúc gửi yêu cầu đến khi nhận được phản hồi",
+              "Tốc độ tải file",
+              "Dung lượng file"
+            ],
+            "correct": 1,
+            "explanation": "Độ trễ thấp rất quan trọng cho chơi game và phẫu thuật từ xa."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Ứng dụng nào sau đây là ứng dụng của IoT?",
+            "options": [
+              "Thành phố thông minh",
+              "Nông nghiệp thông minh",
+              "Nhà thông minh",
+              "Tất cả các ý trên"
+            ],
+            "correct": 3,
+            "explanation": "IoT có ứng dụng vô cùng rộng rãi trong mọi lĩnh vực."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Đường truyền mạng bao gồm?",
+            "options": [
+              "Cáp đồng",
+              "Cáp quang",
+              "Không dây (WiFi)",
+              "Di động (4G/5G)"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Đường truyền gồm cáp đồng, cáp quang, WiFi và di động."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Cáp quang có ưu điểm gì?",
+            "options": [
+              "Tốc độ cao",
+              "Khoảng cách xa",
+              "Chống nhiễu",
+              "Giá rẻ hơn cáp đồng"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cáp quang: tốc độ cao, khoảng cách xa, chống nhiễu."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Tốc độ mạng được đo bằng?",
+            "options": [
+              "Mbps",
+              "Gbps",
+              "Hz",
+              "ms"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "Tốc độ mạng đo bằng Mbps/Gbps."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Yếu tố nào ảnh hưởng đến tốc độ mạng?",
+            "options": [
+              "Khoảng cách đến thiết bị",
+              "Số lượng thiết bị",
+              "Tường và vật cản",
+              "Màu sắc modem"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Tốc độ phụ thuộc khoảng cách, số thiết bị, vật cản."
+          }
         ]
       }
     }

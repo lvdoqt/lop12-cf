@@ -15,21 +15,32 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Giao thông và bưu chính viễn thông: trục kết nối nền kinh tế",
-          "summary": "Giao thông vận tải kết nối hàng hóa, con người và thị trường; bưu chính viễn thông kết nối thông tin. Cả hai đóng vai trò quan trọng trong liên kết vùng, thương mại và phát triển dịch vụ số.",
+          "title": "Giao thông vận tải và bưu chính viễn thông",
+          "summary": "Giao thông vận tải và bưu chính viễn thông là hạ tầng thiết yếu kết nối sản xuất, lưu thông hàng hóa, con người và thông tin. Ở Việt Nam, hệ thống giao thông đa dạng và mạng lưới bưu chính viễn thông phát triển nhanh đang thúc đẩy kinh tế - xã hội và hội nhập quốc tế.",
           "sections": [
-            { "heading": "Hệ thống giao thông", "content": "Gồm đường bộ, đường sắt, đường thủy nội địa, cảng biển và hàng không; mỗi loại có vai trò và phân bố khác nhau." },
-            { "heading": "Bưu chính viễn thông", "content": "Hạ tầng viễn thông, internet, dịch vụ bưu chính; nền tảng cho thương mại điện tử và dịch vụ hiện đại." },
-            { "heading": "Thách thức và giải pháp", "content": "Quy hoạch tích hợp, nâng cấp hạ tầng, số hóa dịch vụ và quản lý môi trường, an ninh mạng." }
+            {
+              "heading": "Vai trò của giao thông vận tải",
+              "content": "Giao thông vận tải (GTVT) đảm bảo sự lưu thông hàng hóa và con người, kết nối các vùng kinh tế, thúc đẩy phân công lao động và mở rộng thị trường. GTVT góp phần khai thác tài nguyên, đảm bảo an ninh quốc phòng và nâng cao hiệu quả kinh tế. Sự phát triển GTVT gắn liền với tăng trưởng thương mại, du lịch và thu hút đầu tư."
+            },
+            {
+              "heading": "Các loại hình giao thông vận tải",
+              "content": "Việt Nam có đủ các loại hình: đường bộ (quốc lộ 1A, đường Hồ Chí Minh, cao tốc Bắc - Nam) chiếm tỉ trọng vận tải lớn nhất; đường sắt (tuyến Thống Nhất Hà Nội - TP. Hồ Chí Minh); đường thủy nội địa và đường biển (vận tải hàng nặng, xuất nhập khẩu); đường hàng không (các sân bay Nội Bài, Tân Sơn Nhất, Đà Nẵng) cho vận tải nhanh; đường ống vận chuyển dầu khí. Mỗi loại hình có ưu thế riêng về khối lượng, tốc độ và chi phí."
+            },
+            {
+              "heading": "Cảng biển và hàng không",
+              "content": "Cảng biển giữ vai trò then chốt trong vận tải quốc tế (Hải Phòng, Cái Lân, Đà Nẵng, Sài Gòn, Cần Thơ, Vũng Tàu), gắn với các hành lang kinh tế và trung chuyển hàng hóa. Hàng không phát triển nhanh với mạng lưới sân bay dân dụng, kết nối các vùng và quốc tế, phục vụ du lịch và vận chuyển hàng hóa giá trị cao."
+            },
+            {
+              "heading": "Bưu chính và viễn thông",
+              "content": "Bưu chính bao gồm chuyển phát thư từ, hàng hóa, bưu kiện qua mạng lưới bưu cục. Viễn thông và công nghệ thông tin truyền tải dữ liệu, thoại, internet, kết nối vùng sâu vùng xa. Mạng viễn thông Việt Nam phủ sóng rộng, là nền tảng cho chính phủ điện tử, thương mại điện tử và dịch vụ số."
+            },
+            {
+              "heading": "Thách thức và hướng phát triển",
+              "content": "GTVT đang đối mặt với ùn tắc đô thị, hạ tầng quá tải, tai nạn và ô nhiễm; bưu chính viễn thông cần bảo đảm an ninh mạng và thu hẹp khoảng cách số. Hướng phát triển là quy hoạch tích hợp, hiện đại hóa hạ tầng (cao tốc, cảng nước sâu, sân bay, 5G), đẩy mạnh vận tải công cộng, logistics và chuyển đổi số để kết nối hiệu quả."
+            }
           ]
         },
-        "exercises": {
-          "short_answers": [
-            { "q": "Nêu hai loại hình giao thông quan trọng cho xuất khẩu?", "a_hint": "Cảng biển và hàng không (vận tải quốc tế)." },
-            { "q": "Một lợi ích của phát triển viễn thông?", "a_hint": "Thúc đẩy thương mại điện tử và tiếp cận dịch vụ trực tuyến." }
-          ]
-        },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Loại hình giao thông nào quan trọng cho vận tải hàng nặng quốc tế?", "options": ["Cảng biển","Đường mòn nhỏ","Xe đạp","Đường ngầm"], "correct": 0, "explanation": "Cảng biển là trục chính vận chuyển hàng hóa nặng quốc tế." },
           { "id": 2, "type": "mcq", "question": "Bưu chính viễn thông hỗ trợ mạnh nhất cho ngành nào?", "options": ["Thương mại điện tử và dịch vụ số","Khai khoáng thủ công","Trồng trọt truyền thống","Nuôi gia súc"], "correct": 0, "explanation": "Viễn thông là nền tảng cho thương mại điện tử và dịch vụ số." },
           { "id": 3, "type": "mcq", "question": "Một thách thức của giao thông là?", "options": ["Ùn tắc giao thông và hạ tầng quá tải","Tăng năng suất nông nghiệp","Tăng số trường học","Giảm dân số"], "correct": 0, "explanation": "Ùn tắc và hạ tầng quá tải là thách thức đô thị lớn." },
@@ -39,7 +50,16 @@
           { "id": 7, "type": "mcq", "question": "An ninh mạng liên quan tới bưu chính viễn thông vì?", "options": ["Dữ liệu và giao dịch trực tuyến cần được bảo vệ","Không liên quan","Chỉ là vấn đề thời tiết","Không có lý do"], "correct": 0, "explanation": "Bảo vệ dữ liệu và giao dịch trực tuyến là yêu cầu then chốt." },
           { "id": 8, "type": "mcq", "question": "Phát triển giao thông bền vững nên chú trọng?", "options": ["Vận tải công cộng và giảm phát thải","Tăng xe cá nhân","Bê tông hóa toàn bộ","Tăng xả thải"], "correct": 0, "explanation": "Vận tải công cộng giảm ách tắc và ô nhiễm môi trường." },
           { "id": 9, "type": "mcq", "question": "Một chỉ tiêu đánh giá hạ tầng giao thông là?", "options": ["Khả năng thông quan hàng hóa và năng suất cảng","Số cửa hàng bán lẻ","Diện tích rừng","Số trường học"], "correct": 0, "explanation": "Khả năng thông quan và năng suất cảng phản ánh hiệu quả hạ tầng logistics." },
-          { "id": 10, "type": "mcq", "question": "Thương mại điện tử phụ thuộc nhiều vào?", "options": ["Bưu chính viễn thông và logistics","Số lượng nông trại","Loại đất trồng","Không phụ thuộc gì"], "correct": 0, "explanation": "Thương mại điện tử cần hạ tầng viễn thông và logistics để giao hàng." }
+          { "id": 10, "type": "mcq", "question": "Thương mại điện tử phụ thuộc nhiều vào?", "options": ["Bưu chính viễn thông và logistics","Số lượng nông trại","Loại đất trồng","Không phụ thuộc gì"], "correct": 0, "explanation": "Thương mại điện tử cần hạ tầng viễn thông và logistics để giao hàng." },
+          { "id": 11, "type": "msq", "question": "Các loại hình giao thông vận tải ở Việt Nam gồm?", "options": ["Đường bộ", "Đường sắt", "Đường thủy", "Đường ống"], "correct": [0,1,2,3], "explanation": "Việt Nam có đủ các loại hình giao thông: đường bộ, đường sắt, đường thủy, đường ống và hàng không." },
+          { "id": 12, "type": "msq", "question": "Vai trò của bưu chính viễn thông trong nền kinh tế?", "options": ["Kết nối thông tin", "Thúc đẩy thương mại điện tử", "Hỗ trợ chính phủ điện tử", "Khai thác khoáng sản"], "correct": [0,1,2], "explanation": "Bưu chính viễn thông kết nối thông tin, thúc đẩy thương mại điện tử và chính phủ điện tử." },
+          { "id": 13, "type": "msq", "question": "Các loại hình giao thông vận tải ở Việt Nam?", "options": ["Đường bộ", "Đường sắt", "Đường thủy nội địa", "Đường hàng không"], "correct": [0,1,2,3], "explanation": "Việt Nam có đầy đủ các loại hình giao thông." },
+          { "id": 14, "type": "msq", "question": "Các tuyến đường bộ quan trọng ở Việt Nam?", "options": ["Quốc lộ 1A", "Đường Hồ Chí Minh", "Cao tốc Bắc - Nam", "Đường sắt Bắc - Nam"], "correct": [0,1,2], "explanation": "Quốc lộ 1A, đường Hồ Chí Minh và cao tốc Bắc - Nam là tuyến đường bộ quan trọng." },
+          { "id": 15, "type": "sa", "question": "Kể tên một cảng biển lớn ở Việt Nam?", "correct": "Cảng Hải Phòng, Cảng Sài Gòn, Cảng Đà Nẵng", "explanation": "Hải Phòng, Sài Gòn, Đà Nẵng là cảng biển lớn." },
+          { "id": 16, "type": "sa", "question": "Vai trò của giao thông vận tải đối với nền kinh tế?", "correct": "Kết nối sản xuất, lưu thông hàng hóa, thúc đẩy thương mại", "explanation": "Giao thông vận tải kết nối sản xuất, lưu thông hàng hóa và thúc đẩy thương mại." },
+          { "id": 17, "type": "sa", "question": "Kể tên một tuyến đường sắt quan trọng ở Việt Nam?", "correct": "Đường sắt Bắc - Nam (Hà Nội - TP. Hồ Chí Minh)", "explanation": "Đường sắt Bắc - Nam là tuyến đường sắt quan trọng nhất." },
+          { "id": 18, "type": "sa", "question": "Nêu hai loại hình giao thông quan trọng cho xuất khẩu?", "correct": "Cảng biển và hàng không (vận tải quốc tế).", "explanation": "Cảng biển và hàng không (vận tải quốc tế)." },
+          { "id": 19, "type": "sa", "question": "Một lợi ích của phát triển viễn thông?", "correct": "Thúc đẩy thương mại điện tử và tiếp cận dịch vụ trực tuyến.", "explanation": "Thúc đẩy thương mại điện tử và tiếp cận dịch vụ trực tuyến." }
         ]
       }
     }

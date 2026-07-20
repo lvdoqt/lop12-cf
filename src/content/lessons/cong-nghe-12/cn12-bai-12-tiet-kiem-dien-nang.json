@@ -1,0 +1,66 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12_12",
+      "name": "Tiết kiệm điện năng",
+      "slug": "tiet-kiem-dien-nang",
+      "chapter": "An toàn và tiết kiệm điện năng",
+      "chapter_id": "CN12",
+      "lesson_id": 12,
+      "description": "Sự cần thiết phải tiết kiệm điện năng và các biện pháp tiết kiệm điện trong gia đình và sản xuất.",
+      "duration_minutes": 50,
+      "difficulty_level": "dễ",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Tiết kiệm điện năng",
+          "summary": "Tiết kiệm điện năng không chỉ giảm chi phí cho gia đình mà còn góp phần bảo vệ tài nguyên môi trường và phát triển bền vững đất nước.",
+          "sections": [
+            {
+              "heading": "Sự cần thiết phải tiết kiệm điện năng",
+              "content": "Nhu cầu điện năng ngày càng tăng trong khi nguồn tài nguyên sản xuất điện có hạn. Tiết kiệm điện giúp giảm chi phí sinh hoạt, hạn chế xây thêm nhà máy điện, giảm ô nhiễm môi trường từ nhiệt điện, bảo tồn tài nguyên và đảm bảo an ninh năng lượng quốc gia."
+            },
+            {
+              "heading": "Tiết kiệm điện trong chiếu sáng",
+              "content": "Sử dụng đèn LED thay đèn sợi đốt (tiết kiệm 80% điện năng); tận dụng ánh sáng tự nhiên; tắt đèn khi không cần thiết; sử dụng cảm biến ánh sáng và cảm biến chuyển động cho đèn hành lang, khu vực công cộng."
+            },
+            {
+              "heading": "Tiết kiệm điện với thiết bị gia dụng",
+              "content": "Chọn thiết bị có nhãn năng lượng hiệu suất cao (5 sao); điều chỉnh nhiệt độ điều hòa hợp lý (26-28°C); vệ sinh bảo dưỡng định kỳ; rút phích cắm khi không sử dụng; sử dụng máy giặt, máy rửa bát với đầy tải; hạn chế sử dụng đồ dùng điện trong giờ cao điểm."
+            },
+            {
+              "heading": "Tiết kiệm điện trong sản xuất",
+              "content": "Sử dụng động cơ hiệu suất cao (IE3, IE4); hệ thống chiếu sáng thông minh; bù công suất phản kháng để giảm tổn thất; công nghệ biến tần điều khiển tốc độ động cơ; tối ưu hóa quy trình sản xuất; sử dụng năng lượng tái tạo bổ sung; quản lý năng lượng theo ISO 50001."
+            },
+            {
+              "heading": "Sử dụng năng lượng tái tạo",
+              "content": "Lắp đặt hệ thống điện mặt trời áp mái; sử dụng bình nước nóng năng lượng mặt trời; đèn năng lượng mặt trời cho chiếu sáng ngoài trời; quạt gió và thông gió tự nhiên giảm tải điều hòa. Các giải pháp này vừa tiết kiệm điện vừa thân thiện môi trường."
+            },
+            {
+              "heading": "Xây dựng thói quen tiết kiệm điện",
+              "content": "Tuyền truyền nâng cao ý thức cộng đồng; thực hiện giờ Trái Đất; tắt thiết bị khi ra khỏi phòng; sử dụng ổ cắm thông minh có hẹn giờ; dạy trẻ em thói quen tiết kiệm điện; lắp đặt hệ thống giám sát năng lượng để theo dõi và điều chỉnh hành vi sử dụng điện."
+            }
+          ]
+        },
+        "exercises": [
+          { "id": 1, "type": "mcq", "question": "Tiết kiệm điện năng mang lại lợi ích gì?", "options": ["Tăng hóa đơn tiền điện", "Giảm chi phí và bảo vệ môi trường", "Làm hỏng thiết bị", "Gây mất điện"], "correct": 1, "explanation": "Tiết kiệm điện giảm chi phí, hạn chế ô nhiễm và bảo tồn tài nguyên." },
+          { "id": 2, "type": "mcq", "question": "Loại đèn nào tiết kiệm điện nhất?", "options": ["Đèn sợi đốt", "Đèn huỳnh quang", "Đèn LED", "Đèn halogen"], "correct": 2, "explanation": "Đèn LED tiết kiệm đến 80% điện năng so với đèn sợi đốt." },
+          { "id": 3, "type": "mcq", "question": "Nhiệt độ điều hòa hợp lý để tiết kiệm điện là?", "options": ["16-18°C", "26-28°C", "30-32°C", "34-36°C"], "correct": 1, "explanation": "26-28°C vừa đủ mát vừa tiết kiệm điện, chênh lệch với ngoài trời không quá 8°C." },
+          { "id": 4, "type": "mcq", "question": "Nhãn năng lượng 5 sao trên thiết bị điện có ý nghĩa gì?", "options": ["Thiết bị cũ", "Hiệu suất năng lượng cao nhất", "Giá rẻ nhất", "Kích thước nhỏ nhất"], "correct": 1, "explanation": "5 sao là mức hiệu suất năng lượng cao, tiết kiệm điện nhất." },
+          { "id": 5, "type": "mcq", "question": "Sử dụng biến tần (inverter) cho động cơ giúp?", "options": ["Tăng tốc động cơ", "Điều khiển tốc độ và tiết kiệm điện", "Làm động cơ nóng hơn", "Tăng tiếng ồn"], "correct": 1, "explanation": "Biến tần điều chỉnh tốc độ động cơ phù hợp tải, giảm tiêu thụ điện đáng kể." },
+          { "id": 6, "type": "mcq", "question": "Hành vi nào giúp tiết kiệm điện?", "options": ["Để điều hòa chạy cả ngày khi không nhà", "Rút phích cắm thiết bị khi không dùng", "Bật đèn cả ngày lẫn đêm", "Mở tủ lạnh thường xuyên"], "correct": 1, "explanation": "Rút phích cắm loại bỏ điện năng tiêu thụ ở chế độ chờ (standby)." },
+          { "id": 7, "type": "mcq", "question": "Giờ cao điểm tiêu thụ điện thường vào khoảng?", "options": ["0-6h sáng", "9h30-11h30 sáng và 17h-20h tối", "12h-13h trưa", "22h-24h đêm"], "correct": 1, "explanation": "Giờ cao điểm là khi nhu cầu điện lớn nhất, thường sáng và tối." },
+          { "id": 8, "type": "mcq", "question": "Năng lượng tái tạo nào phổ biến cho hộ gia đình?", "options": ["Điện hạt nhân", "Điện mặt trời áp mái", "Nhiệt điện than", "Thủy điện lớn"], "correct": 1, "explanation": "Điện mặt trời áp mái phù hợp với hộ gia đình, giảm hóa đơn tiền điện." },
+          { "id": 9, "type": "mcq", "question": "Bù công suất phản kháng giúp?", "options": ["Tăng điện áp", "Giảm tổn thất điện năng trên đường dây", "Tăng dòng điện", "Làm hỏng thiết bị"], "correct": 1, "explanation": "Bù công suất phản kháng cải thiện hệ số công suất, giảm tổn thất." },
+          { "id": 10, "type": "mcq", "question": "ISO 50001 là tiêu chuẩn về?", "options": ["Chất lượng sản phẩm", "Quản lý năng lượng", "An toàn thực phẩm", "Quản lý môi trường"], "correct": 1, "explanation": "ISO 50001 là tiêu chuẩn quốc tế về hệ thống quản lý năng lượng." },
+          { "id": 11, "type": "msq", "question": "Các biện pháp tiết kiệm điện trong gia đình gồm?", "options": ["Dùng đèn LED", ["Tắt thiết bị khi không dùng"], "Bật điều hòa 16°C", "Chọn thiết bị 5 sao"], "correct": [0, 1, 3], "explanation": "Đèn LED, tắt thiết bị và chọn thiết bị 5 sao là biện pháp tiết kiệm." },
+          { "id": 12, "type": "msq", "question": "Lợi ích của tiết kiệm điện năng?", "options": ["Giảm chi phí", "Bảo vệ môi trường", "Tăng ô nhiễm", "Đảm bảo an ninh năng lượng"], "correct": [0, 1, 3], "explanation": "Tiết kiệm điện giảm chi phí, bảo vệ môi trường và an ninh năng lượng." },
+          { "id": 13, "type": "msq", "question": "Thiết bị tiết kiệm điện là?", "options": ["Đèn LED", "Biến tần inverter", "Đèn sợi đốt 100W", "Điều hòa inverter 5 sao"], "correct": [0, 1, 3], "explanation": "Đèn LED, biến tần và điều hòa inverter 5 sao là thiết bị tiết kiệm." },
+          { "id": 14, "type": "msq", "question": "Giải pháp năng lượng tái tạo cho gia đình?", "options": ["Pin mặt trời áp mái", "Bình nước nóng năng lượng mặt trời", "Máy phát điện diesel", "Đèn năng lượng mặt trời"], "correct": [0, 1, 3], "explanation": "Pin mặt trời, bình nước nóng NLMT và đèn NLMT là giải pháp tái tạo cho gia đình." }
+        ]
+      }
+    }
+  ]
+}

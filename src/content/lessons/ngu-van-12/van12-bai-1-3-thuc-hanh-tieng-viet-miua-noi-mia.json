@@ -1,0 +1,211 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-1-3-thuc-hanh-tieng-viet-miua-noi-mia",
+      "name": "Thực hành tiếng Việt: Biện pháp tu từ nói mỉa, nghịch ngữ: đặc điểm và tác dụng",
+      "slug": "thuc-hanh-tieng-viet-miua-noi-mia",
+      "chapter": "Khả năng lớn lao của tiểu thuyết",
+      "chapter_id": "V12-1",
+      "lesson_id": 3,
+      "description": "Tìm hiểu về biện pháp tu từ nói mỉa và nghịch ngữ, đặc điểm và tác dụng trong giao tiếp và văn học.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1456356180008-ceb8dd5cea51?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "tq-loi-1",
+          "name": "Nhận biết lỗi thành phần câu",
+          "slug": "nhan-biet-loi",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Biện pháp tu từ nói mỉa, nghịch ngữ: đặc điểm và tác dụng",
+          "sections": [
+            {
+              "heading": "1. Khái niệm câu và thành phần câu",
+              "content": "<h4>a) Định nghĩa câu</h4><p>Câu là đơn vị ngôn ngữ có ý nghĩa hoàn chỉnh, cấu trúc ngữ pháp rõ ràng. Một câu đơn điển hình gồm: chủ ngữ + vị ngữ + bổ ngữ + các thành phần khác.</p><h4>b) Các thành phần chính</h4><ul><li><strong>Chủ ngữ:</strong> Cái/người câu nói về (danh từ, đại từ)</li><li><strong>Vị ngữ:</strong> Hành động/trạng thái (động từ)</li><li><strong>Bổ ngữ:</strong> Hoàn tất ý của vị ngữ</li><li><strong>Định ngữ:</strong> Bổ sung, giới hạn ý</li><li><strong>Trạng ngữ:</strong> Thông tin về nơi, thời gian, cách thức</li></ul>"
+            },
+            {
+              "heading": "2. Lỗi thiếu thành phần chính",
+              "content": "<h4>a) Thiếu chủ ngữ</h4><p><strong>Sai:</strong> 'Mỗi sáng đi học, rất vui' (ai?)</p><p><strong>Sửa:</strong> 'Mỗi sáng tôi đi học, rất vui'</p><h4>b) Thiếu vị ngữ</h4><p><strong>Sai:</strong> 'Mẹ tôi, người thảo phục' (làm gì?)</p><p><strong>Sửa:</strong> 'Mẹ tôi là người lao động'</p>"
+            },
+            {
+              "heading": "3. Lỗi chủ vị không phù hợp",
+              "content": "<h4>a) Không phù hợp số lượng</h4><p><strong>Sai:</strong> 'Nhóm là những người' (nhóm = số ít, những người = số nhiều)</p><p><strong>Sửa:</strong> 'Nhóm lớp tôi rất chăm chỉ' hoặc 'Những em họcsinh là những người chăm chỉ'</p><h4>b) Không phù hợp ngữ pháp</h4><p><strong>Sai:</strong> 'Sự phát triển của giáo dục quy định tương lai' (nặng nề)</p><p><strong>Sửa:</strong> 'Giáo dục quyết định tương lai'</p>"
+            },
+            {
+              "heading": "4. Lỗi cấu trúc song parallel",
+              "content": "<h4>a) Không song parallel</h4><p><strong>Sai:</strong> 'Vừa thông minh vừa chăm chỉ và người tốt bụng'</p><p><strong>Sửa:</strong> 'Vừa thông minh vừa chăm chỉ vừa tốt bụng'</p><h4>b) Lặp lại chủ ngữ nhiều lần</h4><p><strong>Sai:</strong> 'Tôi thích đọc sách, tôi thích viết bài, tôi thích học toán'</p><p><strong>Sửa:</strong> 'Tôi thích đọc sách, viết bài và học toán'</p>"
+            },
+            {
+              "heading": "5. Lỗi về vị trí định ngữ và trạng ngữ",
+              "content": "<h4>a) Định ngữ ở vị trí sai</h4><p><strong>Sai:</strong> 'Cô gái cao lớn, váy xanh, tóc đen bước vào' (quá nhiều định ngữ)</p><p><strong>Sửa:</strong> 'Cô gái cao lớn bước vào. Cô mặc váy xanh, tóc đen.'</p><h4>b) Trạng ngữ không rõ ràng</h4><p><strong>Sai:</strong> 'Tôi hoàn thành bài tập, đi chơi' (thứ tự không rõ)</p><p><strong>Sửa:</strong> 'Sau khi hoàn thành bài tập, tôi đi chơi'</p>"
+            },
+            {
+              "heading": "6. Phương pháp nhận biết và sửa lỗi",
+              "content": "<h4>Bước 1: Xác định chủ vị</h4><p>Tìm: Ai/cái gì (chủ)? I làm gì (vị)?</p><h4>Bước 2: Kiểm tra tính hợp lệ</h4><p>Rõ ràng? Ý đầy đủ? Liên kết logic?</p><h4>Bước 3: So sánh mẫu chuẩn</h4><p>Cấu trúc đúng? Song parallel?</p><h4>Bước 4: Sửa</h4><p>Bổ sung, thay thế, sắp xếp lại</p>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Nhận biết lỗi",
+            "method": "<p>Xác định cấu trúc → kiểm tra hợp lệ → xác định loại lỗi → đề xuất sửa</p>",
+            "examples": [
+              {
+                "question": "Câu 'Hàng ngày đi học rất vui' có lỗi gì?",
+                "answer": "Thiếu chủ ngữ. Sửa: 'Hàng ngày tôi đi học rất vui'"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Sửa lỗi",
+            "method": "<p>Hiểu quy tắc → so sánh mẫu → sửa → kiểm tra</p>",
+            "examples": [
+              {
+                "question": "Sửa: 'Chúng tôi vừa thích đọc sách vừa vui hũ'",
+                "answer": "Sửa: 'Chúng tôi vừa thích đọc sách vừa vui hứng' (song parallel)"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Cải thiện câu",
+            "method": "<p>Tìm điểm yếu → phân tích → cải thiện → giải thích lợi ích</p>",
+            "examples": [
+              {
+                "question": "Cái thiện: 'Cô giáo cao lớn mặc áo xanh, tóc đen bước vào'",
+                "answer": "Quá dài. Tách: 'Cô giáo cao lớn bước vào. Cô mặc áo xanh, tóc đen.'"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Câu nào không có lỗi?",
+            "options": [
+              "Mỗi sáng đi học vui",
+              "Tôi mỗi sáng vui",
+              "Mỗi sáng tôi đi học rất vui",
+              "Sáng đi học vui lắm"
+            ],
+            "correct": 2,
+            "explanation": "Câu C có cấu trúc đúng: chủ (tôi) + vị (đi) + trạng (mỗi sáng) + bổ (rất vui)"
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Lỗi gì trong 'Tôi thích'?",
+            "options": [
+              "Thiếu chủ",
+              "Thiếu vị",
+              "Thiếu bổ ngữ",
+              "Không lỗi"
+            ],
+            "correct": 2,
+            "explanation": "Thiếu tân ngữ. Cần: 'Tôi thích đọc sách'"
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Câu nào có lỗi parallel?",
+            "options": [
+              "Anh thông minh, chăm chỉ, tốt",
+              "Anh vừa thông minh vừa chăm chỉ",
+              "Anh vừa thông minh vừa chăm và tốt",
+              "Không có lỗi"
+            ],
+            "correct": 2,
+            "explanation": "Câu C: 'vừa…vừa' không song với 'và tốt'. Sửa: 'vừa…vừa…vừa' hoặc 'vừa…vừa, và tốt'"
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Chủ vị không phù hợp ở câu nào?",
+            "options": [
+              "Các bạn rất vui",
+              "Nhóm là những người tốt",
+              "Những em rất chăm chỉ",
+              "Tôi și cả lớp vui"
+            ],
+            "correct": 1,
+            "explanation": "Nhóm = số ít, 'là những người' = số nhiều. Sửa: 'Nhóm...rất tốt'"
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Lỗi trạng ngữ ở câu nào?",
+            "options": [
+              "Hôm nay tôi đi học",
+              "Tôi học từ 7 đến 12 giờ",
+              "Tôi hoàn thành bài, đi chơi",
+              "Ở trường, tôi vui"
+            ],
+            "correct": 2,
+            "explanation": "Thứ tự không rõ. Sửa: 'Sau khi hoàn thành bài, tôi đi chơi'"
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Định ngữ quá dài ở câu nào?",
+            "options": [
+              "Cô gái xinh bước vào",
+              "Cô gái xinh, mặc áo trắng, tóc đen, nụ cười tươi bước vào",
+              "Cô gái mặc áo trắng bước vào",
+              "Không có lỗi"
+            ],
+            "correct": 1,
+            "explanation": "Quá nhiều định ngữ. Tách: 'Cô gái...bước vào. Cô mặc áo trắng, tóc đen'"
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Cấu trúc nào KHÔNG phải lỗi thành phần?",
+            "options": [
+              "Thiếu chủ ngữ",
+              "Định ngữ sai vị trí",
+              "Lỗi chính tả",
+              "Song parallel sai"
+            ],
+            "correct": 2,
+            "explanation": "Lỗi chính tả (viết sai từ) không phải lỗi thành phần câu"
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Câu nào cần tách?",
+            "options": [
+              "Tôi học toán ở trường",
+              "Cô gái cao, váy xanh, tóc đen, nụ cười tươi bước vào nhà",
+              "Khi trời mưa, tôi ở nhà",
+              "Tôi yêu học tập"
+            ],
+            "correct": 1,
+            "explanation": "Quá dài, có nhiều định ngữ liên tiếp. Tách thành 2 câu cho rõ ràng"
+          },
+          {
+            "id": "ex9",
+            "type": "essay",
+            "question": "Sửa lỗi và giải thích: 'Nhóm học sinh vừa chăm chỉ vừa yêu nước và rất tế nhị'",
+            "answer_guide": "Lỗi: Song parallel không nhất quán - 'vừa...vừa' không áp với 'rất'\nCách 1: 'Nhóm...vừa chăm vừa yêu vừa tế nhị' (thêm vừa)\nCách 2: 'Nhóm...chăm chỉ, yêu nước, tế nhị' (thay cấu trúc)\nChọn 1 để trả lời"
+          },
+          {
+            "id": "ex10",
+            "type": "essay",
+            "question": "Viết 1 câu có 3 loại lỗi khác nhau (thiếu chủ, song parallel sai, định ngữ dài), sửa chúng",
+            "answer_guide": "Viết: 'Mỗi sáng đi học, vừa thích vừa sợ và rất mệt, cô gái xinh, áo đỏ, tóc dài bước vào lớp'\nSửa: 'Mỗi sáng tôi đi học. Tôi vừa thích vừa sợ vừa mệt. Cô gái xinh bước vào lớp - cô mặc áo đỏ, tóc dài'\nGiải thích từng lỗi"
+          }
+        ]
+      }
+    }
+  ]
+}

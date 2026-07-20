@@ -18,22 +18,216 @@
           "title": "Liên kết (Links)",
           "summary": "Liên kết là linh hồn của World Wide Web, cho phép chuyển hướng giữa các tài liệu.",
           "sections": [
-            { "heading": "Thẻ liên kết <a>", "content": "Cú pháp: <a href=\"URL\">nội dung hiển thị</a>. URL có thể là địa chỉ tuyệt đối hoặc tương đối." },
-            { "heading": "Liên kết nội bộ và bên ngoài", "content": "Liên kết đến trang khác trên Internet hoặc liên kết đến các vị trí khác nhau trong cùng một trang (Anchors)." },
-            { "heading": "Thuộc tính target", "content": "target=\"_blank\" mở liên kết trong một tab mới." }
+            {
+              "heading": "Thẻ liên kết <a>",
+              "content": "Cú pháp: <a href=\"URL\">nội dung hiển thị</a>. URL có thể là địa chỉ tuyệt đối hoặc tương đối."
+            },
+            {
+              "heading": "Liên kết nội bộ và bên ngoài",
+              "content": "Liên kết đến trang khác trên Internet hoặc liên kết đến các vị trí khác nhau trong cùng một trang (Anchors)."
+            },
+            {
+              "heading": "Thuộc tính target",
+              "content": "target=\"_blank\" mở liên kết trong một tab mới."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Thẻ nào dùng để tạo liên kết trong HTML?", "options": ["<link>", "<a>", "<href>", "<url>"], "correct": 1, "explanation": "<a> viết tắt của Anchor (mỏ neo)." },
-          { "id": 2, "type": "mcq", "question": "Thuộc tính nào bắt buộc phải có để chỉ định địa chỉ đích của liên kết?", "options": ["src", "link", "href", "target"], "correct": 2, "explanation": "href (hypertext reference) chứa URL của trang đích." },
-          { "id": 3, "type": "mcq", "question": "Để mở một liên kết trong tab mới, ta dùng?", "options": ["target=\"_self\"", "target=\"_blank\"", "target=\"_new\"", "target=\"_parent\""], "correct": 1, "explanation": "target=\"_blank\" là thuộc tính phổ biến nhất để không làm mất trang hiện tại." },
-          { "id": 4, "type": "mcq", "question": "Địa chỉ URL tuyệt đối là gì?", "options": ["Địa chỉ đầy đủ bắt đầu bằng http:// hoặc https://", "Địa chỉ tệp trong cùng thư mục", "Tên file", "Địa chỉ IP máy tính"], "correct": 0, "explanation": "URL tuyệt đối chỉ rõ vị trí tệp trên mạng Internet." },
-          { "id": 5, "type": "mcq", "question": "Để tạo liên kết gửi email, ta dùng cú pháp href như thế nào?", "options": ["href=\"email:abc@gmail.com\"", "href=\"mailto:abc@gmail.com\"", "href=\"send:abc@gmail.com\"", "href=\"abc@gmail.com\""], "correct": 1, "explanation": "Tiền tố mailto: kích hoạt ứng dụng gửi thư trên máy người dùng." },
-          { "id": 6, "type": "mcq", "question": "Liên kết đến một vị trí trong cùng trang web (Anchor) sử dụng kí hiệu nào?", "options": ["?", "@", "#", "$"], "correct": 2, "explanation": "Ví dụ: href=\"#section1\" sẽ nhảy đến phần tử có id=\"section1\"." },
-          { "id": 7, "type": "mcq", "question": "Hình ảnh có thể dùng làm liên kết không?", "options": ["Không, chỉ có chữ", "Có, bằng cách đặt thẻ <img> bên trong thẻ <a>", "Chỉ ảnh nhỏ mới làm được", "Phải dùng JavaScript"], "correct": 1, "explanation": "Bất kỳ phần tử nào nằm trong <a> đều trở thành liên kết." },
-          { "id": 8, "type": "mcq", "question": "Thuộc tính 'title' trong thẻ <a> dùng để làm gì?", "options": ["Đặt tiêu đề trang", "Hiển thị ghi chú khi di chuột qua liên kết (tooltip)", "Làm chữ to hơn", "Định dạng màu sắc"], "correct": 1, "explanation": "Title cung cấp thêm thông tin mô tả cho người dùng." },
-          { "id": 9, "type": "mcq", "question": "URL tương đối dùng để liên kết khi nào?", "options": ["Liên kết đến trang Facebook", "Liên kết giữa các file trong cùng một website/thư mục", "Liên kết đến Google", "Liên kết đến địa chỉ IP lạ"], "correct": 1, "explanation": "URL tương đối giúp website hoạt động linh hoạt khi di chuyển giữa các máy chủ." },
-          { "id": 10, "type": "mcq", "question": "Màu mặc định của một liên kết chưa nhấn vào là màu gì?", "options": ["Đỏ", "Xanh lá", "Xanh dương", "Tím"], "correct": 2, "explanation": "Hầu hết trình duyệt mặc định liên kết là màu xanh dương và có gạch chân." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Thẻ nào dùng để tạo liên kết trong HTML?",
+            "options": [
+              "<link>",
+              "<a>",
+              "<href>",
+              "<url>"
+            ],
+            "correct": 1,
+            "explanation": "<a> viết tắt của Anchor (mỏ neo)."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Thuộc tính nào bắt buộc phải có để chỉ định địa chỉ đích của liên kết?",
+            "options": [
+              "src",
+              "link",
+              "href",
+              "target"
+            ],
+            "correct": 2,
+            "explanation": "href (hypertext reference) chứa URL của trang đích."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Để mở một liên kết trong tab mới, ta dùng?",
+            "options": [
+              "target=\"_self\"",
+              "target=\"_blank\"",
+              "target=\"_new\"",
+              "target=\"_parent\""
+            ],
+            "correct": 1,
+            "explanation": "target=\"_blank\" là thuộc tính phổ biến nhất để không làm mất trang hiện tại."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Địa chỉ URL tuyệt đối là gì?",
+            "options": [
+              "Địa chỉ đầy đủ bắt đầu bằng http:// hoặc https://",
+              "Địa chỉ tệp trong cùng thư mục",
+              "Tên file",
+              "Địa chỉ IP máy tính"
+            ],
+            "correct": 0,
+            "explanation": "URL tuyệt đối chỉ rõ vị trí tệp trên mạng Internet."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Để tạo liên kết gửi email, ta dùng cú pháp href như thế nào?",
+            "options": [
+              "href=\"email:abc@gmail.com\"",
+              "href=\"mailto:abc@gmail.com\"",
+              "href=\"send:abc@gmail.com\"",
+              "href=\"abc@gmail.com\""
+            ],
+            "correct": 1,
+            "explanation": "Tiền tố mailto: kích hoạt ứng dụng gửi thư trên máy người dùng."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Liên kết đến một vị trí trong cùng trang web (Anchor) sử dụng kí hiệu nào?",
+            "options": [
+              "?",
+              "@",
+              "#",
+              "$"
+            ],
+            "correct": 2,
+            "explanation": "Ví dụ: href=\"#section1\" sẽ nhảy đến phần tử có id=\"section1\"."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Hình ảnh có thể dùng làm liên kết không?",
+            "options": [
+              "Không, chỉ có chữ",
+              "Có, bằng cách đặt thẻ <img> bên trong thẻ <a>",
+              "Chỉ ảnh nhỏ mới làm được",
+              "Phải dùng JavaScript"
+            ],
+            "correct": 1,
+            "explanation": "Bất kỳ phần tử nào nằm trong <a> đều trở thành liên kết."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Thuộc tính 'title' trong thẻ <a> dùng để làm gì?",
+            "options": [
+              "Đặt tiêu đề trang",
+              "Hiển thị ghi chú khi di chuột qua liên kết (tooltip)",
+              "Làm chữ to hơn",
+              "Định dạng màu sắc"
+            ],
+            "correct": 1,
+            "explanation": "Title cung cấp thêm thông tin mô tả cho người dùng."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "URL tương đối dùng để liên kết khi nào?",
+            "options": [
+              "Liên kết đến trang Facebook",
+              "Liên kết giữa các file trong cùng một website/thư mục",
+              "Liên kết đến Google",
+              "Liên kết đến địa chỉ IP lạ"
+            ],
+            "correct": 1,
+            "explanation": "URL tương đối giúp website hoạt động linh hoạt khi di chuyển giữa các máy chủ."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Màu mặc định của một liên kết chưa nhấn vào là màu gì?",
+            "options": [
+              "Đỏ",
+              "Xanh lá",
+              "Xanh dương",
+              "Tím"
+            ],
+            "correct": 2,
+            "explanation": "Hầu hết trình duyệt mặc định liên kết là màu xanh dương và có gạch chân."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Liên kết trong HTML có những loại nào?",
+            "options": [
+              "Liên kết nội bộ",
+              "Liên kết bên ngoài",
+              "Liên kết email",
+              "Liên kết file"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "HTML hỗ trợ tất cả các loại liên kết."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "target='_blank' dùng để làm gì?",
+            "options": [
+              "Mở link trong tab mới",
+              "Mở link trong cùng tab",
+              "Tải file",
+              "Gửi email"
+            ],
+            "correct": [
+              0
+            ],
+            "explanation": "target='_blank' mở liên kết trong tab mới."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Anchor trong HTML được tạo bằng?",
+            "options": [
+              "<a name='...'>",
+              "<a href='#...'>",
+              "<id>",
+              "<anchor>"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "Anchor dùng name attribute hoặc href với #."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Liên kết email có thể kèm theo?",
+            "options": [
+              "Chủ đề (subject)",
+              "Nội dung (body)",
+              "Đính kèm file",
+              "CC/BCC"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "Liên kết mailto: có thể kèm subject và body."
+          }
         ]
       }
     }

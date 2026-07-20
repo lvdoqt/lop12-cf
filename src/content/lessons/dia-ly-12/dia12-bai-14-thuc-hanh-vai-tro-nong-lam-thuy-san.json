@@ -15,25 +15,250 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Thực hành phân tích ngành nông - lâm - thủy sản",
-          "summary": "Bước thực hành gồm thu thập số liệu sản lượng, diện tích, giá trị xuất khẩu; vẽ biểu đồ so sánh và nhận xét xu hướng, đóng góp vào GDP và việc làm.",
+          "title": "Thực hành: Tìm hiểu vai trò ngành nông nghiệp, lâm nghiệp và thủy sản",
+          "summary": "Bài thực hành giúp học sinh rèn kỹ năng thu thập, xử lý số liệu và vẽ biểu đồ để phân tích vai trò của ngành nông - lâm - thủy sản đối với nền kinh tế. Qua đó, học sinh nhận xét được xu hướng phát triển, đóng góp vào GDP, việc làm và xuất khẩu, đồng thời giải thích các nguyên nhân và đề xuất định hướng.",
           "sections": [
-            { "heading": "Thu thập số liệu", "content": "Nguồn: cục thống kê, báo cáo ngành, số liệu địa phương; số liệu về sản lượng, diện tích, giá trị xuất khẩu." },
-            { "heading": "Phân tích và vẽ biểu đồ", "content": "Sử dụng biểu đồ cột/ đường/ tròn để so sánh sản lượng theo năm và tỷ trọng đóng góp." }
+            {
+              "heading": "Thu thập và xử lý số liệu",
+              "content": "Số liệu được thu thập từ Niên giám thống kê, Tổng cục Thống kê, Cục Thống kê tỉnh và Sở Nông nghiệp. Các chỉ tiêu cần thiết gồm: giá trị sản xuất, cơ cấu GDP của ngành nông - lâm - thủy sản, diện tích, sản lượng, số lao động và kim ngạch xuất khẩu. Trước khi phân tích, cần kiểm tra tính tin cậy, thống nhất đơn vị và sắp xếp dữ liệu theo thứ tự thời gian."
+            },
+            {
+              "heading": "Vẽ biểu đồ thể hiện vai trò ngành",
+              "content": "Tùy mục tiêu mà lựa chọn dạng biểu đồ: biểu đồ cột (so sánh sản lượng, giá trị qua các năm), biểu đồ đường (thể hiện xu hướng, tốc độ tăng trưởng theo thời gian), biểu đồ tròn (thể hiện cơ cấu, tỉ trọng đóng góp của từng ngành). Cần ghi rõ tên biểu đồ, chú giải, đơn vị và năm của số liệu."
+            },
+            {
+              "heading": "Nhận xét và giải thích",
+              "content": "Khi nhận xét cần nêu rõ xu hướng (tăng, giảm hay ổn định), quy mô, sự chênh lệch giữa các ngành và các vùng. Sau đó giải thích nguyên nhân bằng các căn cứ tự nhiên (đất, khí hậu, nguồn nước), kinh tế - xã hội (thị trường, công nghệ, chính sách) và tác động của biến đổi khí hậu. Cuối cùng đưa ra đánh giá và đề xuất giải pháp phát triển bền vững."
+            }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Ghi hai nguồn số liệu nông nghiệp?", "a_hint": "Cục Thống kê, Sở Nông nghiệp tỉnh." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Số liệu nào cần cho biểu đồ sản lượng?", "options": ["Sản lượng theo năm","Sở thích cá nhân","Số lượng trường học","Mã bưu điện"], "correct": 0, "explanation": "Sản lượng theo năm dùng để vẽ biểu đồ xu hướng." },
-          { "id": 2, "type": "mcq", "question": "Biểu đồ nào phù hợp để thể hiện thay đổi theo thời gian?", "options": ["Biểu đồ đường","Biểu đồ tròn","Ảnh tĩnh","Bản đồ"], "correct": 0, "explanation": "Biểu đồ đường/ cột thể hiện xu hướng theo thời gian." },
-          { "id": 3, "type": "mcq", "question": "Một chỉ tiêu phản ánh vai trò kinh tế của ngành là?", "options": ["Tỷ trọng đóng góp vào GDP","Số lượng nhà hàng","Số sân bay","Màu sắc cờ"], "correct": 0, "explanation": "Tỷ trọng GDP phản ánh vai trò kinh tế ngành." },
-          { "id": 4, "type": "mcq", "question": "Khi nhận xét biểu đồ cần nêu?", "options": ["Xu hướng, nguyên nhân và hệ quả","Chỉ nêu màu sắc","Không nhận xét","Nói số ngẫu nhiên"], "correct": 0, "explanation": "Nhận xét cần mô tả xu hướng và nguyên nhân." },
-          { "id": 5, "type": "mcq", "question": "Một bước quan trọng sau khi thu thập số liệu là?", "options": ["Kiểm tra tính tin cậy và làm sạch dữ liệu","In dữ liệu không kiểm tra","Bỏ qua số liệu","Chỉ dùng số liệu cũ"], "correct": 0, "explanation": "Kiểm tra và làm sạch dữ liệu đảm bảo phân tích chính xác." },
-          { "id": 6, "type": "mcq", "question": "Dữ liệu xuất khẩu giúp hiểu điều gì?", "options": ["Quy mô thị trường nước ngoài và giá trị ngành","Sở thích nội địa","Số lượng ngôi chùa","Không giúp gì"], "correct": 0, "explanation": "Dữ liệu xuất khẩu thể hiện giá trị ngành trên thị trường quốc tế." },
-          { "id": 7, "type": "mcq", "question": "Nhận xét biểu đồ nên đưa ra đề xuất gì?", "options": ["Giải pháp nâng cao năng suất hoặc đa dạng hóa sản phẩm","Không cần đề xuất","Đề xuất giảm sản xuất","Không có"], "correct": 0, "explanation": "Đề xuất nhằm cải thiện và phát triển ngành là phù hợp." },
-          { "id": 8, "type": "mcq", "question": "Một công cụ trực quan hữu ích khi phân tích nông sản theo địa lý?", "options": ["Bản đồ phân bố","Danh sách số","Văn bản dài","Không có"], "correct": 0, "explanation": "Bản đồ biểu diễn phân bố địa lý có giá trị khi phân tích ngành." },
-          { "id": 9, "type": "mcq", "question": "Tổ chức dữ liệu trước khi vẽ biểu đồ là cần thiết vì?", "options": ["Để đảm bảo tính chính xác và so sánh được","Không quan trọng","Tăng lỗi","Làm chậm quá trình"], "correct": 0, "explanation": "Dọn dữ liệu giúp phân tích rõ ràng và chính xác." },
-          { "id": 10, "type": "mcq", "question": "Một bước để giảm thiệt hại sau thu hoạch là?", "options": ["Xây kho lạnh và cải thiện chuỗi cung ứng","Bỏ qua thu hoạch","Phá hủy sản phẩm","Không làm gì"], "correct": 0, "explanation": "Kho lạnh và chuỗi cung ứng tốt giảm thất thoát sau thu hoạch." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Số liệu nào cần cho biểu đồ sản lượng?",
+            "options": [
+              "Sản lượng theo năm",
+              "Sở thích cá nhân",
+              "Số lượng trường học",
+              "Mã bưu điện"
+            ],
+            "correct": 0,
+            "explanation": "Sản lượng theo năm dùng để vẽ biểu đồ xu hướng."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Biểu đồ nào phù hợp để thể hiện thay đổi theo thời gian?",
+            "options": [
+              "Biểu đồ đường",
+              "Biểu đồ tròn",
+              "Ảnh tĩnh",
+              "Bản đồ"
+            ],
+            "correct": 0,
+            "explanation": "Biểu đồ đường/ cột thể hiện xu hướng theo thời gian."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Một chỉ tiêu phản ánh vai trò kinh tế của ngành là?",
+            "options": [
+              "Tỷ trọng đóng góp vào GDP",
+              "Số lượng nhà hàng",
+              "Số sân bay",
+              "Màu sắc cờ"
+            ],
+            "correct": 0,
+            "explanation": "Tỷ trọng GDP phản ánh vai trò kinh tế ngành."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Khi nhận xét biểu đồ cần nêu?",
+            "options": [
+              "Xu hướng, nguyên nhân và hệ quả",
+              "Chỉ nêu màu sắc",
+              "Không nhận xét",
+              "Nói số ngẫu nhiên"
+            ],
+            "correct": 0,
+            "explanation": "Nhận xét cần mô tả xu hướng và nguyên nhân."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Một bước quan trọng sau khi thu thập số liệu là?",
+            "options": [
+              "Kiểm tra tính tin cậy và làm sạch dữ liệu",
+              "In dữ liệu không kiểm tra",
+              "Bỏ qua số liệu",
+              "Chỉ dùng số liệu cũ"
+            ],
+            "correct": 0,
+            "explanation": "Kiểm tra và làm sạch dữ liệu đảm bảo phân tích chính xác."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Dữ liệu xuất khẩu giúp hiểu điều gì?",
+            "options": [
+              "Quy mô thị trường nước ngoài và giá trị ngành",
+              "Sở thích nội địa",
+              "Số lượng ngôi chùa",
+              "Không giúp gì"
+            ],
+            "correct": 0,
+            "explanation": "Dữ liệu xuất khẩu thể hiện giá trị ngành trên thị trường quốc tế."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Nhận xét biểu đồ nên đưa ra đề xuất gì?",
+            "options": [
+              "Giải pháp nâng cao năng suất hoặc đa dạng hóa sản phẩm",
+              "Không cần đề xuất",
+              "Đề xuất giảm sản xuất",
+              "Không có"
+            ],
+            "correct": 0,
+            "explanation": "Đề xuất nhằm cải thiện và phát triển ngành là phù hợp."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Một công cụ trực quan hữu ích khi phân tích nông sản theo địa lý?",
+            "options": [
+              "Bản đồ phân bố",
+              "Danh sách số",
+              "Văn bản dài",
+              "Không có"
+            ],
+            "correct": 0,
+            "explanation": "Bản đồ biểu diễn phân bố địa lý có giá trị khi phân tích ngành."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Tổ chức dữ liệu trước khi vẽ biểu đồ là cần thiết vì?",
+            "options": [
+              "Để đảm bảo tính chính xác và so sánh được",
+              "Không quan trọng",
+              "Tăng lỗi",
+              "Làm chậm quá trình"
+            ],
+            "correct": 0,
+            "explanation": "Dọn dữ liệu giúp phân tích rõ ràng và chính xác."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Một bước để giảm thiệt hại sau thu hoạch là?",
+            "options": [
+              "Xây kho lạnh và cải thiện chuỗi cung ứng",
+              "Bỏ qua thu hoạch",
+              "Phá hủy sản phẩm",
+              "Không làm gì"
+            ],
+            "correct": 0,
+            "explanation": "Kho lạnh và chuỗi cung ứng tốt giảm thất thoát sau thu hoạch."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Các ngành kinh tế được tìm hiểu trong bài thực hành?",
+            "options": [
+              "Nông nghiệp",
+              "Lâm nghiệp",
+              "Thủy sản",
+              "Công nghiệp"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Bài thực hành tìm hiểu vai trò của nông nghiệp, lâm nghiệp và thủy sản."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Các dạng biểu đồ thường dùng để thể hiện vai trò nông - lâm - thủy sản?",
+            "options": [
+              "Biểu đồ tròn",
+              "Biểu đồ cột",
+              "Biểu đồ đường",
+              "Biểu đồ miền"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Biểu đồ tròn, cột và đường thường dùng để thể hiện vai trò các ngành."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Các chỉ tiêu đánh giá vai trò nông - lâm - thủy sản?",
+            "options": [
+              "Tỷ trọng GDP",
+              "Tỷ lệ lao động",
+              "Giá trị xuất khẩu",
+              "Số lượng trường học"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Tỷ trọng GDP, tỷ lệ lao động và giá trị xuất khẩu là chỉ tiêu đánh giá."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Các bước thực hiện bài thực hành gồm?",
+            "options": [
+              "Thu thập số liệu",
+              "Vẽ biểu đồ",
+              "Nhận xét và giải thích",
+              "Tổ chức hội thảo"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Thu thập số liệu, vẽ biểu đồ, nhận xét và giải thích là các bước thực hành."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Mục đích của bài thực hành?",
+            "correct": "Tìm hiểu vai trò của nông nghiệp, lâm nghiệp và thủy sản",
+            "explanation": "Bài thực hành tìm hiểu vai trò của nông - lâm - thủy sản."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Kể tên một dạng biểu đồ dùng trong bài thực hành?",
+            "correct": "Biểu đồ tròn, biểu đồ cột",
+            "explanation": "Biểu đồ tròn và cột thường dùng trong bài thực hành."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Nguồn số liệu sử dụng trong bài thực hành?",
+            "correct": "Niên giám thống kê, số liệu của Tổng cục Thống kê",
+            "explanation": "Niên giám thống kê và số liệu của Tổng cục Thống kê là nguồn số liệu."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Ghi hai nguồn số liệu nông nghiệp?",
+            "correct": "Cục Thống kê, Sở Nông nghiệp tỉnh.",
+            "explanation": "Cục Thống kê, Sở Nông nghiệp tỉnh."
+          }
         ]
       }
     }

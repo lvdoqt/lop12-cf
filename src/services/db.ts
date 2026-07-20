@@ -81,6 +81,9 @@ let mockAnswers: Answer[] = [];
 
 let mockExams: Exam[] = [];
 
+// Junction table: links exams to bank questions (mirrors exam_questions in Supabase)
+let mockExamQuestions: { exam_id: string; question_id: string; so_cau: number; phan: string }[] = [];
+
 let mockAttempts: Attempt[] = [];
 
 let mockComments: Comment[] = [];
@@ -207,7 +210,7 @@ export const db = {
     const client = adminClient();
     if (!client) return [];
     const { data, error } = await client.from('subjects').select('*').order('name');
-    if (error) throw error;
+    if (error) { console.error('[db.getSubjects] error:', error); return []; }
     return data || [];
   },
 
@@ -324,20 +327,24 @@ export const db = {
     if (examIds.length === 0) return counts;
 
     if (isInMockMode()) {
-      for (const q of mockQuestions) {
-        if (q.de_id && examIds.includes(q.de_id)) {
-          counts[q.de_id] = (counts[q.de_id] || 0) + 1;
+      // In mock mode, track via mockExamQuestions
+      for (const eq of mockExamQuestions) {
+        if (examIds.includes(eq.exam_id)) {
+          counts[eq.exam_id] = (counts[eq.exam_id] || 0) + 1;
         }
       }
       return counts;
     }
 
     const client = adminClient()!;
-    const { data, error } = await client.from('questions').select('de_id').in('de_id', examIds);
+    const { data, error } = await client
+      .from('exam_questions')
+      .select('exam_id')
+      .in('exam_id', examIds);
     if (data && !error) {
       for (const row of data) {
-        if (row.de_id) {
-          counts[row.de_id] = (counts[row.de_id] || 0) + 1;
+        if (row.exam_id) {
+          counts[row.exam_id] = (counts[row.exam_id] || 0) + 1;
         }
       }
     }
@@ -353,6 +360,10 @@ export const db = {
         created_at: new Date().toISOString()
       };
       mockExams.push(newExam);
+      // Link questions via mock junction
+      questionIds.forEach((qId, index) => {
+        mockExamQuestions.push({ exam_id: newExam.id, question_id: qId, so_cau: index + 1, phan: 'I' });
+      });
       return newExam;
     }
 
@@ -370,37 +381,28 @@ export const db = {
     if (examError) { console.error('[db.createExam] error:', examError); throw examError; }
 
     if (questionIds.length > 0) {
-      // Fetch the template questions from the bank
-      const { data: templates, error: tempError } = await _adminCl
+      // Verify all IDs exist in the bank
+      const { data: bankQs, error: verifyError } = await _adminCl
         .from('questions')
-        .select('*')
-        .in('id', questionIds);
-      if (tempError) { console.error('[db.createExam] templates fetch error:', tempError); throw tempError; }
+        .select('id')
+        .in('id', questionIds)
+        .eq('de_id', 'bank');
+      if (verifyError) { console.error('[db.createExam] verify bank questions error:', verifyError); throw verifyError; }
 
-      // Map templates by ID to preserve order of questionIds list
-      const templatesMap = new Map(templates.map(t => [t.id, t]));
+      const validIds = new Set((bankQs || []).map((r: any) => r.id));
 
-      const questionsToInsert = questionIds.map((qId, index) => {
-        const t = templatesMap.get(qId);
-        if (!t) return null;
-        return {
-          de_id: newExam.id,
+      const junctionRows = questionIds
+        .filter(qId => validIds.has(qId))
+        .map((qId, index) => ({
+          exam_id: newExam.id,
+          question_id: qId,
           so_cau: index + 1,
-          phan: 'I',
-          content: t.content,
-          options: t.options,
-          answer: t.answer,
-          image_url: t.image_url,
-          metadata: {
-            ...(t.metadata || {}),
-            parent_id: t.id
-          }
-        };
-      }).filter((x): x is NonNullable<typeof x> => x != null);
+          phan: 'I'
+        }));
 
-      if (questionsToInsert.length > 0) {
-        const { error: insError } = await _adminCl.from('questions').insert(questionsToInsert);
-        if (insError) { console.error('[db.createExam] questions insert error:', insError); throw insError; }
+      if (junctionRows.length > 0) {
+        const { error: insError } = await _adminCl.from('exam_questions').insert(junctionRows);
+        if (insError) { console.error('[db.createExam] exam_questions insert error:', insError); throw insError; }
       }
     }
     return newExam;
@@ -411,8 +413,13 @@ export const db = {
       const index = mockExams.findIndex(e => e.id === id);
       if (index === -1) throw new Error('Exam not found');
       mockExams[index] = { ...mockExams[index], ...exam };
-
-      // Note: mock mode doesn't update question-exam links since questions carry de_id inline
+      if (questionIds) {
+        // Replace mock junction rows
+        mockExamQuestions = mockExamQuestions.filter(eq => eq.exam_id !== id);
+        questionIds.forEach((qId, idx) => {
+          mockExamQuestions.push({ exam_id: id, question_id: qId, so_cau: idx + 1, phan: 'I' });
+        });
+      }
       return mockExams[index];
     }
 
@@ -424,42 +431,19 @@ export const db = {
     if (examError) throw examError;
 
     if (questionIds) {
-      // Delete old questions associated with this exam (de_id = id)
-      const { error: delError } = await _adminCl.from('questions').delete().eq('de_id', id);
+      // Replace exam_questions rows for this exam
+      const { error: delError } = await _adminCl.from('exam_questions').delete().eq('exam_id', id);
       if (delError) throw delError;
 
-      // Copy new questions from bank
       if (questionIds.length > 0) {
-        const { data: templates, error: tempError } = await _adminCl
-          .from('questions')
-          .select('*')
-          .in('id', questionIds);
-        if (tempError) throw tempError;
-
-        const templatesMap = new Map(templates.map(t => [t.id, t]));
-
-        const questionsToInsert = questionIds.map((qId, index) => {
-          const t = templatesMap.get(qId);
-          if (!t) return null;
-          return {
-            de_id: id,
-            so_cau: index + 1,
-            phan: 'I',
-            content: t.content,
-            options: t.options,
-            answer: t.answer,
-            image_url: t.image_url,
-            metadata: {
-              ...(t.metadata || {}),
-              parent_id: t.id
-            }
-          };
-        }).filter((x): x is NonNullable<typeof x> => x != null);
-
-        if (questionsToInsert.length > 0) {
-          const { error: insError } = await _adminCl.from('questions').insert(questionsToInsert);
-          if (insError) throw insError;
-        }
+        const junctionRows = questionIds.map((qId, index) => ({
+          exam_id: id,
+          question_id: qId,
+          so_cau: index + 1,
+          phan: 'I'
+        }));
+        const { error: insError } = await _adminCl.from('exam_questions').insert(junctionRows);
+        if (insError) throw insError;
       }
     }
 
@@ -481,27 +465,83 @@ export const db = {
     const { data: updatedExam, error: examError } = await _adminCl.from('exams').update(exam).eq('id', id).select().single();
     if (examError) throw examError;
 
-    if (questionsData) {
-      // Delete old questions associated with this exam
-      const { error: delError } = await _adminCl.from('questions').delete().eq('de_id', id);
+    if (questionsData && questionsData.length > 0) {
+      // Upsert each question into bank (de_id='bank'), then update exam_questions links
+      const bankInserts = questionsData.map((q, index) => ({
+        de_id: 'bank' as const,
+        so_cau: q.so_cau || index + 1,
+        phan: q.phan || 'I',
+        content: q.content,
+        options: q.options || [],
+        answer: q.answer || null,
+        image_url: q.image_url || null,
+        metadata: {
+          ...(q.metadata || {}),
+          // preserve original parent_id if present
+          ...(q.metadata?.parent_id ? {} : {})
+        }
+      }));
+
+      // Resolve existing bank question IDs from parent_id in metadata
+      const parentIds = questionsData
+        .map(q => q.metadata?.parent_id)
+        .filter(Boolean) as string[];
+
+      // For questions that already exist in bank (have parent_id), keep their ID
+      // For new questions (no parent_id), insert into bank first
+      const newQuestionsData = questionsData.filter(q => !q.metadata?.parent_id);
+      const existingQuestionIds = questionsData
+        .filter(q => q.metadata?.parent_id)
+        .map((q, index) => ({ id: q.metadata.parent_id as string, so_cau: q.so_cau || index + 1, phan: q.phan || 'I' }));
+
+      let allQuestionLinks: { id: string; so_cau: number; phan: string }[] = [...existingQuestionIds];
+
+      // Insert truly new questions into bank
+      if (newQuestionsData.length > 0) {
+        // Find max so_cau in bank to avoid unique constraint
+        const { data: maxData } = await _adminCl
+          .from('questions')
+          .select('so_cau')
+          .eq('de_id', 'bank')
+          .order('so_cau', { ascending: false })
+          .limit(1);
+        let nextSoCau = ((maxData?.[0]?.so_cau) || 0) + 1;
+
+        const newBankRows = newQuestionsData.map((q, i) => ({
+          de_id: 'bank' as const,
+          so_cau: nextSoCau + i,
+          phan: q.phan || 'I',
+          content: q.content,
+          options: q.options || [],
+          answer: q.answer || null,
+          image_url: q.image_url || null,
+          metadata: q.metadata || {}
+        }));
+
+        const { data: inserted, error: insErr } = await _adminCl
+          .from('questions')
+          .insert(newBankRows)
+          .select('id, so_cau, phan');
+        if (insErr) { console.error('[db.updateExamWithQuestions] insert new bank questions error:', insErr); throw insErr; }
+
+        (inserted || []).forEach((r: any) => {
+          allQuestionLinks.push({ id: r.id, so_cau: r.so_cau, phan: r.phan });
+        });
+      }
+
+      // Replace exam_questions rows
+      const { error: delError } = await _adminCl.from('exam_questions').delete().eq('exam_id', id);
       if (delError) throw delError;
 
-      if (questionsData.length > 0) {
-        const questionsToInsert = questionsData.map((q, index) => {
-          return {
-            de_id: id,
-            so_cau: index + 1,
-            phan: q.phan || 'I',
-            content: q.content,
-            options: q.options || [],
-            answer: q.answer || null,
-            image_url: q.image_url || null,
-            metadata: q.metadata || {}
-          };
-        });
-
-        const { error: insError } = await _adminCl.from('questions').insert(questionsToInsert);
-        if (insError) throw insError;
+      if (allQuestionLinks.length > 0) {
+        const junctionRows = allQuestionLinks.map((q, index) => ({
+          exam_id: id,
+          question_id: q.id,
+          so_cau: index + 1,
+          phan: q.phan || 'I'
+        }));
+        const { error: junctionErr } = await _adminCl.from('exam_questions').insert(junctionRows);
+        if (junctionErr) { console.error('[db.updateExamWithQuestions] exam_questions insert error:', junctionErr); throw junctionErr; }
       }
     }
 
@@ -511,16 +551,15 @@ export const db = {
   async deleteExam(id: string): Promise<void> {
     if (isInMockMode()) {
       mockExams = mockExams.filter(e => e.id !== id);
-      mockQuestions = mockQuestions.filter(q => q.de_id !== id);
+      mockExamQuestions = mockExamQuestions.filter(eq => eq.exam_id !== id);
       return;
     }
     const _adminCl = adminClient();
     if (!_adminCl) {
       throw new Error('[db.deleteExam] Admin Supabase client unavailable. Set SUPABASE_SERVICE_ROLE_KEY.');
     }
-    // Delete associated questions first
-    await _adminCl.from('questions').delete().eq('de_id', id);
-    // Delete exam
+    // exam_questions rows cascade-deleted via ON DELETE CASCADE on exam_id FK
+    // Delete exam (cascade handles exam_questions)
     const { error } = await _adminCl.from('exams').delete().eq('id', id);
     if (error) throw error;
   },
@@ -559,7 +598,7 @@ export const db = {
       query = query.eq('metadata->>grade', grade);
     }
     const { data, error } = await query;
-    if (error) throw error;
+    if (error) { console.error('[db.getQuestions] error:', error); return []; }
 
     // Fetch subjects to associate
     const subjects = await this.getSubjects();
@@ -573,20 +612,29 @@ export const db = {
 
   async getQuestionsByExamId(examId: string): Promise<(Question & { answers: Answer[] })[]> {
     if (isInMockMode()) {
-      const qList = mockQuestions.filter(q => q.de_id === examId);
-      return qList.map(q => ({
-        ...q,
-        answers: q.options.map((opt, idx) => {
-          const letter = String.fromCharCode(65 + idx);
-          const correctLetters = (q.answer || '').split(',').map(l => l.trim().toUpperCase());
-          return {
-            id: `${q.id}-${letter}`,
-            question_id: q.id,
-            content: opt,
-            is_correct: correctLetters.includes(letter)
-          };
-        })
-      }));
+      // Look up via mock junction table
+      const links = mockExamQuestions
+        .filter(eq => eq.exam_id === examId)
+        .sort((a, b) => a.so_cau - b.so_cau);
+      return links.map(link => {
+        const q = mockQuestions.find(mq => mq.id === link.question_id);
+        if (!q) return null;
+        return {
+          ...q,
+          so_cau: link.so_cau,
+          phan: link.phan,
+          answers: (q.options || []).map((opt, idx) => {
+            const letter = String.fromCharCode(65 + idx);
+            const correctLetters = (q.answer || '').split(',').map(l => l.trim().toUpperCase());
+            return {
+              id: `${q.id}-${letter}`,
+              question_id: q.id,
+              content: opt,
+              is_correct: correctLetters.includes(letter)
+            };
+          })
+        };
+      }).filter((x): x is NonNullable<typeof x> => x != null);
     }
 
     const _adminCl = adminClient();
@@ -598,21 +646,29 @@ export const db = {
       console.error('[db.getQuestionsByExamId] No Supabase client available (both admin and anon are null).');
       return [];
     }
-    
-    // In the new schema, questions are linked directly via de_id
-    const { data: questions, error: qError } = await client
-      .from('questions')
-      .select('*')
-      .eq('de_id', examId)
+
+    // Join exam_questions → questions to get ordered bank questions for this exam
+    const { data: junctionRows, error: jError } = await client
+      .from('exam_questions')
+      .select('so_cau, phan, question_id, questions(*)')
+      .eq('exam_id', examId)
       .order('phan')
       .order('so_cau');
-      
-    if (qError) {
-      console.error('[db.getQuestionsByExamId] Supabase query error:', qError.message);
-      throw qError;
+
+    if (jError) {
+      console.error('[db.getQuestionsByExamId] Supabase query error:', jError.message);
+      throw jError;
     }
 
-    return (questions || []).map(q => mapDbQuestionToAppQuestion(q));
+    return (junctionRows || []).map((row: any) => {
+      const q = row.questions;
+      if (!q) return null;
+      const mapped = mapDbQuestionToAppQuestion(q);
+      // Override so_cau/phan from the junction (exam-specific ordering)
+      mapped.so_cau = row.so_cau;
+      mapped.phan = row.phan;
+      return mapped;
+    }).filter((x): x is NonNullable<typeof x> => x != null);
   },
 
   async createQuestion(question: Omit<Question, 'id'>, answers: Omit<Answer, 'id' | 'question_id'>[]): Promise<Question & { answers: Answer[] }> {
@@ -666,10 +722,13 @@ export const db = {
       .eq('de_id', de_id)
       .order('so_cau', { ascending: false })
       .limit(1);
+    if (countError) {
+      console.error('[db.createQuestion] countError:', countError);
+    }
       
     let nextSoCau = 1;
     if (countData && countData.length > 0) {
-      nextSoCau = countData[0].so_cau + 1;
+      nextSoCau = (countData[0].so_cau || 0) + 1;
     }
 
     const dbInsert = {
@@ -690,6 +749,7 @@ export const db = {
       .single();
       
     if (qError) throw qError;
+    if (!newQ) throw new Error('[db.createQuestion] Insert returned no data.');
 
     return mapDbQuestionToAppQuestion(newQ);
   },

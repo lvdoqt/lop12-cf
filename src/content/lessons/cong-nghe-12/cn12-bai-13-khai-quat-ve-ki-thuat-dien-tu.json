@@ -1,0 +1,230 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-13-khai-quat-ve-ki-thuat-dien-tu",
+      "name": "Bài 13. Khái quát về kĩ thuật điện tử",
+      "slug": "bai-13-khai-quat-ve-ki-thuat-dien-tu",
+      "chapter": "Chương 1. Giới thiệu chung về kĩ thuật điện tử",
+      "chapter_id": "CN12",
+      "lesson_id": 13,
+      "description": "Tìm hiểu khái niệm, vai trò, phân loại và triển vọng phát triển của kĩ thuật điện tử trong sản xuất và đời sống.",
+      "duration_minutes": 45,
+      "difficulty_level": "easy",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Khái quát về kĩ thuật điện tử",
+          "summary": "Kĩ thuật điện tử là lĩnh vực kĩ thuật nghiên cứu, thiết kế, chế tạo và ứng dụng các linh kiện, mạch điện tử và hệ thống điện tử nhằm xử lí tín hiệu điện, điều khiển thiết bị và truyền thông tin.",
+          "sections": [
+            {
+              "heading": "1. Khái niệm kĩ thuật điện tử",
+              "content": "<p><strong>Kĩ thuật điện tử</strong> là lĩnh vực kĩ thuật liên quan đến nghiên cứu, thiết kế, chế tạo và ứng dụng các linh kiện điện tử, mạch điện tử và hệ thống điện tử.</p><p>Đối tượng nghiên cứu chính bao gồm:</p><ul><li>Các linh kiện điện tử cơ bản (điện trở, tụ điện, cuộn cảm, diode, transistor, IC…)</li><li>Mạch điện tử (mạch khuếch đại, mạch chỉnh lưu, mạch dao động…)</li><li>Hệ thống điện tử (máy tính, viễn thông, điều khiển tự động…)</li></ul>"
+            },
+            {
+              "heading": "2. Vai trò của kĩ thuật điện tử",
+              "content": "<p>Kĩ thuật điện tử đóng vai trò quan trọng trong hầu hết các lĩnh vực:</p><ul><li><strong>Trong sản xuất công nghiệp:</strong> Tự động hoá dây chuyền sản xuất, robot công nghiệp, hệ thống điều khiển số CNC.</li><li><strong>Trong nông nghiệp:</strong> Hệ thống tưới tiêu tự động, cảm biến môi trường, máy bay không người lái (drone) phun thuốc.</li><li><strong>Trong y tế:</strong> Máy chụp X-quang, máy siêu âm, máy đo điện tim (ECG), thiết bị hỗ trợ chẩn đoán.</li><li><strong>Trong đời sống:</strong> Điện thoại thông minh, tivi, máy tính, tủ lạnh thông minh, điều hoà nhiệt độ.</li><li><strong>Trong giao thông:</strong> Hệ thống định vị GPS, đèn tín hiệu giao thông thông minh, xe điện.</li></ul>"
+            },
+            {
+              "heading": "3. Phân loại thiết bị điện tử",
+              "content": "<p>Các thiết bị điện tử được phân loại dựa trên nhiều tiêu chí:</p><p><strong>a) Theo nguyên lí hoạt động:</strong></p><ul><li><strong>Thiết bị tương tự (Analog):</strong> Xử lí tín hiệu liên tục (ampli âm thanh, máy thu radio analog).</li><li><strong>Thiết bị số (Digital):</strong> Xử lí tín hiệu rời rạc (máy tính, điện thoại kĩ thuật số).</li></ul><p><strong>b) Theo chức năng:</strong></p><ul><li>Thiết bị thu/phát tín hiệu (anten, micro, loa).</li><li>Thiết bị xử lí tín hiệu (vi xử lí, vi điều khiển).</li><li>Thiết bị hiển thị (màn hình LED, LCD).</li><li>Thiết bị lưu trữ (ổ cứng, thẻ nhớ).</li></ul>"
+            },
+            {
+              "heading": "4. Triển vọng phát triển",
+              "content": "<p>Kĩ thuật điện tử đang phát triển mạnh mẽ với các xu hướng sau:</p><ul><li><strong>Trí tuệ nhân tạo (AI):</strong> Tích hợp AI vào thiết bị điện tử thông minh, nhà thông minh, xe tự lái.</li><li><strong>Internet vạn vật (IoT):</strong> Kết nối hàng tỉ thiết bị điện tử qua mạng Internet, tạo ra hệ sinh thái thông minh.</li><li><strong>Điện tử nano:</strong> Chế tạo linh kiện kích thước nanomet cho hiệu suất cao hơn, tiêu thụ năng lượng thấp hơn.</li><li><strong>Công nghệ 5G/6G:</strong> Tốc độ truyền dữ liệu siêu nhanh, độ trễ thấp cho các ứng dụng thời gian thực.</li><li><strong>Năng lượng xanh:</strong> Phát triển thiết bị điện tử tiết kiệm năng lượng, thân thiện môi trường.</li></ul>"
+            },
+            {
+              "heading": "5. Một số linh kiện điện tử cơ bản",
+              "content": "<p>Các linh kiện điện tử cơ bản được chia thành hai nhóm chính:</p><p><strong>Linh kiện thụ động:</strong></p><ul><li><strong>Điện trở (R):</strong> Hạn chế dòng điện, phân áp.</li><li><strong>Tụ điện (C):</strong> Tích trữ và phóng điện, lọc nhiễu.</li><li><strong>Cuộn cảm (L):</strong> Chặn dòng xoay chiều, lọc tần số.</li></ul><p><strong>Linh kiện tích cực:</strong></p><ul><li><strong>Diode:</strong> Chỉnh lưu dòng điện, ổn áp.</li><li><strong>Transistor:</strong> Khuếch đại, chuyển mạch.</li><li><strong>Mạch tích hợp IC:</strong> Tích hợp nhiều chức năng trên một chip bán dẫn.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "cn12-b13-ex1",
+            "type": "mcq",
+            "question": "Kĩ thuật điện tử là lĩnh vực kĩ thuật liên quan đến:",
+            "options": [
+              "Nghiên cứu, thiết kế, chế tạo và ứng dụng linh kiện điện tử, mạch điện tử và hệ thống điện tử",
+              "Sản xuất và truyền tải điện năng",
+              "Khai thác và chế biến khoáng sản",
+              "Xây dựng các công trình dân dụng"
+            ],
+            "correct": 0,
+            "explanation": "Kĩ thuật điện tử liên quan đến nghiên cứu, thiết kế, chế tạo và ứng dụng các linh kiện, mạch và hệ thống điện tử."
+          },
+          {
+            "id": "cn12-b13-ex2",
+            "type": "mcq",
+            "question": "Thiết bị nào sau đây là thiết bị điện tử trong y tế?",
+            "options": [
+              "Máy cày",
+              "Máy siêu âm",
+              "Máy phát điện",
+              "Máy bơm nước"
+            ],
+            "correct": 1,
+            "explanation": "Máy siêu âm là thiết bị điện tử ứng dụng trong y tế để chẩn đoán hình ảnh."
+          },
+          {
+            "id": "cn12-b13-ex3",
+            "type": "mcq",
+            "question": "Thiết bị số (digital) xử lí loại tín hiệu nào?",
+            "options": [
+              "Tín hiệu liên tục",
+              "Tín hiệu rời rạc",
+              "Tín hiệu tương tự",
+              "Tín hiệu sóng mang"
+            ],
+            "correct": 1,
+            "explanation": "Thiết bị số xử lí tín hiệu rời rạc (tín hiệu số), khác với thiết bị tương tự xử lí tín hiệu liên tục."
+          },
+          {
+            "id": "cn12-b13-ex4",
+            "type": "mcq",
+            "question": "IoT là viết tắt của thuật ngữ nào?",
+            "options": [
+              "Internet of Things",
+              "Input of Technology",
+              "Integration of Tools",
+              "Institute of Technology"
+            ],
+            "correct": 0,
+            "explanation": "IoT là viết tắt của Internet vạn vật (Internet of Things), kết nối các thiết bị điện tử qua Internet."
+          },
+          {
+            "id": "cn12-b13-ex5",
+            "type": "mcq",
+            "question": "Linh kiện nào sau đây thuộc nhóm linh kiện thụ động?",
+            "options": [
+              "Transistor",
+              "Diode",
+              "Điện trở",
+              "Mạch tích hợp IC"
+            ],
+            "correct": 2,
+            "explanation": "Điện trở là linh kiện thụ động cùng với tụ điện, cuộn cảm. Transistor, diode, IC là linh kiện tích cực."
+          },
+          {
+            "id": "cn12-b13-ex6",
+            "type": "mcq",
+            "question": "Ứng dụng của kĩ thuật điện tử trong nông nghiệp là:",
+            "options": [
+              "Máy chụp X-quang",
+              "Hệ thống tưới tiêu tự động",
+              "Robot hàn",
+              "Điện thoại thông minh"
+            ],
+            "correct": 1,
+            "explanation": "Hệ thống tưới tiêu tự động dùng cảm biến và điều khiển điện tử là ứng dụng trong nông nghiệp."
+          },
+          {
+            "id": "cn12-b13-ex7",
+            "type": "mcq",
+            "question": "Theo nguyên lí hoạt động, thiết bị điện tử được phân thành:",
+            "options": [
+              "Thiết bị trong nhà và ngoài trời",
+              "Thiết bị thụ động và tích cực",
+              "Thiết bị tương tự và thiết bị số",
+              "Thiết bị cơ khí và điện tử"
+            ],
+            "correct": 2,
+            "explanation": "Căn cứ vào nguyên lí hoạt động, thiết bị điện tử phân thành thiết bị tương tự (analog) và thiết bị số (digital)."
+          },
+          {
+            "id": "cn12-b13-ex8",
+            "type": "mcq",
+            "question": "Xu hướng phát triển nào sau đây của kĩ thuật điện tử?",
+            "options": [
+              "Sử dụng năng lượng hoá thạch",
+              "Tích hợp trí tuệ nhân tạo AI",
+              "Giảm kết nối mạng",
+              "Chỉ sử dụng thiết bị tương tự"
+            ],
+            "correct": 1,
+            "explanation": "Tích hợp AI vào thiết bị điện tử thông minh là xu hướng phát triển quan trọng của kĩ thuật điện tử."
+          },
+          {
+            "id": "cn12-b13-ex9",
+            "type": "mcq",
+            "question": "Linh kiện nào có chức năng khuếch đại tín hiệu?",
+            "options": [
+              "Tụ điện",
+              "Điện trở",
+              "Transistor",
+              "Cuộn cảm"
+            ],
+            "correct": 2,
+            "explanation": "Transistor có chức năng khuếch đại tín hiệu và chuyển mạch trong các mạch điện tử."
+          },
+          {
+            "id": "cn12-b13-ex10",
+            "type": "mcq",
+            "question": "Công nghệ 5G thuộc lĩnh vực ứng dụng nào của kĩ thuật điện tử?",
+            "options": [
+              "Y tế",
+              "Giao thông",
+              "Viễn thông",
+              "Nông nghiệp"
+            ],
+            "correct": 2,
+            "explanation": "5G là công nghệ viễn thông thế hệ thứ năm, cho tốc độ truyền dữ liệu siêu nhanh."
+          },
+          {
+            "id": "cn12-b13-ex11",
+            "type": "msq",
+            "question": " Những lĩnh vực nào có ứng dụng của kĩ thuật điện tử?",
+            "options": [
+              "Y tế",
+              "Công nghiệp",
+              "Thể thao điện tử",
+              "Nông nghiệp"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Kĩ thuật điện tử được ứng dụng trong nhiều lĩnh vực như y tế, công nghiệp, nông nghiệp, giao thông, viễn thông,…"
+          },
+          {
+            "id": "cn12-b13-ex12",
+            "type": "msq",
+            "question": " Thiết bị nào sau đây là thiết bị điện tử số?",
+            "options": [
+              "Máy tính",
+              "Ampli âm thanh analog",
+              "Điện thoại thông minh",
+              "Radio analog"
+            ],
+            "correct": [0, 2],
+            "explanation": "Máy tính và điện thoại thông minh là thiết bị số xử lí tín hiệu rời rạc."
+          },
+          {
+            "id": "cn12-b13-ex13",
+            "type": "msq",
+            "question": " Xu hướng phát triển của kĩ thuật điện tử hiện nay:",
+            "options": [
+              "Trí tuệ nhân tạo AI",
+              "Internet vạn vật IoT",
+              "Sử dụng năng lượng hạt nhân",
+              "Điện tử nano"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "AI, IoT và điện tử nano là các xu hướng phát triển hàng đầu của kĩ thuật điện tử hiện nay."
+          },
+          {
+            "id": "cn12-b13-ex14",
+            "type": "msq",
+            "question": " Linh kiện nào thuộc nhóm linh kiện tích cực?",
+            "options": [
+              "Diode",
+              "Tụ điện",
+              "Transistor",
+              "Cuộn cảm"
+            ],
+            "correct": [0, 2],
+            "explanation": "Diode và transistor là linh kiện tích cực. Tụ điện và cuộn cảm là linh kiện thụ động."
+          }
+        ]
+      }
+    }
+  ]
+}

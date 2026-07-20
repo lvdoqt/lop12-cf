@@ -18,22 +18,219 @@
           "title": "Trí tuệ nhân tạo (AI)",
           "summary": "AI là lĩnh vực khoa học máy tính nhằm tạo ra các hệ thống có khả năng thực hiện các nhiệm vụ đòi hỏi trí tuệ con người.",
           "sections": [
-            { "heading": "Khái niệm AI", "content": "Khả năng của máy tính có thể mô phỏng các quá trình suy nghĩ, học tập và giải quyết vấn đề như con người." },
-            { "heading": "Các đặc điểm của AI", "content": "Khả năng học (Learning), Khả năng hiểu ngôn ngữ (Understanding), Khả năng giải quyết vấn đề (Problem Solving) và Khả năng tự thích nghi." },
-            { "heading": "Phân loại AI", "content": "AI hẹp (Weak AI - thực hiện một nhiệm vụ cụ thể) và AI tổng quát (Strong AI - có trí tuệ như con người)." }
+            {
+              "heading": "Khái niệm AI",
+              "content": "Khả năng của máy tính có thể mô phỏng các quá trình suy nghĩ, học tập và giải quyết vấn đề như con người."
+            },
+            {
+              "heading": "Các đặc điểm của AI",
+              "content": "Khả năng học (Learning), Khả năng hiểu ngôn ngữ (Understanding), Khả năng giải quyết vấn đề (Problem Solving) và Khả năng tự thích nghi."
+            },
+            {
+              "heading": "Phân loại AI",
+              "content": "AI hẹp (Weak AI - thực hiện một nhiệm vụ cụ thể) và AI tổng quát (Strong AI - có trí tuệ như con người)."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "AI là viết tắt của cụm từ nào?", "options": ["Artificial Intelligence", "Automatic Information", "Advanced Internet", "Application Interface"], "correct": 0, "explanation": "AI là Trí tuệ nhân tạo (Artificial Intelligence)." },
-          { "id": 2, "type": "mcq", "question": "Đặc điểm nào sau đây là đặc trưng của AI?", "options": ["Tính toán nhanh nhưng không biết học", "Khả năng tự học và thích nghi từ dữ liệu", "Chỉ làm theo các lệnh cố định", "Không cần dữ liệu đầu vào"], "correct": 1, "explanation": "Khả năng học hỏi từ dữ liệu là cốt lõi của AI hiện đại." },
-          { "id": 3, "type": "mcq", "question": "Hệ thống AI thực hiện tốt một nhiệm vụ cụ thể (như chơi cờ) gọi là gì?", "options": ["AI tổng quát", "AI hẹp (Weak AI)", "Siêu trí tuệ", "Robot"], "correct": 1, "explanation": "AI hẹp được thiết kế cho một phạm vi hẹp các tác vụ." },
-          { "id": 4, "type": "mcq", "question": "Phép thử Turing (Turing Test) dùng để làm gì?", "options": ["Đo tốc độ xử lý của CPU", "Kiểm tra xem máy tính có trí tuệ như con người không", "Kiểm tra dung lượng bộ nhớ", "Kiểm tra kết nối mạng"], "correct": 1, "explanation": "Phép thử này đánh giá khả năng mô phỏng hành vi trí tuệ của máy." },
-          { "id": 5, "type": "mcq", "question": "Học máy (Machine Learning) có mối quan hệ gì với AI?", "options": ["Là một tập con của AI", "Là một lĩnh vực hoàn toàn khác", "Là phần cứng chạy AI", "Là tên gọi khác của Internet"], "correct": 0, "explanation": "Machine Learning là một phương pháp quan trọng để đạt được AI." },
-          { "id": 6, "type": "mcq", "question": "Dữ liệu đóng vai trò gì trong hệ thống AI?", "options": ["Không quan trọng", "Là 'nhiên liệu' để hệ thống học và ra quyết định", "Làm nặng máy tính", "Chỉ dùng để lưu trữ"], "correct": 1, "explanation": "AI cần khối lượng lớn dữ liệu để rèn luyện mô hình." },
-          { "id": 7, "type": "mcq", "question": "AI không thể thực hiện công việc nào sau đây?", "options": ["Nhận diện khuôn mặt", "Dịch ngôn ngữ", "Có cảm xúc và ý thức thực sự như con người", "Lái xe tự động"], "correct": 2, "explanation": "Hiện nay AI vẫn chưa có ý thức và cảm xúc thật sự (Strong AI chưa đạt được)." },
-          { "id": 8, "type": "mcq", "question": "Ứng dụng nào sau đây sử dụng AI?", "options": ["Trợ lý ảo (Siri, Google Assistant)", "Máy tính bỏ túi (Calculator)", "Đèn bàn", "Đồng hồ treo tường"], "correct": 0, "explanation": "Các trợ lý ảo sử dụng xử lý ngôn ngữ tự nhiên (một nhánh của AI)." },
-          { "id": 9, "type": "mcq", "question": "Lĩnh vực nào nghiên cứu cách máy tính hiểu văn bản và giọng nói con người?", "options": ["Đồ họa máy tính", "Xử lý ngôn ngữ tự nhiên (NLP)", "An ninh mạng", "Cơ sở dữ liệu"], "correct": 1, "explanation": "NLP (Natural Language Processing) tập trung vào giao tiếp người-máy." },
-          { "id": 10, "type": "mcq", "question": "Sự phát triển của AI mang lại lợi ích gì?", "options": ["Tăng hiệu suất công việc và hỗ trợ con người", "Làm con người lười đi hoàn toàn", "Gây ra chiến tranh", "Làm máy tính đắt hơn"], "correct": 0, "explanation": "AI hỗ trợ con người giải quyết các bài toán phức tạp một cách nhanh chóng." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "AI là viết tắt của cụm từ nào?",
+            "options": [
+              "Artificial Intelligence",
+              "Automatic Information",
+              "Advanced Internet",
+              "Application Interface"
+            ],
+            "correct": 0,
+            "explanation": "AI là Trí tuệ nhân tạo (Artificial Intelligence)."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Đặc điểm nào sau đây là đặc trưng của AI?",
+            "options": [
+              "Tính toán nhanh nhưng không biết học",
+              "Khả năng tự học và thích nghi từ dữ liệu",
+              "Chỉ làm theo các lệnh cố định",
+              "Không cần dữ liệu đầu vào"
+            ],
+            "correct": 1,
+            "explanation": "Khả năng học hỏi từ dữ liệu là cốt lõi của AI hiện đại."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Hệ thống AI thực hiện tốt một nhiệm vụ cụ thể (như chơi cờ) gọi là gì?",
+            "options": [
+              "AI tổng quát",
+              "AI hẹp (Weak AI)",
+              "Siêu trí tuệ",
+              "Robot"
+            ],
+            "correct": 1,
+            "explanation": "AI hẹp được thiết kế cho một phạm vi hẹp các tác vụ."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Phép thử Turing (Turing Test) dùng để làm gì?",
+            "options": [
+              "Đo tốc độ xử lý của CPU",
+              "Kiểm tra xem máy tính có trí tuệ như con người không",
+              "Kiểm tra dung lượng bộ nhớ",
+              "Kiểm tra kết nối mạng"
+            ],
+            "correct": 1,
+            "explanation": "Phép thử này đánh giá khả năng mô phỏng hành vi trí tuệ của máy."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Học máy (Machine Learning) có mối quan hệ gì với AI?",
+            "options": [
+              "Là một tập con của AI",
+              "Là một lĩnh vực hoàn toàn khác",
+              "Là phần cứng chạy AI",
+              "Là tên gọi khác của Internet"
+            ],
+            "correct": 0,
+            "explanation": "Machine Learning là một phương pháp quan trọng để đạt được AI."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Dữ liệu đóng vai trò gì trong hệ thống AI?",
+            "options": [
+              "Không quan trọng",
+              "Là 'nhiên liệu' để hệ thống học và ra quyết định",
+              "Làm nặng máy tính",
+              "Chỉ dùng để lưu trữ"
+            ],
+            "correct": 1,
+            "explanation": "AI cần khối lượng lớn dữ liệu để rèn luyện mô hình."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "AI không thể thực hiện công việc nào sau đây?",
+            "options": [
+              "Nhận diện khuôn mặt",
+              "Dịch ngôn ngữ",
+              "Có cảm xúc và ý thức thực sự như con người",
+              "Lái xe tự động"
+            ],
+            "correct": 2,
+            "explanation": "Hiện nay AI vẫn chưa có ý thức và cảm xúc thật sự (Strong AI chưa đạt được)."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Ứng dụng nào sau đây sử dụng AI?",
+            "options": [
+              "Trợ lý ảo (Siri, Google Assistant)",
+              "Máy tính bỏ túi (Calculator)",
+              "Đèn bàn",
+              "Đồng hồ treo tường"
+            ],
+            "correct": 0,
+            "explanation": "Các trợ lý ảo sử dụng xử lý ngôn ngữ tự nhiên (một nhánh của AI)."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Lĩnh vực nào nghiên cứu cách máy tính hiểu văn bản và giọng nói con người?",
+            "options": [
+              "Đồ họa máy tính",
+              "Xử lý ngôn ngữ tự nhiên (NLP)",
+              "An ninh mạng",
+              "Cơ sở dữ liệu"
+            ],
+            "correct": 1,
+            "explanation": "NLP (Natural Language Processing) tập trung vào giao tiếp người-máy."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Sự phát triển của AI mang lại lợi ích gì?",
+            "options": [
+              "Tăng hiệu suất công việc và hỗ trợ con người",
+              "Làm con người lười đi hoàn toàn",
+              "Gây ra chiến tranh",
+              "Làm máy tính đắt hơn"
+            ],
+            "correct": 0,
+            "explanation": "AI hỗ trợ con người giải quyết các bài toán phức tạp một cách nhanh chóng."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Những lĩnh vực nào sau đây có ứng dụng AI?",
+            "options": [
+              "Y tế (chẩn đoán bệnh)",
+              "Giao thông (lái xe tự động)",
+              "Giáo dục (học máy)",
+              "Nông nghiệp (tưới tiêu tự động)"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "AI có ứng dụng rộng rãi trong hầu hết các lĩnh vực."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Đặc điểm nào sau đây là của AI?",
+            "options": [
+              "Khả năng học từ dữ liệu",
+              "Khả năng tự thích nghi",
+              "Có cảm xúc và ý thức như con người",
+              "Khả năng nhận diện khuôn mặt"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "AI có khả năng học, thích nghi và nhận diện, nhưng chưa có ý thức và cảm xúc thực sự."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Học máy (Machine Learning) bao gồm những phương pháp nào?",
+            "options": [
+              "Học có giám sát",
+              "Học không giám sát",
+              "Học tăng cường",
+              "Lập trình thủ công"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "ML bao gồm học có giám sát, không giám sát và tăng cường."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "AI hẹp (Weak AI) có đặc điểm gì?",
+            "options": [
+              "Thực hiện một nhiệm vụ cụ thể",
+              "Có trí tuệ tổng quát như con người",
+              "Được huấn luyện cho phạm vi hẹp",
+              "Không thể tự học"
+            ],
+            "correct": [
+              0,
+              2
+            ],
+            "explanation": "AI hẹp chỉ thực hiện nhiệm vụ cụ thể, được huấn luyện cho phạm vi hẹp."
+          }
         ]
       }
     }

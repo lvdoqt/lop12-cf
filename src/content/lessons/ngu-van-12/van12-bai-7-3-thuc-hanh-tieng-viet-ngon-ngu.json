@@ -1,0 +1,178 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-7-3-thuc-hanh-tieng-viet",
+      "name": "Thực hành tiếng Việt",
+      "slug": "thuc-hanh-tieng-viet",
+      "chapter": "Sự thật trong tác phẩm kí",
+      "chapter_id": "V12-7",
+      "lesson_id": 3,
+      "description": "Thực hành tiếng Việt trong chương Sự thật trong tác phẩm kí.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "language-register",
+          "name": "Phong cách ngôn ngữ",
+          "slug": "phong-cach-ngon-ngu",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Thực hành tiếng Việt",
+          "sections": [
+            {
+              "heading": "1. Ngôn ngữ trang trọng",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Định nghĩa:</strong> Ngôn ngữ được sử dụng trong các tình huống chính thức, nghiêm túc</li><li><strong>Đặc điểm:</strong> Chuẩn mực, lịch sự, tôn trọng</li><li><strong>Mục đích:</strong> Thể hiện sự trang trọng, nghiêm túc</li></ul><h4>b) Đặc điểm ngôn ngữ trang trọng</h4><ul><li><strong>Từ vựng:</strong> Chuẩn mực, tránh tiếng lóng</li><li><strong>Ngữ pháp:</strong> Đầy đủ, chính xác</li><li><strong>Xưng hô:</strong> Lịch sự, tôn trọng</li><li><strong>Giọng điệu:</strong> Nghiêm túc, trang trọng</li></ul><h4>c) Tình huống sử dụng</h4><ul><li><strong>Văn bản:</strong> Công văn, báo cáo, luận văn</li><li><strong>Giao tiếp:</strong> Hội nghị, phát biểu, thuyết trình</li><li><strong>Đối tượng:</strong> Cấp trên, người lớn tuổi, người xa lạ</li></ul>"
+            },
+            {
+              "heading": "2. Ngôn ngữ thân mật",
+              "content": "<h4>a) Khái niệm</h4><ul><li><strong>Định nghĩa:</strong> Ngôn ngữ được sử dụng trong các tình huống thân thiết, gần gũi</li><li><strong>Đặc điểm:</strong> Tự nhiên, thoải mái, gần gũi</li><li><strong>Mục đích:</strong> Tạo sự thân thiện, gắn kết</li></ul><h4>b) Đặc điểm ngôn ngữ thân mật</h4><ul><li><strong>Từ vựng:</strong> Có thể dùng tiếng lóng, từ địa phương</li><li><strong>Ngữ pháp:</strong> Có thể rút gọn, không quá cứng nhắc</li><li><strong>Xưng hô:</strong> Thân mật, gần gũi</li><li><strong>Giọng điệu:</strong> Tự nhiên, thoải mái</li></ul><h4>c) Tình huống sử dụng</h4><ul><li><strong>Văn bản:</strong> Thư cá nhân, nhật ký, mạng xã hội</li><li><strong>Giao tiếp:</strong> Với bạn bè, người thân</li><li><strong>Đối tượng:</strong> Người quen, bạn bè, gia đình</li></ul>"
+            },
+            {
+              "heading": "3. So sánh và ứng dụng",
+              "content": "<h4>a) So sánh</h4><ul><li><strong>Trang trọng:</strong> Chính thức, chuẩn mực, lịch sự</li><li><strong>Thân mật:</strong> Tự nhiên, gần gũi, thoải mái</li><li><strong>Lưu ý:</strong> Cần phân biệt rõ để sử dụng phù hợp</li></ul><h4>b) Nguyên tắc sử dụng</h4><ul><li><strong>Xem xét hoàn cảnh:</strong> Chính thức hay thân mật</li><li><strong>Xem xét đối tượng:</strong> Người lớn tuổi, cấp trên hay bạn bè</li><li><strong>Xem xét mục đích:</strong> Giao tiếp công việc hay trò chuyện</li></ul><h4>c) Ví dụ minh họa</h4><ul><li><strong>Trang trọng:</strong> 'Kính thưa thầy, em xin phép được hỏi'</li><li><strong>Thân mật:</strong> 'Này, tớ hỏi cậu chút nhé'</li><li><strong>Chuyển đổi:</strong> Biết chuyển đổi linh hoạt giữa hai phong cách</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex7-3-1",
+            "type": "mcq",
+            "question": "Ngôn ngữ trang trọng được sử dụng trong tình huống nào?",
+            "options": [
+              "Trò chuyện với bạn bè",
+              "Hội nghị, phát biểu, văn bản chính thức",
+              "Nhắn tin với người thân",
+              "Viết nhật ký"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ trang trọng được sử dụng trong các tình huống chính thức như hội nghị, phát biểu, văn bản công việc."
+          },
+          {
+            "id": "ex7-3-2",
+            "type": "mcq",
+            "question": "Đặc điểm của ngôn ngữ thân mật là gì?",
+            "options": [
+              "Cứng nhắc, máy móc",
+              "Tự nhiên, thoải mái, gần gũi",
+              "Phức tạp, khó hiểu",
+              "Nghiêm túc, trang trọng"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ thân mật có đặc điểm tự nhiên, thoải mái và gần gũi, phù hợp với giao tiếp thân thiết."
+          },
+          {
+            "id": "ex7-3-3",
+            "type": "mcq",
+            "question": "Câu nào sử dụng ngôn ngữ trang trọng?",
+            "options": [
+              "Này, tớ hỏi cậu chút",
+              "Kính thưa thầy, em xin phép được hỏi",
+              "Ê, đi chơi không?",
+              "Mày làm gì đấy?"
+            ],
+            "correct": 1,
+            "explanation": "Câu 'Kính thưa thầy, em xin phép được hỏi' sử dụng ngôn ngữ trang trọng, lịch sự với người lớn tuổi."
+          },
+          {
+            "id": "ex7-3-4",
+            "type": "mcq",
+            "question": "Khi viết văn bản nào cần dùng ngôn ngữ trang trọng?",
+            "options": [
+              "Nhật ký cá nhân",
+              "Công văn, báo cáo, luận văn",
+              "Tin nhắn với bạn",
+              "Bài đăng Facebook cá nhân"
+            ],
+            "correct": 1,
+            "explanation": "Công văn, báo cáo, luận văn là các văn bản chính thức cần sử dụng ngôn ngữ trang trọng."
+          },
+          {
+            "id": "ex7-3-5",
+            "type": "mcq",
+            "question": "Yếu tố nào cần xem xét khi chọn phong cách ngôn ngữ?",
+            "options": [
+              "Chỉ xem xét thời tiết",
+              "Hoàn cảnh, đối tượng, mục đích giao tiếp",
+              "Chỉ xem xét tâm trạng",
+              "Không cần xem xét gì"
+            ],
+            "correct": 1,
+            "explanation": "Cần xem xét hoàn cảnh (chính thức hay không), đối tượng (ai) và mục đích giao tiếp để chọn phong cách phù hợp."
+          },
+          {
+            "id": "ex7-3-6",
+            "type": "mcq",
+            "question": "Ngôn ngữ thân mật có thể sử dụng gì?",
+            "options": [
+              "Chỉ từ chuẩn mực",
+              "Tiếng lóng, từ địa phương, rút gọn",
+              "Chỉ từ Hán Việt",
+              "Chỉ từ ngoại lai"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ thân mật có thể sử dụng tiếng lóng, từ địa phương và các hình thức rút gọn một cách tự nhiên."
+          },
+          {
+            "id": "ex7-3-7",
+            "type": "mcq",
+            "question": "Tại sao cần phân biệt ngôn ngữ trang trọng và thân mật?",
+            "options": [
+              "Không cần phân biệt",
+              "Để sử dụng phù hợp với hoàn cảnh, tạo hiệu quả giao tiếp",
+              "Chỉ để khoe khoang",
+              "Để làm khó người khác"
+            ],
+            "correct": 1,
+            "explanation": "Phân biệt rõ giúp sử dụng ngôn ngữ phù hợp với từng hoàn cảnh, tạo hiệu quả giao tiếp và thể hiện sự tôn trọng."
+          },
+          {
+            "id": "ex7-3-8",
+            "type": "mcq",
+            "question": "Khi nào nên chuyển từ ngôn ngữ thân mật sang trang trọng?",
+            "options": [
+              "Không bao giờ",
+              "Khi chuyển từ trò chuyện riêng sang tình huống chính thức",
+              "Khi muốn xa cách",
+              "Khi tâm trạng không tốt"
+            ],
+            "correct": 1,
+            "explanation": "Cần chuyển sang ngôn ngữ trang trọng khi chuyển từ tình huống thân mật sang tình huống chính thức, công việc."
+          },
+          {
+            "id": "ex7-3-9",
+            "type": "mcq",
+            "question": "Vai trò của ngôn ngữ trong tác phẩm văn học là gì?",
+            "options": [
+              "Phương tiện thể hiện tư tưởng, cảm xúc của tác giả",
+              "Chỉ là công cụ giao tiếp",
+              "Không quan trọng",
+              "Yếu tố phụ"
+            ],
+            "correct": 0,
+            "explanation": "Ngôn ngữ là phương tiện quan trọng để thể hiện nội dung, tư tưởng và cảm xúc trong tác phẩm."
+          },
+          {
+            "id": "ex7-3-10",
+            "type": "mcq",
+            "question": "Khi viết bài văn nghị luận, cần đảm bảo yêu cầu nào?",
+            "options": [
+              "Lí lẽ rõ ràng, dẫn chứng thuyết phục, lập luận chặt chẽ",
+              "Chỉ nêu cảm xúc cá nhân",
+              "Viết dài để thuyết phục",
+              "Sử dụng nhiều từ ngữ hoa mỹ"
+            ],
+            "correct": 0,
+            "explanation": "Bài văn nghị luận cần lí lẽ rõ ràng, dẫn chứng thuyết phục và lập luận chặt chẽ."
+          }
+        ]
+      }
+    }
+  ]
+}

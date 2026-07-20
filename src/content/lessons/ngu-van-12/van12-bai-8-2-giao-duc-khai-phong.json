@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-8-2-giao-duc-khai-phong",
-      "name": "Giáo dục khai phóng Việt Nam nhìn từ Đông Kinh Nghĩa Thục",
+      "name": "Giáo dục khai phóng ở Việt Nam nhìn từ Đông Kinh Nghĩa Thục",
       "slug": "giao-duc-khai-phong",
       "chapter": "Dữ liệu trong văn bản thông tin",
       "chapter_id": "V12-8",
       "lesson_id": 2,
       "author": "Nguyễn Nam",
-      "description": "Tìm hiểu về phong trào Đông Kinh Nghĩa Thục và vai trò của giáo dục khai phóng trong lịch sử Việt Nam đầu thế kỷ 20.",
+      "description": "Tìm hiểu về giáo dục khai phóng ở Việt Nam qua Đông Kinh Nghĩa Thục.",
       "duration_minutes": 90,
       "difficulty_level": "medium",
       "is_published": true,
@@ -25,7 +25,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Giáo dục khai phóng và Đông Kinh Nghĩa Thục",
+          "title": "Giáo dục khai phóng ở Việt Nam nhìn từ Đông Kinh Nghĩa Thục",
           "sections": [
             {
               "heading": "1. Đông Kinh Nghĩa Thục",
@@ -41,115 +41,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex8-2-1",
-              "type": "mcq",
-              "question": "Đông Kinh Nghĩa Thục được thành lập năm nào?",
-              "options": [
-                "1900",
-                "1907",
-                "1920",
-                "1930"
-              ],
-              "correct": 1,
-              "explanation": "Đông Kinh Nghĩa Thục được thành lập năm 1907 tại Hà Nội."
-            },
-            {
-              "id": "ex8-2-2",
-              "type": "mcq",
-              "question": "Ai là người khởi xướng Đông Kinh Nghĩa Thục?",
-              "options": [
-                "Phan Bội Châu",
-                "Lương Văn Can",
-                "Nguyễn Ái Quốc",
-                "Hồ Chí Minh"
-              ],
-              "correct": 1,
-              "explanation": "Lương Văn Can là người khởi xướng thành lập Đông Kinh Nghĩa Thục."
-            },
-            {
-              "id": "ex8-2-3",
-              "type": "mcq",
-              "question": "Mục đích chính của Đông Kinh Nghĩa Thục là gì?",
-              "options": [
-                "Kinh doanh",
-                "Phổ biến học vấn mới, đánh thức dân trí",
-                "Giải trí",
-                "Du lịch"
-              ],
-              "correct": 1,
-              "explanation": "Mục đích chính là phổ biến học vấn mới, đánh thức dân trí và tinh thần yêu nước."
-            },
-            {
-              "id": "ex8-2-4",
-              "type": "mcq",
-              "question": "Giáo dục khai phóng là gì?",
-              "options": [
-                "Giáo dục truyền thống",
-                "Giáo dục giải phóng tư tưởng, đánh thức dân trí",
-                "Giáo dục ngoại ngữ",
-                "Giáo dục thể chất"
-              ],
-              "correct": 1,
-              "explanation": "Giáo dục khai phóng là giáo dục giải phóng tư tưởng, đánh thức dân trí, nâng cao nhận thức dân tộc."
-            },
-            {
-              "id": "ex8-2-5",
-              "type": "mcq",
-              "question": "Đông Kinh Nghĩa Thục giảng dạy những môn gì?",
-              "options": [
-                "Chỉ có Hán văn",
-                "Quốc văn, quốc sử, khoa học mới, tư tưởng tiến bộ",
-                "Chỉ có ngoại ngữ",
-                "Không giảng dạy gì"
-              ],
-              "correct": 1,
-              "explanation": "Đông Kinh Nghĩa Thục giảng dạy quốc văn, quốc sử, khoa học mới và truyền bá tư tưởng dân quyền, tiến bộ."
-            },
-            {
-              "id": "ex8-2-6",
-              "type": "mcq",
-              "question": "Ý nghĩa của Đông Kinh Nghĩa Thục là gì?",
-              "options": [
-                "Không có ý nghĩa",
-                "Đánh thức tinh thần dân tộc, chuẩn bị lực lượng cách mạng",
-                "Chỉ dạy chữ",
-                "Chỉ kinh doanh"
-              ],
-              "correct": 1,
-              "explanation": "Đông Kinh Nghĩa Thục có ý nghĩa lớn trong việc đánh thức tinh thần dân tộc và chuẩn bị lực lượng cho phong trào cách mạng."
-            },
-            {
-              "id": "ex8-2-7",
-              "type": "mcq",
-              "question": "Bài học từ Đông Kinh Nghĩa Thục là gì?",
-              "options": [
-                "Không có bài học",
-                "Vai trò quan trọng của giáo dục trong giải phóng dân tộc",
-                "Chỉ học là đủ",
-                "Không cần giáo dục"
-              ],
-              "correct": 1,
-              "explanation": "Bài học quan trọng là vai trò của giáo dục trong việc giải phóng tư tưởng và giải phóng dân tộc."
-            },
-            {
-              "id": "ex8-2-8",
-              "type": "mcq",
-              "question": "Đông Kinh Nghĩa Thục ảnh hưởng đến điều gì?",
-              "options": [
-                "Không ảnh hưởng gì",
-                "Các phong trào yêu nước và cách mạng sau này",
-                "Chỉ ảnh hưởng đến giáo dục",
-                "Chỉ ảnh hưởng đến văn hóa"
-              ],
-              "correct": 1,
-              "explanation": "Đông Kinh Nghĩa Thục có ảnh hưởng sâu rộng đến các phong trào yêu nước và cách mạng Việt Nam sau này."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex8-2-1",
+            "type": "mcq",
+            "question": "Đông Kinh Nghĩa Thục được thành lập năm nào?",
+            "options": [
+              "1900",
+              "1907",
+              "1920",
+              "1930"
+            ],
+            "correct": 1,
+            "explanation": "Đông Kinh Nghĩa Thục được thành lập năm 1907 tại Hà Nội."
+          },
+          {
+            "id": "ex8-2-2",
+            "type": "mcq",
+            "question": "Ai là người khởi xướng Đông Kinh Nghĩa Thục?",
+            "options": [
+              "Phan Bội Châu",
+              "Lương Văn Can",
+              "Nguyễn Ái Quốc",
+              "Hồ Chí Minh"
+            ],
+            "correct": 1,
+            "explanation": "Lương Văn Can là người khởi xướng thành lập Đông Kinh Nghĩa Thục."
+          },
+          {
+            "id": "ex8-2-3",
+            "type": "mcq",
+            "question": "Mục đích chính của Đông Kinh Nghĩa Thục là gì?",
+            "options": [
+              "Kinh doanh",
+              "Phổ biến học vấn mới, đánh thức dân trí",
+              "Giải trí",
+              "Du lịch"
+            ],
+            "correct": 1,
+            "explanation": "Mục đích chính là phổ biến học vấn mới, đánh thức dân trí và tinh thần yêu nước."
+          },
+          {
+            "id": "ex8-2-4",
+            "type": "mcq",
+            "question": "Giáo dục khai phóng là gì?",
+            "options": [
+              "Giáo dục truyền thống",
+              "Giáo dục giải phóng tư tưởng, đánh thức dân trí",
+              "Giáo dục ngoại ngữ",
+              "Giáo dục thể chất"
+            ],
+            "correct": 1,
+            "explanation": "Giáo dục khai phóng là giáo dục giải phóng tư tưởng, đánh thức dân trí, nâng cao nhận thức dân tộc."
+          },
+          {
+            "id": "ex8-2-5",
+            "type": "mcq",
+            "question": "Đông Kinh Nghĩa Thục giảng dạy những môn gì?",
+            "options": [
+              "Chỉ có Hán văn",
+              "Quốc văn, quốc sử, khoa học mới, tư tưởng tiến bộ",
+              "Chỉ có ngoại ngữ",
+              "Không giảng dạy gì"
+            ],
+            "correct": 1,
+            "explanation": "Đông Kinh Nghĩa Thục giảng dạy quốc văn, quốc sử, khoa học mới và truyền bá tư tưởng dân quyền, tiến bộ."
+          },
+          {
+            "id": "ex8-2-6",
+            "type": "mcq",
+            "question": "Ý nghĩa của Đông Kinh Nghĩa Thục là gì?",
+            "options": [
+              "Không có ý nghĩa",
+              "Đánh thức tinh thần dân tộc, chuẩn bị lực lượng cách mạng",
+              "Chỉ dạy chữ",
+              "Chỉ kinh doanh"
+            ],
+            "correct": 1,
+            "explanation": "Đông Kinh Nghĩa Thục có ý nghĩa lớn trong việc đánh thức tinh thần dân tộc và chuẩn bị lực lượng cho phong trào cách mạng."
+          },
+          {
+            "id": "ex8-2-7",
+            "type": "mcq",
+            "question": "Bài học từ Đông Kinh Nghĩa Thục là gì?",
+            "options": [
+              "Không có bài học",
+              "Vai trò quan trọng của giáo dục trong giải phóng dân tộc",
+              "Chỉ học là đủ",
+              "Không cần giáo dục"
+            ],
+            "correct": 1,
+            "explanation": "Bài học quan trọng là vai trò của giáo dục trong việc giải phóng tư tưởng và giải phóng dân tộc."
+          },
+          {
+            "id": "ex8-2-8",
+            "type": "mcq",
+            "question": "Đông Kinh Nghĩa Thục ảnh hưởng đến điều gì?",
+            "options": [
+              "Không ảnh hưởng gì",
+              "Các phong trào yêu nước và cách mạng sau này",
+              "Chỉ ảnh hưởng đến giáo dục",
+              "Chỉ ảnh hưởng đến văn hóa"
+            ],
+            "correct": 1,
+            "explanation": "Đông Kinh Nghĩa Thục có ảnh hưởng sâu rộng đến các phong trào yêu nước và cách mạng Việt Nam sau này."
+          },
+          {
+            "id": "ex8-2-9",
+            "type": "mcq",
+            "question": "Văn bản thông tin thường có đặc điểm gì?",
+            "options": [
+              "Tính chính xác, khách quan, cập nhật",
+              "Tính hư cấu, tưởng tượng",
+              "Tính cảm xúc, chủ quan",
+              "Tính triết lý, sâu xa"
+            ],
+            "correct": 0,
+            "explanation": "Văn bản thông tin cần đảm bảo tính chính xác, khách quan và cập nhật."
+          },
+          {
+            "id": "ex8-2-10",
+            "type": "mcq",
+            "question": "Mục đích của việc viết thư trao đổi là gì?",
+            "options": [
+              "Trao đổi ý kiến, thuyết phục người đọc về một vấn đề",
+              "Kể chuyện giải trí",
+              "Thông báo tin tức",
+              "Bày tỏ cảm xúc cá nhân"
+            ],
+            "correct": 0,
+            "explanation": "Thư trao đổi nhằm trao đổi ý kiến và thuyết phục người đọc về một vấn đề cụ thể."
+          }
+        ]
       }
     }
   ]

@@ -4,36 +4,269 @@
   "lessons": [
     {
       "id": "dia12_34",
-      "name": "Thực hành: Lập kế hoạch phát triển dịch vụ hàng hải ở Nam Trung bộ",
+      "name": "Thực hành: Viết báo cáo tuyên truyền về bảo vệ chủ quyền biển, đảo của Việt Nam",
       "slug": "thuc-hanh-lap-ke-hoach-phat-trien-dich-vu-hang-hai-nam_trung_bo",
       "chapter": "Địa lí các vùng kinh tế",
       "chapter_id": "dia12_part4",
       "lesson_id": 34,
-      "description": "Thực hành xây dựng kế hoạch phát triển dịch vụ hàng hải (logistics, cảng, bảo đảm an ninh hàng hải) dành cho một địa phương ở Nam Trung bộ, bao gồm đánh giá hiện trạng và đề xuất giải pháp.",
+      "description": "Thực hành thu thập tư liệu và viết báo cáo tuyên truyền về bảo vệ chủ quyền biển, đảo Việt Nam, tập trung vào chủ quyền quần đảo Hoàng Sa, Trường Sa và Luật Biển Việt Nam.",
       "duration_minutes": 90,
       "difficulty_level": "trung bình",
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Dịch vụ hàng hải: khái niệm và thành phần",
-          "summary": "Dịch vụ hàng hải bao gồm logistics cảng, xếp dỡ, kho bãi, bảo hiểm, dịch vụ tàu và các hoạt động hỗ trợ; kế hoạch phát triển cần đánh giá hạ tầng, nguồn lực và yêu cầu an ninh hàng hải.",
+          "title": "Thực hành: Viết báo cáo tuyên truyền về bảo vệ chủ quyền biển, đảo của Việt Nam",
+          "summary": "Bài thực hành yêu cầu thu thập tài liệu, tranh ảnh, video để viết báo cáo tuyên truyền về bảo vệ chủ quyền biển, đảo Việt Nam, có thể chọn nội dung về chủ quyền Hoàng Sa, Trường Sa hoặc về Luật Biển Việt Nam.",
           "sections": [
-            { "heading": "Thành phần dịch vụ", "content": "Logistics, kho bãi, dịch vụ xếp dỡ, sửa chữa tàu và dịch vụ an ninh hàng hải." },
-            { "heading": "Tiêu chí lập kế hoạch", "content": "Đánh giá nhu cầu, năng lực cảng, kết nối giao thông và tính bền vững môi trường." }
+            {
+              "heading": "Mục tiêu và nội dung tuyên truyền",
+              "content": "Mục tiêu của bài thực hành là nâng cao nhận thức và trách nhiệm của thế hệ trẻ đối với việc bảo vệ chủ quyền biển, đảo Tổ quốc. Nội dung tuyên truyền gồm hai hướng: Nội dung 1 - tuyên truyền về chủ quyền của Việt Nam ở quần đảo Hoàng Sa và quần đảo Trường Sa; Nội dung 2 - tuyên truyền về Luật Biển Việt Nam (Luật số 18/2012/QH13 ngày 21/6/2012). Học sinh lựa chọn một trong hai nội dung để triển khai báo cáo."
+            },
+            {
+              "heading": "Cơ sở pháp lý và lịch sử chủ quyền",
+              "content": "Việt Nam có đầy đủ bằng chứng pháp lý và lịch sử khẳng định chủ quyền đối với hai quần đảo Hoàng Sa và Trường Sa. Từ nửa đầu thế kỷ XVII, Chúa Nguyễn đã tổ chức đội Hoàng Sa, đến thế kỷ XIX nhà Nguyễn tổ chức thêm đội Bắc Hải để thực thi chủ quyền. Trong các năm 1930 - 1933, Pháp thay mặt Việt Nam đã đóng giữ, đặt cột mốc và xây hải đăng trên hai quần đảo. Hội nghị San Francisco (1951) ghi nhận sự khẳng định chủ quyền của Việt Nam không gặp phản đối. Năm 1975, Hải quân nhân dân Việt Nam giải phóng các đảo, và hiện nay Hoàng Sa thuộc TP. Đà Nẵng, Trường Sa thuộc tỉnh Khánh Hòa."
+            },
+            {
+              "heading": "Nguồn tư liệu tham khảo",
+              "content": "Để viết báo cáo, cần sưu tầm tư liệu từ nhiều nguồn: nội dung bài 33 (phát triển kinh tế và đảm bảo an ninh quốc phòng ở Biển Đông); thông tin trên internet liên quan; sách, báo, tạp chí, video về chủ quyền biển đảo; Luật Biển Việt Nam và các văn bản pháp lý khẳng định chủ quyền. Việc tổng hợp đa dạng nguồn tư liệu giúp báo cáo khách quan, thuyết phục và cập nhật."
+            },
+            {
+              "heading": "Quy trình thực hiện báo cáo",
+              "content": "Quy trình gồm ba bước: (1) Lựa chọn nội dung cụ thể cần tuyên truyền; (2) Sưu tầm, tổng hợp thông tin, tranh ảnh, video, tư liệu lịch sử và pháp lý; (3) Viết báo cáo hoàn chỉnh với bố cục mở đầu, nội dung chính và kết luận. Báo cáo cần thể hiện rõ bằng chứng chủ quyền, tiềm năng biển đảo và trách nhiệm của tuổi trẻ trong bảo vệ lãnh thải."
+            },
+            {
+              "heading": "Trách nhiệm của thế hệ trẻ",
+              "content": "Tuyên truyền bảo vệ chủ quyền biển, đảo là hoạt động giáo dục lòng yêu nước và ý thức công dân. Thế hệ trẻ cần nắm vững chủ trương, chính sách của Đảng và Nhà nước, tích cực chia sẻ thông tin đúng đắn trên mạng xã hội, tham gia các phong trào bảo vệ môi trường biển và sẵn sàng đóng góp sức lực cho nhiệm vụ bảo vệ chủ quyền quốc gia trên biển."
+            }
           ]
         },
-        "exercises": { "plan_tasks": [ { "q": "Soạn một bản tóm tắt kế hoạch 1 trang gồm hiện trạng, mục tiêu và 3 giải pháp chính.", "a_hint": "Tập trung vào nâng cấp cảng, đào tạo nhân lực và quản lý môi trường." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Dịch vụ hàng hải bao gồm hoạt động nào?", "options": ["Logistics cảng và xếp dỡ hàng","Trồng lúa","Khai thác khoáng sản nội địa","Không có hoạt động gì"], "correct": 0, "explanation": "Logistics và xếp dỡ là phần cốt lõi của dịch vụ hàng hải." },
-          { "id": 2, "type": "mcq", "question": "Một bước quan trọng khi lập kế hoạch là?", "options": ["Đánh giá nhu cầu hiện có và năng lực cơ sở hạ tầng","Bắt đầu xây dựng ngay","Không khảo sát","Chỉ dựa vào ước tính"], "correct": 0, "explanation": "Đánh giá hiện trạng là bước khởi đầu thiết yếu." },
-          { "id": 3, "type": "mcq", "question": "Kế hoạch dịch vụ hàng hải nên chú trọng?", "options": ["Kết nối với cảng, đường biển và quản lý môi trường","Chỉ quảng bá du lịch","Không chú trọng gì","Chỉ quan tâm lợi nhuận"], "correct": 0, "explanation": "Kết nối hạ tầng và môi trường là trọng tâm của kế hoạch bền vững." },
-          { "id": 4, "type": "mcq", "question": "Một giải pháp nâng cao năng lực dịch vụ là?", "options": ["Đào tạo nhân lực và nâng cấp trang thiết bị bốc xếp","Giảm nhân lực","Bỏ qua công nghệ","Không làm gì"], "correct": 0, "explanation": "Đào tạo và công nghệ hỗ trợ tăng năng suất dịch vụ." },
-          { "id": 5, "type": "mcq", "question": "Kế hoạch cần đánh giá yếu tố nào về môi trường?", "options": ["Tác động đến vùng sinh thái và chất lượng nước biển","Chỉ lợi nhuận","Không cần đánh giá","Chỉ số khách du lịch"], "correct": 0, "explanation": "Đánh giá môi trường giúp giảm tác động tiêu cực của dịch vụ hàng hải." },
-          { "id": 6, "type": "mcq", "question": "Một chỉ tiêu thành công cho kế hoạch có thể là?", "options": ["Tăng lưu lượng hàng hóa qua cảng và thời gian giao nhận giảm","Tăng ô nhiễm","Giảm dịch vụ","Không có chỉ tiêu"], "correct": 0, "explanation": "Lưu lượng hàng hóa và hiệu quả giao nhận là chỉ tiêu thực tế." },
-          { "id": 7, "type": "mcq", "question": "Ai là người nên tham gia lập kế hoạch?", "options": ["Chính quyền, doanh nghiệp cảng, ngư dân và chuyên gia môi trường","Chỉ chính quyền","Không ai","Chỉ doanh nghiệp nước ngoài"], "correct": 0, "explanation": "Sự tham gia đa bên giúp kế hoạch khả thi và bền vững." },
-          { "id": 8, "type": "mcq", "question": "Một rủi ro nếu không quản lý dịch vụ hàng hải tốt là?", "options": ["Ô nhiễm và nghẽn giao thông cảng","Tăng diện tích rừng","Cải thiện du lịch","Không có rủi ro"], "correct": 0, "explanation": "Quản lý kém dẫn tới ô nhiễm và giảm hiệu quả cảng." },
-          { "id": 9, "type": "mcq", "question": "Kế hoạch nên bao gồm mục tiêu nào?", "options": ["Nâng cao năng lực cảng và giảm tác động môi trường","Chỉ lợi nhuận ngắn hạn","Không có mục tiêu","Tăng ô nhiễm"], "correct": 0, "explanation": "Mục tiêu phải cân bằng hiệu quả và bảo vệ môi trường." },
-          { "id": 10, "type": "mcq", "question": "Một công cụ hỗ trợ lập kế hoạch hiệu quả là?", "options": ["Bản đồ hiện trạng hạ tầng và phân tích SWOT","Không cần công cụ","Chỉ dùng cảm tính","Sử dụng may rủi"], "correct": 0, "explanation": "Bản đồ và phân tích SWOT giúp hình dung rõ ưu - nhược điểm." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Dịch vụ hàng hải bao gồm hoạt động nào?",
+            "options": [
+              "Logistics cảng và xếp dỡ hàng",
+              "Trồng lúa",
+              "Khai thác khoáng sản nội địa",
+              "Không có hoạt động gì"
+            ],
+            "correct": 0,
+            "explanation": "Logistics và xếp dỡ là phần cốt lõi của dịch vụ hàng hải."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Một bước quan trọng khi lập kế hoạch là?",
+            "options": [
+              "Đánh giá nhu cầu hiện có và năng lực cơ sở hạ tầng",
+              "Bắt đầu xây dựng ngay",
+              "Không khảo sát",
+              "Chỉ dựa vào ước tính"
+            ],
+            "correct": 0,
+            "explanation": "Đánh giá hiện trạng là bước khởi đầu thiết yếu."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Kế hoạch dịch vụ hàng hải nên chú trọng?",
+            "options": [
+              "Kết nối với cảng, đường biển và quản lý môi trường",
+              "Chỉ quảng bá du lịch",
+              "Không chú trọng gì",
+              "Chỉ quan tâm lợi nhuận"
+            ],
+            "correct": 0,
+            "explanation": "Kết nối hạ tầng và môi trường là trọng tâm của kế hoạch bền vững."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Một giải pháp nâng cao năng lực dịch vụ là?",
+            "options": [
+              "Đào tạo nhân lực và nâng cấp trang thiết bị bốc xếp",
+              "Giảm nhân lực",
+              "Bỏ qua công nghệ",
+              "Không làm gì"
+            ],
+            "correct": 0,
+            "explanation": "Đào tạo và công nghệ hỗ trợ tăng năng suất dịch vụ."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Kế hoạch cần đánh giá yếu tố nào về môi trường?",
+            "options": [
+              "Tác động đến vùng sinh thái và chất lượng nước biển",
+              "Chỉ lợi nhuận",
+              "Không cần đánh giá",
+              "Chỉ số khách du lịch"
+            ],
+            "correct": 0,
+            "explanation": "Đánh giá môi trường giúp giảm tác động tiêu cực của dịch vụ hàng hải."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Một chỉ tiêu thành công cho kế hoạch có thể là?",
+            "options": [
+              "Tăng lưu lượng hàng hóa qua cảng và thời gian giao nhận giảm",
+              "Tăng ô nhiễm",
+              "Giảm dịch vụ",
+              "Không có chỉ tiêu"
+            ],
+            "correct": 0,
+            "explanation": "Lưu lượng hàng hóa và hiệu quả giao nhận là chỉ tiêu thực tế."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Ai là người nên tham gia lập kế hoạch?",
+            "options": [
+              "Chính quyền, doanh nghiệp cảng, ngư dân và chuyên gia môi trường",
+              "Chỉ chính quyền",
+              "Không ai",
+              "Chỉ doanh nghiệp nước ngoài"
+            ],
+            "correct": 0,
+            "explanation": "Sự tham gia đa bên giúp kế hoạch khả thi và bền vững."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Một rủi ro nếu không quản lý dịch vụ hàng hải tốt là?",
+            "options": [
+              "Ô nhiễm và nghẽn giao thông cảng",
+              "Tăng diện tích rừng",
+              "Cải thiện du lịch",
+              "Không có rủi ro"
+            ],
+            "correct": 0,
+            "explanation": "Quản lý kém dẫn tới ô nhiễm và giảm hiệu quả cảng."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Kế hoạch nên bao gồm mục tiêu nào?",
+            "options": [
+              "Nâng cao năng lực cảng và giảm tác động môi trường",
+              "Chỉ lợi nhuận ngắn hạn",
+              "Không có mục tiêu",
+              "Tăng ô nhiễm"
+            ],
+            "correct": 0,
+            "explanation": "Mục tiêu phải cân bằng hiệu quả và bảo vệ môi trường."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Một công cụ hỗ trợ lập kế hoạch hiệu quả là?",
+            "options": [
+              "Bản đồ hiện trạng hạ tầng và phân tích SWOT",
+              "Không cần công cụ",
+              "Chỉ dùng cảm tính",
+              "Sử dụng may rủi"
+            ],
+            "correct": 0,
+            "explanation": "Bản đồ và phân tích SWOT giúp hình dung rõ ưu - nhược điểm."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Nội dung kế hoạch phát triển dịch vụ hàng hải gồm?",
+            "options": [
+              "Phân tích hiện trạng",
+              "Mục tiêu phát triển",
+              "Giải pháp thực hiện",
+              "Lịch sử hình thành"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Kế hoạch cần phân tích hiện trạng, mục tiêu và giải pháp."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Các yếu tố ảnh hưởng đến phát triển dịch vụ hàng hải?",
+            "options": [
+              "Cảng biển",
+              "Đội tàu",
+              "Logistics",
+              "Trồng lúa"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cảng biển, đội tàu và logistics ảnh hưởng đến dịch vụ hàng hải."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Các giải pháp phát triển dịch vụ hàng hải?",
+            "options": [
+              "Nâng cấp cảng",
+              "Phát triển đội tàu",
+              "Đào tạo nhân lực",
+              "Giảm đầu tư"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Nâng cấp cảng, phát triển đội tàu và đào tạo nhân lực là giải pháp."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Vai trò của dịch vụ hàng hải đối với vùng?",
+            "options": [
+              "Thúc đẩy xuất nhập khẩu",
+              "Tạo việc làm",
+              "Kết nối vùng",
+              "Giảm thương mại"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Dịch vụ hàng hải thúc đẩy xuất nhập khẩu, tạo việc làm và kết nối vùng."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Mục đích của bài thực hành?",
+            "correct": "Lập kế hoạch phát triển dịch vụ hàng hải ở Nam Trung Bộ",
+            "explanation": "Bài thực hành lập kế hoạch phát triển dịch vụ hàng hải."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Kể tên một cảng biển ở Nam Trung Bộ?",
+            "correct": "Cảng Đà Nẵng, Cảng Quy Nhơn, Cảng Cam Ranh",
+            "explanation": "Đà Nẵng, Quy Nhơn, Cam Ranh là cảng biển ở Nam Trung Bộ."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Một giải pháp phát triển dịch vụ hàng hải?",
+            "correct": "Nâng cấp cảng, phát triển đội tàu, đào tạo nhân lực",
+            "explanation": "Nâng cấp cảng, phát triển đội tàu và đào tạo nhân lực là giải pháp."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Soạn một bản tóm tắt kế hoạch 1 trang gồm hiện trạng, mục tiêu và 3 giải pháp chính.",
+            "correct": "Tập trung vào nâng cấp cảng, đào tạo nhân lực và quản lý môi trường.",
+            "explanation": "Tập trung vào nâng cấp cảng, đào tạo nhân lực và quản lý môi trường."
+          }
         ]
       }
     }

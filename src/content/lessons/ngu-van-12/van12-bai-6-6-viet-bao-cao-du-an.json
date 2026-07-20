@@ -6,10 +6,10 @@
       "id": "van12-bai-6-6-viet-bao-cao-du-an",
       "name": "Viết báo cáo kết quả của bài tập dự án",
       "slug": "viet-bao-cao-du-an",
-      "chapter": "Hồ Chí Minh - Văn hóa phải soi đường cho quốc dân đi",
+      "chapter": "Hồ Chí Minh \"văn hóa phải soi đường cho quốc dân đi\"",
       "chapter_id": "V12-6",
       "lesson_id": 6,
-      "description": "Học cách viết báo cáo kết quả của bài tập dự án, trình bày quá trình thực hiện và kết quả đạt được một cách khoa học và có hệ thống.",
+      "description": "Hướng dẫn viết báo cáo kết quả bài tập dự án.",
       "duration_minutes": 90,
       "difficulty_level": "hard",
       "is_published": true,
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex6-6-1",
-              "type": "mcq",
-              "question": "Báo cáo dự án có mục đích chính là gì?",
-              "options": [
-                "Kể chuyện vui",
-                "Tổng kết, đánh giá hiệu quả, rút kinh nghiệm",
-                "Miêu tả cảnh vật",
-                "Bày tỏ cảm xúc"
-              ],
-              "correct": 1,
-              "explanation": "Báo cáo dự án có mục đích tổng kết quá trình thực hiện, đánh giá hiệu quả và rút ra bài học kinh nghiệm."
-            },
-            {
-              "id": "ex6-6-2",
-              "type": "mcq",
-              "question": "Phần nào KHÔNG thuộc cấu trúc báo cáo dự án?",
-              "options": [
-                "Giới thiệu dự án",
-                "Quá trình thực hiện",
-                "Thơ ca",
-                "Kết luận"
-              ],
-              "correct": 2,
-              "explanation": "Thơ ca không thuộc cấu trúc báo cáo dự án. Báo cáo dự án cần có: giới thiệu, quá trình thực hiện, kết quả, đánh giá."
-            },
-            {
-              "id": "ex6-6-3",
-              "type": "mcq",
-              "question": "Bước đầu tiên khi viết báo cáo dự án là gì?",
-              "options": [
-                "Viết ngay",
-                "Thu thập tài liệu: kế hoạch, nhật ký, hình ảnh",
-                "Đánh giá",
-                "Hoàn thiện"
-              ],
-              "correct": 1,
-              "explanation": "Bước đầu tiên là thu thập đầy đủ tài liệu liên quan đến dự án: kế hoạch, nhật ký thực hiện, hình ảnh minh họa."
-            },
-            {
-              "id": "ex6-6-4",
-              "type": "mcq",
-              "question": "Trong phần 'Kết quả đạt được', nên trình bày nội dung gì?",
-              "options": [
-                "Chỉ nêu khó khăn",
-                "Sản phẩm, thành tựu cụ thể của dự án",
-                "Chỉ nêu kế hoạch",
-                "Không cần nêu gì"
-              ],
-              "correct": 1,
-              "explanation": "Phần 'Kết quả đạt được' cần trình bày cụ thể các sản phẩm, thành tựu mà dự án đã đạt được."
-            },
-            {
-              "id": "ex6-6-5",
-              "type": "mcq",
-              "question": "Đặc điểm nào quan trọng nhất của báo cáo dự án?",
-              "options": [
-                "Tưởng tượng",
-                "Tính thực tiễn, hệ thống, khách quan",
-                "Cảm xúc",
-                "Hài hước"
-              ],
-              "correct": 1,
-              "explanation": "Báo cáo dự án cần có tính thực tiễn (dựa trên hoạt động thực tế), tính hệ thống (trình bày logic) và tính khách quan (đánh giá trung thực)."
-            },
-            {
-              "id": "ex6-6-6",
-              "type": "mcq",
-              "question": "Phần 'Khó khăn và cách giải quyết' có vai trò gì?",
-              "options": [
-                "Không quan trọng",
-                "Trình bày vấn đề gặp phải và cách khắc phục",
-                "Chỉ than phiền",
-                "Đổ lỗi cho người khác"
-              ],
-              "correct": 1,
-              "explanation": "Phần này giúp trình bày trung thực các vấn đề gặp phải và cách nhóm đã giải quyết, thể hiện khả năng xử lý tình huống."
-            },
-            {
-              "id": "ex6-6-7",
-              "type": "mcq",
-              "question": "Khi viết báo cáo dự án, nên sử dụng ngôn ngữ như thế nào?",
-              "options": [
-                "Hoa mỹ, phức tạp",
-                "Rõ ràng, chính xác, dễ hiểu",
-                "Văn vẻ, khó hiểu",
-                "Tùy hứng"
-              ],
-              "correct": 1,
-              "explanation": "Báo cáo dự án cần sử dụng ngôn ngữ rõ ràng, chính xác và dễ hiểu để người đọc nắm bắt nội dung một cách nhanh chóng."
-            },
-            {
-              "id": "ex6-6-8",
-              "type": "mcq",
-              "question": "Phần 'Bài học kinh nghiệm' trong kết luận nên bao gồm nội dung gì?",
-              "options": [
-                "Chỉ khen ngợi",
-                "Những gì học được từ quá trình thực hiện dự án",
-                "Chỉ chỉ trích",
-                "Không cần viết"
-              ],
-              "correct": 1,
-              "explanation": "Phần 'Bài học kinh nghiệm' cần tổng kết những gì nhóm đã học được, kỹ năng phát triển và những điều cần cải thiện."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex6-6-1",
+            "type": "mcq",
+            "question": "Báo cáo dự án có mục đích chính là gì?",
+            "options": [
+              "Kể chuyện vui",
+              "Tổng kết, đánh giá hiệu quả, rút kinh nghiệm",
+              "Miêu tả cảnh vật",
+              "Bày tỏ cảm xúc"
+            ],
+            "correct": 1,
+            "explanation": "Báo cáo dự án có mục đích tổng kết quá trình thực hiện, đánh giá hiệu quả và rút ra bài học kinh nghiệm."
+          },
+          {
+            "id": "ex6-6-2",
+            "type": "mcq",
+            "question": "Phần nào KHÔNG thuộc cấu trúc báo cáo dự án?",
+            "options": [
+              "Giới thiệu dự án",
+              "Quá trình thực hiện",
+              "Thơ ca",
+              "Kết luận"
+            ],
+            "correct": 2,
+            "explanation": "Thơ ca không thuộc cấu trúc báo cáo dự án. Báo cáo dự án cần có: giới thiệu, quá trình thực hiện, kết quả, đánh giá."
+          },
+          {
+            "id": "ex6-6-3",
+            "type": "mcq",
+            "question": "Bước đầu tiên khi viết báo cáo dự án là gì?",
+            "options": [
+              "Viết ngay",
+              "Thu thập tài liệu: kế hoạch, nhật ký, hình ảnh",
+              "Đánh giá",
+              "Hoàn thiện"
+            ],
+            "correct": 1,
+            "explanation": "Bước đầu tiên là thu thập đầy đủ tài liệu liên quan đến dự án: kế hoạch, nhật ký thực hiện, hình ảnh minh họa."
+          },
+          {
+            "id": "ex6-6-4",
+            "type": "mcq",
+            "question": "Trong phần 'Kết quả đạt được', nên trình bày nội dung gì?",
+            "options": [
+              "Chỉ nêu khó khăn",
+              "Sản phẩm, thành tựu cụ thể của dự án",
+              "Chỉ nêu kế hoạch",
+              "Không cần nêu gì"
+            ],
+            "correct": 1,
+            "explanation": "Phần 'Kết quả đạt được' cần trình bày cụ thể các sản phẩm, thành tựu mà dự án đã đạt được."
+          },
+          {
+            "id": "ex6-6-5",
+            "type": "mcq",
+            "question": "Đặc điểm nào quan trọng nhất của báo cáo dự án?",
+            "options": [
+              "Tưởng tượng",
+              "Tính thực tiễn, hệ thống, khách quan",
+              "Cảm xúc",
+              "Hài hước"
+            ],
+            "correct": 1,
+            "explanation": "Báo cáo dự án cần có tính thực tiễn (dựa trên hoạt động thực tế), tính hệ thống (trình bày logic) và tính khách quan (đánh giá trung thực)."
+          },
+          {
+            "id": "ex6-6-6",
+            "type": "mcq",
+            "question": "Phần 'Khó khăn và cách giải quyết' có vai trò gì?",
+            "options": [
+              "Không quan trọng",
+              "Trình bày vấn đề gặp phải và cách khắc phục",
+              "Chỉ than phiền",
+              "Đổ lỗi cho người khác"
+            ],
+            "correct": 1,
+            "explanation": "Phần này giúp trình bày trung thực các vấn đề gặp phải và cách nhóm đã giải quyết, thể hiện khả năng xử lý tình huống."
+          },
+          {
+            "id": "ex6-6-7",
+            "type": "mcq",
+            "question": "Khi viết báo cáo dự án, nên sử dụng ngôn ngữ như thế nào?",
+            "options": [
+              "Hoa mỹ, phức tạp",
+              "Rõ ràng, chính xác, dễ hiểu",
+              "Văn vẻ, khó hiểu",
+              "Tùy hứng"
+            ],
+            "correct": 1,
+            "explanation": "Báo cáo dự án cần sử dụng ngôn ngữ rõ ràng, chính xác và dễ hiểu để người đọc nắm bắt nội dung một cách nhanh chóng."
+          },
+          {
+            "id": "ex6-6-8",
+            "type": "mcq",
+            "question": "Phần 'Bài học kinh nghiệm' trong kết luận nên bao gồm nội dung gì?",
+            "options": [
+              "Chỉ khen ngợi",
+              "Những gì học được từ quá trình thực hiện dự án",
+              "Chỉ chỉ trích",
+              "Không cần viết"
+            ],
+            "correct": 1,
+            "explanation": "Phần 'Bài học kinh nghiệm' cần tổng kết những gì nhóm đã học được, kỹ năng phát triển và những điều cần cải thiện."
+          },
+          {
+            "id": "ex6-6-9",
+            "type": "mcq",
+            "question": "Phong cách nghệ thuật của Hồ Chí Minh có đặc điểm gì nổi bật?",
+            "options": [
+              "Giản dị, trong sáng, kết hợp trữ tình và chính luận",
+              "Hoa mỹ, cầu kỳ",
+              "Cổ điển, khó hiểu",
+              "Hiện đại, phức tạp"
+            ],
+            "correct": 0,
+            "explanation": "Phong cách Hồ Chí Minh giản dị, trong sáng, kết hợp hài hòa giữa trữ tình và chính luận."
+          },
+          {
+            "id": "ex6-6-10",
+            "type": "mcq",
+            "question": "Tuyên ngôn Độc lập (1945) có ý nghĩa lịch sử như thế nào?",
+            "options": [
+              "Khẳng định quyền độc lập, tự do của dân tộc Việt Nam",
+              "Tuyên bố chiến tranh với Pháp",
+              "Kêu gọi viện trợ quốc tế",
+              "Thành lập chính phủ mới"
+            ],
+            "correct": 0,
+            "explanation": "Tuyên ngôn Độc lập khẳng định quyền độc lập, tự do thiêng liêng của dân tộc Việt Nam trước thế giới."
+          }
+        ]
       }
     }
   ]

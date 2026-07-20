@@ -18,22 +18,217 @@
           "title": "Độ ưu tiên trong CSS",
           "summary": "CSS sử dụng một hệ thống tính điểm (specificity) để xác định quy tắc nào mạnh nhất khi một phần tử bị tác động bởi nhiều bộ chọn.",
           "sections": [
-            { "heading": "Thứ tự ưu tiên cơ bản", "content": "1. !important (cao nhất). 2. Inline style. 3. ID. 4. Class/Attribute/Pseudo-class. 5. Element (thẻ)." },
-            { "heading": "Quy tắc nguồn gốc", "content": "Nếu hai bộ chọn có cùng độ ưu tiên, quy tắc nào được viết sau (nằm dưới cùng) sẽ được áp dụng." },
-            { "heading": "Bộ chọn kết hợp", "content": "Điểm ưu tiên được cộng dồn dựa trên số lượng ID, Class và Thẻ có trong bộ chọn đó." }
+            {
+              "heading": "Thứ tự ưu tiên cơ bản",
+              "content": "1. !important (cao nhất). 2. Inline style. 3. ID. 4. Class/Attribute/Pseudo-class. 5. Element (thẻ)."
+            },
+            {
+              "heading": "Quy tắc nguồn gốc",
+              "content": "Nếu hai bộ chọn có cùng độ ưu tiên, quy tắc nào được viết sau (nằm dưới cùng) sẽ được áp dụng."
+            },
+            {
+              "heading": "Bộ chọn kết hợp",
+              "content": "Điểm ưu tiên được cộng dồn dựa trên số lượng ID, Class và Thẻ có trong bộ chọn đó."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Bộ chọn nào sau đây có độ ưu tiên cao nhất trong CSS thông thường?", "options": ["Bộ chọn thẻ (h1)", "Bộ chọn lớp (.class)", "Bộ chọn định danh (#id)", "Bộ chọn vạn năng (*)"], "correct": 2, "explanation": "ID luôn mạnh hơn Class và thẻ HTML." },
-          { "id": 2, "type": "mcq", "question": "Cách chèn CSS nào có độ ưu tiên cao hơn External CSS và Internal CSS?", "options": ["Inline CSS (trong thuộc tính style của thẻ)", "Browser default", "User agent CSS", "Không có cách nào"], "correct": 0, "explanation": "Inline style được trình duyệt ưu tiên hàng đầu vì nó tác động trực tiếp vào phần tử." },
-          { "id": 3, "type": "mcq", "question": "Từ khóa nào dùng để ép buộc một quy tắc CSS có độ ưu tiên cao tuyệt đối?", "options": ["@strong", "!important", "#priority", "!!must"], "correct": 1, "explanation": "!important ghi đè lên tất cả các quy tắc ưu tiên thông thường khác." },
-          { "id": 4, "type": "mcq", "question": "Nếu một thẻ <div> có cả id=\"box\" và class=\"container\", quy tắc của bộ chọn nào thắng?", "options": ["div", ".container", "#box", "Cái nào viết trước thì thắng"], "correct": 2, "explanation": "ID (#box) có trọng số điểm cao hơn Class và thẻ." },
-          { "id": 5, "type": "mcq", "question": "Khi hai quy tắc có cùng độ ưu tiên (ví dụ cùng là class), trình duyệt sẽ chọn quy tắc nào?", "options": ["Quy tắc viết trước", "Quy tắc viết sau cùng", "Quy tắc có tên ngắn hơn", "Ngẫu nhiên"], "correct": 1, "explanation": "Quy tắc 'Cái gì xuất hiện sau sẽ đè lên cái trước'." },
-          { "id": 6, "type": "mcq", "question": "Bộ chọn 'div p' và 'p', cái nào ưu tiên hơn?", "options": ["p", "div p", "Ngang nhau", "Tùy màu sắc"], "correct": 1, "explanation": "Bộ chọn chi tiết hơn (div p) có độ ưu tiên cao hơn bộ chọn đơn (p)." },
-          { "id": 7, "type": "mcq", "question": "Độ ưu tiên của bộ chọn vạn năng (*) là bao nhiêu?", "options": ["Rất cao", "Bằng với ID", "Bằng 0 (thấp nhất)", "Cao hơn thẻ"], "correct": 2, "explanation": "Bộ chọn vạn năng có độ ưu tiên thấp nhất." },
-          { "id": 8, "type": "mcq", "question": "Việc sử dụng quá nhiều !important gây ra tác hại gì?", "options": ["Làm máy tính chạy chậm", "Làm mã nguồn khó bảo trì và ghi đè sau này", "Làm trình duyệt bị lỗi", "Làm mất dữ liệu"], "correct": 1, "explanation": "Nó phá vỡ cấu trúc phân tầng tự nhiên của CSS." },
-          { "id": 9, "type": "mcq", "question": "Thứ tự ưu tiên đúng giảm dần là?", "options": ["ID > Class > Thẻ", "Thẻ > Class > ID", "Class > ID > Thẻ", "ID > Thẻ > Class"], "correct": 0, "explanation": "Đây là nguyên tắc tính điểm chuẩn của CSS." },
-          { "id": 10, "type": "mcq", "question": "CSS trong file .css (External) và trong thẻ <style> (Internal) cái nào mạnh hơn?", "options": ["Internal luôn mạnh hơn", "External luôn mạnh hơn", "Ngang nhau, tùy vào việc file nào được load sau", "Không bao giờ xung đột"], "correct": 2, "explanation": "Cả hai đều cùng cấp độ, cái nào nằm sau trong file HTML sẽ thắng." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Bộ chọn nào sau đây có độ ưu tiên cao nhất trong CSS thông thường?",
+            "options": [
+              "Bộ chọn thẻ (h1)",
+              "Bộ chọn lớp (.class)",
+              "Bộ chọn định danh (#id)",
+              "Bộ chọn vạn năng (*)"
+            ],
+            "correct": 2,
+            "explanation": "ID luôn mạnh hơn Class và thẻ HTML."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Cách chèn CSS nào có độ ưu tiên cao hơn External CSS và Internal CSS?",
+            "options": [
+              "Inline CSS (trong thuộc tính style của thẻ)",
+              "Browser default",
+              "User agent CSS",
+              "Không có cách nào"
+            ],
+            "correct": 0,
+            "explanation": "Inline style được trình duyệt ưu tiên hàng đầu vì nó tác động trực tiếp vào phần tử."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Từ khóa nào dùng để ép buộc một quy tắc CSS có độ ưu tiên cao tuyệt đối?",
+            "options": [
+              "@strong",
+              "!important",
+              "#priority",
+              "!!must"
+            ],
+            "correct": 1,
+            "explanation": "!important ghi đè lên tất cả các quy tắc ưu tiên thông thường khác."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Nếu một thẻ <div> có cả id=\"box\" và class=\"container\", quy tắc của bộ chọn nào thắng?",
+            "options": [
+              "div",
+              ".container",
+              "#box",
+              "Cái nào viết trước thì thắng"
+            ],
+            "correct": 2,
+            "explanation": "ID (#box) có trọng số điểm cao hơn Class và thẻ."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Khi hai quy tắc có cùng độ ưu tiên (ví dụ cùng là class), trình duyệt sẽ chọn quy tắc nào?",
+            "options": [
+              "Quy tắc viết trước",
+              "Quy tắc viết sau cùng",
+              "Quy tắc có tên ngắn hơn",
+              "Ngẫu nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Quy tắc 'Cái gì xuất hiện sau sẽ đè lên cái trước'."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Bộ chọn 'div p' và 'p', cái nào ưu tiên hơn?",
+            "options": [
+              "p",
+              "div p",
+              "Ngang nhau",
+              "Tùy màu sắc"
+            ],
+            "correct": 1,
+            "explanation": "Bộ chọn chi tiết hơn (div p) có độ ưu tiên cao hơn bộ chọn đơn (p)."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Độ ưu tiên của bộ chọn vạn năng (*) là bao nhiêu?",
+            "options": [
+              "Rất cao",
+              "Bằng với ID",
+              "Bằng 0 (thấp nhất)",
+              "Cao hơn thẻ"
+            ],
+            "correct": 2,
+            "explanation": "Bộ chọn vạn năng có độ ưu tiên thấp nhất."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Việc sử dụng quá nhiều !important gây ra tác hại gì?",
+            "options": [
+              "Làm máy tính chạy chậm",
+              "Làm mã nguồn khó bảo trì và ghi đè sau này",
+              "Làm trình duyệt bị lỗi",
+              "Làm mất dữ liệu"
+            ],
+            "correct": 1,
+            "explanation": "Nó phá vỡ cấu trúc phân tầng tự nhiên của CSS."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Thứ tự ưu tiên đúng giảm dần là?",
+            "options": [
+              "ID > Class > Thẻ",
+              "Thẻ > Class > ID",
+              "Class > ID > Thẻ",
+              "ID > Thẻ > Class"
+            ],
+            "correct": 0,
+            "explanation": "Đây là nguyên tắc tính điểm chuẩn của CSS."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "CSS trong file .css (External) và trong thẻ <style> (Internal) cái nào mạnh hơn?",
+            "options": [
+              "Internal luôn mạnh hơn",
+              "External luôn mạnh hơn",
+              "Ngang nhau, tùy vào việc file nào được load sau",
+              "Không bao giờ xung đột"
+            ],
+            "correct": 2,
+            "explanation": "Cả hai đều cùng cấp độ, cái nào nằm sau trong file HTML sẽ thắng."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "CSS selector có những loại nào?",
+            "options": [
+              "Element selector",
+              "Class selector",
+              "ID selector",
+              "Attribute selector"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "CSS có nhiều loại selector."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Class selector viết bằng?",
+            "options": [
+              ".classname",
+              "#classname",
+              "classname",
+              "*classname"
+            ],
+            "correct": [
+              0
+            ],
+            "explanation": "Class selector bắt đầu bằng dấu chấm (.)."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Độ ưu tiên selector từ cao đến thấp là?",
+            "options": [
+              "ID > Class > Element",
+              "Element > Class > ID",
+              "Class > ID > Element",
+              "ID > Element > Class"
+            ],
+            "correct": [
+              0
+            ],
+            "explanation": "ID (cao nhất) > Class > Element (thấp nhất)."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Pseudo-class dùng để?",
+            "options": [
+              "Định dạng khi hover",
+              "Định dạng khi focus",
+              "Định dạng phần tử đầu/cuối",
+              "Định dạng khi active"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Pseudo-class: :hover, :focus, :first-child, :last-child, :active."
+          }
         ]
       }
     }

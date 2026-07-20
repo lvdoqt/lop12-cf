@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-8-8-thuc-hanh-doc",
+      "id": "van12-bai-8-8-thuc-hanh-doc-sach-thay-doi",
       "name": "Thực hành đọc: Sách thay đổi lịch sử loài người",
-      "slug": "thuc-hanh-doc-sach-thay-doi-lich-su",
+      "slug": "thuc-hanh-doc-sach-thay-doi",
       "chapter": "Dữ liệu trong văn bản thông tin",
       "chapter_id": "V12-8",
       "lesson_id": 8,
-      "description": "Thực hành đọc và phân tích văn bản về vai trò của sách trong việc thay đổi lịch sử loài người.",
+      "description": "Thực hành đọc về sách thay đổi lịch sử loài người.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Sách thay đổi lịch sử loài người",
+          "title": "Thực hành đọc: Sách thay đổi lịch sử loài người",
           "sections": [
             {
               "heading": "1. Vai trò của sách",
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex8-8-1",
-              "type": "mcq",
-              "question": "Vai trò chính của sách là gì?",
-              "options": [
-                "Chỉ để giải trí",
-                "Lưu trữ tri thức, phổ biến tư tưởng, thay đổi xã hội",
-                "Chỉ để trang trí",
-                "Không có vai trò"
-              ],
-              "correct": 1,
-              "explanation": "Sách có vai trò lưu trữ tri thức, phổ biến tư tưởng và có thể thay đổi xã hội, con người."
-            },
-            {
-              "id": "ex8-8-2",
-              "type": "mcq",
-              "question": "Cuốn sách nào có ảnh hưởng lớn đến văn hóa phương Tây?",
-              "options": [
-                "Truyện Kiều",
-                "Kinh thánh",
-                "Tam Quốc",
-                "Thủy Hử"
-              ],
-              "correct": 1,
-              "explanation": "Kinh thánh có ảnh hưởng sâu rộng đến văn hóa, đạo đức và xã hội phương Tây."
-            },
-            {
-              "id": "ex8-8-3",
-              "type": "mcq",
-              "question": "Cuốn 'Nguồn gốc các loài' của Darwin đóng góp gì?",
-              "options": [
-                "Không đóng góp gì",
-                "Thuyết tiến hóa, thay đổi nhận thức về sự sống",
-                "Chỉ về động vật",
-                "Chỉ về thực vật"
-              ],
-              "correct": 1,
-              "explanation": "Cuốn sách đưa ra thuyết tiến hóa, thay đổi căn bản nhận thức của con người về nguồn gốc sự sống."
-            },
-            {
-              "id": "ex8-8-4",
-              "type": "mcq",
-              "question": "Sách có thể thay đổi lịch sử như thế nào?",
-              "options": [
-                "Không thể thay đổi",
-                "Lan tỏa tư tưởng, thay đổi nhận thức và hành động",
-                "Chỉ cung cấp thông tin",
-                "Không ảnh hưởng gì"
-              ],
-              "correct": 1,
-              "explanation": "Sách có thể lan tỏa tư tưởng mới, thay đổi nhận thức và hành động của con người, từ đó thay đổi lịch sử."
-            },
-            {
-              "id": "ex8-8-5",
-              "type": "mcq",
-              "question": "Trách nhiệm của tác giả là gì?",
-              "options": [
-                "Viết bất cứ thứ gì",
-                "Viết sách có giá trị, có ích cho xã hội",
-                "Chỉ viết để kiếm tiền",
-                "Không có trách nhiệm"
-              ],
-              "correct": 1,
-              "explanation": "Tác giả có trách nhiệm viết sách có giá trị, có ích cho xã hội và con người."
-            },
-            {
-              "id": "ex8-8-6",
-              "type": "mcq",
-              "question": "Độc giả cần làm gì khi đọc sách?",
-              "options": [
-                "Tin tất cả những gì đọc",
-                "Đọc có chọn lọc, tư duy phản biện",
-                "Không cần suy nghĩ",
-                "Chỉ đọc lướt"
-              ],
-              "correct": 1,
-              "explanation": "Độc giả cần đọc sách có chọn lọc và có tư duy phản biện để đánh giá thông tin."
-            },
-            {
-              "id": "ex8-8-7",
-              "type": "mcq",
-              "question": "Bài học từ vai trò của sách là gì?",
-              "options": [
-                "Không cần đọc sách",
-                "Đọc sách để nâng cao tri thức và ứng dụng vào cuộc sống",
-                "Chỉ đọc để thi cử",
-                "Sách không quan trọng"
-              ],
-              "correct": 1,
-              "explanation": "Bài học là cần đọc sách để nâng cao tri thức, phát triển tư duy và ứng dụng kiến thức vào cuộc sống."
-            },
-            {
-              "id": "ex8-8-8",
-              "type": "mcq",
-              "question": "Xã hội cần làm gì để phát huy vai trò của sách?",
-              "options": [
-                "Không cần làm gì",
-                "Khuyến khích văn hóa đọc, xây dựng thư viện",
-                "Cấm đọc sách",
-                "Chỉ tập trung vào công nghệ"
-              ],
-              "correct": 1,
-              "explanation": "Xã hội cần khuyến khích văn hóa đọc, xây dựng thư viện và tạo điều kiện cho mọi người tiếp cận sách."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex8-8-1",
+            "type": "mcq",
+            "question": "Vai trò chính của sách là gì?",
+            "options": [
+              "Chỉ để giải trí",
+              "Lưu trữ tri thức, phổ biến tư tưởng, thay đổi xã hội",
+              "Chỉ để trang trí",
+              "Không có vai trò"
+            ],
+            "correct": 1,
+            "explanation": "Sách có vai trò lưu trữ tri thức, phổ biến tư tưởng và có thể thay đổi xã hội, con người."
+          },
+          {
+            "id": "ex8-8-2",
+            "type": "mcq",
+            "question": "Cuốn sách nào có ảnh hưởng lớn đến văn hóa phương Tây?",
+            "options": [
+              "Truyện Kiều",
+              "Kinh thánh",
+              "Tam Quốc",
+              "Thủy Hử"
+            ],
+            "correct": 1,
+            "explanation": "Kinh thánh có ảnh hưởng sâu rộng đến văn hóa, đạo đức và xã hội phương Tây."
+          },
+          {
+            "id": "ex8-8-3",
+            "type": "mcq",
+            "question": "Cuốn 'Nguồn gốc các loài' của Darwin đóng góp gì?",
+            "options": [
+              "Không đóng góp gì",
+              "Thuyết tiến hóa, thay đổi nhận thức về sự sống",
+              "Chỉ về động vật",
+              "Chỉ về thực vật"
+            ],
+            "correct": 1,
+            "explanation": "Cuốn sách đưa ra thuyết tiến hóa, thay đổi căn bản nhận thức của con người về nguồn gốc sự sống."
+          },
+          {
+            "id": "ex8-8-4",
+            "type": "mcq",
+            "question": "Sách có thể thay đổi lịch sử như thế nào?",
+            "options": [
+              "Không thể thay đổi",
+              "Lan tỏa tư tưởng, thay đổi nhận thức và hành động",
+              "Chỉ cung cấp thông tin",
+              "Không ảnh hưởng gì"
+            ],
+            "correct": 1,
+            "explanation": "Sách có thể lan tỏa tư tưởng mới, thay đổi nhận thức và hành động của con người, từ đó thay đổi lịch sử."
+          },
+          {
+            "id": "ex8-8-5",
+            "type": "mcq",
+            "question": "Trách nhiệm của tác giả là gì?",
+            "options": [
+              "Viết bất cứ thứ gì",
+              "Viết sách có giá trị, có ích cho xã hội",
+              "Chỉ viết để kiếm tiền",
+              "Không có trách nhiệm"
+            ],
+            "correct": 1,
+            "explanation": "Tác giả có trách nhiệm viết sách có giá trị, có ích cho xã hội và con người."
+          },
+          {
+            "id": "ex8-8-6",
+            "type": "mcq",
+            "question": "Độc giả cần làm gì khi đọc sách?",
+            "options": [
+              "Tin tất cả những gì đọc",
+              "Đọc có chọn lọc, tư duy phản biện",
+              "Không cần suy nghĩ",
+              "Chỉ đọc lướt"
+            ],
+            "correct": 1,
+            "explanation": "Độc giả cần đọc sách có chọn lọc và có tư duy phản biện để đánh giá thông tin."
+          },
+          {
+            "id": "ex8-8-7",
+            "type": "mcq",
+            "question": "Bài học từ vai trò của sách là gì?",
+            "options": [
+              "Không cần đọc sách",
+              "Đọc sách để nâng cao tri thức và ứng dụng vào cuộc sống",
+              "Chỉ đọc để thi cử",
+              "Sách không quan trọng"
+            ],
+            "correct": 1,
+            "explanation": "Bài học là cần đọc sách để nâng cao tri thức, phát triển tư duy và ứng dụng kiến thức vào cuộc sống."
+          },
+          {
+            "id": "ex8-8-8",
+            "type": "mcq",
+            "question": "Xã hội cần làm gì để phát huy vai trò của sách?",
+            "options": [
+              "Không cần làm gì",
+              "Khuyến khích văn hóa đọc, xây dựng thư viện",
+              "Cấm đọc sách",
+              "Chỉ tập trung vào công nghệ"
+            ],
+            "correct": 1,
+            "explanation": "Xã hội cần khuyến khích văn hóa đọc, xây dựng thư viện và tạo điều kiện cho mọi người tiếp cận sách."
+          },
+          {
+            "id": "ex8-8-9",
+            "type": "mcq",
+            "question": "Văn bản thông tin thường có đặc điểm gì?",
+            "options": [
+              "Tính chính xác, khách quan, cập nhật",
+              "Tính hư cấu, tưởng tượng",
+              "Tính cảm xúc, chủ quan",
+              "Tính triết lý, sâu xa"
+            ],
+            "correct": 0,
+            "explanation": "Văn bản thông tin cần đảm bảo tính chính xác, khách quan và cập nhật."
+          },
+          {
+            "id": "ex8-8-10",
+            "type": "mcq",
+            "question": "Mục đích của việc viết thư trao đổi là gì?",
+            "options": [
+              "Trao đổi ý kiến, thuyết phục người đọc về một vấn đề",
+              "Kể chuyện giải trí",
+              "Thông báo tin tức",
+              "Bày tỏ cảm xúc cá nhân"
+            ],
+            "correct": 0,
+            "explanation": "Thư trao đổi nhằm trao đổi ý kiến và thuyết phục người đọc về một vấn đề cụ thể."
+          }
+        ]
       }
     }
   ]

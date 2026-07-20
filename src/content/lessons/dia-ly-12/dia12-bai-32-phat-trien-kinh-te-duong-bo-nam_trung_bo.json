@@ -4,36 +4,269 @@
   "lessons": [
     {
       "id": "dia12_32",
-      "name": "Phát triển hạ tầng giao thông đường bộ và liên vùng ở Nam Trung bộ",
+      "name": "Phát triển các vùng kinh tế trọng điểm",
       "slug": "phat-trien-kinh-te-duong-bo-nam_trung_bo",
       "chapter": "Địa lí các vùng kinh tế",
       "chapter_id": "dia12_part4",
       "lesson_id": 32,
-      "description": "Vai trò giao thông đường bộ trong kết nối vùng, thúc đẩy thương mại và du lịch ở Nam Trung bộ; phân tích các hướng đầu tư hạ tầng và tác động xã hội - kinh tế.",
+      "description": "Khái niệm vùng kinh tế trọng điểm, các vùng động lực quốc gia theo Nghị quyết 81/2023/QH15, đặc điểm và vai trò của 4 vùng KTTĐ đối với sự phát triển kinh tế - xã hội cả nước.",
       "duration_minutes": 60,
       "difficulty_level": "trung bình",
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Giao thông đường bộ: huyết mạch kết nối vùng",
-          "summary": "Hệ thống đường bộ đóng vai trò quan trọng trong kết nối cảng, khu công nghiệp, trung tâm dịch vụ và phục vụ lưu thông hàng hóa; đầu tư giao thông làm giảm chi phí vận chuyển và thúc đẩy phát triển kinh tế địa phương.",
+          "title": "Phát triển các vùng kinh tế trọng điểm",
+          "summary": "Vùng kinh tế trọng điểm là bộ phận lãnh thổ hội tụ điều kiện thuận lợi, có tiềm lực kinh tế lớn, giữ vai trò động lực thúc đẩy phát triển chung của cả nước. Nghị quyết 81/2023/QH15 xác định 4 vùng động lực quốc gia trên cơ sở các vùng kinh tế trọng điểm hiện nay.",
           "sections": [
-            { "heading": "Tác động kinh tế", "content": "Cải thiện giao thông làm tăng tiếp cận thị trường, giảm chi phí, tạo thuận lợi cho đầu tư và du lịch." },
-            { "heading": "Hậu quả xã hội", "content": "Tạo việc làm, thay đổi cơ cấu dân cư nhưng có thể gây áp lực lên môi trường và hạ tầng đô thị." }
+            {
+              "heading": "Khái niệm và đặc điểm vùng kinh tế trọng điểm",
+              "content": "Vùng kinh tế trọng điểm (KTTĐ) là một bộ phận của lãnh thổ quốc gia, hội tụ các điều kiện và yếu tố phát triển thuận lợi, có tiềm lực kinh tế lớn, giữ vai trò động lực, đầu tàu thúc đẩy sự phát triển chung của cả nước. Đặc điểm chung: hội tụ các yếu tố thuận lợi về vị trí địa lí, nguồn lực tự nhiên và kinh tế - xã hội; được ưu tiên về đầu tư (vốn, khoa học - công nghệ, cơ sở hạ tầng); có đóng góp lớn cho quốc gia, giữ vai trò động lực; số lượng và phạm vi lãnh thổ thay đổi theo sự phát triển kinh tế - xã hội của đất nước."
+            },
+            {
+              "heading": "4 vùng động lực quốc gia theo Nghị quyết 81/2023",
+              "content": "Nghị quyết số 81/2023/QH15 của Quốc hội về Quy hoạch tổng thể quốc gia thời kỳ 2021 - 2030, tầm nhìn đến năm 2050 định hướng phát triển 4 vùng động lực quốc gia trên cơ sở các vùng kinh tế trọng điểm hiện nay, gồm: Vùng động lực phía Bắc (Vùng KTTĐ Bắc Bộ), Vùng động lực phía Nam (Vùng KTTĐ phía Nam), Vùng động lực miền Trung (Vùng KTTĐ miền Trung) và Vùng động lực Đồng bằng sông Cửu Long (Vùng KTTĐ vùng Đồng bằng sông Cửu Long)."
+            },
+            {
+              "heading": "Vùng KTTĐ Bắc Bộ và miền Trung",
+              "content": "Vùng KTTĐ Bắc Bộ (thành lập 1997, mở rộng 2004) gồm Hà Nội, Hải Phòng, Quảng Ninh, Hưng Yên, Hải Dương, Vĩnh Phúc, Bắc Ninh; có Thủ đô Hà Nội là trung tâm chính trị, kinh tế, văn hóa, khoa học - công nghệ, quy mô GRDP đứng thứ 2 cả nước. Vùng KTTĐ miền Trung (thành lập 1997) gồm Đà Nẵng, Thừa Thiên Huế, Quảng Nam, Quảng Ngãi, Bình Định; nằm ở vị trí chiến lược giao lưu Bắc - Nam và Đông - Tây, là cửa ngõ ra biển của Tây Nguyên, thế mạnh kinh tế biển và du lịch."
+            },
+            {
+              "heading": "Vùng KTTĐ phía Nam và Đồng bằng sông Cửu Long",
+              "content": "Vùng KTTĐ phía Nam (thành lập 1998, mở rộng 2003, 2009) gồm TP. Hồ Chí Minh, Đồng Nai, Bình Dương, Bà Rịa - Vũng Tàu, Tây Ninh, Bình Phước, Long An, Tiền Giang; là vùng phát triển kinh tế hàng đầu, GRDP đứng đầu 4 vùng, đóng góp 33,5% GDP năm 2021. Vùng KTTĐ Đồng bằng sông Cửu Long (thành lập 2009) gồm Cần Thơ, An Giang, Kiên Giang, Cà Mau; dẫn đầu cả nước về sản xuất lúa gạo, nuôi trồng và chế biến thủy sản."
+            },
+            {
+              "heading": "Vai trò và liên kết vùng",
+              "content": "Các vùng KTTĐ có vai trò động lực, đầu tàu thúc đẩy phát triển chung của cả nước, thể hiện qua tỉ trọng đóng góp GDP, tăng trưởng kinh tế, trị giá xuất khẩu và chuyển dịch cơ cấu kinh tế. Liên kết vùng giúp phát huy lợi thế so sánh, hình thành các cực tăng trưởng, lan tỏa và lôi kéo các địa phương khác cùng phát triển, thúc đẩy hội nhập và ổn định kinh tế vĩ mô."
+            }
           ]
         },
-        "exercises": { "short_tasks": [ { "q": "Nêu 2 lợi ích trực tiếp của nâng cấp đường bộ ven biển?", "a_hint": "Giảm thời gian vận chuyển và tăng tiếp cận du lịch." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Một tác động của đường bộ tốt là?", "options": ["Giảm chi phí vận chuyển","Tăng thời gian giao thông","Cản trở thương mại","Không có tác động"], "correct": 0, "explanation": "Đường bộ tốt giảm chi phí vận chuyển và thời gian." },
-          { "id": 2, "type": "mcq", "question": "Giao thông giúp phát triển ngành nào?", "options": ["Thương mại và du lịch","Trồng trọt trên núi","Ngành khai khoáng nằm xa cảng","Không giúp ngành nào"], "correct": 0, "explanation": "Giao thông kết nối thúc đẩy thương mại và du lịch." },
-          { "id": 3, "type": "mcq", "question": "Khi đầu tư đường bộ cần lưu ý?", "options": ["Tác động môi trường và quy hoạch đô thị","Không cần ý kiến cộng đồng","Chỉ tập trung vào tốc độ xây dựng","Bỏ qua an toàn giao thông"], "correct": 0, "explanation": "Cân nhắc môi trường và quy hoạch để giảm tác động tiêu cực." },
-          { "id": 4, "type": "mcq", "question": "Một biện pháp giảm thiểu tác động xã hội của xây dựng đường là?", "options": ["Tham vấn cộng đồng và bồi thường hợp lý","Không thông báo","Bắt buộc di dời cưỡng chế","Không bồi thường"], "correct": 0, "explanation": "Tham vấn và bồi thường giúp giảm xung đột xã hội." },
-          { "id": 5, "type": "mcq", "question": "Đầu tư liên vùng cần tập trung vào?", "options": ["Nút giao chính kết nối cảng, sân bay và khu công nghiệp","Chỉ đường nhỏ trong làng","Không cần kết nối","Chỉ đường rừng"], "correct": 0, "explanation": "Kết nối đa phương tiện tối ưu hóa lợi ích kinh tế." },
-          { "id": 6, "type": "mcq", "question": "Một chỉ tiêu đánh giá hạ tầng đường là?", "options": ["Tốc độ lưu thông trung bình và năng lực hàng hóa mỗi ngày","Số cây dọc đường","Số ngã tư","Không có chỉ tiêu"], "correct": 0, "explanation": "Tốc độ lưu thông và năng lực vận chuyển là chỉ tiêu thực tế." },
-          { "id": 7, "type": "mcq", "question": "Nâng cấp đường bộ giúp gì cho nông sản?", "options": ["Rút ngắn thời gian đưa hàng ra cảng và thị trường","Làm hỏng nông sản","Không giúp gì","Tăng chi phí"], "correct": 0, "explanation": "Giảm thời gian vận chuyển giúp nông sản tươi hơn và giảm hỏng hóc." },
-          { "id": 8, "type": "mcq", "question": "Khi kết nối khu công nghiệp với cảng cần chú ý?", "options": ["Khả năng chuyên chở hàng nặng và an toàn giao thông","Chỉ thời tiết","Không cần chú ý","Chỉ cảnh quan"], "correct": 0, "explanation": "Tải trọng và an toàn là yếu tố cần thiết cho vận chuyển hàng nặng." },
-          { "id": 9, "type": "mcq", "question": "Phát triển đường bộ có thể gây ra?", "options": ["Áp lực đô thị hóa và thay đổi sử dụng đất","Giảm dân số","Giảm thương mại","Không gây gì"], "correct": 0, "explanation": "Hạ tầng mới có thể thúc đẩy đô thị hóa và thay đổi sử dụng đất." },
-          { "id": 10, "type": "mcq", "question": "Để đảm bảo bền vững, đầu tư hạ tầng cần?", "options": ["Tính đến môi trường, bảo tồn và phát triển cộng đồng","Chỉ tối ưu chi phí ngắn hạn","Không quan tâm cộng đồng","Chỉ ưu tiên lợi nhuận"], "correct": 0, "explanation": "Đầu tư bền vững cân bằng kinh tế, xã hội và môi trường." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Một tác động của đường bộ tốt là?",
+            "options": [
+              "Giảm chi phí vận chuyển",
+              "Tăng thời gian giao thông",
+              "Cản trở thương mại",
+              "Không có tác động"
+            ],
+            "correct": 0,
+            "explanation": "Đường bộ tốt giảm chi phí vận chuyển và thời gian."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Giao thông giúp phát triển ngành nào?",
+            "options": [
+              "Thương mại và du lịch",
+              "Trồng trọt trên núi",
+              "Ngành khai khoáng nằm xa cảng",
+              "Không giúp ngành nào"
+            ],
+            "correct": 0,
+            "explanation": "Giao thông kết nối thúc đẩy thương mại và du lịch."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Khi đầu tư đường bộ cần lưu ý?",
+            "options": [
+              "Tác động môi trường và quy hoạch đô thị",
+              "Không cần ý kiến cộng đồng",
+              "Chỉ tập trung vào tốc độ xây dựng",
+              "Bỏ qua an toàn giao thông"
+            ],
+            "correct": 0,
+            "explanation": "Cân nhắc môi trường và quy hoạch để giảm tác động tiêu cực."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Một biện pháp giảm thiểu tác động xã hội của xây dựng đường là?",
+            "options": [
+              "Tham vấn cộng đồng và bồi thường hợp lý",
+              "Không thông báo",
+              "Bắt buộc di dời cưỡng chế",
+              "Không bồi thường"
+            ],
+            "correct": 0,
+            "explanation": "Tham vấn và bồi thường giúp giảm xung đột xã hội."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Đầu tư liên vùng cần tập trung vào?",
+            "options": [
+              "Nút giao chính kết nối cảng, sân bay và khu công nghiệp",
+              "Chỉ đường nhỏ trong làng",
+              "Không cần kết nối",
+              "Chỉ đường rừng"
+            ],
+            "correct": 0,
+            "explanation": "Kết nối đa phương tiện tối ưu hóa lợi ích kinh tế."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Một chỉ tiêu đánh giá hạ tầng đường là?",
+            "options": [
+              "Tốc độ lưu thông trung bình và năng lực hàng hóa mỗi ngày",
+              "Số cây dọc đường",
+              "Số ngã tư",
+              "Không có chỉ tiêu"
+            ],
+            "correct": 0,
+            "explanation": "Tốc độ lưu thông và năng lực vận chuyển là chỉ tiêu thực tế."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Nâng cấp đường bộ giúp gì cho nông sản?",
+            "options": [
+              "Rút ngắn thời gian đưa hàng ra cảng và thị trường",
+              "Làm hỏng nông sản",
+              "Không giúp gì",
+              "Tăng chi phí"
+            ],
+            "correct": 0,
+            "explanation": "Giảm thời gian vận chuyển giúp nông sản tươi hơn và giảm hỏng hóc."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Khi kết nối khu công nghiệp với cảng cần chú ý?",
+            "options": [
+              "Khả năng chuyên chở hàng nặng và an toàn giao thông",
+              "Chỉ thời tiết",
+              "Không cần chú ý",
+              "Chỉ cảnh quan"
+            ],
+            "correct": 0,
+            "explanation": "Tải trọng và an toàn là yếu tố cần thiết cho vận chuyển hàng nặng."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Phát triển đường bộ có thể gây ra?",
+            "options": [
+              "Áp lực đô thị hóa và thay đổi sử dụng đất",
+              "Giảm dân số",
+              "Giảm thương mại",
+              "Không gây gì"
+            ],
+            "correct": 0,
+            "explanation": "Hạ tầng mới có thể thúc đẩy đô thị hóa và thay đổi sử dụng đất."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Để đảm bảo bền vững, đầu tư hạ tầng cần?",
+            "options": [
+              "Tính đến môi trường, bảo tồn và phát triển cộng đồng",
+              "Chỉ tối ưu chi phí ngắn hạn",
+              "Không quan tâm cộng đồng",
+              "Chỉ ưu tiên lợi nhuận"
+            ],
+            "correct": 0,
+            "explanation": "Đầu tư bền vững cân bằng kinh tế, xã hội và môi trường."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Các tuyến giao thông đường bộ quan trọng ở Nam Trung Bộ?",
+            "options": [
+              "Quốc lộ 1A",
+              "Đường Hồ Chí Minh",
+              "Cao tốc Bắc - Nam",
+              "Đường sắt Bắc - Nam"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Quốc lộ 1A, đường Hồ Chí Minh và cao tốc Bắc - Nam là tuyến đường bộ quan trọng."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Vai trò của giao thông đường bộ đối với phát triển vùng?",
+            "options": [
+              "Kết nối các tỉnh trong vùng",
+              "Vận chuyển hàng hóa đến cảng",
+              "Phát triển du lịch",
+              "Khai thác khoáng sản"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Giao thông đường bộ kết nối các tỉnh, vận chuyển hàng hóa và phát triển du lịch."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Các tuyến đường bộ kết nối Nam Trung Bộ với Tây Nguyên?",
+            "options": [
+              "Quốc lộ 14",
+              "Quốc lộ 19",
+              "Quốc lộ 24",
+              "Quốc lộ 1A"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "QL14, QL19, QL24 kết nối Nam Trung Bộ với Tây Nguyên."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Tác động của phát triển đường bộ đến kinh tế vùng?",
+            "options": [
+              "Giảm chi phí vận chuyển",
+              "Mở rộng thị trường",
+              "Thu hút đầu tư",
+              "Tăng cô lập vùng"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Đường bộ giảm chi phí, mở rộng thị trường và thu hút đầu tư."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Kể tên một tuyến cao tốc ở Nam Trung Bộ?",
+            "correct": "Cao tốc Đà Nẵng - Quảng Ngãi",
+            "explanation": "Cao tốc Đà Nẵng - Quảng Ngãi là tuyến cao tốc quan trọng."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Vai trò của quốc lộ 1A đối với vùng?",
+            "correct": "Kết nối Bắc - Nam, vận chuyển hàng hóa và hành khách",
+            "explanation": "Quốc lộ 1A là trục giao thông Bắc - Nam quan trọng."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Một tuyến đường kết nối Nam Trung Bộ với Tây Nguyên?",
+            "correct": "Quốc lộ 14, Quốc lộ 19, Quốc lộ 24",
+            "explanation": "QL14, QL19, QL24 kết nối Nam Trung Bộ với Tây Nguyên."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Nêu 2 lợi ích trực tiếp của nâng cấp đường bộ ven biển?",
+            "correct": "Giảm thời gian vận chuyển và tăng tiếp cận du lịch.",
+            "explanation": "Giảm thời gian vận chuyển và tăng tiếp cận du lịch."
+          }
         ]
       }
     }

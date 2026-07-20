@@ -15,31 +15,259 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Dân số Việt Nam: đặc điểm và xu hướng",
-          "summary": "Phân tích quy mô, tốc độ tăng, cơ cấu và phân bố dân số Việt Nam; các xu hướng chính gồm già hóa dân số, chuyển dịch cơ cấu từ nông nghiệp sang công nghiệp - dịch vụ, và phân bố không đều giữa các vùng kinh tế - xã hội.",
+          "title": "Dân số Việt Nam",
+          "summary": "Việt Nam có quy mô dân số lớn, đứng thứ ba ở Đông Nam Á và khoảng thứ 15 trên thế giới, với hơn 100 triệu người (năm 2023). Giai đoạn 1979-2023, quy mô dân số tăng nhưng tốc độ gia tăng đã chậm lại rõ rệt nhờ công tác dân số - kế hoạch hóa gia đình. Cơ cấu dân số theo tuổi đang chuyển từ giai đoạn cơ cấu trẻ sang già hóa, trong khi cơ cấu giới tính khi sinh có xu hướng mất cân bằng. Phân bố dân cư không đều giữa các vùng, tập trung đông ở đồng bằng và thưa thớt ở miền núi, vùng sâu vùng xa.",
           "sections": [
-            { "heading": "Quy mô và tăng trưởng", "content": "Dân số Việt Nam tăng nhanh trong thế kỷ 20, sau đó tốc độ giảm dần nhờ chính sách dân số và giảm tỷ lệ sinh; các yếu tố ảnh hưởng gồm tỷ lệ sinh, tỷ lệ tử và di cư." },
-            { "heading": "Cơ cấu dân số", "content": "Cơ cấu theo tuổi đang chuyển từ trẻ sang già; cơ cấu lao động chuyển từ nông nghiệp sang công nghiệp và dịch vụ." },
-            { "heading": "Phân bố dân cư", "content": "Dân cư tập trung tại đồng bằng sông Hồng, đồng bằng sông Cửu Long và vùng Đông Nam Bộ; miền núi và ven biển một số nơi thưa dân." }
+            {
+              "heading": "Quy mô và tốc độ tăng dân số",
+              "content": "Năm 2023, dân số Việt Nam vượt mốc 100 triệu người, thuộc nhóm nước đông dân trên thế giới. Tuy quy mô tiếp tục tăng, nhưng tốc độ gia tảm dân số (tỷ lệ gia tăng tự nhiên) đã giảm mạnh từ sau năm 1989 nhờ thực hiện chính sách kế hoạch hóa gia đình, giảm tỷ lệ sinh từ mức cao xuống mức sinh thay thế (khoảng 2,1 con/phụ nữ). Tỷ lệ tử vong giảm nhờ y tế phát triển và tuổi thọ trung bình tăng lên khoảng 73-74 tuổi. Giai đoạn từ năm 2009 đến 2019, dân số tăng bình quân khoảng 1,0%/năm, thấp hơn giai đoạn trước."
+            },
+            {
+              "heading": "Cơ cấu dân số theo tuổi",
+              "content": "Cơ cấu dân số theo tuổi gồm ba nhóm: nhóm dưới 15 tuổi, nhóm từ 15-64 tuổi (nhóm lao động, lực lượng sản xuất chính) và nhóm trên 64 tuổi. Nhờ giảm tỷ lệ sinh, tỷ trọng nhóm dưới 15 tuổi giảm dần, trong khi nhóm trên 64 tuổi tăng lên, đưa Việt Nam bước vào thời kỳ già hóa dân số (từ khoảng năm 2011, tỷ lệ người cao tuổi trên 65 tuổi vượt ngưỡng 7%). Hiện nước ta đang tận dụng cơ cấu dân số vàng (tỷ trọng nhóm 15-64 tuổi chiếm khoảng 68-70%), nhưng xu hướng già hóa sẽ làm tăng gánh nặng phụ thuộc trong tương lai."
+            },
+            {
+              "heading": "Cơ cấu dân số theo giới tính",
+              "content": "Về giới tính chung, tỷ số giới tính tổng quát tương đối cân bằng (khoảng 99-100 nam/100 nữ). Tuy nhiên, tỷ số giới tính khi sinh (số trẻ trai trên 100 trẻ gái khi mới sinh) đang có xu hướng tăng cao bất thường, vượt mức sinh học tự nhiên (khoảng 105-106 nam/100 nữ) lên mức 111-112 nam/100 nữ. Sự mất cân bằng này do tư tưởng ưa con trai và công nghệ chọn lọc giới tính, gây hệ quả lâu dài về cân bằng giới trong xã hội."
+            },
+            {
+              "heading": "Phân bố dân cư",
+              "content": "Dân cư nước ta phân bố không đều theo lãnh thổ. Các vùng tập trung đông dân gồm: đồng bằng sông Hồng, đồng bằng sông Cửu Long và vùng Đông Nam Bộ (đặc biệt là TP. Hồ Chí Minh và các tỉnh lân cận). Ngược lại, miền núi phía Bắc, Tây Nguyên và một phần Bắc Trung Bộ có mật độ dân số thấp. Sự phân bố này chịu ảnh hưởng của địa hình, khí hậu, lịch sử khai thác lãnh thổ, trình độ phát triển kinh tế và mạng lưới đô thị. Phân bố không đều gây áp lực lên hạ tầng đô thị và chênh lệch phát triển vùng."
+            }
           ]
         },
-        "exercises": {
-          "short_answers": [
-            { "q": "Nêu hai vùng có mật độ dân số cao ở Việt Nam?", "a_hint": "Đồng bằng sông Hồng, Đông Nam Bộ." },
-            { "q": "Một hệ quả của già hóa dân số?", "a_hint": "Áp lực an sinh xã hội và y tế." }
-          ]
-        },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Yếu tố nào trực tiếp làm thay đổi quy mô dân số?", "options": ["Tỷ lệ sinh","Màu cờ","Vị trí cảng","Ngôn ngữ"], "correct": 0, "explanation": "Tỷ lệ sinh là yếu tố chính ảnh hưởng tới quy mô dân số." },
-          { "id": 2, "type": "mcq", "question": "Vùng nào có mật độ dân số thấp nhất ở Việt Nam?", "options": ["Đồng bằng sông Hồng","Miền núi phía Bắc","Đông Nam Bộ","Đồng bằng sông Cửu Long"], "correct": 1, "explanation": "Miền núi thường có mật độ dân số thấp hơn do địa hình khó khăn." },
-          { "id": 3, "type": "mcq", "question": "Hiện tượng già hóa dân số là do?", "options": ["Tỷ lệ sinh giảm và tuổi thọ tăng","Tỷ lệ sinh tăng mạnh","Di cư ra nước ngoài","Tăng dân số trẻ"], "correct": 0, "explanation": "Già hóa do tỷ lệ sinh giảm trong khi tuổi thọ tăng." },
-          { "id": 4, "type": "mcq", "question": "Di cư nông thôn - thành thị thường dẫn tới?", "options": ["Tăng dân số đô thị","Giảm dân số đô thị","Không thay đổi","Làm cho nông thôn đông đúc hơn"], "correct": 0, "explanation": "Di cư làm tăng dân số đô thị và áp lực hạ tầng." },
-          { "id": 5, "type": "mcq", "question": "Một thách thức do phân bố dân cư không đều là?", "options": ["Quá tải hạ tầng ở thành phố","Tăng nguồn lực nông thôn","Cải thiện chất lượng sống ở các vùng miền","Không có thách thức"], "correct": 0, "explanation": "Phân bố không đều gây quá tải ở đô thị và thiếu phát triển vùng nông thôn." },
-          { "id": 6, "type": "mcq", "question": "Chỉ số nào thể hiện cơ cấu tuổi của dân số?", "options": ["Tỷ lệ người dưới 15, người 15-64 và trên 65","Số lượng cảng biển","Diện tích rừng","GDP"], "correct": 0, "explanation": "Cơ cấu tuổi thường được biểu thị bằng tỷ lệ các nhóm tuổi như trên." },
-          { "id": 7, "type": "mcq", "question": "Một biện pháp ứng phó với già hóa dân số?", "options": ["Phát triển hệ thống an sinh xã hội và chăm sóc sức khỏe","Khuyến khích tỷ lệ sinh giảm hơn nữa","Không có biện pháp","Tăng nhập cư trẻ"], "correct": 0, "explanation": "Cần hệ thống an sinh và y tế mạnh để ứng phó già hóa." },
-          { "id": 8, "type": "mcq", "question": "Cơ cấu lao động chuyển dịch từ ngành nào sang ngành nào?", "options": ["Từ nông nghiệp sang công nghiệp và dịch vụ","Từ dịch vụ sang nông nghiệp","Từ công nghiệp sang nông nghiệp","Không thay đổi"], "correct": 0, "explanation": "Quá trình công nghiệp hóa khiến lao động dịch chuyển khỏi nông nghiệp." },
-          { "id": 9, "type": "mcq", "question": "Nguồn dữ liệu chính để nghiên cứu dân số là?", "options": ["Tổng điều tra dân số, thống kê quốc gia","Mạng xã hội","Ảnh hưởng thời tiết","Không có dữ liệu"], "correct": 0, "explanation": "Tổng điều tra dân số và số liệu thống kê là nguồn chính." },
-          { "id": 10, "type": "mcq", "question": "Một giải pháp giảm áp lực lên đô thị là?", "options": ["Phát triển kinh tế vùng, cơ sở hạ tầng nông thôn","Tập trung tất cả đầu tư vào thành phố lớn","Ngăn cản di cư bằng bạo lực","Không làm gì"], "correct": 0, "explanation": "Phát triển vùng và cơ sở hạ tầng giúp giảm di cư lên đô thị." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Yếu tố nào trực tiếp làm thay đổi quy mô dân số?",
+            "options": [
+              "Tỷ lệ sinh",
+              "Màu cờ",
+              "Vị trí cảng",
+              "Ngôn ngữ"
+            ],
+            "correct": 0,
+            "explanation": "Tỷ lệ sinh là yếu tố chính ảnh hưởng tới quy mô dân số."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Vùng nào có mật độ dân số thấp nhất ở Việt Nam?",
+            "options": [
+              "Đồng bằng sông Hồng",
+              "Miền núi phía Bắc",
+              "Đông Nam Bộ",
+              "Đồng bằng sông Cửu Long"
+            ],
+            "correct": 1,
+            "explanation": "Miền núi thường có mật độ dân số thấp hơn do địa hình khó khăn."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Hiện tượng già hóa dân số là do?",
+            "options": [
+              "Tỷ lệ sinh giảm và tuổi thọ tăng",
+              "Tỷ lệ sinh tăng mạnh",
+              "Di cư ra nước ngoài",
+              "Tăng dân số trẻ"
+            ],
+            "correct": 0,
+            "explanation": "Già hóa do tỷ lệ sinh giảm trong khi tuổi thọ tăng."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Di cư nông thôn - thành thị thường dẫn tới?",
+            "options": [
+              "Tăng dân số đô thị",
+              "Giảm dân số đô thị",
+              "Không thay đổi",
+              "Làm cho nông thôn đông đúc hơn"
+            ],
+            "correct": 0,
+            "explanation": "Di cư làm tăng dân số đô thị và áp lực hạ tầng."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Một thách thức do phân bố dân cư không đều là?",
+            "options": [
+              "Quá tải hạ tầng ở thành phố",
+              "Tăng nguồn lực nông thôn",
+              "Cải thiện chất lượng sống ở các vùng miền",
+              "Không có thách thức"
+            ],
+            "correct": 0,
+            "explanation": "Phân bố không đều gây quá tải ở đô thị và thiếu phát triển vùng nông thôn."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Chỉ số nào thể hiện cơ cấu tuổi của dân số?",
+            "options": [
+              "Tỷ lệ người dưới 15, người 15-64 và trên 65",
+              "Số lượng cảng biển",
+              "Diện tích rừng",
+              "GDP"
+            ],
+            "correct": 0,
+            "explanation": "Cơ cấu tuổi thường được biểu thị bằng tỷ lệ các nhóm tuổi như trên."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Một biện pháp ứng phó với già hóa dân số?",
+            "options": [
+              "Phát triển hệ thống an sinh xã hội và chăm sóc sức khỏe",
+              "Khuyến khích tỷ lệ sinh giảm hơn nữa",
+              "Không có biện pháp",
+              "Tăng nhập cư trẻ"
+            ],
+            "correct": 0,
+            "explanation": "Cần hệ thống an sinh và y tế mạnh để ứng phó già hóa."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Cơ cấu lao động chuyển dịch từ ngành nào sang ngành nào?",
+            "options": [
+              "Từ nông nghiệp sang công nghiệp và dịch vụ",
+              "Từ dịch vụ sang nông nghiệp",
+              "Từ công nghiệp sang nông nghiệp",
+              "Không thay đổi"
+            ],
+            "correct": 0,
+            "explanation": "Quá trình công nghiệp hóa khiến lao động dịch chuyển khỏi nông nghiệp."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Nguồn dữ liệu chính để nghiên cứu dân số là?",
+            "options": [
+              "Tổng điều tra dân số, thống kê quốc gia",
+              "Mạng xã hội",
+              "Ảnh hưởng thời tiết",
+              "Không có dữ liệu"
+            ],
+            "correct": 0,
+            "explanation": "Tổng điều tra dân số và số liệu thống kê là nguồn chính."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Một giải pháp giảm áp lực lên đô thị là?",
+            "options": [
+              "Phát triển kinh tế vùng, cơ sở hạ tầng nông thôn",
+              "Tập trung tất cả đầu tư vào thành phố lớn",
+              "Ngăn cản di cư bằng bạo lực",
+              "Không làm gì"
+            ],
+            "correct": 0,
+            "explanation": "Phát triển vùng và cơ sở hạ tầng giúp giảm di cư lên đô thị."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Đặc điểm nào sau đây đúng với dân số Việt Nam hiện nay?",
+            "options": [
+              "Quy mô dân số lớn, đứng thứ 3 Đông Nam Á",
+              "Tốc độ gia tăng dân số giảm dần",
+              "Cơ cấu dân số trẻ",
+              "Phân bố dân cư đồng đều"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "Việt Nam có quy mô dân số lớn, tốc độ tăng giảm dần, dân số đang già hóa và phân bố không đồng đều."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Vùng nào có mật độ dân số cao nhất Việt Nam?",
+            "options": [
+              "Đồng bằng sông Hồng",
+              "Đồng bằng sông Cửu Long",
+              "Đông Nam Bộ",
+              "Tây Nguyên"
+            ],
+            "correct": [
+              0,
+              2
+            ],
+            "explanation": "Đồng bằng sông Hồng và Đông Nam Bộ là các vùng có mật độ dân số cao nhất."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Hệ quả của già hóa dân số ở Việt Nam là?",
+            "options": [
+              "Thiếu hụt lao động trong tương lai",
+              "Tăng áp lực lên hệ thống y tế",
+              "Tăng tỷ lệ sinh",
+              "Tăng chi phí an sinh xã hội"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Già hóa dân số dẫn đến thiếu hụt lao động, tăng áp lực y tế và an sinh xã hội."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Các yếu tố ảnh hưởng đến phân bố dân cư ở Việt Nam là?",
+            "options": [
+              "Địa hình",
+              "Khí hậu",
+              "Lịch sử khai thác lãnh thổ",
+              "Màu sắc đất"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Phân bố dân cư chịu ảnh hưởng của địa hình, khí hậu và lịch sử khai thác lãnh thổ."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Loại tháp dân số nào thể hiện cơ cấu dân số già?",
+            "correct": "Tháp dân số hình chóp ngược hoặc hình tam giác ngược",
+            "explanation": "Tháp dân số có đáy hẹp, đỉnh rộng thể hiện dân số già."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Tỷ lệ giới tính khi sinh của Việt Nam đang có xu hướng gì?",
+            "correct": "Mất cân bằng nghiêng về nam giới",
+            "explanation": "Tỷ lệ nam/nữ khi sinh cao hơn mức tự nhiên (khoảng 112 nam/100 nữ)."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Một giải pháp khắc phục tình trạng phân bố dân cư không hợp lý?",
+            "correct": "Phát triển kinh tế - xã hội ở miền núi và nông thôn",
+            "explanation": "Phát triển kinh tế vùng giúp giảm chênh lệch phân bố dân cư."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Nêu hai vùng có mật độ dân số cao ở Việt Nam?",
+            "correct": "Đồng bằng sông Hồng, Đông Nam Bộ.",
+            "explanation": "Đồng bằng sông Hồng, Đông Nam Bộ."
+          },
+          {
+            "id": 19,
+            "type": "sa",
+            "question": "Một hệ quả của già hóa dân số?",
+            "correct": "Áp lực an sinh xã hội và y tế.",
+            "explanation": "Áp lực an sinh xã hội và y tế."
+          }
         ]
       }
     }

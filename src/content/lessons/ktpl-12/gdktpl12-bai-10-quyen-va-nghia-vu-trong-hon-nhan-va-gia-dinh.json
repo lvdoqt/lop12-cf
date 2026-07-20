@@ -18,22 +18,51 @@
           "title": "Hôn nhân và Gia đình",
           "summary": "Hôn nhân tự nguyện, tiến bộ, một vợ một chồng là nền tảng của gia đình hạnh phúc và xã hội bền vững.",
           "sections": [
-            { "heading": "Nguyên tắc hôn nhân", "content": "Tự nguyện, không ép buộc, bình đẳng giữa vợ và chồng. Độ tuổi kết hôn: Nam từ đủ 20 tuổi, Nữ từ đủ 18 tuổi." },
-            { "heading": "Nghĩa vụ giữa vợ và chồng", "content": "Chung thủy, thương yêu, tôn trọng danh dự và cùng nhau chăm lo cuộc sống gia đình." },
-            { "heading": "Trách nhiệm cha mẹ và con cái", "content": "Cha mẹ nuôi dạy con thành công dân tốt; con cái có bổn phận kính trọng, chăm sóc và phụng dưỡng cha mẹ." }
+            {
+              "heading": "Nguyên tắc cơ bản của chế độ hôn nhân Việt Nam",
+              "content": "Luật Hôn nhân và Gia đình năm 2014 quy định chế độ hôn nhân Việt Nam dựa trên các nguyên tắc: hôn nhân tự nguyện, tiến bộ, một vợ một chồng, vợ chồng bình đẳng. Hôn nhân phải được đăng ký tại cơ quan nhà nước có thẩm quyền. Nghiêm cấm tảo hôn, cưỡng ép kết hôn, lừa dối kết hôn, cản trở kết hôn. Các nguyên tắc này nhằm bảo vệ quyền lợi chính đáng của mỗi cá nhân và xây dựng gia đình hạnh phúc, bền vững."
+            },
+            {
+              "heading": "Độ tuổi kết hôn và điều kiện kết hôn hợp pháp",
+              "content": "Theo Điều 8 Luật Hôn nhân và Gia đình 2014, điều kiện kết hôn gồm: nam từ đủ 20 tuổi trở lên, nữ từ đủ 18 tuổi trở lên; việc kết hôn do nam nữ tự nguyện quyết định; không thuộc trường hợp bị mất năng lực hành vi dân sự; việc kết hôn không thuộc các trường hợp cấm kết hôn. Hôn nhân hợp pháp được cơ quan nhà nước có thẩm quyền đăng ký và cấp Giấy chứng nhận kết hôn. Tảo hôn (kết hôn khi chưa đủ tuổi) là hành vi bị pháp luật nghiêm cấm và xử lý kỷ luật, xử phạt vi phạm hành chính."
+            },
+            {
+              "heading": "Nghĩa vụ và quyền giữa vợ và chồng",
+              "content": "Vợ chồng có nghĩa vụ thương yêu, chung thủy, tôn trọng danh dự và nhân phẩm của nhau; cùng nhau chăm lo cuộc sống chung, xây dựng gia đình hạnh phúc. Vợ chồng có quyền bình đẳng trong việc lựa chọn nơi cư trú, tôn giáo, tín ngưỡng; quyền và nghĩa vụ trong việc tạo lập, chiếm hữu, sử dụng và định đoạt tài sản chung. Mọi tài sản do vợ chồng tạo ra trong thời kỳ hôn nhân là tài sản chung, trừ trường hợp được thừa kế riêng, tặng cho riêng. Vợ chồng cùng đại diện cho nhau trong quan hệ pháp luật về tài sản."
+            },
+            {
+              "heading": "Trách nhiệm của cha mẹ đối với con cái",
+              "content": "Cha mẹ có nghĩa vụ thương yêu, nuôi dưỡng, chăm sóc và giáo dục con cái đến tuổi trưởng thành. Cha mẹ phải tạo điều kiện cho con học tập, rèn luyện đạo đức, phát triển năng khiếu; là tấm gương tốt cho con noi theo. Không được phân biệt đối xử giữa các con, lạm dụng lao động trẻ em, xúi giục con làm điều trái pháp luật. Cha mẹ có quyền đại diện pháp lý cho con chưa thành niên và chịu trách nhiệm bồi thường thiệt hại do con chưa thành niên gây ra."
+            },
+            {
+              "heading": "Trách nhiệm của con cái đối với cha mẹ",
+              "content": "Con cái có bổn phận yêu quý, kính trọng, biết ơn và hiếu thảo với cha mẹ. Con cái có nghĩa vụ chăm sóc, nuôi dưỡng cha mẹ khi cha mẹ già yếu, đau ốm, không còn khả năng lao động. Con đã thành niên có quyền tự do lựa chọn nghề nghiệp, nơi cư trú nhưng phải có trách nhiệm phụng dưỡng cha mẹ. Việc ngược đãi, xúc phạm, bỏ mặc cha mẹ già là hành vi vi phạm đạo đức và bị pháp luật xử lý nghiêm minh."
+            },
+            {
+              "heading": "Các trường hợp bị cấm kết hôn",
+              "content": "Pháp luật nghiêm cấm các trường hợp kết hôn sau: kết hôn giả tạo; tảo hôn và cưỡng ép kết hôn; kết hôn giữa những người cùng dòng máu trực hệ; giữa những người có họ trong phạm vi ba đời; kết hôn giữa cha mẹ nuôi và con nuôi; giữa người đã từng là cha mẹ nuôi với con nuôi; kết hôn giữa bố chồng với con dâu, mẹ vợ với con rể, cha dượng với con riêng của vợ. Những quy định này đảm bảo sự lành mạnh về mặt sinh học và đạo đức xã hội."
+            },
+            {
+              "heading": "Bạo lực gia đình và xử lý vi phạm",
+              "content": "Bạo lực gia đình là hành vi cố ý gây tổn hại về thể chất, tinh thần và tài sản giữa các thành viên trong gia đình. Luật Phòng, chống bạo lực gia đình quy định các hành vi bạo lực gồm: hành hạ, ngược đãi, đánh đập; lăng mạ, xúc phạm danh dự; cô lập, xua đuổi; cưỡng ép tảo hôn, cưỡng ép kết hôn; cưỡng ép quan hệ tình dục. Người có hành vi bạo lực gia đình tùy theo tính chất, mức độ vi phạm có thể bị xử lý hành chính, kỷ luật hoặc truy cứu trách nhiệm hình sự."
+            }
           ]
         },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Độ tuổi kết hôn hợp pháp theo Luật Hôn nhân và Gia đình Việt Nam là?", "options": ["Nam 18, Nữ 16", "Nam từ đủ 20, Nữ từ đủ 18", "Cả hai đều đủ 18", "Cả hai đều đủ 22"], "correct": 1, "explanation": "Quy định này đảm bảo sự trưởng thành về thể chất và tinh thần." },
           { "id": 2, "type": "mcq", "question": "Chế độ hôn nhân cơ bản ở nước ta hiện nay là gì?", "options": ["Đa thê", "Một vợ một chồng, vợ chồng bình đẳng", "Tự do chung sống không cần đăng ký", "Kết hôn do cha mẹ đặt đâu con ngồi đó"], "correct": 1, "explanation": "Đây là nguyên tắc đảm bảo hạnh phúc gia đình và công bằng xã hội." },
           { "id": 3, "type": "mcq", "question": "Hôn nhân hợp pháp được xác lập khi nào?", "options": ["Tổ chức đám cưới linh đình", "Sống chung với nhau lâu ngày", "Được cơ quan nhà nước cấp Giấy chứng nhận kết hôn", "Hai gia đình gặp mặt"], "correct": 2, "explanation": "Đăng ký kết hôn là thủ tục pháp lý bắt buộc." },
           { "id": 4, "type": "mcq", "question": "Quyền và nghĩa vụ bình đẳng giữa vợ và chồng thể hiện ở?", "options": ["Chồng quyết định mọi việc lớn", "Cùng nhau bàn bạc và quyết định các công việc chung của gia đình", "Vợ chỉ làm việc nhà", "Ai kiếm nhiều tiền hơn thì có quyền hơn"], "correct": 1, "explanation": "Bình đẳng là tôn trọng và chia sẻ trách nhiệm giữa hai bên." },
           { "id": 5, "type": "mcq", "question": "Con cái có nghĩa vụ gì đối với cha mẹ?", "options": ["Chỉ cần học giỏi là đủ", "Yêu quý, kính trọng và phụng dưỡng cha mẹ khi già yếu", "Cãi lại cha mẹ", "Bỏ mặc cha mẹ sống một mình"], "correct": 1, "explanation": "Đây là đạo lý và nghĩa vụ pháp lý của con cái." },
           { "id": 6, "type": "mcq", "question": "Hành vi bạo lực gia đình bị pháp luật xử lý như thế nào?", "options": ["Là chuyện riêng gia đình nên không can thiệp", "Bị nghiêm cấm và xử lý theo pháp luật", "Được xã hội ủng hộ", "Chỉ cần xin lỗi là xong"], "correct": 1, "explanation": "Bạo lực gia đình xâm phạm nhân phẩm và sức khỏe thành viên." },
-          { "id": 7, "type": "mcq", "question": "Vợ chồng có nghĩa vụ tôn trọng tôn giáo, tín ngưỡng của nhau không?", "options": ["Không, phải theo một đạo duy nhất", "Có, phải tôn trọng quyền tự do tín ngưỡng, tôn giáo của nhau", "Chỉ vợ phải theo chồng", "Tùy vào điều kiện kinh tế"], "correct": 1, "explanation": "Quyền tự do tín ngưỡng được bảo vệ ngay cả trong quan hệ hôn nhân." },
-          { "id": 8, "type": "mcq", "question": "Những người có cùng dòng máu về trực hệ có được kết hôn không?", "options": ["Được phép", "Bị pháp luật nghiêm cấm kết hôn", "Tùy vùng miền", "Được nếu hai bên đồng ý"], "correct": 1, "explanation": "Để đảm bảo giống nòi và đạo đức, pháp luật cấm kết hôn cận huyết." },
-          { "id": 9, "type": "mcq", "question": "Tài sản chung của vợ chồng bao gồm?", "options": ["Chỉ tiền lương của chồng", "Tài sản do vợ chồng tạo ra trong thời kỳ hôn nhân", "Tài sản của cha mẹ để lại riêng cho vợ", "Quà tặng riêng cho chồng"], "correct": 1, "explanation": "Công sức của cả hai trong hôn nhân đều được coi là của chung." },
-          { "id": 10, "type": "mcq", "question": "Gia đình đóng vai trò gì đối với xã hội?", "options": ["Không quan trọng", "Là tế bào của xã hội, nơi duy trì giống nòi và nuôi dưỡng nhân cách", "Chỉ là nơi để ăn ngủ", "Gây phiền phức cho nhà nước"], "correct": 1, "explanation": "Gia đình tốt thì xã hội mới ổn định và phát triển." }
+          { "id": 7, "type": "mcq", "question": "Những người có cùng dòng máu về trực hệ có được kết hôn không?", "options": ["Được phép", "Bị pháp luật nghiêm cấm kết hôn", "Tùy vùng miền", "Được nếu hai bên đồng ý"], "correct": 1, "explanation": "Để đảm bảo giống nòi và đạo đức, pháp luật cấm kết hôn cận huyết." },
+          { "id": 8, "type": "mcq", "question": "Tài sản chung của vợ chồng bao gồm loại nào sau đây?", "options": ["Chỉ tiền lương của chồng", "Tài sản do vợ chồng tạo ra trong thời kỳ hôn nhân", "Tài sản của cha mẹ để lại riêng cho vợ", "Quà tặng riêng cho chồng"], "correct": 1, "explanation": "Công sức của cả hai trong hôn nhân đều được coi là của chung." },
+          { "id": 9, "type": "mcq", "question": "Vợ chồng có nghĩa vụ tôn trọng tôn giáo, tín ngưỡng của nhau không?", "options": ["Không, phải theo một đạo duy nhất", "Có, phải tôn trọng quyền tự do tín ngưỡng, tôn giáo của nhau", "Chỉ vợ phải theo chồng", "Tùy vào điều kiện kinh tế"], "correct": 1, "explanation": "Quyền tự do tín ngưỡng được bảo vệ ngay cả trong quan hệ hôn nhân." },
+          { "id": 10, "type": "mcq", "question": "Gia đình đóng vai trò gì đối với xã hội?", "options": ["Không quan trọng", "Là tế bào của xã hội, nơi duy trì giống nòi và nuôi dưỡng nhân cách", "Chỉ là nơi để ăn ngủ", "Gây phiền phức cho nhà nước"], "correct": 1, "explanation": "Gia đình tốt thì xã hội mới ổn định và phát triển." },
+          { "id": 11, "type": "msq", "question": "Những hành vi nào sau đây bị pháp luật nghiêm cấm trong quan hệ hôn nhân?", "options": ["Tảo hôn", "Kết hôn giữa những người cùng dòng máu trực hệ", "Kết hôn giữa người Việt Nam và người nước ngoài", "Cưỡng ép kết hôn"], "correct": [0, 1, 3], "explanation": "Tảo hôn, kết hôn cận huyết và cưỡng ép kết hôn đều bị pháp luật nghiêm cấm." },
+          { "id": 12, "type": "msq", "question": "Theo Luật Hôn nhân và Gia đình, vợ chồng có những quyền nào sau đây?", "options": ["Quyền lựa chọn nơi cư trú", "Quyền tự do tín ngưỡng, tôn giáo", "Quyền chiếm hữu và định đoạt tài sản chung", "Quyền đánh đập con cái"], "correct": [0, 1, 2], "explanation": "Quyền cư trú, tín ngưỡng và tài sản chung là các quyền hợp pháp của vợ chồng." },
+          { "id": 13, "type": "msq", "question": "Những trường hợp nào sau đây thuộc phạm vi bị cấm kết hôn?", "options": ["Cha mẹ nuôi kết hôn với con nuôi", "Hai người cùng họ trong phạm vi ba đời", "Nam nữ chênh lệch tuổi tác quá lớn", "Bố chồng kết hôn với con dâu"], "correct": [0, 1, 3], "explanation": "Kết hôn giữa cha mẹ nuôi với con nuôi, người cùng họ ba đời và bố chồng với con dâu đều bị cấm." },
+          { "id": 14, "type": "msq", "question": "Trách nhiệm của cha mẹ đối với con cái bao gồm những nội dung nào?", "options": ["Nuôi dưỡng và chăm sóc", "Tạo điều kiện học tập và phát triển", "Đánh đập để dạy bảo", "Làm gương tốt cho con noi theo"], "correct": [0, 1, 3], "explanation": "Cha mẹ có nghĩa vụ nuôi dưỡng, giáo dục và làm gương tốt cho con." }
         ]
       }
     }

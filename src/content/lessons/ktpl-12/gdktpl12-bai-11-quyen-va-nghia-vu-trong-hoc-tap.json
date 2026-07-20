@@ -16,14 +16,39 @@
       "content": {
         "theory": {
           "title": "Quyền và Nghĩa vụ Học tập",
-          "summary": "Học tập là quyền cơ bản và cũng là nghĩa vụ để công dân phát triển bản thân và đóng góp cho tổ chức.",
+          "summary": "Học tập là quyền cơ bản và cũng là nghĩa vụ để công dân phát triển bản thân và đóng góp cho xã hội.",
           "sections": [
-            { "heading": "Quyền học tập", "content": "Mọi công dân đều có quyền học không hạn chế (từ tiểu học đến đại học), học bất kỳ ngành nghề nào và học bằng nhiều hình thức." },
-            { "heading": "Sự bình đẳng trong học tập", "content": "Không phân biệt dân tộc, tôn giáo, giới tính, nguồn gốc gia đình và địa vị xã hội." },
-            { "heading": "Nghĩa vụ học tập", "content": "Học tập để hoàn thành phổ cập giáo dục theo quy định của Nhà nước và không ngừng nâng cao kiến thức, kĩ năng." }
+            {
+              "heading": "Quyền học tập không hạn chế của công dân",
+              "content": "Theo Hiến pháp năm 2013 và Luật Giáo dục năm 2019, mọi công dân đều có quyền học tập không hạn chế. Quyền này được thể hiện qua việc công dân có thể học từ bậc tiểu học đến sau đại học, học bất kỳ ngành nghề nào phù hợp với năng lực, sở thích và điều kiện của bản thân. Nhà nước có trách nhiệm tạo môi trường giáo dục thuận lợi, ban hành các chính sách ưu tiên, hỗ trợ cho người học thuộc diện chính sách, hộ nghèo, vùng sâu vùng xa, dân tộc thiểu số."
+            },
+            {
+              "heading": "Bình đẳng trong học tập",
+              "content": "Mọi công dân đều bình đẳng về quyền và cơ hội học tập, không bị phân biệt đối xử về dân tộc, tôn giáo, giới tính, nguồn gốc gia đình, địa vị xã hội hay hoàn cảnh kinh tế. Nhà nước thực hiện giáo dục hòa nhập cho người khuyết tật, tạo điều kiện cho trẻ em có hoàn cảnh đặc biệt được đến trường. Các chính sách học bổng, miễn giảm học phí, hỗ trợ chi phí học tập được triển khai để bảo đảm công bằng trong giáo dục trên mọi vùng miền."
+            },
+            {
+              "heading": "Học tập bằng nhiều hình thức",
+              "content": "Công dân có quyền lựa chọn hình thức học tập phù hợp với hoàn cảnh và điều kiện cá nhân. Các hình thức học tập bao gồm: học chính quy tại các trường công lập, dân lập, tư thục; học vừa làm vừa học; học từ xa; học trực tuyến (online); học tại các trung tâm giáo dục thường xuyên; học ở các lớp xóa mù chữ. Việc đa dạng hóa hình thức học tập giúp mọi người dân, ở mọi lứa tuổi, đều có thể tiếp cận tri thức một cách linh hoạt."
+            },
+            {
+              "heading": "Nghĩa vụ học tập của công dân",
+              "content": "Học tập không chỉ là quyền mà còn là nghĩa vụ của mỗi công dân. Công dân trong độ tuổi quy định có nghĩa vụ hoàn thành giáo dục tiểu học và trung học cơ sở (phổ cập giáo dục bắt buộc). Người học có nghĩa vụ học tập chuyên cần, rèn luyện đạo đức, tuân thủ nội quy nhà trường, tôn trọng giáo viên và bạn bè. Cha mẹ hoặc người giám hộ có trách nhiệm tạo điều kiện cho con em hoàn thành nghĩa vụ học tập theo quy định của pháp luật."
+            },
+            {
+              "heading": "Phổ cập giáo dục bắt buộc",
+              "content": "Nhà nước thực hiện phổ cập giáo dục mầm non cho trẻ em 5 tuổi, phổ cập giáo dục tiểu học và trung học cơ sở. Giáo dục tiểu học và trung học cơ sở là bắt buộc đối với mọi trẻ em Việt Nam. Nhà nước miễn học phí cho học sinh tiểu học công lập và có chính sách hỗ trợ học phí cho học sinh trung học cơ sở. Các địa phương có trách nhiệm huy động trẻ em trong độ tuổi đến trường, đảm bảo không có học sinh bỏ học vì hoàn cảnh khó khăn."
+            },
+            {
+              "heading": "Học tập suốt đời",
+              "content": "Học tập suốt đời là quyền và trách nhiệm của mỗi công dân trong xã hội hiện đại. Đây là quá trình học tập liên tục, không giới hạn độ tuổi, giúp mỗi người thích ứng với sự thay đổi của khoa học công nghệ và thị trường lao động. Nhà nước khuyến khích và tạo điều kiện cho mọi công dân học tập suốt đời thông qua các cơ sở giáo dục thường xuyên, trung tâm học tập cộng đồng, các chương trình đào tạo từ xa và các nền tảng học trực tuyến mở."
+            },
+            {
+              "heading": "Trách nhiệm của Nhà nước trong giáo dục",
+              "content": "Nhà nước giữ vai trò chủ đạo trong phát triển sự nghiệp giáo dục quốc gia. Nhà nước đầu tư ngân sách cho giáo dục, xây dựng cơ sở vật chất trường học, đào tạo đội ngũ giáo viên, ban hành chương trình giáo dục quốc gia thống nhất. Nhà nước ưu tiên phát triển giáo dục ở vùng dân tộc thiểu số, miền núi, hải đảo và vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn. Đồng thời, Nhà nước xã hội hóa giáo dục, khuyến khích các tổ chức, cá nhân tham gia phát triển giáo dục."
+            }
           ]
         },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Mọi công dân đều có quyền học tập 'không hạn chế' nghĩa là?", "options": ["Học ở bất cứ đâu", "Có thể học từ bậc thấp đến bậc cao (Tiến sĩ, sau Tiến sĩ...)", "Học mà không cần thi", "Học miễn phí hoàn toàn"], "correct": 1, "explanation": "Công dân có thể học suốt đời tùy theo năng lực và điều kiện." },
           { "id": 2, "type": "mcq", "question": "Quyền học tập của công dân được quy định đầu tiên trong văn bản nào?", "options": ["Nội quy nhà trường", "Luật Giáo dục", "Hiến pháp", "Sách giáo khoa"], "correct": 2, "explanation": "Hiến pháp là luật cơ bản quy định các quyền con người." },
           { "id": 3, "type": "mcq", "question": "Học tập bằng nhiều hình thức (chính quy, từ xa, vừa học vừa làm) thể hiện quyền gì?", "options": ["Quyền sáng tạo", "Quyền tự do lựa chọn hình thức học tập", "Quyền ưu tiên", "Quyền bắt buộc"], "correct": 1, "explanation": "Nhà nước tạo điều kiện linh hoạt để ai cũng có thể tiếp cận tri thức." },
@@ -33,7 +58,11 @@
           { "id": 7, "type": "mcq", "question": "Học sinh có nghĩa vụ gì trong học tập?", "options": ["Chỉ cần đến lớp ngồi", "Học tập chuyên cần, rèn luyện đạo đức và tuân thủ nội quy trường học", "Làm bài hộ bạn", "Quay cóp trong thi cử"], "correct": 1, "explanation": "Nghiêm túc trong học tập là trách nhiệm của người học." },
           { "id": 8, "type": "mcq", "question": "Học tập suốt đời (Lifelong learning) giúp công dân?", "options": ["Mệt mỏi thêm", "Thích nghi với sự thay đổi của xã hội và công nghệ", "Tốn nhiều tiền", "Được khen ngợi"], "correct": 1, "explanation": "Trong thời đại số, ngừng học đồng nghĩa với tụt hậu." },
           { "id": 9, "type": "mcq", "question": "Hành vi cản trở người khác đi học bị coi là?", "options": ["Hành vi giúp đỡ", "Vi phạm quyền học tập của công dân", "Quyền của cha mẹ", "Việc bình thường"], "correct": 1, "explanation": "Xâm phạm quyền học tập là vi phạm pháp luật và đạo đức." },
-          { "id": 10, "type": "mcq", "question": "Tại sao học tập lại là nghĩa vụ đối với đất nước?", "options": ["Để có nhiều bằng cấp cho đẹp", "Vì dân trí cao là sức mạnh và tương lai của dân tộc", "Để Nhà nước thu tiền học phí", "Để học sinh bớt thời gian chơi"], "correct": 1, "explanation": "Nguồn nhân lực chất lượng là yếu tố then chốt để phát triển quốc gia." }
+          { "id": 10, "type": "mcq", "question": "Tại sao học tập lại là nghĩa vụ đối với đất nước?", "options": ["Để có nhiều bằng cấp cho đẹp", "Vì dân trí cao là sức mạnh và tương lai của dân tộc", "Để Nhà nước thu tiền học phí", "Để học sinh bớt thời gian chơi"], "correct": 1, "explanation": "Nguồn nhân lực chất lượng là yếu tố then chốt để phát triển quốc gia." },
+          { "id": 11, "type": "msq", "question": "Những hình thức học tập nào được pháp luật Việt Nam công nhận?", "options": ["Học chính quy tại trường", "Học từ xa trực tuyến", "Học vừa làm vừa học", "Học tại trung tâm giáo dục thường xuyên"], "correct": [0, 1, 2, 3], "explanation": "Mọi hình thức học tập hợp pháp đều được công nhận nhằm đảm bảo quyền học tập suốt đời của công dân." },
+          { "id": 12, "type": "msq", "question": "Theo quy định về phổ cập giáo dục, trẻ em Việt Nam phải hoàn thành những bậc học nào?", "options": ["Giáo dục tiểu học", "Giáo dục trung học cơ sở", "Giáo dục trung học phổ thông", "Đại học"], "correct": [0, 1], "explanation": "Phổ cập giáo dục bắt buộc bao gồm tiểu học và trung học cơ sở." },
+          { "id": 13, "type": "msq", "question": "Những yếu tố nào không được phép phân biệt đối xử trong giáo dục?", "options": ["Dân tộc", "Giới tính", "Điều kiện kinh tế", "Năng lực học tập"], "correct": [0, 1, 2], "explanation": "Phân biệt đối xử về dân tộc, giới tính và điều kiện kinh tế là trái với nguyên tắc bình đẳng trong giáo dục." },
+          { "id": 14, "type": "msq", "question": "Nhà nước có những trách nhiệm nào sau đây trong lĩnh vực giáo dục?", "options": ["Đầu tư ngân sách cho giáo dục", "Xây dựng chương trình giáo dục quốc gia", "Xã hội hóa giáo dục, khuyến khích tư nhân tham gia", "Ép buộc học sinh học thêm"], "correct": [0, 1, 2], "explanation": "Nhà nước có trách nhiệm đầu tư, xây dựng chương trình và xã hội hóa giáo dục." }
         ]
       }
     }

@@ -36,7 +36,7 @@ if (Astro.request.method === 'POST') {
       try { parsed = JSON.parse(jsonRaw); } catch {
         throw new Error('JSON không hợp lệ. Vui lòng kiểm tra cú pháp.');
       }
-      const qs = parsed.questions || parsed.questions;
+      const qs = Array.isArray(parsed) ? parsed : (parsed.questions || []);
       if (!Array.isArray(qs) || qs.length === 0)
         throw new Error('JSON phải chứa mảng "questions" với ít nhất 1 câu hỏi.');
 
@@ -113,16 +113,21 @@ if (Astro.request.method === 'POST') {
           ];
         }
 
-        const created = await db.createQuestion({
-          subject_id,
-          content: qContent,
-          explanation: qExpl,
-          difficulty: qDiff,
-          type: qType as any,
-          answer: qType === 'sa' ? correctStr : null,
-          created_by: user.id,
-          metadata: metadata ? metadata : (category_id ? { category_id } : undefined)
-        }, answers);
+        let created: any;
+        try {
+          created = await db.createQuestion({
+            subject_id,
+            content: qContent,
+            explanation: qExpl,
+            difficulty: qDiff,
+            type: qType as any,
+            answer: qType === 'sa' ? correctStr : null,
+            created_by: user.id,
+            metadata: metadata ? metadata : (category_id ? { category_id } : undefined)
+          }, answers);
+        } catch (qErr: any) {
+          throw new Error(`Lỗi tạo câu hỏi (${qType}): ${qErr?.message || qErr?.details || String(qErr)}`);
+        }
         questionIds.push(created.id);
       }
     } else {
@@ -131,17 +136,24 @@ if (Astro.request.method === 'POST') {
         throw new Error('Cần gán ít nhất một câu hỏi vào đề thi này.');
     }
 
-    await db.createExam({ title, duration, subject_id, category_id, exam_type, created_by: user.id, ...(password ? { password } : {}) }, questionIds);
+    try {
+      await db.createExam({ title, duration, subject_id, category_id, exam_type, created_by: user.id, ...(password ? { password } : {}) }, questionIds);
+    } catch (examErr: any) {
+      throw new Error(`Lỗi tạo đề thi: ${examErr?.message || examErr?.details || String(examErr)}`);
+    }
     return Astro.redirect('/admin/exams');
 
   } catch (err: any) {
-    errMsg = err.message || 'Lỗi tạo đề thi mới.';
+    errMsg = err.message || err?.details || 'Lỗi tạo đề thi mới.';
   }
 }
 
-const subjects  = await db.getSubjects();
-const questions = await db.getQuestions(undefined, user.role === 'admin' ? undefined : user.id);
-const allCategories = await db.getCategories();
+let subjects: any[] = [];
+let questions: any[] = [];
+let allCategories: any[] = [];
+try { subjects = await db.getSubjects(); } catch { /* fallback to empty */ }
+try { questions = await db.getQuestions(undefined, user.role === 'admin' ? undefined : user.id); } catch { /* fallback to empty */ }
+try { allCategories = await db.getCategories(); } catch { /* fallback to empty */ }
 
 // Handle pre-selected questions via GET ?q=id1,id2
 const url = new URL(Astro.request.url);

@@ -15,25 +15,258 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Vấn đề và hướng phát triển nông nghiệp",
-          "summary": "Nông nghiệp phải chuyển đổi theo hướng tăng năng suất, đa dạng hoá sản phẩm, ứng phó với biến đổi khí hậu và tham gia chuỗi giá trị toàn cầu.",
+          "title": "Vấn đề phát triển ngành nông nghiệp",
+          "summary": "Nông nghiệp Việt Nam giữ vai trò quan trọng, đang chuyển dịch cơ cấu theo hướng tăng tỉ trọng chăn nuôi, đa dạng hóa cây trồng, phát triển nông nghiệp hàng hóa và ứng dụng công nghệ cao. Tuy nhiên, ngành còn đối mặt với nhiều thách thức như biến đổi khí hậu, quy mô sản xuất nhỏ, năng suất lao động thấp và ô nhiễm môi trường.",
           "sections": [
-            { "heading": "Năng suất và kỹ thuật canh tác", "content": "Ứng dụng giống, phân bón hợp lý, tưới tiêu và cơ giới hóa để nâng cao năng suất." },
-            { "heading": "Nông nghiệp bền vững", "content": "Mô hình canh tác bảo vệ đất, sử dụng hợp lý nước và giảm sử dụng hóa chất." }
+            {
+              "heading": "Phát triển cây lương thực và cây thực phẩm",
+              "content": "Cây lương thực chủ lực là lúa nước, tập trung ở Đồng bằng sông Hồng và Đồng bằng sông Cửu Long - hai vựa lúa lớn nhất cả nước. Cùng với lúa, các cây lương thực khác (ngô, khoai, sắn) và cây thực phẩm (rau, đậu, cây ăn quả) phát triển đa dạng nhằm bảo đảm an ninh lương thực và cung cấp nguyên liệu chế biến. Việc thâm canh, mở rộng diện tích và áp dụng giống mới đã giúp năng suất lúa tăng đáng kể, đưa Việt Nam trở thành nước xuất khẩu gạo hàng đầu thế giới."
+            },
+            {
+              "heading": "Phát triển cây công nghiệp và cây ăn quả",
+              "content": "Cây công nghiệp được phân bố theo điều kiện sinh thái: cây công nghiệp hàng năm (mía, đậu tương, lạc) ở trung du, miền núi và các vùng đất thấp; cây công nghiệp lâu năm (cà phê, cao su, chè, hồ tiêu, điều) tập trung ở Tây Nguyên, Đông Nam Bộ và Duyên hải Nam Trung Bộ. Cây ăn quả phát triển mạnh ở Đồng bằng sông Cửu Long, Đông Nam Bộ và các vùng đồi núi thấp. Việc đa dạng hóa cơ cấu cây trồng giúp tăng giá trị và giảm rủi ro cho nông dân."
+            },
+            {
+              "heading": "Phát triển chăn nuôi",
+              "content": "Chăn nuôi đang chuyển dịch theo hướng công nghiệp hóa, hiện đại hóa với tỉ trọng ngày càng tăng trong cơ cấu nông nghiệp. Gia súc (trâu, bò, lợn) và gia cầm (gà, vịt) được nuôi cả theo hình thức nông hộ và trang trại quy mô lớn. Chăn nuôi tập trung gần các đô thị lớn và vùng tiêu thụ để thuận tiện vận chuyển, kết hợp với giết mổ, chế biến theo chuỗi khép kín nhằm bảo đảm vệ sinh an toàn thực phẩm."
+            },
+            {
+              "heading": "Thách thức của ngành nông nghiệp",
+              "content": "Nông nghiệp Việt Nam đối mặt với nhiều thách thức: biến đổi khí hậu gây hạn hán, xâm nhập mặn, bão lũ; quy mô sản xuất còn manh mún, nhỏ lẻ; năng suất lao động thấp; sự cạnh tranh của hàng nông sản nhập khẩu; và nguy cơ ô nhiễm môi trường do lạm dụng phân bón, thuốc bảo vệ thực vật. Bên cạnh đó, liên kết giữa sản xuất và tiêu thụ, chế biến còn lỏng lẻo, thị trường đầu ra thiếu ổn định."
+            },
+            {
+              "heading": "Định hướng phát triển bền vững",
+              "content": "Hướng phát triển của nông nghiệp Việt Nam là chuyển sang sản xuất hàng hóa lớn, ứng dụng công nghệ cao (nông nghiệp thông minh, nông nghiệp hữu cơ, nông nghiệp chính xác), gắn sản xuất với chế biến và xuất khẩu. Nhà nước khuyến khích tích tụ, tập trung ruộng đất, xây dựng các vùng chuyên canh quy mô lớn, liên kết chuỗi giá trị và bảo vệ môi trường nhằm nâng cao giá trị gia tăng và thích ứng với biến đổi khí hậu."
+            }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Nêu một thách thức của nông nghiệp hiện nay?", "a_hint": "Biến đổi khí hậu, xâm nhập mặn, đất bạc màu." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Một biện pháp tăng năng suất nông nghiệp là?", "options": ["Sử dụng giống tốt hơn","Giảm tưới tiêu","Tăng phá rừng","Không can thiệp"], "correct": 0, "explanation": "Giống năng suất cao và kỹ thuật canh tác tốt giúp tăng năng suất." },
-          { "id": 2, "type": "mcq", "question": "Nông nghiệp bền vững chú trọng điều gì?", "options": ["Bảo vệ đất và nước","Tăng dùng thuốc BVTV","Khai thác quá mức","Không quan tâm"], "correct": 0, "explanation": "Bảo vệ tài nguyên là trọng tâm của nông nghiệp bền vững." },
-          { "id": 3, "type": "mcq", "question": "Chuỗi giá trị nông sản là gì?", "options": ["Từ sản xuất đến tiêu thụ gồm chế biến, vận chuyển, thị trường","Chỉ trồng trọt","Chỉ xuất khẩu","Chỉ tiêu thụ nội địa"], "correct": 0, "explanation": "Chuỗi giá trị bao gồm nhiều khâu từ sản xuất đến tiêu dùng." },
-          { "id": 4, "type": "mcq", "question": "Một rủi ro ảnh hưởng tới nông nghiệp ven biển?", "options": ["Xâm nhập mặn và bão","Tuyết rơi","Nắng yếu liên tục","Không có rủi ro"], "correct": 0, "explanation": "Xâm nhập mặn và bão là rủi ro vùng ven biển." },
-          { "id": 5, "type": "mcq", "question": "Phát triển nông nghiệp cần ưu tiên?", "options": ["Đào tạo kỹ thuật nông nghiệp và cơ sở hạ tầng nông thôn","Tập trung tất cả ở thành phố","Ngăn chặn mọi công nghệ","Không đầu tư"], "correct": 0, "explanation": "Đầu tư vào kỹ thuật và hạ tầng giúp nông nghiệp phát triển." },
-          { "id": 6, "type": "mcq", "question": "Nông nghiệp có thể thích ứng với biến đổi khí hậu bằng?", "options": ["Chọn giống chịu hạn/mặn, cải thiện quản lý nước","Không làm gì","Tăng phá rừng","Giảm canh tác"], "correct": 0, "explanation": "Chọn giống và quản lý nước là biện pháp thích ứng." },
-          { "id": 7, "type": "mcq", "question": "Một chỉ tiêu để đánh giá hiệu quả nông nghiệp là?", "options": ["Năng suất trên đơn vị diện tích","Số lượng cảng biển","Số trường đại học","Số bệnh viện"], "correct": 0, "explanation": "Năng suất/ha là chỉ tiêu quan trọng trong nông nghiệp." },
-          { "id": 8, "type": "mcq", "question": "Phát triển nông nghiệp bền vững giảm tác động nào?", "options": ["Suy thoái đất và ô nhiễm nước","Tăng phá rừng","Giảm sản lượng mãi mãi","Không có gì"], "correct": 0, "explanation": "Thực hành bền vững giúp giảm suy thoái và ô nhiễm." },
-          { "id": 9, "type": "mcq", "question": "Hoạt động nào giúp nông sản gia tăng giá trị?", "options": ["Chế biến sau thu hoạch và đóng gói","Bán tươi tại sân nhà","Không xử lý","Bỏ qua tiêu chuẩn"], "correct": 0, "explanation": "Chế biến và tiêu chuẩn chất lượng tăng giá trị nông sản." },
-          { "id": 10, "type": "mcq", "question": "Một yếu tố ảnh hưởng tới phân bố cây trồng là?", "options": ["Đất và khí hậu","Màu sắc cờ","Số lượng cửa hàng","Không có yếu tố"], "correct": 0, "explanation": "Đất và khí hậu quyết định phù hợp trồng loại cây nào." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Một biện pháp tăng năng suất nông nghiệp là?",
+            "options": [
+              "Sử dụng giống tốt hơn",
+              "Giảm tưới tiêu",
+              "Tăng phá rừng",
+              "Không can thiệp"
+            ],
+            "correct": 0,
+            "explanation": "Giống năng suất cao và kỹ thuật canh tác tốt giúp tăng năng suất."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Nông nghiệp bền vững chú trọng điều gì?",
+            "options": [
+              "Bảo vệ đất và nước",
+              "Tăng dùng thuốc BVTV",
+              "Khai thác quá mức",
+              "Không quan tâm"
+            ],
+            "correct": 0,
+            "explanation": "Bảo vệ tài nguyên là trọng tâm của nông nghiệp bền vững."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Chuỗi giá trị nông sản là gì?",
+            "options": [
+              "Từ sản xuất đến tiêu thụ gồm chế biến, vận chuyển, thị trường",
+              "Chỉ trồng trọt",
+              "Chỉ xuất khẩu",
+              "Chỉ tiêu thụ nội địa"
+            ],
+            "correct": 0,
+            "explanation": "Chuỗi giá trị bao gồm nhiều khâu từ sản xuất đến tiêu dùng."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Một rủi ro ảnh hưởng tới nông nghiệp ven biển?",
+            "options": [
+              "Xâm nhập mặn và bão",
+              "Tuyết rơi",
+              "Nắng yếu liên tục",
+              "Không có rủi ro"
+            ],
+            "correct": 0,
+            "explanation": "Xâm nhập mặn và bão là rủi ro vùng ven biển."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Phát triển nông nghiệp cần ưu tiên?",
+            "options": [
+              "Đào tạo kỹ thuật nông nghiệp và cơ sở hạ tầng nông thôn",
+              "Tập trung tất cả ở thành phố",
+              "Ngăn chặn mọi công nghệ",
+              "Không đầu tư"
+            ],
+            "correct": 0,
+            "explanation": "Đầu tư vào kỹ thuật và hạ tầng giúp nông nghiệp phát triển."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Nông nghiệp có thể thích ứng với biến đổi khí hậu bằng?",
+            "options": [
+              "Chọn giống chịu hạn/mặn, cải thiện quản lý nước",
+              "Không làm gì",
+              "Tăng phá rừng",
+              "Giảm canh tác"
+            ],
+            "correct": 0,
+            "explanation": "Chọn giống và quản lý nước là biện pháp thích ứng."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Một chỉ tiêu để đánh giá hiệu quả nông nghiệp là?",
+            "options": [
+              "Năng suất trên đơn vị diện tích",
+              "Số lượng cảng biển",
+              "Số trường đại học",
+              "Số bệnh viện"
+            ],
+            "correct": 0,
+            "explanation": "Năng suất/ha là chỉ tiêu quan trọng trong nông nghiệp."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Phát triển nông nghiệp bền vững giảm tác động nào?",
+            "options": [
+              "Suy thoái đất và ô nhiễm nước",
+              "Tăng phá rừng",
+              "Giảm sản lượng mãi mãi",
+              "Không có gì"
+            ],
+            "correct": 0,
+            "explanation": "Thực hành bền vững giúp giảm suy thoái và ô nhiễm."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Hoạt động nào giúp nông sản gia tăng giá trị?",
+            "options": [
+              "Chế biến sau thu hoạch và đóng gói",
+              "Bán tươi tại sân nhà",
+              "Không xử lý",
+              "Bỏ qua tiêu chuẩn"
+            ],
+            "correct": 0,
+            "explanation": "Chế biến và tiêu chuẩn chất lượng tăng giá trị nông sản."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Một yếu tố ảnh hưởng tới phân bố cây trồng là?",
+            "options": [
+              "Đất và khí hậu",
+              "Màu sắc cờ",
+              "Số lượng cửa hàng",
+              "Không có yếu tố"
+            ],
+            "correct": 0,
+            "explanation": "Đất và khí hậu quyết định phù hợp trồng loại cây nào."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Những thế mạnh để phát triển nông nghiệp ở Việt Nam là?",
+            "options": [
+              "Khí hậu nhiệt đới ẩm gió mùa",
+              "Đất đai màu mỡ",
+              "Công nghệ chế biến kém phát triển",
+              "Nguồn lao động dồi dào"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Khí hậu thuận lợi, đất đai màu mỡ và lao động dồi dào là thế mạnh nông nghiệp."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Các loại cây trồng chủ lực của Việt Nam là?",
+            "options": [
+              "Lúa gạo",
+              "Cà phê",
+              "Cao su",
+              "Lúa mì"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Lúa gạo, cà phê và cao su là các cây trồng chủ lực; lúa mì không phù hợp khí hậu nhiệt đới."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Những thách thức đối với nông nghiệp Việt Nam hiện nay là?",
+            "options": [
+              "Biến đổi khí hậu",
+              "Xâm nhập mặn",
+              "Năng suất lao động thấp",
+              "Thị trường tiêu thụ rộng lớn"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Biến đổi khí hậu, xâm nhập mặn và năng suất lao động thấp là thách thức lớn."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Định hướng phát triển nông nghiệp bền vững ở Việt Nam là?",
+            "options": [
+              "Ứng dụng công nghệ cao",
+              "Phát triển nông nghiệp hữu cơ",
+              "Tăng cường sử dụng phân bón hóa học",
+              "Liên kết chuỗi giá trị"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Công nghệ cao, nông nghiệp hữu cơ và liên kết chuỗi giá trị là hướng phát triển bền vững."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Cây lúa nước được trồng nhiều nhất ở vùng nào?",
+            "correct": "Đồng bằng sông Cửu Long và đồng bằng sông Hồng",
+            "explanation": "ĐBSCL là vùng sản xuất lúa lớn nhất cả nước."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Xu hướng phát triển nông nghiệp Việt Nam hiện nay?",
+            "correct": "Phát triển nông nghiệp hàng hóa, ứng dụng công nghệ cao",
+            "explanation": "Nông nghiệp đang chuyển từ tự cung tự cấp sang sản xuất hàng hóa."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Kể tên một sản phẩm nông nghiệp xuất khẩu chủ lực của Việt Nam?",
+            "correct": "Gạo, cà phê, cao su, trái cây, tôm, cá tra",
+            "explanation": "Việt Nam là nước xuất khẩu gạo, cà phê và thủy sản hàng đầu thế giới."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Nêu một thách thức của nông nghiệp hiện nay?",
+            "correct": "Biến đổi khí hậu, xâm nhập mặn, đất bạc màu.",
+            "explanation": "Biến đổi khí hậu, xâm nhập mặn, đất bạc màu."
+          }
         ]
       }
     }

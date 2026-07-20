@@ -3,7 +3,7 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-2-5-viet-van-nghi-luan-so-sanh",
+      "id": "van12-bai-2-5-viet-van-nghi-luan-so-sanh-tho",
       "name": "Viết bài văn nghị luận so sánh, đánh giá hai tác phẩm thơ",
       "slug": "viet-van-nghi-luan-so-sanh-tho",
       "chapter": "Những thế giới thơ",
@@ -59,7 +59,12 @@
             "slug": "lua-chon-tieu-chi-so-sanh",
             "description": "Nhận diện những tiêu chí so sánh phù hợp và phát triển luận điểm xung quanh mỗi tiêu chí",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Phân tích hai tác phẩm:</strong> Xác định đặc điểm chính của mỗi tác phẩm</li><li><strong>Lựa chọn tiêu chí:</strong> Chọn 2-3 tiêu chí chính (chủ đề, cảm xúc, hình ảng, phong cách...)</li><li><strong>So sánh từng tiêu chí:</strong><ul><li>Điểm giống nhau (nếu có)</li><li>Điểm khác nhau</li><li>Ý nghĩa của sự khác/giống</li></ul></li><li><strong>Viết thành đoạn text:</strong> Với topic sentence, supporting sentences, dẫn chứng</li></ol>",
-            "examples": "<h4>Ví dụ:</h4><p><strong>So sánh Cảm hoài và Tây Tiến</strong><br/>- Tiêu chí 1: Chủ đề<br/>  + Topic sentence: \"Về chủ đề, Cảm hoài viết về cảm xúc cá nhân, còn Tây Tiến viết về sự kiện lịch sử anh hùng\"<br/>  + Supporting: \"Cảm hoài là những suy tư của một cá nhân về vận mệnh, thời gian, trong khi Tây Tiến ca tụng Chiến dịch Tây Tiến\"<br/>  + Nhận xét: \"Sự khác biệt này cho thấy thơ ca có thể thể hiện nhiều khía cạnh của cuộc sống\"}}<br/>- Tiêu chí 2: Cảm xúc<br/>  + Topic sentence: \"Cảm xúc của hai bài thơ cũng khác nhau\"<br/>  + Supporting: \"Cảm hoài mang cảm xúc buồn bã nhẹ nhàng, lạc lõng; Tây Tiến mang cảm xúc sôi nổi, hùng tráng\"}}<br/>- Tiêu chí 3: Hình ảng<br/>  + Topic sentence: \"Hình ảng được lựa chọn cũng khác nhau\"}}<br/>  + Dẫn chứng cụ thể từ từng bài thơ"
+            "examples": [
+              {
+                "question": "<p><strong>So sánh Cảm hoài và Tây Tiến</strong></p>",
+                "solution": "\n- Tiêu chí 1: Chủ đề\n  + Topic sentence: \"Về chủ đề, Cảm hoài viết về cảm xúc cá nhân, còn Tây Tiến viết về sự kiện lịch sử anh hùng\"\n  + Supporting: \"Cảm hoài là những suy tư của một cá nhân về vận mệnh, thời gian, trong khi Tây Tiến ca tụng Chiến dịch Tây Tiến\"\n  + Nhận xét: \"Sự khác biệt này cho thấy thơ ca có thể thể hiện nhiều khía cạnh của cuộc sống\"}}\n- Tiêu chí 2: Cảm xúc\n  + Topic sentence: \"Cảm xúc của hai bài thơ cũng khác nhau\"\n  + Supporting: \"Cảm hoài mang cảm xúc buồn bã nhẹ nhàng, lạc lõng; Tây Tiến mang cảm xúc sôi nổi, hùng tráng\"}}\n- Tiêu chí 3: Hình ảng\n  + Topic sentence: \"Hình ảng được lựa chọn cũng khác nhau\"}}\n  + Dẫn chứng cụ thể từ từng bài thơ"
+              }
+            ]
           },
           {
             "id": "dang2",
@@ -67,7 +72,12 @@
             "slug": "xay-dung-luan-diem",
             "description": "Phát triển một luận điểm rõ ràng và hỗ trợ nó bằng các dẫn chứng, ví dụ cụ thể từ text",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Nêu topic sentence:</strong> Luận điểm rõ ràng, cụ thể, có thể chứng minh được</li><li><strong>Nêu các supporting sentences:</strong> Giải thích tại sao topic sentence đó là đúng</li><li><strong>Dẫn chứng:</strong> Trích dẫn từ text hoặc đề cập đến nội dung text có liên quan</li><li><strong>Nhận xét:</strong> Giải thích ý nghĩa của dẫn chứng đó, liên hệ với topic sentence</li></ol>",
-            "examples": "<h4>Ví dụ:</h4><p><strong>Luận điểm: \"Đặng Dung sử dụng hình ảng tự nhiên để biểu hiện cảm xúc nội tâm\"</strong><br/>1. Topic sentence: \"Trong bài Cảm hoài, Đặng Dung chủ yếu lựa chọn những hình ảng từ thiên nhiên để biểu hiện cảm xúc cá nhân\"<br/>2. Supporting:\n   - \"Những hình ảng như gió, mưa, lá, ánh sáng không chỉ là hiền tượng tự nhiên mà còn biểu tượng cho các trạng thái tâm lý\"<br/>   - \"Lựa chọn này giúp bài thơ trở nên gần gũi, dễ cảm nhận\"<br/>3. Dẫn chứng:\n   - \"Gió thổi\" não → biểu tượng cho vận mệnh\n   - \"Lá bay\" → biểu tượng cho thời gian, tuổi trẻ trôi đi\n   - \"Mưa rơi\" → biểu tượng cho nước mắt, buồn bã<br/>4. Nhận xét: \"Thông qua việc lựa chọn những hình ảng tự nhiên quen thuộc, tác giả đã giúp độc giả cảm thấy những cảm xúc sâu kín không phải là của riêng tác giả mà là chung của tất cả con người\""
+            "examples": [
+              {
+                "question": "<p><strong>Luận điểm: \"Đặng Dung sử dụng hình ảng tự nhiên để biểu hiện cảm xúc nội tâm\"</strong></p>",
+                "solution": "\n1. Topic sentence: \"Trong bài Cảm hoài, Đặng Dung chủ yếu lựa chọn những hình ảng từ thiên nhiên để biểu hiện cảm xúc cá nhân\"\n2. Supporting:\n   - \"Những hình ảng như gió, mưa, lá, ánh sáng không chỉ là hiền tượng tự nhiên mà còn biểu tượng cho các trạng thái tâm lý\"\n   - \"Lựa chọn này giúp bài thơ trở nên gần gũi, dễ cảm nhận\"\n3. Dẫn chứng:\n   - \"Gió thổi\" não → biểu tượng cho vận mệnh\n   - \"Lá bay\" → biểu tượng cho thời gian, tuổi trẻ trôi đi\n   - \"Mưa rơi\" → biểu tượng cho nước mắt, buồn bã\n4. Nhận xét: \"Thông qua việc lựa chọn những hình ảng tự nhiên quen thuộc, tác giả đã giúp độc giả cảm thấy những cảm xúc sâu kín không phải là của riêng tác giả mà là chung của tất cả con người\""
+              }
+            ]
           },
           {
             "id": "dang3",
@@ -75,130 +85,132 @@
             "slug": "phat-trien-bai-viet",
             "description": "Cách nâng cấp bài viết so sánh từ những nhân xét bề ngoài đến những phân tích sâu sắc hơn",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>So sánh bề ngoài:</strong> Nêu những điểm giống/khác rõ ràng (chủ đề, cảm xúc, hình ảng...)</li><li><strong>So sánh sâu hơn:</strong> <ul><li>Tại sao tác giả lại chọn những hình ảng này</li><li>Tục dụng của những lựa chọn này đối với độc giả</li><li>Giá trị, ý nghĩa của từng lựa chọn</li></ul></li><li><strong>Liên hệ với bối cảnh lớn:</strong><ul><li>Những lựa chọn này có liên hệ với nền văn hóa, thời đại không</li><li>Những bài học rộng hơn từ sự so sánh</li><li>Ý nghĩa với độc giả hiện đại</li></ul></li></ol>",
-            "examples": "<h4>Ví dụ:</h4><p><strong>So sánh bề ngoài:</strong> \"Cảm hoài của Đặng Dung và Tây Tiến của Quang Dũng khác nhau về chủ đề\"<p><strong>So sánh sâu hơn:</strong> <br/>\"Sự khác biệt về chủ đề phản ánh những quan điểm khác nhau về con người và cuộc sống. Đặng Dung nhấn mạnh rằng con người cần sâu sắc suy tư về bản thân, cuộc sống, trong khi Quang Dũng khẳng định giá trị của hành động, của việc hy sinh vì mục đích cao cả. Hai quan điểm này không mâu thuẫn mà bổ sung cho nhau.\"<p><strong>Liên hệ với bối cảnh:</strong> <br/>\"Cả hai tác phẩm đều viết vào thế kỷ XX, thời kỳ Việt Nam đang đi qua những biến cố lớn. Nhưng trong khi Tây Tiến ca tụng những hành động anh hùng, Cảm hoài lại nhập mạnh tầm quan trọng của sâu sắc suy tư. Điều này cho cô có, rằng thơ ca không chỉ phác tự lịch sử, mà còn giúp con người tìm được ý nghĩa riêng cho cuộc sống của mình.\""
+            "examples": [
+              {
+                "question": "<p><strong>So sánh bề ngoài:</strong></p>",
+                "solution": "\"Cảm hoài của Đặng Dung và Tây Tiến của Quang Dũng khác nhau về chủ đề\"<p><strong>So sánh sâu hơn:</strong> \n\"Sự khác biệt về chủ đề phản ánh những quan điểm khác nhau về con người và cuộc sống. Đặng Dung nhấn mạnh rằng con người cần sâu sắc suy tư về bản thân, cuộc sống, trong khi Quang Dũng khẳng định giá trị của hành động, của việc hy sinh vì mục đích cao cả. Hai quan điểm này không mâu thuẫn mà bổ sung cho nhau.\"<p><strong>Liên hệ với bối cảnh:</strong> \n\"Cả hai tác phẩm đều viết vào thế kỷ XX, thời kỳ Việt Nam đang đi qua những biến cố lớn. Nhưng trong khi Tây Tiến ca tụng những hành động anh hùng, Cảm hoài lại nhập mạnh tầm quan trọng của sâu sắc suy tư. Điều này cho cô có, rằng thơ ca không chỉ phác tự lịch sử, mà còn giúp con người tìm được ý nghĩa riêng cho cuộc sống của mình.\""
+              }
+            ]
           }
         ],
-        "exercises": {
-          "title": "Bài tập",
-          "items": [
-            {
-              "id": "ex1",
-              "type": "mcq",
-              "question": "Bài văn nghị luận so sánh hai tác phẩm là gì?",
-              "options": [
-                "Bài viết nêu ưu điểm của tác phẩm thứ nhất",
-                "Bài viết nêu những điểm giống/khác giữa hai tác phẩm để rút ra nhận xét, đánh giá",
-                "Bài viết chỉ nêu những điểm khác",
-                "Bài viết tô đen lên sai sót của một tác phẩm"
-              ],
-              "correct": 1,
-              "explanation": "Bài văn so sánh là việc tìm những điểm giống, khác giữa hai tác phẩm, rồi rút ra nhận xét, đánh giá để giúp độc giả hiểu sâu hơn."
-            },
-            {
-              "id": "ex2",
-              "type": "mcq",
-              "question": "Tiêu chí so sánh nào là quan trọng nhất khi đánh giá hai bài thơ?",
-              "options": [
-                "Chỉ cần so sánh chủ đề",
-                "Chỉ cần so sánh cảm xúc",
-                "Nên so sánh 2-3 tiêu chí chính như chủ đề, cảm xúc, hình ảng, phong cách",
-                "Không cần có tiêu chí cụ thể"
-              ],
-              "correct": 2,
-              "explanation": "Nên chọn 2-3 tiêu chí chính để so sánh, mỗi tiêu chí một đoạn, giúp bài viết toàn diện hơn."
-            },
-            {
-              "id": "ex3",
-              "type": "mcq",
-              "question": "Mở bài bài văn so sánh nên bao gồm những gì?",
-              "options": [
-                "Chỉ giới thiệu tác phẩm thứ nhất",
-                "Giới thiệu hai tác phẩm, nêu vấn đề, gợi mở suy nghĩ, nêu tiêu chí so sánh chính",
-                "Nêu kết luận cuối cùng",
-                "Nêu chi tiết từng điểm so sánh"
-              ],
-              "correct": 1,
-              "explanation": "Mở bài nên giới thiệu hai tác phẩm, nêu rõ sẽ so sánh những gì, và tạo hứng thú cho độc giả."
-            },
-            {
-              "id": "ex4",
-              "type": "mcq",
-              "question": "Mỗi đoạn văn trong phần thân bài nên bao gồm những yếu tố nào?",
-              "options": [
-                "Chỉ nêu điểm giống nhau",
-                "Topic sentence, giải thích, dẫn chứng, nhận xét/đánh giá",
-                "Chỉ dẫn chứng",
-                "Chỉ kết luận"
-              ],
-              "correct": 1,
-              "explanation": "Mỗi đoạn nên có: topic sentence (nêu tiêu chí), giải thích, dẫn chứng cụ thể, và nhận xét/đánh giá."
-            },
-            {
-              "id": "ex5",
-              "type": "mcq",
-              "question": "Lỗi thường gặp khi viết bài so sánh là gì?",
-              "options": [
-                "Dùng từ nối phù hợp",
-                "Thiên vị một tác phẩm, không công bằng với cả hai",
-                "Có dẫn chứng rõ",
-                "Cấu trúc rõ ràng"
-              ],
-              "correct": 1,
-              "explanation": "Lỗi thường gặp là thiên vị một tác phẩm, sát báo tác phẩm khác. Nên công bằng, khách quan với cả hai."
-            },
-            {
-              "id": "ex6",
-              "type": "mcq",
-              "question": "Khi viết bài so sánh, nên dùng những từ nối nào?",
-              "options": [
-                "Chỉ dùng \"và\"",
-                "Giống như, khác với, tuy vậy, bên cạnh đó, ngược lại...",
-                "Không cần từ nối",
-                "Chỉ dùng \"nhưng\""
-              ],
-              "correct": 1,
-              "explanation": "Nên dùng những từ nối thích hợp: \"giống như\" (so sánh), \"khác với\", \"tuy vậy\", \"ngược lại\", \"bên cạnh đó\" để kết nối các ý."
-            },
-            {
-              "id": "ex7",
-              "type": "mcq",
-              "question": "Phần kết bài bài văn so sánh nên bao gồm những gì?",
-              "options": [
-                "Chỉ nêu điểm giống nhau",
-                "Tổng kết những điểm so sánh, nêu những đặc điểm chung, đánh giá tổng thể",
-                "Nêu chi tiết tất cả các points",
-                "Nêu những điểm chỉ báo tác phẩm khác"
-              ],
-              "correct": 1,
-              "explanation": "Kết bài nên tổng kết lại các điểm so sánh, nêu những điểm chung, và nêu đánh giá tổng thể về giá trị của hai tác phẩm."
-            },
-            {
-              "id": "ex8",
-              "type": "mcq",
-              "question": "Dẫn chứng trong bài so sánh nên như thế nào?",
-              "options": [
-                "Dẫn quá dài, gần như toàn bộ passage",
-                "Không cần dẫn chứng",
-                "Dẫn những đoạn ngắn, cụ thể từ text, giúp chứng minh luận điểm",
-                "Dẫn chứng bằng những câu chỉ có trong đầu"
-              ],
-              "correct": 2,
-              "explanation": "Nên dẫn những đoạn ngắn, cụ thể từ text để chứng minh luận điểm. Không nên dẫn quá dài."
-            },
-            {
-              "id": "ex9",
-              "type": "essay",
-              "question": "Hãy viết bài văn so sánh Cảm hoài (Đặng Dung) và Tây Tiến (Quang Dũng) bằng cách chọn 3 tiêu chí chính: chủ đề, cảm xúc, hình ảng. Mỗi tiêu chí một đoạn, có dẫn chứng cụ thể và nhận xét.",
-              "answer_guide": "Câu trả lời tốt neon bao gồm:\n- Mở bài: Giới thiệu hai bài thơ, nêu tiêu chí so sánh chính sẽ là 3 tiêu chí: chủ đề, cảm xúc, hình ảng\n- Đoạn 1 (Chủ đề):\n  + Topic sentence: \"Về chủ đề, Cảm hoài viết về cảm xúc cá nhân, còn Tây Tiến viết về sự kiện lịch sử anh hùng\"\n  + Supporting: Giải thích chi tiết\n  + Dẫn chứng/Ví dụ: Nêu cụ thể nội dung từng bài\n  + Nhận xét: \"Sự khác biệt này cho thấy thơ ca thể hiện được nhiều khía cạnh của cuộc sống\"\n- Đoạn 2 (Cảm xúc):\n  + Topic sentence tương tự\n  + Cảm hoài: buồn bã nhẹ nhàng, lạc lõng, suy tư\n  + Tây Tiến: sôi nổi, hùng tráng, tự hào\n  + Dẫn chứng: Những từ, cụm từ thể hiện cảm xúc\n  + Nhận xét: \"Cảm xúc khác nhau phục vụ các mục đích khác nhau của tác giả\"\n- Đoạn 3 (Hình ảng):\n  + Topic sentence về sự khác nhau về hình ảng\n  + Cảm hoài: hình ảng tự nhiên (gió, mưa, lá, ánh sáng)\n  + Tây Tiến: hình ảng chiến trường (máu, vũ khí, cờ, lính chiến)\n  + Dẫn chứng cụ thể\n  + Nhận xét: \"Lựa chọn hình ảng phản ánh cách tiếp cận khác nhau của hai tác giả\"\n- Kết bài: \n  + Tổng kết 3 tiêu chí\n  + Nêu những điểm chung (cả hai đều là thơ hiện đại, đều thể hiện cảm xúc sâu sắc)\n  + Đánh giá tổng thể (cở hai tác phẩm có giá trị bằng nhau, chỉ khác nhau về cách tiếp cận)"
-            },
-            {
-              "id": "ex10",
-              "type": "essay",
-              "question": "Viết bài văn so sánh từ: Hãy so sánh Cảm hoài với bài thơ mà bạn chọn từ ba bài còn lại (Tây Tiến, Đàn ghi ta, hoặc Bài thơ số 28). Ngoài việc nêu giống/khác, hãy cố gắng phân tích tại sao những lựa chọn này của tác giả là hợp lý, và bài học mà bạn rút ra từ sự so sánh.",
-              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Chọn một bài thơ để so sánh với Cảm hoài\n- Mở bài rõ ràng, nêu tiêu chí so sánh chính\n- Phần thân bài:\n  + Tiêu chí 1: So sánh chi tiết, có dẫn chứng, có nhận xét tại sao tác giả chọn như vậy\n  + Tiêu chí 2: Tương tự\n  + Tiêu chí 3 (nếu có): Tương tự\n  + Mỗi đoạn nên phân tích:\n    - Những lựa chọn này phản ánh điều gì\n    - Tác giả tại sao lại chọn như vậy (từ nền văn hóa, từ ý định sáng tác)\n    - Hiệu quả đối với độc giả\n- Kết bài:\n  + Tổng kết các điểm so sánh\n  + Bài học chung: Cả hai bài thơ giáo dục chúng ta về những khía cạnh khác nhau của cuộc sống, con người\n  + Ý nghĩa với độc giả hiện đại\n- Điểm cộng nếu:\n  + Liên hệ với bối cảnh thời đại\n  + Có suy tư sâu sắc\n  + Phân tích kỹ tại sao những lựa chọn là hợp lý\n  + Có ý kiến cá nhân rõ ràng"
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Bài văn nghị luận so sánh hai tác phẩm là gì?",
+            "options": [
+              "Bài viết nêu ưu điểm của tác phẩm thứ nhất",
+              "Bài viết nêu những điểm giống/khác giữa hai tác phẩm để rút ra nhận xét, đánh giá",
+              "Bài viết chỉ nêu những điểm khác",
+              "Bài viết tô đen lên sai sót của một tác phẩm"
+            ],
+            "correct": 1,
+            "explanation": "Bài văn so sánh là việc tìm những điểm giống, khác giữa hai tác phẩm, rồi rút ra nhận xét, đánh giá để giúp độc giả hiểu sâu hơn."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Tiêu chí so sánh nào là quan trọng nhất khi đánh giá hai bài thơ?",
+            "options": [
+              "Chỉ cần so sánh chủ đề",
+              "Chỉ cần so sánh cảm xúc",
+              "Nên so sánh 2-3 tiêu chí chính như chủ đề, cảm xúc, hình ảng, phong cách",
+              "Không cần có tiêu chí cụ thể"
+            ],
+            "correct": 2,
+            "explanation": "Nên chọn 2-3 tiêu chí chính để so sánh, mỗi tiêu chí một đoạn, giúp bài viết toàn diện hơn."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Mở bài bài văn so sánh nên bao gồm những gì?",
+            "options": [
+              "Chỉ giới thiệu tác phẩm thứ nhất",
+              "Giới thiệu hai tác phẩm, nêu vấn đề, gợi mở suy nghĩ, nêu tiêu chí so sánh chính",
+              "Nêu kết luận cuối cùng",
+              "Nêu chi tiết từng điểm so sánh"
+            ],
+            "correct": 1,
+            "explanation": "Mở bài nên giới thiệu hai tác phẩm, nêu rõ sẽ so sánh những gì, và tạo hứng thú cho độc giả."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Mỗi đoạn văn trong phần thân bài nên bao gồm những yếu tố nào?",
+            "options": [
+              "Chỉ nêu điểm giống nhau",
+              "Topic sentence, giải thích, dẫn chứng, nhận xét/đánh giá",
+              "Chỉ dẫn chứng",
+              "Chỉ kết luận"
+            ],
+            "correct": 1,
+            "explanation": "Mỗi đoạn nên có: topic sentence (nêu tiêu chí), giải thích, dẫn chứng cụ thể, và nhận xét/đánh giá."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Lỗi thường gặp khi viết bài so sánh là gì?",
+            "options": [
+              "Dùng từ nối phù hợp",
+              "Thiên vị một tác phẩm, không công bằng với cả hai",
+              "Có dẫn chứng rõ",
+              "Cấu trúc rõ ràng"
+            ],
+            "correct": 1,
+            "explanation": "Lỗi thường gặp là thiên vị một tác phẩm, sát báo tác phẩm khác. Nên công bằng, khách quan với cả hai."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Khi viết bài so sánh, nên dùng những từ nối nào?",
+            "options": [
+              "Chỉ dùng \"và\"",
+              "Giống như, khác với, tuy vậy, bên cạnh đó, ngược lại...",
+              "Không cần từ nối",
+              "Chỉ dùng \"nhưng\""
+            ],
+            "correct": 1,
+            "explanation": "Nên dùng những từ nối thích hợp: \"giống như\" (so sánh), \"khác với\", \"tuy vậy\", \"ngược lại\", \"bên cạnh đó\" để kết nối các ý."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Phần kết bài bài văn so sánh nên bao gồm những gì?",
+            "options": [
+              "Chỉ nêu điểm giống nhau",
+              "Tổng kết những điểm so sánh, nêu những đặc điểm chung, đánh giá tổng thể",
+              "Nêu chi tiết tất cả các points",
+              "Nêu những điểm chỉ báo tác phẩm khác"
+            ],
+            "correct": 1,
+            "explanation": "Kết bài nên tổng kết lại các điểm so sánh, nêu những điểm chung, và nêu đánh giá tổng thể về giá trị của hai tác phẩm."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Dẫn chứng trong bài so sánh nên như thế nào?",
+            "options": [
+              "Dẫn quá dài, gần như toàn bộ passage",
+              "Không cần dẫn chứng",
+              "Dẫn những đoạn ngắn, cụ thể từ text, giúp chứng minh luận điểm",
+              "Dẫn chứng bằng những câu chỉ có trong đầu"
+            ],
+            "correct": 2,
+            "explanation": "Nên dẫn những đoạn ngắn, cụ thể từ text để chứng minh luận điểm. Không nên dẫn quá dài."
+          },
+          {
+            "id": "ex9",
+            "type": "essay",
+            "question": "Hãy viết bài văn so sánh Cảm hoài (Đặng Dung) và Tây Tiến (Quang Dũng) bằng cách chọn 3 tiêu chí chính: chủ đề, cảm xúc, hình ảng. Mỗi tiêu chí một đoạn, có dẫn chứng cụ thể và nhận xét.",
+            "answer_guide": "Câu trả lời tốt neon bao gồm:\n- Mở bài: Giới thiệu hai bài thơ, nêu tiêu chí so sánh chính sẽ là 3 tiêu chí: chủ đề, cảm xúc, hình ảng\n- Đoạn 1 (Chủ đề):\n  + Topic sentence: \"Về chủ đề, Cảm hoài viết về cảm xúc cá nhân, còn Tây Tiến viết về sự kiện lịch sử anh hùng\"\n  + Supporting: Giải thích chi tiết\n  + Dẫn chứng/Ví dụ: Nêu cụ thể nội dung từng bài\n  + Nhận xét: \"Sự khác biệt này cho thấy thơ ca thể hiện được nhiều khía cạnh của cuộc sống\"\n- Đoạn 2 (Cảm xúc):\n  + Topic sentence tương tự\n  + Cảm hoài: buồn bã nhẹ nhàng, lạc lõng, suy tư\n  + Tây Tiến: sôi nổi, hùng tráng, tự hào\n  + Dẫn chứng: Những từ, cụm từ thể hiện cảm xúc\n  + Nhận xét: \"Cảm xúc khác nhau phục vụ các mục đích khác nhau của tác giả\"\n- Đoạn 3 (Hình ảng):\n  + Topic sentence về sự khác nhau về hình ảng\n  + Cảm hoài: hình ảng tự nhiên (gió, mưa, lá, ánh sáng)\n  + Tây Tiến: hình ảng chiến trường (máu, vũ khí, cờ, lính chiến)\n  + Dẫn chứng cụ thể\n  + Nhận xét: \"Lựa chọn hình ảng phản ánh cách tiếp cận khác nhau của hai tác giả\"\n- Kết bài: \n  + Tổng kết 3 tiêu chí\n  + Nêu những điểm chung (cả hai đều là thơ hiện đại, đều thể hiện cảm xúc sâu sắc)\n  + Đánh giá tổng thể (cở hai tác phẩm có giá trị bằng nhau, chỉ khác nhau về cách tiếp cận)"
+          },
+          {
+            "id": "ex10",
+            "type": "essay",
+            "question": "Viết bài văn so sánh từ: Hãy so sánh Cảm hoài với bài thơ mà bạn chọn từ ba bài còn lại (Tây Tiến, Đàn ghi ta, hoặc Bài thơ số 28). Ngoài việc nêu giống/khác, hãy cố gắng phân tích tại sao những lựa chọn này của tác giả là hợp lý, và bài học mà bạn rút ra từ sự so sánh.",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Chọn một bài thơ để so sánh với Cảm hoài\n- Mở bài rõ ràng, nêu tiêu chí so sánh chính\n- Phần thân bài:\n  + Tiêu chí 1: So sánh chi tiết, có dẫn chứng, có nhận xét tại sao tác giả chọn như vậy\n  + Tiêu chí 2: Tương tự\n  + Tiêu chí 3 (nếu có): Tương tự\n  + Mỗi đoạn nên phân tích:\n    - Những lựa chọn này phản ánh điều gì\n    - Tác giả tại sao lại chọn như vậy (từ nền văn hóa, từ ý định sáng tác)\n    - Hiệu quả đối với độc giả\n- Kết bài:\n  + Tổng kết các điểm so sánh\n  + Bài học chung: Cả hai bài thơ giáo dục chúng ta về những khía cạnh khác nhau của cuộc sống, con người\n  + Ý nghĩa với độc giả hiện đại\n- Điểm cộng nếu:\n  + Liên hệ với bối cảnh thời đại\n  + Có suy tư sâu sắc\n  + Phân tích kỹ tại sao những lựa chọn là hợp lý\n  + Có ý kiến cá nhân rõ ràng"
+          }
+        ]
       }
     }
   ]

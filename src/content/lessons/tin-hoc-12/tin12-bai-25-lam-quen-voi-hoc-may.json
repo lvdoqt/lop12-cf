@@ -18,22 +18,220 @@
           "title": "Học máy (Machine Learning)",
           "summary": "Học máy cho phép máy tính tự học từ dữ liệu để cải thiện hiệu suất mà không cần lập trình chi tiết cho từng tác vụ.",
           "sections": [
-            { "heading": "Khái niệm Học máy", "content": "Quá trình xây dựng các mô hình toán học từ dữ liệu để thực hiện các công việc như dự báo hoặc phân loại." },
-            { "heading": "Các kiểu học máy chính", "content": "Học có giám sát (Supervised), Học không giám sát (Unsupervised) và Học tăng cường (Reinforcement)." },
-            { "heading": "Quy trình thực hiện", "content": "Thu thập dữ liệu -> Tiền xử lý -> Huấn luyện mô hình -> Đánh giá -> Ứng dụng." }
+            {
+              "heading": "Khái niệm Học máy",
+              "content": "Quá trình xây dựng các mô hình toán học từ dữ liệu để thực hiện các công việc như dự báo hoặc phân loại."
+            },
+            {
+              "heading": "Các kiểu học máy chính",
+              "content": "Học có giám sát (Supervised), Học không giám sát (Unsupervised) và Học tăng cường (Reinforcement)."
+            },
+            {
+              "heading": "Quy trình thực hiện",
+              "content": "Thu thập dữ liệu -> Tiền xử lý -> Huấn luyện mô hình -> Đánh giá -> Ứng dụng."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Học máy (Machine Learning) là gì?", "options": ["Việc máy tính đi học ở trường", "Khả năng của máy tính tự học hỏi và cải thiện từ dữ liệu", "Việc lắp ráp máy tính nhanh hơn", "Một trò chơi điện tử"], "correct": 1, "explanation": "Học máy tập trung vào các thuật toán cho phép máy 'học'." },
-          { "id": 2, "type": "mcq", "question": "Trong học có giám sát (Supervised Learning), dữ liệu huấn luyện cần có gì?", "options": ["Chỉ có đầu vào", "Chỉ có nhãn", "Cả dữ liệu đầu vào và nhãn (kết quả đúng)", "Không cần dữ liệu"], "correct": 2, "explanation": "Máy học dựa trên các ví dụ đã biết trước đáp án đúng." },
-          { "id": 3, "type": "mcq", "question": "Ứng dụng lọc thư rác (Spam) sử dụng kiểu học nào?", "options": ["Học không giám sát", "Học có giám sát", "Học tăng cường", "Học vẹt"], "correct": 1, "explanation": "Máy được dạy dựa trên danh sách các email đã được đánh dấu là spam hoặc không." },
-          { "id": 4, "type": "mcq", "question": "Học không giám sát thường được dùng để làm gì?", "options": ["Dự báo giá nhà", "Phân nhóm dữ liệu (Clustering)", "Nhận diện khuôn mặt", "Dịch thuật"], "correct": 1, "explanation": "Máy tự tìm ra các cấu trúc hoặc nhóm tiềm ẩn trong dữ liệu không nhãn." },
-          { "id": 5, "type": "mcq", "question": "Học tăng cường (Reinforcement Learning) dựa trên nguyên tắc nào?", "options": ["Đọc sách", "Thưởng và phạt thông qua tương tác với môi trường", "Bắt chước con người", "Ghi nhớ bảng chữ cái"], "correct": 1, "explanation": "Máy học thông qua việc tối ưu hóa phần thưởng nhận được." },
-          { "id": 6, "type": "mcq", "question": "Dữ liệu 'Sạch' là gì?", "options": ["Dữ liệu được rửa bằng nước", "Dữ liệu chính xác, không sai lệch và đúng định dạng", "Dữ liệu mới tải về", "Dữ liệu bí mật"], "correct": 1, "explanation": "Chất lượng dữ liệu quyết định chất lượng của mô hình học máy." },
-          { "id": 7, "type": "mcq", "question": "Bước nào quan trọng nhất trước khi huấn luyện mô hình?", "options": ["In kết quả", "Tiền xử lý và làm sạch dữ liệu", "Mua máy tính mới", "Tắt mạng"], "correct": 1, "explanation": "Dữ liệu rác sẽ tạo ra kết quả rác (Garbage in, Garbage out)." },
-          { "id": 8, "type": "mcq", "question": "Ứng dụng gợi ý sản phẩm trên Shopee/Lazada là ứng dụng của?", "options": ["Soạn thảo văn bản", "Học máy", "Hệ điều hành", "Đồ họa kĩ thuật"], "correct": 1, "explanation": "Học máy phân tích thói quen mua sắm để đưa ra gợi ý phù hợp." },
-          { "id": 9, "type": "mcq", "question": "Khái niệm 'Overfitting' trong học máy nghĩa là gì?", "options": ["Máy chạy quá nóng", "Mô hình quá khớp với dữ liệu huấn luyện nhưng dự báo kém trên dữ liệu mới", "Mô hình quá đơn giản", "Dữ liệu quá ít"], "correct": 1, "explanation": "Overfitting là hiện tượng máy 'học vẹt' các ví dụ cụ thể thay vì hiểu quy luật chung." },
-          { "id": 10, "type": "mcq", "question": "Để đánh giá độ chính xác của mô hình, ta dùng tập dữ liệu nào?", "options": ["Tập huấn luyện (Train set)", "Tập kiểm tra (Test set)", "Tập dữ liệu rác", "Không cần đánh giá"], "correct": 1, "explanation": "Test set là dữ liệu máy chưa từng thấy để kiểm tra khả năng thực tế của nó." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Học máy (Machine Learning) là gì?",
+            "options": [
+              "Việc máy tính đi học ở trường",
+              "Khả năng của máy tính tự học hỏi và cải thiện từ dữ liệu",
+              "Việc lắp ráp máy tính nhanh hơn",
+              "Một trò chơi điện tử"
+            ],
+            "correct": 1,
+            "explanation": "Học máy tập trung vào các thuật toán cho phép máy 'học'."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Trong học có giám sát (Supervised Learning), dữ liệu huấn luyện cần có gì?",
+            "options": [
+              "Chỉ có đầu vào",
+              "Chỉ có nhãn",
+              "Cả dữ liệu đầu vào và nhãn (kết quả đúng)",
+              "Không cần dữ liệu"
+            ],
+            "correct": 2,
+            "explanation": "Máy học dựa trên các ví dụ đã biết trước đáp án đúng."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Ứng dụng lọc thư rác (Spam) sử dụng kiểu học nào?",
+            "options": [
+              "Học không giám sát",
+              "Học có giám sát",
+              "Học tăng cường",
+              "Học vẹt"
+            ],
+            "correct": 1,
+            "explanation": "Máy được dạy dựa trên danh sách các email đã được đánh dấu là spam hoặc không."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Học không giám sát thường được dùng để làm gì?",
+            "options": [
+              "Dự báo giá nhà",
+              "Phân nhóm dữ liệu (Clustering)",
+              "Nhận diện khuôn mặt",
+              "Dịch thuật"
+            ],
+            "correct": 1,
+            "explanation": "Máy tự tìm ra các cấu trúc hoặc nhóm tiềm ẩn trong dữ liệu không nhãn."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Học tăng cường (Reinforcement Learning) dựa trên nguyên tắc nào?",
+            "options": [
+              "Đọc sách",
+              "Thưởng và phạt thông qua tương tác với môi trường",
+              "Bắt chước con người",
+              "Ghi nhớ bảng chữ cái"
+            ],
+            "correct": 1,
+            "explanation": "Máy học thông qua việc tối ưu hóa phần thưởng nhận được."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Dữ liệu 'Sạch' là gì?",
+            "options": [
+              "Dữ liệu được rửa bằng nước",
+              "Dữ liệu chính xác, không sai lệch và đúng định dạng",
+              "Dữ liệu mới tải về",
+              "Dữ liệu bí mật"
+            ],
+            "correct": 1,
+            "explanation": "Chất lượng dữ liệu quyết định chất lượng của mô hình học máy."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Bước nào quan trọng nhất trước khi huấn luyện mô hình?",
+            "options": [
+              "In kết quả",
+              "Tiền xử lý và làm sạch dữ liệu",
+              "Mua máy tính mới",
+              "Tắt mạng"
+            ],
+            "correct": 1,
+            "explanation": "Dữ liệu rác sẽ tạo ra kết quả rác (Garbage in, Garbage out)."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Ứng dụng gợi ý sản phẩm trên Shopee/Lazada là ứng dụng của?",
+            "options": [
+              "Soạn thảo văn bản",
+              "Học máy",
+              "Hệ điều hành",
+              "Đồ họa kĩ thuật"
+            ],
+            "correct": 1,
+            "explanation": "Học máy phân tích thói quen mua sắm để đưa ra gợi ý phù hợp."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Khái niệm 'Overfitting' trong học máy nghĩa là gì?",
+            "options": [
+              "Máy chạy quá nóng",
+              "Mô hình quá khớp với dữ liệu huấn luyện nhưng dự báo kém trên dữ liệu mới",
+              "Mô hình quá đơn giản",
+              "Dữ liệu quá ít"
+            ],
+            "correct": 1,
+            "explanation": "Overfitting là hiện tượng máy 'học vẹt' các ví dụ cụ thể thay vì hiểu quy luật chung."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Để đánh giá độ chính xác của mô hình, ta dùng tập dữ liệu nào?",
+            "options": [
+              "Tập huấn luyện (Train set)",
+              "Tập kiểm tra (Test set)",
+              "Tập dữ liệu rác",
+              "Không cần đánh giá"
+            ],
+            "correct": 1,
+            "explanation": "Test set là dữ liệu máy chưa từng thấy để kiểm tra khả năng thực tế của nó."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Học máy (Machine Learning) là gì?",
+            "options": [
+              "Một nhánh của AI",
+              "Cho phép máy tính tự học",
+              "Cần dữ liệu để huấn luyện",
+              "Chỉ dùng cho robotics"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "ML là nhánh của AI, cho phép máy tính tự học từ dữ liệu."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Học máy có những loại chính?",
+            "options": [
+              "Học có giám sát",
+              "Học không giám sát",
+              "Học tăng cường",
+              "Học thủ công"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "ML gồm học có giám sát, không giám sát và tăng cường."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Dữ liệu đầu vào cho ML gồm?",
+            "options": [
+              "Dữ liệu huấn luyện",
+              "Dữ liệu kiểm tra",
+              "Dữ liệu validation",
+              "Dữ liệu ngẫu nhiên"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "ML cần dữ liệu huấn luyện, kiểm tra và validation."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Ứng dụng của ML trong thực tế?",
+            "options": [
+              "Nhận diện khuôn mặt",
+              "Dự đoán nhu cầu",
+              "Phân loại email",
+              "Tự động lái xe"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "ML ứng dụng trong nhận diện, dự đoán, phân loại và lái xe tự động."
+          }
         ]
       }
     }

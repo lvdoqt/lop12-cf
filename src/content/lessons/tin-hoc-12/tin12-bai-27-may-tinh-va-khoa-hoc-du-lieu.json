@@ -18,22 +18,219 @@
           "title": "Công cụ Khoa học dữ liệu",
           "summary": "Để thực hiện khoa học dữ liệu, cần có các máy tính cấu hình mạnh và các thư viện phần mềm chuyên dụng.",
           "sections": [
-            { "heading": "Hạ tầng tính toán", "content": "Sử dụng máy tính hiệu năng cao, điện toán đám mây và xử lý song song để xử lý Big Data." },
-            { "heading": "Ngôn ngữ lập trình", "content": "Python và R là hai ngôn ngữ phổ biến nhất nhờ có hệ sinh thái thư viện phong phú." },
-            { "heading": "Các thư viện hỗ trợ", "content": "Pandas (xử lý bảng), NumPy (tính toán số học), Matplotlib (vẽ biểu đồ), Scikit-learn (học máy)." }
+            {
+              "heading": "Hạ tầng tính toán",
+              "content": "Sử dụng máy tính hiệu năng cao, điện toán đám mây và xử lý song song để xử lý Big Data."
+            },
+            {
+              "heading": "Ngôn ngữ lập trình",
+              "content": "Python và R là hai ngôn ngữ phổ biến nhất nhờ có hệ sinh thái thư viện phong phú."
+            },
+            {
+              "heading": "Các thư viện hỗ trợ",
+              "content": "Pandas (xử lý bảng), NumPy (tính toán số học), Matplotlib (vẽ biểu đồ), Scikit-learn (học máy)."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Ngôn ngữ lập trình nào được dùng phổ biến nhất trong khoa học dữ liệu hiện nay?", "options": ["Pascal", "C++", "Python", "HTML"], "correct": 2, "explanation": "Python dễ học và có rất nhiều thư viện hỗ trợ dữ liệu." },
-          { "id": 2, "type": "mcq", "question": "Thư viện 'Pandas' trong Python chuyên dùng để làm gì?", "options": ["Vẽ hình 3D", "Xử lý và phân tích dữ liệu dạng bảng", "Gửi email", "Lập trình web"], "correct": 1, "explanation": "Pandas là công cụ mạnh mẽ nhất để thao tác với dữ liệu bảng (DataFrame)." },
-          { "id": 3, "type": "mcq", "question": "Tại sao khoa học dữ liệu thường cần máy tính có cấu hình mạnh (nhiều RAM, GPU)?", "options": ["Để chơi game khi rảnh", "Để lưu trữ và xử lý hàng triệu/tỷ bản ghi một cách nhanh chóng", "Để máy trông ngầu hơn", "Quy định bắt buộc"], "correct": 1, "explanation": "Xử lý dữ liệu lớn tốn rất nhiều tài nguyên hệ thống." },
-          { "id": 4, "type": "mcq", "question": "Thành phần nào của máy tính giúp tăng tốc độ huấn luyện mô hình học máy hiện nay?", "options": ["Bàn phím", "Card đồ họa (GPU)", "Ổ đĩa mềm", "Loa"], "correct": 1, "explanation": "GPU có khả năng tính toán song song hàng nghìn luồng dữ liệu cùng lúc." },
-          { "id": 5, "type": "mcq", "question": "Điện toán đám mây đóng vai trò gì cho nhà khoa học dữ liệu?", "options": ["Cung cấp không gian lưu trữ và sức mạnh tính toán khổng lồ mà không cần mua máy chủ vật lý", "Làm cho Internet miễn phí", "Dùng để xem thời tiết", "Làm máy tính cá nhân chạy nhanh hơn"], "correct": 0, "explanation": "Đám mây (AWS, Google Cloud) giúp tiếp cận hạ tầng mạnh mẽ một cách linh hoạt." },
-          { "id": 6, "type": "mcq", "question": "Thư viện 'Matplotlib' dùng để làm gì?", "options": ["Xóa file", "Vẽ các biểu đồ và trực quan hóa dữ liệu", "Mã hóa mật khẩu", "Tính căn bậc hai"], "correct": 1, "explanation": "Matplotlib giúp biến các con số thành biểu đồ hình ảnh." },
-          { "id": 7, "type": "mcq", "question": "Khái niệm 'Notebook' (như Jupyter Notebook) là gì?", "options": ["Một quyển sổ tay bằng giấy", "Môi trường lập trình cho phép kết hợp code, văn bản và hình ảnh hiển thị", "Tên một hãng máy tính", "Một phần mềm soạn văn bản"], "correct": 1, "explanation": "Notebook cực kỳ tiện lợi để thử nghiệm và trình bày các dự án dữ liệu." },
-          { "id": 8, "type": "mcq", "question": "Dữ liệu được lưu trữ trong khoa học dữ liệu thường có định dạng file nào?", "options": [".exe", ".mp3", ".csv hoặc .xlsx", ".jpg"], "correct": 2, "explanation": "CSV là định dạng văn bản đơn giản chứa dữ liệu ngăn cách bởi dấu phẩy, rất phổ biến." },
-          { "id": 9, "type": "mcq", "question": "Thành phần nào giúp máy tính xử lý nhiều tác vụ dữ liệu cùng một lúc?", "options": ["Vi xử lý đa nhân (Multi-core CPU)", "Màn hình to", "Chuột quang", "Dây cáp mạng"], "correct": 0, "explanation": "Đa nhân giúp thực hiện tính toán song song, tiết kiệm thời gian." },
-          { "id": 10, "type": "mcq", "question": "Khoa học dữ liệu và Máy tính có mối quan hệ như thế nào?", "options": ["Máy tính là công cụ bắt buộc để triển khai khoa học dữ liệu", "Chúng không liên quan", "Khoa học dữ liệu tạo ra máy tính", "Máy tính chỉ dùng để chơi game"], "correct": 0, "explanation": "Không có máy tính, khoa học dữ liệu hiện đại không thể tồn tại." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Ngôn ngữ lập trình nào được dùng phổ biến nhất trong khoa học dữ liệu hiện nay?",
+            "options": [
+              "Pascal",
+              "C++",
+              "Python",
+              "HTML"
+            ],
+            "correct": 2,
+            "explanation": "Python dễ học và có rất nhiều thư viện hỗ trợ dữ liệu."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Thư viện 'Pandas' trong Python chuyên dùng để làm gì?",
+            "options": [
+              "Vẽ hình 3D",
+              "Xử lý và phân tích dữ liệu dạng bảng",
+              "Gửi email",
+              "Lập trình web"
+            ],
+            "correct": 1,
+            "explanation": "Pandas là công cụ mạnh mẽ nhất để thao tác với dữ liệu bảng (DataFrame)."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Tại sao khoa học dữ liệu thường cần máy tính có cấu hình mạnh (nhiều RAM, GPU)?",
+            "options": [
+              "Để chơi game khi rảnh",
+              "Để lưu trữ và xử lý hàng triệu/tỷ bản ghi một cách nhanh chóng",
+              "Để máy trông ngầu hơn",
+              "Quy định bắt buộc"
+            ],
+            "correct": 1,
+            "explanation": "Xử lý dữ liệu lớn tốn rất nhiều tài nguyên hệ thống."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Thành phần nào của máy tính giúp tăng tốc độ huấn luyện mô hình học máy hiện nay?",
+            "options": [
+              "Bàn phím",
+              "Card đồ họa (GPU)",
+              "Ổ đĩa mềm",
+              "Loa"
+            ],
+            "correct": 1,
+            "explanation": "GPU có khả năng tính toán song song hàng nghìn luồng dữ liệu cùng lúc."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Điện toán đám mây đóng vai trò gì cho nhà khoa học dữ liệu?",
+            "options": [
+              "Cung cấp không gian lưu trữ và sức mạnh tính toán khổng lồ mà không cần mua máy chủ vật lý",
+              "Làm cho Internet miễn phí",
+              "Dùng để xem thời tiết",
+              "Làm máy tính cá nhân chạy nhanh hơn"
+            ],
+            "correct": 0,
+            "explanation": "Đám mây (AWS, Google Cloud) giúp tiếp cận hạ tầng mạnh mẽ một cách linh hoạt."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Thư viện 'Matplotlib' dùng để làm gì?",
+            "options": [
+              "Xóa file",
+              "Vẽ các biểu đồ và trực quan hóa dữ liệu",
+              "Mã hóa mật khẩu",
+              "Tính căn bậc hai"
+            ],
+            "correct": 1,
+            "explanation": "Matplotlib giúp biến các con số thành biểu đồ hình ảnh."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Khái niệm 'Notebook' (như Jupyter Notebook) là gì?",
+            "options": [
+              "Một quyển sổ tay bằng giấy",
+              "Môi trường lập trình cho phép kết hợp code, văn bản và hình ảnh hiển thị",
+              "Tên một hãng máy tính",
+              "Một phần mềm soạn văn bản"
+            ],
+            "correct": 1,
+            "explanation": "Notebook cực kỳ tiện lợi để thử nghiệm và trình bày các dự án dữ liệu."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Dữ liệu được lưu trữ trong khoa học dữ liệu thường có định dạng file nào?",
+            "options": [
+              ".exe",
+              ".mp3",
+              ".csv hoặc .xlsx",
+              ".jpg"
+            ],
+            "correct": 2,
+            "explanation": "CSV là định dạng văn bản đơn giản chứa dữ liệu ngăn cách bởi dấu phẩy, rất phổ biến."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Thành phần nào giúp máy tính xử lý nhiều tác vụ dữ liệu cùng một lúc?",
+            "options": [
+              "Vi xử lý đa nhân (Multi-core CPU)",
+              "Màn hình to",
+              "Chuột quang",
+              "Dây cáp mạng"
+            ],
+            "correct": 0,
+            "explanation": "Đa nhân giúp thực hiện tính toán song song, tiết kiệm thời gian."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Khoa học dữ liệu và Máy tính có mối quan hệ như thế nào?",
+            "options": [
+              "Máy tính là công cụ bắt buộc để triển khai khoa học dữ liệu",
+              "Chúng không liên quan",
+              "Khoa học dữ liệu tạo ra máy tính",
+              "Máy tính chỉ dùng để chơi game"
+            ],
+            "correct": 0,
+            "explanation": "Không có máy tính, khoa học dữ liệu hiện đại không thể tồn tại."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Máy tính đóng vai trò gì trong khoa học dữ liệu?",
+            "options": [
+              "Xử lý dữ liệu lớn",
+              "Lưu trữ dữ liệu",
+              "Chạy mô hình ML",
+              "Tạo giao diện web"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Máy tính xử lý, lưu trữ dữ liệu và chạy mô hình ML."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Ngôn ngữ Python dùng trong KSDT vì?",
+            "options": [
+              "Dễ học",
+              "Thư viện phong phú",
+              "Community lớn",
+              "Chạy nhanh nhất"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Python dễ học, thư viện phong phú và community lớn."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Cơ sở dữ liệu trong KSDT gồm?",
+            "options": [
+              "SQL",
+              "NoSQL",
+              "Big Data",
+              "Text file"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "KSDT dùng SQL, NoSQL và Big Data."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Cloud computing hỗ trợ KSDT như thế nào?",
+            "options": [
+              "Lưu trữ không giới hạn",
+              "Xử lý song song",
+              "Chi phí linh hoạt",
+              "Bảo mật tuyệt đối"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cloud hỗ trợ lưu trữ, xử lý song song và chi phí linh hoạt."
+          }
         ]
       }
     }

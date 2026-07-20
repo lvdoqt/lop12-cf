@@ -15,15 +15,32 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Tổ chức lãnh thổ công nghiệp và vùng chuyên ngành",
-          "summary": "Sắp xếp các hoạt động công nghiệp theo vùng để tận dụng lợi thế về nguyên liệu, thị trường, lao động và hạ tầng; phát triển khu công nghiệp và liên kết vùng là yếu tố then chốt.",
+          "title": "Tổ chức lãnh thổ công nghiệp",
+          "summary": "Tổ chức lãnh thổ công nghiệp là cách bố trí các hoạt động công nghiệp trên không gian nhằm sử dụng hợp lý tài nguyên, thúc đẩy liên kết và nâng cao hiệu quả kinh tế - xã hội. Ở Việt Nam hình thành các cấp tổ chức từ điểm công nghiệp, khu công nghiệp, trung tâm công nghiệp đến vùng công nghiệp.",
           "sections": [
-            { "heading": "Khu công nghiệp và vùng chuyên ngành", "content": "Khu công nghiệp tập trung cơ sở hạ tầng, chính sách và dịch vụ hỗ trợ; vùng chuyên ngành tận dụng nguồn nguyên liệu và lao động." },
-            { "heading": "Liên kết vùng", "content": "Phát triển chuỗi cung ứng và kết nối giữa vùng nguyên liệu, chế biến và thị trường." }
+            {
+              "heading": "Điểm công nghiệp",
+              "content": "Điểm công nghiệp là hình thức tổ chức lãnh thổ công nghiệp đơn giản nhất, gồm một hoặc một số cơ sở sản xuất công nghiệp nhỏ, phân bố rải rác ở nông thôn hoặc đô thị, thường gắn với nguồn nguyên liệu, năng lượng hoặc thị trường địa phương. Đây là cấp cơ sở tạo việc làm và thúc đẩy công nghiệp hóa ở quy mô nhỏ."
+            },
+            {
+              "heading": "Khu công nghiệp, khu chế xuất và khu công nghệ cao",
+              "content": "Khu công nghiệp (KCN) là vùng đất được quy hoạch, có ranh giới rõ ràng, hạ tầng kỹ thuật đồng bộ (điện, nước, xử lý nước thải) và áp dụng chính sách ưu đãi đầu tư, thu hút nhiều doanh nghiệp cùng hoạt động. Khu chế xuất chuyên sản xuất hàng xuất khẩu, thường đặt gần cảng biển. Khu công nghệ cao tập trung các ngành kỹ thuật cao, điện tử, tin học (Hòa Lạc, TP. Hồ Chí Minh, Đà Nẵng)."
+            },
+            {
+              "heading": "Trung tâm công nghiệp",
+              "content": "Trung tâm công nghiệp là đô thị hoặc vùng tập trung nhiều ngành công nghiệp, đóng vai trò đầu tàu thúc đẩy kinh tế vùng. Các trung tâm lớn của Việt Nam gồm Hà Nội, TP. Hồ Chí Minh, Hải Phòng, Đà Nẵng, Cần Thơ, Biên Hòa, Thái Nguyên. Mỗi trung tâm thường có ngành chủ đạo riêng gắn với lợi thế vị trí, nguồn lực và lịch sử phát triển."
+            },
+            {
+              "heading": "Vùng công nghiệp",
+              "content": "Vùng công nghiệp là tập hợp nhiều trung tâm và khu công nghiệp liên kết trong một không gian lãnh thổ rộng lớn, hình thành các vùng chuyên ngành. Ở Việt Nam đã hình thành vùng công nghiệp phía Nam (Đông Nam Bộ, Đồng bằng sông Cửu Long), vùng công nghiệp phía Bắc (đồng bằng sông Hồng, Bắc Trung Bộ) và vùng miền Trung. Vùng công nghiệp tận dụng liên kết chuỗi cung ứng, giảm chi phí vận chuyển và tăng sức cạnh tranh."
+            },
+            {
+              "heading": "Nguyên tắc và vai trò của tổ chức lãnh thổ công nghiệp",
+              "content": "Tổ chức lãnh thổ công nghiệp cần tuân thủ các nguyên tắc: bố trí theo lợi thế so sánh, thúc đẩy liên kết vùng, sử dụng tiết kiệm tài nguyên và bảo vệ môi trường. Việc hình thành các cấp tổ chức lãnh thổ công nghiệp giúp thu hút đầu tư, tạo việc làm, chuyển dịch cơ cấu kinh tế và thúc đẩy công nghiệp hóa, hiện đại hóa đất nước."
+            }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Nêu vai trò của khu công nghiệp?", "a_hint": "Thu hút đầu tư, tạo việc làm, phát triển chuỗi cung ứng." } ] },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Khu công nghiệp thường cung cấp gì cho doanh nghiệp?", "options": ["Hạ tầng, điện, nước và dịch vụ suport","Màu sắc cờ","Đất nông nghiệp","Không hỗ trợ gì"], "correct": 0, "explanation": "Khu công nghiệp cung cấp hạ tầng và dịch vụ cần thiết." },
           { "id": 2, "type": "mcq", "question": "Liên kết vùng giúp gì cho công nghiệp?", "options": ["Tối ưu chuỗi cung ứng và giảm chi phí vận chuyển","Làm tăng chi phí","Làm giảm năng suất","Không có ý nghĩa"], "correct": 0, "explanation": "Liên kết vùng tối ưu chi phí và nguồn nguyên liệu." },
           { "id": 3, "type": "mcq", "question": "Một yếu tố quan trọng khi chọn địa điểm khu công nghiệp là?", "options": ["Gần cảng hoặc đường sắt, nguồn lao động và điện","Màu sắc quốc kỳ","Số lượng trường đại học duy nhất","Không có yếu tố"], "correct": 0, "explanation": "Gần cảng, lao động và nguồn điện là lợi thế địa điểm." },
@@ -33,7 +50,15 @@
           { "id": 7, "type": "mcq", "question": "Quy hoạch lãnh thổ công nghiệp cần cân nhắc?", "options": ["Môi trường, dân cư và hạ tầng","Chỉ lợi ích kinh tế","Không cần quy hoạch","Chỉ sử dụng đất"], "correct": 0, "explanation": "Quy hoạch cần kết hợp yếu tố kinh tế và môi trường." },
           { "id": 8, "type": "mcq", "question": "Một biện pháp giảm ô nhiễm công nghiệp là?", "options": ["Hệ thống xử lý chất thải và công nghệ sạch","Tăng xả thải","Không kiểm soát","Đóng cửa tất cả khu công nghiệp"], "correct": 0, "explanation": "Công nghệ sạch và xử lý chất thải giảm ô nhiễm." },
           { "id": 9, "type": "mcq", "question": "Vai trò của hạ tầng giao thông trong công nghiệp?", "options": ["Giảm chi phí vận chuyển và kết nối thị trường","Không quan trọng","Tăng rào cản","Làm chậm sản xuất"], "correct": 0, "explanation": "Hạ tầng giao thông giúp kết nối và giảm chi phí." },
-          { "id": 10, "type": "mcq", "question": "Chính sách nào hỗ trợ phát triển khu công nghiệp bền vững?", "options": ["Quy hoạch, quản lý môi trường và ưu đãi đầu tư","Tăng rào cản hành chính","Bỏ quy hoạch","Không có chính sách"], "correct": 0, "explanation": "Quy hoạch và quản lý môi trường là yêu cầu phát triển bền vững." }
+          { "id": 10, "type": "mcq", "question": "Chính sách nào hỗ trợ phát triển khu công nghiệp bền vững?", "options": ["Quy hoạch, quản lý môi trường và ưu đãi đầu tư","Tăng rào cản hành chính","Bỏ quy hoạch","Không có chính sách"], "correct": 0, "explanation": "Quy hoạch và quản lý môi trường là yêu cầu phát triển bền vững." },
+          { "id": 11, "type": "msq", "question": "Các hình thức tổ chức lãnh thổ công nghiệp gồm?", "options": ["Điểm công nghiệp", "Khu công nghiệp", "Trung tâm công nghiệp", "Vùng nông nghiệp"], "correct": [0,1,2], "explanation": "Điểm công nghiệp, khu công nghiệp và trung tâm công nghiệp là hình thức tổ chức lãnh thổ công nghiệp." },
+          { "id": 12, "type": "msq", "question": "Khu công nghiệp tập trung thường có đặc điểm?", "options": ["Có ranh giới rõ ràng", "Hạ tầng kỹ thuật đồng bộ", "Chính sách ưu đãi riêng", "Nằm xa trung tâm giao thông"], "correct": [0,1,2], "explanation": "Khu công nghiệp có ranh giới rõ, hạ tầng đồng bộ và chính sách ưu đãi." },
+          { "id": 13, "type": "msq", "question": "Các trung tâm công nghiệp lớn ở Việt Nam gồm?", "options": ["TP. Hồ Chí Minh", "Hà Nội", "Đà Nẵng", "Kon Tum"], "correct": [0,1,2], "explanation": "TP. Hồ Chí Minh, Hà Nội, Đà Nẵng là trung tâm công nghiệp lớn." },
+          { "id": 14, "type": "msq", "question": "Vai trò của khu công nghiệp tập trung?", "options": ["Thu hút đầu tư", "Tạo việc làm", "Phát triển chuỗi cung ứng", "Giảm sản xuất"], "correct": [0,1,2], "explanation": "Khu công nghiệp thu hút đầu tư, tạo việc làm và phát triển chuỗi cung ứng." },
+          { "id": 15, "type": "sa", "question": "Kể tên một khu công nghiệp lớn ở Việt Nam?", "correct": "Khu công nghiệp VSIP, Khu công nghệ cao Hòa Lạc", "explanation": "VSIP và Hòa Lạc là khu công nghiệp/công nghệ cao lớn." },
+          { "id": 16, "type": "sa", "question": "Vai trò của khu công nghiệp đối với nền kinh tế?", "correct": "Thu hút đầu tư, tạo việc làm, thúc đẩy công nghiệp hóa", "explanation": "Khu công nghiệp thu hút đầu tư, tạo việc làm và thúc đẩy công nghiệp hóa." },
+          { "id": 17, "type": "sa", "question": "Kể tên một trung tâm công nghiệp lớn ở miền Trung?", "correct": "Đà Nẵng", "explanation": "Đà Nẵng là trung tâm công nghiệp lớn ở miền Trung." },
+          { "id": 18, "type": "sa", "question": "Nêu vai trò của khu công nghiệp?", "correct": "Thu hút đầu tư, tạo việc làm, phát triển chuỗi cung ứng." }
         ]
       }
     }

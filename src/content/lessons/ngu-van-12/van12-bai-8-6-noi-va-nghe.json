@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-8-6-noi-va-nghe",
-      "name": "Nói và nghe: Tranh biện về một vấn đề đời sống",
-      "slug": "noi-va-nghe-tranh-bien",
+      "id": "van12-bai-8-6-tranh-bien",
+      "name": "Tranh biện về một vấn đề đời sống",
+      "slug": "tranh-bien",
       "chapter": "Dữ liệu trong văn bản thông tin",
       "chapter_id": "V12-8",
       "lesson_id": 6,
-      "description": "Phát triển kỹ năng tranh biện, lập luận và phản biện về các vấn đề đời sống một cách logic và thuyết phục.",
+      "description": "Hướng dẫn tranh biện về vấn đề đời sống.",
       "duration_minutes": 90,
       "difficulty_level": "hard",
       "is_published": true,
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex8-6-1",
-              "type": "mcq",
-              "question": "Tranh biện là gì?",
-              "options": [
-                "Cãi nhau",
-                "Trao đổi, bảo vệ quan điểm khác nhau có tổ chức",
-                "Tranh luận vô tổ chức",
-                "Không có quy tắc"
-              ],
-              "correct": 1,
-              "explanation": "Tranh biện là hoạt động trao đổi, bảo vệ quan điểm khác nhau một cách có tổ chức, theo quy tắc."
-            },
-            {
-              "id": "ex8-6-2",
-              "type": "mcq",
-              "question": "Mục đích của tranh biện là gì?",
-              "options": [
-                "Để thắng bằng mọi giá",
-                "Tìm ra giải pháp tốt nhất, phát triển tư duy",
-                "Để chỉ trích người khác",
-                "Không có mục đích"
-              ],
-              "correct": 1,
-              "explanation": "Mục đích là tìm ra giải pháp tốt nhất cho vấn đề và phát triển tư duy phản biện."
-            },
-            {
-              "id": "ex8-6-3",
-              "type": "mcq",
-              "question": "Khi chuẩn bị tranh biện, cần làm gì?",
-              "options": [
-                "Không cần chuẩn bị",
-                "Nghiên cứu vấn đề, xây dựng luận điểm, dự đoán phản biện",
-                "Chỉ học thuộc lòng",
-                "Chỉ tập nói"
-              ],
-              "correct": 1,
-              "explanation": "Cần nghiên cứu kỹ vấn đề, xây dựng luận điểm vững chắc và dự đoán phản biện của đối phương."
-            },
-            {
-              "id": "ex8-6-4",
-              "type": "mcq",
-              "question": "Lập luận trong tranh biện cần có đặc điểm gì?",
-              "options": [
-                "Mơ hồ, chung chung",
-                "Rõ ràng, logic, có dẫn chứng thuyết phục",
-                "Dài dòng, lòng vòng",
-                "Không cần logic"
-              ],
-              "correct": 1,
-              "explanation": "Lập luận cần rõ ràng, logic chặt chẽ và có dẫn chứng thuyết phục như ví dụ, số liệu."
-            },
-            {
-              "id": "ex8-6-5",
-              "type": "mcq",
-              "question": "Khi phản biện, cần làm gì?",
-              "options": [
-                "Công kích cá nhân",
-                "Lắng nghe, phân tích điểm yếu, phản bác có căn cứ",
-                "Ngắt lời liên tục",
-                "Không cần lắng nghe"
-              ],
-              "correct": 1,
-              "explanation": "Cần lắng nghe quan điểm đối phương, phân tích điểm yếu và phản bác có căn cứ, lịch sự."
-            },
-            {
-              "id": "ex8-6-6",
-              "type": "mcq",
-              "question": "Thái độ trong tranh biện cần như thế nào?",
-              "options": [
-                "Hung hăng, thiếu tôn trọng",
-                "Tôn trọng, lịch sự, khách quan",
-                "Tùy hứng",
-                "Không quan trọng"
-              ],
-              "correct": 1,
-              "explanation": "Cần giữ thái độ tôn trọng đối phương, lịch sự trong ngôn từ và khách quan, không công kích cá nhân."
-            },
-            {
-              "id": "ex8-6-7",
-              "type": "mcq",
-              "question": "Vai trò của tranh biện là gì?",
-              "options": [
-                "Không có vai trò",
-                "Phát triển tư duy, rèn kỹ năng, tìm giải pháp",
-                "Chỉ để giải trí",
-                "Chỉ để thi đấu"
-              ],
-              "correct": 1,
-              "explanation": "Tranh biện giúp phát triển tư duy phản biện, rèn kỹ năng nói và tìm giải pháp cho vấn đề xã hội."
-            },
-            {
-              "id": "ex8-6-8",
-              "type": "mcq",
-              "question": "Mục tiêu cuối cùng của tranh biện là gì?",
-              "options": [
-                "Thắng bằng mọi giá",
-                "Thuyết phục, học hỏi, tìm giải pháp tốt nhất",
-                "Làm đối phương thua cuộc",
-                "Không có mục tiêu"
-              ],
-              "correct": 1,
-              "explanation": "Mục tiêu là thuyết phục khán giả, học hỏi từ đối phương và tìm ra giải pháp tốt nhất cho vấn đề."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex8-6-1",
+            "type": "mcq",
+            "question": "Tranh biện là gì?",
+            "options": [
+              "Cãi nhau",
+              "Trao đổi, bảo vệ quan điểm khác nhau có tổ chức",
+              "Tranh luận vô tổ chức",
+              "Không có quy tắc"
+            ],
+            "correct": 1,
+            "explanation": "Tranh biện là hoạt động trao đổi, bảo vệ quan điểm khác nhau một cách có tổ chức, theo quy tắc."
+          },
+          {
+            "id": "ex8-6-2",
+            "type": "mcq",
+            "question": "Mục đích của tranh biện là gì?",
+            "options": [
+              "Để thắng bằng mọi giá",
+              "Tìm ra giải pháp tốt nhất, phát triển tư duy",
+              "Để chỉ trích người khác",
+              "Không có mục đích"
+            ],
+            "correct": 1,
+            "explanation": "Mục đích là tìm ra giải pháp tốt nhất cho vấn đề và phát triển tư duy phản biện."
+          },
+          {
+            "id": "ex8-6-3",
+            "type": "mcq",
+            "question": "Khi chuẩn bị tranh biện, cần làm gì?",
+            "options": [
+              "Không cần chuẩn bị",
+              "Nghiên cứu vấn đề, xây dựng luận điểm, dự đoán phản biện",
+              "Chỉ học thuộc lòng",
+              "Chỉ tập nói"
+            ],
+            "correct": 1,
+            "explanation": "Cần nghiên cứu kỹ vấn đề, xây dựng luận điểm vững chắc và dự đoán phản biện của đối phương."
+          },
+          {
+            "id": "ex8-6-4",
+            "type": "mcq",
+            "question": "Lập luận trong tranh biện cần có đặc điểm gì?",
+            "options": [
+              "Mơ hồ, chung chung",
+              "Rõ ràng, logic, có dẫn chứng thuyết phục",
+              "Dài dòng, lòng vòng",
+              "Không cần logic"
+            ],
+            "correct": 1,
+            "explanation": "Lập luận cần rõ ràng, logic chặt chẽ và có dẫn chứng thuyết phục như ví dụ, số liệu."
+          },
+          {
+            "id": "ex8-6-5",
+            "type": "mcq",
+            "question": "Khi phản biện, cần làm gì?",
+            "options": [
+              "Công kích cá nhân",
+              "Lắng nghe, phân tích điểm yếu, phản bác có căn cứ",
+              "Ngắt lời liên tục",
+              "Không cần lắng nghe"
+            ],
+            "correct": 1,
+            "explanation": "Cần lắng nghe quan điểm đối phương, phân tích điểm yếu và phản bác có căn cứ, lịch sự."
+          },
+          {
+            "id": "ex8-6-6",
+            "type": "mcq",
+            "question": "Thái độ trong tranh biện cần như thế nào?",
+            "options": [
+              "Hung hăng, thiếu tôn trọng",
+              "Tôn trọng, lịch sự, khách quan",
+              "Tùy hứng",
+              "Không quan trọng"
+            ],
+            "correct": 1,
+            "explanation": "Cần giữ thái độ tôn trọng đối phương, lịch sự trong ngôn từ và khách quan, không công kích cá nhân."
+          },
+          {
+            "id": "ex8-6-7",
+            "type": "mcq",
+            "question": "Vai trò của tranh biện là gì?",
+            "options": [
+              "Không có vai trò",
+              "Phát triển tư duy, rèn kỹ năng, tìm giải pháp",
+              "Chỉ để giải trí",
+              "Chỉ để thi đấu"
+            ],
+            "correct": 1,
+            "explanation": "Tranh biện giúp phát triển tư duy phản biện, rèn kỹ năng nói và tìm giải pháp cho vấn đề xã hội."
+          },
+          {
+            "id": "ex8-6-8",
+            "type": "mcq",
+            "question": "Mục tiêu cuối cùng của tranh biện là gì?",
+            "options": [
+              "Thắng bằng mọi giá",
+              "Thuyết phục, học hỏi, tìm giải pháp tốt nhất",
+              "Làm đối phương thua cuộc",
+              "Không có mục tiêu"
+            ],
+            "correct": 1,
+            "explanation": "Mục tiêu là thuyết phục khán giả, học hỏi từ đối phương và tìm ra giải pháp tốt nhất cho vấn đề."
+          },
+          {
+            "id": "ex8-6-9",
+            "type": "mcq",
+            "question": "Văn bản thông tin thường có đặc điểm gì?",
+            "options": [
+              "Tính chính xác, khách quan, cập nhật",
+              "Tính hư cấu, tưởng tượng",
+              "Tính cảm xúc, chủ quan",
+              "Tính triết lý, sâu xa"
+            ],
+            "correct": 0,
+            "explanation": "Văn bản thông tin cần đảm bảo tính chính xác, khách quan và cập nhật."
+          },
+          {
+            "id": "ex8-6-10",
+            "type": "mcq",
+            "question": "Mục đích của việc viết thư trao đổi là gì?",
+            "options": [
+              "Trao đổi ý kiến, thuyết phục người đọc về một vấn đề",
+              "Kể chuyện giải trí",
+              "Thông báo tin tức",
+              "Bày tỏ cảm xúc cá nhân"
+            ],
+            "correct": 0,
+            "explanation": "Thư trao đổi nhằm trao đổi ý kiến và thuyết phục người đọc về một vấn đề cụ thể."
+          }
+        ]
       }
     }
   ]

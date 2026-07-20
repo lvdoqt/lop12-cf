@@ -18,12 +18,49 @@
           "title": "Bảo vệ sức khỏe và An sinh xã hội",
           "summary": "Mọi công dân đều có quyền được bảo vệ, chăm sóc sức khỏe và hưởng thụ các dịch vụ an sinh xã hội cơ bản theo quy định.",
           "sections": [
-            { "heading": "Quyền về chăm sóc sức khỏe", "content": "Được hưởng các dịch vụ y tế, khám chữa bệnh công bằng. Phụ nữ, trẻ em, người nghèo và người có công được ưu tiên hỗ trợ." },
-            { "heading": "Nghĩa vụ trong bảo vệ sức khỏe", "content": "Tuân thủ quy định về phòng chống dịch bệnh, giữ gìn vệ sinh chung, không làm tổn hại đến sức khỏe người khác." },
-            { "heading": "Bảo đảm an sinh xã hội", "content": "Quyền được hỗ trợ khi gặp rủi ro (thất nghiệp, tai nạn, già yếu) thông qua các quỹ bảo hiểm và trợ giúp xã hội." }
+            {
+              "heading": "Quyền được bảo vệ và chăm sóc sức khỏe",
+              "content": "Theo Hiến pháp 2013 và Luật Khám bệnh, chữa bệnh, mọi công dân có quyền được bảo vệ và chăm sóc sức khỏe. Nhà nước đầu tư xây dựng hệ thống y tế từ trung ương đến cơ sở, bảo đảm mọi người dân đều được tiếp cận dịch vụ y tế công bằng, chất lượng. Các nhóm ưu tiên như trẻ em, người cao tuổi, người có công với cách mạng, người nghèo và đồng bào dân tộc thiểu số được hưởng chế độ khám chữa bệnh miễn phí hoặc hỗ trợ chi phí."
+            },
+            {
+              "heading": "Nghĩa vụ của công dân trong bảo vệ sức khỏe",
+              "content": "Công dân có nghĩa vụ thực hiện các quy định của pháp luật về phòng bệnh, chữa bệnh và vệ sinh công cộng. Cụ thể: tuân thủ các biện pháp phòng chống dịch bệnh, tiêm chủng theo quy định, không cố ý lây truyền bệnh truyền nhiễm, giữ gìn vệ sinh nơi công cộng, tham gia bảo hiểm y tế. Ngoài ra, mỗi người phải có trách nhiệm xây dựng lối sống lành mạnh, không sử dụng chất kích thích, ma túy và các chất gây nghiện khác."
+            },
+            {
+              "heading": "Bảo hiểm y tế và quyền lợi của người tham gia",
+              "content": "Bảo hiểm y tế (BHYT) là hình thức bảo hiểm do Nhà nước tổ chức nhằm huy động sự đóng góp của cộng đồng để hỗ trợ chi phí khám chữa bệnh cho người tham gia. Theo Luật Bảo hiểm y tế, người tham gia BHYT được quỹ BHYT thanh toán một phần hoặc toàn bộ chi phí khám chữa bệnh theo danh mục quy định. Đối tượng bắt buộc tham gia gồm người lao động, học sinh sinh viên, người nghèo, trẻ em dưới 6 tuổi và người cao tuổi. BHYT thể hiện tinh thần tương thân tương ái và bảo đảm an toàn tài chính y tế cho mọi người."
+            },
+            {
+              "heading": "Quyền và nghĩa vụ về an sinh xã hội",
+              "content": "An sinh xã hội là hệ thống các chính sách và chương trình của Nhà nước nhằm bảo vệ công dân trước các rủi ro như ốm đau, tai nạn lao động, thất nghiệp, già yếu, mất người nuôi dưỡng. Các trụ cột chính gồm: bảo hiểm xã hội (hưu trí, tử tuất, ốm đau, thai sản, tai nạn lao động), bảo hiểm thất nghiệp, trợ giúp xã hội thường xuyên và đột xuất. Công dân có quyền tham gia và hưởng các chế độ này khi đáp ứng đủ điều kiện theo quy định của Luật Bảo hiểm xã hội và Luật Việc làm."
+            },
+            {
+              "heading": "Chế độ trợ cấp xã hội và bảo trợ xã hội",
+              "content": "Nhà nước thực hiện chính sách trợ cấp xã hội thường xuyên cho các đối tượng yếu thế như trẻ em mồ côi, người khuyết tật nặng, người cao tuổi không có lương hưu, người đơn thân nuôi con nhỏ. Ngoài ra, trợ giúp xã hội đột xuất được áp dụng khi công dân gặp thiên tai, hỏa hoạn, dịch bệnh hoặc các rủi ro bất khả kháng khác. Các hình thức trợ giúp bao gồm hỗ trợ tiền mặt, hiện vật, miễn giảm học phí, hỗ trợ nhà ở và tạo việc làm. Đây là biểu hiện của nguyên tắc không ai bị bỏ lại phía sau trong xã hội."
+            },
+            {
+              "heading": "Bảo hiểm xã hội và bảo hiểm thất nghiệp",
+              "content": "Bảo hiểm xã hội (BHXH) là sự bảo đảm thay thế hoặc bù đắp một phần thu nhập cho người lao động khi họ bị giảm hoặc mất thu nhập do ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp, hết tuổi lao động hoặc chết. BHXH bắt buộc áp dụng với người lao động có hợp đồng lao động từ 1 tháng trở lên. Bảo hiểm thất nghiệp hỗ trợ người lao động mất việc thông qua trợ cấp thất nghiệp, tư vấn giới thiệu việc làm và hỗ trợ học nghề. Thời gian hưởng trợ cấp thất nghiệp phụ thuộc vào thời gian đóng bảo hiểm thất nghiệp."
+            },
+            {
+              "heading": "Quyền và nghĩa vụ của công dân trong bảo vệ sức khỏe cộng đồng",
+              "content": "Công dân có quyền được sống trong môi trường không bị ô nhiễm, được tiếp cận thông tin về dịch bệnh và các biện pháp phòng ngừa. Đồng thời, mỗi người có nghĩa vụ tham gia các hoạt động bảo vệ sức khỏe cộng đồng như tiêm chủng mở rộng, hiến máu nhân đạo, tham gia vệ sinh môi trường khu dân cư. Pháp luật nghiêm cấm các hành vi sản xuất, buôn bán thực phẩm bẩn, thuốc giả, trang thiết bị y tế kém chất lượng gây nguy hại đến sức khỏe của người dân. Công dân có quyền tố cáo các hành vi vi phạm đến cơ quan y tế hoặc chính quyền địa phương."
+            },
+            {
+              "heading": "Trách nhiệm của Nhà nước trong bảo đảm an sinh xã hội",
+              "content": "Nhà nước có trách nhiệm xây dựng và hoàn thiện hệ thống pháp luật về an sinh xã hội, bố trí ngân sách để thực hiện các chính sách trợ giúp xã hội, bảo hiểm y tế, bảo hiểm xã hội. Các chương trình mục tiêu quốc gia như giảm nghèo bền vững, xây dựng nông thôn mới, phát triển kinh tế - xã hội vùng đồng bào dân tộc thiểu số và miền núi góp phần nâng cao đời sống vật chất và tinh thần của nhân dân. Nhà nước cũng khuyến khích các tổ chức, cá nhân tham gia đóng góp vào Quỹ Bảo trợ xã hội và các hoạt động từ thiện nhân đạo."
+            },
+            {
+              "heading": "Trách nhiệm của công dân trong thực hiện chính sách an sinh xã hội",
+              "content": "Công dân có trách nhiệm tham gia bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp theo quy định của pháp luật. Người lao động phải ký hợp đồng lao động và yêu cầu người sử dụng lao động đóng bảo hiểm đầy đủ. Khi gặp rủi ro, công dân cần chủ động làm thủ tục hưởng trợ cấp theo đúng quy trình. Ngoài ra, mỗi người có trách nhiệm giúp đỡ những người xung quanh khi họ gặp khó khăn, tham gia các quỹ từ thiện, quỹ vì người nghèo, góp phần xây dựng cộng đồng đoàn kết, tương trợ lẫn nhau."
+            },
+            {
+              "heading": "Xử lý vi phạm pháp luật về sức khỏe và an sinh xã hội",
+              "content": "Pháp luật quy định các chế tài xử lý nghiêm minh đối với hành vi vi phạm trong lĩnh vực y tế và an sinh xã hội. Các hành vi như sản xuất thuốc giả, hành nghề y trái phép, cố ý lây truyền bệnh truyền nhiễm, trốn đóng bảo hiểm xã hội cho người lao động có thể bị xử phạt hành chính hoặc truy cứu trách nhiệm hình sự tùy theo mức độ. Người sử dụng lao động không đóng BHXH, BHYT, bảo hiểm thất nghiệp cho người lao động sẽ bị xử phạt và buộc phải đóng bù. Công dân cần nắm rõ các quy định pháp luật để tự bảo vệ quyền lợi của mình và không vi phạm."
+            }
           ]
         },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Công dân có quyền được chăm sóc sức khỏe thể hiện rõ nhất ở việc nào?", "options": ["Tự chữa bệnh ở nhà", "Được khám, chữa bệnh tại các cơ sở y tế theo quy định", "Không phải tập thể dục", "Được ăn uống miễn phí"], "correct": 1, "explanation": "Nhà nước bảo đảm quyền tiếp cận dịch vụ y tế cho mọi người dân." },
           { "id": 2, "type": "mcq", "question": "Nghĩa vụ của công dân trong phòng chống dịch bệnh là?", "options": ["Che giấu thông tin bệnh", "Tuân thủ các biện pháp phòng ngừa và chỉ dẫn y tế của nhà nước", "Tự ý đi lại trong vùng dịch", "Không cần tiêm chủng"], "correct": 1, "explanation": "Tuân thủ quy định giúp bảo vệ sức khỏe cộng đồng và cá nhân." },
           { "id": 3, "type": "mcq", "question": "Đối tượng nào sau đây được Nhà nước ưu tiên hỗ trợ về y tế?", "options": ["Chỉ những người giàu", "Trẻ em, người già, người nghèo và người có công với cách mạng", "Người đi du lịch", "Những người không đi làm"], "correct": 1, "explanation": "Đây là chính sách nhân văn nhằm đảm bảo công bằng trong chăm sóc sức khỏe." },
@@ -33,7 +70,11 @@
           { "id": 7, "type": "mcq", "question": "Công dân có nghĩa vụ gì đối với môi trường sống xung quanh?", "options": ["Phá hoại cây xanh", "Giữ gìn vệ sinh, tạo cảnh quan môi trường trong sạch để bảo vệ sức khỏe", "Xả nước thải bừa bãi", "Mặc kệ môi trường"], "correct": 1, "explanation": "Môi trường trong sạch là tiền đề cho sức khỏe tốt." },
           { "id": 8, "type": "mcq", "question": "Việc Nhà nước đầu tư xây dựng các trạm y tế xã, phường nhằm?", "options": ["Để cho đẹp khu dân cư", "Tạo điều kiện để công dân thực hiện quyền chăm sóc sức khỏe cơ bản", "Để thu nhiều tiền hơn", "Chỉ để làm văn phòng"], "correct": 1, "explanation": "Y tế cơ sở giúp người dân tiếp cận dịch vụ nhanh chóng nhất." },
           { "id": 9, "type": "mcq", "question": "Chế độ trợ cấp xã hội cho người khuyết tật nặng thuộc về?", "options": ["Bảo hiểm thương mại", "Chính sách an sinh xã hội của Nhà nước", "Sự đóng góp cá nhân", "Một loại tiền phạt"], "correct": 1, "explanation": "Đây là sự hỗ trợ từ ngân sách cho các đối tượng yếu thế." },
-          { "id": 10, "type": "mcq", "question": "Tại sao việc bảo vệ sức khỏe lại là nghĩa vụ của mỗi công dân?", "options": ["Để không bị công an phạt", "Vì sức khỏe mỗi người là vốn quý của cá nhân và quốc gia", "Để được khen thưởng", "Vì mọi người đều thích khỏe"], "correct": 1, "explanation": "Sức khỏe nhân dân là nền tảng của sức mạnh đất nước." }
+          { "id": 10, "type": "mcq", "question": "Tại sao việc bảo vệ sức khỏe lại là nghĩa vụ của mỗi công dân?", "options": ["Để không bị công an phạt", "Vì sức khỏe mỗi người là vốn quý của cá nhân và quốc gia", "Để được khen thưởng", "Vì mọi người đều thích khỏe"], "correct": 1, "explanation": "Sức khỏe nhân dân là nền tảng của sức mạnh đất nước." },
+          { "id": 11, "type": "msq", "question": "Những đối tượng nào sau đây thuộc diện được Nhà nước cấp thẻ BHYT miễn phí?", "options": ["Trẻ em dưới 6 tuổi", "Người có công với cách mạng", "Người đang đi du lịch nước ngoài", "Người thuộc hộ nghèo"], "correct": [0, 1, 3], "explanation": "Trẻ em dưới 6 tuổi, người có công và người thuộc hộ nghèo được cấp thẻ BHYT miễn phí theo quy định." },
+          { "id": 12, "type": "msq", "question": "Những hành vi nào sau đây bị pháp luật nghiêm cấm trong lĩnh vực y tế?", "options": ["Sản xuất thuốc giả", "Hành nghề y không có chứng chỉ hành nghề", "Khám sức khỏe định kỳ cho công nhân", "Cố ý lây truyền HIV cho người khác"], "correct": [0, 1, 3], "explanation": "Sản xuất thuốc giả, hành nghề y trái phép và cố ý lây truyền bệnh đều bị nghiêm cấm." },
+          { "id": 13, "type": "msq", "question": "Những chính sách nào sau đây thuộc hệ thống an sinh xã hội?", "options": ["Bảo hiểm xã hội", "Bảo hiểm thất nghiệp", "Bảo hiểm xe cơ giới", "Trợ giúp xã hội thường xuyên"], "correct": [0, 1, 3], "explanation": "BHXH, bảo hiểm thất nghiệp và trợ giúp xã hội là ba trụ cột của an sinh xã hội." },
+          { "id": 14, "type": "msq", "question": "Những hành vi nào sau đây vi phạm nghĩa vụ của công dân trong bảo vệ sức khỏe?", "options": ["Không đeo khẩu trang khi có dịch bệnh", "Từ chối tiêm chủng theo chương trình tiêm chủng mở rộng", "Tập thể dục hàng ngày", "Xả chất thải y tế chưa xử lý ra môi trường"], "correct": [0, 1, 3], "explanation": "Không đeo khẩu trang khi có dịch, từ chối tiêm chủng và xả chất thải y tế đều vi phạm nghĩa vụ bảo vệ sức khỏe cộng đồng." }
         ]
       }
     }

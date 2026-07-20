@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-2-1-cam-hoai-dang-dung",
-      "name": "Cảm hoài (Trích Nỗi lòng - Đặng Dung)",
-      "slug": "cam-hoai-dang-dung",
+      "id": "van12-bai-2-1-cam-hoai",
+      "name": "Cảm hoài (Nỗi lòng – Đặng Dung)",
+      "slug": "cam-hoai",
       "chapter": "Những thế giới thơ",
       "chapter_id": "V12-2",
       "lesson_id": 1,
-      "description": "Học và phân tích bài thơ Cảm hoài trích từ tập thơ Nỗi lòng của nhà thơ Đặng Dung, khám phá cách thơ ca thể hiện cảm xúc, tâm tư của con người qua những hình ảnh thơm thảo.",
+      "description": "Phân tích bài thơ Cảm hoài của Đặng Dung trong tập Nỗi lòng, khám phá cách thơ ca thể hiện cảm xúc sâu kín của con người.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Cảm hoài (Trích Nỗi lòng - Đặng Dung)",
+          "title": "Cảm hoài (Nỗi lòng – Đặng Dung)",
           "sections": [
             {
               "heading": "1. Giới thiệu tác giả và tác phẩm",
@@ -59,7 +59,16 @@
             "slug": "phan-tich-hinh-anh-bieu-tuong",
             "description": "Xác định những hình ảnh chính trong bài thơ và phân tích ý nghĩa biểu tượng của chúng",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Xác định hình ảnh:</strong> Tìm những từ, cụm từ tả hình ảnh (hoa, lá, gió, mưa, đường...)</li><li><strong>Ghi chú đặc điểm:</strong> Ghi chú những đặc điểm của hình ảnh (đẹp, buồn, chuyển động...)</li><li><strong>Liên hệ với cảm xúc:</strong> Suy ngẫm cảm xúc của tác giả khi viết hình ảnh đó</li><li><strong>Mở rộng ý nghĩa:</strong> Từ hình ảnh cụ thể mở rộng tới ý nghĩa trừu tượng (hình ảnh tài nhiên → cuộc sống)</li><li><strong>Kết luận:</strong> Nêu ý nghĩa biểu tượng ngắn gọn, rõ ràng</li></ol>",
-            "examples": "<h4>Ví dụ:</h4><p><strong>Hình ảnh: Lá bay</strong><br/>- Đặc điểm: Lá không còn nằm yên trên cây, bị gió cuốn đi<br/>- Cảm xúc: Cảm giác mất mát, laconic lõng, không thể giữ được<br/>- Ý nghĩa biểu tượng: Tuổi trẻ, vẫn đẹp nhưng đang từng chút một trôi đi; hoặc những giá trị quý báu mà ta không thể giữ lại<br/>- Kết luận: Hình ảnh lá bay biểu tượng cho sự vô thường của cuộc sống, sự trôi qua của thời gian</p><p><strong>Hình ảnh: Gió thổi</strong><br/>- Đặc điểm: Gió không thể nhìn thấy nhưng có sức mạnh, thổi mạnh, cuốn đi mọi thứ<br/>- Cảm xúc: Cảm giác bất lực trước những lực lượng vô tình mà con người không thể chống lại<br/>- Ý nghĩa biểu tượng: Vận mệnh, thời gian, hoặc những sự kiện lớn thay đổi cuộc sống<br/>- Kết luận: Gió biểu tượng cho vận mệnh của con người, những lực lượng vô tình mà ta không thể kiểm soát</p>"
+            "examples": [
+              {
+                "question": "<p><strong>Hình ảnh: Lá bay</strong></p>",
+                "solution": "\n- Đặc điểm: Lá không còn nằm yên trên cây, bị gió cuốn đi\n- Cảm xúc: Cảm giác mất mát, laconic lõng, không thể giữ được\n- Ý nghĩa biểu tượng: Tuổi trẻ, vẫn đẹp nhưng đang từng chút một trôi đi; hoặc những giá trị quý báu mà ta không thể giữ lại\n- Kết luận: Hình ảnh lá bay biểu tượng cho sự vô thường của cuộc sống, sự trôi qua của thời gian"
+              },
+              {
+                "question": "<p><strong>Hình ảnh: Gió thổi</strong></p>",
+                "solution": "\n- Đặc điểm: Gió không thể nhìn thấy nhưng có sức mạnh, thổi mạnh, cuốn đi mọi thứ\n- Cảm xúc: Cảm giác bất lực trước những lực lượng vô tình mà con người không thể chống lại\n- Ý nghĩa biểu tượng: Vận mệnh, thời gian, hoặc những sự kiện lớn thay đổi cuộc sống\n- Kết luận: Gió biểu tượng cho vận mệnh của con người, những lực lượng vô tình mà ta không thể kiểm soát"
+              }
+            ]
           },
           {
             "id": "dang2",
@@ -67,7 +76,16 @@
             "slug": "phan-tich-bien-phap-tac-dung",
             "description": "Xác định các biện pháp tu từ được sử dụng và phân tích tác dụng của chúng",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Đọc kỹ bài thơ:</strong> Tìm những chỗ sử dụng biện pháp tu từ (so sánh, ẩn dụ, nhân hóa, điệp âu...)</li><li><strong>Xác định loại biện pháp:</strong> Nêu tên biện pháp cụ thể</li><li><strong>Phân tích thành phần:</strong> Để so sánh: là gì so với cái gì; ẩn dụ: chiếc gì mà chiếc gì...</li><li><strong>Tác dụng:</strong><ul><li>Về sắc thái cảm xúc: làm cho cảm xúc sinh động, gợi cảm, mạnh mẽ</li><li>Về hình ảnh: làm cho hình ảnh sống động, cụ thể, dễ hình dung</li><li>Về ý tưởng: giúp thể hiện ý tưởng sâu sắc, phức tạp một cách tinh tế</li><li>Về tạo ấn tượng: tạo sự bất ngờ, lôi cuốn độc giả</li></ul></li><li><strong>Kết luận:</strong> Tác dụng chung của các biện pháp trong bài thơ</li></ol>",
-            "examples": "<h4>Ví dụ:</h4><p><strong>Nhân hóa: \"gió thổi\"</strong><br/>- Xác định: nhân hóa (tặng gió hành động \"thổi\" như con người)<br/>- Phân tích: Gió không phải là lực tự nhiên vô thức, mà được tặng ý chí, ý định<br/>- Tác dụng: Làm cho gió trở nên sống động, gần gũi, tạo cảm giác gió đang \"tìm\" thứ gì đó, không phải chỉ là hiện tượng tự nhiên<br/>- Giúp thể hiện: Cảm giác gió có sức mạnh cố định chốn người ta không thể chống lại</p><p><strong>Ẩn dụ: \"con đường của cuộc sống\"</strong><br/>- Xác định: ẩn dụ (đường đi tượng trưng cho cuộc sống)<br/>- Phân tích: Cuộc sống được so sánh với một con đường dài, có nhiều ngoặc, địa hình khác nhau<br/>- Tác dụng: Giúp độc giả hiểu cuộc sống như một hành trình, mỗi bước đi là một phần của hành trình<br/>- Giúp thể hiện: Cuộc sống không phải là cái gì cô lập, thơm mà là một hành trình liên tục</p>"
+            "examples": [
+              {
+                "question": "<p><strong>Nhân hóa: \"gió thổi\"</strong></p>",
+                "solution": "\n- Xác định: nhân hóa (tặng gió hành động \"thổi\" như con người)\n- Phân tích: Gió không phải là lực tự nhiên vô thức, mà được tặng ý chí, ý định\n- Tác dụng: Làm cho gió trở nên sống động, gần gũi, tạo cảm giác gió đang \"tìm\" thứ gì đó, không phải chỉ là hiện tượng tự nhiên\n- Giúp thể hiện: Cảm giác gió có sức mạnh cố định chốn người ta không thể chống lại"
+              },
+              {
+                "question": "<p><strong>Ẩn dụ: \"con đường của cuộc sống\"</strong></p>",
+                "solution": "\n- Xác định: ẩn dụ (đường đi tượng trưng cho cuộc sống)\n- Phân tích: Cuộc sống được so sánh với một con đường dài, có nhiều ngoặc, địa hình khác nhau\n- Tác dụng: Giúp độc giả hiểu cuộc sống như một hành trình, mỗi bước đi là một phần của hành trình\n- Giúp thể hiện: Cuộc sống không phải là cái gì cô lập, thơm mà là một hành trình liên tục"
+              }
+            ]
           },
           {
             "id": "dang3",
@@ -75,130 +93,132 @@
             "slug": "so-sanh-voi-bai-tho-khac",
             "description": "So sánh cách tiếp cận chủ đề, phong cách, biện pháp giữa Cảm hoài và các bài thơ hiện đại khác",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Xác định hai tác phẩm:</strong> Xác định rõ bài thơ cần so sánh</li><li><strong>Tìm điểm giống nhau:</strong><ul><li>Chủ đề, đề tài: Cùng viết về gì</li><li>Cảm xúc: Cùng thể hiện cảm xúc gì</li><li>Biện pháp: Cùng sử dụng những biện pháp nào</li><li>Phong cách: Cách viết có giống nhau không</li></ul></li><li><strong>Tìm điểm khác nhau:</strong><ul><li>Cách thể hiện: Cách tiếp cận khác nhau</li><li>Tầm ảnh hưởng: Một bài có ảnh hưởng sâu, bài khác hơi nhẹ nhàng</li><li>Hiệu quả: Bài nào thuyết phục hơn, tại sao</li></ul></li><li><strong>Kết luận:</strong> Nêu rõ hay hay kém, giống hay khác</li></ol>",
-            "examples": "<h4>Ví dụ:</h4><p><strong>So sánh Cảm hoài (Đặng Dung) với Tây Tiến (Quang Dũng)</strong><br/>- Giống nhau:<br/>  + Cả hai are thơ viết về cuộc sống Việt Nam<br/>  + Cả hai thể hiện cảm xúc sâu sắc<br/>  + Cả hai sử dụng hình ảnh thơ<br/>- Khác nhau:<br/>  + Cảm hoài: thơ nội tâm, cảm xúc cá nhân, lâm lâm buồn bã<br/>  + Tây Tiến: thơ anh hùng, ca tụng sự kiện lịch sử, sôi nổi hưng phấn<br/>  + Biện pháp: Cảm hoài dùng ẩn dụ tinh tế, Tây Tiến dùng hình ảnh mạnh mẽ<br/>- Kết luận: Hai bài thơ thể hiện hai khía cạnh khác nhau của \"thế giới thơ\"</p>"
+            "examples": [
+              {
+                "question": "<p><strong>So sánh Cảm hoài (Đặng Dung) với Tây Tiến (Quang Dũng)</strong></p>",
+                "solution": "\n- Giống nhau:\n  + Cả hai are thơ viết về cuộc sống Việt Nam\n  + Cả hai thể hiện cảm xúc sâu sắc\n  + Cả hai sử dụng hình ảnh thơ\n- Khác nhau:\n  + Cảm hoài: thơ nội tâm, cảm xúc cá nhân, lâm lâm buồn bã\n  + Tây Tiến: thơ anh hùng, ca tụng sự kiện lịch sử, sôi nổi hưng phấn\n  + Biện pháp: Cảm hoài dùng ẩn dụ tinh tế, Tây Tiến dùng hình ảnh mạnh mẽ\n- Kết luận: Hai bài thơ thể hiện hai khía cạnh khác nhau của \"thế giới thơ\""
+              }
+            ]
           }
         ],
-        "exercises": {
-          "title": "Bài tập",
-          "items": [
-            {
-              "id": "ex1",
-              "type": "mcq",
-              "question": "Tác giả Đặng Dung sống vào thời kỳ nào?",
-              "options": [
-                "Thế kỷ XVII-XVIII",
-                "Thế kỷ XIX",
-                "Thế kỷ XX",
-                "Thế kỷ XXI"
-              ],
-              "correct": 2,
-              "explanation": "Đặng Dung là nhà thơ hiện đại Việt Nam, sống vào thế kỷ XX, thời kỳ phát triển văn học hiện đại Việt Nam."
-            },
-            {
-              "id": "ex2",
-              "type": "mcq",
-              "question": "Tập thơ Nỗi lòng của Đặng Dung có đặc điểm gì chính?",
-              "options": [
-                "Kể những câu chuyện xã hội",
-                "Bộ sưu tập những bài thơ về tâm tư, cảm xúc con người",
-                "Viết về những sự kiện lịch sử",
-                "Miêu tả những cảnh vật tự nhiên"
-              ],
-              "correct": 1,
-              "explanation": "Tập thơ Nỗi lòng là những bài thơ diễn đạt tâm tư, cảm xúc sâu kín của con người, kết hợp tự nhiên với tâm lý."
-            },
-            {
-              "id": "ex3",
-              "type": "mcq",
-              "question": "Hình ảnh nào biểu tượng cho sự trôi qua của thời gian, tuổi trẻ?",
-              "options": [
-                "Gió thổi",
-                "Mưa rơi",
-                "Lá bay",
-                "Đêm ngày"
-              ],
-              "correct": 2,
-              "explanation": "Hình ảnh lá bay, lá rơi biểu tượng cho sự vô thường, sự trôi qua của thời gian, tuổi trẻ không quay lại được."
-            },
-            {
-              "id": "ex4",
-              "type": "mcq",
-              "question": "Biện pháp tu từ nào được sử dụng trong cụm từ \"gió thổi\"?",
-              "options": [
-                "So sánh",
-                "Nhân hóa",
-                "Ẩn dụ",
-                "Hoán dụ"
-              ],
-              "correct": 1,
-              "explanation": "\"Gió thổi\" là nhân hóa vì gió được tặng hành động \"thổi\" như con người, thay vì chỉ là hiện tượng tự nhiên."
-            },
-            {
-              "id": "ex5",
-              "type": "mcq",
-              "question": "Cảm xúc chủ đạo của bài thơ Cảm hoài là gì?",
-              "options": [
-                "Vui vẻ, lạc quan",
-                "Buồn man mác, suy tư nhưng không tuyệt vọng",
-                "Tức giận, oán hận",
-                "Hoàn toàn tuyệt vọng"
-              ],
-              "correct": 1,
-              "explanation": "Bài thơ mang cảm xúc buồn bã nhẹ nhàng, suy tư sâu sắc nhưng không tuyệt vọng, còn chứa hy vọng."
-            },
-            {
-              "id": "ex6",
-              "type": "mcq",
-              "question": "Bài thơ Cảm hoài nhấn mạnh điều gì về cuộc sống con người?",
-              "options": [
-                "Cuộc sống là những niềm vui liên tục",
-                "Cuộc sống là hành trình dài, có thay đổi, mất mát nhưng cần chấp nhận",
-                "Cuộc sống là sự lặp lại vô ích",
-                "Cuộc sống không có ý nghĩa"
-              ],
-              "correct": 1,
-              "explanation": "Bài thơ thể hiện cuộc sống như một con đường dài, cần chấp nhận sự thay đổi, mất mát, nhưng vẫn có ý nghĩa."
-            },
-            {
-              "id": "ex7",
-              "type": "mcq",
-              "question": "Phong cách của Đặng Dung trong Cảm hoài được xem là gì?",
-              "options": [
-                "Thơ anh hùng",
-                "Thơ nội tâm, trữ tình",
-                "Thơ miêu tả"  ,
-                "Thơ châm biếm"
-              ],
-              "correct": 1,
-              "explanation": "Đặng Dung viết thơ nội tâm, trữ tình, thể hiện những cảm xúc, tâm tư sâu kín của con người."
-            },
-            {
-              "id": "ex8",
-              "type": "mcq",
-              "question": "Cảm hoài có vị trí gì trong chương Những thế giới thơ?",
-              "options": [
-                "Bài thơ giải thích ý kiến triết học",
-                "Bài thơ động viên đầu tiên, thể hiện khả năng của thơ mở ra những thế giới nội tâm",
-                "Bài thơ cuối cùng, tóm tắt toàn chương",
-                "Bài thơ có tầm quan trọng nhất"
-              ],
-              "correct": 1,
-              "explanation": "Cảm hoài là bài thơ động viên đầu tiên, giúp độc giả khám phá khả năng của thơ trong việc thể hiện nội tâm con người."
-            },
-            {
-              "id": "ex9",
-              "type": "essay",
-              "question": "Hãy phân tích cách Đặng Dung sử dụng hình ảnh tự nhiên (gió, mưa, lá, ánh sáng) để biểu đạt cảm xúc sâu kín của con người trong bài thơ Cảm hoài. Tại sao lại chọn những hình ảnh này?",
-              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Xác định những hình ảnh tự nhiên chính: gió, mưa, lá, ánh sáng, đêm ngày\n- Phân tích từng hình ảnh:\n  + Gió: biểu tượng cho vận mệnh, những lực lượng vô tình\n  + Mưa: biểu tượng cho buồn bã, nước mắt, nhưng cũng tái sinh\n  + Lá rơi: biểu tượng cho sự trôi qua thời gian, mất mát\n  + Ánh sáng: biểu tượng cho hy vọng, sự sáng tỏ\n- Lý do chọn hình ảnh tự nhiên:\n  + Gần gũi, quen thuộc với độc giả\n  + Tự nhiên có tính chất vô thường, luôn thay đổi, giống cuộc sống\n  + Tạo sự liên kết giữa cảm xúc cá nhân và vTrue bộ thiên nhiên\n  + Giúp thể hiện cảm xúc một cách tinh tế, không trực tiếp\n- Kết luận: Sử dụng hình ảnh tự nhiên làm cho bài thơ có sức lôi cuốn, giúp độc giả cảm thấy hiểu được và không cô đơn"
-            },
-            {
-              "id": "ex10",
-              "type": "essay",
-              "question": "Hãy lập luận tại sao Cảm hoài lại được xếp vào chương Những thế giới thơ. Nó mở ra thế giới thơ nào cho độc giả?",
-              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Mở bài: Nêu rõ câu hỏi, Cảm hoài thuộc chương Những thế giới thơ\n- Lập luận 1: Thế giới nội tâm\n  + Bài thơ mở ra thế giới nội tâm sâu kín con người\n  + Thể hiện tâm tư, suy tư, cảm xúc không phải là vật chất mà là tâm lý\n  + Giúp độc giả nhận thức được những cảm xúc sâu kín của mình\n- Lập luận 2: Thế giới của tự nhiên và con người\n  + Bài thơ kết hợp hình ảnh tự nhiên với tâm lý con người\n  + Tự nhiên không chỉ là vật lý mà là biểu tượng của cảm xúc\n  + Mở ra cách nhìn mới: tự nhiên và con người liên hệ với nhau\n- Lập luận 3: Thế giới của suy tư, triết học\n  + Bài thơ đặt những câu hỏi về vận mệnh, thời gian, tuổi trẻ\n  + Thế giới thơ không chỉ là tạo hình ảnh đẹp mà cũng là suy tư sâu sắc\n- Kết luận: Cảm hoài thể hiện triệt để khả năng của thơ ca - mở ra những thế giới khác lạ, giúp con người suy tư sâu sắc về cuộc sống"
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Tác giả Đặng Dung sống vào thời kỳ nào?",
+            "options": [
+              "Thế kỷ XVII-XVIII",
+              "Thế kỷ XIX",
+              "Thế kỷ XX",
+              "Thế kỷ XXI"
+            ],
+            "correct": 2,
+            "explanation": "Đặng Dung là nhà thơ hiện đại Việt Nam, sống vào thế kỷ XX, thời kỳ phát triển văn học hiện đại Việt Nam."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Tập thơ Nỗi lòng của Đặng Dung có đặc điểm gì chính?",
+            "options": [
+              "Kể những câu chuyện xã hội",
+              "Bộ sưu tập những bài thơ về tâm tư, cảm xúc con người",
+              "Viết về những sự kiện lịch sử",
+              "Miêu tả những cảnh vật tự nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Tập thơ Nỗi lòng là những bài thơ diễn đạt tâm tư, cảm xúc sâu kín của con người, kết hợp tự nhiên với tâm lý."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Hình ảnh nào biểu tượng cho sự trôi qua của thời gian, tuổi trẻ?",
+            "options": [
+              "Gió thổi",
+              "Mưa rơi",
+              "Lá bay",
+              "Đêm ngày"
+            ],
+            "correct": 2,
+            "explanation": "Hình ảnh lá bay, lá rơi biểu tượng cho sự vô thường, sự trôi qua của thời gian, tuổi trẻ không quay lại được."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Biện pháp tu từ nào được sử dụng trong cụm từ \"gió thổi\"?",
+            "options": [
+              "So sánh",
+              "Nhân hóa",
+              "Ẩn dụ",
+              "Hoán dụ"
+            ],
+            "correct": 1,
+            "explanation": "\"Gió thổi\" là nhân hóa vì gió được tặng hành động \"thổi\" như con người, thay vì chỉ là hiện tượng tự nhiên."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Cảm xúc chủ đạo của bài thơ Cảm hoài là gì?",
+            "options": [
+              "Vui vẻ, lạc quan",
+              "Buồn man mác, suy tư nhưng không tuyệt vọng",
+              "Tức giận, oán hận",
+              "Hoàn toàn tuyệt vọng"
+            ],
+            "correct": 1,
+            "explanation": "Bài thơ mang cảm xúc buồn bã nhẹ nhàng, suy tư sâu sắc nhưng không tuyệt vọng, còn chứa hy vọng."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Bài thơ Cảm hoài nhấn mạnh điều gì về cuộc sống con người?",
+            "options": [
+              "Cuộc sống là những niềm vui liên tục",
+              "Cuộc sống là hành trình dài, có thay đổi, mất mát nhưng cần chấp nhận",
+              "Cuộc sống là sự lặp lại vô ích",
+              "Cuộc sống không có ý nghĩa"
+            ],
+            "correct": 1,
+            "explanation": "Bài thơ thể hiện cuộc sống như một con đường dài, cần chấp nhận sự thay đổi, mất mát, nhưng vẫn có ý nghĩa."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Phong cách của Đặng Dung trong Cảm hoài được xem là gì?",
+            "options": [
+              "Thơ anh hùng",
+              "Thơ nội tâm, trữ tình",
+              "Thơ miêu tả",
+              "Thơ châm biếm"
+            ],
+            "correct": 1,
+            "explanation": "Đặng Dung viết thơ nội tâm, trữ tình, thể hiện những cảm xúc, tâm tư sâu kín của con người."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Cảm hoài có vị trí gì trong chương Những thế giới thơ?",
+            "options": [
+              "Bài thơ giải thích ý kiến triết học",
+              "Bài thơ động viên đầu tiên, thể hiện khả năng của thơ mở ra những thế giới nội tâm",
+              "Bài thơ cuối cùng, tóm tắt toàn chương",
+              "Bài thơ có tầm quan trọng nhất"
+            ],
+            "correct": 1,
+            "explanation": "Cảm hoài là bài thơ động viên đầu tiên, giúp độc giả khám phá khả năng của thơ trong việc thể hiện nội tâm con người."
+          },
+          {
+            "id": "ex9",
+            "type": "essay",
+            "question": "Hãy phân tích cách Đặng Dung sử dụng hình ảnh tự nhiên (gió, mưa, lá, ánh sáng) để biểu đạt cảm xúc sâu kín của con người trong bài thơ Cảm hoài. Tại sao lại chọn những hình ảnh này?",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Xác định những hình ảnh tự nhiên chính: gió, mưa, lá, ánh sáng, đêm ngày\n- Phân tích từng hình ảnh:\n  + Gió: biểu tượng cho vận mệnh, những lực lượng vô tình\n  + Mưa: biểu tượng cho buồn bã, nước mắt, nhưng cũng tái sinh\n  + Lá rơi: biểu tượng cho sự trôi qua thời gian, mất mát\n  + Ánh sáng: biểu tượng cho hy vọng, sự sáng tỏ\n- Lý do chọn hình ảnh tự nhiên:\n  + Gần gũi, quen thuộc với độc giả\n  + Tự nhiên có tính chất vô thường, luôn thay đổi, giống cuộc sống\n  + Tạo sự liên kết giữa cảm xúc cá nhân và vTrue bộ thiên nhiên\n  + Giúp thể hiện cảm xúc một cách tinh tế, không trực tiếp\n- Kết luận: Sử dụng hình ảnh tự nhiên làm cho bài thơ có sức lôi cuốn, giúp độc giả cảm thấy hiểu được và không cô đơn"
+          },
+          {
+            "id": "ex10",
+            "type": "essay",
+            "question": "Hãy lập luận tại sao Cảm hoài lại được xếp vào chương Những thế giới thơ. Nó mở ra thế giới thơ nào cho độc giả?",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Mở bài: Nêu rõ câu hỏi, Cảm hoài thuộc chương Những thế giới thơ\n- Lập luận 1: Thế giới nội tâm\n  + Bài thơ mở ra thế giới nội tâm sâu kín con người\n  + Thể hiện tâm tư, suy tư, cảm xúc không phải là vật chất mà là tâm lý\n  + Giúp độc giả nhận thức được những cảm xúc sâu kín của mình\n- Lập luận 2: Thế giới của tự nhiên và con người\n  + Bài thơ kết hợp hình ảnh tự nhiên với tâm lý con người\n  + Tự nhiên không chỉ là vật lý mà là biểu tượng của cảm xúc\n  + Mở ra cách nhìn mới: tự nhiên và con người liên hệ với nhau\n- Lập luận 3: Thế giới của suy tư, triết học\n  + Bài thơ đặt những câu hỏi về vận mệnh, thời gian, tuổi trẻ\n  + Thế giới thơ không chỉ là tạo hình ảnh đẹp mà cũng là suy tư sâu sắc\n- Kết luận: Cảm hoài thể hiện triệt để khả năng của thơ ca - mở ra những thế giới khác lạ, giúp con người suy tư sâu sắc về cuộc sống"
+          }
+        ]
       }
     }
   ]

@@ -15,25 +15,243 @@
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Đặc điểm và chiến lược phát triển đồng bằng sông Hồng",
-          "summary": "Vùng có nền nông nghiệp lúa nước truyền thống, công nghiệp chế biến và dịch vụ tập trung; cần giải pháp về quản lý đô thị, phòng chống lụt, bảo vệ đất, và phát triển hạ tầng để thúc đẩy tăng trưởng bền vững.",
+          "title": "Phát triển kinh tế - xã hội ở Đồng bằng sông Hồng",
+          "summary": "Đồng bằng sông Hồng là vùng kinh tế trọng điểm phía Bắc, có vị trí địa lí thuận lợi, là trung tâm chính trị, kinh tế, văn hóa, khoa học - kĩ thuật hàng đầu của cả nước với Thủ đô Hà Nội. Vùng có nhiều thế mạnh: đất phù sa màu mỡ do hệ thống sông Hồng và sông Thái Bình bồi đắp, nguồn nước dồi dào, dân cư đông, nguồn lao động chất lượng cao, cơ sở hạ tầng và cơ sở vật chất - kĩ thuật phát triển. Kinh tế vùng chuyển dịch theo hướng công nghiệp hóa, hiện đại hóa với công nghiệp và dịch vụ chiếm tỉ trọng cao, nông nghiệp thâm canh trình độ cao. Đây là vùng có mạng lưới đô thị dày đặc và tỉ lệ đô thị hóa cao. Tuy nhiên, vùng đối mặt với thách thức về sức ép dân số, ô nhiễm môi trường, thiên tai và yêu cầu chuyển đổi mô hình tăng trưởng theo hướng bền vững.",
           "sections": [
-            { "heading": "Tiềm năng kinh tế", "content": "Đất phù sa màu mỡ, hệ thống sông ngòi dày đặc, cơ sở hạ tầng kết nối với thủ đô và cảng biển, lực lượng lao động dồi dào." },
-            { "heading": "Thách thức", "content": "Ngập lụt, xói mòn, ô nhiễm, áp lực dân số đô thị và quản lý sử dụng đất; cần tích hợp quy hoạch và quản lý rủi ro thiên tai." }
+            { "heading": "Vị trí địa lí và phạm vi lãnh thổ", "content": "Đồng bằng sông Hồng gồm các tỉnh, thành phố trực thuộc Trung ương trong đó có Thủ đô Hà Nội và thành phố cảng Hải Phòng. Vùng nằm ở trung tâm phía Bắc, giáp Trung du và miền núi Bắc Bộ, Bắc Trung Bộ và vịnh Bắc Bộ. Vị trí này tạo điều kiện thuận lợi để giao lưu, kết nối với các vùng trong nước và quốc tế, phát triển kinh tế mở, đóng vai trò là cầu nối giữa vùng núi phía Bắc với biển và các vùng kinh tế khác." },
+            { "heading": "Các thế mạnh để phát triển kinh tế - xã hội", "content": "Vùng có nhiều thế mạnh nổi bật: đất phù sa màu mỡ do sông Hồng và sông Thái Bình bồi đắp, thuận lợi cho thâm canh lúa và cây lương thực - thực phẩm; khí hậu nhiệt đới ẩm có mùa đông lạnh cho phép đa dạng hóa cây trồng, phát triển rau vụ đông; nguồn nước dồi dào; tài nguyên biển ở Hải Phòng, Quảng Ninh lân cận. Dân cư đông, nguồn lao động dồi dào, có trình độ và tay nghề cao. Cơ sở hạ tầng, cơ sở vật chất - kĩ thuật vào loại tốt nhất cả nước; tập trung nhiều trung tâm nghiên cứu, trường đại học, đầu mối giao thông." },
+            { "heading": "Chuyển dịch cơ cấu và các ngành kinh tế", "content": "Cơ cấu kinh tế của vùng chuyển dịch tích cực theo hướng công nghiệp hóa, hiện đại hóa: giảm tỉ trọng nông - lâm - thủy sản, tăng tỉ trọng công nghiệp - xây dựng và dịch vụ. Công nghiệp phát triển đa dạng với các ngành cơ khí, điện tử, chế biến thực phẩm, sản xuất vật liệu xây dựng, dệt may; hình thành nhiều khu công nghiệp, khu công nghệ cao. Dịch vụ phát triển mạnh gồm thương mại, du lịch, tài chính - ngân hàng, giao thông vận tải, bưu chính viễn thông. Nông nghiệp là vùng thâm canh lúa trình độ cao, phát triển rau vụ đông, chăn nuôi lợn, gia cầm và nuôi trồng thủy sản." },
+            { "heading": "Đô thị hóa và mạng lưới đô thị", "content": "Đồng bằng sông Hồng có mật độ dân số cao nhất cả nước và mạng lưới đô thị dày đặc, tỉ lệ đô thị hóa cao. Hà Nội là Thủ đô, đô thị đặc biệt, trung tâm chính trị, kinh tế, văn hóa, khoa học - kĩ thuật lớn của cả nước; Hải Phòng là thành phố cảng và trung tâm công nghiệp, dịch vụ quan trọng. Quá trình đô thị hóa gắn với công nghiệp hóa thúc đẩy phát triển kinh tế nhưng cũng tạo sức ép về việc làm, nhà ở, hạ tầng và môi trường." },
+            { "heading": "Thách thức và định hướng phát triển bền vững", "content": "Vùng đối mặt với các thách thức: sức ép dân số và di cư lớn, quỹ đất nông nghiệp thu hẹp, ô nhiễm môi trường đất - nước - không khí, thiên tai (bão, ngập lụt, rét đậm) và tác động của biến đổi khí hậu. Định hướng phát triển bền vững gồm: phát triển kinh tế tri thức, công nghiệp công nghệ cao và dịch vụ hiện đại; quy hoạch và quản lí đô thị hợp lí; xử lí ô nhiễm, bảo vệ môi trường; phát triển giao thông xanh; bảo vệ và sử dụng hợp lí tài nguyên đất, nước." }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Nêu một thách thức môi trường lớn ở đồng bằng sông Hồng?", "a_hint": "Ngập lụt và ô nhiễm nước." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Đồng bằng sông Hồng nổi tiếng với?", "options": ["Nông nghiệp lúa nước, mật độ dân số cao và công nghiệp tập trung","Sa mạc rộng lớn","Rừng nguyên sinh dày đặc","Đảo núi lửa"], "correct": 0, "explanation": "Đồng bằng sông Hồng là vùng lúa nước, đông dân và phát triển công nghiệp/dịch vụ." },
-          { "id": 2, "type": "mcq", "question": "Một biện pháp phòng chống lụt hiệu quả là?", "options": ["Quản lý lưu vực, đê điều và trồng rừng đầu nguồn","Tăng dân cư vùng lũ","Xây nhà ngay trên luồng chảy","Không làm gì"], "correct": 0, "explanation": "Quản lý lưu vực và đê điều giảm rủi ro lụt." },
-          { "id": 3, "type": "mcq", "question": "Một thách thức do mật độ dân số cao là?", "options": ["Quá tải hạ tầng và ô nhiễm","Tăng diện tích rừng","Giảm nhu cầu dịch vụ","Không có thách thức"], "correct": 0, "explanation": "Mật độ cao gây áp lực lên hạ tầng và môi trường." },
-          { "id": 4, "type": "mcq", "question": "Để phát triển bền vững, vùng đồng bằng cần?", "options": ["Quy hoạch sử dụng đất, xử lý nước thải và phát triển giao thông xanh","Bê tông hóa toàn bộ","Xả thải trực tiếp","Tăng mật độ dân cư không kiểm soát"], "correct": 0, "explanation": "Quy hoạch và xử lý môi trường giúp phát triển bền vững." },
-          { "id": 5, "type": "mcq", "question": "Một ngành công nghiệp phù hợp với vùng đồng bằng là?", "options": ["Chế biến nông sản và công nghiệp nhẹ","Khai thác than nhân tạo","Trồng lúa ở sa mạc","Nuôi cá băng hà"], "correct": 0, "explanation": "Chế biến nông sản phù hợp với nguồn nông sản dồi dào." },
-          { "id": 6, "type": "mcq", "question": "Nguồn lực lao động dồi dào ở vùng có lợi cho?", "options": ["Phát triển công nghiệp và dịch vụ","Giảm sản xuất","Tăng sa mạc hóa","Không liên quan"], "correct": 0, "explanation": "Lao động dồi dào hỗ trợ phát triển công nghiệp và dịch vụ." },
-          { "id": 7, "type": "mcq", "question": "Một bài toán quan trọng cho đồng bằng sông Hồng là?", "options": ["Cân bằng giữa phát triển đô thị và bảo vệ đất nông nghiệp","Chuyển toàn bộ dân cư ra biển","Phá bỏ hệ thống sông","Không có bài toán"], "correct": 0, "explanation": "Cần cân bằng phát triển đô thị với bảo vệ đất nông nghiệp và phòng lũ." },
-          { "id": 8, "type": "mcq", "question": "Vai trò của thủ đô trong vùng là?", "options": ["Là trung tâm chính trị, kinh tế, dịch vụ và kết nối vùng","Chỉ là điểm du lịch nhỏ","Không vai trò","Là sa mạc"], "correct": 0, "explanation": "Thủ đô là trung tâm nhiều chức năng quan trọng cho vùng." },
-          { "id": 9, "type": "mcq", "question": "Một giải pháp cho ô nhiễm nước là?", "options": ["Xây nhà máy xử lý nước thải và quản lý nguồn xả","Tăng xả thải trực tiếp","Bỏ qua ô nhiễm","Giảm xử lý"], "correct": 0, "explanation": "Xử lý nước thải và quản lý nguồn xả giảm ô nhiễm." },
-          { "id": 10, "type": "mcq", "question": "Đồng bằng sông Hồng phù hợp phát triển ngành nào?", "options": ["Nông nghiệp lúa nước, chế biến nông sản, thương mại và dịch vụ","Công nghiệp băng tuyết","Trồng cây sa mạc","Nuôi cá bắc cực"], "correct": 0, "explanation": "Các ngành trên phù hợp với điều kiện vùng." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Đồng bằng sông Hồng nổi tiếng với?",
+            "options": [
+              "Nông nghiệp lúa nước, mật độ dân số cao và công nghiệp tập trung",
+              "Sa mạc rộng lớn",
+              "Rừng nguyên sinh dày đặc",
+              "Đảo núi lửa"
+            ],
+            "correct": 0,
+            "explanation": "Đồng bằng sông Hồng là vùng lúa nước, đông dân và phát triển công nghiệp/dịch vụ."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Một biện pháp phòng chống lụt hiệu quả là?",
+            "options": [
+              "Quản lý lưu vực, đê điều và trồng rừng đầu nguồn",
+              "Tăng dân cư vùng lũ",
+              "Xây nhà ngay trên luồng chảy",
+              "Không làm gì"
+            ],
+            "correct": 0,
+            "explanation": "Quản lý lưu vực và đê điều giảm rủi ro lụt."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Một thách thức do mật độ dân số cao là?",
+            "options": [
+              "Quá tải hạ tầng và ô nhiễm",
+              "Tăng diện tích rừng",
+              "Giảm nhu cầu dịch vụ",
+              "Không có thách thức"
+            ],
+            "correct": 0,
+            "explanation": "Mật độ cao gây áp lực lên hạ tầng và môi trường."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Để phát triển bền vững, vùng đồng bằng cần?",
+            "options": [
+              "Quy hoạch sử dụng đất, xử lý nước thải và phát triển giao thông xanh",
+              "Bê tông hóa toàn bộ",
+              "Xả thải trực tiếp",
+              "Tăng mật độ dân cư không kiểm soát"
+            ],
+            "correct": 0,
+            "explanation": "Quy hoạch và xử lý môi trường giúp phát triển bền vững."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Một ngành công nghiệp phù hợp với vùng đồng bằng là?",
+            "options": [
+              "Chế biến nông sản và công nghiệp nhẹ",
+              "Khai thác than nhân tạo",
+              "Trồng lúa ở sa mạc",
+              "Nuôi cá băng hà"
+            ],
+            "correct": 0,
+            "explanation": "Chế biến nông sản phù hợp với nguồn nông sản dồi dào."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Nguồn lực lao động dồi dào ở vùng có lợi cho?",
+            "options": [
+              "Phát triển công nghiệp và dịch vụ",
+              "Giảm sản xuất",
+              "Tăng sa mạc hóa",
+              "Không liên quan"
+            ],
+            "correct": 0,
+            "explanation": "Lao động dồi dào hỗ trợ phát triển công nghiệp và dịch vụ."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Một bài toán quan trọng cho đồng bằng sông Hồng là?",
+            "options": [
+              "Cân bằng giữa phát triển đô thị và bảo vệ đất nông nghiệp",
+              "Chuyển toàn bộ dân cư ra biển",
+              "Phá bỏ hệ thống sông",
+              "Không có bài toán"
+            ],
+            "correct": 0,
+            "explanation": "Cần cân bằng phát triển đô thị với bảo vệ đất nông nghiệp và phòng lũ."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Vai trò của thủ đô trong vùng là?",
+            "options": [
+              "Là trung tâm chính trị, kinh tế, dịch vụ và kết nối vùng",
+              "Chỉ là điểm du lịch nhỏ",
+              "Không vai trò",
+              "Là sa mạc"
+            ],
+            "correct": 0,
+            "explanation": "Thủ đô là trung tâm nhiều chức năng quan trọng cho vùng."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Một giải pháp cho ô nhiễm nước là?",
+            "options": [
+              "Xây nhà máy xử lý nước thải và quản lý nguồn xả",
+              "Tăng xả thải trực tiếp",
+              "Bỏ qua ô nhiễm",
+              "Giảm xử lý"
+            ],
+            "correct": 0,
+            "explanation": "Xử lý nước thải và quản lý nguồn xả giảm ô nhiễm."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Đồng bằng sông Hồng phù hợp phát triển ngành nào?",
+            "options": [
+              "Nông nghiệp lúa nước, chế biến nông sản, thương mại và dịch vụ",
+              "Công nghiệp băng tuyết",
+              "Trồng cây sa mạc",
+              "Nuôi cá bắc cực"
+            ],
+            "correct": 0,
+            "explanation": "Các ngành trên phù hợp với điều kiện vùng."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Thế mạnh của đồng bằng sông Hồng gồm?",
+            "options": [
+              "Đất phù sa màu mỡ",
+              "Nguồn nước dồi dào",
+              "Lao động đông đảo",
+              "Địa hình đồi núi hiểm trở"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Đất phù sa, nguồn nước và lao động là thế mạnh của vùng."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Các ngành kinh tế chủ lực của đồng bằng sông Hồng?",
+            "options": [
+              "Nông nghiệp lúa nước",
+              "Công nghiệp chế biến",
+              "Dịch vụ thương mại",
+              "Khai thác dầu khí"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Lúa nước, chế biến và thương mại là ngành chủ lực."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Thách thức đối với phát triển bền vững ở đồng bằng sông Hồng?",
+            "options": [
+              "Ngập lụt",
+              "Ô nhiễm môi trường",
+              "Áp lực dân số",
+              "Dư thừa đất nông nghiệp"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Ngập lụt, ô nhiễm và áp lực dân số là thách thức lớn."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Các ngành công nghiệp phát triển ở đồng bằng sông Hồng?",
+            "options": [
+              "Chế biến nông sản",
+              "Sản xuất vật liệu xây dựng",
+              "Cơ khí",
+              "Khai thác dầu khí"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Chế biến nông sản, vật liệu xây dựng và cơ khí phát triển ở vùng."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Kể tên một tỉnh thuộc đồng bằng sông Hồng?",
+            "correct": "Hà Nội, Hải Phòng, Nam Định, Thái Bình",
+            "explanation": "Hà Nội, Hải Phòng, Nam Định, Thái Bình thuộc ĐB sông Hồng."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Vai trò của thủ đô Hà Nội đối với vùng?",
+            "correct": "Trung tâm chính trị, kinh tế, văn hóa, khoa học kỹ thuật",
+            "explanation": "Hà Nội là trung tâm chính trị, kinh tế, văn hóa của vùng."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Một giải pháp phát triển bền vững cho đồng bằng sông Hồng?",
+            "correct": "Quy hoạch đô thị, kiểm soát ô nhiễm, phát triển giao thông xanh",
+            "explanation": "Quy hoạch đô thị, kiểm soát ô nhiễm và giao thông xanh là giải pháp bền vững."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Nêu một thách thức môi trường lớn ở đồng bằng sông Hồng?",
+            "correct": "Ngập lụt và ô nhiễm nước.",
+            "explanation": "Ngập lụt và ô nhiễm nước."
+          }
         ]
       }
     }

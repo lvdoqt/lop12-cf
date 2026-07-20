@@ -1,0 +1,178 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-7-4-viet-nghi-luan-tuoi-tre",
+      "name": "Viết bài văn nghị luận về một vấn đề liên quan đến tuổi trẻ",
+      "slug": "viet-nghi-luan-tuoi-tre",
+      "chapter": "Sự thật trong tác phẩm kí",
+      "chapter_id": "V12-7",
+      "lesson_id": 4,
+      "description": "Hướng dẫn viết bài văn nghị luận về vấn đề liên quan đến tuổi trẻ.",
+      "duration_minutes": 90,
+      "difficulty_level": "hard",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "argumentative-writing",
+          "name": "Viết văn nghị luận",
+          "slug": "viet-van-nghi-luan",
+          "difficulty": "hard"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Viết bài văn nghị luận về vấn đề liên quan đến tuổi trẻ",
+          "sections": [
+            {
+              "heading": "1. Các vấn đề về tuổi trẻ",
+              "content": "<h4>a) Cách ứng xử trong gia đình</h4><ul><li><strong>Với cha mẹ:</strong> Hiếu thảo, tôn trọng, chia sẻ</li><li><strong>Với anh chị em:</strong> Yêu thương, giúp đỡ</li><li><strong>Trách nhiệm:</strong> Học tập tốt, giúp việc nhà</li></ul><h4>b) Cách ứng xử trong xã hội</h4><ul><li><strong>Với bạn bè:</strong> Chân thành, tôn trọng, hỗ trợ</li><li><strong>Với thầy cô:</strong> Kính trọng, lễ phép</li><li><strong>Với người lớn tuổi:</strong> Nhường nhịn, giúp đỡ</li><li><strong>Trong cộng đồng:</strong> Tham gia hoạt động tình nguyện</li></ul><h4>c) Thách thức hiện nay</h4><ul><li><strong>Công nghệ:</strong> Lạm dụng mạng xã hội</li><li><strong>Áp lực:</strong> Học tập, thi cử</li><li><strong>Định hướng:</strong> Lựa chọn nghề nghiệp</li></ul>"
+            },
+            {
+              "heading": "2. Cấu trúc bài văn",
+              "content": "<h4>a) Mở bài</h4><ul><li><strong>Dẫn nhập:</strong> Giới thiệu vấn đề</li><li><strong>Đặt vấn đề:</strong> Nêu rõ chủ đề bàn luận</li><li><strong>Nêu luận điểm:</strong> Quan điểm của mình</li></ul><h4>b) Thân bài</h4><ul><li><strong>Luận điểm 1:</strong> Tầm quan trọng của vấn đề</li><li><strong>Luận điểm 2:</strong> Thực trạng hiện nay</li><li><strong>Luận điểm 3:</strong> Giải pháp, đề xuất</li><li><strong>Dẫn chứng:</strong> Ví dụ, số liệu minh họa</li></ul><h4>c) Kết bài</h4><ul><li><strong>Khẳng định:</strong> Nhấn mạnh quan điểm</li><li><strong>Kêu gọi:</strong> Hành động, thay đổi</li><li><strong>Mở rộng:</strong> Triển vọng tương lai</li></ul>"
+            },
+            {
+              "heading": "3. Kỹ thuật viết",
+              "content": "<h4>a) Ngôn ngữ</h4><ul><li><strong>Rõ ràng:</strong> Dễ hiểu, mạch lạc</li><li><strong>Thuyết phục:</strong> Lập luận chặt chẽ</li><li><strong>Chân thành:</strong> Xuất phát từ trải nghiệm</li></ul><h4>b) Lập luận</h4><ul><li><strong>Logic:</strong> Có hệ thống, mạch lạc</li><li><strong>Đa chiều:</strong> Xem xét nhiều góc độ</li><li><strong>Thực tế:</strong> Gắn với đời sống</li></ul><h4>c) Dẫn chứng</h4><ul><li><strong>Đa dạng:</strong> Ví dụ, số liệu, trích dẫn</li><li><strong>Cụ thể:</strong> Rõ ràng, dễ hình dung</li><li><strong>Thuyết phục:</strong> Có sức thuyết phục cao</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex7-4-1",
+            "type": "mcq",
+            "question": "Khi viết về cách ứng xử với cha mẹ, nên nhấn mạnh điều gì?",
+            "options": [
+              "Quyền lợi của con cái",
+              "Hiếu thảo, tôn trọng, chia sẻ",
+              "Sự khác biệt thế hệ",
+              "Không cần nhấn mạnh gì"
+            ],
+            "correct": 1,
+            "explanation": "Cần nhấn mạnh đạo lý hiếu thảo, sự tôn trọng và chia sẻ với cha mẹ, đây là giá trị truyền thống quan trọng."
+          },
+          {
+            "id": "ex7-4-2",
+            "type": "mcq",
+            "question": "Phần mở bài của văn nghị luận cần làm gì?",
+            "options": [
+              "Kết luận vấn đề",
+              "Giới thiệu vấn đề và nêu luận điểm",
+              "Chỉ kể chuyện",
+              "Không cần mở bài"
+            ],
+            "correct": 1,
+            "explanation": "Mở bài cần giới thiệu vấn đề, đặt vấn đề và nêu rõ luận điểm của người viết."
+          },
+          {
+            "id": "ex7-4-3",
+            "type": "mcq",
+            "question": "Thách thức lớn nhất của tuổi trẻ hiện nay là gì?",
+            "options": [
+              "Không có thách thức",
+              "Lạm dụng công nghệ, áp lực học tập, định hướng nghề nghiệp",
+              "Chỉ có áp lực học tập",
+              "Chỉ có vấn đề công nghệ"
+            ],
+            "correct": 1,
+            "explanation": "Tuổi trẻ hiện nay đối mặt với nhiều thách thức: lạm dụng mạng xã hội, áp lực học tập và khó khăn trong định hướng nghề nghiệp."
+          },
+          {
+            "id": "ex7-4-4",
+            "type": "mcq",
+            "question": "Dẫn chứng trong bài văn nghị luận cần có đặc điểm gì?",
+            "options": [
+              "Mơ hồ, chung chung",
+              "Đa dạng, cụ thể, thuyết phục",
+              "Chỉ cần một ví dụ",
+              "Không cần dẫn chứng"
+            ],
+            "correct": 1,
+            "explanation": "Dẫn chứng cần đa dạng (ví dụ, số liệu, trích dẫn), cụ thể và có sức thuyết phục cao."
+          },
+          {
+            "id": "ex7-4-5",
+            "type": "mcq",
+            "question": "Cách ứng xử với bạn bè cần dựa trên nguyên tắc nào?",
+            "options": [
+              "Lợi ích cá nhân",
+              "Chân thành, tôn trọng, hỗ trợ lẫn nhau",
+              "Cạnh tranh",
+              "Xa cách"
+            ],
+            "correct": 1,
+            "explanation": "Cách ứng xử với bạn bè cần dựa trên sự chân thành, tôn trọng và hỗ trợ lẫn nhau."
+          },
+          {
+            "id": "ex7-4-6",
+            "type": "mcq",
+            "question": "Phần thân bài nên bao gồm mấy luận điểm chính?",
+            "options": [
+              "Không cần luận điểm",
+              "2-3 luận điểm: tầm quan trọng, thực trạng, giải pháp",
+              "Chỉ 1 luận điểm",
+              "Càng nhiều càng tốt"
+            ],
+            "correct": 1,
+            "explanation": "Thân bài nên có 2-3 luận điểm chính: tầm quan trọng của vấn đề, thực trạng hiện nay và giải pháp đề xuất."
+          },
+          {
+            "id": "ex7-4-7",
+            "type": "mcq",
+            "question": "Kết bài của văn nghị luận cần làm gì?",
+            "options": [
+              "Đặt vấn đề mới",
+              "Khẳng định quan điểm, kêu gọi hành động",
+              "Chỉ nói 'Hết'",
+              "Không cần kết bài"
+            ],
+            "correct": 1,
+            "explanation": "Kết bài cần khẳng định lại quan điểm, kêu gọi hành động và có thể mở rộng về triển vọng tương lai."
+          },
+          {
+            "id": "ex7-4-8",
+            "type": "mcq",
+            "question": "Ngôn ngữ trong văn nghị luận cần có đặc điểm gì?",
+            "options": [
+              "Hoa mỹ, phức tạp",
+              "Rõ ràng, thuyết phục, chân thành",
+              "Khô khan, máy móc",
+              "Tùy hứng"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ cần rõ ràng, dễ hiểu, có tính thuyết phục và chân thành, xuất phát từ trải nghiệm thực."
+          },
+          {
+            "id": "ex7-4-9",
+            "type": "mcq",
+            "question": "Vai trò của ngôn ngữ trong tác phẩm văn học là gì?",
+            "options": [
+              "Phương tiện thể hiện tư tưởng, cảm xúc của tác giả",
+              "Chỉ là công cụ giao tiếp",
+              "Không quan trọng",
+              "Yếu tố phụ"
+            ],
+            "correct": 0,
+            "explanation": "Ngôn ngữ là phương tiện quan trọng để thể hiện nội dung, tư tưởng và cảm xúc trong tác phẩm."
+          },
+          {
+            "id": "ex7-4-10",
+            "type": "mcq",
+            "question": "Khi viết bài văn nghị luận, cần đảm bảo yêu cầu nào?",
+            "options": [
+              "Lí lẽ rõ ràng, dẫn chứng thuyết phục, lập luận chặt chẽ",
+              "Chỉ nêu cảm xúc cá nhân",
+              "Viết dài để thuyết phục",
+              "Sử dụng nhiều từ ngữ hoa mỹ"
+            ],
+            "correct": 0,
+            "explanation": "Bài văn nghị luận cần lí lẽ rõ ràng, dẫn chứng thuyết phục và lập luận chặt chẽ."
+          }
+        ]
+      }
+    }
+  ]
+}

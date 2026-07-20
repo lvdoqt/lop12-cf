@@ -1,0 +1,254 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-07-mang-dien-ha-ap-dung-trong-sinh-hoat",
+      "name": "Bài 7. Mạng điện hạ áp dùng trong sinh hoạt",
+      "slug": "bai-7-mang-dien-ha-ap-dung-trong-sinh-hoat",
+      "chapter": "Chương 1. Công nghệ Điện - Điện tử",
+      "chapter_id": "CN12",
+      "lesson_id": 7,
+      "description": "Trình bày khái niệm mạng điện hạ áp; cấu tạo, các phần tử; dây dẫn, thiết bị bảo vệ; sơ đồ mạng điện sinh hoạt; tiêu chuẩn an toàn.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1541888946425-d81bb275e9e5?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "cn12-7-1",
+          "name": "Khái niệm mạng hạ áp",
+          "slug": "khai-niem-mang-ha-ap",
+          "difficulty": "easy"
+        },
+        {
+          "id": "cn12-7-2",
+          "name": "Cấu tạo phần tử mạng hạ áp",
+          "slug": "cau-tao-phan-tu-mang-ha-ap",
+          "difficulty": "medium"
+        },
+        {
+          "id": "cn12-7-3",
+          "name": "An toàn điện sinh hoạt",
+          "slug": "an-toan-dien-sinh-hoat",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Mạng điện hạ áp dùng trong sinh hoạt",
+          "sections": [
+            {
+              "heading": "1. Khái niệm mạng điện hạ áp",
+              "content": "<p><strong>Mạng điện hạ áp</strong> là mạng điện có điện áp danh định dưới 1 kV, thường là 220 V (một pha) hoặc 380/220 V (ba pha), cấp điện cho các hộ gia đình và các tòa nhà dân dụng.</p><p><strong>Đặc điểm:</strong></p><ul><li>Điện áp thấp, an toàn hơn so với trung thế và cao thế</li><li>Kết cấu đơn giản, dễ lắp đặt và bảo trì</li><li>Phân bố rộng khắp đến từng hộ tiêu thụ</li><li>Yêu cầu an toàn điện rất cao</li></ul>"
+            },
+            {
+              "heading": "2. Cấu tạo mạng điện hạ áp trong sinh hoạt",
+              "content": "<p><strong>Các phần tử chính:</strong></p><ul><li><strong>Trạm biến áp hạ áp:</strong> Đặt trên cột hoặc trong trạm kín, hạ từ 22 kV hoặc 35 kV xuống 0,4 kV</li><li><strong>Đường dây hạ áp:</strong> Dây cáp hoặc dây bọc, đi nổi trên cột hoặc đi ngầm</li><li><strong>Tủ điện phân phối:</strong> Đặt ở khu vực trung tâm, có aptomat tổng, aptomat nhánh</li><li><strong>Đường dây vào nhà:</strong> Từ cột điện vào đồng hồ, aptomat tổng của nhà</li><li><strong>Bảng điện trong nhà:</strong> aptomat nhánh, công tắc, ổ cắm</li></ul>"
+            },
+            {
+              "heading": "3. Dây dẫn điện",
+              "content": "<p><strong>Phân loại dây dẫn:</strong></p><ul><li>Dây trần: dùng cho đường dây trên không</li><li>Dây bọc PVC: dùng trong nhà, có vỏ cách điện PVC</li><li>Dây cáp: nhiều lõi, bọc nhiều lớp, dùng cho hệ thống ngầm hoặc đi trong tường</li></ul><p><strong>Tiết diện dây dẫn:</strong></p><ul><li>Chọn theo dòng điện phụ tải</li><li>Dây nhánh tối thiểu 1,5 mm²</li><li>Dây chính tối thiểu 2,5 mm²</li><li>Dây cấp nguồn cho bếp từ, bình nóng lạnh tối thiểu 4-6 mm²</li></ul>"
+            },
+            {
+              "heading": "4. Thiết bị bảo vệ và đóng cắt",
+              "content": "<p><strong>Aptomat (CB):</strong></p><ul><li>Aptomat tổng: ngắt toàn bộ mạng điện trong nhà, dòng định mức 40-63 A</li><li>Aptomat nhánh: bảo vệ từng khu vực, dòng định mức 10-20 A</li><li>Aptomat chống giật (ELCB/RCCB): phát hiện dòng rò, tự động ngắt khi có rò điện ≥ 30 mA</li></ul><p><strong>Cầu dao, cầu chì:</strong></p><ul><li>Cầu dao: đóng cắt bằng tay, thường kết hợp trong bảng điện</li><li>Cầu chì: bảo vệ ngắn mạch, dùng ở đường dây chính hoặc nhánh</li></ul>"
+            },
+            {
+              "heading": "5. Sơ đồ mạng điện sinh hoạt",
+              "content": "<p><strong>Sơ đồ nguyên lí:</strong></p><p>Đường dây hạ áp 0,4 kV → Công tơ điện → Aptomat tổng → Bảng điện chính → Aptomat nhánh → Đường dây nhánh → Các thiết bị tiêu thụ (đèn, quạt, ổ cắm, máy lạnh...).</p><p><strong>Sơ đồ bảng điện:</strong></p><ul><li><strong>Bảng điện chính:</strong> aptomat tổng, công tơ, các aptomat nhánh chính</li><li><strong>Bảng điện nhánh:</strong> aptomat nhánh phụ, công tắc, ổ cắm điện</li></ul><p><strong>Phân phối tải:</strong> Mỗi aptomat nhánh có thể cấp cho một phòng hoặc một nhóm thiết bị (chiếu sáng, ổ cắm, máy lạnh, bếp).</p>"
+            },
+            {
+              "heading": "6. Tiêu chuẩn an toàn điện trong sinh hoạt",
+              "content": "<p><strong>Các tiêu chuẩn:</strong></p><ul><li><strong>Quy chuẩn QCVN 12:2014/BXD</strong> về hệ thống điện trong nhà ở</li><li><strong>TCVN 9206:2012</strong> thiết bị điện trong nhà ở</li></ul><p><strong>Nguyên tắc an toàn:</strong></p><ul><li>Dây dẫn phải được cách điện tốt</li><li>Không để nước xâm nhập vào bảng điện, ổ cắm</li><li>Lắp aptomat chống giật cho nhà có nhiều thiết bị</li><li>Kiểm tra thiết bị điện định kì, thay thế khi hư hỏng</li><li>Ngắt aptomat khi sửa chữa hoặc khi không có người ở dài ngày</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Mạng điện hạ áp có điện áp danh định:",
+            "options": [
+              "Trên 110 kV",
+              "Từ 1 kV đến 35 kV",
+              "Dưới 1 kV",
+              "Bằng 110 kV"
+            ],
+            "correct": 2,
+            "explanation": "Mạng hạ áp có điện áp dưới 1 kV (thường là 220 V hoặc 380/220 V)."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Dây dẫn điện trong nhà thường có vỏ bọc bằng:",
+            "options": [
+              "Cao su tự nhiên",
+              "PVC (polyvinyl chloride)",
+              "Kim loại",
+              "Giấy cách điện"
+            ],
+            "correct": 1,
+            "explanation": "Dây điện trong nhà thường bọc PVC cách điện."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Aptomat chống giật (RCCB) có chức năng:",
+            "options": [
+              "Bảo vệ quá tải",
+              "Bảo vệ ngắn mạch",
+              "Phát hiện dòng rò và tự động ngắt",
+              "Đo điện năng tiêu thụ"
+            ],
+            "correct": 2,
+            "explanation": "RCCB (ELCB) phát hiện dòng rò ≥ 30 mA và ngắt mạch để chống giật."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Tiết diện dây dẫn tối thiểu cho mạch nhánh trong nhà là:",
+            "options": [
+              "0,5 mm²",
+              "1,5 mm²",
+              "6 mm²",
+              "10 mm²"
+            ],
+            "correct": 1,
+            "explanation": "Dây nhánh tối thiểu 1,5 mm² theo tiêu chuẩn."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Thiết bị nào dùng để đo điện năng tiêu thụ của hộ gia đình?",
+            "options": [
+              "Ampe kế",
+              "Vôn kế",
+              "Công tơ điện",
+              "Aptomat"
+            ],
+            "correct": 2,
+            "explanation": "Công tơ điện (điện kế) đo lượng điện năng tiêu thụ tính bằng kWh."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Bảng điện trong nhà không bao gồm thành phần nào sau đây?",
+            "options": [
+              "Aptomat nhánh",
+              "Công tắc",
+              "Ổ cắm",
+              "Máy biến áp"
+            ],
+            "correct": 3,
+            "explanation": "Máy biến áp không phải là thành phần của bảng điện trong nhà."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Khi sửa chữa điện trong nhà, cần thực hiện biện pháp an toàn nào trước tiên?",
+            "options": [
+              "Đeo găng tay cao su",
+              "Dùng bút thử điện kiểm tra",
+              "Ngắt aptomat tổng",
+              "Gọi thợ điện"
+            ],
+            "correct": 2,
+            "explanation": "Phải ngắt aptomat tổng để cắt toàn bộ nguồn điện trước khi sửa chữa."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Dòng điện rò tối đa cho phép để aptomat chống giật ngắt mạch là:",
+            "options": [
+              "5 mA",
+              "10 mA",
+              "30 mA",
+              "100 mA"
+            ],
+            "correct": 2,
+            "explanation": "RCCB tiêu chuẩn ngắt khi dòng rò đạt 30 mA để bảo vệ con người."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Đường dây cấp nguồn cho bình nóng lạnh nên có tiết diện tối thiểu:",
+            "options": [
+              "1,5 mm²",
+              "2,5 mm²",
+              "4-6 mm²",
+              "10 mm²"
+            ],
+            "correct": 2,
+            "explanation": "Thiết bị công suất lớn như bình nóng lạnh, bếp từ cần dây tối thiểu 4-6 mm²."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Mạng điện trong nhà thường sử dụng điện áp:",
+            "options": [
+              "12 V",
+              "110 V",
+              "220 V (một pha)",
+              "380 V (ba pha công nghiệp)"
+            ],
+            "correct": 2,
+            "explanation": "Hộ gia đình Việt Nam dùng điện áp 220 V một pha."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các thiết bị bảo vệ trong mạng điện sinh hoạt:",
+            "options": [
+              "Aptomat tổng",
+              "Aptomat chống giật (RCCB)",
+              "Công tơ điện",
+              "Cầu chì"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Aptomat tổng, RCCB, cầu chì là thiết bị bảo vệ; công tơ là đo lường."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Đặc điểm của mạng điện hạ áp dùng trong sinh hoạt:",
+            "options": [
+              "Điện áp dưới 1 kV",
+              "Kết cấu đơn giản, dễ lắp đặt",
+              "Chỉ dùng cho nhà máy công nghiệp",
+              "Yêu cầu an toàn điện cao"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Mạng hạ áp sinh hoạt có điện áp thấp, đơn giản, yêu cầu an toàn cao."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Nguyên tắc an toàn khi sử dụng điện trong gia đình:",
+            "options": [
+              "Không dùng dây điện trần trong nhà",
+              "Dùng aptomat chống giật",
+              "Tự ý sửa điện khi chưa ngắt nguồn",
+              "Kiểm tra thiết bị điện định kì"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "An toàn gồm: dây bọc, aptomat chống giật, kiểm tra định kì."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Các thành phần trong sơ đồ mạng điện sinh hoạt từ ngoài vào nhà:",
+            "options": [
+              "Đường dây hạ áp 0,4 kV",
+              "Công tơ điện",
+              "Trạm biến áp 110 kV",
+              "Aptomat tổng"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Sơ đồ: đường hạ áp → công tơ → aptomat tổng; trạm 110 kV là lưới truyền tải."
+          }
+        ]
+      }
+    }
+  ]
+}

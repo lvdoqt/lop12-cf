@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-3-3-may-y-nghi-ve-tho",
-      "name": "Mấy ý nghĩ về thơ",
+      "name": "Mấy ý nghĩ về thơ (Trích – Nguyễn Đình Thi)",
       "slug": "may-y-nghi-ve-tho",
       "chapter": "Lập luận trong văn bản nghị luận",
       "chapter_id": "V12-3",
       "lesson_id": 3,
       "author": "Nguyễn Đình Thi",
-      "description": "Tìm hiểu về tầm quan trọng của thơ ca qua bài viết nghị luận của Nguyễn Đình Thi. Phân tích các luận điểm về vai trò, ý nghĩa của thơ trong đời sống con người.",
+      "description": "Phân tích bài viết \"Mấy ý nghĩ về thơ\" của Nguyễn Đình Thi, tìm hiểu về thơ ca và sáng tạo văn học.",
       "duration_minutes": 50,
       "difficulty_level": "medium",
       "is_published": true,
@@ -31,7 +31,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Mấy ý nghĩ về thơ - Nguyễn Đình Thi",
+          "title": "Mấy ý nghĩ về thơ (Trích – Nguyễn Đình Thi)",
           "sections": [
             {
               "heading": "1. Tác giả Nguyễn Đình Thi",
@@ -59,143 +59,140 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex3-3-1",
-              "type": "mcq",
-              "question": "Theo Nguyễn Đình Thi, thơ là gì?",
-              "options": [
-                "Chỉ là những câu có vần",
-                "Thể loại văn học sử dụng ngôn ngữ có âm nhạc, hình ảnh, cảm xúc cao để biểu đạt tâm thế",
-                "Chỉ là lời nói đẹp",
-                "Chỉ để giải trí"
-              ],
-              "correct": 1,
-              "explanation": "Thơ là thể loại văn học sử dụng ngôn ngữ có tính chất âm nhạc, hình ảnh, cảm xúc cao nhất để biểu đạt tâm thế của con người."
-            },
-            {
-              "id": "ex3-3-2",
-              "type": "mcq",
-              "question": "Thơ khác với tiểu thuyết ở điểm nào?",
-              "options": [
-                "Thơ dài hơn",
-                "Thơ không kể chuyện chi tiết, chỉ nắm bắt khoảnh khắc, cảm giác",
-                "Thơ dễ viết hơn",
-                "Không có khác biệt"
-              ],
-              "correct": 1,
-              "explanation": "Thơ không kể chuyện chi tiết như tiểu thuyết, mà chỉ nắm bắt những khoảnh khắc, cảm giác, tâm trạng."
-            },
-            {
-              "id": "ex3-3-3",
-              "type": "mcq",
-              "question": "Chức năng nào KHÔNG phải của thơ?",
-              "options": [
-                "Biểu hiện cảm xúc",
-                "Giáo dục nhân cách",
-                "Tính toán số học",
-                "Kết nối con người"
-              ],
-              "correct": 2,
-              "explanation": "Thơ có các chức năng: biểu hiện cảm xúc, giáo dục nhân cách, thẩm mỹ, kết nối con người. Tính toán số học không phải chức năng của thơ."
-            },
-            {
-              "id": "ex3-3-4",
-              "type": "mcq",
-              "question": "Theo tác giả, thơ là ngôn ngữ của cái gì?",
-              "options": [
-                "Ngôn ngữ của khoa học",
-                "Ngôn ngữ của tâm hồn",
-                "Ngôn ngữ của kinh tế",
-                "Ngôn ngữ của chính trị"
-              ],
-              "correct": 1,
-              "explanation": "Tác giả khẳng định thơ là ngôn ngữ của tâm hồn - cách để diễn đạt những cảm xúc mà lời thường không nắm được."
-            },
-            {
-              "id": "ex3-3-5",
-              "type": "mcq",
-              "question": "Thơ có sức mạnh gì?",
-              "options": [
-                "Không có sức mạnh",
-                "Có sức mạnh thay đổi con người, làm con người tốt đẹp hơn",
-                "Chỉ để đọc cho vui",
-                "Chỉ để thi đấu"
-              ],
-              "correct": 1,
-              "explanation": "Thơ có sức mạnh thay đổi con người - một bài thơ hay có thể thay đổi cách nhìn thế giới, làm con người tốt đẹp hơn."
-            },
-            {
-              "id": "ex3-3-6",
-              "type": "mcq",
-              "question": "Thơ là tài sản của ai?",
-              "options": [
-                "Chỉ của nhà thơ",
-                "Của toàn nhân loại, vượt qua ranh giới quốc gia và thời gian",
-                "Chỉ của một quốc gia",
-                "Chỉ của thế hệ hiện tại"
-              ],
-              "correct": 1,
-              "explanation": "Thơ là tài sản chung của nhân loại - những bài thơ hay vượt qua ranh giới quốc gia, thời gian, là di sản chung."
-            },
-            {
-              "id": "ex3-3-7",
-              "type": "mcq",
-              "question": "Phương pháp lập luận nào tác giả sử dụng?",
-              "options": [
-                "Chỉ dùng cảm xúc",
-                "Từ khái niệm, chức năng, ví dụ, so sánh, cảm nhận cá nhân",
-                "Chỉ kể chuyện",
-                "Không có phương pháp"
-              ],
-              "correct": 1,
-              "explanation": "Tác giả sử dụng: lập luận từ khái niệm, từ chức năng, từ ví dụ cụ thể, so sánh với thể loại khác, và cảm nhận cá nhân."
-            },
-            {
-              "id": "ex3-3-8",
-              "type": "mcq",
-              "question": "Ý nghĩa của bài viết với độc giả là gì?",
-              "options": [
-                "Không có ý nghĩa",
-                "Giúp nhận thức lại tầm quan trọng của thơ, khuyến khích đọc thơ",
-                "Chỉ để thi cử",
-                "Chỉ cho nhà thơ"
-              ],
-              "correct": 1,
-              "explanation": "Bài viết giúp độc giả nhận thức lại tầm quan trọng, vẻ đẹp của thơ ca và khuyến khích đọc, thưởng thức thơ."
-            },
-            {
-              "id": "ex3-1",
-              "question": "Hãy trình bày các chức năng của thơ theo quan điểm của Nguyễn Đình Thi.",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Thơ có các chức năng: biểu hiện cảm xúc, giáo dục nhân cách, thẩm mỹ, kết nối con người. Mỗi chức năng nên được giải thích chi tiết và có ví dụ."
-            },
-            {
-              "id": "ex3-2",
-              "question": "Thơ khác với các thể loại văn học khác ở những điểm nào? Hãy nêu và giải thích.",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Thơ khác tiểu thuyết ở tính súc tích; khác báo đạo ở tính cảm xúc; khác với lời nói thường ở cấu trúc, nhịp điệu. Nên có ví dụ cụ thể."
-            },
-            {
-              "id": "ex3-3",
-              "question": "Bạn có đồng ý rằng thơ có sức mạnh thay đổi con người không? Hãy lập luận.",
-              "type": "essay",
-              "difficulty": "hard",
-              "answer_guide": "Học sinh nên lập luận rõ ràng, có dẫn chứng từ những bài thơ cụ thể hoặc từ kinh nghiệm cá nhân. Có thể đồng ý hoặc có quan điểm khác miễn là lập luận thuyết phục."
-            },
-            {
-              "id": "ex3-4",
-              "question": "Hãy chọn một bài thơ bạn yêu thích và phân tích nó dựa trên các luận điểm của tác giả.",
-              "type": "essay",
-              "difficulty": "hard",
-              "answer_guide": "Học sinh chọn một bài thơ cụ thể và phân tích nó từ các góc độ: biểu hiện cảm xúc, giá trị giáo dục, vẻ đẹp thẩm mỹ, khả năng kết nối. Nên có dẫn dắt chi tiết từ bài thơ."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex3-3-1",
+            "type": "mcq",
+            "question": "Theo Nguyễn Đình Thi, thơ là gì?",
+            "options": [
+              "Chỉ là những câu có vần",
+              "Thể loại văn học sử dụng ngôn ngữ có âm nhạc, hình ảnh, cảm xúc cao để biểu đạt tâm thế",
+              "Chỉ là lời nói đẹp",
+              "Chỉ để giải trí"
+            ],
+            "correct": 1,
+            "explanation": "Thơ là thể loại văn học sử dụng ngôn ngữ có tính chất âm nhạc, hình ảnh, cảm xúc cao nhất để biểu đạt tâm thế của con người."
+          },
+          {
+            "id": "ex3-3-2",
+            "type": "mcq",
+            "question": "Thơ khác với tiểu thuyết ở điểm nào?",
+            "options": [
+              "Thơ dài hơn",
+              "Thơ không kể chuyện chi tiết, chỉ nắm bắt khoảnh khắc, cảm giác",
+              "Thơ dễ viết hơn",
+              "Không có khác biệt"
+            ],
+            "correct": 1,
+            "explanation": "Thơ không kể chuyện chi tiết như tiểu thuyết, mà chỉ nắm bắt những khoảnh khắc, cảm giác, tâm trạng."
+          },
+          {
+            "id": "ex3-3-3",
+            "type": "mcq",
+            "question": "Chức năng nào KHÔNG phải của thơ?",
+            "options": [
+              "Biểu hiện cảm xúc",
+              "Giáo dục nhân cách",
+              "Tính toán số học",
+              "Kết nối con người"
+            ],
+            "correct": 2,
+            "explanation": "Thơ có các chức năng: biểu hiện cảm xúc, giáo dục nhân cách, thẩm mỹ, kết nối con người. Tính toán số học không phải chức năng của thơ."
+          },
+          {
+            "id": "ex3-3-4",
+            "type": "mcq",
+            "question": "Theo tác giả, thơ là ngôn ngữ của cái gì?",
+            "options": [
+              "Ngôn ngữ của khoa học",
+              "Ngôn ngữ của tâm hồn",
+              "Ngôn ngữ của kinh tế",
+              "Ngôn ngữ của chính trị"
+            ],
+            "correct": 1,
+            "explanation": "Tác giả khẳng định thơ là ngôn ngữ của tâm hồn - cách để diễn đạt những cảm xúc mà lời thường không nắm được."
+          },
+          {
+            "id": "ex3-3-5",
+            "type": "mcq",
+            "question": "Thơ có sức mạnh gì?",
+            "options": [
+              "Không có sức mạnh",
+              "Có sức mạnh thay đổi con người, làm con người tốt đẹp hơn",
+              "Chỉ để đọc cho vui",
+              "Chỉ để thi đấu"
+            ],
+            "correct": 1,
+            "explanation": "Thơ có sức mạnh thay đổi con người - một bài thơ hay có thể thay đổi cách nhìn thế giới, làm con người tốt đẹp hơn."
+          },
+          {
+            "id": "ex3-3-6",
+            "type": "mcq",
+            "question": "Thơ là tài sản của ai?",
+            "options": [
+              "Chỉ của nhà thơ",
+              "Của toàn nhân loại, vượt qua ranh giới quốc gia và thời gian",
+              "Chỉ của một quốc gia",
+              "Chỉ của thế hệ hiện tại"
+            ],
+            "correct": 1,
+            "explanation": "Thơ là tài sản chung của nhân loại - những bài thơ hay vượt qua ranh giới quốc gia, thời gian, là di sản chung."
+          },
+          {
+            "id": "ex3-3-7",
+            "type": "mcq",
+            "question": "Phương pháp lập luận nào tác giả sử dụng?",
+            "options": [
+              "Chỉ dùng cảm xúc",
+              "Từ khái niệm, chức năng, ví dụ, so sánh, cảm nhận cá nhân",
+              "Chỉ kể chuyện",
+              "Không có phương pháp"
+            ],
+            "correct": 1,
+            "explanation": "Tác giả sử dụng: lập luận từ khái niệm, từ chức năng, từ ví dụ cụ thể, so sánh với thể loại khác, và cảm nhận cá nhân."
+          },
+          {
+            "id": "ex3-3-8",
+            "type": "mcq",
+            "question": "Ý nghĩa của bài viết với độc giả là gì?",
+            "options": [
+              "Không có ý nghĩa",
+              "Giúp nhận thức lại tầm quan trọng của thơ, khuyến khích đọc thơ",
+              "Chỉ để thi cử",
+              "Chỉ cho nhà thơ"
+            ],
+            "correct": 1,
+            "explanation": "Bài viết giúp độc giả nhận thức lại tầm quan trọng, vẻ đẹp của thơ ca và khuyến khích đọc, thưởng thức thơ."
+          },
+          {
+            "id": "ex3-1",
+            "question": "Hãy trình bày các chức năng của thơ theo quan điểm của Nguyễn Đình Thi.",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Thơ có các chức năng: biểu hiện cảm xúc, giáo dục nhân cách, thẩm mỹ, kết nối con người. Mỗi chức năng nên được giải thích chi tiết và có ví dụ."
+          },
+          {
+            "id": "ex3-2",
+            "question": "Thơ khác với các thể loại văn học khác ở những điểm nào? Hãy nêu và giải thích.",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Thơ khác tiểu thuyết ở tính súc tích; khác báo đạo ở tính cảm xúc; khác với lời nói thường ở cấu trúc, nhịp điệu. Nên có ví dụ cụ thể."
+          },
+          {
+            "id": "ex3-3",
+            "question": "Bạn có đồng ý rằng thơ có sức mạnh thay đổi con người không? Hãy lập luận.",
+            "type": "essay",
+            "difficulty": "hard",
+            "answer_guide": "Học sinh nên lập luận rõ ràng, có dẫn chứng từ những bài thơ cụ thể hoặc từ kinh nghiệm cá nhân. Có thể đồng ý hoặc có quan điểm khác miễn là lập luận thuyết phục."
+          },
+          {
+            "id": "ex3-4",
+            "question": "Hãy chọn một bài thơ bạn yêu thích và phân tích nó dựa trên các luận điểm của tác giả.",
+            "type": "essay",
+            "difficulty": "hard",
+            "answer_guide": "Học sinh chọn một bài thơ cụ thể và phân tích nó từ các góc độ: biểu hiện cảm xúc, giá trị giáo dục, vẻ đẹp thẩm mỹ, khả năng kết nối. Nên có dẫn dắt chi tiết từ bài thơ."
+          }
+        ]
       }
     }
   ]

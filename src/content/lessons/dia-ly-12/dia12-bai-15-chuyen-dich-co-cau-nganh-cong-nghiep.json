@@ -16,14 +16,27 @@
       "content": {
         "theory": {
           "title": "Chuyển dịch cơ cấu ngành công nghiệp",
-          "summary": "Công nghiệp chuyển dịch từ dựa vào nguyên liệu thô sang chế biến sâu, công nghiệp công nghệ cao; điều này ảnh hưởng đến cơ cấu lao động, phân bố công nghiệp và yêu cầu về hạ tầng." ,
+          "summary": "Chuyển dịch cơ cấu ngành công nghiệp là sự thay đổi tỉ trọng giữa các ngành theo hướng giảm dần tỉ trọng khai thác, tăng nhanh tỉ trọng chế biến, chế tạo và công nghiệp công nghệ cao. Quá trình này gắn với phân bố công nghiệp ngày càng tập trung ở các vùng kinh tế trọng điểm và ven cảng biển.",
           "sections": [
-            { "heading": "Các loại công nghiệp", "content": "Công nghiệp khai thác, sản xuất, chế biến, công nghiệp công nghệ cao và công nghiệp sử dụng nhiều lao động." },
-            { "heading": "Yếu tố thúc đẩy", "content": "Đầu tư, chính sách, năng lực công nghệ, nguồn nguyên liệu và thị trường." }
+            {
+              "heading": "Khái niệm và nội dung chuyển dịch",
+              "content": "Chuyển dịch cơ cấu ngành công nghiệp diễn ra theo ba nội dung: chuyển dịch giữa các ngành (tăng tỉ trọng công nghiệp chế biến, chế tạo, giảm tỉ trọng khai thác khoáng sản); chuyển dịch nội bộ từng ngành (sản xuất sạch hơn, giá trị gia tăng cao hơn); và chuyển dịch theo lãnh thổ (tập trung vào vùng kinh tế trọng điểm). Công nghiệp nặng và nhẹ đều phát triển, song chế biến thực phẩm, dệt may, điện tử và cơ khí chế tạo giữ vai trò chủ đạo."
+            },
+            {
+              "heading": "Sự phát triển công nghiệp chế biến và công nghệ cao",
+              "content": "Công nghiệp chế biến (chế biến nông - lâm - thủy sản, thực phẩm, đồ uống) phát triển mạnh nhờ nguồn nguyên liệu trong nước và nhu cầu tiêu dùng, xuất khẩu. Cùng với đó, công nghiệp công nghệ cao (điện tử, tin học, viễn thông, sinh học) đang được ưu tiên phát triển tại các khu công nghệ cao ở Hà Nội, TP. Hồ Chí Minh và Đà Nẵng, góp phần nâng cao hàm lượng tri thức của nền kinh tế."
+            },
+            {
+              "heading": "Các nhân tố thúc đẩy chuyển dịch",
+              "content": "Chuyển dịch cơ cấu công nghiệp chịu tác động bởi: tài nguyên và nguyên liệu; nguồn lao động (kỹ năng, chi phí); thị trường tiêu thụ và xuất khẩu; cơ sở hạ tầng (giao thông, điện, cảng); và đặc biệt là đường lối, chính sách đầu tư, thu hút FDI và hội nhập quốc tế. Khoa học - công nghệ và đổi mới sáng tạo là động lực then chốt."
+            },
+            {
+              "heading": "Phân bố và hướng phát triển công nghiệp",
+              "content": "Công nghiệp nước ta phân bố không đều, tập trung chủ yếu ở Đông Nam Bộ, Đồng bằng sông Hồng và Duyên hải Nam Trung Bộ nhờ hạ tầng, cảng biển và nguồn lao động. Hướng phát triển là tiếp tục đẩy mạnh công nghiệp hóa, hiện đại hóa, xây dựng các ngành công nghiệp nền tảng, công nghiệp hỗ trợ, giảm ô nhiễm môi trường và bảo đảm phát triển bền vững gắn với liên kết vùng."
+            }
           ]
         },
-        "exercises": { "short_answers": [ { "q": "Nêu một xu hướng trong chuyển dịch ngành công nghiệp?", "a_hint": "Tăng chế biến sâu và công nghệ cao." } ] },
-        "quiz": [
+        "exercises": [
           { "id": 1, "type": "mcq", "question": "Ngành công nghiệp nào thường tăng khi nền kinh tế phát triển?", "options": ["Công nghiệp chế biến và công nghệ cao","Chỉ khai thác nguyên liệu thô","Không thay đổi","Giảm tất cả"], "correct": 0, "explanation": "Khi phát triển, chế biến sâu và công nghệ cao tăng lên." },
           { "id": 2, "type": "mcq", "question": "Yếu tố nào hỗ trợ phân bố công nghiệp?", "options": ["Cảng biển, nguồn nguyên liệu, điện và lao động","Chỉ màu cờ","Không có yếu tố","Số lượng trường học"], "correct": 0, "explanation": "Hạ tầng và nguồn lực quyết định phân bố công nghiệp." },
           { "id": 3, "type": "mcq", "question": "Một hệ quả của chuyển dịch công nghiệp là?", "options": ["Tạo thêm việc làm chất lượng cao","Giảm cơ hội việc làm","Không có tác động","Tăng đói nghèo"], "correct": 0, "explanation": "Chuyển dịch hướng tới công nghệ cao tạo việc làm chất lượng hơn." },
@@ -33,7 +46,15 @@
           { "id": 7, "type": "mcq", "question": "Phát triển công nghiệp cần lưu ý điều gì về môi trường?", "options": ["Kiểm soát ô nhiễm và xử lý chất thải","Tăng phát thải","Không cần kiểm soát","Phá hoại môi trường"], "correct": 0, "explanation": "Kiểm soát ô nhiễm là yếu tố bắt buộc trong công nghiệp hiện đại." },
           { "id": 8, "type": "mcq", "question": "Một chỉ tiêu đánh giá công nghiệp là?", "options": ["Tỷ trọng công nghiệp trong GDP","Số lượng công viên","Diện tích rừng","Số chợ địa phương"], "correct": 0, "explanation": "Tỷ trọng công nghiệp trong GDP thể hiện quy mô ngành." },
           { "id": 9, "type": "mcq", "question": "Phân bố công nghiệp thường tập trung ở đâu?", "options": ["Gần nguồn nguyên liệu, cảng biển và các đô thị lớn","Miền núi hẻo lánh","Giữa sa mạc","Không phân bố"], "correct": 0, "explanation": "Gần nguyên liệu và cảng biển giúp giảm chi phí vận chuyển." },
-          { "id": 10, "type": "mcq", "question": "Một yếu tố thúc đẩy chuyển dịch sang công nghệ cao là?", "options": ["Đầu tư vào R&D và đào tạo chất lượng cao","Giảm đầu tư","Tăng thuế R&D","Không làm gì"], "correct": 0, "explanation": "Đầu tư vào R&D thúc đẩy công nghiệp công nghệ cao." }
+          { "id": 10, "type": "mcq", "question": "Một yếu tố thúc đẩy chuyển dịch sang công nghệ cao là?", "options": ["Đầu tư vào R&D và đào tạo chất lượng cao","Giảm đầu tư","Tăng thuế R&D","Không làm gì"], "correct": 0, "explanation": "Đầu tư vào R&D thúc đẩy công nghiệp công nghệ cao." },
+          { "id": 11, "type": "msq", "question": "Xu hướng chuyển dịch cơ cấu ngành công nghiệp ở Việt Nam là?", "options": ["Tăng tỉ trọng công nghiệp chế biến", "Tăng tỉ trọng công nghiệp khai thác", "Phát triển công nghiệp công nghệ cao", "Giảm tỉ trọng công nghiệp chế tạo"], "correct": [0,2], "explanation": "Công nghiệp chế biến và công nghệ cao đang tăng tỉ trọng." },
+          { "id": 12, "type": "msq", "question": "Các ngành công nghiệp trọng điểm của Việt Nam gồm?", "options": ["Chế biến thực phẩm", "Dệt may", "Khai thác khoáng sản", "Công nghiệp vũ trụ"], "correct": [0,1,2], "explanation": "Chế biến thực phẩm, dệt may và khai thác khoáng sản là ngành trọng điểm." },
+          { "id": 13, "type": "msq", "question": "Yếu tố ảnh hưởng đến phân bố công nghiệp?", "options": ["Nguồn nguyên liệu", "Thị trường tiêu thụ", "Giao thông vận tải", "Màu sắc quốc kỳ"], "correct": [0,1,2], "explanation": "Nguyên liệu, thị trường và giao thông ảnh hưởng đến phân bố công nghiệp." },
+          { "id": 14, "type": "msq", "question": "Các khu vực tập trung công nghiệp lớn ở Việt Nam?", "options": ["Đông Nam Bộ", "Đồng bằng sông Hồng", "Tây Nguyên", "Duyên hải Nam Trung Bộ"], "correct": [0,1,3], "explanation": "Đông Nam Bộ, ĐB sông Hồng và Duyên hải Nam Trung Bộ là vùng công nghiệp lớn." },
+          { "id": 15, "type": "sa", "question": "Kể tên một ngành công nghiệp trọng điểm của Việt Nam?", "correct": "Chế biến thực phẩm, dệt may, điện tử", "explanation": "Chế biến thực phẩm, dệt may, điện tử là ngành công nghiệp trọng điểm." },
+          { "id": 16, "type": "sa", "question": "Yếu tố nào quyết định phân bố công nghiệp?", "correct": "Nguồn nguyên liệu, thị trường, lao động, giao thông", "explanation": "Phân bố công nghiệp phụ thuộc vào nguyên liệu, thị trường, lao động và giao thông." },
+          { "id": 17, "type": "sa", "question": "Xu hướng chuyển dịch cơ cấu công nghiệp hiện nay?", "correct": "Tăng tỉ trọng công nghiệp chế biến, chế tạo và công nghệ cao", "explanation": "Công nghiệp chế biến, chế tạo và công nghệ cao đang tăng tỉ trọng." },
+          { "id": 18, "type": "sa", "question": "Nêu một xu hướng trong chuyển dịch ngành công nghiệp?", "correct": "Tăng chế biến sâu và công nghệ cao." }
         ]
       }
     }

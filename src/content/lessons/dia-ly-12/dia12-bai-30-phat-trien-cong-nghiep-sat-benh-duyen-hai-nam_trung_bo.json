@@ -4,36 +4,269 @@
   "lessons": [
     {
       "id": "dia12_30",
-      "name": "Phát triển công nghiệp ven biển và liên kết vùng ở Nam Trung bộ",
+      "name": "Sử dụng hợp lí tự nhiên để phát triển kinh tế ở đồng bằng sông Cửu Long",
       "slug": "phat-trien-cong-nghiep-sat-ben-duyen-hai-nam_trung_bo",
       "chapter": "Địa lí các vùng kinh tế",
       "chapter_id": "dia12_part4",
       "lesson_id": 30,
-      "description": "Vai trò công nghiệp ven biển, các hình thức liên kết vùng và yêu cầu về quy hoạch, môi trường, lao động khi phát triển công nghiệp gần bờ ở Nam Trung bộ.",
+      "description": "Tìm hiểu điều kiện tự nhiên, thế mạnh, hạn chế và hướng sử dụng hợp lí tài nguyên để phát triển nông nghiệp, thủy sản, du lịch bền vững ở Đồng bằng sông Cửu Long.",
       "duration_minutes": 60,
       "difficulty_level": "trung bình",
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Công nghiệp ven biển: lợi thế và thách thức",
-          "summary": "Công nghiệp ven biển tận dụng cảng, nguồn lao động và nguyên liệu biển; tuy nhiên cần cân nhắc ô nhiễm, quản lý chất thải và an ninh môi trường biển khi lập kế hoạch phát triển.",
+          "title": "Sử dụng hợp lí tự nhiên để phát triển kinh tế ở Đồng bằng sông Cửu Long",
+          "summary": "Đồng bằng sông Cửu Long (40,9 nghìn km2, gồm TP Cần Thơ và 12 tỉnh) là vùng trọng điểm lương thực, thực phẩm lớn nhất cả nước. Vùng có thế mạnh về đất phù sa, mạng lưới sông ngòi, hệ sinh thái rừng và biển, nhưng chịu ảnh hưởng nặng nề của biến đổi khí hậu. Sử dụng hợp lí tự nhiên theo hướng bền vững là chìa khóa phát triển kinh tế – xã hội vùng.",
           "sections": [
-            { "heading": "Hình thức công nghiệp ven biển", "content": "Nhà máy chế biến thủy sản, đóng tàu nhỏ, logistics, lắp ráp xuất khẩu; liên kết với cảng và khu công nghiệp ven biển." },
-            { "heading": "Thách thức", "content": "Ô nhiễm biển, xung đột sử dụng đất, nhu cầu lao động kỹ thuật và điều kiện hạ tầng." }
+            {
+              "heading": "Vị trí địa lí và phạm vi lãnh thổ",
+              "content": "Vùng gồm TP Cần Thơ và 12 tỉnh: Long An, Vĩnh Long, Tiền Giang, Bến Tre, Hậu Giang, Sóc Trăng, Trà Vinh, Bạc Liêu, Đồng Tháp, An Giang, Kiên Giang, Cà Mau. Là vùng đất cực Nam, có biển bao quanh 3 phía, gần ngã tư đường hàng hải quốc tế, giáp Đông Nam Bộ và Cam-pu-chia. Năm 2021 dân số 17,4 triệu người, mật độ 426 người/km2, tỉ lệ tăng tự nhiên thấp nhất cả nước (0,55%), với các dân tộc Kinh, Khơ-me, Hoa, Chăm."
+            },
+            {
+              "heading": "Thế mạnh tự nhiên và hệ sinh thái",
+              "content": "Đây là đồng bằng châu thổ rộng largest nhất nước, địa hình thấp bằng phẳng với ba loại đất chính: đất phù sa sông (hơn 1 triệu ha dọc sông Tiền, sông Hậu) màu mỡ trồng lúa; đất phèn (hơn 1,6 triệu ha) cải tạo trồng lúa, cây ăn quả; đất mặn (gần 1 triệu ha) ven biển nuôi thủy sản. Khí hậu cận xích đạo, mạng lưới sông ngòi kênh rạch chằng chịt (sông Tiền, sông Hậu), rừng tràm và rừng ngập mặn, khoáng sản dầu khí, biển giàu hải sản với đảo Phú Quốc."
+            },
+            {
+              "heading": "Sản xuất lương thực và thực phẩm",
+              "content": "Lúa là cây chủ đạo, năm 2021 chiếm hơn 90% sản lượng gạo xuất khẩu cả nước, năng suất 62,4 tạ/ha cao nhất cả nước, trồng nhiều ở Kiên Giang, An Giang, Hậu Giang, Sóc Trăng, Đồng Tháp. Thủy sản là trọng điểm số 1 (trên 50% sản lượng cả nước, trên 70% nuôi trồng) với tôm, cá da trơn, cua. Cây ăn quả (sầu riêng, thanh long, xoài,...) đạt hơn 377 nghìn ha, chiếm trên 33% cả nước, phát triển theo hướng công nghệ cao."
+            },
+            {
+              "heading": "Phát triển du lịch",
+              "content": "Tài nguyên du lịch tự nhiên phong phú với sông nước, cù lao, rừng ngập mặn U Minh, rừng tràm Tràm Chim, các đảo Phú Quốc, Nam Du. Tài nguyên văn hóa gồm chợ nổi Cái Răng, Phụng Hiệp, đờn ca tài tử, lễ hội Vía Bà Chúa Xứ, Ok Om Bok. Loại hình đặc trưng là du lịch sinh thái, sông nước, biển đảo và văn hóa; trọng điểm Cần Thơ, Kiên Giang, Đồng Tháp, An Giang, Tiền Giang, Bến Tre với Phú Quốc là điểm đến hấp dẫn nhất."
+            },
+            {
+              "heading": "Thách thức và giải pháp sử dụng hợp lí",
+              "content": "Vùng chịu ảnh hưởng nặng nề nhất biến đổi khí hậu: mùa khô sâu sắc gây thiếu nước ngọt, nước biển dâng, xâm nhập mặn, sạt lở; nằm hạ lưu sông Mê Công nên phụ thuộc nguồn nước đầu nguồn. Hướng sử dụng hợp lí là quản lý hiệu quả đất và nước, hiện đại hóa thủy lợi, chủ động kiểm soát lũ và mặn, bảo vệ bờ biển và vùng ngập nước, ứng dụng công nghệ sinh học, nâng cao nhận thức và thích ứng biến đổi khí hậu."
+            }
           ]
         },
-        "exercises": { "case_study": [ { "q": "Đề xuất 3 biện pháp giảm ô nhiễm từ khu công nghiệp ven biển?", "a_hint": "Công nghệ xử lý nước thải, giám sát khí thải, vùng đệm sinh thái." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Một lợi thế của công nghiệp ven biển là?", "options": ["Gần cảng và dễ tiếp cận nguyên liệu","Xa nguồn nguyên liệu","Ít lao động","Không có lợi thế"], "correct": 0, "explanation": "Gần cảng giúp giảm chi phí vận chuyển và tiếp cận thị trường." },
-          { "id": 2, "type": "mcq", "question": "Một thách thức lớn khi phát triển công nghiệp ven biển là?", "options": ["Ô nhiễm môi trường biển","Tăng diện tích rừng","Giảm dân số","Không có thách thức"], "correct": 0, "explanation": "Ô nhiễm là thách thức khiến cần biện pháp quản lý môi trường." },
-          { "id": 3, "type": "mcq", "question": "Liên kết vùng trong công nghiệp ven biển bao gồm?", "options": ["Kết nối cảng - khu công nghiệp - hệ thống giao thông","Chỉ xây dựng riêng lẻ","Tránh kết nối","Không cần liên kết"], "correct": 0, "explanation": "Liên kết giúp tối ưu chuỗi cung ứng và logistics." },
-          { "id": 4, "type": "mcq", "question": "Một biện pháp giảm ô nhiễm là?", "options": ["Xây hệ thống xử lý nước thải theo tiêu chuẩn","Tăng xả thải ra biển","Không quản lý","Khai thác vật liệu san lấp"], "correct": 0, "explanation": "Xử lý nước thải là biện pháp cơ bản để giảm ô nhiễm." },
-          { "id": 5, "type": "mcq", "question": "Công nghiệp ven biển cần nhân lực với kỹ năng gì?", "options": ["Kỹ thuật vận hành và quản lý môi trường","Chỉ lao động phổ thông","Không cần kỹ năng","Chỉ quản lý"], "correct": 0, "explanation": "Kỹ năng kỹ thuật và quản lý môi trường là cần thiết." },
-          { "id": 6, "type": "mcq", "question": "Một lợi ích kinh tế là?", "options": ["Tăng xuất khẩu và hoạt động logistics","Làm giảm xuất khẩu","Tăng đói nghèo","Không thay đổi"], "correct": 0, "explanation": "Công nghiệp ven biển thường thúc đẩy xuất khẩu và logistics." },
-          { "id": 7, "type": "mcq", "question": "Vấn đề an ninh liên quan đến công nghiệp ven biển là?", "options": ["Bảo vệ tài sản quan trọng và an toàn hàng hải","Không liên quan","Tăng du lịch","Giảm an ninh"], "correct": 0, "explanation": "Cần bảo vệ cơ sở hạ tầng và đảm bảo an toàn hàng hải." },
-          { "id": 8, "type": "mcq", "question": "Quy hoạch công nghiệp ven biển cần tránh?", "options": ["Xây trên vùng ngập mặn quan trọng và rạn san hô","Xây trên vùng hoang vắng","Không cần tránh gì","Chỉ quan tâm lợi ích ngắn hạn"], "correct": 0, "explanation": "Tránh khu vực nhạy cảm sinh thái để giảm tác động môi trường." },
-          { "id": 9, "type": "mcq", "question": "Một chính sách hỗ trợ công nghiệp ven biển hiệu quả là?", "options": ["Đầu tư kết nối cảng và hỗ trợ đào tạo nghề","Không đầu tư","Cấm mọi hoạt động công nghiệp","Chỉ thuế cao"], "correct": 0, "explanation": "Đầu tư hạ tầng và đào tạo giúp phát triển bền vững." },
-          { "id": 10, "type": "mcq", "question": "Đo lường thành công công nghiệp ven biển có thể dùng chỉ tiêu?", "options": ["Tổng giá trị xuất khẩu và tỷ lệ việc làm khu vực ven biển","Số lượng tàu cá","Số du khách","Không có chỉ tiêu"], "correct": 0, "explanation": "Giá trị xuất khẩu và việc làm là chỉ tiêu thực tế để đánh giá hiệu quả." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Một lợi thế của công nghiệp ven biển là?",
+            "options": [
+              "Gần cảng và dễ tiếp cận nguyên liệu",
+              "Xa nguồn nguyên liệu",
+              "Ít lao động",
+              "Không có lợi thế"
+            ],
+            "correct": 0,
+            "explanation": "Gần cảng giúp giảm chi phí vận chuyển và tiếp cận thị trường."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Một thách thức lớn khi phát triển công nghiệp ven biển là?",
+            "options": [
+              "Ô nhiễm môi trường biển",
+              "Tăng diện tích rừng",
+              "Giảm dân số",
+              "Không có thách thức"
+            ],
+            "correct": 0,
+            "explanation": "Ô nhiễm là thách thức khiến cần biện pháp quản lý môi trường."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Liên kết vùng trong công nghiệp ven biển bao gồm?",
+            "options": [
+              "Kết nối cảng - khu công nghiệp - hệ thống giao thông",
+              "Chỉ xây dựng riêng lẻ",
+              "Tránh kết nối",
+              "Không cần liên kết"
+            ],
+            "correct": 0,
+            "explanation": "Liên kết giúp tối ưu chuỗi cung ứng và logistics."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Một biện pháp giảm ô nhiễm là?",
+            "options": [
+              "Xây hệ thống xử lý nước thải theo tiêu chuẩn",
+              "Tăng xả thải ra biển",
+              "Không quản lý",
+              "Khai thác vật liệu san lấp"
+            ],
+            "correct": 0,
+            "explanation": "Xử lý nước thải là biện pháp cơ bản để giảm ô nhiễm."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Công nghiệp ven biển cần nhân lực với kỹ năng gì?",
+            "options": [
+              "Kỹ thuật vận hành và quản lý môi trường",
+              "Chỉ lao động phổ thông",
+              "Không cần kỹ năng",
+              "Chỉ quản lý"
+            ],
+            "correct": 0,
+            "explanation": "Kỹ năng kỹ thuật và quản lý môi trường là cần thiết."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Một lợi ích kinh tế là?",
+            "options": [
+              "Tăng xuất khẩu và hoạt động logistics",
+              "Làm giảm xuất khẩu",
+              "Tăng đói nghèo",
+              "Không thay đổi"
+            ],
+            "correct": 0,
+            "explanation": "Công nghiệp ven biển thường thúc đẩy xuất khẩu và logistics."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Vấn đề an ninh liên quan đến công nghiệp ven biển là?",
+            "options": [
+              "Bảo vệ tài sản quan trọng và an toàn hàng hải",
+              "Không liên quan",
+              "Tăng du lịch",
+              "Giảm an ninh"
+            ],
+            "correct": 0,
+            "explanation": "Cần bảo vệ cơ sở hạ tầng và đảm bảo an toàn hàng hải."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Quy hoạch công nghiệp ven biển cần tránh?",
+            "options": [
+              "Xây trên vùng ngập mặn quan trọng và rạn san hô",
+              "Xây trên vùng hoang vắng",
+              "Không cần tránh gì",
+              "Chỉ quan tâm lợi ích ngắn hạn"
+            ],
+            "correct": 0,
+            "explanation": "Tránh khu vực nhạy cảm sinh thái để giảm tác động môi trường."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Một chính sách hỗ trợ công nghiệp ven biển hiệu quả là?",
+            "options": [
+              "Đầu tư kết nối cảng và hỗ trợ đào tạo nghề",
+              "Không đầu tư",
+              "Cấm mọi hoạt động công nghiệp",
+              "Chỉ thuế cao"
+            ],
+            "correct": 0,
+            "explanation": "Đầu tư hạ tầng và đào tạo giúp phát triển bền vững."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Đo lường thành công công nghiệp ven biển có thể dùng chỉ tiêu?",
+            "options": [
+              "Tổng giá trị xuất khẩu và tỷ lệ việc làm khu vực ven biển",
+              "Số lượng tàu cá",
+              "Số du khách",
+              "Không có chỉ tiêu"
+            ],
+            "correct": 0,
+            "explanation": "Giá trị xuất khẩu và việc làm là chỉ tiêu thực tế để đánh giá hiệu quả."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Các ngành công nghiệp phát triển ở duyên hải Nam Trung Bộ?",
+            "options": [
+              "Công nghiệp chế biến thủy sản",
+              "Công nghiệp đóng tàu",
+              "Công nghiệp lọc dầu",
+              "Công nghiệp khai thác than"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Chế biến thủy sản, đóng tàu và lọc dầu là ngành công nghiệp phát triển."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Yếu tố thuận lợi cho phát triển công nghiệp ở vùng?",
+            "options": [
+              "Cảng biển nước sâu",
+              "Nguồn lao động dồi dào",
+              "Giao thông kết nối",
+              "Địa hình đồi núi hiểm trở"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cảng biển, lao động và giao thông thuận lợi cho công nghiệp."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Các khu công nghiệp lớn ở Nam Trung Bộ?",
+            "options": [
+              "Khu công nghiệp Dung Quất",
+              "Khu công nghiệp Hòa Khánh",
+              "Khu công nghiệp Liên Chiểu",
+              "Khu công nghiệp Bắc Thăng Long"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Dung Quất, Hòa Khánh, Liên Chiểu là khu công nghiệp lớn."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Ngành công nghiệp chế biến thủy sản phát triển dựa trên?",
+            "options": [
+              "Nguồn nguyên liệu tại chỗ",
+              "Lao động dồi dào",
+              "Cảng biển thuận lợi",
+              "Công nghệ vũ trụ"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Nguyên liệu, lao động và cảng biển là cơ sở phát triển."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Kể tên một khu kinh tế ven biển ở Nam Trung Bộ?",
+            "correct": "Khu kinh tế Dung Quất, Khu kinh tế Chu Lai",
+            "explanation": "Dung Quất và Chu Lai là khu kinh tế ven biển."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Ngành công nghiệp chủ lực của vùng?",
+            "correct": "Chế biến thủy sản, đóng tàu, lọc dầu",
+            "explanation": "Chế biến thủy sản, đóng tàu, lọc dầu là ngành chủ lực."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Vai trò của khu kinh tế Dung Quất?",
+            "correct": "Trung tâm lọc dầu, hóa dầu và công nghiệp nặng",
+            "explanation": "Dung Quất là trung tâm lọc dầu, hóa dầu và công nghiệp nặng."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Đề xuất 3 biện pháp giảm ô nhiễm từ khu công nghiệp ven biển?",
+            "correct": "Công nghệ xử lý nước thải, giám sát khí thải, vùng đệm sinh thái.",
+            "explanation": "Công nghệ xử lý nước thải, giám sát khí thải, vùng đệm sinh thái."
+          }
         ]
       }
     }

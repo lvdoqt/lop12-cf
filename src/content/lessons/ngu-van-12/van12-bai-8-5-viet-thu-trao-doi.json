@@ -4,12 +4,12 @@
   "lessons": [
     {
       "id": "van12-bai-8-5-viet-thu-trao-doi",
-      "name": "Viết thư trao đổi về công việc hoặc vấn đề đáng quan tâm",
+      "name": "Viết thư trao đổi về công việc hoặc một vấn đề đáng quan tâm",
       "slug": "viet-thu-trao-doi",
       "chapter": "Dữ liệu trong văn bản thông tin",
       "chapter_id": "V12-8",
       "lesson_id": 5,
-      "description": "Học cách viết thư trao đổi công việc hoặc thư bày tỏ quan điểm về các vấn đề đáng quan tâm một cách chuyên nghiệp.",
+      "description": "Hướng dẫn viết thư trao đổi về công việc hoặc vấn đề đáng quan tâm.",
       "duration_minutes": 90,
       "difficulty_level": "medium",
       "is_published": true,
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex8-5-1",
-              "type": "mcq",
-              "question": "Thư trao đổi công việc có mục đích gì?",
-              "options": [
-                "Trò chuyện",
-                "Trao đổi thông tin, đề xuất, phản hồi về công việc",
-                "Kể chuyện",
-                "Không có mục đích"
-              ],
-              "correct": 1,
-              "explanation": "Thư trao đổi công việc nhằm trao đổi thông tin, đề xuất ý kiến và phản hồi về các vấn đề công việc."
-            },
-            {
-              "id": "ex8-5-2",
-              "type": "mcq",
-              "question": "Phần đầu thư cần có những thông tin gì?",
-              "options": [
-                "Chỉ có tên người gửi",
-                "Người gửi, người nhận, ngày tháng",
-                "Chỉ có ngày tháng",
-                "Không cần thông tin"
-              ],
-              "correct": 1,
-              "explanation": "Phần đầu thư cần có đầy đủ: thông tin người gửi, người nhận và ngày tháng viết thư."
-            },
-            {
-              "id": "ex8-5-3",
-              "type": "mcq",
-              "question": "Ngôn ngữ trong thư trao đổi công việc cần có đặc điểm gì?",
-              "options": [
-                "Tùy tiện, thân mật",
-                "Trang trọng, rõ ràng, thuyết phục",
-                "Hài hước",
-                "Phức tạp"
-              ],
-              "correct": 1,
-              "explanation": "Ngôn ngữ cần trang trọng, lịch sự, rõ ràng và có tính thuyết phục."
-            },
-            {
-              "id": "ex8-5-4",
-              "type": "mcq",
-              "question": "Khi viết thư về vấn đề đáng quan tâm, cần làm gì?",
-              "options": [
-                "Chỉ phàn nàn",
-                "Nêu rõ vấn đề, có căn cứ, đề xuất giải pháp",
-                "Chỉ chỉ trích",
-                "Không cần làm gì"
-              ],
-              "correct": 1,
-              "explanation": "Cần nêu rõ vấn đề, có căn cứ dẫn chứng và đề xuất giải pháp xây dựng."
-            },
-            {
-              "id": "ex8-5-5",
-              "type": "mcq",
-              "question": "Lời chào trong thư trang trọng thường là gì?",
-              "options": [
-                "Chào bạn",
-                "Kính gửi",
-                "Này",
-                "Ê"
-              ],
-              "correct": 1,
-              "explanation": "Trong thư trang trọng, lời chào thường là 'Kính gửi' để thể hiện sự tôn trọng."
-            },
-            {
-              "id": "ex8-5-6",
-              "type": "mcq",
-              "question": "Nội dung thư cần có đặc điểm gì?",
-              "options": [
-                "Mơ hồ, chung chung",
-                "Cụ thể, có căn cứ, xây dựng",
-                "Dài dòng, lòng vòng",
-                "Không rõ ràng"
-              ],
-              "correct": 1,
-              "explanation": "Nội dung thư cần cụ thể, có căn cứ dẫn chứng và mang tính xây dựng."
-            },
-            {
-              "id": "ex8-5-7",
-              "type": "mcq",
-              "question": "Khi viết thư, cần tôn trọng điều gì?",
-              "options": [
-                "Không cần tôn trọng",
-                "Người nhận, khách quan, xây dựng",
-                "Chỉ tôn trọng bản thân",
-                "Không quan trọng"
-              ],
-              "correct": 1,
-              "explanation": "Cần tôn trọng người nhận, giữ thái độ khách quan và góp ý xây dựng."
-            },
-            {
-              "id": "ex8-5-8",
-              "type": "mcq",
-              "question": "Phần kết thúc thư nên có gì?",
-              "options": [
-                "Không cần kết thúc",
-                "Lời cảm ơn, chữ ký",
-                "Chỉ có chữ ký",
-                "Chỉ có lời cảm ơn"
-              ],
-              "correct": 1,
-              "explanation": "Phần kết thúc cần có lời cảm ơn và chữ ký của người gửi."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex8-5-1",
+            "type": "mcq",
+            "question": "Thư trao đổi công việc có mục đích gì?",
+            "options": [
+              "Trò chuyện",
+              "Trao đổi thông tin, đề xuất, phản hồi về công việc",
+              "Kể chuyện",
+              "Không có mục đích"
+            ],
+            "correct": 1,
+            "explanation": "Thư trao đổi công việc nhằm trao đổi thông tin, đề xuất ý kiến và phản hồi về các vấn đề công việc."
+          },
+          {
+            "id": "ex8-5-2",
+            "type": "mcq",
+            "question": "Phần đầu thư cần có những thông tin gì?",
+            "options": [
+              "Chỉ có tên người gửi",
+              "Người gửi, người nhận, ngày tháng",
+              "Chỉ có ngày tháng",
+              "Không cần thông tin"
+            ],
+            "correct": 1,
+            "explanation": "Phần đầu thư cần có đầy đủ: thông tin người gửi, người nhận và ngày tháng viết thư."
+          },
+          {
+            "id": "ex8-5-3",
+            "type": "mcq",
+            "question": "Ngôn ngữ trong thư trao đổi công việc cần có đặc điểm gì?",
+            "options": [
+              "Tùy tiện, thân mật",
+              "Trang trọng, rõ ràng, thuyết phục",
+              "Hài hước",
+              "Phức tạp"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ cần trang trọng, lịch sự, rõ ràng và có tính thuyết phục."
+          },
+          {
+            "id": "ex8-5-4",
+            "type": "mcq",
+            "question": "Khi viết thư về vấn đề đáng quan tâm, cần làm gì?",
+            "options": [
+              "Chỉ phàn nàn",
+              "Nêu rõ vấn đề, có căn cứ, đề xuất giải pháp",
+              "Chỉ chỉ trích",
+              "Không cần làm gì"
+            ],
+            "correct": 1,
+            "explanation": "Cần nêu rõ vấn đề, có căn cứ dẫn chứng và đề xuất giải pháp xây dựng."
+          },
+          {
+            "id": "ex8-5-5",
+            "type": "mcq",
+            "question": "Lời chào trong thư trang trọng thường là gì?",
+            "options": [
+              "Chào bạn",
+              "Kính gửi",
+              "Này",
+              "Ê"
+            ],
+            "correct": 1,
+            "explanation": "Trong thư trang trọng, lời chào thường là 'Kính gửi' để thể hiện sự tôn trọng."
+          },
+          {
+            "id": "ex8-5-6",
+            "type": "mcq",
+            "question": "Nội dung thư cần có đặc điểm gì?",
+            "options": [
+              "Mơ hồ, chung chung",
+              "Cụ thể, có căn cứ, xây dựng",
+              "Dài dòng, lòng vòng",
+              "Không rõ ràng"
+            ],
+            "correct": 1,
+            "explanation": "Nội dung thư cần cụ thể, có căn cứ dẫn chứng và mang tính xây dựng."
+          },
+          {
+            "id": "ex8-5-7",
+            "type": "mcq",
+            "question": "Khi viết thư, cần tôn trọng điều gì?",
+            "options": [
+              "Không cần tôn trọng",
+              "Người nhận, khách quan, xây dựng",
+              "Chỉ tôn trọng bản thân",
+              "Không quan trọng"
+            ],
+            "correct": 1,
+            "explanation": "Cần tôn trọng người nhận, giữ thái độ khách quan và góp ý xây dựng."
+          },
+          {
+            "id": "ex8-5-8",
+            "type": "mcq",
+            "question": "Phần kết thúc thư nên có gì?",
+            "options": [
+              "Không cần kết thúc",
+              "Lời cảm ơn, chữ ký",
+              "Chỉ có chữ ký",
+              "Chỉ có lời cảm ơn"
+            ],
+            "correct": 1,
+            "explanation": "Phần kết thúc cần có lời cảm ơn và chữ ký của người gửi."
+          },
+          {
+            "id": "ex8-5-9",
+            "type": "mcq",
+            "question": "Văn bản thông tin thường có đặc điểm gì?",
+            "options": [
+              "Tính chính xác, khách quan, cập nhật",
+              "Tính hư cấu, tưởng tượng",
+              "Tính cảm xúc, chủ quan",
+              "Tính triết lý, sâu xa"
+            ],
+            "correct": 0,
+            "explanation": "Văn bản thông tin cần đảm bảo tính chính xác, khách quan và cập nhật."
+          },
+          {
+            "id": "ex8-5-10",
+            "type": "mcq",
+            "question": "Mục đích của việc viết thư trao đổi là gì?",
+            "options": [
+              "Trao đổi ý kiến, thuyết phục người đọc về một vấn đề",
+              "Kể chuyện giải trí",
+              "Thông báo tin tức",
+              "Bày tỏ cảm xúc cá nhân"
+            ],
+            "correct": 0,
+            "explanation": "Thư trao đổi nhằm trao đổi ý kiến và thuyết phục người đọc về một vấn đề cụ thể."
+          }
+        ]
       }
     }
   ]

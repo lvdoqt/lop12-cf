@@ -18,22 +18,221 @@
           "title": "Chia sẻ Tài nguyên",
           "summary": "Mạng máy tính cho phép người dùng chia sẻ phần cứng và phần mềm, giúp tiết kiệm chi phí và tăng hiệu quả làm việc.",
           "sections": [
-            { "heading": "Chia sẻ thư mục", "content": "Thiết lập quyền truy cập cho người dùng khác trong mạng (Read, Write). Sử dụng tính năng Map Network Drive." },
-            { "heading": "Chia sẻ máy in", "content": "Kết nối máy in vào một máy tính và cho phép các máy khác trong mạng cùng in." },
-            { "heading": "Quyền truy cập", "content": "Kiểm soát ai có quyền xem, sửa hoặc xóa dữ liệu dùng chung để đảm bảo an toàn thông tin." }
+            {
+              "heading": "Chia sẻ thư mục",
+              "content": "Thiết lập quyền truy cập cho người dùng khác trong mạng (Read, Write). Sử dụng tính năng Map Network Drive."
+            },
+            {
+              "heading": "Chia sẻ máy in",
+              "content": "Kết nối máy in vào một máy tính và cho phép các máy khác trong mạng cùng in."
+            },
+            {
+              "heading": "Quyền truy cập",
+              "content": "Kiểm soát ai có quyền xem, sửa hoặc xóa dữ liệu dùng chung để đảm bảo an toàn thông tin."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Lợi ích lớn nhất của việc chia sẻ máy in trong mạng là gì?", "options": ["In đẹp hơn", "Tiết kiệm chi phí đầu tư thiết bị", "Máy in không bị hỏng", "Tăng tốc độ máy tính"], "correct": 1, "explanation": "Nhiều máy tính dùng chung một máy in giúp giảm số lượng máy in cần mua." },
-          { "id": 2, "type": "mcq", "question": "Để chia sẻ một thư mục trong Windows, ta thường chuột phải vào thư mục và chọn?", "options": ["Delete", "Properties -> Sharing", "Rename", "Copy"], "correct": 1, "explanation": "Thẻ Sharing trong Properties chứa các thiết lập chia sẻ." },
-          { "id": 3, "type": "mcq", "question": "Quyền 'Read' trong chia sẻ tệp cho phép người dùng khác?", "options": ["Xóa tệp", "Sửa nội dung tệp", "Chỉ được xem và copy tệp", "Đổi tên tệp"], "correct": 2, "explanation": "Quyền Read (Đọc) không cho phép thay đổi dữ liệu gốc." },
-          { "id": 4, "type": "mcq", "question": "Địa chỉ IP tĩnh thường được dùng cho thiết bị nào trong mạng chia sẻ?", "options": ["Máy tính của khách", "Máy in hoặc máy chủ (Server)", "Chuột không dây", "Màn hình"], "correct": 1, "explanation": "Địa chỉ cố định giúp các máy khác luôn tìm thấy thiết bị chia sẻ một cách ổn định." },
-          { "id": 5, "type": "mcq", "question": "Tính năng 'Map Network Drive' dùng để làm gì?", "options": ["Vẽ bản đồ mạng", "Gắn một thư mục chia sẻ trên mạng thành một ổ đĩa ảo trên máy tính", "Tăng dung lượng RAM", "Sửa lỗi ổ cứng"], "correct": 1, "explanation": "Nó giúp truy cập thư mục mạng tiện lợi như ổ C, D cục bộ." },
-          { "id": 6, "type": "mcq", "question": "Để các máy tính thấy nhau trong mạng LAN, chúng nên ở cùng một?", "options": ["Màu sắc máy", "Workgroup hoặc Domain", "Kích thước màn hình", "Năm sản xuất"], "correct": 1, "explanation": "Workgroup là nhóm các máy tính cùng làm việc trong mạng nội bộ." },
-          { "id": 7, "type": "mcq", "question": "Phần mềm nào cho phép điều khiển máy tính từ xa qua mạng?", "options": ["Excel", "TeamViewer hoặc UltraViewer", "Paint", "Calculator"], "correct": 1, "explanation": "Đây là các phần mềm hỗ trợ kỹ thuật từ xa phổ biến." },
-          { "id": 8, "type": "mcq", "question": "Khi chia sẻ tài nguyên, tại sao cần quan tâm đến bảo mật?", "options": ["Để máy tính đẹp hơn", "Ngăn chặn người không có thẩm quyền xem hoặc xóa dữ liệu quan trọng", "Vì Windows bắt buộc", "Để tốn thời gian"], "correct": 1, "explanation": "Chia sẻ không kiểm soát dễ dẫn đến mất mát thông tin." },
-          { "id": 9, "type": "mcq", "question": "Dấu hiệu nào cho thấy một thư mục đang được chia sẻ trong Windows?", "options": ["Thư mục có màu đỏ", "Biểu tượng thư mục có thêm hình bàn tay hoặc biểu tượng người", "Thư mục không mở được", "Thư mục tự động xóa"], "correct": 1, "explanation": "Hệ điều hành dùng biểu tượng đặc biệt để phân biệt thư mục shared." },
-          { "id": 10, "type": "mcq", "question": "Để máy khác in được qua máy in chia sẻ, máy tính kết nối trực tiếp với máy in phải?", "options": ["Đang tắt", "Đang bật và đang kết nối mạng", "Đang chơi game", "Không cần làm gì"], "correct": 1, "explanation": "Máy chủ máy in phải hoạt động để xử lý lệnh in từ mạng." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Lợi ích lớn nhất của việc chia sẻ máy in trong mạng là gì?",
+            "options": [
+              "In đẹp hơn",
+              "Tiết kiệm chi phí đầu tư thiết bị",
+              "Máy in không bị hỏng",
+              "Tăng tốc độ máy tính"
+            ],
+            "correct": 1,
+            "explanation": "Nhiều máy tính dùng chung một máy in giúp giảm số lượng máy in cần mua."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Để chia sẻ một thư mục trong Windows, ta thường chuột phải vào thư mục và chọn?",
+            "options": [
+              "Delete",
+              "Properties -> Sharing",
+              "Rename",
+              "Copy"
+            ],
+            "correct": 1,
+            "explanation": "Thẻ Sharing trong Properties chứa các thiết lập chia sẻ."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Quyền 'Read' trong chia sẻ tệp cho phép người dùng khác?",
+            "options": [
+              "Xóa tệp",
+              "Sửa nội dung tệp",
+              "Chỉ được xem và copy tệp",
+              "Đổi tên tệp"
+            ],
+            "correct": 2,
+            "explanation": "Quyền Read (Đọc) không cho phép thay đổi dữ liệu gốc."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Địa chỉ IP tĩnh thường được dùng cho thiết bị nào trong mạng chia sẻ?",
+            "options": [
+              "Máy tính của khách",
+              "Máy in hoặc máy chủ (Server)",
+              "Chuột không dây",
+              "Màn hình"
+            ],
+            "correct": 1,
+            "explanation": "Địa chỉ cố định giúp các máy khác luôn tìm thấy thiết bị chia sẻ một cách ổn định."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Tính năng 'Map Network Drive' dùng để làm gì?",
+            "options": [
+              "Vẽ bản đồ mạng",
+              "Gắn một thư mục chia sẻ trên mạng thành một ổ đĩa ảo trên máy tính",
+              "Tăng dung lượng RAM",
+              "Sửa lỗi ổ cứng"
+            ],
+            "correct": 1,
+            "explanation": "Nó giúp truy cập thư mục mạng tiện lợi như ổ C, D cục bộ."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Để các máy tính thấy nhau trong mạng LAN, chúng nên ở cùng một?",
+            "options": [
+              "Màu sắc máy",
+              "Workgroup hoặc Domain",
+              "Kích thước màn hình",
+              "Năm sản xuất"
+            ],
+            "correct": 1,
+            "explanation": "Workgroup là nhóm các máy tính cùng làm việc trong mạng nội bộ."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Phần mềm nào cho phép điều khiển máy tính từ xa qua mạng?",
+            "options": [
+              "Excel",
+              "TeamViewer hoặc UltraViewer",
+              "Paint",
+              "Calculator"
+            ],
+            "correct": 1,
+            "explanation": "Đây là các phần mềm hỗ trợ kỹ thuật từ xa phổ biến."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Khi chia sẻ tài nguyên, tại sao cần quan tâm đến bảo mật?",
+            "options": [
+              "Để máy tính đẹp hơn",
+              "Ngăn chặn người không có thẩm quyền xem hoặc xóa dữ liệu quan trọng",
+              "Vì Windows bắt buộc",
+              "Để tốn thời gian"
+            ],
+            "correct": 1,
+            "explanation": "Chia sẻ không kiểm soát dễ dẫn đến mất mát thông tin."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Dấu hiệu nào cho thấy một thư mục đang được chia sẻ trong Windows?",
+            "options": [
+              "Thư mục có màu đỏ",
+              "Biểu tượng thư mục có thêm hình bàn tay hoặc biểu tượng người",
+              "Thư mục không mở được",
+              "Thư mục tự động xóa"
+            ],
+            "correct": 1,
+            "explanation": "Hệ điều hành dùng biểu tượng đặc biệt để phân biệt thư mục shared."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Để máy khác in được qua máy in chia sẻ, máy tính kết nối trực tiếp với máy in phải?",
+            "options": [
+              "Đang tắt",
+              "Đang bật và đang kết nối mạng",
+              "Đang chơi game",
+              "Không cần làm gì"
+            ],
+            "correct": 1,
+            "explanation": "Máy chủ máy in phải hoạt động để xử lý lệnh in từ mạng."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Chia sẻ tài nguyên mạng có thể chia sẻ những gì?",
+            "options": [
+              "Thư mục",
+              "Máy in",
+              "Kết nối Internet",
+              "Ổ cứng"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Có thể chia sẻ thư mục, máy in, kết nối Internet và ổ cứng."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Quyền truy cập thư mục chia sẻ gồm những mức nào?",
+            "options": [
+              "Đọc",
+              "Ghi",
+              "Thực thi",
+              "Xóa"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Quyền truy cập gồm: Đọc, Ghi, Thực thi."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Công cụ nào dùng để chia sẻ file trên mạng?",
+            "options": [
+              "Windows File Sharing",
+              "FTP",
+              "Cloud Storage",
+              "Bluetooth"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "Tất cả đều có thể dùng để chia sẻ file."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Để chia sẻ máy in trên mạng cần?",
+            "options": [
+              "Máy in kết nối mạng",
+              "Driver máy in",
+              "Cùng subnet",
+              "Internet"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cần máy in có khả năng mạng, driver và cấu hình mạng phù hợp."
+          }
         ]
       }
     }

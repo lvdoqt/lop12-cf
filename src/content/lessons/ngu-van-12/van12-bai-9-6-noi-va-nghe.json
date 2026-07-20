@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-9-6-noi-va-nghe",
-      "name": "Nói và nghe: Thuyết trình về cơ hội và thách thức đối với đất nước",
-      "slug": "noi-va-nghe-thuyet-trinh",
+      "id": "van12-bai-9-6-thuyet-trinh",
+      "name": "Thuyết trình về một vấn đề liên quan đến cơ hội và thách thức đối với đất nước",
+      "slug": "thuyet-trinh",
       "chapter": "Văn học và cuộc đời",
       "chapter_id": "V12-9",
       "lesson_id": 6,
-      "description": "Phát triển kỹ năng thuyết trình về các vấn đề liên quan đến cơ hội và thách thức đối với đất nước trong thời kỳ hội nhập.",
+      "description": "Hướng dẫn thuyết trình về cơ hội và thách thức đối với đất nước.",
       "duration_minutes": 90,
       "difficulty_level": "hard",
       "is_published": true,
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex9-6-1",
-              "type": "mcq",
-              "question": "Cơ hội lớn nhất của Việt Nam hiện nay là gì?",
-              "options": [
-                "Không có cơ hội",
-                "Hội nhập kinh tế, công nghệ 4.0, dân số trẻ",
-                "Chỉ có vị trí địa lý",
-                "Không rõ"
-              ],
-              "correct": 1,
-              "explanation": "Việt Nam có nhiều cơ hội: hội nhập kinh tế quốc tế, cách mạng công nghệ 4.0, dân số trẻ và vị trí địa lý chiến lược."
-            },
-            {
-              "id": "ex9-6-2",
-              "type": "mcq",
-              "question": "Thách thức lớn nhất đối với Việt Nam là gì?",
-              "options": [
-                "Không có thách thức",
-                "Cạnh tranh toàn cầu, môi trường, chất lượng nguồn nhân lực",
-                "Chỉ có vấn đề môi trường",
-                "Chỉ có vấn đề giáo dục"
-              ],
-              "correct": 1,
-              "explanation": "Việt Nam đối mặt nhiều thách thức: cạnh tranh toàn cầu, ô nhiễm môi trường, chất lượng nguồn nhân lực."
-            },
-            {
-              "id": "ex9-6-3",
-              "type": "mcq",
-              "question": "Khi chuẩn bị thuyết trình, cần làm gì đầu tiên?",
-              "options": [
-                "Làm slide ngay",
-                "Nghiên cứu vấn đề kỹ lưỡng",
-                "Không cần chuẩn bị",
-                "Chỉ tập nói"
-              ],
-              "correct": 1,
-              "explanation": "Cần nghiên cứu vấn đề kỹ lưỡng trước khi phân tích và đề xuất giải pháp."
-            },
-            {
-              "id": "ex9-6-4",
-              "type": "mcq",
-              "question": "Cấu trúc bài thuyết trình cần có những phần nào?",
-              "options": [
-                "Chỉ có mở đầu",
-                "Mở đầu, phân tích cơ hội-thách thức, giải pháp, kết luận",
-                "Chỉ có kết luận",
-                "Không cần cấu trúc"
-              ],
-              "correct": 1,
-              "explanation": "Bài thuyết trình cần có: mở đầu, phân tích cơ hội và thách thức, đề xuất giải pháp, kết luận."
-            },
-            {
-              "id": "ex9-6-5",
-              "type": "mcq",
-              "question": "Slide thuyết trình cần có đặc điểm gì?",
-              "options": [
-                "Nhiều chữ, phức tạp",
-                "Trực quan, dễ hiểu, có biểu đồ số liệu",
-                "Chỉ có chữ",
-                "Không cần slide"
-              ],
-              "correct": 1,
-              "explanation": "Slide cần trực quan, dễ hiểu, sử dụng biểu đồ và số liệu để minh họa."
-            },
-            {
-              "id": "ex9-6-6",
-              "type": "mcq",
-              "question": "Khi lắng nghe thuyết trình, cần làm gì?",
-              "options": [
-                "Nhìn điện thoại",
-                "Tập trung, ghi chú, đánh giá nội dung",
-                "Nói chuyện riêng",
-                "Ngủ"
-              ],
-              "correct": 1,
-              "explanation": "Cần tập trung lắng nghe, ghi chú các điểm quan trọng và đánh giá phân tích, luận cứ."
-            },
-            {
-              "id": "ex9-6-7",
-              "type": "mcq",
-              "question": "Loại câu hỏi nào phù hợp sau bài thuyết trình?",
-              "options": [
-                "Câu hỏi về đời tư",
-                "Câu hỏi làm rõ, phản biện, mở rộng vấn đề",
-                "Câu hỏi về thời tiết",
-                "Không nên hỏi"
-              ],
-              "correct": 1,
-              "explanation": "Nên hỏi để làm rõ thông tin, phản biện quan điểm hoặc mở rộng vấn đề liên quan."
-            },
-            {
-              "id": "ex9-6-8",
-              "type": "mcq",
-              "question": "Phản hồi sau thuyết trình cần như thế nào?",
-              "options": [
-                "Chỉ chỉ trích",
-                "Ghi nhận điểm hay, góp ý xây dựng, khách quan",
-                "Không nói gì",
-                "Chỉ khen ngợi"
-              ],
-              "correct": 1,
-              "explanation": "Phản hồi cần ghi nhận điểm hay, góp ý xây dựng và đánh giá khách quan."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex9-6-1",
+            "type": "mcq",
+            "question": "Cơ hội lớn nhất của Việt Nam hiện nay là gì?",
+            "options": [
+              "Không có cơ hội",
+              "Hội nhập kinh tế, công nghệ 4.0, dân số trẻ",
+              "Chỉ có vị trí địa lý",
+              "Không rõ"
+            ],
+            "correct": 1,
+            "explanation": "Việt Nam có nhiều cơ hội: hội nhập kinh tế quốc tế, cách mạng công nghệ 4.0, dân số trẻ và vị trí địa lý chiến lược."
+          },
+          {
+            "id": "ex9-6-2",
+            "type": "mcq",
+            "question": "Thách thức lớn nhất đối với Việt Nam là gì?",
+            "options": [
+              "Không có thách thức",
+              "Cạnh tranh toàn cầu, môi trường, chất lượng nguồn nhân lực",
+              "Chỉ có vấn đề môi trường",
+              "Chỉ có vấn đề giáo dục"
+            ],
+            "correct": 1,
+            "explanation": "Việt Nam đối mặt nhiều thách thức: cạnh tranh toàn cầu, ô nhiễm môi trường, chất lượng nguồn nhân lực."
+          },
+          {
+            "id": "ex9-6-3",
+            "type": "mcq",
+            "question": "Khi chuẩn bị thuyết trình, cần làm gì đầu tiên?",
+            "options": [
+              "Làm slide ngay",
+              "Nghiên cứu vấn đề kỹ lưỡng",
+              "Không cần chuẩn bị",
+              "Chỉ tập nói"
+            ],
+            "correct": 1,
+            "explanation": "Cần nghiên cứu vấn đề kỹ lưỡng trước khi phân tích và đề xuất giải pháp."
+          },
+          {
+            "id": "ex9-6-4",
+            "type": "mcq",
+            "question": "Cấu trúc bài thuyết trình cần có những phần nào?",
+            "options": [
+              "Chỉ có mở đầu",
+              "Mở đầu, phân tích cơ hội-thách thức, giải pháp, kết luận",
+              "Chỉ có kết luận",
+              "Không cần cấu trúc"
+            ],
+            "correct": 1,
+            "explanation": "Bài thuyết trình cần có: mở đầu, phân tích cơ hội và thách thức, đề xuất giải pháp, kết luận."
+          },
+          {
+            "id": "ex9-6-5",
+            "type": "mcq",
+            "question": "Slide thuyết trình cần có đặc điểm gì?",
+            "options": [
+              "Nhiều chữ, phức tạp",
+              "Trực quan, dễ hiểu, có biểu đồ số liệu",
+              "Chỉ có chữ",
+              "Không cần slide"
+            ],
+            "correct": 1,
+            "explanation": "Slide cần trực quan, dễ hiểu, sử dụng biểu đồ và số liệu để minh họa."
+          },
+          {
+            "id": "ex9-6-6",
+            "type": "mcq",
+            "question": "Khi lắng nghe thuyết trình, cần làm gì?",
+            "options": [
+              "Nhìn điện thoại",
+              "Tập trung, ghi chú, đánh giá nội dung",
+              "Nói chuyện riêng",
+              "Ngủ"
+            ],
+            "correct": 1,
+            "explanation": "Cần tập trung lắng nghe, ghi chú các điểm quan trọng và đánh giá phân tích, luận cứ."
+          },
+          {
+            "id": "ex9-6-7",
+            "type": "mcq",
+            "question": "Loại câu hỏi nào phù hợp sau bài thuyết trình?",
+            "options": [
+              "Câu hỏi về đời tư",
+              "Câu hỏi làm rõ, phản biện, mở rộng vấn đề",
+              "Câu hỏi về thời tiết",
+              "Không nên hỏi"
+            ],
+            "correct": 1,
+            "explanation": "Nên hỏi để làm rõ thông tin, phản biện quan điểm hoặc mở rộng vấn đề liên quan."
+          },
+          {
+            "id": "ex9-6-8",
+            "type": "mcq",
+            "question": "Phản hồi sau thuyết trình cần như thế nào?",
+            "options": [
+              "Chỉ chỉ trích",
+              "Ghi nhận điểm hay, góp ý xây dựng, khách quan",
+              "Không nói gì",
+              "Chỉ khen ngợi"
+            ],
+            "correct": 1,
+            "explanation": "Phản hồi cần ghi nhận điểm hay, góp ý xây dựng và đánh giá khách quan."
+          },
+          {
+            "id": "ex9-6-9",
+            "type": "mcq",
+            "question": "Thể thơ của bài thơ thường được xác định dựa trên yếu tố nào?",
+            "options": [
+              "Số câu, số chữ, vần và nhịp điệu",
+              "Chủ đề bài thơ",
+              "Cảm xúc của tác giả",
+              "Thời gian sáng tác"
+            ],
+            "correct": 0,
+            "explanation": "Thể thơ được xác định dựa trên số câu, số chữ trong câu, vần và nhịp điệu."
+          },
+          {
+            "id": "ex9-6-10",
+            "type": "mcq",
+            "question": "Nhân vật chính trong tác phẩm kịch thường là người như thế nào?",
+            "options": [
+              "Là nhân vật trung tâm, giữ vai trò then chốt",
+              "Xuất hiện ít",
+              "Không quan trọng",
+              "Chỉ là nhân vật phụ"
+            ],
+            "correct": 0,
+            "explanation": "Nhân vật chính là trung tâm của tác phẩm, giữ vai trò then chốt trong việc thể hiện chủ đề."
+          }
+        ]
       }
     }
   ]

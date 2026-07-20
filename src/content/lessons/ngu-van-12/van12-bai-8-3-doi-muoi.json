@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-8-3-doi-muoi",
-      "name": "Đời muối (trích Đời muối: Lịch sử thế giới)",
+      "name": "Đời muối",
       "slug": "doi-muoi",
       "chapter": "Dữ liệu trong văn bản thông tin",
       "chapter_id": "V12-8",
       "lesson_id": 3,
       "author": "Mark Kurlansky (Mác Kơ-len-xki)",
-      "description": "Tìm hiểu tác phẩm 'Đời muối' của Mark Kurlansky, khám phá vai trò của muối trong lịch sử loài người qua dữ liệu và thông tin phong phú.",
+      "description": "Phân tích tác phẩm Đời muối trong văn bản thông tin.",
       "duration_minutes": 90,
       "difficulty_level": "medium",
       "is_published": true,
@@ -25,7 +25,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Đời muối - Mark Kurlansky",
+          "title": "Đời muối",
           "sections": [
             {
               "heading": "1. Tác giả Mark Kurlansky",
@@ -41,115 +41,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex8-3-1",
-              "type": "mcq",
-              "question": "Tác giả của 'Đời muối' là ai?",
-              "options": [
-                "Claude Lévi-Strauss",
-                "Mark Kurlansky",
-                "Nguyễn Nam",
-                "Đào Duy Anh"
-              ],
-              "correct": 1,
-              "explanation": "'Đời muối' là tác phẩm của nhà văn, nhà báo Mỹ Mark Kurlansky."
-            },
-            {
-              "id": "ex8-3-2",
-              "type": "mcq",
-              "question": "Chủ đề chính của tác phẩm là gì?",
-              "options": [
-                "Tình yêu",
-                "Lịch sử thế giới qua vai trò của muối",
-                "Chiến tranh",
-                "Thiên nhiên"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm kể về lịch sử thế giới qua vai trò quan trọng của muối trong văn minh nhân loại."
-            },
-            {
-              "id": "ex8-3-3",
-              "type": "mcq",
-              "question": "Dữ liệu trong tác phẩm bao gồm những gì?",
-              "options": [
-                "Chỉ có tưởng tượng",
-                "Lịch sử, kinh tế, văn hóa, khoa học về muối",
-                "Chỉ có cảm xúc",
-                "Không có dữ liệu"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm chứa nhiều dữ liệu về lịch sử, kinh tế (buôn bán muối), văn hóa và khoa học liên quan đến muối."
-            },
-            {
-              "id": "ex8-3-4",
-              "type": "mcq",
-              "question": "Cách trình bày trong tác phẩm có đặc điểm gì?",
-              "options": [
-                "Khô khan, máy móc",
-                "Kết hợp dữ liệu và kể chuyện sinh động",
-                "Chỉ có số liệu",
-                "Chỉ kể chuyện"
-              ],
-              "correct": 1,
-              "explanation": "Tác giả kết hợp khéo léo giữa dữ liệu chính xác và cách kể chuyện sinh động, hấp dẫn."
-            },
-            {
-              "id": "ex8-3-5",
-              "type": "mcq",
-              "question": "Góc nhìn của tác phẩm có gì đặc biệt?",
-              "options": [
-                "Bình thường",
-                "Độc đáo: nhìn lịch sử qua một vật dụng hàng ngày",
-                "Không có gì đặc biệt",
-                "Khó hiểu"
-              ],
-              "correct": 1,
-              "explanation": "Góc nhìn độc đáo khi xem xét lịch sử thế giới qua vai trò của muối - một vật dụng tưởng chừng bình thường."
-            },
-            {
-              "id": "ex8-3-6",
-              "type": "mcq",
-              "question": "Ngôn ngữ trong tác phẩm kết hợp điều gì?",
-              "options": [
-                "Chỉ khoa học",
-                "Khoa học (chính xác) và văn học (sinh động)",
-                "Chỉ văn học",
-                "Không có đặc điểm"
-              ],
-              "correct": 1,
-              "explanation": "Ngôn ngữ kết hợp tính khoa học (chính xác, rõ ràng) và văn học (sinh động, hấp dẫn)."
-            },
-            {
-              "id": "ex8-3-7",
-              "type": "mcq",
-              "question": "Muối có vai trò gì trong lịch sử?",
-              "options": [
-                "Không có vai trò",
-                "Quan trọng trong kinh tế, chính trị, văn hóa",
-                "Chỉ để ăn",
-                "Không đáng kể"
-              ],
-              "correct": 1,
-              "explanation": "Muối có vai trò quan trọng trong kinh tế (buôn bán), chính trị (thuế muối), văn hóa và đời sống xã hội."
-            },
-            {
-              "id": "ex8-3-8",
-              "type": "mcq",
-              "question": "Giá trị của tác phẩm là gì?",
-              "options": [
-                "Chỉ giải trí",
-                "Cung cấp tri thức phong phú, góc nhìn độc đáo về lịch sử",
-                "Không có giá trị",
-                "Chỉ dạy nấu ăn"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm có giá trị cung cấp kiến thức lịch sử phong phú với góc nhìn độc đáo và sáng tạo."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex8-3-1",
+            "type": "mcq",
+            "question": "Tác giả của 'Đời muối' là ai?",
+            "options": [
+              "Claude Lévi-Strauss",
+              "Mark Kurlansky",
+              "Nguyễn Nam",
+              "Đào Duy Anh"
+            ],
+            "correct": 1,
+            "explanation": "'Đời muối' là tác phẩm của nhà văn, nhà báo Mỹ Mark Kurlansky."
+          },
+          {
+            "id": "ex8-3-2",
+            "type": "mcq",
+            "question": "Chủ đề chính của tác phẩm là gì?",
+            "options": [
+              "Tình yêu",
+              "Lịch sử thế giới qua vai trò của muối",
+              "Chiến tranh",
+              "Thiên nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm kể về lịch sử thế giới qua vai trò quan trọng của muối trong văn minh nhân loại."
+          },
+          {
+            "id": "ex8-3-3",
+            "type": "mcq",
+            "question": "Dữ liệu trong tác phẩm bao gồm những gì?",
+            "options": [
+              "Chỉ có tưởng tượng",
+              "Lịch sử, kinh tế, văn hóa, khoa học về muối",
+              "Chỉ có cảm xúc",
+              "Không có dữ liệu"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm chứa nhiều dữ liệu về lịch sử, kinh tế (buôn bán muối), văn hóa và khoa học liên quan đến muối."
+          },
+          {
+            "id": "ex8-3-4",
+            "type": "mcq",
+            "question": "Cách trình bày trong tác phẩm có đặc điểm gì?",
+            "options": [
+              "Khô khan, máy móc",
+              "Kết hợp dữ liệu và kể chuyện sinh động",
+              "Chỉ có số liệu",
+              "Chỉ kể chuyện"
+            ],
+            "correct": 1,
+            "explanation": "Tác giả kết hợp khéo léo giữa dữ liệu chính xác và cách kể chuyện sinh động, hấp dẫn."
+          },
+          {
+            "id": "ex8-3-5",
+            "type": "mcq",
+            "question": "Góc nhìn của tác phẩm có gì đặc biệt?",
+            "options": [
+              "Bình thường",
+              "Độc đáo: nhìn lịch sử qua một vật dụng hàng ngày",
+              "Không có gì đặc biệt",
+              "Khó hiểu"
+            ],
+            "correct": 1,
+            "explanation": "Góc nhìn độc đáo khi xem xét lịch sử thế giới qua vai trò của muối - một vật dụng tưởng chừng bình thường."
+          },
+          {
+            "id": "ex8-3-6",
+            "type": "mcq",
+            "question": "Ngôn ngữ trong tác phẩm kết hợp điều gì?",
+            "options": [
+              "Chỉ khoa học",
+              "Khoa học (chính xác) và văn học (sinh động)",
+              "Chỉ văn học",
+              "Không có đặc điểm"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ kết hợp tính khoa học (chính xác, rõ ràng) và văn học (sinh động, hấp dẫn)."
+          },
+          {
+            "id": "ex8-3-7",
+            "type": "mcq",
+            "question": "Muối có vai trò gì trong lịch sử?",
+            "options": [
+              "Không có vai trò",
+              "Quan trọng trong kinh tế, chính trị, văn hóa",
+              "Chỉ để ăn",
+              "Không đáng kể"
+            ],
+            "correct": 1,
+            "explanation": "Muối có vai trò quan trọng trong kinh tế (buôn bán), chính trị (thuế muối), văn hóa và đời sống xã hội."
+          },
+          {
+            "id": "ex8-3-8",
+            "type": "mcq",
+            "question": "Giá trị của tác phẩm là gì?",
+            "options": [
+              "Chỉ giải trí",
+              "Cung cấp tri thức phong phú, góc nhìn độc đáo về lịch sử",
+              "Không có giá trị",
+              "Chỉ dạy nấu ăn"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm có giá trị cung cấp kiến thức lịch sử phong phú với góc nhìn độc đáo và sáng tạo."
+          },
+          {
+            "id": "ex8-3-9",
+            "type": "mcq",
+            "question": "Văn bản thông tin thường có đặc điểm gì?",
+            "options": [
+              "Tính chính xác, khách quan, cập nhật",
+              "Tính hư cấu, tưởng tượng",
+              "Tính cảm xúc, chủ quan",
+              "Tính triết lý, sâu xa"
+            ],
+            "correct": 0,
+            "explanation": "Văn bản thông tin cần đảm bảo tính chính xác, khách quan và cập nhật."
+          },
+          {
+            "id": "ex8-3-10",
+            "type": "mcq",
+            "question": "Mục đích của việc viết thư trao đổi là gì?",
+            "options": [
+              "Trao đổi ý kiến, thuyết phục người đọc về một vấn đề",
+              "Kể chuyện giải trí",
+              "Thông báo tin tức",
+              "Bày tỏ cảm xúc cá nhân"
+            ],
+            "correct": 0,
+            "explanation": "Thư trao đổi nhằm trao đổi ý kiến và thuyết phục người đọc về một vấn đề cụ thể."
+          }
+        ]
       }
     }
   ]

@@ -4,36 +4,269 @@
   "lessons": [
     {
       "id": "dia12_35",
-      "name": "Biển và hệ thống kinh tế toàn cầu: ảnh hưởng và liên kết",
+      "name": "Thực hành: Tìm hiểu địa lí địa phương",
       "slug": "phat-trien-bien-va-he-thong-kinh-te-toan-cau",
-      "chapter": "Địa lí các vùng kinh tế",
+      "chapter": "Địa lí địa phương",
       "chapter_id": "dia12_part5",
       "lesson_id": 35,
-      "description": "Tổng quan vai trò của biển trong hệ thống kinh tế toàn cầu: vận tải biển quốc tế, tuyến hàng hải, thương mại, và tác động tới kinh tế quốc gia; hướng đến liên kết vùng và chính sách thích ứng.",
+      "description": "Thực hành tìm hiểu địa lí tỉnh, thành phố trực thuộc Trung ương theo các chủ đề vị trí, điều kiện tự nhiên, dân cư và kinh tế; viết báo cáo giới thiệu địa lí địa phương từ các nguồn tư liệu địa phương.",
       "duration_minutes": 60,
       "difficulty_level": "khó",
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Biển trong nền kinh tế toàn cầu",
-          "summary": "Biển là trục chính của thương mại toàn cầu, với tuyến vận tải chính, cảng lớn và chuỗi cung ứng quốc tế; quốc gia ven biển cần chính sách để tận dụng lợi thế và ứng phó rủi ro toàn cầu (khủng hoảng, biến động giá, an ninh biển).",
+          "title": "Thực hành: Tìm hiểu địa lí địa phương",
+          "summary": "Bài thực hành hướng dẫn tìm hiểu địa lí địa phương (tỉnh, thành phố trực thuộc Trung ương) theo các chủ đề và viết báo cáo giới thiệu, dựa trên các nguồn tư liệu như sách giáo dục địa phương, niên giám thống kê và trang web của địa phương.",
           "sections": [
-            { "heading": "Vai trò quốc tế", "content": "Vận tải biển chiếm phần lớn khối lượng thương mại quốc tế; tuyến hàng hải và cảng chính là mắt xích của chuỗi cung ứng toàn cầu." },
-            { "heading": "Tác động với kinh tế quốc gia", "content": "Cảng lớn và logistics kết nối doanh nghiệp trong nước với thị trường quốc tế; rủi ro toàn cầu ảnh hưởng tới giá cả và an ninh nguồn cung." }
+            {
+              "heading": "Mục tiêu và nội dung thực hành",
+              "content": "Mục tiêu của bài thực hành là giúp học sinh vận dụng kiến thức địa lí để tìm hiểu địa phương nơi mình sinh sống, từ đó bồi dưỡng lòng yêu quê hương và ý thức phát triển bền vững. Nội dung gồm: tìm hiểu địa lí địa phương theo các chủ đề và viết báo cáo giới thiệu địa lí địa phương. Học sinh lựa chọn một tỉnh, thành phố trực thuộc Trung ương để nghiên cứu."
+            },
+            {
+              "heading": "Các chủ đề tìm hiểu",
+              "content": "Báo cáo có thể chọn một trong các chủ đề: (1) Vị trí địa lí, phạm vi lãnh thổ (diện tích, tiếp giáp, phân chia hành chính, ý nghĩa vị trí); (2) Điều kiện tự nhiên và tài nguyên thiên nhiên (địa hình, đất đai, khí hậu, sông ngòi, sinh vật, khoáng sản, bảo vệ môi trường); (3) Dân cư và xã hội (quy mô dân số, cơ cấu, phân bố, lao động, việc làm, các vấn đề giáo dục y tế văn hóa); (4) Kinh tế (quy mô, tăng trưởng, cơ cấu, các ngành nông nghiệp, công nghiệp, dịch vụ và phát triển bền vững)."
+            },
+            {
+              "heading": "Nguồn tư liệu tham khảo",
+              "content": "Các nguồn tư liệu cần thiết gồm: sách giáo khoa Địa lí 12; tài liệu Giáo dục địa phương; niên giám thống kê của tỉnh, thành phố; trang web của địa phương và các cơ quan liên quan; hệ thống bản đồ hành chính, tự nhiên, dân cư và kinh tế của địa phương. Việc khai thác đa dạng nguồn tư liệu giúp báo cáo chính xác và cập nhật."
+            },
+            {
+              "heading": "Quy trình viết báo cáo",
+              "content": "Quy trình thực hiện gồm các bước: lựa chọn chủ đề và địa phương cần nghiên cứu; sưu tầm, tổng hợp thông tin từ các nguồn tư liệu; xử lý số liệu và lập bảng, biểu đồ minh họa; viết báo cáo theo bố cục mở đầu, nội dung chi tiết từng phần và kết luận. Báo cáo cần đánh giá khách quan và đề xuất hướng phát triển phù hợp với đặc điểm địa phương."
+            },
+            {
+              "heading": "Ví dụ minh họa và ý nghĩa",
+              "content": "Ví dụ có thể chọn chủ đề vị trí địa lí của Hà Nội: diện tích 3.360 km², thuộc Đồng bằng sông Hồng và vùng KTTĐ Bắc Bộ, tiếp giáp Vĩnh Phúc, Thái Nguyên, Hòa Bình, Hà Nam, Bắc Ninh, Bắc Giang, Hưng Yên, Phú Thọ. Vị trí thuận lợi giúp Hà Nội trở thành đầu tàu kinh tế, trung tâm giao thông và thu hút đầu tư công nghệ cao. Thông qua thực hành, học sinh hiểu sâu sắc hơn về địa phương và trách nhiệm xây dựng quê hương."
+            }
           ]
         },
-        "exercises": { "essay": [ { "q": "Phân tích lợi ích và rủi ro khi gia tăng hội nhập biển toàn cầu cho một nền kinh tế ven biển.", "a_hint": "Xem tới thương mại, an ninh, biến động thị trường và chính sách bảo vệ ngành nội địa." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Vai trò chủ yếu của biển trong kinh tế toàn cầu là?", "options": ["Vận tải hàng hóa quốc tế","Chỉ giải trí","Nông nghiệp trên biển","Không có vai trò"], "correct": 0, "explanation": "Vận tải biển là trụ cột cho thương mại quốc tế." },
-          { "id": 2, "type": "mcq", "question": "Quốc gia có cảng lớn thường có lợi thế gì?", "options": ["Tiếp cận thị trường quốc tế và chi phí logistics thấp hơn","Không có lợi thế","Ít giao thương","Giảm xuất khẩu"], "correct": 0, "explanation": "Cảng lớn giúp doanh nghiệp tiếp cận thị trường và cạnh tranh hơn." },
-          { "id": 3, "type": "mcq", "question": "Một rủi ro toàn cầu ảnh hưởng tới kinh tế biển là?", "options": ["Khủng hoảng logistic toàn cầu và tăng giá cước vận tải","Thời tiết địa phương","Không có rủi ro","Tăng sản xuất"], "correct": 0, "explanation": "Khủng hoảng logistics gây gián đoạn chuỗi cung ứng quốc tế." },
-          { "id": 4, "type": "mcq", "question": "Một chiến lược quốc gia để tận dụng lợi thế biển là?", "options": ["Đầu tư cảng và chính sách hỗ trợ xuất khẩu","Cấm thương mại quốc tế","Không đầu tư","Tập trung vào nông nghiệp nội địa"], "correct": 0, "explanation": "Đầu tư hạ tầng và chính sách hỗ trợ là chiến lược hợp lý." },
-          { "id": 5, "type": "mcq", "question": "Tuyến hàng hải quốc tế quan trọng vì?", "options": ["Nối liền các trung tâm kinh tế và giảm chi phí vận tải","Không quan trọng","Chỉ dành cho du lịch","Dùng để khai khoáng"], "correct": 0, "explanation": "Tuyến hàng hải giúp tối ưu hóa chi phí và thời gian vận chuyển giữa trung tâm kinh tế." },
-          { "id": 6, "type": "mcq", "question": "Một biểu hiện của liên kết toàn cầu qua biển là?", "options": ["Chuỗi cung ứng xuyên biên giới và cảng trung chuyển","Tự cung tự cấp hoàn toàn","Tiêu dùng nội địa tăng","Không liên kết"], "correct": 0, "explanation": "Cảng trung chuyển và chuỗi xuyên biên giới minh họa sự liên kết toàn cầu." },
-          { "id": 7, "type": "mcq", "question": "Chính sách ứng phó rủi ro cần chú trọng?", "options": ["Đa dạng hóa thị trường và tăng dự trữ chiến lược","Không cần ứng phó","Tập trung một thị trường chính","Loại bỏ dự trữ"], "correct": 0, "explanation": "Đa dạng hóa và dự trữ giúp giảm thiểu rủi ro gián đoạn." },
-          { "id": 8, "type": "mcq", "question": "Cơ sở hạ tầng quan trọng để tham gia chuỗi cung ứng toàn cầu là?", "options": ["Cảng hiện đại, logistics và kho bãi hiệu quả","Chỉ đường bộ nhỏ","Không cần hạ tầng","Chỉ văn phòng thương mại"], "correct": 0, "explanation": "Cảng và logistics hiệu quả là hạ tầng thiết yếu." },
-          { "id": 9, "type": "mcq", "question": "Một thách thức khi gia tăng hội nhập biển là?", "options": ["Cạnh tranh mạnh mẽ và áp lực môi trường","Tăng an ninh hoàn toàn","Giảm xuất khẩu","Không có thách thức"], "correct": 0, "explanation": "Gia nhập sâu sắc có thể làm tăng cạnh tranh và áp lực bảo vệ môi trường." },
-          { "id": 10, "type": "mcq", "question": "Mục tiêu chính của chính sách biển quốc gia nên là?", "options": ["Tối ưu lợi ích kinh tế đồng thời đảm bảo an ninh và bền vững môi trường","Chỉ tối ưu lợi nhuận ngắn hạn","Chỉ tập trung vào quân sự","Không có mục tiêu"], "correct": 0, "explanation": "Chính sách cần cân bằng phát triển kinh tế và bảo vệ môi trường, an ninh." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Vai trò chủ yếu của biển trong kinh tế toàn cầu là?",
+            "options": [
+              "Vận tải hàng hóa quốc tế",
+              "Chỉ giải trí",
+              "Nông nghiệp trên biển",
+              "Không có vai trò"
+            ],
+            "correct": 0,
+            "explanation": "Vận tải biển là trụ cột cho thương mại quốc tế."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Quốc gia có cảng lớn thường có lợi thế gì?",
+            "options": [
+              "Tiếp cận thị trường quốc tế và chi phí logistics thấp hơn",
+              "Không có lợi thế",
+              "Ít giao thương",
+              "Giảm xuất khẩu"
+            ],
+            "correct": 0,
+            "explanation": "Cảng lớn giúp doanh nghiệp tiếp cận thị trường và cạnh tranh hơn."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Một rủi ro toàn cầu ảnh hưởng tới kinh tế biển là?",
+            "options": [
+              "Khủng hoảng logistic toàn cầu và tăng giá cước vận tải",
+              "Thời tiết địa phương",
+              "Không có rủi ro",
+              "Tăng sản xuất"
+            ],
+            "correct": 0,
+            "explanation": "Khủng hoảng logistics gây gián đoạn chuỗi cung ứng quốc tế."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Một chiến lược quốc gia để tận dụng lợi thế biển là?",
+            "options": [
+              "Đầu tư cảng và chính sách hỗ trợ xuất khẩu",
+              "Cấm thương mại quốc tế",
+              "Không đầu tư",
+              "Tập trung vào nông nghiệp nội địa"
+            ],
+            "correct": 0,
+            "explanation": "Đầu tư hạ tầng và chính sách hỗ trợ là chiến lược hợp lý."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Tuyến hàng hải quốc tế quan trọng vì?",
+            "options": [
+              "Nối liền các trung tâm kinh tế và giảm chi phí vận tải",
+              "Không quan trọng",
+              "Chỉ dành cho du lịch",
+              "Dùng để khai khoáng"
+            ],
+            "correct": 0,
+            "explanation": "Tuyến hàng hải giúp tối ưu hóa chi phí và thời gian vận chuyển giữa trung tâm kinh tế."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Một biểu hiện của liên kết toàn cầu qua biển là?",
+            "options": [
+              "Chuỗi cung ứng xuyên biên giới và cảng trung chuyển",
+              "Tự cung tự cấp hoàn toàn",
+              "Tiêu dùng nội địa tăng",
+              "Không liên kết"
+            ],
+            "correct": 0,
+            "explanation": "Cảng trung chuyển và chuỗi xuyên biên giới minh họa sự liên kết toàn cầu."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Chính sách ứng phó rủi ro cần chú trọng?",
+            "options": [
+              "Đa dạng hóa thị trường và tăng dự trữ chiến lược",
+              "Không cần ứng phó",
+              "Tập trung một thị trường chính",
+              "Loại bỏ dự trữ"
+            ],
+            "correct": 0,
+            "explanation": "Đa dạng hóa và dự trữ giúp giảm thiểu rủi ro gián đoạn."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Cơ sở hạ tầng quan trọng để tham gia chuỗi cung ứng toàn cầu là?",
+            "options": [
+              "Cảng hiện đại, logistics và kho bãi hiệu quả",
+              "Chỉ đường bộ nhỏ",
+              "Không cần hạ tầng",
+              "Chỉ văn phòng thương mại"
+            ],
+            "correct": 0,
+            "explanation": "Cảng và logistics hiệu quả là hạ tầng thiết yếu."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Một thách thức khi gia tăng hội nhập biển là?",
+            "options": [
+              "Cạnh tranh mạnh mẽ và áp lực môi trường",
+              "Tăng an ninh hoàn toàn",
+              "Giảm xuất khẩu",
+              "Không có thách thức"
+            ],
+            "correct": 0,
+            "explanation": "Gia nhập sâu sắc có thể làm tăng cạnh tranh và áp lực bảo vệ môi trường."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Mục tiêu chính của chính sách biển quốc gia nên là?",
+            "options": [
+              "Tối ưu lợi ích kinh tế đồng thời đảm bảo an ninh và bền vững môi trường",
+              "Chỉ tối ưu lợi nhuận ngắn hạn",
+              "Chỉ tập trung vào quân sự",
+              "Không có mục tiêu"
+            ],
+            "correct": 0,
+            "explanation": "Chính sách cần cân bằng phát triển kinh tế và bảo vệ môi trường, an ninh."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Các trụ cột của phát triển bền vững gồm?",
+            "options": [
+              "Kinh tế",
+              "Xã hội",
+              "Môi trường",
+              "Quân sự"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Phát triển bền vững dựa trên ba trụ cột: kinh tế, xã hội và môi trường."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Các chỉ tiêu đánh giá phát triển bền vững?",
+            "options": [
+              "GDP xanh",
+              "Chỉ số phát triển con người (HDI)",
+              "Dấu chân sinh thái",
+              "Số lượng xe hơi"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "GDP xanh, HDI và dấu chân sinh thái là chỉ tiêu đánh giá phát triển bền vững."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Các mục tiêu phát triển bền vững (SDG) liên quan đến môi trường?",
+            "options": [
+              "Bảo vệ đại dương",
+              "Ứng phó biến đổi khí hậu",
+              "Bảo tồn đa dạng sinh học",
+              "Tăng khai thác tài nguyên"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Bảo vệ đại dương, ứng phó biến đổi khí hậu và bảo tồn đa dạng sinh học là mục tiêu SDG."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Các yếu tố của phát triển bền vững?",
+            "options": [
+              "Tăng trưởng kinh tế",
+              "Công bằng xã hội",
+              "Bảo vệ môi trường",
+              "Khai thác tài nguyên tối đa"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Tăng trưởng kinh tế, công bằng xã hội và bảo vệ môi trường là yếu tố phát triển bền vững."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Phát triển bền vững là gì?",
+            "correct": "Phát triển đáp ứng nhu cầu hiện tại mà không làm tổn hại khả năng đáp ứng nhu cầu của thế hệ tương lai",
+            "explanation": "Phát triển bền vững cân bằng giữa kinh tế, xã hội và môi trường."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Kể tên một mục tiêu phát triển bền vững của Liên Hợp Quốc?",
+            "correct": "Xóa đói giảm nghèo, bảo vệ môi trường, ứng phó biến đổi khí hậu",
+            "explanation": "Các mục tiêu SDG gồm xóa đói giảm nghèo, bảo vệ môi trường và ứng phó biến đổi khí hậu."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Vai trò của kinh tế xanh trong phát triển bền vững?",
+            "correct": "Giảm phát thải, sử dụng hiệu quả tài nguyên, bảo vệ hệ sinh thái",
+            "explanation": "Kinh tế xanh giảm phát thải, sử dụng hiệu quả tài nguyên và bảo vệ hệ sinh thái."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Phân tích lợi ích và rủi ro khi gia tăng hội nhập biển toàn cầu cho một nền kinh tế ven biển.",
+            "correct": "Xem tới thương mại, an ninh, biến động thị trường và chính sách bảo vệ ngành nội địa.",
+            "explanation": "Xem tới thương mại, an ninh, biến động thị trường và chính sách bảo vệ ngành nội địa."
+          }
         ]
       }
     }

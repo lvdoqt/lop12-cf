@@ -18,22 +18,218 @@
           "title": "Giới thiệu CSS",
           "summary": "CSS (Cascading Style Sheets) dùng để quy định cách trình bày của các phần tử HTML trên màn hình.",
           "sections": [
-            { "heading": "Khái niệm CSS", "content": "Là ngôn ngữ định kiểu theo tầng, giúp kiểm soát màu sắc, bố cục, font chữ của website." },
-            { "heading": "Vai trò của CSS", "content": "Tách biệt nội dung và hình thức, giúp bảo trì code dễ dàng, cho phép một file CSS áp dụng cho nhiều trang HTML." },
-            { "heading": "Ba cách chèn CSS", "content": "Inline (trong thẻ), Internal (trong thẻ <style>), External (file .css riêng biệt)." }
+            {
+              "heading": "Khái niệm CSS",
+              "content": "Là ngôn ngữ định kiểu theo tầng, giúp kiểm soát màu sắc, bố cục, font chữ của website."
+            },
+            {
+              "heading": "Vai trò của CSS",
+              "content": "Tách biệt nội dung và hình thức, giúp bảo trì code dễ dàng, cho phép một file CSS áp dụng cho nhiều trang HTML."
+            },
+            {
+              "heading": "Ba cách chèn CSS",
+              "content": "Inline (trong thẻ), Internal (trong thẻ <style>), External (file .css riêng biệt)."
+            }
           ]
         },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "CSS là viết tắt của cụm từ nào?", "options": ["Cascading Style Sheets", "Colorful Style Sheets", "Computer Style Sheets", "Creative Style System"], "correct": 0, "explanation": "CSS là Ngôn ngữ định kiểu theo tầng." },
-          { "id": 2, "type": "mcq", "question": "Để kết nối file CSS bên ngoài vào trang HTML, ta dùng thẻ nào?", "options": ["<style>", "<link>", "<css>", "<script>"], "correct": 1, "explanation": "Thẻ <link rel=\"stylesheet\" href=\"...\"> đặt trong <head>." },
-          { "id": 3, "type": "mcq", "question": "Thành phần nào trong CSS dùng để chỉ định phần tử HTML muốn định dạng?", "options": ["Selector (Bộ chọn)", "Property (Thuộc tính)", "Value (Giá trị)", "Declaration"], "correct": 0, "explanation": "Selector xác định đối tượng sẽ bị tác động bởi CSS." },
-          { "id": 4, "type": "mcq", "question": "Cách chèn CSS nào được khuyến khích nhất cho dự án lớn?", "options": ["Inline CSS", "Internal CSS", "External CSS (file .css riêng)", "Dùng JavaScript"], "correct": 2, "explanation": "External CSS giúp tái sử dụng mã và quản lý dễ dàng." },
-          { "id": 5, "type": "mcq", "question": "Kí hiệu nào dùng để định dạng cho một lớp (Class) trong CSS?", "options": ["Dấu thăng (#)", "Dấu chấm (.)", "Dấu đô la ($)", "Dấu sao (*)"], "correct": 1, "explanation": "Ví dụ: .myClass { ... }." },
-          { "id": 6, "type": "mcq", "question": "Kí hiệu nào dùng để định dạng cho một định danh (ID) duy nhất trong CSS?", "options": ["Dấu chấm (.)", "Dấu thăng (#)", "Dấu ngoặc vuông []", "Dấu gạch ngang -"], "correct": 1, "explanation": "Ví dụ: #myID { ... }." },
-          { "id": 7, "type": "mcq", "question": "Nếu cùng một phần tử có cả 3 cách chèn CSS, cách nào thường có ưu tiên cao nhất?", "options": ["External CSS", "Internal CSS", "Inline CSS", "Trình duyệt tự chọn"], "correct": 2, "explanation": "Inline CSS (viết trực tiếp trong thuộc tính style của thẻ) có độ ưu tiên cao nhất." },
-          { "id": 8, "type": "mcq", "question": "Bộ chọn '*' trong CSS dùng để làm gì?", "options": ["Chọn tất cả các thẻ <a>", "Chọn tất cả các phần tử trên trang", "Chọn các phần tử quan trọng", "Chọn các thẻ chứa ảnh"], "correct": 1, "explanation": "Đó là bộ chọn vạn năng (Universal selector)." },
-          { "id": 9, "type": "mcq", "question": "Để viết chú thích trong file CSS, ta dùng?", "options": ["// chú thích", "<!-- chú thích -->", "/* chú thích */", "# chú thích"], "correct": 2, "explanation": "Cú pháp /* ... */ dùng cho chú thích trong CSS." },
-          { "id": 10, "type": "mcq", "question": "CSS giúp website?", "options": ["Chạy nhanh hơn", "Chuyên nghiệp, đẹp mắt và đồng nhất về giao diện", "Có nhiều dữ liệu hơn", "An toàn hơn trước virus"], "correct": 1, "explanation": "CSS tập trung vào trải nghiệm thị giác của người dùng." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "CSS là viết tắt của cụm từ nào?",
+            "options": [
+              "Cascading Style Sheets",
+              "Colorful Style Sheets",
+              "Computer Style Sheets",
+              "Creative Style System"
+            ],
+            "correct": 0,
+            "explanation": "CSS là Ngôn ngữ định kiểu theo tầng."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Để kết nối file CSS bên ngoài vào trang HTML, ta dùng thẻ nào?",
+            "options": [
+              "<style>",
+              "<link>",
+              "<css>",
+              "<script>"
+            ],
+            "correct": 1,
+            "explanation": "Thẻ <link rel=\"stylesheet\" href=\"...\"> đặt trong <head>."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Thành phần nào trong CSS dùng để chỉ định phần tử HTML muốn định dạng?",
+            "options": [
+              "Selector (Bộ chọn)",
+              "Property (Thuộc tính)",
+              "Value (Giá trị)",
+              "Declaration"
+            ],
+            "correct": 0,
+            "explanation": "Selector xác định đối tượng sẽ bị tác động bởi CSS."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Cách chèn CSS nào được khuyến khích nhất cho dự án lớn?",
+            "options": [
+              "Inline CSS",
+              "Internal CSS",
+              "External CSS (file .css riêng)",
+              "Dùng JavaScript"
+            ],
+            "correct": 2,
+            "explanation": "External CSS giúp tái sử dụng mã và quản lý dễ dàng."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Kí hiệu nào dùng để định dạng cho một lớp (Class) trong CSS?",
+            "options": [
+              "Dấu thăng (#)",
+              "Dấu chấm (.)",
+              "Dấu đô la ($)",
+              "Dấu sao (*)"
+            ],
+            "correct": 1,
+            "explanation": "Ví dụ: .myClass { ... }."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Kí hiệu nào dùng để định dạng cho một định danh (ID) duy nhất trong CSS?",
+            "options": [
+              "Dấu chấm (.)",
+              "Dấu thăng (#)",
+              "Dấu ngoặc vuông []",
+              "Dấu gạch ngang -"
+            ],
+            "correct": 1,
+            "explanation": "Ví dụ: #myID { ... }."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Nếu cùng một phần tử có cả 3 cách chèn CSS, cách nào thường có ưu tiên cao nhất?",
+            "options": [
+              "External CSS",
+              "Internal CSS",
+              "Inline CSS",
+              "Trình duyệt tự chọn"
+            ],
+            "correct": 2,
+            "explanation": "Inline CSS (viết trực tiếp trong thuộc tính style của thẻ) có độ ưu tiên cao nhất."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Bộ chọn '*' trong CSS dùng để làm gì?",
+            "options": [
+              "Chọn tất cả các thẻ <a>",
+              "Chọn tất cả các phần tử trên trang",
+              "Chọn các phần tử quan trọng",
+              "Chọn các thẻ chứa ảnh"
+            ],
+            "correct": 1,
+            "explanation": "Đó là bộ chọn vạn năng (Universal selector)."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Để viết chú thích trong file CSS, ta dùng?",
+            "options": [
+              "// chú thích",
+              "<!-- chú thích -->",
+              "/* chú thích */",
+              "# chú thích"
+            ],
+            "correct": 2,
+            "explanation": "Cú pháp /* ... */ dùng cho chú thích trong CSS."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "CSS giúp website?",
+            "options": [
+              "Chạy nhanh hơn",
+              "Chuyên nghiệp, đẹp mắt và đồng nhất về giao diện",
+              "Có nhiều dữ liệu hơn",
+              "An toàn hơn trước virus"
+            ],
+            "correct": 1,
+            "explanation": "CSS tập trung vào trải nghiệm thị giác của người dùng."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "CSS là viết tắt của?",
+            "options": [
+              "Cascading Style Sheets",
+              "Computer Style Sheets",
+              "Creative Style System",
+              "Colorful Style Sheets"
+            ],
+            "correct": [
+              0
+            ],
+            "explanation": "CSS là Cascading Style Sheets."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "CSS nhúng vào HTML bằng những cách nào?",
+            "options": [
+              "Inline (thuộc tính style)",
+              "Internal (thẻ <style>)",
+              "External (file .css)",
+              "JavaScript"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "CSS có 3 cách nhúng: inline, internal và external."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "CSS có ưu điểm gì so với HTML thuần?",
+            "options": [
+              "Tách biệt nội dung và trình bày",
+              "Dễ bảo trì",
+              "Tái sử dụng",
+              "Chạy nhanh hơn"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "CSS tách biệt nội dung/trình bày, dễ bảo trì và tái sử dụng."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "CSS dùng để định dạng những gì?",
+            "options": [
+              "Màu sắc",
+              "Font chữ",
+              "Kích thước",
+              "Bố cục"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "explanation": "CSS định dạng màu sắc, font chữ, kích thước và bố cục."
+          }
         ]
       }
     }

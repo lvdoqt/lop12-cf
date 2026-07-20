@@ -34,7 +34,11 @@
         { "id": "ex7", "type": "mcq", "question": "ARF là?", "options": ["Liên minh", "ASEAN Regional Forum", "Khu vực", "Hiệp ước"], "correct": 1, "explanation": "ASEAN Regional Forum - cơ chế đối thoại bảo mật." },
         { "id": "ex8", "type": "mcq", "question": "Thách thức sau độc lập?", "options": ["Hạt nhân", "Xây dựng nhà nước", "Xâm lược", "Độc tài"], "correct": 1, "explanation": "Xây dựng nhà nước từ nền móng thấp." },
         { "id": "ex9", "type": "mcq", "question": "RCEP bao gồm?", "options": ["Chỉ ASEAN", "ASEAN+đối tác toàn cầu", "Chỉ Á Đông", "Âu Châu"], "correct": 1, "explanation": "RCEP: ASEAN+Trung, Nhật, Hàn, Ấn, Úc, NZ." },
-        { "id": "ex10", "type": "mcq", "question": "Tuyên bố ASEAN tên?", "options": ["Kuala Lumpur", "Singapore", "Bangkok", "Manila"], "correct": 2, "explanation": "Tuyên bố Bangkok 1967 thành lập ASEAN." }
+        { "id": "ex10", "type": "mcq", "question": "Tuyên bố ASEAN tên?", "options": ["Kuala Lumpur", "Singapore", "Bangkok", "Manila"], "correct": 2, "explanation": "Tuyên bố Bangkok 1967 thành lập ASEAN." },
+        { "id": "ex11", "type": "msq", "question": "Những quốc gia nào là thành viên sáng lập ASEAN năm 1967?", "options": ["Thái Lan", "Indonesia", "Việt Nam", "Singapore"], "correct": [0, 1, 3], "explanation": "5 thành viên sáng lập: Thái Lan, Indonesia, Malaysia, Philippines, Singapore." },
+        { "id": "ex12", "type": "msq", "question": "Những nước Đông Nam Á nào giành độc lập từ thực dân Pháp?", "options": ["Việt Nam", "Indonesia", "Lào", "Campuchia"], "correct": [0, 2, 3], "explanation": "Việt Nam, Lào, Campuchia là các nước Đông Dương thuộc Pháp." },
+        { "id": "ex13", "type": "msq", "question": "Những thách thức sau độc lập của các quốc gia Đông Nam Á là?", "options": ["Xây dựng nhà nước và ổn định chính trị", "Phát triển kinh tế từ nền tảng yếu", "Mở rộng lãnh thổ thuộc địa", "Xây dựng bản sắc quốc gia"], "correct": [0, 1, 3], "explanation": "Các nước Đông Nam Á đối mặt với xây dựng nhà nước, phát triển kinh tế và xây dựng bản sắc dân tộc." },
+        { "id": "ex14", "type": "msq", "question": "Vai trò của ASEAN trong khu vực bao gồm?", "options": ["Thúc đẩy hợp tác kinh tế qua AFTA", "Duy trì hòa bình và ổn định khu vực", "Áp đặt chế độ chính trị lên các nước thành viên", "Tạo diễn đàn đối thoại giữa các cường quốc"], "correct": [0, 1, 3], "explanation": "ASEAN thúc đẩy hợp tác kinh tế, duy trì hòa bình và là diễn đàn đối thoại." }
       ]
     }
   }]

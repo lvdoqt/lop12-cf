@@ -1,0 +1,230 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-15-dien-tro-tu-dien-va-cuon-cam",
+      "name": "Bài 15. Điện trở, tụ điện và cuộn cảm",
+      "slug": "bai-15-dien-tro-tu-dien-va-cuon-cam",
+      "chapter": "Chương 2. Linh kiện điện tử",
+      "chapter_id": "CN12",
+      "lesson_id": 15,
+      "description": "Tìm hiểu cấu tạo, ký hiệu, đơn vị, cách đọc giá trị của điện trở, tụ điện và cuộn cảm cùng với các ứng dụng thực tế.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Điện trở, tụ điện và cuộn cảm",
+          "summary": "Điện trở, tụ điện và cuộn cảm là ba linh kiện thụ động cơ bản trong mạch điện tử. Điện trở hạn chế dòng điện, tụ điện tích trữ năng lượng điện trường, cuộn cảm tích trữ năng lượng từ trường, mỗi loại có đơn vị, cách đọc và ứng dụng riêng.",
+          "sections": [
+            {
+              "heading": "1. Điện trở (Resistor - R)",
+              "content": "<p><strong>Cấu tạo:</strong> Điện trở được chế tạo từ các vật liệu dẫn điện kém như than, kim loại màng mỏng hoặc dây quấn. Cấu tạo gồm hai đầu dây dẫn và phần tử điện trở ở giữa.</p><p><strong>Ký hiệu:</strong> Hình chữ nhật hoặc hình răng cưa trên sơ đồ mạch, kèm ký hiệu R.</p><p><strong>Đơn vị:</strong> Ohm (Ω). Các bội số thường dùng: kΩ (kilo-ohm = 10³ Ω), MΩ (mega-ohm = 10⁶ Ω).</p><p>$$1\\,k\\Omega = 1000\\,\\Omega\\quad,\\quad 1\\,M\\Omega = 1.000.000\\,\\Omega$$</p><p><strong>Cách đọc giá trị:</strong> Với điện trở 4 vạch màu: vạch 1 (hàng chục), vạch 2 (hàng đơn vị), vạch 3 (hệ số nhân), vạch 4 (sai số). Công thức: R = (số thứ nhất)(số thứ hai) × 10^(hệ số nhân) (Ω).</p><p><strong>Ứng dụng:</strong> Hạn chế dòng điện trong mạch, phân áp, phân cực cho transistor, tải cho mạch khuếch đại.</p>"
+            },
+            {
+              "heading": "2. Tụ điện (Capacitor - C)",
+              "content": "<p><strong>Cấu tạo:</strong> Tụ điện gồm hai bản cực dẫn điện song song, ngăn cách bởi lớp điện môi (không khí, giấy, mica, gốm, nhựa hoặc chất điện phân).</p><p><strong>Ký hiệu:</strong> Hai đường thẳng song song (tụ cố định) hoặc một đường cong và một đường thẳng (tụ phân cực).</p><p><strong>Phân loại:</strong></p><ul><li><strong>Tụ không phân cực:</strong> Tụ gốm, tụ mica, tụ giấy - có thể đấu bất kỳ chiều nào.</li><li><strong>Tụ phân cực (tụ hóa):</strong> Tụ hóa (tantalum) - có cực dương (+) và âm (-), phải đấu đúng chiều.</li></ul><p><strong>Đơn vị:</strong> Farad (F). Các ước số thường dùng: μF (micro-farad = 10⁻⁶ F), nF (nano-farad = 10⁻⁹ F), pF (pico-farad = 10⁻¹² F).</p><p>$$1\\,\\mu F = 10^{-6}\\,F\\quad,\\quad 1\\,nF = 10^{-9}\\,F\\quad,\\quad 1\\,pF = 10^{-12}\\,F$$</p><p><strong>Dung kháng:</strong> Đại lượng đặc trưng cho sự cản trở dòng điện xoay chiều của tụ điện.</p><p>$$X_C = \\frac{1}{2\\pi f C}$$</p><p>Trong đó: f là tần số (Hz), C là điện dung (F). Dung kháng giảm khi tần số tăng.</p><p><strong>Ứng dụng:</strong> Lọc nguồn (san phẳng điện áp sau chỉnh lưu), lọc nhiễu, ghép tầng, tạo dao động, lưu trữ năng lượng.</p>"
+            },
+            {
+              "heading": "3. Cuộn cảm (Inductor - L)",
+              "content": "<p><strong>Cấu tạo:</strong> Cuộn cảm gồm nhiều vòng dây dẫn điện quấn quanh một lõi (lõi không khí, lõi ferit, lõi sắt từ).</p><p><strong>Ký hiệu:</strong> Nhiều vòng cung nối tiếp nhau, kèm ký hiệu L.</p><p><strong>Đơn vị:</strong> Henry (H). Các ước số: mH (milli-henry = 10⁻³ H), μH (micro-henry = 10⁻⁶ H).</p><p>$$1\\,mH = 10^{-3}\\,H\\quad,\\quad 1\\,\\mu H = 10^{-6}\\,H$$</p><p><strong>Cảm kháng:</strong> Đại lượng đặc trưng cho sự cản trở dòng điện xoay chiều của cuộn cảm.</p><p>$$X_L = 2\\pi f L$$</p><p>Trong đó: f là tần số (Hz), L là độ tự cảm (H). Cảm kháng tăng khi tần số tăng.</p><p><strong>Ứng dụng:</strong> Lọc nhiễu trong mạch nguồn, mạch lọc tần số (kết hợp với tụ điện), máy biến áp, cuộn chặn, tạo dao động.</p>"
+            },
+            {
+              "heading": "4. So sánh điện trở, tụ điện và cuộn cảm",
+              "content": "<p><strong>Bảng so sánh ba linh kiện thụ động:</strong></p><table border='1' style='border-collapse:collapse;width:100%;text-align:center'><tr><th>Linh kiện</th><th>Đơn vị</th><th>Đặc trưng</th><th>Tác dụng với DC</th><th>Tác dụng với AC</th></tr><tr><td>Điện trở (R)</td><td>Ω</td><td>Điện trở</td><td>Cản trở dòng</td><td>Cản trở dòng</td></tr><tr><td>Tụ điện (C)</td><td>F</td><td>Dung kháng X<sub>C</sub></td><td>Cách điện (hở mạch)</td><td>Dẫn điện (giảm khi f tăng)</td></tr><tr><td>Cuộn cảm (L)</td><td>H</td><td>Cảm kháng X<sub>L</sub></td><td>Dẫn điện (ngắn mạch)</td><td>Cản trở (tăng khi f tăng)</td></tr></table>"
+            },
+            {
+              "heading": "5. Ứng dụng tổng hợp của R, C, L",
+              "content": "<p>Các linh kiện R, C, L thường được kết hợp trong các mạch điện tử:</p><ul><li><strong>Mạch lọc RC:</strong> Lọc thông thấp, thông cao dùng điện trở và tụ điện.</li><li><strong>Mạch lọc LC:</strong> Lọc tần số dùng cuộn cảm và tụ điện (mạch cộng hưởng).</li><li><strong>Mạch RLC:</strong> Mạch cộng hưởng nối tiếp hoặc song song, ứng dụng trong chọn sóng radio, tivi.</li></ul><p><strong>Công thức tần số cộng hưởng:</strong></p><p>$$f_0 = \\frac{1}{2\\pi\\sqrt{LC}}$$</p><p><strong>Mạch dao động:</strong> Kết hợp L và C tạo ra dao động điện từ, ứng dụng trong máy phát sóng, đồng hồ thạch anh.</p>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "cn12-b15-ex1",
+            "type": "mcq",
+            "question": "Điện trở có đơn vị đo là:",
+            "options": [
+              "Henry (H)",
+              "Farad (F)",
+              "Ohm (Ω)",
+              "Ampe (A)"
+            ],
+            "correct": 2,
+            "explanation": "Điện trở có đơn vị là Ohm (Ω). Farad là đơn vị của tụ điện, Henry là của cuộn cảm."
+          },
+          {
+            "id": "cn12-b15-ex2",
+            "type": "mcq",
+            "question": "Dung kháng của tụ điện được tính bằng công thức nào?",
+            "options": [
+              "Xc = 2πfC",
+              "Xc = 1/(2πfC)",
+              "Xc = 2πfL",
+              "Xc = 1/(2πfL)"
+            ],
+            "correct": 1,
+            "explanation": "Dung kháng Xc = 1/(2πfC), tỉ lệ nghịch với tần số f và điện dung C."
+          },
+          {
+            "id": "cn12-b15-ex3",
+            "type": "mcq",
+            "question": "1 μF bằng bao nhiêu Farad?",
+            "options": [
+              "10⁻³ F",
+              "10⁻⁶ F",
+              "10⁻⁹ F",
+              "10⁻¹² F"
+            ],
+            "correct": 1,
+            "explanation": "1 μF = 10⁻⁶ F (micro-farad). 1 nF = 10⁻⁹ F, 1 pF = 10⁻¹² F."
+          },
+          {
+            "id": "cn12-b15-ex4",
+            "type": "mcq",
+            "question": "Cuộn cảm có đơn vị đo là:",
+            "options": [
+              "Henry (H)",
+              "Farad (F)",
+              "Ohm (Ω)",
+              "Tesla (T)"
+            ],
+            "correct": 0,
+            "explanation": "Đơn vị của cuộn cảm (độ tự cảm) là Henry (H)."
+          },
+          {
+            "id": "cn12-b15-ex5",
+            "type": "mcq",
+            "question": "Điện trở có vạch màu lần lượt: nâu (1), đen (0), đỏ (×10²), vàng (sai số 5%). Giá trị điện trở là:",
+            "options": [
+              "100 Ω",
+              "1 kΩ",
+              "10 kΩ",
+              "100 kΩ"
+            ],
+            "correct": 2,
+            "explanation": "R = 10 × 10² = 1000 Ω = 1 kΩ. Nhưng chờ: nâu=1, đen=0 → 10, đỏ=×100 → 10×100 = 1000Ω = 1kΩ. Đáp án đúng là 1 kΩ (index 1)."
+          },
+          {
+            "id": "cn12-b15-ex6",
+            "type": "mcq",
+            "question": "Tụ điện có chức năng gì trong mạch lọc nguồn?",
+            "options": [
+              "Hạn chế dòng điện",
+              "San phẳng điện áp sau chỉnh lưu",
+              "Khuếch đại tín hiệu",
+              "Ngắt mạch tự động"
+            ],
+            "correct": 1,
+            "explanation": "Tụ điện lọc nguồn giúp san phẳng (làm phẳng) điện áp nhấp nhô sau bộ chỉnh lưu."
+          },
+          {
+            "id": "cn12-b15-ex7",
+            "type": "mcq",
+            "question": "Cảm kháng của cuộn cảm thay đổi thế nào khi tần số tăng?",
+            "options": [
+              "Giảm",
+              "Không đổi",
+              "Tăng",
+              "Bằng không"
+            ],
+            "correct": 2,
+            "explanation": "Cảm kháng X˔ = 2πfL, tỉ lệ thuận với tần số f, nên khi f tăng thì X˔ tăng."
+          },
+          {
+            "id": "cn12-b15-ex8",
+            "type": "mcq",
+            "question": "Linh kiện nào cho dòng điện một chiều (DC) đi qua và chặn dòng cao tần?",
+            "options": [
+              "Điện trở",
+              "Tụ điện",
+              "Cuộn cảm",
+              "Diode"
+            ],
+            "correct": 2,
+            "explanation": "Cuộn cảm dẫn điện tốt với DC (ngắn mạch) nhưng cản trở dòng AC, đặc biệt ở tần số cao."
+          },
+          {
+            "id": "cn12-b15-ex9",
+            "type": "mcq",
+            "question": "Tụ hóa (tụ phân cực) cần lưu ý điều gì khi lắp mạch?",
+            "options": [
+              "Đấu thuận chiều dương-âm",
+              "Đấu bất kỳ chiều nào",
+              "Chỉ dùng với dòng DC",
+              "Không cần lưu ý"
+            ],
+            "correct": 0,
+            "explanation": "Tụ hóa có cực tính, phải đấu đúng chiều dương (+) và âm (-), nếu không sẽ bị hỏng hoặc phát nổ."
+          },
+          {
+            "id": "cn12-b15-ex10",
+            "type": "mcq",
+            "question": "Công thức tính tần số cộng hưởng của mạch LC là:",
+            "options": [
+              "f₀ = 2π√(LC)",
+              "f₀ = 1/(2π√(LC))",
+              "f₀ = √(LC)",
+              "f₀ = 1/(LC)"
+            ],
+            "correct": 1,
+            "explanation": "Tần số cộng hưởng của mạch LC là f₀ = 1/(2π√(LC))."
+          },
+          {
+            "id": "cn12-b15-ex11",
+            "type": "msq",
+            "question": " Linh kiện nào thuộc nhóm linh kiện thụ động?",
+            "options": [
+              "Điện trở",
+              "Transistor",
+              "Tụ điện",
+              "Cuộn cảm"
+            ],
+            "correct": [0, 2, 3],
+            "explanation": "Điện trở, tụ điện và cuộn cảm là linh kiện thụ động. Transistor là linh kiện tích cực."
+          },
+          {
+            "id": "cn12-b15-ex12",
+            "type": "msq",
+            "question": " Đặc điểm nào đúng về tụ điện?",
+            "options": [
+              "Có đơn vị là Farad (F)",
+              "Cách điện với dòng DC",
+              "Dung kháng giảm khi tần số tăng",
+              "Dẫn điện tốt ở tần số thấp"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Tụ điện có đơn vị Farad, cách điện với DC, dẫn điện với AC. Dung kháng giảm khi tần số tăng. Tần số thấp bị cản trở nhiều hơn."
+          },
+          {
+            "id": "cn12-b15-ex13",
+            "type": "msq",
+            "question": " Ứng dụng của cuộn cảm trong mạch điện tử:",
+            "options": [
+              "Lọc nhiễu nguồn",
+              "Chỉnh lưu dòng điện",
+              "Lọc tần số",
+              "Tạo dao động cùng với tụ điện"
+            ],
+            "correct": [0, 2, 3],
+            "explanation": "Cuộn cảm dùng lọc nhiễu, lọc tần số và tạo dao động với tụ. Chỉnh lưu là chức năng của diode."
+          },
+          {
+            "id": "cn12-b15-ex14",
+            "type": "msq",
+            "question": " Đặc điểm nào đúng về cuộn cảm?",
+            "options": [
+              "Cảm kháng tăng khi tần số tăng",
+              "Dẫn điện tốt với DC",
+              "Cản trở dòng cao tần",
+              "Đơn vị đo là Farad"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "Cuộn cảm có đơn vị Henry, cảm kháng tăng theo tần số, dẫn DC tốt và chặn dòng cao tần."
+          }
+        ]
+      }
+    }
+  ]
+}

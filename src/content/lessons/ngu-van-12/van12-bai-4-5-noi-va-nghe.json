@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-4-5-noi-va-nghe",
-      "name": "Nói và nghe: Trình bày về việc vay mượn – cải biến – sáng tạo",
+      "id": "van12-bai-4-5-noi-va-nghe-vay-muon-sang-tao",
+      "name": "Trình bày về việc vay mượn – cải biến – sáng tạo trong một tác phẩm văn học",
       "slug": "noi-va-nghe-vay-muon-sang-tao",
       "chapter": "Yếu tố kì ảo trong truyện kể",
       "chapter_id": "V12-4",
       "lesson_id": 5,
-      "description": "Phát triển kỹ năng nói và nghe để thuyết trình, trình bày quan điểm về quá trình vay mượn, cải biến, sáng tạo trong một tác phẩm văn học.",
+      "description": "Hướng dẫn trình bày về việc vay mượn, cải biến, sáng tạo trong tác phẩm văn học.",
       "duration_minutes": 50,
       "difficulty_level": "medium",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Nói và nghe: Thuyết trình về vay mượn – cải biến – sáng tạo",
+          "title": "Trình bày về vay mượn – cải biến – sáng tạo",
           "sections": [
             {
               "heading": "1. Chuẩn bị nội dung cho bài thuyết trình",
@@ -148,6 +148,32 @@
             ],
             "correct": 1,
             "explanation": "Câu hỏi giúp gợi suy tư, tạo sự tương tác, giữ sự chú ý của khán giả và làm bài thuyết trình sinh động hơn."
+          },
+          {
+            "id": "ex4-5-9",
+            "type": "mcq",
+            "question": "Phân tích yếu tố kì ảo trong tác phẩm giúp người đọc hiểu được điều gì?",
+            "options": [
+              "Nội dung và thông điệp sâu sắc của tác phẩm",
+              "Chỉ để giải trí",
+              "Không có tác dụng",
+              "Làm tác phẩm khó hiểu hơn"
+            ],
+            "correct": 0,
+            "explanation": "Phân tích yếu tố kì ảo giúp khám phá ý nghĩa biểu tượng và thông điệp của tác phẩm."
+          },
+          {
+            "id": "ex4-5-10",
+            "type": "mcq",
+            "question": "Trong truyện kể, yếu tố kì ảo thường kết hợp với yếu tố nào để tạo nên giá trị tác phẩm?",
+            "options": [
+              "Yếu tố hiện thực",
+              "Chỉ có yếu tố kì ảo",
+              "Yếu tố lịch sử",
+              "Yếu tố khoa học"
+            ],
+            "correct": 0,
+            "explanation": "Yếu tố kì ảo kết hợp với hiện thực tạo nên sự hấp dẫn và chiều sâu cho tác phẩm."
           }
         ]
       }

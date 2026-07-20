@@ -1,0 +1,230 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-14-nganh-nghe-va-dich-vu-trong-linh-vuc-ki-thuat-dien-tu",
+      "name": "Bài 14. Ngành nghề và dịch vụ trong lĩnh vực kĩ thuật điện tử",
+      "slug": "bai-14-nganh-nghe-va-dich-vu-trong-linh-vuc-ki-thuat-dien-tu",
+      "chapter": "Chương 1. Giới thiệu chung về kĩ thuật điện tử",
+      "chapter_id": "CN12",
+      "lesson_id": 14,
+      "description": "Tìm hiểu các ngành nghề, yêu cầu năng lực, cơ hội việc làm và các dịch vụ liên quan trong lĩnh vực kĩ thuật điện tử.",
+      "duration_minutes": 45,
+      "difficulty_level": "easy",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Ngành nghề và dịch vụ trong lĩnh vực kĩ thuật điện tử",
+          "summary": "Lĩnh vực kĩ thuật điện tử bao gồm nhiều ngành nghề đa dạng như kĩ sư điện tử, kĩ thuật viên sửa chữa điện tử, lập trình viên nhúng, chuyên gia IoT,… đòi hỏi kiến thức chuyên môn và kĩ năng thực hành cao.",
+          "sections": [
+            {
+              "heading": "1. Các ngành nghề trong kĩ thuật điện tử",
+              "content": "<p>Lĩnh vực kĩ thuật điện tử gồm nhiều ngành nghề hấp dẫn:</p><ul><li><strong>Kĩ sư thiết kế vi mạch (IC Designer):</strong> Thiết kế, mô phỏng và kiểm thử mạch tích hợp trên chip bán dẫn.</li><li><strong>Kĩ sư hệ thống nhúng (Embedded Systems Engineer):</strong> Phát triển phần cứng và phần mềm cho các thiết bị nhúng (xe thông minh, thiết bị y tế, robot).</li><li><strong>Kĩ thuật viên điện tử (Electronics Technician):</strong> Lắp ráp, kiểm tra, bảo trì và sửa chữa thiết bị điện tử.</li><li><strong>Chuyên gia IoT (IoT Specialist):</strong> Thiết kế và triển khai hệ thống kết nối vạn vật, cảm biến thông minh.</li><li><strong>Kĩ sư viễn thông (Telecommunications Engineer):</strong> Thiết kế và vận hành hệ thống truyền thông, mạng di động, vệ tinh.</li></ul>"
+            },
+            {
+              "heading": "2. Yêu cầu năng lực đối với người lao động",
+              "content": "<p>Người làm việc trong lĩnh vực kĩ thuật điện tử cần đáp ứng các yêu cầu sau:</p><p><strong>Kiến thức chuyên môn:</strong></p><ul><li>Nắm vững nguyên lí hoạt động của linh kiện và mạch điện tử cơ bản.</li><li>Thành thạo các công cụ thiết kế và mô phỏng mạch (Altium, Eagle, MATLAB, Proteus…).</li><li>Hiểu biết về vi điều khiển, lập trình nhúng (C, C++, Python, Arduino…).</li></ul><p><strong>Kĩ năng mềm:</strong></p><ul><li>Khả năng tư duy logic, phân tích và giải quyết vấn đề.</li><li>Làm việc nhóm và giao tiếp hiệu quả.</li><li>Sáng tạo, ham học hỏi và cập nhật công nghệ mới.</li></ul>"
+            },
+            {
+              "heading": "3. Cơ hội việc làm",
+              "content": "<p>Ngành kĩ thuật điện tử có nhu cầu nhân lực lớn và đa dạng:</p><ul><li><strong>Công ty sản xuất linh kiện điện tử:</strong> Intel, Samsung, LG, Bosch, Panasonic…</li><li><strong>Công ty thiết kế vi mạch:</strong> Qualcomm, MediaTek, Synopsys, Cadence…</li><li><strong>Công ty viễn thông:</strong> Viettel, VNPT, Mobifone, VinaPhone…</li><li><strong>Công ty công nghệ thông tin và IoT:</strong> FPT, VNG, các startup IoT.</li><li><strong>Nhà máy sản xuất ô tô:</strong> VinFast, Toyota, Honda (hệ thống điện tử trên xe).</li><li><strong>Cơ quan nghiên cứu, viện, trường đại học.</strong></li></ul>"
+            },
+            {
+              "heading": "4. Các dịch vụ liên quan đến kĩ thuật điện tử",
+              "content": "<p>Các dịch vụ phổ biến trong lĩnh vực kĩ thuật điện tử bao gồm:</p><ul><li><strong>Dịch vụ sửa chữa và bảo trì thiết bị điện tử:</strong> Sửa chữa điện thoại, máy tính, tivi, tủ lạnh, điều hoà…</li><li><strong>Dịch vụ tư vấn và thiết kế hệ thống điện tử:</strong> Tư vấn giải pháp tự động hoá, nhà thông minh, hệ thống an ninh.</li><li><strong>Dịch vụ lắp đặt hệ thống điện tử:</strong> Lắp đặt camera giám sát, hệ thống âm thanh, hội nghị truyền hình.</li><li><strong>Dịch vụ đào tạo và chuyển giao công nghệ:</strong> Đào tạo kĩ thuật viên điện tử, chuyển giao công nghệ sản xuất.</li></ul>"
+            },
+            {
+              "heading": "5. Định hướng nghề nghiệp cho học sinh",
+              "content": "<p>Để theo đuổi ngành kĩ thuật điện tử, học sinh cần:</p><ul><li>Học tốt các môn Toán, Vật lí, Công nghệ, Tin học ở bậc THPT.</li><li>Tham gia các câu lạc bộ STEM, robotics, điện tử để rèn luyện kĩ năng thực hành.</li><li>Tìm hiểu thông tin tuyển sinh của các trường đại học, cao đẳng có đào tạo ngành Điện tử - Viễn thông, Công nghệ Kĩ thuật Điện tử,…</li><li>Phát triển kĩ năng ngoại ngữ (tiếng Anh chuyên ngành) để tiếp cận tài liệu kĩ thuật và công nghệ mới.</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "cn12-b14-ex1",
+            "type": "mcq",
+            "question": "Người làm công việc thiết kế, mô phỏng và kiểm thử mạch tích hợp trên chip bán dẫn được gọi là:",
+            "options": [
+              "Kĩ sư hệ thống nhúng",
+              "Kĩ sư thiết kế vi mạch",
+              "Kĩ thuật viên điện tử",
+              "Chuyên gia IoT"
+            ],
+            "correct": 1,
+            "explanation": "Kĩ sư thiết kế vi mạch (IC Designer) chuyên thiết kế mạch tích hợp trên chip bán dẫn."
+          },
+          {
+            "id": "cn12-b14-ex2",
+            "type": "mcq",
+            "question": "Kĩ năng nào là quan trọng đối với người làm trong lĩnh vực kĩ thuật điện tử?",
+            "options": [
+              "Nấu ăn",
+              "Lái xe",
+              "Lập trình nhúng",
+              "Vẽ tranh"
+            ],
+            "correct": 2,
+            "explanation": "Lập trình nhúng (C, C++, Python, Arduino…) là kĩ năng quan trọng trong kĩ thuật điện tử."
+          },
+          {
+            "id": "cn12-b14-ex3",
+            "type": "mcq",
+            "question": "Công ty nào sau đây chuyên sản xuất linh kiện điện tử?",
+            "options": [
+              "Vinamilk",
+              "Samsung",
+              "Vietcombank",
+              "Vinasoy"
+            ],
+            "correct": 1,
+            "explanation": "Samsung là tập đoàn sản xuất linh kiện và thiết bị điện tử hàng đầu thế giới."
+          },
+          {
+            "id": "cn12-b14-ex4",
+            "type": "mcq",
+            "question": "Dịch vụ nào sau đây thuộc lĩnh vực kĩ thuật điện tử?",
+            "options": [
+              "Dịch vụ rửa xe",
+              "Dịch vụ sửa chữa điện thoại",
+              "Dịch vụ du lịch",
+              "Dịch vụ bảo hiểm"
+            ],
+            "correct": 1,
+            "explanation": "Sửa chữa điện thoại là dịch vụ thuộc lĩnh vực kĩ thuật điện tử."
+          },
+          {
+            "id": "cn12-b14-ex5",
+            "type": "mcq",
+            "question": "Ngành nghề nào sau đây thuộc lĩnh vực kĩ thuật điện tử?",
+            "options": [
+              "Kĩ sư xây dựng",
+              "Kĩ sư hệ thống nhúng",
+              "Bác sĩ",
+              "Kế toán"
+            ],
+            "correct": 1,
+            "explanation": "Kĩ sư hệ thống nhúng là ngành nghề trong lĩnh vực kĩ thuật điện tử, phát triển phần cứng và phần mềm cho thiết bị nhúng."
+          },
+          {
+            "id": "cn12-b14-ex6",
+            "type": "mcq",
+            "question": "Chuyên gia IoT làm công việc gì?",
+            "options": [
+              "Thiết kế trang web",
+              "Thiết kế hệ thống kết nối vạn vật và cảm biến thông minh",
+              "Dạy học",
+              "Sửa chữa ô tô"
+            ],
+            "correct": 1,
+            "explanation": "Chuyên gia IoT thiết kế và triển khai hệ thống Internet kết nối vạn vật và các thiết bị cảm biến thông minh."
+          },
+          {
+            "id": "cn12-b14-ex7",
+            "type": "mcq",
+            "question": "Để theo đuổi ngành kĩ thuật điện tử, học sinh cần học tốt môn nào?",
+            "options": [
+              "Ngữ văn",
+              "Lịch sử",
+              "Vật lí",
+              "Địa lí"
+            ],
+            "correct": 2,
+            "explanation": "Vật lí là môn học nền tảng quan trọng cho ngành kĩ thuật điện tử, cùng với Toán và Tin học."
+          },
+          {
+            "id": "cn12-b14-ex8",
+            "type": "mcq",
+            "question": "Phần mềm nào thường dùng để thiết kế và mô phỏng mạch điện tử?",
+            "options": [
+              "Microsoft Word",
+              "Altium",
+              "Adobe Photoshop",
+              "Google Chrome"
+            ],
+            "correct": 1,
+            "explanation": "Altium là phần mềm chuyên dụng để thiết kế và mô phỏng mạch điện tử."
+          },
+          {
+            "id": "cn12-b14-ex9",
+            "type": "mcq",
+            "question": "Ngôn ngữ lập trình nào thường dùng trong lập trình nhúng?",
+            "options": [
+              "HTML",
+              "C++",
+              "SQL",
+              "CSS"
+            ],
+            "correct": 1,
+            "explanation": "C++ là ngôn ngữ lập trình phổ biến trong lập trình nhúng, cùng với C và Python."
+          },
+          {
+            "id": "cn12-b14-ex10",
+            "type": "mcq",
+            "question": "Nhà máy sản xuất ô tô nào sau đây cần kĩ sư điện tử cho hệ thống điện tử trên xe?",
+            "options": [
+              "VinFast",
+              "Maybelline",
+              "Biti's",
+              "Kova"
+            ],
+            "correct": 0,
+            "explanation": "VinFast là nhà sản xuất ô tô cần đội ngũ kĩ sư điện tử cho các hệ thống điện tử trên xe."
+          },
+          {
+            "id": "cn12-b14-ex11",
+            "type": "msq",
+            "question": " Những ngành nghề nào thuộc lĩnh vực kĩ thuật điện tử?",
+            "options": [
+              "Kĩ sư hệ thống nhúng",
+              "Kĩ sư thiết kế vi mạch",
+              "Kĩ sư xây dựng",
+              "Kĩ sư viễn thông"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Kĩ sư hệ thống nhúng, thiết kế vi mạch và viễn thông đều thuộc lĩnh vực kĩ thuật điện tử."
+          },
+          {
+            "id": "cn12-b14-ex12",
+            "type": "msq",
+            "question": " Yêu cầu về kiến thức chuyên môn đối với người làm kĩ thuật điện tử:",
+            "options": [
+              "Nắm vững nguyên lí linh kiện và mạch điện tử",
+              "Thành thạo thiết kế và mô phỏng mạch",
+              "Biết nấu ăn",
+              "Hiểu biết về vi điều khiển và lập trình nhúng"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Người làm kĩ thuật điện tử cần nắm vững nguyên lí linh kiện, thành thạo thiết kế mạch và hiểu biết về lập trình nhúng."
+          },
+          {
+            "id": "cn12-b14-ex13",
+            "type": "msq",
+            "question": " Cơ hội việc làm cho người học ngành kĩ thuật điện tử bao gồm:",
+            "options": [
+              "Công ty sản xuất linh kiện điện tử",
+              "Công ty viễn thông",
+              "Ngân hàng",
+              "Công ty thiết kế vi mạch"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Các công ty sản xuất linh kiện, viễn thông và thiết kế vi mạch đều là cơ hội việc làm cho ngành kĩ thuật điện tử."
+          },
+          {
+            "id": "cn12-b14-ex14",
+            "type": "msq",
+            "question": " Dịch vụ nào liên quan đến kĩ thuật điện tử?",
+            "options": [
+              "Sửa chữa thiết bị điện tử",
+              "Thiết kế hệ thống nhà thông minh",
+              "Chăm sóc thú cưng",
+              "Lắp đặt camera giám sát"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Sửa chữa thiết bị điện tử, thiết kế nhà thông minh và lắp đặt camera là các dịch vụ liên quan đến kĩ thuật điện tử."
+          }
+        ]
+      }
+    }
+  ]
+}

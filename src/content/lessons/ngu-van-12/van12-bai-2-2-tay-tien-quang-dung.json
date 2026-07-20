@@ -59,7 +59,12 @@
             "slug": "phan-tich-su-kien-lich-su",
             "description": "Phân tích cách bài thơ thể hiện sự kiện lịch sử Tây Tiến qua những hình ảnh thơ ca",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Xác định sự kiện lịch sử:</strong> Tây Tiến là chiến dịch gì, khi nào, ở đâu, kết quả thế nào</li><li><strong>Tìm những hình ảnh thơ biểu hiện sự kiện:</strong> Chiến trường, lính, vũ khí, máu, cờ...</li><li><strong>Phân tích từng hình ảnh:</strong> Hình ảnh đó biểu hiện chi tiết nào của sự kiện</li><li><strong>Làm thế nào mà thơ thể hiện lịch sử:</strong><ul><li>Không phải kể lại sự kiện một cách khô khan</li><li>Sử dụng hình ảnh, tình cảm để làm cho lịch sử sinh động</li><li>Nêu bật tinh thần, ý chí của con người hơn là chi tiết sự kiện</li></ul></li><li><strong>Kết luận:</strong> Tây Tiến là một ví dụ về cách thơ ca có thể mang tính lịch sử</li></ol>",
-            "examples": "<h4>Ví dụ:</h4><p><strong>Sự kiện: Chiến dịch Tây Tiến năm 1950</strong><br/>- Hình ảnh thơ 1: \"Lính Tây Tiến bước chân dũng cảm\"<br/>  + Chi tiết lịch sử: Lính Việt Nam được huy động chi chiến dịch này<br/>  + Ý tưởng thơ: \"bước chân dũng cảm\" nhấn mạnh tinh thần, không phải chi tiết cụ thể<br/>- Hình ảnh thơ 2: \"máu tươi gieo rơi trên đất Tây Tiến\"<br/>  + Chi tiết lịch sử: Chiến dịch có tổn thất lớn<br/>  + Ý tưởng thơ: \"máu tươi\" tạo cảm xúc mạnh mẽ hơn là nói \"có xx tử vong\"<br/>- Kết luận: Thơ Tây Tiến không phải sách sử, nhưng vẫn truyền tải chính xác ý nghĩa lịch sử qua hình ảnh cảm xúc</p>"
+            "examples": [
+              {
+                "question": "<p><strong>Sự kiện: Chiến dịch Tây Tiến năm 1950</strong></p>",
+                "solution": "\n- Hình ảnh thơ 1: \"Lính Tây Tiến bước chân dũng cảm\"\n  + Chi tiết lịch sử: Lính Việt Nam được huy động chi chiến dịch này\n  + Ý tưởng thơ: \"bước chân dũng cảm\" nhấn mạnh tinh thần, không phải chi tiết cụ thể\n- Hình ảnh thơ 2: \"máu tươi gieo rơi trên đất Tây Tiến\"\n  + Chi tiết lịch sử: Chiến dịch có tổn thất lớn\n  + Ý tưởng thơ: \"máu tươi\" tạo cảm xúc mạnh mẽ hơn là nói \"có xx tử vong\"\n- Kết luận: Thơ Tây Tiến không phải sách sử, nhưng vẫn truyền tải chính xác ý nghĩa lịch sử qua hình ảnh cảm xúc"
+              }
+            ]
           },
           {
             "id": "dang2",
@@ -67,7 +72,12 @@
             "slug": "so-sanh-tho-anh-hung-va-tho-tru-tinh",
             "description": "So sánh đặc điểm, phong cách, biện pháp giữa thơ anh hùng (Tây Tiến) và thơ trữ tình (Cảm hoài)",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Xác định hai loại thơ:</strong> Thơ anh hùng vs thơ trữ tình</li><li><strong>So sánh về chủ đề:</strong><ul><li>Anh hùng: Lịch sử, chiến tranh, kiệt tác lớn lao</li><li>Trữ tình: Cảm xúc cá nhân, tâm tư, tâm sự</li></ul></li><li><strong>So sánh về cảm xúc:</strong><ul><li>Anh hùng: Sôi nổi, hùng tráng, ca vui, tự hào</li><li>Trữ tình: Buồn bã, suy tư, dịu dàng, nhạy cảm</li></ul></li><li><strong>So sánh về biện pháp:</strong><ul><li>Anh hùng: Sử dụng hình ảnh mạnh mẽ, so sánh trực tiếp, nhân hóa sôi nổi</li><li>Trữ tình: Sử dụng hình ảnh tinh tế, ẩn dụ sâu sắc, nhân hóa dịu dàng</li></ul></li><li><strong>So sánh về tác dụng:</strong><ul><li>Anh hùng: Truyền cảm hứng, nâng cao tinh thần</li><li>Trữ tình: Tạo sự đồng cảm, giúp người đọc tự suy tư</li></ul></li><li><strong>Kết luận:</strong> Hai loại thơ có những điểm khác nhau nhưng cùng thể hiện khả năng của thơ ca</li></ol>",
-            "examples": "<h4>Ví dụ so sánh Tây Tiến và Cảm hoài:</h4><p><strong>Về chủ đề:</strong><br/>- Tây Tiến: Chiến dịch lịch sử, sự kiện công cộng<br/>- Cảm hoài: Tâm tư cá nhân, cuộc sống riêng tư<p><strong>Về cảm xúc:</strong><br/>- Tây Tiến: Hùng tráng, sôi nổi, mạnh mẽ, tự hào<br/>- Cảm hoài: Buồn bã nhẹ nhàng, suy tư, dịu dàng, lạc lõng<p><strong>Về biện pháp:</strong><br/>- Tây Tiến: \"máu tươi gieo rơi\" (so sánh mạnh mẽ), \"lính bước chân dũng cảm\" (nhân hóa trực tiếp)<br/>- Cảm hoài: \"gió thổi\" (nhân hóa tinh tế), \"lá bay\" (ẩn dụ sâu sắc)<p><strong>Về tác dụng:</strong><br/>- Tây Tiến: Kích động, truyền cảm hứng, nâng cao tinh thần <br/>- Cảm hoài: Gợi suy tư, tạo đồng cảm, giúp tự nhận thức<p><strong>Kết luận:</strong> Hai bài thơ là hai khía cạnh khác nhau của \"thế giới thơ\" - nơi mà những cảm xúc, ý tưởng khác nhau có thể được thể hiện một cách mạnh mẽ, sâu sắc</p>"
+            "examples": [
+              {
+                "question": "<p><strong>Về chủ đề:</strong></p>",
+                "solution": "<h4>Ví dụ so sánh Tây Tiến và Cảm hoài:</h4><p><strong>Về chủ đề:</strong>\n- Tây Tiến: Chiến dịch lịch sử, sự kiện công cộng\n- Cảm hoài: Tâm tư cá nhân, cuộc sống riêng tư<p><strong>Về cảm xúc:</strong>\n- Tây Tiến: Hùng tráng, sôi nổi, mạnh mẽ, tự hào\n- Cảm hoài: Buồn bã nhẹ nhàng, suy tư, dịu dàng, lạc lõng<p><strong>Về biện pháp:</strong>\n- Tây Tiến: \"máu tươi gieo rơi\" (so sánh mạnh mẽ), \"lính bước chân dũng cảm\" (nhân hóa trực tiếp)\n- Cảm hoài: \"gió thổi\" (nhân hóa tinh tế), \"lá bay\" (ẩn dụ sâu sắc)<p><strong>Về tác dụng:</strong>\n- Tây Tiến: Kích động, truyền cảm hứng, nâng cao tinh thần \n- Cảm hoài: Gợi suy tư, tạo đồng cảm, giúp tự nhận thức<p><strong>Kết luận:</strong> Hai bài thơ là hai khía cạnh khác nhau của \"thế giới thơ\" - nơi mà những cảm xúc, ý tưởng khác nhau có thể được thể hiện một cách mạnh mẽ, sâu sắc"
+              }
+            ]
           },
           {
             "id": "dang3",
@@ -75,130 +85,132 @@
             "slug": "phan-tich-tac-dung-hinh-anh-anh-hung",
             "description": "Phân tích cách các hình ảnh về anh hùng, hy sinh thể hiện tinh thần của bài thơ",
             "methods": "<h4>Phương pháp giải:</h4><ol><li><strong>Xác định những hình ảnh anh hùng, hy sinh:</strong> Tìm những từ, cụm từ liên quan đến chiến sĩ, anh hùng, hy sinh</li><li><strong>Phân tích từng hình ảnh:</strong><ul><li>Hình ảnh nào đó có ý gì</li><li>Nó được miêu tả như thế nào</li><li>Cần cảm xúc gì từ độc giả</li></ul></li><li><strong>Tác dụng cộng lại:</strong> Tất cả các hình ảnh cùng nhau tạo thành một bức tranh về tinh thần anh hùng, hy sinh</li><li><strong>Liên hệ với chủ đề chương:</strong> Thế giới thơ có thể là thế giới anh hùng, hy sinh</li><li><strong>Kết luận:</strong> Thơ giúp con người hiểu, tôn trọng, tưởng nhớ những anh hùng hy sinh</li></ol>",
-            "examples": "<h4>Ví dụ:</h4><p><strong>Hình ảnh: \"Chiến sĩ với vũ khí trong tay\"</strong><br/>- Ý tưởng: Con người không nhỏ bé, yếu đuối mà mạnh mẽ, sẵn sàng chiến đấu<br/>- Cảm xúc: Tôn kính, khâm phục<br/>- Tác dụng: Nâng cao hình ảnh người lính từ chỉ một người thường thành anh hùng<p><strong>Hình ảnh: \"máu tươi gieo rơi trên đất Tây Tiến\"</strong><br/>- Ý tưởng: Hy sinh không phải chuyện vô nghĩa mà là giá trị lớn lao<br/>- Cảm xúc: Thương cảm, tôn trọng, buồn thương<br/>- Tác dụng: Làm cho hy sinh trở nên thiêng liêng, không bị quên lãng<p><strong>Hình ảnh: \"cờ bay trên Tây Tiến\"</strong><br/>- Ý tưởng: Chiến thắng, vinh quang đạt được nhờ hy sinh của những lính<br/>- Cảm xúc: Vui mừng, tự hào, kính trọng<br/>- Tác dụng: Kết luận rằng hy sinh không vô ích, mà là nền tảng của vinh quang"
+            "examples": [
+              {
+                "question": "<p><strong>Hình ảnh: \"Chiến sĩ với vũ khí trong tay\"</strong></p>",
+                "solution": "\n- Ý tưởng: Con người không nhỏ bé, yếu đuối mà mạnh mẽ, sẵn sàng chiến đấu\n- Cảm xúc: Tôn kính, khâm phục\n- Tác dụng: Nâng cao hình ảnh người lính từ chỉ một người thường thành anh hùng<p><strong>Hình ảnh: \"máu tươi gieo rơi trên đất Tây Tiến\"</strong>\n- Ý tưởng: Hy sinh không phải chuyện vô nghĩa mà là giá trị lớn lao\n- Cảm xúc: Thương cảm, tôn trọng, buồn thương\n- Tác dụng: Làm cho hy sinh trở nên thiêng liêng, không bị quên lãng<p><strong>Hình ảnh: \"cờ bay trên Tây Tiến\"</strong>\n- Ý tưởng: Chiến thắng, vinh quang đạt được nhờ hy sinh của những lính\n- Cảm xúc: Vui mừng, tự hào, kính trọng\n- Tác dụng: Kết luận rằng hy sinh không vô ích, mà là nền tảng của vinh quang"
+              }
+            ]
           }
         ],
-        "exercises": {
-          "title": "Bài tập",
-          "items": [
-            {
-              "id": "ex1",
-              "type": "mcq",
-              "question": "Sự kiện lịch sử Tây Tiến diễn ra khi nào?",
-              "options": [
-                "Năm 1940",
-                "Năm 1950",
-                "Năm 1960",
-                "Năm 1970"
-              ],
-              "correct": 1,
-              "explanation": "Tây Tiến là chiến dịch quân sự năm 1950, một sự kiện quan trọng trong lịch sử quân sự Việt Nam."
-            },
-            {
-              "id": "ex2",
-              "type": "mcq",
-              "question": "Tác phẩm Tây Tiến thuộc loại thơ nào?",
-              "options": [
-                "Thơ trữ tình",
-                "Thơ anh hùng",
-                "Thơ châm biếm",
-                "Thơ miêu tả"
-              ],
-              "correct": 1,
-              "explanation": "Tây Tiến là thơ anh hùng, ca tụng sự kiện lịch sử, tinh thần đấu tranh anh dũng."
-            },
-            {
-              "id": "ex3",
-              "type": "mcq",
-              "question": "Hình ảng \"máu tươi gieo rơi trên đất Tây Tiến\" tượng trưng cho điều gì?",
-              "options": [
-                "Sự lãng phí vô ích",
-                "Hy sinh quý báu, có ý nghĩa",
-                "Sự tàn khóc của chiến tranh",
-                "Sự bất công của vận mệnh"
-              ],
-              "correct": 1,
-              "explanation": "Máu tươi trong thơ tượng trưng cho sự hy sinh quý báu, là nền tảng của chiến thắng, không phải vô ích."
-            },
-            {
-              "id": "ex4",
-              "type": "mcq",
-              "question": "Cảm xúc chủ đạo của bài thơ Tây Tiến là gì?",
-              "options": [
-                "Buồn bã, tuyệt vọng",
-                "Sôi nổi, hùng tráng, tự hào",
-                "Lạc lõng, lonely",
-                "Tức giận, oán hận"
-              ],
-              "correct": 1,
-              "explanation": "Bài thơ mang cảm xúc sôi nổi, hùng tráng, ca vui chiến thắng nhưng cũng tôn trọng các hy sinh."
-            },
-            {
-              "id": "ex5",
-              "type": "mcq",
-              "question": "Quang Dũng sử dụng biện pháp nào nhiều nhất trong bài thơ Tây Tiến?",
-              "options": [
-                "Ẩn dụ mềm mại",
-                "Hình ảnh mạnh mẽ, ẩn dụ trực tiếp",
-                "Miêu tả chi tiết",
-                "Câu hỏi tu từ"
-              ],
-              "correct": 1,
-              "explanation": "Thơ Tây Tiến sử dụng những hình ảnh mạnh mẽ, ẩn dụ trực tiếp để tạo không khí hùng tráng."
-            },
-            {
-              "id": "ex6",
-              "type": "mcq",
-              "question": "So với bài thơ Cảm hoài, Tây Tiến khác nhau như thế nào?",
-              "options": [
-                "Cảm hoài là thơ viết về lịch sử, Tây Tiến là thơ trữ tình",
-                "Cảm hoài là thơ nội tâm, Tây Tiến là thơ anh hùng",
-                "Cả hai đều là thơ anh hùng",
-                "Không có khác nhau gì"
-              ],
-              "correct": 1,
-              "explanation": "Cảm hoài thể hiện tâm tư cá nhân, trong khi Tây Tiến ca tụng sự kiện lịch sử anh hùng."
-            },
-            {
-              "id": "ex7",
-              "type": "mcq",
-              "question": "Ý nghĩa chính của việc ca tụng Tây Tiến bằng thơ ca là gì?",
-              "options": [
-                "Để độc giả biết chi tiết cuộc chiến đấu",
-                "Để ghi lại lịch sử không bị quên lãng, vinh danh những anh hùng hy sinh",
-                "Để chỉ ra sự tàn khóc của chiến tranh",
-                "Để phê bình quyết định quốc gia"
-              ],
-              "correct": 1,
-              "explanation": "Thơ ca giúp lịch sử được ghi lại một cách sâu sắc, cảm xúc, giúp con người không quên hy sinh của các thế hệ trước."
-            },
-            {
-              "id": "ex8",
-              "type": "mcq",
-              "question": "Bài thơ Tây Tiến có vị trí gì trong chương Những thế giới thơ?",
-              "options": [
-                "Bài thơ thể hiện thế giới tự nhiên",
-                "Bài thơ thể hiện thế giới lịch sử, anh hùng, tương phản với thế giới nội tâm",
-                "Bài thơ cuối cùng, tóm tắt chương",
-                "Bài thơ không quan trọng"
-              ],
-              "correct": 1,
-              "explanation": "Tây Tiến thể hiện một khía cạnh khác của \"thế giới thơ\" - không chỉ nội tâm mà còn lịch sử, anh hùng."
-            },
-            {
-              "id": "ex9",
-              "type": "essay",
-              "question": "Hãy phân tích cách Quang Dũng sử dụng hình ảnh chiến trường, lính chiến, máu tươi, cờ bay để thể hiện ý tưởng về anh hùng, hy sinh trong bài thơ Tây Tiến.",
-              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Xác định các hình ảnh chính trong bài thơ: chiến trường Tây Tiến, lính chiến, vũ khí, máu tươi, cờ bay\n- Phân tích từng hình ảnh:\n  + Chiến trường: Không gian của chiến đấu, nơi hiển thi anh hùng\n  + Lính chiến: Người có tinh thần dũng cảm, sẵn sàng hy sinh\n  + Máu tươi: Tượng trưng cho hy sinh quý báu, giá trị của cuộc đấu tranh\n  + Cờ bay: Tượng trưng cho chiến thắng, vinh quang đạt được\n- Cách sử dụng hình ảnh:\n  + Hình ảnh được miêu tả một cách mạnh mẽ, sôi nổi\n  + Tạo ra một bức tranh tổng thể về chiến đấu từ chuẩn bị đến chiến thắng\n  + Nhấn mạnh tinh thần, ý chí con người hơn là chi tiết quân sự\n- Ý tưởng được thể hiện:\n  + Anh hùng không phải một hình ảnh trừu tượng mà là con người cụ thể sẵn sàng hy sinh\n  + Hy sinh không phải vô ích mà là cơ sở của chiến thắng\n  + Dân tộc Việt Nam có tinh thần anh hùng, kiệt cường\n- Kết luận: Thơ ca Tây Tiến thể hiện khả năng mạnh mẽ trong việc ca tụng lịch sử, vinh danh anh hùng"
-            },
-            {
-              "id": "ex10",
-              "type": "essay",
-              "question": "Hãy so sánh phong cách, cách thể hiện giữa Cảm hoài (Đặng Dung) và Tây Tiến (Quang Dũng). Từ đó, giải thích tại sao hai bài thơ này lại được xếp cùng trong chương Những thế giới thơ?",
-              "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Mở bài: Nêu rõ hai bài thơ và câu hỏi: tại sao cùng chương dù có vẻ khác nhau\n- So sánh về phong cách:\n  + Cảm hoài: Thơ trữ tình, nội tâm, cảm xúc cá nhân\n  + Tây Tiến: Thơ anh hùng, công cộng, sự kiện lịch sử\n- So sánh về lối viết:\n  + Cảm hoài: Sử dụng hình ảnh tinh tế, ẩn dụ sâu sắc, dịu dàng\n  + Tây Tiến: Sử dụng hình ảnh mạnh mẽ, ẩn dụ trực tiếp, hùng tráng\n- So sánh về cảm xúc:\n  + Cảm hoài: Buồn bã nhẹ nhàng, suy tư, lạc lõng\n  + Tây Tiến: Sôi nổi, hùng tráng, tự hào, ca vui\n- Lý do cùng chương:\n  + Cả hai đều mở ra những \"thế giới thơ\" khác nhau\n  + Cảm hoài mở ra thế giới nội tâm, tâm lý con người\n  + Tây Tiến mở ra thế giới lịch sử, anh hùng, công cộng\n  + Cả hai chứng tỏ thơ ca có khả năng thể hiện nhiều khía cạnh của con người và xã hội\n  + Cùng nhau chúng hình thành một khung nhìn toàn diện về thế giới thơ\n- Kết luận: \"Những thế giới thơ\" là những khía cạnh khác nhau mà thơ ca có thể thể hiện - từ nội tâm cá nhân đến lịch sử công cộng"
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Sự kiện lịch sử Tây Tiến diễn ra khi nào?",
+            "options": [
+              "Năm 1940",
+              "Năm 1950",
+              "Năm 1960",
+              "Năm 1970"
+            ],
+            "correct": 1,
+            "explanation": "Tây Tiến là chiến dịch quân sự năm 1950, một sự kiện quan trọng trong lịch sử quân sự Việt Nam."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Tác phẩm Tây Tiến thuộc loại thơ nào?",
+            "options": [
+              "Thơ trữ tình",
+              "Thơ anh hùng",
+              "Thơ châm biếm",
+              "Thơ miêu tả"
+            ],
+            "correct": 1,
+            "explanation": "Tây Tiến là thơ anh hùng, ca tụng sự kiện lịch sử, tinh thần đấu tranh anh dũng."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Hình ảng \"máu tươi gieo rơi trên đất Tây Tiến\" tượng trưng cho điều gì?",
+            "options": [
+              "Sự lãng phí vô ích",
+              "Hy sinh quý báu, có ý nghĩa",
+              "Sự tàn khóc của chiến tranh",
+              "Sự bất công của vận mệnh"
+            ],
+            "correct": 1,
+            "explanation": "Máu tươi trong thơ tượng trưng cho sự hy sinh quý báu, là nền tảng của chiến thắng, không phải vô ích."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Cảm xúc chủ đạo của bài thơ Tây Tiến là gì?",
+            "options": [
+              "Buồn bã, tuyệt vọng",
+              "Sôi nổi, hùng tráng, tự hào",
+              "Lạc lõng, lonely",
+              "Tức giận, oán hận"
+            ],
+            "correct": 1,
+            "explanation": "Bài thơ mang cảm xúc sôi nổi, hùng tráng, ca vui chiến thắng nhưng cũng tôn trọng các hy sinh."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Quang Dũng sử dụng biện pháp nào nhiều nhất trong bài thơ Tây Tiến?",
+            "options": [
+              "Ẩn dụ mềm mại",
+              "Hình ảnh mạnh mẽ, ẩn dụ trực tiếp",
+              "Miêu tả chi tiết",
+              "Câu hỏi tu từ"
+            ],
+            "correct": 1,
+            "explanation": "Thơ Tây Tiến sử dụng những hình ảnh mạnh mẽ, ẩn dụ trực tiếp để tạo không khí hùng tráng."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "So với bài thơ Cảm hoài, Tây Tiến khác nhau như thế nào?",
+            "options": [
+              "Cảm hoài là thơ viết về lịch sử, Tây Tiến là thơ trữ tình",
+              "Cảm hoài là thơ nội tâm, Tây Tiến là thơ anh hùng",
+              "Cả hai đều là thơ anh hùng",
+              "Không có khác nhau gì"
+            ],
+            "correct": 1,
+            "explanation": "Cảm hoài thể hiện tâm tư cá nhân, trong khi Tây Tiến ca tụng sự kiện lịch sử anh hùng."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Ý nghĩa chính của việc ca tụng Tây Tiến bằng thơ ca là gì?",
+            "options": [
+              "Để độc giả biết chi tiết cuộc chiến đấu",
+              "Để ghi lại lịch sử không bị quên lãng, vinh danh những anh hùng hy sinh",
+              "Để chỉ ra sự tàn khóc của chiến tranh",
+              "Để phê bình quyết định quốc gia"
+            ],
+            "correct": 1,
+            "explanation": "Thơ ca giúp lịch sử được ghi lại một cách sâu sắc, cảm xúc, giúp con người không quên hy sinh của các thế hệ trước."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Bài thơ Tây Tiến có vị trí gì trong chương Những thế giới thơ?",
+            "options": [
+              "Bài thơ thể hiện thế giới tự nhiên",
+              "Bài thơ thể hiện thế giới lịch sử, anh hùng, tương phản với thế giới nội tâm",
+              "Bài thơ cuối cùng, tóm tắt chương",
+              "Bài thơ không quan trọng"
+            ],
+            "correct": 1,
+            "explanation": "Tây Tiến thể hiện một khía cạnh khác của \"thế giới thơ\" - không chỉ nội tâm mà còn lịch sử, anh hùng."
+          },
+          {
+            "id": "ex9",
+            "type": "essay",
+            "question": "Hãy phân tích cách Quang Dũng sử dụng hình ảnh chiến trường, lính chiến, máu tươi, cờ bay để thể hiện ý tưởng về anh hùng, hy sinh trong bài thơ Tây Tiến.",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Xác định các hình ảnh chính trong bài thơ: chiến trường Tây Tiến, lính chiến, vũ khí, máu tươi, cờ bay\n- Phân tích từng hình ảnh:\n  + Chiến trường: Không gian của chiến đấu, nơi hiển thi anh hùng\n  + Lính chiến: Người có tinh thần dũng cảm, sẵn sàng hy sinh\n  + Máu tươi: Tượng trưng cho hy sinh quý báu, giá trị của cuộc đấu tranh\n  + Cờ bay: Tượng trưng cho chiến thắng, vinh quang đạt được\n- Cách sử dụng hình ảnh:\n  + Hình ảnh được miêu tả một cách mạnh mẽ, sôi nổi\n  + Tạo ra một bức tranh tổng thể về chiến đấu từ chuẩn bị đến chiến thắng\n  + Nhấn mạnh tinh thần, ý chí con người hơn là chi tiết quân sự\n- Ý tưởng được thể hiện:\n  + Anh hùng không phải một hình ảnh trừu tượng mà là con người cụ thể sẵn sàng hy sinh\n  + Hy sinh không phải vô ích mà là cơ sở của chiến thắng\n  + Dân tộc Việt Nam có tinh thần anh hùng, kiệt cường\n- Kết luận: Thơ ca Tây Tiến thể hiện khả năng mạnh mẽ trong việc ca tụng lịch sử, vinh danh anh hùng"
+          },
+          {
+            "id": "ex10",
+            "type": "essay",
+            "question": "Hãy so sánh phong cách, cách thể hiện giữa Cảm hoài (Đặng Dung) và Tây Tiến (Quang Dũng). Từ đó, giải thích tại sao hai bài thơ này lại được xếp cùng trong chương Những thế giới thơ?",
+            "answer_guide": "Câu trả lời tốt nên bao gồm:\n- Mở bài: Nêu rõ hai bài thơ và câu hỏi: tại sao cùng chương dù có vẻ khác nhau\n- So sánh về phong cách:\n  + Cảm hoài: Thơ trữ tình, nội tâm, cảm xúc cá nhân\n  + Tây Tiến: Thơ anh hùng, công cộng, sự kiện lịch sử\n- So sánh về lối viết:\n  + Cảm hoài: Sử dụng hình ảnh tinh tế, ẩn dụ sâu sắc, dịu dàng\n  + Tây Tiến: Sử dụng hình ảnh mạnh mẽ, ẩn dụ trực tiếp, hùng tráng\n- So sánh về cảm xúc:\n  + Cảm hoài: Buồn bã nhẹ nhàng, suy tư, lạc lõng\n  + Tây Tiến: Sôi nổi, hùng tráng, tự hào, ca vui\n- Lý do cùng chương:\n  + Cả hai đều mở ra những \"thế giới thơ\" khác nhau\n  + Cảm hoài mở ra thế giới nội tâm, tâm lý con người\n  + Tây Tiến mở ra thế giới lịch sử, anh hùng, công cộng\n  + Cả hai chứng tỏ thơ ca có khả năng thể hiện nhiều khía cạnh của con người và xã hội\n  + Cùng nhau chúng hình thành một khung nhìn toàn diện về thế giới thơ\n- Kết luận: \"Những thế giới thơ\" là những khía cạnh khác nhau mà thơ ca có thể thể hiện - từ nội tâm cá nhân đến lịch sử công cộng"
+          }
+        ]
       }
     }
   ]

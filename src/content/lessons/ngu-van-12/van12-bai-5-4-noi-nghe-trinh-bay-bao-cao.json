@@ -4,12 +4,12 @@
   "lessons": [
     {
       "id": "van12-bai-5-4-noi-nghe-trinh-bay-bao-cao",
-      "name": "Nói và nghe: Trình bày báo cáo kết quả nghiên cứu",
+      "name": "Trình bày báo cáo kết quả nghiên cứu",
       "slug": "noi-nghe-trinh-bay-bao-cao",
       "chapter": "Tiếng cười của hài kịch",
       "chapter_id": "V12-5",
       "lesson_id": 4,
-      "description": "Phát triển kỹ năng trình bày báo cáo nghiên cứu trước đám đông, kỹ năng lắng nghe và đặt câu hỏi trong buổi báo cáo khoa học.",
+      "description": "Hướng dẫn trình bày báo cáo kết quả nghiên cứu.",
       "duration_minutes": 90,
       "difficulty_level": "hard",
       "is_published": true,
@@ -24,7 +24,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Nói và nghe: Trình bày báo cáo nghiên cứu",
+          "title": "Trình bày báo cáo kết quả nghiên cứu",
           "sections": [
             {
               "heading": "1. Chuẩn bị trình bày báo cáo",
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex5-4-1",
-              "type": "mcq",
-              "question": "Thời gian thích hợp để trình bày báo cáo nghiên cứu là bao lâu?",
-              "options": [
-                "5 phút",
-                "10-15 phút",
-                "30 phút",
-                "1 giờ"
-              ],
-              "correct": 1,
-              "explanation": "Thời gian thích hợp để trình bày báo cáo nghiên cứu thường là 10-15 phút, đủ để trình bày nội dung chính mà không quá dài."
-            },
-            {
-              "id": "ex5-4-2",
-              "type": "mcq",
-              "question": "Khi trình bày báo cáo, nên làm gì với slide thuyết trình?",
-              "options": [
-                "Đọc từng chữ trên slide",
-                "Giải thích, bổ sung thông tin, không đọc slide",
-                "Không cần nhìn vào slide",
-                "Chỉ đọc tiêu đề"
-              ],
-              "correct": 1,
-              "explanation": "Khi trình bày, nên giải thích và bổ sung thông tin cho slide, không nên đọc từng chữ trên slide vì khán giả có thể tự đọc."
-            },
-            {
-              "id": "ex5-4-3",
-              "type": "mcq",
-              "question": "Yếu tố nào quan trọng nhất trong ngôn ngữ cơ thể khi trình bày?",
-              "options": [
-                "Đứng yên một chỗ",
-                "Liên hệ mắt với khán giả",
-                "Giấu tay sau lưng",
-                "Nhìn xuống sàn nhà"
-              ],
-              "correct": 1,
-              "explanation": "Liên hệ mắt với khán giả là yếu tố quan trọng nhất, giúp tạo kết nối và thể hiện sự tự tin."
-            },
-            {
-              "id": "ex5-4-4",
-              "type": "mcq",
-              "question": "Loại câu hỏi nào giúp làm rõ phương pháp nghiên cứu?",
-              "options": [
-                "Câu hỏi về cảm xúc",
-                "Câu hỏi làm rõ về phương pháp, dữ liệu",
-                "Câu hỏi về trang phục",
-                "Câu hỏi về thời tiết"
-              ],
-              "correct": 1,
-              "explanation": "Câu hỏi làm rõ về phương pháp và dữ liệu giúp hiểu rõ hơn về cách thức nghiên cứu được thực hiện."
-            },
-            {
-              "id": "ex5-4-5",
-              "type": "mcq",
-              "question": "Khi lắng nghe báo cáo, nên làm gì?",
-              "options": [
-                "Nhìn điện thoại",
-                "Tập trung, ghi chú các ý chính",
-                "Nói chuyện với người bên cạnh",
-                "Ngủ"
-              ],
-              "correct": 1,
-              "explanation": "Khi lắng nghe báo cáo, cần tập trung và ghi chú các ý chính để hiểu rõ nội dung và có thể đặt câu hỏi sau."
-            },
-            {
-              "id": "ex5-4-6",
-              "type": "mcq",
-              "question": "Biểu đồ, bảng số liệu trong báo cáo có vai trò gì?",
-              "options": [
-                "Trang trí",
-                "Trực quan hóa dữ liệu, giúp dễ hiểu",
-                "Làm báo cáo dài hơn",
-                "Không có vai trò"
-              ],
-              "correct": 1,
-              "explanation": "Biểu đồ và bảng số liệu giúp trực quan hóa dữ liệu, làm cho thông tin dễ hiểu và dễ nhớ hơn."
-            },
-            {
-              "id": "ex5-4-7",
-              "type": "mcq",
-              "question": "Câu hỏi phản biện trong buổi báo cáo có mục đích gì?",
-              "options": [
-                "Chỉ trích người trình bày",
-                "Kiểm tra tính hợp lý của nghiên cứu",
-                "Làm người trình bày bối rối",
-                "Không có mục đích"
-              ],
-              "correct": 1,
-              "explanation": "Câu hỏi phản biện có mục đích kiểm tra tính hợp lý, độ tin cậy của phương pháp và kết quả nghiên cứu."
-            },
-            {
-              "id": "ex5-4-8",
-              "type": "mcq",
-              "question": "Trước khi trình bày báo cáo, nên làm gì?",
-              "options": [
-                "Không cần chuẩn bị",
-                "Luyện tập trước gương hoặc với bạn bè",
-                "Chỉ đọc lại một lần",
-                "Học thuộc lòng toàn bộ"
-              ],
-              "correct": 1,
-              "explanation": "Nên luyện tập trước gương hoặc với bạn bè để quen với nội dung, kiểm soát thời gian và cải thiện kỹ năng trình bày."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex5-4-1",
+            "type": "mcq",
+            "question": "Thời gian thích hợp để trình bày báo cáo nghiên cứu là bao lâu?",
+            "options": [
+              "5 phút",
+              "10-15 phút",
+              "30 phút",
+              "1 giờ"
+            ],
+            "correct": 1,
+            "explanation": "Thời gian thích hợp để trình bày báo cáo nghiên cứu thường là 10-15 phút, đủ để trình bày nội dung chính mà không quá dài."
+          },
+          {
+            "id": "ex5-4-2",
+            "type": "mcq",
+            "question": "Khi trình bày báo cáo, nên làm gì với slide thuyết trình?",
+            "options": [
+              "Đọc từng chữ trên slide",
+              "Giải thích, bổ sung thông tin, không đọc slide",
+              "Không cần nhìn vào slide",
+              "Chỉ đọc tiêu đề"
+            ],
+            "correct": 1,
+            "explanation": "Khi trình bày, nên giải thích và bổ sung thông tin cho slide, không nên đọc từng chữ trên slide vì khán giả có thể tự đọc."
+          },
+          {
+            "id": "ex5-4-3",
+            "type": "mcq",
+            "question": "Yếu tố nào quan trọng nhất trong ngôn ngữ cơ thể khi trình bày?",
+            "options": [
+              "Đứng yên một chỗ",
+              "Liên hệ mắt với khán giả",
+              "Giấu tay sau lưng",
+              "Nhìn xuống sàn nhà"
+            ],
+            "correct": 1,
+            "explanation": "Liên hệ mắt với khán giả là yếu tố quan trọng nhất, giúp tạo kết nối và thể hiện sự tự tin."
+          },
+          {
+            "id": "ex5-4-4",
+            "type": "mcq",
+            "question": "Loại câu hỏi nào giúp làm rõ phương pháp nghiên cứu?",
+            "options": [
+              "Câu hỏi về cảm xúc",
+              "Câu hỏi làm rõ về phương pháp, dữ liệu",
+              "Câu hỏi về trang phục",
+              "Câu hỏi về thời tiết"
+            ],
+            "correct": 1,
+            "explanation": "Câu hỏi làm rõ về phương pháp và dữ liệu giúp hiểu rõ hơn về cách thức nghiên cứu được thực hiện."
+          },
+          {
+            "id": "ex5-4-5",
+            "type": "mcq",
+            "question": "Khi lắng nghe báo cáo, nên làm gì?",
+            "options": [
+              "Nhìn điện thoại",
+              "Tập trung, ghi chú các ý chính",
+              "Nói chuyện với người bên cạnh",
+              "Ngủ"
+            ],
+            "correct": 1,
+            "explanation": "Khi lắng nghe báo cáo, cần tập trung và ghi chú các ý chính để hiểu rõ nội dung và có thể đặt câu hỏi sau."
+          },
+          {
+            "id": "ex5-4-6",
+            "type": "mcq",
+            "question": "Biểu đồ, bảng số liệu trong báo cáo có vai trò gì?",
+            "options": [
+              "Trang trí",
+              "Trực quan hóa dữ liệu, giúp dễ hiểu",
+              "Làm báo cáo dài hơn",
+              "Không có vai trò"
+            ],
+            "correct": 1,
+            "explanation": "Biểu đồ và bảng số liệu giúp trực quan hóa dữ liệu, làm cho thông tin dễ hiểu và dễ nhớ hơn."
+          },
+          {
+            "id": "ex5-4-7",
+            "type": "mcq",
+            "question": "Câu hỏi phản biện trong buổi báo cáo có mục đích gì?",
+            "options": [
+              "Chỉ trích người trình bày",
+              "Kiểm tra tính hợp lý của nghiên cứu",
+              "Làm người trình bày bối rối",
+              "Không có mục đích"
+            ],
+            "correct": 1,
+            "explanation": "Câu hỏi phản biện có mục đích kiểm tra tính hợp lý, độ tin cậy của phương pháp và kết quả nghiên cứu."
+          },
+          {
+            "id": "ex5-4-8",
+            "type": "mcq",
+            "question": "Trước khi trình bày báo cáo, nên làm gì?",
+            "options": [
+              "Không cần chuẩn bị",
+              "Luyện tập trước gương hoặc với bạn bè",
+              "Chỉ đọc lại một lần",
+              "Học thuộc lòng toàn bộ"
+            ],
+            "correct": 1,
+            "explanation": "Nên luyện tập trước gương hoặc với bạn bè để quen với nội dung, kiểm soát thời gian và cải thiện kỹ năng trình bày."
+          },
+          {
+            "id": "ex5-4-9",
+            "type": "mcq",
+            "question": "Tình huống truyện có vai trò như thế nào trong việc thể hiện chủ đề tác phẩm?",
+            "options": [
+              "Bộc lộ tính cách nhân vật và làm nổi bật chủ đề",
+              "Không quan trọng",
+              "Chỉ làm câu chuyện dài hơn",
+              "Gây khó hiểu cho người đọc"
+            ],
+            "correct": 0,
+            "explanation": "Tình huống truyện có vai trò then chốt trong việc bộc lộ tính cách nhân vật và làm nổi bật chủ đề."
+          },
+          {
+            "id": "ex5-4-10",
+            "type": "mcq",
+            "question": "Nhân vật văn học thường được xây dựng qua những phương diện nào?",
+            "options": [
+              "Ngoại hình, hành động, lời nội tâm",
+              "Chỉ qua ngoại hình",
+              "Chỉ qua hành động",
+              "Chỉ qua lời nói"
+            ],
+            "correct": 0,
+            "explanation": "Nhân vật được xây dựng qua nhiều phương diện: ngoại hình, hành động, lời nói và nội tâm."
+          }
+        ]
       }
     }
   ]

@@ -3,14 +3,14 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-9-8-thuc-hanh-doc",
-      "name": "Thực hành đọc: Khúc đồng quê (trích Cô bé nhìn mưa)",
+      "id": "van12-bai-9-8-thuc-hanh-doc-khuc-dong-que",
+      "name": "Thực hành đọc: Khúc đồng quê",
       "slug": "thuc-hanh-doc-khuc-dong-que",
       "chapter": "Văn học và cuộc đời",
       "chapter_id": "V12-9",
       "lesson_id": 8,
       "author": "Đặng Thị Hạnh",
-      "description": "Thực hành đọc và phân tích 'Khúc đồng quê' của Đặng Thị Hạnh, khám phá vẻ đẹp đồng quê Việt Nam qua ngòi bút nữ.",
+      "description": "Thực hành đọc bài thơ Khúc đồng quê.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -25,7 +25,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Khúc đồng quê - Đặng Thị Hạnh",
+          "title": "Thực hành đọc: Khúc đồng quê",
           "sections": [
             {
               "heading": "1. Tác giả Đặng Thị Hạnh",
@@ -41,115 +41,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex9-8-1",
-              "type": "mcq",
-              "question": "Tác giả của 'Khúc đồng quê' là ai?",
-              "options": [
-                "Nguyễn Nhật Ánh",
-                "Đặng Thị Hạnh",
-                "Tô Hoài",
-                "Nam Cao"
-              ],
-              "correct": 1,
-              "explanation": "'Khúc đồng quê' là tác phẩm của nhà văn Đặng Thị Hạnh, trích từ 'Cô bé nhìn mưa'."
-            },
-            {
-              "id": "ex9-8-2",
-              "type": "mcq",
-              "question": "Chủ đề chính của tác phẩm là gì?",
-              "options": [
-                "Thành phố",
-                "Vẻ đẹp đồng quê, tuổi thơ, thiên nhiên",
-                "Chiến tranh",
-                "Tình yêu"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm miêu tả vẻ đẹp đồng quê Việt Nam, kỷ niệm tuổi thơ và thiên nhiên yên bình."
-            },
-            {
-              "id": "ex9-8-3",
-              "type": "mcq",
-              "question": "Hình ảnh nào xuất hiện trong tác phẩm?",
-              "options": [
-                "Nhà cao tầng",
-                "Đồng lúa, con đường, cây cối, người nông dân",
-                "Xe cộ đông đúc",
-                "Nhà máy"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm miêu tả hình ảnh đồng lúa, con đường làng, cây cối và người nông dân."
-            },
-            {
-              "id": "ex9-8-4",
-              "type": "mcq",
-              "question": "Cảm xúc chủ đạo trong tác phẩm là gì?",
-              "options": [
-                "Buồn bã",
-                "Yêu thương, hoài niệm quê hương",
-                "Tức giận",
-                "Sợ hãi"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm thể hiện tình yêu thương và sự hoài niệm về quê hương, tuổi thơ."
-            },
-            {
-              "id": "ex9-8-5",
-              "type": "mcq",
-              "question": "Ngôn ngữ trong tác phẩm có đặc điểm gì?",
-              "options": [
-                "Khô khan, máy móc",
-                "Trữ tình, tinh tế, giản dị",
-                "Phức tạp, khó hiểu",
-                "Hoa mỹ, rườm rà"
-              ],
-              "correct": 1,
-              "explanation": "Ngôn ngữ mang tính trữ tình, tinh tế trong miêu tả và giản dị, gần gũi."
-            },
-            {
-              "id": "ex9-8-6",
-              "type": "mcq",
-              "question": "Phương thức biểu đạt chính trong tác phẩm là gì?",
-              "options": [
-                "Nghị luận",
-                "Miêu tả cảnh vật sinh động",
-                "Chỉ tự sự",
-                "Chỉ biểu cảm"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm sử dụng chủ yếu phương thức miêu tả cảnh vật sinh động, kết hợp tự sự và biểu cảm."
-            },
-            {
-              "id": "ex9-8-7",
-              "type": "mcq",
-              "question": "Đặng Thị Hạnh nổi tiếng với phong cách văn xuôi nào?",
-              "options": [
-                "Hùng hồn, khí thế",
-                "Trữ tình, tinh tế, nữ giới",
-                "Châm biếm, hài hước",
-                "Khô khan, máy móc"
-              ],
-              "correct": 1,
-              "explanation": "Đặng Thị Hạnh nổi tiếng với phong cách văn xuôi trữ tình, tinh tế, mang đậm nét nữ giới."
-            },
-            {
-              "id": "ex9-8-8",
-              "type": "mcq",
-              "question": "Giá trị của tác phẩm là gì?",
-              "options": [
-                "Chỉ giải trí",
-                "Lưu giữ hình ảnh đồng quê, thể hiện tình yêu quê hương",
-                "Không có giá trị",
-                "Chỉ miêu tả cảnh vật"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm có giá trị lưu giữ hình ảnh đồng quê Việt Nam và thể hiện tình yêu sâu sắc với quê hương."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex9-8-1",
+            "type": "mcq",
+            "question": "Tác giả của 'Khúc đồng quê' là ai?",
+            "options": [
+              "Nguyễn Nhật Ánh",
+              "Đặng Thị Hạnh",
+              "Tô Hoài",
+              "Nam Cao"
+            ],
+            "correct": 1,
+            "explanation": "'Khúc đồng quê' là tác phẩm của nhà văn Đặng Thị Hạnh, trích từ 'Cô bé nhìn mưa'."
+          },
+          {
+            "id": "ex9-8-2",
+            "type": "mcq",
+            "question": "Chủ đề chính của tác phẩm là gì?",
+            "options": [
+              "Thành phố",
+              "Vẻ đẹp đồng quê, tuổi thơ, thiên nhiên",
+              "Chiến tranh",
+              "Tình yêu"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm miêu tả vẻ đẹp đồng quê Việt Nam, kỷ niệm tuổi thơ và thiên nhiên yên bình."
+          },
+          {
+            "id": "ex9-8-3",
+            "type": "mcq",
+            "question": "Hình ảnh nào xuất hiện trong tác phẩm?",
+            "options": [
+              "Nhà cao tầng",
+              "Đồng lúa, con đường, cây cối, người nông dân",
+              "Xe cộ đông đúc",
+              "Nhà máy"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm miêu tả hình ảnh đồng lúa, con đường làng, cây cối và người nông dân."
+          },
+          {
+            "id": "ex9-8-4",
+            "type": "mcq",
+            "question": "Cảm xúc chủ đạo trong tác phẩm là gì?",
+            "options": [
+              "Buồn bã",
+              "Yêu thương, hoài niệm quê hương",
+              "Tức giận",
+              "Sợ hãi"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm thể hiện tình yêu thương và sự hoài niệm về quê hương, tuổi thơ."
+          },
+          {
+            "id": "ex9-8-5",
+            "type": "mcq",
+            "question": "Ngôn ngữ trong tác phẩm có đặc điểm gì?",
+            "options": [
+              "Khô khan, máy móc",
+              "Trữ tình, tinh tế, giản dị",
+              "Phức tạp, khó hiểu",
+              "Hoa mỹ, rườm rà"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ mang tính trữ tình, tinh tế trong miêu tả và giản dị, gần gũi."
+          },
+          {
+            "id": "ex9-8-6",
+            "type": "mcq",
+            "question": "Phương thức biểu đạt chính trong tác phẩm là gì?",
+            "options": [
+              "Nghị luận",
+              "Miêu tả cảnh vật sinh động",
+              "Chỉ tự sự",
+              "Chỉ biểu cảm"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm sử dụng chủ yếu phương thức miêu tả cảnh vật sinh động, kết hợp tự sự và biểu cảm."
+          },
+          {
+            "id": "ex9-8-7",
+            "type": "mcq",
+            "question": "Đặng Thị Hạnh nổi tiếng với phong cách văn xuôi nào?",
+            "options": [
+              "Hùng hồn, khí thế",
+              "Trữ tình, tinh tế, nữ giới",
+              "Châm biếm, hài hước",
+              "Khô khan, máy móc"
+            ],
+            "correct": 1,
+            "explanation": "Đặng Thị Hạnh nổi tiếng với phong cách văn xuôi trữ tình, tinh tế, mang đậm nét nữ giới."
+          },
+          {
+            "id": "ex9-8-8",
+            "type": "mcq",
+            "question": "Giá trị của tác phẩm là gì?",
+            "options": [
+              "Chỉ giải trí",
+              "Lưu giữ hình ảnh đồng quê, thể hiện tình yêu quê hương",
+              "Không có giá trị",
+              "Chỉ miêu tả cảnh vật"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm có giá trị lưu giữ hình ảnh đồng quê Việt Nam và thể hiện tình yêu sâu sắc với quê hương."
+          },
+          {
+            "id": "ex9-8-9",
+            "type": "mcq",
+            "question": "Thể thơ của bài thơ thường được xác định dựa trên yếu tố nào?",
+            "options": [
+              "Số câu, số chữ, vần và nhịp điệu",
+              "Chủ đề bài thơ",
+              "Cảm xúc của tác giả",
+              "Thời gian sáng tác"
+            ],
+            "correct": 0,
+            "explanation": "Thể thơ được xác định dựa trên số câu, số chữ trong câu, vần và nhịp điệu."
+          },
+          {
+            "id": "ex9-8-10",
+            "type": "mcq",
+            "question": "Nhân vật chính trong tác phẩm kịch thường là người như thế nào?",
+            "options": [
+              "Là nhân vật trung tâm, giữ vai trò then chốt",
+              "Xuất hiện ít",
+              "Không quan trọng",
+              "Chỉ là nhân vật phụ"
+            ],
+            "correct": 0,
+            "explanation": "Nhân vật chính là trung tâm của tác phẩm, giữ vai trò then chốt trong việc thể hiện chủ đề."
+          }
+        ]
       }
     }
   ]

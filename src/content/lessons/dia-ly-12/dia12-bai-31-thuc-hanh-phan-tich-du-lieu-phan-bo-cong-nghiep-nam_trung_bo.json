@@ -4,36 +4,269 @@
   "lessons": [
     {
       "id": "dia12_31",
-      "name": "Thực hành: Phân tích dữ liệu về phân bố công nghiệp Nam Trung bộ",
+      "name": "Thực hành: Viết báo cáo về biến đổi khí hậu ở đồng bằng sông Cửu Long",
       "slug": "thuc-hanh-phan-tich-du-lieu-phan-bo-cong-nghiep-nam_trung_bo",
       "chapter": "Địa lí các vùng kinh tế",
       "chapter_id": "dia12_part4",
       "lesson_id": 31,
-      "description": "Thực hành thu thập và phân tích dữ liệu phân bố các cơ sở công nghiệp, xác định các trung tâm công nghiệp và mối liên kết với cảng, nguồn lao động ở Nam Trung bộ.",
+      "description": "Thực hành thu thập, xử lý tư liệu và viết báo cáo về tác động của biến đổi khí hậu cùng giải pháp ứng phó tại Đồng bằng sông Cửu Long.",
       "duration_minutes": 90,
       "difficulty_level": "trung bình",
       "is_published": true,
       "content": {
         "theory": {
-          "title": "Phân bố công nghiệp và phương pháp phân tích",
-          "summary": "Phân bố công nghiệp phụ thuộc vào hạ tầng, nguồn lao động, nguyên liệu và thị trường; phân tích dữ liệu giúp xác định xu hướng phân vùng và đề xuất chiến lược phát triển vùng.",
+          "title": "Thực hành: Viết báo cáo về biến đổi khí hậu ở Đồng bằng sông Cửu Long",
+          "summary": "Bài thực hành trang bị kỹ năng thu thập, xử lý tư liệu và viết báo cáo về ảnh hưởng của biến đổi khí hậu cũng như giải pháp ứng phó tại Đồng bằng sông Cửu Long. Học sinh vận dụng các nguồn tư liệu để phân tích các biểu hiện (nước biển dâng, xâm nhập mặn, hạn hán, sạt lở) và đề xuất hướng thích ứng bền vững.",
           "sections": [
-            { "heading": "Nguồn dữ liệu", "content": "Số liệu thống kê tỉnh, bản đồ công nghiệp, báo cáo doanh nghiệp và dữ liệu cảng." },
-            { "heading": "Phương pháp phân tích", "content": "Sử dụng bản đồ, biểu đồ phân bố, chỉ số mật độ công nghiệp và phân tích mối liên kết vùng." }
+            {
+              "heading": "Mục tiêu và nguồn tư liệu",
+              "content": "Mục tiêu của bài thực hành là rèn luyện kỹ năng tìm hiểu, hệ thống hóa thông tin và viết báo cáo về tác động cùng giải pháp ứng phó biến đổi khí hậu ở Đồng bằng sông Cửu Long. Nguồn tư liệu gồm tạp chí, sách, báo, internet và thực tế; các tài liệu tham khảo từ Bộ Tài nguyên và Môi trường, các nghiên cứu về tác động đến nông nghiệp và chính sách ứng phó vùng ĐBSCL. Cần ghi rõ xuất xứ để bảo đảm độ tin cậy."
+            },
+            {
+              "heading": "Quy trình thu thập và xử lý tư liệu",
+              "content": "Bước 1: Xác định các chỉ tiêu cần phân tích (mực nước biển dâng, diện tích xâm nhập mặn, tần suất hạn hán, sạt lở bờ sông/bờ biển). Bước 2: Thu thập số liệu theo địa phương (An Giang, Cần Thơ, Đồng Tháp, Kiên Giang, Cà Mau,...) từ các báo cáo và trang thông tin chính thống. Bước 3: Xử lý, so sánh và tổng hợp để thấy mức độ tác động theo vùng sinh thái khác nhau."
+            },
+            {
+              "heading": "Các biểu hiện biến đổi khí hậu",
+              "content": "Biến đổi khí hậu ở ĐBSCL thể hiện qua nước biển dâng làm thay đổi dòng chảy ven bờ và gây sạt lở; xâm nhập mặn mở rộng diện tích đất nhiễm mặn, thu hẹp diện tích lúa và cây ăn trái; hạn hán gia tăng về cường độ và thời gian; lũ lụt bất thường và mất cân bằng nguồn nước do phụ thuộc thượng nguồn sông Mê Công. Các vùng đất ngập nước (Tràm Chim, U Minh, Trà Sư) bị đe dọa, đa dạng sinh học suy giảm."
+            },
+            {
+              "heading": "Tác động đến kinh tế và đời sống",
+              "content": "Sản lượng lương thực có nguy cơ giảm, đe dọa an ninh lương thực; diện tích canh tác nước ngọt và nuôi trồng thủy sản thu hẹp, năng suất suy giảm; cá nước ngọt giảm, cá mặn lợ gia tăng. Về đời sống, sạt lở bờ biển làm mất nhà cửa, người dân thiếu điều kiện ứng phó, dự báo có sự di cư cơ học lên các đô thị phía bắc và phía tây (Châu Đốc, Long Xuyên, Cần Thơ, Mỹ Tho...), gây áp lực quy hoạch và môi trường đô thị."
+            },
+            {
+              "heading": "Giải pháp ứng phó",
+              "content": "Giải pháp giảm nhẹ: trồng cây, tái chế rác thải, tiết kiệm nước, nâng cao nhận thức, xây dựng quy chuẩn hạ tầng thích ứng, chiến lược bảo vệ nguồn nước sông Mê Công, kiểm soát khai thác nước ngầm và cảnh báo thiên tai. Giải pháp thích ứng: điều chỉnh thời vụ, giống chống chịu, nông nghiệp hữu cơ, hoàn thiện đê biển - đê bao - thủy lợi nội đồng, phát triển rừng ngập mặn, chuyển đổi cơ cấu kinh tế theo vùng sinh thái và lồng ghép thích ứng vào quy hoạch phát triển."
+            }
           ]
         },
-        "exercises": { "tasks": [ { "q": "Thu thập dữ liệu 3 cơ sở công nghiệp lớn và trình bày vị trí trên bản đồ; phân tích thuận lợi và khó khăn.", "a_hint": "Lấy dữ liệu về ngành, quy mô, kết nối với cảng và nguồn lao động." } ] },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Yếu tố cơ bản quyết định phân bố công nghiệp là?", "options": ["Hạ tầng giao thông và gần nguồn nguyên liệu","Sở thích cá nhân","Không có yếu tố","Chỉ khí hậu"], "correct": 0, "explanation": "Hạ tầng và nguyên liệu là yếu tố quyết định phân bố." },
-          { "id": 2, "type": "mcq", "question": "Một phương pháp trực quan để thể hiện phân bố là?", "options": ["Bản đồ phân bố và biểu đồ mật độ","Báo cáo văn bản dài","Số liệu thô không biểu diễn","Không dùng gì"], "correct": 0, "explanation": "Bản đồ và biểu đồ giúp minh họa phân bố rõ ràng." },
-          { "id": 3, "type": "mcq", "question": "Kết nối với cảng ảnh hưởng đến công nghiệp bằng cách?", "options": ["Giảm chi phí vận chuyển và mở rộng thị trường","Không ảnh hưởng","Tăng chi phí","Làm giảm sản xuất"], "correct": 0, "explanation": "Gần cảng giúp giảm chi phí logistics cho doanh nghiệp." },
-          { "id": 4, "type": "mcq", "question": "Một chỉ số dùng để so sánh mật độ công nghiệp giữa các tỉnh là?", "options": ["Số doanh nghiệp trên km2 hoặc giá trị sản xuất trên km2","Số dân","Tổng diện tích rừng","Không có chỉ số"], "correct": 0, "explanation": "Mật độ doanh nghiệp hoặc giá trị sản xuất trên diện tích là chỉ số thích hợp." },
-          { "id": 5, "type": "mcq", "question": "Phân tích phân bố công nghiệp cần xem xét thêm yếu tố nào?", "options": ["Nguồn lao động có kỹ năng và chính sách thu hút đầu tư","Chỉ tài nguyên than","Không cần yếu tố khác","Chỉ du lịch"], "correct": 0, "explanation": "Nguồn lao động và chính sách quan trọng cho phát triển công nghiệp." },
-          { "id": 6, "type": "mcq", "question": "Một hạn chế khi phân tích dữ liệu là?", "options": ["Dữ liệu không đầy đủ hoặc lỗi thời","Dữ liệu luôn hoàn hảo","Dữ liệu không cần kiểm tra","Không có hạn chế"], "correct": 0, "explanation": "Dữ liệu không đầy đủ có thể làm sai lệch kết luận." },
-          { "id": 7, "type": "mcq", "question": "Sử dụng bản đồ nhiệt (heatmap) giúp?", "options": ["Nhận diện khu vực tập trung công nghiệp mật độ cao","Làm rối dữ liệu","Không hữu ích","Giảm giá trị dữ liệu"], "correct": 0, "explanation": "Heatmap hỗ trợ thấy khu vực tập trung công nghiệp." },
-          { "id": 8, "type": "mcq", "question": "Kết quả phân tích có thể dùng để?", "options": ["Đề xuất vị trí khu công nghiệp mới và chính sách hỗ trợ","Không sử dụng","Chỉ lưu trữ","Bỏ qua"], "correct": 0, "explanation": "Phân tích giúp hoạch định chiến lược phát triển." },
-          { "id": 9, "type": "mcq", "question": "Một nguồn dữ liệu hữu ích là?", "options": ["Số liệu của sở công thương và cảng địa phương","Tin đồn truyền miệng","Dữ liệu ngẫu nhiên","Không có nguồn"], "correct": 0, "explanation": "Số liệu chính thức cung cấp cơ sở đáng tin cậy cho phân tích." },
-          { "id": 10, "type": "mcq", "question": "Khi báo cáo phân bố công nghiệp, cần chú ý gì?", "options": ["Minh bạch nguồn dữ liệu và phân tích khách quan","Chỉ nêu ý kiến cá nhân","Không cần minh bạch","Chỉ quảng bá"], "correct": 0, "explanation": "Minh bạch dữ liệu và phân tích là tiêu chuẩn của báo cáo khoa học." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Yếu tố cơ bản quyết định phân bố công nghiệp là?",
+            "options": [
+              "Hạ tầng giao thông và gần nguồn nguyên liệu",
+              "Sở thích cá nhân",
+              "Không có yếu tố",
+              "Chỉ khí hậu"
+            ],
+            "correct": 0,
+            "explanation": "Hạ tầng và nguyên liệu là yếu tố quyết định phân bố."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Một phương pháp trực quan để thể hiện phân bố là?",
+            "options": [
+              "Bản đồ phân bố và biểu đồ mật độ",
+              "Báo cáo văn bản dài",
+              "Số liệu thô không biểu diễn",
+              "Không dùng gì"
+            ],
+            "correct": 0,
+            "explanation": "Bản đồ và biểu đồ giúp minh họa phân bố rõ ràng."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Kết nối với cảng ảnh hưởng đến công nghiệp bằng cách?",
+            "options": [
+              "Giảm chi phí vận chuyển và mở rộng thị trường",
+              "Không ảnh hưởng",
+              "Tăng chi phí",
+              "Làm giảm sản xuất"
+            ],
+            "correct": 0,
+            "explanation": "Gần cảng giúp giảm chi phí logistics cho doanh nghiệp."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Một chỉ số dùng để so sánh mật độ công nghiệp giữa các tỉnh là?",
+            "options": [
+              "Số doanh nghiệp trên km2 hoặc giá trị sản xuất trên km2",
+              "Số dân",
+              "Tổng diện tích rừng",
+              "Không có chỉ số"
+            ],
+            "correct": 0,
+            "explanation": "Mật độ doanh nghiệp hoặc giá trị sản xuất trên diện tích là chỉ số thích hợp."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Phân tích phân bố công nghiệp cần xem xét thêm yếu tố nào?",
+            "options": [
+              "Nguồn lao động có kỹ năng và chính sách thu hút đầu tư",
+              "Chỉ tài nguyên than",
+              "Không cần yếu tố khác",
+              "Chỉ du lịch"
+            ],
+            "correct": 0,
+            "explanation": "Nguồn lao động và chính sách quan trọng cho phát triển công nghiệp."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Một hạn chế khi phân tích dữ liệu là?",
+            "options": [
+              "Dữ liệu không đầy đủ hoặc lỗi thời",
+              "Dữ liệu luôn hoàn hảo",
+              "Dữ liệu không cần kiểm tra",
+              "Không có hạn chế"
+            ],
+            "correct": 0,
+            "explanation": "Dữ liệu không đầy đủ có thể làm sai lệch kết luận."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Sử dụng bản đồ nhiệt (heatmap) giúp?",
+            "options": [
+              "Nhận diện khu vực tập trung công nghiệp mật độ cao",
+              "Làm rối dữ liệu",
+              "Không hữu ích",
+              "Giảm giá trị dữ liệu"
+            ],
+            "correct": 0,
+            "explanation": "Heatmap hỗ trợ thấy khu vực tập trung công nghiệp."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Kết quả phân tích có thể dùng để?",
+            "options": [
+              "Đề xuất vị trí khu công nghiệp mới và chính sách hỗ trợ",
+              "Không sử dụng",
+              "Chỉ lưu trữ",
+              "Bỏ qua"
+            ],
+            "correct": 0,
+            "explanation": "Phân tích giúp hoạch định chiến lược phát triển."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Một nguồn dữ liệu hữu ích là?",
+            "options": [
+              "Số liệu của sở công thương và cảng địa phương",
+              "Tin đồn truyền miệng",
+              "Dữ liệu ngẫu nhiên",
+              "Không có nguồn"
+            ],
+            "correct": 0,
+            "explanation": "Số liệu chính thức cung cấp cơ sở đáng tin cậy cho phân tích."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Khi báo cáo phân bố công nghiệp, cần chú ý gì?",
+            "options": [
+              "Minh bạch nguồn dữ liệu và phân tích khách quan",
+              "Chỉ nêu ý kiến cá nhân",
+              "Không cần minh bạch",
+              "Chỉ quảng bá"
+            ],
+            "correct": 0,
+            "explanation": "Minh bạch dữ liệu và phân tích là tiêu chuẩn của báo cáo khoa học."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Các nội dung phân tích dữ liệu công nghiệp?",
+            "options": [
+              "Phân bố theo lãnh thổ",
+              "Cơ cấu ngành",
+              "Quy mô sản xuất",
+              "Màu sắc sản phẩm"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Phân bố lãnh thổ, cơ cấu ngành và quy mô sản xuất là nội dung phân tích."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Các nguồn dữ liệu về công nghiệp?",
+            "options": [
+              "Niên giám thống kê",
+              "Báo cáo ngành",
+              "Số liệu điều tra",
+              "Truyền thuyết"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Niên giám thống kê, báo cáo ngành và số liệu điều tra là nguồn dữ liệu."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Các chỉ tiêu phân tích phân bố công nghiệp?",
+            "options": [
+              "Số lượng cơ sở sản xuất",
+              "Giá trị sản xuất",
+              "Lao động công nghiệp",
+              "Số lượng trường học"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Số cơ sở, giá trị sản xuất và lao động công nghiệp là chỉ tiêu phân tích."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Các yếu tố ảnh hưởng đến phân bố công nghiệp Nam Trung Bộ?",
+            "options": [
+              "Cảng biển",
+              "Nguồn nguyên liệu",
+              "Giao thông",
+              "Địa hình đồi núi cao"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cảng biển, nguyên liệu và giao thông ảnh hưởng đến phân bố công nghiệp."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Mục đích của bài thực hành?",
+            "correct": "Phân tích dữ liệu về phân bố công nghiệp ở Nam Trung Bộ",
+            "explanation": "Bài thực hành phân tích dữ liệu về phân bố công nghiệp."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Kể tên một trung tâm công nghiệp ở Nam Trung Bộ?",
+            "correct": "Đà Nẵng, Quy Nhơn, Nha Trang",
+            "explanation": "Đà Nẵng, Quy Nhơn, Nha Trang là trung tâm công nghiệp."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Nguồn số liệu sử dụng trong bài thực hành?",
+            "correct": "Niên giám thống kê, số liệu của Tổng cục Thống kê",
+            "explanation": "Niên giám thống kê và số liệu của Tổng cục Thống kê là nguồn số liệu."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Thu thập dữ liệu 3 cơ sở công nghiệp lớn và trình bày vị trí trên bản đồ; phân tích thuận lợi và khó khăn.",
+            "correct": "Lấy dữ liệu về ngành, quy mô, kết nối với cảng và nguồn lao động.",
+            "explanation": "Lấy dữ liệu về ngành, quy mô, kết nối với cảng và nguồn lao động."
+          }
         ]
       }
     }

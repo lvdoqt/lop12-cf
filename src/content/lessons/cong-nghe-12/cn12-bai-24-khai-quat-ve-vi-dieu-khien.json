@@ -1,0 +1,295 @@
+{
+  "subject": "Công nghệ 12",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12-bai-24-khai-quat-ve-vi-dieu-khien",
+      "name": "Bài 24. Khái quát về vi điều khiển",
+      "slug": "bai-24-khai-quat-ve-vi-dieu-khien",
+      "chapter": "Chương 8. Vi điều khiển và ứng dụng",
+      "chapter_id": "CN12",
+      "lesson_id": 24,
+      "description": "Tìm hiểu khái niệm vi điều khiển, cấu trúc cơ bản (CPU, RAM, ROM, I/O), so sánh với vi xử lý và các ứng dụng trong đời sống.",
+      "duration_minutes": 45,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1553406830-ef2513450d76?q=80&w=2600&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "vk-1",
+          "name": "Khái niệm vi điều khiển",
+          "slug": "khai-niem-vi-dieu-khien",
+          "difficulty": "easy"
+        },
+        {
+          "id": "vk-2",
+          "name": "Cấu trúc vi điều khiển",
+          "slug": "cau-truc-vi-dieu-khien",
+          "difficulty": "medium"
+        },
+        {
+          "id": "vk-3",
+          "name": "So sánh vi điều khiển và vi xử lý",
+          "slug": "so-sanh-vi-dieu-khien-va-vi-xu-ly",
+          "difficulty": "medium"
+        },
+        {
+          "id": "vk-4",
+          "name": "Ứng dụng vi điều khiển",
+          "slug": "ung-dung-vi-dieu-khien",
+          "difficulty": "easy"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Lý thuyết Khái quát về vi điều khiển",
+          "sections": [
+            {
+              "heading": "1. Khái niệm vi điều khiển",
+              "content": "<p><strong>Vi điều khiển</strong> (Microcontroller — MCU) là một máy tính thu nhỏ được tích hợp trên một chip duy nhất, bao gồm bộ xử lý, bộ nhớ và các khối ngoại vi.</p><p><strong>Đặc điểm:</strong></p><ul><li>Tích hợp nhiều thành phần trên một chip (SoC — System on Chip)</li><li>Tiêu thụ năng lượng thấp</li><li>Giá thành rẻ</li><li>Kích thước nhỏ gọn</li><li>Phù hợp cho các ứng dụng nhúng</li></ul><p><strong>Ví dụ về vi điều khiển phổ biến:</strong> Arduino (ATmega328), ESP32, STM32, PIC, 8051.</p>"
+            },
+            {
+              "heading": "2. Cấu trúc cơ bản của vi điều khiển",
+              "content": "<p><strong>Các khối chức năng chính:</strong></p><ul><li><strong>CPU (Central Processing Unit):</strong> Khối xử lý trung tâm, thực thi chương trình</li><li><strong>RAM (Random Access Memory):</strong> Bộ nhớ tạm thời, lưu dữ liệu trong khi chạy</li><li><strong>ROM/Flash:</strong> Bộ nhớ chứa chương trình và dữ liệu cố định</li><li><strong>Cổng I/O (Input/Output):</strong> Giao tiếp với các thiết bị bên ngoài</li><li><strong>Các khối ngoại vi:</strong> Timer, ADC, PWM, UART, SPI, I²C...</li></ul><p><strong>Sơ đồ khối:</strong> CPU là trung tâm, kết nối với RAM, ROM qua bus dữ liệu và bus địa chỉ; các khối ngoại vi kết nối qua bus ngoại vi.</p>"
+            },
+            {
+              "heading": "3. CPU và bộ nhớ",
+              "content": "<p><strong>CPU (Central Processing Unit):</strong></p><ul><li><strong>ALU (Arithmetic Logic Unit):</strong> Thực hiện tính toán số học và logic</li><li><strong>CU (Control Unit):</strong> Điều khiển và giải mã lệnh</li><li><strong>Thanh ghi (Register):</strong> Lưu dữ liệu tạm thời trong CPU</li><li><strong>Bộ đếm chương trình (PC):</strong> Chỉ đến lệnh tiếp theo</li></ul><p><strong>Bộ nhớ:</strong></p><ul><li><strong>ROM (Read Only Memory):</strong> Lưu chương trình cố định (bootloader, firmware)</li><li><strong>RAM (Random Access Memory):</strong> Lưu biến, stack, dữ liệu tạm thời — mất khi mất nguồn</li><li><strong>EEPROM/Flash:</strong> Lưu dữ liệu không mất khi mất nguồn, có thể ghi/xóa</li></ul>"
+            },
+            {
+              "heading": "4. Các khối ngoại vi",
+              "content": "<p><strong>Các khối ngoại vi phổ biến trong vi điều khiển:</strong></p><ul><li><strong>GPIO (General Purpose I/O):</strong> Các chân vào/ra đa năng, có thể đọc hoặc xuất tín hiệu số</li><li><strong>ADC (Analog-to-Digital Converter):</strong> Chuyển đổi tín hiệu tương tự sang số</li><li><strong>Timer/Counter:</strong> Đếm thời gian và sự kiện</li><li><strong>PWM (Pulse Width Modulation):</strong> Tạo xung điều chế độ rộng để điều khiển tốc độ, độ sáng</li><li><strong>UART/USART:</strong> Giao tiếp nối tiếp không đồng bộ</li><li><strong>SPI, I²C:</strong> Giao tiếp nối tiếp đồng bộ với cảm biến, màn hình, bộ nhớ ngoài</li></ul>"
+            },
+            {
+              "heading": "5. So sánh vi điều khiển và vi xử lý",
+              "content": "<p><strong>Vi xử lý (Microprocessor — MPU):</strong></p><ul><li>Chỉ có CPU trên chip</li><li>Cần thêm RAM, ROM, ngoại vi bên ngoài</li><li>Công suất tính toán cao</li><li>Phù hợp máy tính, server, laptop</li><li>Ví dụ: Intel Core i5, AMD Ryzen</li></ul><p><strong>Vi điều khiển (Microcontroller — MCU):</strong></p><ul><li>Tích hợp CPU + RAM + ROM + ngoại vi trên một chip</li><li>Tiêu thụ điện thấp</li><li>Giá thành thấp</li><li>Phù hợp hệ thống nhúng, IoT, tự động hóa</li><li>Ví dụ: ATmega328, STM32, ESP32</li></ul>"
+            },
+            {
+              "heading": "6. Ứng dụng của vi điều khiển trong đời sống",
+              "content": "<p><strong>Các ứng dụng thực tế:</strong></p><ul><li><strong>Thiết bị gia dụng thông minh:</strong> Máy giặt, lò vi sóng, tủ lạnh, điều hòa</li><li><strong>Ô tô:</strong> ECU (Engine Control Unit), ABS, túi khí, điều khiển cửa</li><li><strong>IoT (Internet of Things):</strong> Cảm biến thông minh, nhà thông minh, đo đạc từ xa</li><li><strong>Robot và drone:</strong> Điều khiển động cơ, đọc cảm biến, xử lý ảnh</li><li><strong>Y tế:</strong> Máy đo huyết áp, máy đo đường huyết, máy tạo nhịp tim</li><li><strong>Giáo dục và Maker:</strong> Arduino, Micro:bit, Raspberry Pi Pico</li></ul>"
+            }
+          ]
+        },
+        "problemTypes": [
+          {
+            "id": "dang1",
+            "name": "Dạng 1: Phân biệt vi điều khiển và vi xử lý",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Vi điều khiển: tích hợp CPU+RAM+ROM+I/O trên chip, giá rẻ, tiết kiệm năng lượng</li><li>Vi xử lý: chỉ CPU, cần thêm chip ngoài, hiệu năng cao, đắt hơn</li><li>Xem xét yêu cầu ứng dụng để chọn loại phù hợp</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Một thiết bị đo nhiệt độ hiển thị LCD, dùng pin AAA. Nên chọn vi điều khiển hay vi xử lý?",
+                "solution": "<p><strong>Giải:</strong> Nên chọn vi điều khiển vì giá rẻ, tiết kiệm pin, tích hợp ADC và GPIO đủ dùng cho cảm biến và LCD.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang2",
+            "name": "Dạng 2: Xác định chức năng khối trong vi điều khiển",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>CPU: xử lý và thực thi lệnh</li><li>RAM: lưu dữ liệu tạm thời</li><li>ROM/Flash: lưu chương trình</li><li>GPIO: giao tiếp tín hiệu số</li><li>ADC: đọc tín hiệu tương tự</li><li>Timer: đếm thời gian/sự kiện</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1:</strong> Bộ phận nào trong vi điều khiển dùng để lưu chương trình khởi động?",
+                "solution": "<p><strong>Giải:</strong> ROM (hoặc Flash) chứa chương trình khởi động (bootloader) và firmware.</p>"
+              }
+            ]
+          },
+          {
+            "id": "dang3",
+            "name": "Dạng 3: Lập trình GPIO cơ bản",
+            "method": "<p><strong>Phương pháp:</strong></p><ul><li>Cấu hình chân GPIO là input hoặc output</li><li>Output: digitalWrite(chân, HIGH/LOW) để xuất mức điện áp</li><li>Input: digitalRead(chân) để đọc trạng thái</li><li>Analog: analogRead(chân ADC) để đọc giá trị 0-1023</li></ul>",
+            "examples": [
+              {
+                "question": "<strong>Ví dụ 1 (Arduino):</strong> Viết code bật LED ở chân 13 khi nhấn nút ở chân 2.",
+                "solution": "<p><strong>Giải:</strong></p><pre>void setup() { pinMode(13, OUTPUT); pinMode(2, INPUT_PULLUP); }<br>void loop() { digitalWrite(13, !digitalRead(2)); }</pre>"
+              }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex1",
+            "type": "mcq",
+            "question": "Vi điều khiển là:",
+            "options": [
+              "Một bộ vi xử lý thông thường",
+              "Một máy tính tích hợp trên một chip",
+              "Một bộ nhớ ngoài",
+              "Một cảm biến thông minh"
+            ],
+            "correct": 1,
+            "explanation": "Vi điều khiển là hệ thống máy tính thu nhỏ tích hợp CPU, RAM, ROM và ngoại vi trên một chip."
+          },
+          {
+            "id": "ex2",
+            "type": "mcq",
+            "question": "Các khối chức năng chính của vi điều khiển gồm:",
+            "options": [
+              "CPU, RAM, ổ cứng, GPU",
+              "CPU, RAM, ROM, I/O",
+              "CPU, GPU, ROM, I/O",
+              "RAM, ROM, GPU, I/O"
+            ],
+            "correct": 1,
+            "explanation": "Vi điều khiển gồm CPU, RAM, ROM (Flash) và các cổng I/O."
+          },
+          {
+            "id": "ex3",
+            "type": "mcq",
+            "question": "Bộ phận nào trong CPU thực hiện các phép tính số học và logic?",
+            "options": [
+              "CU (Control Unit)",
+              "ALU (Arithmetic Logic Unit)",
+              "PC (Program Counter)",
+              "SP (Stack Pointer)"
+            ],
+            "correct": 1,
+            "explanation": "ALU là khối tính toán số học và logic trong CPU."
+          },
+          {
+            "id": "ex4",
+            "type": "mcq",
+            "question": "Bộ nhớ nào trong vi điều khiển mất dữ liệu khi mất nguồn?",
+            "options": [
+              "ROM",
+              "Flash",
+              "RAM",
+              "EEPROM"
+            ],
+            "correct": 2,
+            "explanation": "RAM là bộ nhớ khả biến, mất dữ liệu khi mất nguồn."
+          },
+          {
+            "id": "ex5",
+            "type": "mcq",
+            "question": "Khối nào trong vi điều khiển dùng để chuyển tín hiệu tương tự sang số?",
+            "options": [
+              "GPIO",
+              "DAC",
+              "ADC",
+              "PWM"
+            ],
+            "correct": 2,
+            "explanation": "ADC (Analog-to-Digital Converter) chuyển tín hiệu tương tự thành giá trị số."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "So với vi xử lý, vi điều khiển có ưu điểm:",
+            "options": [
+              "Tốc độ xử lý cao hơn",
+              "Tiêu thụ điện năng thấp hơn",
+              "Bộ nhớ lớn hơn",
+              "Giá thành đắt hơn"
+            ],
+            "correct": 1,
+            "explanation": "Vi điều khiển tiêu thụ điện năng thấp, phù hợp thiết bị chạy pin và hệ thống nhúng."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Ví dụ nào sau đây là vi điều khiển?",
+            "options": [
+              "Intel Core i7",
+              "AMD Ryzen 5",
+              "ATmega328",
+              "NVIDIA RTX 3060"
+            ],
+            "correct": 2,
+            "explanation": "ATmega328 là vi điều khiển (dùng trên Arduino Uno). Core i7, Ryzen là vi xử lý, RTX là GPU."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "GPIO là viết tắt của:",
+            "options": [
+              "General Purpose Input/Output",
+              "Graphics Processing I/O",
+              "General Power I/O",
+              "Global Purpose I/O"
+            ],
+            "correct": 0,
+            "explanation": "GPIO (General Purpose Input/Output) là các chân vào/ra đa năng."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Giao tiếp nào sau đây KHÔNG phải là giao tiếp nối tiếp phổ biến trên vi điều khiển?",
+            "options": [
+              "UART",
+              "SPI",
+              "I²C",
+              "VGA"
+            ],
+            "correct": 3,
+            "explanation": "UART, SPI, I²C là các chuẩn giao tiếp nối tiếp. VGA là chuẩn hiển thị analog."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "PWM thường được dùng để:",
+            "options": [
+              "Đọc cảm biến nhiệt độ",
+              "Điều khiển độ sáng LED hoặc tốc độ động cơ",
+              "Lưu trữ dữ liệu",
+              "Kết nối Internet"
+            ],
+            "correct": 1,
+            "explanation": "PWM (Pulse Width Modulation) điều khiển độ sáng LED, tốc độ động cơ DC và các ứng dụng điều chế."
+          },
+          {
+            "id": "ex11",
+            "type": "msq",
+            "question": "Các thành phần cơ bản bên trong một vi điều khiển:",
+            "options": [
+              "CPU",
+              "RAM",
+              "ROM/Flash",
+              "Màn hình LCD"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "CPU, RAM, ROM/Flash là các thành phần cốt lõi. Màn hình LCD là thiết bị ngoại vi bên ngoài."
+          },
+          {
+            "id": "ex12",
+            "type": "msq",
+            "question": "Các khối ngoại vi thường có trong vi điều khiển:",
+            "options": [
+              "ADC",
+              "Timer/PWM",
+              "UART",
+              "GPU"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "ADC, Timer/PWM, UART là các ngoại vi phổ biến. GPU không có trong vi điều khiển thông thường."
+          },
+          {
+            "id": "ex13",
+            "type": "msq",
+            "question": "Ứng dụng thực tế của vi điều khiển:",
+            "options": [
+              "Máy giặt thông minh",
+              "Hệ thống phun xăng ô tô",
+              "Máy tính xách tay",
+              "Thiết bị IoT"
+            ],
+            "correct": [0, 1, 3],
+            "explanation": "Máy giặt, ECU ô tô, IoT là ứng dụng của vi điều khiển. Laptop dùng vi xử lý."
+          },
+          {
+            "id": "ex14",
+            "type": "msq",
+            "question": "Điểm khác biệt giữa vi điều khiển và vi xử lý:",
+            "options": [
+              "MCU tích hợp RAM và ROM trên chip, MPU cần chip ngoài",
+              "MCU tiêu thụ điện ít hơn MPU",
+              "MPU có hiệu năng tính toán cao hơn MCU",
+              "MCU đắt hơn MPU"
+            ],
+            "correct": [0, 1, 2],
+            "explanation": "MCU tích hợp sẵn nhớ và ngoại vi, tiết kiệm điện; MPU hiệu năng cao hơn và đắt hơn."
+          }
+        ]
+      }
+    }
+  ]
+}

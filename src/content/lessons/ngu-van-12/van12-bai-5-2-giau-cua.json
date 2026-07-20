@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-5-2-giau-cua",
-      "name": "Giấu của (trích Quẫn - Lộng Chương)",
-      "slug": "giau-cua-quon-long-chuong",
+      "name": "Giấu của (trích Quẫn – Lộng Chương)",
+      "slug": "giau-cua",
       "chapter": "Tiếng cười của hài kịch",
       "chapter_id": "V12-5",
       "lesson_id": 2,
       "author": "Lộng Chương",
-      "description": "Phân tích đoạn trích Giấu của trong vở kịch Quẫn của Lộng Chương, tìm hiểu nghệ thuật hài kịch Việt Nam và ý nghĩa nhân văn sâu sắc của tác phẩm.",
+      "description": "Phân tích đoạn trích Giấu của từ vở kịch Quẫn của Lộng Chương.",
       "duration_minutes": 90,
       "difficulty_level": "medium",
       "is_published": true,
@@ -25,7 +25,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Giấu của (trích Quẫn - Lộng Chương)",
+          "title": "Giấu của (trích Quẫn – Lộng Chương)",
           "sections": [
             {
               "heading": "1. Tác giả Lộng Chương",
@@ -37,115 +37,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex5-2-1",
-              "type": "mcq",
-              "question": "Lộng Chương là nhà văn của thời kỳ nào?",
-              "options": [
-                "Thời Pháp thuộc",
-                "Kháng chiến chống Pháp",
-                "Đương đại (1925-2012)",
-                "Thời phong kiến"
-              ],
-              "correct": 2,
-              "explanation": "Lộng Chương (1925-2012) là nhà văn, nhà viết kịch Việt Nam đương đại, nổi tiếng với phong cách hài hước và nhân văn."
-            },
-            {
-              "id": "ex5-2-2",
-              "type": "mcq",
-              "question": "Vở kịch Quẫn của Lộng Chương thuộc thể loại nào?",
-              "options": [
-                "Bi kịch",
-                "Hài kịch",
-                "Kịch lịch sử",
-                "Kịch thơ"
-              ],
-              "correct": 1,
-              "explanation": "Quẫn là một vở hài kịch, kết hợp yếu tố hài hước với chiều sâu nhân văn để phản ánh đời sống xã hội."
-            },
-            {
-              "id": "ex5-2-3",
-              "type": "mcq",
-              "question": "Đoạn trích 'Giấu của' phản ánh vấn đề gì?",
-              "options": [
-                "Tình yêu đôi lứa",
-                "Chiến tranh",
-                "Thái độ sống không trung thực, mâu thuẫn giàu nghèo",
-                "Lịch sử dân tộc"
-              ],
-              "correct": 2,
-              "explanation": "Đoạn trích 'Giấu của' phản ánh thái độ sống không trung thực và mâu thuẫn giữa giàu nghèo trong xã hội."
-            },
-            {
-              "id": "ex5-2-4",
-              "type": "mcq",
-              "question": "Yếu tố hài hước trong 'Giấu của' đến từ đâu?",
-              "options": [
-                "Chỉ từ lời thoại",
-                "Từ tình huống và tâm lý nhân vật",
-                "Từ trang phục",
-                "Không có yếu tố hài hước"
-              ],
-              "correct": 1,
-              "explanation": "Yếu tố hài hước trong 'Giấu của' đến từ tình huống nhân vật phải giấu của cải và tâm lý lo sợ, hồi hộp của họ."
-            },
-            {
-              "id": "ex5-2-5",
-              "type": "mcq",
-              "question": "Phong cách sáng tác của Lộng Chương có đặc điểm gì?",
-              "options": [
-                "Bi quan, u ám",
-                "Hài hước, nhân văn, gần gũi với đời sống",
-                "Trừu tượng, khó hiểu",
-                "Lãng mạn, mơ mộng"
-              ],
-              "correct": 1,
-              "explanation": "Lộng Chương nổi tiếng với phong cách hài hước, nhân văn và gần gũi với đời sống thực tế của người dân."
-            },
-            {
-              "id": "ex5-2-6",
-              "type": "mcq",
-              "question": "Vở kịch Quẫn được sáng tác trong bối cảnh nào?",
-              "options": [
-                "Thời kỳ phong kiến",
-                "Thời kỳ kháng chiến",
-                "Thời kỳ đổi mới ở Việt Nam",
-                "Thời kỳ Pháp thuộc"
-              ],
-              "correct": 2,
-              "explanation": "Vở kịch Quẫn được sáng tác trong bối cảnh Việt Nam thời kỳ đổi mới, phản ánh những thay đổi về kinh tế và xã hội."
-            },
-            {
-              "id": "ex5-2-7",
-              "type": "mcq",
-              "question": "Ý nghĩa chính của đoạn trích 'Giấu của' là gì?",
-              "options": [
-                "Khuyến khích tích trữ của cải",
-                "Phê phán thái độ sống không trung thực",
-                "Tôn vinh sự giàu có",
-                "Kể về cuộc sống hàng ngày"
-              ],
-              "correct": 1,
-              "explanation": "Đoạn trích 'Giấu của' có ý nghĩa phê phán thái độ sống không trung thực, không dám thể hiện sự thật về hoàn cảnh của mình."
-            },
-            {
-              "id": "ex5-2-8",
-              "type": "mcq",
-              "question": "Hài kịch của Lộng Chương khác với hài kịch phương Tây ở điểm nào?",
-              "options": [
-                "Không có sự khác biệt",
-                "Gần gũi với đời sống Việt Nam, có chiều sâu nhân văn",
-                "Chỉ tập trung vào giải trí",
-                "Không có yếu tố hài hước"
-              ],
-              "correct": 1,
-              "explanation": "Hài kịch của Lộng Chương mang đậm bản sắc Việt Nam, gần gũi với đời sống thực tế và có chiều sâu nhân văn, không chỉ đơn thuần giải trí."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex5-2-1",
+            "type": "mcq",
+            "question": "Lộng Chương là nhà văn của thời kỳ nào?",
+            "options": [
+              "Thời Pháp thuộc",
+              "Kháng chiến chống Pháp",
+              "Đương đại (1925-2012)",
+              "Thời phong kiến"
+            ],
+            "correct": 2,
+            "explanation": "Lộng Chương (1925-2012) là nhà văn, nhà viết kịch Việt Nam đương đại, nổi tiếng với phong cách hài hước và nhân văn."
+          },
+          {
+            "id": "ex5-2-2",
+            "type": "mcq",
+            "question": "Vở kịch Quẫn của Lộng Chương thuộc thể loại nào?",
+            "options": [
+              "Bi kịch",
+              "Hài kịch",
+              "Kịch lịch sử",
+              "Kịch thơ"
+            ],
+            "correct": 1,
+            "explanation": "Quẫn là một vở hài kịch, kết hợp yếu tố hài hước với chiều sâu nhân văn để phản ánh đời sống xã hội."
+          },
+          {
+            "id": "ex5-2-3",
+            "type": "mcq",
+            "question": "Đoạn trích 'Giấu của' phản ánh vấn đề gì?",
+            "options": [
+              "Tình yêu đôi lứa",
+              "Chiến tranh",
+              "Thái độ sống không trung thực, mâu thuẫn giàu nghèo",
+              "Lịch sử dân tộc"
+            ],
+            "correct": 2,
+            "explanation": "Đoạn trích 'Giấu của' phản ánh thái độ sống không trung thực và mâu thuẫn giữa giàu nghèo trong xã hội."
+          },
+          {
+            "id": "ex5-2-4",
+            "type": "mcq",
+            "question": "Yếu tố hài hước trong 'Giấu của' đến từ đâu?",
+            "options": [
+              "Chỉ từ lời thoại",
+              "Từ tình huống và tâm lý nhân vật",
+              "Từ trang phục",
+              "Không có yếu tố hài hước"
+            ],
+            "correct": 1,
+            "explanation": "Yếu tố hài hước trong 'Giấu của' đến từ tình huống nhân vật phải giấu của cải và tâm lý lo sợ, hồi hộp của họ."
+          },
+          {
+            "id": "ex5-2-5",
+            "type": "mcq",
+            "question": "Phong cách sáng tác của Lộng Chương có đặc điểm gì?",
+            "options": [
+              "Bi quan, u ám",
+              "Hài hước, nhân văn, gần gũi với đời sống",
+              "Trừu tượng, khó hiểu",
+              "Lãng mạn, mơ mộng"
+            ],
+            "correct": 1,
+            "explanation": "Lộng Chương nổi tiếng với phong cách hài hước, nhân văn và gần gũi với đời sống thực tế của người dân."
+          },
+          {
+            "id": "ex5-2-6",
+            "type": "mcq",
+            "question": "Vở kịch Quẫn được sáng tác trong bối cảnh nào?",
+            "options": [
+              "Thời kỳ phong kiến",
+              "Thời kỳ kháng chiến",
+              "Thời kỳ đổi mới ở Việt Nam",
+              "Thời kỳ Pháp thuộc"
+            ],
+            "correct": 2,
+            "explanation": "Vở kịch Quẫn được sáng tác trong bối cảnh Việt Nam thời kỳ đổi mới, phản ánh những thay đổi về kinh tế và xã hội."
+          },
+          {
+            "id": "ex5-2-7",
+            "type": "mcq",
+            "question": "Ý nghĩa chính của đoạn trích 'Giấu của' là gì?",
+            "options": [
+              "Khuyến khích tích trữ của cải",
+              "Phê phán thái độ sống không trung thực",
+              "Tôn vinh sự giàu có",
+              "Kể về cuộc sống hàng ngày"
+            ],
+            "correct": 1,
+            "explanation": "Đoạn trích 'Giấu của' có ý nghĩa phê phán thái độ sống không trung thực, không dám thể hiện sự thật về hoàn cảnh của mình."
+          },
+          {
+            "id": "ex5-2-8",
+            "type": "mcq",
+            "question": "Hài kịch của Lộng Chương khác với hài kịch phương Tây ở điểm nào?",
+            "options": [
+              "Không có sự khác biệt",
+              "Gần gũi với đời sống Việt Nam, có chiều sâu nhân văn",
+              "Chỉ tập trung vào giải trí",
+              "Không có yếu tố hài hước"
+            ],
+            "correct": 1,
+            "explanation": "Hài kịch của Lộng Chương mang đậm bản sắc Việt Nam, gần gũi với đời sống thực tế và có chiều sâu nhân văn, không chỉ đơn thuần giải trí."
+          },
+          {
+            "id": "ex5-2-9",
+            "type": "mcq",
+            "question": "Tình huống truyện có vai trò như thế nào trong việc thể hiện chủ đề tác phẩm?",
+            "options": [
+              "Bộc lộ tính cách nhân vật và làm nổi bật chủ đề",
+              "Không quan trọng",
+              "Chỉ làm câu chuyện dài hơn",
+              "Gây khó hiểu cho người đọc"
+            ],
+            "correct": 0,
+            "explanation": "Tình huống truyện có vai trò then chốt trong việc bộc lộ tính cách nhân vật và làm nổi bật chủ đề."
+          },
+          {
+            "id": "ex5-2-10",
+            "type": "mcq",
+            "question": "Nhân vật văn học thường được xây dựng qua những phương diện nào?",
+            "options": [
+              "Ngoại hình, hành động, lời nội tâm",
+              "Chỉ qua ngoại hình",
+              "Chỉ qua hành động",
+              "Chỉ qua lời nói"
+            ],
+            "correct": 0,
+            "explanation": "Nhân vật được xây dựng qua nhiều phương diện: ngoại hình, hành động, lời nói và nội tâm."
+          }
+        ]
       }
     }
   ]

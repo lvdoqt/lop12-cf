@@ -6,10 +6,10 @@
       "id": "van12-bai-6-8-cung-co-mo-rong",
       "name": "Củng cố, mở rộng",
       "slug": "cung-co-mo-rong",
-      "chapter": "Hồ Chí Minh - Văn hóa phải soi đường cho quốc dân đi",
+      "chapter": "Hồ Chí Minh \"văn hóa phải soi đường cho quốc dân đi\"",
       "chapter_id": "V12-6",
       "lesson_id": 8,
-      "description": "Củng cố kiến thức về tư tưởng Hồ Chí Minh và mở rộng hiểu biết về văn hóa, văn học cách mạng Việt Nam.",
+      "description": "Củng cố và mở rộng kiến thức chương Hồ Chí Minh.",
       "duration_minutes": 45,
       "difficulty_level": "medium",
       "is_published": true,
@@ -40,115 +40,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex6-8-1",
-              "type": "mcq",
-              "question": "Câu nói 'Văn hóa phải soi đường cho quốc dân đi' thể hiện quan điểm gì?",
-              "options": [
-                "Văn hóa không quan trọng",
-                "Văn hóa là nền tảng tinh thần, định hướng phát triển xã hội",
-                "Văn hóa chỉ là giải trí",
-                "Văn hóa không liên quan đến chính trị"
-              ],
-              "correct": 1,
-              "explanation": "Câu nói thể hiện quan điểm của Hồ Chí Minh về vai trò quan trọng của văn hóa như ngọn đuốc soi đường cho sự phát triển của dân tộc."
-            },
-            {
-              "id": "ex6-8-2",
-              "type": "mcq",
-              "question": "Phong cách ngôn ngữ của Hồ Chí Minh có đặc điểm gì?",
-              "options": [
-                "Phức tạp, khó hiểu",
-                "Giản dị, gần gũi, sâu sắc, giàu cảm xúc",
-                "Hoa mỹ, văn vẻ",
-                "Khô khan, máy móc"
-              ],
-              "correct": 1,
-              "explanation": "Phong cách ngôn ngữ của Hồ Chí Minh giản dị, gần gũi nhưng sâu sắc, súc tích và giàu cảm xúc yêu nước, yêu dân."
-            },
-            {
-              "id": "ex6-8-3",
-              "type": "mcq",
-              "question": "Văn học cách mạng Việt Nam có nội dung chủ yếu là gì?",
-              "options": [
-                "Tình yêu nam nữ",
-                "Phản ánh đấu tranh giải phóng dân tộc",
-                "Miêu tả cảnh vật",
-                "Kể chuyện thần thoại"
-              ],
-              "correct": 1,
-              "explanation": "Văn học cách mạng Việt Nam chủ yếu phản ánh cuộc đấu tranh giải phóng dân tộc, tinh thần yêu nước và cách mạng."
-            },
-            {
-              "id": "ex6-8-4",
-              "type": "mcq",
-              "question": "Ba đặc điểm của nền văn hóa mới theo Hồ Chí Minh là gì?",
-              "options": [
-                "Đẹp, tốt, hay",
-                "Dân tộc, khoa học, đại chúng",
-                "Cổ điển, hiện đại, tương lai",
-                "Đông, Tây, Nam, Bắc"
-              ],
-              "correct": 1,
-              "explanation": "Theo Hồ Chí Minh, nền văn hóa mới phải có ba đặc điểm: dân tộc (giữ gìn bản sắc), khoa học (tiến bộ) và đại chúng (phục vụ nhân dân)."
-            },
-            {
-              "id": "ex6-8-5",
-              "type": "mcq",
-              "question": "Tác phẩm nào KHÔNG phải của Hồ Chí Minh?",
-              "options": [
-                "Nhật ký trong tù",
-                "Tuyên ngôn độc lập",
-                "Việt Bắc",
-                "Nguyên tiêu"
-              ],
-              "correct": 2,
-              "explanation": "'Việt Bắc' là tác phẩm của Tố Hữu, không phải của Hồ Chí Minh. Các tác phẩm khác đều do Người sáng tác."
-            },
-            {
-              "id": "ex6-8-6",
-              "type": "mcq",
-              "question": "Đạo đức Hồ Chí Minh được tóm tắt qua những từ nào?",
-              "options": [
-                "Giàu, sang, đẹp",
-                "Cần, kiệm, liêm, chính, chí công vô tư",
-                "Mạnh, khỏe, nhanh",
-                "Cao, lớn, rộng"
-              ],
-              "correct": 1,
-              "explanation": "Đạo đức Hồ Chí Minh được tóm tắt qua: cần (siêng năng), kiệm (tiết kiệm), liêm (trong sạch), chính (ngay thẳng), chí công vô tư."
-            },
-            {
-              "id": "ex6-8-7",
-              "type": "mcq",
-              "question": "Phong cách làm việc của Hồ Chí Minh được thể hiện qua câu nói nào?",
-              "options": [
-                "Xa dân, xa thực tế",
-                "Gần dân, sát dân, vì dân",
-                "Chỉ ngồi văn phòng",
-                "Không quan tâm đến dân"
-              ],
-              "correct": 1,
-              "explanation": "Phong cách làm việc của Hồ Chí Minh là 'gần dân, sát dân, vì dân', luôn quan tâm đến đời sống nhân dân."
-            },
-            {
-              "id": "ex6-8-8",
-              "type": "mcq",
-              "question": "Giá trị di sản của Hồ Chí Minh có ý nghĩa gì với hiện tại?",
-              "options": [
-                "Không còn ý nghĩa",
-                "Định hướng xây dựng đất nước, con người Việt Nam",
-                "Chỉ có giá trị lịch sử",
-                "Không cần quan tâm"
-              ],
-              "correct": 1,
-              "explanation": "Giá trị di sản của Hồ Chí Minh vẫn có ý nghĩa to lớn, định hướng cho việc xây dựng đất nước và con người Việt Nam hiện đại."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex6-8-1",
+            "type": "mcq",
+            "question": "Câu nói 'Văn hóa phải soi đường cho quốc dân đi' thể hiện quan điểm gì?",
+            "options": [
+              "Văn hóa không quan trọng",
+              "Văn hóa là nền tảng tinh thần, định hướng phát triển xã hội",
+              "Văn hóa chỉ là giải trí",
+              "Văn hóa không liên quan đến chính trị"
+            ],
+            "correct": 1,
+            "explanation": "Câu nói thể hiện quan điểm của Hồ Chí Minh về vai trò quan trọng của văn hóa như ngọn đuốc soi đường cho sự phát triển của dân tộc."
+          },
+          {
+            "id": "ex6-8-2",
+            "type": "mcq",
+            "question": "Phong cách ngôn ngữ của Hồ Chí Minh có đặc điểm gì?",
+            "options": [
+              "Phức tạp, khó hiểu",
+              "Giản dị, gần gũi, sâu sắc, giàu cảm xúc",
+              "Hoa mỹ, văn vẻ",
+              "Khô khan, máy móc"
+            ],
+            "correct": 1,
+            "explanation": "Phong cách ngôn ngữ của Hồ Chí Minh giản dị, gần gũi nhưng sâu sắc, súc tích và giàu cảm xúc yêu nước, yêu dân."
+          },
+          {
+            "id": "ex6-8-3",
+            "type": "mcq",
+            "question": "Văn học cách mạng Việt Nam có nội dung chủ yếu là gì?",
+            "options": [
+              "Tình yêu nam nữ",
+              "Phản ánh đấu tranh giải phóng dân tộc",
+              "Miêu tả cảnh vật",
+              "Kể chuyện thần thoại"
+            ],
+            "correct": 1,
+            "explanation": "Văn học cách mạng Việt Nam chủ yếu phản ánh cuộc đấu tranh giải phóng dân tộc, tinh thần yêu nước và cách mạng."
+          },
+          {
+            "id": "ex6-8-4",
+            "type": "mcq",
+            "question": "Ba đặc điểm của nền văn hóa mới theo Hồ Chí Minh là gì?",
+            "options": [
+              "Đẹp, tốt, hay",
+              "Dân tộc, khoa học, đại chúng",
+              "Cổ điển, hiện đại, tương lai",
+              "Đông, Tây, Nam, Bắc"
+            ],
+            "correct": 1,
+            "explanation": "Theo Hồ Chí Minh, nền văn hóa mới phải có ba đặc điểm: dân tộc (giữ gìn bản sắc), khoa học (tiến bộ) và đại chúng (phục vụ nhân dân)."
+          },
+          {
+            "id": "ex6-8-5",
+            "type": "mcq",
+            "question": "Tác phẩm nào KHÔNG phải của Hồ Chí Minh?",
+            "options": [
+              "Nhật ký trong tù",
+              "Tuyên ngôn độc lập",
+              "Việt Bắc",
+              "Nguyên tiêu"
+            ],
+            "correct": 2,
+            "explanation": "'Việt Bắc' là tác phẩm của Tố Hữu, không phải của Hồ Chí Minh. Các tác phẩm khác đều do Người sáng tác."
+          },
+          {
+            "id": "ex6-8-6",
+            "type": "mcq",
+            "question": "Đạo đức Hồ Chí Minh được tóm tắt qua những từ nào?",
+            "options": [
+              "Giàu, sang, đẹp",
+              "Cần, kiệm, liêm, chính, chí công vô tư",
+              "Mạnh, khỏe, nhanh",
+              "Cao, lớn, rộng"
+            ],
+            "correct": 1,
+            "explanation": "Đạo đức Hồ Chí Minh được tóm tắt qua: cần (siêng năng), kiệm (tiết kiệm), liêm (trong sạch), chính (ngay thẳng), chí công vô tư."
+          },
+          {
+            "id": "ex6-8-7",
+            "type": "mcq",
+            "question": "Phong cách làm việc của Hồ Chí Minh được thể hiện qua câu nói nào?",
+            "options": [
+              "Xa dân, xa thực tế",
+              "Gần dân, sát dân, vì dân",
+              "Chỉ ngồi văn phòng",
+              "Không quan tâm đến dân"
+            ],
+            "correct": 1,
+            "explanation": "Phong cách làm việc của Hồ Chí Minh là 'gần dân, sát dân, vì dân', luôn quan tâm đến đời sống nhân dân."
+          },
+          {
+            "id": "ex6-8-8",
+            "type": "mcq",
+            "question": "Giá trị di sản của Hồ Chí Minh có ý nghĩa gì với hiện tại?",
+            "options": [
+              "Không còn ý nghĩa",
+              "Định hướng xây dựng đất nước, con người Việt Nam",
+              "Chỉ có giá trị lịch sử",
+              "Không cần quan tâm"
+            ],
+            "correct": 1,
+            "explanation": "Giá trị di sản của Hồ Chí Minh vẫn có ý nghĩa to lớn, định hướng cho việc xây dựng đất nước và con người Việt Nam hiện đại."
+          },
+          {
+            "id": "ex6-8-9",
+            "type": "mcq",
+            "question": "Phong cách nghệ thuật của Hồ Chí Minh có đặc điểm gì nổi bật?",
+            "options": [
+              "Giản dị, trong sáng, kết hợp trữ tình và chính luận",
+              "Hoa mỹ, cầu kỳ",
+              "Cổ điển, khó hiểu",
+              "Hiện đại, phức tạp"
+            ],
+            "correct": 0,
+            "explanation": "Phong cách Hồ Chí Minh giản dị, trong sáng, kết hợp hài hòa giữa trữ tình và chính luận."
+          },
+          {
+            "id": "ex6-8-10",
+            "type": "mcq",
+            "question": "Tuyên ngôn Độc lập (1945) có ý nghĩa lịch sử như thế nào?",
+            "options": [
+              "Khẳng định quyền độc lập, tự do của dân tộc Việt Nam",
+              "Tuyên bố chiến tranh với Pháp",
+              "Kêu gọi viện trợ quốc tế",
+              "Thành lập chính phủ mới"
+            ],
+            "correct": 0,
+            "explanation": "Tuyên ngôn Độc lập khẳng định quyền độc lập, tự do thiêng liêng của dân tộc Việt Nam trước thế giới."
+          }
+        ]
       }
     }
   ]

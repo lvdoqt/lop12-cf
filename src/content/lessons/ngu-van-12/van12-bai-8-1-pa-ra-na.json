@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-8-1-pa-ra-na",
-      "name": "Pa-ra-na (Parana) (trích Nhiệt đới buồn)",
+      "name": "Pa-ra-na",
       "slug": "pa-ra-na",
       "chapter": "Dữ liệu trong văn bản thông tin",
       "chapter_id": "V12-8",
       "lesson_id": 1,
       "author": "Cờ-lốt Lê-vi-Xtơ-rốt (Claude Lévi-Strauss)",
-      "description": "Tìm hiểu tác phẩm 'Pa-ra-na' của nhà nhân học Pháp Claude Lévi-Strauss, khám phá cách tác giả sử dụng dữ liệu trong văn bản thông tin.",
+      "description": "Phân tích tác phẩm Pa-ra-na trong văn bản thông tin.",
       "duration_minutes": 90,
       "difficulty_level": "hard",
       "is_published": true,
@@ -25,7 +25,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Pa-ra-na - Claude Lévi-Strauss",
+          "title": "Pa-ra-na",
           "sections": [
             {
               "heading": "1. Tác giả Claude Lévi-Strauss",
@@ -41,115 +41,138 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex8-1-1",
-              "type": "mcq",
-              "question": "Tác giả của 'Pa-ra-na' là ai?",
-              "options": [
-                "Mark Kurlansky",
-                "Claude Lévi-Strauss",
-                "Nguyễn Nam",
-                "Ngô Tất Tố"
-              ],
-              "correct": 1,
-              "explanation": "'Pa-ra-na' là tác phẩm của nhà nhân học Pháp Claude Lévi-Strauss, trích từ 'Nhiệt đới buồn'."
-            },
-            {
-              "id": "ex8-1-2",
-              "type": "mcq",
-              "question": "Tác phẩm thuộc thể loại nào?",
-              "options": [
-                "Tiểu thuyết",
-                "Văn bản thông tin (hồi ký nhân học)",
-                "Thơ",
-                "Kịch"
-              ],
-              "correct": 1,
-              "explanation": "'Pa-ra-na' là văn bản thông tin, kết hợp hồi ký và nghiên cứu nhân học."
-            },
-            {
-              "id": "ex8-1-3",
-              "type": "mcq",
-              "question": "Chủ đề chính của tác phẩm là gì?",
-              "options": [
-                "Tình yêu",
-                "Khảo sát nhân học về các bộ lạc thổ dân Brazil",
-                "Chiến tranh",
-                "Thiên nhiên"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm ghi chép quá trình khảo sát nhân học về các bộ lạc thổ dân ở vùng sông Pa-ra-na, Brazil."
-            },
-            {
-              "id": "ex8-1-4",
-              "type": "mcq",
-              "question": "Dữ liệu trong tác phẩm bao gồm những gì?",
-              "options": [
-                "Chỉ có tưởng tượng",
-                "Địa lý, dân tộc học, lịch sử",
-                "Chỉ có cảm xúc",
-                "Không có dữ liệu"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm chứa nhiều dữ liệu về địa lý (sông Pa-ra-na), dân tộc học (phong tục thổ dân) và lịch sử."
-            },
-            {
-              "id": "ex8-1-5",
-              "type": "mcq",
-              "question": "Góc nhìn của tác giả có đặc điểm gì?",
-              "options": [
-                "Chủ quan, thiên vị",
-                "Khách quan, nhân văn, tôn trọng văn hóa bản địa",
-                "Khinh thường thổ dân",
-                "Không có góc nhìn"
-              ],
-              "correct": 1,
-              "explanation": "Tác giả có góc nhìn khách quan của nhà khoa học nhưng vẫn nhân văn, tôn trọng văn hóa bản địa."
-            },
-            {
-              "id": "ex8-1-6",
-              "type": "mcq",
-              "question": "Ngôn ngữ trong tác phẩm kết hợp điều gì?",
-              "options": [
-                "Chỉ khoa học",
-                "Khoa học và văn học",
-                "Chỉ văn học",
-                "Không có đặc điểm"
-              ],
-              "correct": 1,
-              "explanation": "Ngôn ngữ kết hợp tính khoa học (chính xác, rõ ràng) và văn học (giàu hình ảnh, cảm xúc)."
-            },
-            {
-              "id": "ex8-1-7",
-              "type": "mcq",
-              "question": "Claude Lévi-Strauss nổi tiếng với lĩnh vực nào?",
-              "options": [
-                "Văn học",
-                "Nhân học cấu trúc",
-                "Vật lý",
-                "Hóa học"
-              ],
-              "correct": 1,
-              "explanation": "Claude Lévi-Strauss là người sáng lập trường phái nhân học cấu trúc, có ảnh hưởng lớn đến khoa học xã hội."
-            },
-            {
-              "id": "ex8-1-8",
-              "type": "mcq",
-              "question": "Giá trị của tác phẩm là gì?",
-              "options": [
-                "Chỉ giải trí",
-                "Tư liệu nhân học quý, kỹ thuật viết độc đáo, tôn trọng đa dạng văn hóa",
-                "Không có giá trị",
-                "Chỉ miêu tả cảnh đẹp"
-              ],
-              "correct": 1,
-              "explanation": "Tác phẩm có giá trị khoa học như tư liệu nhân học, giá trị văn học với kỹ thuật viết độc đáo và giá trị nhân văn."
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex8-1-1",
+            "type": "mcq",
+            "question": "Tác giả của 'Pa-ra-na' là ai?",
+            "options": [
+              "Mark Kurlansky",
+              "Claude Lévi-Strauss",
+              "Nguyễn Nam",
+              "Ngô Tất Tố"
+            ],
+            "correct": 1,
+            "explanation": "'Pa-ra-na' là tác phẩm của nhà nhân học Pháp Claude Lévi-Strauss, trích từ 'Nhiệt đới buồn'."
+          },
+          {
+            "id": "ex8-1-2",
+            "type": "mcq",
+            "question": "Tác phẩm thuộc thể loại nào?",
+            "options": [
+              "Tiểu thuyết",
+              "Văn bản thông tin (hồi ký nhân học)",
+              "Thơ",
+              "Kịch"
+            ],
+            "correct": 1,
+            "explanation": "'Pa-ra-na' là văn bản thông tin, kết hợp hồi ký và nghiên cứu nhân học."
+          },
+          {
+            "id": "ex8-1-3",
+            "type": "mcq",
+            "question": "Chủ đề chính của tác phẩm là gì?",
+            "options": [
+              "Tình yêu",
+              "Khảo sát nhân học về các bộ lạc thổ dân Brazil",
+              "Chiến tranh",
+              "Thiên nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm ghi chép quá trình khảo sát nhân học về các bộ lạc thổ dân ở vùng sông Pa-ra-na, Brazil."
+          },
+          {
+            "id": "ex8-1-4",
+            "type": "mcq",
+            "question": "Dữ liệu trong tác phẩm bao gồm những gì?",
+            "options": [
+              "Chỉ có tưởng tượng",
+              "Địa lý, dân tộc học, lịch sử",
+              "Chỉ có cảm xúc",
+              "Không có dữ liệu"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm chứa nhiều dữ liệu về địa lý (sông Pa-ra-na), dân tộc học (phong tục thổ dân) và lịch sử."
+          },
+          {
+            "id": "ex8-1-5",
+            "type": "mcq",
+            "question": "Góc nhìn của tác giả có đặc điểm gì?",
+            "options": [
+              "Chủ quan, thiên vị",
+              "Khách quan, nhân văn, tôn trọng văn hóa bản địa",
+              "Khinh thường thổ dân",
+              "Không có góc nhìn"
+            ],
+            "correct": 1,
+            "explanation": "Tác giả có góc nhìn khách quan của nhà khoa học nhưng vẫn nhân văn, tôn trọng văn hóa bản địa."
+          },
+          {
+            "id": "ex8-1-6",
+            "type": "mcq",
+            "question": "Ngôn ngữ trong tác phẩm kết hợp điều gì?",
+            "options": [
+              "Chỉ khoa học",
+              "Khoa học và văn học",
+              "Chỉ văn học",
+              "Không có đặc điểm"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ kết hợp tính khoa học (chính xác, rõ ràng) và văn học (giàu hình ảnh, cảm xúc)."
+          },
+          {
+            "id": "ex8-1-7",
+            "type": "mcq",
+            "question": "Claude Lévi-Strauss nổi tiếng với lĩnh vực nào?",
+            "options": [
+              "Văn học",
+              "Nhân học cấu trúc",
+              "Vật lý",
+              "Hóa học"
+            ],
+            "correct": 1,
+            "explanation": "Claude Lévi-Strauss là người sáng lập trường phái nhân học cấu trúc, có ảnh hưởng lớn đến khoa học xã hội."
+          },
+          {
+            "id": "ex8-1-8",
+            "type": "mcq",
+            "question": "Giá trị của tác phẩm là gì?",
+            "options": [
+              "Chỉ giải trí",
+              "Tư liệu nhân học quý, kỹ thuật viết độc đáo, tôn trọng đa dạng văn hóa",
+              "Không có giá trị",
+              "Chỉ miêu tả cảnh đẹp"
+            ],
+            "correct": 1,
+            "explanation": "Tác phẩm có giá trị khoa học như tư liệu nhân học, giá trị văn học với kỹ thuật viết độc đáo và giá trị nhân văn."
+          },
+          {
+            "id": "ex8-1-9",
+            "type": "mcq",
+            "question": "Văn bản thông tin thường có đặc điểm gì?",
+            "options": [
+              "Tính chính xác, khách quan, cập nhật",
+              "Tính hư cấu, tưởng tượng",
+              "Tính cảm xúc, chủ quan",
+              "Tính triết lý, sâu xa"
+            ],
+            "correct": 0,
+            "explanation": "Văn bản thông tin cần đảm bảo tính chính xác, khách quan và cập nhật."
+          },
+          {
+            "id": "ex8-1-10",
+            "type": "mcq",
+            "question": "Mục đích của việc viết thư trao đổi là gì?",
+            "options": [
+              "Trao đổi ý kiến, thuyết phục người đọc về một vấn đề",
+              "Kể chuyện giải trí",
+              "Thông báo tin tức",
+              "Bày tỏ cảm xúc cá nhân"
+            ],
+            "correct": 0,
+            "explanation": "Thư trao đổi nhằm trao đổi ý kiến và thuyết phục người đọc về một vấn đề cụ thể."
+          }
+        ]
       }
     }
   ]

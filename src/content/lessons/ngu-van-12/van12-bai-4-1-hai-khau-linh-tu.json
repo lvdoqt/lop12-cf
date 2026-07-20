@@ -4,13 +4,13 @@
   "lessons": [
     {
       "id": "van12-bai-4-1-hai-khau-linh-tu",
-      "name": "Hải khẩu linh từ (Đền thiêng cửa bể)",
-      "slug": "hai-khau-linh-tu-den-thieng-cua-be",
+      "name": "Hải khẩu linh từ – Đền thiêng cửa bể (Trích – Đoàn Thị Điểm)",
+      "slug": "hai-khau-linh-tu",
       "chapter": "Yếu tố kì ảo trong truyện kể",
       "chapter_id": "V12-4",
       "lesson_id": 1,
       "author": "Đoàn Thị Điểm",
-      "description": "Tìm hiểu về yếu tố kì ảo trong tác phẩm 'Hải khẩu linh từ' - một tác phẩm tiêu biểu trong văn học dân gian Việt Nam, phân tích cách sử dụng những yếu tố huyền ảo để xây dựng cốt truyện.",
+      "description": "Tìm hiểu yếu tố kì ảo trong truyện \"Hải khẩu linh từ – Đền thiêng cửa bể\" của Đoàn Thị Điểm.",
       "duration_minutes": 50,
       "difficulty_level": "medium",
       "is_published": true,
@@ -31,7 +31,7 @@
       ],
       "content": {
         "theory": {
-          "title": "Hải khẩu linh từ (Đền thiêng cửa bể) - Đoàn Thị Điểm",
+          "title": "Hải khẩu linh từ – Đền thiêng cửa bể (Trích – Đoàn Thị Điểm)",
           "sections": [
             {
               "heading": "1. Tác giả Đoàn Thị Điểm",
@@ -163,6 +163,32 @@
             ],
             "correct": 1,
             "explanation": "Yếu tố kì ảo cần có quy luật riêng trong thế giới tác phẩm và nhân vật phải có thái độ nhất quán để tạo độ tin cậy cho độc giả."
+          },
+          {
+            "id": "ex4-1-9",
+            "type": "mcq",
+            "question": "Phân tích yếu tố kì ảo trong tác phẩm giúp người đọc hiểu được điều gì?",
+            "options": [
+              "Nội dung và thông điệp sâu sắc của tác phẩm",
+              "Chỉ để giải trí",
+              "Không có tác dụng",
+              "Làm tác phẩm khó hiểu hơn"
+            ],
+            "correct": 0,
+            "explanation": "Phân tích yếu tố kì ảo giúp khám phá ý nghĩa biểu tượng và thông điệp của tác phẩm."
+          },
+          {
+            "id": "ex4-1-10",
+            "type": "mcq",
+            "question": "Trong truyện kể, yếu tố kì ảo thường kết hợp với yếu tố nào để tạo nên giá trị tác phẩm?",
+            "options": [
+              "Yếu tố hiện thực",
+              "Chỉ có yếu tố kì ảo",
+              "Yếu tố lịch sử",
+              "Yếu tố khoa học"
+            ],
+            "correct": 0,
+            "explanation": "Yếu tố kì ảo kết hợp với hiện thực tạo nên sự hấp dẫn và chiều sâu cho tác phẩm."
           }
         ]
       }

@@ -3,13 +3,13 @@
   "subject_id": 5,
   "lessons": [
     {
-      "id": "van12-bai-3-4-thuc-hanh-tieng-viet",
+      "id": "van12-bai-3-4-thuc-hanh-tieng-viet-loi-logic",
       "name": "Thực hành tiếng Việt: Lỗi logic, lỗi câu mơ hồ và cách sửa",
       "slug": "thuc-hanh-tieng-viet-loi-logic",
       "chapter": "Lập luận trong văn bản nghị luận",
       "chapter_id": "V12-3",
       "lesson_id": 4,
-      "description": "Rèn luyện kỹ năng sử dụng tiếng Việt đúng cách. Nhận diện và sửa những lỗi logic, lỗi câu mơ hồ một cách hiệu quả.",
+      "description": "Tìm hiểu về các lỗi logic, lỗi câu mơ hồ trong lập luận và cách khắc phục.",
       "duration_minutes": 50,
       "difficulty_level": "medium",
       "is_published": true,
@@ -54,149 +54,146 @@
             }
           ]
         },
-        "exercises": {
-          "title": "Bài tập luyện tập",
-          "items": [
-            {
-              "id": "ex3-4-1",
-              "type": "mcq",
-              "question": "Lỗi định nghĩa quá rộng là gì?",
-              "options": [
-                "Định nghĩa quá ngắn",
-                "Phạm vi định nghĩa lớn hơn khái niệm cần định nghĩa",
-                "Định nghĩa quá chi tiết",
-                "Định nghĩa không có ví dụ"
-              ],
-              "correct": 1,
-              "explanation": "Lỗi định nghĩa quá rộng xảy ra khi phạm vi định nghĩa lớn hơn khái niệm cần định nghĩa, bao gồm cả những thứ không thuộc khái niệm đó."
-            },
-            {
-              "id": "ex3-4-2",
-              "type": "mcq",
-              "question": "Định nghĩa theo vòng tròn là gì?",
-              "options": [
-                "Định nghĩa có hình tròn",
-                "Dùng chính khái niệm đó để định nghĩa cho chính nó",
-                "Định nghĩa quá dài",
-                "Định nghĩa có nhiều ví dụ"
-              ],
-              "correct": 1,
-              "explanation": "Định nghĩa theo vòng tròn là khi dùng chính khái niệm đó để định nghĩa cho chính khái niệm ấy, không giải thích được gì."
-            },
-            {
-              "id": "ex3-4-3",
-              "type": "mcq",
-              "question": "Lỗi nhân quả giả tạo (Post hoc) là gì?",
-              "options": [
-                "Tìm đúng nguyên nhân",
-                "Cho rằng vì A xảy ra trước B nên A là nguyên nhân gây B",
-                "Không tìm được nguyên nhân",
-                "Có quá nhiều nguyên nhân"
-              ],
-              "correct": 1,
-              "explanation": "Lỗi nhân quả giả tạo là khi nhầm lẫn trình tự thời gian với mối quan hệ nhân quả - cho rằng vì A xảy ra trước B nên A gây ra B."
-            },
-            {
-              "id": "ex3-4-4",
-              "type": "mcq",
-              "question": "Lỗi so sánh nào là phổ biến?",
-              "options": [
-                "So sánh quá chi tiết",
-                "So sánh giữa những thứ không cùng cấp hoặc không có điểm chung",
-                "So sánh quá ngắn",
-                "So sánh có quá nhiều ví dụ"
-              ],
-              "correct": 1,
-              "explanation": "Lỗi so sánh phổ biến là so sánh giữa những thứ không cùng cấp hoặc không có điểm chung, làm cho so sánh không hợp lý."
-            },
-            {
-              "id": "ex3-4-5",
-              "type": "mcq",
-              "question": "Lỗi câu mơ hồ do chủ ngữ không rõ thường xảy ra khi nào?",
-              "options": [
-                "Khi câu quá dài",
-                "Khi sử dụng đại từ 'nó', 'họ' mà không rõ thay thế cho ai/cái gì",
-                "Khi câu quá ngắn",
-                "Khi có quá nhiều động từ"
-              ],
-              "correct": 1,
-              "explanation": "Lỗi chủ ngữ không rõ thường xảy ra khi sử dụng đại từ như 'nó', 'họ' mà không rõ ràng thay thế cho ai hoặc cái gì."
-            },
-            {
-              "id": "ex3-4-6",
-              "type": "mcq",
-              "question": "Cách sửa lỗi cấu trúc không song song là gì?",
-              "options": [
-                "Thêm nhiều từ hơn",
-                "Đảm bảo các thành phần trong chuỗi có cấu trúc ngữ pháp giống nhau",
-                "Viết lại toàn bộ câu",
-                "Bỏ bớt từ"
-              ],
-              "correct": 1,
-              "explanation": "Để sửa lỗi cấu trúc không song parallel, cần đảm bảo các thành phần trong chuỗi (liệt kê) có cấu trúc ngữ pháp giống nhau."
-            },
-            {
-              "id": "ex3-4-7",
-              "type": "mcq",
-              "question": "Bước đầu tiên để nhận biết lỗi là gì?",
-              "options": [
-                "Sửa ngay",
-                "Đọc kỹ câu, đoạn để nắm ý chính và xác định chủ vị",
-                "Bỏ qua",
-                "Hỏi người khác"
-              ],
-              "correct": 1,
-              "explanation": "Bước đầu tiên là đọc kỹ câu, đoạn để nắm được ý chính và xác định chủ ngữ, vị ngữ, tân ngữ chính."
-            },
-            {
-              "id": "ex3-4-8",
-              "type": "mcq",
-              "question": "Sau khi sửa lỗi, cần làm gì?",
-              "options": [
-                "Không cần làm gì",
-                "Kiểm tra lại xem câu có hợp lý, rõ ràng không",
-                "Viết lại từ đầu",
-                "Xóa câu đó"
-              ],
-              "correct": 1,
-              "explanation": "Sau khi sửa lỗi, cần kiểm tra lại xem câu sửa có hợp lý, rõ ràng không, có thể đọc to để nghe sự tự nhiên của câu."
-            },
-            {
-              "id": "ex4-1",
-              "question": "Xác định loại lỗi logic còn lại trong câu sau: 'Những người thông minh đều học tập chăm chỉ, vậy nếu bạn học tập chăm chỉ thì bạn sẽ thông minh'",
-              "type": "multiple_choice",
-              "difficulty": "medium",
-              "options": [
-                "Định nghĩa quá rộng",
-                "Lập luận nhân quả giả tạo",
-                "Logic đảo ngược không đúng",
-                "Định nghĩa theo vòng tròn"
-              ],
-              "answer": "Logic đảo ngược không đúng"
-            },
-            {
-              "id": "ex4-2",
-              "question": "Sửa lỗi câu mơ hồ trong câu: 'Tôi thấy qua cửa sổ những chiếc xe chở hàng hóa khiến tôi nhượng chỗ'",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Câu này có chủ ngữ \"tôi\" không rõ ràng. Cách sửa: 'Nhìn qua cửa sổ, tôi thấy những chiếc xe chở hàng hóa chạy với tốc độ cao, khiến tôi thở phào' hoặc 'Từ cửa sổ, tôi nhìn thấy những chiếc xe chở hàng hóa chạy qua, và điều đó khiến tôi thở phào'"
-            },
-            {
-              "id": "ex4-3",
-              "question": "Tìm và sửa lỗi logic trong đoạn: 'Sách nói là những tệp âm thanh được đọc từ sách in. Vậy bất cứ tệp âm thanh nào cũng được gọi là sách nói'",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Lỗi: Lập luận logic đảo ngược không đúng. Định nghĩa sách nói rất rộng trong câu thứ hai. Sửa: 'Sách nói là những tệp âm thanh ghi lại tiếng người đọc từ một sách in hay một tác phẩm văn học. Không phải bất cứ tệp âm thanh nào cũng là sách nói'"
-            },
-            {
-              "id": "ex4-4",
-              "question": "Hãy sửa lỗi cấu trúc không song song trong câu: 'Cách chăm sóc thực vật bao gồm: tưới nước đều đặn, đặt thực vật ở nơi có ánh sáng đầy đủ, và nên bón phân thường xuyên'",
-              "type": "essay",
-              "difficulty": "medium",
-              "answer_guide": "Cách sửa: 'Cách chăm sóc thực vật bao gồm: tưới nước đều đặn, đặt thực vật ở nơi có ánh sáng đầy đủ, và bón phân thường xuyên' (loại bỏ 'nên')"
-            }
-          ]
-        }
+        "exercises": [
+          {
+            "id": "ex3-4-1",
+            "type": "mcq",
+            "question": "Lỗi định nghĩa quá rộng là gì?",
+            "options": [
+              "Định nghĩa quá ngắn",
+              "Phạm vi định nghĩa lớn hơn khái niệm cần định nghĩa",
+              "Định nghĩa quá chi tiết",
+              "Định nghĩa không có ví dụ"
+            ],
+            "correct": 1,
+            "explanation": "Lỗi định nghĩa quá rộng xảy ra khi phạm vi định nghĩa lớn hơn khái niệm cần định nghĩa, bao gồm cả những thứ không thuộc khái niệm đó."
+          },
+          {
+            "id": "ex3-4-2",
+            "type": "mcq",
+            "question": "Định nghĩa theo vòng tròn là gì?",
+            "options": [
+              "Định nghĩa có hình tròn",
+              "Dùng chính khái niệm đó để định nghĩa cho chính nó",
+              "Định nghĩa quá dài",
+              "Định nghĩa có nhiều ví dụ"
+            ],
+            "correct": 1,
+            "explanation": "Định nghĩa theo vòng tròn là khi dùng chính khái niệm đó để định nghĩa cho chính khái niệm ấy, không giải thích được gì."
+          },
+          {
+            "id": "ex3-4-3",
+            "type": "mcq",
+            "question": "Lỗi nhân quả giả tạo (Post hoc) là gì?",
+            "options": [
+              "Tìm đúng nguyên nhân",
+              "Cho rằng vì A xảy ra trước B nên A là nguyên nhân gây B",
+              "Không tìm được nguyên nhân",
+              "Có quá nhiều nguyên nhân"
+            ],
+            "correct": 1,
+            "explanation": "Lỗi nhân quả giả tạo là khi nhầm lẫn trình tự thời gian với mối quan hệ nhân quả - cho rằng vì A xảy ra trước B nên A gây ra B."
+          },
+          {
+            "id": "ex3-4-4",
+            "type": "mcq",
+            "question": "Lỗi so sánh nào là phổ biến?",
+            "options": [
+              "So sánh quá chi tiết",
+              "So sánh giữa những thứ không cùng cấp hoặc không có điểm chung",
+              "So sánh quá ngắn",
+              "So sánh có quá nhiều ví dụ"
+            ],
+            "correct": 1,
+            "explanation": "Lỗi so sánh phổ biến là so sánh giữa những thứ không cùng cấp hoặc không có điểm chung, làm cho so sánh không hợp lý."
+          },
+          {
+            "id": "ex3-4-5",
+            "type": "mcq",
+            "question": "Lỗi câu mơ hồ do chủ ngữ không rõ thường xảy ra khi nào?",
+            "options": [
+              "Khi câu quá dài",
+              "Khi sử dụng đại từ 'nó', 'họ' mà không rõ thay thế cho ai/cái gì",
+              "Khi câu quá ngắn",
+              "Khi có quá nhiều động từ"
+            ],
+            "correct": 1,
+            "explanation": "Lỗi chủ ngữ không rõ thường xảy ra khi sử dụng đại từ như 'nó', 'họ' mà không rõ ràng thay thế cho ai hoặc cái gì."
+          },
+          {
+            "id": "ex3-4-6",
+            "type": "mcq",
+            "question": "Cách sửa lỗi cấu trúc không song song là gì?",
+            "options": [
+              "Thêm nhiều từ hơn",
+              "Đảm bảo các thành phần trong chuỗi có cấu trúc ngữ pháp giống nhau",
+              "Viết lại toàn bộ câu",
+              "Bỏ bớt từ"
+            ],
+            "correct": 1,
+            "explanation": "Để sửa lỗi cấu trúc không song parallel, cần đảm bảo các thành phần trong chuỗi (liệt kê) có cấu trúc ngữ pháp giống nhau."
+          },
+          {
+            "id": "ex3-4-7",
+            "type": "mcq",
+            "question": "Bước đầu tiên để nhận biết lỗi là gì?",
+            "options": [
+              "Sửa ngay",
+              "Đọc kỹ câu, đoạn để nắm ý chính và xác định chủ vị",
+              "Bỏ qua",
+              "Hỏi người khác"
+            ],
+            "correct": 1,
+            "explanation": "Bước đầu tiên là đọc kỹ câu, đoạn để nắm được ý chính và xác định chủ ngữ, vị ngữ, tân ngữ chính."
+          },
+          {
+            "id": "ex3-4-8",
+            "type": "mcq",
+            "question": "Sau khi sửa lỗi, cần làm gì?",
+            "options": [
+              "Không cần làm gì",
+              "Kiểm tra lại xem câu có hợp lý, rõ ràng không",
+              "Viết lại từ đầu",
+              "Xóa câu đó"
+            ],
+            "correct": 1,
+            "explanation": "Sau khi sửa lỗi, cần kiểm tra lại xem câu sửa có hợp lý, rõ ràng không, có thể đọc to để nghe sự tự nhiên của câu."
+          },
+          {
+            "id": "ex4-1",
+            "question": "Xác định loại lỗi logic còn lại trong câu sau: 'Những người thông minh đều học tập chăm chỉ, vậy nếu bạn học tập chăm chỉ thì bạn sẽ thông minh'",
+            "type": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Định nghĩa quá rộng",
+              "Lập luận nhân quả giả tạo",
+              "Logic đảo ngược không đúng",
+              "Định nghĩa theo vòng tròn"
+            ],
+            "answer": "Logic đảo ngược không đúng"
+          },
+          {
+            "id": "ex4-2",
+            "question": "Sửa lỗi câu mơ hồ trong câu: 'Tôi thấy qua cửa sổ những chiếc xe chở hàng hóa khiến tôi nhượng chỗ'",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Câu này có chủ ngữ \"tôi\" không rõ ràng. Cách sửa: 'Nhìn qua cửa sổ, tôi thấy những chiếc xe chở hàng hóa chạy với tốc độ cao, khiến tôi thở phào' hoặc 'Từ cửa sổ, tôi nhìn thấy những chiếc xe chở hàng hóa chạy qua, và điều đó khiến tôi thở phào'"
+          },
+          {
+            "id": "ex4-3",
+            "question": "Tìm và sửa lỗi logic trong đoạn: 'Sách nói là những tệp âm thanh được đọc từ sách in. Vậy bất cứ tệp âm thanh nào cũng được gọi là sách nói'",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Lỗi: Lập luận logic đảo ngược không đúng. Định nghĩa sách nói rất rộng trong câu thứ hai. Sửa: 'Sách nói là những tệp âm thanh ghi lại tiếng người đọc từ một sách in hay một tác phẩm văn học. Không phải bất cứ tệp âm thanh nào cũng là sách nói'"
+          },
+          {
+            "id": "ex4-4",
+            "question": "Hãy sửa lỗi cấu trúc không song song trong câu: 'Cách chăm sóc thực vật bao gồm: tưới nước đều đặn, đặt thực vật ở nơi có ánh sáng đầy đủ, và nên bón phân thường xuyên'",
+            "type": "essay",
+            "difficulty": "medium",
+            "answer_guide": "Cách sửa: 'Cách chăm sóc thực vật bao gồm: tưới nước đều đặn, đặt thực vật ở nơi có ánh sáng đầy đủ, và bón phân thường xuyên' (loại bỏ 'nên')"
+          }
+        ]
       }
     }
   ]

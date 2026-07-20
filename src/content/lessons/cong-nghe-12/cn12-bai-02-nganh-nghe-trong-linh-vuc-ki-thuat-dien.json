@@ -1,0 +1,70 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12_02",
+      "name": "Ngành nghề trong lĩnh vực kĩ thuật điện",
+      "slug": "nganh-nghe-trong-linh-vuc-ki-thuat-dien",
+      "chapter": "Mở đầu về kĩ thuật điện",
+      "chapter_id": "CN12",
+      "lesson_id": 2,
+      "description": "Các ngành nghề trong lĩnh vực kĩ thuật điện: kĩ sư điện, kĩ thuật viên, thợ điện; yêu cầu năng lực; cơ hội việc làm.",
+      "duration_minutes": 45,
+      "difficulty_level": "trung bình",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Ngành nghề trong lĩnh vực kĩ thuật điện",
+          "summary": "Lĩnh vực kĩ thuật điện bao gồm nhiều ngành nghề đa dạng như kĩ sư điện, kĩ thuật viên điện, thợ điện, mỗi nghề có yêu cầu năng lực và cơ hội việc làm riêng. Đây là nhóm ngành có nhu cầu nhân lực cao tại Việt Nam trong bối cảnh công nghiệp hóa và chuyển đổi số.",
+          "sections": [
+            {
+              "heading": "Kĩ sư điện",
+              "content": "Kĩ sư điện là người thiết kế, phát triển và giám sát các hệ thống, thiết bị điện. Công việc bao gồm: thiết kế hệ thống điện cho tòa nhà, nhà máy; nghiên cứu và phát triển sản phẩm mới; giám sát thi công lắp đặt; bảo trì và vận hành hệ thống điện. Yêu cầu có bằng đại học chuyên ngành kĩ thuật điện, khả năng phân tích và giải quyết vấn đề."
+            },
+            {
+              "heading": "Kĩ thuật viên điện",
+              "content": "Kĩ thuật viên điện hỗ trợ kĩ sư điện trong việc thực hiện các dự án: lắp đặt, vận hành thử nghiệm, bảo trì thiết bị; vẽ kĩ thuật và lập hồ sơ kĩ thuật; kiểm tra chất lượng thiết bị điện. Yêu cầu có bằng cao đẳng hoặc trung cấp chuyên ngành điện, kĩ năng thực hành tốt và hiểu biết về quy trình an toàn điện."
+            },
+            {
+              "heading": "Thợ điện",
+              "content": "Thợ điện là người trực tiếp thi công lắp đặt, sửa chữa và bảo trì hệ thống điện. Công việc gồm: đi dây điện, lắp đặt thiết bị điện dân dụng và công nghiệp; sửa chữa các sự cố điện; kiểm tra và thay thế thiết bị hư hỏng. Yêu cầu có chứng chỉ nghề điện, sức khỏe tốt, tỉ mỉ và cẩn thận, tuân thủ nghiêm ngặt quy tắc an toàn."
+            },
+            {
+              "heading": "Yêu cầu năng lực chung đối với người lao động trong lĩnh vực kĩ thuật điện",
+              "content": "Người lao động trong lĩnh vực kĩ thuật điện cần có: (1) Kiến thức chuyên môn vững vàng về điện - điện tử; (2) Kĩ năng phân tích, tư duy logic và giải quyết vấn đề; (3) Kĩ năng sử dụng các phần mềm chuyên ngành; (4) Kĩ năng làm việc nhóm và giao tiếp; (5) Ý thức kỉ luật và an toàn lao động cao; (6) Khả năng học tập suốt đời để cập nhật công nghệ mới."
+            },
+            {
+              "heading": "Cơ hội việc làm trong lĩnh vực kĩ thuật điện",
+              "content": "Cơ hội việc làm rất đa dạng: các công ty điện lực, nhà máy sản xuất công nghiệp, công ty xây dựng, khu công nghiệp, công ty tư vấn thiết kế điện, viện nghiên cứu, trường dạy nghề. Người lao động có thể làm việc trong nước hoặc xuất khẩu lao động tại Nhật Bản, Hàn Quốc, châu Âu. Mức lương hấp dẫn và có nhiều cơ hội thăng tiến."
+            },
+            {
+              "heading": "Một số ngành nghề khác trong lĩnh vực kĩ thuật điện",
+              "content": "Ngoài ba nhóm chính trên, lĩnh vực kĩ thuật điện còn có các ngành nghề: kĩ sư tự động hóa (thiết kế hệ thống điều khiển tự động), kĩ sư điện tử công suất (thiết kế bộ biến đổi năng lượng), kĩ sư năng lượng tái tạo (hệ thống điện mặt trời, điện gió), chuyên viên quản lí năng lượng (tối ưu hóa sử dụng điện trong doanh nghiệp), giám sát thi công điện."
+            },
+            {
+              "heading": "Định hướng phát triển bản thân cho học sinh",
+              "content": "Học sinh muốn theo đuổi ngành kĩ thuật điện cần: học tốt các môn Toán, Vật lí; tìm hiểu và tham gia các câu lạc bộ kĩ thuật; rèn luyện kĩ năng thực hành qua các dự án nhỏ; phát triển tư duy logic và khả năng giải quyết vấn đề; tìm hiểu thông tin tuyển sinh của các trường đại học, cao đẳng có đào tạo ngành kĩ thuật điện."
+            }
+          ]
+        },
+        "exercises": [
+          { "id": 1, "type": "mcq", "question": "Kĩ sư điện là người làm công việc gì?", "options": ["Thiết kế và giám sát hệ thống điện", "Lắp đặt điện dân dụng", "Sửa chữa thiết bị gia dụng", "Bán thiết bị điện"], "correct": 0, "explanation": "Kĩ sư điện thiết kế, phát triển và giám sát hệ thống điện." },
+          { "id": 2, "type": "mcq", "question": "Kĩ thuật viên điện yêu cầu trình độ tối thiểu gì?", "options": ["Đại học", "Cao đẳng hoặc trung cấp", "Chứng chỉ nghề", "Tốt nghiệp THPT"], "correct": 1, "explanation": "Kĩ thuật viên điện thường yêu cầu bằng cao đẳng hoặc trung cấp." },
+          { "id": 3, "type": "mcq", "question": "Thợ điện trực tiếp thực hiện công việc nào?", "options": ["Thiết kế hệ thống điện", "Lắp đặt và sửa chữa điện", "Nghiên cứu sản phẩm mới", "Quản lí dự án"], "correct": 1, "explanation": "Thợ điện trực tiếp thi công, lắp đặt, sửa chữa hệ thống điện." },
+          { "id": 4, "type": "mcq", "question": "Yêu cầu quan trọng nhất đối với thợ điện là gì?", "options": ["Bằng đại học", "Chứng chỉ nghề và tuân thủ an toàn", "Kinh nghiệm quản lí", "Khả năng ngoại ngữ"], "correct": 1, "explanation": "Thợ điện cần có chứng chỉ nghề và tuân thủ an toàn lao động." },
+          { "id": 5, "type": "mcq", "question": "Ngành nào sau đây thuộc lĩnh vực kĩ thuật điện?", "options": ["Kĩ thuật dầu khí", "Kĩ thuật điện tử công suất", "Kĩ thuật hàng không", "Kĩ thuật môi trường"], "correct": 1, "explanation": "Kĩ thuật điện tử công suất là một chuyên ngành trong kĩ thuật điện." },
+          { "id": 6, "type": "mcq", "question": "Học sinh muốn theo ngành kĩ thuật điện cần học tốt môn nào?", "options": ["Ngữ văn", "Lịch sử", "Toán và Vật lí", "Địa lí"], "correct": 2, "explanation": "Toán và Vật lí là hai môn nền tảng cho kĩ thuật điện." },
+          { "id": 7, "type": "mcq", "question": "AI là kĩ sư năng lượng tái tạo, công việc chính là gì?", "options": ["Thiết kế hệ thống điện mặt trời", "Lắp đặt điện dân dụng", "Bán linh kiện điện tử", "Sửa chữa động cơ"], "correct": 0, "explanation": "Kĩ sư năng lượng tái tạo thiết kế hệ thống điện mặt trời, điện gió." },
+          { "id": 8, "type": "mcq", "question": "Cơ hội việc làm cho ngành kĩ thuật điện hiện nay như thế nào?", "options": ["Rất hạn chế", "Trung bình", "Cao và đa dạng", "Không có nhu cầu"], "correct": 2, "explanation": "Kĩ thuật điện có nhu cầu nhân lực cao trong bối cảnh công nghiệp hóa." },
+          { "id": 9, "type": "mcq", "question": "Kĩ sư tự động hóa thuộc lĩnh vực nào?", "options": ["Công nghệ thông tin", "Kĩ thuật điện", "Xây dựng", "Cơ khí"], "correct": 1, "explanation": "Kĩ sư tự động hóa là một chuyên ngành trong kĩ thuật điện." },
+          { "id": 10, "type": "mcq", "question": "Chức năng của chuyên viên quản lí năng lượng là gì?", "options": ["Thiết kế máy phát điện", "Tối ưu hóa sử dụng điện trong doanh nghiệp", "Sửa chữa thiết bị điện", "Bán điện"], "correct": 1, "explanation": "Chuyên viên quản lí năng lượng tối ưu hóa việc sử dụng năng lượng trong doanh nghiệp." },
+          { "id": 11, "type": "msq", "question": "Những ngành nghề nào thuộc lĩnh vực kĩ thuật điện?", "options": ["Kĩ sư điện", "Kĩ thuật viên điện", "Bác sĩ", "Thợ điện"], "correct": [0, 1, 3], "explanation": "Kĩ sư điện, kĩ thuật viên điện và thợ điện là các nghề trong kĩ thuật điện. Bác sĩ thuộc ngành y." },
+          { "id": 12, "type": "msq", "question": "Yêu cầu năng lực nào cần có đối với người làm kĩ thuật điện?", "options": ["Kiến thức chuyên môn về điện", "Kĩ năng phân tích và giải quyết vấn đề", "Khả năng nấu ăn", "Ý thức an toàn lao động"], "correct": [0, 1, 3], "explanation": "Kiến thức chuyên môn, kĩ năng phân tích và ý thức an toàn là các yêu cầu quan trọng." },
+          { "id": 13, "type": "msq", "question": "Cơ hội việc làm của ngành kĩ thuật điện có ở đâu?", "options": ["Công ty điện lực", "Nhà máy công nghiệp", "Bệnh viện (vị trí kĩ thuật)", "Công ty tư vấn thiết kế điện"], "correct": [0, 1, 3], "explanation": "Kĩ sư điện có thể làm việc ở công ty điện lực, nhà máy, công ty tư vấn thiết kế. Bệnh viện tuyển bác sĩ chứ không phải kĩ sư điện." },
+          { "id": 14, "type": "msq", "question": "Những kĩ năng nào cần rèn luyện để theo đuổi ngành kĩ thuật điện?", "options": ["Tư duy logic", "Kĩ năng thực hành", "Kĩ năng viết văn nghệ thuật", "Kĩ năng làm việc nhóm"], "correct": [0, 1, 3], "explanation": "Tư duy logic, kĩ năng thực hành và làm việc nhóm rất quan trọng. Viết văn nghệ thuật không liên quan." }
+        ]
+      }
+    }
+  ]
+}

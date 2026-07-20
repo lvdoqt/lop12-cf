@@ -1,0 +1,70 @@
+{
+  "subject": "Công nghệ",
+  "subject_id": 75,
+  "lessons": [
+    {
+      "id": "cn12_03",
+      "name": "Mạch điện xoay chiều ba pha",
+      "slug": "mach-dien-xoay-chieu-ba-pha",
+      "chapter": "Mạch điện xoay chiều ba pha",
+      "chapter_id": "CN12",
+      "lesson_id": 3,
+      "description": "Khái niệm dòng điện xoay chiều ba pha, cấu tạo máy phát điện ba pha, các cách mắc hình sao và hình tam giác, ưu điểm của mạch điện ba pha.",
+      "duration_minutes": 50,
+      "difficulty_level": "khó",
+      "is_published": true,
+      "content": {
+        "theory": {
+          "title": "Mạch điện xoay chiều ba pha",
+          "summary": "Dòng điện xoay chiều ba pha là hệ thống gồm ba dòng điện xoay chiều có cùng tần số, cùng biên độ nhưng lệch pha nhau 120° (2π/3 rad). Máy phát điện ba pha hoạt động dựa trên nguyên lí cảm ứng điện từ, tạo ra sức điện động xoay chiều ba pha. Mạch ba pha có thể mắc hình sao (Y) hoặc hình tam giác (Δ).",
+          "sections": [
+            {
+              "heading": "Khái niệm dòng điện xoay chiều ba pha",
+              "content": "Dòng điện xoay chiều ba pha là hệ thống gồm ba dòng điện xoay chiều một pha, có cùng biên độ, cùng tần số, nhưng lệch pha nhau một góc 120° (tương ứng 2π/3 rad). Dòng điện ba pha được sử dụng rộng rãi trong công nghiệp vì hiệu suất cao hơn và khả năng truyền tải năng lượng lớn hơn so với dòng điện một pha."
+            },
+            {
+              "heading": "Nguyên lí tạo ra dòng điện xoay chiều ba pha",
+              "content": "Dòng điện xoay chiều ba pha được tạo ra từ máy phát điện xoay chiều ba pha. Máy phát gồm stato có ba cuộn dây đặt lệch nhau 120° trên vòng tròn, và rôto là nam châm điện hoặc nam châm vĩnh cửu quay. Khi rôto quay, từ thông qua mỗi cuộn dây biến thiên hình sin, tạo ra sức điện động cảm ứng xoay chiều lệch pha nhau 120°."
+            },
+            {
+              "heading": "Cấu tạo máy phát điện xoay chiều ba pha",
+              "content": "Máy phát điện xoay chiều ba pha gồm hai phần chính: (1) Stato (phần tĩnh) gồm lõi thép có rãnh, đặt ba cuộn dây AX, BY, CZ giống hệt nhau, lệch nhau 120° trên chu vi stato; (2) Rôto (phần quay) là nam châm điện hoặc nam châm vĩnh cửu, tạo ra từ trường quay. Khi rôto quay với tốc độ n (vòng/phút), tần số dòng điện f = np/60 (p là số đôi cực)."
+            },
+            {
+              "heading": "Cách mắc mạch điện ba pha hình sao (Y)",
+              "content": "Cách mắc hình sao: nối ba điểm cuối X, Y, Z của ba cuộn dây với nhau tạo thành điểm trung tính (O); ba điểm đầu A, B, C nối với ba dây pha. Điện áp pha (Up) là điện áp giữa dây pha và dây trung tính. Điện áp dây (Ud) là điện áp giữa hai dây pha. Quan hệ: Ud = √3 × Up. Dòng điện dây Id bằng dòng điện pha Ip."
+            },
+            {
+              "heading": "Cách mắc mạch điện ba pha hình tam giác (Δ)",
+              "content": "Cách mắc hình tam giác: điểm cuối của cuộn dây này nối với điểm đầu của cuộn dây kia: X nối B, Y nối C, Z nối A. Ba điểm nối được đưa ra ba dây pha. Trong cách mắc này, điện áp dây Ud bằng điện áp pha Up. Dòng điện dây Id = √3 × Ip. Cách mắc hình tam giác thường dùng cho tải có công suất lớn."
+            },
+            {
+              "heading": "Ưu điểm của mạch điện xoay chiều ba pha",
+              "content": "Mạch điện xoay chiều ba pha có nhiều ưu điểm: (1) Tiết kiệm dây dẫn so với ba hệ thống một pha riêng rẽ; (2) Tạo ra từ trường quay dễ dàng, làm cơ sở cho động cơ ba pha; (3) Công suất truyền tải lớn, phù hợp cho sản xuất công nghiệp; (4) Hiệu suất truyền tải cao hơn; (5) Có thể chuyển đổi giữa hai cấp điện áp nhờ hai cách mắc khác nhau."
+            },
+            {
+              "heading": "Ứng dụng của mạch điện ba pha trong thực tế",
+              "content": "Mạch điện ba pha được ứng dụng rộng rãi: truyền tải điện năng từ nhà máy điện đến nơi tiêu thụ; vận hành động cơ điện ba pha trong nhà máy, xí nghiệp; cung cấp điện cho các khu công nghiệp, tòa nhà lớn; các thiết bị công suất lớn như máy hàn, máy nén khí; hệ thống điều hòa trung tâm; thang máy. Ở Việt Nam, điện ba pha có điện áp dây 380V, điện áp pha 220V."
+            }
+          ]
+        },
+        "exercises": [
+          { "id": 1, "type": "mcq", "question": "Dòng điện xoay chiều ba pha có các dòng điện lệch pha nhau một góc bao nhiêu?", "options": ["90°", "120°", "180°", "60°"], "correct": 1, "explanation": "Ba dòng điện lệch pha nhau 120° (2π/3 rad)." },
+          { "id": 2, "type": "mcq", "question": "Trong máy phát điện ba pha, ba cuộn dây được đặt lệch nhau góc bao nhiêu trên stato?", "options": ["90°", "180°", "120°", "60°"], "correct": 2, "explanation": "Ba cuộn dây đặt lệch nhau 120° trên chu vi stato." },
+          { "id": 3, "type": "mcq", "question": "Trong cách mắc hình sao, quan hệ giữa điện áp dây và điện áp pha là gì?", "options": ["Ud = Up", "Ud = √2 × Up", "Ud = √3 × Up", "Ud = 2 × Up"], "correct": 2, "explanation": "Trong mắc hình sao: Ud = √3 × Up." },
+          { "id": 4, "type": "mcq", "question": "Trong cách mắc hình tam giác, quan hệ giữa dòng điện dây và dòng điện pha là gì?", "options": ["Id = Ip", "Id = √2 × Ip", "Id = √3 × Ip", "Id = 2 × Ip"], "correct": 2, "explanation": "Trong mắc hình tam giác: Id = √3 × Ip." },
+          { "id": 5, "type": "mcq", "question": "Điện áp dây của điện ba pha ở Việt Nam là bao nhiêu?", "options": ["110V", "220V", "380V", "500V"], "correct": 2, "explanation": "Ở Việt Nam, điện áp dây ba pha là 380V, điện áp pha là 220V." },
+          { "id": 6, "type": "mcq", "question": "Bộ phận nào của máy phát điện ba pha tạo ra từ trường quay?", "options": ["Stato", "Rôto", "Cuộn dây", "Lõi thép"], "correct": 1, "explanation": "Rôto là bộ phận quay tạo ra từ trường quay." },
+          { "id": 7, "type": "mcq", "question": "Cách mắc nào thường dùng cho tải có công suất lớn?", "options": ["Hình sao", "Hình tam giác", "Hỗn hợp", "Nối tiếp"], "correct": 1, "explanation": "Mắc hình tam giác thường dùng cho tải có công suất lớn." },
+          { "id": 8, "type": "mcq", "question": "Một ưu điểm của mạch điện ba pha so với một pha là gì?", "options": ["Dễ lắp đặt", "Tiết kiệm dây dẫn", "An toàn hơn", "Giá rẻ hơn"], "correct": 1, "explanation": "Mạch ba pha tiết kiệm dây dẫn so với ba hệ thống một pha riêng rẽ." },
+          { "id": 9, "type": "mcq", "question": "Trong mắc hình sao, nếu điện áp pha Up = 220V thì điện áp dây Ud bằng bao nhiêu?", "options": ["220V", "311V", "380V", "440V"], "correct": 2, "explanation": "Ud = √3 × Up = √3 × 220 ≈ 380V." },
+          { "id": 10, "type": "mcq", "question": "Công thức tính tần số dòng điện do máy phát điện ba pha tạo ra là?", "options": ["f = n/p", "f = np/60", "f = 60n/p", "f = p/n"], "correct": 1, "explanation": "Tần số f = np/60, với n là tốc độ quay (vòng/phút), p là số đôi cực." },
+          { "id": 11, "type": "msq", "question": "Những đặc điểm nào đúng với dòng điện xoay chiều ba pha?", "options": ["Cùng tần số", "Cùng biên độ", "Lệch pha 90°", "Lệch pha 120°"], "correct": [0, 1, 3], "explanation": "Dòng điện ba pha có cùng tần số, cùng biên độ, lệch pha nhau 120°." },
+          { "id": 12, "type": "msq", "question": "Bộ phận nào thuộc cấu tạo máy phát điện ba pha?", "options": ["Stato", "Rôto", "Tụ điện", "Cuộn dây AX, BY, CZ"], "correct": [0, 1, 3], "explanation": "Máy phát điện ba pha gồm stato, rôto và các cuộn dây AX, BY, CZ. Tụ điện không phải bộ phận chính." },
+          { "id": 13, "type": "msq", "question": "Ưu điểm của mạch điện xoay chiều ba pha là gì?", "options": ["Tiết kiệm dây dẫn", "Tạo từ trường quay dễ dàng", "Dễ chế tạo thiết bị", "Công suất truyền tải lớn"], "correct": [0, 1, 3], "explanation": "Mạch ba pha tiết kiệm dây dẫn, tạo từ trường quay, công suất truyền tải lớn." },
+          { "id": 14, "type": "msq", "question": "Ứng dụng nào sau đây của mạch điện ba pha?", "options": ["Truyền tải điện năng", "Động cơ điện ba pha", "Bóng đèn LED", "Máy nén khí công nghiệp"], "correct": [0, 1, 3], "explanation": "Truyền tải điện, động cơ ba pha, máy nén khí công nghiệp là ứng dụng của ba pha. Bóng đèn LED dùng một pha." }
+        ]
+      }
+    }
+  ]
+}

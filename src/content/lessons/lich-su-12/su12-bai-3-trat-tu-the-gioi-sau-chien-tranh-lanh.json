@@ -34,7 +34,11 @@
         { "id": "ex7", "type": "mcq", "question": "Ví dụ khu vực hóa là?", "options": ["Warszawa", "NATO", "Liên Âu", "LHQ"], "correct": 2, "explanation": "Liên Âu là ví dụ tiêu biểu của khu vực hóa." },
         { "id": "ex8", "type": "mcq", "question": "New World Order tìm cách?", "options": ["Khôi phục chiến tranh lạnh", "Xây dựng hệ thống mới dưới Mỹ", "Xóa liên minh", "Cô lập"], "correct": 1, "explanation": "Xây dựng hệ thống quốc tế mới với Mỹ dẫn đầu." },
         { "id": "ex9", "type": "mcq", "question": "Vai trò LHQ thế nào?", "options": ["Tăng nhưng giới hạn", "Mất hết", "Thay thế tất cả", "Chỉ ở Âu"], "correct": 0, "explanation": "Vai trò LHQ tăng nhưng bị hạn chế bởi lợi ích quốc gia." },
-        { "id": "ex10", "type": "mcq", "question": "Công nghệ chính trong toàn cầu hóa?", "options": ["Nông", "Internet-IT", "Hạt nhân", "Khai mỏ"], "correct": 1, "explanation": "Internet và công nghệ thông tin là nền tảng toàn cầu hóa." }
+        { "id": "ex10", "type": "mcq", "question": "Công nghệ chính trong toàn cầu hóa?", "options": ["Nông", "Internet-IT", "Hạt nhân", "Khai mỏ"], "correct": 1, "explanation": "Internet và công nghệ thông tin là nền tảng toàn cầu hóa." },
+        { "id": "ex11", "type": "msq", "question": "Những đặc điểm nào của thế giới sau Chiến tranh lạnh?", "options": ["Thế giới chuyển từ hai cực sang đa cực", "Toàn cầu hóa diễn ra mạnh mẽ", "Chiến tranh lạnh tiếp diễn ở châu Phi", "Vai trò của Liên Hợp Quốc được tăng cường"], "correct": [0, 1, 3], "explanation": "Sau CTL: thế giới đa cực, toàn cầu hóa, vai trò LHQ tăng." },
+        { "id": "ex12", "type": "msq", "question": "Những thách thức mới của thế giới sau Chiến tranh lạnh là?", "options": ["Khủng bố quốc tế", "Biến đổi khí hậu", "Xung đột Đông-Tây", "Đại dịch toàn cầu"], "correct": [0, 1, 3], "explanation": "Khủng bố, biến đổi khí hậu và đại dịch (COVID-19) là thách thức mới." },
+        { "id": "ex13", "type": "msq", "question": "Những cường quốc mới nổi lên sau Chiến tranh lạnh là?", "options": ["Trung Quốc", "Ấn Độ", "Liên Xô", "ASEAN"], "correct": [0, 1, 3], "explanation": "Trung Quốc, Ấn Độ nổi lên là cường quốc kinh tế; ASEAN tăng tầm quan trọng." },
+        { "id": "ex14", "type": "msq", "question": "Xu hướng toàn cầu hóa được thể hiện qua những yếu tố nào?", "options": ["Kết nối internet và công nghệ thông tin", "Thương mại tự do mở rộng", "Các quốc gia tự cô lập kinh tế", "Công ty đa quốc gia phát triển mạnh"], "correct": [0, 1, 3], "explanation": "Toàn cầu hóa nhờ internet, thương mại tự do và công ty đa quốc gia." }
       ]
     }
   }]

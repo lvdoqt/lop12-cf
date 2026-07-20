@@ -16,30 +16,263 @@
       "content": {
         "theory": {
           "title": "Lao động và việc làm ở Việt Nam",
-          "summary": "Phân tích lực lượng lao động theo ngành, xu hướng chuyển dịch nghề nghiệp, vấn đề việc làm, thất nghiệp và di cư lao động; các chính sách đào tạo nghề, tạo việc làm và thúc đẩy việc làm bền vững.",
+          "summary": "Lực lượng lao động Việt Nam dồi dào, khoảng hơn 51 triệu người, nhưng chất lượng và cơ cấu chưa hợp lý. Quá trình công nghiệp hóa, đô thị hóa thúc đẩy sự chuyển dịch cơ cấu lao động từ nông nghiệp sang công nghiệp và dịch vụ. Bên cạnh những thành tựu, nước ta vẫn đối mặt với thất nghiệp, thiếu việc làm, đặc biệt ở thanh niên và nông thôn, cùng với hiện tượng di cư và xuất khẩu lao động. Các giải pháp trọng tâm là đào tạo nghề, hỗ trợ doanh nghiệp và phát triển thị trường lao động.",
           "sections": [
-            { "heading": "Cơ cấu lao động theo ngành", "content": "Tỷ lệ lao động nông nghiệp giảm, trong khi công nghiệp và dịch vụ tăng theo tiến trình công nghiệp hóa và đô thị hóa." },
-            { "heading": "Thất nghiệp và thiếu việc làm", "content": "Thất nghiệp ở thanh niên, lao động trình độ thấp và ở một số vùng nông thôn là thách thức; cần đào tạo kỹ năng và hỗ trợ tạo việc làm." },
-            { "heading": "Di cư và thị trường lao động", "content": "Di cư lao động sang thành phố hoặc đi làm việc ở nước ngoài là xu hướng lớn, có lợi và cả rủi ro xã hội." }
+            {
+              "heading": "Quy mô và chất lượng lao động",
+              "content": "Việt Nam có nguồn lao động dồi dào với hơn 51 triệu người trong độ tuổi lao động, là lợi thế lớn cho phát triển kinh tế. Tuy nhiên, chất lượng lao động còn hạn chế: tỷ lệ lao động qua đào tạo nghề chỉ khoảng 26-27%, phần lớn lao động chưa được đào tạo bài bản, trình độ chuyên môn kỹ thuật thấp. Lao động Việt Nam có ưu điểm cần cù, chịu khó, tiếp thu nhanh khoa học kỹ thuật, nhưng năng suất lao động còn thấp so với khu vực, gây khó khăn trong hội nhập và thu hút đầu tư công nghệ cao."
+            },
+            {
+              "heading": "Cơ cấu lao động theo ngành",
+              "content": "Cơ cấu lao động theo ngành kinh tế đang chuyển dịch tích cực theo hướng công nghiệp hóa: tỷ trọng lao động nông nghiệp giảm dần (còn khoảng 27-28%), trong khi tỷ trọng lao động công nghiệp - xây dựng và dịch vụ tăng lên (chiếm hơn 70%). Sự chuyển dịch này gắn liền với quá trình đô thị hóa và phát triển các khu công nghiệp, khu chế xuất. Tuy nhiên, tốc độ giảm lao động nông nghiệp còn chậm so với yêu cầu, và lao động trong công nghiệp phần lớn vẫn làm các khâu gia công, giá trị gia tăng thấp."
+            },
+            {
+              "heading": "Vấn đề thất nghiệp và thiếu việc làm",
+              "content": "Thất nghiệp là tình trạng lao động trong độ tuổi muốn làm việc nhưng chưa có việc. Tỷ lệ thất nghiệp ở khu vực thành thị cao hơn nông thôn, và trong đó thanh niên (15-24 tuổi) chiếm tỷ lệ lớn do thiếu kỹ năng và kinh nghiệm. Thiếu việc làm (làm việc dưới năng lực, thu nhập thấp, thời gian làm việc ngắn) phổ biến ở nông thôn. Nguyên nhân chủ yếu là cơ cấu đào tạo chưa phù hợp với nhu cầu thị trường, chất lượng lao động thấp và tốc độ tạo việc làm chưa bắt kịp tốc độ gia tăng lực lượng lao động."
+            },
+            {
+              "heading": "Di cư và xuất khẩu lao động",
+              "content": "Di cư lao động, đặc biệt là di cư từ nông thôn ra thành thị và từ miền Trung, miền núi đến vùng Đông Nam Bộ, góp phần cung ứng nhân lực cho các đô thị và khu công nghiệp, giúp người lao động tăng thu nhập. Đồng thời, xuất khẩu lao động (đưa người đi làm việc ở nước ngoài) là kênh quan trọng giải quyết việc làm và mang lại nguồn ngoại tệ lớn. Tuy nhiên, di cư và xuất khẩu lao động cũng đặt ra thách thức về quá tải hạ tầng đô thị, an sinh xã hội, cũng như rủi ro về hợp đồng, sức khỏe và bị bóc lột đối với người lao động."
+            },
+            {
+              "heading": "Giải pháp tạo việc làm",
+              "content": "Để giải quyết việc làm, Việt Nam tập trung đẩy mạnh đào tạo nghề gắn với nhu cầu thị trường; hỗ trợ doanh nghiệp vừa và nhỏ, khởi nghiệp và thu hút đầu tư để mở rộng sản xuất; phát triển kinh tế địa phương và nông thôn nhằm tạo việc làm tại chỗ; xây dựng hệ thống thông tin thị trường lao động minh bạch; đồng thời quản lý và hỗ trợ xuất khẩu lao động an toàn. Những giải pháp này giúp nâng cao chất lượng lao động và giảm tỷ lệ thất nghiệp, thiếu việc làm."
+            }
           ]
         },
-        "exercises": {
-          "short_answers": [
-            { "q": "Nêu một chính sách giúp tạo việc làm?", "a_hint": "Đào tạo nghề, hỗ trợ doanh nghiệp vừa và nhỏ." },
-            { "q": "Một nguyên nhân gây thất nghiệp ở thanh niên?", "a_hint": "Thiếu kỹ năng phù hợp với thị trường." }
-          ]
-        },
-        "quiz": [
-          { "id": 1, "type": "mcq", "question": "Ngành nào đang giảm tỷ lệ lao động ở Việt Nam?", "options": ["Nông nghiệp","Công nghiệp","Dịch vụ","Du lịch"], "correct": 0, "explanation": "Tỷ lệ lao động trong nông nghiệp giảm do công nghiệp hóa." },
-          { "id": 2, "type": "mcq", "question": "Giải pháp nào giúp giảm thất nghiệp thanh niên?", "options": ["Đào tạo nghề và kết nối việc làm","Tăng giờ làm cho người già","Giảm giáo dục","Không có giải pháp"], "correct": 0, "explanation": "Đào tạo nghề giúp thanh niên có kỹ năng phù hợp." },
-          { "id": 3, "type": "mcq", "question": "Di cư lao động thường dẫn tới?", "options": ["Tăng lực lượng lao động tại thành phố","Giảm lực lượng lao động ở thành phố","Không thay đổi","Tăng nông thôn"], "correct": 0, "explanation": "Di cư nông thôn - thành thị làm tăng lực lượng lao động tại thành phố." },
-          { "id": 4, "type": "mcq", "question": "Một rủi ro của lao động đi làm nước ngoài là?", "options": ["Thu nhập thấp hơn ở nước ngoài","Rủi ro về hợp đồng, sức khỏe và gia đình bị ảnh hưởng","Không có rủi ro","Giảm kỹ năng"], "correct": 1, "explanation": "Lao động xuất khẩu có thể gặp rủi ro về hợp đồng và điều kiện sống." },
-          { "id": 5, "type": "mcq", "question": "Chính sách nào khuyến khích doanh nghiệp tạo việc làm?", "options": ["Hỗ trợ tín dụng và giảm thuế cho doanh nghiệp nhỏ","Tăng thuế cho doanh nghiệp nhỏ","Cấm doanh nghiệp tuyển dụng","Không có chính sách"], "correct": 0, "explanation": "Hỗ trợ tài chính và ưu đãi thuế khuyến khích doanh nghiệp tuyển dụng." },
-          { "id": 6, "type": "mcq", "question": "Yếu tố nào làm gia tăng nhu cầu lao động có kỹ năng cao?", "options": ["Công nghiệp hoá, hiện đại hoá","Giảm đầu tư","Tăng người thất nghiệp","Không có yếu tố"], "correct": 0, "explanation": "Công nghiệp hóa yêu cầu lao động có kỹ năng chuyên môn hơn." },
-          { "id": 7, "type": "mcq", "question": "Việc làm phi chính thức thường có đặc điểm?", "options": ["Thu nhập bấp bênh, thiếu bảo hiểm xã hội","Thu nhập ổn định và bảo hiểm đầy đủ","Luôn là công việc nhà nước","Không tồn tại"], "correct": 0, "explanation": "Việc làm phi chính thức thường thiếu bảo đảm xã hội và thu nhập không ổn định." },
-          { "id": 8, "type": "mcq", "question": "Một biện pháp hỗ trợ lao động nông thôn là?", "options": ["Phát triển vùng và đa dạng hóa sinh kế","Cấm mọi hoạt động kinh tế","Tập trung tất cả vào thành phố","Không hỗ trợ"], "correct": 0, "explanation": "Phát triển kinh tế vùng giúp tạo việc làm tại chỗ cho nông thôn." },
-          { "id": 9, "type": "mcq", "question": "Thị trường lao động minh bạch cần có?", "options": ["Cơ sở dữ liệu việc làm, trung tâm giới thiệu và thông tin tuyển dụng","Bí mật hoàn toàn","Không có thông tin","Chỉ tuyển qua mối quan hệ"], "correct": 0, "explanation": "Thông tin việc làm minh bạch giúp kết nối người tìm việc và nhà tuyển dụng." },
-          { "id": 10, "type": "mcq", "question": "Một chỉ tiêu thường dùng để đánh giá việc làm là?", "options": ["Tỷ lệ thất nghiệp","Chiều cao trung bình","Số lượng cảng","Tổng diện tích rừng"], "correct": 0, "explanation": "Tỷ lệ thất nghiệp là chỉ tiêu đánh giá tình trạng việc làm." }
+        "exercises": [
+          {
+            "id": 1,
+            "type": "mcq",
+            "question": "Ngành nào đang giảm tỷ lệ lao động ở Việt Nam?",
+            "options": [
+              "Nông nghiệp",
+              "Công nghiệp",
+              "Dịch vụ",
+              "Du lịch"
+            ],
+            "correct": 0,
+            "explanation": "Tỷ lệ lao động trong nông nghiệp giảm do công nghiệp hóa."
+          },
+          {
+            "id": 2,
+            "type": "mcq",
+            "question": "Giải pháp nào giúp giảm thất nghiệp thanh niên?",
+            "options": [
+              "Đào tạo nghề và kết nối việc làm",
+              "Tăng giờ làm cho người già",
+              "Giảm giáo dục",
+              "Không có giải pháp"
+            ],
+            "correct": 0,
+            "explanation": "Đào tạo nghề giúp thanh niên có kỹ năng phù hợp."
+          },
+          {
+            "id": 3,
+            "type": "mcq",
+            "question": "Di cư lao động thường dẫn tới?",
+            "options": [
+              "Tăng lực lượng lao động tại thành phố",
+              "Giảm lực lượng lao động ở thành phố",
+              "Không thay đổi",
+              "Tăng nông thôn"
+            ],
+            "correct": 0,
+            "explanation": "Di cư nông thôn - thành thị làm tăng lực lượng lao động tại thành phố."
+          },
+          {
+            "id": 4,
+            "type": "mcq",
+            "question": "Một rủi ro của lao động đi làm nước ngoài là?",
+            "options": [
+              "Thu nhập thấp hơn ở nước ngoài",
+              "Rủi ro về hợp đồng, sức khỏe và gia đình bị ảnh hưởng",
+              "Không có rủi ro",
+              "Giảm kỹ năng"
+            ],
+            "correct": 1,
+            "explanation": "Lao động xuất khẩu có thể gặp rủi ro về hợp đồng và điều kiện sống."
+          },
+          {
+            "id": 5,
+            "type": "mcq",
+            "question": "Chính sách nào khuyến khích doanh nghiệp tạo việc làm?",
+            "options": [
+              "Hỗ trợ tín dụng và giảm thuế cho doanh nghiệp nhỏ",
+              "Tăng thuế cho doanh nghiệp nhỏ",
+              "Cấm doanh nghiệp tuyển dụng",
+              "Không có chính sách"
+            ],
+            "correct": 0,
+            "explanation": "Hỗ trợ tài chính và ưu đãi thuế khuyến khích doanh nghiệp tuyển dụng."
+          },
+          {
+            "id": 6,
+            "type": "mcq",
+            "question": "Yếu tố nào làm gia tăng nhu cầu lao động có kỹ năng cao?",
+            "options": [
+              "Công nghiệp hoá, hiện đại hoá",
+              "Giảm đầu tư",
+              "Tăng người thất nghiệp",
+              "Không có yếu tố"
+            ],
+            "correct": 0,
+            "explanation": "Công nghiệp hóa yêu cầu lao động có kỹ năng chuyên môn hơn."
+          },
+          {
+            "id": 7,
+            "type": "mcq",
+            "question": "Việc làm phi chính thức thường có đặc điểm?",
+            "options": [
+              "Thu nhập bấp bênh, thiếu bảo hiểm xã hội",
+              "Thu nhập ổn định và bảo hiểm đầy đủ",
+              "Luôn là công việc nhà nước",
+              "Không tồn tại"
+            ],
+            "correct": 0,
+            "explanation": "Việc làm phi chính thức thường thiếu bảo đảm xã hội và thu nhập không ổn định."
+          },
+          {
+            "id": 8,
+            "type": "mcq",
+            "question": "Một biện pháp hỗ trợ lao động nông thôn là?",
+            "options": [
+              "Phát triển vùng và đa dạng hóa sinh kế",
+              "Cấm mọi hoạt động kinh tế",
+              "Tập trung tất cả vào thành phố",
+              "Không hỗ trợ"
+            ],
+            "correct": 0,
+            "explanation": "Phát triển kinh tế vùng giúp tạo việc làm tại chỗ cho nông thôn."
+          },
+          {
+            "id": 9,
+            "type": "mcq",
+            "question": "Thị trường lao động minh bạch cần có?",
+            "options": [
+              "Cơ sở dữ liệu việc làm, trung tâm giới thiệu và thông tin tuyển dụng",
+              "Bí mật hoàn toàn",
+              "Không có thông tin",
+              "Chỉ tuyển qua mối quan hệ"
+            ],
+            "correct": 0,
+            "explanation": "Thông tin việc làm minh bạch giúp kết nối người tìm việc và nhà tuyển dụng."
+          },
+          {
+            "id": 10,
+            "type": "mcq",
+            "question": "Một chỉ tiêu thường dùng để đánh giá việc làm là?",
+            "options": [
+              "Tỷ lệ thất nghiệp",
+              "Chiều cao trung bình",
+              "Số lượng cảng",
+              "Tổng diện tích rừng"
+            ],
+            "correct": 0,
+            "explanation": "Tỷ lệ thất nghiệp là chỉ tiêu đánh giá tình trạng việc làm."
+          },
+          {
+            "id": 11,
+            "type": "msq",
+            "question": "Cơ cấu lao động theo ngành ở Việt Nam đang chuyển dịch theo hướng nào?",
+            "options": [
+              "Giảm tỷ trọng lao động nông nghiệp",
+              "Tăng tỷ trọng lao động công nghiệp",
+              "Tăng tỷ trọng lao động dịch vụ",
+              "Giảm tỷ trọng lao động dịch vụ"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "explanation": "Cơ cấu lao động chuyển dịch theo hướng giảm nông nghiệp, tăng công nghiệp và dịch vụ."
+          },
+          {
+            "id": 12,
+            "type": "msq",
+            "question": "Nguyên nhân gây thất nghiệp ở Việt Nam là?",
+            "options": [
+              "Chất lượng lao động thấp",
+              "Cơ cấu đào tạo chưa phù hợp",
+              "Thiếu việc làm ở thành thị",
+              "Tốc độ tăng trưởng kinh tế quá nhanh"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "explanation": "Thất nghiệp do chất lượng lao động thấp và cơ cấu đào tạo chưa phù hợp với thị trường."
+          },
+          {
+            "id": 13,
+            "type": "msq",
+            "question": "Lao động Việt Nam có những thế mạnh nào?",
+            "options": [
+              "Cần cù, chịu khó",
+              "Tiếp thu nhanh khoa học kỹ thuật",
+              "Giá nhân công cao",
+              "Dồi dào về số lượng"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Lao động Việt Nam có ưu điểm cần cù, tiếp thu nhanh và số lượng dồi dào."
+          },
+          {
+            "id": 14,
+            "type": "msq",
+            "question": "Các giải pháp tạo việc làm cho người lao động là?",
+            "options": [
+              "Đào tạo nghề",
+              "Hỗ trợ doanh nghiệp vừa và nhỏ",
+              "Hạn chế xuất khẩu lao động",
+              "Phát triển kinh tế địa phương"
+            ],
+            "correct": [
+              0,
+              1,
+              3
+            ],
+            "explanation": "Đào tạo nghề, hỗ trợ doanh nghiệp và phát triển kinh tế địa phương giúp tạo việc làm."
+          },
+          {
+            "id": 15,
+            "type": "sa",
+            "question": "Xu hướng việc làm trong tương lai ở Việt Nam là gì?",
+            "correct": "Tăng tỷ trọng việc làm trong lĩnh vực dịch vụ và công nghiệp công nghệ cao",
+            "explanation": "Việc làm dịch chuyển sang dịch vụ và công nghiệp công nghệ cao."
+          },
+          {
+            "id": 16,
+            "type": "sa",
+            "question": "Nêu khái niệm 'thất nghiệp cơ cấu'?",
+            "correct": "Thất nghiệp do sự mất cân đối giữa kỹ năng của người lao động và yêu cầu của thị trường lao động",
+            "explanation": "Thất nghiệp cơ cấu xảy ra khi kỹ năng lao động không phù hợp với nhu cầu."
+          },
+          {
+            "id": 17,
+            "type": "sa",
+            "question": "Biện pháp nâng cao chất lượng lao động Việt Nam?",
+            "correct": "Đổi mới chương trình đào tạo, tăng cường dạy nghề và hợp tác quốc tế về giáo dục",
+            "explanation": "Cải cách giáo dục và đào tạo nghề giúp nâng cao chất lượng lao động."
+          },
+          {
+            "id": 18,
+            "type": "sa",
+            "question": "Nêu một chính sách giúp tạo việc làm?",
+            "correct": "Đào tạo nghề, hỗ trợ doanh nghiệp vừa và nhỏ.",
+            "explanation": "Đào tạo nghề, hỗ trợ doanh nghiệp vừa và nhỏ."
+          },
+          {
+            "id": 19,
+            "type": "sa",
+            "question": "Một nguyên nhân gây thất nghiệp ở thanh niên?",
+            "correct": "Thiếu kỹ năng phù hợp với thị trường.",
+            "explanation": "Thiếu kỹ năng phù hợp với thị trường."
+          }
         ]
       }
     }

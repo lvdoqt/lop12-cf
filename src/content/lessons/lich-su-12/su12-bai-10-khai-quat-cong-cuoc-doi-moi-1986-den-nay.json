@@ -34,7 +34,11 @@
         { "id": "ex7", "type": "mcq", "question": "Thời kỳ Bình thường hoá với Mỹ?", "options": ["1990", "1993", "1995", "1997"], "correct": 2, "explanation": "Bình thường hóa quan hệ với Mỹ năm 1995." },
         { "id": "ex8", "type": "mcq", "question": "Gia nhập ASEAN?", "options": ["1992", "1994", "1995", "1997"], "correct": 2, "explanation": "Gia nhập ASEAN năm 1995." },
         { "id": "ex9", "type": "mcq", "question": "Gia nhập WTO?", "options": ["2000", "2005", "2007", "2010"], "correct": 2, "explanation": "Gia nhập WTO năm 2007." },
-        { "id": "ex10", "type": "mcq", "question": "Tỷ lệ tăng trưởng GDP?", "options": ["2-3% hàng năm", "5-7% hàng năm", "10-12% hàng năm", "15% hàng năm"], "correct": 1, "explanation": "Giai đoạn 1986-2000, GDP tăng 5-7% hàng năm." }
+        { "id": "ex10", "type": "mcq", "question": "Tỷ lệ tăng trưởng GDP?", "options": ["2-3% hàng năm", "5-7% hàng năm", "10-12% hàng năm", "15% hàng năm"], "correct": 1, "explanation": "Giai đoạn 1986-2000, GDP tăng 5-7% hàng năm." },
+        { "id": "ex11", "type": "msq", "question": "Những nội dung chính của công cuộc Đổi mới?", "options": ["Phát triển kinh tế thị trường định hướng xã hội chủ nghĩa", "Cải cách nông nghiệp và phát triển thương mại", "Xóa bỏ hoàn toàn vai trò của Nhà nước", "Mở cửa hội nhập quốc tế"], "correct": [0, 1, 3], "explanation": "Đổi mới: kinh tế thị trường, cải cách nông nghiệp, mở cửa hội nhập; không xóa bỏ vai trò Nhà nước." },
+        { "id": "ex12", "type": "msq", "question": "Kết quả của Đổi mới giai đoạn 1986-2000?", "options": ["GDP tăng 5-7% hàng năm", "Lạm phát được kiểm soát", "Việt Nam trở thành nước công nghiệp phát triển", "Thu hút vốn FDI, xuất khẩu tăng trưởng"], "correct": [0, 1, 3], "explanation": "Đổi mới giúp GDP tăng, kiểm soát lạm phát, thu hút FDI." },
+        { "id": "ex13", "type": "msq", "question": "Những thành tựu đối ngoại của Việt Nam từ Đổi mới?", "options": ["Bình thường hóa quan hệ với Mỹ (1995)", "Gia nhập ASEAN (1995)", "Chiến tranh với Campuchia", "Gia nhập WTO (2007)"], "correct": [0, 1, 3], "explanation": "Thành tựu đối ngoại: bình thường hóa với Mỹ, gia nhập ASEAN và WTO." },
+        { "id": "ex14", "type": "msq", "question": "Nguyên nhân Việt Nam tiến hành Đổi mới?", "options": ["Kinh tế phát triển chậm sau 1975", "Tác động của khủng hoảng và thiên tai 1979", "Áp lực từ Mỹ buộc thay đổi thể chế", "Ảnh hưởng từ cải cách Perestroika của Liên Xô"], "correct": [0, 1, 3], "explanation": "Nguyên nhân: kinh tế chậm, khủng hoảng 1979 và ảnh hưởng từ cải cách Liên Xô." }
       ]
     }
   }]

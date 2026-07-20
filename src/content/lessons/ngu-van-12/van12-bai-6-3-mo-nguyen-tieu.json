@@ -1,0 +1,183 @@
+{
+  "subject": "Ngữ Văn 12",
+  "subject_id": 5,
+  "lessons": [
+    {
+      "id": "van12-bai-6-3-mo-nguyen-tieu",
+      "name": "Mộ, Nguyên tiêu",
+      "slug": "mo-nguyen-tieu",
+      "chapter": "Hồ Chí Minh \"văn hóa phải soi đường cho quốc dân đi\"",
+      "chapter_id": "V12-6",
+      "lesson_id": 3,
+      "author": "Hồ Chí Minh",
+      "description": "Phân tích hai bài thơ Mộ và Nguyên tiêu của Hồ Chí Minh.",
+      "duration_minutes": 90,
+      "difficulty_level": "medium",
+      "is_published": true,
+      "thumbnail_url": "https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=2574&auto=format&fit=crop",
+      "question_types": [
+        {
+          "id": "analyze-poetry",
+          "name": "Phân tích thơ",
+          "slug": "phan-tich-tho",
+          "difficulty": "medium"
+        }
+      ],
+      "content": {
+        "theory": {
+          "title": "Mộ, Nguyên tiêu",
+          "sections": [
+            {
+              "heading": "1. Hoàn cảnh sáng tác",
+              "content": "<h4>a) Thời gian, địa điểm</h4><ul><li><strong>Thời gian:</strong> 1942-1943</li><li><strong>Địa điểm:</strong> Trong tù ở Trung Quốc</li><li><strong>Hoàn cảnh:</strong> Bị chính quyền Tưởng Giới Thạch bắt giam</li></ul><h4>b) Tập thơ Nhật ký trong tù</h4><ul><li><strong>Số lượng:</strong> 133 bài thơ chữ Hán</li><li><strong>Nội dung:</strong> Ghi lại cuộc sống trong tù, tâm tư, tình cảm</li><li><strong>Giá trị:</strong> Tác phẩm văn học độc đáo, nhân văn sâu sắc</li></ul>"
+            },
+            {
+              "heading": "2. Phân tích bài 'Mộ' (Chiều tối)",
+              "content": "<h4>a) Nội dung</h4><ul><li><strong>Chủ đề:</strong> Cảnh chiều tối trong tù, tâm trạng cô đơn</li><li><strong>Hình ảnh:</strong> Mộ, chiều tối, bóng tối bao trùm</li><li><strong>Tâm trạng:</strong> Buồn bã nhưng không tuyệt vọng</li></ul><h4>b) Nghệ thuật</h4><ul><li><strong>Hình ảnh:</strong> Mộ - biểu tượng cho sự cô đơn, tù túng</li><li><strong>Không gian:</strong> Tù ngục tối tăm, ngột ngạt</li><li><strong>Tâm trạng:</strong> Buồn nhưng vẫn lạc quan, tin tưởng</li></ul>"
+            },
+            {
+              "heading": "3. Phân tích bài 'Nguyên tiêu' (Rằm tháng giêng)",
+              "content": "<h4>a) Nội dung</h4><ul><li><strong>Chủ đề:</strong> Tết Nguyên tiêu trong tù</li><li><strong>Đối chiếu:</strong> Tết ở ngoài vs trong tù</li><li><strong>Tình cảm:</strong> Nhớ Tổ quốc, nhớ nhân dân</li></ul><h4>b) Nghệ thuật</h4><ul><li><strong>Đối chiếu:</strong> Vui buồn, trong ngoài</li><li><strong>Hình ảnh:</strong> Đèn lồng, pháo hoa (bên ngoài) vs tù tối (bên trong)</li><li><strong>Tâm trạng:</strong> Nhớ nhà nhưng vẫn lạc quan</li></ul>"
+            },
+            {
+              "heading": "4. Giá trị chung",
+              "content": "<h4>a) Tư tưởng</h4><ul><li><strong>Yêu nước:</strong> Tình yêu sâu sắc với Tổ quốc</li><li><strong>Lạc quan:</strong> Tin tưởng vào tương lai</li><li><strong>Nhân văn:</strong> Quan tâm đến con người</li></ul><h4>b) Nghệ thuật</h4><ul><li><strong>Ngôn ngữ:</strong> Giản dị, chân thành</li><li><strong>Hình ảnh:</strong> Gần gũi, dễ cảm nhận</li><li><strong>Cảm xúc:</strong> Chân thật, sâu sắc</li></ul>"
+            }
+          ]
+        },
+        "exercises": [
+          {
+            "id": "ex6-3-1",
+            "type": "mcq",
+            "question": "Hai bài thơ được sáng tác trong hoàn cảnh nào?",
+            "options": [
+              "Ở Việt Nam",
+              "Trong tù ở Trung Quốc (1942-1943)",
+              "Ở Pháp",
+              "Ở Liên Xô"
+            ],
+            "correct": 1,
+            "explanation": "Hai bài thơ được sáng tác khi Hồ Chí Minh bị giam trong tù ở Trung Quốc từ năm 1942-1943."
+          },
+          {
+            "id": "ex6-3-2",
+            "type": "mcq",
+            "question": "Tập thơ 'Nhật ký trong tù' có bao nhiêu bài?",
+            "options": [
+              "100 bài",
+              "133 bài",
+              "150 bài",
+              "200 bài"
+            ],
+            "correct": 1,
+            "explanation": "Tập thơ 'Nhật ký trong tù' gồm 133 bài thơ chữ Hán, ghi lại cuộc sống và tâm tư của Người trong tù."
+          },
+          {
+            "id": "ex6-3-3",
+            "type": "mcq",
+            "question": "Hình ảnh 'Mộ' trong bài thơ biểu tượng cho điều gì?",
+            "options": [
+              "Sự vui vẻ",
+              "Sự cô đơn, tù túng",
+              "Sự tự do",
+              "Sự giàu có"
+            ],
+            "correct": 1,
+            "explanation": "Hình ảnh 'Mộ' biểu tượng cho sự cô đơn, tù túng, không gian tù ngục tối tăm mà Người phải chịu đựng."
+          },
+          {
+            "id": "ex6-3-4",
+            "type": "mcq",
+            "question": "Bài 'Nguyên tiêu' viết về dịp nào?",
+            "options": [
+              "Tết Nguyên đán",
+              "Tết Nguyên tiêu (Rằm tháng giêng)",
+              "Tết Trung thu",
+              "Tết Đoan ngọ"
+            ],
+            "correct": 1,
+            "explanation": "Bài thơ viết về dịp Tết Nguyên tiêu (Rằm tháng giêng), đối chiếu không khí vui tươi bên ngoài với cảnh tù tối."
+          },
+          {
+            "id": "ex6-3-5",
+            "type": "mcq",
+            "question": "Tâm trạng chủ đạo trong hai bài thơ là gì?",
+            "options": [
+              "Tuyệt vọng hoàn toàn",
+              "Buồn bã nhưng vẫn lạc quan, tin tưởng",
+              "Vui vẻ, hạnh phúc",
+              "Giận dữ, căm thù"
+            ],
+            "correct": 1,
+            "explanation": "Mặc dù buồn bã vì cảnh ngộ tù tội, Người vẫn giữ được tinh thần lạc quan và tin tưởng vào tương lai."
+          },
+          {
+            "id": "ex6-3-6",
+            "type": "mcq",
+            "question": "Biện pháp nghệ thuật chính trong bài 'Nguyên tiêu' là gì?",
+            "options": [
+              "So sánh",
+              "Đối chiếu (trong/ngoài, vui/buồn)",
+              "Nhân hóa",
+              "Ẩn dụ"
+            ],
+            "correct": 1,
+            "explanation": "Biện pháp đối chiếu được sử dụng để làm nổi bật sự khác biệt giữa không khí vui tươi bên ngoài và cảnh tù tối bên trong."
+          },
+          {
+            "id": "ex6-3-7",
+            "type": "mcq",
+            "question": "Ngôn ngữ trong hai bài thơ có đặc điểm gì?",
+            "options": [
+              "Phức tạp, khó hiểu",
+              "Giản dị, chân thành, gần gũi",
+              "Hoa mỹ, rườm rà",
+              "Trừu tượng, xa lạ"
+            ],
+            "correct": 1,
+            "explanation": "Ngôn ngữ trong thơ Hồ Chí Minh luôn giản dị, chân thành và gần gũi, dễ hiểu với mọi người."
+          },
+          {
+            "id": "ex6-3-8",
+            "type": "mcq",
+            "question": "Giá trị chính của hai bài thơ là gì?",
+            "options": [
+              "Chỉ có giá trị văn học",
+              "Thể hiện tinh thần yêu nước, lạc quan và nhân văn sâu sắc",
+              "Không có giá trị",
+              "Chỉ kể về cuộc sống trong tù"
+            ],
+            "correct": 1,
+            "explanation": "Hai bài thơ có giá trị lớn về tư tưởng (yêu nước, lạc quan, nhân văn) và nghệ thuật (giản dị, chân thành, sâu sắc)."
+          },
+          {
+            "id": "ex6-3-9",
+            "type": "mcq",
+            "question": "Phong cách nghệ thuật của Hồ Chí Minh có đặc điểm gì nổi bật?",
+            "options": [
+              "Giản dị, trong sáng, kết hợp trữ tình và chính luận",
+              "Hoa mỹ, cầu kỳ",
+              "Cổ điển, khó hiểu",
+              "Hiện đại, phức tạp"
+            ],
+            "correct": 0,
+            "explanation": "Phong cách Hồ Chí Minh giản dị, trong sáng, kết hợp hài hòa giữa trữ tình và chính luận."
+          },
+          {
+            "id": "ex6-3-10",
+            "type": "mcq",
+            "question": "Tuyên ngôn Độc lập (1945) có ý nghĩa lịch sử như thế nào?",
+            "options": [
+              "Khẳng định quyền độc lập, tự do của dân tộc Việt Nam",
+              "Tuyên bố chiến tranh với Pháp",
+              "Kêu gọi viện trợ quốc tế",
+              "Thành lập chính phủ mới"
+            ],
+            "correct": 0,
+            "explanation": "Tuyên ngôn Độc lập khẳng định quyền độc lập, tự do thiêng liêng của dân tộc Việt Nam trước thế giới."
+          }
+        ]
+      }
+    }
+  ]
+}
