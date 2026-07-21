@@ -104,6 +104,71 @@
             "explanation": "Proteinase K là enzyme có khả năng phân giải protein, thường được sử dụng trong quá trình tách chiết DNA để loại bỏ protein."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Mục đích của việc thêm ethanol lạnh vào dung dịch DNA là gì?",
+            "options": [
+              "Hòa tan DNA",
+              "Kết tủa DNA",
+              "Phân giải protein",
+              "Phá vỡ màng tế bào"
+            ],
+            "correct": 1,
+            "explanation": "Ethanol lạnh làm giảm độ hòa tan của DNA, khiến DNA kết tủa thành sợi trắng."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Vai trò của NaCl trong dung dịch ly giải là gì?",
+            "options": [
+              "Phá vỡ màng",
+              "Ức chế DNase",
+              "Duy trì tính tan của DNA",
+              "Phân giải protein"
+            ],
+            "correct": 2,
+            "explanation": "NaCl cung cấp ion Na+ giúp duy trì độ hòa tan của DNA trong dung dịch."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Tại sao cần ủ mẫu với proteinase K?",
+            "options": [
+              "Để kết tủa DNA",
+              "Để phân giải protein",
+              "Để phá vỡ màng",
+              "Để tinh sạch RNA"
+            ],
+            "correct": 1,
+            "explanation": "Proteinase K phân giải protein, giúp loại bỏ protein khỏi mẫu DNA."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Khi đo quang phổ, nếu tỷ lệ OD260/OD280 > 1.8 chứng tỏ?",
+            "options": [
+              "DNA tinh khiết",
+              "Còn protein",
+              "Còn RNA",
+              "DNA bị đứt gãy"
+            ],
+            "correct": 2,
+            "explanation": "Tỷ lệ OD260/OD280 > 1.8 cho thấy mẫu còn nhiều RNA."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Trong điện di gel agarose, DNA di chuyển về phía nào?",
+            "options": [
+              "Cực dương",
+              "Cực âm",
+              "Ở giữa",
+              "Không di chuyển"
+            ],
+            "correct": 0,
+            "explanation": "DNA mang điện tích âm nên di chuyển về phía cực dương trong điện trường."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các thành phần của dung dịch ly giải (lysis buffer):",

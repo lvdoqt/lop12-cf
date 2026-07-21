@@ -96,70 +96,62 @@
         "exercises": [
           {
             "id": "reading1",
-            "type": "reading",
-            "passage": "Green living is a lifestyle that aims to reduce an individual's or society's use of Earth's natural resources. It involves making choices that are better for the environment, which includes reducing waste, conserving energy, and using sustainable products.\n\nOne of the most important principles of green living is the 3Rs: Reduce, Reuse, and Recycle. We should cut down on consumption and avoid buying unnecessary items. Instead of throwing away items, we can reuse them or give them to others. Recycling materials like paper, plastic, and glass helps reduce the amount of waste sent to landfills, which take up valuable land and pollute the environment.\n\nAnother key aspect is energy conservation. We should turn off lights and appliances when not in use. Installing solar panels, which convert sunlight into electricity, is an excellent way to use renewable energy. Using public transportation or cycling instead of driving also helps reduce carbon emissions, which contribute to climate change.\n\nMany people are now choosing eco-friendly products, which are made from sustainable materials and are biodegradable. Organic food, which is grown without harmful chemicals, is better for both our health and the environment. By making these small changes in our daily lives, we can make a big difference in protecting our planet for future generations.",
-            "questions": [
-              {
-                "id": "reading1-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "Green living is too difficult",
-                  "Green living involves making environmentally-friendly choices",
-                  "Only rich people can live green",
-                  "Recycling is the only solution"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về sống xanh là việc đưa ra các lựa chọn thân thiện với môi trường."
-              },
-              {
-                "id": "reading1-q2",
-                "question": "What are the 3Rs mentioned in the passage?",
-                "options": [
-                  "Read, Write, Remember",
-                  "Reduce, Reuse, Recycle",
-                  "Run, Rest, Relax",
-                  "Remove, Replace, Repair"
-                ],
-                "correct": 1,
-                "explanation": "Ba chữ R là: Reduce (giảm), Reuse (tái sử dụng), Recycle (tái chế)."
-              },
-              {
-                "id": "reading1-q3",
-                "question": "The word 'convert' in paragraph 3 is closest in meaning to ______.",
-                "options": [
-                  "destroy",
-                  "change into",
-                  "waste",
-                  "hide"
-                ],
-                "correct": 1,
-                "explanation": "Convert = change into (chuyển đổi thành)."
-              },
-              {
-                "id": "reading1-q4",
-                "question": "According to the passage, what helps reduce carbon emissions?",
-                "options": [
-                  "Driving more cars",
-                  "Using public transportation or cycling",
-                  "Buying more products",
-                  "Wasting energy"
-                ],
-                "correct": 1,
-                "explanation": "Sử dụng phương tiện công cộng hoặc đi xe đạp giúp giảm khí thải carbon."
-              },
-              {
-                "id": "reading1-q5",
-                "question": "What is true about organic food according to the passage?",
-                "options": [
-                  "It's grown with harmful chemicals",
-                  "It's bad for health",
-                  "It's grown without harmful chemicals",
-                  "It's more expensive than regular food"
-                ],
-                "correct": 2,
-                "explanation": "Thực phẩm hữu cơ được trồng không có hóa chất độc hại."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nGreen living is a lifestyle that aims to reduce an individual's or society's use of Earth's natural resources. It involves making choices that are better for the environment, which includes reducing waste, conserving energy, and using sustainable products.\n\nOne of the most important principles of green living is the 3Rs: Reduce, Reuse, and Recycle. We should cut down on consumption and avoid buying unnecessary items. Instead of throwing away items, we can reuse them or give them to others. Recycling materials like paper, plastic, and glass helps reduce the amount of waste sent to landfills, which take up valuable land and pollute the environment.\n\nAnother key aspect is energy conservation. We should turn off lights and appliances when not in use. Installing solar panels, which convert sunlight into electricity, is an excellent way to use renewable energy. Using public transportation or cycling instead of driving also helps reduce carbon emissions, which contribute to climate change.\n\nMany people are now choosing eco-friendly products, which are made from sustainable materials and are biodegradable. Organic food, which is grown without harmful chemicals, is better for both our health and the environment. By making these small changes in our daily lives, we can make a big difference in protecting our planet for future generations.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading1-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "Green living is too difficult",
+                  "option_b": "Green living involves making environmentally-friendly choices",
+                  "option_c": "Only rich people can live green",
+                  "option_d": "Recycling is the only solution",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về sống xanh là việc đưa ra các lựa chọn thân thiện với môi trường."
+                },
+                {
+                  "id": "reading1-q2",
+                  "question": "What are the 3Rs mentioned in the passage?",
+                  "option_a": "Read, Write, Remember",
+                  "option_b": "Reduce, Reuse, Recycle",
+                  "option_c": "Run, Rest, Relax",
+                  "option_d": "Remove, Replace, Repair",
+                  "correct_option": "B",
+                  "explanation": "Ba chữ R là: Reduce (giảm), Reuse (tái sử dụng), Recycle (tái chế)."
+                },
+                {
+                  "id": "reading1-q3",
+                  "question": "The word 'convert' in paragraph 3 is closest in meaning to ______.",
+                  "option_a": "destroy",
+                  "option_b": "change into",
+                  "option_c": "waste",
+                  "option_d": "hide",
+                  "correct_option": "B",
+                  "explanation": "Convert = change into (chuyển đổi thành)."
+                },
+                {
+                  "id": "reading1-q4",
+                  "question": "According to the passage, what helps reduce carbon emissions?",
+                  "option_a": "Driving more cars",
+                  "option_b": "Using public transportation or cycling",
+                  "option_c": "Buying more products",
+                  "option_d": "Wasting energy",
+                  "correct_option": "B",
+                  "explanation": "Sử dụng phương tiện công cộng hoặc đi xe đạp giúp giảm khí thải carbon."
+                },
+                {
+                  "id": "reading1-q5",
+                  "question": "What is true about organic food according to the passage?",
+                  "option_a": "It's grown with harmful chemicals",
+                  "option_b": "It's bad for health",
+                  "option_c": "It's grown without harmful chemicals",
+                  "option_d": "It's more expensive than regular food",
+                  "correct_option": "C",
+                  "explanation": "Thực phẩm hữu cơ được trồng không có hóa chất độc hại."
+                }
+              ]
+            }
           }
 ,
           {

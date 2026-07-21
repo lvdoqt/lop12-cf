@@ -47,31 +47,66 @@ const getSlug = (id: string) => id.split('/').pop() || id;
 let quizQuestions: any[] = [];
 
 if (lessonData.content?.exercises && lessonData.content.exercises.length > 0) {
-  quizQuestions = lessonData.content.exercises.map((ex: any, qIdx: number) => {
-    let options = ex.options ? [...ex.options] : [];
-    let correctStrings: string[] = [];
-    if (options.length > 0) {
-      if (Array.isArray(ex.correct)) {
-        correctStrings = ex.correct.map((i: number) => options[i]);
-      } else if (ex.correct !== undefined) {
-        correctStrings = [options[ex.correct]];
+  const supportedTypes = ['mcq', 'msq', 'sa', 'essay', 'tl', 'read', 'list'];
+  quizQuestions = lessonData.content.exercises
+    .filter((ex: any) => supportedTypes.includes(ex.type))
+    .flatMap((ex: any, qIdx: number) => {
+      if (ex.type === 'read' || ex.type === 'list') {
+        const subQuestions = ex.metadata?.questions || [];
+        return subQuestions.map((sq: any, sqIdx: number) => {
+          const optionLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
+          const options: string[] = [];
+          for (const letter of optionLetters) {
+            if (sq['option_' + letter.toLowerCase()]) {
+              options.push(sq['option_' + letter.toLowerCase()]);
+            }
+          }
+          return {
+            id: `ex_${qIdx}_${sqIdx}`,
+            type: 'single_choice',
+            difficulty: 'medium',
+            content: (ex.content || '') + '\n\n' + sq.question,
+            explanation: sq.explanation || '',
+            answers: options.map((opt: string, i: number) => ({
+              id: `opt_${qIdx}_${sqIdx}_${i}`,
+              content: opt,
+              is_correct: optionLetters[i] === (sq.correct_option || '').toUpperCase()
+            })),
+            answer: sq.correct_option
+          };
+        });
       }
-    }
-    
-    return {
-      id: `ex_${qIdx}`,
-      type: ex.type === 'mcq' ? 'single_choice' : ex.type === 'msq' ? 'msq' : ex.type === 'sa' ? 'sa' : ex.type === 'essay' ? 'tl' : ex.type,
-      difficulty: 'medium',
-      content: ex.question,
-      explanation: ex.explanation,
-      answers: options.map((opt: string, i: number) => ({
-        id: `opt_${qIdx}_${i}`,
-        content: opt,
-        is_correct: correctStrings.includes(opt)
-      })),
-      answer: ex.correct
-    };
-  });
+      
+      let options = ex.options ? [...ex.options] : [];
+      let correctStrings: string[] = [];
+      if (options.length > 0) {
+        if (Array.isArray(ex.correct)) {
+          correctStrings = ex.correct.map((i: number) => options[i]);
+        } else if (ex.correct !== undefined) {
+          correctStrings = [options[ex.correct]];
+        }
+      }
+      
+      let type = ex.type;
+      if (type === 'mcq') type = 'single_choice';
+      else if (type === 'msq') type = 'msq';
+      else if (type === 'sa') type = 'sa';
+      else if (type === 'essay') type = 'tl';
+      
+      return {
+        id: `ex_${qIdx}`,
+        type,
+        difficulty: 'medium',
+        content: ex.question,
+        explanation: ex.explanation,
+        answers: options.map((opt: string, i: number) => ({
+          id: `opt_${qIdx}_${i}`,
+          content: opt,
+          is_correct: correctStrings.includes(opt)
+        })),
+        answer: ex.correct
+      };
+    });
 }
 
 // Helper: YouTube embed URL parser

@@ -104,6 +104,71 @@
             "explanation": "Công nghệ gene được ứng dụng để sản xuất insulin nhân tạo trong vi khuẩn E. coli."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Enzyme EcoRI cắt DNA tại trình tự nào?",
+            "options": [
+              "AAGCTT",
+              "GAATTC",
+              "GGATCC",
+              "CTGCAG"
+            ],
+            "correct": 1,
+            "explanation": "EcoRI nhận biết và cắt tại trình tự GAATTC, tạo đầu dính."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Phương pháp biến nạp (transformation) dùng hóa chất nào?",
+            "options": [
+              "NaCl",
+              "CaCl2",
+              "KCl",
+              "MgCl2"
+            ],
+            "correct": 1,
+            "explanation": "CaCl2 kết hợp với sốc nhiệt giúp đưa plasmid vào vi khuẩn."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Kỹ thuật PCR dùng để làm gì?",
+            "options": [
+              "Cắt DNA",
+              "Nối DNA",
+              "Nhân đôi DNA",
+              "Chuyển gene"
+            ],
+            "correct": 2,
+            "explanation": "PCR (Polymerase Chain Reaction) là kỹ thuật nhân đôi DNA in vitro."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Golden Rice là giống lúa biến đổi gen giàu?",
+            "options": [
+              "Vitamin A",
+              "Vitamin C",
+              "Sắt",
+              "Protein"
+            ],
+            "correct": 0,
+            "explanation": "Golden Rice được chuyển gene sản xuất beta-carotene, tiền chất của vitamin A."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Để kiểm tra tế bào đã nhận được plasmid tái tổ hợp, người ta dùng?",
+            "options": [
+              "Kháng sinh chọn lọc",
+              "Nhiệt độ",
+              "Ánh sáng",
+              "Độ pH"
+            ],
+            "correct": 0,
+            "explanation": "Gen kháng kháng sinh trên plasmid giúp chọn lọc tế bào đã nhận plasmid."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các vector thường dùng trong công nghệ gene:",

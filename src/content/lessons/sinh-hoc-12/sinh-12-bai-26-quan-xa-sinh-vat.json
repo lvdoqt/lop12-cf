@@ -104,6 +104,71 @@
             "explanation": "Hiệu ứng biên xảy ra ở ranh giới giữa hai quần xã, thường có đa dạng cao hơn."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Đặc trưng cơ bản của quần xã là gì?",
+            "options": [
+              "Mật độ",
+              "Tỷ lệ sinh tử",
+              "Thành phần loài và số lượng loài",
+              "Kích thước"
+            ],
+            "correct": 2,
+            "explanation": "Thành phần loài, số lượng loài, cấu trúc không gian là các đặc trưng của quần xã."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Loài ưu thế trong quần xã là loài?",
+            "options": [
+              "Có số lượng ít",
+              "Có vai trò kiểm soát quần xã",
+              "Mới xuất hiện",
+              "Có kích thước nhỏ"
+            ],
+            "correct": 1,
+            "explanation": "Loài ưu thế có số lượng lớn hoặc hoạt động mạnh, chi phối quần xã."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Quan hệ hỗ trợ giữa hai loài trong quần xã là?",
+            "options": [
+              "Cạnh tranh",
+              "Ký sinh",
+              "Hợp tác / hội sinh",
+              "Săn mồi"
+            ],
+            "correct": 2,
+            "explanation": "Hợp tác (cả hai có lợi) và hội sinh (một có lợi, một không ảnh hưởng) là quan hệ hỗ trợ."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Phân tầng trong quần xã giúp?",
+            "options": [
+              "Giảm cạnh tranh, tận dụng không gian",
+              "Tăng cạnh tranh",
+              "Giảm đa dạng",
+              "Tạo loài mới"
+            ],
+            "correct": 0,
+            "explanation": "Phân tầng giúp các loài tận dụng tốt nguồn sống và giảm cạnh tranh."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Đa dạng loài trong quần xã thường cao nhất ở?",
+            "options": [
+              "Sa mạc",
+              "Rừng nhiệt đới",
+              "Đồng cỏ ôn đới",
+              "Vùng cực"
+            ],
+            "correct": 1,
+            "explanation": "Rừng nhiệt đới có điều kiện thuận lợi, đa dạng loài cao nhất."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các thành phần của quần xã:",

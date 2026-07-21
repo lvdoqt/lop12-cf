@@ -108,6 +108,71 @@
             "explanation": "Thực hành giúp hiểu nguyên tắc cấu tạo và hoạt động của hệ sinh thái."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Khi thiết kế hệ sinh thái nhân tạo, yếu tố đầu tiên cần xác định là?",
+            "options": [
+              "Loài sinh vật",
+              "Mục đích và không gian",
+              "Chi phí",
+              "Thời gian"
+            ],
+            "correct": 1,
+            "explanation": "Xác định mục đích (nuôi trồng, nghiên cứu) và không gian là bước đầu tiên."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Hệ sinh thái nhân tạo cần có đủ các thành phần nào?",
+            "options": [
+              "Chỉ sinh vật sản xuất",
+              "Sản xuất, tiêu thụ, phân giải và môi trường",
+              "Chỉ môi trường",
+              "Chỉ động vật"
+            ],
+            "correct": 1,
+            "explanation": "Hệ sinh thái cần đủ ba nhóm sinh vật và môi trường để tự duy trì."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Trong bể cá cảnh, vai trò của cây thủy sinh là?",
+            "options": [
+              "Làm đẹp",
+              "Cung cấp O2 qua quang hợp",
+              "Làm thức ăn",
+              "Tạo bóng mát"
+            ],
+            "correct": 1,
+            "explanation": "Cây thủy sinh quang hợp cung cấp O2 cho cá và hấp thụ CO2."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Hệ sinh thái nhân tạo thường có đặc điểm?",
+            "options": [
+              "Đa dạng cao, tự cân bằng",
+              "Đa dạng thấp, cần con người can thiệp",
+              "Không cần ánh sáng",
+              "Vô sinh"
+            ],
+            "correct": 1,
+            "explanation": "Hệ nhân tạo thường đơn giản, kém đa dạng, cần con người cung cấp năng lượng và quản lý."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Khi thiết kế ao nuôi thủy sản, yếu tố quan trọng nhất là?",
+            "options": [
+              "Màu nước",
+              "Chất lượng nước (pH, O2, nhiệt độ)",
+              "Độ sâu",
+              "Loại cá"
+            ],
+            "correct": 1,
+            "explanation": "Chất lượng nước quyết định sự sống và phát triển của thủy sản."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các thành phần cần thiết của hệ sinh thái nhân tạo:",

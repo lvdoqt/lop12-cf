@@ -100,6 +100,71 @@
             "explanation": "Tương tác át chế lặn có tỷ lệ F2: 9:3:4 (9 trội-độc lập : 3 át chế : 4 lặn do át chế)."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Tương tác cộng gộp là gì?",
+            "options": [
+              "Một gene át chế gene khác",
+              "Nhiều gene cùng góp phần vào một tính trạng",
+              "Gene ngoài nhân",
+              "Di truyền liên kết"
+            ],
+            "correct": 1,
+            "explanation": "Tương tác cộng gộp: nhiều gene cùng tác động, mỗi gene góp một phần vào tính trạng."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Tỷ lệ 15:1 là đặc trưng của dạng tương tác nào?",
+            "options": [
+              "Bổ sung",
+              "Cộng gộp",
+              "Át chế trội",
+              "Át chế lặn"
+            ],
+            "correct": 1,
+            "explanation": "Tỷ lệ 15:1 là tương tác cộng gộp: chỉ có aabb là lặn, các kiểu gen còn lại đều trội."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Di truyền đa gene thường tạo ra kiểu hình?",
+            "options": [
+              "Rời rạc",
+              "Phân phối chuẩn (liên tục)",
+              "Đồng nhất",
+              "Đột biến"
+            ],
+            "correct": 1,
+            "explanation": "Tính trạng đa gene thường có phân phối chuẩn, ví dụ chiều cao, màu da."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Gene ngoài nhân được di truyền theo?",
+            "options": [
+              "Dòng bố",
+              "Dòng mẹ",
+              "Cả bố và mẹ",
+              "Ngẫu nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Gene ngoài nhân (ti thể, lạp thể) di truyền theo dòng mẹ."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Lai AaBb x AaBb (tương tác bổ sung 9:7), tỷ lệ kiểu hình lặn là?",
+            "options": [
+              "1/16",
+              "3/16",
+              "7/16",
+              "9/16"
+            ],
+            "correct": 2,
+            "explanation": "Tương tác bổ sung 9:7 -> trội = 9/16, lặn = 7/16."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các ví dụ về di truyền đa gene:",

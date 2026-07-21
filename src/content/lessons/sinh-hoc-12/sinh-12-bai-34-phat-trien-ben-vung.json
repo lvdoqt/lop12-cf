@@ -108,6 +108,71 @@
             "explanation": "Phân loại rác thải giúp tái chế, giảm ô nhiễm, góp phần phát triển bền vững."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Phát triển bền vững là phát triển đáp ứng nhu cầu hiện tại mà?",
+            "options": [
+              "Không quan tâm tương lai",
+              "Không làm tổn hại khả năng của thế hệ tương lai",
+              "Chỉ tập trung kinh tế",
+              "Chỉ bảo vệ môi trường"
+            ],
+            "correct": 1,
+            "explanation": "Phát triển bền vững cân bằng kinh tế, xã hội và môi trường cho cả hiện tại và tương lai."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Ba trụ cột của phát triển bền vững là?",
+            "options": [
+              "Kinh tế, văn hóa, giáo dục",
+              "Kinh tế, xã hội, môi trường",
+              "Chính trị, quân sự, ngoại giao",
+              "Nông nghiệp, công nghiệp, dịch vụ"
+            ],
+            "correct": 1,
+            "explanation": "Ba trụ cột: kinh tế bền vững, xã hội công bằng, môi trường lành mạnh."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Năng lượng tái tạo là nguồn năng lượng?",
+            "options": [
+              "Có hạn",
+              "Không thể tái tạo",
+              "Vô hạn hoặc có thể bổ sung nhanh",
+              "Gây ô nhiễm"
+            ],
+            "correct": 2,
+            "explanation": "Năng lượng tái tạo (mặt trời, gió, thủy triều) vô hạn hoặc bổ sung nhanh."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Dấu chân sinh thái (ecological footprint) đo lường?",
+            "options": [
+              "Lượng khí thải",
+              "Tác động của con người lên môi trường",
+              "Dân số",
+              "Thu nhập"
+            ],
+            "correct": 1,
+            "explanation": "Dấu chân sinh thái đo diện tích đất và nước cần để sản xuất tài nguyên và xử lý chất thải."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Biện pháp nào góp phần phát triển bền vững?",
+            "options": [
+              "Khai thác tài nguyên tối đa",
+              "Sử dụng năng lượng tái tạo và tái chế",
+              "Đốt rừng làm nương",
+              "Săn bắt động vật hoang dã"
+            ],
+            "correct": 1,
+            "explanation": "Sử dụng năng lượng tái tạo và tái chế giúp giảm áp lực lên tài nguyên thiên nhiên."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các năng lượng tái tạo:",

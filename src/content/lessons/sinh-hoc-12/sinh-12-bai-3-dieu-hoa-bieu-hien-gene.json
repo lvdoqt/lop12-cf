@@ -100,6 +100,71 @@
             "explanation": "Điều hòa phiên mã là mức điều hòa quan trọng nhất vì nó quyết định liệu một gene có được sao chép thành RNA hay không."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Trong operon lac, protein ức chế do gene nào mã hóa?",
+            "options": [
+              "lacZ",
+              "lacI",
+              "lacY",
+              "lacA"
+            ],
+            "correct": 1,
+            "explanation": "Gene lacI mã hóa protein ức chế (repressor), nằm ngoài operon lac."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Khi không có lactose, protein ức chế gắn vào vị trí nào trên operon lac?",
+            "options": [
+              "Vùng khởi động (P)",
+              "Vùng vận hành (O)",
+              "Gene cấu trúc lacZ",
+              "Vùng kết thúc"
+            ],
+            "correct": 1,
+            "explanation": "Protein ức chế gắn vào vùng vận hành (O), ngăn RNA polymerase phiên mã."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Điều hòa operon tryptophan thuộc loại điều hòa nào?",
+            "options": [
+              "Điều hòa dương",
+              "Điều hòa âm (khử)",
+              "Điều hòa cảm ứng",
+              "Điều hòa sau phiên mã"
+            ],
+            "correct": 1,
+            "explanation": "Operon trp là operon khử (repressible): khi tryptophan đủ, quá trình phiên mã bị ức chế."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Histone acetylation ảnh hưởng đến biểu hiện gene như thế nào?",
+            "options": [
+              "Làm chromatin đặc lại, ức chế",
+              "Làm chromatin lỏng lẻo, kích hoạt",
+              "Không ảnh hưởng",
+              "Phân giải DNA"
+            ],
+            "correct": 1,
+            "explanation": "Acetyl hóa histone làm giảm lực hút giữa histone và DNA, giúp RNA polymerase dễ tiếp cận."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "RNA interference (RNAi) ức chế biểu hiện gene ở mức độ nào?",
+            "options": [
+              "Phiên mã",
+              "Sau phiên mã (dịch mã)",
+              "Trước phiên mã",
+              "Sau dịch mã"
+            ],
+            "correct": 1,
+            "explanation": "RNAi sử dụng siRNA hoặc miRNA gắn vào mRNA, ức chế dịch mã hoặc phân giải mRNA."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các thành phần cấu trúc của operon lac:",

@@ -108,6 +108,71 @@
             "explanation": "Vật chất được tuần hoàn, sử dụng nhiều lần qua chu trình carbon, nitơ, nước..."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Hiệu suất sinh thái điển hình giữa các bậc dinh dưỡng là?",
+            "options": [
+              "1%",
+              "10%",
+              "50%",
+              "90%"
+            ],
+            "correct": 1,
+            "explanation": "Hiệu suất sinh thái thường khoảng 10%, năng lượng giảm dần qua mỗi bậc."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Tháp sinh thái nào luôn có dạng chuẩn (đáy rộng, đỉnh hẹp)?",
+            "options": [
+              "Tháp số lượng",
+              "Tháp sinh khối",
+              "Tháp năng lượng",
+              "Tất cả các tháp"
+            ],
+            "correct": 2,
+            "explanation": "Tháp năng lượng luôn có dạng chuẩn vì năng lượng giảm qua mỗi bậc."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Vật chất trong hệ sinh thái được?",
+            "options": [
+              "Truyền một chiều",
+              "Tuần hoàn kín",
+              "Mất đi vĩnh viễn",
+              "Không thay đổi"
+            ],
+            "correct": 1,
+            "explanation": "Vật chất (C, N, P, H2O) được tuần hoàn, tái sử dụng qua các chu trình sinh địa hóa."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Năng lượng mặt trời được chuyển thành năng lượng hóa học nhờ?",
+            "options": [
+              "Hô hấp",
+              "Quang hợp",
+              "Phân giải",
+              "Lên men"
+            ],
+            "correct": 1,
+            "explanation": "Quang hợp chuyển năng lượng ánh sáng thành năng lượng hóa học trong chất hữu cơ."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Bậc dinh dưỡng càng cao thì sinh khối?",
+            "options": [
+              "Càng lớn",
+              "Càng nhỏ",
+              "Không đổi",
+              "Dao động"
+            ],
+            "correct": 1,
+            "explanation": "Sinh khối giảm dần qua các bậc dinh dưỡng do hao hụt năng lượng."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các bậc dinh dưỡng trong chuỗi thức ăn:",

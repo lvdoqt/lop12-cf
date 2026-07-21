@@ -108,6 +108,71 @@
             "explanation": "Tỷ lệ giới tính 1:1 có nghĩa là số đực bằng số cái."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Phương pháp đánh bắt - thả lại (mark-recapture) dùng để?",
+            "options": [
+              "Đo nhiệt độ",
+              "Ước tính kích thước quần thể",
+              "Xác định giới tính",
+              "Đo tốc độ tăng trưởng"
+            ],
+            "correct": 1,
+            "explanation": "Phương pháp đánh bắt-thả lại ước tính kích thước quần thể: N = (M × n) / m."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Trong công thức N = (M × n) / m, m là?",
+            "options": [
+              "Số đánh dấu ban đầu",
+              "Số bắt lại có đánh dấu",
+              "Tổng số bắt lại",
+              "Kích thước quần thể"
+            ],
+            "correct": 1,
+            "explanation": "m là số cá thể đánh dấu bắt lại trong lần bắt thứ hai."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Để xác định mật độ quần thể cây, người ta dùng?",
+            "options": [
+              "Lưới vợt",
+              "Khung ô tiêu chuẩn",
+              "Bẫy keo",
+              "Ống nhòm"
+            ],
+            "correct": 1,
+            "explanation": "Dùng khung ô tiêu chuẩn diện tích xác định, đếm số cây trong ô."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Sai số trong phương pháp đánh bắt-thả lại thường do?",
+            "options": [
+              "Thời tiết",
+              "Cá thể học cách tránh bẫy",
+              "Kích thước quần thể",
+              "Loài"
+            ],
+            "correct": 1,
+            "explanation": "Nếu cá thể học cách tránh bẫy, tỷ lệ bắt lại thấp hơn thực tế, dẫn đến sai số."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Khi nghiên cứu quần thể động vật nhỏ di chuyển, phương pháp phù hợp là?",
+            "options": [
+              "Đếm trực tiếp",
+              "Đánh bắt-thả lại",
+              "Quan sát từ xa",
+              "Đo diện tích"
+            ],
+            "correct": 1,
+            "explanation": "Động vật nhỏ di chuyển khó đếm trực tiếp, phương pháp đánh bắt-thả lại phù hợp nhất."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các phương pháp xác định kích thước quần thể:",

@@ -108,6 +108,71 @@
             "explanation": "Ngân hàng gen là phương pháp bảo tồn ex situ (ngoài môi trường sống tự nhiên)."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Đa dạng sinh học bao gồm các mức độ nào?",
+            "options": [
+              "Chỉ loài",
+              "Đa dạng loài, đa dạng di truyền, đa dạng hệ sinh thái",
+              "Chỉ hệ sinh thái",
+              "Chỉ di truyền"
+            ],
+            "correct": 1,
+            "explanation": "Đa dạng sinh học gồm ba mức: đa dạng loài, đa dạng di truyền và đa dạng hệ sinh thái."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Nguyên nhân chính gây suy giảm đa dạng sinh học là?",
+            "options": [
+              "Biến đổi khí hậu tự nhiên",
+              "Hoạt động của con người (phá rừng, săn bắt)",
+              "Động đất",
+              "Núi lửa"
+            ],
+            "correct": 1,
+            "explanation": "Con người là nguyên nhân chính: phá rừng, săn bắt trái phép, ô nhiễm."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Phục hồi hệ sinh thái là?",
+            "options": [
+              "Để tự nhiên tự phục hồi",
+              "Tái tạo lại hệ sinh thái đã suy thoái",
+              "Xây dựng mới",
+              "Bảo tồn nguyên trạng"
+            ],
+            "correct": 1,
+            "explanation": "Phục hồi hệ sinh thái là tái tạo lại cấu trúc và chức năng của hệ sinh thái bị suy thoái."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Vườn quốc gia là hình thức bảo tồn?",
+            "options": [
+              "In situ (tại chỗ)",
+              "Ex situ (chuyển chỗ)",
+              "Cả hai",
+              "Không phải bảo tồn"
+            ],
+            "correct": 0,
+            "explanation": "Vườn quốc gia bảo tồn nguyên hệ sinh thái tại chỗ (in situ)."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Loài ngoại lai xâm hại ảnh hưởng thế nào đến đa dạng sinh học?",
+            "options": [
+              "Tăng đa dạng",
+              "Cạnh tranh và đe dọa loài bản địa",
+              "Không ảnh hưởng",
+              "Có lợi cho hệ sinh thái"
+            ],
+            "correct": 1,
+            "explanation": "Loài ngoại lai cạnh tranh, săn mồi hoặc truyền bệnh cho loài bản địa."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các nguyên nhân suy thoái đa dạng sinh vật:",

@@ -108,6 +108,71 @@
             "explanation": "Bảng thành phần loài cần ghi: tên loài, số cá thể, tầng phân bố."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Để khảo sát quần xã thực vật, người ta dùng?",
+            "options": [
+              "Lưới vợt",
+              "Ô tiêu chuẩn (quadrat)",
+              "Bẫy ảnh",
+              "Máy đo pH"
+            ],
+            "correct": 1,
+            "explanation": "Ô tiêu chuẩn (quadrat) với diện tích xác định dùng để khảo sát thực vật trong quần xã."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Chỉ số đa dạng Shannon (H') thể hiện điều gì?",
+            "options": [
+              "Số lượng cá thể",
+              "Độ phong phú loài và độ đồng đều",
+              "Kích thước quần thể",
+              "Nhiệt độ"
+            ],
+            "correct": 1,
+            "explanation": "Chỉ số Shannon kết hợp số loài và độ đồng đều phân bố cá thể."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Khi thu mẫu động vật đáy, người ta dùng?",
+            "options": [
+              "Vợt côn trùng",
+              "Lưới kéo đáy (bottom trawl)",
+              "Bẫy treo",
+              "Lồng nhốt"
+            ],
+            "correct": 1,
+            "explanation": "Lưới kéo đáy dùng để thu mẫu động vật đáy trong khảo sát thủy vực."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Tần số xuất hiện của loài trong các ô mẫu phản ánh?",
+            "options": [
+              "Mật độ",
+              "Độ thường gặp",
+              "Kích thước",
+              "Tuổi thọ"
+            ],
+            "correct": 1,
+            "explanation": "Tần số xuất hiện = số ô có loài / tổng số ô, phản ánh độ thường gặp."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Loài có chỉ số IVI (Importance Value Index) cao nhất là?",
+            "options": [
+              "Loài hiếm",
+              "Loài ưu thế",
+              "Loài ngoại lai",
+              "Loài mới"
+            ],
+            "correct": 1,
+            "explanation": "IVI = tần suất + mật độ + ưu thế, loài ưu thế có IVI cao nhất."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các dụng cụ cần thiết cho thực hành khảo sát quần xã:",

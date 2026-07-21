@@ -47,143 +47,132 @@
         "exercises": [
           {
             "id": "reading1",
-            "type": "reading",
-            "passage": "Career planning is essential for success in today's competitive job market. Many young professionals look forward to building rewarding careers, but they often struggle to come up with clear strategies. My career counselor told me to start planning early and advised me to develop both hard and soft skills.\n\nSuccessful people emphasize the importance of continuous learning. Technology changes so rapidly that you need to keep up with new developments constantly. My mentor recommended that I should take online courses regularly and suggested joining professional networks. He also offered to help me create a learning plan. This advice proved invaluable - I enrolled in several MOOCs and earned certificates that significantly improved my career prospects.\n\nBuilding relationships is equally important. You should get on with your colleagues and look up to experienced professionals who can guide you. Don't look down on any job or task - every experience helps you grow. When facing challenges, you must face up to them rather than avoid them. My manager told me not to give up when things get difficult and encouraged me to stay persistent.\n\nWork-life balance matters too. While ambition is important, you shouldn't put up with excessive stress. Some people run out of energy because they work too hard without rest. Remember that you need to live up to your potential while maintaining your health and happiness. Hard work can make up for lack of experience, but sustainable success requires balance.",
-            "questions": [
-              {
-                "id": "reading1-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "Career planning is unnecessary",
-                  "Career success requires planning, learning, relationships, and balance",
-                  "Only hard work matters",
-                  "Experience is not important"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về thành công trong sự nghiệp cần lập kế hoạch, học tập, mối quan hệ và sự cân bằng."
-              },
-              {
-                "id": "reading1-q2",
-                "question": "What did the career counselor advise?",
-                "options": [
-                  "To avoid planning",
-                  "To start planning early and develop skills",
-                  "To focus only on hard skills",
-                  "To ignore soft skills"
-                ],
-                "correct": 1,
-                "explanation": "Người tư vấn nghề nghiệp khuyên nên bắt đầu lập kế hoạch sớm và phát triển kỹ năng."
-              },
-              {
-                "id": "reading1-q3",
-                "question": "The phrase 'keep up with' in paragraph 2 is closest in meaning to ______.",
-                "options": [
-                  "ignore",
-                  "stay current with",
-                  "fall behind",
-                  "avoid"
-                ],
-                "correct": 1,
-                "explanation": "Keep up with = stay current with (theo kịp, bắt kịp)."
-              },
-              {
-                "id": "reading1-q4",
-                "question": "According to the passage, what should you do when facing challenges?",
-                "options": [
-                  "Avoid them",
-                  "Face up to them",
-                  "Give up",
-                  "Ignore them"
-                ],
-                "correct": 1,
-                "explanation": "Khi đối mặt với thách thức, bạn nên đối mặt với chúng (face up to them)."
-              },
-              {
-                "id": "reading1-q5",
-                "question": "What does the passage say about work-life balance?",
-                "options": [
-                  "It's not important",
-                  "Only work matters",
-                  "Balance is necessary for sustainable success",
-                  "Rest is a waste of time"
-                ],
-                "correct": 2,
-                "explanation": "Sự cân bằng là cần thiết cho thành công bền vững."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nCareer planning is essential for success in today's competitive job market. Many young professionals look forward to building rewarding careers, but they often struggle to come up with clear strategies. My career counselor told me to start planning early and advised me to develop both hard and soft skills.\n\nSuccessful people emphasize the importance of continuous learning. Technology changes so rapidly that you need to keep up with new developments constantly. My mentor recommended that I should take online courses regularly and suggested joining professional networks. He also offered to help me create a learning plan. This advice proved invaluable - I enrolled in several MOOCs and earned certificates that significantly improved my career prospects.\n\nBuilding relationships is equally important. You should get on with your colleagues and look up to experienced professionals who can guide you. Don't look down on any job or task - every experience helps you grow. When facing challenges, you must face up to them rather than avoid them. My manager told me not to give up when things get difficult and encouraged me to stay persistent.\n\nWork-life balance matters too. While ambition is important, you shouldn't put up with excessive stress. Some people run out of energy because they work too hard without rest. Remember that you need to live up to your potential while maintaining your health and happiness. Hard work can make up for lack of experience, but sustainable success requires balance.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading1-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "Career planning is unnecessary",
+                  "option_b": "Career success requires planning, learning, relationships, and balance",
+                  "option_c": "Only hard work matters",
+                  "option_d": "Experience is not important",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về thành công trong sự nghiệp cần lập kế hoạch, học tập, mối quan hệ và sự cân bằng."
+                },
+                {
+                  "id": "reading1-q2",
+                  "question": "What did the career counselor advise?",
+                  "option_a": "To avoid planning",
+                  "option_b": "To start planning early and develop skills",
+                  "option_c": "To focus only on hard skills",
+                  "option_d": "To ignore soft skills",
+                  "correct_option": "B",
+                  "explanation": "Người tư vấn nghề nghiệp khuyên nên bắt đầu lập kế hoạch sớm và phát triển kỹ năng."
+                },
+                {
+                  "id": "reading1-q3",
+                  "question": "The phrase 'keep up with' in paragraph 2 is closest in meaning to ______.",
+                  "option_a": "ignore",
+                  "option_b": "stay current with",
+                  "option_c": "fall behind",
+                  "option_d": "avoid",
+                  "correct_option": "B",
+                  "explanation": "Keep up with = stay current with (theo kịp, bắt kịp)."
+                },
+                {
+                  "id": "reading1-q4",
+                  "question": "According to the passage, what should you do when facing challenges?",
+                  "option_a": "Avoid them",
+                  "option_b": "Face up to them",
+                  "option_c": "Give up",
+                  "option_d": "Ignore them",
+                  "correct_option": "B",
+                  "explanation": "Khi đối mặt với thách thức, bạn nên đối mặt với chúng (face up to them)."
+                },
+                {
+                  "id": "reading1-q5",
+                  "question": "What does the passage say about work-life balance?",
+                  "option_a": "It's not important",
+                  "option_b": "Only work matters",
+                  "option_c": "Balance is necessary for sustainable success",
+                  "option_d": "Rest is a waste of time",
+                  "correct_option": "C",
+                  "explanation": "Sự cân bằng là cần thiết cho thành công bền vững."
+                }
+              ]
+            }
           },
           {
             "id": "reading2",
-            "type": "reading",
-            "passage": "Lifelong learning has become more important than ever in our rapidly changing world. My professor once told me that education doesn't end with graduation. He advised me to embrace continuous learning and recommended that I should read widely beyond my field. This advice changed my perspective on education.\n\nOnline learning platforms have revolutionized education. Websites like Coursera, edX, and Udemy offer thousands of courses on virtually any topic. My manager asked me to complete a data analysis course last year, and it significantly improved my performance. The instructor told us to practice daily and encouraged us not to give up when facing difficulties. She also suggested joining online study groups to stay motivated.\n\nHowever, lifelong learning requires discipline and motivation. My mentor warned me not to take on too many courses at once. He advised me to focus on quality rather than quantity and offered to help me create a realistic learning schedule. He also recommended that I should set specific goals and track my progress regularly.\n\nThe benefits extend beyond career advancement. Learning new skills boosts confidence, keeps the mind sharp, and opens doors to opportunities. Whether you're learning a language, mastering a technical skill, or exploring a hobby, the key is to stay curious and committed. As my teacher used to say, 'Never stop learning, because life never stops teaching.'",
-            "questions": [
-              {
-                "id": "reading2-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "School education is enough",
-                  "Lifelong learning is essential and beneficial",
-                  "Online courses are expensive",
-                  "Learning is only for young people"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về học tập suốt đời là cần thiết và có lợi."
-              },
-              {
-                "id": "reading2-q2",
-                "question": "What did the professor advise?",
-                "options": [
-                  "To stop learning after graduation",
-                  "To embrace continuous learning and read widely",
-                  "To focus only on one field",
-                  "To avoid online courses"
-                ],
-                "correct": 1,
-                "explanation": "Giáo sư khuyên nên đón nhận việc học liên tục và đọc rộng rãi."
-              },
-              {
-                "id": "reading2-q3",
-                "question": "The word 'revolutionized' in paragraph 2 is closest in meaning to ______.",
-                "options": [
-                  "destroyed",
-                  "completely changed",
-                  "slightly modified",
-                  "ignored"
-                ],
-                "correct": 1,
-                "explanation": "Revolutionized = completely changed (cách mạng hóa, thay đổi hoàn toàn)."
-              },
-              {
-                "id": "reading2-q4",
-                "question": "What did the mentor warn about?",
-                "options": [
-                  "Learning is useless",
-                  "Not to take on too many courses at once",
-                  "Online courses don't work",
-                  "To avoid all learning"
-                ],
-                "correct": 1,
-                "explanation": "Người cố vấn cảnh báo không nên tham gia quá nhiều khóa học cùng lúc."
-              },
-              {
-                "id": "reading2-q5",
-                "question": "According to the passage, what are the benefits of lifelong learning?",
-                "options": [
-                  "Only career advancement",
-                  "Boosts confidence, keeps mind sharp, opens opportunities",
-                  "Nothing important",
-                  "Only financial benefits"
-                ],
-                "correct": 1,
-                "explanation": "Lợi ích bao gồm: tăng sự tự tin, giữ trí óc minh mẫn, mở ra cơ hội."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nLifelong learning has become more important than ever in our rapidly changing world. My professor once told me that education doesn't end with graduation. He advised me to embrace continuous learning and recommended that I should read widely beyond my field. This advice changed my perspective on education.\n\nOnline learning platforms have revolutionized education. Websites like Coursera, edX, and Udemy offer thousands of courses on virtually any topic. My manager asked me to complete a data analysis course last year, and it significantly improved my performance. The instructor told us to practice daily and encouraged us not to give up when facing difficulties. She also suggested joining online study groups to stay motivated.\n\nHowever, lifelong learning requires discipline and motivation. My mentor warned me not to take on too many courses at once. He advised me to focus on quality rather than quantity and offered to help me create a realistic learning schedule. He also recommended that I should set specific goals and track my progress regularly.\n\nThe benefits extend beyond career advancement. Learning new skills boosts confidence, keeps the mind sharp, and opens doors to opportunities. Whether you're learning a language, mastering a technical skill, or exploring a hobby, the key is to stay curious and committed. As my teacher used to say, 'Never stop learning, because life never stops teaching.'",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading2-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "School education is enough",
+                  "option_b": "Lifelong learning is essential and beneficial",
+                  "option_c": "Online courses are expensive",
+                  "option_d": "Learning is only for young people",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về học tập suốt đời là cần thiết và có lợi."
+                },
+                {
+                  "id": "reading2-q2",
+                  "question": "What did the professor advise?",
+                  "option_a": "To stop learning after graduation",
+                  "option_b": "To embrace continuous learning and read widely",
+                  "option_c": "To focus only on one field",
+                  "option_d": "To avoid online courses",
+                  "correct_option": "B",
+                  "explanation": "Giáo sư khuyên nên đón nhận việc học liên tục và đọc rộng rãi."
+                },
+                {
+                  "id": "reading2-q3",
+                  "question": "The word 'revolutionized' in paragraph 2 is closest in meaning to ______.",
+                  "option_a": "destroyed",
+                  "option_b": "completely changed",
+                  "option_c": "slightly modified",
+                  "option_d": "ignored",
+                  "correct_option": "B",
+                  "explanation": "Revolutionized = completely changed (cách mạng hóa, thay đổi hoàn toàn)."
+                },
+                {
+                  "id": "reading2-q4",
+                  "question": "What did the mentor warn about?",
+                  "option_a": "Learning is useless",
+                  "option_b": "Not to take on too many courses at once",
+                  "option_c": "Online courses don't work",
+                  "option_d": "To avoid all learning",
+                  "correct_option": "B",
+                  "explanation": "Người cố vấn cảnh báo không nên tham gia quá nhiều khóa học cùng lúc."
+                },
+                {
+                  "id": "reading2-q5",
+                  "question": "According to the passage, what are the benefits of lifelong learning?",
+                  "option_a": "Only career advancement",
+                  "option_b": "Boosts confidence, keeps mind sharp, opens opportunities",
+                  "option_c": "Nothing important",
+                  "option_d": "Only financial benefits",
+                  "correct_option": "B",
+                  "explanation": "Lợi ích bao gồm: tăng sự tự tin, giữ trí óc minh mẫn, mở ra cơ hội."
+                }
+              ]
+            }
           },
           {
             "id": "mcq1",
             "type": "mcq",
             "question": "I'm really looking forward ______ my new job next month.",
-            "options": ["to start", "to starting", "start", "starting"],
+            "options": [
+              "to start",
+              "to starting",
+              "start",
+              "starting"
+            ],
             "correct": 1,
             "explanation": "Look forward to + V-ing (mong chờ làm gì)."
           },
@@ -191,7 +180,12 @@
             "id": "mcq2",
             "type": "mcq",
             "question": "\"Study harder!\" → She ______ me ______ harder.",
-            "options": ["told / to study", "told / study", "said / to study", "asked / study"],
+            "options": [
+              "told / to study",
+              "told / study",
+              "said / to study",
+              "asked / study"
+            ],
             "correct": 0,
             "explanation": "Tell + O + to V - tường thuật mệnh lệnh."
           },
@@ -199,7 +193,12 @@
             "id": "mcq3",
             "type": "mcq",
             "question": "She ______ a brilliant solution to the problem.",
-            "options": ["came up with", "came with up", "came up", "up came with"],
+            "options": [
+              "came up with",
+              "came with up",
+              "came up",
+              "up came with"
+            ],
             "correct": 0,
             "explanation": "Come up with = nghĩ ra, đưa ra (giải pháp, ý tưởng)."
           },
@@ -207,7 +206,12 @@
             "id": "mcq4",
             "type": "mcq",
             "question": "\"Please help me.\" → She ______ me ______ her.",
-            "options": ["told / to help", "asked / to help", "ordered / help", "said / to help"],
+            "options": [
+              "told / to help",
+              "asked / to help",
+              "ordered / help",
+              "said / to help"
+            ],
             "correct": 1,
             "explanation": "Ask + O + to V - tường thuật yêu cầu (có 'please')."
           },
@@ -215,7 +219,12 @@
             "id": "mcq5",
             "type": "mcq",
             "question": "I ______ my colleagues very well.",
-            "options": ["get with on", "get on with", "get on", "on get with"],
+            "options": [
+              "get with on",
+              "get on with",
+              "get on",
+              "on get with"
+            ],
             "correct": 1,
             "explanation": "Get on with = hòa hợp với, có quan hệ tốt với."
           },
@@ -223,7 +232,12 @@
             "id": "mcq6",
             "type": "mcq",
             "question": "\"Don't be late!\" → He ______ us ______ late.",
-            "options": ["told / not to be", "told / to not be", "said / not be", "asked / not be"],
+            "options": [
+              "told / not to be",
+              "told / to not be",
+              "said / not be",
+              "asked / not be"
+            ],
             "correct": 0,
             "explanation": "Tell + O + not to V - tường thuật mệnh lệnh phủ định."
           },
@@ -231,7 +245,12 @@
             "id": "mcq7",
             "type": "mcq",
             "question": "We need to ______ the latest technology trends.",
-            "options": ["keep up with", "keep with up", "keep up", "up keep with"],
+            "options": [
+              "keep up with",
+              "keep with up",
+              "keep up",
+              "up keep with"
+            ],
             "correct": 0,
             "explanation": "Keep up with = theo kịp, bắt kịp."
           },
@@ -239,7 +258,12 @@
             "id": "mcq8",
             "type": "mcq",
             "question": "\"I'll help you.\" → She ______ to help me.",
-            "options": ["told", "asked", "offered", "ordered"],
+            "options": [
+              "told",
+              "asked",
+              "offered",
+              "ordered"
+            ],
             "correct": 2,
             "explanation": "Offer + to V - tường thuật lời đề nghị."
           },
@@ -247,7 +271,12 @@
             "id": "mcq9",
             "type": "mcq",
             "question": "I can't ______ this stressful work environment anymore.",
-            "options": ["put with up", "put up with", "put up", "up put with"],
+            "options": [
+              "put with up",
+              "put up with",
+              "put up",
+              "up put with"
+            ],
             "correct": 1,
             "explanation": "Put up with = chịu đựng."
           },
@@ -255,7 +284,12 @@
             "id": "mcq10",
             "type": "mcq",
             "question": "\"You should take this course.\" → She ______ me ______ that course.",
-            "options": ["told / to take", "advised / to take", "ordered / take", "asked / take"],
+            "options": [
+              "told / to take",
+              "advised / to take",
+              "ordered / take",
+              "asked / take"
+            ],
             "correct": 1,
             "explanation": "Advise + O + to V - tường thuật lời khuyên."
           },
@@ -263,7 +297,12 @@
             "id": "mcq11",
             "type": "mcq",
             "question": "We're ______ time to finish the project.",
-            "options": ["running out of", "running of out", "running out", "out running of"],
+            "options": [
+              "running out of",
+              "running of out",
+              "running out",
+              "out running of"
+            ],
             "correct": 0,
             "explanation": "Run out of = hết, cạn kiệt."
           },
@@ -271,7 +310,12 @@
             "id": "mcq12",
             "type": "mcq",
             "question": "\"Let's study together.\" → She ______ studying together.",
-            "options": ["told", "asked", "suggested", "ordered"],
+            "options": [
+              "told",
+              "asked",
+              "suggested",
+              "ordered"
+            ],
             "correct": 2,
             "explanation": "Suggest + V-ing - tường thuật lời đề nghị."
           },
@@ -279,7 +323,12 @@
             "id": "mcq13",
             "type": "mcq",
             "question": "Young people ______ successful entrepreneurs.",
-            "options": ["look to up", "look up to", "look up", "up look to"],
+            "options": [
+              "look to up",
+              "look up to",
+              "look up",
+              "up look to"
+            ],
             "correct": 1,
             "explanation": "Look up to = kính trọng, ngưỡng mộ."
           },
@@ -287,7 +336,12 @@
             "id": "mcq14",
             "type": "mcq",
             "question": "\"Please don't tell anyone.\" → She ______ me ______ tell anyone.",
-            "options": ["asked / not to", "asked / to not", "told / not", "said / not to"],
+            "options": [
+              "asked / not to",
+              "asked / to not",
+              "told / not",
+              "said / not to"
+            ],
             "correct": 0,
             "explanation": "Ask + O + not to V - yêu cầu phủ định."
           },
@@ -295,7 +349,12 @@
             "id": "mcq15",
             "type": "mcq",
             "question": "You must ______ the challenges in your career.",
-            "options": ["face up to", "face to up", "face up", "up face to"],
+            "options": [
+              "face up to",
+              "face to up",
+              "face up",
+              "up face to"
+            ],
             "correct": 0,
             "explanation": "Face up to = đối mặt với."
           },
@@ -303,7 +362,12 @@
             "id": "mcq16",
             "type": "mcq",
             "question": "\"You shouldn't waste time.\" → She ______ me ______ waste time.",
-            "options": ["advised / not to", "advised / to not", "told / not", "asked / not"],
+            "options": [
+              "advised / not to",
+              "advised / to not",
+              "told / not",
+              "asked / not"
+            ],
             "correct": 0,
             "explanation": "Advise + O + not to V - lời khuyên phủ định."
           },
@@ -311,7 +375,12 @@
             "id": "mcq17",
             "type": "mcq",
             "question": "She always ______ her promises.",
-            "options": ["lives to up", "lives up to", "lives up", "up lives to"],
+            "options": [
+              "lives to up",
+              "lives up to",
+              "lives up",
+              "up lives to"
+            ],
             "correct": 1,
             "explanation": "Live up to = đáp ứng, sống theo (kỳ vọng, lời hứa)."
           },
@@ -319,7 +388,12 @@
             "id": "mcq18",
             "type": "mcq",
             "question": "\"Why don't you enroll?\" → He ______ me ______ enroll.",
-            "options": ["told / to", "asked / to", "recommended / to", "ordered / to"],
+            "options": [
+              "told / to",
+              "asked / to",
+              "recommended / to",
+              "ordered / to"
+            ],
             "correct": 2,
             "explanation": "Recommend + O + to V - tường thuật lời khuyên."
           },
@@ -327,7 +401,12 @@
             "id": "mcq19",
             "type": "mcq",
             "question": "Hard work can ______ lack of experience.",
-            "options": ["make for up", "make up for", "make up", "up make for"],
+            "options": [
+              "make for up",
+              "make up for",
+              "make up",
+              "up make for"
+            ],
             "correct": 1,
             "explanation": "Make up for = bù đắp."
           },
@@ -335,7 +414,12 @@
             "id": "mcq20",
             "type": "mcq",
             "question": "\"Would you like to join us?\" → She ______ me ______ join them.",
-            "options": ["told / to", "invited / to", "ordered / to", "asked / to"],
+            "options": [
+              "told / to",
+              "invited / to",
+              "ordered / to",
+              "asked / to"
+            ],
             "correct": 1,
             "explanation": "Invite + O + to V - tường thuật lời mời."
           },
@@ -343,7 +427,10 @@
             "id": "msq1",
             "type": "msq",
             "question_text": "Three-word phrasal verbs cannot be separated.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Cụm động từ có 3 từ không thể tách rời, tân ngữ luôn đứng sau."
           },
@@ -351,7 +438,10 @@
             "id": "msq2",
             "type": "msq",
             "question_text": "We use 'tell' for commands and 'ask' for requests.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Tell dùng cho mệnh lệnh, ask dùng cho yêu cầu."
           },
@@ -359,7 +449,10 @@
             "id": "msq3",
             "type": "msq",
             "question_text": "After 'look forward to', we use V-ing, not to-infinitive.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Look forward to + V-ing (to là giới từ, không phải to-infinitive)."
           },
@@ -367,7 +460,10 @@
             "id": "msq4",
             "type": "msq",
             "question_text": "After 'suggest', we use to-infinitive.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 1,
             "explanation": "Sai. Sau suggest dùng V-ing hoặc that + S + (should) + V, không dùng to-infinitive."
           },
@@ -375,7 +471,10 @@
             "id": "msq5",
             "type": "msq",
             "question_text": "'Look up to' and 'look down on' have opposite meanings.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Look up to = ngưỡng mộ, look down on = coi thường (nghĩa trái ngược)."
           },

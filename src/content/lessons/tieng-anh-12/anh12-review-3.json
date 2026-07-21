@@ -47,210 +47,191 @@
         "exercises": [
           {
             "id": "reading1",
-            "type": "reading",
-            "passage": "Artificial Intelligence has become such a transformative technology that it affects nearly every industry. From healthcare to transportation, AI systems are changing how we work and live. Machine learning algorithms can analyze data so quickly that they identify patterns humans might miss. For example, AI helps doctors diagnose diseases more accurately, and autonomous vehicles navigate roads as if they had human intelligence.\n\nHowever, AI also raises important concerns. Many people worry that AI will replace human workers, leading to unemployment. The technology is developing so rapidly that society struggles to adapt. Some experts warn that if we don't regulate AI carefully, it could be misused. Unless we establish ethical guidelines, AI systems might make biased decisions or invade privacy.\n\nDespite these challenges, AI offers tremendous benefits. The more we invest in AI research, the more applications we discover. Provided that we develop AI responsibly, it can improve healthcare, education, and environmental protection. As long as humans remain in control, AI will be a powerful tool for progress.",
-            "questions": [
-              {
-                "id": "reading1-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "AI is perfect",
-                  "AI brings both benefits and challenges",
-                  "AI will destroy humanity",
-                  "AI is not important"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về AI mang lại cả lợi ích và thách thức."
-              },
-              {
-                "id": "reading1-q2",
-                "question": "According to the passage, what is one benefit of AI?",
-                "options": [
-                  "It replaces all workers",
-                  "It helps doctors diagnose diseases",
-                  "It creates unemployment",
-                  "It invades privacy"
-                ],
-                "correct": 1,
-                "explanation": "AI giúp bác sĩ chẩn đoán bệnh chính xác hơn."
-              },
-              {
-                "id": "reading1-q3",
-                "question": "The word 'tremendous' in paragraph 3 is closest in meaning to ______.",
-                "options": [
-                  "very small",
-                  "very large",
-                  "terrible",
-                  "average"
-                ],
-                "correct": 1,
-                "explanation": "Tremendous = very large (rất lớn, to lớn)."
-              },
-              {
-                "id": "reading1-q4",
-                "question": "What concern about AI is mentioned?",
-                "options": [
-                  "It's too slow",
-                  "It might replace human workers",
-                  "It's too expensive",
-                  "It doesn't work"
-                ],
-                "correct": 1,
-                "explanation": "Lo ngại được đề cập là AI có thể thay thế lao động con người."
-              },
-              {
-                "id": "reading1-q5",
-                "question": "According to the passage, what is necessary for AI development?",
-                "options": [
-                  "No regulation",
-                  "Responsible development and ethical guidelines",
-                  "Stopping all research",
-                  "Ignoring concerns"
-                ],
-                "correct": 1,
-                "explanation": "Cần phát triển AI có trách nhiệm và thiết lập hướng dẫn đạo đức."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nArtificial Intelligence has become such a transformative technology that it affects nearly every industry. From healthcare to transportation, AI systems are changing how we work and live. Machine learning algorithms can analyze data so quickly that they identify patterns humans might miss. For example, AI helps doctors diagnose diseases more accurately, and autonomous vehicles navigate roads as if they had human intelligence.\n\nHowever, AI also raises important concerns. Many people worry that AI will replace human workers, leading to unemployment. The technology is developing so rapidly that society struggles to adapt. Some experts warn that if we don't regulate AI carefully, it could be misused. Unless we establish ethical guidelines, AI systems might make biased decisions or invade privacy.\n\nDespite these challenges, AI offers tremendous benefits. The more we invest in AI research, the more applications we discover. Provided that we develop AI responsibly, it can improve healthcare, education, and environmental protection. As long as humans remain in control, AI will be a powerful tool for progress.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading1-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "AI is perfect",
+                  "option_b": "AI brings both benefits and challenges",
+                  "option_c": "AI will destroy humanity",
+                  "option_d": "AI is not important",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về AI mang lại cả lợi ích và thách thức."
+                },
+                {
+                  "id": "reading1-q2",
+                  "question": "According to the passage, what is one benefit of AI?",
+                  "option_a": "It replaces all workers",
+                  "option_b": "It helps doctors diagnose diseases",
+                  "option_c": "It creates unemployment",
+                  "option_d": "It invades privacy",
+                  "correct_option": "B",
+                  "explanation": "AI giúp bác sĩ chẩn đoán bệnh chính xác hơn."
+                },
+                {
+                  "id": "reading1-q3",
+                  "question": "The word 'tremendous' in paragraph 3 is closest in meaning to ______.",
+                  "option_a": "very small",
+                  "option_b": "very large",
+                  "option_c": "terrible",
+                  "option_d": "average",
+                  "correct_option": "B",
+                  "explanation": "Tremendous = very large (rất lớn, to lớn)."
+                },
+                {
+                  "id": "reading1-q4",
+                  "question": "What concern about AI is mentioned?",
+                  "option_a": "It's too slow",
+                  "option_b": "It might replace human workers",
+                  "option_c": "It's too expensive",
+                  "option_d": "It doesn't work",
+                  "correct_option": "B",
+                  "explanation": "Lo ngại được đề cập là AI có thể thay thế lao động con người."
+                },
+                {
+                  "id": "reading1-q5",
+                  "question": "According to the passage, what is necessary for AI development?",
+                  "option_a": "No regulation",
+                  "option_b": "Responsible development and ethical guidelines",
+                  "option_c": "Stopping all research",
+                  "option_d": "Ignoring concerns",
+                  "correct_option": "B",
+                  "explanation": "Cần phát triển AI có trách nhiệm và thiết lập hướng dẫn đạo đức."
+                }
+              ]
+            }
           },
           {
             "id": "reading2",
-            "type": "reading",
-            "passage": "Mass media has such a powerful influence on society that it shapes public opinion and behavior. Social media platforms have grown so rapidly that billions of people now use them daily. Information spreads so quickly online that a news story can reach millions within minutes. However, this speed creates problems - fake news can go viral just as fast as accurate information.\n\nJournalists report news as if they are providing objective facts, but media bias exists everywhere. Some outlets present information in such a way that it supports their political views. The more sensational a headline, the more clicks it receives, so media companies sometimes prioritize attention over accuracy. Unless readers develop critical thinking skills, they may believe misinformation.\n\nDespite these challenges, mass media plays a vital role in democracy. If people have access to reliable information, they can make informed decisions. The key is media literacy - the ability to evaluate sources critically. As long as we question what we read and verify facts, we can benefit from mass media while avoiding its pitfalls.",
-            "questions": [
-              {
-                "id": "reading2-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "All media is fake",
-                  "Mass media has both positive and negative impacts",
-                  "Social media should be banned",
-                  "Journalists are always objective"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về tác động tích cực và tiêu cực của truyền thông đại chúng."
-              },
-              {
-                "id": "reading2-q2",
-                "question": "What problem does the passage mention about social media?",
-                "options": [
-                  "It's too slow",
-                  "Fake news can spread quickly",
-                  "Nobody uses it",
-                  "It's too expensive"
-                ],
-                "correct": 1,
-                "explanation": "Vấn đề được đề cập là tin giả có thể lan truyền nhanh chóng."
-              },
-              {
-                "id": "reading2-q3",
-                "question": "The word 'sensational' in paragraph 2 is closest in meaning to ______.",
-                "options": [
-                  "boring",
-                  "shocking or exciting",
-                  "accurate",
-                  "quiet"
-                ],
-                "correct": 1,
-                "explanation": "Sensational = shocking or exciting (gây sốc, giật gân)."
-              },
-              {
-                "id": "reading2-q4",
-                "question": "According to the passage, what is media literacy?",
-                "options": [
-                  "Reading newspapers",
-                  "The ability to evaluate sources critically",
-                  "Watching TV",
-                  "Using social media"
-                ],
-                "correct": 1,
-                "explanation": "Media literacy là khả năng đánh giá nguồn tin một cách phê phán."
-              },
-              {
-                "id": "reading2-q5",
-                "question": "What does the passage suggest readers should do?",
-                "options": [
-                  "Believe everything",
-                  "Question what they read and verify facts",
-                  "Avoid all media",
-                  "Only read one source"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn gợi ý độc giả nên đặt câu hỏi về những gì họ đọc và xác minh sự thật."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nMass media has such a powerful influence on society that it shapes public opinion and behavior. Social media platforms have grown so rapidly that billions of people now use them daily. Information spreads so quickly online that a news story can reach millions within minutes. However, this speed creates problems - fake news can go viral just as fast as accurate information.\n\nJournalists report news as if they are providing objective facts, but media bias exists everywhere. Some outlets present information in such a way that it supports their political views. The more sensational a headline, the more clicks it receives, so media companies sometimes prioritize attention over accuracy. Unless readers develop critical thinking skills, they may believe misinformation.\n\nDespite these challenges, mass media plays a vital role in democracy. If people have access to reliable information, they can make informed decisions. The key is media literacy - the ability to evaluate sources critically. As long as we question what we read and verify facts, we can benefit from mass media while avoiding its pitfalls.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading2-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "All media is fake",
+                  "option_b": "Mass media has both positive and negative impacts",
+                  "option_c": "Social media should be banned",
+                  "option_d": "Journalists are always objective",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về tác động tích cực và tiêu cực của truyền thông đại chúng."
+                },
+                {
+                  "id": "reading2-q2",
+                  "question": "What problem does the passage mention about social media?",
+                  "option_a": "It's too slow",
+                  "option_b": "Fake news can spread quickly",
+                  "option_c": "Nobody uses it",
+                  "option_d": "It's too expensive",
+                  "correct_option": "B",
+                  "explanation": "Vấn đề được đề cập là tin giả có thể lan truyền nhanh chóng."
+                },
+                {
+                  "id": "reading2-q3",
+                  "question": "The word 'sensational' in paragraph 2 is closest in meaning to ______.",
+                  "option_a": "boring",
+                  "option_b": "shocking or exciting",
+                  "option_c": "accurate",
+                  "option_d": "quiet",
+                  "correct_option": "B",
+                  "explanation": "Sensational = shocking or exciting (gây sốc, giật gân)."
+                },
+                {
+                  "id": "reading2-q4",
+                  "question": "According to the passage, what is media literacy?",
+                  "option_a": "Reading newspapers",
+                  "option_b": "The ability to evaluate sources critically",
+                  "option_c": "Watching TV",
+                  "option_d": "Using social media",
+                  "correct_option": "B",
+                  "explanation": "Media literacy là khả năng đánh giá nguồn tin một cách phê phán."
+                },
+                {
+                  "id": "reading2-q5",
+                  "question": "What does the passage suggest readers should do?",
+                  "option_a": "Believe everything",
+                  "option_b": "Question what they read and verify facts",
+                  "option_c": "Avoid all media",
+                  "option_d": "Only read one source",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn gợi ý độc giả nên đặt câu hỏi về những gì họ đọc và xác minh sự thật."
+                }
+              ]
+            }
           },
           {
             "id": "reading3",
-            "type": "reading",
-            "passage": "Wildlife conservation has become more urgent than ever. Many species are disappearing so quickly that scientists cannot study them in time. If we don't take immediate action, countless species will become extinct within our lifetime.\n\nThe main threats are habitat loss, poaching, and climate change. Deforestation destroys animal homes so extensively that entire ecosystems collapse. Tigers are more endangered now than 50 years ago because their habitats have shrunk dramatically. Unless we stop destroying forests, many species will disappear forever.\n\nPoaching remains a serious problem. Illegal hunters kill elephants for ivory and rhinos for horns. The demand for wildlife products is as high as it has ever been. If governments enforced stricter laws, fewer animals would be killed. Some countries have made progress - provided that anti-poaching patrols are well-funded, they can protect animals effectively.\n\nClimate change affects wildlife in ways that are not always obvious. As temperatures rise, animals must adapt or move. However, many species cannot move fast enough. The faster the climate changes, the harder it is for animals to survive. Despite these challenges, there are success stories. Giant pandas have recovered thanks to conservation efforts. This shows that if we invest in conservation, species can recover. The more people understand biodiversity's importance, the more support conservation receives. As long as we work together, there is hope for wildlife.",
-            "questions": [
-              {
-                "id": "reading3-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "All animals are safe",
-                  "Wildlife conservation is urgent and requires action",
-                  "Climate change doesn't affect animals",
-                  "Poaching has stopped"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về sự cấp thiết của bảo tồn động vật hoang dã và cần hành động."
-              },
-              {
-                "id": "reading3-q2",
-                "question": "What are the main threats to wildlife mentioned?",
-                "options": [
-                  "Only climate change",
-                  "Habitat loss, poaching, and climate change",
-                  "Only poaching",
-                  "Natural disasters"
-                ],
-                "correct": 1,
-                "explanation": "Ba mối đe dọa chính là: mất môi trường sống, săn bắt trái phép, và biến đổi khí hậu."
-              },
-              {
-                "id": "reading3-q3",
-                "question": "The word 'extensively' in paragraph 2 is closest in meaning to ______.",
-                "options": [
-                  "slightly",
-                  "widely or greatly",
-                  "rarely",
-                  "slowly"
-                ],
-                "correct": 1,
-                "explanation": "Extensively = widely or greatly (rộng rãi, trên diện rộng)."
-              },
-              {
-                "id": "reading3-q4",
-                "question": "What success story is mentioned?",
-                "options": [
-                  "Tigers have recovered",
-                  "Giant pandas have recovered",
-                  "All species are safe",
-                  "Poaching has ended"
-                ],
-                "correct": 1,
-                "explanation": "Câu chuyện thành công được đề cập là gấu trúc khổng lồ đã phục hồi."
-              },
-              {
-                "id": "reading3-q5",
-                "question": "According to the passage, what gives hope for wildlife?",
-                "options": [
-                  "Doing nothing",
-                  "Working together and investing in conservation",
-                  "Ignoring the problem",
-                  "Only government action"
-                ],
-                "correct": 1,
-                "explanation": "Hy vọng đến từ việc làm việc cùng nhau và đầu tư vào bảo tồn."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nWildlife conservation has become more urgent than ever. Many species are disappearing so quickly that scientists cannot study them in time. If we don't take immediate action, countless species will become extinct within our lifetime.\n\nThe main threats are habitat loss, poaching, and climate change. Deforestation destroys animal homes so extensively that entire ecosystems collapse. Tigers are more endangered now than 50 years ago because their habitats have shrunk dramatically. Unless we stop destroying forests, many species will disappear forever.\n\nPoaching remains a serious problem. Illegal hunters kill elephants for ivory and rhinos for horns. The demand for wildlife products is as high as it has ever been. If governments enforced stricter laws, fewer animals would be killed. Some countries have made progress - provided that anti-poaching patrols are well-funded, they can protect animals effectively.\n\nClimate change affects wildlife in ways that are not always obvious. As temperatures rise, animals must adapt or move. However, many species cannot move fast enough. The faster the climate changes, the harder it is for animals to survive. Despite these challenges, there are success stories. Giant pandas have recovered thanks to conservation efforts. This shows that if we invest in conservation, species can recover. The more people understand biodiversity's importance, the more support conservation receives. As long as we work together, there is hope for wildlife.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading3-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "All animals are safe",
+                  "option_b": "Wildlife conservation is urgent and requires action",
+                  "option_c": "Climate change doesn't affect animals",
+                  "option_d": "Poaching has stopped",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về sự cấp thiết của bảo tồn động vật hoang dã và cần hành động."
+                },
+                {
+                  "id": "reading3-q2",
+                  "question": "What are the main threats to wildlife mentioned?",
+                  "option_a": "Only climate change",
+                  "option_b": "Habitat loss, poaching, and climate change",
+                  "option_c": "Only poaching",
+                  "option_d": "Natural disasters",
+                  "correct_option": "B",
+                  "explanation": "Ba mối đe dọa chính là: mất môi trường sống, săn bắt trái phép, và biến đổi khí hậu."
+                },
+                {
+                  "id": "reading3-q3",
+                  "question": "The word 'extensively' in paragraph 2 is closest in meaning to ______.",
+                  "option_a": "slightly",
+                  "option_b": "widely or greatly",
+                  "option_c": "rarely",
+                  "option_d": "slowly",
+                  "correct_option": "B",
+                  "explanation": "Extensively = widely or greatly (rộng rãi, trên diện rộng)."
+                },
+                {
+                  "id": "reading3-q4",
+                  "question": "What success story is mentioned?",
+                  "option_a": "Tigers have recovered",
+                  "option_b": "Giant pandas have recovered",
+                  "option_c": "All species are safe",
+                  "option_d": "Poaching has ended",
+                  "correct_option": "B",
+                  "explanation": "Câu chuyện thành công được đề cập là gấu trúc khổng lồ đã phục hồi."
+                },
+                {
+                  "id": "reading3-q5",
+                  "question": "According to the passage, what gives hope for wildlife?",
+                  "option_a": "Doing nothing",
+                  "option_b": "Working together and investing in conservation",
+                  "option_c": "Ignoring the problem",
+                  "option_d": "Only government action",
+                  "correct_option": "B",
+                  "explanation": "Hy vọng đến từ việc làm việc cùng nhau và đầu tư vào bảo tồn."
+                }
+              ]
+            }
           },
           {
             "id": "mcq1",
             "type": "mcq",
             "question": "I ______ my assistant check the AI data every day.",
-            "options": ["have", "get", "make", "let"],
+            "options": [
+              "have",
+              "get",
+              "make",
+              "let"
+            ],
             "correct": 0,
             "explanation": "Have + person + V (bare infinitive) - thể sai khiến chủ động."
           },
@@ -258,7 +239,12 @@
             "id": "mcq2",
             "type": "mcq",
             "question": "She ______ her computer repaired yesterday.",
-            "options": ["have", "has", "had", "having"],
+            "options": [
+              "have",
+              "has",
+              "had",
+              "having"
+            ],
             "correct": 2,
             "explanation": "Had + thing + V3/ed - thể sai khiến bị động ở quá khứ."
           },
@@ -266,7 +252,12 @@
             "id": "mcq3",
             "type": "mcq",
             "question": "The news spread ______ quickly that everyone heard it.",
-            "options": ["so", "such", "as", "than"],
+            "options": [
+              "so",
+              "such",
+              "as",
+              "than"
+            ],
             "correct": 0,
             "explanation": "So + adv + that - mệnh đề trạng ngữ chỉ kết quả."
           },
@@ -274,7 +265,12 @@
             "id": "mcq4",
             "type": "mcq",
             "question": "It was ______ shocking news that everyone talked about it.",
-            "options": ["so", "such", "as", "than"],
+            "options": [
+              "so",
+              "such",
+              "as",
+              "than"
+            ],
             "correct": 1,
             "explanation": "Such + adj + noun + that - mệnh đề trạng ngữ chỉ kết quả."
           },
@@ -282,7 +278,12 @@
             "id": "mcq5",
             "type": "mcq",
             "question": "______ we protect habitats, animals will survive.",
-            "options": ["Unless", "If", "Although", "Because"],
+            "options": [
+              "Unless",
+              "If",
+              "Although",
+              "Because"
+            ],
             "correct": 1,
             "explanation": "If - mệnh đề điều kiện loại 1 (điều kiện có thật)."
           },
@@ -290,7 +291,12 @@
             "id": "mcq6",
             "type": "mcq",
             "question": "______ we act now, many species will become extinct.",
-            "options": ["If", "Unless", "When", "Because"],
+            "options": [
+              "If",
+              "Unless",
+              "When",
+              "Because"
+            ],
             "correct": 1,
             "explanation": "Unless = If...not - trừ khi, nếu không."
           },
@@ -298,7 +304,12 @@
             "id": "mcq7",
             "type": "mcq",
             "question": "Tigers are ______ endangered ______ rhinos.",
-            "options": ["more / than", "as / as", "so / as", "such / as"],
+            "options": [
+              "more / than",
+              "as / as",
+              "so / as",
+              "such / as"
+            ],
             "correct": 1,
             "explanation": "As...as - so sánh bằng."
           },
@@ -306,7 +317,12 @@
             "id": "mcq8",
             "type": "mcq",
             "question": "______ more we protect wildlife, ______ more species survive.",
-            "options": ["A / a", "The / the", "A / the", "The / a"],
+            "options": [
+              "A / a",
+              "The / the",
+              "A / the",
+              "The / a"
+            ],
             "correct": 1,
             "explanation": "The...the... - cấu trúc so sánh kép (càng...càng...)."
           },
@@ -314,7 +330,12 @@
             "id": "mcq9",
             "type": "mcq",
             "question": "She talks ______ she knew everything about AI.",
-            "options": ["as", "as if", "so", "such"],
+            "options": [
+              "as",
+              "as if",
+              "so",
+              "such"
+            ],
             "correct": 1,
             "explanation": "As if - mệnh đề trạng ngữ chỉ cách thức (như thể)."
           },
@@ -322,7 +343,12 @@
             "id": "mcq10",
             "type": "mcq",
             "question": "I got my phone ______ last week.",
-            "options": ["fix", "fixed", "to fix", "fixing"],
+            "options": [
+              "fix",
+              "fixed",
+              "to fix",
+              "fixing"
+            ],
             "correct": 1,
             "explanation": "Got + thing + V3/ed - thể sai khiến bị động."
           },
@@ -330,7 +356,12 @@
             "id": "mcq11",
             "type": "mcq",
             "question": "The video went viral ______ fast that millions saw it.",
-            "options": ["so", "such", "as", "than"],
+            "options": [
+              "so",
+              "such",
+              "as",
+              "than"
+            ],
             "correct": 0,
             "explanation": "So + adv + that - chỉ kết quả."
           },
@@ -338,7 +369,12 @@
             "id": "mcq12",
             "type": "mcq",
             "question": "______ that we preserve habitats, biodiversity will thrive.",
-            "options": ["Unless", "If", "Provided", "Although"],
+            "options": [
+              "Unless",
+              "If",
+              "Provided",
+              "Although"
+            ],
             "correct": 2,
             "explanation": "Provided (that) = miễn là, với điều kiện."
           },
@@ -346,7 +382,12 @@
             "id": "mcq13",
             "type": "mcq",
             "question": "AI is ______ efficient than traditional methods.",
-            "options": ["as", "so", "more", "such"],
+            "options": [
+              "as",
+              "so",
+              "more",
+              "such"
+            ],
             "correct": 2,
             "explanation": "More...than - so sánh hơn."
           },
@@ -354,7 +395,12 @@
             "id": "mcq14",
             "type": "mcq",
             "question": "I have AI ______ documents for me.",
-            "options": ["translate", "to translate", "translated", "translating"],
+            "options": [
+              "translate",
+              "to translate",
+              "translated",
+              "translating"
+            ],
             "correct": 0,
             "explanation": "Have + person/thing + V (bare infinitive) - thể sai khiến chủ động."
           },
@@ -362,7 +408,12 @@
             "id": "mcq15",
             "type": "mcq",
             "question": "______ long as we work together, we can save wildlife.",
-            "options": ["If", "Unless", "As", "Although"],
+            "options": [
+              "If",
+              "Unless",
+              "As",
+              "Although"
+            ],
             "correct": 2,
             "explanation": "As long as = miễn là - mệnh đề điều kiện."
           },
@@ -370,7 +421,12 @@
             "id": "mcq16",
             "type": "mcq",
             "question": "She is ______ a good journalist that everyone trusts her.",
-            "options": ["so", "such", "as", "than"],
+            "options": [
+              "so",
+              "such",
+              "as",
+              "than"
+            ],
             "correct": 1,
             "explanation": "Such + a/an + adj + noun + that - chỉ kết quả."
           },
@@ -378,7 +434,12 @@
             "id": "mcq17",
             "type": "mcq",
             "question": "He reported the news ______ he was there.",
-            "options": ["as", "as if", "so", "such"],
+            "options": [
+              "as",
+              "as if",
+              "so",
+              "such"
+            ],
             "correct": 1,
             "explanation": "As if - mệnh đề trạng ngữ chỉ cách thức."
           },
@@ -386,7 +447,12 @@
             "id": "mcq18",
             "type": "mcq",
             "question": "______ we stop deforestation, habitats will be destroyed.",
-            "options": ["If", "Unless", "When", "Because"],
+            "options": [
+              "If",
+              "Unless",
+              "When",
+              "Because"
+            ],
             "correct": 1,
             "explanation": "Unless = If...not - nếu không."
           },
@@ -394,7 +460,12 @@
             "id": "mcq19",
             "type": "mcq",
             "question": "I got my assistant ______ help me with the project.",
-            "options": ["help", "to help", "helped", "helping"],
+            "options": [
+              "help",
+              "to help",
+              "helped",
+              "helping"
+            ],
             "correct": 1,
             "explanation": "Got + person + to V - thể sai khiến chủ động với 'get'."
           },
@@ -402,7 +473,12 @@
             "id": "mcq20",
             "type": "mcq",
             "question": "______ faster we act, ______ better the results.",
-            "options": ["A / a", "The / the", "A / the", "The / a"],
+            "options": [
+              "A / a",
+              "The / the",
+              "A / the",
+              "The / a"
+            ],
             "correct": 1,
             "explanation": "The...the... - so sánh kép."
           },
@@ -410,7 +486,10 @@
             "id": "msq1",
             "type": "msq",
             "question_text": "Active causative uses: have/get + person + (to) V.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Have + person + V (bare), Get + person + to V."
           },
@@ -418,7 +497,10 @@
             "id": "msq2",
             "type": "msq",
             "question_text": "Passive causative uses: have/get + thing + V3/ed.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Thể sai khiến bị động dùng have/get + thing + past participle."
           },
@@ -426,7 +508,10 @@
             "id": "msq3",
             "type": "msq",
             "question_text": "'As if' and 'as though' are used for adverbial clauses of manner.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. As if/as though dùng trong mệnh đề trạng ngữ chỉ cách thức."
           },
@@ -434,7 +519,10 @@
             "id": "msq4",
             "type": "msq",
             "question_text": "'So...that' is used with adjectives/adverbs, while 'such...that' is used with nouns.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. So + adj/adv + that, Such + (a/an) + adj + noun + that."
           },
@@ -442,7 +530,10 @@
             "id": "msq5",
             "type": "msq",
             "question_text": "'Unless' means 'if not' and is used with negative verbs.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 1,
             "explanation": "Sai. Unless = if not nhưng luôn dùng với động từ khẳng định, không dùng 'not'."
           },

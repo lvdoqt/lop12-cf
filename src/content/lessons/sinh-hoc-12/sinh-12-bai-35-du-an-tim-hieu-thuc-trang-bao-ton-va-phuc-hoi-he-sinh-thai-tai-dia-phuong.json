@@ -108,6 +108,71 @@
             "explanation": "Cần thu thập thông tin về môi trường, đa dạng sinh vật và các mối đe dọa."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Bước đầu tiên trong dự án bảo tồn hệ sinh thái là?",
+            "options": [
+              "Xây dựng khu bảo tồn",
+              "Khảo sát hiện trạng và thu thập dữ liệu",
+              "Tuyên truyền",
+              "Đưa loài về"
+            ],
+            "correct": 1,
+            "explanation": "Khảo sát hiện trạng giúp đánh giá mức độ suy thoái và xác định biện pháp phù hợp."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Chỉ số nào dùng để đánh giá chất lượng môi trường nước?",
+            "options": [
+              "pH, DO, BOD",
+              "Nhiệt độ không khí",
+              "Độ ẩm đất",
+              "Cường độ ánh sáng"
+            ],
+            "correct": 0,
+            "explanation": "pH, DO (oxy hòa tan), BOD (nhu cầu oxy sinh hóa) là các chỉ số đánh giá chất lượng nước."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Phương pháp nào thường dùng để phục hồi rừng suy thoái?",
+            "options": [
+              "Trồng cây bản địa",
+              "Đổ bê tông",
+              "Xây đập",
+              "Dùng hóa chất"
+            ],
+            "correct": 0,
+            "explanation": "Trồng cây bản địa giúp phục hồi cấu trúc rừng và tạo sinh cảnh cho động vật."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Sự tham gia của cộng đồng địa phương quan trọng vì?",
+            "options": [
+              "Họ có kiến thức bản địa và sẽ bảo vệ lâu dài",
+              "Họ không liên quan",
+              "Chỉ cần chuyên gia",
+              "Tốn ít chi phí"
+            ],
+            "correct": 0,
+            "explanation": "Cộng đồng địa phương có kiến thức bản địa và sẽ đồng quản lý, bảo vệ bền vững."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Kết quả thành công của dự án bảo tồn thể hiện qua?",
+            "options": [
+              "Số lượng báo cáo",
+              "Đa dạng loài và sinh khối tăng",
+              "Kinh phí giải ngân",
+              "Số du khách"
+            ],
+            "correct": 1,
+            "explanation": "Thành công thể hiện qua phục hồi đa dạng loài và chức năng hệ sinh thái."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các phương pháp thu thập dữ liệu trong dự án:",

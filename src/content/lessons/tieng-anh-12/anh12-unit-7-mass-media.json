@@ -33,9 +33,7 @@
             {
               "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
               "content": "<p><strong>Types of Mass Media:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Print media:</strong> newspapers, magazines, books</li><li><strong>Broadcast media:</strong> TV, radio</li><li><strong>Digital media:</strong> websites, social media, blogs</li><li><strong>Social media:</strong> Facebook, Twitter, Instagram, TikTok</li></ul><p><strong>People in Media:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>journalist:</strong> nhà báo</li><li><strong>reporter:</strong> phóng viên</li><li><strong>editor:</strong> biên tập viên</li><li><strong>photographer:</strong> nhiếp ảnh gia</li><li><strong>broadcaster:</strong> người phát thanh</li><li><strong>influencer:</strong> người có ảnh hưởng</li><li><strong>content creator:</strong> người tạo nội dung</li></ul><p><strong>Media Content:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>news:</strong> tin tức</li><li><strong>headline:</strong> tiêu đề</li><li><strong>article:</strong> bài báo</li><li><strong>report:</strong> bản tin</li><li><strong>interview:</strong> phỏng vấn</li><li><strong>documentary:</strong> phim tài liệu</li><li><strong>advertisement:</strong> quảng cáo</li><li><strong>post:</strong> bài đăng</li><li><strong>comment:</strong> bình luận</li></ul><p><strong>Media Actions:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>broadcast:</strong> phát sóng</li><li><strong>publish:</strong> xuất bản</li><li><strong>report:</strong> đưa tin</li><li><strong>share:</strong> chia sẻ</li><li><strong>post:</strong> đăng bài</li><li><strong>like:</strong> thích</li><li><strong>comment:</strong> bình luận</li><li><strong>subscribe:</strong> đăng ký</li><li><strong>follow:</strong> theo dõi</li><li><strong>go viral:</strong> lan truyền nhanh</li></ul><p><strong>Media Issues:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>fake news:</strong> tin giả</li><li><strong>misinformation:</strong> thông tin sai lệch</li><li><strong>bias:</strong> thiên kiến</li><li><strong>censorship:</strong> kiểm duyệt</li><li><strong>privacy:</strong> quyền riêng tư</li><li><strong>cyberbullying:</strong> bắt nạt trên mạng</li></ul>"
-            }
-
-,
+            },
             {
               "heading": "3. Ngữ âm: Nhấn mạnh trong mệnh đề trạng ngữ",
               "content": "<h3>Stress in adverbial clauses</h3><p><strong>Quy tắc nhấn mạnh:</strong></p><p><strong>1. Mệnh đề trạng ngữ chỉ cách thức (Manner):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ chính và cách thức</li><li>Ex: She reported the news <strong>AS IF</strong> she was <strong>THERE</strong>.</li><li>Ex: He speaks <strong>AS THOUGH</strong> he <strong>KNOWS</strong> everything.</li></ul><p><strong>2. Mệnh đề trạng ngữ chỉ kết quả (Result):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh mức độ và kết quả</li><li>Ex: The news was <strong>SO SHOCKING</strong> that everyone <strong>TALKED</strong> about it.</li><li>Ex: She has <strong>SUCH INFLUENCE</strong> that millions <strong>FOLLOW</strong> her.</li></ul><p><strong>3. Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Liên từ (as if, as though, so...that, such...that) thường nhấn nhẹ</li><li>Tính từ/trạng từ sau 'so' được nhấn mạnh</li><li>Danh từ sau 'such' được nhấn mạnh</li></ul>"
@@ -91,79 +89,75 @@
           }
         ],
         "exercises": [
-
           {
             "id": "reading1",
-            "type": "reading",
-            "passage": "Mass media has become such a powerful force in modern society that it shapes how we think, what we believe, and how we behave. From traditional newspapers and television to digital platforms and social media, mass media influences nearly every aspect of our lives.\n\nThe rise of social media has been so dramatic that it has transformed how people communicate and consume information. Platforms like Facebook, Twitter, and Instagram have billions of users who share news, opinions, and personal updates. Information spreads so quickly on social media that a story can reach millions of people within hours. However, this speed comes with risks - fake news and misinformation can go viral just as fast as accurate information.\n\nTraditional media like newspapers and television still play important roles, though their influence has declined. Many people now get their news from online sources because digital media is so convenient that they can access it anytime, anywhere. Journalists report news as if they are providing objective facts, but media bias exists in both traditional and digital platforms. Some news outlets present information in such a way that it supports their political or commercial interests.\n\nThe challenge for modern citizens is developing media literacy - the ability to critically evaluate information. We should not believe everything we read or watch as though it were automatically true. Instead, we need to check multiple sources, verify facts, and think critically about what we consume. The media's influence is so strong that it can shape public opinion and even affect elections, so being an informed and critical consumer of media is more important than ever.",
-            "questions": [
-              {
-                "id": "reading1-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "Social media is better than traditional media",
-                  "Mass media is powerful and requires critical thinking",
-                  "All news is fake",
-                  "Traditional media is dead"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về sức mạnh của truyền thông đại chúng và nhu cầu tư duy phản biện."
-              },
-              {
-                "id": "reading1-q2",
-                "question": "Why does information spread quickly on social media?",
-                "options": [
-                  "Because it's always true",
-                  "Because of the nature and reach of social platforms",
-                  "Because journalists control it",
-                  "Because it's expensive"
-                ],
-                "correct": 1,
-                "explanation": "Thông tin lan nhanh do bản chất và phạm vi tiếp cận của các nền tảng mạng xã hội."
-              },
-              {
-                "id": "reading1-q3",
-                "question": "The word 'objective' in paragraph 3 is closest in meaning to ______.",
-                "options": [
-                  "biased",
-                  "unbiased and factual",
-                  "emotional",
-                  "false"
-                ],
-                "correct": 1,
-                "explanation": "Objective = unbiased and factual (khách quan, không thiên vị)."
-              },
-              {
-                "id": "reading1-q4",
-                "question": "What problem is mentioned about fast information spread?",
-                "options": [
-                  "It's too slow",
-                  "Fake news can spread as quickly as real news",
-                  "Nobody reads it",
-                  "It's too expensive"
-                ],
-                "correct": 1,
-                "explanation": "Vấn đề là tin giả có thể lan nhanh như tin thật."
-              },
-              {
-                "id": "reading1-q5",
-                "question": "According to the passage, what is media literacy?",
-                "options": [
-                  "Reading newspapers",
-                  "The ability to critically evaluate information",
-                  "Watching TV all day",
-                  "Believing everything online"
-                ],
-                "correct": 1,
-                "explanation": "Media literacy là khả năng đánh giá thông tin một cách phản biện."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nMass media has become such a powerful force in modern society that it shapes how we think, what we believe, and how we behave. From traditional newspapers and television to digital platforms and social media, mass media influences nearly every aspect of our lives.\n\nThe rise of social media has been so dramatic that it has transformed how people communicate and consume information. Platforms like Facebook, Twitter, and Instagram have billions of users who share news, opinions, and personal updates. Information spreads so quickly on social media that a story can reach millions of people within hours. However, this speed comes with risks - fake news and misinformation can go viral just as fast as accurate information.\n\nTraditional media like newspapers and television still play important roles, though their influence has declined. Many people now get their news from online sources because digital media is so convenient that they can access it anytime, anywhere. Journalists report news as if they are providing objective facts, but media bias exists in both traditional and digital platforms. Some news outlets present information in such a way that it supports their political or commercial interests.\n\nThe challenge for modern citizens is developing media literacy - the ability to critically evaluate information. We should not believe everything we read or watch as though it were automatically true. Instead, we need to check multiple sources, verify facts, and think critically about what we consume. The media's influence is so strong that it can shape public opinion and even affect elections, so being an informed and critical consumer of media is more important than ever.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading1-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "Social media is better than traditional media",
+                  "option_b": "Mass media is powerful and requires critical thinking",
+                  "option_c": "All news is fake",
+                  "option_d": "Traditional media is dead",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về sức mạnh của truyền thông đại chúng và nhu cầu tư duy phản biện."
+                },
+                {
+                  "id": "reading1-q2",
+                  "question": "Why does information spread quickly on social media?",
+                  "option_a": "Because it's always true",
+                  "option_b": "Because of the nature and reach of social platforms",
+                  "option_c": "Because journalists control it",
+                  "option_d": "Because it's expensive",
+                  "correct_option": "B",
+                  "explanation": "Thông tin lan nhanh do bản chất và phạm vi tiếp cận của các nền tảng mạng xã hội."
+                },
+                {
+                  "id": "reading1-q3",
+                  "question": "The word 'objective' in paragraph 3 is closest in meaning to ______.",
+                  "option_a": "biased",
+                  "option_b": "unbiased and factual",
+                  "option_c": "emotional",
+                  "option_d": "false",
+                  "correct_option": "B",
+                  "explanation": "Objective = unbiased and factual (khách quan, không thiên vị)."
+                },
+                {
+                  "id": "reading1-q4",
+                  "question": "What problem is mentioned about fast information spread?",
+                  "option_a": "It's too slow",
+                  "option_b": "Fake news can spread as quickly as real news",
+                  "option_c": "Nobody reads it",
+                  "option_d": "It's too expensive",
+                  "correct_option": "B",
+                  "explanation": "Vấn đề là tin giả có thể lan nhanh như tin thật."
+                },
+                {
+                  "id": "reading1-q5",
+                  "question": "According to the passage, what is media literacy?",
+                  "option_a": "Reading newspapers",
+                  "option_b": "The ability to critically evaluate information",
+                  "option_c": "Watching TV all day",
+                  "option_d": "Believing everything online",
+                  "correct_option": "B",
+                  "explanation": "Media literacy là khả năng đánh giá thông tin một cách phản biện."
+                }
+              ]
+            }
           },
           {
             "id": "mcq1",
             "type": "mcq",
             "question": "The news was ______ shocking ______ everyone talked about it.",
-            "options": ["so / that", "such / that", "so / as", "such / as"],
+            "options": [
+              "so / that",
+              "such / that",
+              "so / as",
+              "such / as"
+            ],
             "correct": 0,
             "explanation": "So...that - mệnh đề kết quả với tính từ: so + adj + that."
           },
@@ -171,7 +165,12 @@
             "id": "mcq2",
             "type": "mcq",
             "question": "She talks ______ she knew everything.",
-            "options": ["as if", "so that", "such that", "as"],
+            "options": [
+              "as if",
+              "so that",
+              "such that",
+              "as"
+            ],
             "correct": 0,
             "explanation": "As if - mệnh đề cách thức: như thể (giả định không có thật)."
           },
@@ -179,7 +178,12 @@
             "id": "mcq3",
             "type": "mcq",
             "question": "It was ______ interesting article ______ I shared it.",
-            "options": ["so / that", "such / that", "such an / that", "so an / that"],
+            "options": [
+              "so / that",
+              "such / that",
+              "such an / that",
+              "so an / that"
+            ],
             "correct": 2,
             "explanation": "Such an...that - mệnh đề kết quả với danh từ đếm được số ít."
           },
@@ -187,7 +191,12 @@
             "id": "mcq4",
             "type": "mcq",
             "question": "He reported the news ______ he had been there.",
-            "options": ["as though", "so that", "such that", "so"],
+            "options": [
+              "as though",
+              "so that",
+              "such that",
+              "so"
+            ],
             "correct": 0,
             "explanation": "As though - mệnh đề cách thức: như thể (giả định quá khứ)."
           },
@@ -195,7 +204,12 @@
             "id": "mcq5",
             "type": "mcq",
             "question": "Social media is ______ popular ______ billions use it.",
-            "options": ["such / that", "so / that", "so / as", "such / as"],
+            "options": [
+              "such / that",
+              "so / that",
+              "so / as",
+              "such / as"
+            ],
             "correct": 1,
             "explanation": "So...that - mệnh đề kết quả với tính từ."
           },
@@ -203,7 +217,12 @@
             "id": "mcq6",
             "type": "mcq",
             "question": "The video went viral ______ quickly ______ millions saw it.",
-            "options": ["such / that", "so / that", "so / as", "as / that"],
+            "options": [
+              "such / that",
+              "so / that",
+              "so / as",
+              "as / that"
+            ],
             "correct": 1,
             "explanation": "So...that - mệnh đề kết quả với trạng từ."
           },
@@ -211,7 +230,12 @@
             "id": "mcq7",
             "type": "mcq",
             "question": "She acts ______ she were famous.",
-            "options": ["as if", "so that", "such that", "so"],
+            "options": [
+              "as if",
+              "so that",
+              "such that",
+              "so"
+            ],
             "correct": 0,
             "explanation": "As if - mệnh đề cách thức với 'were' (giả định không có thật)."
           },
@@ -219,7 +243,12 @@
             "id": "mcq8",
             "type": "mcq",
             "question": "There was ______ much fake news ______ people didn't know what to believe.",
-            "options": ["such / that", "so / that", "so / as", "such / as"],
+            "options": [
+              "such / that",
+              "so / that",
+              "so / as",
+              "such / as"
+            ],
             "correct": 1,
             "explanation": "So much...that - mệnh đề kết quả với danh từ không đếm được."
           },
@@ -227,7 +256,12 @@
             "id": "mcq9",
             "type": "mcq",
             "question": "Do ______ the journalist says.",
-            "options": ["as", "as if", "so that", "such that"],
+            "options": [
+              "as",
+              "as if",
+              "so that",
+              "such that"
+            ],
             "correct": 0,
             "explanation": "As - mệnh đề cách thức: theo cách, như (thực tế)."
           },
@@ -235,7 +269,12 @@
             "id": "mcq10",
             "type": "mcq",
             "question": "She has ______ influence ______ millions follow her.",
-            "options": ["so / that", "such / that", "so / as", "such / as"],
+            "options": [
+              "so / that",
+              "such / that",
+              "so / as",
+              "such / as"
+            ],
             "correct": 1,
             "explanation": "Such...that - mệnh đề kết quả với danh từ."
           },
@@ -243,7 +282,12 @@
             "id": "mcq11",
             "type": "mcq",
             "question": "I like ______ she presents the news.",
-            "options": ["the way", "as if", "so that", "such that"],
+            "options": [
+              "the way",
+              "as if",
+              "so that",
+              "such that"
+            ],
             "correct": 0,
             "explanation": "The way - mệnh đề cách thức: cách mà."
           },
@@ -251,7 +295,12 @@
             "id": "mcq12",
             "type": "mcq",
             "question": "He has ______ many followers ______ his posts reach millions.",
-            "options": ["such / that", "so / that", "so / as", "such / as"],
+            "options": [
+              "such / that",
+              "so / that",
+              "so / as",
+              "such / as"
+            ],
             "correct": 1,
             "explanation": "So many...that - mệnh đề kết quả."
           },
@@ -259,7 +308,12 @@
             "id": "mcq13",
             "type": "mcq",
             "question": "The journalist spoke ______ he had witnessed the event.",
-            "options": ["as though", "so that", "such that", "so"],
+            "options": [
+              "as though",
+              "so that",
+              "such that",
+              "so"
+            ],
             "correct": 0,
             "explanation": "As though - mệnh đề cách thức với Past Perfect."
           },
@@ -267,7 +321,12 @@
             "id": "mcq14",
             "type": "mcq",
             "question": "It was ______ viral video ______ everyone shared it.",
-            "options": ["so / that", "such / that", "such a / that", "so a / that"],
+            "options": [
+              "so / that",
+              "such / that",
+              "such a / that",
+              "so a / that"
+            ],
             "correct": 2,
             "explanation": "Such a...that - mệnh đề kết quả với danh từ đếm được."
           },
@@ -275,7 +334,12 @@
             "id": "mcq15",
             "type": "mcq",
             "question": "Information spreads ______ it happened.",
-            "options": ["as", "as if", "so that", "such that"],
+            "options": [
+              "as",
+              "as if",
+              "so that",
+              "such that"
+            ],
             "correct": 0,
             "explanation": "As - mệnh đề cách thức: như, theo cách (thực tế)."
           },
@@ -283,7 +347,10 @@
             "id": "msq1",
             "type": "msq",
             "question_text": "After 'as if' and 'as though', we often use past tenses to show unreal situations.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. As if/as though thường dùng thì quá khứ để chỉ tình huống không có thật."
           },
@@ -291,7 +358,10 @@
             "id": "msq2",
             "type": "msq",
             "question_text": "'So' is used with adjectives and adverbs, while 'such' is used with nouns.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. So + adj/adv, such + noun phrase."
           },
@@ -299,7 +369,10 @@
             "id": "msq3",
             "type": "msq",
             "question_text": "We can say 'so a good journalist' in result clauses.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 1,
             "explanation": "Sai. Phải dùng 'such a good journalist'."
           },
@@ -307,7 +380,10 @@
             "id": "msq4",
             "type": "msq",
             "question_text": "'The way' can be used to introduce manner clauses.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. 'The way' dùng để giới thiệu mệnh đề cách thức."
           },
@@ -315,7 +391,10 @@
             "id": "msq5",
             "type": "msq",
             "question_text": "Mass media can influence public opinion.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Truyền thông đại chúng có thể ảnh hưởng đến dư luận."
           },

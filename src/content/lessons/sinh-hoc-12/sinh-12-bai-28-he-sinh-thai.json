@@ -108,6 +108,71 @@
             "explanation": "Năng lượng được truyền một chiều từ sinh vật sản xuất → sinh vật tiêu thụ → môi trường."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Chuỗi thức ăn bắt đầu bằng sinh vật nào?",
+            "options": [
+              "Động vật ăn thịt",
+              "Sinh vật sản xuất",
+              "Sinh vật phân giải",
+              "Động vật ăn cỏ"
+            ],
+            "correct": 1,
+            "explanation": "Chuỗi thức ăn bắt đầu từ sinh vật sản xuất (thực vật, tảo) tự tổng hợp chất hữu cơ."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Sinh vật phân giải có vai trò gì trong hệ sinh thái?",
+            "options": [
+              "Tổng hợp chất hữu cơ",
+              "Phân giải xác chết thành chất vô cơ",
+              "Ăn thực vật",
+              "Săn mồi"
+            ],
+            "correct": 1,
+            "explanation": "Sinh vật phân giải (vi khuẩn, nấm) biến chất hữu cơ thành chất vô cơ trả lại môi trường."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Lưới thức ăn phức tạp hơn chuỗi thức ăn vì?",
+            "options": [
+              "Chỉ có một loài",
+              "Nhiều chuỗi đan xen",
+              "Không có sinh vật sản xuất",
+              "Ít bậc dinh dưỡng"
+            ],
+            "correct": 1,
+            "explanation": "Lưới thức ăn gồm nhiều chuỗi thức ăn đan xen, thể hiện mối quan hệ phức tạp."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Hệ sinh thái tự nhiên có đặc điểm nào?",
+            "options": [
+              "Đa dạng thấp, do con người tạo",
+              "Đa dạng cao, tự cân bằng",
+              "Năng suất thấp",
+              "Không có sinh vật phân giải"
+            ],
+            "correct": 1,
+            "explanation": "Hệ sinh thái tự nhiên đa dạng cao, có cơ chế tự điều chỉnh và cân bằng."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Ví dụ nào là hệ sinh thái nhân tạo?",
+            "options": [
+              "Rừng nhiệt đới",
+              "Rạn san hô",
+              "Đồng ruộng lúa nước",
+              "Hồ tự nhiên"
+            ],
+            "correct": 2,
+            "explanation": "Đồng ruộng lúa nước do con người tạo ra và quản lý, là hệ sinh thái nhân tạo."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các thành phần vô sinh của hệ sinh thái:",

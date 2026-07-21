@@ -100,6 +100,71 @@
             "explanation": "Quy luật phân li độc lập chỉ xảy ra khi các cặp allele nằm trên các cặp NST tương đồng khác nhau."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Mendel chọn đối tượng nghiên cứu là?",
+            "options": [
+              "Ruồi giấm",
+              "Đậu Hà Lan",
+              "Chuột bạch",
+              "Vi khuẩn E. coli"
+            ],
+            "correct": 1,
+            "explanation": "Mendel chọn đậu Hà Lan (Pisum sativum) vì dễ trồng, tự thụ phấn, có nhiều tính trạng tương phản."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Khi lai P thuần chủng khác nhau về 1 tính trạng, tỷ lệ kiểu hình ở F1 là?",
+            "options": [
+              "3:1",
+              "1:1",
+              "100% trội",
+              "100% lặn"
+            ],
+            "correct": 2,
+            "explanation": "F1 đồng tính (100% mang tính trạng trội) khi lai hai dòng thuần chủng tương phản."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Kiểu gen dị hợp là kiểu gen có?",
+            "options": [
+              "Hai allele giống nhau",
+              "Hai allele khác nhau",
+              "Một allele",
+              "Nhiều allele"
+            ],
+            "correct": 1,
+            "explanation": "Dị hợp (heterozygous) là kiểu gen có hai allele khác nhau của cùng một gene."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Khi lai Aa x Aa, tỷ lệ kiểu gen dị hợp ở F1 là?",
+            "options": [
+              "1/4",
+              "1/2",
+              "3/4",
+              "1/3"
+            ],
+            "correct": 1,
+            "explanation": "Aa x Aa -> 1/4 AA : 1/2 Aa : 1/4 aa. Tỷ lệ dị hợp = 1/2."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Cơ sở tế bào học của quy luật phân li là?",
+            "options": [
+              "Sự nhân đôi DNA",
+              "Sự phân li của NST tương đồng trong giảm phân",
+              "Sự trao đổi chéo",
+              "Sự thụ tinh"
+            ],
+            "correct": 1,
+            "explanation": "Các allele nằm trên NST tương đồng, khi giảm phân các NST tương đồng phân li -> các allele phân li."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các đặc điểm của đậu Hà Lan mà Mendel dùng trong nghiên cứu:",

@@ -96,70 +96,62 @@
         "exercises": [
           {
             "id": "reading1",
-            "type": "reading",
-            "passage": "Canada is known as one of the most multicultural countries in the world. With a population of over 38 million people, Canada is home to immigrants from more than 200 countries. The country's official policy of multiculturalism encourages people to maintain their cultural heritage while integrating into Canadian society.\n\nThe benefits of this diversity are numerous. Immigrants bring new ideas, skills, and perspectives that enrich Canadian culture and economy. Cities like Toronto and Vancouver are vibrant multicultural centers where you can experience cuisines, festivals, and traditions from around the world. This cultural exchange promotes tolerance and understanding among different communities.\n\nHowever, integration is not without challenges. Language barriers can make it difficult for newcomers to find jobs and access services. Some immigrants face discrimination and prejudice. Additionally, maintaining cultural identity while adapting to a new society can be emotionally challenging.\n\nTo address these issues, the Canadian government provides language training programs and settlement services. Community organizations also play a crucial role in helping immigrants integrate. Schools teach students about different cultures to promote respect and acceptance from an early age. Through these efforts, Canada continues to celebrate diversity while building a cohesive society.",
-            "questions": [
-              {
-                "id": "reading1-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "Canada has too many immigrants",
-                  "Canada is a successful multicultural country with benefits and challenges",
-                  "Immigration should be stopped",
-                  "Canadian culture is disappearing"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về Canada là quốc gia đa văn hóa thành công với cả lợi ích và thách thức."
-              },
-              {
-                "id": "reading1-q2",
-                "question": "According to the passage, what is one benefit of multiculturalism in Canada?",
-                "options": [
-                  "Everyone speaks the same language",
-                  "Immigrants bring new ideas and enrich culture",
-                  "There are no challenges",
-                  "People forget their heritage"
-                ],
-                "correct": 1,
-                "explanation": "Người nhập cư mang đến ý tưởng mới và làm phong phú văn hóa Canada."
-              },
-              {
-                "id": "reading1-q3",
-                "question": "The word 'vibrant' in paragraph 2 is closest in meaning to ______.",
-                "options": [
-                  "quiet and boring",
-                  "full of energy and life",
-                  "small",
-                  "dangerous"
-                ],
-                "correct": 1,
-                "explanation": "Vibrant = full of energy and life (sôi động, đầy sức sống)."
-              },
-              {
-                "id": "reading1-q4",
-                "question": "What is one challenge mentioned for immigrants?",
-                "options": [
-                  "Too much food",
-                  "Language barriers",
-                  "Too many festivals",
-                  "Too much money"
-                ],
-                "correct": 1,
-                "explanation": "Rào cản ngôn ngữ là một thách thức được đề cập cho người nhập cư."
-              },
-              {
-                "id": "reading1-q5",
-                "question": "How does Canada help immigrants integrate?",
-                "options": [
-                  "By ignoring them",
-                  "By providing language training and settlement services",
-                  "By sending them back",
-                  "By making them forget their culture"
-                ],
-                "correct": 1,
-                "explanation": "Canada cung cấp chương trình đào tạo ngôn ngữ và dịch vụ định cư."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nCanada is known as one of the most multicultural countries in the world. With a population of over 38 million people, Canada is home to immigrants from more than 200 countries. The country's official policy of multiculturalism encourages people to maintain their cultural heritage while integrating into Canadian society.\n\nThe benefits of this diversity are numerous. Immigrants bring new ideas, skills, and perspectives that enrich Canadian culture and economy. Cities like Toronto and Vancouver are vibrant multicultural centers where you can experience cuisines, festivals, and traditions from around the world. This cultural exchange promotes tolerance and understanding among different communities.\n\nHowever, integration is not without challenges. Language barriers can make it difficult for newcomers to find jobs and access services. Some immigrants face discrimination and prejudice. Additionally, maintaining cultural identity while adapting to a new society can be emotionally challenging.\n\nTo address these issues, the Canadian government provides language training programs and settlement services. Community organizations also play a crucial role in helping immigrants integrate. Schools teach students about different cultures to promote respect and acceptance from an early age. Through these efforts, Canada continues to celebrate diversity while building a cohesive society.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading1-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "Canada has too many immigrants",
+                  "option_b": "Canada is a successful multicultural country with benefits and challenges",
+                  "option_c": "Immigration should be stopped",
+                  "option_d": "Canadian culture is disappearing",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về Canada là quốc gia đa văn hóa thành công với cả lợi ích và thách thức."
+                },
+                {
+                  "id": "reading1-q2",
+                  "question": "According to the passage, what is one benefit of multiculturalism in Canada?",
+                  "option_a": "Everyone speaks the same language",
+                  "option_b": "Immigrants bring new ideas and enrich culture",
+                  "option_c": "There are no challenges",
+                  "option_d": "People forget their heritage",
+                  "correct_option": "B",
+                  "explanation": "Người nhập cư mang đến ý tưởng mới và làm phong phú văn hóa Canada."
+                },
+                {
+                  "id": "reading1-q3",
+                  "question": "The word 'vibrant' in paragraph 2 is closest in meaning to ______.",
+                  "option_a": "quiet and boring",
+                  "option_b": "full of energy and life",
+                  "option_c": "small",
+                  "option_d": "dangerous",
+                  "correct_option": "B",
+                  "explanation": "Vibrant = full of energy and life (sôi động, đầy sức sống)."
+                },
+                {
+                  "id": "reading1-q4",
+                  "question": "What is one challenge mentioned for immigrants?",
+                  "option_a": "Too much food",
+                  "option_b": "Language barriers",
+                  "option_c": "Too many festivals",
+                  "option_d": "Too much money",
+                  "correct_option": "B",
+                  "explanation": "Rào cản ngôn ngữ là một thách thức được đề cập cho người nhập cư."
+                },
+                {
+                  "id": "reading1-q5",
+                  "question": "How does Canada help immigrants integrate?",
+                  "option_a": "By ignoring them",
+                  "option_b": "By providing language training and settlement services",
+                  "option_c": "By sending them back",
+                  "option_d": "By making them forget their culture",
+                  "correct_option": "B",
+                  "explanation": "Canada cung cấp chương trình đào tạo ngôn ngữ và dịch vụ định cư."
+                }
+              ]
+            }
           }
 ,
           {

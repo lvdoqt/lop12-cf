@@ -104,6 +104,71 @@
             "explanation": "Hiệu ứng Founder xảy ra khi một nhóm nhỏ tách ra lập quần thể mới."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Nguồn nguyên liệu chủ yếu của tiến hóa theo thuyết tổng hợp là gì?",
+            "options": [
+              "Đột biến và biến dị tổ hợp",
+              "Chọn lọc tự nhiên",
+              "Di nhập gene",
+              "Giao phối ngẫu nhiên"
+            ],
+            "correct": 0,
+            "explanation": "Đột biến tạo allele mới, biến dị tổ hợp sắp xếp lại vật chất di truyền, là nguồn nguyên liệu cho tiến hóa."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Trôi di truyền (genetic drift) có ảnh hưởng mạnh nhất ở?",
+            "options": [
+              "Quần thể lớn",
+              "Quần thể nhỏ",
+              "Quần thể ổn định",
+              "Quần thể ngẫu phối"
+            ],
+            "correct": 1,
+            "explanation": "Trôi di truyền xảy ra mạnh trong quần thể nhỏ do sự thay đổi ngẫu nhiên tần số allele qua các thế hệ."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Đơn vị tiến hóa cơ sở trong thuyết tiến hóa tổng hợp là?",
+            "options": [
+              "Cá thể",
+              "Quần thể",
+              "Loài",
+              "Hệ gene"
+            ],
+            "correct": 1,
+            "explanation": "Quần thể là đơn vị tiến hóa nhỏ nhất vì tiến hóa là sự thay đổi tần số allele trong quần thể."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Hiệu ứng thắt cổ chai (bottleneck) xảy ra khi?",
+            "options": [
+              "Kích thước quần thể giảm mạnh đột ngột",
+              "Một nhóm nhỏ tách ra lập quần thể mới",
+              "Có đột biến lớn",
+              "Có dòng gene mạnh"
+            ],
+            "correct": 0,
+            "explanation": "Bottleneck: quần thể giảm mạnh số lượng do thiên tai, dịch bệnh, làm mất đa dạng di truyền."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Chọn lọc ổn định (stabilizing selection) có tác dụng?",
+            "options": [
+              "Loại bỏ kiểu hình trung gian",
+              "Loại bỏ kiểu hình cực đoan, duy trì kiểu hình trung gian",
+              "Tạo kiểu hình mới",
+              "Tăng đa dạng di truyền"
+            ],
+            "correct": 1,
+            "explanation": "Chọn lọc ổn định loại bỏ cá thể cực đoan, duy trì kiểu hình trung gian tối ưu."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các cơ chế tiến hóa:",

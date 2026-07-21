@@ -38,6 +38,8 @@ if (Astro.request.method === 'POST') {
         if (type === 'mcq') type = 'single_choice';
         if (type === 'tf_cluster') type = 'msq';
         if (type === 'tf') type = 'true_false';
+        if (type === 'reading') type = 'read';
+        if (type === 'listing') type = 'list';
 
         let answers: { content: string; is_correct: boolean }[] = [];
         

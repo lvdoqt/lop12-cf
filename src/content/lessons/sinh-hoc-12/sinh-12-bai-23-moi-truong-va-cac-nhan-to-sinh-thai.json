@@ -104,6 +104,71 @@
             "explanation": "Quy luật Liebig: Sinh vật bị giới hạn bởi yếu tố sinh thái khan hiếm nhất, không phải yếu tố dồi dào nhất."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Nhân tố nào sau đây là nhân tố vô sinh?",
+            "options": [
+              "Cạnh tranh",
+              "Ký sinh",
+              "Ánh sáng",
+              "Hỗ sinh"
+            ],
+            "correct": 2,
+            "explanation": "Ánh sáng là nhân tố vô sinh (vật lý), các nhân tố còn lại là hữu sinh."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Động vật hằng nhiệt duy trì nhiệt độ cơ thể ổn định nhờ?",
+            "options": [
+              "Thay đổi theo môi trường",
+              "Cơ chế điều hòa thân nhiệt",
+              "Sống dưới nước",
+              "Ngủ đông"
+            ],
+            "correct": 1,
+            "explanation": "Động vật hằng nhiệt (chim, thú) có cơ chế điều hòa thân nhiệt để duy trì nhiệt độ ổn định."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Cây ra hoa phụ thuộc vào yếu tố ánh sáng nào?",
+            "options": [
+              "Cường độ ánh sáng",
+              "Quang chu kỳ (thời gian chiếu sáng)",
+              "Màu sắc ánh sáng",
+              "Góc chiếu"
+            ],
+            "correct": 1,
+            "explanation": "Quang chu kỳ là thời gian chiếu sáng trong ngày, ảnh hưởng đến sự ra hoa của cây."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Khoảng thuận lợi trong giới hạn sinh thái là?",
+            "options": [
+              "Khoảng sinh vật không sống được",
+              "Khoảng sinh vật sinh trưởng tối ưu",
+              "Khoảng gây chết",
+              "Khoảng giới hạn trên"
+            ],
+            "correct": 1,
+            "explanation": "Khoảng thuận lợi là khoảng giá trị nhân tố mà sinh vật sinh trưởng và phát triển tốt nhất."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Nước là yếu tố giới hạn chủ yếu ở môi trường nào?",
+            "options": [
+              "Dưới nước",
+              "Trên cạn",
+              "Trong đất",
+              "Trong không khí"
+            ],
+            "correct": 1,
+            "explanation": "Trên cạn, nước là yếu tố giới hạn quan trọng nhất, quyết định phân bố sinh vật."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các nhân tố vô sinh ảnh hưởng đến sinh vật:",

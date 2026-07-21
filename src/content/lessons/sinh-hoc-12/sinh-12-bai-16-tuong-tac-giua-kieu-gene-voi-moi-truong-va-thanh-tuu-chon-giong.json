@@ -104,6 +104,71 @@
             "explanation": "Bảo tồn ex situ là bảo tồn ngoài môi trường sống tự nhiên, như ngân hàng gene, vườn gen."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Liên kết phosphodiester trong DNA được hình thành giữa những thành phần nào?",
+            "options": [
+              "Giữa các bazơ nitơ",
+              "Giữa đường và nhóm phosphate",
+              "Giữa các đường deoxyribose",
+              "Giữa các nhóm phosphate"
+            ],
+            "correct": 1,
+            "explanation": "Liên kết phosphodiester được hình thành giữa đường deoxyribose của nucleotit này với nhóm phosphate của nucleotit kế tiếp."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Một phân tử DNA tự nhân đôi 3 lần liên tiếp tạo ra bao nhiêu phân tử DNA con?",
+            "options": [
+              "4",
+              "6",
+              "8",
+              "16"
+            ],
+            "correct": 2,
+            "explanation": "Số phân tử DNA con = 2^3 = 8."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Chiều tổng hợp của mạch mới trong quá trình tái bản DNA là?",
+            "options": [
+              "3' → 5'",
+              "5' → 3'",
+              "Cả hai chiều",
+              "Không xác định"
+            ],
+            "correct": 1,
+            "explanation": "DNA polymerase chỉ tổng hợp mạch mới theo chiều 5' → 3'."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Các đoạn Okazaki được nối với nhau nhờ enzyme nào?",
+            "options": [
+              "DNA polymerase III",
+              "Helicase",
+              "DNA ligase",
+              "Topoisomerase"
+            ],
+            "correct": 2,
+            "explanation": "DNA ligase có chức năng nối các đoạn Okazaki thành mạch hoàn chỉnh."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Trong cấu trúc DNA, nguyên tắc bổ sung được thể hiện như thế nào?",
+            "options": [
+              "A-G, T-C",
+              "A-T, G-C",
+              "A-C, T-G",
+              "A-T, G-G"
+            ],
+            "correct": 1,
+            "explanation": "A luôn liên kết với T (2 liên kết H), G luôn liên kết với C (3 liên kết H)."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các ví dụ về thường biến:",

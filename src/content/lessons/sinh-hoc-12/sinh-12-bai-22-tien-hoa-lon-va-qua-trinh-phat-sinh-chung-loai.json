@@ -102,8 +102,74 @@
             ],
             "correct": 2,
             "explanation": "Người và tinh tinh phân ly cách đây khoảng 6 triệu năm theo đồng hồ phân tử"
-            },
-         {"id": "msq1",
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Tiến hóa lớn khác tiến hóa nhỏ ở điểm nào?",
+            "options": [
+              "Diễn ra trong thời gian ngắn",
+              "Chỉ thay đổi tần số allele",
+              "Hình thành loài mới và nhóm loài lớn",
+              "Không có chọn lọc"
+            ],
+            "correct": 2,
+            "explanation": "Tiến hóa lớn hình thành loài mới và các nhóm phân loại lớn hơn, cần thời gian dài."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Cách ly sinh sản là điều kiện cần cho quá trình nào?",
+            "options": [
+              "Tiến hóa nhỏ",
+              "Hình thành loài mới",
+              "Di nhập gene",
+              "Chọn lọc tự nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Cách ly sinh sản ngăn dòng gene giữa các quần thể, dẫn đến hình thành loài mới."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Hình thành loài cùng khu vực (sympatric) thường xảy ra nhờ?",
+            "options": [
+              "Rào cản địa lý",
+              "Cách ly sinh thái hoặc tập tính",
+              "Di cư xa",
+              "Lai xa"
+            ],
+            "correct": 1,
+            "explanation": "Sympatric speciation xảy ra trong cùng khu vực nhờ cách ly sinh thái, mùa vụ hoặc tập tính giao phối."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Cây tiến hóa (phylogenetic tree) thể hiện điều gì?",
+            "options": [
+              "Kích thước các loài",
+              "Quan hệ họ hàng giữa các loài",
+              "Số lượng cá thể",
+              "Phân bố địa lý"
+            ],
+            "correct": 1,
+            "explanation": "Cây tiến hóa biểu diễn mối quan hệ họ hàng và thời điểm phân ly giữa các loài."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Loài lai (ví dụ lúa mì) thường có đặc điểm gì?",
+            "options": [
+              "Sinh sản mạnh",
+              "Bất thụ do NST không bắt cặp",
+              "Kích thước nhỏ",
+              "Không thích nghi"
+            ],
+            "correct": 1,
+            "explanation": "Loài lai thường bất thụ vì bộ NST từ hai loài khác nhau không bắt cặp trong giảm phân."
+          },
+          {
+            "id": "msq1",
             "type": "msq",
             "question": "Chọn các cơ chế hình thành loài:",
             "options": [

@@ -33,8 +33,7 @@
             {
               "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
               "content": "<p><strong>AI Technology (Công nghệ AI):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>artificial intelligence (AI):</strong> trí tuệ nhân tạo</li><li><strong>machine learning:</strong> học máy</li><li><strong>deep learning:</strong> học sâu</li><li><strong>neural network:</strong> mạng nơ-ron</li><li><strong>algorithm:</strong> thuật toán</li><li><strong>data:</strong> dữ liệu</li><li><strong>big data:</strong> dữ liệu lớn</li></ul><p><strong>AI Applications (Ứng dụng AI):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>facial recognition:</strong> nhận dạng khuôn mặt</li><li><strong>voice recognition:</strong> nhận dạng giọng nói</li><li><strong>virtual assistant:</strong> trợ lý ảo (Siri, Alexa)</li><li><strong>chatbot:</strong> trò chuyện tự động</li><li><strong>autonomous vehicle:</strong> xe tự lái</li><li><strong>recommendation system:</strong> hệ thống gợi ý</li><li><strong>translation software:</strong> phần mềm dịch thuật</li></ul><p><strong>AI Actions (Hành động của AI):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>process information:</strong> xử lý thông tin</li><li><strong>analyze data:</strong> phân tích dữ liệu</li><li><strong>recognize patterns:</strong> nhận dạng mẫu</li><li><strong>predict outcomes:</strong> dự đoán kết quả</li><li><strong>make decisions:</strong> đưa ra quyết định</li><li><strong>learn from experience:</strong> học từ kinh nghiệm</li><li><strong>solve problems:</strong> giải quyết vấn đề</li></ul><p><strong>Benefits and Concerns (Lợi ích và lo ngại):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>Benefits:</strong> efficient, accurate, fast, convenient, cost-effective</li><li><strong>Concerns:</strong> job loss, privacy issues, ethical concerns, dependence on technology</li></ul><p><strong>Collocations về AI:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>develop AI:</strong> phát triển AI</li><li><strong>train a model:</strong> huấn luyện mô hình</li><li><strong>collect data:</strong> thu thập dữ liệu</li><li><strong>improve accuracy:</strong> cải thiện độ chính xác</li><li><strong>replace human workers:</strong> thay thế lao động con người</li><li><strong>raise ethical concerns:</strong> nêu lên lo ngại đạo đức</li></ul>"
-            }
-,
+            },
             {
               "heading": "3. Ngữ âm: Nhấn mạnh trong câu với thể sai khiến",
               "content": "<h3>Stress in causative sentences</h3><p><strong>Quy tắc nhấn mạnh:</strong></p><p><strong>1. Thể sai khiến chủ động (Active causative):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ chính và tân ngữ</li><li>Ex: I <strong>HAD</strong> my computer <strong>REPAIRED</strong>.</li><li>Ex: She <strong>GOT</strong> her phone <strong>FIXED</strong>.</li></ul><p><strong>2. Thể sai khiến bị động (Passive causative):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ have/get và động từ chính</li><li>Ex: I <strong>HAD</strong> the robot <strong>CLEAN</strong> the house.</li><li>Ex: They <strong>GOT</strong> AI to <strong>ANALYZE</strong> the data.</li></ul><p><strong>3. Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Have/Get thường nhấn nhẹ hơn động từ chính</li><li>Tân ngữ (object) được nhấn mạnh vừa phải</li><li>Động từ chính (main verb) được nhấn mạnh nhất</li></ul>"
@@ -92,76 +91,73 @@
         "exercises": [
           {
             "id": "reading1",
-            "type": "reading",
-            "passage": "Artificial Intelligence (AI) has become one of the most transformative technologies of the 21st century. From virtual assistants like Siri and Alexa to autonomous vehicles and medical diagnosis systems, AI is changing how we live and work.\n\nAI works by processing large amounts of data and recognizing patterns. Machine learning, a subset of AI, allows computers to learn from experience without being explicitly programmed. For example, when you use a streaming service, AI analyzes your viewing habits and recommends shows you might enjoy. Similarly, facial recognition systems learn to identify faces by studying thousands of images.\n\nThe benefits of AI are numerous. In healthcare, AI helps doctors diagnose diseases more accurately and develop new treatments faster. In education, AI provides personalized learning experiences for students. In business, companies use AI to analyze customer data and improve their services. AI also makes our daily lives more convenient - we can have our phones recognize our voices, get AI to translate foreign languages instantly, and have virtual assistants manage our schedules.\n\nHowever, AI also raises important concerns. Many people worry that AI will replace human workers, leading to widespread unemployment. Privacy is another major issue - AI systems collect vast amounts of personal data, which could be misused. There are also ethical questions about AI decision-making, especially in areas like criminal justice and healthcare. Some experts warn that we need to develop AI responsibly to ensure it benefits humanity.\n\nDespite these challenges, AI will continue to advance. The key is to balance innovation with careful regulation and ethical considerations.",
-            "questions": [
-              {
-                "id": "reading1-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "AI is perfect and has no problems",
-                  "AI is transforming society with both benefits and concerns",
-                  "AI should be banned",
-                  "AI only works in healthcare"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về AI đang thay đổi xã hội với cả lợi ích và lo ngại."
-              },
-              {
-                "id": "reading1-q2",
-                "question": "How does machine learning work?",
-                "options": [
-                  "It needs explicit programming",
-                  "It learns from experience and data",
-                  "It doesn't work",
-                  "It only recognizes faces"
-                ],
-                "correct": 1,
-                "explanation": "Machine learning học từ kinh nghiệm và dữ liệu mà không cần lập trình cụ thể."
-              },
-              {
-                "id": "reading1-q3",
-                "question": "The word 'transformative' in paragraph 1 is closest in meaning to ______.",
-                "options": [
-                  "unchanging",
-                  "life-changing",
-                  "useless",
-                  "expensive"
-                ],
-                "correct": 1,
-                "explanation": "Transformative = life-changing (thay đổi cuộc sống, mang tính biến đổi)."
-              },
-              {
-                "id": "reading1-q4",
-                "question": "What concern about AI is mentioned?",
-                "options": [
-                  "It's too cheap",
-                  "Job loss and privacy issues",
-                  "It's too slow",
-                  "It's too simple"
-                ],
-                "correct": 1,
-                "explanation": "Các lo ngại được đề cập là mất việc làm và vấn đề riêng tư."
-              },
-              {
-                "id": "reading1-q5",
-                "question": "According to the passage, what is important for AI development?",
-                "options": [
-                  "Developing as fast as possible without rules",
-                  "Balancing innovation with regulation and ethics",
-                  "Stopping all AI research",
-                  "Only using AI in games"
-                ],
-                "correct": 1,
-                "explanation": "Quan trọng là cân bằng giữa đổi mới với quy định và đạo đức."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nArtificial Intelligence (AI) has become one of the most transformative technologies of the 21st century. From virtual assistants like Siri and Alexa to autonomous vehicles and medical diagnosis systems, AI is changing how we live and work.\n\nAI works by processing large amounts of data and recognizing patterns. Machine learning, a subset of AI, allows computers to learn from experience without being explicitly programmed. For example, when you use a streaming service, AI analyzes your viewing habits and recommends shows you might enjoy. Similarly, facial recognition systems learn to identify faces by studying thousands of images.\n\nThe benefits of AI are numerous. In healthcare, AI helps doctors diagnose diseases more accurately and develop new treatments faster. In education, AI provides personalized learning experiences for students. In business, companies use AI to analyze customer data and improve their services. AI also makes our daily lives more convenient - we can have our phones recognize our voices, get AI to translate foreign languages instantly, and have virtual assistants manage our schedules.\n\nHowever, AI also raises important concerns. Many people worry that AI will replace human workers, leading to widespread unemployment. Privacy is another major issue - AI systems collect vast amounts of personal data, which could be misused. There are also ethical questions about AI decision-making, especially in areas like criminal justice and healthcare. Some experts warn that we need to develop AI responsibly to ensure it benefits humanity.\n\nDespite these challenges, AI will continue to advance. The key is to balance innovation with careful regulation and ethical considerations.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading1-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "AI is perfect and has no problems",
+                  "option_b": "AI is transforming society with both benefits and concerns",
+                  "option_c": "AI should be banned",
+                  "option_d": "AI only works in healthcare",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về AI đang thay đổi xã hội với cả lợi ích và lo ngại."
+                },
+                {
+                  "id": "reading1-q2",
+                  "question": "How does machine learning work?",
+                  "option_a": "It needs explicit programming",
+                  "option_b": "It learns from experience and data",
+                  "option_c": "It doesn't work",
+                  "option_d": "It only recognizes faces",
+                  "correct_option": "B",
+                  "explanation": "Machine learning học từ kinh nghiệm và dữ liệu mà không cần lập trình cụ thể."
+                },
+                {
+                  "id": "reading1-q3",
+                  "question": "The word 'transformative' in paragraph 1 is closest in meaning to ______.",
+                  "option_a": "unchanging",
+                  "option_b": "life-changing",
+                  "option_c": "useless",
+                  "option_d": "expensive",
+                  "correct_option": "B",
+                  "explanation": "Transformative = life-changing (thay đổi cuộc sống, mang tính biến đổi)."
+                },
+                {
+                  "id": "reading1-q4",
+                  "question": "What concern about AI is mentioned?",
+                  "option_a": "It's too cheap",
+                  "option_b": "Job loss and privacy issues",
+                  "option_c": "It's too slow",
+                  "option_d": "It's too simple",
+                  "correct_option": "B",
+                  "explanation": "Các lo ngại được đề cập là mất việc làm và vấn đề riêng tư."
+                },
+                {
+                  "id": "reading1-q5",
+                  "question": "According to the passage, what is important for AI development?",
+                  "option_a": "Developing as fast as possible without rules",
+                  "option_b": "Balancing innovation with regulation and ethics",
+                  "option_c": "Stopping all AI research",
+                  "option_d": "Only using AI in games",
+                  "correct_option": "B",
+                  "explanation": "Quan trọng là cân bằng giữa đổi mới với quy định và đạo đức."
+                }
+              ]
+            }
           },
           {
             "id": "mcq1",
             "type": "mcq",
             "question": "I ______ my computer repaired yesterday.",
-            "options": ["have", "had", "has", "having"],
+            "options": [
+              "have",
+              "had",
+              "has",
+              "having"
+            ],
             "correct": 1,
             "explanation": "Had (Past Simple) - thể sai khiến bị động trong quá khứ: have + O + V3/ed."
           },
@@ -169,7 +165,12 @@
             "id": "mcq2",
             "type": "mcq",
             "question": "She ______ AI translate the document for her.",
-            "options": ["got to", "got", "get to", "getting"],
+            "options": [
+              "got to",
+              "got",
+              "get to",
+              "getting"
+            ],
             "correct": 1,
             "explanation": "Got - thể sai khiến chủ động: get + O + to V (AI to translate)."
           },
@@ -177,7 +178,12 @@
             "id": "mcq3",
             "type": "mcq",
             "question": "We ______ the robot ______ the house every day.",
-            "options": ["have / clean", "have / to clean", "have / cleaned", "has / clean"],
+            "options": [
+              "have / clean",
+              "have / to clean",
+              "have / cleaned",
+              "has / clean"
+            ],
             "correct": 0,
             "explanation": "Have...clean - thể sai khiến chủ động: have + O (person/thing) + V (bare infinitive)."
           },
@@ -185,7 +191,12 @@
             "id": "mcq4",
             "type": "mcq",
             "question": "I need to ______ my phone ______.",
-            "options": ["get / fix", "get / fixed", "got / fixed", "getting / fix"],
+            "options": [
+              "get / fix",
+              "get / fixed",
+              "got / fixed",
+              "getting / fix"
+            ],
             "correct": 1,
             "explanation": "Get...fixed - thể sai khiến bị động: get + O (thing) + V3/ed."
           },
@@ -193,7 +204,12 @@
             "id": "mcq5",
             "type": "mcq",
             "question": "The teacher ______ students ______ AI tools in class.",
-            "options": ["lets / use", "lets / to use", "let / using", "letting / use"],
+            "options": [
+              "lets / use",
+              "lets / to use",
+              "let / using",
+              "letting / use"
+            ],
             "correct": 0,
             "explanation": "Lets...use - let + O + V (bare infinitive): cho phép ai đó làm gì."
           },
@@ -201,7 +217,12 @@
             "id": "mcq6",
             "type": "mcq",
             "question": "AI ______ tasks ______ easier.",
-            "options": ["makes / become", "makes / to become", "make / becomes", "making / become"],
+            "options": [
+              "makes / become",
+              "makes / to become",
+              "make / becomes",
+              "making / become"
+            ],
             "correct": 0,
             "explanation": "Makes...become - make + O + V (bare infinitive): khiến cái gì trở nên như thế nào."
           },
@@ -209,7 +230,12 @@
             "id": "mcq7",
             "type": "mcq",
             "question": "I ______ my assistant ______ the data.",
-            "options": ["have / check", "have / to check", "has / check", "having / check"],
+            "options": [
+              "have / check",
+              "have / to check",
+              "has / check",
+              "having / check"
+            ],
             "correct": 0,
             "explanation": "Have...check - thể sai khiến chủ động: have + O (person) + V (bare infinitive)."
           },
@@ -217,7 +243,12 @@
             "id": "mcq8",
             "type": "mcq",
             "question": "She ______ her hair ______ every month.",
-            "options": ["has / cut", "has / to cut", "have / cut", "having / cut"],
+            "options": [
+              "has / cut",
+              "has / to cut",
+              "have / cut",
+              "having / cut"
+            ],
             "correct": 0,
             "explanation": "Has...cut - thể sai khiến bị động: have + O (thing) + V3/ed."
           },
@@ -225,7 +256,12 @@
             "id": "mcq9",
             "type": "mcq",
             "question": "We ______ the engineer ______ the robot.",
-            "options": ["got / fix", "got / to fix", "get / fixed", "getting / fix"],
+            "options": [
+              "got / fix",
+              "got / to fix",
+              "get / fixed",
+              "getting / fix"
+            ],
             "correct": 1,
             "explanation": "Got...to fix - thể sai khiến chủ động: get + O (person) + to V."
           },
@@ -233,7 +269,12 @@
             "id": "mcq10",
             "type": "mcq",
             "question": "My parents ______ me ______ chatbots for homework.",
-            "options": ["let / use", "let / to use", "lets / use", "letting / use"],
+            "options": [
+              "let / use",
+              "let / to use",
+              "lets / use",
+              "letting / use"
+            ],
             "correct": 0,
             "explanation": "Let...use - let + O + V (bare infinitive): cho phép."
           },
@@ -241,7 +282,12 @@
             "id": "mcq11",
             "type": "mcq",
             "question": "I'm ______ my computer ______ right now.",
-            "options": ["having / repaired", "have / repair", "had / repaired", "has / repaired"],
+            "options": [
+              "having / repaired",
+              "have / repair",
+              "had / repaired",
+              "has / repaired"
+            ],
             "correct": 0,
             "explanation": "Having...repaired - Present Continuous của thể sai khiến bị động."
           },
@@ -249,7 +295,12 @@
             "id": "mcq12",
             "type": "mcq",
             "question": "AI can ______ information very quickly.",
-            "options": ["process", "processes", "processing", "processed"],
+            "options": [
+              "process",
+              "processes",
+              "processing",
+              "processed"
+            ],
             "correct": 0,
             "explanation": "Process (v) - động từ nguyên thể sau 'can'."
           },
@@ -257,7 +308,12 @@
             "id": "mcq13",
             "type": "mcq",
             "question": "Facial recognition systems ______ faces accurately.",
-            "options": ["recognize", "recognizes", "recognizing", "recognized"],
+            "options": [
+              "recognize",
+              "recognizes",
+              "recognizing",
+              "recognized"
+            ],
             "correct": 0,
             "explanation": "Recognize (Present Simple) - chủ ngữ số nhiều 'systems'."
           },
@@ -265,7 +321,12 @@
             "id": "mcq14",
             "type": "mcq",
             "question": "I will ______ the software ______ tomorrow.",
-            "options": ["have / updated", "have / update", "has / updated", "having / update"],
+            "options": [
+              "have / updated",
+              "have / update",
+              "has / updated",
+              "having / update"
+            ],
             "correct": 0,
             "explanation": "Have...updated - Future của thể sai khiến bị động: will have + O + V3/ed."
           },
@@ -273,7 +334,12 @@
             "id": "mcq15",
             "type": "mcq",
             "question": "The boss ______ us ______ overtime.",
-            "options": ["made / work", "made / to work", "makes / working", "make / work"],
+            "options": [
+              "made / work",
+              "made / to work",
+              "makes / working",
+              "make / work"
+            ],
             "correct": 0,
             "explanation": "Made...work - make + O + V (bare infinitive): bắt buộc ai đó làm gì."
           },
@@ -281,7 +347,10 @@
             "id": "msq1",
             "type": "msq",
             "question_text": "In passive causative, we use: have/get + object + past participle.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Thể sai khiến bị động: have/get + O (thing) + V3/ed."
           },
@@ -289,7 +358,10 @@
             "id": "msq2",
             "type": "msq",
             "question_text": "After 'have' in active causative, we use 'to + infinitive'.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 1,
             "explanation": "Sai. Sau 'have' dùng bare infinitive (không 'to'): have + O + V."
           },
@@ -297,7 +369,10 @@
             "id": "msq3",
             "type": "msq",
             "question_text": "After 'get' in active causative, we use 'to + infinitive'.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Get + O + to V (có 'to')."
           },
@@ -305,7 +380,10 @@
             "id": "msq4",
             "type": "msq",
             "question_text": "AI can recognize patterns and make predictions.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. AI có thể nhận dạng mẫu và đưa ra dự đoán."
           },
@@ -313,7 +391,10 @@
             "id": "msq5",
             "type": "msq",
             "question_text": "'Make' and 'let' are followed by bare infinitive (without 'to').",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Make/let + O + V (bare infinitive)."
           },

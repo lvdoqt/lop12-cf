@@ -48,138 +48,122 @@
         "exercises": [
           {
             "id": "reading1",
-            "type": "reading",
-            "passage": "Nelson Mandela was born in 1918 in South Africa. He grew up during a time when black people faced severe discrimination under apartheid, a system that separated people by race. Despite these challenges, Mandela was determined to fight for equality and justice.\n\nWhile he was studying law at university, Mandela became involved in the anti-apartheid movement. He joined the African National Congress (ANC) and dedicated his life to ending racial discrimination. In 1964, he was arrested and sentenced to life in prison. He spent 27 years in jail, but he never gave up his beliefs.\n\nDuring his imprisonment, Mandela became a symbol of resistance. People around the world, which included leaders and ordinary citizens, campaigned for his release. Finally, in 1990, he was freed. Four years later, he became South Africa's first black president.\n\nMandela's legacy is remarkable. He showed that perseverance and forgiveness can overcome hatred. His story inspires millions of people to stand up for justice. He received the Nobel Peace Prize in 1993 and is remembered as one of the most influential leaders in history.",
-            "questions": [
-              {
-                "id": "reading1-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "Mandela was born in 1918",
-                  "Mandela's inspiring life story and fight for equality",
-                  "Apartheid was a bad system",
-                  "Mandela spent time in prison"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về câu chuyện cuộc đời truyền cảm hứng và cuộc đấu tranh cho bình đẳng của Mandela."
-              },
-              {
-                "id": "reading1-q2",
-                "question": "How long did Mandela spend in prison?",
-                "options": [
-                  "10 years",
-                  "27 years",
-                  "4 years",
-                  "50 years"
-                ],
-                "correct": 1,
-                "explanation": "Mandela dành 27 năm trong tù."
-              },
-              {
-                "id": "reading1-q3",
-                "question": "The word 'severe' in paragraph 1 is closest in meaning to ______.",
-                "options": [
-                  "mild",
-                  "very serious",
-                  "small",
-                  "happy"
-                ],
-                "correct": 1,
-                "explanation": "Severe = very serious (nghiêm trọng)."
-              },
-              {
-                "id": "reading1-q4",
-                "question": "When did Mandela become South Africa's president?",
-                "options": [
-                  "1964",
-                  "1990",
-                  "1994",
-                  "1993"
-                ],
-                "correct": 2,
-                "explanation": "Mandela trở thành tổng thống năm 1994 (4 năm sau khi được thả năm 1990)."
-              },
-              {
-                "id": "reading1-q5",
-                "question": "What did Mandela receive in 1993?",
-                "options": [
-                  "A prison sentence",
-                  "The Nobel Peace Prize",
-                  "A law degree",
-                  "Nothing"
-                ],
-                "correct": 1,
-                "explanation": "Mandela nhận giải Nobel Hòa bình năm 1993."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nNelson Mandela was born in 1918 in South Africa. He grew up during a time when black people faced severe discrimination under apartheid, a system that separated people by race. Despite these challenges, Mandela was determined to fight for equality and justice.\n\nWhile he was studying law at university, Mandela became involved in the anti-apartheid movement. He joined the African National Congress (ANC) and dedicated his life to ending racial discrimination. In 1964, he was arrested and sentenced to life in prison. He spent 27 years in jail, but he never gave up his beliefs.\n\nDuring his imprisonment, Mandela became a symbol of resistance. People around the world, which included leaders and ordinary citizens, campaigned for his release. Finally, in 1990, he was freed. Four years later, he became South Africa's first black president.\n\nMandela's legacy is remarkable. He showed that perseverance and forgiveness can overcome hatred. His story inspires millions of people to stand up for justice. He received the Nobel Peace Prize in 1993 and is remembered as one of the most influential leaders in history.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading1-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "Mandela was born in 1918",
+                  "option_b": "Mandela's inspiring life story and fight for equality",
+                  "option_c": "Apartheid was a bad system",
+                  "option_d": "Mandela spent time in prison",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về câu chuyện cuộc đời truyền cảm hứng và cuộc đấu tranh cho bình đẳng của Mandela."
+                },
+                {
+                  "id": "reading1-q2",
+                  "question": "How long did Mandela spend in prison?",
+                  "option_a": "10 years",
+                  "option_b": "27 years",
+                  "option_c": "4 years",
+                  "option_d": "50 years",
+                  "correct_option": "B",
+                  "explanation": "Mandela dành 27 năm trong tù."
+                },
+                {
+                  "id": "reading1-q3",
+                  "question": "The word 'severe' in paragraph 1 is closest in meaning to ______.",
+                  "option_a": "mild",
+                  "option_b": "very serious",
+                  "option_c": "small",
+                  "option_d": "happy",
+                  "correct_option": "B",
+                  "explanation": "Severe = very serious (nghiêm trọng)."
+                },
+                {
+                  "id": "reading1-q4",
+                  "question": "When did Mandela become South Africa's president?",
+                  "option_a": "1964",
+                  "option_b": "1990",
+                  "option_c": "1994",
+                  "option_d": "1993",
+                  "correct_option": "C",
+                  "explanation": "Mandela trở thành tổng thống năm 1994 (4 năm sau khi được thả năm 1990)."
+                },
+                {
+                  "id": "reading1-q5",
+                  "question": "What did Mandela receive in 1993?",
+                  "option_a": "A prison sentence",
+                  "option_b": "The Nobel Peace Prize",
+                  "option_c": "A law degree",
+                  "option_d": "Nothing",
+                  "correct_option": "B",
+                  "explanation": "Mandela nhận giải Nobel Hòa bình năm 1993."
+                }
+              ]
+            }
           }
 ,
           {
             "id": "reading2",
-            "type": "reading",
-            "passage": "Living in a multicultural society offers many benefits, but it also presents challenges. Countries like Canada and Australia have successfully created diverse communities where people from different cultures live together harmoniously.\n\nOne major advantage of multiculturalism is cultural enrichment. When people from various backgrounds share their traditions, cuisines, and customs, society becomes more interesting and vibrant. For example, in Toronto, you can experience food from over 200 countries. This diversity also promotes tolerance and understanding among different groups.\n\nHowever, integration can be difficult. Immigrants must learn a new language and adapt to different customs, which takes time and effort. Some people face discrimination, which makes them feel unwelcome. To address these issues, governments provide language classes and settlement services. Schools teach students about different cultures to promote respect from an early age.\n\nEnvironmental protection is also important in diverse societies. People should turn off lights when not needed and cut down on waste. Using public transportation instead of cars helps reduce carbon emissions. By working together, multicultural communities can create sustainable cities that benefit everyone.",
-            "questions": [
-              {
-                "id": "reading2-q1",
-                "question": "What is one benefit of multiculturalism mentioned?",
-                "options": [
-                  "Everyone speaks the same language",
-                  "Cultural enrichment and diversity",
-                  "No challenges exist",
-                  "People stay separate"
-                ],
-                "correct": 1,
-                "explanation": "Một lợi ích là làm phong phú văn hóa và sự đa dạng."
-              },
-              {
-                "id": "reading2-q2",
-                "question": "What challenge do immigrants face?",
-                "options": [
-                  "Too much food",
-                  "Learning a new language and adapting to customs",
-                  "Too many festivals",
-                  "Nothing difficult"
-                ],
-                "correct": 1,
-                "explanation": "Người nhập cư phải học ngôn ngữ mới và thích nghi với phong tục khác."
-              },
-              {
-                "id": "reading2-q3",
-                "question": "The word 'harmoniously' in paragraph 1 is closest in meaning to ______.",
-                "options": [
-                  "peacefully together",
-                  "separately",
-                  "angrily",
-                  "sadly"
-                ],
-                "correct": 0,
-                "explanation": "Harmoniously = peacefully together (hòa thuận, hòa hợp)."
-              },
-              {
-                "id": "reading2-q4",
-                "question": "How do governments help immigrants integrate?",
-                "options": [
-                  "By ignoring them",
-                  "By providing language classes and settlement services",
-                  "By sending them away",
-                  "By making them forget their culture"
-                ],
-                "correct": 1,
-                "explanation": "Chính phủ cung cấp lớp học ngôn ngữ và dịch vụ định cư."
-              },
-              {
-                "id": "reading2-q5",
-                "question": "According to the passage, what helps reduce carbon emissions?",
-                "options": [
-                  "Driving more cars",
-                  "Using public transportation",
-                  "Wasting energy",
-                  "Buying more products"
-                ],
-                "correct": 1,
-                "explanation": "Sử dụng phương tiện công cộng giúp giảm khí thải carbon."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nLiving in a multicultural society offers many benefits, but it also presents challenges. Countries like Canada and Australia have successfully created diverse communities where people from different cultures live together harmoniously.\n\nOne major advantage of multiculturalism is cultural enrichment. When people from various backgrounds share their traditions, cuisines, and customs, society becomes more interesting and vibrant. For example, in Toronto, you can experience food from over 200 countries. This diversity also promotes tolerance and understanding among different groups.\n\nHowever, integration can be difficult. Immigrants must learn a new language and adapt to different customs, which takes time and effort. Some people face discrimination, which makes them feel unwelcome. To address these issues, governments provide language classes and settlement services. Schools teach students about different cultures to promote respect from an early age.\n\nEnvironmental protection is also important in diverse societies. People should turn off lights when not needed and cut down on waste. Using public transportation instead of cars helps reduce carbon emissions. By working together, multicultural communities can create sustainable cities that benefit everyone.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading2-q1",
+                  "question": "What is one benefit of multiculturalism mentioned?",
+                  "option_a": "Everyone speaks the same language",
+                  "option_b": "Cultural enrichment and diversity",
+                  "option_c": "No challenges exist",
+                  "option_d": "People stay separate",
+                  "correct_option": "B",
+                  "explanation": "Một lợi ích là làm phong phú văn hóa và sự đa dạng."
+                },
+                {
+                  "id": "reading2-q2",
+                  "question": "What challenge do immigrants face?",
+                  "option_a": "Too much food",
+                  "option_b": "Learning a new language and adapting to customs",
+                  "option_c": "Too many festivals",
+                  "option_d": "Nothing difficult",
+                  "correct_option": "B",
+                  "explanation": "Người nhập cư phải học ngôn ngữ mới và thích nghi với phong tục khác."
+                },
+                {
+                  "id": "reading2-q3",
+                  "question": "The word 'harmoniously' in paragraph 1 is closest in meaning to ______.",
+                  "option_a": "peacefully together",
+                  "option_b": "separately",
+                  "option_c": "angrily",
+                  "option_d": "sadly",
+                  "correct_option": "A",
+                  "explanation": "Harmoniously = peacefully together (hòa thuận, hòa hợp)."
+                },
+                {
+                  "id": "reading2-q4",
+                  "question": "How do governments help immigrants integrate?",
+                  "option_a": "By ignoring them",
+                  "option_b": "By providing language classes and settlement services",
+                  "option_c": "By sending them away",
+                  "option_d": "By making them forget their culture",
+                  "correct_option": "B",
+                  "explanation": "Chính phủ cung cấp lớp học ngôn ngữ và dịch vụ định cư."
+                },
+                {
+                  "id": "reading2-q5",
+                  "question": "According to the passage, what helps reduce carbon emissions?",
+                  "option_a": "Driving more cars",
+                  "option_b": "Using public transportation",
+                  "option_c": "Wasting energy",
+                  "option_d": "Buying more products",
+                  "correct_option": "B",
+                  "explanation": "Sử dụng phương tiện công cộng giúp giảm khí thải carbon."
+                }
+              ]
+            }
           }
 ,
           {

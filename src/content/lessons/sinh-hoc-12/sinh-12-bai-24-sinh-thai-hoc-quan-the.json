@@ -104,6 +104,71 @@
             "explanation": "Thành phần tuổi gồm: tuổi trước sinh sản, tuổi sinh sản, tuổi sau sinh sản."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Công thức tăng trưởng mũ của quần thể là?",
+            "options": [
+              "Nt = N0 + rt",
+              "Nt = N0 × e^(rt)",
+              "Nt = N0 - rt",
+              "Nt = N0 / e^(rt)"
+            ],
+            "correct": 1,
+            "explanation": "Tăng trưởng mũ: Nt = N0 × e^(rt), không giới hạn bởi môi trường."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Khi N = K/2 trong mô hình logistic, tốc độ tăng trưởng đạt?",
+            "options": [
+              "Tối thiểu",
+              "Tối đa",
+              "Bằng 0",
+              "Không đổi"
+            ],
+            "correct": 1,
+            "explanation": "Tốc độ tăng tối đa khi N = K/2 vì (1 - N/K) × N đạt cực đại."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Tỷ lệ giới tính 1:1 phổ biến ở nhiều loài là do?",
+            "options": [
+              "Chọn lọc tự nhiên",
+              "Di cư",
+              "Đột biến",
+              "Ngẫu nhiên"
+            ],
+            "correct": 0,
+            "explanation": "Chọn lọc tự nhiên duy trì tỷ lệ 1:1 vì mỗi con cái cần một con đực để sinh sản tối ưu."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Quần thể có tháp tuổi dạng phát triển có đặc điểm?",
+            "options": [
+              "Đáy hẹp, đỉnh rộng",
+              "Đáy rộng, đỉnh hẹp",
+              "Đáy và đỉnh bằng nhau",
+              "Hình chữ nhật"
+            ],
+            "correct": 1,
+            "explanation": "Tháp tuổi phát triển: đáy rộng (nhiều cá thể non), đỉnh hẹp (ít cá thể già)."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Yếu tố nào KHÔNG ảnh hưởng đến kích thước quần thể?",
+            "options": [
+              "Tỷ lệ sinh",
+              "Tỷ lệ tử",
+              "Di cư",
+              "Màu sắc cơ thể"
+            ],
+            "correct": 3,
+            "explanation": "Màu sắc cơ thể không ảnh hưởng trực tiếp đến số lượng cá thể."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các yếu tố ảnh hưởng đến kích thước quần thể:",

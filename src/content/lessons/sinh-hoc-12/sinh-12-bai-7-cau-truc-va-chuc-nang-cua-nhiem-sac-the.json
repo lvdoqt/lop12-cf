@@ -104,6 +104,71 @@
             "explanation": "Giao tử có bộ nhiễm sắc thể đơn bội n = 23."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Nucleosome được cấu tạo từ?",
+            "options": [
+              "DNA và RNA",
+              "DNA và protein histone",
+              "Chỉ DNA",
+              "RNA và protein"
+            ],
+            "correct": 1,
+            "explanation": "Nucleosome gồm DNA quấn quanh 8 phân tử protein histone."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Ruồi giấm có bộ NST 2n bằng bao nhiêu?",
+            "options": [
+              "4",
+              "6",
+              "8",
+              "12"
+            ],
+            "correct": 2,
+            "explanation": "Ruồi giấm có 2n = 8 (4 cặp NST)."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "NST acrocentric (đầu mút) có tâm động ở vị trí nào?",
+            "options": [
+              "Ở giữa",
+              "Gần một đầu mút",
+              "Ở đầu mút",
+              "Không có tâm động"
+            ],
+            "correct": 1,
+            "explanation": "NST acrocentric (đầu mút) có tâm động nằm gần một đầu của NST."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Chức năng chính của NST là gì?",
+            "options": [
+              "Tổng hợp protein",
+              "Mang và bảo quản thông tin di truyền",
+              "Sản xuất năng lượng",
+              "Phân giải chất thải"
+            ],
+            "correct": 1,
+            "explanation": "NST mang gene, bảo quản và truyền đạt thông tin di truyền."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Bộ NST lưỡng bội của lúa (Oryza sativa) là?",
+            "options": [
+              "2n = 12",
+              "2n = 24",
+              "2n = 36",
+              "2n = 48"
+            ],
+            "correct": 1,
+            "explanation": "Lúa có 2n = 24 NST."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các thành phần cấu trúc của nhiễm sắc thể:",

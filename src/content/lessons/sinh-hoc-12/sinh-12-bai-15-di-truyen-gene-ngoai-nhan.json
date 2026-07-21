@@ -94,7 +94,7 @@
             "id": "ex5",
             "type": "mcq",
             "question": "Ứng dụng nào của di truyền ti thể?",
-              "options": [
+            "options": [
               "Tạo giống cây trồng",
               "Nghiên cứu tiến hóa và pháp y",
               "Chẩn đoán bệnh",
@@ -102,6 +102,71 @@
             ],
             "correct": 3,
             "explanation": "Di truyền ti thể được ứng dụng trong nghiên cứu tiến hóa, pháp y, chẩn đoán bệnh và tạo giống."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Liên kết phosphodiester trong DNA được hình thành giữa những thành phần nào?",
+            "options": [
+              "Giữa các bazơ nitơ",
+              "Giữa đường và nhóm phosphate",
+              "Giữa các đường deoxyribose",
+              "Giữa các nhóm phosphate"
+            ],
+            "correct": 1,
+            "explanation": "Liên kết phosphodiester được hình thành giữa đường deoxyribose của nucleotit này với nhóm phosphate của nucleotit kế tiếp."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Một phân tử DNA tự nhân đôi 3 lần liên tiếp tạo ra bao nhiêu phân tử DNA con?",
+            "options": [
+              "4",
+              "6",
+              "8",
+              "16"
+            ],
+            "correct": 2,
+            "explanation": "Số phân tử DNA con = 2^3 = 8."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Chiều tổng hợp của mạch mới trong quá trình tái bản DNA là?",
+            "options": [
+              "3' → 5'",
+              "5' → 3'",
+              "Cả hai chiều",
+              "Không xác định"
+            ],
+            "correct": 1,
+            "explanation": "DNA polymerase chỉ tổng hợp mạch mới theo chiều 5' → 3'."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Các đoạn Okazaki được nối với nhau nhờ enzyme nào?",
+            "options": [
+              "DNA polymerase III",
+              "Helicase",
+              "DNA ligase",
+              "Topoisomerase"
+            ],
+            "correct": 2,
+            "explanation": "DNA ligase có chức năng nối các đoạn Okazaki thành mạch hoàn chỉnh."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Trong cấu trúc DNA, nguyên tắc bổ sung được thể hiện như thế nào?",
+            "options": [
+              "A-G, T-C",
+              "A-T, G-C",
+              "A-C, T-G",
+              "A-T, G-G"
+            ],
+            "correct": 1,
+            "explanation": "A luôn liên kết với T (2 liên kết H), G luôn liên kết với C (3 liên kết H)."
           },
           {
             "id": "msq1",

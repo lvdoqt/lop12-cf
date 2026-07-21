@@ -80,9 +80,9 @@
             ],
             "correct": 1,
             "explanation": "Quang hợp lấy CO₂ từ khí quyển, chuyển thành carbon hữu cơ."
-            },
+          },
           {
-           "id":"ex4",
+            "id": "ex4",
             "type": "mcq",
             "question": "Vi khuẩn nào có vai trò cố định nitơ trong chu trình nitơ?",
             "options": [
@@ -106,6 +106,71 @@
             ],
             "correct": 0,
             "explanation": "Chu trình nước gồm: bốc hơi → ngưng tụ → mưa → thấm → chảy → bốc hơi."
+          },
+          {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Sinh quyển bao gồm những phần nào của Trái Đất?",
+            "options": [
+              "Chỉ thủy quyển",
+              "Khí quyển, thủy quyển, thạch quyển có sinh vật",
+              "Chỉ thạch quyển",
+              "Chỉ khí quyển"
+            ],
+            "correct": 1,
+            "explanation": "Sinh quyển gồm phần khí quyển, thủy quyển và thạch quyển có sự sống."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Khu sinh học rừng taiga có đặc điểm khí hậu?",
+            "options": [
+              "Nóng ẩm",
+              "Ôn đới 4 mùa",
+              "Lạnh, cây lá kim",
+              "Khô hạn"
+            ],
+            "correct": 2,
+            "explanation": "Taiga có khí hậu lạnh, cây lá kim (thông, tùng) chiếm ưu thế."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Trong chu trình carbon, carbon từ sinh vật trở lại khí quyển qua?",
+            "options": [
+              "Quang hợp",
+              "Hô hấp và phân hủy",
+              "Cố định carbon",
+              "Lắng đọng"
+            ],
+            "correct": 1,
+            "explanation": "Hô hấp và phân hủy giải phóng CO2 từ sinh vật trở lại khí quyển."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Quá trình nitrat hóa chuyển NH3 thành?",
+            "options": [
+              "N2",
+              "NO2- và NO3-",
+              "Protein",
+              "Ure"
+            ],
+            "correct": 1,
+            "explanation": "Nitrat hóa: NH3 → NO2- (Nitrosomonas) → NO3- (Nitrobacter)."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Chu trình phốtpho khác chu trình carbon và nitơ ở điểm nào?",
+            "options": [
+              "Có dạng khí",
+              "Không có dạng khí, tuần hoàn chậm",
+              "Nhanh hơn",
+              "Chỉ xảy ra trong nước"
+            ],
+            "correct": 1,
+            "explanation": "Phốtpho không có dạng khí, tuần hoàn chậm qua phong hóa đá và phân hủy."
           },
           {
             "id": "msq1",

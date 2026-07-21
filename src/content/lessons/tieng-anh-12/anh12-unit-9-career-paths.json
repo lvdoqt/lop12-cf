@@ -33,8 +33,7 @@
             {
               "heading": "2. Luyện tập từ vựng (Vocabulary Practice)",
               "content": "<p><strong>Career-related Terms (Thuật ngữ về nghề nghiệp):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>career path:</strong> con đường sự nghiệp</li><li><strong>career development:</strong> phát triển nghề nghiệp</li><li><strong>career goal:</strong> mục tiêu nghề nghiệp</li><li><strong>career change:</strong> thay đổi nghề nghiệp</li><li><strong>career advancement:</strong> thăng tiến trong sự nghiệp</li><li><strong>career counseling:</strong> tư vấn nghề nghiệp</li><li><strong>career prospects:</strong> triển vọng nghề nghiệp</li></ul><p><strong>Job Application (Xin việc):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>apply for a job:</strong> nộp đơn xin việc</li><li><strong>CV/resume:</strong> sơ yếu lý lịch</li><li><strong>cover letter:</strong> thư xin việc</li><li><strong>job interview:</strong> phỏng vấn xin việc</li><li><strong>reference:</strong> thư giới thiệu</li><li><strong>job offer:</strong> lời mời làm việc</li><li><strong>probation period:</strong> thời gian thử việc</li></ul><p><strong>Skills (Kỹ năng):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>hard skills:</strong> kỹ năng chuyên môn (technical skills, computer skills)</li><li><strong>soft skills:</strong> kỹ năng mềm (communication, teamwork, problem-solving)</li><li><strong>leadership skills:</strong> kỹ năng lãnh đạo</li><li><strong>time management:</strong> quản lý thời gian</li><li><strong>critical thinking:</strong> tư duy phản biện</li><li><strong>adaptability:</strong> khả năng thích nghi</li></ul><p><strong>Workplace (Nơi làm việc):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>colleague:</strong> đồng nghiệp</li><li><strong>supervisor/manager:</strong> người quản lý</li><li><strong>employee:</strong> nhân viên</li><li><strong>employer:</strong> người sử dụng lao động</li><li><strong>team:</strong> nhóm, đội</li><li><strong>department:</strong> phòng ban</li><li><strong>office:</strong> văn phòng</li></ul><p><strong>Work Conditions (Điều kiện làm việc):</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>full-time job:</strong> công việc toàn thời gian</li><li><strong>part-time job:</strong> công việc bán thời gian</li><li><strong>remote work:</strong> làm việc từ xa</li><li><strong>flexible hours:</strong> giờ làm việc linh hoạt</li><li><strong>overtime:</strong> làm thêm giờ</li><li><strong>work-life balance:</strong> cân bằng công việc và cuộc sống</li></ul><p><strong>Collocations về Career:</strong></p><ul class='list-disc pl-5 space-y-2'><li><strong>pursue a career:</strong> theo đuổi sự nghiệp</li><li><strong>build a career:</strong> xây dựng sự nghiệp</li><li><strong>advance one's career:</strong> thăng tiến trong sự nghiệp</li><li><strong>change careers:</strong> thay đổi nghề nghiệp</li><li><strong>gain experience:</strong> tích lũy kinh nghiệm</li><li><strong>develop skills:</strong> phát triển kỹ năng</li><li><strong>get promoted:</strong> được thăng chức</li><li><strong>earn a salary:</strong> kiếm lương</li></ul>"
-            }
-,
+            },
             {
               "heading": "3. Ngữ âm: Nhấn mạnh trong cụm động từ có 3 từ",
               "content": "<h3>Stress in three-word phrasal verbs</h3><p><strong>Quy tắc nhấn mạnh:</strong></p><p><strong>1. Cụm động từ có 3 từ (Three-word phrasal verbs):</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh vào từ cuối cùng (giới từ thứ hai)</li><li>Ex: look <strong>FORWARD TO</strong></li><li>Ex: get <strong>ON WITH</strong></li><li>Ex: come <strong>UP WITH</strong></li></ul><p><strong>2. Trong câu:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Nhấn mạnh động từ chính và giới từ cuối</li><li>Ex: I'm <strong>LOOKING FORWARD TO</strong> the interview.</li><li>Ex: She <strong>CAME UP WITH</strong> a great idea.</li><li>Ex: We need to <strong>CATCH UP WITH</strong> the deadline.</li></ul><p><strong>3. Lưu ý:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Động từ chính thường nhấn nhẹ hơn</li><li>Giới từ đầu tiên nhấn vừa phải</li><li>Giới từ cuối cùng được nhấn mạnh nhất</li></ul>"
@@ -92,76 +91,73 @@
         "exercises": [
           {
             "id": "reading1",
-            "type": "reading",
-            "passage": "Choosing the right career path is one of the most important decisions young people face. Many students look forward to starting their professional lives, but they often struggle to come up with a clear plan. Career planning requires careful thought about your interests, skills, and goals.\n\nSuccessful professionals emphasize the importance of developing both hard skills and soft skills. Hard skills are technical abilities specific to your field, such as programming, accounting, or medical knowledge. Soft skills include communication, teamwork, and problem-solving. Employers look for candidates who can keep up with industry changes and adapt to new challenges. You need to face up to the reality that learning never stops - continuous education is essential in today's fast-paced world.\n\nBuilding a career also means building relationships. You should get on with your colleagues and supervisors, as good working relationships lead to better opportunities. Many young professionals look up to mentors who guide them through career challenges. A mentor can help you come up with solutions when you face difficulties and can make up for your lack of experience with their wisdom.\n\nWork-life balance is another crucial factor. While ambition is important, you shouldn't put up with excessive stress or unreasonable working conditions. Some people run out of energy because they work too hard without taking breaks. Remember that a sustainable career is one where you can live up to your potential while maintaining your health and happiness.\n\nFinally, don't be afraid to change direction if needed. Many successful people have gone through with career changes that initially seemed risky. The key is to keep learning, stay flexible, and never look down on any honest work. Every experience helps you grow professionally.",
-            "questions": [
-              {
-                "id": "reading1-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "Career planning is easy",
-                  "Career planning requires thought about skills, relationships, and balance",
-                  "Only hard skills matter",
-                  "Career changes are impossible"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về việc lập kế hoạch nghề nghiệp cần suy nghĩ về kỹ năng, mối quan hệ và sự cân bằng."
-              },
-              {
-                "id": "reading1-q2",
-                "question": "According to the passage, what are hard skills?",
-                "options": [
-                  "Communication and teamwork",
-                  "Technical abilities specific to your field",
-                  "Problem-solving skills",
-                  "Relationship building"
-                ],
-                "correct": 1,
-                "explanation": "Hard skills là kỹ năng kỹ thuật cụ thể cho lĩnh vực của bạn."
-              },
-              {
-                "id": "reading1-q3",
-                "question": "The phrase 'keep up with' in paragraph 2 is closest in meaning to ______.",
-                "options": [
-                  "ignore",
-                  "stay current with",
-                  "fall behind",
-                  "avoid"
-                ],
-                "correct": 1,
-                "explanation": "Keep up with = stay current with (theo kịp, bắt kịp)."
-              },
-              {
-                "id": "reading1-q4",
-                "question": "Why is having a mentor important?",
-                "options": [
-                  "They do your work",
-                  "They help you find solutions and compensate for lack of experience",
-                  "They give you money",
-                  "They are not important"
-                ],
-                "correct": 1,
-                "explanation": "Người cố vấn giúp bạn tìm giải pháp và bù đắp cho sự thiếu kinh nghiệm."
-              },
-              {
-                "id": "reading1-q5",
-                "question": "What does the passage say about career changes?",
-                "options": [
-                  "They should be avoided",
-                  "They are always easy",
-                  "They can be successful even if initially risky",
-                  "They never work"
-                ],
-                "correct": 2,
-                "explanation": "Thay đổi nghề nghiệp có thể thành công ngay cả khi ban đầu có vẻ rủi ro."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nChoosing the right career path is one of the most important decisions young people face. Many students look forward to starting their professional lives, but they often struggle to come up with a clear plan. Career planning requires careful thought about your interests, skills, and goals.\n\nSuccessful professionals emphasize the importance of developing both hard skills and soft skills. Hard skills are technical abilities specific to your field, such as programming, accounting, or medical knowledge. Soft skills include communication, teamwork, and problem-solving. Employers look for candidates who can keep up with industry changes and adapt to new challenges. You need to face up to the reality that learning never stops - continuous education is essential in today's fast-paced world.\n\nBuilding a career also means building relationships. You should get on with your colleagues and supervisors, as good working relationships lead to better opportunities. Many young professionals look up to mentors who guide them through career challenges. A mentor can help you come up with solutions when you face difficulties and can make up for your lack of experience with their wisdom.\n\nWork-life balance is another crucial factor. While ambition is important, you shouldn't put up with excessive stress or unreasonable working conditions. Some people run out of energy because they work too hard without taking breaks. Remember that a sustainable career is one where you can live up to your potential while maintaining your health and happiness.\n\nFinally, don't be afraid to change direction if needed. Many successful people have gone through with career changes that initially seemed risky. The key is to keep learning, stay flexible, and never look down on any honest work. Every experience helps you grow professionally.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading1-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "Career planning is easy",
+                  "option_b": "Career planning requires thought about skills, relationships, and balance",
+                  "option_c": "Only hard skills matter",
+                  "option_d": "Career changes are impossible",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về việc lập kế hoạch nghề nghiệp cần suy nghĩ về kỹ năng, mối quan hệ và sự cân bằng."
+                },
+                {
+                  "id": "reading1-q2",
+                  "question": "According to the passage, what are hard skills?",
+                  "option_a": "Communication and teamwork",
+                  "option_b": "Technical abilities specific to your field",
+                  "option_c": "Problem-solving skills",
+                  "option_d": "Relationship building",
+                  "correct_option": "B",
+                  "explanation": "Hard skills là kỹ năng kỹ thuật cụ thể cho lĩnh vực của bạn."
+                },
+                {
+                  "id": "reading1-q3",
+                  "question": "The phrase 'keep up with' in paragraph 2 is closest in meaning to ______.",
+                  "option_a": "ignore",
+                  "option_b": "stay current with",
+                  "option_c": "fall behind",
+                  "option_d": "avoid",
+                  "correct_option": "B",
+                  "explanation": "Keep up with = stay current with (theo kịp, bắt kịp)."
+                },
+                {
+                  "id": "reading1-q4",
+                  "question": "Why is having a mentor important?",
+                  "option_a": "They do your work",
+                  "option_b": "They help you find solutions and compensate for lack of experience",
+                  "option_c": "They give you money",
+                  "option_d": "They are not important",
+                  "correct_option": "B",
+                  "explanation": "Người cố vấn giúp bạn tìm giải pháp và bù đắp cho sự thiếu kinh nghiệm."
+                },
+                {
+                  "id": "reading1-q5",
+                  "question": "What does the passage say about career changes?",
+                  "option_a": "They should be avoided",
+                  "option_b": "They are always easy",
+                  "option_c": "They can be successful even if initially risky",
+                  "option_d": "They never work",
+                  "correct_option": "C",
+                  "explanation": "Thay đổi nghề nghiệp có thể thành công ngay cả khi ban đầu có vẻ rủi ro."
+                }
+              ]
+            }
           },
           {
             "id": "mcq1",
             "type": "mcq",
             "question": "I'm really looking forward ______ my new job next month.",
-            "options": ["to start", "to starting", "start", "starting"],
+            "options": [
+              "to start",
+              "to starting",
+              "start",
+              "starting"
+            ],
             "correct": 1,
             "explanation": "Look forward to + V-ing (mong chờ làm gì)."
           },
@@ -169,7 +165,12 @@
             "id": "mcq2",
             "type": "mcq",
             "question": "She ______ a brilliant solution to the problem.",
-            "options": ["came up with", "came with up", "came up", "up came with"],
+            "options": [
+              "came up with",
+              "came with up",
+              "came up",
+              "up came with"
+            ],
             "correct": 0,
             "explanation": "Come up with = nghĩ ra, đưa ra (giải pháp, ý tưởng)."
           },
@@ -177,7 +178,12 @@
             "id": "mcq3",
             "type": "mcq",
             "question": "I ______ my colleagues very well.",
-            "options": ["get with on", "get on with", "get on", "on get with"],
+            "options": [
+              "get with on",
+              "get on with",
+              "get on",
+              "on get with"
+            ],
             "correct": 1,
             "explanation": "Get on with = hòa hợp với, có quan hệ tốt với."
           },
@@ -185,7 +191,12 @@
             "id": "mcq4",
             "type": "mcq",
             "question": "We need to ______ the latest technology trends.",
-            "options": ["keep up with", "keep with up", "keep up", "up keep with"],
+            "options": [
+              "keep up with",
+              "keep with up",
+              "keep up",
+              "up keep with"
+            ],
             "correct": 0,
             "explanation": "Keep up with = theo kịp, bắt kịp."
           },
@@ -193,7 +204,12 @@
             "id": "mcq5",
             "type": "mcq",
             "question": "I can't ______ this stressful work environment anymore.",
-            "options": ["put with up", "put up with", "put up", "up put with"],
+            "options": [
+              "put with up",
+              "put up with",
+              "put up",
+              "up put with"
+            ],
             "correct": 1,
             "explanation": "Put up with = chịu đựng."
           },
@@ -201,7 +217,12 @@
             "id": "mcq6",
             "type": "mcq",
             "question": "We're ______ time to finish the project.",
-            "options": ["running out of", "running of out", "running out", "out running of"],
+            "options": [
+              "running out of",
+              "running of out",
+              "running out",
+              "out running of"
+            ],
             "correct": 0,
             "explanation": "Run out of = hết, cạn kiệt."
           },
@@ -209,7 +230,12 @@
             "id": "mcq7",
             "type": "mcq",
             "question": "Young people ______ successful entrepreneurs.",
-            "options": ["look to up", "look up to", "look up", "up look to"],
+            "options": [
+              "look to up",
+              "look up to",
+              "look up",
+              "up look to"
+            ],
             "correct": 1,
             "explanation": "Look up to = kính trọng, ngưỡng mộ."
           },
@@ -217,7 +243,12 @@
             "id": "mcq8",
             "type": "mcq",
             "question": "You must ______ the challenges in your career.",
-            "options": ["face up to", "face to up", "face up", "up face to"],
+            "options": [
+              "face up to",
+              "face to up",
+              "face up",
+              "up face to"
+            ],
             "correct": 0,
             "explanation": "Face up to = đối mặt với."
           },
@@ -225,7 +256,12 @@
             "id": "mcq9",
             "type": "mcq",
             "question": "She always ______ her promises.",
-            "options": ["lives to up", "lives up to", "lives up", "up lives to"],
+            "options": [
+              "lives to up",
+              "lives up to",
+              "lives up",
+              "up lives to"
+            ],
             "correct": 1,
             "explanation": "Live up to = đáp ứng, sống theo (kỳ vọng, lời hứa)."
           },
@@ -233,7 +269,12 @@
             "id": "mcq10",
             "type": "mcq",
             "question": "I need to ______ my missed work.",
-            "options": ["catch up with", "catch with up", "catch up", "up catch with"],
+            "options": [
+              "catch up with",
+              "catch with up",
+              "catch up",
+              "up catch with"
+            ],
             "correct": 0,
             "explanation": "Catch up with = bắt kịp."
           },
@@ -241,7 +282,12 @@
             "id": "mcq11",
             "type": "mcq",
             "question": "Hard work can ______ lack of experience.",
-            "options": ["make for up", "make up for", "make up", "up make for"],
+            "options": [
+              "make for up",
+              "make up for",
+              "make up",
+              "up make for"
+            ],
             "correct": 1,
             "explanation": "Make up for = bù đắp."
           },
@@ -249,7 +295,12 @@
             "id": "mcq12",
             "type": "mcq",
             "question": "We decided to ______ the career change plan.",
-            "options": ["go through with", "go with through", "go through", "through go with"],
+            "options": [
+              "go through with",
+              "go with through",
+              "go through",
+              "through go with"
+            ],
             "correct": 0,
             "explanation": "Go through with = thực hiện đến cùng."
           },
@@ -257,7 +308,12 @@
             "id": "mcq13",
             "type": "mcq",
             "question": "The company needs to ______ unnecessary expenses.",
-            "options": ["cut down on", "cut on down", "cut down", "down cut on"],
+            "options": [
+              "cut down on",
+              "cut on down",
+              "cut down",
+              "down cut on"
+            ],
             "correct": 0,
             "explanation": "Cut down on = cắt giảm."
           },
@@ -265,7 +321,12 @@
             "id": "mcq14",
             "type": "mcq",
             "question": "Don't ______ any profession.",
-            "options": ["look down on", "look on down", "look down", "down look on"],
+            "options": [
+              "look down on",
+              "look on down",
+              "look down",
+              "down look on"
+            ],
             "correct": 0,
             "explanation": "Look down on = coi thường."
           },
@@ -273,7 +334,12 @@
             "id": "mcq15",
             "type": "mcq",
             "question": "You can't ______ being late to work.",
-            "options": ["get away with", "get with away", "get away", "away get with"],
+            "options": [
+              "get away with",
+              "get with away",
+              "get away",
+              "away get with"
+            ],
             "correct": 0,
             "explanation": "Get away with = thoát khỏi hình phạt."
           },
@@ -281,7 +347,10 @@
             "id": "msq1",
             "type": "msq",
             "question_text": "Three-word phrasal verbs cannot be separated.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Cụm động từ có 3 từ không thể tách rời, tân ngữ luôn đứng sau."
           },
@@ -289,7 +358,10 @@
             "id": "msq2",
             "type": "msq",
             "question_text": "After 'look forward to', we use V-ing, not to-infinitive.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Look forward to + V-ing (to là giới từ, không phải to-infinitive)."
           },
@@ -297,7 +369,10 @@
             "id": "msq3",
             "type": "msq",
             "question_text": "'Come up with' means to think of or produce an idea.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Come up with = nghĩ ra, đưa ra (ý tưởng, giải pháp)."
           },
@@ -305,7 +380,10 @@
             "id": "msq4",
             "type": "msq",
             "question_text": "'Look up to' and 'look down on' have similar meanings.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 1,
             "explanation": "Sai. Look up to = ngưỡng mộ, look down on = coi thường (nghĩa trái ngược)."
           },
@@ -313,7 +391,10 @@
             "id": "msq5",
             "type": "msq",
             "question_text": "Soft skills include communication, teamwork, and problem-solving.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Soft skills (kỹ năng mềm) bao gồm giao tiếp, làm việc nhóm, giải quyết vấn đề."
           },

@@ -104,6 +104,71 @@
             "explanation": "Đột biến dịch khung xảy ra khi thêm hoặc mất số nucleotit không chia hết cho 3, làm thay đổi khung đọc từ vị trí đột biến."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Đột biến thay thế một cặp nucleotit có thể gây ra hậu quả gì?",
+            "options": [
+              "Luôn có hại",
+              "Luôn có lợi",
+              "Có thể đồng nghĩa, sai nghĩa hoặc vô nghĩa",
+              "Không ảnh hưởng"
+            ],
+            "correct": 2,
+            "explanation": "Đột biến thay thế có thể là đồng nghĩa (cùng axit amin), sai nghĩa (khác axit amin) hoặc vô nghĩa (tạo codon kết thúc)."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Loại đột biến nào gây dịch khung đọc (frameshift)?",
+            "options": [
+              "Thay thế 1 cặp A-T",
+              "Mất 2 cặp nucleotit",
+              "Thay thế 1 cặp G-C",
+              "Đảo đoạn"
+            ],
+            "correct": 1,
+            "explanation": "Mất hoặc thêm số nucleotit không chia hết cho 3 sẽ gây dịch khung đọc."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Tác nhân nào gây đột biến bằng cách tạo dimer thymine?",
+            "options": [
+              "Tia X",
+              "Tia UV",
+              "5-bromouracil",
+              "Nitrosoguanidine"
+            ],
+            "correct": 1,
+            "explanation": "Tia UV (tia cực tím) làm hai thymine kề nhau trên DNA liên kết với nhau tạo dimer thymine."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Đột biến vô nghĩa (nonsense) xảy ra khi?",
+            "options": [
+              "Codon mới mã hóa cùng axit amin",
+              "Codon mới mã hóa axit amin khác",
+              "Codon mới trở thành codon kết thúc",
+              "Mất toàn bộ khung đọc"
+            ],
+            "correct": 2,
+            "explanation": "Đột biến vô nghĩa biến đổi codon mã hóa thành codon kết thúc, làm dừng dịch mã sớm."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Tần số đột biến tự nhiên thường ở mức nào?",
+            "options": [
+              "10^-1 đến 10^-2",
+              "10^-3 đến 10^-4",
+              "10^-5 đến 10^-6",
+              "10^-7 đến 10^-8"
+            ],
+            "correct": 2,
+            "explanation": "Tần số đột biến tự nhiên rất thấp, khoảng 10^-5 đến 10^-6 cho mỗi gene mỗi thế hệ."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các loại đột biến điểm:",

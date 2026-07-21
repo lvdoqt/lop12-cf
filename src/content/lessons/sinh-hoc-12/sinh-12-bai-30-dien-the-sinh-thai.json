@@ -108,6 +108,71 @@
             "explanation": "Địa y là sinh vật đầu tiên xuất hiện trên đá trần, phá vỡ đá tạo đất."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Diễn thế nguyên sinh xảy ra ở môi trường?",
+            "options": [
+              "Đã có quần xã",
+              "Chưa có sinh vật (đất trống, núi lửa)",
+              "Môi trường nước",
+              "Đồng ruộng"
+            ],
+            "correct": 1,
+            "explanation": "Diễn thế nguyên sinh bắt đầu từ môi trường chưa có sinh vật, như đất trống, đá núi lửa."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Diễn thế thứ sinh xảy ra khi?",
+            "options": [
+              "Môi trường hoàn toàn mới",
+              "Quần xã bị phá hủy một phần",
+              "Núi lửa phun",
+              "Biển tiến"
+            ],
+            "correct": 1,
+            "explanation": "Diễn thế thứ sinh xảy ra trên nền quần xã đã tồn tại nhưng bị suy thoái."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Nguyên nhân chính gây diễn thế sinh thái là?",
+            "options": [
+              "Chỉ do con người",
+              "Thay đổi môi trường và tác động của sinh vật",
+              "Chỉ do khí hậu",
+              "Ngẫu nhiên"
+            ],
+            "correct": 1,
+            "explanation": "Diễn thế do cả nguyên nhân bên ngoài (môi trường) và bên trong (tác động của sinh vật)."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Giai đoạn cuối của diễn thế nguyên sinh là?",
+            "options": [
+              "Quần xã suy thoái",
+              "Quần xã đỉnh cực (climax)",
+              "Đất trống",
+              "Cỏ mọc"
+            ],
+            "correct": 1,
+            "explanation": "Diễn thế kết thúc ở quần xã đỉnh cực, ổn định và phù hợp với môi trường."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Hoạt động nào của con người gây diễn thế thứ sinh?",
+            "options": [
+              "Trồng rừng",
+              "Phá rừng làm nương rẫy",
+              "Bảo tồn thiên nhiên",
+              "Xây dựng vườn quốc gia"
+            ],
+            "correct": 1,
+            "explanation": "Phá rừng làm nương rẫy làm suy thoái quần xã, kích hoạt diễn thế thứ sinh."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các loại diễn thế sinh thái:",

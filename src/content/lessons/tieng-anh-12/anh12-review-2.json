@@ -47,144 +47,132 @@
         "exercises": [
           {
             "id": "reading1",
-            "type": "reading",
-            "passage": "Urbanisation has transformed cities worldwide over the past few decades. More and more people have moved from rural areas to urban centers in search of better opportunities. This rapid migration has created both exciting possibilities and serious challenges.\n\nThe main attraction of cities is economic opportunity. Urban areas offer more jobs, higher salaries, and better access to education and healthcare. For example, in Vietnam, Ho Chi Minh City and Hanoi have become major economic hubs. The more people move to these cities, the more diverse and dynamic they become. Young people, in particular, are drawn to cities because they want to pursue their careers and gain valuable work experience.\n\nHowever, rapid urbanisation has created significant problems. The bigger cities grow, the more crowded they become. Traffic congestion has worsened dramatically, and many cities struggle with inadequate infrastructure. Although governments have invested in public transportation, the demand continues to exceed supply. Housing has become increasingly expensive, and many low-income workers cannot afford decent accommodation.\n\nTo address these challenges, cities need better urban planning. The more money invested in infrastructure, the better the quality of life will be. Governments should build affordable housing and improve public services. If cities can manage growth effectively, they will continue to be engines of economic development while maintaining livability for all residents.",
-            "questions": [
-              {
-                "id": "reading1-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "Cities are perfect places",
-                  "Urbanisation brings both opportunities and challenges",
-                  "Everyone should move to cities",
-                  "Rural life is better"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về đô thị hóa mang lại cả cơ hội và thách thức."
-              },
-              {
-                "id": "reading1-q2",
-                "question": "Why do young people move to cities?",
-                "options": [
-                  "Because they like crowds",
-                  "To pursue careers and gain work experience",
-                  "To escape family",
-                  "Because rural life is boring"
-                ],
-                "correct": 1,
-                "explanation": "Người trẻ chuyển đến thành phố để theo đuổi sự nghiệp và tích lũy kinh nghiệm làm việc."
-              },
-              {
-                "id": "reading1-q3",
-                "question": "The word 'inadequate' in paragraph 3 is closest in meaning to ______.",
-                "options": [
-                  "sufficient",
-                  "not enough",
-                  "excellent",
-                  "modern"
-                ],
-                "correct": 1,
-                "explanation": "Inadequate = not enough (không đủ, thiếu)."
-              },
-              {
-                "id": "reading1-q4",
-                "question": "What problem is mentioned in the passage?",
-                "options": [
-                  "Too many parks",
-                  "Traffic congestion and expensive housing",
-                  "Too much money",
-                  "Too few people"
-                ],
-                "correct": 1,
-                "explanation": "Các vấn đề được đề cập là tắc nghẽn giao thông và nhà ở đắt đỏ."
-              },
-              {
-                "id": "reading1-q5",
-                "question": "According to the passage, what is one solution?",
-                "options": [
-                  "Stop urbanisation",
-                  "Better urban planning and infrastructure investment",
-                  "Build more slums",
-                  "Do nothing"
-                ],
-                "correct": 1,
-                "explanation": "Một giải pháp là quy hoạch đô thị tốt hơn và đầu tư vào cơ sở hạ tầng."
-              }
-            ]
-          }
-,
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nUrbanisation has transformed cities worldwide over the past few decades. More and more people have moved from rural areas to urban centers in search of better opportunities. This rapid migration has created both exciting possibilities and serious challenges.\n\nThe main attraction of cities is economic opportunity. Urban areas offer more jobs, higher salaries, and better access to education and healthcare. For example, in Vietnam, Ho Chi Minh City and Hanoi have become major economic hubs. The more people move to these cities, the more diverse and dynamic they become. Young people, in particular, are drawn to cities because they want to pursue their careers and gain valuable work experience.\n\nHowever, rapid urbanisation has created significant problems. The bigger cities grow, the more crowded they become. Traffic congestion has worsened dramatically, and many cities struggle with inadequate infrastructure. Although governments have invested in public transportation, the demand continues to exceed supply. Housing has become increasingly expensive, and many low-income workers cannot afford decent accommodation.\n\nTo address these challenges, cities need better urban planning. The more money invested in infrastructure, the better the quality of life will be. Governments should build affordable housing and improve public services. If cities can manage growth effectively, they will continue to be engines of economic development while maintaining livability for all residents.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading1-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "Cities are perfect places",
+                  "option_b": "Urbanisation brings both opportunities and challenges",
+                  "option_c": "Everyone should move to cities",
+                  "option_d": "Rural life is better",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về đô thị hóa mang lại cả cơ hội và thách thức."
+                },
+                {
+                  "id": "reading1-q2",
+                  "question": "Why do young people move to cities?",
+                  "option_a": "Because they like crowds",
+                  "option_b": "To pursue careers and gain work experience",
+                  "option_c": "To escape family",
+                  "option_d": "Because rural life is boring",
+                  "correct_option": "B",
+                  "explanation": "Người trẻ chuyển đến thành phố để theo đuổi sự nghiệp và tích lũy kinh nghiệm làm việc."
+                },
+                {
+                  "id": "reading1-q3",
+                  "question": "The word 'inadequate' in paragraph 3 is closest in meaning to ______.",
+                  "option_a": "sufficient",
+                  "option_b": "not enough",
+                  "option_c": "excellent",
+                  "option_d": "modern",
+                  "correct_option": "B",
+                  "explanation": "Inadequate = not enough (không đủ, thiếu)."
+                },
+                {
+                  "id": "reading1-q4",
+                  "question": "What problem is mentioned in the passage?",
+                  "option_a": "Too many parks",
+                  "option_b": "Traffic congestion and expensive housing",
+                  "option_c": "Too much money",
+                  "option_d": "Too few people",
+                  "correct_option": "B",
+                  "explanation": "Các vấn đề được đề cập là tắc nghẽn giao thông và nhà ở đắt đỏ."
+                },
+                {
+                  "id": "reading1-q5",
+                  "question": "According to the passage, what is one solution?",
+                  "option_a": "Stop urbanisation",
+                  "option_b": "Better urban planning and infrastructure investment",
+                  "option_c": "Build more slums",
+                  "option_d": "Do nothing",
+                  "correct_option": "B",
+                  "explanation": "Một giải pháp là quy hoạch đô thị tốt hơn và đầu tư vào cơ sở hạ tầng."
+                }
+              ]
+            }
+          },
           {
             "id": "reading2",
-            "type": "reading",
-            "passage": "Finding the right career is one of the most important decisions young people make. The job market has changed dramatically in recent years, and traditional career paths are no longer the only options. Today's graduates need to be flexible and adaptable.\n\nWhen choosing a career, consider your interests and skills. If you enjoy working with people, careers in education, healthcare, or customer service might suit you. If you prefer working with technology, consider IT, engineering, or data analysis. Research different fields and talk to professionals to understand what each job involves.\n\nPreparing a strong CV is essential. Your CV should highlight your education, work experience, and relevant skills. Keep it concise and professional. A well-written cover letter is equally important because it shows your motivation and explains why you're suitable for the position. Although many people find writing cover letters challenging, they significantly improve your chances of getting an interview.\n\nDuring job interviews, be confident and honest. Employers want to see that you're enthusiastic and prepared. Research the company beforehand, and prepare answers to common questions. Remember that interviews are also opportunities for you to ask questions and learn whether the job is right for you. The more prepared you are, the more confident you'll feel.",
-            "questions": [
-              {
-                "id": "reading2-q1",
-                "question": "What is the main idea of the passage?",
-                "options": [
-                  "All jobs are the same",
-                  "Career planning and job application tips",
-                  "Only traditional careers exist",
-                  "CVs are not important"
-                ],
-                "correct": 1,
-                "explanation": "Đoạn văn nói về lập kế hoạch nghề nghiệp và các mẹo xin việc."
-              },
-              {
-                "id": "reading2-q2",
-                "question": "What should you consider when choosing a career?",
-                "options": [
-                  "Only salary",
-                  "Your interests and skills",
-                  "What your parents want",
-                  "Nothing important"
-                ],
-                "correct": 1,
-                "explanation": "Bạn nên xem xét sở thích và kỹ năng của mình khi chọn nghề."
-              },
-              {
-                "id": "reading2-q3",
-                "question": "The word 'concise' in paragraph 3 is closest in meaning to ______.",
-                "options": [
-                  "very long",
-                  "brief and clear",
-                  "complicated",
-                  "boring"
-                ],
-                "correct": 1,
-                "explanation": "Concise = brief and clear (ngắn gọn và rõ ràng)."
-              },
-              {
-                "id": "reading2-q4",
-                "question": "Why is a cover letter important?",
-                "options": [
-                  "It's not important",
-                  "It shows motivation and suitability",
-                  "It replaces the CV",
-                  "It's just decoration"
-                ],
-                "correct": 1,
-                "explanation": "Thư xin việc thể hiện động lực và sự phù hợp của bạn với vị trí."
-              },
-              {
-                "id": "reading2-q5",
-                "question": "According to the passage, what helps you feel more confident in interviews?",
-                "options": [
-                  "Not preparing",
-                  "Being more prepared",
-                  "Lying about experience",
-                  "Avoiding questions"
-                ],
-                "correct": 1,
-                "explanation": "Chuẩn bị kỹ càng giúp bạn tự tin hơn trong phỏng vấn."
-              }
-            ]
+            "type": "read",
+            "content": "Read the following passage and answer the questions that follow.\n\nFinding the right career is one of the most important decisions young people make. The job market has changed dramatically in recent years, and traditional career paths are no longer the only options. Today's graduates need to be flexible and adaptable.\n\nWhen choosing a career, consider your interests and skills. If you enjoy working with people, careers in education, healthcare, or customer service might suit you. If you prefer working with technology, consider IT, engineering, or data analysis. Research different fields and talk to professionals to understand what each job involves.\n\nPreparing a strong CV is essential. Your CV should highlight your education, work experience, and relevant skills. Keep it concise and professional. A well-written cover letter is equally important because it shows your motivation and explains why you're suitable for the position. Although many people find writing cover letters challenging, they significantly improve your chances of getting an interview.\n\nDuring job interviews, be confident and honest. Employers want to see that you're enthusiastic and prepared. Research the company beforehand, and prepare answers to common questions. Remember that interviews are also opportunities for you to ask questions and learn whether the job is right for you. The more prepared you are, the more confident you'll feel.",
+            "metadata": {
+              "questions": [
+                {
+                  "id": "reading2-q1",
+                  "question": "What is the main idea of the passage?",
+                  "option_a": "All jobs are the same",
+                  "option_b": "Career planning and job application tips",
+                  "option_c": "Only traditional careers exist",
+                  "option_d": "CVs are not important",
+                  "correct_option": "B",
+                  "explanation": "Đoạn văn nói về lập kế hoạch nghề nghiệp và các mẹo xin việc."
+                },
+                {
+                  "id": "reading2-q2",
+                  "question": "What should you consider when choosing a career?",
+                  "option_a": "Only salary",
+                  "option_b": "Your interests and skills",
+                  "option_c": "What your parents want",
+                  "option_d": "Nothing important",
+                  "correct_option": "B",
+                  "explanation": "Bạn nên xem xét sở thích và kỹ năng của mình khi chọn nghề."
+                },
+                {
+                  "id": "reading2-q3",
+                  "question": "The word 'concise' in paragraph 3 is closest in meaning to ______.",
+                  "option_a": "very long",
+                  "option_b": "brief and clear",
+                  "option_c": "complicated",
+                  "option_d": "boring",
+                  "correct_option": "B",
+                  "explanation": "Concise = brief and clear (ngắn gọn và rõ ràng)."
+                },
+                {
+                  "id": "reading2-q4",
+                  "question": "Why is a cover letter important?",
+                  "option_a": "It's not important",
+                  "option_b": "It shows motivation and suitability",
+                  "option_c": "It replaces the CV",
+                  "option_d": "It's just decoration",
+                  "correct_option": "B",
+                  "explanation": "Thư xin việc thể hiện động lực và sự phù hợp của bạn với vị trí."
+                },
+                {
+                  "id": "reading2-q5",
+                  "question": "According to the passage, what helps you feel more confident in interviews?",
+                  "option_a": "Not preparing",
+                  "option_b": "Being more prepared",
+                  "option_c": "Lying about experience",
+                  "option_d": "Avoiding questions",
+                  "correct_option": "B",
+                  "explanation": "Chuẩn bị kỹ càng giúp bạn tự tin hơn trong phỏng vấn."
+                }
+              ]
+            }
           },
           {
             "id": "mcq1",
             "type": "mcq",
             "question": "Urbanisation ______ rapidly over the past decade.",
-            "options": ["increased", "has increased", "is increasing", "increases"],
+            "options": [
+              "increased",
+              "has increased",
+              "is increasing",
+              "increases"
+            ],
             "correct": 1,
             "explanation": "Has increased (Present Perfect) - hành động bắt đầu trong quá khứ và liên quan đến hiện tại, có 'over the past decade'."
           },
@@ -192,7 +180,12 @@
             "id": "mcq2",
             "type": "mcq",
             "question": "______ bigger the city, ______ more crowded it becomes.",
-            "options": ["A / a", "The / the", "A / the", "The / a"],
+            "options": [
+              "A / a",
+              "The / the",
+              "A / the",
+              "The / a"
+            ],
             "correct": 1,
             "explanation": "The...the... (Double Comparative) - cấu trúc so sánh kép."
           },
@@ -200,7 +193,12 @@
             "id": "mcq3",
             "type": "mcq",
             "question": "I applied for the job, ______ they called me for an interview.",
-            "options": ["but", "and", "or", "so"],
+            "options": [
+              "but",
+              "and",
+              "or",
+              "so"
+            ],
             "correct": 1,
             "explanation": "And: nối hai mệnh đề độc lập trong câu ghép (compound sentence)."
           },
@@ -208,7 +206,12 @@
             "id": "mcq4",
             "type": "mcq",
             "question": "______ it's challenging, I enjoy my work.",
-            "options": ["Because", "Although", "If", "When"],
+            "options": [
+              "Because",
+              "Although",
+              "If",
+              "When"
+            ],
             "correct": 1,
             "explanation": "Although: mặc dù - tạo câu phức (complex sentence) với mệnh đề nhượng bộ."
           },
@@ -216,7 +219,12 @@
             "id": "mcq5",
             "type": "mcq",
             "question": "She ______ in this city for five years.",
-            "options": ["lives", "lived", "has lived", "is living"],
+            "options": [
+              "lives",
+              "lived",
+              "has lived",
+              "is living"
+            ],
             "correct": 2,
             "explanation": "Has lived (Present Perfect) - hành động bắt đầu trong quá khứ và tiếp tục đến hiện tại, có 'for five years'."
           },
@@ -224,7 +232,12 @@
             "id": "mcq6",
             "type": "mcq",
             "question": "______ more people migrate to cities, ______ more problems arise.",
-            "options": ["The / the", "A / a", "The / a", "A / the"],
+            "options": [
+              "The / the",
+              "A / a",
+              "The / a",
+              "A / the"
+            ],
             "correct": 0,
             "explanation": "The...the... (Double Comparative) - càng nhiều người di cư, càng nhiều vấn đề phát sinh."
           },
@@ -232,7 +245,12 @@
             "id": "mcq7",
             "type": "mcq",
             "question": "I want to work in marketing ______ I'm creative.",
-            "options": ["but", "because", "although", "or"],
+            "options": [
+              "but",
+              "because",
+              "although",
+              "or"
+            ],
             "correct": 1,
             "explanation": "Because: bởi vì - chỉ lý do trong câu phức."
           },
@@ -240,7 +258,12 @@
             "id": "mcq8",
             "type": "mcq",
             "question": "Traffic congestion ______ worse in recent years.",
-            "options": ["got", "has got", "gets", "is getting"],
+            "options": [
+              "got",
+              "has got",
+              "gets",
+              "is getting"
+            ],
             "correct": 1,
             "explanation": "Has got (Present Perfect) - tình trạng thay đổi từ quá khứ đến hiện tại, có 'in recent years'."
           },
@@ -248,7 +271,12 @@
             "id": "mcq9",
             "type": "mcq",
             "question": "She studied hard, ______ she passed the exam.",
-            "options": ["but", "or", "so", "yet"],
+            "options": [
+              "but",
+              "or",
+              "so",
+              "yet"
+            ],
             "correct": 2,
             "explanation": "So: vì vậy - chỉ kết quả trong câu ghép."
           },
@@ -256,7 +284,12 @@
             "id": "mcq10",
             "type": "mcq",
             "question": "______ I finish my degree, I'll look for a job.",
-            "options": ["When", "But", "And", "Or"],
+            "options": [
+              "When",
+              "But",
+              "And",
+              "Or"
+            ],
             "correct": 0,
             "explanation": "When: khi - tạo câu phức với mệnh đề thời gian."
           },
@@ -264,7 +297,12 @@
             "id": "mcq11",
             "type": "mcq",
             "question": "They ______ never ______ to such a big city before.",
-            "options": ["have / been", "has / been", "had / been", "are / being"],
+            "options": [
+              "have / been",
+              "has / been",
+              "had / been",
+              "are / being"
+            ],
             "correct": 0,
             "explanation": "Have been (Present Perfect) - kinh nghiệm đến hiện tại, có 'never' và 'before'."
           },
@@ -272,7 +310,12 @@
             "id": "mcq12",
             "type": "mcq",
             "question": "______ more money invested, ______ better the infrastructure.",
-            "options": ["The / the", "A / the", "The / a", "A / a"],
+            "options": [
+              "The / the",
+              "A / the",
+              "The / a",
+              "A / a"
+            ],
             "correct": 0,
             "explanation": "The...the... (Double Comparative) - càng đầu tư nhiều tiền, cơ sở hạ tầng càng tốt."
           },
@@ -280,7 +323,12 @@
             "id": "mcq13",
             "type": "mcq",
             "question": "I like the job ______ the salary is low.",
-            "options": ["because", "although", "so", "and"],
+            "options": [
+              "because",
+              "although",
+              "so",
+              "and"
+            ],
             "correct": 1,
             "explanation": "Although: mặc dù - chỉ sự tương phản trong câu phức."
           },
@@ -288,7 +336,12 @@
             "id": "mcq14",
             "type": "mcq",
             "question": "He ______ his CV to five companies already.",
-            "options": ["sent", "has sent", "sends", "is sending"],
+            "options": [
+              "sent",
+              "has sent",
+              "sends",
+              "is sending"
+            ],
             "correct": 1,
             "explanation": "Has sent (Present Perfect) - hành động đã hoàn thành đến hiện tại, có 'already'."
           },
@@ -296,7 +349,12 @@
             "id": "mcq15",
             "type": "mcq",
             "question": "I work hard ______ I want a promotion.",
-            "options": ["but", "because", "or", "so"],
+            "options": [
+              "but",
+              "because",
+              "or",
+              "so"
+            ],
             "correct": 1,
             "explanation": "Because: bởi vì - chỉ lý do."
           },
@@ -304,7 +362,10 @@
             "id": "msq1",
             "type": "msq",
             "question_text": "Present Perfect is used with 'for', 'since', 'already', 'yet', 'just'.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Present Perfect thường đi với các từ này để chỉ thời gian."
           },
@@ -312,7 +373,10 @@
             "id": "msq2",
             "type": "msq",
             "question_text": "Double comparatives use the structure: The + comparative..., the + comparative...",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Cấu trúc so sánh kép: The bigger..., the better..."
           },
@@ -320,7 +384,10 @@
             "id": "msq3",
             "type": "msq",
             "question_text": "A compound sentence has one independent clause and one dependent clause.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 1,
             "explanation": "Sai. Câu ghép có 2+ mệnh đề độc lập. Câu phức mới có mệnh đề độc lập + mệnh đề phụ thuộc."
           },
@@ -328,7 +395,10 @@
             "id": "msq4",
             "type": "msq",
             "question_text": "FANBOYS stands for: for, and, nor, but, or, yet, so.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. FANBOYS là các liên từ nối trong câu ghép."
           },
@@ -336,7 +406,10 @@
             "id": "msq5",
             "type": "msq",
             "question_text": "Complex sentences use subordinating conjunctions like 'when', 'because', 'if', 'although'.",
-            "options": ["True", "False"],
+            "options": [
+              "True",
+              "False"
+            ],
             "correct": 0,
             "explanation": "Đúng. Câu phức sử dụng các liên từ phụ thuộc này."
           },

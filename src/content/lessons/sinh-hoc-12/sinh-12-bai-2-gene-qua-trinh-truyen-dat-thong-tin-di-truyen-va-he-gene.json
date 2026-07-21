@@ -100,6 +100,71 @@
             "explanation": "Hệ gene người chứa khoảng 20.000-25.000 gene theo ước tính hiện tại."
           },
           {
+            "id": "ex6",
+            "type": "mcq",
+            "question": "Trình tự nào đúng của dogma trung tâm?",
+            "options": [
+              "RNA -> DNA -> Protein",
+              "Protein -> RNA -> DNA",
+              "DNA -> RNA -> Protein",
+              "DNA -> Protein -> RNA"
+            ],
+            "correct": 2,
+            "explanation": "Dogma trung tâm: DNA -> RNA (phiên mã) -> Protein (dịch mã)."
+          },
+          {
+            "id": "ex7",
+            "type": "mcq",
+            "question": "Codon kết thúc nào sau đây không mã hóa axit amin?",
+            "options": [
+              "AUG",
+              "UAA",
+              "AAA",
+              "GGG"
+            ],
+            "correct": 1,
+            "explanation": "Các codon kết thúc là UAA, UAG, UGA, không mã hóa axit amin nào."
+          },
+          {
+            "id": "ex8",
+            "type": "mcq",
+            "question": "Ở sinh vật nhân thực, quá trình phiên mã diễn ra ở đâu?",
+            "options": [
+              "Tế bào chất",
+              "Ribosome",
+              "Nhân tế bào",
+              "Ty thể"
+            ],
+            "correct": 2,
+            "explanation": "Phiên mã diễn ra trong nhân tế bào, nơi có DNA làm khuôn."
+          },
+          {
+            "id": "ex9",
+            "type": "mcq",
+            "question": "Một gene có 600 cặp bazơ trong vùng mã hóa, số codon tối đa là?",
+            "options": [
+              "200",
+              "300",
+              "600",
+              "1200"
+            ],
+            "correct": 0,
+            "explanation": "Số codon = số cặp bazơ / 3 = 600 / 3 = 200."
+          },
+          {
+            "id": "ex10",
+            "type": "mcq",
+            "question": "Trong quá trình dịch mã, ribosome di chuyển trên mRNA theo hướng nào?",
+            "options": [
+              "3' -> 5'",
+              "5' -> 3'",
+              "Không có hướng",
+              "Cả hai hướng"
+            ],
+            "correct": 1,
+            "explanation": "Ribosome đọc mRNA theo chiều 5' -> 3'."
+          },
+          {
             "id": "msq1",
             "type": "msq",
             "question": "Chọn các thành phần tham gia vào quá trình dịch mã:",
