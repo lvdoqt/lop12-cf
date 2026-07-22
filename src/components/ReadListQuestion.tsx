@@ -37,10 +37,72 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
   const subQuestions: any[] = (question.metadata as any)?.questions || [];
   const audioUrl = (question.metadata as any)?.audio_url;
   const isList = question.type === 'list';
-  const typeLabel = isList ? 'Kỹ năng nghe' : 'Đọc hiểu';
+  const isClozeRaw = question.type === 'read_cloze';
+  const hasPlaceholders = useMemo(() => {
+    if (!isClozeRaw) return false;
+    if (/\(\d+\)/.test(question.content || '')) return true;
+    for (const sq of subQuestions) {
+      if (/\(\d+\)/.test(sq.question || '')) return true;
+    }
+    return false;
+  }, [isClozeRaw, question.content, subQuestions]);
+  const isCloze = isClozeRaw && hasPlaceholders;
+  const typeLabel = isList ? 'Kỹ năng nghe' : isCloze ? 'Điền vào chỗ trống' : 'Đọc hiểu';
+  // Màu sắc theo loại: indigo (read), teal (read_cloze), cyan (list)
+  const headerGradient = isList
+    ? 'from-cyan-50 to-blue-50 dark:from-cyan-950/30 dark:to-blue-950/30'
+    : isCloze
+    ? 'from-teal-50 to-cyan-50 dark:from-teal-950/30 dark:to-cyan-950/30'
+    : 'from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30';
+  const badgeBg = isList
+    ? 'from-cyan-500 to-blue-600'
+    : isCloze
+    ? 'from-teal-500 to-cyan-600'
+    : 'from-indigo-500 to-purple-600';
+  const labelColor = isList
+    ? 'text-cyan-700 dark:text-cyan-300'
+    : isCloze
+    ? 'text-teal-700 dark:text-teal-300'
+    : 'text-indigo-700 dark:text-indigo-300';
+  const borderColor = isList
+    ? 'border-cyan-200/60 dark:border-cyan-900/40'
+    : isCloze
+    ? 'border-teal-200/60 dark:border-teal-900/40'
+    : 'border-indigo-200/60 dark:border-indigo-900/40';
+  const subDivider = isList
+    ? 'border-cyan-100/70 dark:border-cyan-900/20'
+    : isCloze
+    ? 'border-teal-100/70 dark:border-teal-900/20'
+    : 'border-indigo-100/70 dark:border-indigo-900/20';
+  const subNumColor = isList
+    ? 'text-cyan-500 dark:text-cyan-400'
+    : isCloze
+    ? 'text-teal-500 dark:text-teal-400'
+    : 'text-indigo-500 dark:text-indigo-400';
+  const selectedStyle = isList
+    ? 'border-cyan-500 bg-cyan-50/60 dark:border-cyan-500/50 dark:bg-cyan-950/20 text-cyan-700 dark:text-cyan-400 ring-2 ring-cyan-400/40'
+    : isCloze
+    ? 'border-teal-500 bg-teal-50/60 dark:border-teal-500/50 dark:bg-teal-950/20 text-teal-700 dark:text-teal-400 ring-2 ring-teal-400/40'
+    : 'border-indigo-500 bg-indigo-50/60 dark:border-indigo-500/50 dark:bg-indigo-950/20 text-indigo-700 dark:text-indigo-400 ring-2 ring-indigo-400/40';
+  const selectedLetterStyle = isList
+    ? 'bg-cyan-600 border-transparent text-white'
+    : isCloze
+    ? 'bg-teal-600 border-transparent text-white'
+    : 'bg-indigo-600 border-transparent text-white';
 
-  const contentHtml = useMemo(() => ({ __html: parseMarkdownWithMath(question.content || '', false) }), [question.content]);
-
+  const contentHtml = useMemo(() => {
+    let content = question.content || '';
+    if (isCloze && subQuestions.length > 0) {
+      content = content.replace(/\((\d+)\)/g, (match, p1) => {
+        const num = parseInt(p1, 10);
+        if (num >= 1 && num <= subQuestions.length) {
+          return `(${index + num - 1})`;
+        }
+        return match;
+      });
+    }
+    return { __html: parseMarkdownWithMath(content, false) };
+  }, [question.content, isCloze, subQuestions.length, index]);
   const [selection, setSelection] = useState<Record<string, string>>(
     selectedAnswers && typeof selectedAnswers === 'object' ? { ...selectedAnswers } : {}
   );
@@ -74,15 +136,17 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
     <div
       ref={cardRef}
       id={`question-section-${index}`}
-      className="bg-white dark:bg-slate-900 border border-indigo-200/60 dark:border-indigo-900/40 rounded-2xl shadow-sm mb-6 overflow-hidden"
+      className={`bg-white dark:bg-slate-900 border ${borderColor} rounded-2xl shadow-sm mb-6 overflow-hidden`}
     >
-      <div className="flex items-center justify-between px-5 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30">
-        <span className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl text-sm font-extrabold bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-md">
-          <span className="text-base md:text-lg leading-none">Câu {index}{subQuestions.length > 1 ? ` - ${index + subQuestions.length - 1}` : ''}</span>
+      <div className={`flex items-center justify-between px-5 py-3 bg-gradient-to-r ${headerGradient}`}>
+        <span className={`inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl text-sm font-extrabold bg-gradient-to-br ${badgeBg} text-white shadow-md`}>
+          <span className="text-base md:text-lg leading-none">{isCloze ? 'Nhóm' : 'Câu'} {index}{subQuestions.length > 1 ? ` - ${index + subQuestions.length - 1}` : ''}</span>
         </span>
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-300">{typeLabel}</span>
-        </div>
+        {!isCloze && (
+          <div className="flex items-center gap-2">
+            <span className={`text-xs font-semibold ${labelColor}`}>{typeLabel}</span>
+          </div>
+        )}
       </div>
 
       <div className="p-6 space-y-4">
@@ -102,11 +166,23 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
             const correctLetter = (sq.correct_option || '').toUpperCase();
             const sel = selection[String(i)];
             const subNum = i + 1;
+            
+            let displayQuestion = sq.question || '';
+            if (isCloze) {
+              displayQuestion = displayQuestion.replace(/\((\d+)\)/g, (match, p1) => {
+                const num = parseInt(p1, 10);
+                if (num >= 1 && num <= subQuestions.length) {
+                  return `(${index + num - 1})`;
+                }
+                return match;
+              });
+            }
+
             return (
-              <li key={i} className="border-t border-indigo-100/70 dark:border-indigo-900/20 pt-3 first:border-t-0 first:pt-0">
+              <li key={i} className={`border-t ${subDivider} pt-3 first:border-t-0 first:pt-0`}>
                 <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 mb-2 leading-relaxed whitespace-pre-wrap">
-                  <span className="text-indigo-500 dark:text-indigo-400 mr-1">Câu {index + i}.</span>
-                  <span dangerouslySetInnerHTML={{ __html: parseMarkdownWithMath(sq.question || '', false) }} />
+                  <span className={`${subNumColor} mr-1`}>Câu {index + i}.</span>
+                  <span dangerouslySetInnerHTML={{ __html: parseMarkdownWithMath(displayQuestion, false) }} />
                 </p>
                 <div className="space-y-2">
                   {optionLetters.filter(l => sq['option_' + l.toLowerCase()]).map(l => {
@@ -126,8 +202,8 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
                         letterStyle = 'bg-rose-600 border-rose-600 text-white';
                       }
                     } else if (isSel) {
-                      optStyle = 'border-indigo-500 bg-indigo-50/60 dark:border-indigo-500/50 dark:bg-indigo-950/20 text-indigo-700 dark:text-indigo-400 ring-2 ring-indigo-400/40';
-                      letterStyle = 'bg-indigo-600 border-transparent text-white';
+                      optStyle = selectedStyle;
+                      letterStyle = selectedLetterStyle;
                     }
 
                     return (

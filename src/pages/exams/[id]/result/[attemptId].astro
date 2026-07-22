@@ -27,41 +27,16 @@ if (attempt.user_id && attempt.user_id !== user?.id) {
 
 const allQuestions = await db.getQuestionsByExamId(exam.id);
 
-const bySection = {
-  mcq: allQuestions.filter(q => q.type === 'single_choice'),
-  multiple_choice: allQuestions.filter(q => q.type === 'multiple_choice'),
-  msq: allQuestions.filter(q => q.type === 'msq'),
-  sa: allQuestions.filter(q => q.type === 'sa'),
-  true_false: allQuestions.filter(q => q.type === 'true_false'),
-  tl: allQuestions.filter(q => q.type === 'tl'),
-  readlist: allQuestions.filter(q => q.type === 'read' || q.type === 'list'),
-};
+import { buildShuffledExam } from '../../../../lib/exam';
 
 const prng = mulberry32(uuidToSeed(attempt.id));
-
-const shuffled = {
-  mcq: shuffleArrayWithPRNG(bySection.mcq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  multiple_choice: shuffleArrayWithPRNG(bySection.multiple_choice, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  msq: shuffleArrayWithPRNG(bySection.msq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  sa: shuffleArrayWithPRNG(bySection.sa, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  true_false: shuffleArrayWithPRNG(bySection.true_false, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  tl: shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  readlist: shuffleArrayWithPRNG(bySection.readlist, prng),
-};
+const rawQuestions = buildShuffledExam(allQuestions, prng);
 
 let currentIndex = 1;
-const questions = [
-  ...shuffled.mcq,
-  ...shuffled.multiple_choice,
-  ...shuffled.msq,
-  ...shuffled.sa,
-  ...shuffled.true_false,
-  ...shuffled.tl,
-  ...shuffled.readlist
-].map((q) => {
+const questions = rawQuestions.map((q) => {
   const startIndex = currentIndex;
   let count = 1;
-  if (q.type === 'read' || q.type === 'list') {
+  if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
     count = (q.metadata as any)?.questions?.length || 1;
   }
   currentIndex += count;
@@ -74,19 +49,24 @@ const msqQuestions = questions.filter(q => q.type === 'msq');
 const saQuestions = questions.filter(q => q.type === 'sa');
 const trueFalseQuestions = questions.filter(q => q.type === 'true_false');
 const tlQuestions = questions.filter(q => q.type === 'tl');
-const readlistQuestions = questions.filter(q => q.type === 'read' || q.type === 'list');
+const readQuestions = questions.filter(q => q.type === 'read');
+const readClozeQuestions = questions.filter(q => q.type === 'read_cloze');
+const listQuestions = questions.filter(q => q.type === 'list');
 
 const allSections = [
-  { key: 'mcq', label: 'Câu trắc nghiệm nhiều phương án lựa chọn', items: mcqQuestions },
-  { key: 'multiple_choice', label: 'Câu hỏi chọn nhiều đáp án', items: multipleChoiceQuestions },
-  { key: 'msq', label: 'Câu trắc nghiệm đúng sai', items: msqQuestions },
-  { key: 'sa', label: 'Câu trắc nghiệm trả lời ngắn', items: saQuestions },
-  { key: 'true_false', label: 'Câu trắc nghiệm đúng/sai đơn', items: trueFalseQuestions },
-  { key: 'tl', label: 'Câu tự luận', items: tlQuestions },
-  { key: 'readlist', label: 'Kỹ năng đọc hiểu & nghe', items: readlistQuestions },
+  { key: 'read',            label: 'Đọc hiểu',                               items: readQuestions },
+  { key: 'read_cloze',      label: 'Điền vào chỗ trống',                     items: readClozeQuestions },
+  { key: 'list',            label: 'Kỹ năng nghe',                            items: listQuestions },
+  { key: 'mcq',             label: 'Câu trắc nghiệm nhiều phương án lựa chọn', items: mcqQuestions },
+  { key: 'multiple_choice', label: 'Câu hỏi chọn nhiều đáp án',              items: multipleChoiceQuestions },
+  { key: 'msq',             label: 'Câu trắc nghiệm đúng sai',               items: msqQuestions },
+  { key: 'sa',              label: 'Câu trắc nghiệm trả lời ngắn',           items: saQuestions },
+  { key: 'true_false',      label: 'Câu trắc nghiệm đúng/sai đơn',          items: trueFalseQuestions },
+  { key: 'tl',              label: 'Câu tự luận',                             items: tlQuestions },
 ];
 const activeSections = allSections.filter(s => s.items.length > 0);
 const Roman = (n: number) => ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][n - 1] || String(n);
+
 
 // 1. Calculate time spent
 const timeSpentMs = attempt.finished_at 
@@ -100,7 +80,7 @@ const timeSpentStr = timeSpentMin > 0 ? `${timeSpentMin} phút ${timeSpentSec} g
 let correctCount = 0;
 let totalCount = 0;
 questions.forEach(q => {
-  if (q.type === 'read' || q.type === 'list') {
+  if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
     const subs = (q.metadata && (q.metadata as any).questions) || [];
     totalCount += subs.length;
     const submitted = attempt.answers_submitted?.[q.id];
@@ -252,32 +232,56 @@ if (score < 5.0) {
       </div>
 
       <div class="space-y-8">
-        {activeSections.map((section, index) => (
-          <div class="space-y-4">
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">
-              Phần {Roman(index + 1)}. {section.label}
-            </h3>
-            {section.key === 'readlist' ? (
-              section.items.map(question => (
-                <ReadListQuestion
-                  client:load
-                  question={question}
-                  index={question.globalIndex}
-                  mode="review"
-                  selectedAnswers={attempt.answers_submitted?.[question.id] || {}}
-                />
-              ))
-            ) : (
-              section.items.map(question => {
-                const submittedRaw = attempt.answers_submitted?.[question.id];
-                const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
-                return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
-              })
-            )}
-          </div>
-        ))}
+        {(() => {
+          let sectionCounter = 0;
+          return activeSections.map((section) => {
+            const isCloze = section.key === 'read_cloze';
+            if (isCloze) {
+              // Không header — render thẳng ReadListQuestion
+              return (
+                <div class="space-y-4">
+                  {section.items.map(question => (
+                    <ReadListQuestion
+                      client:load
+                      question={question}
+                      index={question.globalIndex}
+                      mode="review"
+                      selectedAnswers={attempt.answers_submitted?.[question.id] || {}}
+                    />
+                  ))}
+                </div>
+              );
+            }
+            sectionCounter++;
+            return (
+              <div class="space-y-4">
+                <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">
+                  Phần {Roman(sectionCounter)}. {section.label}
+                </h3>
+                {(section.key === 'read' || section.key === 'list') ? (
+                  section.items.map(question => (
+                    <ReadListQuestion
+                      client:load
+                      question={question}
+                      index={question.globalIndex}
+                      mode="review"
+                      selectedAnswers={attempt.answers_submitted?.[question.id] || {}}
+                    />
+                  ))
+                ) : (
+                  section.items.map(question => {
+                    const submittedRaw = attempt.answers_submitted?.[question.id];
+                    const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
+                    return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
+                  })
+                )}
+              </div>
+            );
+          });
+        })()}
       </div>
     </div>
+
 
   </div>
 </Layout>

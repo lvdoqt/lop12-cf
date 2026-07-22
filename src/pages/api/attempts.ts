@@ -3,6 +3,9 @@ import type { APIRoute } from 'astro';
 export const prerender = false;
 import { db } from '../../services/db';
 
+import { uuidToSeed, mulberry32 } from '../../lib/random';
+import { buildShuffledExam } from '../../lib/exam';
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     const { attemptId, answers } = await request.json();
@@ -23,22 +26,24 @@ export const POST: APIRoute = async ({ request }) => {
       return new Response(JSON.stringify({ error: 'No questions found for this exam' }), { status: 400 });
     }
 
-    let correctCount = 0;
-    let totalCount = 0;
+    // 3. Shuffle exactly as the client saw it
+    const prng = mulberry32(uuidToSeed(attemptId));
+    const shuffledExamQuestions = buildShuffledExam(examQuestions, prng);
 
-    // 3. Grade each question
-    examQuestions.forEach(q => {
+    let totalScore = 0;
+
+    // 4. Grade each question based on the shuffled state
+    shuffledExamQuestions.forEach(q => {
       const submitted = answers[q.id]; // Can be string, string[], or Record/string for msq/sa
 
-      // Read / Listen: each sub-question counts individually
-      if (q.type === 'read' || q.type === 'list') {
+      // Read / Listen / Cloze (read_cloze): each sub-question counts individually
+      if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
         const subs = (q.metadata && (q.metadata as any).questions) || [];
-        totalCount += subs.length;
         if (submitted && typeof submitted === 'object' && !Array.isArray(submitted)) {
           subs.forEach((sq: any, i: number) => {
             const sel = (submitted as Record<string, string>)[String(i)];
             if (sel && String(sel).toUpperCase() === String(sq.correct_option || '').toUpperCase()) {
-              correctCount++;
+              totalScore += 0.25;
             }
           });
         }
@@ -46,17 +51,19 @@ export const POST: APIRoute = async ({ request }) => {
       }
 
       const correctAnswers = q.answers.filter(a => a.is_correct).map(a => a.id);
-      totalCount += 1;
 
       if (!submitted) {
         return; // Left blank
       }
 
-      if (q.type === 'single_choice' || q.type === 'true_false') {
+      let isCorrect = false;
+
+      // ordering: treat same as single_choice (answer ID comparison)
+      if (q.type === 'single_choice' || q.type === 'true_false' || q.type === 'ordering') {
         // Submitted is a string representing the answer ID
         const selectedId = typeof submitted === 'string' ? submitted : submitted[0];
         if (correctAnswers.includes(selectedId)) {
-          correctCount++;
+          isCorrect = true;
         }
       } else if (q.type === 'multiple_choice') {
         // Submitted should be an array of answer IDs
@@ -67,7 +74,7 @@ export const POST: APIRoute = async ({ request }) => {
         const noIncorrectSelected = selectedIds.every(id => correctAnswers.includes(id));
         
         if (allCorrectSelected && noIncorrectSelected && correctAnswers.length === selectedIds.length) {
-          correctCount++;
+          isCorrect = true;
         }
       } else if (q.type === 'msq') {
         // Submitted is an object mapping option ID -> "Đúng" or "Sai"
@@ -81,7 +88,7 @@ export const POST: APIRoute = async ({ request }) => {
             }
           });
           if (allCorrect && q.answers.length > 0) {
-            correctCount++;
+            isCorrect = true;
           }
         }
       } else if (q.type === 'sa') {
@@ -91,21 +98,27 @@ export const POST: APIRoute = async ({ request }) => {
           const normCorrect = q.answer.trim().toLowerCase().replace(/\s+/g, ' ').replace(',', '.');
           
           if (normSubmitted === normCorrect) {
-            correctCount++;
+            isCorrect = true;
           } else {
             const numSubmitted = Number(normSubmitted);
             const numCorrect = Number(normCorrect);
             if (!isNaN(numSubmitted) && !isNaN(numCorrect) && numSubmitted === numCorrect) {
-              correctCount++;
+              isCorrect = true;
             }
           }
         }
       }
+
+      if (isCorrect) {
+        if (q.type === 'sa') {
+          totalScore += 0.5;
+        } else {
+          totalScore += 0.25;
+        }
+      }
     });
 
-    // 4. Calculate score out of 10
-    const rawScore = (correctCount / totalCount) * 10;
-    const score = Math.round(rawScore * 100) / 100; // Round to 2 decimal places
+    const score = totalScore; // Absolute points
 
     // 5. Save results to database
     const updatedAttempt = await db.submitAttempt(attemptId, score, answers);
@@ -113,8 +126,6 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({
       success: true,
       score,
-      correctCount,
-      totalCount,
       attempt: updatedAttempt
     }), { status: 200 });
 

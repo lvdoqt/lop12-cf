@@ -25,6 +25,11 @@ if (Astro.request.method === 'POST') {
       const parsed = JSON.parse(jsonData);
       const questions: any[] = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.questions) ? parsed.questions : [parsed]);
       
+      const batchItems: Array<{
+        question: any;
+        answers: { content: string; is_correct: boolean }[];
+      }> = [];
+
       for (const q of questions) {
         const content = q.content || q.question;
         const subject_id = q.subject_id || subjectIdJson;
@@ -58,8 +63,8 @@ if (Astro.request.method === 'POST') {
           if (q.option_f) answers.push({ content: q.option_f, is_correct: correctStr.includes('F') });
         }
 
-        // Dạng đọc hiểu / nghe: lưu câu hỏi con vào metadata.questions
-        if (type === 'read' || type === 'list') {
+        // Dạng đọc hiểu / nghe / cloze: lưu câu hỏi con vào metadata.questions
+        if (type === 'read' || type === 'list' || type === 'read_cloze') {
           const metaQuestions = Array.isArray(q.metadata?.questions) ? q.metadata.questions : [];
           if (metaQuestions.length === 0) {
             throw new Error('Câu hỏi dạng read/list thiếu metadata.questions.');
@@ -79,21 +84,23 @@ if (Astro.request.method === 'POST') {
             return out;
           });
           const audioUrl = q.metadata?.audio_url ? q.metadata.audio_url : undefined;
-          await db.createQuestion({
-            subject_id,
-            content,
-            explanation: q.explanation || null,
-            difficulty: q.difficulty_level || q.difficulty || 'medium',
-            type: type as any,
-            answer: null,
-            created_by: user.id,
-            metadata: { 
-              questions: mappedQuestions, 
-              ...(audioUrl ? { audio_url: audioUrl } : {}),
-              ...(category_id ? { category_id } : {})
-            }
-          }, []);
-          importCount++;
+          batchItems.push({
+            question: {
+              subject_id,
+              content,
+              explanation: q.explanation || null,
+              difficulty: q.difficulty_level || q.difficulty || 'medium',
+              type: type as any,
+              answer: null,
+              created_by: user.id,
+              metadata: { 
+                questions: mappedQuestions, 
+                ...(audioUrl ? { audio_url: audioUrl } : {}),
+                ...(category_id ? { category_id } : {})
+              }
+            },
+            answers: []
+          });
           continue;
         }
 
@@ -107,25 +114,32 @@ if (Astro.request.method === 'POST') {
         }
 
         const existingMeta = q.metadata || {};
-        await db.createQuestion({
-          subject_id,
-          content,
-          explanation: q.explanation || null,
-          difficulty: q.difficulty_level || q.difficulty || 'medium',
-          type: type as any,
-          answer: answer || null,
-          created_by: user.id,
-          metadata: {
-            ...existingMeta,
-            ...(category_id ? { category_id } : {})
-          }
-        }, answers);
-        importCount++;
+        batchItems.push({
+          question: {
+            subject_id,
+            content,
+            explanation: q.explanation || null,
+            difficulty: q.difficulty_level || q.difficulty || 'medium',
+            type: type as any,
+            answer: answer || null,
+            created_by: user.id,
+            metadata: {
+              ...existingMeta,
+              ...(category_id ? { category_id } : {})
+            }
+          },
+          answers
+        });
       }
+
+      // Batch insert tất cả câu hỏi trong 2 subrequests thay vì N×2
+      const createdQs = await db.createQuestionsBatch(batchItems);
+      importCount = createdQs.length;
       return Astro.redirect('/admin/questions?imported=' + importCount);
     } catch (err: any) {
       errMsg = err.message || 'Lỗi nhập JSON.';
     }
+
   } else {
     // Normal question creation
     try {
@@ -141,7 +155,7 @@ if (Astro.request.method === 'POST') {
 
       let metadata: any = undefined;
 
-      if (type === 'read' || type === 'list') {
+      if (type === 'read' || type === 'list' || type === 'read_cloze') {
         // Dạng đọc hiểu / nghe: câu hỏi cha chứa đoạn văn (content) và danh sách
         // câu hỏi con (metadata.questions). Không có phương án ở cấp cha.
         const subQuestions: any[] = [];
@@ -206,7 +220,7 @@ if (Astro.request.method === 'POST') {
       }
 
       const correctCount = answers.filter(a => a.is_correct).length;
-      if (type !== 'sa' && type !== 'msq' && type !== 'read' && type !== 'list') {
+      if (type !== 'sa' && type !== 'msq' && type !== 'read' && type !== 'list' && type !== 'read_cloze') {
         if (correctCount === 0) {
           throw new Error('Cậu hãy đánh dấu ít nhất 1 phương án là đáp án đúng.');
         }
@@ -392,6 +406,8 @@ const allCategories = await db.getCategories();
               <option value="sa">Trả lời ngắn</option>
               <option value="true_false">Đúng / Sai (Đơn)</option>
               <option value="read">Đọc hiểu (Reading)</option>
+              <option value="read_cloze">Điền vào chỗ trống (Cloze)</option>
+              <option value="ordering">Sắp xếp câu / đoạn (Ordering)</option>
               <option value="list">Kỹ năng nghe (Listening)</option>
             </select>
           </div>
@@ -731,7 +747,7 @@ const allCategories = await db.getCategories();
       } else if (val === 'sa') {
         saContainer.classList.remove('hidden');
         document.getElementById('sa_correct')?.setAttribute('required', 'true');
-      } else if (val === 'read' || val === 'list') {
+      } else if (val === 'read' || val === 'list' || val === 'read_cloze') {
         subqContainer.classList.remove('hidden');
         if (val === 'list' && audioUrlRow) audioUrlRow.classList.remove('hidden');
         if (subqList) subqList.querySelectorAll('input').forEach(i => i.removeAttribute('disabled'));

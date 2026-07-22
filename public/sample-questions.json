@@ -2,7 +2,7 @@
   "title": "Câu hỏi json to bank quiz - Đầy đủ các dạng",
   "questions": [
     {
-      "type": "mcq",
+      "type": "single_choice",
       "question": "Tìm đạo hàm của hàm số $f(x) = x^3 - 3x^2 + 2x - 1$",
       "option_a": "$f'(x) = 3x^2 - 6x + 2$",
       "option_b": "$f'(x) = x^3 - 3x^2 + 2$",
@@ -115,6 +115,34 @@
             "option_d": "6:30 PM",
             "correct_option": "B",
             "explanation": "Alice suggests meeting at half past three, and Tom agrees."
+          }
+        ]
+      }
+    },
+    {
+      "type": "read_cloze",
+      "content": "Việt Nam là một quốc gia nằm ở khu vực (1)_______ Nam Á. Thủ đô của Việt Nam là (2)_______.",
+      "difficulty_level": "medium",
+      "is_dynamic": false,
+      "metadata": {
+        "questions": [
+          {
+            "question": "Chỗ trống (1)",
+            "option_a": "Đông",
+            "option_b": "Tây",
+            "option_c": "Nam",
+            "option_d": "Bắc",
+            "correct_option": "A",
+            "explanation": "Việt Nam nằm ở khu vực Đông Nam Á."
+          },
+          {
+            "question": "Chỗ trống (2)",
+            "option_a": "Hà Nội",
+            "option_b": "TP.HCM",
+            "option_c": "Đà Nẵng",
+            "option_d": "Huế",
+            "correct_option": "A",
+            "explanation": "Thủ đô của Việt Nam là Hà Nội."
           }
         ]
       }

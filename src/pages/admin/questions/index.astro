@@ -89,8 +89,11 @@ const qTypeNames: Record<string, string> = {
   'sa': 'Trả lời ngắn',
   'tl': 'Tự luận',
   'read': 'Đọc hiểu',
+  'read_cloze': 'Điền vào chỗ trống',
+  'ordering': 'Sắp xếp câu',
   'list': 'Kỹ năng nghe'
 };
+
 ---
 
 <Layout title="Ngân hàng câu hỏi">
@@ -201,7 +204,7 @@ const qTypeNames: Record<string, string> = {
                   </td>
                   <!-- Content Preview -->
                   <td class="py-4 pr-3 max-w-xs md:max-w-md align-top">
-                    {q.type === 'read' || q.type === 'list' ? (
+                    {q.type === 'read' || q.type === 'list' || q.type === 'read_cloze' ? (
                       <details class="group">
                         <summary class="cursor-pointer list-none">
                           <p class="font-bold text-gray-900 dark:text-white truncate">{q.content.replace(/\$/g, '')}</p>
@@ -215,7 +218,7 @@ const qTypeNames: Record<string, string> = {
                       <p class="font-bold text-gray-900 dark:text-white truncate">{q.content.replace(/\$/g, '')}</p>
                     )}
                     <span class="text-xs text-gray-450 dark:text-slate-500 mt-1 block">
-                      {q.type === 'read' || q.type === 'list'
+                      {q.type === 'read' || q.type === 'list' || q.type === 'read_cloze'
                         ? `${q.metadata?.questions?.length || 0} câu hỏi con`
                         : `${q.answers.length} phương án trả lời • Đáp án đúng: ${q.answers.filter(a => a.is_correct).map((_, i) => String.fromCharCode(65 + q.answers.findIndex(ans => ans.id === _.id))).join(', ')}`
                       }

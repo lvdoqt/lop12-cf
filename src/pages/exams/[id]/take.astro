@@ -3,6 +3,7 @@ import Layout from '../../../layouts/Layout.astro';
 import ExamView from '../../../components/ExamView';
 import { db } from '../../../services/db';
 import { uuidToSeed, mulberry32, shuffleArrayWithPRNG } from '../../../lib/random';
+import { buildShuffledExam } from '../../../lib/exam';
 
 export const prerender = false;
 
@@ -35,40 +36,8 @@ if (attempt.score !== null) {
 
 const allQuestions = await db.getQuestionsByExamId(exam.id);
 
-const bySection = {
-  mcq: allQuestions.filter(q => q.type === 'single_choice'),
-  multiple_choice: allQuestions.filter(q => q.type === 'multiple_choice'),
-  msq: allQuestions.filter(q => q.type === 'msq'),
-  sa: allQuestions.filter(q => q.type === 'sa'),
-  true_false: allQuestions.filter(q => q.type === 'true_false'),
-  tl: allQuestions.filter(q => q.type === 'tl'),
-  read: allQuestions.filter(q => q.type === 'read'),
-  list: allQuestions.filter(q => q.type === 'list'),
-};
-
 const prng = mulberry32(uuidToSeed(attempt.id));
-
-const shuffled = {
-  mcq: shuffleArrayWithPRNG(bySection.mcq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  multiple_choice: shuffleArrayWithPRNG(bySection.multiple_choice, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  msq: shuffleArrayWithPRNG(bySection.msq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  sa: shuffleArrayWithPRNG(bySection.sa, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  true_false: shuffleArrayWithPRNG(bySection.true_false, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  tl: shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers, prng) })),
-  read: shuffleArrayWithPRNG(bySection.read, prng),
-  list: shuffleArrayWithPRNG(bySection.list, prng),
-};
-
-const questions = [
-  ...shuffled.mcq,
-  ...shuffled.multiple_choice,
-  ...shuffled.msq,
-  ...shuffled.sa,
-  ...shuffled.true_false,
-  ...shuffled.tl,
-  ...shuffled.read,
-  ...shuffled.list
-];
+const questions = buildShuffledExam(allQuestions, prng);
 
 console.log(`[take] exam=${exam.id} slug=${exam.slug} questions=${questions.length}`);
 

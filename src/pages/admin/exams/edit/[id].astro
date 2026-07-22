@@ -352,7 +352,7 @@ const availableQuestions = bankQuestions.filter(q => !assignedQuestionIds.includ
         
         if (isEditing) {
           let answersHtml = '';
-          if (q.type === 'read' || q.type === 'list') {
+          if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
             const subqs = (q.metadata && q.metadata.questions) || [];
             answersHtml = '<div class="col-span-1 sm:col-span-2 space-y-4 mt-2">';
             
@@ -412,6 +412,8 @@ const availableQuestions = bankQuestions.filter(q => !assignedQuestionIds.includ
                    <option value="sa" ${q.type==='sa'?'selected':''}>Trả lời ngắn</option>
                    <option value="tl" ${q.type==='tl'?'selected':''}>Tự luận</option>
                    <option value="read" ${q.type==='read'?'selected':''}>Đọc hiểu</option>
+                   <option value="read_cloze" ${q.type==='read_cloze'?'selected':''}>Điền vào chỗ trống</option>
+                   <option value="ordering" ${q.type==='ordering'?'selected':''}>Sắp xếp câu</option>
                    <option value="list" ${q.type==='list'?'selected':''}>Nghe</option>
                 </select>
               </div>
@@ -429,7 +431,7 @@ const availableQuestions = bankQuestions.filter(q => !assignedQuestionIds.includ
           `;
         } else {
           let answersHtml = '';
-          if (q.type === 'read' || q.type === 'list') {
+          if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
             const subqs = (q.metadata && q.metadata.questions) || [];
             answersHtml = '<div class="col-span-1 sm:col-span-2 space-y-3 mt-2">';
             
@@ -533,7 +535,7 @@ const availableQuestions = bankQuestions.filter(q => !assignedQuestionIds.includ
         label.className = "flex items-start space-x-4 p-4 rounded-xl border border-gray-250 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-blue-300 dark:hover:border-blue-800 transition cursor-pointer";
         
         let answersHtml = '';
-        if (q.type === 'read' || q.type === 'list') {
+        if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
             const subqs = (q.metadata && q.metadata.questions) || [];
             answersHtml = '<div class="col-span-1 sm:col-span-2 space-y-2 mt-1">';
             subqs.forEach((sq, sIdx) => {
@@ -587,7 +589,7 @@ const availableQuestions = bankQuestions.filter(q => !assignedQuestionIds.includ
     if (!q) return;
     q.content = document.getElementById(`edit-content-${id}`).value;
     
-    if (q.type === 'read' || q.type === 'list') {
+    if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
       const subqs = q.metadata.questions || [];
       subqs.forEach((sq, sIdx) => {
          const subContent = document.getElementById(`edit-subq-content-${id}-${sIdx}`);
@@ -669,7 +671,7 @@ const availableQuestions = bankQuestions.filter(q => !assignedQuestionIds.includ
       q.answers = [];
       q.answer = q.answer || '';
       if (q.metadata) delete q.metadata.questions;
-    } else if (newType === 'read' || newType === 'list') {
+    } else if (newType === 'read' || newType === 'list' || newType === 'read_cloze') {
       q.answers = [];
       q.metadata = q.metadata || {};
       if (!q.metadata.questions || q.metadata.questions.length === 0) {

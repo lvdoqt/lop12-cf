@@ -47,7 +47,7 @@ export interface Question {
     chapter?: string;
     difficulty?: 'easy' | 'medium' | 'hard';
     dang_toan?: string;
-    type?: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list';
+    type?: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list' | 'read_cloze' | 'ordering';
     explanation?: string | null;
     subject_id?: string;
     category_id?: string | null;
@@ -60,7 +60,7 @@ export interface Question {
   subject_id: string;
   explanation: string | null;
   difficulty: 'easy' | 'medium' | 'hard';
-  type: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list';
+  type: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list' | 'read_cloze' | 'ordering';
   created_by?: string | null;
   category_id?: string | null;
 }

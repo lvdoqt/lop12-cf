@@ -89,8 +89,28 @@ const SECTION_COLORS = {
     text: 'text-indigo-700 dark:text-indigo-300',
     badge: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300',
     nav: 'bg-indigo-500',
-    label: 'Kỹ năng đọc hiểu',
+    label: 'Đọc hiểu',
     icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
+  },
+  read_cloze: {
+    bg: 'from-teal-500 to-cyan-600',
+    light: 'bg-teal-50 dark:bg-teal-950/20',
+    border: 'border-teal-200 dark:border-teal-900/40',
+    text: 'text-teal-700 dark:text-teal-300',
+    badge: 'bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300',
+    nav: 'bg-teal-500',
+    label: 'Điền vào chỗ trống',
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
+  },
+  ordering: {
+    bg: 'from-amber-500 to-yellow-500',
+    light: 'bg-amber-50 dark:bg-amber-950/20',
+    border: 'border-amber-200 dark:border-amber-900/40',
+    text: 'text-amber-700 dark:text-amber-300',
+    badge: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
+    nav: 'bg-amber-500',
+    label: 'Sắp xếp câu / đoạn văn',
+    icon: 'M4 6h16M4 10h16M4 14h16M4 18h16',
   },
   list: {
     bg: 'from-cyan-500 to-blue-600',
@@ -123,11 +143,13 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       else if (q.type === 'sa') section = 'sa';
       else if (q.type === 'tl') section = 'tl';
       else if (q.type === 'read') section = 'read';
+      else if (q.type === 'read_cloze') section = 'read_cloze';
+      else if (q.type === 'ordering') section = 'ordering';
       else if (q.type === 'list') section = 'list';
       
       const startIndex = currentIndex;
       let count = 1;
-      if (q.type === 'read' || q.type === 'list') {
+      if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
         count = (q.metadata as any)?.questions?.length || 1;
       }
       currentIndex += count;
@@ -142,6 +164,8 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       true_false: withIndex.filter(q => q.type === 'true_false'),
       tl: withIndex.filter(q => q.type === 'tl'),
       read: withIndex.filter(q => q.type === 'read'),
+      read_cloze: withIndex.filter(q => q.type === 'read_cloze'),
+      ordering: withIndex.filter(q => q.type === 'ordering'),
       list: withIndex.filter(q => q.type === 'list'),
       all: withIndex,
     };
@@ -150,7 +174,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
   const flatNavigatorItems = useMemo(() => {
     let items: any[] = [];
     classified.all.forEach(q => {
-      const isReadList = q.type === 'read' || q.type === 'list';
+      const isReadList = q.type === 'read' || q.type === 'list' || q.type === 'read_cloze';
       if (isReadList) {
         const numSub = (q.metadata as any)?.questions?.length || 1;
         for (let i = 0; i < numSub; i++) {
@@ -190,7 +214,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
     let total = 0;
     let answered = 0;
     questions.forEach(q => {
-      if (q.type === 'read' || q.type === 'list') {
+      if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
         const n = (q.metadata as any)?.questions?.length || 0;
         total += n;
         const m = answers[q.id];
@@ -332,35 +356,39 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
         {/* Questions */}
         <div className="space-y-10">
           {(() => {
-            const keys: SectionKey[] = ['mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl', 'read', 'list'];
-            const activeKeys = keys.filter(key => classified[key].length > 0);
+            // read_cloze không có section header — render inline như câu thường
+            const sectionKeys: SectionKey[] = ['read', 'ordering', 'list', 'mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl'];
+            const activeKeys = sectionKeys.filter(key => classified[key].length > 0);
             const Roman = (n: number) => ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][n - 1] || String(n);
-            
-            return activeKeys.map((key, index) => {
-              const items = classified[key];
+
+            // Build ordered render list: follow the same order as classified.all
+            // For each question in classified.all, render either section-grouped or inline (read_cloze)
+            // We collect sections in order, inserting read_cloze items at their natural position.
+
+            // Group consecutive questions by section key, keeping read_cloze inline
+            const renderGroups: Array<{ key: SectionKey; items: typeof classified.all }> = [];
+            for (const q of classified.all) {
+              const last = renderGroups[renderGroups.length - 1];
+              if (last && last.key === q.section) {
+                last.items.push(q);
+              } else {
+                renderGroups.push({ key: q.section as SectionKey, items: [q] });
+              }
+            }
+
+            // Assign roman numerals only to non-read_cloze sections
+            let sectionCounter = 0;
+
+            return renderGroups.map((group, gi) => {
+              const { key, items } = group;
               const color = SECTION_COLORS[key];
-              const sectionNum = Roman(index + 1);
-            return (
-              <div key={key} className="space-y-4">
-                <div className={`rounded-2xl overflow-hidden border ${color.border}`}>
-                  <div className={`bg-gradient-to-r ${color.bg} px-6 py-4 flex items-center gap-3`}>
-                    <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
-                      <svg className="w-4.5 h-4.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                        <path strokeLinecap="round" strokeLinejoin="round" d={color.icon} />
-                      </svg>
-                    </div>
-                    <div>
-                      <span className="text-white/80 text-xs font-bold uppercase tracking-wider">Phần {sectionNum}</span>
-                      <h2 className="text-lg font-extrabold text-white leading-tight">{color.label}</h2>
-                    </div>
-                    <div className="ml-auto bg-white/20 rounded-xl px-3 py-1.5 text-white text-xs font-bold">
-                      {items.length} câu
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  {items.map(q =>
-                    (key === 'read' || key === 'list') ? (
+              const isClozeGroup = key === 'read_cloze';
+
+              if (isClozeGroup) {
+                // Không có section header, render thẳng ReadListQuestion
+                return (
+                  <div key={`cloze-${gi}`} className="space-y-4">
+                    {items.map(q => (
                       <ReadListQuestion
                         key={q.id}
                         question={q}
@@ -369,21 +397,58 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
                         selectedAnswers={(answers[q.id] as Record<string, string>) || undefined}
                         onAnswer={handleReadListAnswer}
                       />
-                    ) : (
-                      <QuestionCard
-                        key={q.id}
-                        question={q}
-                        index={q.globalIndex}
-                        mode="take"
-                        selectedAnswer={answers[q.id]}
-                        onAnswer={handleAnswer}
-                        sectionKey={(q.section === 'read' || q.section === 'list') ? 'mcq' : q.section}
-                      />
-                    )
-                  )}
+                    ))}
+                  </div>
+                );
+              }
+
+              sectionCounter++;
+              const sectionNum = Roman(sectionCounter);
+
+              return (
+                <div key={key + '-' + gi} className="space-y-4">
+                  <div className={`rounded-2xl overflow-hidden border ${color.border}`}>
+                    <div className={`bg-gradient-to-r ${color.bg} px-6 py-4 flex items-center gap-3`}>
+                      <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                        <svg className="w-4.5 h-4.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d={color.icon} />
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="text-white/80 text-xs font-bold uppercase tracking-wider">Phần {sectionNum}</span>
+                        <h2 className="text-lg font-extrabold text-white leading-tight">{color.label}</h2>
+                      </div>
+                      <div className="ml-auto bg-white/20 rounded-xl px-3 py-1.5 text-white text-xs font-bold">
+                        {items.length} câu
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    {items.map(q =>
+                      (key === 'read' || key === 'list') ? (
+                        <ReadListQuestion
+                          key={q.id}
+                          question={q}
+                          index={q.globalIndex}
+                          mode="take"
+                          selectedAnswers={(answers[q.id] as Record<string, string>) || undefined}
+                          onAnswer={handleReadListAnswer}
+                        />
+                      ) : (
+                        <QuestionCard
+                          key={q.id}
+                          question={q}
+                          index={q.globalIndex}
+                          mode="take"
+                          selectedAnswer={answers[q.id]}
+                          onAnswer={handleAnswer}
+                          sectionKey={(q.section === 'read' || q.section === 'list' || q.section === 'ordering') ? 'mcq' : q.section}
+                        />
+                      )
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
+              );
             });
           })()}
         </div>
@@ -460,8 +525,9 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
             {/* Legend */}
             <div className="flex items-center gap-3 mt-4 text-[10px] font-semibold text-gray-400 dark:text-slate-500 flex-wrap">
               {(() => {
-                const keys: SectionKey[] = ['mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl', 'read', 'list'];
-                const activeKeys = keys.filter(key => classified[key].length > 0);
+                // read_cloze không có section header — bỏ khỏi legend
+                const sectionKeys: SectionKey[] = ['read', 'ordering', 'list', 'mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl'];
+                const activeKeys = sectionKeys.filter(key => classified[key].length > 0);
                 const Roman = (n: number) => ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][n - 1] || String(n);
                 
                 return activeKeys.map((key, index) => {

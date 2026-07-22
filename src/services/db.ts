@@ -330,7 +330,16 @@ export const db = {
       // In mock mode, track via mockExamQuestions
       for (const eq of mockExamQuestions) {
         if (examIds.includes(eq.exam_id)) {
-          counts[eq.exam_id] = (counts[eq.exam_id] || 0) + 1;
+          const q = mockQuestions.find(mq => mq.id === eq.question_id);
+          let cnt = 1;
+          if (q) {
+             const type = q.metadata?.type;
+             if (type === 'read' || type === 'read_cloze' || type === 'list') {
+               const subs = q.metadata?.questions || [];
+               if (subs.length > 0) cnt = subs.length;
+             }
+          }
+          counts[eq.exam_id] = (counts[eq.exam_id] || 0) + cnt;
         }
       }
       return counts;
@@ -339,12 +348,19 @@ export const db = {
     const client = adminClient()!;
     const { data, error } = await client
       .from('exam_questions')
-      .select('exam_id')
+      .select('exam_id, questions!inner(metadata)')
       .in('exam_id', examIds);
     if (data && !error) {
       for (const row of data) {
-        if (row.exam_id) {
-          counts[row.exam_id] = (counts[row.exam_id] || 0) + 1;
+        if (row.exam_id && row.questions) {
+          const q = Array.isArray(row.questions) ? row.questions[0] : row.questions;
+          let cnt = 1;
+          const type = q.metadata?.type;
+          if (type === 'read' || type === 'read_cloze' || type === 'list') {
+            const subs = q.metadata?.questions || [];
+            if (subs.length > 0) cnt = subs.length;
+          }
+          counts[row.exam_id] = (counts[row.exam_id] || 0) + cnt;
         }
       }
     }
@@ -482,23 +498,45 @@ export const db = {
         }
       }));
 
-      // Resolve existing bank question IDs from parent_id in metadata
-      const parentIds = questionsData
-        .map(q => q.metadata?.parent_id)
-        .filter(Boolean) as string[];
-
-      // For questions that already exist in bank (have parent_id), keep their ID
-      // For new questions (no parent_id), insert into bank first
-      const newQuestionsData = questionsData.filter(q => !q.metadata?.parent_id);
-      const existingQuestionIds = questionsData
-        .filter(q => q.metadata?.parent_id)
-        .map((q, index) => ({ id: q.metadata.parent_id as string, so_cau: q.so_cau || index + 1, phan: q.phan || 'I' }));
-
-      let allQuestionLinks: { id: string; so_cau: number; phan: string }[] = [...existingQuestionIds];
+      let allQuestionLinks: { id: string; so_cau: number; phan: string }[] = [];
+      let newQuestionsToInsert: any[] = [];
+      
+      for (let i = 0; i < questionsData.length; i++) {
+        const q = questionsData[i];
+        const isNew = !q.metadata?.parent_id || String(q.metadata.parent_id).startsWith('new-');
+        
+        if (!isNew) {
+          const pId = q.metadata.parent_id;
+          const { error: updErr } = await _adminCl.from('questions').update({
+            content: q.content,
+            options: q.options || [],
+            answer: q.answer || null,
+            image_url: q.image_url || null,
+            metadata: q.metadata || {}
+          }).eq('id', pId);
+          if (updErr) { console.error('[db.updateExamWithQuestions] update error:', updErr); throw updErr; }
+          
+          allQuestionLinks.push({ id: pId, so_cau: q.so_cau || i + 1, phan: q.phan || 'I' });
+        } else {
+          // Put placeholder, we will fill it after insert
+          allQuestionLinks.push({ id: `new-index-${newQuestionsToInsert.length}`, so_cau: q.so_cau || i + 1, phan: q.phan || 'I' });
+          
+          const { parent_id, ...cleanMetadata } = q.metadata || {};
+          newQuestionsToInsert.push({
+            de_id: 'bank' as const,
+            so_cau: 0, // will set later
+            phan: q.phan || 'I',
+            content: q.content,
+            options: q.options || [],
+            answer: q.answer || null,
+            image_url: q.image_url || null,
+            metadata: cleanMetadata
+          });
+        }
+      }
 
       // Insert truly new questions into bank
-      if (newQuestionsData.length > 0) {
-        // Find max so_cau in bank to avoid unique constraint
+      if (newQuestionsToInsert.length > 0) {
         const { data: maxData } = await _adminCl
           .from('questions')
           .select('so_cau')
@@ -506,27 +544,24 @@ export const db = {
           .order('so_cau', { ascending: false })
           .limit(1);
         let nextSoCau = ((maxData?.[0]?.so_cau) || 0) + 1;
-
-        const newBankRows = newQuestionsData.map((q, i) => ({
-          de_id: 'bank' as const,
-          so_cau: nextSoCau + i,
-          phan: q.phan || 'I',
-          content: q.content,
-          options: q.options || [],
-          answer: q.answer || null,
-          image_url: q.image_url || null,
-          metadata: q.metadata || {}
-        }));
+        
+        newQuestionsToInsert.forEach((nq, i) => {
+          nq.so_cau = nextSoCau + i;
+        });
 
         const { data: inserted, error: insErr } = await _adminCl
           .from('questions')
-          .insert(newBankRows)
-          .select('id, so_cau, phan');
-        if (insErr) { console.error('[db.updateExamWithQuestions] insert new bank questions error:', insErr); throw insErr; }
+          .insert(newQuestionsToInsert)
+          .select('id');
+        if (insErr) { console.error('[db.updateExamWithQuestions] insert new error:', insErr); throw insErr; }
 
-        (inserted || []).forEach((r: any) => {
-          allQuestionLinks.push({ id: r.id, so_cau: r.so_cau, phan: r.phan });
-        });
+        let insertedIndex = 0;
+        for (let i = 0; i < allQuestionLinks.length; i++) {
+          if (allQuestionLinks[i].id.startsWith('new-index-')) {
+            allQuestionLinks[i].id = inserted![insertedIndex].id;
+            insertedIndex++;
+          }
+        }
       }
 
       // Replace exam_questions rows
@@ -752,6 +787,86 @@ export const db = {
     if (!newQ) throw new Error('[db.createQuestion] Insert returned no data.');
 
     return mapDbQuestionToAppQuestion(newQ);
+  },
+
+  /**
+   * Batch-insert multiple questions in 2 subrequests (1 SELECT max so_cau + 1 INSERT).
+   * Use this instead of calling createQuestion() in a loop to avoid the
+   * Cloudflare Workers 50-subrequest limit.
+   */
+  async createQuestionsBatch(
+    questions: Array<{
+      question: Omit<Question, 'id'>;
+      answers: Omit<Answer, 'id' | 'question_id'>[];
+    }>
+  ): Promise<Question[]> {
+    if (questions.length === 0) return [];
+
+    if (isInMockMode()) {
+      const results: Question[] = [];
+      for (const { question, answers } of questions) {
+        const newQuestion: Question = { ...question, id: `q-${Date.now()}-${Math.random()}` };
+        mockQuestions.push(newQuestion as any);
+        answers.forEach((ans, idx) => {
+          mockAnswers.push({ ...ans, id: `a-${Date.now()}-${idx}`, question_id: newQuestion.id });
+        });
+        results.push(newQuestion);
+      }
+      return results;
+    }
+
+    const _adminCl = adminClient();
+    const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    const de_id = 'bank';
+
+    // 1 subrequest: get current max so_cau
+    const { data: countData, error: countError } = await _adminCl!
+      .from('questions')
+      .select('so_cau')
+      .eq('de_id', de_id)
+      .order('so_cau', { ascending: false })
+      .limit(1);
+    if (countError) console.error('[db.createQuestionsBatch] countError:', countError);
+
+    let nextSoCau = (countData && countData.length > 0 ? (countData[0].so_cau || 0) : 0) + 1;
+
+    // Build all rows
+    const dbRows = questions.map(({ question, answers }) => {
+      const options = question.type === 'sa' ? [] : answers.map(a => a.content);
+      const correctLetters = answers
+        .map((a, idx) => a.is_correct ? alphabet[idx] : null)
+        .filter(Boolean) as string[];
+      const answerStr = question.type === 'sa' ? (question.answer || '') : correctLetters.join(',');
+      const metadata = {
+        difficulty: question.difficulty,
+        type: question.type,
+        explanation: question.explanation,
+        subject_id: question.subject_id,
+        grade: '12',
+        ...(question.created_by ? { created_by: question.created_by } : {}),
+        ...(question.metadata || {})
+      };
+      return {
+        de_id,
+        so_cau: nextSoCau++,
+        phan: 'I',
+        content: question.content,
+        options,
+        answer: answerStr,
+        metadata,
+        image_url: null
+      };
+    });
+
+    // 1 subrequest: batch insert
+    const { data: newQs, error: qError } = await _adminCl!
+      .from('questions')
+      .insert(dbRows)
+      .select();
+    if (qError) throw qError;
+    if (!newQs || newQs.length === 0) throw new Error('[db.createQuestionsBatch] Insert returned no data.');
+
+    return newQs.map(mapDbQuestionToAppQuestion);
   },
 
   async updateQuestion(id: string, question: Partial<Omit<Question, 'id'>>, answers?: (Omit<Answer, 'id' | 'question_id'> & { id?: string })[]): Promise<Question & { answers: Answer[] }> {
