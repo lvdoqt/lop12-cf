@@ -37,14 +37,14 @@ export function buildShuffledExam(allQuestions: any[], prng: () => number) {
   const shuffledReadPool = shuffleArrayWithPRNG(readPool, prng);
 
   // Thứ tự sections theo cấu trúc đề:
-  // mcq (single_choice) → msq → sa → tl → multiple_choice → [read + read_cloze trộn] → list → ordering → true_false
+  // mcq (single_choice) → [read + read_cloze trộn] → msq → sa → tl → multiple_choice → list → ordering → true_false
   return [
     ...shuffled.mcq,
+    ...shuffledReadPool,
     ...shuffled.msq,
     ...shuffled.sa,
     ...shuffled.tl,
     ...shuffled.multiple_choice,
-    ...shuffledReadPool,
     ...shuffled.list,
     ...shuffled.ordering,
     ...shuffled.true_false,

@@ -41,6 +41,29 @@ export const GET: APIRoute = async ({ request }) => {
       <link>${origin}${base}</link>
     </image>
     <atom:link href="${origin}${base}/rss.xml" rel="self" type="application/rss+xml"/>
+${(await Promise.all([
+    db.getExams().then(exams => exams.map(e => ({
+      title: `[Đề thi] ${escapeXml(e.title)}`,
+      link: `${origin}${base}/exams/${e.slug}`,
+      pubDate: new Date(e.created_at).toUTCString(),
+      description: escapeXml(e.description || e.title),
+      guid: `exam-${e.id}`
+    }))),
+    db.getCourses().then(courses => courses.map(c => ({
+      title: `[Khóa học] ${escapeXml(c.title)}`,
+      link: `${origin}${base}/khoa-hoc/${c.slug}`,
+      pubDate: new Date(c.created_at).toUTCString(),
+      description: escapeXml(c.description || c.title),
+      guid: `course-${c.id}`
+    })))
+  ])).flat().sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
+    .map(item => `    <item>
+      <title>${item.title}</title>
+      <link>${item.link}</link>
+      <description>${item.description}</description>
+      <pubDate>${item.pubDate}</pubDate>
+      <guid isPermaLink="false">${item.guid}</guid>
+    </item>`).join('\n')}
   </channel>
 </rss>`;
 

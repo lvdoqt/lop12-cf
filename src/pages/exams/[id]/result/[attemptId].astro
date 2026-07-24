@@ -43,14 +43,19 @@ const questions = rawQuestions.map((q) => {
   return { ...q, globalIndex: startIndex };
 });
 
-const mcqQuestions = questions.filter(q => q.type === 'single_choice');
+const hasMcq = questions.some(q => q.type === 'single_choice' || q.type === 'mcq');
+const hasRead = questions.some(q => q.type === 'read');
+const hasReadCloze = questions.some(q => q.type === 'read_cloze');
+const groupEnglishTypes = hasMcq || hasRead || hasReadCloze;
+
+const mcqQuestions = questions.filter(q => q.type === 'single_choice' || (groupEnglishTypes && (q.type === 'read' || q.type === 'read_cloze')));
 const multipleChoiceQuestions = questions.filter(q => q.type === 'multiple_choice');
 const msqQuestions = questions.filter(q => q.type === 'msq');
 const saQuestions = questions.filter(q => q.type === 'sa');
 const trueFalseQuestions = questions.filter(q => q.type === 'true_false');
 const tlQuestions = questions.filter(q => q.type === 'tl');
-const readQuestions = questions.filter(q => q.type === 'read');
-const readClozeQuestions = questions.filter(q => q.type === 'read_cloze');
+const readQuestions = questions.filter(q => !groupEnglishTypes && q.type === 'read');
+const readClozeQuestions = questions.filter(q => !groupEnglishTypes && q.type === 'read_cloze');
 const listQuestions = questions.filter(q => q.type === 'list');
 
 const allSections = [
@@ -246,7 +251,7 @@ if (score < 5.0) {
                       question={question}
                       index={question.globalIndex}
                       mode="review"
-                      selectedAnswers={attempt.answers_submitted?.[question.id] || {}}
+                      selectedAnswers={(attempt.answers_submitted?.[question.id] as Record<string, string>) || {}}
                     />
                   ))}
                 </div>
@@ -265,13 +270,24 @@ if (score < 5.0) {
                       question={question}
                       index={question.globalIndex}
                       mode="review"
-                      selectedAnswers={attempt.answers_submitted?.[question.id] || {}}
+                      selectedAnswers={(attempt.answers_submitted?.[question.id] as Record<string, string>) || {}}
                     />
                   ))
                 ) : (
                   section.items.map(question => {
+                    if (question.type === 'read' || question.type === 'read_cloze' || question.type === 'list') {
+                       return (
+                         <ReadListQuestion
+                           client:load
+                           question={question}
+                           index={question.globalIndex}
+                           mode="review"
+                           selectedAnswers={(attempt.answers_submitted?.[question.id] as Record<string, string>) || {}}
+                         />
+                       );
+                    }
                     const submittedRaw = attempt.answers_submitted?.[question.id];
-                    const selectedAnswers = Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : []);
+                    const selectedAnswers = (Array.isArray(submittedRaw) ? submittedRaw : (submittedRaw ? [submittedRaw] : [])) as string[];
                     return <QuestionCard question={question} index={question.globalIndex} mode="review" selectedAnswers={selectedAnswers} />;
                   })
                 )}

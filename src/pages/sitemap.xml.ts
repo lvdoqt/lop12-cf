@@ -19,10 +19,11 @@ export const GET: APIRoute = async ({ request }) => {
   const base = import.meta.env.BASE_URL; // '/lms'
 
   // Lấy dữ liệu động song song
-  const [subjects, exams, lessonEntries] = await Promise.all([
+  const [subjects, exams, lessonEntries, courses] = await Promise.all([
     db.getSubjects(),
     db.getExams(),
     getCollection('lessons'),
+    db.getCourses(),
   ]);
 
   const now = new Date().toISOString();
@@ -77,10 +78,24 @@ export const GET: APIRoute = async ({ request }) => {
       : now;
     urls.push(`
   <url>
-    <loc>${origin}${base}/exams/${exam.id}</loc>
+    <loc>${origin}${base}/exams/${exam.slug}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
+  </url>`);
+  }
+
+  // ── Khóa học (/khoa-hoc/[slug]) ──────────────────────────────────────────────
+  for (const course of courses) {
+    const lastmod = course.created_at
+      ? new Date(course.created_at).toISOString()
+      : now;
+    urls.push(`
+  <url>
+    <loc>${origin}${base}/khoa-hoc/${course.slug}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>`);
   }
 

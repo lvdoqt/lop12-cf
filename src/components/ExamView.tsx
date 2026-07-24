@@ -136,14 +136,20 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
   const classified = useMemo(() => {
     let currentIndex = 1;
     const withIndex = questions.map((q) => {
+      const hasMcq = questions.some(q => q.type === 'single_choice' || q.type === 'mcq');
+      const hasRead = questions.some(q => q.type === 'read');
+      const hasReadCloze = questions.some(q => q.type === 'read_cloze');
+      // Gộp chung nếu có bất kỳ loại nào (vì đọc hiểu / điền từ thường đi chung với trắc nghiệm)
+      const groupEnglishTypes = hasMcq || hasRead || hasReadCloze;
+
       let section: SectionKey = 'mcq';
       if (q.type === 'multiple_choice') section = 'multiple_choice';
       else if (q.type === 'true_false') section = 'true_false';
       else if (q.type === 'msq') section = 'msq';
       else if (q.type === 'sa') section = 'sa';
       else if (q.type === 'tl') section = 'tl';
-      else if (q.type === 'read') section = 'read';
-      else if (q.type === 'read_cloze') section = 'read_cloze';
+      else if (q.type === 'read') section = groupEnglishTypes ? 'mcq' : 'read';
+      else if (q.type === 'read_cloze') section = groupEnglishTypes ? 'mcq' : 'read_cloze';
       else if (q.type === 'ordering') section = 'ordering';
       else if (q.type === 'list') section = 'list';
       
@@ -157,16 +163,16 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       return { ...q, globalIndex: startIndex, section };
     });
     return {
-      mcq: withIndex.filter(q => q.type === 'single_choice'),
-      multiple_choice: withIndex.filter(q => q.type === 'multiple_choice'),
-      msq: withIndex.filter(q => q.type === 'msq'),
-      sa: withIndex.filter(q => q.type === 'sa'),
-      true_false: withIndex.filter(q => q.type === 'true_false'),
-      tl: withIndex.filter(q => q.type === 'tl'),
-      read: withIndex.filter(q => q.type === 'read'),
-      read_cloze: withIndex.filter(q => q.type === 'read_cloze'),
-      ordering: withIndex.filter(q => q.type === 'ordering'),
-      list: withIndex.filter(q => q.type === 'list'),
+      mcq: withIndex.filter(q => q.section === 'mcq'),
+      multiple_choice: withIndex.filter(q => q.section === 'multiple_choice'),
+      msq: withIndex.filter(q => q.section === 'msq'),
+      sa: withIndex.filter(q => q.section === 'sa'),
+      true_false: withIndex.filter(q => q.section === 'true_false'),
+      tl: withIndex.filter(q => q.section === 'tl'),
+      read: withIndex.filter(q => q.section === 'read'),
+      read_cloze: withIndex.filter(q => q.section === 'read_cloze'),
+      ordering: withIndex.filter(q => q.section === 'ordering'),
+      list: withIndex.filter(q => q.section === 'list'),
       all: withIndex,
     };
   }, [questions]);
@@ -419,13 +425,13 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
                         <h2 className="text-lg font-extrabold text-white leading-tight">{color.label}</h2>
                       </div>
                       <div className="ml-auto bg-white/20 rounded-xl px-3 py-1.5 text-white text-xs font-bold">
-                        {items.length} câu
+                        {items.reduce((acc, q) => acc + ((q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') ? ((q.metadata as any)?.questions?.length || 1) : 1), 0)} câu
                       </div>
                     </div>
                   </div>
                   <div className="space-y-4">
                     {items.map(q =>
-                      key === 'list' ? (
+                      (q.type === 'list' || q.type === 'read' || q.type === 'read_cloze') ? (
                         <ReadListQuestion
                           key={q.id}
                           question={q}

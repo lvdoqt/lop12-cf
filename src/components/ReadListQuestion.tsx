@@ -93,10 +93,19 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
   const contentHtml = useMemo(() => {
     let content = question.content || '';
     if (isCloze && subQuestions.length > 0) {
+      const matches = Array.from(content.matchAll(/\((\d+)\)/g));
+      const nums = Array.from(new Set(matches.map(m => parseInt(m[1], 10))));
+      nums.sort((a, b) => a - b);
+      
+      const numMap = new Map<number, number>();
+      for (let i = 0; i < Math.min(nums.length, subQuestions.length); i++) {
+        numMap.set(nums[i], index + i);
+      }
+
       content = content.replace(/\((\d+)\)/g, (match, p1) => {
         const num = parseInt(p1, 10);
-        if (num >= 1 && num <= subQuestions.length) {
-          return `(${index + num - 1})`;
+        if (numMap.has(num)) {
+          return `(${numMap.get(num)})`;
         }
         return match;
       });
@@ -169,13 +178,7 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
             
             let displayQuestion = sq.question || '';
             if (isCloze) {
-              displayQuestion = displayQuestion.replace(/\((\d+)\)/g, (match, p1) => {
-                const num = parseInt(p1, 10);
-                if (num >= 1 && num <= subQuestions.length) {
-                  return `(${index + num - 1})`;
-                }
-                return match;
-              });
+              displayQuestion = displayQuestion.replace(/\((\d+)\)/g, `(${index + i})`);
             }
 
             return (
