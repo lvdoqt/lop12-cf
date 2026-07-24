@@ -356,8 +356,8 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
         {/* Questions */}
         <div className="space-y-10">
           {(() => {
-            // read_cloze không có section header — render inline như câu thường
-            const sectionKeys: SectionKey[] = ['read', 'ordering', 'list', 'mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl'];
+            // read & read_cloze không có section header — render inline theo từng nhóm passage
+            const sectionKeys: SectionKey[] = ['ordering', 'list', 'mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl'];
             const activeKeys = sectionKeys.filter(key => classified[key].length > 0);
             const Roman = (n: number) => ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][n - 1] || String(n);
 
@@ -382,12 +382,12 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
             return renderGroups.map((group, gi) => {
               const { key, items } = group;
               const color = SECTION_COLORS[key];
-              const isClozeGroup = key === 'read_cloze';
+              const isInlineGroup = key === 'read_cloze' || key === 'read';
 
-              if (isClozeGroup) {
-                // Không có section header, render thẳng ReadListQuestion
+              if (isInlineGroup) {
+                // Không có section header, render thẳng ReadListQuestion theo từng nhóm
                 return (
-                  <div key={`cloze-${gi}`} className="space-y-4">
+                  <div key={`inline-${gi}`} className="space-y-4">
                     {items.map(q => (
                       <ReadListQuestion
                         key={q.id}
@@ -425,7 +425,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
                   </div>
                   <div className="space-y-4">
                     {items.map(q =>
-                      (key === 'read' || key === 'list') ? (
+                      key === 'list' ? (
                         <ReadListQuestion
                           key={q.id}
                           question={q}
@@ -442,7 +442,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
                           mode="take"
                           selectedAnswer={answers[q.id]}
                           onAnswer={handleAnswer}
-                          sectionKey={(q.section === 'read' || q.section === 'list' || q.section === 'ordering') ? 'mcq' : q.section}
+                          sectionKey={(q.section === 'list' || q.section === 'ordering' || q.section === 'read' || q.section === 'read_cloze') ? 'mcq' : q.section}
                         />
                       )
                     )}
@@ -525,8 +525,8 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
             {/* Legend */}
             <div className="flex items-center gap-3 mt-4 text-[10px] font-semibold text-gray-400 dark:text-slate-500 flex-wrap">
               {(() => {
-                // read_cloze không có section header — bỏ khỏi legend
-                const sectionKeys: SectionKey[] = ['read', 'ordering', 'list', 'mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl'];
+                // read & read_cloze không có section header — bỏ khỏi legend
+                const sectionKeys: SectionKey[] = ['ordering', 'list', 'mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl'];
                 const activeKeys = sectionKeys.filter(key => classified[key].length > 0);
                 const Roman = (n: number) => ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][n - 1] || String(n);
                 

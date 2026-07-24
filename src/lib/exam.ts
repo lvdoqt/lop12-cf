@@ -22,12 +22,6 @@ export function buildShuffledExam(allQuestions: any[], prng: () => number) {
     true_false: shuffleArrayWithPRNG(bySection.true_false, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })),
     tl: shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })),
     
-    // read: shuffle nhóm, shuffle câu con, shuffle phương án
-    read: shuffleArrayWithPRNG(bySection.read, prng).map(q => shuffleReadQuestion(q, prng, true)),
-    
-    // read_cloze: shuffle nhóm (passage), KHÔNG shuffle sub-questions bên trong vì các khoảng trống (1), (2) có thứ tự, nhưng CÓ shuffle phương án
-    read_cloze: shuffleArrayWithPRNG(bySection.read_cloze, prng).map(q => shuffleReadQuestion(q, prng, false)),
-    
     // ordering: shuffle vị trí câu, KHÔNG shuffle đáp án (đáp án là chuỗi thứ tự có nghĩa)
     ordering: shuffleArrayWithPRNG(bySection.ordering, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })),
     
@@ -35,17 +29,23 @@ export function buildShuffledExam(allQuestions: any[], prng: () => number) {
     list: shuffleArrayWithPRNG(bySection.list, prng),
   };
 
+  // Gộp read + read_cloze thành 1 pool rồi shuffle chung
+  const readPool = [
+    ...bySection.read.map(q => shuffleReadQuestion(q, prng, true)),
+    ...bySection.read_cloze.map(q => shuffleReadQuestion(q, prng, false)),
+  ];
+  const shuffledReadPool = shuffleArrayWithPRNG(readPool, prng);
+
   // Thứ tự sections theo cấu trúc đề:
-  // mcq (single_choice) → msq → sa → tl → multiple_choice → read → list → read_cloze
+  // mcq (single_choice) → msq → sa → tl → multiple_choice → [read + read_cloze trộn] → list → ordering → true_false
   return [
     ...shuffled.mcq,
     ...shuffled.msq,
     ...shuffled.sa,
     ...shuffled.tl,
     ...shuffled.multiple_choice,
-    ...shuffled.read,
+    ...shuffledReadPool,
     ...shuffled.list,
-    ...shuffled.read_cloze,
     ...shuffled.ordering,
     ...shuffled.true_false,
   ];

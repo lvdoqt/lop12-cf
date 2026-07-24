@@ -333,7 +333,7 @@ export const db = {
           const q = mockQuestions.find(mq => mq.id === eq.question_id);
           let cnt = 1;
           if (q) {
-             const type = q.metadata?.type;
+             const type = q.type;
              if (type === 'read' || type === 'read_cloze' || type === 'list') {
                const subs = q.metadata?.questions || [];
                if (subs.length > 0) cnt = subs.length;
@@ -348,14 +348,14 @@ export const db = {
     const client = adminClient()!;
     const { data, error } = await client
       .from('exam_questions')
-      .select('exam_id, questions!inner(metadata)')
+      .select('exam_id, questions!inner(type, metadata)')
       .in('exam_id', examIds);
     if (data && !error) {
       for (const row of data) {
         if (row.exam_id && row.questions) {
           const q = Array.isArray(row.questions) ? row.questions[0] : row.questions;
           let cnt = 1;
-          const type = q.metadata?.type;
+          const type = q.type;
           if (type === 'read' || type === 'read_cloze' || type === 'list') {
             const subs = q.metadata?.questions || [];
             if (subs.length > 0) cnt = subs.length;

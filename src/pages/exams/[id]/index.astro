@@ -17,7 +17,13 @@ if (!exam) {
 
 const user = Astro.locals.user;
 const questions = await db.getQuestionsByExamId(exam.id);
-const questionsCount = questions.length;
+const questionsCount = questions.reduce((acc: number, q: any) => {
+  if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
+    const subCount = q.metadata?.questions?.length || 1;
+    return acc + subCount;
+  }
+  return acc + 1;
+}, 0);
 const hasPassword = !!(exam.password);
 
 // Handle Start/Submit action (POST)
