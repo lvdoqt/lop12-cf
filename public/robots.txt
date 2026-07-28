@@ -1,4 +1,4 @@
-# robots.txt — lms.lop12.com
+# robots.txt — lop12.com/lms
 # Tự động hóa lập chỉ mục bởi các công cụ tìm kiếm
 
 User-agent: *
@@ -12,6 +12,10 @@ Allow: /lms/guide
 Allow: /lms/contact
 Allow: /lms/privacy
 Allow: /lms/sitemap
+Allow: /lms/de-thi
+Allow: /lms/khoa-hoc
+Allow: /lms/ly-thuyet
+Allow: /lms/exams
 
 # Trang riêng tư — không lập chỉ mục
 Disallow: /lms/admin
@@ -24,9 +28,6 @@ Disallow: /lms/forgot-password
 Disallow: /lms/reset-password
 Disallow: /lms/ai-chat
 
-# Không crawl trang thi (để tránh crawl session)
-Disallow: /lms/exams/*/take
-Disallow: /lms/exams/*/result
 
 # Sitemap XML
-Sitemap: https://lms.lop12.com/lms/sitemap.xml
+Sitemap: https://lop12.com/lms/sitemap.xml

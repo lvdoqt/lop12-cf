@@ -2,6 +2,7 @@
 import Sidebar from '../components/Sidebar.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -41,7 +42,7 @@ const user = Astro.locals.user;
 const activeSidebar = showSidebar && user !== null;
 
 // Canonical URL — dùng URL hiện tại nếu không được override
-const siteUrl = 'https://lms.lop12.com';
+const siteUrl = 'https://lop12.com';
 const base = import.meta.env.BASE_URL; // '/lms'
 const canonicalUrl = canonical
   ? (canonical.startsWith('http') ? canonical : `${siteUrl}${base}${canonical}`)
@@ -198,6 +199,8 @@ const ADSENSE_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX'; // ← Thay bằng Publisher I
         <Footer user={user} />
       </div>
     </div>
+
+    <ScrollToTop />
 
     <!-- KaTeX Math auto render execution -->
     <script is:inline>

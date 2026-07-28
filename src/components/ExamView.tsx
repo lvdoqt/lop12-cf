@@ -29,7 +29,7 @@ const SECTION_COLORS = {
     text: 'text-green-700 dark:text-green-300',
     badge: 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300',
     nav: 'bg-green-500',
-    label: 'Câu trắc nghiệm nhiều phương án lựa chọn',
+    label: 'Câu trắc nghiệm chọn 1 phương án',
     icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
   },
   multiple_choice: {
@@ -152,7 +152,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       else if (q.type === 'read_cloze') section = groupEnglishTypes ? 'mcq' : 'read_cloze';
       else if (q.type === 'ordering') section = 'ordering';
       else if (q.type === 'list') section = 'list';
-      
+
       const startIndex = currentIndex;
       let count = 1;
       if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
@@ -185,18 +185,18 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
         const numSub = (q.metadata as any)?.questions?.length || 1;
         for (let i = 0; i < numSub; i++) {
           items.push({
-             ...q,
-             subIndex: i,
-             displayIndex: q.globalIndex + i,
-             isSub: true
+            ...q,
+            subIndex: i,
+            displayIndex: q.globalIndex + i,
+            isSub: true
           });
         }
       } else {
-         items.push({
-            ...q,
-            displayIndex: q.globalIndex,
-            isSub: false
-         });
+        items.push({
+          ...q,
+          displayIndex: q.globalIndex,
+          isSub: false
+        });
       }
     });
     return items;
@@ -332,9 +332,8 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-4 relative">
       {/* Main content */}
       <div className="lg:col-span-3 space-y-6">
-        <div className={`px-6 py-4 rounded-2xl shadow-md flex items-center justify-between ${
-          isCritical ? 'bg-rose-600' : 'bg-blue-600'
-        } text-white`}>
+        <div className={`px-6 py-4 rounded-2xl shadow-md flex items-center justify-between ${isCritical ? 'bg-rose-600' : 'bg-blue-600'
+          } text-white`}>
           <div className="flex-1 min-w-0">
             <span className="text-xs font-bold uppercase tracking-wider text-white/80">
               {isLowTime ? '⚠️ Sắp hết giờ' : 'Đang thi trực tuyến'}
@@ -464,25 +463,22 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       <div className="lg:col-span-1">
         <div className="sticky top-20 space-y-6">
           {/* Timer */}
-          <div className={`rounded-2xl p-6 shadow-sm text-center transition-all duration-300 border ${
-            isLowTime
+          <div className={`rounded-2xl p-6 shadow-sm text-center transition-all duration-300 border ${isLowTime
               ? 'bg-rose-50 dark:bg-rose-950/20 border-rose-200 dark:border-rose-900/40'
               : 'bg-white dark:bg-slate-900 border-gray-250 dark:border-slate-800/80'
-          }`}>
+            }`}>
             <p className="text-xs font-bold text-gray-400 dark:text-slate-500 uppercase tracking-wider">Thời gian còn lại</p>
-            <div className={`text-3xl md:text-4xl font-black mt-2 font-mono tracking-wider transition-colors ${
-              isLowTime
+            <div className={`text-3xl md:text-4xl font-black mt-2 font-mono tracking-wider transition-colors ${isLowTime
                 ? 'text-rose-600 dark:text-rose-400 animate-pulse'
                 : 'text-blue-600 dark:text-blue-400'
-            }`}>
+              }`}>
               {timeDisplay}
             </div>
             {/* Progress bar */}
             <div className="mt-3 h-1.5 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
               <div
-                className={`h-full rounded-full transition-all duration-1000 ${
-                  isLowTime ? 'bg-rose-500' : 'bg-blue-500'
-                }`}
+                className={`h-full rounded-full transition-all duration-1000 ${isLowTime ? 'bg-rose-500' : 'bg-blue-500'
+                  }`}
                 style={{ width: `${Math.min(progress, 100)}%` }}
               />
             </div>
@@ -499,13 +495,13 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
                 const isMsq = item.type === 'msq';
                 let answered = false;
                 let isPartial = false;
-                
+
                 if (item.isSub) {
-                   const sel = answers[item.id] as Record<string, string>;
-                   answered = !!(sel && sel[item.subIndex]);
+                  const sel = answers[item.id] as Record<string, string>;
+                  answered = !!(sel && sel[item.subIndex]);
                 } else {
-                   answered = answers[item.id] !== undefined;
-                   isPartial = isMsq && typeof answers[item.id] === 'object' && Object.keys(answers[item.id] as object).length > 0;
+                  answered = answers[item.id] !== undefined;
+                  isPartial = isMsq && typeof answers[item.id] === 'object' && Object.keys(answers[item.id] as object).length > 0;
                 }
 
                 const sectionColor = SECTION_COLORS[item.section as SectionKey];
@@ -535,7 +531,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
                 const sectionKeys: SectionKey[] = ['ordering', 'list', 'mcq', 'multiple_choice', 'msq', 'sa', 'true_false', 'tl'];
                 const activeKeys = sectionKeys.filter(key => classified[key].length > 0);
                 const Roman = (n: number) => ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'][n - 1] || String(n);
-                
+
                 return activeKeys.map((key, index) => {
                   const color = SECTION_COLORS[key];
                   return (
