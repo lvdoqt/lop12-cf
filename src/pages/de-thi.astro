@@ -11,6 +11,12 @@ const user = Astro.locals.user;
 const allExams    = await db.getExams();
 const subjects    = await db.getSubjects();
 
+const examIds = allExams.map(e => e.id);
+const [examQuestionCounts, examAttemptCounts] = await Promise.all([
+  db.getExamQuestionCounts(examIds),
+  db.getExamAttemptCounts(examIds),
+]);
+
 // Fetch creators
 let creatorMap: Record<string, string> = {};
 if (isMockMode) {
@@ -213,7 +219,14 @@ const getBgColor = (str: string) => {
           teacherName: creatorName
         };
 
-        return <ExamCard exam={extendedExam} examIndex={idx} />;
+        return (
+          <ExamCard
+            exam={extendedExam}
+            examIndex={idx}
+            questionCount={examQuestionCounts[exam.id] || 0}
+            attemptCount={examAttemptCounts[exam.id] || 0}
+          />
+        );
       })}
     </div>
   )}

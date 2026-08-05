@@ -5,9 +5,11 @@ interface Props {
   exam: Exam & { subject?: Subject; teacherName?: string };
   color?: 'blue' | 'amber' | 'emerald' | 'purple' | 'vermillion';
   examIndex?: number;
+  questionCount?: number;
+  attemptCount?: number;
 }
 
-const { exam, color = 'vermillion', examIndex = 0 } = Astro.props;
+const { exam, color = 'vermillion', examIndex = 0, questionCount = 0, attemptCount = 0 } = Astro.props;
 
 const examTypeNames = {
   '15m': 'Kiểm tra 15p',
@@ -124,7 +126,7 @@ const btnClass = buttonColors[activeBaseColor] || buttonColors.vermillion;
       </div>
     </div>
 
-    <h3 class={`text-xl font-bold line-clamp-2 leading-snug transition-colors font-serif ${activeTextAccent}`}>
+    <h3 class={`text-xl font-extrabold text-slate-900 dark:text-white line-clamp-2 leading-snug transition-colors font-serif ${activeTextAccent.split(' ').filter(c => c.includes('hover:')).join(' ')}`}>
       {exam.title}
     </h3>
 
@@ -143,12 +145,22 @@ const btnClass = buttonColors[activeBaseColor] || buttonColors.vermillion;
   </div>
 
   <div class="mt-6 pt-4 border-t border-slate-200/60 dark:border-slate-700/40 flex items-center justify-between relative z-10">
-    <div class="flex items-center space-x-3 text-xs text-[#A89888] dark:text-[#6A6A8A]">
+    <div class="flex flex-wrap items-center gap-3 text-xs text-[#A89888] dark:text-[#6A6A8A]">
       <span class="flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         {exam.duration} phút
+      </span>
+      {questionCount > 0 && (
+        <span class="flex items-center">
+          <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          {questionCount} câu
+        </span>
+      )}
+      <span class="flex items-center" title="Lượt thi">
+        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+        {attemptCount}
       </span>
     </div>
 

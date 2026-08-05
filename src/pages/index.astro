@@ -34,10 +34,18 @@ const lessons = rawLessons.map(entry => {
   };
 });
 
-const featuredExams = exams.slice(0, 8).map(exam => ({
+const featuredExams = exams.slice(0, 6).map(exam => ({
   ...exam,
   teacherName: exam.created_by ? (teacherMap[exam.created_by] || 'Giảng viên') : 'Giảng viên'
 }));
+
+// Fetch question count & attempt count for featured exams
+const featuredExamIds = featuredExams.map(e => e.id);
+const [examQuestionCounts, examAttemptCounts] = await Promise.all([
+  db.getExamQuestionCounts(featuredExamIds),
+  db.getExamAttemptCounts(featuredExamIds),
+]);
+
 
 // ── JSON-LD Structured Data ──────────────────────────────────────────────────
 const siteUrl = 'https://lop12.com/lms/';
@@ -221,12 +229,40 @@ const subjectRows = [
     </div>
   </div>
 
+  <!-- ===== SECTION: EXAMS (Emerald) ===== -->
+  <div class="bg-gradient-to-br from-emerald-100 via-teal-100 to-cyan-100 dark:from-[#051510] dark:via-[#0A1E1C] dark:to-[#051820] mb-12 rounded-3xl p-6 md:p-10 border border-emerald-300/50 dark:border-emerald-900/40 shadow-sm">
+    <div class="space-y-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <h2 class="section-title text-emerald-700 dark:text-emerald-300">Đề thi thử online bám sát ma trận</h2>
+          <p class="section-subtitle">Đề thi có thời gian làm bài, tự động chấm điểm và xem lời giải chi tiết.</p>
+        </div>
+        <a href="/de-thi" class="text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 flex items-center gap-1 transition-colors shrink-0">
+          Xem thêm đề thi
+          <span class="text-lg leading-none">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredExams.map((exam, idx) => (
+          <ExamCard
+            exam={exam}
+            color="emerald"
+            examIndex={idx}
+            questionCount={examQuestionCounts[exam.id] || 0}
+            attemptCount={examAttemptCounts[exam.id] || 0}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+
   <!-- ===== SECTION: SUBJECTS (Grouped rows with illustrations) ===== -->
   <div class="bg-gradient-to-br from-blue-50 via-indigo-50 to-slate-50 dark:from-[#0A1628] dark:via-[#111827] dark:to-[#0F172A] mb-12 rounded-3xl p-6 md:p-10 border border-blue-200/40 dark:border-blue-900/30">
     <div class="space-y-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h2 class="section-title text-blue-700 dark:text-blue-300">Lựa chọn môn học</h2>
+          <h2 class="section-title text-blue-700 dark:text-blue-300">Học lý thuyết 12</h2>
           <p class="section-subtitle">Đầy đủ 11 môn học Lớp 12 — bài giảng lý thuyết và đề thi trắc nghiệm chuẩn cấu trúc mới.</p>
         </div>
         <a href="/ly-thuyet" class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center gap-1 transition-colors shrink-0">
@@ -382,28 +418,6 @@ const subjectRows = [
             </a>
           );
         })}
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== SECTION: EXAMS (Emerald) ===== -->
-  <div class="bg-gradient-to-br from-emerald-100 via-teal-100 to-cyan-100 dark:from-[#051510] dark:via-[#0A1E1C] dark:to-[#051820] mb-12 rounded-3xl p-6 md:p-10 border border-emerald-300/50 dark:border-emerald-900/40 shadow-sm">
-    <div class="space-y-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <h2 class="section-title text-emerald-700 dark:text-emerald-300">Đề thi thử online bám sát ma trận</h2>
-          <p class="section-subtitle">Đề thi có thời gian làm bài, tự động chấm điểm và xem lời giải chi tiết.</p>
-        </div>
-        <a href="/de-thi" class="text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 flex items-center gap-1 transition-colors shrink-0">
-          Xem thêm đề thi
-          <span class="text-lg leading-none">→</span>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {featuredExams.map((exam, idx) => (
-          <ExamCard exam={exam} color="emerald" examIndex={idx} />
-        ))}
       </div>
     </div>
   </div>

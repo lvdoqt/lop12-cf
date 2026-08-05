@@ -322,6 +322,32 @@ export const db = {
     return data;
   },
 
+
+  async getExamAttemptCounts(examIds: string[]): Promise<Record<string, number>> {
+    const counts: Record<string, number> = {};
+    if (examIds.length === 0) return counts;
+    if (isInMockMode()) {
+      for (const att of mockAttempts) {
+        if (examIds.includes(att.exam_id) && att.finished_at !== null) {
+          counts[att.exam_id] = (counts[att.exam_id] || 0) + 1;
+        }
+      }
+      return counts;
+    }
+    const client = adminClient();
+    const { data, error } = await client
+      .from('attempts')
+      .select('exam_id')
+      .in('exam_id', examIds)
+      .not('finished_at', 'is', null);
+    if (data && !error) {
+      for (const row of data) {
+        counts[row.exam_id] = (counts[row.exam_id] || 0) + 1;
+      }
+    }
+    return counts;
+  },
+
   async getExamQuestionCounts(examIds: string[]): Promise<Record<string, number>> {
     const counts: Record<string, number> = {};
     if (examIds.length === 0) return counts;
@@ -333,7 +359,7 @@ export const db = {
           const q = mockQuestions.find(mq => mq.id === eq.question_id);
           let cnt = 1;
           if (q) {
-             const type = q.type;
+             const type = (q as any).metadata?.type || (q as any).type;
              if (type === 'read' || type === 'read_cloze' || type === 'list') {
                const subs = q.metadata?.questions || [];
                if (subs.length > 0) cnt = subs.length;
@@ -346,16 +372,22 @@ export const db = {
     }
 
     const client = adminClient()!;
+    // NOTE: `type` is NOT a column in the questions table — it is stored inside `metadata` JSONB.
+    // Selecting `type` directly causes a Supabase error; use `metadata` only.
     const { data, error } = await client
       .from('exam_questions')
-      .select('exam_id, questions!inner(type, metadata)')
+      .select('exam_id, questions!inner(metadata)')
       .in('exam_id', examIds);
+    if (error) {
+      console.error('[db.getExamQuestionCounts] Supabase error:', error.message);
+    }
     if (data && !error) {
       for (const row of data) {
         if (row.exam_id && row.questions) {
           const q = Array.isArray(row.questions) ? row.questions[0] : row.questions;
           let cnt = 1;
-          const type = q.type;
+          // type is stored inside metadata, not as a top-level column
+          const type = q.metadata?.type;
           if (type === 'read' || type === 'read_cloze' || type === 'list') {
             const subs = q.metadata?.questions || [];
             if (subs.length > 0) cnt = subs.length;
@@ -367,7 +399,36 @@ export const db = {
     return counts;
   },
 
+  async getExamAttemptCounts(examIds: string[]): Promise<Record<string, number>> {
+    const counts: Record<string, number> = {};
+    if (examIds.length === 0) return counts;
+
+    if (isInMockMode()) {
+      for (const attempt of mockAttempts) {
+        if (examIds.includes(attempt.exam_id) && attempt.finished_at) {
+          counts[attempt.exam_id] = (counts[attempt.exam_id] || 0) + 1;
+        }
+      }
+      return counts;
+    }
+
+    const client = adminClient()!;
+    const { data, error } = await client
+      .from('attempts')
+      .select('exam_id')
+      .in('exam_id', examIds)
+      .not('finished_at', 'is', null);
+    if (error) { console.error('[db.getExamAttemptCounts]', error.message); }
+    if (data) {
+      for (const row of data) {
+        if (row.exam_id) counts[row.exam_id] = (counts[row.exam_id] || 0) + 1;
+      }
+    }
+    return counts;
+  },
+
   async createExam(exam: Omit<Exam, 'id' | 'created_at' | 'slug'>, questionIds: string[]): Promise<Exam> {
+
     if (isInMockMode()) {
       const newExam: Exam = {
         ...exam,
@@ -1082,6 +1143,28 @@ export const db = {
     return data || [];
   },
 
+  async getAttemptsByExamId(examId: string): Promise<(Attempt & { user?: User })[]> {
+    if (isInMockMode()) {
+      return mockAttempts
+        .filter(a => a.exam_id === examId && a.finished_at !== null)
+        .map(att => ({
+          ...att,
+          user: mockUsers.find(u => u.id === att.user_id)
+        }))
+        .sort((a, b) => new Date(b.started_at).getTime() - new Date(a.started_at).getTime());
+    }
+    const client = adminClient();
+    const { data, error } = await client
+      .from('attempts')
+      .select('*, user:users(id, email, fullname, avatar_url, role)')
+      .eq('exam_id', examId)
+      .not('finished_at', 'is', null)
+      .order('started_at', { ascending: false });
+    if (error) { console.error('[db.getAttemptsByExamId]', error); return []; }
+    return data || [];
+  },
+
+
   // --------------------------------------------------------------------------
   // USER PROFILES
   // --------------------------------------------------------------------------
@@ -1363,10 +1446,22 @@ export const db = {
       }
     }
 
+    // Fetch enrollment counts
+    let enrollmentCountMap: Record<string, number> = {};
+    if (courseIds.length > 0) {
+      const { data: allEnrollments } = await client.from('course_enrollments').select('course_id').in('course_id', courseIds);
+      if (allEnrollments) {
+        for (const e of allEnrollments) {
+          enrollmentCountMap[e.course_id] = (enrollmentCountMap[e.course_id] || 0) + 1;
+        }
+      }
+    }
+
     return courses.map((c: any) => ({
       ...c,
       subject: subjectsMap[c.subject_id] || undefined,
       lessonCount: lessonCountMap[c.id] || 0,
+      enrollmentCount: enrollmentCountMap[c.id] || 0,
       teacher: teachersMap[c.created_by] || undefined,
     }));
   },
@@ -1504,6 +1599,45 @@ export const db = {
   // --------------------------------------------------------------------------
   // ENROLLMENTS & PROGRESS
   // --------------------------------------------------------------------------
+
+  async getCourseEnrollments(courseId: string): Promise<(CourseEnrollment & { user?: User })[]> {
+    if (isInMockMode()) {
+      return mockEnrollments
+        .filter(e => e.course_id === courseId)
+        .map(e => ({
+          ...e,
+          user: mockUsers.find(u => u.id === e.user_id)
+        }))
+        .sort((a, b) => new Date(b.enrolled_at).getTime() - new Date(a.enrolled_at).getTime());
+    }
+    const client = adminClient()!;
+    // Step 1: fetch enrollments
+    const { data: enrollments, error } = await client
+      .from('course_enrollments')
+      .select('*')
+      .eq('course_id', courseId)
+      .order('enrolled_at', { ascending: false });
+    if (error) { console.error('[db.getCourseEnrollments] enrollments error:', error.message); return []; }
+    if (!enrollments || enrollments.length === 0) return [];
+
+    // Step 2: fetch users separately (avoids PostgREST join issues)
+    const userIds = [...new Set(enrollments.map((e: any) => e.user_id).filter(Boolean))];
+    let usersMap: Record<string, User> = {};
+    if (userIds.length > 0) {
+      const { data: users, error: userErr } = await client
+        .from('users')
+        .select('id, email, fullname, avatar_url, role')
+        .in('id', userIds);
+      if (userErr) { console.error('[db.getCourseEnrollments] users error:', userErr.message); }
+      if (users) usersMap = Object.fromEntries(users.map((u: any) => [u.id, u]));
+    }
+
+    return enrollments.map((e: any) => ({
+      ...e,
+      user: usersMap[e.user_id] || undefined
+    }));
+  },
+
   async enrollUserInCourse(courseId: string, userId: string): Promise<CourseEnrollment> {
     if (isInMockMode()) {
       const exists = mockEnrollments.find(e => e.course_id === courseId && e.user_id === userId);

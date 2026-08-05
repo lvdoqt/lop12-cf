@@ -42,7 +42,9 @@ const exams    = await db.getExams(undefined, !isAdmin ? user.id : undefined);
 const subjects = await db.getSubjects();
 const categories = await db.getCategories();
 const categoriesMap = Object.fromEntries(categories.map(c => [c.id, c]));
-const examCounts = await db.getExamQuestionCounts(exams.map(e => e.id));
+const examIds = exams.map(e => e.id);
+const examCounts = await db.getExamQuestionCounts(examIds);
+const attemptCounts = await db.getExamAttemptCounts(examIds);
 
 const allUsers = isAdmin ? await db.getUsers() : [];
 const usersMap = Object.fromEntries(allUsers.map(u => [u.id, u]));
@@ -215,6 +217,7 @@ const typeCounts = Object.keys(examTypeMeta).map(t => ({
                 <th class="px-4 py-3">Chuyên mục</th>
                 <th class="px-4 py-3">Loại đề</th>
                 <th class="px-4 py-3 text-center">Số câu</th>
+                <th class="px-4 py-3 text-center">Lượt thi</th>
                 <th class="px-4 py-3">Thời gian</th>
                 <th class="px-4 py-3">Bảo mật</th>
                 <th class="px-4 py-3 text-right">Hành động</th>
@@ -261,6 +264,11 @@ const typeCounts = Object.keys(examTypeMeta).map(t => ({
                         {examCounts[exam.id] || 0}
                       </span>
                     </td>
+                    <td class="px-4 py-4 text-center">
+                      <span class="inline-flex items-center justify-center min-w-[1.5rem] h-6 px-1.5 rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400 font-bold text-xs">
+                        {attemptCounts[exam.id] || 0}
+                      </span>
+                    </td>
                     <td class="px-4 py-4 font-mono text-xs font-semibold text-[#8A7E72] dark:text-[#8A8A9E]">
                       {exam.duration} phút
                     </td>
@@ -274,7 +282,28 @@ const typeCounts = Object.keys(examTypeMeta).map(t => ({
                       )}
                     </td>
                     <td class="px-4 py-4 text-right">
-                      <div class="flex items-center justify-end gap-3">
+                      <div class="flex items-center justify-end gap-2 flex-wrap">
+                        {exam.password && (
+                          <a
+                            href={`/admin/exams/${exam.id}/attempts`}
+                            class="inline-flex items-center gap-1 text-xs font-bold text-violet-600 dark:text-violet-400 hover:underline"
+                            title="Xem danh sách học sinh đã làm bài"
+                          >
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            DS HS
+                          </a>
+                        )}
+                        {exam.password && (
+                          <a
+                            href={`/api/admin/exams/${exam.id}/attempts.csv`}
+                            download
+                            class="inline-flex items-center gap-1 text-xs font-bold text-teal-600 dark:text-teal-400 hover:underline"
+                            title="Tải danh sách học sinh dạng CSV"
+                          >
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            CSV
+                          </a>
+                        )}
                         <a
                           href={`/exams/${exam.slug || exam.id}`}
                           target="_blank"

@@ -102,6 +102,27 @@ const bankQuestions = await db.getQuestions(undefined, user.role === 'admin' ? u
 
 // Filter out questions that are already assigned
 const availableQuestions = bankQuestions.filter(q => !assignedQuestionIds.includes(q.id));
+
+// ---- Thống kê lượt thi ----
+const examAttempts = await db.getAttemptsByExamId(exam.id);
+const totalAttempts = examAttempts.length;
+
+// Chỉ tính các lần đã hoàn thành (score != null)
+const scoredAttempts = examAttempts.filter(a => a.score !== null);
+const avgScore = scoredAttempts.length > 0
+  ? Math.round((scoredAttempts.reduce((s, a) => s + Number(a.score || 0), 0) / scoredAttempts.length) * 100) / 100
+  : null;
+const passRate = scoredAttempts.length > 0
+  ? Math.round((scoredAttempts.filter(a => Number(a.score || 0) >= 5).length / scoredAttempts.length) * 100)
+  : null;
+
+// Học sinh có điểm cao nhất
+const topAttempt = scoredAttempts.length > 0
+  ? scoredAttempts.reduce((best, a) => Number(a.score || 0) > Number(best.score || 0) ? a : best, scoredAttempts[0])
+  : null;
+
+// Số học sinh duy nhất đã thi
+const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
 ---
 
 <Layout title={`Sửa đề thi: ${exam.title}`}>
@@ -125,6 +146,151 @@ const availableQuestions = bankQuestions.filter(q => !assignedQuestionIds.includ
         {errMsg}
       </div>
     )}
+
+    <!-- =====  THỐNG KÊ LƯỢT THI  ===== -->
+    <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800/80 rounded-2xl overflow-hidden shadow-sm">
+      <!-- Card header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-slate-800">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2 h-6 rounded-sm bg-blue-500"></span>
+          <h2 class="text-base font-bold text-gray-900 dark:text-white">Thống kê lượt thi</h2>
+        </div>
+        <span class="text-xs font-semibold text-gray-400 dark:text-slate-500">
+          Cập nhật theo thời gian thực
+        </span>
+      </div>
+
+      <!-- Summary cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 divide-x divide-gray-100 dark:divide-slate-800">
+        <div class="p-5 text-center">
+          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Tổng lượt thi</p>
+          <p class="text-2xl font-black text-gray-900 dark:text-white font-mono">{totalAttempts}</p>
+        </div>
+        <div class="p-5 text-center">
+          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Học sinh thi</p>
+          <p class="text-2xl font-black text-blue-600 dark:text-blue-400 font-mono">{uniqueStudents}</p>
+        </div>
+        <div class="p-5 text-center">
+          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Điểm trung bình</p>
+          <p class={`text-2xl font-black font-mono ${
+            avgScore === null ? 'text-gray-400' :
+            avgScore >= 8 ? 'text-emerald-600 dark:text-emerald-400' :
+            avgScore >= 5 ? 'text-amber-600 dark:text-amber-400' :
+            'text-rose-600 dark:text-rose-400'
+          }`}>
+            {avgScore !== null ? `${avgScore}/10` : '—'}
+          </p>
+        </div>
+        <div class="p-5 text-center">
+          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Tỷ lệ đạt (≥5đ)</p>
+          <p class={`text-2xl font-black font-mono ${
+            passRate === null ? 'text-gray-400' :
+            passRate >= 70 ? 'text-emerald-600 dark:text-emerald-400' :
+            passRate >= 40 ? 'text-amber-600 dark:text-amber-400' :
+            'text-rose-600 dark:text-rose-400'
+          }`}>
+            {passRate !== null ? `${passRate}%` : '—'}
+          </p>
+        </div>
+      </div>
+
+      <!-- Best student badge -->
+      {topAttempt && (
+      <div class="px-6 py-3 border-t border-gray-100 dark:border-slate-800 bg-amber-50/60 dark:bg-amber-900/10 flex items-center gap-3">
+        <span class="text-lg">🏆</span>
+        <p class="text-xs font-semibold text-amber-700 dark:text-amber-400">
+          Điểm cao nhất: <span class="font-black">{Number(topAttempt.score)}/10</span>
+          {' — '}
+          <span>{(topAttempt.user as any)?.fullname || (topAttempt.user as any)?.email || 'Học sinh'}</span>
+        </p>
+      </div>
+      )}
+
+      <!-- Student attempt table -->
+      {examAttempts.length === 0 ? (
+      <div class="py-10 text-center">
+        <p class="text-3xl mb-2">📝</p>
+        <p class="text-sm font-semibold text-gray-400 dark:text-slate-500">Chưa có học sinh nào thi đề thi này</p>
+      </div>
+      ) : (
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-50/80 dark:bg-slate-800/30">
+            <tr class="text-[11px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-wider">
+              <th class="px-6 py-3 text-left">Học sinh</th>
+              <th class="px-4 py-3 text-center">Điểm</th>
+              <th class="px-4 py-3 text-center">Kết quả</th>
+              <th class="px-4 py-3 text-left">Thời gian nộp</th>
+              <th class="px-4 py-3 text-right">Xem chi tiết</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100 dark:divide-slate-800/60">
+            {examAttempts.slice(0, 50).map(att => {
+              const sc = Number(att.score ?? -1);
+              const isPassed = sc >= 5;
+              const displayName = (att.user as any)?.fullname || (att.user as any)?.email || 'Không rõ';
+              const takenAt = new Date(att.started_at).toLocaleString('vi-VN', {
+                day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'
+              });
+              return (
+              <tr class="hover:bg-gray-50/50 dark:hover:bg-slate-800/20 transition-colors">
+                <td class="px-6 py-3">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-7 h-7 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-xs font-black shrink-0">
+                      {displayName.charAt(0).toUpperCase()}
+                    </div>
+                    <div>
+                      <p class="font-semibold text-gray-800 dark:text-slate-200 text-xs leading-tight">{displayName}</p>
+                      <p class="text-[10px] text-gray-400 dark:text-slate-500">{(att.user as any)?.email || ''}</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-center">
+                  <span class={`text-sm font-black font-mono ${
+                    sc >= 8 ? 'text-emerald-600 dark:text-emerald-400' :
+                    sc >= 5 ? 'text-amber-600 dark:text-amber-400' :
+                    sc >= 0 ? 'text-rose-600 dark:text-rose-400' :
+                    'text-gray-400'
+                  }`}>
+                    {sc >= 0 ? `${sc}/10` : '—'}
+                  </span>
+                </td>
+                <td class="px-4 py-3 text-center">
+                  {sc >= 0 ? (
+                  <span class={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold ${
+                    isPassed
+                      ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+                      : 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400'
+                  }`}>
+                    {isPassed ? '✔ Đạt' : '✘ Chưa đạt'}
+                  </span>
+                  ) : (
+                  <span class="text-[10px] text-gray-400">Chưa nộp</span>
+                  )}
+                </td>
+                <td class="px-4 py-3 text-xs text-gray-500 dark:text-slate-400 font-mono">{takenAt}</td>
+                <td class="px-4 py-3 text-right">
+                  <a
+                    href={`/exams/${exam.id}/result/${att.id}`}
+                    target="_blank"
+                    class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    Xem bài làm
+                  </a>
+                </td>
+              </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        {examAttempts.length > 50 && (
+        <div class="px-6 py-3 text-center border-t border-gray-100 dark:border-slate-800">
+          <p class="text-xs text-gray-400">Hiển thị 50 / {examAttempts.length} lượt thi gần nhất</p>
+        </div>
+        )}
+      </div>
+      )}
+    </div>
 
     <!-- Form -->
     <div class="bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800/80 rounded-2xl p-6 md:p-8 shadow-sm">

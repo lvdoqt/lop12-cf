@@ -1,0 +1,167 @@
+﻿---
+import Layout from "../../../../layouts/Layout.astro";
+import { db } from "../../../../services/db";
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== "admin" && user.role !== "teacher")) {
+  return Astro.redirect("/dashboard");
+}
+
+const { id } = Astro.params;
+if (!id) return Astro.redirect("/admin/exams");
+
+const exam = await db.getExamById(id);
+if (!exam) return Astro.redirect("/admin/exams");
+
+if (user.role === "teacher" && exam.created_by !== user.id) {
+  return Astro.redirect("/admin/exams");
+}
+
+const attempts = await db.getAttemptsByExamId(id);
+const examQuestionCounts = await db.getExamQuestionCounts([id]);
+const totalQuestions = examQuestionCounts[id] || 0;
+
+// score = so_cau_dung x 0.25 (moi cau thuong), nen so_cau_dung = score x 4
+function getCorrectCount(score: number | null | undefined): number | null {
+  if (score === null || score === undefined) return null;
+  const raw = Math.round(score * 4);
+  return totalQuestions > 0 ? Math.min(raw, totalQuestions) : raw;
+}
+
+function formatScore(score: number | null | undefined) {
+  if (score === null || score === undefined) return "—";
+  return Number(score).toFixed(2);
+}
+
+function formatDate(dateStr: string | null | undefined) {
+  if (!dateStr) return "—";
+  return new Date(dateStr).toLocaleString("vi-VN", {
+    day: "2-digit", month: "2-digit", year: "numeric",
+    hour: "2-digit", minute: "2-digit"
+  });
+}
+
+const avgScore = attempts.length > 0
+  ? attempts.reduce((sum, a) => sum + (a.score ?? 0), 0) / attempts.length
+  : null;
+---
+
+<Layout title={`DS Hoc sinh lam bai — ${exam.title}`}>
+  <div class="space-y-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <a href="/admin/exams" class="inline-flex items-center text-xs font-bold text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors uppercase tracking-wider mb-2">
+          <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Quan ly De thi
+        </a>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-ink dark:text-[#E8E0D0] tracking-tight font-serif">
+          Danh sach Hoc sinh lam bai
+        </h1>
+        <p class="text-sm text-[#8A7E72] dark:text-[#8A8A9E] mt-1 max-w-lg">
+          {exam.title}
+        </p>
+      </div>
+      <div class="flex gap-3 shrink-0">
+        <a href={`/api/admin/exams/${id}/attempts.csv`} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm shadow shadow-teal-500/15 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          Tai ve CSV
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div class="flex flex-col items-center justify-center p-4 rounded-2xl border text-center bg-violet-50 text-violet-700 dark:bg-violet-900/20 dark:text-violet-300 border-violet-100 dark:border-violet-900/30">
+        <span class="text-2xl font-extrabold">{attempts.length}</span>
+        <span class="text-xs font-semibold mt-0.5 opacity-80">Luot nop bai</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-4 rounded-2xl border text-center bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300 border-blue-100 dark:border-blue-900/30">
+        <span class="text-2xl font-extrabold">{totalQuestions}</span>
+        <span class="text-xs font-semibold mt-0.5 opacity-80">Tong cau hoi</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-4 rounded-2xl border text-center bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-300 border-emerald-100 dark:border-emerald-900/30">
+        <span class="text-2xl font-extrabold">{avgScore !== null ? avgScore.toFixed(2) : "—"}</span>
+        <span class="text-xs font-semibold mt-0.5 opacity-80">Diem trung binh</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-4 rounded-2xl border text-center bg-amber-50 text-amber-700 dark:bg-amber-900/20 dark:text-amber-300 border-amber-100 dark:border-amber-900/30">
+        <span class="text-2xl font-extrabold">{exam.duration}</span>
+        <span class="text-xs font-semibold mt-0.5 opacity-80">Phut lam bai</span>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-[#22223A]/60 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl overflow-hidden shadow-sm">
+      {attempts.length === 0 ? (
+        <div class="text-center py-16 space-y-3">
+          <div class="text-4xl">📭</div>
+          <p class="text-base font-bold text-ink dark:text-[#E8E0D0]">Chua co hoc sinh nao nop bai</p>
+          <p class="text-sm text-[#8A7E72] dark:text-[#8A8A9E]">Chi hien thi hoc sinh da hoan thanh bai thi.</p>
+        </div>
+      ) : (
+        <div class="overflow-x-auto">
+          <table class="min-w-full">
+            <thead class="bg-slate-50/80 dark:bg-slate-800/30">
+              <tr class="text-left text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                <th class="px-6 py-3 text-center w-12">STT</th>
+                <th class="px-4 py-3">Hoc sinh</th>
+                <th class="px-4 py-3">Email</th>
+                <th class="px-4 py-3 text-center">Diem</th>
+                <th class="px-4 py-3 text-center">Cau dung / Tong</th>
+                <th class="px-4 py-3">Ngay nop</th>
+                <th class="px-4 py-3">Thoi gian lam</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60">
+              {attempts.map((attempt, idx) => {
+                const durationMs = attempt.finished_at && attempt.started_at
+                  ? new Date(attempt.finished_at).getTime() - new Date(attempt.started_at).getTime()
+                  : null;
+                const durationMin = durationMs !== null ? Math.floor(durationMs / 60000) : null;
+                const durationSec = durationMs !== null ? Math.floor((durationMs % 60000) / 1000) : null;
+                const correctCount = getCorrectCount(attempt.score);
+                const scoreNum = attempt.score ?? null;
+                const scoreColor = scoreNum === null ? "text-slate-400" :
+                  scoreNum >= 8 ? "text-emerald-600 dark:text-emerald-400" :
+                  scoreNum >= 5 ? "text-amber-600 dark:text-amber-400" :
+                  "text-rose-600 dark:text-rose-400";
+                const userObj = attempt.user as any;
+                return (
+                  <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/20 transition-colors text-sm">
+                    <td class="px-6 py-4 text-center text-xs text-slate-400 font-semibold">{idx + 1}</td>
+                    <td class="px-4 py-4">
+                      <div class="flex items-center gap-2.5">
+                        <div class="w-7 h-7 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center text-xs font-bold text-violet-600 dark:text-violet-400 shrink-0">
+                          {(userObj?.fullname || userObj?.email || "K").charAt(0).toUpperCase()}
+                        </div>
+                        <span class="font-semibold text-ink dark:text-[#E8E0D0] text-sm">{userObj?.fullname || "Hoc sinh"}</span>
+                      </div>
+                    </td>
+                    <td class="px-4 py-4 text-sm text-slate-500 dark:text-slate-400">{userObj?.email || "—"}</td>
+                    <td class="px-4 py-4 text-center">
+                      <span class={`text-base font-extrabold ${scoreColor}`}>{formatScore(attempt.score)}</span>
+                    </td>
+                    <td class="px-4 py-4 text-center">
+                      {correctCount !== null ? (
+                        <span class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+                          {correctCount}{totalQuestions > 0 ? `/${totalQuestions}` : ""}
+                        </span>
+                      ) : <span class="text-slate-400 text-xs">—</span>}
+                    </td>
+                    <td class="px-4 py-4 text-xs text-slate-500 dark:text-slate-400 font-mono">{formatDate(attempt.finished_at)}</td>
+                    <td class="px-4 py-4 text-xs text-slate-500 dark:text-slate-400 font-mono">
+                      {durationMin !== null ? `${durationMin}p ${durationSec}s` : "—"}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  </div>
+</Layout>

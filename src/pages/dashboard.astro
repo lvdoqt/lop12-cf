@@ -21,7 +21,6 @@ const enrollments = await db.getUserEnrollments(user.id);
 // Teacher: fetch courses they created
 const isTeacher = user.role === 'teacher' || user.role === 'admin';
 const myCourses = isTeacher ? await db.getCourses({ createdBy: user.id }) : [];
-const myCoursesCount = myCourses.length;
 
 const lessonsCount = allLessons.length;
 const examsCount = allExams.length;
@@ -33,19 +32,49 @@ const averageScore = completedAttempts.length > 0
   ? Math.round((completedAttempts.reduce((sum, a) => sum + Number(a.score || 0), 0) / completedAttempts.length) * 100) / 100
   : 0;
 
-// Setup Chart 1: Score over time
-const recentAttempts = [...completedAttempts].reverse(); // oldest to newest for chronological chart
+// Setup Chart 1: Score over time (lấy 10 lần gần nhất theo thứ tự cũ→mới)
+const recentAttempts = [...completedAttempts].slice(0, 10).reverse();
 const chartLabels = recentAttempts.map((a, i) => `Lần ${i + 1}`);
 const chartData = recentAttempts.map(a => Number(a.score || 0));
 
-// Setup Chart 2: Score by subject (Mock data based on actual subjects)
+// Setup Chart 2: Điểm TB theo môn học — THỰC TẾ (dùng exam?.subject?.id)
 const subjects = await db.getSubjects();
+const subjectScoreMap = new Map<string, { total: number; count: number }>();
+for (const att of completedAttempts) {
+  const sid = (att.exam as any)?.subject_id || (att.exam as any)?.subject?.id;
+  if (!sid) continue;
+  const ex = subjectScoreMap.get(sid) || { total: 0, count: 0 };
+  subjectScoreMap.set(sid, { total: ex.total + Number(att.score || 0), count: ex.count + 1 });
+}
+
 const subjectProgressLabels = subjects.map(s => s.name);
-const subjectProgressData = subjects.map((sub, idx) => {
-  // Return a mock completion percentage per subject for rich visual
-  const seeds = [75, 50, 40, 20, 60];
-  return seeds[idx % seeds.length];
+// Quy điểm 0–10 thành % 0–100 (nhân 10) để biểu đồ % có ý nghĩa
+const subjectProgressData = subjects.map(s => {
+  const stats = subjectScoreMap.get(s.id);
+  if (!stats || stats.count === 0) return 0;
+  return Math.round((stats.total / stats.count) * 10);
 });
+
+// Số môn đã thi ít nhất 1 lần
+const subjectsTried = subjects.filter(s => subjectScoreMap.has(s.id)).length;
+
+// Môn có điểm cao nhất
+const bestSubjectEntry = [...subjectScoreMap.entries()]
+  .sort((a, b) => (b[1].total / b[1].count) - (a[1].total / a[1].count))[0];
+const bestSubjectName = bestSubjectEntry
+  ? (subjects.find(s => s.id === bestSubjectEntry[0])?.name || '')
+  : '';
+const bestSubjectScore = bestSubjectEntry
+  ? Math.round((bestSubjectEntry[1].total / bestSubjectEntry[1].count) * 100) / 100
+  : 0;
+
+// Tỷ lệ vượt điểm 5 (pass rate)
+const passRate = completedAttempts.length > 0
+  ? Math.round((completedAttempts.filter(a => Number(a.score || 0) >= 5).length / completedAttempts.length) * 100)
+  : 0;
+
+// Lần làm bài gần nhất
+const lastAttempt = completedAttempts.length > 0 ? completedAttempts[0] : null;
 
 // For demonstration/empty state, feed some sample data to charts if no attempts
 const finalChartLabels = chartLabels.length > 0 ? chartLabels : ['Lần 1', 'Lần 2', 'Lần 3'];
@@ -76,7 +105,7 @@ if (isTeacher) {
     const teacherMap = new Map<string, number>();
     for (const q of questions) {
       const teacher = users.find(u => u.id === q.created_by);
-      const tName = teacher ? teacher.fullname : 'Khác';
+      const tName = teacher ? (teacher.fullname ?? 'Không tên') : 'Khác';
       teacherMap.set(tName, (teacherMap.get(tName) || 0) + 1);
     }
     questionsByOtherLabels = Array.from(teacherMap.keys());
@@ -148,17 +177,17 @@ if (isTeacher) {
       />
       <DashboardCard
         title="Điểm trung bình"
-        value={attemptsCount > 0 ? averageScore : 'N/A'}
-        description={attemptsCount > 0 ? `Tính trên ${attemptsCount} lượt làm bài` : 'Chưa thực hiện bài thi nào'}
+        value={completedAttempts.length > 0 ? averageScore : 'N/A'}
+        description={completedAttempts.length > 0 ? `Tính trên ${completedAttempts.length} lượt hoàn thành` : 'Chưa hoàn thành bài thi nào'}
         icon="score"
-        color={attemptsCount > 0 ? (averageScore >= 8 ? 'emerald' : averageScore >= 5 ? 'amber' : 'rose') : 'blue'}
+        color={completedAttempts.length > 0 ? (averageScore >= 8 ? 'emerald' : averageScore >= 5 ? 'amber' : 'rose') : 'blue'}
       />
       <DashboardCard
-        title="Tiến độ chung"
-        value={`${attemptsCount > 0 ? Math.min(100, attemptsCount * 15) : 0}%`}
-        description="Hoàn thành các bài trắc nghiệm"
+        title={isTeacher ? 'Môn đã tạo câu hỏi' : 'Tỷ lệ đạt (≥5đ)'}
+        value={isTeacher ? `${subjects.length} môn` : (completedAttempts.length > 0 ? `${passRate}%` : 'N/A')}
+        description={isTeacher ? 'Ngân hàng câu hỏi' : (completedAttempts.length > 0 ? `${subjectsTried}/${subjects.length} môn đã thi` : 'Chưa có dữ liệu')}
         icon="progress"
-        color="emerald"
+        color={isTeacher ? 'blue' : (passRate >= 80 ? 'emerald' : passRate >= 50 ? 'amber' : completedAttempts.length > 0 ? 'rose' : 'blue')}
       />
     </div>
 
@@ -184,15 +213,18 @@ if (isTeacher) {
 
           <!-- Student Chart 2 -->
           <div>
-            <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+            <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-1 flex items-center">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 mr-2"></span>
-              Tiến độ học tập các môn học
+              Điểm trung bình theo môn học
             </h2>
+            <p class="text-xs text-gray-400 dark:text-slate-500 mb-4">
+              {subjectsTried > 0 ? `Dựa trên dữ liệu thi thực tế — ${subjectsTried}/${subjects.length} môn đã thi` : 'Chưa có dữ liệu thi — hãy làm bài thi đầu tiên!'}
+            </p>
             <ChartComponent
               type="bar"
               labels={subjectProgressLabels}
               data={subjectProgressData}
-              label="Tỷ lệ hoàn thành (%)"
+              label="Điểm TB × 10 (%)"
               id="subject-progress-chart"
               suggestedMax={100}
             />
@@ -234,6 +266,70 @@ if (isTeacher) {
         </>
       )}
     </div>
+
+    <!-- Student: Last Attempt + Best Subject Highlight -->
+    {!isTeacher && completedAttempts.length > 0 && (
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Lần làm bài gần nhất -->
+      {lastAttempt && (
+      <div class="bg-white border border-gray-200 dark:bg-slate-900 dark:border-slate-800/80 rounded-2xl p-5 shadow-sm flex flex-col gap-3">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-2 h-5 rounded-sm bg-blue-500"></span>
+          <h3 class="font-bold text-gray-900 dark:text-white text-sm">Lần làm bài gần nhất</h3>
+        </div>
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="font-semibold text-gray-800 dark:text-white text-sm leading-snug line-clamp-2">{(lastAttempt.exam as any)?.title || 'Đề thi'}</p>
+            <p class="text-xs text-gray-400 dark:text-slate-500 mt-1">{new Date(lastAttempt.started_at).toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' })}</p>
+          </div>
+          <div class={`text-2xl font-black ml-4 flex-shrink-0 ${
+            Number(lastAttempt.score || 0) >= 8 ? 'text-emerald-600 dark:text-emerald-400'
+            : Number(lastAttempt.score || 0) >= 5 ? 'text-amber-600 dark:text-amber-400'
+            : 'text-rose-600 dark:text-rose-400'
+          }`}>{lastAttempt.score}/10</div>
+        </div>
+        <a
+          href={`/exams/${lastAttempt.exam_id}/result/${lastAttempt.id}`}
+          class="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline mt-1"
+        >
+          Xem lại chi tiết
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+      )}
+
+      <!-- Môn tốt nhất -->
+      {bestSubjectName ? (
+      <div class="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200/60 dark:from-emerald-950/20 dark:to-teal-950/20 dark:border-emerald-900/40 rounded-2xl p-5 shadow-sm">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-5 rounded-sm bg-emerald-500"></span>
+          <h3 class="font-bold text-gray-900 dark:text-white text-sm">Môn học nổi trội nhất</h3>
+        </div>
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xl font-black text-emerald-700 dark:text-emerald-400">{bestSubjectName}</p>
+            <p class="text-xs text-gray-500 dark:text-slate-400 mt-1">Điểm trung bình: <span class="font-bold text-emerald-600 dark:text-emerald-400">{bestSubjectScore}/10</span></p>
+          </div>
+          <div class="text-4xl">🏆</div>
+        </div>
+        <a href="/de-thi" class="mt-3 inline-flex items-center text-xs font-bold text-emerald-700 dark:text-emerald-400 hover:underline">
+          Tiếp tục luyện tập →
+        </a>
+      </div>
+      ) : (
+      <div class="bg-amber-50 border border-amber-200/60 dark:bg-amber-950/10 dark:border-amber-900/30 rounded-2xl p-5 shadow-sm">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-5 rounded-sm bg-amber-500"></span>
+          <h3 class="font-bold text-gray-900 dark:text-white text-sm">Bắt đầu ôn luyện ngay!</h3>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-slate-300">Làm thêm đề thi để xem phân tích điểm yếu theo môn.</p>
+        <a href="/de-thi" class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-amber-700 dark:text-amber-400 hover:underline">
+          Chọn đề thi ngay →
+        </a>
+      </div>
+      )}
+    </div>
+    )}
 
     <!-- Enrolled Courses -->
     <div class="bg-white border border-gray-250 dark:bg-slate-900 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
