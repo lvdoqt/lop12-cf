@@ -168,3 +168,27 @@ export interface LessonProgress {
   completed_at: string | null;
 }
 
+// ── Phòng thi ảo (Virtual Exam Room) ─────────────────────────────────────────
+
+export interface ExamRoom {
+  id: string;
+  code: string;            // 6-char alphanum, e.g. 'A3K7P2'
+  exam_id: string;
+  exam_title?: string;     // denormalized for display
+  exam_duration?: number;  // denormalized for display (minutes)
+  teacher_id: string;
+  status: 'waiting' | 'active' | 'closed';
+  created_at: string;
+  closed_at: string | null;
+}
+
+export interface RoomParticipant {
+  id: string;
+  room_id: string;
+  display_name: string;
+  joined_at: string;
+  submitted_at: string | null;
+  score: number | null;
+  total_questions: number;
+  answered_count: number; // how many questions answered so far
+}

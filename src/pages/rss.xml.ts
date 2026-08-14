@@ -46,7 +46,7 @@ ${(await Promise.all([
       title: `[Đề thi] ${escapeXml(e.title)}`,
       link: `${origin}${base}/exams/${e.slug}`,
       pubDate: new Date(e.created_at).toUTCString(),
-      description: escapeXml(e.description || e.title),
+      description: escapeXml(e.title),
       guid: `exam-${e.id}`
     }))),
     db.getCourses().then(courses => courses.map(c => ({

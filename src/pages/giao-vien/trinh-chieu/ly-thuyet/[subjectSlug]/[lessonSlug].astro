@@ -1,0 +1,123 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../../../layouts/Layout.astro';
+import PresentationView from '../../../../../components/giao-vien/PresentationView';
+import { db } from '../../../../../services/db';
+import type { Question, Answer } from '../../../../../types';
+
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
+  return Astro.redirect('/dashboard');
+}
+
+const { subjectSlug, lessonSlug } = Astro.params;
+if (!subjectSlug || !lessonSlug) return Astro.redirect('/giao-vien/trinh-chieu/ly-thuyet');
+
+const mode = Astro.url.searchParams.get('mode') || 'theory';
+if (mode !== 'theory' && mode !== 'exercises') return Astro.redirect('/giao-vien/trinh-chieu/ly-thuyet');
+
+// Load lesson from content collection
+const allEntries = await getCollection('lessons');
+const entry = allEntries.find(e => e.id === `${subjectSlug}/${lessonSlug}` || e.id === `${subjectSlug}/${lessonSlug}.json`);
+
+if (!entry) return Astro.redirect(`/giao-vien/trinh-chieu/ly-thuyet/${subjectSlug}`);
+
+const lessonData = entry.data.lessons?.[0] as any;
+if (!lessonData) return Astro.redirect(`/giao-vien/trinh-chieu/ly-thuyet/${subjectSlug}`);
+
+const lessonTitle = lessonData.name ?? lessonSlug;
+const content = lessonData.content as any;
+
+const ALPHABET = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
+let questions: (Question & { answers: Answer[] })[] = [];
+
+if (mode === 'theory') {
+  // Build theory slides: each section → 1 slide of type theory_section
+  const sections: any[] = content?.theory?.sections ?? [];
+  questions = sections.map((section: any, idx: number) => ({
+    id: `theory-${idx}`,
+    de_id: 'lesson',
+    so_cau: idx + 1,
+    phan: 'I',
+    content: section.heading ?? `Phần ${idx + 1}`,
+    options: [],
+    answer: '',
+    image_url: null,
+    metadata: {
+      type: 'theory_section',
+      difficulty: 'medium',
+      explanation: null,
+      theory_html: section.content ?? '',
+    },
+    subject_id: '',
+    explanation: null,
+    difficulty: 'medium' as const,
+    type: 'theory_section' as any,
+    answers: [],
+  }));
+} else {
+  // Build exercise slides: each exercise → 1 slide of type single_choice
+  const exercises: any[] = content?.exercises ?? [];
+  questions = exercises.map((ex: any, idx: number) => {
+    const opts: string[] = Array.isArray(ex.options) ? ex.options : [];
+    const correctIdx: number = typeof ex.correct === 'number' ? ex.correct : 0;
+    const answers: Answer[] = opts.map((opt: string, i: number) => ({
+      id: `ex-${idx}-${i}`,
+      question_id: `ex-${idx}`,
+      content: opt,
+      is_correct: i === correctIdx,
+    }));
+    return {
+      id: `ex-${idx}`,
+      de_id: 'lesson',
+      so_cau: idx + 1,
+      phan: 'I',
+      content: ex.question ?? '',
+      options: opts,
+      answer: ALPHABET[correctIdx] ?? 'A',
+      image_url: null,
+      metadata: {
+        type: 'single_choice',
+        difficulty: ex.difficulty ?? 'medium',
+        explanation: ex.explanation ?? null,
+      },
+      subject_id: '',
+      explanation: ex.explanation ?? null,
+      difficulty: (ex.difficulty ?? 'medium') as 'easy' | 'medium' | 'hard',
+      type: 'single_choice' as const,
+      answers,
+    };
+  });
+}
+
+const examTitle = mode === 'theory'
+  ? `Lý thuyết: ${lessonTitle}`
+  : `Luyện tập: ${lessonTitle}`;
+
+const backHref = `/giao-vien/trinh-chieu/ly-thuyet/${subjectSlug}`;
+---
+
+<Layout title={examTitle} showSidebar={false} showAds={false}>
+  {questions.length === 0 ? (
+    <div class="min-h-[60vh] flex items-center justify-center">
+      <div class="text-center">
+        <p class="text-gray-500 dark:text-slate-400 mb-4">
+          {mode === 'theory' ? 'Bài học này chưa có nội dung lý thuyết.' : 'Bài học này chưa có câu luyện tập.'}
+        </p>
+        <a href={backHref} class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold transition">
+          Quay lại
+        </a>
+      </div>
+    </div>
+  ) : (
+    <PresentationView
+      client:only="react"
+      exam={{ id: lessonSlug, slug: lessonSlug, title: examTitle }}
+      questions={questions}
+    />
+  )}
+</Layout>

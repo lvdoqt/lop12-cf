@@ -2,7 +2,7 @@
   "title": "Câu hỏi json to bank quiz - Đầy đủ các dạng",
   "questions": [
     {
-      "type": "single_choice",
+      "type": "mcq",
       "question": "Tìm đạo hàm của hàm số $f(x) = x^3 - 3x^2 + 2x - 1$",
       "option_a": "$f'(x) = 3x^2 - 6x + 2$",
       "option_b": "$f'(x) = x^3 - 3x^2 + 2$",

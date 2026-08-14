@@ -86,9 +86,14 @@ const user = Astro.locals.user;
             Hồ sơ cá nhân
           </a>
           {user.role === 'admin' || user.role === 'teacher' ? (
-            <a href="/admin" class="block px-4 py-2 text-sm text-amber-600 hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-slate-800">
-              Trang quản trị
-            </a>
+            <>
+              <a href="/admin" class="block px-4 py-2 text-sm text-amber-600 hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-slate-800">
+                Trang quản trị
+              </a>
+              <a href="/giao-vien" class="block px-4 py-2 text-sm text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-slate-800">
+                Công cụ giảng dạy
+              </a>
+            </>
           ) : null}
           <div class="h-px bg-scholar/50 dark:bg-slate-800 my-1"></div>
           <button

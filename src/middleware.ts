@@ -127,6 +127,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const isPublicContent =
     path.startsWith('/ly-thuyet') ||
     /^\/[a-z0-9-]+-12\/[a-z0-9-]+$/.test(path) || // e.g., /toan-12/bai-1
+    path.startsWith('/thi-online') || // Public: student virtual exam room entry & exam taking
     path === '/';
 
   // Exam info page is public (e.g. /exams/exam-1 but NOT /exams/exam-1/take or /exams/exam-1/result/...)
@@ -143,6 +144,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     path.startsWith('/profile');
 
   const isAdminRoute = path.startsWith('/admin');
+  const isTeacherRoute = path.startsWith('/giao-vien');
   const isApiRoute = path.startsWith('/api');
 
   // ============================================================
@@ -153,13 +155,13 @@ export const onRequest = defineMiddleware(async (context, next) => {
     if (isAuthPage) {
       return context.redirect('/dashboard');
     }
-    // Admin-only route check
-    if (isAdminRoute && user.role !== 'admin' && user.role !== 'teacher') {
+    // Admin-only / Teacher-only route check
+    if ((isAdminRoute || isTeacherRoute) && user.role !== 'admin' && user.role !== 'teacher') {
       return context.redirect('/dashboard');
     }
   } else {
     // Guest user trying to access protected route → send to login
-    if (isProtectedRoute || isAdminRoute) {
+    if (isProtectedRoute || isAdminRoute || isTeacherRoute) {
       return context.redirect('/login');
     }
   }
@@ -203,7 +205,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     }
 
     // Admin & protected routes — không cache
-    if (isAdminRoute || isProtectedRoute) {
+    if (isAdminRoute || isProtectedRoute || isTeacherRoute) {
       finalResponse.headers.set('Cache-Control', 'private, no-store');
       return finalResponse;
     }

@@ -1,8 +1,11 @@
 import { shuffleArrayWithPRNG } from './random';
+import type { Question, Answer } from '../types';
 
-export function buildShuffledExam(allQuestions: any[], prng: () => number) {
+export type ExamQuestion = Question & { answers: Answer[] };
+
+export function buildShuffledExam(allQuestions: ExamQuestion[], prng: () => number): ExamQuestion[] {
   const bySection = {
-    mcq: allQuestions.filter(q => !q.type || q.type === 'mcq' || q.type === 'single_choice'), // fallback if missing
+    mcq: allQuestions.filter(q => !q.type || q.type === 'single_choice'), // fallback if missing
     multiple_choice: allQuestions.filter(q => q.type === 'multiple_choice'),
     msq: allQuestions.filter(q => q.type === 'msq'),
     sa: allQuestions.filter(q => q.type === 'sa'),
@@ -51,13 +54,13 @@ export function buildShuffledExam(allQuestions: any[], prng: () => number) {
   ];
 }
 
-function shuffleReadQuestion(q: any, prng: () => number, shuffleSubquestions = true) {
-  const cloned = JSON.parse(JSON.stringify(q));
+function shuffleReadQuestion(q: ExamQuestion, prng: () => number, shuffleSubquestions = true): ExamQuestion {
+  const cloned: ExamQuestion = JSON.parse(JSON.stringify(q));
   let subs = cloned.metadata?.questions;
   
   // Backwards compatibility with old data structure
-  if (!subs && cloned.questions) {
-    subs = cloned.questions;
+  if (!subs && (cloned as any).questions) {
+    subs = (cloned as any).questions;
   }
   
   if (!subs || !Array.isArray(subs)) return cloned;

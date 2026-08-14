@@ -13,6 +13,7 @@ Nền tảng Quản lý Học tập (LMS) hoàn chỉnh dành cho học sinh THP
 
 ### 2. Giáo viên & Admin Portal (Hệ thống CRUD toàn diện)
 * **Dashboard Admin:** Thống kê nhanh số học sinh, giáo viên, bài học, đề thi và tổng lượt làm bài thi trên nền tảng.
+* **Công cụ Giáo viên (New):** Tổ hợp công cụ hỗ trợ dạy học online (chế độ trình chiếu bài giảng, bảng trắng, phòng thi trực tiếp, thống kê phổ điểm, quản lý lớp học).
 * **Quản lý người dùng:** Liệt kê danh sách tài khoản và phân quyền trực tiếp (Student, Teacher, Admin).
 * **Quản lý bài giảng:** Soạn thảo, chỉnh sửa, xóa và xuất bản bài giảng với trình sinh slug tự động.
 * **Ngân hàng câu hỏi:** Thêm mới và quản lý câu hỏi trắc nghiệm (hỗ trợ trắc nghiệm đơn, nhiều lựa chọn, Đúng/Sai), thiết lập đáp án đúng và viết lời giải chi tiết chứa LaTeX.

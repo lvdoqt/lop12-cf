@@ -1,0 +1,508 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { roomStore, db } from '../../services/db';
+import { uuidToSeed, mulberry32 } from '../../lib/random';
+import { buildShuffledExam } from '../../lib/exam';
+
+export const prerender = false;
+
+const { code } = Astro.params;
+if (!code) return Astro.redirect('/thi-online');
+
+const room = roomStore.getRoomByCode(code.toUpperCase());
+if (!room) return Astro.redirect('/thi-online?error=notfound');
+if (room.status === 'closed') return Astro.redirect('/thi-online?error=closed');
+
+const allQuestions = await db.getQuestionsByExamId(room.exam_id);
+// Serialize questions for client (without correct answers exposed)
+const questionsForClient = allQuestions.map(q => ({
+  id: q.id,
+  content: q.content,
+  type: q.type,
+  image_url: q.image_url,
+  options: q.options,
+  answers: (q.answers || []).map(a => ({ id: a.id, content: a.content })), // strip is_correct
+  metadata: q.metadata ? { ...q.metadata, explanation: undefined } : null,
+  answer: undefined, // never send correct answer to client
+}));
+---
+
+<Layout title={`Phong thi: ${room.exam_title || 'De thi'}`} showSidebar={false}>
+  <div id="room-exam-app" class="min-h-screen bg-gray-50 dark:bg-slate-950">
+    <!-- Loading state -->
+    <div id="loading-screen" class="fixed inset-0 bg-gray-50 dark:bg-slate-950 flex flex-col items-center justify-center z-50">
+      <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-4 shadow-lg">
+        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <p class="text-gray-600 dark:text-slate-400 font-medium">Dang tai de thi...</p>
+    </div>
+
+    <!-- Waiting room (shown before exam starts) -->
+    <div id="waiting-room" class="hidden fixed inset-0 bg-gray-50 dark:bg-slate-950 flex flex-col items-center justify-center z-40 p-6">
+      <div class="max-w-md w-full text-center">
+        <div class="w-20 h-20 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mx-auto mb-5 shadow-xl shadow-emerald-500/25">
+          <svg class="w-10 h-10 text-white animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h1 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-2">Phong cho</h1>
+        <p class="text-gray-500 dark:text-slate-400 mb-4">Dang cho giao vien bat dau bai thi. Trang se tu dong cap nhat...</p>
+        <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-5 mb-5">
+          <p class="text-xs text-gray-400 dark:text-slate-500 uppercase font-semibold tracking-wider mb-1">De thi</p>
+          <p class="font-bold text-gray-900 dark:text-white">{room.exam_title}</p>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-0.5">Thoi gian: {room.exam_duration} phut</p>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span id="waiting-name" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 text-sm font-semibold">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            ---
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main exam area (hidden until started) -->
+    <div id="exam-area" class="hidden">
+      <!-- Top bar -->
+      <div class="sticky top-0 z-30 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between gap-4 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shrink-0">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-xs text-gray-400 dark:text-slate-500 font-medium">Phong thi ao</p>
+            <p class="text-sm font-bold text-gray-900 dark:text-white leading-tight">{room.exam_title}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="text-center">
+            <p id="timer-display" class="text-xl font-black font-mono text-gray-900 dark:text-white tabular-nums">--:--</p>
+            <p class="text-[10px] text-gray-400 dark:text-slate-500 font-medium uppercase">Con lai</p>
+          </div>
+          <div class="text-center">
+            <p id="progress-display" class="text-lg font-black text-emerald-600 dark:text-emerald-400 tabular-nums">0/<span id="total-q">0</span></p>
+            <p class="text-[10px] text-gray-400 dark:text-slate-500 font-medium uppercase">Da tra loi</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Questions container -->
+      <div id="questions-container" class="max-w-3xl mx-auto px-4 py-8 space-y-6">
+        <!-- Questions rendered by JS -->
+      </div>
+
+      <!-- Submit bar -->
+      <div class="fixed bottom-0 inset-x-0 bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 px-4 py-4 flex items-center justify-between gap-4 shadow-lg">
+        <p class="text-sm text-gray-500 dark:text-slate-400">
+          Da tra loi <strong id="answered-count" class="text-gray-900 dark:text-white">0</strong> / <strong id="total-count">0</strong> cau
+        </p>
+        <button
+          id="submit-btn"
+          class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-emerald-500/20 transition flex items-center gap-2"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7 21H5a2 2 0 01-2-2v-1a5.002 5.002 0 015-5h8a5.002 5.002 0 015 5v1a2 2 0 01-2 2h-2M9 21h6" />
+          </svg>
+          Nop bai
+        </button>
+      </div>
+    </div>
+
+    <!-- Result screen -->
+    <div id="result-screen" class="hidden fixed inset-0 bg-gray-50 dark:bg-slate-950 flex flex-col items-center justify-center z-50 p-6">
+      <div class="max-w-sm w-full text-center">
+        <div class="w-24 h-24 rounded-3xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto mb-5 shadow-xl shadow-emerald-500/25">
+          <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-1">Nop bai thanh cong!</h2>
+        <p class="text-gray-500 dark:text-slate-400 mb-6">Ket qua da duoc gui den giao vien</p>
+        <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 mb-5">
+          <p class="text-xs text-gray-400 dark:text-slate-500 uppercase font-semibold tracking-wider mb-1">Diem so</p>
+          <p id="final-score" class="text-5xl font-black text-emerald-600 dark:text-emerald-400">—</p>
+          <p id="score-detail" class="text-sm text-gray-500 dark:text-slate-400 mt-1"></p>
+        </div>
+        <a href="/thi-online" class="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition">
+          Vao phong khac
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script define:vars={{ questionsJSON: JSON.stringify(questionsForClient), roomCode: room.code, roomDuration: room.exam_duration ?? 90, roomStatus: room.status }}>
+    // ── State ──────────────────────────────────────────────────────────────────
+    let participant = null;
+    let answers = {};
+    let timerInterval = null;
+    let progressInterval = null;
+    let pollInterval = null;
+    let remainingSeconds = roomDuration * 60;
+    let questions = [];
+    let started = false;
+
+    // ── DOM refs ───────────────────────────────────────────────────────────────
+    const loadingScreen = document.getElementById('loading-screen');
+    const waitingRoom = document.getElementById('waiting-room');
+    const examArea = document.getElementById('exam-area');
+    const resultScreen = document.getElementById('result-screen');
+    const timerDisplay = document.getElementById('timer-display');
+    const progressDisplay = document.getElementById('progress-display');
+    const totalQEl = document.getElementById('total-q');
+    const answeredCountEl = document.getElementById('answered-count');
+    const totalCountEl = document.getElementById('total-count');
+    const waitingName = document.getElementById('waiting-name');
+    const questionsContainer = document.getElementById('questions-container');
+
+    // ── Init ───────────────────────────────────────────────────────────────────
+    window.addEventListener('load', () => {
+      // Try to restore participant from sessionStorage
+      try {
+        const saved = sessionStorage.getItem('room_participant');
+        if (saved) participant = JSON.parse(saved);
+      } catch (_) {}
+
+      if (!participant) {
+        // Not joined — redirect back
+        window.location.href = `/thi-online?code=${roomCode}`;
+        return;
+      }
+
+      questions = JSON.parse(questionsJSON);
+      totalQEl.textContent = questions.length;
+      totalCountEl.textContent = questions.length;
+
+      if (waitingName) {
+        waitingName.childNodes[waitingName.childNodes.length - 1].textContent = ' ' + participant.display_name;
+      }
+
+      loadingScreen.classList.add('hidden');
+
+      if (roomStatus === 'active') {
+        startExam();
+      } else {
+        waitingRoom.classList.remove('hidden');
+        waitingRoom.style.display = 'flex';
+        // Poll for room activation
+        pollInterval = setInterval(checkRoomStatus, 3000);
+      }
+    });
+
+    async function checkRoomStatus() {
+      try {
+        const res = await fetch('/api/rooms/' + roomCode);
+        const data = await res.json();
+        if (res.ok && data.room && data.room.status === 'active' && !started) {
+          clearInterval(pollInterval);
+          waitingRoom.classList.add('hidden');
+          waitingRoom.style.display = '';
+          startExam();
+        } else if (data.room && data.room.status === 'closed') {
+          clearInterval(pollInterval);
+          alert('Giao vien da dong phong thi.');
+          window.location.href = '/thi-online';
+        }
+      } catch (_) {}
+    }
+
+    // ── Exam start ─────────────────────────────────────────────────────────────
+    function startExam() {
+      if (started) return;
+      started = true;
+
+      // Shuffle questions by section and shuffle answers using participant ID as seed
+      const shuffled = shuffleAndSortWithSeed(questions, participant.id);
+
+      renderQuestions(shuffled);
+
+      examArea.classList.remove('hidden');
+
+      // Timer
+      timerInterval = setInterval(() => {
+        remainingSeconds = Math.max(0, remainingSeconds - 1);
+        updateTimer();
+        if (remainingSeconds <= 0) submitExam();
+      }, 1000);
+      updateTimer();
+
+      // Progress reporter (every 10s)
+      progressInterval = setInterval(reportProgress, 10000);
+
+      // Submit button
+      document.getElementById('submit-btn').addEventListener('click', () => {
+        const count = Object.keys(answers).length;
+        const pct = questions.length > 0 ? Math.round(count / questions.length * 100) : 0;
+        if (pct < 100) {
+          if (!confirm('Ban con ' + (questions.length - count) + ' cau chua tra loi. Nop bai ngay?')) return;
+        }
+        submitExam();
+      });
+    }
+
+    // ── Simple shuffle & sort (same seed → same order) ────────────────────────
+    function shuffleAndSortWithSeed(arr, seed) {
+      // mulberry32-like from seed string
+      let h = 0;
+      for (let i = 0; i < seed.length; i++) h = Math.imul(31, h) + seed.charCodeAt(i) | 0;
+      function rand() {
+        h ^= h << 13; h ^= h >> 17; h ^= h << 5;
+        return ((h >>> 0) / 4294967296);
+      }
+      function shuffleArray(a, shuffleAns = true) {
+        const copy = [...a];
+        for (let i = copy.length - 1; i > 0; i--) {
+          const j = Math.floor(rand() * (i + 1));
+          [copy[i], copy[j]] = [copy[j], copy[i]];
+        }
+        if (shuffleAns) {
+          copy.forEach(q => {
+            if (q.answers && Array.isArray(q.answers)) {
+              const ansCopy = [...q.answers];
+              for (let i = ansCopy.length - 1; i > 0; i--) {
+                const j = Math.floor(rand() * (i + 1));
+                [ansCopy[i], ansCopy[j]] = [ansCopy[j], ansCopy[i]];
+              }
+              q.answers = ansCopy;
+            }
+          });
+        }
+        return copy;
+      }
+      
+      const byType = {
+        mcq: arr.filter(q => !q.type || q.type === 'single_choice'),
+        read: arr.filter(q => q.type === 'read' || q.type === 'read_cloze'),
+        msq: arr.filter(q => q.type === 'msq'),
+        sa: arr.filter(q => q.type === 'sa'),
+        tl: arr.filter(q => q.type === 'tl'),
+        multiple_choice: arr.filter(q => q.type === 'multiple_choice'),
+        list: arr.filter(q => q.type === 'list'),
+        ordering: arr.filter(q => q.type === 'ordering'),
+        true_false: arr.filter(q => q.type === 'true_false'),
+      };
+      
+      return [
+        ...shuffleArray(byType.mcq),
+        ...shuffleArray(byType.read, false), // don't shuffle read answers deeply here for simplicity
+        ...shuffleArray(byType.msq),
+        ...shuffleArray(byType.sa),
+        ...shuffleArray(byType.tl),
+        ...shuffleArray(byType.multiple_choice),
+        ...shuffleArray(byType.list, false),
+        ...shuffleArray(byType.ordering),
+        ...shuffleArray(byType.true_false),
+      ];
+    }
+
+    // ── Timer ──────────────────────────────────────────────────────────────────
+    function updateTimer() {
+      const m = Math.floor(remainingSeconds / 60).toString().padStart(2, '0');
+      const s = (remainingSeconds % 60).toString().padStart(2, '0');
+      timerDisplay.textContent = m + ':' + s;
+      if (remainingSeconds <= 300) timerDisplay.classList.add('text-red-500');
+    }
+
+    // ── Progress update ────────────────────────────────────────────────────────
+    async function reportProgress() {
+      if (!participant || !started) return;
+      try {
+        await fetch('/api/rooms/' + roomCode + '/progress', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ participantId: participant.id, answeredCount: Object.keys(answers).length }),
+        });
+      } catch (_) {}
+    }
+
+    function updateAnsweredUI() {
+      const count = Object.keys(answers).length;
+      answeredCountEl.textContent = count;
+      progressDisplay.childNodes[0].textContent = count + '/';
+    }
+
+    // ── Render questions ───────────────────────────────────────────────────────
+    function renderQuestions(qs) {
+      questionsContainer.innerHTML = '';
+      qs.forEach((q, idx) => {
+        const card = document.createElement('div');
+        card.className = 'bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm';
+        card.id = 'q-' + q.id;
+
+        const num = document.createElement('p');
+        num.className = 'text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-3';
+        num.textContent = 'Cau ' + (idx + 1);
+        card.appendChild(num);
+
+        const content = document.createElement('div');
+        content.className = 'text-gray-900 dark:text-white font-medium mb-4 leading-relaxed';
+        content.innerHTML = q.content;
+        card.appendChild(content);
+
+        if (q.image_url) {
+          const img = document.createElement('img');
+          img.src = q.image_url;
+          img.alt = '';
+          img.className = 'w-full max-w-lg mx-auto rounded-xl mb-4 border border-gray-200 dark:border-slate-700';
+          card.appendChild(img);
+        }
+
+        // Render options
+        if (q.type === 'single_choice' || q.type === 'true_false') {
+          (q.answers || []).forEach(a => {
+            const label = document.createElement('label');
+            label.className = 'flex items-start gap-3 p-3 rounded-xl border border-gray-200 dark:border-slate-700 hover:bg-emerald-50 dark:hover:bg-emerald-950/20 cursor-pointer transition mb-2 group';
+            const input = document.createElement('input');
+            input.type = 'radio';
+            input.name = 'q_' + q.id;
+            input.value = a.id;
+            input.className = 'mt-0.5 accent-emerald-500 shrink-0';
+            input.addEventListener('change', () => {
+              answers[q.id] = a.id;
+              updateAnsweredUI();
+              // Highlight selected
+              card.querySelectorAll('label').forEach(l => l.classList.remove('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'dark:border-emerald-600'));
+              label.classList.add('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'dark:border-emerald-600');
+            });
+            const span = document.createElement('span');
+            span.className = 'text-sm text-gray-700 dark:text-slate-300';
+            span.innerHTML = a.content;
+            label.appendChild(input);
+            label.appendChild(span);
+            card.appendChild(label);
+          });
+        } else if (q.type === 'sa') {
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.placeholder = 'Nhap cau tra loi...';
+          input.className = 'w-full px-4 py-2.5 border border-gray-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500';
+          input.addEventListener('input', () => {
+            if (input.value.trim()) {
+              answers[q.id] = input.value.trim();
+            } else {
+              delete answers[q.id];
+            }
+            updateAnsweredUI();
+          });
+          card.appendChild(input);
+        } else if (q.type === 'msq') {
+          const msqContainer = document.createElement('div');
+          msqContainer.className = 'space-y-4';
+          
+          (q.answers || []).forEach((a, optIdx) => {
+            const letter = String.fromCharCode(65 + optIdx);
+            
+            const row = document.createElement('div');
+            row.className = 'flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 gap-3';
+            
+            const leftDiv = document.createElement('div');
+            leftDiv.className = 'flex items-start flex-1 min-w-0';
+            
+            const spanLetter = document.createElement('span');
+            spanLetter.className = 'w-6 h-6 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-500 flex items-center justify-center font-bold text-xs mr-3 shrink-0';
+            spanLetter.textContent = letter;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'text-sm font-medium text-gray-700 dark:text-slate-300 leading-relaxed';
+            contentDiv.innerHTML = a.content;
+            
+            leftDiv.appendChild(spanLetter);
+            leftDiv.appendChild(contentDiv);
+            
+            const rightDiv = document.createElement('div');
+            rightDiv.className = 'flex items-center gap-2 shrink-0 self-end sm:self-center';
+            
+            const btnDung = document.createElement('button');
+            btnDung.type = 'button';
+            btnDung.textContent = 'Đúng';
+            
+            const btnSai = document.createElement('button');
+            btnSai.type = 'button';
+            btnSai.textContent = 'Sai';
+            
+            function updateBtns() {
+              const currentVal = (answers[q.id] || {})[a.id];
+              btnDung.className = 'px-4 py-1.5 rounded-lg text-xs font-bold transition-all border ' + (currentVal === 'Đúng' ? 'bg-blue-600 border-blue-600 text-white' : 'bg-gray-50 border-gray-200 text-gray-600 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 hover:bg-gray-100');
+              btnSai.className = 'px-4 py-1.5 rounded-lg text-xs font-bold transition-all border ' + (currentVal === 'Sai' ? 'bg-blue-600 border-blue-600 text-white' : 'bg-gray-50 border-gray-200 text-gray-600 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 hover:bg-gray-100');
+            }
+            updateBtns();
+            
+            btnDung.addEventListener('click', () => {
+              if (!answers[q.id]) answers[q.id] = {};
+              answers[q.id][a.id] = 'Đúng';
+              updateBtns();
+              updateAnsweredUI();
+            });
+            
+            btnSai.addEventListener('click', () => {
+              if (!answers[q.id]) answers[q.id] = {};
+              answers[q.id][a.id] = 'Sai';
+              updateBtns();
+              updateAnsweredUI();
+            });
+            
+            rightDiv.appendChild(btnDung);
+            rightDiv.appendChild(btnSai);
+            
+            row.appendChild(leftDiv);
+            row.appendChild(rightDiv);
+            
+            msqContainer.appendChild(row);
+          });
+          card.appendChild(msqContainer);
+        } else {
+          // Fallback: text for unsupported types
+          const p = document.createElement('p');
+          p.className = 'text-xs text-gray-400 italic';
+          p.textContent = '[Loai cau hoi: ' + q.type + ']';
+          card.appendChild(p);
+        }
+
+        questionsContainer.appendChild(card);
+      });
+    }
+
+    // ── Submit ─────────────────────────────────────────────────────────────────
+    async function submitExam() {
+      if (timerInterval) clearInterval(timerInterval);
+      if (progressInterval) clearInterval(progressInterval);
+
+      document.getElementById('submit-btn').disabled = true;
+      document.getElementById('submit-btn').textContent = 'Dang nop...';
+
+      // Final progress sync
+      await reportProgress();
+
+      try {
+        const res = await fetch('/api/rooms/' + roomCode + '/progress', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ participantId: participant.id, answers }),
+        });
+        const data = await res.json();
+        if (res.ok) {
+          showResult(data.score, data.participant);
+        } else {
+          alert('Loi nop bai: ' + (data.error || 'Unknown'));
+        }
+      } catch (e) {
+        alert('Loi ket noi khi nop bai. Thu lai sau.');
+      }
+    }
+
+    function showResult(score, participantData) {
+      examArea.classList.add('hidden');
+      resultScreen.classList.remove('hidden');
+      resultScreen.style.display = 'flex';
+      document.getElementById('final-score').textContent = score !== null ? score.toFixed(2) : '—';
+      const total = participantData?.total_questions || questions.length;
+      const answered = participantData?.answered_count || Object.keys(answers).length;
+      document.getElementById('score-detail').textContent = 'Tra loi ' + answered + '/' + total + ' cau';
+    }
+  </script>
+</Layout>

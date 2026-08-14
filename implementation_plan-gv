@@ -1,0 +1,51 @@
+# Kế hoạch Xây dựng Công cụ Giáo viên (Teacher Tools)
+
+Mục tiêu của kế hoạch này là xây dựng một cổng công cụ chuyên biệt tại đường dẫn `/giao-vien/` nhằm cung cấp các tiện ích hỗ trợ giáo viên trong quá trình dạy học online (đặc biệt trong các buổi live-stream, Google Meet, Zoom, hoặc quản lý kiểm tra trực tiếp) cho năm học mới. 
+
+Hệ thống sẽ tái sử dụng các dữ liệu đã có (bài giảng, ngân hàng câu hỏi, đề thi) kết hợp với các tính năng tương tác mới.
+
+> [!NOTE]
+> Kế hoạch này được chia làm nhiều giai đoạn. Chúng ta sẽ ưu tiên làm các tính năng có thể mang lại hiệu quả ngay lập tức cho các lớp học online.
+
+## Open Questions
+
+> [!IMPORTANT]
+> Dưới đây là một số câu hỏi thiết kế cần bạn (người dùng) quyết định trước khi bắt đầu code:
+> 1. **Thứ tự ưu tiên**: Trong số các module được đề xuất dưới đây, bạn muốn ưu tiên code tính năng nào trước? (Ví dụ: Chế độ trình chiếu & bảng trắng hay Phòng thi ảo?)
+> 2. **Phòng thi ảo**: Bạn có cần tính năng giám sát thời gian thực bằng **Supabase Realtime** (nhìn thấy học sinh chọn đáp án nào, nộp bài lúc nào ngay lập tức) không?
+> 3. **Quản lý lớp học**: Việc quản lý lớp học sẽ diễn ra hoàn toàn nội bộ trên Lớp 12 LMS hay bạn muốn học sinh tự nhập "Mã lớp" để tham gia?
+
+## Proposed Changes (Các Module Tính năng)
+
+Khu vực này sẽ là một Dashboard mới độc lập hoặc mở rộng từ Admin Portal, tập trung vào **trải nghiệm lúc giảng dạy** thay vì trải nghiệm CRUD (thêm/sửa/xóa) thông thường.
+
+### 1. Module Trình chiếu & Bảng trắng (Presentation & Whiteboard)
+Tận dụng dữ liệu Ngân hàng câu hỏi và Bài giảng hiện có.
+- **Tính năng**: Giáo viên chọn 1 đề thi hoặc 1 nhóm câu hỏi, hệ thống sẽ mở chế độ Trình chiếu toàn màn hình (Tương tự PowerPoint). 
+- **Bảng trắng tích hợp**: Trên màn hình trình chiếu câu hỏi sẽ có một lớp Canvas trong suốt cho phép giáo viên dùng chuột hoặc bảng vẽ Wacom để viết công thức, vẽ hình, giải bài trực tiếp khi đang share screen.
+- **Tương tác**: Hiện đáp án, ẩn/hiện lời giải chi tiết.
+
+### 2. Module Phòng thi ảo (Live Exam Room)
+Tận dụng Module Đề thi hiện có.
+- **Tính năng**: Thay vì học sinh tự vào làm bài tự do, giáo viên tạo một "Phòng thi live". Hệ thống sinh ra một **Mã phòng** (Room Code).
+- **Trải nghiệm học sinh**: Truy cập `/giao-vien/join`, nhập mã phòng để bắt đầu làm bài.
+- **Trải nghiệm giáo viên**: Màn hình Dashboard theo dõi real-time số lượng học sinh đang online, tiến độ làm bài (đã làm được bao nhiêu câu), và bảng điểm xếp hạng ngay khi bài kiểm tra kết thúc.
+
+### 3. Module Phân tích phổ điểm & Đánh giá (Analytics)
+Tận dụng lịch sử làm bài thi (Exam Results) hiện tại.
+- **Tính năng**: Sau mỗi bài kiểm tra, hệ thống tự động phân tích câu hỏi nào bị học sinh chọn sai nhiều nhất. 
+- **Báo cáo**: Hiển thị biểu đồ tròn/cột phân bố điểm, giúp giáo viên biết phần kiến thức nào cả lớp đang yếu để tập trung ôn tập lại.
+
+### 4. Giao diện (UI/UX)
+- Tạo trang `/src/pages/giao-vien/index.astro` làm Hub tổng hợp các công cụ.
+- Bổ sung sidebar riêng biệt cho các tính năng dạy học để giáo viên không bị phân tâm bởi các chức năng quản trị hệ thống (Admin).
+
+---
+
+## Verification Plan
+
+### Manual Verification
+- Truy cập bằng tài khoản `teacher@lop12.vn`.
+- Kiểm tra tính năng tạo phòng thi ảo, nhập mã phòng ở cửa sổ ẩn danh (với tư cách học sinh).
+- Bật chế độ bảng trắng (Whiteboard), dùng thử công cụ vẽ và xóa.
+- Kiểm tra Layout xem đã Responsive và tối ưu cho chế độ trình chiếu (Fullscreen) hay chưa.

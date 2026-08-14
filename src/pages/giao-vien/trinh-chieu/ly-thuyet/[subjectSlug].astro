@@ -1,0 +1,156 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../../layouts/Layout.astro';
+import { db } from '../../../../services/db';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
+  return Astro.redirect('/dashboard');
+}
+
+const { subjectSlug } = Astro.params;
+if (!subjectSlug) return Astro.redirect('/giao-vien/trinh-chieu/ly-thuyet');
+
+const subjects = await db.getSubjects();
+const subject = subjects.find(s => s.slug === subjectSlug);
+if (!subject) return Astro.redirect('/giao-vien/trinh-chieu/ly-thuyet');
+
+// Load lessons for this subject from Content Collection
+const allEntries = await getCollection('lessons');
+const entries = allEntries
+  .filter(e => e.id.startsWith(subjectSlug + '/'))
+  .sort((a, b) => {
+    const la = a.data.lessons?.[0]?.lesson_id || 0;
+    const lb = b.data.lessons?.[0]?.lesson_id || 0;
+    return la - lb;
+  });
+
+// Build lesson list
+const lessons = entries.map(entry => {
+  const lessonData = entry.data.lessons?.[0] ?? null;
+  const slug = entry.id.split('/').pop() || entry.id;
+  const content = lessonData?.content as any;
+  const theoryCount = content?.theory?.sections?.length || 0;
+  const exerciseCount = content?.exercises?.length || 0;
+  return {
+    slug,
+    name: lessonData?.name ?? slug,
+    chapter: lessonData?.chapter ?? '',
+    lesson_id: lessonData?.lesson_id ?? 0,
+    theoryCount,
+    exerciseCount,
+  };
+});
+
+// Group by chapter
+const chapters: Map<string, typeof lessons> = new Map();
+for (const lesson of lessons) {
+  const ch = lesson.chapter || 'Khác';
+  if (!chapters.has(ch)) chapters.set(ch, []);
+  chapters.get(ch)!.push(lesson);
+}
+---
+
+<Layout title={`${subject.name} — Bài học`}>
+  <div class="space-y-6">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1">
+          Lý thuyết &amp; Luyện tập
+        </p>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+          {subject.name}
+        </h1>
+        <p class="text-sm text-gray-500 dark:text-slate-400 mt-1">
+          {lessons.length} bài học — chọn bài để trình chiếu
+        </p>
+      </div>
+      <a
+        href="/giao-vien/trinh-chieu/ly-thuyet"
+        class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-gray-200 dark:border-slate-700 text-sm font-semibold text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition shrink-0"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Chọn môn khác
+      </a>
+    </div>
+
+    <!-- Lesson list grouped by chapter -->
+    {Array.from(chapters.entries()).map(([chapter, chLessons]) => (
+      <div class="space-y-3">
+        <!-- Chapter divider -->
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest whitespace-nowrap">
+            {chapter}
+          </span>
+          <div class="flex-1 h-px bg-gradient-to-r from-slate-200 dark:from-slate-700 to-transparent"></div>
+        </div>
+
+        <!-- Lesson cards -->
+        <div class="space-y-2">
+          {chLessons.map(lesson => (
+            <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:shadow-sm transition-all">
+              <!-- Info -->
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-bold text-gray-900 dark:text-white leading-snug">
+                  {lesson.name}
+                </p>
+                <p class="text-xs text-gray-400 dark:text-slate-500 mt-0.5 font-medium">
+                  {lesson.theoryCount > 0 && `${lesson.theoryCount} phần lý thuyết`}
+                  {lesson.theoryCount > 0 && lesson.exerciseCount > 0 && ' · '}
+                  {lesson.exerciseCount > 0 && `${lesson.exerciseCount} câu luyện tập`}
+                  {lesson.theoryCount === 0 && lesson.exerciseCount === 0 && 'Chưa có nội dung'}
+                </p>
+              </div>
+
+              <!-- Action buttons -->
+              <div class="flex items-center gap-2 shrink-0">
+                {lesson.theoryCount > 0 ? (
+                  <a
+                    href={`/giao-vien/trinh-chieu/ly-thuyet/${subjectSlug}/${lesson.slug}?mode=theory`}
+                    class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow shadow-emerald-500/20 transition"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    Lý thuyết
+                  </a>
+                ) : (
+                  <span class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-400 dark:text-slate-500 text-xs font-bold cursor-not-allowed">
+                    Lý thuyết
+                  </span>
+                )}
+
+                {lesson.exerciseCount > 0 ? (
+                  <a
+                    href={`/giao-vien/trinh-chieu/ly-thuyet/${subjectSlug}/${lesson.slug}?mode=exercises`}
+                    class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow shadow-blue-500/20 transition"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Luyện tập
+                  </a>
+                ) : (
+                  <span class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-400 dark:text-slate-500 text-xs font-bold cursor-not-allowed">
+                    Luyện tập
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    {lessons.length === 0 && (
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-12 text-center">
+        <p class="text-gray-500 dark:text-slate-400 text-sm">Chưa có bài học nào cho môn này.</p>
+      </div>
+    )}
+  </div>
+</Layout>

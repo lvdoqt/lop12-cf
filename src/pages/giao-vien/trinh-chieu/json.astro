@@ -1,0 +1,15 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import JsonPresentationLoader from '../../../components/giao-vien/JsonPresentationLoader';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
+  return Astro.redirect('/dashboard');
+}
+---
+
+<Layout title="Trình chiếu từ JSON" showSidebar={false} showAds={false}>
+  <JsonPresentationLoader client:only="react" />
+</Layout>

@@ -1,0 +1,32 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import WorksheetGenerator from '../../../components/giao-vien/WorksheetGenerator';
+import { db } from '../../../services/db';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
+  return Astro.redirect('/dashboard');
+}
+
+const { id } = Astro.params;
+if (!id) {
+  return Astro.redirect('/giao-vien/phieu-bai-tap');
+}
+
+const exam = await db.getExamById(id);
+if (!exam) {
+  return Astro.redirect('/giao-vien/phieu-bai-tap');
+}
+
+const questions = await db.getQuestionsByExamId(exam.id);
+---
+
+<Layout title={`Phiếu bài tập: ${exam.title}`} showSidebar={false} showAds={false}>
+  <WorksheetGenerator
+    client:load
+    exam={{ id: exam.id, slug: exam.slug, title: exam.title }}
+    questions={questions}
+  />
+</Layout>

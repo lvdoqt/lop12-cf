@@ -1,0 +1,182 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export const prerender = false;
+
+// Pre-fill code from query param if provided
+const codeParam = Astro.url.searchParams.get('code') || '';
+---
+
+<Layout title="Phong thi truc tuyen">
+  <div class="min-h-[70vh] flex items-center justify-center py-12 px-4">
+    <div class="w-full max-w-md">
+      <!-- Card -->
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl shadow-xl p-8">
+        <!-- Logo / Icon -->
+        <div class="flex justify-center mb-6">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-xl shadow-emerald-500/25">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+
+        <h1 class="text-2xl font-extrabold text-gray-900 dark:text-white text-center mb-1">Vao phong thi</h1>
+        <p class="text-sm text-gray-500 dark:text-slate-400 text-center mb-8">Nhap ma phong va ten de bat dau lam bai</p>
+
+        <!-- Error alert -->
+        <div id="error-alert" class="hidden mb-4 p-3 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800/40 rounded-xl text-sm text-red-600 dark:text-red-400 flex items-center gap-2">
+          <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span id="error-msg"></span>
+        </div>
+
+        <!-- Room info preview -->
+        <div id="room-preview" class="hidden mb-5 p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/40 rounded-xl">
+          <p class="text-xs font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wide mb-1">De thi</p>
+          <p id="room-exam-title" class="font-bold text-gray-900 dark:text-white text-sm"></p>
+          <p id="room-duration" class="text-xs text-gray-500 dark:text-slate-400 mt-0.5"></p>
+        </div>
+
+        <form id="join-form" class="space-y-4" onsubmit="return false;">
+          <!-- Room code -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5" for="room-code">Ma phong</label>
+            <input
+              type="text"
+              id="room-code"
+              name="code"
+              value={codeParam}
+              placeholder="VD: 9785"
+              maxlength="4"
+              autocomplete="off"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 text-gray-900 dark:text-white font-mono text-xl tracking-[0.3em] text-center uppercase font-bold placeholder:font-normal placeholder:tracking-normal placeholder:text-gray-400 placeholder:text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-600 transition"
+            />
+          </div>
+
+          <!-- Display name -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5" for="display-name">Ten cua ban</label>
+            <input
+              type="text"
+              id="display-name"
+              name="displayName"
+              placeholder="Nguyen Van A"
+              maxlength="50"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 text-gray-900 dark:text-white text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-600 transition"
+            />
+          </div>
+
+          <button
+            type="submit"
+            id="join-btn"
+            class="w-full flex items-center justify-center gap-2 py-3.5 px-6 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-base rounded-xl shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:shadow-emerald-500/30 transition-all duration-200"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+            Vao phong thi
+          </button>
+        </form>
+
+        <p class="text-xs text-gray-400 dark:text-slate-500 text-center mt-5 leading-relaxed">
+          Ban khong can dang nhap. Chi can ma phong cua giao vien la co the tham gia.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const codeInput = document.getElementById('room-code') as HTMLInputElement;
+    const nameInput = document.getElementById('display-name') as HTMLInputElement;
+    const joinBtn = document.getElementById('join-btn') as HTMLButtonElement;
+    const errorAlert = document.getElementById('error-alert') as HTMLDivElement;
+    const errorMsg = document.getElementById('error-msg') as HTMLSpanElement;
+    const roomPreview = document.getElementById('room-preview') as HTMLDivElement;
+    const roomExamTitle = document.getElementById('room-exam-title') as HTMLParagraphElement;
+    const roomDuration = document.getElementById('room-duration') as HTMLParagraphElement;
+
+    function showError(msg: string) {
+      errorMsg.textContent = msg;
+      errorAlert.classList.remove('hidden');
+    }
+    function hideError() {
+      errorAlert.classList.add('hidden');
+    }
+
+    // Normalize code input: uppercase, max 6
+    codeInput.addEventListener('input', () => {
+      codeInput.value = codeInput.value.replace(/[^0-9]/g, '').slice(0, 4);
+      hideError();
+      roomPreview.classList.add('hidden');
+    });
+
+    // Auto-check room when code is 4 chars
+    let checkTimeout: ReturnType<typeof setTimeout>;
+    codeInput.addEventListener('input', () => {
+      clearTimeout(checkTimeout);
+      if (codeInput.value.length === 4) {
+        checkTimeout = setTimeout(checkRoom, 500);
+      }
+    });
+
+    async function checkRoom() {
+      const code = codeInput.value.trim();
+      if (code.length !== 4) return;
+      try {
+        const res = await fetch(`/api/rooms/${code}`);
+        const data = await res.json();
+        if (res.ok && data.room) {
+          roomExamTitle.textContent = data.room.exam_title || 'De thi';
+          roomDuration.textContent = `Thoi gian: ${data.room.exam_duration ?? 90} phut`;
+          roomPreview.classList.remove('hidden');
+          hideError();
+        } else {
+          roomPreview.classList.add('hidden');
+          if (res.status === 404) showError('Phong thi khong ton tai. Kiem tra lai ma phong.');
+          else if (res.status === 410) showError('Phong thi da ket thuc.');
+          else showError(data.error || 'Loi kiem tra phong');
+        }
+      } catch (_) {}
+    }
+
+    document.getElementById('join-form')!.addEventListener('submit', async () => {
+      hideError();
+      const code = codeInput.value.trim();
+      const displayName = nameInput.value.trim();
+
+      if (!code || code.length !== 4) { showError('Nhap du 4 so ma phong'); return; }
+      if (!displayName) { showError('Nhap ten cua ban'); return; }
+
+      joinBtn.disabled = true;
+      joinBtn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> Dang vao...';
+
+      try {
+        const res = await fetch(`/api/rooms/${code}/join`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ displayName }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          showError(data.error || 'Khong the vao phong');
+          return;
+        }
+        // Save participant session in sessionStorage
+        sessionStorage.setItem('room_participant', JSON.stringify(data.participant));
+        sessionStorage.setItem('room_info', JSON.stringify(data.room));
+        // Navigate to exam room page
+        window.location.href = `/thi-online/${code}`;
+      } catch (e: any) {
+        showError(e.message || 'Loi ket noi');
+      } finally {
+        joinBtn.disabled = false;
+        joinBtn.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg> Vao phong thi';
+      }
+    });
+
+    // If code pre-filled, check it
+    if (codeInput.value.length === 4) checkRoom();
+  </script>
+</Layout>

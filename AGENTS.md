@@ -44,8 +44,9 @@ src/
   layouts/Layout.astro  — Global HTML wrapper, SEO, KaTeX, AdSense
   pages/                — File-based routes; [param] for dynamic segments
   pages/admin/          — Admin/teacher CRUD (users, questions, exams, courses, blogs)
+  pages/giao-vien/      — Teacher specific tools (online teaching aids, grading, class management)
   content/lessons/      — MDX lesson files organized by subject slug
-supabase/migrations/    — SQL schema + RLS policies (apply in order)
+  supabase/migrations/  — SQL schema + RLS policies (apply in order)
 ```
 
 ## Route access rules (middleware)
@@ -55,4 +56,5 @@ supabase/migrations/    — SQL schema + RLS policies (apply in order)
 | `/`, `/ly-thuyet*`, `/[subject]/[slug]`, `/exams/[id]` (info only) | Public |
 | `/dashboard`, `/profile`, `/ai-chat`, `/exams/[id]/take*`, `/exams/[id]/result/*` | Login required |
 | `/admin/*` | Teacher or admin only |
+| `/giao-vien/*` | Teacher only (online teaching tools) |
 

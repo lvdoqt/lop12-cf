@@ -399,34 +399,6 @@ export const db = {
     return counts;
   },
 
-  async getExamAttemptCounts(examIds: string[]): Promise<Record<string, number>> {
-    const counts: Record<string, number> = {};
-    if (examIds.length === 0) return counts;
-
-    if (isInMockMode()) {
-      for (const attempt of mockAttempts) {
-        if (examIds.includes(attempt.exam_id) && attempt.finished_at) {
-          counts[attempt.exam_id] = (counts[attempt.exam_id] || 0) + 1;
-        }
-      }
-      return counts;
-    }
-
-    const client = adminClient()!;
-    const { data, error } = await client
-      .from('attempts')
-      .select('exam_id')
-      .in('exam_id', examIds)
-      .not('finished_at', 'is', null);
-    if (error) { console.error('[db.getExamAttemptCounts]', error.message); }
-    if (data) {
-      for (const row of data) {
-        if (row.exam_id) counts[row.exam_id] = (counts[row.exam_id] || 0) + 1;
-      }
-    }
-    return counts;
-  },
-
   async createExam(exam: Omit<Exam, 'id' | 'created_at' | 'slug'>, questionIds: string[]): Promise<Exam> {
 
     if (isInMockMode()) {
@@ -1752,6 +1724,149 @@ export const db = {
     return data || [];
   }
 };
+
+
+// ============================================================================
+// PHÒNG THI ẢO — In-Memory Store (works for both mock and production SSR)
+// Rooms are ephemeral: they live for the duration of the server process.
+// For production with multiple workers, a shared store (Redis/Supabase) is needed.
+// ============================================================================
+
+import type { ExamRoom, RoomParticipant } from '../types';
+
+let _examRooms: ExamRoom[] = [];
+let _roomParticipants: RoomParticipant[] = [];
+
+/** Generate a random 4-digit room code */
+function generateRoomCode(): string {
+  const chars = '0123456789';
+  let code = '';
+  for (let i = 0; i < 4; i++) {
+    code += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return code;
+}
+
+/** Ensure the code is unique among active rooms */
+function uniqueRoomCode(): string {
+  let code = generateRoomCode();
+  let attempts = 0;
+  while (_examRooms.some(r => r.code === code && r.status !== 'closed') && attempts < 20) {
+    code = generateRoomCode();
+    attempts++;
+  }
+  return code;
+}
+
+export const roomStore = {
+  // ── Teacher operations ──────────────────────────────────────────────────────
+
+  async createRoom(examId: string, teacherId: string): Promise<ExamRoom> {
+    // Fetch exam info to denormalize title/duration
+    let examTitle = '';
+    let examDuration = 90;
+    try {
+      const exam = await db.getExamById(examId);
+      if (exam) {
+        examTitle = exam.title;
+        examDuration = exam.duration;
+      }
+    } catch (_) {}
+
+    const room: ExamRoom = {
+      id: `room-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      code: uniqueRoomCode(),
+      exam_id: examId,
+      exam_title: examTitle,
+      exam_duration: examDuration,
+      teacher_id: teacherId,
+      status: 'waiting',
+      created_at: new Date().toISOString(),
+      closed_at: null,
+    };
+    _examRooms.push(room);
+    return room;
+  },
+
+  getRoomByCode(code: string): ExamRoom | null {
+    return _examRooms.find(r => r.code === code.toUpperCase()) ?? null;
+  },
+
+  getRoomById(id: string): ExamRoom | null {
+    return _examRooms.find(r => r.id === id) ?? null;
+  },
+
+  getTeacherRooms(teacherId: string): ExamRoom[] {
+    return _examRooms
+      .filter(r => r.teacher_id === teacherId)
+      .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+  },
+
+  activateRoom(roomId: string): ExamRoom | null {
+    const room = _examRooms.find(r => r.id === roomId);
+    if (room) room.status = 'active';
+    return room ?? null;
+  },
+
+  closeRoom(roomId: string): ExamRoom | null {
+    const room = _examRooms.find(r => r.id === roomId);
+    if (room) {
+      room.status = 'closed';
+      room.closed_at = new Date().toISOString();
+    }
+    return room ?? null;
+  },
+
+  // ── Participant operations ──────────────────────────────────────────────────
+
+  joinRoom(roomId: string, displayName: string, totalQuestions: number): RoomParticipant {
+    // Prevent duplicate name in same room (re-join scenario)
+    const existing = _roomParticipants.find(
+      p => p.room_id === roomId && p.display_name.toLowerCase() === displayName.toLowerCase()
+    );
+    if (existing) return existing;
+
+    const participant: RoomParticipant = {
+      id: `rp-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      room_id: roomId,
+      display_name: displayName,
+      joined_at: new Date().toISOString(),
+      submitted_at: null,
+      score: null,
+      total_questions: totalQuestions,
+      answered_count: 0,
+    };
+    _roomParticipants.push(participant);
+    return participant;
+  },
+
+  getParticipant(participantId: string): RoomParticipant | null {
+    return _roomParticipants.find(p => p.id === participantId) ?? null;
+  },
+
+  getParticipants(roomId: string): RoomParticipant[] {
+    return _roomParticipants
+      .filter(p => p.room_id === roomId)
+      .sort((a, b) => new Date(a.joined_at).getTime() - new Date(b.joined_at).getTime());
+  },
+
+  updateProgress(participantId: string, answeredCount: number): RoomParticipant | null {
+    const p = _roomParticipants.find(p => p.id === participantId);
+    if (p && !p.submitted_at) p.answered_count = answeredCount;
+    return p ?? null;
+  },
+
+  submitParticipant(participantId: string, score: number, answeredCount: number): RoomParticipant | null {
+    const p = _roomParticipants.find(p => p.id === participantId);
+    if (p) {
+      p.score = score;
+      p.answered_count = answeredCount;
+      p.submitted_at = new Date().toISOString();
+    }
+    return p ?? null;
+  },
+};
+
 
 
 

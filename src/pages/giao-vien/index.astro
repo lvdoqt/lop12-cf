@@ -1,0 +1,369 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { db } from '../../services/db';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
+  return Astro.redirect('/dashboard');
+}
+
+// Fetch teacher stats
+const isAdmin = user.role === 'admin';
+const myExams = await db.getExams(undefined, isAdmin ? undefined : user.id);
+const allAttempts = await db.getAllAttempts?.() || [];
+const myExamIds = new Set(myExams.map(e => e.id));
+const attemptsOnMyExams = allAttempts.filter((a: any) => myExamIds.has(a.exam_id));
+const completedAttempts = attemptsOnMyExams.filter((a: any) => a.score !== null);
+const avgScore = completedAttempts.length > 0
+  ? (completedAttempts.reduce((sum: number, a: any) => sum + Number(a.score || 0), 0) / completedAttempts.length).toFixed(1)
+  : '—';
+---
+
+<Layout title="Công cụ giảng dạy">
+  <div class="space-y-8">
+    <!-- Header -->
+    <div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6" />
+        </svg>
+        Công cụ Giảng dạy
+      </h1>
+      <p class="text-sm text-gray-500 dark:text-slate-400 mt-1">
+        Các tiện ích hỗ trợ giảng dạy trực tuyến — trình chiếu câu hỏi, bảng trắng và các công cụ lớp học.
+      </p>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-4">
+        <p class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wide">Đề thi</p>
+        <p class="text-2xl font-black text-gray-900 dark:text-white mt-1">{myExams.length}</p>
+      </div>
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-4">
+        <p class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wide">Lượt thi</p>
+        <p class="text-2xl font-black text-gray-900 dark:text-white mt-1">{attemptsOnMyExams.length}</p>
+      </div>
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-4">
+        <p class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wide">Đã hoàn thành</p>
+        <p class="text-2xl font-black text-emerald-600 dark:text-emerald-400 mt-1">{completedAttempts.length}</p>
+      </div>
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-4">
+        <p class="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wide">Điểm TB</p>
+        <p class="text-2xl font-black text-blue-600 dark:text-blue-400 mt-1">{avgScore}</p>
+      </div>
+    </div>
+
+    <!-- Section: Dạy trên lớp -->
+    <div>
+      <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm">🏫</span>
+        Dạy trên lớp
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <!-- Trình chiếu & Bảng trắng -->
+        <a
+          href="/giao-vien/trinh-chieu"
+          class="group bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400">
+              Sẵn sàng
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            Trình chiếu &amp; Bảng trắng
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Chọn một đề thi và trình chiếu toàn màn hình từng câu hỏi. Vẽ công thức, giải bài trực tiếp lên slide bằng bảng trắng khi share screen.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold text-gray-500 dark:text-slate-400">
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Toàn màn hình</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Canvas vẽ</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Hiện đáp án</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Lời giải</span>
+          </div>
+        </a>
+
+        <!-- Phòng thi ảo -->
+        <a
+          href="/giao-vien/phong-thi"
+          class="group bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400">
+              Sẵn sàng
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Phòng thi ảo</h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Tạo phòng thi live với mã phòng 6 ký tự, theo dõi tiến độ học sinh real-time và bảng điểm sau khi kết thúc.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold text-gray-500 dark:text-slate-400">
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Mã phòng 6 ký tự</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Khách (không cần đăng nhập)</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Tiến độ real-time</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Bảng điểm</span>
+          </div>
+        </a>
+
+        <!-- Đồng hồ đếm ngược — MỚI -->
+        <a
+          href="/giao-vien/dong-ho"
+          class="group bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-orange-600 flex items-center justify-center text-white shadow-lg shadow-rose-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400">
+              Mới
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+            Đồng hồ đếm ngược
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Hẹn giờ cho kiểm tra bài, thảo luận nhóm, hoạt động trên lớp. Đếm ngược hoặc bấm giờ, toàn màn hình.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold text-gray-500 dark:text-slate-400">
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Đếm ngược</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Bấm giờ</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Preset 1–45p</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Toàn màn hình</span>
+          </div>
+        </a>
+
+        <!-- Bốc thăm ngẫu nhiên — MỚI -->
+        <a
+          href="/giao-vien/boc-tham"
+          class="group bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white shadow-lg shadow-amber-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400">
+              Mới
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+            Bốc thăm ngẫu nhiên
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Gọi tên học sinh ngẫu nhiên với animation hấp dẫn, hoặc chia nhóm thảo luận nhanh. Lưu danh sách lớp.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold text-gray-500 dark:text-slate-400">
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Bốc 1 bạn</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Chia nhóm</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Lưu danh sách lớp</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Toàn màn hình</span>
+          </div>
+        </a>
+
+        <!-- Khảo sát nhanh — MỚI -->
+        <a
+          href="/giao-vien/khao-sat"
+          class="group bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white shadow-lg shadow-pink-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-pink-50 text-pink-600 dark:bg-pink-950/20 dark:text-pink-400">
+              Mới
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
+            Khảo sát nhanh (Poll)
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Tạo câu hỏi trắc nghiệm nhanh, học sinh quét QR Code để vote, xem biểu đồ kết quả real-time.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold text-gray-500 dark:text-slate-400">
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Quét mã QR</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Biểu đồ live</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Toàn màn hình</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Section: Quản lý & Soạn bài -->
+    <div>
+      <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-violet-100 dark:bg-violet-950/30 text-violet-600 dark:text-violet-400 flex items-center justify-center text-sm">📝</span>
+        Quản lý & Soạn bài
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <!-- Quản lý Lớp học (Lớp dạy & Chủ nhiệm) — MỚI -->
+        <a
+          href="/giao-vien/quan-ly-lop"
+          class="group bg-white dark:bg-slate-900 border-2 border-blue-500/30 dark:border-blue-500/40 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 relative overflow-hidden"
+        >
+          <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl pointer-events-none"></div>
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white shadow-lg shadow-blue-500/25">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-blue-600 dark:bg-blue-950/40 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+              ⭐ Mới &amp; Đầy đủ
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex items-center gap-2">
+            Quản lý Lớp (Lớp Dạy &amp; Chủ Nhiệm)
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Quản lý danh sách học sinh, điểm danh theo tiết, sổ điểm quá trình, nề nếp thi đua và danh bạ phụ huynh lớp chủ nhiệm.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-semibold text-gray-500 dark:text-slate-400">
+            <span class="px-2 py-1 rounded-lg bg-blue-50 text-blue-700 dark:bg-blue-950/50 dark:text-blue-300 font-bold">Lớp chủ nhiệm</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Lớp dạy bộ môn</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Điểm danh</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Sổ điểm quá trình</span>
+            <span class="px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800">Danh bạ phụ huynh</span>
+          </div>
+        </a>
+
+        <!-- Lịch dạy — MỚI -->
+        <a
+          href="/giao-vien/lich-day"
+          class="group bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 3v4M8 3v4M4 11h16M10 15h4M12 13v4" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-cyan-50 text-cyan-600 dark:bg-cyan-950/20 dark:text-cyan-400">
+              Mới
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+            Thời khoá biểu / Lịch dạy
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Xem và cập nhật lịch dạy trên trường. Nhập tay các tiết dạy từ thứ 2 đến thứ 7 hoặc dán nhanh ảnh TKB.
+          </p>
+        </a>
+
+        <!-- Quản lý đề thi & ngân hàng câu hỏi -->
+        <a
+          href="/admin/exams"
+          class="group bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-violet-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-violet-50 text-violet-600 dark:bg-violet-950/20 dark:text-violet-400">
+              Sẵn sàng
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+            Quản lý đề thi &amp; Câu hỏi
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Tạo và chỉnh sửa đề thi, ngân hàng câu hỏi — dữ liệu nguồn cho chế độ trình chiếu.
+          </p>
+        </a>
+
+        <!-- Phiếu bài tập PDF -->
+        <a
+          href="/giao-vien/phieu-bai-tap"
+          class="group bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center text-white shadow-lg shadow-teal-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-teal-50 text-teal-600 dark:bg-teal-950/20 dark:text-teal-400">
+              Mới
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+            Xuất Phiếu bài tập PDF
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Xuất đề thi thành file PDF theo layout A4 đẹp mắt, hỗ trợ tạo bản có đáp án và không đáp án để in ấn.
+          </p>
+        </a>
+
+        <!-- Giao bài tập -->
+        <a
+          href="/giao-vien/giao-bai"
+          class="group bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-indigo-50 text-indigo-600 dark:bg-indigo-950/20 dark:text-indigo-400">
+              Sắp ra mắt
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            Giao bài tập về nhà
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Giao bài kiểm tra kèm deadline cho học sinh. Theo dõi trạng thái đã nộp, chưa nộp và phổ điểm.
+          </p>
+        </a>
+
+        <!-- Phân tích phổ điểm (sắp ra mắt) -->
+        <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm opacity-70 cursor-not-allowed">
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white shadow-lg shadow-amber-500/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9 9 0 1020.945 13H11V3.055z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+              </svg>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold bg-gray-100 text-gray-500 dark:bg-slate-800 dark:text-slate-400">
+              Sắp ra mắt
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-4">Phân tích phổ điểm &amp; Đánh giá</h3>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            Xem câu hỏi nào học sinh sai nhiều nhất, biểu đồ phân bố điểm và kiến thức cả lớp còn yếu.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</Layout>

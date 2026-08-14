@@ -48,7 +48,7 @@ const questions = rawQuestions.map((q) => {
 });
 
 const hasMcq = questions.some(
-  (q) => q.type === "single_choice" || q.type === "mcq",
+  (q) => q.type === "single_choice",
 );
 const hasRead = questions.some((q) => q.type === "read");
 const hasReadCloze = questions.some((q) => q.type === "read_cloze");

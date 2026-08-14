@@ -1,0 +1,44 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PollManager from '../../../components/giao-vien/PollManager';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
+  return Astro.redirect('/dashboard');
+}
+---
+
+<Layout title="Khảo sát nhanh (Poll) — Công cụ giảng dạy">
+  <div class="space-y-6">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-3">
+          <a href="/giao-vien" class="text-gray-400 hover:text-gray-600 dark:hover:text-slate-300 transition">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </a>
+          <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight flex items-center gap-2">
+            <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white shadow-lg shadow-pink-500/20 shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </span>
+            Khảo sát nhanh
+          </h1>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-slate-400 mt-1 ml-12">
+          Tạo câu hỏi trắc nghiệm trực tiếp. Học sinh quét mã QR để bình chọn và xem biểu đồ kết quả real-time.
+        </p>
+      </div>
+    </div>
+
+    <!-- Poll component -->
+    <div class="mt-8">
+      <PollManager client:load />
+    </div>
+  </div>
+</Layout>
