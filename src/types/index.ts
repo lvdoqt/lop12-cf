@@ -47,7 +47,7 @@ export interface Question {
     chapter?: string;
     difficulty?: 'easy' | 'medium' | 'hard';
     dang_toan?: string;
-    type?: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list' | 'read_cloze' | 'ordering';
+    type?: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list' | 'read_cloze' | 'ordering' | 'matching' | 'cloze_text';
     explanation?: string | null;
     subject_id?: string;
     category_id?: string | null;
@@ -60,7 +60,7 @@ export interface Question {
   subject_id: string;
   explanation: string | null;
   difficulty: 'easy' | 'medium' | 'hard';
-  type: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list' | 'read_cloze' | 'ordering';
+  type: 'single_choice' | 'multiple_choice' | 'true_false' | 'msq' | 'sa' | 'tl' | 'read' | 'list' | 'read_cloze' | 'ordering' | 'matching' | 'cloze_text';
   created_by?: string | null;
   category_id?: string | null;
 }
@@ -79,7 +79,7 @@ export interface Exam {
   duration: number; // in minutes
   subject_id: string;
   category_id?: string | null; // Chuyên mục (con của môn học)
-  exam_type: '15m' | '45m' | 'semester' | 'mock_thpt';
+  exam_type: '15m' | '45m' | 'semester' | 'mock_thpt' | 'vsat';
   password?: string | null; // Optional: if set, students must enter password before taking the exam
   created_by?: string | null; // UUID of the creator (teacher/admin)
   created_at: string;
@@ -95,6 +95,10 @@ export interface Attempt {
   user_id: string;
   exam_id: string;
   score: number | null;
+  /** Official V-SAT raw score, maximum 150. */
+  raw_score?: number | null;
+  /** IRT scaled score (mean 500, SD 100); null until calibrated externally. */
+  ability_score?: number | null;
   answers_submitted: Record<string, string | string[] | boolean> | null; // question_id -> answer choice
   started_at: string;
   finished_at: string | null;
@@ -180,6 +184,63 @@ export interface ExamRoom {
   status: 'waiting' | 'active' | 'closed';
   created_at: string;
   closed_at: string | null;
+}
+
+// ── Interactive Video Quizzes ─────────────────────────────────────────────────
+export interface CourseLessonQuiz {
+  id: string;
+  lesson_id: string;
+  timestamp_sec: number;   // second in video when player pauses
+  question: string;
+  options: string[];       // ["A. ...", "B. ...", "C. ...", "D. ..."]
+  answer: string;          // correct letter: "A" | "B" | "C" | "D"
+  explanation: string | null;
+  order_index: number;
+  created_at: string;
+}
+
+export interface VideoQuizResponse {
+  id: string;
+  quiz_id: string;
+  lesson_id: string;
+  user_id: string | null;   // null for guest
+  guest_id: string | null;  // browser fingerprint for guests
+  selected_answer: string;
+  is_correct: boolean;
+  attempt_number: number;
+  answered_at: string;
+}
+
+// ── Notices for teachers ────────────────────────────────────────────────────
+export type TeacherNoticeKind = 'task' | 'timetable';
+export type TeacherNoticePriority = 'normal' | 'important' | 'urgent';
+
+export interface TeacherNotice {
+  id: string;
+  kind: TeacherNoticeKind;
+  title: string;
+  content: string | null;
+  priority: TeacherNoticePriority;
+  due_at: string | null;
+  image_url: string | null;
+  is_published: boolean;
+  created_by: string | null;
+  /** null = thông báo chung; có giá trị = dữ liệu riêng của một giáo viên. */
+  recipient_teacher_id: string | null;
+  created_at: string;
+}
+
+/** Aggregated learning data for one enrolled user in a course. */
+export interface CourseLearningStatistic {
+  enrollment: CourseEnrollment & { user?: Pick<User, 'id' | 'fullname' | 'email' | 'avatar_url' | 'role'> };
+  completedLessons: number;
+  totalLessons: number;
+  completionPercent: number;
+  answeredQuizzes: number;
+  totalQuizzes: number;
+  correctQuizzes: number;
+  quizAccuracy: number | null;
+  lastActivityAt: string | null;
 }
 
 export interface RoomParticipant {

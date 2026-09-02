@@ -22,6 +22,7 @@ if (user.role === "teacher" && exam.created_by !== user.id) {
 const attempts = await db.getAttemptsByExamId(id);
 const examQuestionCounts = await db.getExamQuestionCounts([id]);
 const totalQuestions = examQuestionCounts[id] || 0;
+const isVsat = exam.exam_type === 'vsat';
 
 // score = so_cau_dung x 0.25 (moi cau thuong), nen so_cau_dung = score x 4
 function getCorrectCount(score: number | null | undefined): number | null {
@@ -86,7 +87,7 @@ const avgScore = attempts.length > 0
       </div>
       <div class="flex flex-col items-center justify-center p-4 rounded-2xl border text-center bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-300 border-emerald-100 dark:border-emerald-900/30">
         <span class="text-2xl font-extrabold">{avgScore !== null ? avgScore.toFixed(2) : "—"}</span>
-        <span class="text-xs font-semibold mt-0.5 opacity-80">Diem trung binh</span>
+        <span class="text-xs font-semibold mt-0.5 opacity-80">{isVsat ? 'Diem tho TB / 150' : 'Diem trung binh'}</span>
       </div>
       <div class="flex flex-col items-center justify-center p-4 rounded-2xl border text-center bg-amber-50 text-amber-700 dark:bg-amber-900/20 dark:text-amber-300 border-amber-100 dark:border-amber-900/30">
         <span class="text-2xl font-extrabold">{exam.duration}</span>
@@ -109,8 +110,8 @@ const avgScore = attempts.length > 0
                 <th class="px-6 py-3 text-center w-12">STT</th>
                 <th class="px-4 py-3">Hoc sinh</th>
                 <th class="px-4 py-3">Email</th>
-                <th class="px-4 py-3 text-center">Diem</th>
-                <th class="px-4 py-3 text-center">Cau dung / Tong</th>
+                <th class="px-4 py-3 text-center">{isVsat ? 'Diem tho / 150' : 'Diem'}</th>
+                <th class="px-4 py-3 text-center">{isVsat ? 'Diem nang luc IRT' : 'Cau dung / Tong'}</th>
                 <th class="px-4 py-3">Ngay nop</th>
                 <th class="px-4 py-3">Thoi gian lam</th>
               </tr>
@@ -122,11 +123,11 @@ const avgScore = attempts.length > 0
                   : null;
                 const durationMin = durationMs !== null ? Math.floor(durationMs / 60000) : null;
                 const durationSec = durationMs !== null ? Math.floor((durationMs % 60000) / 1000) : null;
-                const correctCount = getCorrectCount(attempt.score);
+                const correctCount = isVsat ? null : getCorrectCount(attempt.score);
                 const scoreNum = attempt.score ?? null;
                 const scoreColor = scoreNum === null ? "text-slate-400" :
-                  scoreNum >= 8 ? "text-emerald-600 dark:text-emerald-400" :
-                  scoreNum >= 5 ? "text-amber-600 dark:text-amber-400" :
+                  scoreNum >= (isVsat ? 120 : 8) ? "text-emerald-600 dark:text-emerald-400" :
+                  scoreNum >= (isVsat ? 75 : 5) ? "text-amber-600 dark:text-amber-400" :
                   "text-rose-600 dark:text-rose-400";
                 const userObj = attempt.user as any;
                 return (
@@ -145,7 +146,9 @@ const avgScore = attempts.length > 0
                       <span class={`text-base font-extrabold ${scoreColor}`}>{formatScore(attempt.score)}</span>
                     </td>
                     <td class="px-4 py-4 text-center">
-                      {correctCount !== null ? (
+                      {isVsat ? (
+                        <span class="text-xs font-bold text-violet-700 dark:text-violet-400">{attempt.ability_score ?? 'Chua hieu chinh'}</span>
+                      ) : correctCount !== null ? (
                         <span class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
                           {correctCount}{totalQuestions > 0 ? `/${totalQuestions}` : ""}
                         </span>

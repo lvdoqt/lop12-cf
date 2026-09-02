@@ -1,0 +1,134 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { db } from '../../../../services/db';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || !['admin', 'teacher'].includes(user.role)) {
+  return Astro.redirect('/dashboard');
+}
+
+const { id } = Astro.params;
+if (!id) return Astro.redirect('/admin/courses');
+
+const course = await db.getCourseById(id);
+if (!course) return Astro.redirect('/admin/courses');
+if (user.role === 'teacher' && course.created_by !== user.id) {
+  return Astro.redirect('/admin/courses');
+}
+
+const statistics = await db.getCourseLearningStatistics(id);
+const totalStudents = statistics.length;
+const averageCompletion = totalStudents > 0
+  ? Math.round(statistics.reduce((sum, item) => sum + item.completionPercent, 0) / totalStudents)
+  : 0;
+const completedStudents = statistics.filter(item => item.totalLessons > 0 && item.completionPercent === 100).length;
+const quizParticipants = statistics.filter(item => item.answeredQuizzes > 0);
+const averageQuizAccuracy = quizParticipants.length > 0
+  ? Math.round(quizParticipants.reduce((sum, item) => sum + (item.quizAccuracy || 0), 0) / quizParticipants.length)
+  : null;
+
+function formatDate(dateString: string | null) {
+  if (!dateString) return 'Chưa có';
+  return new Date(dateString).toLocaleString('vi-VN', {
+    day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit',
+  });
+}
+---
+
+<Layout title={`Thống kê học tập — ${course.title}`}>
+  <div class="space-y-6">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+      <div>
+        <a href={`/admin/courses/${id}`} class="inline-flex items-center text-xs font-bold text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors uppercase tracking-wider mb-2">
+          ← Quản lý khóa học
+        </a>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-ink dark:text-[#E8E0D0] tracking-tight">Thống kê học tập</h1>
+        <p class="text-sm text-[#8A7E72] dark:text-[#8A8A9E] mt-1">{course.title}</p>
+      </div>
+      <a href={`/api/admin/courses/${id}/analytics.csv`} class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm shadow shadow-teal-500/15 transition shrink-0">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+        Tải CSV
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div class="p-5 rounded-2xl border bg-violet-50 text-violet-700 dark:bg-violet-900/20 dark:text-violet-300 border-violet-100 dark:border-violet-900/30">
+        <p class="text-3xl font-extrabold">{totalStudents}</p>
+        <p class="text-xs font-bold uppercase tracking-wide mt-1 opacity-80">Học sinh đăng ký</p>
+      </div>
+      <div class="p-5 rounded-2xl border bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300 border-blue-100 dark:border-blue-900/30">
+        <p class="text-3xl font-extrabold">{averageCompletion}%</p>
+        <p class="text-xs font-bold uppercase tracking-wide mt-1 opacity-80">Tiến độ trung bình</p>
+      </div>
+      <div class="p-5 rounded-2xl border bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-300 border-emerald-100 dark:border-emerald-900/30">
+        <p class="text-3xl font-extrabold">{completedStudents}</p>
+        <p class="text-xs font-bold uppercase tracking-wide mt-1 opacity-80">Đã hoàn thành khóa</p>
+      </div>
+      <div class="p-5 rounded-2xl border bg-amber-50 text-amber-700 dark:bg-amber-900/20 dark:text-amber-300 border-amber-100 dark:border-amber-900/30">
+        <p class="text-3xl font-extrabold">{averageQuizAccuracy === null ? '—' : `${averageQuizAccuracy}%`}</p>
+        <p class="text-xs font-bold uppercase tracking-wide mt-1 opacity-80">Đúng quiz trung bình</p>
+      </div>
+    </div>
+
+    <div class="rounded-xl border border-blue-100 dark:border-blue-900/30 bg-blue-50/60 dark:bg-blue-950/20 px-4 py-3 text-sm text-blue-800 dark:text-blue-200">
+      Kết quả quiz dùng câu trả lời gần nhất của mỗi học sinh cho mỗi câu hỏi; lượt làm của khách chưa đăng nhập không được đưa vào báo cáo này.
+    </div>
+
+    <div class="bg-white dark:bg-[#22223A]/60 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl overflow-hidden shadow-sm">
+      {statistics.length === 0 ? (
+        <div class="text-center py-16">
+          <p class="text-base font-bold text-ink dark:text-[#E8E0D0]">Chưa có học sinh nào đăng ký</p>
+          <p class="text-sm text-[#8A7E72] dark:text-[#8A8A9E] mt-1">Thống kê sẽ xuất hiện khi học sinh ghi danh vào khóa học.</p>
+        </div>
+      ) : (
+        <div class="overflow-x-auto">
+          <table class="min-w-full">
+            <thead class="bg-slate-50/80 dark:bg-slate-800/30">
+              <tr class="text-left text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                <th class="px-5 py-3">Học sinh</th>
+                <th class="px-5 py-3 min-w-[180px]">Tiến độ bài học</th>
+                <th class="px-5 py-3 min-w-[180px]">Kết quả quiz video</th>
+                <th class="px-5 py-3">Hoạt động gần nhất</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60">
+              {statistics.map(item => {
+                const student = item.enrollment.user;
+                return (
+                  <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/20 transition-colors text-sm">
+                    <td class="px-5 py-4">
+                      <p class="font-semibold text-ink dark:text-[#E8E0D0]">{student?.fullname || student?.email || 'Học sinh'}</p>
+                      <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{student?.email || '—'}</p>
+                    </td>
+                    <td class="px-5 py-4">
+                      <div class="flex items-center justify-between gap-3 text-xs font-bold text-slate-600 dark:text-slate-300 mb-2">
+                        <span>{item.completedLessons}/{item.totalLessons} bài</span>
+                        <span>{item.completionPercent}%</span>
+                      </div>
+                      <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                        <div class="h-full rounded-full bg-blue-500" style={`width: ${item.completionPercent}%`}></div>
+                      </div>
+                    </td>
+                    <td class="px-5 py-4">
+                      {item.answeredQuizzes === 0 ? (
+                        <span class="text-xs text-slate-400">Chưa trả lời quiz</span>
+                      ) : (
+                        <div>
+                          <p class="font-semibold text-ink dark:text-[#E8E0D0]">{item.correctQuizzes}/{item.answeredQuizzes} đúng <span class="text-slate-400 font-normal">({item.quizAccuracy}%)</span></p>
+                          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Đã trả lời {item.answeredQuizzes}/{item.totalQuizzes} câu</p>
+                        </div>
+                      )}
+                    </td>
+                    <td class="px-5 py-4 text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">{formatDate(item.lastActivityAt)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  </div>
+</Layout>

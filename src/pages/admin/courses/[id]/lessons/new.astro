@@ -15,6 +15,10 @@ if (!id) return Astro.redirect('/admin/courses');
 const course = await db.getCourseById(id);
 if (!course) return Astro.redirect('/admin/courses');
 
+if (user.role === 'teacher' && course.created_by !== user.id) {
+  return Astro.redirect('/admin/courses');
+}
+
 const lessons = await db.getCourseLessons(id);
 const nextOrder = lessons.length > 0 ? Math.max(...lessons.map(l => l.order_index)) + 1 : 1;
 

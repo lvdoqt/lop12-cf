@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import ExamView from '../../../components/ExamView';
+import VSatExamView from '../../../components/VSatExamView';
 import { db } from '../../../services/db';
 import { uuidToSeed, mulberry32, shuffleArrayWithPRNG } from '../../../lib/random';
 import { buildShuffledExam } from '../../../lib/exam';
@@ -48,11 +49,9 @@ const remainingSeconds = Math.max(0, Math.floor((durationMs - elapsedMs) / 1000)
 ---
 
 <Layout title={`Đang làm bài: ${exam.title}`} showSidebar={false}>
-  <ExamView
-    client:load
-    exam={{ id: exam.id, slug: exam.slug, title: exam.title, duration: exam.duration }}
-    attempt={{ id: attempt.id }}
-    questions={questions}
-    initialSeconds={remainingSeconds}
-  />
+  {exam.exam_type === 'vsat' ? (
+    <VSatExamView client:load exam={{ slug: exam.slug, title: exam.title, duration: exam.duration }} attempt={{ id: attempt.id }} questions={questions} initialSeconds={remainingSeconds} />
+  ) : (
+    <ExamView client:load exam={{ id: exam.id, slug: exam.slug, title: exam.title, duration: exam.duration }} attempt={{ id: attempt.id }} questions={questions} initialSeconds={remainingSeconds} />
+  )}
 </Layout>

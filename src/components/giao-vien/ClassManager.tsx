@@ -42,6 +42,7 @@ export interface DisciplineRecord {
 
 export interface AttendanceRecord {
   date: string; // YYYY-MM-DD
+  period?: number; // Tiết học; bản ghi cũ không có sẽ được hiểu là tiết 1
   statuses: Record<string, AttendanceStatus>; // studentId -> status
   notes: Record<string, string>; // studentId -> note
 }
@@ -364,10 +365,10 @@ function calculateAverage(grades?: StudentGrades): number | null {
 
 function getGradeClassification(avg: number | null): { label: string; color: string } {
   if (avg === null) return { label: 'Chưa có', color: 'text-gray-400' };
-  if (avg >= 8.0) return { label: 'Giỏi', color: 'text-emerald-600 dark:text-emerald-400 font-bold' };
+  if (avg >= 8.0) return { label: 'Tốt', color: 'text-emerald-600 dark:text-emerald-400 font-bold' };
   if (avg >= 6.5) return { label: 'Khá', color: 'text-blue-600 dark:text-blue-400 font-bold' };
-  if (avg >= 5.0) return { label: 'Trung bình', color: 'text-amber-600 dark:text-amber-400 font-medium' };
-  return { label: 'Yếu', color: 'text-rose-600 dark:text-rose-400 font-bold' };
+  if (avg >= 5.0) return { label: 'Đạt', color: 'text-amber-600 dark:text-amber-400 font-medium' };
+  return { label: 'Cần hỗ trợ', color: 'text-rose-600 dark:text-rose-400 font-bold' };
 }
 
 // ── Main React Component ────────────────────────────────────────────────────
@@ -402,6 +403,7 @@ export default function ClassManager() {
   const [selectedAttendanceDate, setSelectedAttendanceDate] = useState<string>(
     new Date().toISOString().split('T')[0]
   );
+  const [selectedAttendancePeriod, setSelectedAttendancePeriod] = useState<number>(1);
 
   // Quick Notification Toast
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -471,19 +473,20 @@ export default function ClassManager() {
     });
   }, [activeClass, searchQuery, selectedGroupFilter]);
 
-  // Current Day's Attendance record
+  // Attendance is tracked by date and period, not only by date.
   const currentAttendance = useMemo(() => {
     if (!activeClass) return null;
-    let rec = activeClass.attendance.find(a => a.date === selectedAttendanceDate);
+    let rec = activeClass.attendance.find(a => a.date === selectedAttendanceDate && (a.period ?? 1) === selectedAttendancePeriod);
     if (!rec) {
       rec = {
         date: selectedAttendanceDate,
+        period: selectedAttendancePeriod,
         statuses: {},
         notes: {}
       };
     }
     return rec;
-  }, [activeClass, selectedAttendanceDate]);
+  }, [activeClass, selectedAttendanceDate, selectedAttendancePeriod]);
 
   // Attendance stats for current date
   const attendanceStats = useMemo(() => {
@@ -507,6 +510,25 @@ export default function ClassManager() {
     const rate = total > 0 ? Math.round((attended / total) * 100) : 100;
     return { present, late, excused, unexcused, total, rate };
   }, [activeClass, currentAttendance]);
+
+  // Signals for the teacher to review with the learner before contacting family.
+  const studentSupportList = useMemo(() => {
+    if (!activeClass) return [];
+    return activeClass.students.map(student => {
+      const records = activeClass.attendance;
+      const lateCount = records.filter(record => record.statuses[student.id] === 'late').length;
+      const excusedCount = records.filter(record => record.statuses[student.id] === 'excused').length;
+      const unexcusedCount = records.filter(record => record.statuses[student.id] === 'unexcused').length;
+      const average = calculateAverage(student.grades);
+      const reasons: string[] = [];
+      if (unexcusedCount > 0) reasons.push(`${unexcusedCount} tiết nghỉ không phép`);
+      if (lateCount >= 2) reasons.push(`${lateCount} tiết đi muộn`);
+      if (average !== null && average < 5) reasons.push(`ĐTB tạm tính ${average}`);
+      const priority = unexcusedCount >= 2 || (average !== null && average < 5) ? 'urgent' : 'watch';
+      return { student, lateCount, excusedCount, unexcusedCount, average, reasons, priority };
+    }).filter(item => item.reasons.length > 0)
+      .sort((a, b) => (b.unexcusedCount * 10 + b.lateCount) - (a.unexcusedCount * 10 + a.lateCount));
+  }, [activeClass]);
 
   // ── Handlers: Class CRUD ──────────────────────────────────────────────────
   const handleSaveClass = (e: React.FormEvent<HTMLFormElement>) => {
@@ -706,7 +728,7 @@ export default function ClassManager() {
 
     const updatedStatuses = { ...(currentAttendance?.statuses || {}), [studentId]: nextStatus };
     const updatedAttendanceList = [...activeClass.attendance];
-    const existingIndex = updatedAttendanceList.findIndex(a => a.date === selectedAttendanceDate);
+    const existingIndex = updatedAttendanceList.findIndex(a => a.date === selectedAttendanceDate && (a.period ?? 1) === selectedAttendancePeriod);
 
     if (existingIndex >= 0) {
       updatedAttendanceList[existingIndex] = {
@@ -716,6 +738,7 @@ export default function ClassManager() {
     } else {
       updatedAttendanceList.push({
         date: selectedAttendanceDate,
+        period: selectedAttendancePeriod,
         statuses: updatedStatuses,
         notes: {}
       });
@@ -733,7 +756,7 @@ export default function ClassManager() {
     });
 
     const updatedAttendanceList = [...activeClass.attendance];
-    const existingIndex = updatedAttendanceList.findIndex(a => a.date === selectedAttendanceDate);
+    const existingIndex = updatedAttendanceList.findIndex(a => a.date === selectedAttendanceDate && (a.period ?? 1) === selectedAttendancePeriod);
 
     if (existingIndex >= 0) {
       updatedAttendanceList[existingIndex] = {
@@ -743,6 +766,7 @@ export default function ClassManager() {
     } else {
       updatedAttendanceList.push({
         date: selectedAttendanceDate,
+        period: selectedAttendancePeriod,
         statuses: allPresentStatuses,
         notes: {}
       });
@@ -757,7 +781,7 @@ export default function ClassManager() {
     if (!activeClass) return;
     const updatedNotes = { ...(currentAttendance?.notes || {}), [studentId]: note };
     const updatedAttendanceList = [...activeClass.attendance];
-    const existingIndex = updatedAttendanceList.findIndex(a => a.date === selectedAttendanceDate);
+    const existingIndex = updatedAttendanceList.findIndex(a => a.date === selectedAttendanceDate && (a.period ?? 1) === selectedAttendancePeriod);
 
     if (existingIndex >= 0) {
       updatedAttendanceList[existingIndex] = {
@@ -767,6 +791,7 @@ export default function ClassManager() {
     } else {
       updatedAttendanceList.push({
         date: selectedAttendanceDate,
+        period: selectedAttendancePeriod,
         statuses: currentAttendance?.statuses || {},
         notes: updatedNotes
       });
@@ -847,7 +872,7 @@ export default function ClassManager() {
     if (!activeClass || activeClass.students.length === 0) return alert('Lớp chưa có học sinh');
     let csvContent = '\uFEFF'; // UTF-8 BOM for Excel Vietnamese display
     csvContent += `DANH SÁCH HỌC SINH LỚP ${activeClass.name.toUpperCase()} - NĂM HỌC ${activeClass.schoolYear}\n`;
-    csvContent += `STT,Mã HS,Họ và Tên,Giới tính,Ngày sinh,Chức vụ,Tổ,SĐT Phụ huynh,Họ tên Phụ huynh,Điểm TB,Hạnh kiểm,Ghi chú\n`;
+    csvContent += `STT,Mã HS,Họ và Tên,Giới tính,Ngày sinh,Chức vụ,Tổ,SĐT Phụ huynh,Họ tên Phụ huynh,Điểm TB tạm tính,Kết quả rèn luyện,Ghi chú\n`;
 
     activeClass.students.forEach((s, idx) => {
       const avg = calculateAverage(s.grades);
@@ -865,6 +890,42 @@ export default function ClassManager() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const exportAttendanceToCSV = () => {
+    if (!activeClass || activeClass.attendance.length === 0) return alert('Lớp chưa có dữ liệu điểm danh');
+    const statusLabels: Record<AttendanceStatus, string> = {
+      present: 'Có mặt', late: 'Đi muộn', excused: 'Nghỉ có phép', unexcused: 'Nghỉ không phép'
+    };
+    const csvCell = (value: string | number) => `"${String(value).replace(/"/g, '""')}"`;
+    const rows: string[] = [];
+    [...activeClass.attendance]
+      .sort((a, b) => a.date.localeCompare(b.date) || (a.period ?? 1) - (b.period ?? 1))
+      .forEach(record => activeClass.students.forEach((student, index) => {
+        const status = record.statuses[student.id] || 'present';
+        rows.push([
+          record.date,
+          `Tiết ${record.period ?? 1}`,
+          activeClass.subject || 'Chủ nhiệm',
+          index + 1,
+          student.studentCode || '',
+          student.name,
+          statusLabels[status],
+          record.notes[student.id] || '',
+        ].map(csvCell).join(','));
+      }));
+
+    const content = '\uFEFF' + ['Ngày', 'Tiết', 'Môn / hoạt động', 'STT', 'Mã HS', 'Họ và tên', 'Trạng thái', 'Ghi chú'].map(csvCell).join(',') + '\n' + rows.join('\n');
+    const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `Chuyen_can_${activeClass.name}_${activeClass.schoolYear.replaceAll(' ', '')}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    showToast('Đã xuất sổ chuyên cần theo tiết');
   };
 
   // ── Backup / Restore JSON ──────────────────────────────────────────────────
@@ -994,6 +1055,11 @@ export default function ClassManager() {
             Đang chọn: <strong className="text-white font-bold">{activeClass ? `${activeClass.name} (${activeClass.type === 'homeroom' ? 'Chủ nhiệm' : activeClass.subject})` : 'Chưa có lớp'}</strong>
           </div>
         </div>
+      </div>
+
+      <div className="rounded-2xl border border-amber-200 dark:border-amber-900/40 bg-amber-50/70 dark:bg-amber-950/20 px-4 py-3 text-xs text-amber-900 dark:text-amber-200 flex gap-2.5">
+        <span className="text-base leading-4">🔒</span>
+        <p><strong>Dữ liệu đang lưu trên trình duyệt này.</strong> Chỉ nhập thông tin cần cho công tác lớp; không lưu CCCD, hồ sơ y tế hoặc thông tin nhạy cảm. Hãy sao lưu có mã hóa và dùng hệ thống quản lý của trường khi cần chia sẻ/chính thức hóa hồ sơ.</p>
       </div>
 
       {/* Class Cards Slider / Selector Grid */}
@@ -1218,6 +1284,25 @@ export default function ClassManager() {
           {/* Tab Content 1: ROSTER (DANH SÁCH HỌC SINH) */}
           {activeTab === 'roster' && (
             <div className="p-6 space-y-5">
+              {studentSupportList.length > 0 && (
+                <section className="rounded-2xl border border-amber-200 dark:border-amber-900/50 bg-amber-50/60 dark:bg-amber-950/15 p-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                    <div>
+                      <h4 className="font-extrabold text-amber-900 dark:text-amber-200 text-sm">Theo dõi cần hỗ trợ</h4>
+                      <p className="text-xs text-amber-800/80 dark:text-amber-300/80 mt-1">Tín hiệu tham khảo từ chuyên cần và điểm tạm tính; giáo viên cần trao đổi với học sinh trước khi liên hệ phụ huynh.</p>
+                    </div>
+                    <span className="shrink-0 px-2.5 py-1 rounded-full bg-amber-200/70 dark:bg-amber-900/50 text-amber-800 dark:text-amber-200 text-xs font-bold">{studentSupportList.length} học sinh</span>
+                  </div>
+                  <div className="mt-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2">
+                    {studentSupportList.slice(0, 6).map(item => (
+                      <div key={item.student.id} className={`rounded-xl border px-3 py-2.5 ${item.priority === 'urgent' ? 'border-rose-200 bg-rose-50/70 dark:border-rose-900/50 dark:bg-rose-950/20' : 'border-amber-200 bg-white/80 dark:border-amber-900/50 dark:bg-slate-900/40'}`}>
+                        <p className="text-sm font-bold text-gray-900 dark:text-white">{item.student.name}</p>
+                        <p className="text-xs text-gray-600 dark:text-slate-300 mt-0.5">{item.reasons.join(' • ')}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
               {/* Search & Sub-filters */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="relative w-full sm:w-72">
@@ -1273,7 +1358,7 @@ export default function ClassManager() {
                         <th className="py-3.5 px-4 font-bold">Chức vụ / Tổ</th>
                         <th className="py-3.5 px-4 font-bold">Phụ huynh &amp; SĐT</th>
                         <th className="py-3.5 px-4 font-bold text-center">Điểm TB</th>
-                        <th className="py-3.5 px-4 font-bold text-center">Hạnh kiểm</th>
+                        <th className="py-3.5 px-4 font-bold text-center">Rèn luyện</th>
                         <th className="py-3.5 px-4 font-bold text-right w-24">Thao tác</th>
                       </tr>
                     </thead>
@@ -1398,7 +1483,7 @@ export default function ClassManager() {
             <div className="p-6 space-y-6">
               {/* Date Picker & Quick Actions Bar */}
               <div className="bg-gray-50 dark:bg-slate-800/60 p-4 rounded-2xl border border-gray-200 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <span className="text-xs font-bold text-gray-700 dark:text-slate-300">Ngày điểm danh:</span>
                   <input
                     type="date"
@@ -1412,9 +1497,25 @@ export default function ClassManager() {
                   >
                     Hôm nay
                   </button>
+                  <label className="flex items-center gap-2 text-xs font-bold text-gray-700 dark:text-slate-300">
+                    Tiết:
+                    <select
+                      value={selectedAttendancePeriod}
+                      onChange={(e) => setSelectedAttendancePeriod(Number(e.target.value))}
+                      className="px-2.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 text-sm font-bold text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+                    >
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(period => <option key={period} value={period}>Tiết {period}</option>)}
+                    </select>
+                  </label>
                 </div>
 
                 <div className="flex items-center gap-2">
+                  <button
+                    onClick={exportAttendanceToCSV}
+                    className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-700 dark:text-slate-200 rounded-xl text-xs font-bold transition cursor-pointer"
+                  >
+                    Xuất chuyên cần
+                  </button>
                   <button
                     onClick={markAllAttendancePresent}
                     className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-md shadow-emerald-600/20 transition flex items-center gap-1.5 cursor-pointer"
@@ -1517,10 +1618,10 @@ export default function ClassManager() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-blue-50/50 dark:bg-blue-950/20 p-4 rounded-2xl border border-blue-200 dark:border-blue-900/40">
                 <div>
                   <h4 className="font-extrabold text-blue-900 dark:text-blue-200 text-sm">
-                    Sổ điểm quá trình — {activeClass.subject || 'Môn học'}
+                    Điểm đánh giá môn học — {activeClass.subject || 'Môn học'}
                   </h4>
                   <p className="text-xs text-blue-700/80 dark:text-blue-300/80 mt-0.5">
-                    Công thức tính ĐTB: (Miệng + 15p + 1 Tiết × 2 + Học kỳ × 3) / Tổng hệ số.
+                    Tạm tính ĐTB môn: (đánh giá thường xuyên + giữa kỳ × 2 + cuối kỳ × 3) / tổng hệ số. Mức hiển thị chỉ để theo dõi, không thay thế kết quả đánh giá chính thức.
                   </p>
                 </div>
                 <button
@@ -1538,12 +1639,12 @@ export default function ClassManager() {
                     <tr>
                       <th className="py-3 px-3 font-bold text-center w-10">STT</th>
                       <th className="py-3 px-4 font-bold min-w-[160px]">Họ và Tên</th>
-                      <th className="py-3 px-2 font-bold text-center w-24">Miệng (HS1)</th>
-                      <th className="py-3 px-2 font-bold text-center w-28">15 Phút (HS1)</th>
-                      <th className="py-3 px-2 font-bold text-center w-24">1 Tiết (HS2)</th>
-                      <th className="py-3 px-2 font-bold text-center w-24">Học kỳ (HS3)</th>
+                      <th className="py-3 px-2 font-bold text-center w-24">ĐG thường xuyên (HS1)</th>
+                      <th className="py-3 px-2 font-bold text-center w-28">ĐG thường xuyên (HS1)</th>
+                      <th className="py-3 px-2 font-bold text-center w-24">Giữa kỳ (HS2)</th>
+                      <th className="py-3 px-2 font-bold text-center w-24">Cuối kỳ (HS3)</th>
                       <th className="py-3 px-3 font-bold text-center w-20 bg-blue-50/50 dark:bg-blue-950/30">ĐTB</th>
-                      <th className="py-3 px-3 font-bold text-center w-24">Xếp loại</th>
+                      <th className="py-3 px-3 font-bold text-center w-24">Mức tham khảo</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200 dark:divide-slate-800">
@@ -1698,7 +1799,7 @@ export default function ClassManager() {
                       </button>
                     </div>
                     <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
-                      Ghi nhận các điểm cộng phát biểu, giải bài tập hoặc các lỗi vi phạm như đi muộn, không làm bài tập để tổng kết điểm thi đua và đánh giá hạnh kiểm cuối kỳ.
+                      Ghi nhận các điểm cộng phát biểu, giải bài tập hoặc các lỗi vi phạm như đi muộn, không làm bài tập để tổng hợp minh chứng rèn luyện cuối kỳ.
                     </p>
                   </div>
 

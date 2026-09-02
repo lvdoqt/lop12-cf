@@ -28,7 +28,7 @@ if (user) {
 const progressPct = publishedLessons.length > 0 ? Math.round((completedIds.size / publishedLessons.length) * 100) : 0;
 ---
 
-<Layout title={course.title} description={course.description || undefined}>
+<Layout title={course.title} description={course.description || undefined} showSidebar={false}>
   <div class="max-w-4xl mx-auto space-y-8">
     <!-- Back -->
     <a href="/khoa-hoc" class="inline-flex items-center text-sm font-semibold text-gray-400 hover:text-gray-600 dark:hover:text-slate-300 transition">

@@ -2,6 +2,8 @@
 import Layout from "../../../../layouts/Layout.astro";
 import QuestionCard from "../../../../components/QuestionCard.astro";
 import ReadListQuestion from "../../../../components/ReadListQuestion";
+import MatchingQuestion from "../../../../components/MatchingQuestion";
+import ClozeTextQuestion from "../../../../components/ClozeTextQuestion";
 import { db } from "../../../../services/db";
 import {
   uuidToSeed,
@@ -35,12 +37,14 @@ import { buildShuffledExam } from "../../../../lib/exam";
 
 const prng = mulberry32(uuidToSeed(attempt.id));
 const rawQuestions = buildShuffledExam(allQuestions, prng);
+const isVsatExam = exam.exam_type === 'vsat';
+const isEnglishVsat = isVsatExam && exam.subject?.slug === 'tieng-anh-12';
 
 let currentIndex = 1;
 const questions = rawQuestions.map((q) => {
   const startIndex = currentIndex;
   let count = 1;
-  if (q.type === "read" || q.type === "list" || q.type === "read_cloze") {
+  if (q.type === "read" || q.type === "list" || q.type === "read_cloze" || q.type === "cloze_text") {
     count = (q.metadata as any)?.questions?.length || 1;
   }
   currentIndex += count;
@@ -73,11 +77,15 @@ const readClozeQuestions = questions.filter(
   (q) => !groupEnglishTypes && q.type === "read_cloze",
 );
 const listQuestions = questions.filter((q) => q.type === "list");
+const matchingQuestions = questions.filter((q) => q.type === "matching");
+const clozeTextQuestions = questions.filter((q) => q.type === "cloze_text");
 
 const allSections = [
   { key: "read", label: "Đọc hiểu", items: readQuestions },
   { key: "read_cloze", label: "Điền vào chỗ trống", items: readClozeQuestions },
   { key: "list", label: "Kỹ năng nghe", items: listQuestions },
+  { key: "matching", label: "Câu hỏi ghép cặp", items: matchingQuestions },
+  { key: "cloze_text", label: "Điền một từ vào chỗ trống", items: clozeTextQuestions },
   {
     key: "mcq",
     label: "Câu trắc nghiệm chọn 1 phương án",
@@ -97,7 +105,14 @@ const allSections = [
   },
   { key: "tl", label: "Câu tự luận", items: tlQuestions },
 ];
-const activeSections = allSections.filter((s) => s.items.length > 0);
+const vsatSections = [
+  { key: "msq", label: isEnglishVsat ? "PART 1 – Questions 1–9: TRUE / FALSE" : "Phần 1 – Câu hỏi Đúng / Sai", items: msqQuestions },
+  { key: "mcq", label: isEnglishVsat ? "PART 2 – Questions 10–15: READING" : "Phần 2 – Trắc nghiệm 4 lựa chọn", items: mcqQuestions },
+  { key: "matching", label: isEnglishVsat ? "PART 3 – Questions 16–20: MATCHING" : "Phần 3 – Câu hỏi Ghép hợp", items: matchingQuestions },
+  { key: "cloze_text", label: isEnglishVsat ? "PART 4 – Questions 21–25: OPEN CLOZE" : "Phần 4 – Trả lời ngắn", items: clozeTextQuestions },
+  { key: "sa", label: "Phần 4 – Trả lời ngắn", items: saQuestions },
+];
+const activeSections = (isVsatExam ? vsatSections : allSections).filter((s) => s.items.length > 0);
 const Roman = (n: number) =>
   ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"][n - 1] || String(n);
 
@@ -117,6 +132,26 @@ const timeSpentStr =
 let correctCount = 0;
 let totalCount = 0;
 questions.forEach((q) => {
+  if (q.type === "cloze_text") {
+    const blanks = (q.metadata as any)?.questions || [];
+    totalCount += blanks.length;
+    const submitted = attempt.answers_submitted?.[q.id];
+    if (submitted && typeof submitted === "object" && !Array.isArray(submitted)) {
+      blanks.forEach((blank: any, i: number) => {
+        const actual = String((submitted as Record<string, string>)[String(i)] || '').trim().toLowerCase();
+        const accepted = (Array.isArray(blank.accepted_answers) ? blank.accepted_answers : [blank.correct_answer]).map((x: any) => String(x || '').trim().toLowerCase());
+        if (actual && accepted.includes(actual)) correctCount++;
+      });
+    }
+    return;
+  }
+  if (q.type === "matching") {
+    totalCount += 1;
+    const pairs = (q.metadata as any)?.questions || [];
+    const submitted = attempt.answers_submitted?.[q.id];
+    if (submitted && typeof submitted === "object" && !Array.isArray(submitted) && pairs.length && pairs.every((p: any, i: number) => String((submitted as Record<string,string>)[String(i)] || '').toUpperCase() === String(p.correct_option || '').toUpperCase())) correctCount++;
+    return;
+  }
   if (q.type === "read" || q.type === "list" || q.type === "read_cloze") {
     const subs = (q.metadata && (q.metadata as any).questions) || [];
     totalCount += subs.length;
@@ -214,6 +249,10 @@ questions.forEach((q) => {
 });
 
 const score = attempt.score !== null ? Number(attempt.score) : 0;
+const isVsat = isVsatExam;
+const rawScore = Number(attempt.raw_score ?? score);
+const abilityScore = attempt.ability_score == null ? null : Number(attempt.ability_score);
+const themeScore = isVsat ? rawScore / 15 : score;
 
 // 3. Theme color according to score
 let scoreTheme = {
@@ -223,14 +262,14 @@ let scoreTheme = {
   desc: "Chúc mừng cậu nhé! Cậu đã nắm rất chắc kiến thức này.",
 };
 
-if (score < 5.0) {
+if (themeScore < 5.0) {
   scoreTheme = {
     bg: "bg-rose-50 border-rose-200/50 dark:bg-rose-950/20 dark:border-rose-900/35",
     text: "text-rose-700 dark:text-rose-400",
     title: "Cần cố gắng thêm!",
     desc: "Đừng nản lòng nhé. Hãy xem kỹ lời giải chi tiết và ôn lại bài học lý thuyết.",
   };
-} else if (score < 8.0) {
+} else if (themeScore < 8.0) {
   scoreTheme = {
     bg: "bg-amber-50 border-amber-200/50 dark:bg-amber-950/20 dark:border-amber-900/35",
     text: "text-amber-700 dark:text-amber-400",
@@ -290,12 +329,12 @@ if (score < 5.0) {
         <!-- Score progress bar -->
         <div class="w-full max-w-xs mt-3">
           <div class="flex justify-between text-xs font-semibold text-gray-500 dark:text-slate-400 mb-1">
-            <span>0</span><span>10</span>
+            <span>0</span><span>{isVsat ? '150' : '10'}</span>
           </div>
           <div class="h-2.5 bg-white/40 dark:bg-slate-800/60 rounded-full overflow-hidden">
             <div
-              class={`h-full rounded-full transition-all ${score >= 8 ? 'bg-emerald-500' : score >= 5 ? 'bg-amber-500' : 'bg-rose-500'}`}
-              style={`width: ${score * 10}%`}
+              class={`h-full rounded-full transition-all ${themeScore >= 8 ? 'bg-emerald-500' : themeScore >= 5 ? 'bg-amber-500' : 'bg-rose-500'}`}
+              style={`width: ${Math.min(100, themeScore * 10)}%`}
             ></div>
           </div>
         </div>
@@ -305,13 +344,28 @@ if (score < 5.0) {
       <div
         class="w-32 h-32 rounded-full border-4 border-white dark:border-slate-800 bg-white dark:bg-slate-900 shadow-lg flex flex-col items-center justify-center flex-shrink-0"
       >
-        <span class={`text-4xl font-black ${scoreTheme.text}`}>{score}</span>
+        <span class={`text-4xl font-black ${scoreTheme.text}`}>{isVsat ? rawScore : score}</span>
         <span
           class="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mt-0.5"
-          >trên 10</span
+          >{isVsat ? 'điểm thô / 150' : 'trên 10'}</span
         >
       </div>
     </div>
+
+    {isVsat && (
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-sky-200 bg-sky-50 p-5 dark:border-sky-900 dark:bg-sky-950/20">
+          <p class="text-xs font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">Điểm thô V-SAT</p>
+          <p class="mt-1 text-3xl font-black text-sky-950 dark:text-white">{rawScore} <span class="text-sm font-semibold text-sky-700 dark:text-sky-400">/ 150</span></p>
+          <p class="mt-2 text-xs leading-5 text-sky-800 dark:text-sky-300">Tính trực tiếp theo số tiểu mục đúng và trọng số của từng dạng câu hỏi.</p>
+        </div>
+        <div class="rounded-2xl border border-violet-200 bg-violet-50 p-5 dark:border-violet-900 dark:bg-violet-950/20">
+          <p class="text-xs font-bold uppercase tracking-wider text-violet-700 dark:text-violet-400">Điểm năng lực IRT</p>
+          <p class="mt-1 text-3xl font-black text-violet-950 dark:text-white">{abilityScore ?? 'Chưa hiệu chỉnh'}</p>
+          <p class="mt-2 text-xs leading-5 text-violet-800 dark:text-violet-300">Cần tham số câu hỏi và dữ liệu mẫu để ước lượng IRT; không quy đổi tuyến tính từ điểm thô.</p>
+        </div>
+      </div>
+    )}
 
     <!-- Stats Table Grid -->
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -476,7 +530,7 @@ if (score < 5.0) {
               return (
                 <div class="space-y-4">
                   <h3 class="text-lg font-bold text-gray-800 dark:text-white border-b border-gray-200 dark:border-slate-700 pb-2">
-                    Phần {Roman(sectionCounter)}. {section.label}
+                    {isVsat ? section.label : `Phần ${Roman(sectionCounter)}. ${section.label}`}
                   </h3>
                   {section.key === "read" || section.key === "list"
                     ? section.items.map((question) => (
@@ -494,6 +548,12 @@ if (score < 5.0) {
                         />
                       ))
                     : section.items.map((question) => {
+                        if (question.type === "matching") {
+                          return <MatchingQuestion client:load question={question} index={question.globalIndex} mode="review" selected={(attempt.answers_submitted?.[question.id] as unknown as Record<string, string>) || {}} />;
+                        }
+                        if (question.type === "cloze_text") {
+                          return <ClozeTextQuestion client:load question={question} index={question.globalIndex} mode="review" selected={(attempt.answers_submitted?.[question.id] as unknown as Record<string, string>) || {}} />;
+                        }
                         if (
                           question.type === "read" ||
                           question.type === "read_cloze" ||

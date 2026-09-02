@@ -1,5 +1,5 @@
 import { isMockMode, isMockModeForEnv, supabase, createAdminSupabase, createServerSupabase } from '../lib/supabase';
-import type { Subject, Lesson, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress, Category } from '../types';
+import type { Subject, Lesson, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress, Category, CourseLessonQuiz, VideoQuizResponse, CourseLearningStatistic, TeacherNotice } from '../types';
 
 // Ã¢â€â‚¬Ã¢â€â‚¬ Cloudflare runtime env injection Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 // Middleware calls setRuntimeEnv() per-request with Cloudflare runtime.env.
@@ -95,6 +95,11 @@ let mockCourseLessons: CourseLesson[] = [];
 
 let mockEnrollments: CourseEnrollment[] = [];
 let mockLessonProgress: LessonProgress[] = [];
+
+// ── Video quiz mock data ──────────────────────────────────────────────────────
+let mockVideoQuizzes: CourseLessonQuiz[] = [];
+let mockVideoQuizResponses: VideoQuizResponse[] = [];
+let mockTeacherNotices: TeacherNotice[] = [];
 
 let mockBlogs: Blog[] = [];
 
@@ -360,7 +365,7 @@ export const db = {
           let cnt = 1;
           if (q) {
              const type = (q as any).metadata?.type || (q as any).type;
-             if (type === 'read' || type === 'read_cloze' || type === 'list') {
+             if (type === 'read' || type === 'read_cloze' || type === 'list' || type === 'matching' || type === 'cloze_text') {
                const subs = q.metadata?.questions || [];
                if (subs.length > 0) cnt = subs.length;
              }
@@ -388,7 +393,7 @@ export const db = {
           let cnt = 1;
           // type is stored inside metadata, not as a top-level column
           const type = q.metadata?.type;
-          if (type === 'read' || type === 'read_cloze' || type === 'list') {
+          if (type === 'read' || type === 'read_cloze' || type === 'list' || type === 'matching' || type === 'cloze_text') {
             const subs = q.metadata?.questions || [];
             if (subs.length > 0) cnt = subs.length;
           }
@@ -1067,13 +1072,14 @@ export const db = {
     return data;
   },
 
-  async submitAttempt(attemptId: string, score: number, answersSubmitted: Record<string, any>): Promise<Attempt> {
+  async submitAttempt(attemptId: string, score: number, answersSubmitted: Record<string, any>, scoring?: { raw_score?: number | null; ability_score?: number | null }): Promise<Attempt> {
     if (isInMockMode()) {
       const index = mockAttempts.findIndex(a => a.id === attemptId);
       if (index === -1) throw new Error('Attempt not found');
       mockAttempts[index] = {
         ...mockAttempts[index],
         score,
+        ...(scoring || {}),
         answers_submitted: answersSubmitted,
         finished_at: new Date().toISOString()
       };
@@ -1086,6 +1092,7 @@ export const db = {
       .from('attempts')
       .update({
         score,
+        ...(scoring || {}),
         answers_submitted: answersSubmitted,
         finished_at: new Date().toISOString()
       })
@@ -1722,7 +1729,322 @@ export const db = {
     const { data, error } = await query;
     if (error) throw error;
     return data || [];
-  }
+  },
+
+  /** Aggregate course completion and the latest answer for each video quiz per enrolled user. */
+  async getCourseLearningStatistics(courseId: string): Promise<CourseLearningStatistic[]> {
+    const buildStatistics = (
+      enrollments: (CourseEnrollment & { user?: User })[],
+      lessons: CourseLesson[],
+      quizzes: CourseLessonQuiz[],
+      progressRows: LessonProgress[],
+      responseRows: VideoQuizResponse[],
+    ): CourseLearningStatistic[] => {
+      const lessonIds = new Set(lessons.map(lesson => lesson.id));
+      const totalLessons = lessons.length;
+      const totalQuizzes = quizzes.length;
+
+      return enrollments.map(enrollment => {
+        const completed = new Set(
+          progressRows
+            .filter(progress => progress.user_id === enrollment.user_id && progress.completed && lessonIds.has(progress.lesson_id))
+            .map(progress => progress.lesson_id),
+        );
+
+        // A learner may retry a quiz. The dashboard reports their latest answer per question,
+        // so one learner cannot inflate their own result by retrying.
+        const latestAnswers = new Map<string, VideoQuizResponse>();
+        for (const response of responseRows) {
+          if (response.user_id !== enrollment.user_id || !lessonIds.has(response.lesson_id)) continue;
+          const previous = latestAnswers.get(response.quiz_id);
+          if (!previous || new Date(response.answered_at).getTime() > new Date(previous.answered_at).getTime()) {
+            latestAnswers.set(response.quiz_id, response);
+          }
+        }
+
+        const latestActivity = [
+          ...progressRows
+            .filter(progress => progress.user_id === enrollment.user_id && progress.completed_at)
+            .map(progress => progress.completed_at as string),
+          ...responseRows
+            .filter(response => response.user_id === enrollment.user_id)
+            .map(response => response.answered_at),
+        ].sort((a, b) => new Date(b).getTime() - new Date(a).getTime())[0] || null;
+
+        const answeredQuizzes = latestAnswers.size;
+        const correctQuizzes = [...latestAnswers.values()].filter(response => response.is_correct).length;
+        return {
+          enrollment,
+          completedLessons: completed.size,
+          totalLessons,
+          completionPercent: totalLessons > 0 ? Math.round((completed.size / totalLessons) * 100) : 0,
+          answeredQuizzes,
+          totalQuizzes,
+          correctQuizzes,
+          quizAccuracy: answeredQuizzes > 0 ? Math.round((correctQuizzes / answeredQuizzes) * 100) : null,
+          lastActivityAt: latestActivity,
+        };
+      });
+    };
+
+    if (isInMockMode()) {
+      const lessons = mockCourseLessons.filter(lesson => lesson.course_id === courseId && lesson.is_published);
+      const lessonIds = new Set(lessons.map(lesson => lesson.id));
+      const enrollments = await this.getCourseEnrollments(courseId);
+      return buildStatistics(
+        enrollments,
+        lessons,
+        mockVideoQuizzes.filter(quiz => lessonIds.has(quiz.lesson_id)),
+        mockLessonProgress.filter(progress => lessonIds.has(progress.lesson_id)),
+        mockVideoQuizResponses.filter(response => lessonIds.has(response.lesson_id)),
+      );
+    }
+
+    const client = adminClient()!;
+    const enrollments = await this.getCourseEnrollments(courseId);
+    const { data: lessonRows, error: lessonsError } = await client
+      .from('course_lessons')
+      .select('*')
+      .eq('course_id', courseId)
+      .eq('is_published', true);
+    if (lessonsError) throw lessonsError;
+
+    const lessons = (lessonRows || []) as CourseLesson[];
+    const lessonIds = lessons.map(lesson => lesson.id);
+    const userIds = enrollments.map(enrollment => enrollment.user_id);
+    if (lessonIds.length === 0 || userIds.length === 0) {
+      return buildStatistics(enrollments, lessons, [], [], []);
+    }
+
+    const [quizzesResult, progressResult, responsesResult] = await Promise.all([
+      client.from('course_lesson_quizzes').select('*').in('lesson_id', lessonIds),
+      client.from('lesson_progress').select('*').in('lesson_id', lessonIds).in('user_id', userIds).eq('completed', true),
+      client.from('video_quiz_responses').select('*').in('lesson_id', lessonIds).in('user_id', userIds),
+    ]);
+    if (quizzesResult.error) throw quizzesResult.error;
+    if (progressResult.error) throw progressResult.error;
+    if (responsesResult.error) throw responsesResult.error;
+
+    return buildStatistics(
+      enrollments,
+      lessons,
+      (quizzesResult.data || []).map((quiz: any) => ({ ...quiz, options: Array.isArray(quiz.options) ? quiz.options : JSON.parse(quiz.options || '[]') })),
+      (progressResult.data || []) as LessonProgress[],
+      (responsesResult.data || []) as VideoQuizResponse[],
+    );
+  },
+
+  // --------------------------------------------------------------------------
+  // VIDEO QUIZZES
+  // --------------------------------------------------------------------------
+
+  async getVideoQuizzes(lessonId: string): Promise<CourseLessonQuiz[]> {
+    if (isInMockMode()) {
+      return mockVideoQuizzes
+        .filter(q => q.lesson_id === lessonId)
+        .sort((a, b) => a.order_index - b.order_index || a.timestamp_sec - b.timestamp_sec);
+    }
+    const client = adminClient()!;
+    const { data, error } = await client
+      .from('course_lesson_quizzes')
+      .select('*')
+      .eq('lesson_id', lessonId)
+      .order('order_index')
+      .order('timestamp_sec');
+    if (error) throw error;
+    return (data || []).map((q: any) => ({ ...q, options: Array.isArray(q.options) ? q.options : JSON.parse(q.options || '[]') }));
+  },
+
+  async getVideoQuizById(id: string): Promise<CourseLessonQuiz | null> {
+    if (isInMockMode()) return mockVideoQuizzes.find(quiz => quiz.id === id) || null;
+    const client = adminClient()!;
+    const { data, error } = await client.from('course_lesson_quizzes').select('*').eq('id', id).maybeSingle();
+    if (error) throw error;
+    if (!data) return null;
+    return { ...data, options: Array.isArray(data.options) ? data.options : JSON.parse(data.options || '[]') };
+  },
+
+  async createVideoQuiz(quiz: Omit<CourseLessonQuiz, 'id' | 'created_at'>): Promise<CourseLessonQuiz> {
+    if (isInMockMode()) {
+      const newQuiz: CourseLessonQuiz = { ...quiz, id: `vq-${Date.now()}`, created_at: new Date().toISOString() };
+      mockVideoQuizzes.push(newQuiz);
+      return newQuiz;
+    }
+    const client = adminClient()!;
+    const { data, error } = await client
+      .from('course_lesson_quizzes')
+      .insert([{ ...quiz, options: JSON.stringify(quiz.options) }])
+      .select().single();
+    if (error) throw error;
+    return { ...data, options: Array.isArray(data.options) ? data.options : JSON.parse(data.options || '[]') };
+  },
+
+  async updateVideoQuiz(id: string, updates: Partial<Omit<CourseLessonQuiz, 'id' | 'created_at'>>): Promise<CourseLessonQuiz> {
+    if (isInMockMode()) {
+      const idx = mockVideoQuizzes.findIndex(q => q.id === id);
+      if (idx === -1) throw new Error('Quiz not found');
+      mockVideoQuizzes[idx] = { ...mockVideoQuizzes[idx], ...updates };
+      return mockVideoQuizzes[idx];
+    }
+    const client = adminClient()!;
+    const payload: any = { ...updates };
+    if (updates.options) payload.options = JSON.stringify(updates.options);
+    const { data, error } = await client
+      .from('course_lesson_quizzes')
+      .update(payload).eq('id', id).select().single();
+    if (error) throw error;
+    return { ...data, options: Array.isArray(data.options) ? data.options : JSON.parse(data.options || '[]') };
+  },
+
+  async deleteVideoQuiz(id: string): Promise<void> {
+    if (isInMockMode()) {
+      mockVideoQuizzes = mockVideoQuizzes.filter(q => q.id !== id);
+      return;
+    }
+    const client = adminClient()!;
+    const { error } = await client.from('course_lesson_quizzes').delete().eq('id', id);
+    if (error) throw error;
+  },
+
+  async saveVideoQuizResponse(response: Omit<VideoQuizResponse, 'id' | 'answered_at'>): Promise<VideoQuizResponse> {
+    if (isInMockMode()) {
+      const newResp: VideoQuizResponse = { ...response, id: `vqr-${Date.now()}`, answered_at: new Date().toISOString() };
+      mockVideoQuizResponses.push(newResp);
+      return newResp;
+    }
+    const client = adminClient()!;
+    const { data, error } = await client
+      .from('video_quiz_responses')
+      .insert([response])
+      .select().single();
+    if (error) throw error;
+    return data;
+  },
+
+  /** Get all responses for a lesson — for teacher analytics */
+  async getVideoQuizResponsesByLesson(lessonId: string): Promise<(VideoQuizResponse & { user?: Pick<User, 'id' | 'fullname' | 'email'> })[]> {
+    if (isInMockMode()) {
+      return mockVideoQuizResponses
+        .filter(r => r.lesson_id === lessonId)
+        .map(r => ({ ...r, user: mockUsers.find(u => u.id === r.user_id) }));
+    }
+    const client = adminClient()!;
+    const { data, error } = await client
+      .from('video_quiz_responses')
+      .select('*')
+      .eq('lesson_id', lessonId)
+      .order('answered_at', { ascending: false });
+    if (error) throw error;
+    const rows = data || [];
+    // Fetch user info separately
+    const userIds = [...new Set(rows.map((r: any) => r.user_id).filter(Boolean))];
+    let usersMap: Record<string, any> = {};
+    if (userIds.length > 0) {
+      const { data: users } = await client.from('users').select('id, fullname, email').in('id', userIds);
+      if (users) usersMap = Object.fromEntries(users.map((u: any) => [u.id, u]));
+    }
+    return rows.map((r: any) => ({ ...r, user: usersMap[r.user_id] || undefined }));
+  },
+
+  /** Latest saved answer for every quiz in a lesson by one learner. */
+  async getLatestVideoQuizResponses(lessonId: string, userId?: string, guestId?: string): Promise<VideoQuizResponse[]> {
+    if (!userId && !guestId) return [];
+    const matchesLearner = (response: VideoQuizResponse) => userId
+      ? response.user_id === userId
+      : response.guest_id === guestId;
+    const keepLatest = (responses: VideoQuizResponse[]) => {
+      const latest = new Map<string, VideoQuizResponse>();
+      for (const response of responses) {
+        const previous = latest.get(response.quiz_id);
+        const isNewer = !previous
+          || new Date(response.answered_at).getTime() > new Date(previous.answered_at).getTime()
+          || (response.answered_at === previous.answered_at && response.attempt_number > previous.attempt_number);
+        if (isNewer) latest.set(response.quiz_id, response);
+      }
+      return [...latest.values()];
+    };
+
+    if (isInMockMode()) {
+      return keepLatest(mockVideoQuizResponses.filter(response => response.lesson_id === lessonId && matchesLearner(response)));
+    }
+
+    const client = adminClient()!;
+    let query = client.from('video_quiz_responses').select('*').eq('lesson_id', lessonId);
+    query = userId ? query.eq('user_id', userId) : query.eq('guest_id', guestId!);
+    const { data, error } = await query;
+    if (error) throw error;
+    return keepLatest((data || []) as VideoQuizResponse[]);
+  },
+
+  /** Get attempt count per quiz for a specific user/guest in a lesson */
+  async getVideoQuizAttemptCounts(lessonId: string, userId?: string, guestId?: string): Promise<Record<string, number>> {
+    if (isInMockMode()) {
+      const relevant = mockVideoQuizResponses.filter(r =>
+        r.lesson_id === lessonId && (userId ? r.user_id === userId : r.guest_id === guestId)
+      );
+      return relevant.reduce((acc, r) => { acc[r.quiz_id] = (acc[r.quiz_id] || 0) + 1; return acc; }, {} as Record<string, number>);
+    }
+    const client = adminClient()!;
+    let query = client.from('video_quiz_responses').select('quiz_id, attempt_number').eq('lesson_id', lessonId);
+    if (userId) query = query.eq('user_id', userId);
+    else if (guestId) query = query.eq('guest_id', guestId);
+    const { data } = await query;
+    return (data || []).reduce((acc: Record<string, number>, r: any) => { acc[r.quiz_id] = (acc[r.quiz_id] || 0) + 1; return acc; }, {});
+  },
+
+  // --------------------------------------------------------------------------
+  // TEACHER NOTICES & TIMETABLE IMAGES
+  // --------------------------------------------------------------------------
+
+  async getTeacherNotices(includeUnpublished = false, teacherId?: string): Promise<TeacherNotice[]> {
+    if (isInMockMode()) {
+      return mockTeacherNotices
+        .filter(notice => (includeUnpublished || notice.is_published) && (!teacherId || notice.recipient_teacher_id === null || notice.recipient_teacher_id === teacherId))
+        .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+    }
+    const client = adminClient()!;
+    let query = client.from('teacher_notices').select('*').order('created_at', { ascending: false });
+    if (!includeUnpublished) query = query.eq('is_published', true);
+    if (teacherId) query = query.or(`recipient_teacher_id.is.null,recipient_teacher_id.eq.${teacherId}`);
+    const { data, error } = await query;
+    if (error) throw error;
+    return (data || []) as TeacherNotice[];
+  },
+
+  async createTeacherNotice(notice: Omit<TeacherNotice, 'id' | 'created_at'>): Promise<TeacherNotice> {
+    if (isInMockMode()) {
+      const created: TeacherNotice = { ...notice, id: `teacher-notice-${Date.now()}`, created_at: new Date().toISOString() };
+      mockTeacherNotices.unshift(created);
+      return created;
+    }
+    const client = adminClient()!;
+    const { data, error } = await client.from('teacher_notices').insert([notice]).select().single();
+    if (error) throw error;
+    return data as TeacherNotice;
+  },
+
+  async updateTeacherNotice(id: string, updates: Partial<Omit<TeacherNotice, 'id' | 'created_at'>>): Promise<TeacherNotice> {
+    if (isInMockMode()) {
+      const index = mockTeacherNotices.findIndex(notice => notice.id === id);
+      if (index === -1) throw new Error('Teacher notice not found');
+      mockTeacherNotices[index] = { ...mockTeacherNotices[index], ...updates };
+      return mockTeacherNotices[index];
+    }
+    const client = adminClient()!;
+    const { data, error } = await client.from('teacher_notices').update(updates).eq('id', id).select().single();
+    if (error) throw error;
+    return data as TeacherNotice;
+  },
+
+  async deleteTeacherNotice(id: string): Promise<void> {
+    if (isInMockMode()) {
+      mockTeacherNotices = mockTeacherNotices.filter(notice => notice.id !== id);
+      return;
+    }
+    const client = adminClient()!;
+    const { error } = await client.from('teacher_notices').delete().eq('id', id);
+    if (error) throw error;
+  },
 };
 
 
@@ -1866,9 +2188,3 @@ export const roomStore = {
     return p ?? null;
   },
 };
-
-
-
-
-
-

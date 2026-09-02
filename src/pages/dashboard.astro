@@ -432,8 +432,9 @@ if (isTeacher) {
             <tbody class="divide-y divide-gray-100 dark:divide-slate-800/60 text-sm font-medium">
               {attempts.map(attempt => {
                 const isFinished = attempt.finished_at !== null;
+                const isVsatAttempt = attempt.exam?.exam_type === 'vsat';
                 const scoreColor = attempt.score !== null 
-                  ? (attempt.score >= 8.0 ? 'text-emerald-600 dark:text-emerald-400' : attempt.score >= 5.0 ? 'text-amber-600 dark:text-amber-400' : 'text-rose-600 dark:text-rose-400')
+                  ? (attempt.score >= (isVsatAttempt ? 120 : 8) ? 'text-emerald-600 dark:text-emerald-400' : attempt.score >= (isVsatAttempt ? 75 : 5) ? 'text-amber-600 dark:text-amber-400' : 'text-rose-600 dark:text-rose-400')
                   : 'text-gray-400';
                 
                 return (
@@ -445,7 +446,7 @@ if (isTeacher) {
                       {attempt.exam?.subject?.name || 'Chưa phân loại'}
                     </td>
                     <td class={`py-4 font-bold ${scoreColor}`}>
-                      {attempt.score !== null ? `${attempt.score} / 10` : 'Đang làm...'}
+                      {attempt.score !== null ? `${attempt.score} / ${isVsatAttempt ? 150 : 10}` : 'Đang làm...'}
                     </td>
                     <td class="py-4 hidden md:table-cell text-gray-500 dark:text-slate-450">
                       {new Date(attempt.started_at).toLocaleString('vi-VN')}

@@ -1,0 +1,84 @@
+{
+  "_huong_dan": "Mẫu đại diện bốn phần đề Tiếng Anh. Sao chép các object để tạo đủ câu theo đề chính thức.",
+  "_cau_truc_150_diem": {
+    "part_1_and_true_false_reading": "9 câu msq x tối đa 6 điểm = 54",
+    "part_2_mcq": "6 câu A-D x 6 điểm = 36",
+    "part_3_matching": "5 câu x 4 tiểu mục x 1.5 điểm = 30",
+    "part_4_cloze_text": "5 ô x 6 điểm = 30"
+  },
+  "questions": [
+    {
+      "type": "msq",
+      "content": "### SCHOOL ENTRANCE AHEAD\n\n**DEAD SLOW**",
+      "difficulty": "easy",
+      "statements": [
+        { "content": "The sign is meant for drivers.", "correct": true },
+        { "content": "There is a school entrance near the sign.", "correct": true },
+        { "content": "Drivers should increase their speed.", "correct": false },
+        { "content": "The sign advertises a driving school.", "correct": false }
+      ],
+      "explanation": "The notice warns drivers to slow down near a school entrance."
+    },
+    {
+      "type": "read",
+      "content": "Henry uses technology to visit places that he cannot reach physically. A telepresence robot allows him to move through museums and communicate with guides.",
+      "difficulty": "medium",
+      "questions": [
+        {
+          "question": "What does Henry use to visit museums?",
+          "option_a": "A telepresence robot",
+          "option_b": "A private aircraft",
+          "option_c": "A traditional wheelchair",
+          "option_d": "A telephone directory",
+          "correct_option": "A",
+          "explanation": "The passage directly mentions a telepresence robot."
+        },
+        {
+          "question": "The word “physically” is closest in meaning to ____.",
+          "option_a": "in person",
+          "option_b": "secretly",
+          "option_c": "quickly",
+          "option_d": "occasionally",
+          "correct_option": "A"
+        }
+      ]
+    },
+    {
+      "type": "single_choice",
+      "content": "Choose the word closest in meaning to **portable**.",
+      "difficulty": "easy",
+      "options": ["easy to carry", "hard to control", "very expensive", "permanently fixed"],
+      "correct_option": "A"
+    },
+    {
+      "type": "matching",
+      "content": "Match each utterance with the most suitable response.",
+      "difficulty": "easy",
+      "questions": [
+        { "content": "Thanks a lot for helping me!", "correct_option": "A" },
+        { "content": "Excuse me, where is the library?", "correct_option": "B" },
+        { "content": "Goodbye!", "correct_option": "C" },
+        { "content": "What time is it?", "correct_option": "E" }
+      ],
+      "options": [
+        { "key": "A", "content": "My pleasure." },
+        { "key": "B", "content": "It is just round the corner." },
+        { "key": "C", "content": "See you." },
+        { "key": "D", "content": "I am glad you like it." },
+        { "key": "E", "content": "It is nine o'clock." },
+        { "key": "F", "content": "It is on May 5th." }
+      ]
+    },
+    {
+      "type": "cloze_text",
+      "content": "We know sleep is an activity we cannot do without, yet we let our hectic lifestyle wear us down until we cannot (21) ___ from bed. The longer we go without sleep, the more likely we are to have (22) ___ accident. Mid-day naps are catching (23) ___.",
+      "difficulty": "medium",
+      "blanks": [
+        { "number": 21, "correct_answer": "get" },
+        { "number": 22, "correct_answer": "an" },
+        { "number": 23, "correct_answer": "on" }
+      ],
+      "explanation": "The correct collocations are get from bed, have an accident, and catch on."
+    }
+  ]
+}

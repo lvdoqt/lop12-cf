@@ -1,0 +1,410 @@
+---
+import Layout from '../../../../../../layouts/Layout.astro';
+import { db } from '../../../../../../services/db';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || !['admin', 'teacher'].includes(user.role)) {
+  return Astro.redirect('/login');
+}
+
+const { id: courseId, lid: lessonId } = Astro.params;
+if (!courseId || !lessonId) return Astro.redirect('/admin/courses');
+
+const course = await db.getCourseById(courseId);
+if (!course) return Astro.redirect('/admin/courses');
+
+if (user.role === 'teacher' && course.created_by !== user.id) {
+  return Astro.redirect('/admin/courses');
+}
+
+const lesson = await db.getCourseLessonById(lessonId);
+if (!lesson || lesson.course_id !== courseId) return Astro.redirect(`/admin/courses/${courseId}`);
+
+const quizzes = await db.getVideoQuizzes(lessonId);
+
+// Analytics: response counts for this lesson
+const responses = await db.getVideoQuizResponsesByLesson(lessonId);
+
+// Count every wrong attempt, then compute the latest result for each learner.
+// The latest result is the meaningful completion status because the player only
+// exposes its continue button after a correct answer.
+const statsMap: Record<string, {
+  totalAttempts: number;
+  wrongAttempts: number;
+  learners: Map<string, { isCorrect: boolean; answeredAt: string; attemptNumber: number }>;
+}> = {};
+for (const r of responses) {
+  if (!statsMap[r.quiz_id]) statsMap[r.quiz_id] = { totalAttempts: 0, wrongAttempts: 0, learners: new Map() };
+  const stats = statsMap[r.quiz_id];
+  stats.totalAttempts++;
+  if (!r.is_correct) stats.wrongAttempts++;
+  const learnerId = r.user_id || (r.guest_id ? `g:${r.guest_id}` : `anonymous:${r.id}`);
+  const previous = stats.learners.get(learnerId);
+  const isNewer = !previous
+    || new Date(r.answered_at).getTime() > new Date(previous.answeredAt).getTime()
+    || (r.answered_at === previous.answeredAt && r.attempt_number > previous.attemptNumber);
+  if (isNewer) {
+    stats.learners.set(learnerId, { isCorrect: r.is_correct, answeredAt: r.answered_at, attemptNumber: r.attempt_number });
+  }
+}
+
+function formatTime(sec: number) {
+  const m = Math.floor(sec / 60).toString().padStart(2, '0');
+  const s = (sec % 60).toString().padStart(2, '0');
+  return `${m}:${s}`;
+}
+---
+
+<Layout title={`Quiz Video — ${lesson.title}`}>
+  <div class="max-w-4xl mx-auto space-y-8">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-sm text-gray-500 dark:text-slate-400 gap-2 flex-wrap">
+      <a href="/admin/courses" class="hover:text-blue-600 transition">Khóa học</a>
+      <span>›</span>
+      <a href={`/admin/courses/${courseId}`} class="hover:text-blue-600 transition truncate max-w-[160px]">{course.title}</a>
+      <span>›</span>
+      <a href={`/admin/courses/${courseId}/lessons/${lessonId}/edit`} class="hover:text-blue-600 transition truncate max-w-[160px]">{lesson.title}</a>
+      <span>›</span>
+      <span class="text-gray-900 dark:text-white font-medium">Quiz Video</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <h1 class="text-2xl font-extrabold text-gray-900 dark:text-white">Quiz trong Video</h1>
+        <p class="text-sm text-gray-500 dark:text-slate-400 mt-1">
+          Video sẽ tự dừng tại mỗi mốc thời gian và hiển thị câu hỏi cho học sinh.
+          {lesson.video_url ? (
+            <a href={lesson.video_url} target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline ml-1">Xem video ↗</a>
+          ) : ''}
+        </p>
+      </div>
+      <button
+        id="open-create-modal-btn"
+        class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm transition shadow-lg shadow-blue-500/20"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+        Thêm câu hỏi
+      </button>
+    </div>
+
+    <!-- Quiz list -->
+    {quizzes.length === 0 ? (
+      <div class="bg-white dark:bg-slate-900 border border-dashed border-gray-300 dark:border-slate-700 rounded-2xl p-12 text-center">
+        <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <p class="font-bold text-gray-900 dark:text-white mb-1">Chưa có câu hỏi nào</p>
+        <p class="text-sm text-gray-500 dark:text-slate-400">Thêm câu hỏi để video dừng và kiểm tra học sinh tại các mốc thời gian.</p>
+      </div>
+    ) : (
+      <div class="space-y-4">
+        {quizzes.map((quiz, i) => {
+          const stats = statsMap[quiz.id];
+          const learnerCount = stats?.learners.size || 0;
+          const passedCount = stats ? [...stats.learners.values()].filter(result => result.isCorrect).length : 0;
+          const waitingCount = learnerCount - passedCount;
+          const passedRate = learnerCount > 0 ? Math.round((passedCount / learnerCount) * 100) : null;
+          return (
+            <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm" id={`quiz-card-${quiz.id}`}>
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex items-start gap-4 flex-1 min-w-0">
+                  <!-- Order + timestamp badge -->
+                  <div class="shrink-0 flex flex-col items-center gap-1">
+                    <span class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 flex items-center justify-center font-bold text-sm">{i + 1}</span>
+                    <span class="text-[10px] font-bold text-gray-400 bg-gray-100 dark:bg-slate-800 px-1.5 py-0.5 rounded-md">{formatTime(quiz.timestamp_sec)}</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-semibold text-gray-900 dark:text-white leading-snug mb-3">{quiz.question}</p>
+                    <!-- Options grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {quiz.options.map((opt, oi) => {
+                        const letter = ['A','B','C','D'][oi] || String.fromCharCode(65+oi);
+                        const isAnswer = letter === quiz.answer;
+                        return (
+                          <div class={`flex items-start gap-2 px-3 py-2 rounded-lg text-sm ${isAnswer ? 'bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800' : 'bg-gray-50 dark:bg-slate-800 border border-transparent'}`}>
+                            <span class={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] ${isAnswer ? 'bg-emerald-500 text-white' : 'bg-gray-200 dark:bg-slate-700 text-gray-600 dark:text-slate-300'}`}>{letter}</span>
+                            <span class={isAnswer ? 'text-emerald-800 dark:text-emerald-200 font-medium' : 'text-gray-700 dark:text-slate-300'}>{opt}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    {quiz.explanation && (
+                      <p class="mt-2 text-xs text-gray-400 dark:text-slate-500 italic">💡 {quiz.explanation}</p>
+                    )}
+                  </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="shrink-0 flex flex-col gap-2">
+                  <button
+                    class="edit-quiz-btn p-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 text-blue-600 dark:text-blue-400 transition"
+                    data-quiz={JSON.stringify(quiz)}
+                    title="Chỉnh sửa"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                  </button>
+                  <button
+                    class="delete-quiz-btn p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-red-400 hover:text-red-600 transition"
+                    data-quiz-id={quiz.id}
+                    title="Xóa"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Stats row -->
+              {stats && (
+                <div class="mt-4 pt-4 border-t border-gray-100 dark:border-slate-800 flex flex-wrap gap-4 text-xs text-gray-500 dark:text-slate-400">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                    {stats.totalAttempts} lần trả lời
+                  </span>
+                  <span class="flex items-center gap-1.5 text-rose-600 dark:text-rose-400">
+                    <span class="w-2 h-2 rounded-full bg-rose-400"></span>
+                    {stats.wrongAttempts} lần sai
+                  </span>
+                  <span class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    Lần cuối đúng: {passedCount}/{learnerCount} ({passedRate}%)
+                  </span>
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                    {learnerCount} người học
+                  </span>
+                  {waitingCount > 0 && <span class="text-amber-600 dark:text-amber-400">{waitingCount} người chưa trả lời đúng</span>}
+                  <!-- Accuracy bar -->
+                  <div class="w-full mt-1">
+                    <div class="h-1.5 bg-gray-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                      <div class="h-1.5 bg-emerald-400 rounded-full transition-all" style={`width:${passedRate}%`}></div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    )}
+  </div>
+
+  <!-- Create/Edit Modal -->
+  <div id="quiz-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="w-full max-w-xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-slate-700 overflow-hidden">
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-5">
+        <h2 id="modal-title" class="text-white font-bold text-lg">Thêm câu hỏi quiz</h2>
+        <p class="text-white/70 text-sm mt-0.5">Video sẽ tự dừng tại mốc thời gian bạn chỉ định.</p>
+      </div>
+
+      <form id="quiz-form" class="p-6 space-y-5">
+        <input type="hidden" id="edit-quiz-id" value="" />
+
+        <!-- Timestamp -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5">Phút (mm)</label>
+            <input id="ts-min" type="number" min="0" max="999" value="0"
+              class="w-full rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white"
+              placeholder="0"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5">Giây (ss)</label>
+            <input id="ts-sec" type="number" min="0" max="59" value="0"
+              class="w-full rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white"
+              placeholder="0"
+            />
+          </div>
+        </div>
+
+        <!-- Question -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5">Câu hỏi <span class="text-red-500">*</span></label>
+          <textarea id="q-question" rows="2"
+            class="w-full rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white resize-none"
+            placeholder="Nhập nội dung câu hỏi..."
+          ></textarea>
+        </div>
+
+        <!-- Options A-D -->
+        <div class="space-y-2.5">
+          <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300">Các đáp án <span class="text-red-500">*</span></label>
+          {['A','B','C','D'].map(letter => (
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 flex items-center justify-center font-bold text-xs shrink-0">{letter}</span>
+              <input
+                id={`q-opt-${letter.toLowerCase()}`}
+                type="text"
+                class="flex-1 rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white"
+                placeholder={`Đáp án ${letter}...`}
+              />
+            </div>
+          ))}
+        </div>
+
+        <!-- Correct answer -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5">Đáp án đúng <span class="text-red-500">*</span></label>
+          <select id="q-answer"
+            class="w-full rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white"
+          >
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+        </div>
+
+        <!-- Explanation -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5">Giải thích (tuỳ chọn)</label>
+          <textarea id="q-explanation" rows="2"
+            class="w-full rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white resize-none"
+            placeholder="Hiển thị sau khi học sinh trả lời đúng..."
+          ></textarea>
+        </div>
+
+        <!-- Error -->
+        <p id="form-error" class="text-sm text-red-600 dark:text-red-400 hidden"></p>
+
+        <!-- Buttons -->
+        <div class="flex justify-end gap-3 pt-1">
+          <button type="button" id="close-modal-btn"
+            class="px-5 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 text-sm font-semibold text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+          >Hủy</button>
+          <button type="submit" id="submit-quiz-btn"
+            class="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm transition shadow-lg shadow-blue-500/20"
+          >Lưu câu hỏi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ lessonId, courseId }}>
+  const BASE = (window._astroEnv || {}).BASE_URL || '';
+  const modal = document.getElementById('quiz-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const form = document.getElementById('quiz-form');
+  const editIdInput = document.getElementById('edit-quiz-id');
+  const formError = document.getElementById('form-error');
+  const submitBtn = document.getElementById('submit-quiz-btn');
+
+  function openModal(editData) {
+    if (editData) {
+      modalTitle.textContent = 'Chỉnh sửa câu hỏi';
+      editIdInput.value = editData.id;
+      const totalSec = editData.timestamp_sec;
+      document.getElementById('ts-min').value = Math.floor(totalSec / 60);
+      document.getElementById('ts-sec').value = totalSec % 60;
+      document.getElementById('q-question').value = editData.question;
+      const opts = editData.options;
+      ['a','b','c','d'].forEach((l, i) => {
+        document.getElementById(`q-opt-${l}`).value = opts[i] || '';
+      });
+      document.getElementById('q-answer').value = editData.answer;
+      document.getElementById('q-explanation').value = editData.explanation || '';
+    } else {
+      modalTitle.textContent = 'Thêm câu hỏi quiz';
+      editIdInput.value = '';
+      form.reset();
+    }
+    formError.classList.add('hidden');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  document.getElementById('open-create-modal-btn').addEventListener('click', () => openModal(null));
+  document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  // Edit buttons
+  document.querySelectorAll('.edit-quiz-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const quiz = JSON.parse(btn.dataset.quiz);
+      openModal(quiz);
+    });
+  });
+
+  // Delete buttons
+  document.querySelectorAll('.delete-quiz-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      if (!confirm('Xóa câu hỏi này?')) return;
+      const quizId = btn.dataset.quizId;
+      try {
+        const res = await fetch(`${BASE}/api/admin/courses/video-quizzes/${quizId}`, { method: 'DELETE' });
+        if (res.ok) {
+          document.getElementById(`quiz-card-${quizId}`)?.remove();
+        } else {
+          alert('Xóa thất bại. Vui lòng thử lại.');
+        }
+      } catch {
+        alert('Lỗi kết nối.');
+      }
+    });
+  });
+
+  // Form submit
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formError.classList.add('hidden');
+
+    const min = parseInt(document.getElementById('ts-min').value || '0', 10);
+    const sec = parseInt(document.getElementById('ts-sec').value || '0', 10);
+    const timestamp_sec = min * 60 + sec;
+    const question = document.getElementById('q-question').value.trim();
+    const options = [
+      document.getElementById('q-opt-a').value.trim(),
+      document.getElementById('q-opt-b').value.trim(),
+      document.getElementById('q-opt-c').value.trim(),
+      document.getElementById('q-opt-d').value.trim(),
+    ];
+    const answer = document.getElementById('q-answer').value;
+    const explanation = document.getElementById('q-explanation').value.trim();
+
+    if (!question) { showError('Vui lòng nhập nội dung câu hỏi.'); return; }
+    if (options.some(o => !o)) { showError('Vui lòng điền đầy đủ 4 đáp án.'); return; }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Đang lưu...';
+
+    const editId = editIdInput.value;
+    const payload = { lessonId, timestamp_sec, question, options, answer, explanation: explanation || null, order_index: 0 };
+
+    try {
+      const url = editId
+        ? `${BASE}/api/admin/courses/video-quizzes/${editId}`
+        : `${BASE}/api/admin/courses/video-quizzes`;
+      const method = editId ? 'PUT' : 'POST';
+      const res = await fetch(url, {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (res.ok) {
+        window.location.reload();
+      } else {
+        const data = await res.json();
+        showError(data.error || 'Lưu thất bại.');
+      }
+    } catch {
+      showError('Lỗi kết nối. Vui lòng thử lại.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Lưu câu hỏi';
+    }
+  });
+
+  function showError(msg) {
+    formError.textContent = msg;
+    formError.classList.remove('hidden');
+  }
+</script>

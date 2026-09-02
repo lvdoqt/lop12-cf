@@ -1,0 +1,119 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { db } from '../../../services/db';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || !['teacher', 'admin'].includes(user.role)) return Astro.redirect('/dashboard');
+
+let error = '';
+if (Astro.request.method === 'POST') {
+  const form = await Astro.request.formData();
+  const action = String(form.get('_action') || '');
+  const id = String(form.get('id') || '');
+  try {
+    if (action === 'create-personal') {
+      const title = String(form.get('title') || '').trim();
+      const kind = String(form.get('kind') || 'task') === 'timetable' ? 'timetable' : 'task';
+      const priorityValue = String(form.get('priority') || 'normal');
+      const priority = ['normal', 'important', 'urgent'].includes(priorityValue) ? priorityValue as 'normal' | 'important' | 'urgent' : 'normal';
+      const dueValue = String(form.get('due_at') || '').trim();
+      if (!title) throw new Error('Vui lòng nhập tiêu đề việc hoặc lịch.');
+      await db.createTeacherNotice({
+        kind, title,
+        content: String(form.get('content') || '').trim() || null,
+        priority,
+        due_at: dueValue ? new Date(dueValue).toISOString() : null,
+        image_url: String(form.get('image_url') || '').trim() || null,
+        is_published: true,
+        created_by: user.id,
+        recipient_teacher_id: user.id,
+      });
+      return Astro.redirect('/giao-vien/thong-bao');
+    }
+    if (action === 'delete-personal' && id) {
+      const available = await db.getTeacherNotices(true, user.id);
+      const notice = available.find(item => item.id === id);
+      if (!notice || notice.recipient_teacher_id !== user.id || notice.created_by !== user.id) throw new Error('Bạn không có quyền xóa mục này.');
+      await db.deleteTeacherNotice(id);
+      return Astro.redirect('/giao-vien/thong-bao');
+    }
+  } catch (err: any) {
+    error = err.message || 'Không thể lưu thông tin cá nhân.';
+  }
+}
+
+const notices = await db.getTeacherNotices(true, user.id);
+const personalNotices = notices.filter(item => item.recipient_teacher_id === user.id);
+const schoolNotices = notices.filter(item => item.recipient_teacher_id === null && item.is_published);
+const schoolTasks = schoolNotices.filter(item => item.kind === 'task');
+const schoolTimetables = schoolNotices.filter(item => item.kind === 'timetable');
+
+function formatDate(value: string | null) {
+  return value ? new Date(value).toLocaleString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : null;
+}
+function priorityLabel(priority: string) { return priority === 'urgent' ? 'KHẨN' : priority === 'important' ? 'QUAN TRỌNG' : 'CẦN LÀM'; }
+function priorityClass(priority: string) {
+  return priority === 'urgent' ? 'border-rose-200 bg-rose-50/60 dark:border-rose-900/40 dark:bg-rose-950/15' : priority === 'important' ? 'border-amber-200 bg-amber-50/60 dark:border-amber-900/40 dark:bg-amber-950/15' : 'border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900';
+}
+---
+
+<Layout title="Việc cá nhân & thời khóa biểu">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div>
+      <a href="/giao-vien" class="text-xs font-bold text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">← Công cụ giảng dạy</a>
+      <h1 class="mt-2 text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">Việc cá nhân & thời khóa biểu</h1>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Tự ghi việc cần làm, lịch họp và ảnh thời khóa biểu riêng. Mục riêng chỉ hiển thị với bạn; thông báo chung nằm bên dưới.</p>
+    </div>
+
+    <section class="rounded-2xl border border-blue-100 bg-blue-50/60 p-5 dark:border-blue-900/50 dark:bg-blue-950/20">
+      <h2 class="font-extrabold text-gray-900 dark:text-white">Thêm việc hoặc lịch riêng</h2>
+      <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Chọn “Thời khóa biểu” để lưu ảnh TKB cá nhân; dán URL ảnh công khai nếu có.</p>
+      {error && <p class="mt-4 rounded-xl bg-rose-100 px-3 py-2 text-sm font-medium text-rose-700 dark:bg-rose-900/30 dark:text-rose-200">{error}</p>}
+      <form method="POST" class="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2">
+        <input type="hidden" name="_action" value="create-personal" />
+        <label class="text-sm font-bold text-slate-700 dark:text-slate-200">Loại
+          <select name="kind" class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-900"><option value="task">Việc cần làm / lịch họp</option><option value="timetable">Thời khóa biểu</option></select>
+        </label>
+        <label class="text-sm font-bold text-slate-700 dark:text-slate-200">Tiêu đề
+          <input required name="title" maxlength="180" placeholder="Ví dụ: Họp tổ Toán tháng 9" class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-900" />
+        </label>
+        <label class="text-sm font-bold text-slate-700 dark:text-slate-200">Mức độ
+          <select name="priority" class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-900"><option value="normal">Cần làm</option><option value="important">Quan trọng</option><option value="urgent">Khẩn</option></select>
+        </label>
+        <label class="text-sm font-bold text-slate-700 dark:text-slate-200">Thời điểm / hạn
+          <input type="datetime-local" name="due_at" class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-900" />
+        </label>
+        <label class="md:col-span-2 text-sm font-bold text-slate-700 dark:text-slate-200">Ghi chú
+          <textarea name="content" rows="3" placeholder="Nội dung cuộc họp, phòng học, việc cần chuẩn bị..." class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-900"></textarea>
+        </label>
+        <label class="md:col-span-2 text-sm font-bold text-slate-700 dark:text-slate-200">URL ảnh TKB (không bắt buộc)
+          <input type="url" name="image_url" placeholder="https://..." class="mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm dark:border-slate-700 dark:bg-slate-900" />
+        </label>
+        <div class="md:col-span-2 flex justify-end"><button class="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white hover:bg-blue-700">Lưu mục riêng</button></div>
+      </form>
+    </section>
+
+    <section>
+      <div class="mb-3 flex items-center justify-between"><h2 class="font-extrabold text-gray-900 dark:text-white">Lịch và việc của tôi</h2><span class="rounded-full bg-blue-100 px-2.5 py-1 text-xs font-bold text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">{personalNotices.length}</span></div>
+      {personalNotices.length === 0 ? <div class="rounded-2xl border border-dashed border-slate-300 p-8 text-center text-sm text-slate-500 dark:border-slate-700">Chưa có mục riêng. Hãy thêm lịch họp, việc cần làm hoặc ảnh TKB ở trên.</div> : <div class="grid grid-cols-1 gap-4 md:grid-cols-2">{personalNotices.map(item => (
+        <article class={`overflow-hidden rounded-2xl border p-5 ${priorityClass(item.priority)}`}>
+          <div class="flex items-start justify-between gap-3"><div><p class="text-[11px] font-extrabold uppercase tracking-wide text-blue-600 dark:text-blue-300">{item.kind === 'timetable' ? 'Thời khóa biểu riêng' : 'Việc / lịch riêng'}</p><h3 class="mt-1 font-bold text-gray-900 dark:text-white">{item.title}</h3></div><form method="POST"><input type="hidden" name="_action" value="delete-personal" /><input type="hidden" name="id" value={item.id} /><button class="text-xs font-bold text-rose-600 hover:underline" aria-label={`Xóa ${item.title}`}>Xóa</button></form></div>
+          {item.content && <p class="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-600 dark:text-slate-300">{item.content}</p>}
+          {formatDate(item.due_at) && <p class="mt-3 text-xs font-semibold text-slate-500 dark:text-slate-400">Thời điểm: {formatDate(item.due_at)}</p>}
+          {item.kind === 'task' && <p class="mt-2 text-[11px] font-bold text-slate-500 dark:text-slate-400">{priorityLabel(item.priority)}</p>}
+          {item.image_url && <a href={item.image_url} target="_blank" rel="noreferrer" class="mt-4 block rounded-xl bg-white/60 p-2 dark:bg-slate-800/60"><img src={item.image_url} alt={item.title} loading="lazy" class="max-h-80 w-full rounded-lg object-contain" /></a>}
+        </article>
+      ))}</div>}
+    </section>
+
+    <section class="border-t border-slate-200 pt-8 dark:border-slate-800">
+      <div class="mb-3 flex items-center justify-between"><h2 class="font-extrabold text-gray-900 dark:text-white">Thông báo từ nhà trường</h2><span class="text-xs text-slate-500">{schoolTasks.length} việc · {schoolTimetables.length} TKB</span></div>
+      {schoolTasks.length === 0 && schoolTimetables.length === 0 ? <div class="rounded-2xl border border-dashed border-slate-300 p-8 text-center text-sm text-slate-500 dark:border-slate-700">Hiện chưa có thông báo chung.</div> : <div class="space-y-5">
+        {schoolTasks.map(task => (<article class={`rounded-2xl border p-5 ${priorityClass(task.priority)}`}><div class="flex items-start justify-between gap-3"><h3 class="font-bold text-gray-900 dark:text-white">{task.title}</h3><span class="shrink-0 text-[11px] font-bold text-slate-500">{priorityLabel(task.priority)}</span></div>{task.content && <p class="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-600 dark:text-slate-300">{task.content}</p>}{formatDate(task.due_at) && <p class="mt-3 text-xs font-semibold text-slate-500 dark:text-slate-400">Hạn hoàn thành: {formatDate(task.due_at)}</p>}</article>))}
+        {schoolTimetables.map(item => (<article class="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"><div class="p-5"><h3 class="font-bold text-gray-900 dark:text-white">{item.title}</h3>{item.content && <p class="mt-1 whitespace-pre-line text-sm text-slate-500 dark:text-slate-400">{item.content}</p>}</div>{item.image_url ? <a href={item.image_url} target="_blank" rel="noreferrer" class="block bg-slate-50 p-3 dark:bg-slate-800/50"><img src={item.image_url} alt={item.title} loading="lazy" class="max-h-[70vh] w-full rounded-xl object-contain" /></a> : <p class="px-5 pb-5 text-sm text-slate-400">Chưa đính kèm ảnh.</p>}</article>))}
+      </div>}
+    </section>
+  </div>
+</Layout>

@@ -4,6 +4,16 @@ import type { Question, Answer } from '../types';
 export type ExamQuestion = Question & { answers: Answer[] };
 
 export function buildShuffledExam(allQuestions: ExamQuestion[], prng: () => number): ExamQuestion[] {
+  // Presence of matching identifies a V-SAT paper. Preserve the official section
+  // sequence and author-entered group order; candidate randomization can be added
+  // later without breaking grouped passages/matching keys.
+  if (allQuestions.some(q => q.type === 'matching')) {
+    const order: Record<string, number> = { msq: 0, single_choice: 1, read: 1, matching: 2, sa: 3, cloze_text: 3 };
+    return allQuestions
+      .map((q, index) => ({ q, index }))
+      .sort((a, b) => (order[a.q.type] ?? 9) - (order[b.q.type] ?? 9) || a.index - b.index)
+      .map(x => x.q);
+  }
   const bySection = {
     mcq: allQuestions.filter(q => !q.type || q.type === 'single_choice'), // fallback if missing
     multiple_choice: allQuestions.filter(q => q.type === 'multiple_choice'),
@@ -15,6 +25,8 @@ export function buildShuffledExam(allQuestions: ExamQuestion[], prng: () => numb
     read_cloze: allQuestions.filter(q => q.type === 'read_cloze'),
     ordering: allQuestions.filter(q => q.type === 'ordering'),
     list: allQuestions.filter(q => q.type === 'list'),
+    matching: allQuestions.filter(q => q.type === 'matching'),
+    cloze_text: allQuestions.filter(q => q.type === 'cloze_text'),
   };
 
   const shuffled = {
@@ -30,6 +42,9 @@ export function buildShuffledExam(allQuestions: ExamQuestion[], prng: () => numb
     
     // list: shuffle nhóm
     list: shuffleArrayWithPRNG(bySection.list, prng),
+    // V-SAT matching groups keep their prompt/option order, just like the official UI.
+    matching: bySection.matching,
+    cloze_text: bySection.cloze_text,
   };
 
   // Gộp read + read_cloze thành 1 pool rồi shuffle chung
@@ -49,6 +64,8 @@ export function buildShuffledExam(allQuestions: ExamQuestion[], prng: () => numb
     ...shuffled.tl,
     ...shuffled.multiple_choice,
     ...shuffled.list,
+    ...shuffled.matching,
+    ...shuffled.cloze_text,
     ...shuffled.ordering,
     ...shuffled.true_false,
   ];

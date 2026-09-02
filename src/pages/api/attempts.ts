@@ -19,6 +19,8 @@ export const POST: APIRoute = async ({ request }) => {
     if (!attempt) {
       return new Response(JSON.stringify({ error: 'Attempt not found' }), { status: 404 });
     }
+    const exam = await db.getExamById(attempt.exam_id);
+    const isVsat = exam?.exam_type === 'vsat';
 
     // 2. Fetch all questions and correct answers for this exam
     const examQuestions = await db.getQuestionsByExamId(attempt.exam_id);
@@ -43,8 +45,35 @@ export const POST: APIRoute = async ({ request }) => {
           subs.forEach((sq: any, i: number) => {
             const sel = (submitted as Record<string, string>)[String(i)];
             if (sel && String(sel).toUpperCase() === String(sq.correct_option || '').toUpperCase()) {
-              totalScore += 0.25;
+              totalScore += isVsat ? 6 : 0.25;
             }
+          });
+        }
+        return;
+      }
+
+      // V-SAT matching: every left-side prompt must map to the correct letter.
+      if (q.type === 'matching') {
+        const subs = (q.metadata as any)?.questions || [];
+        if (submitted && typeof submitted === 'object' && !Array.isArray(submitted)) {
+          const correctPairs = subs.filter((sq: any, i: number) =>
+            String((submitted as Record<string, string>)[String(i)] || '').toUpperCase() === String(sq.correct_option || '').toUpperCase()
+          ).length;
+          totalScore += isVsat ? correctPairs * 1.5 : (correctPairs === subs.length && subs.length > 0 ? 0.25 : 0);
+        }
+        return;
+      }
+
+      // V-SAT English open cloze: grade every blank independently and
+      // case-insensitively; each blank accepts one or more configured answers.
+      if (q.type === 'cloze_text') {
+        const blanks = (q.metadata as any)?.questions || [];
+        if (submitted && typeof submitted === 'object' && !Array.isArray(submitted)) {
+          blanks.forEach((blank: any, i: number) => {
+            const actual = String((submitted as Record<string, string>)[String(i)] || '').trim().toLowerCase();
+            const accepted = (Array.isArray(blank.accepted_answers) ? blank.accepted_answers : [blank.correct_answer])
+              .map((x: any) => String(x || '').trim().toLowerCase());
+            if (actual && accepted.includes(actual)) totalScore += isVsat ? 6 : 0.25;
           });
         }
         return;
@@ -79,15 +108,16 @@ export const POST: APIRoute = async ({ request }) => {
       } else if (q.type === 'msq') {
         // Submitted is an object mapping option ID -> "Đúng" or "Sai"
         if (typeof submitted === 'object' && submitted !== null) {
-          let allCorrect = true;
+          let correctSubItems = 0;
           q.answers.forEach(a => {
             const studentChoice = (submitted as any)[a.id];
             const correctChoice = a.is_correct ? 'Đúng' : 'Sai';
-            if (studentChoice !== correctChoice) {
-              allCorrect = false;
-            }
+            if (studentChoice === correctChoice) correctSubItems++;
           });
-          if (allCorrect && q.answers.length > 0) {
+          if (isVsat) {
+            const vsatTrueFalsePoints = [0, 1, 2, 3, 6];
+            totalScore += vsatTrueFalsePoints[Math.min(correctSubItems, 4)] || 0;
+          } else if (correctSubItems === q.answers.length && q.answers.length > 0) {
             isCorrect = true;
           }
         }
@@ -110,7 +140,9 @@ export const POST: APIRoute = async ({ request }) => {
       }
 
       if (isCorrect) {
-        if (q.type === 'sa') {
+        if (isVsat) {
+          totalScore += 6;
+        } else if (q.type === 'sa') {
           totalScore += 0.5;
         } else {
           totalScore += 0.25;
@@ -118,14 +150,21 @@ export const POST: APIRoute = async ({ request }) => {
       }
     });
 
-    const score = totalScore; // Absolute points
+    const score = totalScore; // V-SAT: raw /150; legacy exams: existing points
 
     // 5. Save results to database
-    const updatedAttempt = await db.submitAttempt(attemptId, score, answers);
+    const updatedAttempt = await db.submitAttempt(
+      attemptId,
+      score,
+      answers,
+      isVsat ? { raw_score: score, ability_score: null } : undefined
+    );
 
     return new Response(JSON.stringify({
       success: true,
       score,
+      rawScore: isVsat ? score : null,
+      abilityScore: null,
       attempt: updatedAttempt
     }), { status: 200 });
 

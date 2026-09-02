@@ -1,121 +1,170 @@
-# 🎓 Lớp 12 LMS - Web App Học Tập & Ôn Thi Trắc Nghiệm Online
+# Lớp 12 LMS & hệ thống thi thử V-SAT
 
-Nền tảng Quản lý Học tập (LMS) hoàn chỉnh dành cho học sinh THPT lớp 12 tại Việt Nam. Dự án được phát triển dựa trên các công nghệ hiện đại nhất: **Astro 6 (SSR)**, **Supabase Auth & Database**, **TailwindCSS (v4)** và **TypeScript**.
+Nền tảng học tập và thi trực tuyến dành cho học sinh THPT, xây dựng bằng Astro, React, TypeScript và Supabase. Hệ thống có ngân hàng câu hỏi, đề thi thường, đề V-SAT, tài khoản học sinh/giáo viên/admin, lưu lượt thi và chấm điểm tự động.
 
-## ✨ Tính năng nổi bật
+## Tính năng V-SAT
 
-### 1. Học sinh Portal (ChatGPT/Gemini Style)
-* **Giao diện hiện đại:** Thiết kế Responsive Mobile-First, hỗ trợ chế độ Dark Mode tinh tế mặc định, thanh Sidebar điều hướng thông minh.
-* **Bài học đa phương tiện:** Tích hợp video bài giảng YouTube, nội dung tóm tắt lý thuyết bằng Markdown cực đẹp qua Tailwind Typography, hiển thị trực quan các công thức Toán, Lý, Hóa dưới dạng **LaTeX** (qua KaTeX). Hỗ trợ đính kèm tài liệu học tập PDF.
-* **Thi trắc nghiệm có tính giờ:** Các bài kiểm tra 15 phút, 1 tiết, học kỳ và thi thử THPT Quốc gia. Đồng hồ đếm ngược tự động nộp bài khi hết giờ. Chấm điểm chính xác, hiển thị kết quả trực quan cùng lời giải chi tiết.
-* **AI Hỗ Trợ Học Tập:** Cửa sổ chat AI thông minh (ChatGPT-like) sẵn sàng giải đáp mọi thắc mắc học tập, công thức và lý thuyết 24/7.
-* **Bảng điều khiển & Thống kê:** Theo dõi điểm số trung bình (GPA), số lượng bài đã hoàn thành, hiển thị biểu đồ tiến độ học tập trực quan sử dụng **Chart.js**.
+- Kho đề riêng tại `/v-sat`.
+- Phòng thi trên máy tính có đồng hồ, phiếu trả lời và tự nộp khi hết giờ.
+- Hỗ trợ cấu trúc đề minh họa Toán và Tiếng Anh V-SAT 2025.
+- Hỗ trợ Đúng/Sai, MCQ A–D, đọc hiểu theo nhóm, ghép hợp A–F, trả lời ngắn và điền một từ.
+- Chấm điểm thô theo thang 150; lưu riêng `raw_score` và `ability_score`.
+- Điểm năng lực hiển thị “Chưa hiệu chỉnh” cho đến khi có kết quả IRT hợp lệ.
+- Xuất CSV kết quả V-SAT từ trang quản trị.
 
-### 2. Giáo viên & Admin Portal (Hệ thống CRUD toàn diện)
-* **Dashboard Admin:** Thống kê nhanh số học sinh, giáo viên, bài học, đề thi và tổng lượt làm bài thi trên nền tảng.
-* **Công cụ Giáo viên (New):** Tổ hợp công cụ hỗ trợ dạy học online (chế độ trình chiếu bài giảng, bảng trắng, phòng thi trực tiếp, thống kê phổ điểm, quản lý lớp học).
-* **Quản lý người dùng:** Liệt kê danh sách tài khoản và phân quyền trực tiếp (Student, Teacher, Admin).
-* **Quản lý bài giảng:** Soạn thảo, chỉnh sửa, xóa và xuất bản bài giảng với trình sinh slug tự động.
-* **Ngân hàng câu hỏi:** Thêm mới và quản lý câu hỏi trắc nghiệm (hỗ trợ trắc nghiệm đơn, nhiều lựa chọn, Đúng/Sai), thiết lập đáp án đúng và viết lời giải chi tiết chứa LaTeX.
-* **Quản lý đề thi:** Tạo đề thi mới, thiết lập thời gian làm bài (phút), phân loại đề thi, gán danh sách câu hỏi tương ứng tự động lọc theo môn học.
+## Cài đặt nhanh
 
----
+Yêu cầu Node.js từ 22.15 trở lên.
 
-## 🛠️ Hướng dẫn cài đặt và chạy thử cục bộ (Local Setup)
-
-Dự án này được thiết kế thông minh để có thể **chạy ngay lập tức** sau khi tải về mà không cần cấu hình database phức tạp nhờ cơ chế **Mock Mode (Chạy offline)** tự động kích hoạt khi phát hiện thông tin placeholder.
-
-### Bước 1: Cài đặt thư viện
-Chạy lệnh sau tại thư mục gốc của dự án để tải về các package:
 ```bash
 npm install
-```
-
-### Bước 2: Chạy dự án ở chế độ phát triển
-Khởi động máy chủ local:
-```bash
 npm run dev
 ```
-Truy cập ứng dụng tại: `http://localhost:4321`
 
----
+Ứng dụng chạy tại `http://localhost:4321`.
 
-## 🗄️ Cấu hình Supabase Database (Chế độ Production)
+Các lệnh kiểm tra:
 
-Khi đã sẵn sàng chuyển từ chạy giả lập Mock sang kết nối cơ sở dữ liệu thật của bạn trên Supabase, hãy làm theo các bước sau:
-
-### 1. Tạo Database Schema
-Mở **SQL Editor** trên trang quản trị dự án Supabase của bạn, sao chép và chạy lần lượt nội dung của hai tệp tin SQL di chuyển (migrations) nằm trong thư mục của dự án:
-1. [01_schema.sql](file:///d:/lop12/supabase/migrations/20260604000000_schema.sql): Tạo cấu trúc bảng, các khóa ngoại và thiết lập hàm/trigger tự động đồng bộ tài khoản người dùng từ `auth.users` sang `public.users`.
-2. [02_rls_policies.sql](file:///d:/lop12/supabase/migrations/20260604000001_rls_policies.sql): Thiết lập chính sách bảo mật Row Level Security (RLS) để phân quyền: học sinh đọc bài/làm bài, chỉ giáo viên và admin mới có quyền CRUD nội dung học liệu.
-
-### 2. Cập nhật các biến môi trường
-Thay đổi các giá trị placeholder trong tệp tin `.env` ở thư mục gốc bằng thông tin kết nối thực tế từ Supabase Dashboard (Settings -> API):
-```env
-SUPABASE_URL=https://your-project-id.supabase.co
-SUPABASE_ANON_KEY=your-public-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-private-service-role-key
-GEMINI_API_KEY=your-gemini-api-key-if-using-ai
+```bash
+npm run build
+npx astro check
+npx tsc --noEmit
 ```
-*Sau khi lưu file `.env`, hãy khởi động lại server (`npm run dev`) để áp dụng cấu hình thật.*
 
----
+## Cấu hình môi trường
 
-## 🔐 Tài khoản thử nghiệm (Mock Mode)
+Tạo `.env` từ `.env.example` và điền thông tin Supabase:
 
-Khi chạy ở chế độ Mock Mode, bạn có thể đăng nhập bằng các tài khoản mẫu định sẵn hiển thị trực tiếp trên giao diện Đăng nhập:
-* **Học sinh:** `student@lop12.vn` (Xem bài học, thi trắc nghiệm, chat AI, theo dõi biểu đồ).
-* **Giáo viên:** `teacher@lop12.vn` (Toàn quyền quản trị bài học, ngân hàng câu hỏi, đề thi).
-* **Admin:** `admin@lop12.vn` (Toàn quyền quản lý hệ thống, phân quyền người dùng).
+```env
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+```
 
----
+Có thể dùng `PUBLIC_SUPABASE_URL` và `PUBLIC_SUPABASE_ANON_KEY`. Nếu khóa bị thiếu hoặc là placeholder, ứng dụng tự chạy Mock Mode. Không đưa service-role key vào frontend hoặc repository công khai.
 
-## 🚀 Hướng dẫn triển khai dự án (Deployment Guide)
+## Cài đặt Supabase
 
-Astro 6 hỗ trợ biên dịch và deploy cực kỳ mượt mà lên nhiều nền tảng Cloud:
+### Database đã có LMS
 
-### 1. Cloudflare Pages
-1. Thay thế adapter trong file `astro.config.mjs` bằng `@astrojs/cloudflare`:
-   ```bash
-   npm install @astrojs/cloudflare
-   ```
-   *Cấu hình trong `astro.config.mjs`:*
-   ```javascript
-   import cloudflare from '@astrojs/cloudflare';
-   export default defineConfig({
-     output: 'server',
-     adapter: cloudflare()
-   });
-   ```
-2. Đẩy code lên GitHub.
-3. Liên kết dự án GitHub với Cloudflare Pages Dashboard. Chọn framework **Astro** và thiết lập các biến môi trường (`SUPABASE_URL`, `SUPABASE_ANON_KEY`) trong phần cấu hình biến của Cloudflare.
+Mở Supabase Dashboard → SQL Editor → New query, dán và chạy toàn bộ file:
 
-### 2. Vercel
-1. Cài đặt adapter Vercel:
-   ```bash
-   npm install @astrojs/vercel
-   ```
-   *Cấu hình trong `astro.config.mjs`:*
-   ```javascript
-   import vercel from '@astrojs/vercel';
-   export default defineConfig({
-     output: 'server',
-     adapter: vercel()
-   });
-   ```
-2. Đẩy code lên GitHub và nhập dự án vào Vercel Dashboard. Vercel sẽ tự động nhận diện Astro và build dự án SSR. Đừng quên dán các biến môi trường vào phần settings của Vercel.
+[`supabase/VSAT_SETUP.sql`](supabase/VSAT_SETUP.sql)
 
-### 3. Netlify
-1. Cài đặt adapter Netlify:
-   ```bash
-   npm install @astrojs/netlify
-   ```
-   *Cấu hình trong `astro.config.mjs`:*
-   ```javascript
-   import netlify from '@astrojs/netlify';
-   export default defineConfig({
-     output: 'server',
-     adapter: netlify()
-   });
-   ```
-2. Kết nối GitHub với Netlify Dashboard để kích hoạt tính năng tự động build và deploy liên tục (CI/CD). Khai báo các thông số kết nối Supabase trong phần Environment Variables.
+File tổng hợp này có thể chạy lại an toàn và sẽ:
+
+- Thêm `vsat` vào `exam_type`.
+- Thêm `attempts.raw_score` và `attempts.ability_score`.
+- Tạo index cho đề V-SAT, điểm thô và type câu hỏi JSONB.
+
+### Database Supabase mới hoàn toàn
+
+Chạy các file trong `supabase/migrations` theo thứ tự tên file. Migration V-SAT cuối cùng là `20260902000000_vsat_exam_type.sql`. Sau đó khởi động lại ứng dụng.
+
+## Tài khoản Mock Mode
+
+- Học sinh: `student@lop12.vn`
+- Giáo viên: `teacher@lop12.vn`
+- Admin: `admin@lop12.vn`
+
+Các nút tài khoản mẫu xuất hiện tại `/login` khi Mock Mode hoạt động.
+
+## Tạo đề V-SAT
+
+1. Đăng nhập bằng giáo viên hoặc admin.
+2. Mở `/admin/v-sat/new`.
+3. Nhập tên đề, môn, thời gian và mật khẩu nếu cần.
+4. Dán JSON hoặc tải file mẫu ngay trên trang.
+5. Nhấn “Tạo đề và xem trước”.
+6. Đề xuất hiện tại `/v-sat`.
+
+Thời gian theo đề minh họa 2025:
+
+- Toán và Ngữ văn: 90 phút.
+- Tiếng Anh, Vật lí, Hóa học, Sinh học, Lịch sử và Địa lí: 60 phút.
+
+## File JSON mẫu
+
+- [`public/vsat-mau-toan.json`](public/vsat-mau-toan.json): Đúng/Sai, MCQ theo ngữ liệu, ghép hợp và trả lời ngắn.
+- [`public/vsat-mau-tieng-anh.json`](public/vsat-mau-tieng-anh.json): Đúng/Sai theo thông báo, đọc hiểu, ghép hợp và điền một từ.
+- [`public/vsat-tieng-anh-2025-day-du.json`](public/vsat-tieng-anh-2025-day-du.json): Toàn bộ đề minh họa Tiếng Anh 2025, import trực tiếp, đủ 25 câu/85 tiểu mục/150 điểm.
+
+Cấu trúc gốc:
+
+```json
+{
+  "questions": [
+    {
+      "type": "msq",
+      "content": "Nội dung câu hỏi",
+      "statements": []
+    }
+  ]
+}
+```
+
+| Type | Công dụng |
+|---|---|
+| `msq` | Một câu gồm các tiểu mục Đúng/Sai |
+| `single_choice` | Một câu chọn A–D |
+| `read` | Một ngữ liệu có nhiều câu A–D |
+| `matching` | Ghép 4 nội dung với phương án A–F |
+| `sa` | Trả lời ngắn |
+| `cloze_text` | Điền một từ vào từng chỗ trống |
+
+Nội dung hỗ trợ Markdown, HTML cơ bản, ảnh từ URL và LaTeX trong `$...$` hoặc `$$...$$`.
+
+## Cách chấm V-SAT
+
+Điểm thô tối đa là 150:
+
+- Đúng/Sai: đúng 1/4 ý được 1 điểm; 2/4 được 2; 3/4 được 3; 4/4 được 6.
+- Ghép hợp: mỗi tiểu mục đúng được 1,5 điểm.
+- MCQ A–D: mỗi câu đúng được 6 điểm.
+- Trả lời ngắn hoặc điền một từ: mỗi câu/ô đúng được 6 điểm.
+
+Điểm năng lực phải được ước lượng bằng IRT với tham số câu hỏi đã hiệu chỉnh và dữ liệu mẫu thí sinh. Hệ thống không quy đổi tuyến tính điểm thô; `ability_score` để trống đến khi có kết quả IRT.
+
+## Quy trình học sinh
+
+1. Mở `/v-sat`, chọn đề và vào phòng thi.
+2. Đăng nhập nếu được yêu cầu.
+3. Làm bài, theo dõi đồng hồ và phiếu trả lời.
+4. Nhấn “Nộp bài” hoặc để hệ thống tự nộp khi hết giờ.
+5. Xem điểm thô, đáp án và lời giải.
+
+## Quy trình giáo viên
+
+- Tạo đề: `/admin/v-sat/new`.
+- Quản lý đề: `/admin/exams`.
+- Kho đề: `/v-sat`.
+- Xem lượt thi và tải CSV từ trang chi tiết đề trong quản trị.
+
+## Kiến trúc V-SAT
+
+```text
+src/pages/v-sat.astro                 Kho đề V-SAT
+src/pages/admin/v-sat/new.astro       Tạo đề từ JSON
+src/components/VSatExamView.tsx       Giao diện phòng thi
+src/components/MatchingQuestion.tsx   Câu ghép hợp
+src/components/ClozeTextQuestion.tsx  Câu điền một từ
+src/pages/api/attempts.ts              Chấm và lưu kết quả
+supabase/VSAT_SETUP.sql                SQL nâng cấp một lần
+public/vsat-mau-*.json                 JSON mẫu
+```
+
+## Lưu ý vận hành
+
+- Đề phải có `exam_type = 'vsat'` để dùng giao diện và thang 150.
+- Mỗi câu `msq` và `matching` nên có đúng 4 tiểu mục.
+- Với `cloze_text`, dùng `accepted_answers` khi có nhiều cách viết đúng.
+- Không đổi khóa ghép sau khi đã có học sinh nộp bài.
+- Chạy `npm run build` trước khi triển khai.
+
+## Triển khai
+
+Dự án dùng Astro SSR và adapter Cloudflare. Khai báo các biến môi trường Supabase trên nền tảng triển khai rồi chạy:
+
+```bash
+npm run build
+```

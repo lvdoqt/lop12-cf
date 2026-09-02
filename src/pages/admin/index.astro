@@ -64,6 +64,11 @@ const attemptsCount = attempts.length;
             Quản lý Thành viên
           </a>
         )}
+        {isAdmin && (
+          <a href="/admin/teacher-notices" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow shadow-amber-500/10">
+            Việc GV & TKB
+          </a>
+        )}
         <a href="/admin/exams" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow shadow-blue-500/10">
           Quản lý Đề thi
         </a>
@@ -156,8 +161,9 @@ const attemptsCount = attempts.length;
             <tbody class="divide-y divide-gray-100 dark:divide-slate-800/60 text-sm font-medium">
               {attempts.slice(0, 10).map(attempt => {
                 const isFinished = attempt.finished_at !== null;
+                const isVsatAttempt = attempt.exam?.exam_type === 'vsat';
                 const scoreColor = attempt.score !== null 
-                  ? (attempt.score >= 8.0 ? 'text-emerald-600 dark:text-emerald-400' : attempt.score >= 5.0 ? 'text-amber-600 dark:text-amber-400' : 'text-rose-600 dark:text-rose-400')
+                  ? (attempt.score >= (isVsatAttempt ? 120 : 8) ? 'text-emerald-600 dark:text-emerald-400' : attempt.score >= (isVsatAttempt ? 75 : 5) ? 'text-amber-600 dark:text-amber-400' : 'text-rose-600 dark:text-rose-400')
                   : 'text-gray-400';
 
                 return (
@@ -170,7 +176,7 @@ const attemptsCount = attempts.length;
                       {attempt.exam?.title || 'Đề thi đã bị xóa'}
                     </td>
                     <td class={`py-4 font-extrabold ${scoreColor}`}>
-                      {attempt.score !== null ? `${attempt.score} / 10` : 'Đang làm...'}
+                      {attempt.score !== null ? `${attempt.score} / ${isVsatAttempt ? 150 : 10}` : 'Đang làm...'}
                     </td>
                     <td class="py-4 text-gray-500 dark:text-slate-450">
                       {isFinished ? new Date(attempt.finished_at || '').toLocaleString('vi-VN') : '--:--'}

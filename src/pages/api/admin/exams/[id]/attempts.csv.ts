@@ -23,7 +23,10 @@ export const GET: APIRoute = async ({ params, locals }) => {
   const examQuestionCounts = await db.getExamQuestionCounts([id]);
   const totalQuestions = examQuestionCounts[id] || 0;
 
-  const header = 'STT,Ho ten,Email,Diem,So cau dung,Tong cau,Thoi gian lam (phut),Ngay nop\r\n';
+  const isVsat = exam.exam_type === 'vsat';
+  const header = isVsat
+    ? 'STT,Ho ten,Email,Diem tho (150),Diem nang luc IRT,Thoi gian lam (phut),Ngay nop\r\n'
+    : 'STT,Ho ten,Email,Diem,So cau dung,Tong cau,Thoi gian lam (phut),Ngay nop\r\n';
 
   const rows = attempts.map((attempt, idx) => {
     const userObj = attempt.user as any;
@@ -44,7 +47,9 @@ export const GET: APIRoute = async ({ params, locals }) => {
     const finishedAt = attempt.finished_at
       ? new Date(attempt.finished_at).toLocaleString('vi-VN')
       : '';
-    return `${idx + 1},"${name}","${email}",${score},${correct},${totalQuestions},${durationMin},"${finishedAt}"`;
+    return isVsat
+      ? `${idx + 1},"${name}","${email}",${score},${attempt.ability_score ?? ''},${durationMin},"${finishedAt}"`
+      : `${idx + 1},"${name}","${email}",${score},${correct},${totalQuestions},${durationMin},"${finishedAt}"`;
   });
 
   const examTitle = exam.title.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').slice(0, 40);
