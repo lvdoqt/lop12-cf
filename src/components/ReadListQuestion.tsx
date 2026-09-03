@@ -112,6 +112,17 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
     }
     return { __html: parseMarkdownWithMath(content, false) };
   }, [question.content, isCloze, subQuestions.length, index]);
+  // Re-render KaTeX whenever a child question, choice, or explanation changes.
+  // The passage itself is not enough: `read` stores its actual quiz content in
+  // metadata.questions.
+  const mathRenderKey = useMemo(() => JSON.stringify({
+    content: question.content || '',
+    questions: subQuestions.map((sq) => ({
+      question: sq.question || '',
+      options: optionLetters.map(letter => sq[`option_${letter.toLowerCase()}`] || ''),
+      explanation: sq.explanation || '',
+    })),
+  }), [question.content, subQuestions]);
   const [selection, setSelection] = useState<Record<string, string>>(
     selectedAnswers && typeof selectedAnswers === 'object' ? { ...selectedAnswers } : {}
   );
@@ -121,7 +132,8 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
   }, [selectedAnswers]);
 
   useEffect(() => {
-    if (cardRef.current && typeof window !== 'undefined' && (window as any).renderMathInElement) {
+    const renderMath = () => {
+      if (!cardRef.current || typeof window === 'undefined' || !(window as any).renderMathInElement) return;
       (window as any).renderMathInElement(cardRef.current, {
         delimiters: [
           { left: '$$', right: '$$', display: true },
@@ -131,8 +143,11 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
         ],
         throwOnError: false
       });
-    }
-  }, [contentHtml]);
+    };
+
+    const frame = window.requestAnimationFrame(renderMath);
+    return () => window.cancelAnimationFrame(frame);
+  }, [mathRenderKey]);
 
   const handleClick = (subIdx: number, letter: string) => {
     if (mode !== 'take') return;
@@ -185,7 +200,10 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
               <li key={i} className={`border-t ${subDivider} pt-3 first:border-t-0 first:pt-0`}>
                 <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 mb-2 leading-relaxed whitespace-pre-wrap">
                   <span className={`${subNumColor} mr-1`}>Câu {index + i}.</span>
-                  <span dangerouslySetInnerHTML={{ __html: parseMarkdownWithMath(displayQuestion, false) }} />
+                  <span
+                    className="inline [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1"
+                    dangerouslySetInnerHTML={{ __html: parseMarkdownWithMath(displayQuestion, true) }}
+                  />
                 </p>
                 <div className="space-y-2">
                   {optionLetters.filter(l => sq['option_' + l.toLowerCase()]).map(l => {

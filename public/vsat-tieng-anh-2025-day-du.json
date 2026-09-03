@@ -5,111 +5,111 @@
   "questions": [
     {
       "type": "msq",
-      "content": "## PART 1 – Question 1\n\nRead the notice and decide whether each statement is TRUE or FALSE.\n\n> **SCHOOL ENTRANCE AHEAD**  \n> **DEAD SLOW**",
-      "statements": [
-        { "content": "Parents must stay away from the gate.", "correct": false },
-        { "content": "The sign is meant for drivers.", "correct": true },
-        { "content": "There is a school gate near the sign.", "correct": true },
-        { "content": "Schoolchildren have to walk slowly.", "correct": false }
-      ],
+      "question": "## PART 1 – Question 1\n\nRead the notice and decide whether each statement is TRUE or FALSE.\n\n> **SCHOOL ENTRANCE AHEAD**  \n> **DEAD SLOW**",
+      "option_a": "Parents must stay away from the gate.",
+      "option_b": "The sign is meant for drivers.",
+      "option_c": "There is a school gate near the sign.",
+      "option_d": "Schoolchildren have to walk slowly.",
+      "correct_option": "B,C",
       "explanation": "The notice warns drivers that a school entrance is ahead and asks them to drive very slowly.",
-      "difficulty": "easy"
+      "difficulty_level": "easy",
+      "is_dynamic": false
     },
     {
       "type": "msq",
-      "content": "## Question 2\n\nRead the advertisement.\n\n> **GRAY & SONS**  \n> **BUILDERS**  \n> Since 1983  \n> Free estimates",
-      "statements": [
-        { "content": "Gray and Sons builds houses.", "correct": true },
-        { "content": "Gray and Sons estimates the size of your house for free.", "correct": false },
-        { "content": "Gray and Sons gives builders houses for free.", "correct": false },
-        { "content": "Gray and Sons has been in the business since 1983.", "correct": true }
-      ],
+      "question": "## Question 2\n\nRead the advertisement.\n\n> **GRAY & SONS**  \n> **BUILDERS**  \n> Since 1983  \n> Free estimates",
+      "option_a": "Gray and Sons builds houses.",
+      "option_b": "Gray and Sons estimates the size of your house for free.",
+      "option_c": "Gray and Sons gives builders houses for free.",
+      "option_d": "Gray and Sons has been in the business since 1983.",
+      "correct_option": "A,D",
       "explanation": "Free estimates means customers can receive a free estimate of the expected cost; it does not mean free houses or size measurement.",
-      "difficulty": "easy"
+      "difficulty_level": "easy",
+      "is_dynamic": false
     },
     {
       "type": "msq",
-      "content": "## Question 3\n\nRead the advertisement.\n\n> **PACKERS & MOVERS**  \n> 24 hours, seven days a week  \n> MOBILE: 378 8880 6235",
-      "statements": [
-        { "content": "Packers & Movers moves houses.", "correct": true },
-        { "content": "You can contact Packers & Movers on mobile.", "correct": true },
-        { "content": "Packers & Movers doesn’t work at the weekend.", "correct": false },
-        { "content": "Packers & Movers works only 24 hours a week.", "correct": false }
-      ],
+      "question": "## Question 3\n\nRead the advertisement.\n\n> **PACKERS & MOVERS**  \n> 24 hours, seven days a week  \n> MOBILE: 378 8880 6235",
+      "option_a": "Packers & Movers moves houses.",
+      "option_b": "You can contact Packers & Movers on mobile.",
+      "option_c": "Packers & Movers doesn’t work at the weekend.",
+      "option_d": "Packers & Movers works only 24 hours a week.",
+      "correct_option": "A,B",
       "explanation": "The business operates 24 hours a day, seven days a week, and provides a mobile contact number.",
-      "difficulty": "easy"
+      "difficulty_level": "easy",
+      "is_dynamic": false
     },
     {
       "type": "msq",
-      "content": "## Question 4\n\nRead the announcement.\n\n> **YEAR-END PARTY**  \n> Our year-end party will take place at the auditorium instead of the stadium as planned before. The party will also be delayed half an hour, starting at 7.30 p.m. on Dec 25th. Formal clothes are required!",
-      "statements": [
-        { "content": "The party will take place on the last day of the year.", "correct": false },
-        { "content": "The party will no longer be held in the stadium.", "correct": true },
-        { "content": "There is a change in the time of the party.", "correct": true },
-        { "content": "People can wear casual clothes to the party.", "correct": false }
-      ],
+      "question": "## Question 4\n\nRead the announcement.\n\n> **YEAR-END PARTY**  \n> Our year-end party will take place at the auditorium instead of the stadium as planned before. The party will also be delayed half an hour, starting at 7.30 p.m. on Dec 25th. Formal clothes are required!",
+      "option_a": "The party will take place on the last day of the year.",
+      "option_b": "The party will no longer be held in the stadium.",
+      "option_c": "There is a change in the time of the party.",
+      "option_d": "People can wear casual clothes to the party.",
+      "correct_option": "B,C",
       "explanation": "The party is on December 25, has moved to the auditorium, starts half an hour later, and requires formal clothes.",
-      "difficulty": "easy"
+      "difficulty_level": "easy",
+      "is_dynamic": false
     },
     {
       "type": "msq",
-      "content": "## Question 5\n\nRead the announcement.\n\n> The Thinking Skills Assessment (TSA) is divided into two parts: a 90-minute, multiple choice TSA and a 30-minute writing task. The TSA will be a paper-based test from next month.",
-      "statements": [
-        { "content": "Candidates can take the computer-based TSA from next month.", "correct": false },
-        { "content": "The TSA consists of two sessions.", "correct": true },
-        { "content": "There is no multiple choice TSA this year.", "correct": false },
-        { "content": "The TSA writing task lasts 30 minutes.", "correct": true }
-      ],
+      "question": "## Question 5\n\nRead the announcement.\n\n> The Thinking Skills Assessment (TSA) is divided into two parts: a 90-minute, multiple choice TSA and a 30-minute writing task. The TSA will be a paper-based test from next month.",
+      "option_a": "Candidates can take the computer-based TSA from next month.",
+      "option_b": "The TSA consists of two sessions.",
+      "option_c": "There is no multiple choice TSA this year.",
+      "option_d": "The TSA writing task lasts 30 minutes.",
+      "correct_option": "B,D",
       "explanation": "The test has two parts, includes a multiple-choice component, and becomes paper-based from next month.",
-      "difficulty": "easy"
+      "difficulty_level": "easy",
+      "is_dynamic": false
     },
     {
       "type": "msq",
-      "content": "## Question 6\n\nRead the room advertisement.\n\n> Single room available in our four-bedroom house in Fairfax. Two-minute walk from city centre. Move in from 1 Dec. Shared kitchen and living room with three female housemates, no parking, £600 a month. No pets. Contact 0678 123456 for viewing.",
-      "statements": [
-        { "content": "This house is near the city centre.", "correct": true },
-        { "content": "You can keep your car here.", "correct": false },
-        { "content": "You can come to see the house first.", "correct": true },
-        { "content": "Pets can live in the house.", "correct": false }
-      ],
+      "question": "## Question 6\n\nRead the room advertisement.\n\n> Single room available in our four-bedroom house in Fairfax. Two-minute walk from city centre. Move in from 1 Dec. Shared kitchen and living room with three female housemates, no parking, £600 a month. No pets. Contact 0678 123456 for viewing.",
+      "option_a": "This house is near the city centre.",
+      "option_b": "You can keep your car here.",
+      "option_c": "You can come to see the house first.",
+      "option_d": "Pets can live in the house.",
+      "correct_option": "A,C",
       "explanation": "It is a two-minute walk from the centre, has no parking, offers viewing by contact, and does not allow pets.",
-      "difficulty": "easy"
+      "difficulty_level": "easy",
+      "is_dynamic": false
     },
     {
       "type": "msq",
-      "content": "## Question 7\n\nRead the message.\n\n> **From:** Joy  \n> **To:** Linh  \n> Hi Linh. I’ll be in town on business this Friday, so how about meeting for dinner then, instead of Tuesday as usual?  \n> Joy",
-      "statements": [
-        { "content": "Joy wants Linh to meet her on Tuesday this week.", "correct": false },
-        { "content": "The message is meant for Linh.", "correct": true },
-        { "content": "Joy and Linh often meet for dinner on Friday.", "correct": false },
-        { "content": "Joy is with Linh on a business trip to town.", "correct": false }
-      ],
+      "question": "## Question 7\n\nRead the message.\n\n> **From:** Joy  \n> **To:** Linh  \n> Hi Linh. I’ll be in town on business this Friday, so how about meeting for dinner then, instead of Tuesday as usual?  \n> Joy",
+      "option_a": "Joy wants Linh to meet her on Tuesday this week.",
+      "option_b": "The message is meant for Linh.",
+      "option_c": "Joy and Linh often meet for dinner on Friday.",
+      "option_d": "Joy is with Linh on a business trip to town.",
+      "correct_option": "B",
       "explanation": "Joy writes to Linh and proposes Friday instead of their usual Tuesday meeting. Joy, not both of them, will be in town on business.",
-      "difficulty": "easy"
+      "difficulty_level": "easy",
+      "is_dynamic": false
     },
     {
       "type": "msq",
-      "content": "## PART 2 – Question 8\n\nFifty-two-year-old American Henry Evans is one of the world's first teletourists. From the comfort of his bed in Palo Alto, California, he has travelled to places as far away as Bora Bora in the South Pacific. Under normal circumstances, this journey would be impossible for Henry because he is disabled. A serious stroke when he was 40 affected his brain and left him without speech and unable to use his arms or legs. But with the help of technology, Henry is able to deal with his difficulties and get out to see the world.\n\nDecide whether each statement is TRUE or FALSE.",
-      "statements": [
-        { "content": "Henry suffers from severe and lasting post-stroke disability.", "correct": true },
-        { "content": "Henry has been disabled since he was born.", "correct": false },
-        { "content": "Henry has only visited domestic destinations virtually so far.", "correct": false },
-        { "content": "It is impossible for Henry to travel physically to faraway places.", "correct": true }
-      ],
+      "question": "## PART 2 – Question 8\n\nFifty-two-year-old American Henry Evans is one of the world's first teletourists. From the comfort of his bed in Palo Alto, California, he has travelled to places as far away as Bora Bora in the South Pacific. Under normal circumstances, this journey would be impossible for Henry because he is disabled. A serious stroke when he was 40 affected his brain and left him without speech and unable to use his arms or legs. But with the help of technology, Henry is able to deal with his difficulties and get out to see the world.\n\nDecide whether each statement is TRUE or FALSE.",
+      "option_a": "Henry suffers from severe and lasting post-stroke disability.",
+      "option_b": "Henry has been disabled since he was born.",
+      "option_c": "Henry has only visited domestic destinations virtually so far.",
+      "option_d": "It is impossible for Henry to travel physically to faraway places.",
+      "correct_option": "A,D",
       "explanation": "Henry became disabled after a stroke at 40, has virtually visited distant international destinations, and cannot normally make those physical journeys.",
-      "difficulty": "medium"
+      "difficulty_level": "medium",
+      "is_dynamic": false
     },
     {
       "type": "msq",
-      "content": "## Question 9\n\nWhen Henry wants to visit a museum, he uses a telepresence robot called the Beam, a big computer monitor with a webcam that is attached to a mobile base with two poles. Using head movements, he can drive the machine around the halls, talking to the guide and learning about the exhibits, just like any other visitor. Several of the world's museums already use these machines, and Henry hopes there will soon be more.\n\nDecide whether each statement is TRUE or FALSE.",
-      "statements": [
-        { "content": "Henry can visit museums with the help of a telepresence robot.", "correct": true },
-        { "content": "Robots like the Beam are being used widely in museums across the world.", "correct": false },
-        { "content": "Henry uses sign language to communicate directly with museum guides.", "correct": false },
-        { "content": "The Beam is attached permanently to museums’ walls.", "correct": false }
-      ],
+      "question": "## Question 9\n\nWhen Henry wants to visit a museum, he uses a telepresence robot called the Beam, a big computer monitor with a webcam that is attached to a mobile base with two poles. Using head movements, he can drive the machine around the halls, talking to the guide and learning about the exhibits, just like any other visitor. Several of the world's museums already use these machines, and Henry hopes there will soon be more.\n\nDecide whether each statement is TRUE or FALSE.",
+      "option_a": "Henry can visit museums with the help of a telepresence robot.",
+      "option_b": "Robots like the Beam are being used widely in museums across the world.",
+      "option_c": "Henry uses sign language to communicate directly with museum guides.",
+      "option_d": "The Beam is attached permanently to museums’ walls.",
+      "correct_option": "A",
       "explanation": "Only several museums currently use the mobile Beam robot. Henry controls it with head movements and talks through it.",
-      "difficulty": "medium"
+      "difficulty_level": "medium",
+      "is_dynamic": false
     },
     {
       "type": "read",
@@ -176,18 +176,48 @@
       "type": "matching",
       "content": "## PART 3 – Question 16\n\nMatch each utterance with the most suitable response.",
       "questions": [
-        { "content": "Thanks a lot for helping me out this time!", "correct_option": "A" },
-        { "content": "Excuse me, where’s the library?", "correct_option": "B" },
-        { "content": "Goodbye!", "correct_option": "C" },
-        { "content": "What time is it?", "correct_option": "E" }
+        {
+          "content": "Thanks a lot for helping me out this time!",
+          "correct_option": "A"
+        },
+        {
+          "content": "Excuse me, where’s the library?",
+          "correct_option": "B"
+        },
+        {
+          "content": "Goodbye!",
+          "correct_option": "C"
+        },
+        {
+          "content": "What time is it?",
+          "correct_option": "E"
+        }
       ],
       "options": [
-        { "key": "A", "content": "My pleasure." },
-        { "key": "B", "content": "It’s near here, just round the corner." },
-        { "key": "C", "content": "See you." },
-        { "key": "D", "content": "I’m glad you like it." },
-        { "key": "E", "content": "It’s nine o’clock." },
-        { "key": "F", "content": "It’s on May 5th." }
+        {
+          "key": "A",
+          "content": "My pleasure."
+        },
+        {
+          "key": "B",
+          "content": "It’s near here, just round the corner."
+        },
+        {
+          "key": "C",
+          "content": "See you."
+        },
+        {
+          "key": "D",
+          "content": "I’m glad you like it."
+        },
+        {
+          "key": "E",
+          "content": "It’s nine o’clock."
+        },
+        {
+          "key": "F",
+          "content": "It’s on May 5th."
+        }
       ],
       "difficulty": "easy"
     },
@@ -195,18 +225,48 @@
       "type": "matching",
       "content": "## Question 17\n\nMatch each sentence beginning with its most suitable ending.",
       "questions": [
-        { "content": "Many children’s insecurities ____", "correct_option": "A" },
-        { "content": "One consequence of family instability ____", "correct_option": "C" },
-        { "content": "Deforestation in the Amazon rain forest ____", "correct_option": "E" },
-        { "content": "A diet deficient in vitamin C ____", "correct_option": "F" }
+        {
+          "content": "Many children’s insecurities ____",
+          "correct_option": "A"
+        },
+        {
+          "content": "One consequence of family instability ____",
+          "correct_option": "C"
+        },
+        {
+          "content": "Deforestation in the Amazon rain forest ____",
+          "correct_option": "E"
+        },
+        {
+          "content": "A diet deficient in vitamin C ____",
+          "correct_option": "F"
+        }
       ],
       "options": [
-        { "key": "A", "content": "come as a result of problematic parental behaviours." },
-        { "key": "B", "content": "stem mostly from human activities." },
-        { "key": "C", "content": "is a reduction in the overall well-being of the children involved." },
-        { "key": "D", "content": "is caused by bullying behaviours at school." },
-        { "key": "E", "content": "is having its impacts on the water cycle as well as plant and animal life in the region." },
-        { "key": "F", "content": "can lead to unwanted exhaustion and spontaneous bleeding." }
+        {
+          "key": "A",
+          "content": "come as a result of problematic parental behaviours."
+        },
+        {
+          "key": "B",
+          "content": "stem mostly from human activities."
+        },
+        {
+          "key": "C",
+          "content": "is a reduction in the overall well-being of the children involved."
+        },
+        {
+          "key": "D",
+          "content": "is caused by bullying behaviours at school."
+        },
+        {
+          "key": "E",
+          "content": "is having its impacts on the water cycle as well as plant and animal life in the region."
+        },
+        {
+          "key": "F",
+          "content": "can lead to unwanted exhaustion and spontaneous bleeding."
+        }
       ],
       "difficulty": "medium"
     },
@@ -214,18 +274,48 @@
       "type": "matching",
       "content": "## Question 18\n\nMatch each sentence beginning with its most suitable ending.",
       "questions": [
-        { "content": "Should the government promote a healthy lifestyle, ____", "correct_option": "B" },
-        { "content": "Were John to behave properly, ____", "correct_option": "A" },
-        { "content": "Had David seen Mary off at the airport yesterday, ____", "correct_option": "D" },
-        { "content": "Had it not been for the appearance of the famous singer, ____", "correct_option": "C" }
+        {
+          "content": "Should the government promote a healthy lifestyle, ____",
+          "correct_option": "B"
+        },
+        {
+          "content": "Were John to behave properly, ____",
+          "correct_option": "A"
+        },
+        {
+          "content": "Had David seen Mary off at the airport yesterday, ____",
+          "correct_option": "D"
+        },
+        {
+          "content": "Had it not been for the appearance of the famous singer, ____",
+          "correct_option": "C"
+        }
       ],
       "options": [
-        { "key": "A", "content": "he wouldn’t be often blamed by his peers." },
-        { "key": "B", "content": "many people will adopt better eating habits." },
-        { "key": "C", "content": "the concert wouldn’t have been so appealing." },
-        { "key": "D", "content": "she would have been happy." },
-        { "key": "E", "content": "there would be no one in the hall." },
-        { "key": "F", "content": "she will be delighted." }
+        {
+          "key": "A",
+          "content": "he wouldn’t be often blamed by his peers."
+        },
+        {
+          "key": "B",
+          "content": "many people will adopt better eating habits."
+        },
+        {
+          "key": "C",
+          "content": "the concert wouldn’t have been so appealing."
+        },
+        {
+          "key": "D",
+          "content": "she would have been happy."
+        },
+        {
+          "key": "E",
+          "content": "there would be no one in the hall."
+        },
+        {
+          "key": "F",
+          "content": "she will be delighted."
+        }
       ],
       "difficulty": "medium"
     },
@@ -233,18 +323,48 @@
       "type": "matching",
       "content": "## Question 19\n\nMatch each sentence beginning with its most suitable ending.",
       "questions": [
-        { "content": "Mr. Brian is considering early retirement, ____", "correct_option": "A" },
-        { "content": "Our next-door neighbour is a famous author, ____", "correct_option": "B" },
-        { "content": "The artist had an impressive performance, ____", "correct_option": "C" },
-        { "content": "David failed to answer the last question in the English speaking contest, ____", "correct_option": "F" }
+        {
+          "content": "Mr. Brian is considering early retirement, ____",
+          "correct_option": "A"
+        },
+        {
+          "content": "Our next-door neighbour is a famous author, ____",
+          "correct_option": "B"
+        },
+        {
+          "content": "The artist had an impressive performance, ____",
+          "correct_option": "C"
+        },
+        {
+          "content": "David failed to answer the last question in the English speaking contest, ____",
+          "correct_option": "F"
+        }
       ],
       "options": [
-        { "key": "A", "content": "in which case his only son will take over the family business." },
-        { "key": "B", "content": "most of whose books have been adapted for theatre." },
-        { "key": "C", "content": "which satisfied her audience." },
-        { "key": "D", "content": "for whom the students show great respect." },
-        { "key": "E", "content": "most of which have been translated into three languages." },
-        { "key": "F", "content": "which shocked everyone in the hall." }
+        {
+          "key": "A",
+          "content": "in which case his only son will take over the family business."
+        },
+        {
+          "key": "B",
+          "content": "most of whose books have been adapted for theatre."
+        },
+        {
+          "key": "C",
+          "content": "which satisfied her audience."
+        },
+        {
+          "key": "D",
+          "content": "for whom the students show great respect."
+        },
+        {
+          "key": "E",
+          "content": "most of which have been translated into three languages."
+        },
+        {
+          "key": "F",
+          "content": "which shocked everyone in the hall."
+        }
       ],
       "difficulty": "medium"
     },
@@ -252,18 +372,48 @@
       "type": "matching",
       "content": "## Question 20\n\nMatch each sentence beginning with its most suitable ending.",
       "questions": [
-        { "content": "She handled the situation ____", "correct_option": "C" },
-        { "content": "Adam performed the experiment ____", "correct_option": "F" },
-        { "content": "It was this beautiful scenery ____", "correct_option": "B" },
-        { "content": "It is my parents’ encouragement ____", "correct_option": "D" }
+        {
+          "content": "She handled the situation ____",
+          "correct_option": "C"
+        },
+        {
+          "content": "Adam performed the experiment ____",
+          "correct_option": "F"
+        },
+        {
+          "content": "It was this beautiful scenery ____",
+          "correct_option": "B"
+        },
+        {
+          "content": "It is my parents’ encouragement ____",
+          "correct_option": "D"
+        }
       ],
       "options": [
-        { "key": "A", "content": "as she always will." },
-        { "key": "B", "content": "that attracted visitors to the place." },
-        { "key": "C", "content": "like a true leader would." },
-        { "key": "D", "content": "that helps me overcome many challenges." },
-        { "key": "E", "content": "which motivates me a lot." },
-        { "key": "F", "content": "the way he was instructed." }
+        {
+          "key": "A",
+          "content": "as she always will."
+        },
+        {
+          "key": "B",
+          "content": "that attracted visitors to the place."
+        },
+        {
+          "key": "C",
+          "content": "like a true leader would."
+        },
+        {
+          "key": "D",
+          "content": "that helps me overcome many challenges."
+        },
+        {
+          "key": "E",
+          "content": "which motivates me a lot."
+        },
+        {
+          "key": "F",
+          "content": "the way he was instructed."
+        }
       ],
       "difficulty": "medium"
     },
@@ -271,11 +421,26 @@
       "type": "cloze_text",
       "content": "## PART 4 – Questions 21–25\n\nRead the text and fill in **ONE word** which best fits each gap.\n\nWe know sleep is an activity we can’t do without, yet we let our hectic lifestyle wear us down until we can’t (21) ____ from bed in the morning. We know the longer we go without sleep, the more likely we are to have (22) ____ accident, and when that happens, this will be the unhappiest moment we’ve been through in our life. It’s safe to say that too many people have come up against this problem. But there’s no need for us to make ourselves tired over a lack of sleep. Now it seems as if people are bouncing back from this terrible (23) ____ torture by taking mid-day naps. Some may think it makes them look lazy to the boss, but these days aren’t as old-fashioned (24) ____ we might expect, and such ideas as napping at work are catching (25) ____. It’s been proven by researchers that a mid-day nap increases productivity, and more employees are changing their tune about the practice.",
       "blanks": [
-        { "number": 21, "correct_answer": "rise" },
-        { "number": 22, "correct_answer": "an" },
-        { "number": 23, "correct_answer": "sleep" },
-        { "number": 24, "correct_answer": "as" },
-        { "number": 25, "correct_answer": "on" }
+        {
+          "number": 21,
+          "correct_answer": "rise"
+        },
+        {
+          "number": 22,
+          "correct_answer": "an"
+        },
+        {
+          "number": 23,
+          "correct_answer": "sleep"
+        },
+        {
+          "number": 24,
+          "correct_answer": "as"
+        },
+        {
+          "number": 25,
+          "correct_answer": "on"
+        }
       ],
       "explanation": "21 rise from bed; 22 have an accident; 23 sleep torture; 24 as ... as; 25 catch on.",
       "difficulty": "medium"

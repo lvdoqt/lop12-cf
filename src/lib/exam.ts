@@ -8,14 +8,14 @@ export function buildShuffledExam(allQuestions: ExamQuestion[], prng: () => numb
   // sequence and author-entered group order; candidate randomization can be added
   // later without breaking grouped passages/matching keys.
   if (allQuestions.some(q => q.type === 'matching')) {
-    const order: Record<string, number> = { msq: 0, single_choice: 1, read: 1, matching: 2, sa: 3, cloze_text: 3 };
+    const order: Record<string, number> = { msq: 0, mcq: 1, single_choice: 1, read: 1, matching: 2, sa: 3, cloze_text: 3 };
     return allQuestions
       .map((q, index) => ({ q, index }))
       .sort((a, b) => (order[a.q.type] ?? 9) - (order[b.q.type] ?? 9) || a.index - b.index)
       .map(x => x.q);
   }
   const bySection = {
-    mcq: allQuestions.filter(q => !q.type || q.type === 'single_choice'), // fallback if missing
+    mcq: allQuestions.filter(q => !q.type || q.type === 'mcq' || q.type === 'single_choice'), // fallback for legacy data
     multiple_choice: allQuestions.filter(q => q.type === 'multiple_choice'),
     msq: allQuestions.filter(q => q.type === 'msq'),
     sa: allQuestions.filter(q => q.type === 'sa'),

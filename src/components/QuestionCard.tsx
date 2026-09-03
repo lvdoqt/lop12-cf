@@ -204,6 +204,7 @@ export default function QuestionCard({ question, index, selectedAnswer, onAnswer
       : 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400';
 
   const typeLabel: Record<string, string> = {
+    mcq: 'Trắc nghiệm đơn',
     single_choice: 'Trắc nghiệm đơn',
     multiple_choice: 'Nhiều lựa chọn',
     true_false: 'Đúng / Sai',
@@ -239,7 +240,7 @@ export default function QuestionCard({ question, index, selectedAnswer, onAnswer
       />
 
       {/* Standard options: single_choice, multiple_choice, true_false */}
-      {(question.type === 'single_choice' || question.type === 'multiple_choice' || question.type === 'true_false') && (
+      {(question.type === 'mcq' || question.type === 'single_choice' || question.type === 'multiple_choice' || question.type === 'true_false') && (
         <div className="space-y-3">
           {question.answers.map((answer, optIdx) => {
             const letter = optionLetters[optIdx];
@@ -254,7 +255,7 @@ export default function QuestionCard({ question, index, selectedAnswer, onAnswer
                 optStyle = `${accent.selBorder} ${accent.selBg} dark:${accent.selBorder} ${accent.selText} ring-2 ${accent.selRing}`;
                 letterStyle = `${accent.selNumBg} ${question.type === 'multiple_choice' ? 'border-blue-300 dark:border-blue-800' : 'border-transparent'} ${accent.selNumText}`;
               }
-              if (selected && question.type === 'single_choice') {
+              if (selected && (question.type === 'mcq' || question.type === 'single_choice')) {
                 optStyle = `${accent.selBorder} ${accent.selBg} ${accent.selText} ring-2 ${accent.selRing}`;
               }
             } else {
@@ -279,7 +280,7 @@ export default function QuestionCard({ question, index, selectedAnswer, onAnswer
                 }}
                 className={`flex items-center p-4 rounded-xl border-2 transition-all duration-150 select-none cursor-pointer ${optStyle}`}
               >
-                <div className={`w-6 h-6 ${question.type === 'single_choice' || question.type === 'true_false' ? 'rounded-full' : 'rounded'} mr-3 flex items-center justify-center font-bold text-xs transition-colors border shrink-0 ${letterStyle}`}>
+                <div className={`w-6 h-6 ${question.type === 'mcq' || question.type === 'single_choice' || question.type === 'true_false' ? 'rounded-full' : 'rounded'} mr-3 flex items-center justify-center font-bold text-xs transition-colors border shrink-0 ${letterStyle}`}>
                   {letter}
                 </div>
                 <div className="text-sm md:text-base font-medium flex-1 [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1" dangerouslySetInnerHTML={answerHtmlMap[answer.id]} />

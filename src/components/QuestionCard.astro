@@ -42,7 +42,7 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
     <div class="flex items-center space-x-2">
       <!-- Question Type -->
       <span class="text-xs font-semibold text-gray-400 dark:text-slate-500">
-        {question.type === 'single_choice' 
+        {question.type === 'mcq' || question.type === 'single_choice' 
           ? 'Trắc nghiệm đơn' 
           : question.type === 'multiple_choice' 
             ? 'Nhiều lựa chọn' 
@@ -112,7 +112,7 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
         }
 
         const isMultipleChoice = question.type === 'multiple_choice';
-        const isSingleChoice = question.type === 'single_choice' || question.type === 'true_false';
+        const isSingleChoice = question.type === 'mcq' || question.type === 'single_choice' || question.type === 'true_false';
         const shapeClass = isSingleChoice ? 'rounded-full' : 'rounded';
 
         return (
@@ -349,7 +349,7 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
         });
         document.dispatchEvent(event);
 
-        if (qType === 'single_choice' || qType === 'true_false') {
+        if (qType === 'mcq' || qType === 'single_choice' || qType === 'true_false') {
           document.querySelectorAll(`.option-item[data-question-id="${qId}"]`).forEach(sibling => {
             sibling.classList.remove('border-blue-500', 'bg-blue-50/50', 'dark:border-blue-500', 'dark:bg-blue-950/20', 'text-blue-700', 'dark:text-blue-400');
             const letter = sibling.querySelector('.w-6');

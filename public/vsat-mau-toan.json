@@ -1,5 +1,5 @@
 {
-  "_huong_dan": "Sao chép cấu trúc câu hỏi và bổ sung đủ 9 câu msq, 6 nhóm read/single_choice, 5 câu matching và 5 câu sa để đạt cấu trúc 150 điểm.",
+  "_huong_dan": "Sao chép cấu trúc câu hỏi và bổ sung đủ 9 câu msq, 6 nhóm read/mcq, 5 câu matching và 5 câu sa để đạt cấu trúc 150 điểm.",
   "_cau_truc_150_diem": {
     "msq": "9 câu x tối đa 6 điểm = 54",
     "mcq": "6 nhóm, tổng 6 câu nhỏ x 6 điểm = 36 (điều chỉnh số câu nhỏ theo đề thực tế để tổng phần là 36)",
@@ -9,15 +9,15 @@
   "questions": [
     {
       "type": "msq",
-      "content": "Cho dãy số $(u_n)$ với $u_n=2n+1$. Xét tính đúng sai của các mệnh đề sau:",
-      "difficulty": "medium",
-      "statements": [
-        { "content": "Dãy số $(u_n)$ là một cấp số cộng.", "correct": true },
-        { "content": "Công sai của cấp số cộng bằng $1$.", "correct": false },
-        { "content": "Dãy số $(u_n)$ là dãy tăng.", "correct": true },
-        { "content": "Dãy số $(u_n)$ bị chặn trên.", "correct": false }
-      ],
-      "explanation": "$u_{n+1}-u_n=2$ nên đây là cấp số cộng tăng và không bị chặn trên."
+      "question": "Cho dãy số $(u_n)$ với $u_n=2n+1$. Xét tính đúng sai của các mệnh đề sau:",
+      "option_a": "Dãy số $(u_n)$ là một cấp số cộng.",
+      "option_b": "Công sai của cấp số cộng bằng $1$.",
+      "option_c": "Dãy số $(u_n)$ là dãy tăng.",
+      "option_d": "Dãy số $(u_n)$ bị chặn trên.",
+      "correct_option": "A,C",
+      "explanation": "$u_{n+1}-u_n=2$ nên đây là cấp số cộng tăng và không bị chặn trên.",
+      "difficulty_level": "medium",
+      "is_dynamic": false
     },
     {
       "type": "read",
@@ -45,30 +45,64 @@
       ]
     },
     {
-      "type": "single_choice",
-      "content": "Nghiệm của phương trình $x^2-5x+6=0$ là:",
-      "difficulty": "easy",
-      "options": ["$x=1,2$", "$x=2,3$", "$x=-2,-3$", "$x=1,6$"],
+      "type": "mcq",
+      "question": "Nghiệm của phương trình $x^2-5x+6=0$ là:",
+      "option_a": "$x=1,2$",
+      "option_b": "$x=2,3$",
+      "option_c": "$x=-2,-3$",
+      "option_d": "$x=1,6$",
       "correct_option": "B",
-      "explanation": "$x^2-5x+6=(x-2)(x-3)$."
+      "explanation": "$x^2-5x+6=(x-2)(x-3)$.",
+      "difficulty_level": "easy",
+      "is_dynamic": false
     },
     {
       "type": "matching",
       "content": "Ghép mỗi biểu thức ở cột trái với giá trị đúng ở cột phải.",
       "difficulty": "medium",
       "questions": [
-        { "content": "$2+3$", "correct_option": "B" },
-        { "content": "$2^3$", "correct_option": "D" },
-        { "content": "$\\sqrt{9}$", "correct_option": "A" },
-        { "content": "$10-4$", "correct_option": "C" }
+        {
+          "content": "$2+3$",
+          "correct_option": "B"
+        },
+        {
+          "content": "$2^3$",
+          "correct_option": "D"
+        },
+        {
+          "content": "$\\sqrt{9}$",
+          "correct_option": "A"
+        },
+        {
+          "content": "$10-4$",
+          "correct_option": "C"
+        }
       ],
       "options": [
-        { "key": "A", "content": "$3$" },
-        { "key": "B", "content": "$5$" },
-        { "key": "C", "content": "$6$" },
-        { "key": "D", "content": "$8$" },
-        { "key": "E", "content": "$9$" },
-        { "key": "F", "content": "$10$" }
+        {
+          "key": "A",
+          "content": "$3$"
+        },
+        {
+          "key": "B",
+          "content": "$5$"
+        },
+        {
+          "key": "C",
+          "content": "$6$"
+        },
+        {
+          "key": "D",
+          "content": "$8$"
+        },
+        {
+          "key": "E",
+          "content": "$9$"
+        },
+        {
+          "key": "F",
+          "content": "$10$"
+        }
       ]
     },
     {

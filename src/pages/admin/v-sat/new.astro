@@ -17,33 +17,56 @@ if (Astro.request.method === 'POST') {
     const parsed = JSON.parse(raw);
     const source = Array.isArray(parsed) ? parsed : parsed.questions;
     if (!Array.isArray(source) || !source.length) throw new Error('JSON cần có mảng questions và ít nhất một câu.');
-    const valid = ['msq','single_choice','read','matching','sa','cloze_text'];
+    const valid = ['mcq','msq','single_choice','read','matching','sa','cloze_text'];
+    const optionKeys = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const getOptions = (q: any) => {
+      if (Array.isArray(q.options)) {
+        return q.options.map((option: any) => typeof option === 'string' ? option : option.content || option.text).filter(Boolean);
+      }
+      return optionKeys.map(key => q[`option_${key.toLowerCase()}`]).filter(Boolean);
+    };
+    const getCorrectKeys = (value: unknown) => new Set(String(value || '')
+      .split(',')
+      .map(key => key.trim().toUpperCase())
+      .filter(Boolean));
     const batch = source.map((q: any, idx: number) => {
       if (!valid.includes(q.type)) throw new Error(`Câu ${idx + 1}: type “${q.type}” chưa được hỗ trợ cho V-SAT.`);
+      const type = q.type === 'single_choice' ? 'mcq' : q.type;
       const metadata: any = {};
       let answers: any[] = [];
       let answer: string | null = null;
-      if (q.type === 'msq') {
-        const statements = q.statements || q.options;
-        if (!Array.isArray(statements) || statements.length < 2) throw new Error(`Câu ${idx + 1}: msq cần mảng statements.`);
-        answers = statements.map((x: any) => ({ content: x.content || x.text, is_correct: ['true','đúng','d','đ'].includes(String(x.correct ?? x.answer).toLowerCase()) || x.correct === true }));
-      } else if (q.type === 'single_choice') {
-        const opts = q.options || [];
-        if (opts.length < 2) throw new Error(`Câu ${idx + 1}: single_choice cần mảng options.`);
-        answers = opts.map((x: any, i: number) => ({ content: typeof x === 'string' ? x : x.content, is_correct: String(q.correct_option || q.answer).toUpperCase() === String.fromCharCode(65 + i) }));
-      } else if (q.type === 'read') {
+      if (type === 'msq') {
+        // Canonical JSON (same as /de-thi): question + option_a... + correct_option.
+        // Keep statements as a backwards-compatible format for existing V-SAT exports.
+        const statements = Array.isArray(q.statements) ? q.statements : null;
+        const options = statements ? statements.map((item: any) => item.content || item.text) : getOptions(q);
+        if (options.length < 2) throw new Error(`Câu ${idx + 1}: msq cần option_a…option_d hoặc mảng statements.`);
+        const correctKeys = getCorrectKeys(q.correct_option || q.answer);
+        answers = options.map((content: string, optionIndex: number) => {
+          const statement = statements?.[optionIndex];
+          const isCorrect = statement
+            ? statement.correct === true || ['true', 'đúng', 'd', 'đ'].includes(String(statement.correct ?? statement.answer).toLowerCase())
+            : correctKeys.has(optionKeys[optionIndex]);
+          return { content, is_correct: isCorrect };
+        });
+      } else if (type === 'mcq') {
+        const options = getOptions(q);
+        if (options.length < 2) throw new Error(`Câu ${idx + 1}: mcq cần option_a…option_d hoặc mảng options.`);
+        const correctKeys = getCorrectKeys(q.correct_option || q.answer);
+        answers = options.map((content: string, optionIndex: number) => ({ content, is_correct: correctKeys.has(optionKeys[optionIndex]) }));
+      } else if (type === 'read') {
         metadata.questions = q.questions || [];
         if (!metadata.questions.length) throw new Error(`Câu ${idx + 1}: read cần mảng questions.`);
-      } else if (q.type === 'matching') {
+      } else if (type === 'matching') {
         metadata.questions = q.questions || [];
         metadata.options = q.options || [];
         if (!metadata.questions.length || !metadata.options.length) throw new Error(`Câu ${idx + 1}: matching cần questions và options.`);
-      } else if (q.type === 'cloze_text') {
+      } else if (type === 'cloze_text') {
         metadata.questions = q.blanks || q.questions || [];
         if (!metadata.questions.length) throw new Error(`Câu ${idx + 1}: cloze_text cần mảng blanks.`);
         metadata.questions.forEach((b: any, bi: number) => { if (!b.correct_answer && !b.accepted_answers?.length) throw new Error(`Câu ${idx + 1}, ô ${bi + 1}: thiếu correct_answer.`); });
-      } else if (q.type === 'sa') answer = String(q.correct_answer ?? q.answer ?? '');
-      return { question: { de_id: 'bank', so_cau: 0, phan: 'I', content: q.content || q.passage || '', options: [], answer, image_url: null, metadata, subject_id, explanation: q.explanation || '', difficulty: q.difficulty || 'medium', type: q.type, created_by: user.id }, answers };
+      } else if (type === 'sa') answer = String(q.correct_answer ?? q.answer ?? '');
+      return { question: { de_id: 'bank', so_cau: 0, phan: 'I', content: q.question || q.content || q.passage || '', options: [], answer, image_url: null, metadata, subject_id, explanation: q.explanation || '', difficulty: q.difficulty_level || q.difficulty || 'medium', type, created_by: user.id }, answers };
     });
     const created = await db.createQuestionsBatch(batch as any);
     const exam = await db.createExam({ title, duration, subject_id, category_id: null, exam_type: 'vsat', created_by: user.id, password: String(form.get('password') || '').trim() || undefined }, created.map(q => q.id));
@@ -52,11 +75,11 @@ if (Astro.request.method === 'POST') {
 }
 const subjects = await db.getSubjects();
 const sample = JSON.stringify({ questions: [
-  { type: 'msq', content: 'Cho dãy số $(u_n)$. Xét tính đúng sai:', statements: [{ content: 'Dãy số là cấp số cộng.', correct: true }, { content: 'Dãy số bị chặn trên.', correct: false }] },
+  { type: 'msq', question: 'Cho dãy số $(u_n)$. Xét tính đúng sai:', option_a: 'Dãy số là cấp số cộng.', option_b: 'Dãy số bị chặn trên.', correct_option: 'A' },
   { type: 'read', content: 'Đọc dữ liệu sau và trả lời.', questions: [{ question: 'Kết luận nào đúng?', option_a: 'Phương án 1', option_b: 'Phương án 2', option_c: 'Phương án 3', option_d: 'Phương án 4', correct_option: 'A' }] },
   { type: 'matching', content: 'Ghép mỗi nội dung với phương án phù hợp.', questions: [{ content: 'Giá trị cực đại', correct_option: 'B' }, { content: 'Giá trị cực tiểu', correct_option: 'D' }], options: [{ key: 'A', content: '$-2$' }, { key: 'B', content: '$3$' }, { key: 'C', content: '$0$' }, { key: 'D', content: '$-1$' }] },
   { type: 'cloze_text', content: 'We cannot (21) ___ from bed. Taking naps is catching (22) ___.', blanks: [{ number: 21, correct_answer: 'get' }, { number: 22, correct_answer: 'on' }] },
-  { type: 'sa', content: 'Tính giá trị biểu thức.', correct_answer: '42' }
+  { type: 'sa', question: 'Tính giá trị biểu thức.', correct_answer: '42' }
 ] }, null, 2);
 ---
 <Layout title="Tạo đề V-SAT" showSidebar={true}>
@@ -72,7 +95,7 @@ const sample = JSON.stringify({ questions: [
       </section>
       <section class="rounded-2xl border border-slate-200 bg-white p-6">
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <div><h2 class="font-bold">Dữ liệu câu hỏi</h2><p class="text-xs text-slate-500">Type: msq · single_choice · read · matching · cloze_text · sa</p></div>
+          <div><h2 class="font-bold">Dữ liệu câu hỏi</h2><p class="text-xs text-slate-500">Type: mcq · msq · read · matching · cloze_text · sa</p></div>
           <div class="flex flex-wrap gap-2">
             <button id="sample-math" type="button" class="rounded-lg bg-sky-50 px-3 py-2 text-xs font-bold text-sky-800">Nạp mẫu Toán</button>
             <button id="sample-english" type="button" class="rounded-lg bg-amber-50 px-3 py-2 text-xs font-bold text-amber-800">Nạp mẫu Tiếng Anh</button>

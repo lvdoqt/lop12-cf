@@ -19,7 +19,7 @@ interface ExamViewProps {
 
 type AnswersMap = Record<string, string | string[] | Record<string, string>>;
 
-const MCQ_TYPES = ['single_choice', 'multiple_choice', 'true_false'];
+const MCQ_TYPES = ['mcq', 'single_choice', 'multiple_choice', 'true_false'];
 
 const SECTION_COLORS = {
   mcq: {
@@ -136,7 +136,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
   const classified = useMemo(() => {
     let currentIndex = 1;
     const withIndex = questions.map((q) => {
-      const hasMcq = questions.some(q => q.type === 'single_choice');
+      const hasMcq = questions.some(q => q.type === 'mcq' || q.type === 'single_choice');
       const hasRead = questions.some(q => q.type === 'read');
       const hasReadCloze = questions.some(q => q.type === 'read_cloze');
       // Gộp chung nếu có bất kỳ loại nào (vì đọc hiểu / điền từ thường đi chung với trắc nghiệm)

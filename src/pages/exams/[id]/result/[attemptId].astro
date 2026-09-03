@@ -52,7 +52,7 @@ const questions = rawQuestions.map((q) => {
 });
 
 const hasMcq = questions.some(
-  (q) => q.type === "single_choice",
+  (q) => q.type === "mcq" || q.type === "single_choice",
 );
 const hasRead = questions.some((q) => q.type === "read");
 const hasReadCloze = questions.some((q) => q.type === "read_cloze");
@@ -60,6 +60,7 @@ const groupEnglishTypes = hasMcq || hasRead || hasReadCloze;
 
 const mcqQuestions = questions.filter(
   (q) =>
+    q.type === "mcq" ||
     q.type === "single_choice" ||
     (groupEnglishTypes && (q.type === "read" || q.type === "read_cloze")),
 );
@@ -181,7 +182,7 @@ questions.forEach((q) => {
 
   if (!submitted) return;
 
-  if (q.type === "single_choice" || q.type === "true_false") {
+  if (q.type === "mcq" || q.type === "single_choice" || q.type === "true_false") {
     const selectedId =
       typeof submitted === "string" ? submitted : (submitted as string[])[0];
     if (correctAnswers.includes(selectedId)) {
@@ -422,7 +423,7 @@ if (themeScore < 5.0) {
                 const sub = attempt.answers_submitted?.[q.id];
                 if (!sub) return acc;
                 const correctIds = q.answers.filter((a: any) => a.is_correct).map((a: any) => a.id);
-                if (q.type === 'single_choice' || q.type === 'true_false') {
+                if (q.type === 'mcq' || q.type === 'single_choice' || q.type === 'true_false') {
                   const sel = typeof sub === 'string' ? sub : (sub as any[])[0];
                   return acc + (correctIds.includes(sel) ? 1 : 0);
                 }
@@ -586,7 +587,7 @@ if (themeScore < 5.0) {
                         const correctAnswerIds = question.answers.filter((a: any) => a.is_correct).map((a: any) => a.id);
                         let questionStatus = 'skipped';
                         if (submittedRaw) {
-                          if (question.type === 'single_choice' || question.type === 'true_false') {
+                          if (question.type === 'mcq' || question.type === 'single_choice' || question.type === 'true_false') {
                             const sel = typeof submittedRaw === 'string' ? submittedRaw : (submittedRaw as any[])[0];
                             questionStatus = correctAnswerIds.includes(sel) ? 'correct' : 'wrong';
                           } else if (question.type === 'multiple_choice') {

@@ -88,7 +88,7 @@ export const POST: APIRoute = async ({ request }) => {
       let isCorrect = false;
 
       // ordering: treat same as single_choice (answer ID comparison)
-      if (q.type === 'single_choice' || q.type === 'true_false' || q.type === 'ordering') {
+      if (q.type === 'mcq' || q.type === 'single_choice' || q.type === 'true_false' || q.type === 'ordering') {
         // Submitted is a string representing the answer ID
         const selectedId = typeof submitted === 'string' ? submitted : submitted[0];
         if (correctAnswers.includes(selectedId)) {

@@ -9,7 +9,7 @@ type Q = Question & { answers: Answer[] };
 type Props = { exam: { slug: string; title: string; duration: number }; attempt: { id: string }; questions: Q[]; initialSeconds: number };
 type AnswerMap = Record<string, string | string[] | Record<string, string>>;
 
-const labels: Record<string, string> = { msq: 'Đúng / Sai', read: 'Chọn đáp án', single_choice: 'Chọn đáp án', matching: 'Ghép cặp', sa: 'Trả lời ngắn', cloze_text: 'Điền một từ' };
+const labels: Record<string, string> = { mcq: 'Chọn đáp án', msq: 'Đúng / Sai', read: 'Chọn đáp án', single_choice: 'Chọn đáp án', matching: 'Ghép cặp', sa: 'Trả lời ngắn', cloze_text: 'Điền một từ' };
 
 export default function VSatExamView({ exam, attempt, questions, initialSeconds }: Props) {
   const [answers, setAnswers] = useState<AnswerMap>({});
