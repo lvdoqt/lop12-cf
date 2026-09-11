@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import LessonCard from '../../components/LessonCard.astro';
-import AdUnit from '../../components/AdUnit.astro';
 import { db } from '../../services/db';
 
 export const prerender = false;
@@ -157,7 +156,6 @@ const breadcrumbs = [
     </div>
 
     <!-- Ad Unit cuối trang môn học -->
-    <AdUnit type="responsive" adSlot="1122334455" class="mt-2" />
   </div>
 </Layout>
 

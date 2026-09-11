@@ -1,4 +1,5 @@
 ---
+import { getAdsenseClient, allowAdsense } from '../lib/adsense';
 /**
  * AdUnit.astro — Component quảng cáo Google AdSense tái sử dụng
  *
@@ -23,12 +24,13 @@ interface Props {
 
 const {
   type = 'responsive',
-  adSlot = '0000000000',   // ← Thay bằng Ad Slot ID thực tế từ AdSense
+  adSlot = '',
   class: className = '',
   label = 'Quảng cáo',
 } = Astro.props;
 
-const ADSENSE_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX'; // ← Thay bằng Publisher ID thực tế
+const ADSENSE_CLIENT = getAdsenseClient(Astro.locals.runtimeEnv);
+const enabled = !!ADSENSE_CLIENT && /^\d+$/.test(adSlot) && allowAdsense(Astro.url.pathname);
 
 // Kích thước theo type
 const sizeMap: Record<string, { width: string; height: string; format: string }> = {
@@ -40,7 +42,7 @@ const sizeMap: Record<string, { width: string; height: string; format: string }>
 const size = sizeMap[type] ?? sizeMap.responsive;
 ---
 
-<div
+{enabled && <Fragment><div
   class={`ad-unit-wrapper relative overflow-hidden text-center ${className}`}
   aria-label={label}
   role="complementary"
@@ -77,3 +79,4 @@ const size = sizeMap[type] ?? sizeMap.responsive;
     }
   }
 </script>
+</Fragment>}

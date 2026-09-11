@@ -7,6 +7,7 @@ pages_build_output_dir = "dist"
 # Secret keys (SUPABASE_SERVICE_ROLE_KEY, GEMINI_API_KEY) must be set
 # via Cloudflare Dashboard: Pages → lop12 → Settings → Environment variables
 [vars]
+PUBLIC_ADSENSE_CLIENT_ID = "ca-pub-4789233598401236"
 PUBLIC_SUPABASE_URL = "https://dwezesrukmwygqnmefbz.supabase.co"
 PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR3ZXplc3J1a213eWdxbm1lZmJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAxMzA0NjIsImV4cCI6MjA5NTcwNjQ2Mn0.LCojdG6LGAQDHw9ewbXFiJOFIvrFYNPZLr4KRNmystw"
 

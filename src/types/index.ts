@@ -162,6 +162,9 @@ export interface CourseEnrollment {
   course_id: string;
   user_id: string;
   enrolled_at: string;
+  status?: 'active' | 'completed' | 'paused';
+  last_activity_at?: string | null;
+  completed_at?: string | null;
 }
 
 export interface LessonProgress {
@@ -170,6 +173,16 @@ export interface LessonProgress {
   user_id: string;
   completed: boolean;
   completed_at: string | null;
+  status?: 'in_progress' | 'completed';
+  started_at?: string | null;
+  last_accessed_at?: string | null;
+  updated_at?: string;
+  time_spent_seconds?: number;
+  video_position_seconds?: number;
+  video_duration_seconds?: number;
+  video_watched_seconds?: number;
+  visit_count?: number;
+  last_session_id?: string | null;
 }
 
 // ── Phòng thi ảo (Virtual Exam Room) ─────────────────────────────────────────
@@ -195,6 +208,8 @@ export interface CourseLessonQuiz {
   options: string[];       // ["A. ...", "B. ...", "C. ...", "D. ..."]
   answer: string;          // correct letter: "A" | "B" | "C" | "D"
   explanation: string | null;
+  knowledge_tag: string;
+  difficulty: 1 | 2 | 3;
   order_index: number;
   created_at: string;
 }
@@ -208,6 +223,47 @@ export interface VideoQuizResponse {
   selected_answer: string;
   is_correct: boolean;
   attempt_number: number;
+  answered_at: string;
+  response_time_ms?: number | null;
+  video_position_seconds?: number | null;
+  client_event_id?: string | null;
+}
+
+// ── Quiz ôn tập độc lập ở cuối bài học ──────────────────────────────────────
+export interface CourseLessonReviewQuestion {
+  id: string;
+  lesson_id: string;
+  question: string;
+  options: string[];
+  answer: string;
+  explanation: string | null;
+  knowledge_tag: string;
+  difficulty: 1 | 2 | 3;
+  points: number;
+  order_index: number;
+  created_at: string;
+}
+
+export interface CourseLessonReviewAttempt {
+  id: string;
+  lesson_id: string;
+  user_id: string;
+  attempt_number: number;
+  score: number;
+  correct_count: number;
+  total_questions: number;
+  earned_points: number;
+  total_points: number;
+  submitted_at: string;
+}
+
+export interface CourseLessonReviewAnswer {
+  id: string;
+  attempt_id: string;
+  question_id: string;
+  selected_answer: string;
+  is_correct: boolean;
+  awarded_points: number;
   answered_at: string;
 }
 
@@ -240,7 +296,42 @@ export interface CourseLearningStatistic {
   totalQuizzes: number;
   correctQuizzes: number;
   quizAccuracy: number | null;
+  quizScore: number | null;
+  reviewQuizAttempts: number;
+  reviewQuizAverageScore: number | null;
+  reviewQuizBestScore: number | null;
+  totalQuizAttempts: number;
+  wrongQuizAttempts: number;
+  firstTryAccuracy: number | null;
+  timeSpentSeconds: number;
+  videoWatchedPercent: number | null;
+  weakKnowledgeTags: string[];
   lastActivityAt: string | null;
+}
+
+/** Mastery for a teacher-defined concept, calculated from every quiz attempt. */
+export interface LearnerSkillMastery {
+  user_id: string;
+  course_id: string;
+  knowledge_tag: string;
+  questions_attempted: number;
+  questions_mastered: number;
+  total_attempts: number;
+  wrong_attempts: number;
+  first_try_accuracy: number;
+  eventual_accuracy: number;
+  average_attempts_to_master: number;
+  last_attempt_at: string;
+  mastery_score: number;
+}
+
+export interface UserCourseInsights {
+  lessonProgress: LessonProgress[];
+  skills: LearnerSkillMastery[];
+  totalTimeSpentSeconds: number;
+  averageVideoPercent: number | null;
+  totalAttempts: number;
+  wrongAttempts: number;
 }
 
 export interface RoomParticipant {

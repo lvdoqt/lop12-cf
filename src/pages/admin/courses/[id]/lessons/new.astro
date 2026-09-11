@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../../../layouts/Layout.astro';
 import { db } from '../../../../../services/db';
+import { COURSE_QUIZ_JSON_SAMPLE, parseCourseQuizJson } from '../../../../../lib/course-quiz-import';
 
 export const prerender = false;
 
@@ -23,6 +24,11 @@ const lessons = await db.getCourseLessons(id);
 const nextOrder = lessons.length > 0 ? Math.max(...lessons.map(l => l.order_index)) + 1 : 1;
 
 let error = '';
+let quizJsonValue = '';
+let formValues = {
+  title: '', content: '', videoUrl: '', orderIndex: nextOrder,
+  duration: '', isPublished: true, isFree: false,
+};
 
 if (Astro.request.method === 'POST') {
   const form = await Astro.request.formData();
@@ -33,13 +39,22 @@ if (Astro.request.method === 'POST') {
   const duration = parseInt(form.get('duration') as string) || null;
   const is_published = form.getAll('is_published').includes('1');
   const is_free = form.getAll('is_free').includes('1');
+  quizJsonValue = String(form.get('quiz_json') || '').trim();
+  formValues = {
+    title, content, videoUrl: video_url || '', orderIndex: order_index,
+    duration: duration ? String(duration) : '', isPublished: is_published, isFree: is_free,
+  };
 
   if (!title) {
     error = 'Tiêu đề bài giảng không được để trống.';
   } else {
     try {
-      await db.createCourseLesson({ course_id: id, title, content: content || null, video_url, order_index, duration, is_published, is_free });
-      return Astro.redirect(`/admin/courses/${id}`);
+      const quizzes = parseCourseQuizJson(quizJsonValue);
+      await db.createCourseLessonWithReviewQuiz(
+        { course_id: id, title, content: content || null, video_url, order_index, duration, is_published, is_free },
+        quizzes,
+      );
+      return Astro.redirect(`/admin/courses/${id}?lessonCreated=1&quizzes=${quizzes.length}`);
     } catch (e: any) {
       error = e.message || 'Có lỗi xảy ra.';
     }
@@ -48,7 +63,7 @@ if (Astro.request.method === 'POST') {
 ---
 
 <Layout title="Thêm bài giảng">
-  <div class="max-w-3xl mx-auto space-y-6">
+  <div class="max-w-5xl mx-auto space-y-6">
     <div>
       <a href={`/admin/courses/${id}`} class="inline-flex items-center text-xs font-bold text-gray-400 hover:text-gray-600 dark:hover:text-slate-350 transition-colors uppercase tracking-wider mb-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
@@ -65,22 +80,58 @@ if (Astro.request.method === 'POST') {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="md:col-span-2">
           <label class="block text-sm font-bold text-gray-700 dark:text-slate-200 mb-1.5">Tiêu đề bài giảng <span class="text-rose-500">*</span></label>
-          <input type="text" name="title" required placeholder="VD: Hàm số đồng biến, nghịch biến..." class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+          <input type="text" name="title" value={formValues.title} required placeholder="VD: Hàm số đồng biến, nghịch biến..." class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
         </div>
         <div>
           <label class="block text-sm font-bold text-gray-700 dark:text-slate-200 mb-1.5">Thứ tự</label>
-          <input type="number" name="order_index" value={nextOrder} min="1" class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+          <input type="number" name="order_index" value={formValues.orderIndex} min="1" class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
         </div>
       </div>
 
       <div>
         <label class="block text-sm font-bold text-gray-700 dark:text-slate-200 mb-1.5">Link video YouTube</label>
-        <input type="url" name="video_url" placeholder="https://www.youtube.com/watch?v=..." class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+        <input type="url" name="video_url" value={formValues.videoUrl} placeholder="https://www.youtube.com/watch?v=..." class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
       </div>
+
+      <section class="rounded-2xl border border-violet-200 dark:border-violet-900/50 bg-violet-50/40 dark:bg-violet-950/10 overflow-hidden">
+        <div class="flex flex-col gap-3 border-b border-violet-100 dark:border-violet-900/40 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="font-bold text-gray-900 dark:text-white">Quiz của bài học</h2>
+              <span class="rounded-full bg-violet-100 dark:bg-violet-900/40 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-violet-700 dark:text-violet-300">Không bắt buộc</span>
+            </div>
+            <p class="mt-1 text-xs text-gray-500 dark:text-slate-400">Bài kiểm tra độc lập nằm cuối bài học, dùng để ôn tập sau phần văn bản/video và được tự động chấm điểm.</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <input id="quiz-json-file" type="file" accept="application/json,.json" class="hidden" />
+            <button id="quiz-file-btn" type="button" class="rounded-lg border border-violet-200 dark:border-violet-800 bg-white dark:bg-slate-900 px-3 py-2 text-xs font-bold text-violet-700 dark:text-violet-300 hover:bg-violet-50 transition">Tải file JSON</button>
+            <button id="quiz-sample-btn" type="button" class="rounded-lg bg-violet-100 dark:bg-violet-900/40 px-3 py-2 text-xs font-bold text-violet-700 dark:text-violet-300 hover:bg-violet-200 transition">Nạp dữ liệu mẫu</button>
+            <button id="quiz-validate-btn" type="button" class="rounded-lg bg-violet-600 px-3 py-2 text-xs font-bold text-white hover:bg-violet-700 transition">Kiểm tra JSON</button>
+          </div>
+        </div>
+        <div class="p-5">
+          <textarea
+            id="quiz-json"
+            name="quiz_json"
+            rows="14"
+            spellcheck="false"
+            placeholder={'{\n  "questions": [\n    { "question": "...", "option_a": "...", "option_b": "...", "correct_option": "A" }\n  ]\n}'}
+            class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 font-mono text-xs leading-5 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-violet-500 resize-y"
+          >{quizJsonValue}</textarea>
+          <div class="mt-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div class="text-xs leading-5 text-gray-500 dark:text-slate-400">
+              <p><strong>Giống JSON đề thi:</strong> question, option_a…option_d, correct_option, explanation.</p>
+              <p>Có thể thêm <strong>knowledge_tag</strong>, difficulty 1–3 và points. Quiz này không nằm trong video.</p>
+            </div>
+            <p id="quiz-json-feedback" class="hidden shrink-0 text-xs font-bold" aria-live="polite"></p>
+          </div>
+          <div id="quiz-preview" class="hidden mt-4 grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+        </div>
+      </section>
 
       <div>
         <label class="block text-sm font-bold text-gray-700 dark:text-slate-200 mb-1.5">Thời lượng (phút)</label>
-        <input type="number" name="duration" min="1" placeholder="VD: 15" class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+        <input type="number" name="duration" value={formValues.duration} min="1" placeholder="VD: 15" class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
       </div>
 
       <div>
@@ -90,19 +141,19 @@ if (Astro.request.method === 'POST') {
           rows="12"
           placeholder="## Nội dung bài học&#10;&#10;Viết nội dung Markdown tại đây. Hỗ trợ công thức LaTeX: $f'(x) > 0$"
           class="w-full px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm font-mono resize-y"
-        ></textarea>
+        >{formValues.content}</textarea>
         <p class="text-xs text-gray-400 dark:text-slate-500 mt-1">Hỗ trợ Markdown và công thức LaTeX (dùng $...$ hoặc $$...$$).</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700">
           <input type="hidden" name="is_published" value="0" />
-          <input type="checkbox" name="is_published" id="is_published" value="1" checked class="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+          <input type="checkbox" name="is_published" id="is_published" value="1" checked={formValues.isPublished} class="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
           <label for="is_published" class="text-sm font-bold text-gray-700 dark:text-slate-200 cursor-pointer">Hiển thị bài giảng</label>
         </div>
         <div class="flex items-center gap-3 p-4 rounded-xl bg-emerald-50/50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-900/30">
           <input type="hidden" name="is_free" value="0" />
-          <input type="checkbox" name="is_free" id="is_free" value="1" class="w-4 h-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500" />
+          <input type="checkbox" name="is_free" id="is_free" value="1" checked={formValues.isFree} class="w-4 h-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500" />
           <label for="is_free" class="text-sm font-bold text-emerald-700 dark:text-emerald-400 cursor-pointer">Cho phép học thử (Miễn phí)</label>
         </div>
       </div>
@@ -118,3 +169,98 @@ if (Astro.request.method === 'POST') {
     </form>
   </div>
 </Layout>
+
+<script define:vars={{ quizSample: COURSE_QUIZ_JSON_SAMPLE }}>
+  const jsonInput = document.getElementById('quiz-json');
+  const fileInput = document.getElementById('quiz-json-file');
+  const fileButton = document.getElementById('quiz-file-btn');
+  const sampleButton = document.getElementById('quiz-sample-btn');
+  const validateButton = document.getElementById('quiz-validate-btn');
+  const feedback = document.getElementById('quiz-json-feedback');
+  const preview = document.getElementById('quiz-preview');
+
+  function questionsFromJson() {
+    const raw = jsonInput.value.trim();
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    const questions = Array.isArray(parsed) ? parsed : (parsed.questions || parsed.quizzes);
+    if (!Array.isArray(questions) || questions.length === 0) throw new Error('Thiếu mảng questions hoặc quizzes.');
+    return questions;
+  }
+
+  function showValidation() {
+    try {
+      const questions = questionsFromJson();
+      if (!questions.length) {
+        feedback.textContent = 'Chưa nhập quiz — bài học vẫn có thể được tạo.';
+        feedback.className = 'shrink-0 text-xs font-bold text-slate-500';
+        feedback.classList.remove('hidden');
+        preview.classList.add('hidden');
+        return true;
+      }
+      for (let index = 0; index < questions.length; index++) {
+        const item = questions[index];
+        if (!(item.question || item.content)) throw new Error(`Câu ${index + 1} thiếu question.`);
+        const options = Array.isArray(item.options)
+          ? item.options
+          : ['a','b','c','d','e','f','g','h'].map(key => item[`option_${key}`]).filter(Boolean);
+        if (options.length < 2) throw new Error(`Câu ${index + 1} cần ít nhất 2 đáp án.`);
+        if (!(item.correct_option || item.correct_answer || item.answer)) throw new Error(`Câu ${index + 1} thiếu correct_option.`);
+      }
+
+      feedback.textContent = `✓ JSON hợp lệ sơ bộ: ${questions.length} câu quiz`;
+      feedback.className = 'shrink-0 text-xs font-bold text-emerald-600 dark:text-emerald-400';
+      feedback.classList.remove('hidden');
+      preview.innerHTML = '';
+      questions.slice(0, 8).forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'rounded-xl border border-violet-100 dark:border-violet-900/40 bg-white dark:bg-slate-900 p-3';
+        const title = document.createElement('p');
+        title.className = 'text-sm font-semibold text-gray-800 dark:text-slate-100 line-clamp-2';
+        title.textContent = `${index + 1}. ${item.question || item.content}`;
+        const meta = document.createElement('p');
+        meta.className = 'mt-1 text-[11px] text-violet-600 dark:text-violet-400';
+        meta.textContent = `${item.knowledge_tag || item.topic || item.skill || 'Chưa phân loại'} · ${item.points || 1} điểm trọng số`;
+        card.append(title, meta);
+        preview.appendChild(card);
+      });
+      if (questions.length > 8) {
+        const more = document.createElement('p');
+        more.className = 'text-xs text-gray-500';
+        more.textContent = `Và ${questions.length - 8} câu khác…`;
+        preview.appendChild(more);
+      }
+      preview.classList.remove('hidden');
+      return true;
+    } catch (error) {
+      feedback.textContent = `✕ ${error instanceof Error ? error.message : 'JSON không hợp lệ.'}`;
+      feedback.className = 'shrink-0 text-xs font-bold text-rose-600 dark:text-rose-400';
+      feedback.classList.remove('hidden');
+      preview.classList.add('hidden');
+      return false;
+    }
+  }
+
+  fileButton?.addEventListener('click', () => fileInput?.click());
+  fileInput?.addEventListener('change', async () => {
+    const file = fileInput.files?.[0];
+    if (!file) return;
+    if (file.size > 2 * 1024 * 1024) {
+      feedback.textContent = '✕ File JSON tối đa 2 MB.';
+      feedback.className = 'shrink-0 text-xs font-bold text-rose-600';
+      feedback.classList.remove('hidden');
+      return;
+    }
+    jsonInput.value = await file.text();
+    showValidation();
+  });
+  sampleButton?.addEventListener('click', () => {
+    jsonInput.value = quizSample;
+    showValidation();
+  });
+  validateButton?.addEventListener('click', showValidation);
+  jsonInput?.closest('form')?.addEventListener('submit', event => {
+    if (jsonInput.value.trim() && !showValidation()) event.preventDefault();
+  });
+  if (jsonInput?.value.trim()) showValidation();
+</script>

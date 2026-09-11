@@ -118,6 +118,10 @@ function formatTime(sec: number) {
                   </div>
                   <div class="flex-1 min-w-0">
                     <p class="font-semibold text-gray-900 dark:text-white leading-snug mb-3">{quiz.question}</p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                      <span class="rounded-full bg-violet-50 dark:bg-violet-900/20 px-2.5 py-1 text-[11px] font-bold text-violet-700 dark:text-violet-300">{quiz.knowledge_tag || 'Chưa phân loại'}</span>
+                      <span class="rounded-full bg-amber-50 dark:bg-amber-900/20 px-2.5 py-1 text-[11px] font-bold text-amber-700 dark:text-amber-300">Mức {quiz.difficulty || 2}/3</span>
+                    </div>
                     <!-- Options grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {quiz.options.map((opt, oi) => {
@@ -229,6 +233,25 @@ function formatTime(sec: number) {
           ></textarea>
         </div>
 
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5">Kiến thức / kỹ năng <span class="text-red-500">*</span></label>
+            <input id="q-knowledge-tag" type="text" maxlength="120"
+              class="w-full rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white"
+              placeholder="VD: Đạo hàm — tính đơn điệu"
+            />
+            <p class="mt-1 text-[11px] text-gray-400">Dùng cùng tên cho các câu kiểm tra cùng một năng lực.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5">Độ khó</label>
+            <select id="q-difficulty" class="w-full rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white">
+              <option value="1">1 — Nhận biết</option>
+              <option value="2" selected>2 — Thông hiểu</option>
+              <option value="3">3 — Vận dụng</option>
+            </select>
+          </div>
+        </div>
+
         <!-- Options A-D -->
         <div class="space-y-2.5">
           <label class="block text-sm font-semibold text-gray-700 dark:text-slate-300">Các đáp án <span class="text-red-500">*</span></label>
@@ -301,6 +324,8 @@ function formatTime(sec: number) {
       document.getElementById('ts-min').value = Math.floor(totalSec / 60);
       document.getElementById('ts-sec').value = totalSec % 60;
       document.getElementById('q-question').value = editData.question;
+      document.getElementById('q-knowledge-tag').value = editData.knowledge_tag || 'Chưa phân loại';
+      document.getElementById('q-difficulty').value = String(editData.difficulty || 2);
       const opts = editData.options;
       ['a','b','c','d'].forEach((l, i) => {
         document.getElementById(`q-opt-${l}`).value = opts[i] || '';
@@ -369,15 +394,18 @@ function formatTime(sec: number) {
     ];
     const answer = document.getElementById('q-answer').value;
     const explanation = document.getElementById('q-explanation').value.trim();
+    const knowledge_tag = document.getElementById('q-knowledge-tag').value.trim();
+    const difficulty = Number(document.getElementById('q-difficulty').value);
 
     if (!question) { showError('Vui lòng nhập nội dung câu hỏi.'); return; }
+    if (!knowledge_tag) { showError('Vui lòng nhập kiến thức hoặc kỹ năng cần đánh giá.'); return; }
     if (options.some(o => !o)) { showError('Vui lòng điền đầy đủ 4 đáp án.'); return; }
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Đang lưu...';
 
     const editId = editIdInput.value;
-    const payload = { lessonId, timestamp_sec, question, options, answer, explanation: explanation || null, order_index: 0 };
+    const payload = { lessonId, timestamp_sec, question, options, answer, explanation: explanation || null, knowledge_tag, difficulty, order_index: 0 };
 
     try {
       const url = editId

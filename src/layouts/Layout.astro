@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ScrollToTop from '../components/ScrollToTop.astro';
 import '../styles/global.css';
+import { getAdsenseClient, allowAdsense } from '../lib/adsense';
 
 interface Props {
   title: string;
@@ -104,7 +105,8 @@ if (structuredData) {
   }
 }
 
-const ADSENSE_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX'; // ← Thay bằng Publisher ID thực tế
+const ADSENSE_CLIENT = getAdsenseClient(Astro.locals.runtimeEnv);
+const adsEnabled = showAds && !noindex && !!ADSENSE_CLIENT && allowAdsense(Astro.url.pathname);
 ---
 
 <!DOCTYPE html>
@@ -173,7 +175,7 @@ const ADSENSE_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX'; // ← Thay bằng Publisher I
     <script is:inline src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 
     <!-- Google AdSense -->
-    {showAds && (
+    {adsEnabled && (
       <script
         async
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}

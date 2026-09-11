@@ -13,19 +13,35 @@ if (!course || !course.is_published) return Astro.redirect('/khoa-hoc');
 
 const lessons = await db.getCourseLessons(course.id);
 const publishedLessons = lessons.filter(l => l.is_published);
+const reviewQuizCounts = new Map(await Promise.all(
+  publishedLessons.map(async lesson => [lesson.id, (await db.getLessonReviewQuestions(lesson.id)).length] as const),
+));
 
 let isEnrolled = false;
 let completedIds = new Set<string>();
+let learnerInsights: Awaited<ReturnType<typeof db.getUserCourseInsights>> | null = null;
 
 if (user) {
   isEnrolled = await db.isUserEnrolled(course.id, user.id);
   if (isEnrolled) {
-    const progress = await db.getLessonProgress(user.id, course.id);
-    progress.filter(p => p.completed).forEach(p => completedIds.add(p.lesson_id));
+    learnerInsights = await db.getUserCourseInsights(user.id, course.id);
+    learnerInsights.lessonProgress.filter(p => p.completed).forEach(p => completedIds.add(p.lesson_id));
   }
 }
 
 const progressPct = publishedLessons.length > 0 ? Math.round((completedIds.size / publishedLessons.length) * 100) : 0;
+const progressByLesson = new Map(learnerInsights?.lessonProgress.map(progress => [progress.lesson_id, progress]) || []);
+const weakSkills = learnerInsights?.skills.filter(skill => skill.mastery_score < 70 || skill.wrong_attempts >= 2).slice(0, 4) || [];
+const lastActiveLessonId = learnerInsights?.lessonProgress
+  .filter(progress => !progress.completed && publishedLessons.some(lesson => lesson.id === progress.lesson_id))
+  .sort((a, b) => new Date(b.last_accessed_at || b.updated_at || 0).getTime() - new Date(a.last_accessed_at || a.updated_at || 0).getTime())[0]?.lesson_id;
+const resumeLessonId = lastActiveLessonId || publishedLessons.find(lesson => !completedIds.has(lesson.id))?.id || publishedLessons[0]?.id;
+function formatStudyTime(seconds: number) {
+  if (seconds < 60) return `${seconds} giây`;
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  return hours > 0 ? `${hours} giờ ${minutes} phút` : `${minutes} phút`;
+}
 ---
 
 <Layout title={course.title} description={course.description || undefined} showSidebar={false}>
@@ -64,7 +80,7 @@ const progressPct = publishedLessons.length > 0 ? Math.round((completedIds.size 
 
     <!-- Progress bar (if enrolled) -->
     {isEnrolled && (
-      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-5">
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-5 space-y-4">
         <div class="flex items-center justify-between mb-2">
           <p class="text-sm font-bold text-gray-700 dark:text-slate-200">Tiến độ học tập</p>
           <span class="text-sm font-bold text-blue-600 dark:text-blue-400">{progressPct}%</span>
@@ -72,7 +88,50 @@ const progressPct = publishedLessons.length > 0 ? Math.round((completedIds.size 
         <div class="w-full bg-gray-100 dark:bg-slate-800 rounded-full h-2.5">
           <div class="bg-blue-600 h-2.5 rounded-full transition-all duration-500" style={`width: ${progressPct}%`}></div>
         </div>
+        {learnerInsights && (
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
+            <div class="rounded-xl bg-slate-50 dark:bg-slate-800/60 p-3">
+              <p class="text-lg font-extrabold text-slate-900 dark:text-white">{formatStudyTime(learnerInsights.totalTimeSpentSeconds)}</p>
+              <p class="text-[11px] font-semibold text-slate-500">Thời gian học</p>
+            </div>
+            <div class="rounded-xl bg-slate-50 dark:bg-slate-800/60 p-3">
+              <p class="text-lg font-extrabold text-slate-900 dark:text-white">{learnerInsights.averageVideoPercent === null ? '—' : `${learnerInsights.averageVideoPercent}%`}</p>
+              <p class="text-[11px] font-semibold text-slate-500">Video đã xem</p>
+            </div>
+            <div class="rounded-xl bg-slate-50 dark:bg-slate-800/60 p-3">
+              <p class="text-lg font-extrabold text-slate-900 dark:text-white">{learnerInsights.totalAttempts}</p>
+              <p class="text-[11px] font-semibold text-slate-500">Lượt làm quiz</p>
+            </div>
+            <div class="rounded-xl bg-slate-50 dark:bg-slate-800/60 p-3">
+              <p class={`text-lg font-extrabold ${learnerInsights.wrongAttempts > 0 ? 'text-rose-600 dark:text-rose-400' : 'text-emerald-600'}`}>{learnerInsights.wrongAttempts}</p>
+              <p class="text-[11px] font-semibold text-slate-500">Lượt trả lời sai</p>
+            </div>
+          </div>
+        )}
       </div>
+    )}
+
+    {isEnrolled && weakSkills.length > 0 && (
+      <section class="rounded-2xl border border-amber-200 dark:border-amber-900/50 bg-amber-50/70 dark:bg-amber-950/20 p-5">
+        <div class="flex items-start gap-3">
+          <div class="rounded-xl bg-amber-100 dark:bg-amber-900/40 p-2 text-amber-700 dark:text-amber-300">◎</div>
+          <div class="flex-1">
+            <h2 class="font-bold text-amber-950 dark:text-amber-100">Kiến thức nên ôn lại</h2>
+            <p class="text-xs text-amber-800/70 dark:text-amber-200/70 mt-0.5">Dựa trên toàn bộ các lần bạn trả lời quiz, không chỉ kết quả cuối.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3">
+              {weakSkills.map(skill => (
+                <div class="rounded-xl bg-white/80 dark:bg-slate-900/60 border border-amber-100 dark:border-amber-900/30 px-3 py-2.5 flex items-center justify-between gap-3">
+                  <div class="min-w-0">
+                    <p class="text-sm font-semibold text-slate-800 dark:text-slate-100 truncate">{skill.knowledge_tag}</p>
+                    <p class="text-[11px] text-slate-500">Sai {skill.wrong_attempts}/{skill.total_attempts} lượt · đúng lần đầu {skill.first_try_accuracy}%</p>
+                  </div>
+                  <span class="shrink-0 text-sm font-extrabold text-amber-700 dark:text-amber-300">{skill.mastery_score}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     )}
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -85,6 +144,7 @@ const progressPct = publishedLessons.length > 0 ? Math.round((completedIds.size 
           <div class="divide-y divide-gray-100 dark:divide-slate-800">
             {publishedLessons.map((lesson, idx) => {
               const done = completedIds.has(lesson.id);
+              const lessonProgress = progressByLesson.get(lesson.id);
               const canAccess = isEnrolled || lesson.is_free;
               return (
                 <div class={`flex items-center gap-4 px-5 py-4 transition ${canAccess ? 'hover:bg-gray-50 dark:hover:bg-slate-800/50' : 'opacity-70'}`}>
@@ -105,6 +165,8 @@ const progressPct = publishedLessons.length > 0 ? Math.round((completedIds.size 
                     <div class="flex items-center gap-3 mt-0.5 text-xs text-gray-400 dark:text-slate-500">
                       {lesson.duration && <span>{lesson.duration} phút</span>}
                       {lesson.video_url && <span class="text-blue-400">▶ Video</span>}
+                      {reviewQuizCounts.get(lesson.id) ? <span class="font-semibold text-violet-500">◉ {reviewQuizCounts.get(lesson.id)} câu ôn tập</span> : null}
+                      {!done && lessonProgress && lesson.video_url && <span class="text-amber-500">Đang học · {Math.min(100, Math.round(Number(lessonProgress.video_watched_seconds || 0) / Math.max(Number(lessonProgress.video_duration_seconds || 0), 1) * 100))}% video</span>}
                     </div>
                   </div>
 
@@ -134,9 +196,9 @@ const progressPct = publishedLessons.length > 0 ? Math.round((completedIds.size 
               </div>
               <p class="font-bold text-gray-900 dark:text-white mb-1">Bạn đã đăng ký</p>
               <p class="text-sm text-gray-500 dark:text-slate-400 mb-4">Tiếp tục học từ bài chưa hoàn thành.</p>
-              {publishedLessons.length > 0 && (
+              {resumeLessonId && (
                 <a 
-                  href={`/khoa-hoc/${slug}/${publishedLessons.find(l => !completedIds.has(l.id))?.id || publishedLessons[0].id}`}
+                  href={`/khoa-hoc/${slug}/${resumeLessonId}`}
                   class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl text-sm text-center transition"
                 >
                   Tiếp tục học →

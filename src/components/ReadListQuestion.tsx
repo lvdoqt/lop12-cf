@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { memo, useState, useEffect, useLayoutEffect, useRef, useMemo } from 'react';
 import { marked } from 'marked';
 import type { Question, Answer } from '../types';
 
@@ -32,8 +32,49 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
   return html;
 };
 
+// Keep KaTeX-owned DOM isolated from answer changes and the exam's timer ticks.
+// Recreating dangerouslySetInnerHTML on those renders restores the raw LaTeX.
+const MathContent = memo(function MathContent({ text, inline = false, as = 'div', className }: {
+  text: string;
+  inline?: boolean;
+  as?: 'div' | 'span';
+  className: string;
+}) {
+  const rootRef = useRef<HTMLDivElement & HTMLSpanElement>(null);
+  const html = useMemo(() => ({ __html: parseMarkdownWithMath(text, inline) }), [text, inline]);
+
+  useLayoutEffect(() => {
+    let retryTimer: number | undefined;
+    let attempts = 0;
+    const renderMath = () => {
+      if (!rootRef.current) return;
+      const autoRender = (window as any).renderMathInElement;
+      if (typeof autoRender !== 'function') {
+        if (attempts++ < 20) retryTimer = window.setTimeout(renderMath, 150);
+        return;
+      }
+      autoRender(rootRef.current, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true },
+        ],
+        throwOnError: false,
+      });
+    };
+    // Render before paint when KaTeX is ready; retry if its CDN script is late.
+    renderMath();
+    return () => {
+      if (retryTimer !== undefined) window.clearTimeout(retryTimer);
+    };
+  }, [html, as]);
+
+  const Tag = as;
+  return <Tag ref={rootRef} className={className} dangerouslySetInnerHTML={html} />;
+});
+
 export default function ReadListQuestion({ question, index, mode, selectedAnswers, onAnswer }: ReadListQuestionProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
   const subQuestions: any[] = (question.metadata as any)?.questions || [];
   const audioUrl = (question.metadata as any)?.audio_url;
   const isList = question.type === 'list';
@@ -90,7 +131,7 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
     ? 'bg-teal-600 border-transparent text-white'
     : 'bg-indigo-600 border-transparent text-white';
 
-  const contentHtml = useMemo(() => {
+  const passage = useMemo(() => {
     let content = question.content || '';
     if (isCloze && subQuestions.length > 0) {
       const matches = Array.from(content.matchAll(/\((\d+)\)/g));
@@ -110,19 +151,8 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
         return match;
       });
     }
-    return { __html: parseMarkdownWithMath(content, false) };
+    return content;
   }, [question.content, isCloze, subQuestions.length, index]);
-  // Re-render KaTeX whenever a child question, choice, or explanation changes.
-  // The passage itself is not enough: `read` stores its actual quiz content in
-  // metadata.questions.
-  const mathRenderKey = useMemo(() => JSON.stringify({
-    content: question.content || '',
-    questions: subQuestions.map((sq) => ({
-      question: sq.question || '',
-      options: optionLetters.map(letter => sq[`option_${letter.toLowerCase()}`] || ''),
-      explanation: sq.explanation || '',
-    })),
-  }), [question.content, subQuestions]);
   const [selection, setSelection] = useState<Record<string, string>>(
     selectedAnswers && typeof selectedAnswers === 'object' ? { ...selectedAnswers } : {}
   );
@@ -130,24 +160,6 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
   useEffect(() => {
     setSelection(selectedAnswers && typeof selectedAnswers === 'object' ? { ...selectedAnswers } : {});
   }, [selectedAnswers]);
-
-  useEffect(() => {
-    const renderMath = () => {
-      if (!cardRef.current || typeof window === 'undefined' || !(window as any).renderMathInElement) return;
-      (window as any).renderMathInElement(cardRef.current, {
-        delimiters: [
-          { left: '$$', right: '$$', display: true },
-          { left: '$', right: '$', display: false },
-          { left: '\\(', right: '\\)', display: false },
-          { left: '\\[', right: '\\]', display: true }
-        ],
-        throwOnError: false
-      });
-    };
-
-    const frame = window.requestAnimationFrame(renderMath);
-    return () => window.cancelAnimationFrame(frame);
-  }, [mathRenderKey]);
 
   const handleClick = (subIdx: number, letter: string) => {
     if (mode !== 'take') return;
@@ -158,7 +170,6 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
 
   return (
     <div
-      ref={cardRef}
       id={`question-section-${index}`}
       className={`bg-white dark:bg-slate-900 border ${borderColor} rounded-2xl shadow-sm mb-6 overflow-hidden`}
     >
@@ -174,9 +185,9 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
       </div>
 
       <div className="p-6 space-y-4">
-        <div
+        <MathContent
           className="text-base md:text-lg font-semibold text-gray-800 dark:text-slate-100 leading-relaxed whitespace-pre-wrap select-none question-text [&_img]:max-w-full [&_img]:rounded-lg [&_img]:mx-auto [&_img]:my-3 [&_p]:inline"
-          dangerouslySetInnerHTML={contentHtml}
+          text={passage}
         />
 
         {audioUrl && (
@@ -189,7 +200,6 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
           {subQuestions.map((sq, i) => {
             const correctLetter = (sq.correct_option || '').toUpperCase();
             const sel = selection[String(i)];
-            const subNum = i + 1;
             
             let displayQuestion = sq.question || '';
             if (isCloze) {
@@ -200,9 +210,11 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
               <li key={i} className={`border-t ${subDivider} pt-3 first:border-t-0 first:pt-0`}>
                 <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 mb-2 leading-relaxed whitespace-pre-wrap">
                   <span className={`${subNumColor} mr-1`}>Câu {index + i}.</span>
-                  <span
+                  <MathContent
+                    as="span"
+                    inline
                     className="inline [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1"
-                    dangerouslySetInnerHTML={{ __html: parseMarkdownWithMath(displayQuestion, true) }}
+                    text={displayQuestion}
                   />
                 </p>
                 <div className="space-y-2">
@@ -236,7 +248,7 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
                         <div className={`w-6 h-6 rounded-lg mr-3 flex items-center justify-center font-bold text-xs transition-colors border shrink-0 ${letterStyle}`}>
                           {l}
                         </div>
-                        <div className="text-sm md:text-base font-medium flex-1" dangerouslySetInnerHTML={{ __html: parseMarkdownWithMath(text || '', true) }} />
+                        <MathContent className="text-sm md:text-base font-medium flex-1" text={text} inline />
                         {mode === 'review' && isCorrect && (
                           <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400 ml-auto shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -254,9 +266,9 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
                 {mode === 'review' && sq.explanation && (
                   <div className="mt-2 p-3 rounded-xl bg-blue-50/40 border border-blue-100/30 dark:bg-slate-900/60 dark:border-slate-800/80">
                     <p className="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">💡 Giải thích:</p>
-                    <div
+                    <MathContent
                       className="text-sm text-gray-600 dark:text-slate-300 whitespace-pre-wrap leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: parseMarkdownWithMath(sq.explanation || '', false) }}
+                      text={sq.explanation}
                     />
                   </div>
                 )}

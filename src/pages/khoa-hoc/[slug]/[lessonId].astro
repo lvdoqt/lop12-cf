@@ -36,24 +36,40 @@ const htmlContent = currentLesson.content ? marked.parse(currentLesson.content) 
 const progress = user ? await db.getLessonProgress(user.id, course.id) : [];
 const completedIds = new Set(progress.filter(p => p.completed).map(p => p.lesson_id));
 const isCompleted = completedIds.has(lessonId);
+const currentProgress = progress.find(p => p.lesson_id === lessonId);
+const initialVideoPosition = Number(currentProgress?.video_position_seconds || 0);
 
 // Video quizzes for this lesson
-const videoQuizzes = await db.getVideoQuizzes(lessonId);
-// Build quiz map: { [quizId]: { answer, explanation } } — server-side only, NOT sent to client
-const quizAnswerMap: Record<string, { answer: string; explanation: string | null }> = {};
-videoQuizzes.forEach(q => { quizAnswerMap[q.id] = { answer: q.answer, explanation: q.explanation }; });
-
+const videoQuizzes = (await db.getVideoQuizzes(lessonId))
+  .sort((a, b) => a.timestamp_sec - b.timestamp_sec || a.order_index - b.order_index);
 // Send quizzes to client WITHOUT correct answers
 const clientQuizzes = videoQuizzes.map(({ answer: _a, explanation: _e, ...q }) => q);
 
-// Function to extract YouTube ID
+// Independent end-of-lesson review quiz (separate from interactive video quizzes).
+const reviewQuestions = await db.getLessonReviewQuestions(lessonId);
+const reviewAttempts = user && isEnrolled ? await db.getLessonReviewAttempts(lessonId, user.id) : [];
+const bestReviewScore = reviewAttempts.length ? Math.max(...reviewAttempts.map(attempt => attempt.score)) : null;
+
+// Extract YouTube IDs from watch, short, embed, live and youtu.be URLs.
 function getYouTubeId(url: string) {
-  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-  const match = url.match(regExp);
-  return (match && match[2].length === 11) ? match[2] : null;
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.replace(/^www\./, '');
+    if (hostname === 'youtu.be') return parsed.pathname.split('/').filter(Boolean)[0] || null;
+    if (hostname === 'youtube.com' || hostname === 'm.youtube.com') {
+      const pathParts = parsed.pathname.split('/').filter(Boolean);
+      if (parsed.pathname === '/watch') return parsed.searchParams.get('v');
+      if (['embed', 'shorts', 'live'].includes(pathParts[0])) return pathParts[1] || null;
+    }
+  } catch {
+    // Keep a permissive fallback for legacy values without a full URL.
+  }
+  const match = url.match(/(?:youtu\.be\/|embed\/|shorts\/|live\/|[?&]v=)([^#&?\/]{11})/);
+  return match?.[1] || null;
 }
 const ytId = currentLesson.video_url ? getYouTubeId(currentLesson.video_url) : null;
 const hasQuizzes = videoQuizzes.length > 0;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title={`${currentLesson.title} - ${course.title}`} showSidebar={false}>
@@ -71,42 +87,53 @@ const hasQuizzes = videoQuizzes.length > 0;
 
       <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
         <!-- Interactive Video Player -->
-        {ytId && (
+        {currentLesson.video_url && (
           <div class="relative bg-black" id="video-player-wrapper">
-            <!-- YouTube iframe (hidden until API ready) -->
-            <div class="aspect-video" id="yt-player-container">
-              <div id="yt-player"></div>
-            </div>
+            {ytId ? (
+              <div class="aspect-video" id="yt-player-container">
+                <div id="yt-player"></div>
+              </div>
+            ) : (
+              <div class="aspect-video bg-black">
+                <video id="native-course-video" src={currentLesson.video_url} controls playsinline controlslist={hasQuizzes ? 'nofullscreen noremoteplayback' : undefined} disablepictureinpicture={hasQuizzes} class="w-full h-full" />
+              </div>
+            )}
 
             <!-- Quiz Overlay — shown when video pauses at a quiz timestamp -->
             <div
               id="quiz-overlay"
-              class="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-20 hidden"
-              aria-live="polite"
+              class="absolute inset-0 bg-black/90 flex items-center justify-center z-20 hidden"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="quiz-question-text"
             >
-              <div id="quiz-card" class="w-full max-w-xl mx-4 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 scale-95 opacity-0">
+              <div id="quiz-card" class="w-full max-w-xl bg-white dark:bg-slate-900 rounded-xl shadow-2xl">
                 <!-- Quiz header -->
-                <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4">
+                <div class="quiz-header bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3">
                   <div class="flex items-center gap-2 text-white/80 text-xs font-bold uppercase tracking-wide mb-1">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     Câu hỏi kiểm tra
                   </div>
-                  <p id="quiz-question-text" class="text-white font-semibold text-base leading-snug"></p>
+                  <div id="quiz-question-text" tabindex="-1" class="text-white font-semibold text-base leading-relaxed whitespace-pre-wrap"></div>
                 </div>
 
                 <!-- Options -->
-                <div id="quiz-options" class="p-5 space-y-3"></div>
+                <div id="quiz-options" class="p-3 space-y-2"></div>
 
                 <!-- Feedback area -->
-                <div id="quiz-feedback" class="hidden px-5 pb-4">
-                  <div id="quiz-feedback-inner" class="rounded-xl p-4 text-sm"></div>
+                <div id="quiz-feedback" class="hidden px-3 pb-3" aria-live="polite">
+                  <div id="quiz-feedback-inner" class="rounded-xl p-3 text-sm whitespace-pre-wrap"></div>
                 </div>
 
                 <!-- Footer -->
-                <div class="px-5 pb-5 flex items-center justify-between">
+                <div class="quiz-footer p-3 flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-slate-900">
                   <span id="quiz-attempt-label" class="text-xs text-gray-400 dark:text-slate-500"></span>
+                  <button id="quiz-submit-btn" type="button" disabled class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-bold text-sm">
+                    Kiểm tra đáp án
+                  </button>
                   <button
                     id="quiz-continue-btn"
+                    type="button"
                     class="hidden px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm transition shadow-lg shadow-emerald-500/20"
                   >
                     Tiếp tục xem ▶
@@ -129,13 +156,6 @@ const hasQuizzes = videoQuizzes.length > 0;
           </div>
         )}
 
-        {/* Non-YouTube video fallback */}
-        {!ytId && currentLesson.video_url && (
-          <div class="aspect-video bg-black">
-            <video src={currentLesson.video_url} controls class="w-full h-full" />
-          </div>
-        )}
-
         <div class="p-6 md:p-8">
           <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-4">{currentLesson.title}</h1>
 
@@ -146,9 +166,73 @@ const hasQuizzes = videoQuizzes.length > 0;
             </div>
           )}
 
+          {isEnrolled && currentProgress && !isCompleted && (
+            <div class="mb-6 flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-800 text-sm text-amber-800 dark:text-amber-200">
+              <span>Tiến độ được lưu tự động. Bạn có thể tiếp tục từ vị trí đã xem.</span>
+              {currentProgress.video_duration_seconds && currentProgress.video_duration_seconds > 0 && (
+                <strong class="shrink-0">{Math.min(100, Math.round(Number(currentProgress.video_watched_seconds || 0) / currentProgress.video_duration_seconds * 100))}% video</strong>
+              )}
+            </div>
+          )}
+
           <div class="prose prose-blue dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400">
             <Fragment set:html={htmlContent} />
           </div>
+
+          {reviewQuestions.length > 0 && (
+            <section id="review-quiz-section" class="mt-10 rounded-2xl border border-violet-200 dark:border-violet-900/50 bg-violet-50/50 dark:bg-violet-950/10 overflow-hidden">
+              <div class="border-b border-violet-100 dark:border-violet-900/40 bg-white/70 dark:bg-slate-900/50 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <div>
+                  <p class="text-[11px] font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">Ôn tập cuối bài</p>
+                  <h2 class="text-lg font-extrabold text-gray-900 dark:text-white">Quiz kiểm tra kiến thức</h2>
+                  <p class="mt-1 text-xs text-gray-500 dark:text-slate-400">{reviewQuestions.length} câu · Chấm theo thang điểm 10 · Có lưu lịch sử làm bài</p>
+                </div>
+                {bestReviewScore !== null && (
+                  <div class="rounded-xl bg-violet-100 dark:bg-violet-900/40 px-4 py-2 text-center">
+                    <p class="text-[10px] font-bold uppercase text-violet-500">Điểm cao nhất</p>
+                    <p class="text-xl font-black text-violet-700 dark:text-violet-300">{bestReviewScore.toFixed(1)}</p>
+                  </div>
+                )}
+              </div>
+
+              <form id="review-quiz-form" class="p-5 space-y-5">
+                {reviewQuestions.map((question, questionIndex) => (
+                  <fieldset id={`review-question-${question.id}`} class="rounded-xl border border-violet-100 dark:border-violet-900/30 bg-white dark:bg-slate-900 p-4 transition-colors">
+                    <legend class="px-1 text-sm font-bold text-gray-900 dark:text-white">
+                      Câu {questionIndex + 1}. {question.question}
+                    </legend>
+                    <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {question.options.map((option, optionIndex) => {
+                        const letter = String.fromCharCode(65 + optionIndex);
+                        return (
+                          <label class="flex items-start gap-3 rounded-xl border border-gray-200 dark:border-slate-700 px-3 py-2.5 text-sm text-gray-700 dark:text-slate-200 hover:border-violet-400 hover:bg-violet-50/50 dark:hover:bg-violet-900/10 cursor-pointer transition">
+                            <input type="radio" name={`review-${question.id}`} value={letter} data-question-id={question.id} class="mt-0.5 h-4 w-4 text-violet-600 focus:ring-violet-500" />
+                            <span><strong class="text-violet-700 dark:text-violet-300">{letter}.</strong> {option}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                    <div id={`review-feedback-${question.id}`} class="hidden mt-3 rounded-lg px-3 py-2 text-xs"></div>
+                  </fieldset>
+                ))}
+
+                {isEnrolled ? (
+                  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-1">
+                    <p id="review-quiz-summary" class="text-sm font-semibold text-gray-500 dark:text-slate-400">
+                      {reviewAttempts.length > 0 ? `Bạn đã làm ${reviewAttempts.length} lần.` : 'Hãy trả lời tất cả câu hỏi trước khi nộp.'}
+                    </p>
+                    <button id="review-quiz-submit" type="submit" class="rounded-xl bg-violet-600 hover:bg-violet-700 px-6 py-3 text-sm font-bold text-white shadow shadow-violet-500/20 transition">
+                      Nộp bài và xem điểm
+                    </button>
+                  </div>
+                ) : (
+                  <div class="rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 px-4 py-3 text-sm text-amber-800 dark:text-amber-200">
+                    Bạn cần đăng nhập và đăng ký khóa học để làm quiz và lưu điểm.
+                  </div>
+                )}
+              </form>
+            </section>
+          )}
 
           <div class="mt-10 pt-6 border-t border-gray-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="w-full sm:w-auto">
@@ -249,19 +333,23 @@ const hasQuizzes = videoQuizzes.length > 0;
       completeBtn.disabled = true;
       completeBtn.innerHTML = 'Đang xử lý...';
       try {
-        const res = await fetch(import.meta.env.BASE_URL + '/api/courses/progress', {
+        (window as any).__lmsCompleting = true;
+        await (window as any).__lmsFlush?.();
+        const res = await fetch(import.meta.env.BASE_URL.replace(/\/$/, '') + '/api/courses/progress', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ lessonId })
+          body: JSON.stringify({ lessonId, action: 'complete', sessionId: (window as any).__lmsSessionId })
         });
         if (res.ok) {
           window.location.reload();
         } else {
+          (window as any).__lmsCompleting = false;
           alert('Có lỗi xảy ra, vui lòng thử lại.');
           completeBtn.disabled = false;
           completeBtn.innerHTML = 'Đánh dấu hoàn thành';
         }
       } catch {
+        (window as any).__lmsCompleting = false;
         alert('Không thể kết nối. Vui lòng kiểm tra mạng.');
         completeBtn.disabled = false;
         completeBtn.innerHTML = 'Đánh dấu hoàn thành';
@@ -270,303 +358,149 @@ const hasQuizzes = videoQuizzes.length > 0;
   }
 </script>
 
-<!-- Interactive Video Quiz Script -->
-<script define:vars={{ ytId, clientQuizzes, lessonId }}>
-  // Only initialise if there's a YouTube video
-  if (!ytId) { /* nothing */ } else {
+<!-- Independent review quiz submission and grading. -->
+<script define:vars={{ reviewLessonId: lessonId, canSubmitReview: isEnrolled, baseUrl }}>
+  if (canSubmitReview) {
+    const form = document.getElementById('review-quiz-form');
+    const submitButton = document.getElementById('review-quiz-submit');
+    const summary = document.getElementById('review-quiz-summary');
+    const BASE = baseUrl;
 
-  // ── Guest ID (persisted in localStorage) ─────────────────────────────────
-  function getGuestId() {
-    let id = localStorage.getItem('vq-guest-id');
-    if (!id) {
-      id = 'g-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
-      localStorage.setItem('vq-guest-id', id);
-    }
-    return id;
-  }
-  const GUEST_ID = getGuestId();
-  const BASE = (window._astroEnv || {}).BASE_URL || '';
-
-  // ── State ─────────────────────────────────────────────────────────────────
-  const quizzes = clientQuizzes; // [{id, timestamp_sec, question, options, order_index}]
-  const passedQuizIds = new Set(); // quizzes the user has answered correctly
-  let quizStateReady = false;
-  let currentQuizIdx = -1;        // index of quiz currently shown
-  let player = null;              // YT.Player instance
-  let pollTimer = null;           // setInterval for time polling
-  let overlayOpen = false;
-
-  // ── DOM refs ───────────────────────────────────────────────────────────────
-  const overlay = document.getElementById('quiz-overlay');
-  const card = document.getElementById('quiz-card');
-  const questionEl = document.getElementById('quiz-question-text');
-  const optionsEl = document.getElementById('quiz-options');
-  const feedbackEl = document.getElementById('quiz-feedback');
-  const feedbackInner = document.getElementById('quiz-feedback-inner');
-  const continueBtn = document.getElementById('quiz-continue-btn');
-  const attemptLabel = document.getElementById('quiz-attempt-label');
-
-  // ── YouTube IFrame API ────────────────────────────────────────────────────
-  window.onYouTubeIframeAPIReady = function () {
-    player = new YT.Player('yt-player', {
-      videoId: ytId,
-      width: '100%',
-      height: '100%',
-      playerVars: {
-        rel: 0,
-        modestbranding: 1,
-        enablejsapi: 1,
-      },
-      events: {
-        onReady: () => {
-          // Start polling for quiz timestamps
-          if (quizzes.length > 0) {
-            pollTimer = setInterval(checkQuizTrigger, 600);
-          }
-        },
-        onStateChange: (e) => {
-          // YT.PlayerState.PLAYING = 1
-          if (e.data === 1 && overlayOpen) {
-            // User somehow resumed — re-pause
-            player.pauseVideo();
-          }
-        },
-      },
-    });
-  };
-
-  // Load the YouTube IFrame API script
-  const tag = document.createElement('script');
-  tag.src = 'https://www.youtube.com/iframe_api';
-  const firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // ── Check if we hit a quiz timestamp ─────────────────────────────────────
-  function checkQuizTrigger() {
-    if (!quizStateReady || overlayOpen || !player || typeof player.getCurrentTime !== 'function') return;
-    const currentTime = Math.floor(player.getCurrentTime());
-
-    for (let i = 0; i < quizzes.length; i++) {
-      const q = quizzes[i];
-      if (passedQuizIds.has(q.id)) continue;
-      // Trigger within a 1.5s window of the timestamp
-      if (currentTime >= q.timestamp_sec && currentTime <= q.timestamp_sec + 1) {
-        player.pauseVideo();
-        showQuizOverlay(i);
-        break;
-      }
-    }
-  }
-
-  async function restoreQuizState() {
-    try {
-      const params = new URLSearchParams({ lessonId });
-      if (GUEST_ID) params.set('guestId', GUEST_ID);
-      const response = await fetch(`${BASE}/api/courses/video-quiz-state?${params.toString()}`);
-      if (response.ok) {
-        const data = await response.json();
-        (data.passedQuizIds || []).forEach(id => passedQuizIds.add(id));
-      }
-    } catch (error) {
-      console.warn('Could not restore video quiz state:', error);
-    } finally {
-      quizStateReady = true;
-    }
-  }
-
-  restoreQuizState();
-
-  // ── Show quiz overlay ──────────────────────────────────────────────────────
-  let attemptCount = 0;
-
-  function showQuizOverlay(quizIdx) {
-    currentQuizIdx = quizIdx;
-    overlayOpen = true;
-    attemptCount = 0;
-    const quiz = quizzes[quizIdx];
-
-    // Populate question
-    questionEl.textContent = quiz.question;
-
-    // Render options
-    const letters = ['A', 'B', 'C', 'D'];
-    optionsEl.innerHTML = '';
-    quiz.options.forEach((opt, i) => {
-      const letter = letters[i] || String.fromCharCode(65 + i);
-      const btn = document.createElement('button');
-      btn.dataset.letter = letter;
-      btn.className = [
-        'w-full text-left flex items-start gap-3 px-4 py-3 rounded-xl border-2 border-transparent',
-        'bg-gray-50 dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-slate-700',
-        'hover:border-blue-400 text-sm font-medium text-gray-800 dark:text-slate-200',
-        'transition-all duration-150 group quiz-option-btn',
-      ].join(' ');
-      btn.innerHTML = `
-        <span class="shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 flex items-center justify-center font-bold text-xs group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition">${letter}</span>
-        <span class="leading-relaxed pt-0.5">${opt}</span>
-      `;
-      btn.addEventListener('click', () => handleAnswer(letter, btn));
-      optionsEl.appendChild(btn);
-    });
-
-    // Reset feedback / continue
-    feedbackEl.classList.add('hidden');
-    continueBtn.classList.add('hidden');
-    attemptLabel.textContent = '';
-
-    // Show overlay with animation
-    overlay.classList.remove('hidden');
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        card.classList.remove('scale-95', 'opacity-0');
-        card.classList.add('scale-100', 'opacity-100');
-        // Render math in the quiz card
-        if (typeof renderMathInElement === 'function') {
-          renderMathInElement(card, {
-            delimiters: [
-              {left: '$$', right: '$$', display: true},
-              {left: '\\[', right: '\\]', display: true},
-              {left: '$', right: '$', display: false},
-              {left: '\\(', right: '\\)', display: false}
-            ],
-            throwOnError: false,
-            trust: true,
-            strict: false
-          });
-        }
+    form?.addEventListener('submit', async event => {
+      event.preventDefault();
+      const answers = {};
+      form.querySelectorAll('input[type="radio"]:checked').forEach(input => {
+        answers[input.dataset.questionId] = input.value;
       });
-    });
+      const questionCount = form.querySelectorAll('fieldset').length;
+      if (Object.keys(answers).length !== questionCount) {
+        summary.textContent = 'Vui lòng trả lời đầy đủ tất cả câu hỏi.';
+        summary.className = 'text-sm font-semibold text-rose-600 dark:text-rose-400';
+        return;
+      }
 
-    // Update dot
-    updateDot(quizIdx, 'active');
-  }
-
-  // ── Handle answer selection ────────────────────────────────────────────────
-  async function handleAnswer(letter, clickedBtn) {
-    attemptCount++;
-
-    // Disable all buttons while checking
-    document.querySelectorAll('.quiz-option-btn').forEach(b => b.disabled = true);
-
-    // Send to server
-    let isCorrect = false;
-    let explanation = null;
-    let serverAttemptNumber = attemptCount;
-    try {
-      const res = await fetch(BASE + '/api/courses/video-quiz-response', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          quizId: quizzes[currentQuizIdx].id,
-          lessonId,
-          selectedAnswer: letter,
-          guestId: GUEST_ID,
-        }),
-      });
-      const data = await res.json();
-      isCorrect = data.isCorrect;
-      explanation = data.explanation;
-      serverAttemptNumber = data.attemptNumber || attemptCount;
-    } catch (err) {
-      console.error('Quiz response error:', err);
-      // On network error, allow retry
-      document.querySelectorAll('.quiz-option-btn').forEach(b => b.disabled = false);
-      return;
-    }
-
-    // Style the clicked button
-    if (isCorrect) {
-      clickedBtn.classList.add('bg-emerald-50', 'dark:bg-emerald-900/20', 'border-emerald-500', 'text-emerald-700', 'dark:text-emerald-300');
-      clickedBtn.querySelector('span').classList.replace('bg-blue-100', 'bg-emerald-100');
-    } else {
-      clickedBtn.classList.add('bg-red-50', 'dark:bg-red-900/20', 'border-red-400', 'text-red-700', 'dark:text-red-300');
-      clickedBtn.classList.add('quiz-shake');
-      setTimeout(() => clickedBtn.classList.remove('quiz-shake'), 600);
-    }
-
-    // Show feedback
-    feedbackEl.classList.remove('hidden');
-    if (isCorrect) {
-      feedbackInner.className = 'rounded-xl p-4 text-sm bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200';
-      feedbackInner.innerHTML = `
-        <div class="flex items-start gap-2">
-          <span class="text-lg shrink-0">✅</span>
-          <div>
-            <p class="font-bold">Chính xác!</p>
-            ${explanation ? `<p class="mt-1 leading-relaxed opacity-90">${explanation}</p>` : ''}
-          </div>
-        </div>
-      `;
-      passedQuizIds.add(quizzes[currentQuizIdx].id);
-      continueBtn.classList.remove('hidden');
-      updateDot(currentQuizIdx, 'done');
-      attemptLabel.textContent = `Trả lời đúng sau ${serverAttemptNumber} lần thử`;
-    } else {
-      feedbackInner.className = 'rounded-xl p-4 text-sm bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-200';
-      feedbackInner.innerHTML = `
-        <div class="flex items-start gap-2">
-          <span class="text-lg shrink-0">❌</span>
-          <div>
-            <p class="font-bold">Chưa đúng — hãy thử lại!</p>
-            <p class="mt-1 opacity-80">Xem lại video và chọn đáp án khác.</p>
-          </div>
-        </div>
-      `;
-      attemptLabel.textContent = `Lần thử: ${serverAttemptNumber}`;
-      // Re-enable non-selected options after 1s
-      setTimeout(() => {
-        document.querySelectorAll('.quiz-option-btn').forEach(b => {
-          if (b !== clickedBtn) b.disabled = false;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Đang chấm điểm...';
+      try {
+        const response = await fetch(`${BASE}/api/courses/review-quiz`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ lessonId: reviewLessonId, answers }),
         });
-        // Reset clicked button style to allow re-selecting
-        clickedBtn.classList.remove('bg-red-50', 'dark:bg-red-900/20', 'border-red-400', 'text-red-700', 'dark:text-red-300');
-        clickedBtn.disabled = false;
-      }, 1000);
-    }
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || 'Không thể chấm bài.');
 
-    if (typeof renderMathInElement === 'function') {
-      renderMathInElement(feedbackInner, {
-        delimiters: [
-          {left: '$$', right: '$$', display: true},
-          {left: '\\[', right: '\\]', display: true},
-          {left: '$', right: '$', display: false},
-          {left: '\\(', right: '\\)', display: false}
-        ],
-        throwOnError: false, trust: true, strict: false
-      });
-    }
-  }
-
-  // ── Continue button ────────────────────────────────────────────────────────
-  if (continueBtn) {
-    continueBtn.addEventListener('click', () => {
-      hideOverlay();
-      // Seek slightly past the quiz timestamp to avoid re-triggering
-      if (player && quizzes[currentQuizIdx]) {
-        player.seekTo(quizzes[currentQuizIdx].timestamp_sec + 2, true);
+        data.results.forEach(result => {
+          const card = document.getElementById(`review-question-${result.questionId}`);
+          const feedback = document.getElementById(`review-feedback-${result.questionId}`);
+          card?.classList.remove('border-violet-100', 'dark:border-violet-900/30', 'border-emerald-400', 'border-rose-400');
+          card?.classList.add(result.isCorrect ? 'border-emerald-400' : 'border-rose-400');
+          if (feedback) {
+            feedback.textContent = result.isCorrect
+              ? `✓ Chính xác.${result.explanation ? ` ${result.explanation}` : ''}`
+              : `✕ Chưa đúng. Đáp án đúng: ${result.correctAnswer}.${result.explanation ? ` ${result.explanation}` : ''}`;
+            feedback.className = `mt-3 rounded-lg px-3 py-2 text-xs ${result.isCorrect
+              ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300'
+              : 'bg-rose-50 dark:bg-rose-900/20 text-rose-700 dark:text-rose-300'}`;
+          }
+        });
+        summary.textContent = `Lần ${data.attempt.attempt_number}: ${data.attempt.correct_count}/${data.attempt.total_questions} câu đúng · ${Number(data.attempt.score).toFixed(1)}/10 điểm`;
+        summary.className = 'text-sm font-bold text-violet-700 dark:text-violet-300';
+        submitButton.textContent = 'Nộp lại bài';
+        if (typeof renderMathInElement === 'function') renderMathInElement(form, { throwOnError: false });
+      } catch (error) {
+        summary.textContent = error instanceof Error ? error.message : 'Không thể chấm bài.';
+        summary.className = 'text-sm font-semibold text-rose-600 dark:text-rose-400';
+        submitButton.textContent = 'Thử nộp lại';
+      } finally {
+        submitButton.disabled = false;
       }
-      player.playVideo();
     });
   }
+</script>
 
-  function hideOverlay() {
-    overlayOpen = false;
-    card.classList.remove('scale-100', 'opacity-100');
-    card.classList.add('scale-95', 'opacity-0');
-    setTimeout(() => overlay.classList.add('hidden'), 300);
+<!-- Learning telemetry: active study time, video coverage and resume position. -->
+<script define:vars={{ lessonId, isEnrolled, baseUrl }}>
+  if (isEnrolled) {
+    const BASE = baseUrl;
+    const sessionId = crypto.randomUUID();
+    window.__lmsSessionId = sessionId;
+    let activeSeconds = 0;
+    let watchedSeconds = 0;
+    let videoPositionSeconds = 0;
+    let videoDurationSeconds = 0;
+    let lastVideoPosition = null;
+    let sending = false;
+
+    window.addEventListener('lms-video-tick', (event) => {
+      const detail = event.detail || {};
+      const position = Math.max(0, Number(detail.position || 0));
+      videoPositionSeconds = Math.round(position);
+      videoDurationSeconds = Math.max(videoDurationSeconds, Math.round(Number(detail.duration || 0)));
+      if (detail.playing && lastVideoPosition !== null) {
+        const delta = position - lastVideoPosition;
+        // Count continuous playback only; seeking cannot manufacture watch time.
+        if (delta > 0 && delta <= 2.5) watchedSeconds += delta;
+      }
+      lastVideoPosition = position;
+    });
+
+
+    setInterval(() => {
+      if (document.visibilityState === 'visible' && !window.__lmsCompleting) activeSeconds++;
+    }, 1000);
+
+    async function flush(keepalive = false) {
+      if (sending || (activeSeconds <= 0 && watchedSeconds <= 0 && videoPositionSeconds <= 0)) return;
+      sending = true;
+      const payload = {
+        lessonId,
+        action: 'heartbeat',
+        sessionId,
+        activeSeconds,
+        watchedSeconds: Math.round(watchedSeconds),
+        videoPositionSeconds,
+        videoDurationSeconds,
+      };
+      try {
+        const response = await fetch(`${BASE}/api/courses/progress`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          keepalive,
+        });
+        if (response.ok) {
+          activeSeconds = 0;
+          watchedSeconds = 0;
+        }
+      } catch (error) {
+        console.warn('Không thể lưu tiến độ học:', error);
+      } finally {
+        sending = false;
+      }
+    }
+
+    window.__lmsFlush = flush;
+    fetch(`${BASE}/api/courses/progress`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ lessonId, action: 'start', sessionId }),
+    }).catch(() => {});
+    setInterval(() => flush(), 15000);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden' && !window.__lmsCompleting) flush(true);
+    });
+    window.addEventListener('pagehide', () => {
+      if (!window.__lmsCompleting) flush(true);
+    });
   }
+</script>
 
-  // ── Quiz progress dots ─────────────────────────────────────────────────────
-  function updateDot(idx, state) {
-    const dot = document.getElementById(`quiz-dot-${idx}`);
-    if (!dot) return;
-    dot.classList.remove('bg-white/20', 'bg-blue-400', 'bg-emerald-400');
-    if (state === 'active') dot.classList.add('bg-blue-400');
-    else if (state === 'done') dot.classList.add('bg-emerald-400');
-    else dot.classList.add('bg-white/20');
-  }
-
-  } // end if ytId
+<!-- Interactive video quizzes run for enrolled learners and free-lesson guests. -->
+<script id="video-quiz-config" type="application/json" set:html={JSON.stringify({ ytId, clientQuizzes, lessonId, isEnrolled, initialVideoPosition, baseUrl }).replace(/</g, '\\u003c')} />
+<script>
+  import { initVideoQuizPlayer } from '../../../lib/video-quiz-player';
+  const config = document.getElementById('video-quiz-config');
+  if (config?.textContent) initVideoQuizPlayer(JSON.parse(config.textContent));
 </script>
 
 <style>
@@ -582,13 +516,44 @@ const hasQuizzes = videoQuizzes.length > 0;
     height: 100%;
   }
 
-  /* Quiz card shake animation */
-  @keyframes quizShake {
-    0%, 100% { transform: translateX(0); }
-    20%       { transform: translateX(-6px); }
-    40%       { transform: translateX(6px); }
-    60%       { transform: translateX(-4px); }
-    80%       { transform: translateX(4px); }
+  /* Grow the video region while answering so phone-sized 16:9 frames do not
+     clip the quiz. Long questions scroll inside this same video region. */
+  #video-player-wrapper.quiz-active {
+    min-height: min(680px, 85svh);
   }
-  .quiz-shake { animation: quizShake 0.55s ease; }
+  #quiz-overlay { padding: 8px; }
+  #quiz-card { max-height: 100%; overflow-y: auto; overscroll-behavior: contain; }
+  #quiz-question-text { overflow-wrap: anywhere; }
+  .quiz-header { border-radius: 12px 12px 0 0; }
+  .quiz-footer { position: sticky; bottom: 0; border-top: 1px solid #e2e8f0; }
+  #quiz-attempt-label { color: #64748b; }
+  :global(.quiz-option-btn) {
+    display: flex; align-items: flex-start; gap: 10px; width: 100%; min-height: 48px;
+    padding: 10px 12px; text-align: left; border: 2px solid #cbd5e1;
+    border-radius: 12px; background: #f8fafc; color: #1e293b; font-size: 15px;
+    line-height: 1.6; cursor: pointer; touch-action: manipulation;
+  }
+  :global(.quiz-option-letter) {
+    display: grid; place-items: center; flex-shrink: 0; width: 28px; height: 28px;
+    border-radius: 50%; background: #dbeafe; color: #1d4ed8; font-weight: 700;
+  }
+  :global(.quiz-option-content) { min-width: 0; overflow-wrap: anywhere; }
+  :global(.quiz-option-btn:focus-visible) { outline: 3px solid #60a5fa; outline-offset: 2px; }
+  :global(.quiz-option-btn[data-state="selected"]) { background: #2563eb; border-color: #1d4ed8; color: white; }
+  :global(.quiz-option-btn[data-state="correct"]), #quiz-feedback-inner[data-state="correct"] {
+    background: #ecfdf5; border-color: #10b981; color: #065f46;
+  }
+  :global(.quiz-option-btn[data-state="wrong"]), #quiz-feedback-inner[data-state="wrong"] {
+    background: #fef2f2; border-color: #f87171; color: #991b1b;
+  }
+  #quiz-feedback-inner[data-state="error"] { background: #fffbeb; color: #92400e; }
+  #quiz-dots-bar > [data-state="active"] { background: #60a5fa; }
+  #quiz-dots-bar > [data-state="done"] { background: #34d399; }
+  :global(#quiz-card .katex-display) { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+  @media (max-width: 640px) {
+    #quiz-card { max-width: none; }
+    .quiz-footer { align-items: stretch; }
+    #quiz-attempt-label { width: 100%; }
+    #quiz-submit-btn, #quiz-continue-btn { width: 100%; }
+  }
 </style>

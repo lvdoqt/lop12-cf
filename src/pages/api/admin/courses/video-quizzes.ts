@@ -25,12 +25,24 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return new Response(JSON.stringify({ error: 'Invalid JSON' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
   }
 
-  const { lessonId, timestamp_sec, question, options, answer, explanation, order_index } = body;
+  const { lessonId, timestamp_sec, question, options, answer, explanation, order_index, knowledge_tag, difficulty } = body;
   if (!lessonId || timestamp_sec == null || !question || !options || !answer) {
     return new Response(JSON.stringify({ error: 'Missing required fields' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
   }
   if (!Array.isArray(options) || options.length < 2) {
     return new Response(JSON.stringify({ error: 'options must be array with at least 2 items' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+  }
+  const normalizedAnswer = String(answer).toUpperCase();
+  if (!options.map((_: unknown, index: number) => String.fromCharCode(65 + index)).includes(normalizedAnswer)) {
+    return new Response(JSON.stringify({ error: 'answer must match an option' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+  }
+  const normalizedDifficulty = Number(difficulty ?? 2);
+  if (![1, 2, 3].includes(normalizedDifficulty)) {
+    return new Response(JSON.stringify({ error: 'difficulty must be 1, 2 or 3' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+  }
+  const normalizedTimestamp = Number(timestamp_sec);
+  if (!Number.isInteger(normalizedTimestamp) || normalizedTimestamp < 0) {
+    return new Response(JSON.stringify({ error: 'timestamp_sec must be a non-negative integer' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
   }
 
   try {
@@ -38,11 +50,13 @@ export const POST: APIRoute = async ({ request, locals }) => {
     if (authorizationError) return authorizationError;
     const quiz = await db.createVideoQuiz({
       lesson_id: lessonId,
-      timestamp_sec: Number(timestamp_sec),
+      timestamp_sec: normalizedTimestamp,
       question: String(question),
       options: options.map(String),
-      answer: String(answer).toUpperCase(),
+      answer: normalizedAnswer,
       explanation: explanation || null,
+      knowledge_tag: String(knowledge_tag || 'Chưa phân loại').trim().slice(0, 120) || 'Chưa phân loại',
+      difficulty: normalizedDifficulty as 1 | 2 | 3,
       order_index: Number(order_index ?? 0),
     });
     return new Response(JSON.stringify(quiz), { status: 201, headers: { 'Content-Type': 'application/json' } });

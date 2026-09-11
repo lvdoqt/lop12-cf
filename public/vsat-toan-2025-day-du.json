@@ -1,0 +1,322 @@
+{
+  "_thong_tin": {
+    "title": "Đề thi minh họa V-SAT môn Toán năm 2025 - Trường Đại học Cần Thơ",
+    "duration": 90,
+    "source": "V-SAT-1.-ĐỀ-THI-MINH-HỌA-TOÁN_2025.pdf",
+    "image_base_path": "/img/"
+  },
+  "_cau_truc_150_diem": {
+    "msq": "9 câu x tối đa 6 điểm = 54",
+    "read": "2 nhóm, tổng 6 câu nhỏ x 6 điểm = 36",
+    "matching": "5 câu x 4 tiểu mục x 1.5 điểm = 30",
+    "sa": "5 câu x 6 điểm = 30"
+  },
+  "questions": [
+    {
+      "type": "msq",
+      "question": "Cho dãy số $(u_n)$ biết $u_n=2n+3,\\ \forall n\\in\\mathbb{N}^*$.",
+      "option_a": "Dãy số $(u_n)$ là cấp số cộng.",
+      "option_b": "Dãy số $(u_n)$ là dãy tăng.",
+      "option_c": "Dãy số $(u_n)$ bị chặn dưới.",
+      "option_d": "Dãy số $(u_n)$ bị chặn trên.",
+      "correct_option": "A,B,C",
+      "explanation": "$u_{n+1}-u_n=2>0$. Dãy là cấp số cộng, tăng, bị chặn dưới và không bị chặn trên.",
+      "difficulty_level": "easy",
+      "is_dynamic": false
+    },
+    {
+      "type": "msq",
+      "question": "Cho hàm số $y=\\dfrac{2x-1}{x+1}$ có đồ thị là $(C)$.",
+      "option_a": "Đường thẳng $x=1$ là tiệm cận đứng của $(C)$.",
+      "option_b": "Đường thẳng $y=2$ là tiệm cận ngang của $(C)$.",
+      "option_c": "$(C)$ chứa ít nhất một điểm có tung độ bằng $-1$.",
+      "option_d": "$(C)$ không chứa điểm nào có tung độ bằng $0$.",
+      "correct_option": "B,C",
+      "explanation": "Tiệm cận đứng là $x=-1$, tiệm cận ngang là $y=2$; đồ thị đi qua $(0,-1)$ và $(\\tfrac12,0)$.",
+      "difficulty_level": "easy",
+      "is_dynamic": false
+    },
+    {
+      "type": "msq",
+      "question": "Trong không gian $Oxyz$ cho đường thẳng $(d):\\begin{cases}x=1-2t\\\\y=3+t\\\\z=2\\end{cases}$.",
+      "option_a": "Một vec-tơ chỉ phương của đường thẳng $(d)$ là $\\vec u=(-2;1;2)$.",
+      "option_b": "Điểm $M(1;3;2)$ nằm trên đường thẳng $(d)$.",
+      "option_c": "Đường thẳng $(d)$ vuông góc với trục $Oz$.",
+      "option_d": "Gọi $\\alpha$ là góc giữa đường thẳng $(d)$ và trục $Oy$, khi đó $\\cos\\alpha=\\dfrac1{\\sqrt5}$.",
+      "correct_option": "B,C,D",
+      "explanation": "Một vec-tơ chỉ phương là $(-2;1;0)$. Với $t=0$ ta được $M$; vec-tơ này vuông góc với $(0;0;1)$ và $\\cos\\alpha=1/\\sqrt5$.",
+      "difficulty_level": "medium",
+      "is_dynamic": false
+    },
+    {
+      "type": "msq",
+      "question": "Bảng sau tóm tắt kết quả phân tích quá trình tự phân hủy và sự thối rữa của các con bọ cánh cứng chết:\n\n| | Tự phân hủy cao | Tự phân hủy thấp |\n|---|---:|---:|\n| Thối rữa cao | 14 | 59 |\n| Thối rữa thấp | 18 | 9 |\n\nChọn ngẫu nhiên một con bọ cánh cứng trong các mẫu trên.",
+      "option_a": "Xác suất để mẫu chọn ra có quá trình tự phân hủy cao là $\\dfrac7{50}$.",
+      "option_b": "Xác suất để mẫu chọn ra có quá trình tự phân hủy cao và độ thối rữa thấp là $\\dfrac9{50}$.",
+      "option_c": "Nếu quá trình tự phân hủy của một mẫu chọn ra là cao thì xác suất để thối rữa thấp là $\\dfrac9{16}$.",
+      "option_d": "Nếu độ thối rữa một mẫu chọn ra là cao thì xác suất để quá trình tự phân hủy cao bằng $\\dfrac{14}{73}$.",
+      "correct_option": "B,C,D",
+      "explanation": "Có 100 mẫu. Các xác suất tương ứng là $32/100=8/25$, $18/100=9/50$, $18/32=9/16$ và $14/73$.",
+      "difficulty_level": "medium",
+      "is_dynamic": false
+    },
+    {
+      "type": "msq",
+      "question": "Cho các mệnh đề sau.",
+      "option_a": "$\\displaystyle\\int 2x\\,dx=x^2+C$.",
+      "option_b": "$\\displaystyle\\int\\cos x\\,dx=\\sin x+C$.",
+      "option_c": "$\\displaystyle\\int x\\sqrt{x}\\,dx=\\dfrac{2x^2\\sqrt{x}}5+C$.",
+      "option_d": "$\\displaystyle\\int\\cot^2x\\,dx=\\cot x-x+C$.",
+      "correct_option": "A,B,C",
+      "explanation": "Vì $\\cot^2x=\\csc^2x-1$ nên $\\int\\cot^2x\\,dx=-\\cot x-x+C$; ba mệnh đề còn lại đúng.",
+      "difficulty_level": "easy",
+      "is_dynamic": false
+    },
+    {
+      "type": "msq",
+      "question": "Trong không gian $Oxyz$ cho mặt cầu $(S):x^2+y^2+z^2-4x+10y-2z+14=0$ và hai điểm $A(3;-4;4)$, $B(5;-2;4)$.",
+      "option_a": "Mặt cầu $(S)$ có tâm $I(2;-5;1)$ và bán kính $R=4$.",
+      "option_b": "Điểm $A$ nằm ngoài mặt cầu $(S)$.",
+      "option_c": "Phương trình mặt cầu tâm $A$ và đi qua $B$ là $(x-3)^2+(y+4)^2+(z-4)^2=4$.",
+      "option_d": "Phương trình mặt cầu đường kính $AB$ là $(x-4)^2+(y+3)^2+(z-4)^2=2$.",
+      "correct_option": "A,D",
+      "explanation": "$(S)$ có tâm $I(2,-5,1)$, $R=4$ và $IA=\\sqrt{11}<4$. Ta có $AB^2=8$, nên mặt cầu tâm $A$ qua $B$ có vế phải 8; mặt cầu đường kính $AB$ có bán kính bình phương bằng 2.",
+      "difficulty_level": "medium",
+      "is_dynamic": false
+    },
+    {
+      "type": "msq",
+      "question": "Nhiệt độ $T$ (°C) của nước trong ấm đặt trên bếp được xác định bởi $T=95-75e^{-t}$, $t\\ge0$, trong đó $t$ (phút) tính từ lúc bật bếp. Khi nước đạt $85^\\circ C$ thì tắt bếp; sau đó nhiệt độ được xác định bởi $T=15+Ae^{-t/20}$, $t\\ge0$, trong đó $t$ tính từ lúc tắt bếp.",
+      "option_a": "Nhiệt độ ban đầu của nước trong ấm là $20^\\circ C$.",
+      "option_b": "Ta có $A=85$.",
+      "option_c": "Sau khoảng 2 phút (làm tròn đến hàng đơn vị) kể từ lúc bật bếp thì nước đạt $85^\\circ C$.",
+      "option_d": "Sau khoảng 21 phút (làm tròn đến hàng đơn vị) kể từ lúc bật bếp thì nhiệt độ của nước giảm xuống tới $40^\\circ C$.",
+      "correct_option": "A,C",
+      "explanation": "$T(0)=20$, $A=70$. Thời gian đun là $\\ln(15/2)\\approx2.01$ phút; thời gian nguội từ 85°C xuống 40°C là $20\\ln(14/5)\\approx20.59$ phút, tổng khoảng 23 phút.",
+      "difficulty_level": "medium",
+      "is_dynamic": false
+    },
+    {
+      "type": "msq",
+      "question": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình thang vuông tại $A,B$, $SA\\perp(ABCD)$ và $SA=AB=BC=a$, $AD=2a$.",
+      "option_a": "Thể tích khối chóp $S.ABCD$ bằng $\\dfrac{3a^3}{2}$.",
+      "option_b": "Đường thẳng $SC$ tạo với mặt phẳng $(ABCD)$ một góc bằng $45^\\circ$.",
+      "option_c": "Khoảng cách từ điểm $A$ đến đường thẳng $CD$ bằng $\\sqrt2a$.",
+      "option_d": "Khoảng cách từ điểm $B$ đến mặt phẳng $(SCD)$ bằng $\\dfrac{\\sqrt5a}{5}$.",
+      "correct_option": "C",
+      "explanation": "Diện tích đáy là $3a^2/2$, nên thể tích bằng $a^3/2$. Góc của $SC$ với đáy có $\\tan=1/\\sqrt2$. Ngoài ra $d(A,CD)=\\sqrt2a$ và $d(B,(SCD))=a/\\sqrt6$.",
+      "difficulty_level": "hard",
+      "is_dynamic": false
+    },
+    {
+      "type": "msq",
+      "question": "Trong đại dịch Covid-19, xét nghiệm RT-PCR có tỉ lệ dương tính giả 5%, tỉ lệ âm tính giả 13% và tỉ lệ mắc bệnh của vùng dân cư là 5%.",
+      "option_a": "Tỉ lệ dương tính thật bằng 95%.",
+      "option_b": "Tỉ lệ xét nghiệm RT-PCR có kết quả dương tính là 9,1%.",
+      "option_c": "Tỉ lệ người nhiễm vi-rút trong những người có kết quả xét nghiệm RT-PCR dương tính khoảng 47,8%.",
+      "option_d": "Tỉ lệ người không nhiễm vi-rút trong những người có kết quả xét nghiệm RT-PCR âm tính khoảng 90,9%.",
+      "correct_option": "B,C",
+      "explanation": "Độ nhạy là 87%. Ta có $P(+)=0.05\\cdot0.87+0.95\\cdot0.05=0.091$ và $P(B|+)\\approx0.478$. Trong nhóm âm tính, tỉ lệ không bệnh xấp xỉ 99.3%.",
+      "difficulty_level": "medium",
+      "is_dynamic": false
+    },
+    {
+      "type": "read",
+      "content": "Một vật di chuyển trên một đường thẳng. Tại thời điểm $t$ giây sau khi bắt đầu di chuyển từ điểm $O$, vật có gia tốc $a(t)=-0.8t+4$ ($m/s^2$).",
+      "difficulty": "medium",
+      "questions": [
+        {
+          "question": "Tìm gia tốc cực đại (đơn vị: $m/s^2$) của vật trong khoảng thời gian từ 1 tới 3 giây.",
+          "option_a": "$3.2$",
+          "option_b": "$2.6$",
+          "option_c": "$4.8$",
+          "option_d": "$6.4$",
+          "correct_option": "A",
+          "explanation": "$a(t)$ giảm trên $[1,3]$, nên giá trị lớn nhất là $a(1)=3.2$."
+        },
+        {
+          "question": "Tốc độ của vật giảm trong khoảng thời gian nào dưới đây?",
+          "option_a": "$[5;6]$",
+          "option_b": "$[2;4]$",
+          "option_c": "$[4;5]$",
+          "option_d": "$[1;3]$",
+          "correct_option": "A",
+          "explanation": "Với $v(0)=0$, $v(t)=-0.4t^2+4t$ dương trên $(0,10)$; từ $t=5$ gia tốc âm nên tốc độ giảm trên $[5,6]$."
+        },
+        {
+          "question": "Tính quãng đường (đơn vị: m) vật đi được từ 5 giây tới 11 giây, làm tròn đến hàng phần mười.",
+          "option_a": "$35.5$",
+          "option_b": "$31.2$",
+          "option_c": "$33.3$",
+          "option_d": "$37.4$",
+          "correct_option": "A",
+          "explanation": "Vận tốc đổi dấu tại $t=10$. Tích phân $|v(t)|$ trên $[5,11]$ cho $35.466\\ldots$ m, làm tròn được $35.5$ m."
+        }
+      ]
+    },
+    {
+      "type": "read",
+      "content": "Thời gian trung bình sử dụng ChatGPT trong một ngày của một nhóm học sinh:\n\n| Thời gian (phút) | Tần số |\n|---|---:|\n| $[0;5)$ | 3 |\n| $[5;15)$ | 11 |\n| $[15;25)$ | 6 |\n| $[25;30)$ | 15 |\n| $[30;35)$ | 5 |",
+      "difficulty": "medium",
+      "questions": [
+        {
+          "question": "Tính tứ phân vị thứ nhất của mẫu số liệu ghép nhóm (làm tròn đến hàng phần mười; đơn vị: phút).",
+          "option_a": "$11.4$",
+          "option_b": "$11.3$",
+          "option_c": "$11.2$",
+          "option_d": "$11.1$",
+          "correct_option": "A",
+          "explanation": "$Q_1=5+\\dfrac{10-3}{11}\\cdot10\\approx11.4$."
+        },
+        {
+          "question": "Chọn ngẫu nhiên một học sinh. Xác suất để thời gian sử dụng ChatGPT lớn hơn hoặc bằng 25 phút mỗi ngày là bao nhiêu (làm tròn đến hàng phần trăm)?",
+          "option_a": "$0.50$",
+          "option_b": "$0.38$",
+          "option_c": "$0.37$",
+          "option_d": "$0.51$",
+          "correct_option": "A",
+          "explanation": "Có $15+5=20$ trong tổng số 40 học sinh, nên xác suất bằng $20/40=0.50$."
+        },
+        {
+          "question": "Tất cả mốc thời gian đã bị ghi lùi 5 phút so với thực tế. Gọi $s_1,s_2$ lần lượt là độ lệch chuẩn trước và sau khi chỉnh sửa. Chọn khẳng định đúng.",
+          "option_a": "$s_1=s_2$",
+          "option_b": "$s_1>s_2$",
+          "option_c": "$s_1<s_2$",
+          "option_d": "$s_1=s_2-5$",
+          "correct_option": "A",
+          "explanation": "Cộng cùng một hằng số vào mọi giá trị không làm thay đổi độ lệch chuẩn."
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "content": "Cho hàm số $y=f(x)$ xác định trên $[-2;4]$ với dấu của đạo hàm: $f'(x)>0$ trên $(-2,-1)$, $f'(x)<0$ trên $(-1,3)$, $f'(x)>0$ trên $(3,4)$; đồng thời $f(-2)=-1$, $f(-1)=6$, $f(3)=-26$, $f(4)=-19$. Ghép mỗi nội dung với đáp án đúng.",
+      "difficulty": "easy",
+      "questions": [
+        { "content": "Hàm số $f(x)$ đạt cực đại tại điểm $x_{CĐ}=$", "correct_option": "C" },
+        { "content": "Hàm số $f(x)$ đạt cực tiểu tại điểm $x_{CT}=$", "correct_option": "A" },
+        { "content": "Giá trị cực đại của hàm số $f(x)$ là $y_{CĐ}=$", "correct_option": "E" },
+        { "content": "Giá trị cực tiểu của hàm số $f(x)$ là $y_{CT}=$", "correct_option": "B" }
+      ],
+      "options": [
+        { "key": "A", "content": "$3$" },
+        { "key": "B", "content": "$-26$" },
+        { "key": "C", "content": "$-1$" },
+        { "key": "D", "content": "$-2$" },
+        { "key": "E", "content": "$6$" },
+        { "key": "F", "content": "$-19$" }
+      ]
+    },
+    {
+      "type": "matching",
+      "content": "Cho hình chóp $S.ABCD$ có đáy là hình chữ nhật, $AB=a$, $AD=\\sqrt3a$. Biết $SA\\perp(ABCD)$ và $SA=2\\sqrt3a$.",
+      "difficulty": "hard",
+      "questions": [
+        { "content": "Tang của góc giữa $CD$ và $SB$ bằng", "correct_option": "E" },
+        { "content": "Tang của góc giữa $SC$ và $(ABCD)$ bằng", "correct_option": "D" },
+        { "content": "Tang của góc nhị diện $[S,CD,A]$ bằng", "correct_option": "F" },
+        { "content": "Tang của góc nhị diện $[C,SA,D]$ bằng", "correct_option": "B" }
+      ],
+      "options": [
+        { "key": "A", "content": "$\\dfrac12$" },
+        { "key": "B", "content": "$\\dfrac{\\sqrt3}{3}$" },
+        { "key": "C", "content": "$1$" },
+        { "key": "D", "content": "$\\sqrt3$" },
+        { "key": "E", "content": "$2\\sqrt3$" },
+        { "key": "F", "content": "$2$" }
+      ]
+    },
+    {
+      "type": "matching",
+      "content": "Trong không gian $Oxyz$ cho mặt phẳng $(P):2x-y+z-2=0$ và ba điểm $A(1;-1;0)$, $B(2;0;1)$, $C(1;2;-1)$.",
+      "difficulty": "hard",
+      "questions": [
+        { "content": "Phương trình mặt phẳng đi qua $A$ và vuông góc với đường thẳng $BC$ là", "correct_option": "B" },
+        { "content": "Phương trình mặt phẳng đi qua $A$ và song song với $(P)$ là", "correct_option": "A" },
+        { "content": "Phương trình mặt phẳng đi qua ba điểm $A,B,C$ là", "correct_option": "C" },
+        { "content": "Phương trình mặt phẳng đi qua hai điểm $A,B$ và vuông góc với $(P)$ là", "correct_option": "F" }
+      ],
+      "options": [
+        { "key": "A", "content": "$2x-y+z-3=0$" },
+        { "key": "B", "content": "$x-2y+2z-3=0$" },
+        { "key": "C", "content": "$4x-y-3z-5=0$" },
+        { "key": "D", "content": "$2x-y+3z-3=0$" },
+        { "key": "E", "content": "$x+y+z=0$" },
+        { "key": "F", "content": "$2x+y-3z-1=0$" }
+      ]
+    },
+    {
+      "type": "matching",
+      "content": "Trong không gian $Oxyz$, cho $M(0;0;4)$ và hai đường thẳng $d_1:\\begin{cases}x=2-t\\\\y=3\\\\z=-1+t\\end{cases}$, $d_2:\\begin{cases}x=3+t'\\\\y=2-t'\\\\z=-1\\end{cases}$ cắt nhau tại $A$. Đường thẳng $d_3$ qua $M$, cắt $d_1,d_2$ lần lượt tại $B(a;b;c),C$ sao cho tam giác $ABC$ đều.",
+      "difficulty": "hard",
+      "questions": [
+        { "content": "Tọa độ điểm $A$ là", "correct_option": "A" },
+        { "content": "Vec-tơ chỉ phương của đường thẳng $d_3$ là", "correct_option": "B" },
+        { "content": "Tọa độ điểm $B$ là", "correct_option": "C" },
+        { "content": "Tọa độ điểm $C$ là", "correct_option": "D" }
+      ],
+      "options": [
+        { "key": "A", "content": "$(2;3;-1)$" },
+        { "key": "B", "content": "$(0;1;-1)$" },
+        { "key": "C", "content": "$(0;3;1)$" },
+        { "key": "D", "content": "$(0;5;-1)$" },
+        { "key": "E", "content": "$(2;-1;-1)$" },
+        { "key": "F", "content": "$(4;3;-3)$" }
+      ]
+    },
+    {
+      "type": "matching",
+      "content": "Cho hàm số $y=f(x)$, với $f(x)$ là đa thức bậc bốn, có đồ thị $y=f'(x)$ như hình vẽ. Đồ thị cắt trục hoành tại $-1$, $1$, $4$. Đặt $g(x)=f(-x^2+3x-m)$.\n\n![Đồ thị hàm số y=f'(x)](/img/vsat-toan-2025-cau-20-do-thi.png)",
+      "difficulty": "hard",
+      "questions": [
+        { "content": "Khi $m=1$, số điểm cực trị của hàm số $g(x)$ là", "correct_option": "C" },
+        { "content": "Số giá trị nguyên của $m$ để $g(x)$ có đúng 3 điểm cực trị là", "correct_option": "A" },
+        { "content": "Số giá trị nguyên của $m$ để $g(x)$ có đúng 5 điểm cực trị là", "correct_option": "B" },
+        { "content": "Số giá trị nguyên của $m$ để $g(x)$ có đúng 7 điểm cực trị thuộc $(-2;5)$ là", "correct_option": "D" }
+      ],
+      "options": [
+        { "key": "A", "content": "$2$" },
+        { "key": "B", "content": "$3$" },
+        { "key": "C", "content": "$5$" },
+        { "key": "D", "content": "$7$" },
+        { "key": "E", "content": "$12$" },
+        { "key": "F", "content": "$13$" }
+      ]
+    },
+    {
+      "type": "sa",
+      "content": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=2$. Tính $\\displaystyle\\int_0^1[f(x)+2g(x)]\\,dx$.",
+      "difficulty": "easy",
+      "correct_answer": "1",
+      "explanation": "$-3+2\\cdot2=1$."
+    },
+    {
+      "type": "sa",
+      "content": "Cho các số thực dương $a,b,c$ thỏa mãn $\\log_a b=3$ và $\\log_c a=-\\dfrac12$. Tính $P=\\log_{ac}(a^2bc)$.",
+      "difficulty": "medium",
+      "correct_answer": "-3",
+      "explanation": "$b=a^3$, $c=a^{-2}$, nên $ac=a^{-1}$ và $a^2bc=a^3$. Do đó $P=\\log_{a^{-1}}a^3=-3$."
+    },
+    {
+      "type": "sa",
+      "content": "Một người ở điểm $A$ trên bờ một đoạn sông thẳng rộng 300 m và muốn đến điểm $B$ ở bờ đối diện, xuôi về hạ lưu 2 km. Vận tốc chèo thuyền là 6 km/h và vận tốc chạy bộ là 8 km/h. Tính thời gian nhanh nhất để đi từ $A$ đến $B$, theo đơn vị phút.\n\n![Sơ đồ đoạn sông từ A đến B](/img/vsat-toan-2025-cau-23-so-do.png)",
+      "difficulty": "hard",
+      "correct_answer": "17",
+      "explanation": "Nếu cập bờ tại điểm cách $C$ một đoạn $x$ km về hạ lưu thì $T(x)=\\dfrac{\\sqrt{x^2+0.3^2}}6+\\dfrac{2-x}8$. Giải $T'(x)=0$ được $x\\approx0.3402$, suy ra $T_{min}\\approx16.98$ phút, tức khoảng 17 phút."
+    },
+    {
+      "type": "sa",
+      "content": "Xác suất anh An chạy bộ vào buổi sáng thứ nhất là 90%. Xác suất chạy vào mỗi buổi sáng sau là 70% nếu hôm trước có chạy và 80% nếu hôm trước không chạy. Tính xác suất (đơn vị: %) để anh An chạy bộ vào buổi sáng ngày thứ hai.",
+      "difficulty": "easy",
+      "correct_answer": "71",
+      "explanation": "$0.9\\cdot0.7+0.1\\cdot0.8=0.71$, tức 71%."
+    },
+    {
+      "type": "sa",
+      "content": "Trong không gian $Oxyz$, khối đa diện $(H)$ là tập hợp các điểm $M(x;y;z)$ thỏa mãn $|x|+|y|+|z|\\le6$ và $|x|+|y|+|z-2|\\le6$. Tính thể tích khối đa diện $(H)$.",
+      "difficulty": "hard",
+      "correct_answer": "500/3",
+      "explanation": "Tiết diện vuông góc $Oz$ là hình thoi có diện tích $2r^2$. Với $-4\\le z\\le1$, $r=4+z$; với $1\\le z\\le6$, $r=6-z$. Vì vậy $V=\\int_{-4}^1 2(4+z)^2dz+\\int_1^6 2(6-z)^2dz=\\dfrac{500}{3}$."
+    }
+  ]
+}

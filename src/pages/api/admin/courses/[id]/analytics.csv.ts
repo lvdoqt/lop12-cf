@@ -23,7 +23,7 @@ export const GET: APIRoute = async ({ params, locals }) => {
   }
 
   const statistics = await db.getCourseLearningStatistics(id);
-  const header = ['STT', 'Họ tên', 'Email', 'Ngày đăng ký', 'Bài hoàn thành', 'Tỷ lệ hoàn thành', 'Quiz đã trả lời', 'Quiz đúng (lần gần nhất)', 'Tỷ lệ đúng quiz', 'Hoạt động gần nhất'];
+  const header = ['STT', 'Họ tên', 'Email', 'Ngày đăng ký', 'Bài hoàn thành', 'Tỷ lệ hoàn thành', 'Quiz video đã trả lời', 'Quiz video đúng (lần gần nhất)', 'Tỷ lệ đúng hiện tại', 'Điểm quiz video / 10', 'Tỷ lệ đúng lần đầu', 'Tổng lượt quiz video', 'Lượt sai video', 'Lượt quiz cuối bài', 'Điểm TB quiz cuối bài', 'Điểm cao nhất quiz cuối bài', 'Thời gian học (giây)', 'Video đã xem', 'Kiến thức cần củng cố', 'Hoạt động gần nhất'];
   const rows = statistics.map((item, index) => {
     const student = item.enrollment.user;
     const enrolledAt = new Date(item.enrollment.enrolled_at).toLocaleString('vi-VN');
@@ -38,6 +38,16 @@ export const GET: APIRoute = async ({ params, locals }) => {
       `${item.answeredQuizzes}/${item.totalQuizzes}`,
       `${item.correctQuizzes}/${item.answeredQuizzes}`,
       item.quizAccuracy === null ? '' : `${item.quizAccuracy}%`,
+      item.quizScore === null ? '' : item.quizScore.toFixed(1),
+      item.firstTryAccuracy === null ? '' : `${item.firstTryAccuracy}%`,
+      item.totalQuizAttempts,
+      item.wrongQuizAttempts,
+      item.reviewQuizAttempts,
+      item.reviewQuizAverageScore === null ? '' : item.reviewQuizAverageScore.toFixed(1),
+      item.reviewQuizBestScore === null ? '' : item.reviewQuizBestScore.toFixed(1),
+      item.timeSpentSeconds,
+      item.videoWatchedPercent === null ? '' : `${item.videoWatchedPercent}%`,
+      item.weakKnowledgeTags.join('; '),
       lastActivity,
     ].map(csvCell).join(',');
   });

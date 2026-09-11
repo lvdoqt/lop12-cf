@@ -32,10 +32,16 @@ export const PUT: APIRoute = async ({ params, request, locals }) => {
     return new Response(JSON.stringify({ error: 'Invalid JSON' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
   }
 
-  const { timestamp_sec, question, options, answer, explanation } = body;
+  const { timestamp_sec, question, options, answer, explanation, knowledge_tag, difficulty } = body;
   
   const updates: any = {};
-  if (timestamp_sec !== undefined) updates.timestamp_sec = Number(timestamp_sec);
+  if (timestamp_sec !== undefined) {
+    const value = Number(timestamp_sec);
+    if (!Number.isInteger(value) || value < 0) {
+      return new Response(JSON.stringify({ error: 'timestamp_sec must be a non-negative integer' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+    }
+    updates.timestamp_sec = value;
+  }
   if (question !== undefined) updates.question = String(question);
   if (options !== undefined) {
     if (!Array.isArray(options) || options.length < 2) {
@@ -43,8 +49,23 @@ export const PUT: APIRoute = async ({ params, request, locals }) => {
     }
     updates.options = options.map(String);
   }
-  if (answer !== undefined) updates.answer = String(answer).toUpperCase();
+  if (answer !== undefined) {
+    const value = String(answer).toUpperCase();
+    const optionCount = Array.isArray(options) ? options.length : 4;
+    if (!Array.from({ length: optionCount }, (_, index) => String.fromCharCode(65 + index)).includes(value)) {
+      return new Response(JSON.stringify({ error: 'answer must match an option' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+    }
+    updates.answer = value;
+  }
   if (explanation !== undefined) updates.explanation = explanation || null;
+  if (knowledge_tag !== undefined) updates.knowledge_tag = String(knowledge_tag || 'Chưa phân loại').trim().slice(0, 120) || 'Chưa phân loại';
+  if (difficulty !== undefined) {
+    const value = Number(difficulty);
+    if (![1, 2, 3].includes(value)) {
+      return new Response(JSON.stringify({ error: 'difficulty must be 1, 2 or 3' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+    }
+    updates.difficulty = value;
+  }
 
   if (Object.keys(updates).length === 0) {
     return new Response(JSON.stringify({ error: 'No updates provided' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
