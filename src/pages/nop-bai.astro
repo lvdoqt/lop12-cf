@@ -1,6 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getNopBaiAdminClient, getClasses, type NopBaiClass } from '../services/nopBai';
+import {
+  getNopBaiAdminClient,
+  getClasses,
+  listSubmissions,
+  type NopBaiClass,
+  type NopBaiSubmission,
+} from '../services/nopBai';
 
 export const prerender = false;
 
@@ -14,6 +20,11 @@ const classes: NopBaiClass[] = await getClasses(client);
 // Lấy query param lớp nếu có
 const initialClassParam = Astro.url.searchParams.get('lop') || Astro.url.searchParams.get('class') || '';
 const defaultSelectedClass = classes.find(c => c.name.toLowerCase() === initialClassParam.toLowerCase()) || classes[0] || null;
+
+// Tải danh sách bài nộp ban đầu của lớp
+const initialSubmissions: NopBaiSubmission[] = defaultSelectedClass
+  ? await listSubmissions(client, { className: defaultSelectedClass.name })
+  : [];
 
 const initialStudentName = user?.fullname || (user?.email ? user.email.split('@')[0] : '');
 const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
@@ -47,7 +58,7 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
               <h1 class="text-base sm:text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400 leading-tight">
                 Hệ Thống Nộp Bài
               </h1>
-              <p class="text-[11px] text-indigo-400 font-medium">Lớp 12 & Ôn thi THPT Quốc Gia</p>
+              <p class="hidden sm:block text-[11px] text-indigo-400 font-medium">Lớp 12 & Ôn thi THPT Quốc Gia</p>
             </div>
           </a>
         </div>
@@ -58,17 +69,19 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
             <a
               href="/admin/nop-bai"
               class="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/25 transition shadow-sm"
+              title="Quản lý nộp bài"
             >
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span>Quản lý nộp bài</span>
+              <span class="hidden sm:inline">Quản lý nộp bài</span>
             </a>
           ) : (
             <a
               href="/dashboard"
-              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/80 transition"
+              class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/80 transition"
+              title="Bảng điều khiển cá nhân"
             >
               <span>Bảng điều khiển</span>
             </a>
@@ -426,8 +439,69 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
             </div>
           </form>
         </div>
+
+        <!-- ============================================================ -->
+        <!-- DANH SÁCH BÀI ĐÃ NỘP CỦA LỚP (HỌC SINH & GIÁO VIÊN ĐỀU XEM ĐƯỢC) -->
+        <!-- ============================================================ -->
+        <section id="class-submissions-section" class="mt-8 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/80 border border-slate-800 rounded-2xl p-4 sm:p-5 backdrop-blur-md shadow-lg">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h2 class="text-base sm:text-lg font-bold text-white">
+                    Bài nộp của lớp <span id="section-class-name" class="text-indigo-400 font-extrabold">{defaultSelectedClass?.name || '12A4'}</span>
+                  </h2>
+                  <span id="submissions-total-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                    {initialSubmissions.length} bài
+                  </span>
+                </div>
+                <p class="text-xs text-slate-400 mt-0.5">
+                  Các bài tập học sinh đã nộp của lớp. Cả học sinh và giáo viên đều có thể theo dõi tại đây.
+                </p>
+              </div>
+            </div>
+
+            <!-- Search & Refresh tools -->
+            <div class="flex items-center gap-2">
+              <div class="relative flex-1 sm:w-56">
+                <input
+                  id="submissions-search-input"
+                  type="text"
+                  placeholder="Tìm học sinh, nội dung..."
+                  class="w-full bg-slate-950/80 border border-slate-700/80 rounded-xl px-3 py-1.5 pl-8 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition"
+                />
+                <svg class="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <button
+                id="btn-refresh-submissions"
+                type="button"
+                class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition border border-slate-700/60"
+                title="Làm mới danh sách bài nộp"
+              >
+                <svg id="icon-refresh" class="w-4 h-4 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Submissions Cards Grid / List -->
+          <div id="submissions-list-container" class="space-y-4">
+            <!-- Injected and hydrated by JavaScript -->
+          </div>
+        </section>
       </main>
     </div>
+
+    <!-- Data hydration tag -->
+    <script id="initial-submissions-data" type="application/json" set:html={JSON.stringify(initialSubmissions)} />
 
     <!-- ============================================================ -->
     <!-- SUCCESS MODAL (THÔNG BÁO NỘP BÀI THÀNH CÔNG & GHI NHẬN LẦN NỘP) -->
@@ -500,8 +574,8 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
 
   </div>
 
-  <!-- Toast host -->
-  <div id="toast-host" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+  <!-- Toast host (Thông báo nhỏ gọn góc màn hình) -->
+  <div id="toast-host" class="fixed top-4 right-4 sm:top-auto sm:bottom-5 sm:right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-sm w-full px-4 sm:px-0"></div>
 
   <!-- Custom Client Script -->
   <script is:inline>
@@ -509,6 +583,17 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
       // Pending images store: array of { id, file, dataUrl, name, size }
       const pendingImages = [];
       const MAX_IMAGES = 10;
+
+      // Submissions state & elements
+      let currentSubmissions = [];
+      try {
+        const dataEl = document.getElementById('initial-submissions-data');
+        if (dataEl && dataEl.textContent) {
+          currentSubmissions = JSON.parse(dataEl.textContent);
+        }
+      } catch (e) {
+        currentSubmissions = [];
+      }
 
       // Elements
       const studentNameInput = document.getElementById('input-student-name');
@@ -542,28 +627,239 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
       const noticeClassTag = document.getElementById('notice-class-tag');
       const noticeText = document.getElementById('notice-text');
 
-      // Toast notification helper
+      // Submissions section elements
+      const sectionClassName = document.getElementById('section-class-name');
+      const submissionsTotalBadge = document.getElementById('submissions-total-badge');
+      const submissionsSearchInput = document.getElementById('submissions-search-input');
+      const btnRefreshSubmissions = document.getElementById('btn-refresh-submissions');
+      const iconRefresh = document.getElementById('icon-refresh');
+      const submissionsListContainer = document.getElementById('submissions-list-container');
+
+      // Helper: Toast notification nhỏ gọn
       function showToast(message, type = 'info') {
         const host = document.getElementById('toast-host');
         if (!host) return;
         const toast = document.createElement('div');
         const bgColors = {
-          success: 'bg-emerald-600 text-white',
-          error: 'bg-rose-600 text-white',
-          info: 'bg-indigo-600 text-white',
-          warn: 'bg-amber-600 text-white',
+          success: 'bg-emerald-600/95 text-white shadow-emerald-500/30 border-emerald-400/30',
+          error: 'bg-rose-600/95 text-white shadow-rose-500/30 border-rose-400/30',
+          info: 'bg-indigo-600/95 text-white shadow-indigo-500/30 border-indigo-400/30',
+          warn: 'bg-amber-600/95 text-white shadow-amber-500/30 border-amber-400/30',
         };
-        toast.className = `pointer-events-auto px-4 py-2.5 rounded-xl shadow-xl text-xs sm:text-sm font-medium transition-all duration-300 transform translate-y-4 opacity-0 flex items-center gap-2 ${bgColors[type] || bgColors.info}`;
-        toast.textContent = message;
+        const icons = {
+          success: '<svg class="w-4 h-4 shrink-0 text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>',
+          error: '<svg class="w-4 h-4 shrink-0 text-rose-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>',
+          warn: '<svg class="w-4 h-4 shrink-0 text-amber-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>',
+          info: '<svg class="w-4 h-4 shrink-0 text-indigo-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
+        };
+        toast.className = `pointer-events-auto px-4 py-3 rounded-xl shadow-2xl text-xs sm:text-sm font-semibold transition-all duration-300 transform -translate-y-2 opacity-0 flex items-center gap-2.5 border backdrop-blur-md ${bgColors[type] || bgColors.info}`;
+        toast.innerHTML = `${icons[type] || icons.info}<span>${message}</span>`;
         host.appendChild(toast);
         requestAnimationFrame(() => {
-          toast.classList.remove('translate-y-4', 'opacity-0');
+          toast.classList.remove('-translate-y-2', 'opacity-0');
         });
         setTimeout(() => {
-          toast.classList.add('opacity-0', 'translate-y-2');
+          toast.classList.add('opacity-0', '-translate-y-2');
           setTimeout(() => toast.remove(), 300);
-        }, 3500);
+        }, 4000);
       }
+
+      // Formatters
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function getInitials(name) {
+        if (!name) return 'HS';
+        const parts = name.trim().split(/\s+/);
+        if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+        return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+      }
+
+      function formatViDate(iso) {
+        if (!iso) return '';
+        try {
+          const d = new Date(iso);
+          return d.toLocaleString('vi-VN', {
+            hour: '2-digit',
+            minute: '2-digit',
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+          });
+        } catch (e) {
+          return iso;
+        }
+      }
+
+      function updateSubmissionCountBadge() {
+        if (submissionsTotalBadge) {
+          submissionsTotalBadge.textContent = `${currentSubmissions.length} bài`;
+        }
+      }
+
+      // Render danh sách bài nộp của lớp
+      function renderSubmissions(items) {
+        if (!submissionsListContainer) return;
+
+        if (!items || items.length === 0) {
+          const activeClass = classNameInput?.value?.trim() || 'lớp';
+          submissionsListContainer.innerHTML = `
+            <div class="p-8 sm:p-10 text-center rounded-2xl bg-slate-900/40 border border-slate-800 text-slate-400 space-y-2.5">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 mx-auto flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <p class="font-bold text-slate-200 text-sm">Chưa có bài nộp nào của Lớp <span class="text-indigo-400">${escapeHtml(activeClass)}</span></p>
+              <p class="text-xs text-slate-500 max-w-sm mx-auto">Các bài làm khi được gửi sẽ tự động xuất hiện tại đây cho cả học sinh và giáo viên cùng theo dõi.</p>
+            </div>
+          `;
+          return;
+        }
+
+        submissionsListContainer.innerHTML = items.map((sub) => {
+          const initials = getInitials(sub.studentName);
+          const hasImages = Array.isArray(sub.images) && sub.images.length > 0;
+          return `
+            <div
+              class="submission-item-card p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700/80 transition-all duration-300 shadow-md flex flex-col justify-between relative group"
+              data-sub-id="${sub.id}"
+            >
+              <div>
+                <!-- Card Header -->
+                <div class="flex items-start justify-between gap-3 mb-2.5">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-sky-400 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-sm shadow-indigo-500/20 ring-1 ring-white/10">
+                      ${initials}
+                    </div>
+                    <div class="min-w-0">
+                      <h3 class="font-bold text-sm sm:text-base text-white truncate">
+                        ${escapeHtml(sub.studentName)}
+                      </h3>
+                      <div class="flex items-center flex-wrap gap-1.5 mt-0.5">
+                        <span class="text-[11px] px-2 py-0.5 rounded-md font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                          Lớp ${escapeHtml(sub.className)}
+                        </span>
+                        <span class="text-[11px] px-2 py-0.5 rounded-md font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                          Lần ${sub.submissionCount || 1}
+                        </span>
+                        <span class="text-[11px] text-slate-400">
+                          • ${formatViDate(sub.createdAt)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <span class="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    <span>Đã nộp</span>
+                  </span>
+                </div>
+
+                <!-- Text Content -->
+                ${sub.content ? `
+                  <div class="text-xs sm:text-sm text-slate-200 bg-slate-950/70 p-3.5 rounded-xl border border-slate-800/80 mb-3 whitespace-pre-wrap leading-relaxed font-sans selection:bg-indigo-500/30">
+                    ${escapeHtml(sub.content)}
+                  </div>
+                ` : ''}
+
+                <!-- Images Grid -->
+                ${hasImages ? `
+                  <div class="space-y-1.5 mb-1">
+                    <div class="flex items-center justify-between text-[11px] text-slate-400 font-medium">
+                      <span>Ảnh bài làm (${sub.images.length} ảnh):</span>
+                      <span class="text-indigo-400 text-[10px]">Nhấp vào ảnh để phóng to</span>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
+                      ${sub.images.map((img, idx) => `
+                        <div class="aspect-video rounded-xl overflow-hidden border border-slate-800 bg-slate-950 cursor-pointer hover:border-indigo-500/60 hover:scale-[1.02] transition-all relative group/img shadow-sm">
+                          <img
+                            src="${img.url}"
+                            alt="${escapeHtml(img.name || `Ảnh ${idx + 1}`)}"
+                            loading="lazy"
+                            class="w-full h-full object-cover submission-preview-img"
+                            data-full-url="${img.url}"
+                          />
+                          <span class="absolute bottom-1 right-1 text-[9px] px-1.5 py-0.5 rounded bg-black/75 text-slate-300 font-mono">
+                            #${idx + 1}
+                          </span>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        // Gán sự kiện xem ảnh phóng to trong Lightbox
+        submissionsListContainer.querySelectorAll('.submission-preview-img').forEach((img) => {
+          img.addEventListener('click', () => {
+            if (lightboxImg && lightboxModal) {
+              lightboxImg.src = img.dataset.fullUrl;
+              lightboxModal.classList.remove('hidden');
+            }
+          });
+        });
+      }
+
+      // Fetch danh sách bài nộp khi đổi lớp
+      async function fetchSubmissionsForClass(cName) {
+        if (!cName) return;
+        if (sectionClassName) sectionClassName.textContent = cName;
+        if (submissionsListContainer) {
+          submissionsListContainer.innerHTML = `
+            <div class="p-8 text-center text-slate-400">
+              <svg class="w-6 h-6 animate-spin mx-auto text-indigo-400 mb-2" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+              </svg>
+              <p class="text-xs">Đang tải bài nộp của Lớp ${escapeHtml(cName)}...</p>
+            </div>
+          `;
+        }
+        if (iconRefresh) iconRefresh.classList.add('rotate-180');
+        try {
+          const res = await fetch(`/api/nop-bai/submissions?class=${encodeURIComponent(cName)}`);
+          const data = await res.json();
+          currentSubmissions = Array.isArray(data.submissions) ? data.submissions : [];
+          renderSubmissions(currentSubmissions);
+          updateSubmissionCountBadge();
+        } catch (err) {
+          console.error(err);
+          if (submissionsListContainer) {
+            submissionsListContainer.innerHTML = `<p class="text-xs text-rose-400 text-center py-4">Lỗi khi tải bài nộp của lớp ${escapeHtml(cName)}.</p>`;
+          }
+        } finally {
+          if (iconRefresh) iconRefresh.classList.remove('rotate-180');
+        }
+      }
+
+      // Tìm kiếm bài nộp realtime
+      submissionsSearchInput?.addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase().trim();
+        if (!q) {
+          renderSubmissions(currentSubmissions);
+          return;
+        }
+        const filtered = currentSubmissions.filter((s) => {
+          return (s.studentName || '').toLowerCase().includes(q) ||
+                 (s.content || '').toLowerCase().includes(q);
+        });
+        renderSubmissions(filtered);
+      });
+
+      // Nút làm mới bài nộp
+      btnRefreshSubmissions?.addEventListener('click', () => {
+        fetchSubmissionsForClass(classNameInput?.value?.trim() || '12A4');
+      });
 
       // Check count debouncer
       let countTimer = null;
@@ -684,7 +980,6 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
         }
 
         if (files.length > 0) {
-          // Ngăn hành vi mặc định nếu là dán ảnh thuần
           handleImageFiles(files);
         }
       });
@@ -808,6 +1103,9 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
             noticeText.textContent = cNotice || 'Học sinh ghi rõ họ tên, dán ảnh bài làm và viết lời giải chi tiết bên dưới.';
           }
 
+          // Cập nhật danh sách bài nộp của lớp vừa chọn
+          fetchSubmissionsForClass(cName);
+
           // Push state to URL
           try {
             const url = new URL(window.location.href);
@@ -855,7 +1153,7 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
       sidebarBackdrop?.addEventListener('click', closeMobileSidebar);
 
       // ============================================================
-      // SUBMIT ACTION (LƯU VÀO SUPABASE & ĐẾM LƯỢT NỘP)
+      // SUBMIT ACTION (LƯU VÀO SUPABASE, THÔNG BÁO NHỎ & CHẠY XUỐNG DƯỚI)
       // ============================================================
       btnSubmit?.addEventListener('click', async () => {
         const studentName = studentNameInput?.value?.trim();
@@ -908,23 +1206,51 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
             throw new Error(data.error || 'Nộp bài thất bại. Vui lòng thử lại!');
           }
 
-          // Hiển thị modal thành công & ghi nhận số lần nộp
-          modalSubmissionCount.textContent = data.submissionCount || 1;
-          modalStudentName.textContent = data.studentName || studentName;
-          modalClassName.textContent = data.className || className;
-          modalTimestamp.textContent = new Date(data.createdAt || Date.now()).toLocaleString('vi-VN');
-          modalImageCount.textContent = `${(data.images || []).length} ảnh`;
+          // 1. THÔNG BÁO NHỎ THÀNH CÔNG (Toast)
+          showToast(`🎉 Nộp bài thành công! Bạn đã nộp lần thứ ${data.submissionCount || 1}.`, 'success');
 
-          successModal?.classList.remove('hidden');
-
-          // Reset content & images
+          // 2. Reset nội dung và ảnh bài làm đã nộp
           contentTextarea.value = '';
           contentTextarea.dispatchEvent(new Event('input'));
           pendingImages.length = 0;
           renderPreviews();
 
-          // Refresh live count
+          // 3. Tạo đối tượng bài nộp mới và thêm lên đầu danh sách bài nộp của lớp
+          const newSubItem = {
+            id: data.submissionId || 'sub-' + Date.now(),
+            studentName: data.studentName || studentName,
+            className: data.className || className,
+            content: content,
+            images: data.images || [],
+            submissionCount: data.submissionCount || 1,
+            createdAt: data.createdAt || new Date().toISOString(),
+          };
+
+          const currentViewingClass = (sectionClassName?.textContent || '').trim().toLowerCase();
+          if (currentViewingClass === className.toLowerCase()) {
+            currentSubmissions.unshift(newSubItem);
+            renderSubmissions(currentSubmissions);
+            updateSubmissionCountBadge();
+          } else {
+            fetchSubmissionsForClass(className);
+          }
+
+          // 4. Cập nhật đếm số lần nộp của học sinh
           checkSubmissionCount();
+
+          // 5. TỰ ĐỘNG CHẠY XUỐNG DƯỚI CHO HỌC SINH THẤY BÀI NỘP CỦA MÌNH
+          setTimeout(() => {
+            const newCard = document.querySelector(`[data-sub-id="${newSubItem.id}"]`);
+            if (newCard) {
+              newCard.classList.add('ring-2', 'ring-emerald-400', 'bg-emerald-950/20');
+              newCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              setTimeout(() => {
+                newCard.classList.remove('ring-2', 'ring-emerald-400', 'bg-emerald-950/20');
+              }, 4000);
+            } else {
+              document.getElementById('class-submissions-section')?.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 150);
 
         } catch (err) {
           console.error(err);
@@ -942,7 +1268,9 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
         successModal?.classList.add('hidden');
       });
 
-      // Initial check
+      // Initial check & render
+      renderSubmissions(currentSubmissions);
+      updateSubmissionCountBadge();
       checkSubmissionCount();
     })();
   </script>
