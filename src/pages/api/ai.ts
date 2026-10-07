@@ -2,20 +2,23 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-const GEMINI_API_KEY = import.meta.env.GEMINI_API_KEY || '';
-
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   try {
     const { message } = await request.json();
     if (!message) {
       return new Response(JSON.stringify({ error: 'Message is required' }), { status: 400 });
     }
 
-    // 1. If Gemini API Key is configured, fetch response from Google Gemini
-    if (GEMINI_API_KEY && !GEMINI_API_KEY.includes('AIzaSy')) {
+    // Resolve Gemini API key from Cloudflare runtime env or static env
+    const runtimeEnv = (locals as any).runtimeEnv as Record<string, string | undefined> | undefined;
+    const apiKey = (runtimeEnv && runtimeEnv['GEMINI_API_KEY']) || import.meta.env.GEMINI_API_KEY || '';
+
+    // 1. If Gemini API Key is valid (not empty and not placeholder), fetch response from Google Gemini
+    const isValidKey = apiKey && !apiKey.includes('placeholder') && !apiKey.includes('YOUR_KEY') && apiKey.length > 15;
+    if (isValidKey) {
       try {
         const response = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`,
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

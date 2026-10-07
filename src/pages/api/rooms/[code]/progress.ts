@@ -1,4 +1,4 @@
-﻿import type { APIRoute } from 'astro';
+import type { APIRoute } from 'astro';
 import { roomStore, db } from '../../../../services/db';
 import { uuidToSeed, mulberry32 } from '../../../../lib/random';
 import { buildShuffledExam } from '../../../../lib/exam';
@@ -8,14 +8,14 @@ export const prerender = false;
 // PATCH /api/rooms/[code]/progress — Student updates answered count (live progress)
 export const PATCH: APIRoute = async ({ params, request }) => {
   const code = (params.code || '').toUpperCase();
-  const room = roomStore.getRoomByCode(code);
+  const room = await roomStore.getRoomByCode(code);
   if (!room) return new Response(JSON.stringify({ error: 'Room not found' }), { status: 404 });
 
   try {
     const { participantId, answeredCount } = await request.json();
     if (!participantId) return new Response(JSON.stringify({ error: 'participantId required' }), { status: 400 });
 
-    const updated = roomStore.updateProgress(participantId, answeredCount ?? 0);
+    const updated = await roomStore.updateProgress(participantId, answeredCount ?? 0);
     return new Response(JSON.stringify({ participant: updated }), { status: 200 });
   } catch (err: any) {
     return new Response(JSON.stringify({ error: err.message }), { status: 500 });
@@ -25,7 +25,7 @@ export const PATCH: APIRoute = async ({ params, request }) => {
 // POST /api/rooms/[code]/progress — Student submits final answers + score
 export const POST: APIRoute = async ({ params, request }) => {
   const code = (params.code || '').toUpperCase();
-  const room = roomStore.getRoomByCode(code);
+  const room = await roomStore.getRoomByCode(code);
   if (!room) return new Response(JSON.stringify({ error: 'Room not found' }), { status: 404 });
 
   try {
@@ -34,7 +34,7 @@ export const POST: APIRoute = async ({ params, request }) => {
       return new Response(JSON.stringify({ error: 'participantId and answers are required' }), { status: 400 });
     }
 
-    const participant = roomStore.getParticipant(participantId);
+    const participant = await roomStore.getParticipant(participantId);
     if (!participant) return new Response(JSON.stringify({ error: 'Participant not found' }), { status: 404 });
 
     // Grade: reuse same scoring logic as attempts.ts
@@ -98,7 +98,7 @@ export const POST: APIRoute = async ({ params, request }) => {
       if (isCorrect) totalScore += q.type === 'sa' ? 0.5 : 0.25;
     });
 
-    const updated = roomStore.submitParticipant(participantId, totalScore, answeredCount);
+    const updated = await roomStore.submitParticipant(participantId, totalScore, answeredCount);
     return new Response(JSON.stringify({ participant: updated, score: totalScore }), { status: 200 });
   } catch (err: any) {
     return new Response(JSON.stringify({ error: err.message }), { status: 500 });

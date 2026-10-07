@@ -1,0 +1,36 @@
+
+--- 2026-10-06T14:29:13.250Z debug
+🪵  Writing logs to "D:\lop12-cf\.tmp-config\.wrangler\logs\wrangler-2026-10-06_14-29-12_616.log"
+---
+
+--- 2026-10-06T14:29:13.250Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-10-06T14:29:13.252Z debug
+.env file not found at "D:\lop12-cf\.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-10-06T14:29:15.583Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-10-06T14:29:15.584Z log
+Using secrets defined in .env
+---
+
+--- 2026-10-06T14:29:15.585Z debug
+.env file not found at "D:\lop12-cf\.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-10-06T14:29:18.646Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-10-06T14:29:18.647Z log
+Using secrets defined in .env
+---
+
+--- 2026-10-06T14:29:18.648Z debug
+.env file not found at "D:\lop12-cf\.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---

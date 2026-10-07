@@ -16,7 +16,7 @@ const exams = await db.getExams(undefined, user.id);
 const allExams = exams.length > 0 ? exams : await db.getExams();
 
 // Get teacher's existing rooms
-const teacherRooms = roomStore.getTeacherRooms(user.id);
+const teacherRooms = await roomStore.getTeacherRooms(user.id);
 ---
 
 <Layout title="Phong thi ao - Giao vien">

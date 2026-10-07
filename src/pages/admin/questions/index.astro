@@ -239,7 +239,7 @@ const qTypeNames: Record<string, string> = {
 
                    <!-- Category -->
                    <td class="py-4 pr-3">
-                     {(q.category_id || q.metadata?.category_id) && categoriesMap[q.category_id || q.metadata?.category_id] ? (
+                     {(q.category_id || q.metadata?.category_id) && categoriesMap[(q.category_id || q.metadata?.category_id) as string] ? (
                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-indigo-50 text-indigo-600 dark:bg-indigo-950/30 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900/40">
                          {categoriesMap[(q.category_id || q.metadata?.category_id) as string].name}
                        </span>

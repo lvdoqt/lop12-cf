@@ -871,4 +871,4 @@ const allCategories = await db.getCategories();
   }
 </script>
 
-<script id="q-categories-data" type="application/json" set:html={JSON.stringify(allCategories)}></script>
+<script is:inline id="q-categories-data" type="application/json" set:html={JSON.stringify(allCategories)}></script>

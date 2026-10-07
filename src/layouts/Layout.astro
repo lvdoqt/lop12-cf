@@ -161,7 +161,7 @@ const adsEnabled = showAds && !noindex && !!ADSENSE_CLIENT && allowAdsense(Astro
 
     <!-- JSON-LD Structured Data -->
     {schemas.length > 0 && schemas.map(schema => (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
 
     <!-- Google Fonts -->

@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { db } from '../../services/db';
+import { getGroupClient } from '../../services/groupChat';
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
+  return Astro.redirect('/dashboard');
+}
+
+// Lấy danh sách nhóm
+const runtimeEnv = Astro.locals.runtimeEnv;
+const client = getGroupClient(runtimeEnv);
+const { data: groups } = await client
+  .from('chat_groups')
+  .select('*')
+  .order('created_at', { ascending: false });
+
+---
+
+<Layout title="Quản lý nhóm lớp học">
+  <div class="max-w-5xl mx-auto py-8 px-4">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Quản lý nhóm (Zalo style)</h1>
+        <p class="text-gray-500 dark:text-slate-400 mt-1">Tạo và quản lý các nhóm chat, lớp học, câu lạc bộ.</p>
+      </div>
+      <button
+        id="btn-open-create"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition"
+      >
+        + Tạo nhóm mới
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {groups?.map((g: any) => (
+        <a href={`/nhom?groupId=${g.id}`} class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 hover:border-blue-500 hover:shadow-md transition block group relative">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg" style={`background-color: ${g.color || '#6366f1'}`}>
+              {g.initials || g.name.substring(0, 2).toUpperCase()}
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition">{g.name}</h3>
+              <p class="text-xs text-gray-500 dark:text-slate-400">{g.is_club ? 'Nhóm/CLB' : 'Lớp học chính khoá'} {g.grade ? `· Khối ${g.grade}` : ''}</p>
+            </div>
+          </div>
+          <div class="text-sm text-gray-600 dark:text-slate-300 mb-4 line-clamp-2">
+            {g.speciality || 'Chưa có mô tả ngắn'}
+          </div>
+          <div class="flex items-center justify-between text-xs text-gray-500 dark:text-slate-400 border-t border-gray-100 dark:border-slate-700 pt-3">
+            <span>Mã nhóm: {g.id.substring(0, 8)}...</span>
+            <span class="text-blue-600 dark:text-blue-400 font-medium group-hover:underline">Mở khung chat →</span>
+          </div>
+        </a>
+      ))}
+      
+      {(!groups || groups.length === 0) && (
+        <div class="col-span-full text-center py-12 bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700">
+          <p class="text-gray-500 dark:text-slate-400">Chưa có nhóm nào. Hãy tạo nhóm đầu tiên để bắt đầu trao đổi!</p>
+        </div>
+      )}
+    </div>
+  </div>
+
+  <!-- Modal Tạo Nhóm -->
+  <div id="create-modal" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm modal-backdrop"></div>
+    <div class="absolute inset-0 flex items-center justify-center p-4">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-xl w-full max-w-md overflow-hidden relative z-10 animate-in zoom-in-95 duration-200">
+        <div class="p-5 border-b border-gray-100 dark:border-slate-800 flex items-center justify-between">
+          <h2 class="text-lg font-bold text-gray-900 dark:text-white">Tạo nhóm mới</h2>
+          <button type="button" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 modal-close-btn">
+            ✕
+          </button>
+        </div>
+        <form id="create-group-form" class="p-5 space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Tên nhóm / Lớp *</label>
+            <input type="text" id="group-name" required placeholder="VD: Lớp 12A4, CLB Toán học..." class="w-full rounded-lg border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500 px-3 py-2 border outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Mô tả / Chuyên ban</label>
+            <input type="text" id="group-speciality" placeholder="VD: Khối KHTN, Luyện thi đại học..." class="w-full rounded-lg border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500 px-3 py-2 border outline-none" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Màu đại diện</label>
+              <input type="color" id="group-color" value="#6366f1" class="w-full h-10 rounded-lg cursor-pointer" />
+            </div>
+            <div class="flex items-center mt-6">
+              <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-700 dark:text-slate-300">
+                <input type="checkbox" id="group-is-club" class="rounded text-blue-600 focus:ring-blue-500 w-4 h-4" />
+                Là CLB / Nhóm ôn thi
+              </label>
+            </div>
+          </div>
+          
+          <div class="pt-4 flex items-center justify-end gap-3">
+            <button type="button" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 modal-close-btn">
+              Hủy
+            </button>
+            <button type="submit" id="btn-submit" class="px-4 py-2 rounded-lg text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition flex items-center gap-2">
+              Tạo nhóm
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { withBase } from '../../lib/base';
+
+  const modal = document.getElementById('create-modal')!;
+  const openBtn = document.getElementById('btn-open-create')!;
+  const closeBtns = document.querySelectorAll('.modal-close-btn, .modal-backdrop');
+  const form = document.getElementById('create-group-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('btn-submit') as HTMLButtonElement;
+
+  openBtn.onclick = () => modal.classList.remove('hidden');
+  closeBtns.forEach(btn => {
+    (btn as HTMLElement).onclick = () => modal.classList.add('hidden');
+  });
+
+  form.onsubmit = async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Đang tạo...';
+
+    const payload = {
+      name: (document.getElementById('group-name') as HTMLInputElement).value,
+      speciality: (document.getElementById('group-speciality') as HTMLInputElement).value,
+      color: (document.getElementById('group-color') as HTMLInputElement).value,
+      isClub: (document.getElementById('group-is-club') as HTMLInputElement).checked,
+    };
+
+    try {
+      const res = await fetch(withBase('/api/nhom/groups'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      
+      if (!res.ok) throw new Error(data.error || 'Lỗi server');
+      
+      alert('Tạo nhóm thành công!');
+      window.location.reload();
+    } catch (err: any) {
+      alert(err.message);
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Tạo nhóm';
+    }
+  };
+</script>

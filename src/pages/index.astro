@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import LessonCard from '../components/LessonCard.astro';
 import ExamCard from '../components/ExamCard.astro';
 import { db } from '../services/db';
 import { isMockMode } from '../lib/supabase';
@@ -23,14 +22,15 @@ if (isMockMode) {
 const lessons = rawLessons.map(entry => {
   const subjectSlug = entry.id.split('/')[0];
   const matchingSubject = subjects.find(s => s.slug === subjectSlug);
+  const firstLesson = (entry.data as any).lessons?.[0] || {};
   return {
     id: entry.id,
     subject_id: matchingSubject ? matchingSubject.id : '',
-    title: entry.data.title,
-    slug: entry.id.split('/').pop() || entry.id,
-    video_url: entry.data.video_url || null,
+    title: firstLesson.name || firstLesson.title || entry.id,
+    slug: firstLesson.slug || entry.id.split('/').pop() || entry.id,
+    video_url: firstLesson.video_url || null,
     content: '',
-    created_at: entry.data.created_at || new Date().toISOString()
+    created_at: firstLesson.created_at || new Date().toISOString()
   };
 });
 

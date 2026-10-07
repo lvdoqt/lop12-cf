@@ -28,7 +28,7 @@ if (Astro.request.method === 'POST') {
     const duration = Number(formData.get('duration'));
     const subject_id = formData.get('subject_id') as string;
     const category_id = (formData.get('category_id') as string) || null;
-    const exam_type = formData.get('exam_type') as '15m' | '45m' | 'semester' | 'mock_thpt';
+    const exam_type = formData.get('exam_type') as '15m' | '45m' | 'semester' | 'mock_thpt' | 'vsat';
     
     const questionsJson = formData.get('questions_json') as string;
     let questionsData: any[] = [];
@@ -373,6 +373,7 @@ const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
               <option value="45m" selected={exam.exam_type === '45m'}>Kiểm tra 1 tiết</option>
               <option value="semester" selected={exam.exam_type === 'semester'}>Thi học kỳ</option>
               <option value="mock_thpt" selected={exam.exam_type === 'mock_thpt'}>Thi thử THPT</option>
+              <option value="vsat" selected={exam.exam_type === 'vsat'}>Thi đánh giá năng lực V-SAT</option>
             </select>
           </div>
         </div>
@@ -482,15 +483,15 @@ const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
 </Layout>
 
 <!-- Data payload for JS to consume -->
-<script type="application/json" id="assigned-questions-data" set:html={JSON.stringify(assignedQuestions).replace(/</g, '\\u003c')}></script>
-<script type="application/json" id="bank-questions-data" set:html={JSON.stringify(availableQuestions).replace(/</g, '\\u003c')}></script>
+<script is:inline type="application/json" id="assigned-questions-data" set:html={JSON.stringify(assignedQuestions).replace(/</g, '\\u003c')}></script>
+<script is:inline type="application/json" id="bank-questions-data" set:html={JSON.stringify(availableQuestions).replace(/</g, '\\u003c')}></script>
 
-<script>
+<script is:inline>
   let examQuestions = JSON.parse(document.getElementById('assigned-questions-data').textContent || '[]');
   let bankQuestions = JSON.parse(document.getElementById('bank-questions-data').textContent || '[]');
   let editingId = null;
 
-  const subjectSelect = document.getElementById('subject_id') as HTMLSelectElement | null;
+  const subjectSelect = document.getElementById('subject_id') ;
   const list = document.getElementById('assigned-questions-list');
   const bankList = document.getElementById('bank-questions-list');
   
@@ -668,7 +669,7 @@ const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
     }
     
     // Update hidden input for form POST
-    const questionsInput = document.getElementById('questions_json') as HTMLInputElement;
+    const questionsInput = document.getElementById('questions_json') ;
     if (questionsInput) {
       questionsInput.value = JSON.stringify(examQuestions);
     }
@@ -676,8 +677,8 @@ const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
 
   function renderBank() {
     if (!bankList) return;
-    const modalSubject = document.getElementById('modal_subject_id') as HTMLSelectElement | null;
-    const modalCategory = document.getElementById('modal_category_id') as HTMLSelectElement | null;
+    const modalSubject = document.getElementById('modal_subject_id') ;
+    const modalCategory = document.getElementById('modal_category_id') ;
     const selectedSubjectId = modalSubject?.value;
     const selectedCategoryId = modalCategory?.value;
     
@@ -915,7 +916,7 @@ const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
   btnAddSelected?.addEventListener('click', () => {
     const checked = document.querySelectorAll('.modal-question-checkbox:checked');
     checked.forEach(cb => {
-      const qId = (cb as HTMLInputElement).value;
+      const qId = cb.value;
       const bankQ = bankQuestions.find(x => x.id === qId);
       if (bankQ) {
         // Deep clone the bank question, assign a new pseudo-ID for the UI array
@@ -938,14 +939,14 @@ const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
   const catDataEl = document.getElementById('categories-data');
   const ALL_CATEGORIES = catDataEl ? JSON.parse(catDataEl.textContent || '[]') : [];
 
-  function updateCategoryDropdown(subjectId: string, dropdownId: string) {
-    const sel = document.getElementById(dropdownId) as HTMLSelectElement | null;
+  function updateCategoryDropdown(subjectId, dropdownId) {
+    const sel = document.getElementById(dropdownId) ;
     if (!sel) return;
-    const filtered = ALL_CATEGORIES.filter((c: any) => c.subject_id === subjectId);
+    const filtered = ALL_CATEGORIES.filter(c => c.subject_id === subjectId);
     
     const currentVal = sel.value;
     sel.innerHTML = '<option value="">-- Không phân chuyên mục --</option>';
-    filtered.forEach((c: any) => {
+    filtered.forEach(c => {
       const opt = document.createElement('option');
       opt.value = c.id;
       opt.textContent = c.name;
@@ -964,16 +965,16 @@ const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
     });
     if (subjectSelect.value) {
       updateCategoryDropdown(subjectSelect.value, 'exam_category_id');
-      const initialCat = (document.getElementById('exam-initial-category') as HTMLInputElement | null)?.value;
-      const catDropdown = document.getElementById('exam_category_id') as HTMLSelectElement | null;
+      const initialCat = document.getElementById('exam-initial-category')?.value;
+      const catDropdown = document.getElementById('exam_category_id') ;
       if (initialCat && catDropdown) {
         catDropdown.value = initialCat;
       }
     }
   }
 
-  const modalSubjectSelect = document.getElementById('modal_subject_id') as HTMLSelectElement | null;
-  const modalCategorySelect = document.getElementById('modal_category_id') as HTMLSelectElement | null;
+  const modalSubjectSelect = document.getElementById('modal_subject_id') ;
+  const modalCategorySelect = document.getElementById('modal_category_id') ;
   if (modalSubjectSelect) {
     modalSubjectSelect.addEventListener('change', () => {
       updateCategoryDropdown(modalSubjectSelect.value, 'modal_category_id');
@@ -994,4 +995,4 @@ const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
 
 </script>
 
-<script id="categories-data" type="application/json" set:html={JSON.stringify(allCategories)}></script>
+<script is:inline id="categories-data" type="application/json" set:html={JSON.stringify(allCategories)}></script>

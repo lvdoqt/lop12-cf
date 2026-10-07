@@ -4,6 +4,7 @@ const base = import.meta.env.BASE_URL;
 const pathname = new URL(Astro.request.url).pathname.replace(base, '') || '/';
 
 const menuItems = [
+  { href: '/nhom', label: 'Nhóm lớp học', icon: 'groups' },
   { href: '/dashboard', label: 'Bảng điều khiển', icon: 'dashboard' },
   ...(user && (user.role === 'admin' || user.role === 'teacher') 
     ? [

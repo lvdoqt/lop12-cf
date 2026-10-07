@@ -114,7 +114,7 @@ const sample = JSON.stringify({ questions: [
       <div class="flex justify-end"><button class="rounded-xl bg-[#075985] px-6 py-3 text-sm font-bold text-white">Tạo đề và xem trước →</button></div>
     </form>
   </div>
-  <script define:vars={{ sample }}>
+  <script is:inline define:vars={{ sample }}>
     const area = document.getElementById('json'); const feedback = document.getElementById('feedback');
     document.getElementById('sample')?.addEventListener('click', () => { area.value = sample; area.dispatchEvent(new Event('input')); });
     async function loadSample(url) {

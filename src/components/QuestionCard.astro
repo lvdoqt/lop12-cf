@@ -6,10 +6,14 @@ interface Props {
   question: Question & { answers: Answer[] };
   index: number;
   mode?: 'take' | 'review';
-  selectedAnswers?: string[]; // Array of selected answer IDs
+  selectedAnswers?: any[];
 }
 
 const { question, index, mode = 'take', selectedAnswers = [] } = Astro.props;
+
+const submittedMsqMap: Record<string, string> = (selectedAnswers && typeof selectedAnswers[0] === 'object' && selectedAnswers[0] !== null)
+  ? selectedAnswers[0]
+  : {};
 
 const parseMarkdownWithMath = (text: string = '', isInline = false) => {
   if (!text) return '';
@@ -146,8 +150,7 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
     <div class="space-y-4">
       {question.answers.map((answer, optIdx) => {
         const optionLetter = String.fromCharCode(65 + optIdx); // A, B, C, D
-        const submittedObj = selectedAnswers[0] || {};
-        const currentSelection = submittedObj[answer.id]; // "Đúng", "Sai", or undefined
+        const currentSelection = (submittedMsqMap as any)[answer.id]; // "Đúng", "Sai", or undefined
         const correctChoice = answer.is_correct ? 'Đúng' : 'Sai';
         const isOptionCorrect = currentSelection === correctChoice;
         

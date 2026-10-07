@@ -362,8 +362,15 @@ if (themeScore < 5.0) {
         </div>
         <div class="rounded-2xl border border-violet-200 bg-violet-50 p-5 dark:border-violet-900 dark:bg-violet-950/20">
           <p class="text-xs font-bold uppercase tracking-wider text-violet-700 dark:text-violet-400">Điểm năng lực IRT</p>
-          <p class="mt-1 text-3xl font-black text-violet-950 dark:text-white">{abilityScore ?? 'Chưa hiệu chỉnh'}</p>
-          <p class="mt-2 text-xs leading-5 text-violet-800 dark:text-violet-300">Cần tham số câu hỏi và dữ liệu mẫu để ước lượng IRT; không quy đổi tuyến tính từ điểm thô.</p>
+          <p class="mt-1 text-3xl font-black text-violet-950 dark:text-white">
+            {abilityScore ?? 'Chưa hiệu chỉnh'}
+            {abilityScore !== null && <span class="text-sm font-semibold text-violet-700 dark:text-violet-400">/ 800</span>}
+          </p>
+          <p class="mt-2 text-xs leading-5 text-violet-800 dark:text-violet-300">
+            {abilityScore !== null 
+              ? 'Ước lượng năng lực theo mô hình Rasch (1PL IRT) chuẩn hóa theo thang điểm V-SAT (Mean = 500, SD = 100).'
+              : 'Cần tham số câu hỏi và dữ liệu mẫu để ước lượng IRT; không quy đổi tuyến tính từ điểm thô.'}
+          </p>
         </div>
       </div>
     )}
@@ -517,7 +524,7 @@ if (themeScore < 5.0) {
                         index={question.globalIndex}
                         mode="review"
                         selectedAnswers={
-                          (attempt.answers_submitted?.[question.id] as Record<
+                          (attempt.answers_submitted?.[question.id] as unknown as Record<
                             string,
                             string
                           >) || {}
@@ -541,7 +548,7 @@ if (themeScore < 5.0) {
                           index={question.globalIndex}
                           mode="review"
                           selectedAnswers={
-                            (attempt.answers_submitted?.[question.id] as Record<
+                            (attempt.answers_submitted?.[question.id] as unknown as Record<
                               string,
                               string
                             >) || {}
@@ -569,7 +576,7 @@ if (themeScore < 5.0) {
                               selectedAnswers={
                                 (attempt.answers_submitted?.[
                                   question.id
-                                ] as Record<string, string>) || {}
+                                ] as unknown as Record<string, string>) || {}
                               }
                             />
                           );

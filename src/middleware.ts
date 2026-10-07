@@ -7,7 +7,7 @@ import { env } from 'cloudflare:workers';
 
 // Thêm base path (ví dụ '/lms') vào header Location của các redirect
 // (Astro.redirect / redirect không tự thêm base).
-function fixRedirectLocation(headers: Headers, base: string): void {
+function fixRedirectLocation(headers: Headers): void {
   const loc = headers.get('location');
   if (!loc) return;
   const fixed = withBase(loc);
@@ -57,11 +57,12 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   // Determine mock mode using runtime env (correct on Cloudflare Pages)
   const mockMode = isMockModeForEnv(runtimeEnv);
+  const allowMock = import.meta.env.DEV || mockMode;
 
   // Initialize locals
   context.locals.user = null;
 
-  const mockUserId = context.cookies.get('mock-user-id')?.value;
+  const mockUserId = allowMock ? context.cookies.get('mock-user-id')?.value : undefined;
   if (mockUserId) {
     const user = await db.getUserById(mockUserId);
     if (user) {
@@ -123,12 +124,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   //   /ly-thuyet, /ly-thuyet/[slug] — Subject list & detail
   //   /[subject]/[slug]          — Lesson content
   //   /exams/[id]                — Exam info page (shows title, time, question count, lock icon if has password)
-  //   /, /about, /contact, /guide, /privacy, /sitemap
-  const isPublicContent =
-    path.startsWith('/ly-thuyet') ||
-    /^\/[a-z0-9-]+-12\/[a-z0-9-]+$/.test(path) || // e.g., /toan-12/bai-1
-    path.startsWith('/thi-online') || // Public: student virtual exam room entry & exam taking
-    path === '/';
+
 
   // Exam info page is public (e.g. /exams/exam-1 but NOT /exams/exam-1/take or /exams/exam-1/result/...)
   // Check: starts with /exams/ and only has ONE segment after it (no further slashes)
@@ -141,7 +137,8 @@ export const onRequest = defineMiddleware(async (context, next) => {
   //   /dashboard, /profile, /ai-chat
   const isProtectedRoute =
     path.startsWith('/dashboard') ||
-    path.startsWith('/profile');
+    path.startsWith('/profile') ||
+    path === '/nhom' || path.startsWith('/nhom/');
 
   const isAdminRoute = path.startsWith('/admin');
   const isTeacherRoute = path.startsWith('/giao-vien');
@@ -153,16 +150,16 @@ export const onRequest = defineMiddleware(async (context, next) => {
   if (user) {
     // Logged-in user trying to access login/register → send to dashboard
     if (isAuthPage) {
-      return context.redirect('/dashboard');
+      return context.redirect(withBase('/dashboard'));
     }
     // Admin-only / Teacher-only route check
     if ((isAdminRoute || isTeacherRoute) && user.role !== 'admin' && user.role !== 'teacher') {
-      return context.redirect('/dashboard');
+      return context.redirect(withBase('/dashboard'));
     }
   } else {
     // Guest user trying to access protected route → send to login
     if (isProtectedRoute || isAdminRoute || isTeacherRoute) {
-      return context.redirect('/login');
+      return context.redirect(withBase('/login'));
     }
   }
 
@@ -191,7 +188,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
       console.warn('Không thể rewrite base trong HTML:', e);
     }
   }
-  fixRedirectLocation(finalResponse.headers, base);
+  fixRedirectLocation(finalResponse.headers);
 
   // ============================================================
   // CACHE HEADERS (chỉ áp dụng cho GET requests thành công)

@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { isMockModeForEnv } from '../../../lib/supabase';
 
 export const prerender = false;
 
@@ -13,12 +14,16 @@ function getCookieOptions(maxAge: number) {
   };
 }
 
-export const POST: APIRoute = async ({ request, cookies }) => {
+export const POST: APIRoute = async ({ request, cookies, locals }) => {
   try {
     const body = await request.json();
     
-    // Support both Supabase tokens and Mock mode user ID
+    // Support both Supabase tokens and Mock mode user ID (DEV or mock mode only)
     if (body.mockUserId) {
+      const isAllowedMock = import.meta.env.DEV || isMockModeForEnv((locals as any).runtimeEnv);
+      if (!isAllowedMock) {
+        return new Response(JSON.stringify({ error: 'Mock login is disabled in production' }), { status: 403 });
+      }
       cookies.set('mock-user-id', body.mockUserId, getCookieOptions(60 * 60 * 24 * 7));
       return new Response(JSON.stringify({ success: true }), { status: 200 });
     }

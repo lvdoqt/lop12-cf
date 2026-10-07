@@ -159,7 +159,7 @@ const breadcrumbs = [
   </div>
 </Layout>
 
-<script define:vars={{ subjectSlug: subject.slug, subjectName: subject.name, color }}>
+<script is:inline define:vars={{ subjectSlug: subject.slug, subjectName: subject.name, color }}>
   const lessonsBtn = document.getElementById('tab-lessons-btn');
   const examsBtn = document.getElementById('tab-exams-btn');
   const lessonsContent = document.getElementById('tab-lessons-content');

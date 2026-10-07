@@ -1,4 +1,4 @@
-﻿import type { APIRoute } from 'astro';
+import type { APIRoute } from 'astro';
 import { roomStore } from '../../../services/db';
 
 export const prerender = false;
@@ -10,7 +10,7 @@ export const GET: APIRoute = async ({ params }) => {
     return new Response(JSON.stringify({ error: 'Code required' }), { status: 400 });
   }
 
-  const room = roomStore.getRoomByCode(code);
+  const room = await roomStore.getRoomByCode(code);
   if (!room) {
     return new Response(JSON.stringify({ error: 'Phong thi khong ton tai' }), { status: 404 });
   }

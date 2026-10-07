@@ -11,6 +11,22 @@ type AnswerMap = Record<string, string | string[] | Record<string, string>>;
 
 const labels: Record<string, string> = { mcq: 'Chọn đáp án', msq: 'Đúng / Sai', read: 'Chọn đáp án', single_choice: 'Chọn đáp án', matching: 'Ghép cặp', sa: 'Trả lời ngắn', cloze_text: 'Điền một từ' };
 
+const typeColors: Record<string, { done: string, todo: string }> = {
+  mcq: { done: 'border-green-600 bg-green-600 text-white', todo: 'border-green-300 bg-white text-green-700' },
+  single_choice: { done: 'border-green-600 bg-green-600 text-white', todo: 'border-green-300 bg-white text-green-700' },
+  multiple_choice: { done: 'border-blue-600 bg-blue-600 text-white', todo: 'border-blue-300 bg-white text-blue-700' },
+  msq: { done: 'border-violet-600 bg-violet-600 text-white', todo: 'border-violet-300 bg-white text-violet-700' },
+  sa: { done: 'border-amber-500 bg-amber-500 text-white', todo: 'border-amber-300 bg-white text-amber-700' },
+  tl: { done: 'border-emerald-600 bg-emerald-600 text-white', todo: 'border-emerald-300 bg-white text-emerald-700' },
+  true_false: { done: 'border-orange-500 bg-orange-500 text-white', todo: 'border-orange-300 bg-white text-orange-700' },
+  matching: { done: 'border-cyan-600 bg-cyan-600 text-white', todo: 'border-cyan-300 bg-white text-cyan-700' },
+  cloze_text: { done: 'border-amber-600 bg-amber-600 text-white', todo: 'border-amber-300 bg-white text-amber-700' },
+  read: { done: 'border-indigo-600 bg-indigo-600 text-white', todo: 'border-indigo-300 bg-white text-indigo-700' },
+  list: { done: 'border-cyan-600 bg-cyan-600 text-white', todo: 'border-cyan-300 bg-white text-cyan-700' },
+  read_cloze: { done: 'border-teal-600 bg-teal-600 text-white', todo: 'border-teal-300 bg-white text-teal-700' },
+  default: { done: 'border-sky-700 bg-sky-700 text-white', todo: 'border-slate-300 bg-white text-slate-600' }
+};
+
 export default function VSatExamView({ exam, attempt, questions, initialSeconds }: Props) {
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [time, setTime] = useState(initialSeconds);
@@ -69,7 +85,7 @@ export default function VSatExamView({ exam, attempt, questions, initialSeconds 
       </div>
       <aside className="h-fit rounded-xl border border-slate-200 bg-white p-4 shadow-sm lg:sticky lg:top-24">
         <div className="mb-3 flex justify-between text-sm"><b>Phiếu trả lời</b><span className="text-slate-500">{answered}/{totalItems} câu</span></div>
-        <div className="mb-5 grid grid-cols-5 gap-2">{indexed.flatMap(q => Array.from({ length: q.itemCount }, (_, i) => { const a = answers[q.id]; const done = q.itemCount === 1 ? Boolean(a) : Boolean(a && typeof a === 'object' && !Array.isArray(a) && (a as Record<string,string>)[String(i)]); return <a href={`#question-section-${q.displayIndex}`} title={labels[q.type]} className={`grid h-9 place-items-center rounded-md border text-xs font-bold ${done ? 'border-sky-700 bg-sky-700 text-white' : 'border-slate-300 bg-white text-slate-600'}`}>{q.displayIndex + i}</a>; }))}</div>
+        <div className="mb-5 grid grid-cols-5 gap-2">{indexed.flatMap(q => Array.from({ length: q.itemCount }, (_, i) => { const a = answers[q.id]; const done = q.itemCount === 1 ? Boolean(a) : Boolean(a && typeof a === 'object' && !Array.isArray(a) && (a as Record<string,string>)[String(i)]); const colors = typeColors[q.type] || typeColors.default; return <a href={`#question-section-${q.displayIndex}`} title={labels[q.type]} key={`${q.id}-${i}`} className={`grid h-9 place-items-center rounded-md border text-xs font-bold transition-colors ${done ? colors.done : colors.todo}`}>{q.displayIndex + i}</a>; }))}</div>
         <div className="mb-4 space-y-1 border-t pt-3 text-xs text-slate-500">{Object.entries(labels).filter(([k]) => indexed.some(q => q.type === k)).map(([k,v]) => <p><span className="font-bold text-slate-700">{indexed.filter(q => q.type === k).length}</span> {v}</p>)}</div>
         <button onClick={() => setConfirm(true)} disabled={submitting} className="w-full rounded-lg bg-[#075985] px-4 py-3 text-sm font-bold text-white hover:bg-sky-800 disabled:opacity-60">{submitting ? 'Đang nộp bài…' : 'NỘP BÀI'}</button>
       </aside>

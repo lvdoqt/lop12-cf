@@ -307,7 +307,7 @@ function formatTime(sec: number) {
   </div>
 </Layout>
 
-<script define:vars={{ lessonId, courseId }}>
+<script is:inline define:vars={{ lessonId, courseId }}>
   const BASE = (window._astroEnv || {}).BASE_URL || '';
   const modal = document.getElementById('quiz-modal');
   const modalTitle = document.getElementById('modal-title');

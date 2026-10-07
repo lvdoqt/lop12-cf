@@ -170,7 +170,7 @@ if (Astro.request.method === 'POST') {
   </div>
 </Layout>
 
-<script define:vars={{ quizSample: COURSE_QUIZ_JSON_SAMPLE }}>
+<script is:inline define:vars={{ quizSample: COURSE_QUIZ_JSON_SAMPLE }}>
   const jsonInput = document.getElementById('quiz-json');
   const fileInput = document.getElementById('quiz-json-file');
   const fileButton = document.getElementById('quiz-file-btn');

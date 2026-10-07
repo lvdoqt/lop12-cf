@@ -1,4 +1,4 @@
-﻿import type { APIRoute } from 'astro';
+import type { APIRoute } from 'astro';
 import { roomStore, db } from '../../../../services/db';
 
 export const prerender = false;
@@ -6,7 +6,7 @@ export const prerender = false;
 // POST /api/rooms/[code]/join — Student joins a room
 export const POST: APIRoute = async ({ params, request }) => {
   const code = (params.code || '').toUpperCase();
-  const room = roomStore.getRoomByCode(code);
+  const room = await roomStore.getRoomByCode(code);
 
   if (!room) return new Response(JSON.stringify({ error: 'Phong thi khong ton tai' }), { status: 404 });
   if (room.status === 'closed') return new Response(JSON.stringify({ error: 'Phong thi da ket thuc' }), { status: 410 });
@@ -24,7 +24,7 @@ export const POST: APIRoute = async ({ params, request }) => {
       totalQuestions = questions.length;
     } catch (_) {}
 
-    const participant = roomStore.joinRoom(room.id, displayName.trim(), totalQuestions);
+    const participant = await roomStore.joinRoom(room.id, displayName.trim(), totalQuestions);
 
     return new Response(JSON.stringify({
       participant,

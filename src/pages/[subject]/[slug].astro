@@ -120,6 +120,14 @@ function getYoutubeEmbedUrl(url: string | null | undefined) {
 }
 
 const embedUrl = getYoutubeEmbedUrl(lessonData.video_url);
+
+const quizData = quizQuestions.map(q => ({
+  id: q.id,
+  type: q.type,
+  correctAnswers: q.answers.filter((a: any) => a.is_correct).map((a: any) => a.id),
+  answers: q.answers,
+  answer: q.answer
+}));
 ---
 
 <Layout title={lessonData.name}>
@@ -329,7 +337,7 @@ const embedUrl = getYoutubeEmbedUrl(lessonData.video_url);
   </div>
 </Layout>
 
-<script define:vars={{ quizData: quizQuestions.map(q => ({ id: q.id, type: q.type, correctAnswers: q.answers.filter(a => a.is_correct).map(a => a.id), answers: q.answers, answer: q.answer })) }}>
+<script is:inline define:vars={{ quizData }}>
   let currentQuestionIndex = 0;
   const totalQuestions = quizData.length;
   let score = 0;

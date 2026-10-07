@@ -20,7 +20,7 @@ if (Astro.request.method === 'POST') {
     const duration    = Number(formData.get('duration'));
     const subject_id  = formData.get('subject_id') as string;
     const category_id = (formData.get('category_id') as string) || null;
-    const exam_type   = formData.get('exam_type')  as '15m' | '45m' | 'semester' | 'mock_thpt';
+    const exam_type   = formData.get('exam_type')  as '15m' | '45m' | 'semester' | 'mock_thpt' | 'vsat';
     const password    = (formData.get('password')  as string)?.trim() || undefined;
 
     if (!title || !duration || !subject_id || !exam_type) {
@@ -145,6 +145,32 @@ if (Astro.request.method === 'POST') {
       }
       questionIds = createdQs.map((q: any) => q.id);
 
+    } else if (mode === 'matrix') {
+      const nb = Number(formData.get('matrix_nb')) || 0;
+      const th = Number(formData.get('matrix_th')) || 0;
+      const vd = Number(formData.get('matrix_vd')) || 0;
+      const vdc = Number(formData.get('matrix_vdc')) || 0;
+      const chapter = (formData.get('matrix_chapter') as string)?.trim() || undefined;
+      const textbook = (formData.get('matrix_textbook') as string)?.trim() || undefined;
+
+      if (nb + th + vd + vdc <= 0) {
+        throw new Error('Vui lòng chỉ định số lượng câu hỏi cho ít nhất 1 cấp độ nhận thức.');
+      }
+
+      const matrixRes = await db.getQuestionsByMatrix({
+        subjectId: subject_id,
+        categoryId: category_id,
+        chapter,
+        textbook,
+        levels: { nb, th, vd, vdc },
+      });
+
+      if (matrixRes.questions.length === 0) {
+        throw new Error('Không tìm thấy câu hỏi phù hợp với ma trận đã chọn trong ngân hàng đề.');
+      }
+
+      questionIds = matrixRes.questions.map(q => q.id);
+
     } else {
       questionIds = formData.getAll('question_ids') as string[];
       if (questionIds.length === 0)
@@ -256,6 +282,7 @@ if (preselectedIds.length > 0) {
               <option value="45m">📝 Kiểm tra 1 tiết</option>
               <option value="semester">🎓 Thi học kỳ</option>
               <option value="mock_thpt" selected>🏆 Thi thử THPT</option>
+              <option value="vsat">🎯 Thi đánh giá năng lực V-SAT</option>
             </select>
           </div>
 
@@ -279,10 +306,14 @@ if (preselectedIds.length > 0) {
 
         <!-- Tab: Chọn câu hỏi / Nhập JSON -->
         <div class="border-t border-slate-100 dark:border-slate-800/60 pt-6">
-          <div class="flex gap-1 mb-5 bg-slate-100 dark:bg-slate-800/50 rounded-xl p-1 w-fit">
+          <div class="flex flex-wrap gap-1 mb-5 bg-slate-100 dark:bg-slate-800/50 rounded-xl p-1 w-fit">
             <button type="button" id="tab-manual" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg transition-all" data-target="manual-section">📋 Chọn từ ngân hàng</button>
+            <button type="button" id="tab-matrix" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg transition-all" data-target="matrix-section">🎯 Soạn theo Ma trận đề</button>
             <button type="button" id="tab-json" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg transition-all" data-target="json-section">📄 Nhập JSON</button>
           </div>
+
+          <!-- Hidden input for mode -->
+          <input type="hidden" name="mode" id="input-mode" value="manual" />
 
           <!-- Tab: Manual select -->
           <div id="manual-section" class="space-y-4">
@@ -325,9 +356,112 @@ if (preselectedIds.length > 0) {
                 </label>
               ))}
             </div>
+          </div>
 
-            <!-- Hidden input for mode -->
-            <input type="hidden" name="mode" id="input-mode" value="manual" />
+          <!-- Tab: Matrix Auto Generation -->
+          <div id="matrix-section" class="space-y-5 hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="text-sm font-bold text-ink dark:text-[#E8E0D0]">Soạn đề tự động theo Ma trận nhận thức</h3>
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">Tự động chọn ngẫu nhiên từ ngân hàng đề theo cấu trúc đề thi Bộ GD&ĐT 2025.</p>
+              </div>
+              <span id="matrix-total-badge" class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/40 w-fit">
+                Tổng: 40 câu
+              </span>
+            </div>
+
+            <!-- Quick Presets -->
+            <div class="p-3.5 bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-xl space-y-2">
+              <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">⚡ Mẫu phân phối nhanh:</span>
+              <div class="flex flex-wrap gap-2">
+                <button type="button" id="preset-thpt" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 text-xs font-semibold text-slate-700 dark:text-slate-200 transition">
+                  🏆 Chuẩn THPT 2025 (40 câu: 16 NB - 12 TH - 8 VD - 4 VDC)
+                </button>
+                <button type="button" id="preset-1tiet" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 text-xs font-semibold text-slate-700 dark:text-slate-200 transition">
+                  📝 Kiểm tra 1 tiết (25 câu: 10 NB - 8 TH - 5 VD - 2 VDC)
+                </button>
+                <button type="button" id="preset-15p" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 text-xs font-semibold text-slate-700 dark:text-slate-200 transition">
+                  ⏱️ Kiểm tra 15 phút (10 câu: 5 NB - 3 TH - 2 VD - 0 VDC)
+                </button>
+              </div>
+            </div>
+
+            <!-- 4 Cognitive Levels Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <!-- Nhận biết -->
+              <div class="p-4 rounded-xl border border-emerald-200 dark:border-emerald-900/40 bg-emerald-50/40 dark:bg-emerald-950/20 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold uppercase text-emerald-700 dark:text-emerald-400">1. Nhận biết (NB)</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-300 font-bold">Cơ bản</span>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">Công thức, định nghĩa, nhận dạng kiến thức</p>
+                <div class="pt-1">
+                  <label class="block text-[11px] font-semibold text-slate-600 dark:text-slate-300 mb-1">Số lượng câu:</label>
+                  <input type="number" name="matrix_nb" id="matrix_nb" min="0" max="100" value="16" class="matrix-input w-full px-3 py-2 rounded-lg border border-emerald-300 dark:border-emerald-700 bg-white dark:bg-slate-900 text-sm font-bold text-slate-900 dark:text-white text-center focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+                </div>
+              </div>
+
+              <!-- Thông hiểu -->
+              <div class="p-4 rounded-xl border border-blue-200 dark:border-blue-900/40 bg-blue-50/40 dark:bg-blue-950/20 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold uppercase text-blue-700 dark:text-blue-400">2. Thông hiểu (TH)</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 font-bold">Hiểu sâu</span>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">Giải thích, suy luận đơn giản, biến đổi quen thuộc</p>
+                <div class="pt-1">
+                  <label class="block text-[11px] font-semibold text-slate-600 dark:text-slate-300 mb-1">Số lượng câu:</label>
+                  <input type="number" name="matrix_th" id="matrix_th" min="0" max="100" value="12" class="matrix-input w-full px-3 py-2 rounded-lg border border-blue-300 dark:border-blue-700 bg-white dark:bg-slate-900 text-sm font-bold text-slate-900 dark:text-white text-center focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                </div>
+              </div>
+
+              <!-- Vận dụng -->
+              <div class="p-4 rounded-xl border border-amber-200 dark:border-amber-900/40 bg-amber-50/40 dark:bg-amber-950/20 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold uppercase text-amber-700 dark:text-amber-400">3. Vận dụng (VD)</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 font-bold">Thực hành</span>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">Vận dụng quy trình, phương pháp giải toán chuẩn</p>
+                <div class="pt-1">
+                  <label class="block text-[11px] font-semibold text-slate-600 dark:text-slate-300 mb-1">Số lượng câu:</label>
+                  <input type="number" name="matrix_vd" id="matrix_vd" min="0" max="100" value="8" class="matrix-input w-full px-3 py-2 rounded-lg border border-amber-300 dark:border-amber-700 bg-white dark:bg-slate-900 text-sm font-bold text-slate-900 dark:text-white text-center focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                </div>
+              </div>
+
+              <!-- Vận dụng cao -->
+              <div class="p-4 rounded-xl border border-rose-200 dark:border-rose-900/40 bg-rose-50/40 dark:bg-rose-950/20 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold uppercase text-rose-700 dark:text-rose-400">4. Vận dụng cao (VDC)</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-100 dark:bg-rose-900/50 text-rose-800 dark:text-rose-300 font-bold">Phân loại</span>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">Tổng hợp kiến thức phức hợp, liên hệ thực tế</p>
+                <div class="pt-1">
+                  <label class="block text-[11px] font-semibold text-slate-600 dark:text-slate-300 mb-1">Số lượng câu:</label>
+                  <input type="number" name="matrix_vdc" id="matrix_vdc" min="0" max="100" value="4" class="matrix-input w-full px-3 py-2 rounded-lg border border-rose-300 dark:border-rose-700 bg-white dark:bg-slate-900 text-sm font-bold text-slate-900 dark:text-white text-center focus:outline-none focus:ring-2 focus:ring-rose-500" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Optional Textbook & Chapter filters -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              <div>
+                <label for="matrix_textbook" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+                  Bộ sách giáo khoa (tùy chọn)
+                </label>
+                <select name="matrix_textbook" id="matrix_textbook" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm text-ink dark:text-[#E8E0D0] cursor-pointer">
+                  <option value="all">📚 Tất cả các bộ sách (Chung)</option>
+                  <option value="kntt">📖 Kết nối tri thức với cuộc sống</option>
+                  <option value="ctst">🌅 Chân trời sáng tạo</option>
+                  <option value="cd">🪁 Cánh diều</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="matrix_chapter" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+                  Chương / Chuyên đề (tùy chọn)
+                </label>
+                <input type="text" name="matrix_chapter" id="matrix_chapter" placeholder="Ví dụ: Đạo hàm, Mũ và Logarit, Oxyz..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-sm text-ink dark:text-[#E8E0D0] placeholder:text-slate-400" />
+              </div>
+            </div>
           </div>
 
           <!-- Tab: JSON import -->
@@ -379,36 +513,89 @@ if (preselectedIds.length > 0) {
   </div>
 </Layout>
 
-<script>
+<script is:inline>
   // Tab switching
   const tabBtns = document.querySelectorAll('.tab-btn');
   const manualSection = document.getElementById('manual-section');
+  const matrixSection = document.getElementById('matrix-section');
   const jsonSection = document.getElementById('json-section');
   const inputMode = document.getElementById('input-mode');
 
   function switchTab(target) {
+    tabBtns.forEach(b => {
+      b.classList.remove('bg-white', 'dark:bg-slate-700', 'text-blue-700', 'dark:text-white', 'shadow-sm');
+      b.classList.add('text-slate-500', 'dark:text-slate-400');
+    });
+
     if (target === 'manual-section') {
-      manualSection.classList.remove('hidden');
-      jsonSection.classList.add('hidden');
-      inputMode.value = 'manual';
-      tabBtns.forEach(b => {
-        b.classList.remove('bg-white', 'dark:bg-slate-700', 'text-blue-700', 'dark:text-white', 'shadow-sm');
-        b.classList.add('text-slate-500', 'dark:text-slate-400');
-      });
+      manualSection?.classList.remove('hidden');
+      matrixSection?.classList.add('hidden');
+      jsonSection?.classList.add('hidden');
+      if (inputMode) inputMode.value = 'manual';
       document.getElementById('tab-manual')?.classList.add('bg-white', 'dark:bg-slate-700', 'text-blue-700', 'dark:text-white', 'shadow-sm');
       document.getElementById('tab-manual')?.classList.remove('text-slate-500', 'dark:text-slate-400');
+    } else if (target === 'matrix-section') {
+      manualSection?.classList.add('hidden');
+      matrixSection?.classList.remove('hidden');
+      jsonSection?.classList.add('hidden');
+      if (inputMode) inputMode.value = 'matrix';
+      document.getElementById('tab-matrix')?.classList.add('bg-white', 'dark:bg-slate-700', 'text-blue-700', 'dark:text-white', 'shadow-sm');
+      document.getElementById('tab-matrix')?.classList.remove('text-slate-500', 'dark:text-slate-400');
     } else {
-      manualSection.classList.add('hidden');
-      jsonSection.classList.remove('hidden');
-      inputMode.value = 'json';
-      tabBtns.forEach(b => {
-        b.classList.remove('bg-white', 'dark:bg-slate-700', 'text-blue-700', 'dark:text-white', 'shadow-sm');
-        b.classList.add('text-slate-500', 'dark:text-slate-400');
-      });
+      manualSection?.classList.add('hidden');
+      matrixSection?.classList.add('hidden');
+      jsonSection?.classList.remove('hidden');
+      if (inputMode) inputMode.value = 'json';
       document.getElementById('tab-json')?.classList.add('bg-white', 'dark:bg-slate-700', 'text-blue-700', 'dark:text-white', 'shadow-sm');
       document.getElementById('tab-json')?.classList.remove('text-slate-500', 'dark:text-slate-400');
     }
   }
+
+  // Matrix live counter and presets
+  const inputNb = document.getElementById('matrix_nb');
+  const inputTh = document.getElementById('matrix_th');
+  const inputVd = document.getElementById('matrix_vd');
+  const inputVdc = document.getElementById('matrix_vdc');
+  const matrixBadge = document.getElementById('matrix-total-badge');
+
+  function updateMatrixTotal() {
+    const nb = parseInt(inputNb?.value || '0', 10) || 0;
+    const th = parseInt(inputTh?.value || '0', 10) || 0;
+    const vd = parseInt(inputVd?.value || '0', 10) || 0;
+    const vdc = parseInt(inputVdc?.value || '0', 10) || 0;
+    const total = nb + th + vd + vdc;
+    if (matrixBadge) {
+      matrixBadge.textContent = `Tổng: ${total} câu`;
+    }
+  }
+
+  [inputNb, inputTh, inputVd, inputVdc].forEach(el => {
+    el?.addEventListener('input', updateMatrixTotal);
+  });
+
+  document.getElementById('preset-thpt')?.addEventListener('click', () => {
+    if (inputNb) inputNb.value = '16';
+    if (inputTh) inputTh.value = '12';
+    if (inputVd) inputVd.value = '8';
+    if (inputVdc) inputVdc.value = '4';
+    updateMatrixTotal();
+  });
+
+  document.getElementById('preset-1tiet')?.addEventListener('click', () => {
+    if (inputNb) inputNb.value = '10';
+    if (inputTh) inputTh.value = '8';
+    if (inputVd) inputVd.value = '5';
+    if (inputVdc) inputVdc.value = '2';
+    updateMatrixTotal();
+  });
+
+  document.getElementById('preset-15p')?.addEventListener('click', () => {
+    if (inputNb) inputNb.value = '5';
+    if (inputTh) inputTh.value = '3';
+    if (inputVd) inputVd.value = '2';
+    if (inputVdc) inputVdc.value = '0';
+    updateMatrixTotal();
+  });
 
   if (tabBtns.length && manualSection && jsonSection) {
     tabBtns.forEach(btn => {
@@ -419,8 +606,8 @@ if (preselectedIds.length > 0) {
   }
 
   // Manual select: filter by subject and category
-  const subjectSelect = document.getElementById('subject_id') as HTMLSelectElement | null;
-  const categorySelect = document.getElementById('exam_category_id') as HTMLSelectElement | null;
+  const subjectSelect = document.getElementById('subject_id') ;
+  const categorySelect = document.getElementById('exam_category_id') ;
   const noSubjectWarning = document.getElementById('no-subject-warning');
   const noQuestionsWarning = document.getElementById('no-questions-warning');
   const questionsList = document.getElementById('questions-list');
@@ -452,7 +639,7 @@ if (preselectedIds.length > 0) {
       questionItems.forEach(item => {
         const itemSubId = item.getAttribute('data-subject-id');
         const itemCatId = item.getAttribute('data-category-id');
-        const checkbox = item.querySelector('input[type="checkbox"]') as HTMLInputElement;
+        const checkbox = item.querySelector('input[type="checkbox"]') ;
         
         let matches = itemSubId === selectedId;
         if (catId) {
@@ -553,4 +740,4 @@ if (preselectedIds.length > 0) {
   }
 </script>
 
-<script id="categories-data" type="application/json" set:html={JSON.stringify(allCategories)}></script>
+<script is:inline id="categories-data" type="application/json" set:html={JSON.stringify(allCategories)}></script>

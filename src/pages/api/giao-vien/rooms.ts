@@ -1,4 +1,4 @@
-﻿import type { APIRoute } from 'astro';
+import type { APIRoute } from 'astro';
 import { roomStore } from '../../../services/db';
 
 export const prerender = false;
@@ -35,7 +35,7 @@ export const DELETE: APIRoute = async ({ url, locals }) => {
     return new Response(JSON.stringify({ error: 'id is required' }), { status: 400 });
   }
 
-  const room = roomStore.getRoomById(roomId);
+  const room = await roomStore.getRoomById(roomId);
   if (!room) {
     return new Response(JSON.stringify({ error: 'Room not found' }), { status: 404 });
   }
@@ -43,7 +43,7 @@ export const DELETE: APIRoute = async ({ url, locals }) => {
     return new Response(JSON.stringify({ error: 'Forbidden' }), { status: 403 });
   }
 
-  const closed = roomStore.closeRoom(roomId);
+  const closed = await roomStore.closeRoom(roomId);
   return new Response(JSON.stringify({ room: closed }), { status: 200 });
 };
 
@@ -60,11 +60,11 @@ export const PATCH: APIRoute = async ({ request, locals }) => {
       return new Response(JSON.stringify({ error: 'roomId is required' }), { status: 400 });
     }
 
-    const room = roomStore.getRoomById(roomId);
+    const room = await roomStore.getRoomById(roomId);
     if (!room) return new Response(JSON.stringify({ error: 'Room not found' }), { status: 404 });
     if (room.teacher_id !== user.id) return new Response(JSON.stringify({ error: 'Forbidden' }), { status: 403 });
 
-    const activated = roomStore.activateRoom(roomId);
+    const activated = await roomStore.activateRoom(roomId);
     return new Response(JSON.stringify({ room: activated }), { status: 200 });
   } catch (err: any) {
     return new Response(JSON.stringify({ error: err.message }), { status: 500 });

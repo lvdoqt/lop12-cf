@@ -9,7 +9,7 @@ export const prerender = false;
 const { code } = Astro.params;
 if (!code) return Astro.redirect('/thi-online');
 
-const room = roomStore.getRoomByCode(code.toUpperCase());
+const room = await roomStore.getRoomByCode(code.toUpperCase());
 if (!room) return Astro.redirect('/thi-online?error=notfound');
 if (room.status === 'closed') return Astro.redirect('/thi-online?error=closed');
 
@@ -136,15 +136,34 @@ const questionsForClient = allQuestions.map(q => ({
     </div>
   </div>
 
-  <script define:vars={{ questionsJSON: JSON.stringify(questionsForClient), roomCode: room.code, roomDuration: room.exam_duration ?? 90, roomStatus: room.status }}>
+  <script type="application/json" id="exam-room-config" set:html={JSON.stringify({
+    questions: questionsForClient,
+    roomCode: room.code,
+    roomDuration: room.exam_duration ?? 90,
+    roomStatus: room.status,
+  })} />
+
+  <script>
+    import { supabase } from '../../lib/supabase';
+
+    // ── Parse room config ──────────────────────────────────────────────────────
+    const configEl = document.getElementById('exam-room-config');
+    const config = configEl ? JSON.parse(configEl.textContent || '{}') : {};
+    const roomCode: string = config.roomCode || '';
+    const roomDuration: number = config.roomDuration || 90;
+    let roomStatus: string = config.roomStatus || 'waiting';
+    let questions: any[] = config.questions || [];
+
+    // ── Realtime Channel ───────────────────────────────────────────────────────
+    const realtimeChannel = roomCode ? supabase.channel(`room:${roomCode}`) : null;
+
     // ── State ──────────────────────────────────────────────────────────────────
-    let participant = null;
-    let answers = {};
-    let timerInterval = null;
-    let progressInterval = null;
-    let pollInterval = null;
+    let participant: any = null;
+    let answers: Record<string, any> = {};
+    let timerInterval: any = null;
+    let progressInterval: any = null;
+    let pollInterval: any = null;
     let remainingSeconds = roomDuration * 60;
-    let questions = [];
     let started = false;
 
     // ── DOM refs ───────────────────────────────────────────────────────────────
@@ -160,6 +179,24 @@ const questionsForClient = allQuestions.map(q => ({
     const waitingName = document.getElementById('waiting-name');
     const questionsContainer = document.getElementById('questions-container');
 
+    // Subscribe to realtime room updates
+    if (realtimeChannel) {
+      realtimeChannel
+        .on('broadcast', { event: 'room_status' }, ({ payload }) => {
+          if (payload?.status === 'active' && !started) {
+            if (pollInterval) clearInterval(pollInterval);
+            waitingRoom?.classList.add('hidden');
+            if (waitingRoom) waitingRoom.style.display = '';
+            startExam();
+          } else if (payload?.status === 'closed') {
+            if (pollInterval) clearInterval(pollInterval);
+            alert('Giao vien da dong phong thi.');
+            window.location.href = '/thi-online';
+          }
+        })
+        .subscribe();
+    }
+
     // ── Init ───────────────────────────────────────────────────────────────────
     window.addEventListener('load', () => {
       // Try to restore participant from sessionStorage
@@ -174,22 +211,32 @@ const questionsForClient = allQuestions.map(q => ({
         return;
       }
 
-      questions = JSON.parse(questionsJSON);
-      totalQEl.textContent = questions.length;
-      totalCountEl.textContent = questions.length;
+      if (totalQEl) totalQEl.textContent = String(questions.length);
+      if (totalCountEl) totalCountEl.textContent = String(questions.length);
 
       if (waitingName) {
         waitingName.childNodes[waitingName.childNodes.length - 1].textContent = ' ' + participant.display_name;
       }
 
-      loadingScreen.classList.add('hidden');
+      loadingScreen?.classList.add('hidden');
+
+      // Broadcast join to teacher
+      if (realtimeChannel && participant) {
+        realtimeChannel.send({
+          type: 'broadcast',
+          event: 'joined',
+          payload: { participant },
+        });
+      }
 
       if (roomStatus === 'active') {
         startExam();
       } else {
-        waitingRoom.classList.remove('hidden');
-        waitingRoom.style.display = 'flex';
-        // Poll for room activation
+        if (waitingRoom) {
+          waitingRoom.classList.remove('hidden');
+          waitingRoom.style.display = 'flex';
+        }
+        // Poll fallback for room activation
         pollInterval = setInterval(checkRoomStatus, 3000);
       }
     });
@@ -200,8 +247,10 @@ const questionsForClient = allQuestions.map(q => ({
         const data = await res.json();
         if (res.ok && data.room && data.room.status === 'active' && !started) {
           clearInterval(pollInterval);
-          waitingRoom.classList.add('hidden');
-          waitingRoom.style.display = '';
+          if (waitingRoom) {
+            waitingRoom.classList.add('hidden');
+            waitingRoom.style.display = '';
+          }
           startExam();
         } else if (data.room && data.room.status === 'closed') {
           clearInterval(pollInterval);
@@ -322,8 +371,17 @@ const questionsForClient = allQuestions.map(q => ({
 
     function updateAnsweredUI() {
       const count = Object.keys(answers).length;
-      answeredCountEl.textContent = count;
-      progressDisplay.childNodes[0].textContent = count + '/';
+      if (answeredCountEl) answeredCountEl.textContent = String(count);
+      if (progressDisplay && progressDisplay.childNodes[0]) {
+        progressDisplay.childNodes[0].textContent = count + '/';
+      }
+      if (realtimeChannel && participant) {
+        realtimeChannel.send({
+          type: 'broadcast',
+          event: 'progress',
+          payload: { participantId: participant.id, answeredCount: count },
+        });
+      }
     }
 
     // ── Render questions ───────────────────────────────────────────────────────
@@ -486,6 +544,18 @@ const questionsForClient = allQuestions.map(q => ({
         });
         const data = await res.json();
         if (res.ok) {
+          if (realtimeChannel && participant) {
+            realtimeChannel.send({
+              type: 'broadcast',
+              event: 'submitted',
+              payload: {
+                participantId: participant.id,
+                score: data.score,
+                answeredCount: Object.keys(answers).length,
+                displayName: participant.display_name,
+              },
+            });
+          }
           showResult(data.score, data.participant);
         } else {
           alert('Loi nop bai: ' + (data.error || 'Unknown'));

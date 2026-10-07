@@ -1,0 +1,12 @@
+
+--- 2026-10-06T14:28:30.847Z debug
+🪵  Writing logs to "D:\lop12-cf\.tmp-config\.wrangler\logs\wrangler-2026-10-06_14-28-30_102.log"
+---
+
+--- 2026-10-06T14:28:30.846Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-10-06T14:28:30.850Z debug
+.env file not found at "D:\lop12-cf\.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---

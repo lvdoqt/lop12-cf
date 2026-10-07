@@ -30,28 +30,10 @@ function anonClient() {
 // SLUGIFY UTILITY (Vietnamese-aware)
 // ============================================================================
 function slugify(text: string): string {
-  const map: Record<string, string> = {
-    'ÃƒÂ ':'a','ÃƒÂ¡':'a','Ã¡ÂºÂ¡':'a','Ã¡ÂºÂ£':'a','ÃƒÂ£':'a','ÃƒÂ¢':'a','Ã¡ÂºÂ§':'a','Ã¡ÂºÂ¥':'a','Ã¡ÂºÂ­':'a','Ã¡ÂºÂ©':'a','Ã¡ÂºÂ«':'a',
-    'Ã„Æ’':'a','Ã¡ÂºÂ±':'a','Ã¡ÂºÂ¯':'a','Ã¡ÂºÂ·':'a','Ã¡ÂºÂ³':'a','Ã¡ÂºÂµ':'a',
-    'ÃƒÂ¨':'e','ÃƒÂ©':'e','Ã¡ÂºÂ¹':'e','Ã¡ÂºÂ»':'e','Ã¡ÂºÂ½':'e','ÃƒÂª':'e','Ã¡Â»Â':'e','Ã¡ÂºÂ¿':'e','Ã¡Â»â€¡':'e','Ã¡Â»Æ’':'e','Ã¡Â»â€¦':'e',
-    'ÃƒÂ¬':'i','ÃƒÂ­':'i','Ã¡Â»â€¹':'i','Ã¡Â»â€°':'i','Ã„Â©':'i',
-    'ÃƒÂ²':'o','ÃƒÂ³':'o','Ã¡Â»Â':'o','Ã¡Â»Â':'o','ÃƒÂµ':'o','ÃƒÂ´':'o','Ã¡Â»â€œ':'o','Ã¡Â»â€˜':'o','Ã¡Â»â„¢':'o','Ã¡Â»â€¢':'o','Ã¡Â»â€”':'o',
-    'Ã†Â¡':'o','Ã¡Â»Â':'o','Ã¡Â»â€º':'o','Ã¡Â»Â£':'o','Ã¡Â»Å¸':'o','Ã¡Â»Â¡':'o',
-    'ÃƒÂ¹':'u','ÃƒÂº':'u','Ã¡Â»Â¥':'u','Ã¡Â»Â§':'u','Ã…Â©':'u','Ã†Â°':'u','Ã¡Â»Â«':'u','Ã¡Â»Â©':'u','Ã¡Â»Â±':'u','Ã¡Â»Â­':'u','Ã¡Â»Â¯':'u',
-    'Ã¡Â»Â³':'y','ÃƒÂ½':'y','Ã¡Â»Âµ':'y','Ã¡Â»Â·':'y','Ã¡Â»Â¹':'y',
-    'Ã„â€˜':'d',
-    'Ãƒâ‚¬':'a','ÃƒÂ':'a','Ã¡ÂºÂ ':'a','Ã¡ÂºÂ¢':'a','ÃƒÆ’':'a','Ãƒâ€š':'a','Ã¡ÂºÂ¦':'a','Ã¡ÂºÂ¤':'a','Ã¡ÂºÂ¬':'a','Ã¡ÂºÂ¨':'a','Ã¡ÂºÂª':'a',
-    'Ã„â€š':'a','Ã¡ÂºÂ°':'a','Ã¡ÂºÂ®':'a','Ã¡ÂºÂ¶':'a','Ã¡ÂºÂ²':'a','Ã¡ÂºÂ´':'a',
-    'ÃƒË†':'e','Ãƒâ€°':'e','Ã¡ÂºÂ¸':'e','Ã¡ÂºÂº':'e','Ã¡ÂºÂ¼':'e','ÃƒÅ ':'e','Ã¡Â»â‚¬':'e','Ã¡ÂºÂ¾':'e','Ã¡Â»â€ ':'e','Ã¡Â»â€š':'e','Ã¡Â»â€ž':'e',
-    'ÃƒÅ’':'i','ÃƒÂ':'i','Ã¡Â»Å ':'i','Ã¡Â»Ë†':'i','Ã„Â¨':'i',
-    'Ãƒâ€™':'o','Ãƒâ€œ':'o','Ã¡Â»Å’':'o','Ã¡Â»Å½':'o','Ãƒâ€¢':'o','Ãƒâ€':'o','Ã¡Â»â€™':'o','Ã¡Â»Â':'o','Ã¡Â»Ëœ':'o','Ã¡Â»â€':'o','Ã¡Â»â€“':'o',
-    'Ã†Â ':'o','Ã¡Â»Å“':'o','Ã¡Â»Å¡':'o','Ã¡Â»Â¢':'o','Ã¡Â»Å¾':'o','Ã¡Â»Â ':'o',
-    'Ãƒâ„¢':'u','ÃƒÅ¡':'u','Ã¡Â»Â¤':'u','Ã¡Â»Â¦':'u','Ã…Â¨':'u','Ã†Â¯':'u','Ã¡Â»Âª':'u','Ã¡Â»Â¨':'u','Ã¡Â»Â°':'u','Ã¡Â»Â¬':'u','Ã¡Â»Â®':'u',
-    'Ã¡Â»Â²':'y','ÃƒÂ':'y','Ã¡Â»Â´':'y','Ã¡Â»Â¶':'y','Ã¡Â»Â¸':'y',
-    'Ã„Â':'d',
-  };
   return text
-    .split('').map(c => map[c] || c).join('')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[đĐ]/g, 'd')
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, '')
     .trim()
@@ -747,9 +729,142 @@ export const db = {
     }).filter((x): x is NonNullable<typeof x> => x != null);
   },
 
-  async createQuestion(question: Omit<Question, 'id'>, answers: Omit<Answer, 'id' | 'question_id'>[]): Promise<Question & { answers: Answer[] }> {
+  async getQuestionsByMatrix(criteria: {
+    subjectId: string;
+    categoryId?: string | null;
+    chapter?: string;
+    textbook?: string;
+    levels: {
+      nb: number;
+      th: number;
+      vd: number;
+      vdc: number;
+    };
+    types?: {
+      single_choice?: number;
+      msq?: number;
+      sa?: number;
+    };
+  }): Promise<{
+    questions: (Question & { answers: Answer[]; subject?: Subject })[];
+    breakdown: { nb: number; th: number; vd: number; vdc: number };
+    warnings: string[];
+  }> {
+    const allBankQuestions = await this.getQuestions(criteria.subjectId);
+
+    // Filter candidate questions
+    let candidates = allBankQuestions;
+    if (criteria.categoryId) {
+      candidates = candidates.filter(q => q.category_id === criteria.categoryId || q.metadata?.category_id === criteria.categoryId);
+    }
+    if (criteria.chapter && criteria.chapter.trim()) {
+      const chapNorm = criteria.chapter.trim().toLowerCase();
+      candidates = candidates.filter(q => (q.metadata?.chapter || '').toLowerCase().includes(chapNorm));
+    }
+    if (criteria.textbook && criteria.textbook !== 'all') {
+      candidates = candidates.filter(q => {
+        const tb = q.metadata?.textbook;
+        return !tb || tb === 'all' || tb === 'chung' || tb === criteria.textbook;
+      });
+    }
+
+    // Helper to extract cognitive level
+    const getCognitiveLevel = (q: Question): 'nb' | 'th' | 'vd' | 'vdc' => {
+      const metaLevel = q.metadata?.cognitive_level || q.metadata?.level;
+      if (metaLevel === 'nb' || metaLevel === 'th' || metaLevel === 'vd' || metaLevel === 'vdc') {
+        return metaLevel;
+      }
+      const diff = (q.metadata?.difficulty || q.difficulty || 'medium').toLowerCase();
+      if (diff === 'easy' || diff === 'dễ') return 'nb';
+      if (diff === 'hard' || diff === 'khó') {
+        return (q.type === 'sa' || q.metadata?.type === 'sa') ? 'vdc' : 'vd';
+      }
+      if (diff === 'very_hard') return 'vdc';
+      return 'th';
+    };
+
+    // Partition into buckets
+    const buckets: Record<'nb' | 'th' | 'vd' | 'vdc', typeof candidates> = {
+      nb: [],
+      th: [],
+      vd: [],
+      vdc: []
+    };
+
+    candidates.forEach(q => {
+      const lvl = getCognitiveLevel(q);
+      buckets[lvl].push(q);
+    });
+
+    // Shuffle helper
+    const shuffle = <T>(arr: T[]): T[] => {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    };
+
+    const warnings: string[] = [];
+    const selected: (Question & { answers: Answer[]; subject?: Subject })[] = [];
+    const breakdown = { nb: 0, th: 0, vd: 0, vdc: 0 };
+
+    const levelNames: Record<'nb' | 'th' | 'vd' | 'vdc', string> = {
+      nb: 'Nhận biết',
+      th: 'Thông hiểu',
+      vd: 'Vận dụng',
+      vdc: 'Vận dụng cao'
+    };
+
+    const targetLevels: ('nb' | 'th' | 'vd' | 'vdc')[] = ['nb', 'th', 'vd', 'vdc'];
+
+    for (const lvl of targetLevels) {
+      const needed = criteria.levels[lvl] || 0;
+      if (needed <= 0) continue;
+
+      const pool = shuffle(buckets[lvl]);
+      const taken = pool.slice(0, needed);
+      selected.push(...taken);
+      breakdown[lvl] = taken.length;
+
+      if (taken.length < needed) {
+        warnings.push(`Ngân hàng chỉ có ${taken.length}/${needed} câu hỏi mức độ "${levelNames[lvl]}".`);
+      }
+    }
+
+    // Number sequentially and organize by section
+    selected.forEach((q, idx) => {
+      q.so_cau = idx + 1;
+      if (q.type === 'msq' || q.type === 'true_false') {
+        q.phan = 'II';
+      } else if (q.type === 'sa' || q.type === 'tl') {
+        q.phan = 'III';
+      } else {
+        q.phan = 'I';
+      }
+    });
+
+    return {
+      questions: selected,
+      breakdown,
+      warnings
+    };
+  },
+
+  async createQuestion(question: Partial<Omit<Question, 'id'>> & { content: string; subject_id: string; difficulty: 'easy' | 'medium' | 'hard'; type: any; created_by?: string | null }, answers: Omit<Answer, 'id' | 'question_id'>[]): Promise<Question & { answers: Answer[] }> {
     if (isInMockMode()) {
       const newQuestion: Question = {
+        de_id: question.de_id || '',
+        so_cau: question.so_cau || 1,
+        phan: question.phan || 'I',
+        options: question.options || [],
+        image_url: question.image_url || null,
+        metadata: question.metadata || null,
+        explanation: question.explanation || null,
+        answer: question.answer || null,
+        created_by: question.created_by || null,
+        category_id: question.category_id || null,
         ...question,
         id: `q-${Date.now()}`
       };
@@ -2452,13 +2567,14 @@ export const db = {
 
 
 // ============================================================================
-// PHÒNG THI ẢO — In-Memory Store (works for both mock and production SSR)
-// Rooms are ephemeral: they live for the duration of the server process.
-// For production with multiple workers, a shared store (Redis/Supabase) is needed.
+// PHÒNG THI ẢO — Supabase-backed Store (with in-memory mock fallback)
+// Production: persisted in Supabase tables exam_rooms / room_participants.
+// Mock mode: falls back to in-memory arrays for local dev without Supabase.
 // ============================================================================
 
 import type { ExamRoom, RoomParticipant } from '../types';
 
+// ── Mock in-memory fallback ──────────────────────────────────────────────────
 let _examRooms: ExamRoom[] = [];
 let _roomParticipants: RoomParticipant[] = [];
 
@@ -2472,8 +2588,8 @@ function generateRoomCode(): string {
   return code;
 }
 
-/** Ensure the code is unique among active rooms */
-function uniqueRoomCode(): string {
+/** Ensure the code is unique (mock: check array; production: DB unique constraint) */
+function mockUniqueRoomCode(): string {
   let code = generateRoomCode();
   let attempts = 0;
   while (_examRooms.some(r => r.code === code && r.status !== 'closed') && attempts < 20) {
@@ -2481,6 +2597,18 @@ function uniqueRoomCode(): string {
     attempts++;
   }
   return code;
+}
+
+/** Generate a unique room code verified against DB */
+async function dbUniqueRoomCode(): Promise<string> {
+  const client = adminClient();
+  if (!client) return generateRoomCode();
+  for (let i = 0; i < 20; i++) {
+    const code = generateRoomCode();
+    const { data } = await client.from('exam_rooms').select('id').eq('code', code).neq('status', 'closed').limit(1);
+    if (!data || data.length === 0) return code;
+  }
+  return generateRoomCode(); // fallback, DB unique constraint will catch collisions
 }
 
 export const roomStore = {
@@ -2498,96 +2626,216 @@ export const roomStore = {
       }
     } catch (_) {}
 
-    const room: ExamRoom = {
-      id: `room-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
-      code: uniqueRoomCode(),
+    if (isInMockMode()) {
+      const room: ExamRoom = {
+        id: `room-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+        code: mockUniqueRoomCode(),
+        exam_id: examId,
+        exam_title: examTitle,
+        exam_duration: examDuration,
+        teacher_id: teacherId,
+        status: 'waiting',
+        created_at: new Date().toISOString(),
+        closed_at: null,
+      };
+      _examRooms.push(room);
+      return room;
+    }
+
+    const client = adminClient();
+    if (!client) throw new Error('[roomStore.createRoom] Admin client unavailable.');
+
+    const code = await dbUniqueRoomCode();
+    const id = `room-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+
+    const { data, error } = await client.from('exam_rooms').insert([{
+      id,
+      code,
       exam_id: examId,
       exam_title: examTitle,
       exam_duration: examDuration,
       teacher_id: teacherId,
       status: 'waiting',
-      created_at: new Date().toISOString(),
-      closed_at: null,
-    };
-    _examRooms.push(room);
-    return room;
+    }]).select().single();
+
+    if (error) { console.error('[roomStore.createRoom] error:', error); throw error; }
+    return data as ExamRoom;
   },
 
-  getRoomByCode(code: string): ExamRoom | null {
-    return _examRooms.find(r => r.code === code.toUpperCase()) ?? null;
-  },
-
-  getRoomById(id: string): ExamRoom | null {
-    return _examRooms.find(r => r.id === id) ?? null;
-  },
-
-  getTeacherRooms(teacherId: string): ExamRoom[] {
-    return _examRooms
-      .filter(r => r.teacher_id === teacherId)
-      .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
-  },
-
-  activateRoom(roomId: string): ExamRoom | null {
-    const room = _examRooms.find(r => r.id === roomId);
-    if (room) room.status = 'active';
-    return room ?? null;
-  },
-
-  closeRoom(roomId: string): ExamRoom | null {
-    const room = _examRooms.find(r => r.id === roomId);
-    if (room) {
-      room.status = 'closed';
-      room.closed_at = new Date().toISOString();
+  async getRoomByCode(code: string): Promise<ExamRoom | null> {
+    if (isInMockMode()) {
+      return _examRooms.find(r => r.code === code.toUpperCase()) ?? null;
     }
-    return room ?? null;
+    const client = adminClient();
+    if (!client) return null;
+    const { data, error } = await client.from('exam_rooms').select('*').eq('code', code.toUpperCase()).single();
+    if (error) return null;
+    return data as ExamRoom;
+  },
+
+  async getRoomById(id: string): Promise<ExamRoom | null> {
+    if (isInMockMode()) {
+      return _examRooms.find(r => r.id === id) ?? null;
+    }
+    const client = adminClient();
+    if (!client) return null;
+    const { data, error } = await client.from('exam_rooms').select('*').eq('id', id).single();
+    if (error) return null;
+    return data as ExamRoom;
+  },
+
+  async getTeacherRooms(teacherId: string): Promise<ExamRoom[]> {
+    if (isInMockMode()) {
+      return _examRooms
+        .filter(r => r.teacher_id === teacherId)
+        .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+    }
+    const client = adminClient();
+    if (!client) return [];
+    const { data, error } = await client.from('exam_rooms').select('*')
+      .eq('teacher_id', teacherId)
+      .order('created_at', { ascending: false });
+    if (error) { console.error('[roomStore.getTeacherRooms] error:', error); return []; }
+    return (data || []) as ExamRoom[];
+  },
+
+  async activateRoom(roomId: string): Promise<ExamRoom | null> {
+    if (isInMockMode()) {
+      const room = _examRooms.find(r => r.id === roomId);
+      if (room) room.status = 'active';
+      return room ?? null;
+    }
+    const client = adminClient();
+    if (!client) return null;
+    const { data, error } = await client.from('exam_rooms')
+      .update({ status: 'active' }).eq('id', roomId).select().single();
+    if (error) { console.error('[roomStore.activateRoom] error:', error); return null; }
+    return data as ExamRoom;
+  },
+
+  async closeRoom(roomId: string): Promise<ExamRoom | null> {
+    if (isInMockMode()) {
+      const room = _examRooms.find(r => r.id === roomId);
+      if (room) {
+        room.status = 'closed';
+        room.closed_at = new Date().toISOString();
+      }
+      return room ?? null;
+    }
+    const client = adminClient();
+    if (!client) return null;
+    const { data, error } = await client.from('exam_rooms')
+      .update({ status: 'closed', closed_at: new Date().toISOString() })
+      .eq('id', roomId).select().single();
+    if (error) { console.error('[roomStore.closeRoom] error:', error); return null; }
+    return data as ExamRoom;
   },
 
   // ── Participant operations ──────────────────────────────────────────────────
 
-  joinRoom(roomId: string, displayName: string, totalQuestions: number): RoomParticipant {
-    // Prevent duplicate name in same room (re-join scenario)
-    const existing = _roomParticipants.find(
-      p => p.room_id === roomId && p.display_name.toLowerCase() === displayName.toLowerCase()
-    );
-    if (existing) return existing;
+  async joinRoom(roomId: string, displayName: string, totalQuestions: number): Promise<RoomParticipant> {
+    if (isInMockMode()) {
+      const existing = _roomParticipants.find(
+        p => p.room_id === roomId && p.display_name.toLowerCase() === displayName.toLowerCase()
+      );
+      if (existing) return existing;
 
-    const participant: RoomParticipant = {
-      id: `rp-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      const participant: RoomParticipant = {
+        id: `rp-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+        room_id: roomId,
+        display_name: displayName,
+        joined_at: new Date().toISOString(),
+        submitted_at: null,
+        score: null,
+        total_questions: totalQuestions,
+        answered_count: 0,
+      };
+      _roomParticipants.push(participant);
+      return participant;
+    }
+
+    const client = adminClient();
+    if (!client) throw new Error('[roomStore.joinRoom] Admin client unavailable.');
+
+    // Check for existing participant (re-join scenario)
+    const { data: existing } = await client.from('room_participants')
+      .select('*').eq('room_id', roomId).ilike('display_name', displayName).limit(1);
+    if (existing && existing.length > 0) return existing[0] as RoomParticipant;
+
+    const id = `rp-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+    const { data, error } = await client.from('room_participants').insert([{
+      id,
       room_id: roomId,
       display_name: displayName,
-      joined_at: new Date().toISOString(),
-      submitted_at: null,
-      score: null,
       total_questions: totalQuestions,
       answered_count: 0,
-    };
-    _roomParticipants.push(participant);
-    return participant;
+    }]).select().single();
+    if (error) { console.error('[roomStore.joinRoom] error:', error); throw error; }
+    return data as RoomParticipant;
   },
 
-  getParticipant(participantId: string): RoomParticipant | null {
-    return _roomParticipants.find(p => p.id === participantId) ?? null;
-  },
-
-  getParticipants(roomId: string): RoomParticipant[] {
-    return _roomParticipants
-      .filter(p => p.room_id === roomId)
-      .sort((a, b) => new Date(a.joined_at).getTime() - new Date(b.joined_at).getTime());
-  },
-
-  updateProgress(participantId: string, answeredCount: number): RoomParticipant | null {
-    const p = _roomParticipants.find(p => p.id === participantId);
-    if (p && !p.submitted_at) p.answered_count = answeredCount;
-    return p ?? null;
-  },
-
-  submitParticipant(participantId: string, score: number, answeredCount: number): RoomParticipant | null {
-    const p = _roomParticipants.find(p => p.id === participantId);
-    if (p) {
-      p.score = score;
-      p.answered_count = answeredCount;
-      p.submitted_at = new Date().toISOString();
+  async getParticipant(participantId: string): Promise<RoomParticipant | null> {
+    if (isInMockMode()) {
+      return _roomParticipants.find(p => p.id === participantId) ?? null;
     }
-    return p ?? null;
+    const client = adminClient();
+    if (!client) return null;
+    const { data, error } = await client.from('room_participants').select('*').eq('id', participantId).single();
+    if (error) return null;
+    return data as RoomParticipant;
+  },
+
+  async getParticipants(roomId: string): Promise<RoomParticipant[]> {
+    if (isInMockMode()) {
+      return _roomParticipants
+        .filter(p => p.room_id === roomId)
+        .sort((a, b) => new Date(a.joined_at).getTime() - new Date(b.joined_at).getTime());
+    }
+    const client = adminClient();
+    if (!client) return [];
+    const { data, error } = await client.from('room_participants').select('*')
+      .eq('room_id', roomId).order('joined_at', { ascending: true });
+    if (error) { console.error('[roomStore.getParticipants] error:', error); return []; }
+    return (data || []) as RoomParticipant[];
+  },
+
+  async updateProgress(participantId: string, answeredCount: number): Promise<RoomParticipant | null> {
+    if (isInMockMode()) {
+      const p = _roomParticipants.find(p => p.id === participantId);
+      if (p && !p.submitted_at) p.answered_count = answeredCount;
+      return p ?? null;
+    }
+    const client = adminClient();
+    if (!client) return null;
+    // Only update if not yet submitted
+    const { data, error } = await client.from('room_participants')
+      .update({ answered_count: answeredCount })
+      .eq('id', participantId).is('submitted_at', null)
+      .select().single();
+    if (error) { console.error('[roomStore.updateProgress] error:', error); return null; }
+    return data as RoomParticipant;
+  },
+
+  async submitParticipant(participantId: string, score: number, answeredCount: number): Promise<RoomParticipant | null> {
+    if (isInMockMode()) {
+      const p = _roomParticipants.find(p => p.id === participantId);
+      if (p) {
+        p.score = score;
+        p.answered_count = answeredCount;
+        p.submitted_at = new Date().toISOString();
+      }
+      return p ?? null;
+    }
+    const client = adminClient();
+    if (!client) return null;
+    const { data, error } = await client.from('room_participants')
+      .update({
+        score,
+        answered_count: answeredCount,
+        submitted_at: new Date().toISOString(),
+      })
+      .eq('id', participantId).select().single();
+    if (error) { console.error('[roomStore.submitParticipant] error:', error); return null; }
+    return data as RoomParticipant;
   },
 };

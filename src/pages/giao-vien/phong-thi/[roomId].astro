@@ -1,0 +1,39 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import LiveDashboard from '../../../components/giao-vien/LiveDashboard';
+import { roomStore } from '../../../services/db';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
+  return Astro.redirect('/dashboard');
+}
+
+const { roomId } = Astro.params;
+if (!roomId) {
+  return Astro.redirect('/giao-vien/phong-thi');
+}
+
+const room = await roomStore.getRoomById(roomId);
+if (!room) {
+  return Astro.redirect('/giao-vien/phong-thi?error=notfound');
+}
+
+if (room.teacher_id !== user.id && user.role !== 'admin') {
+  return Astro.redirect('/giao-vien/phong-thi?error=forbidden');
+}
+
+const participants = await roomStore.getParticipants(room.id);
+---
+
+<Layout title={`Trực tiếp phòng thi: ${room.code} - Lớp 12 LMS`} showSidebar={true}>
+  <div class="max-w-7xl mx-auto py-2">
+    <LiveDashboard
+      client:load
+      roomId={room.id}
+      initialRoom={room}
+      initialParticipants={participants}
+    />
+  </div>
+</Layout>

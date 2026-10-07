@@ -5,8 +5,9 @@ import { db } from '../../services/db';
 
 import { uuidToSeed, mulberry32 } from '../../lib/random';
 import { buildShuffledExam } from '../../lib/exam';
+import { calculateVsatIRTScore } from '../../lib/irt';
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   try {
     const { attemptId, answers } = await request.json();
     
@@ -19,8 +20,23 @@ export const POST: APIRoute = async ({ request }) => {
     if (!attempt) {
       return new Response(JSON.stringify({ error: 'Attempt not found' }), { status: 404 });
     }
+
+    // Security: Kiểm tra quyền sở hữu attempt (nếu attempt gắn với user)
+    const user = locals.user;
+    if (attempt.user_id && attempt.user_id !== user?.id) {
+      return new Response(JSON.stringify({ error: 'Forbidden: Bạn không có quyền nộp bài thi này' }), { status: 403 });
+    }
+
+    // Security: Chặn nộp đè bài thi đã kết thúc
+    if (attempt.finished_at || attempt.score !== null) {
+      return new Response(JSON.stringify({ error: 'Bài thi này đã được nộp trước đó' }), { status: 400 });
+    }
+
     const exam = await db.getExamById(attempt.exam_id);
-    const isVsat = exam?.exam_type === 'vsat';
+    if (!exam) {
+      return new Response(JSON.stringify({ error: 'Exam not found' }), { status: 404 });
+    }
+    const isVsat = exam.exam_type === 'vsat';
 
     // 2. Fetch all questions and correct answers for this exam
     const examQuestions = await db.getQuestionsByExamId(attempt.exam_id);
@@ -33,6 +49,7 @@ export const POST: APIRoute = async ({ request }) => {
     const shuffledExamQuestions = buildShuffledExam(examQuestions, prng);
 
     let totalScore = 0;
+    const irtItems: Array<{ question: any; scoreFraction: number }> = [];
 
     // 4. Grade each question based on the shuffled state
     shuffledExamQuestions.forEach(q => {
@@ -41,26 +58,37 @@ export const POST: APIRoute = async ({ request }) => {
       // Read / Listen / Cloze (read_cloze): each sub-question counts individually
       if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
         const subs = (q.metadata && (q.metadata as any).questions) || [];
+        let correctSubs = 0;
         if (submitted && typeof submitted === 'object' && !Array.isArray(submitted)) {
           subs.forEach((sq: any, i: number) => {
             const sel = (submitted as Record<string, string>)[String(i)];
             if (sel && String(sel).toUpperCase() === String(sq.correct_option || '').toUpperCase()) {
               totalScore += isVsat ? 6 : 0.25;
+              correctSubs++;
             }
           });
         }
+        irtItems.push({
+          question: q,
+          scoreFraction: subs.length > 0 ? (correctSubs / subs.length) : 0,
+        });
         return;
       }
 
       // V-SAT matching: every left-side prompt must map to the correct letter.
       if (q.type === 'matching') {
         const subs = (q.metadata as any)?.questions || [];
+        let correctPairs = 0;
         if (submitted && typeof submitted === 'object' && !Array.isArray(submitted)) {
-          const correctPairs = subs.filter((sq: any, i: number) =>
+          correctPairs = subs.filter((sq: any, i: number) =>
             String((submitted as Record<string, string>)[String(i)] || '').toUpperCase() === String(sq.correct_option || '').toUpperCase()
           ).length;
           totalScore += isVsat ? correctPairs * 1.5 : (correctPairs === subs.length && subs.length > 0 ? 0.25 : 0);
         }
+        irtItems.push({
+          question: q,
+          scoreFraction: subs.length > 0 ? (correctPairs / subs.length) : 0,
+        });
         return;
       }
 
@@ -68,20 +96,29 @@ export const POST: APIRoute = async ({ request }) => {
       // case-insensitively; each blank accepts one or more configured answers.
       if (q.type === 'cloze_text') {
         const blanks = (q.metadata as any)?.questions || [];
+        let correctBlanks = 0;
         if (submitted && typeof submitted === 'object' && !Array.isArray(submitted)) {
           blanks.forEach((blank: any, i: number) => {
             const actual = String((submitted as Record<string, string>)[String(i)] || '').trim().toLowerCase();
             const accepted = (Array.isArray(blank.accepted_answers) ? blank.accepted_answers : [blank.correct_answer])
               .map((x: any) => String(x || '').trim().toLowerCase());
-            if (actual && accepted.includes(actual)) totalScore += isVsat ? 6 : 0.25;
+            if (actual && accepted.includes(actual)) {
+              totalScore += isVsat ? 6 : 0.25;
+              correctBlanks++;
+            }
           });
         }
+        irtItems.push({
+          question: q,
+          scoreFraction: blanks.length > 0 ? (correctBlanks / blanks.length) : 0,
+        });
         return;
       }
 
       const correctAnswers = q.answers.filter(a => a.is_correct).map(a => a.id);
 
       if (!submitted) {
+        irtItems.push({ question: q, scoreFraction: 0 });
         return; // Left blank
       }
 
@@ -94,6 +131,7 @@ export const POST: APIRoute = async ({ request }) => {
         if (correctAnswers.includes(selectedId)) {
           isCorrect = true;
         }
+        irtItems.push({ question: q, scoreFraction: isCorrect ? 1.0 : 0.0 });
       } else if (q.type === 'multiple_choice') {
         // Submitted should be an array of answer IDs
         const selectedIds = Array.isArray(submitted) ? submitted : [submitted];
@@ -105,8 +143,10 @@ export const POST: APIRoute = async ({ request }) => {
         if (allCorrectSelected && noIncorrectSelected && correctAnswers.length === selectedIds.length) {
           isCorrect = true;
         }
+        irtItems.push({ question: q, scoreFraction: isCorrect ? 1.0 : 0.0 });
       } else if (q.type === 'msq') {
         // Submitted is an object mapping option ID -> "Đúng" or "Sai"
+        let fraction = 0;
         if (typeof submitted === 'object' && submitted !== null) {
           let correctSubItems = 0;
           q.answers.forEach(a => {
@@ -114,6 +154,7 @@ export const POST: APIRoute = async ({ request }) => {
             const correctChoice = a.is_correct ? 'Đúng' : 'Sai';
             if (studentChoice === correctChoice) correctSubItems++;
           });
+          fraction = q.answers.length > 0 ? (correctSubItems / q.answers.length) : 0;
           if (isVsat) {
             const vsatTrueFalsePoints = [0, 1, 2, 3, 6];
             totalScore += vsatTrueFalsePoints[Math.min(correctSubItems, 4)] || 0;
@@ -121,6 +162,7 @@ export const POST: APIRoute = async ({ request }) => {
             isCorrect = true;
           }
         }
+        irtItems.push({ question: q, scoreFraction: fraction });
       } else if (q.type === 'sa') {
         // Submitted is a string answer
         if (typeof submitted === 'string' && q.answer) {
@@ -137,6 +179,7 @@ export const POST: APIRoute = async ({ request }) => {
             }
           }
         }
+        irtItems.push({ question: q, scoreFraction: isCorrect ? 1.0 : 0.0 });
       }
 
       if (isCorrect) {
@@ -152,19 +195,25 @@ export const POST: APIRoute = async ({ request }) => {
 
     const score = totalScore; // V-SAT: raw /150; legacy exams: existing points
 
+    let abilityScore: number | null = null;
+    if (isVsat) {
+      const irtResult = calculateVsatIRTScore(irtItems);
+      abilityScore = irtResult.abilityScore;
+    }
+
     // 5. Save results to database
     const updatedAttempt = await db.submitAttempt(
       attemptId,
       score,
       answers,
-      isVsat ? { raw_score: score, ability_score: null } : undefined
+      isVsat ? { raw_score: score, ability_score: abilityScore } : undefined
     );
 
     return new Response(JSON.stringify({
       success: true,
       score,
       rawScore: isVsat ? score : null,
-      abilityScore: null,
+      abilityScore,
       attempt: updatedAttempt
     }), { status: 200 });
 

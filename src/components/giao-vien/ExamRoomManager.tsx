@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import type { Exam } from '../../types';
 
 interface ExamRoom {
@@ -191,7 +191,14 @@ export default function ExamRoomManager({ exams, teacherRooms: initialRooms }: P
           </div>
 
           {/* Action buttons */}
-          <div className="flex gap-3 mt-4">
+          <div className="flex flex-wrap items-center gap-3 mt-4">
+            <a
+              href={`/giao-vien/phong-thi/${activeRoom.id}`}
+              className="flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 text-sm font-bold rounded-xl shadow-sm transition"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              Màn hình Live Dashboard chuyên sâu →
+            </a>
             {activeRoom.status === 'waiting' && (
               <button
                 onClick={() => activateRoom(activeRoom)}
