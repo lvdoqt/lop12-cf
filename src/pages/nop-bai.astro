@@ -1,0 +1,967 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getNopBaiAdminClient, getClasses, type NopBaiClass } from '../services/nopBai';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+const runtimeEnv = Astro.locals.runtimeEnv;
+const client = getNopBaiAdminClient(runtimeEnv);
+
+// Tải danh sách lớp từ Supabase
+const classes: NopBaiClass[] = await getClasses(client);
+
+// Lấy query param lớp nếu có
+const initialClassParam = Astro.url.searchParams.get('lop') || Astro.url.searchParams.get('class') || '';
+const defaultSelectedClass = classes.find(c => c.name.toLowerCase() === initialClassParam.toLowerCase()) || classes[0] || null;
+
+const initialStudentName = user?.fullname || (user?.email ? user.email.split('@')[0] : '');
+const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
+---
+
+<Layout title="Nộp Bài Tập Trực Tuyến - Lớp 12" description="Hệ thống nộp bài tập trực tuyến, hỗ trợ dán ảnh bài làm trực tiếp từ clipboard, theo dõi số lần nộp cho các lớp 12A4, 11A8...">
+  <div class="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-indigo-500 selection:text-white">
+    <!-- Top Header Banner -->
+    <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md sticky top-0 z-30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <!-- Mobile sidebar toggle -->
+          <button
+            id="btn-toggle-sidebar"
+            type="button"
+            class="lg:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none transition"
+            aria-label="Mở danh sách lớp"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
+          <a href="/nop-bai" class="flex items-center gap-2.5 group">
+            <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-sky-400 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25 ring-1 ring-white/20 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </span>
+            <div>
+              <h1 class="text-base sm:text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400 leading-tight">
+                Hệ Thống Nộp Bài
+              </h1>
+              <p class="text-[11px] text-indigo-400 font-medium">Lớp 12 & Ôn thi THPT Quốc Gia</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Right actions -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          {isStaff ? (
+            <a
+              href="/admin/nop-bai"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/25 transition shadow-sm"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>Quản lý nộp bài</span>
+            </a>
+          ) : (
+            <a
+              href="/dashboard"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/80 transition"
+            >
+              <span>Bảng điều khiển</span>
+            </a>
+          )}
+
+          <div class="hidden sm:flex items-center gap-2 pl-2 border-l border-slate-800 text-xs text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Hệ thống trực tuyến</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container: Sidebar + Content -->
+    <div class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-6 relative">
+      
+      <!-- ============================================================ -->
+      <!-- LEFT SIDEBAR: DANH SÁCH LỚP HỌC (12A4, 11A8, ...) -->
+      <!-- ============================================================ -->
+      <!-- Mobile backdrop -->
+      <div id="sidebar-backdrop" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-40 hidden lg:hidden transition-opacity"></div>
+
+      <aside
+        id="class-sidebar"
+        class="fixed inset-y-0 left-0 z-50 w-72 bg-slate-900 border-r border-slate-800 p-4 flex flex-col transform -translate-x-full lg:translate-x-0 lg:static lg:w-72 lg:bg-slate-900/40 lg:border lg:border-slate-800/80 lg:rounded-2xl lg:p-4 lg:backdrop-blur-sm transition-transform duration-300 ease-out shadow-2xl lg:shadow-none"
+      >
+        <!-- Sidebar Header -->
+        <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+          <div class="flex items-center gap-2">
+            <span class="p-1.5 rounded-lg bg-indigo-500/10 text-indigo-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </span>
+            <div>
+              <h2 class="text-sm font-bold text-white uppercase tracking-wider">Lớp Học</h2>
+              <p class="text-[11px] text-slate-400">Chọn lớp để nộp bài</p>
+            </div>
+          </div>
+
+          <!-- Close button on mobile -->
+          <button
+            id="btn-close-sidebar"
+            type="button"
+            class="lg:hidden p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Search class -->
+        <div class="mb-3 relative">
+          <input
+            id="class-search"
+            type="text"
+            placeholder="Tìm lớp (12A4, 11A8...)"
+            class="w-full bg-slate-950/70 border border-slate-800 rounded-xl px-3 py-2 pl-8 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition"
+          />
+          <svg class="w-4 h-4 text-slate-500 absolute left-2.5 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+
+        <!-- Class List -->
+        <div id="class-list-container" class="flex-1 overflow-y-auto space-y-2 pr-1 custom-scrollbar">
+          {classes.map((c) => {
+            const isSelected = defaultSelectedClass?.id === c.id;
+            return (
+              <button
+                type="button"
+                data-class-id={c.id}
+                data-class-name={c.name}
+                data-class-notice={c.pinnedNotice || ''}
+                class={`class-nav-item w-full text-left p-3 rounded-xl border transition-all duration-200 flex items-start gap-3 group relative overflow-hidden ${
+                  isSelected
+                    ? 'bg-indigo-600/20 border-indigo-500/60 shadow-md shadow-indigo-500/10 text-white'
+                    : 'bg-slate-800/40 border-slate-800/60 hover:bg-slate-800/80 hover:border-slate-700 text-slate-300'
+                }`}
+              >
+                <!-- Color indicator -->
+                <div
+                  class="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs text-white shrink-0 shadow-sm"
+                  style={`background: ${c.color || '#4f46e5'};`}
+                >
+                  {c.initials || c.name.slice(0, 4)}
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-sm truncate group-hover:text-white transition">
+                      Lớp {c.name}
+                    </span>
+                    {c.grade && (
+                      <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-slate-800 text-slate-400 font-medium">
+                        Khối {c.grade}
+                      </span>
+                    )}
+                  </div>
+                  <p class="text-[11px] text-slate-400 truncate mt-0.5">
+                    {c.speciality || 'Bấm để nộp bài'}
+                  </p>
+                </div>
+
+                <!-- Active check indicator -->
+                <div class={`class-active-badge ${isSelected ? 'block' : 'hidden'} text-indigo-400 shrink-0 self-center`}>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        <!-- Sidebar footer: Admin add class link -->
+        {isStaff && (
+          <div class="pt-3 mt-3 border-t border-slate-800">
+            <a
+              href="/admin/nop-bai"
+              class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-slate-700/60 transition"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+              <span>+ Quản lý / Thêm lớp mới</span>
+            </a>
+          </div>
+        )}
+      </aside>
+
+      <!-- ============================================================ -->
+      <!-- MAIN AREA: FORM NỘP BÀI TẬP -->
+      <!-- ============================================================ -->
+      <main class="flex-1 min-w-0">
+        <!-- Class Notice Banner (if any) -->
+        <div id="class-notice-card" class="mb-4 bg-gradient-to-r from-indigo-950/40 via-slate-900/60 to-slate-900/40 border border-indigo-500/20 rounded-2xl p-4 backdrop-blur-sm shadow-sm flex items-start gap-3">
+          <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400 shrink-0 mt-0.5">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Yêu cầu nộp bài</span>
+              <span id="notice-class-tag" class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-semibold">
+                Lớp {defaultSelectedClass?.name || '12A4'}
+              </span>
+            </div>
+            <p id="notice-text" class="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+              {defaultSelectedClass?.pinnedNotice || 'Học sinh ghi rõ họ tên, dán ảnh bài làm (chụp vở hoặc ảnh từ máy tính/điện thoại) và viết lời giải chi tiết bên dưới.'}
+            </p>
+          </div>
+        </div>
+
+        <!-- Main Form Card -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 sm:p-7 backdrop-blur-md shadow-xl relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+          <form id="form-nop-bai" class="space-y-5" onsubmit="return false;">
+            
+            <!-- 1. THÔNG TIN HỌC SINH (Họ tên - Lớp: Textbox nhỏ) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Textbox Tên -->
+              <div>
+                <label for="input-student-name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                  Họ và tên học sinh <span class="text-rose-400">*</span>
+                </label>
+                <div class="relative">
+                  <input
+                    id="input-student-name"
+                    name="studentName"
+                    type="text"
+                    required
+                    value={initialStudentName}
+                    placeholder="Ví dụ: Nguyễn Văn An"
+                    class="w-full bg-slate-950/80 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition shadow-inner"
+                  />
+                  <span class="absolute right-3 top-2.5 text-slate-500">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Textbox Lớp -->
+              <div>
+                <label for="input-class-name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                  Lớp học <span class="text-rose-400">*</span>
+                </label>
+                <div class="relative">
+                  <input
+                    id="input-class-name"
+                    name="className"
+                    type="text"
+                    required
+                    value={defaultSelectedClass?.name || '12A4'}
+                    placeholder="Ví dụ: 12A4 hoặc 11A8"
+                    list="classes-datalist"
+                    class="w-full bg-slate-950/80 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-indigo-300 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition shadow-inner"
+                  />
+                  <datalist id="classes-datalist">
+                    {classes.map(c => <option value={c.name} />)}
+                  </datalist>
+                  <span class="absolute right-3 top-2.5 text-slate-500">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Submission Status (Ghi nhận số lần nộp) -->
+            <div id="live-count-badge" class="hidden p-3 rounded-xl bg-slate-950/60 border border-slate-800 text-xs flex items-center justify-between">
+              <div class="flex items-center gap-2 text-slate-300">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                <span>Lịch sử nộp bài: <strong id="live-count-name" class="text-white">...</strong> tại lớp <strong id="live-count-class" class="text-indigo-400">...</strong></span>
+              </div>
+              <span id="live-count-pill" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                Đã nộp 0 lần
+              </span>
+            </div>
+
+            <!-- 2. KHUNG TEXTBOX LỚN ĐỂ VIẾT VĂN BẢN -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="textarea-content" class="text-xs font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                  <span>Nội dung bài làm / Lời giải chi tiết</span>
+                </label>
+                <div class="text-[11px] text-slate-400 flex items-center gap-3">
+                  <span id="char-count">0 ký tự</span>
+                  <span id="word-count">0 từ</span>
+                </div>
+              </div>
+
+              <!-- Quick action mini toolbar -->
+              <div class="flex items-center gap-1 mb-2 text-xs">
+                <button
+                  type="button"
+                  id="btn-quick-sample"
+                  class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition"
+                  title="Chèn mẫu cấu trúc bài làm"
+                >
+                  📝 Chèn mẫu trình bày
+                </button>
+                <button
+                  type="button"
+                  id="btn-quick-time"
+                  class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition"
+                  title="Chèn dấu thời gian"
+                >
+                  ⏰ Chèn ngày giờ
+                </button>
+                <button
+                  type="button"
+                  id="btn-clear-text"
+                  class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-rose-900/40 text-slate-400 hover:text-rose-300 transition ml-auto"
+                >
+                  Xoá trắng
+                </button>
+              </div>
+
+              <textarea
+                id="textarea-content"
+                name="content"
+                rows="7"
+                placeholder="Nhập nội dung bài giải, các bước giải toán, bài văn hoặc ghi chú nộp bài tại đây...&#10;Mẹo: Bạn có thể nhấn Ctrl + V để dán trực tiếp ảnh bài làm vào khung bên dưới."
+                class="w-full bg-slate-950/80 border border-slate-700/80 rounded-xl p-3.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition leading-relaxed font-sans shadow-inner custom-scrollbar"
+              ></textarea>
+            </div>
+
+            <!-- 3. KHUNG DÁN ẢNH COPY TỪ APP / WEB KHÁC (CLIPBOARD PASTE ZONE) -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span>Hình ảnh bài làm (Dán ảnh từ clipboard hoặc chọn tệp)</span>
+                </label>
+                <span id="image-count-tag" class="text-[11px] text-slate-400">
+                  Đã thêm 0 ảnh (Tối đa 10 ảnh)
+                </span>
+              </div>
+
+              <!-- Interactive Drop & Paste Zone -->
+              <div
+                id="paste-drop-zone"
+                tabindex="0"
+                class="border-2 border-dashed border-slate-700 hover:border-indigo-500 focus:border-indigo-500 bg-slate-950/60 rounded-2xl p-6 text-center cursor-pointer transition-all duration-200 group relative outline-none"
+              >
+                <input
+                  id="file-input"
+                  type="file"
+                  multiple
+                  accept="image/png,image/jpeg,image/webp,image/gif"
+                  class="hidden"
+                />
+
+                <div class="flex flex-col items-center justify-center gap-2 pointer-events-none">
+                  <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all shadow-inner">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                  </div>
+
+                  <div>
+                    <p class="text-sm font-bold text-slate-200 group-hover:text-white transition">
+                      <span class="text-indigo-400">Nhấn Ctrl + V</span> để dán ảnh đã copy từ ứng dụng khác
+                    </p>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                      Hỗ trợ copy từ Zalo, Word, trình duyệt web, Snipping Tool hoặc <span class="text-indigo-400 underline">bấm vào đây</span> để chọn file từ máy
+                    </p>
+                  </div>
+
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">Ctrl + V (Paste)</span>
+                    <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">JPG, PNG, WebP</span>
+                    <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-400">Lưu Supabase Storage</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Image Previews Container -->
+              <div id="image-preview-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mt-3 hidden">
+                <!-- Preview items will be injected by JavaScript -->
+              </div>
+            </div>
+
+            <!-- 4. NÚT NỘP BÀI -->
+            <div class="pt-2">
+              <button
+                id="btn-submit"
+                type="button"
+                class="w-full py-3.5 px-6 rounded-xl font-bold text-base text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-sky-500 hover:from-indigo-500 hover:to-sky-400 active:scale-[0.99] transition-all duration-200 shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed group"
+              >
+                <svg id="submit-spinner" class="w-5 h-5 animate-spin hidden" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                </svg>
+                <svg id="submit-icon" class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+                <span id="submit-text">Nộp Bài Ngay</span>
+              </button>
+              <p class="text-[11px] text-center text-slate-500 mt-2">
+                Hệ thống tự động lưu vào Supabase và đếm số lần nộp của học sinh theo từng lớp.
+              </p>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SUCCESS MODAL (THÔNG BÁO NỘP BÀI THÀNH CÔNG & GHI NHẬN LẦN NỘP) -->
+    <!-- ============================================================ -->
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden transition-all duration-300">
+      <div class="bg-slate-900 border border-slate-700/80 rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl relative overflow-hidden transform scale-95 transition-transform duration-300 animate-in">
+        <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center mb-4 ring-8 ring-emerald-500/10">
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+
+        <h3 class="text-xl sm:text-2xl font-black text-white">Nộp Bài Thành Công!</h3>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">Bài nộp và hình ảnh đã được lưu vào Supabase.</p>
+
+        <!-- Big Submission Count Badge -->
+        <div class="my-5 p-4 rounded-2xl bg-gradient-to-r from-indigo-900/40 via-purple-900/30 to-indigo-900/40 border border-indigo-500/30 text-center">
+          <p class="text-xs uppercase font-semibold text-indigo-300 tracking-wider">Ghi nhận lượt nộp</p>
+          <div class="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-200 mt-1">
+            LẦN THỨ <span id="modal-submission-count">1</span>
+          </div>
+          <div class="mt-2 pt-2 border-t border-indigo-500/20 text-xs text-slate-300 flex justify-around">
+            <div>Học sinh: <strong id="modal-student-name" class="text-white">...</strong></div>
+            <div>Lớp: <strong id="modal-class-name" class="text-indigo-400">...</strong></div>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-400 space-y-1 mb-6 text-left bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+          <div class="flex justify-between">
+            <span>Thời gian nộp:</span>
+            <span id="modal-timestamp" class="text-slate-200 font-medium">...</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Số lượng ảnh:</span>
+            <span id="modal-image-count" class="text-slate-200 font-medium">0 ảnh</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2">
+          <button
+            type="button"
+            id="btn-modal-continue"
+            class="flex-1 py-2.5 px-4 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-500 text-white transition"
+          >
+            Nộp bài tiếp
+          </button>
+          <a
+            href="/dashboard"
+            class="flex-1 py-2.5 px-4 rounded-xl font-semibold text-sm bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition inline-flex items-center justify-center"
+          >
+            Về Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox for Image Preview Zoom -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md hidden">
+      <button
+        id="btn-close-lightbox"
+        type="button"
+        class="absolute top-4 right-4 p-2 text-slate-400 hover:text-white rounded-full bg-slate-800/80 transition"
+      >
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="Xem trước ảnh" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl" />
+    </div>
+
+  </div>
+
+  <!-- Toast host -->
+  <div id="toast-host" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Custom Client Script -->
+  <script is:inline>
+    (function() {
+      // Pending images store: array of { id, file, dataUrl, name, size }
+      const pendingImages = [];
+      const MAX_IMAGES = 10;
+
+      // Elements
+      const studentNameInput = document.getElementById('input-student-name');
+      const classNameInput = document.getElementById('input-class-name');
+      const contentTextarea = document.getElementById('textarea-content');
+      const pasteDropZone = document.getElementById('paste-drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const imagePreviewGrid = document.getElementById('image-preview-grid');
+      const imageCountTag = document.getElementById('image-count-tag');
+      const btnSubmit = document.getElementById('btn-submit');
+      const submitSpinner = document.getElementById('submit-spinner');
+      const submitIcon = document.getElementById('submit-icon');
+      const submitText = document.getElementById('submit-text');
+      const charCount = document.getElementById('char-count');
+      const wordCount = document.getElementById('word-count');
+      const liveCountBadge = document.getElementById('live-count-badge');
+      const liveCountName = document.getElementById('live-count-name');
+      const liveCountClass = document.getElementById('live-count-class');
+      const liveCountPill = document.getElementById('live-count-pill');
+      const successModal = document.getElementById('success-modal');
+      const btnModalContinue = document.getElementById('btn-modal-continue');
+      const modalSubmissionCount = document.getElementById('modal-submission-count');
+      const modalStudentName = document.getElementById('modal-student-name');
+      const modalClassName = document.getElementById('modal-class-name');
+      const modalTimestamp = document.getElementById('modal-timestamp');
+      const modalImageCount = document.getElementById('modal-image-count');
+      const lightboxModal = document.getElementById('lightbox-modal');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const btnCloseLightbox = document.getElementById('btn-close-lightbox');
+      const classNoticeCard = document.getElementById('class-notice-card');
+      const noticeClassTag = document.getElementById('notice-class-tag');
+      const noticeText = document.getElementById('notice-text');
+
+      // Toast notification helper
+      function showToast(message, type = 'info') {
+        const host = document.getElementById('toast-host');
+        if (!host) return;
+        const toast = document.createElement('div');
+        const bgColors = {
+          success: 'bg-emerald-600 text-white',
+          error: 'bg-rose-600 text-white',
+          info: 'bg-indigo-600 text-white',
+          warn: 'bg-amber-600 text-white',
+        };
+        toast.className = `pointer-events-auto px-4 py-2.5 rounded-xl shadow-xl text-xs sm:text-sm font-medium transition-all duration-300 transform translate-y-4 opacity-0 flex items-center gap-2 ${bgColors[type] || bgColors.info}`;
+        toast.textContent = message;
+        host.appendChild(toast);
+        requestAnimationFrame(() => {
+          toast.classList.remove('translate-y-4', 'opacity-0');
+        });
+        setTimeout(() => {
+          toast.classList.add('opacity-0', 'translate-y-2');
+          setTimeout(() => toast.remove(), 300);
+        }, 3500);
+      }
+
+      // Check count debouncer
+      let countTimer = null;
+      function checkSubmissionCount() {
+        clearTimeout(countTimer);
+        countTimer = setTimeout(async () => {
+          const sName = studentNameInput?.value?.trim();
+          const cName = classNameInput?.value?.trim();
+          if (!sName || !cName) {
+            liveCountBadge?.classList.add('hidden');
+            return;
+          }
+          try {
+            const res = await fetch(`/api/nop-bai/check-count?studentName=${encodeURIComponent(sName)}&className=${encodeURIComponent(cName)}`);
+            const data = await res.json();
+            if (typeof data.count === 'number') {
+              liveCountName.textContent = sName;
+              liveCountClass.textContent = cName;
+              liveCountPill.textContent = data.count > 0 ? `Đã nộp ${data.count} lần` : 'Chưa nộp lần nào';
+              liveCountBadge?.classList.remove('hidden');
+            }
+          } catch (e) {
+            // ignore
+          }
+        }, 600);
+      }
+
+      studentNameInput?.addEventListener('input', checkSubmissionCount);
+      classNameInput?.addEventListener('input', checkSubmissionCount);
+
+      // Character & Word Counter
+      contentTextarea?.addEventListener('input', () => {
+        const val = contentTextarea.value || '';
+        charCount.textContent = `${val.length} ký tự`;
+        const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+        wordCount.textContent = `${words} từ`;
+      });
+
+      // Quick Toolbar Buttons
+      document.getElementById('btn-quick-sample')?.addEventListener('click', () => {
+        const sample = `Bài làm chi tiết:\n- Câu 1: ...\n- Câu 2: ...\n- Nhận xét / Kết luận: ...\n`;
+        contentTextarea.value = (contentTextarea.value ? contentTextarea.value + '\n\n' : '') + sample;
+        contentTextarea.dispatchEvent(new Event('input'));
+        contentTextarea.focus();
+      });
+
+      document.getElementById('btn-quick-time')?.addEventListener('click', () => {
+        const timeStr = `[Ngày nộp: ${new Date().toLocaleString('vi-VN')}]\n`;
+        contentTextarea.value = (contentTextarea.value ? contentTextarea.value + '\n' : '') + timeStr;
+        contentTextarea.dispatchEvent(new Event('input'));
+        contentTextarea.focus();
+      });
+
+      document.getElementById('btn-clear-text')?.addEventListener('click', () => {
+        if (contentTextarea.value && confirm('Bạn có chắc muốn xoá nội dung đang viết?')) {
+          contentTextarea.value = '';
+          contentTextarea.dispatchEvent(new Event('input'));
+        }
+      });
+
+      // ============================================================
+      // CLIPBOARD PASTE HANDLER (HỖ TRỢ DÁN ẢNH TỪ WEB / APP KHÁC)
+      // ============================================================
+      function handleImageFiles(files) {
+        if (!files || files.length === 0) return;
+
+        let addedCount = 0;
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          if (!file.type.startsWith('image/')) continue;
+
+          if (pendingImages.length >= MAX_IMAGES) {
+            showToast(`Tối đa ${MAX_IMAGES} ảnh cho mỗi lần nộp`, 'warn');
+            break;
+          }
+
+          if (file.size > 10 * 1024 * 1024) {
+            showToast(`Ảnh "${file.name}" vượt quá 10MB`, 'error');
+            continue;
+          }
+
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const dataUrl = e.target.result;
+            const item = {
+              id: 'img-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
+              file: file,
+              dataUrl: dataUrl,
+              name: file.name || `Ảnh dán lúc ${new Date().toLocaleTimeString('vi-VN')}`,
+              size: (file.size / 1024).toFixed(0) + ' KB',
+            };
+            pendingImages.push(item);
+            renderPreviews();
+          };
+          reader.readAsDataURL(file);
+          addedCount++;
+        }
+
+        if (addedCount > 0) {
+          showToast(`Đã nhận ${addedCount} ảnh từ clipboard!`, 'success');
+        }
+      }
+
+      // Lắng nghe sự kiện PASTE toàn trang & trong textarea / dropzone
+      window.addEventListener('paste', (e) => {
+        const clipboardItems = e.clipboardData?.items;
+        if (!clipboardItems) return;
+
+        const files = [];
+        for (let i = 0; i < clipboardItems.length; i++) {
+          const item = clipboardItems[i];
+          if (item.type.indexOf('image') !== -1) {
+            const blob = item.getAsFile();
+            if (blob) {
+              files.push(blob);
+            }
+          }
+        }
+
+        if (files.length > 0) {
+          // Ngăn hành vi mặc định nếu là dán ảnh thuần
+          handleImageFiles(files);
+        }
+      });
+
+      // Drag & Drop
+      pasteDropZone?.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        pasteDropZone.classList.add('border-indigo-400', 'bg-indigo-950/20');
+      });
+
+      pasteDropZone?.addEventListener('dragleave', () => {
+        pasteDropZone.classList.remove('border-indigo-400', 'bg-indigo-950/20');
+      });
+
+      pasteDropZone?.addEventListener('drop', (e) => {
+        e.preventDefault();
+        pasteDropZone.classList.remove('border-indigo-400', 'bg-indigo-950/20');
+        if (e.dataTransfer?.files) {
+          handleImageFiles(e.dataTransfer.files);
+        }
+      });
+
+      // File input picker
+      pasteDropZone?.addEventListener('click', () => {
+        fileInput?.click();
+      });
+
+      fileInput?.addEventListener('change', (e) => {
+        if (e.target.files) {
+          handleImageFiles(e.target.files);
+          fileInput.value = '';
+        }
+      });
+
+      // Render thumbnails
+      function renderPreviews() {
+        if (!imagePreviewGrid) return;
+
+        imageCountTag.textContent = `Đã thêm ${pendingImages.length} ảnh (Tối đa ${MAX_IMAGES} ảnh)`;
+
+        if (pendingImages.length === 0) {
+          imagePreviewGrid.innerHTML = '';
+          imagePreviewGrid.classList.add('hidden');
+          return;
+        }
+
+        imagePreviewGrid.classList.remove('hidden');
+        imagePreviewGrid.innerHTML = '';
+
+        pendingImages.forEach((img, index) => {
+          const card = document.createElement('div');
+          card.className = 'group relative rounded-xl overflow-hidden bg-slate-950 border border-slate-800 shadow-md aspect-video';
+
+          card.innerHTML = `
+            <img src="${img.dataUrl}" alt="${img.name}" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-200" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-2 pointer-events-none">
+              <div class="flex justify-end pointer-events-auto">
+                <button type="button" data-index="${index}" class="btn-remove-img p-1 rounded-md bg-rose-600/90 text-white hover:bg-rose-600 transition shadow">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+              </div>
+              <p class="text-[10px] text-slate-300 truncate font-mono">${img.name} (${img.size})</p>
+            </div>
+            <span class="absolute bottom-1 left-1.5 text-[9px] px-1.5 py-0.5 rounded bg-slate-900/80 text-slate-300 font-mono pointer-events-none">#${index + 1}</span>
+          `;
+
+          // Zoom preview
+          const imgEl = card.querySelector('img');
+          imgEl?.addEventListener('click', () => {
+            lightboxImg.src = img.dataUrl;
+            lightboxModal.classList.remove('hidden');
+          });
+
+          // Remove
+          const btnRemove = card.querySelector('.btn-remove-img');
+          btnRemove?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            pendingImages.splice(index, 1);
+            renderPreviews();
+          });
+
+          imagePreviewGrid.appendChild(card);
+        });
+      }
+
+      // Lightbox close
+      btnCloseLightbox?.addEventListener('click', () => lightboxModal.classList.add('hidden'));
+      lightboxModal?.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) lightboxModal.classList.add('hidden');
+      });
+
+      // ============================================================
+      // SIDEBAR CLASS SELECTION
+      // ============================================================
+      const classItems = document.querySelectorAll('.class-nav-item');
+      classItems.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const cName = btn.dataset.className;
+          const cNotice = btn.dataset.classNotice;
+
+          // Update active styles
+          classItems.forEach(b => {
+            b.classList.remove('bg-indigo-600/20', 'border-indigo-500/60', 'text-white');
+            b.classList.add('bg-slate-800/40', 'border-slate-800/60', 'text-slate-300');
+            b.querySelector('.class-active-badge')?.classList.add('hidden');
+          });
+
+          btn.classList.add('bg-indigo-600/20', 'border-indigo-500/60', 'text-white');
+          btn.classList.remove('bg-slate-800/40', 'border-slate-800/60', 'text-slate-300');
+          btn.querySelector('.class-active-badge')?.classList.remove('hidden');
+
+          // Auto-fill Lớp input
+          if (classNameInput) {
+            classNameInput.value = cName;
+            classNameInput.dispatchEvent(new Event('input'));
+          }
+
+          // Update notice card
+          if (noticeClassTag) noticeClassTag.textContent = `Lớp ${cName}`;
+          if (noticeText) {
+            noticeText.textContent = cNotice || 'Học sinh ghi rõ họ tên, dán ảnh bài làm và viết lời giải chi tiết bên dưới.';
+          }
+
+          // Push state to URL
+          try {
+            const url = new URL(window.location.href);
+            url.searchParams.set('lop', cName);
+            window.history.replaceState({}, '', url.toString());
+          } catch(e) {}
+
+          // On mobile, close sidebar
+          closeMobileSidebar();
+        });
+      });
+
+      // Search class in sidebar
+      const classSearch = document.getElementById('class-search');
+      classSearch?.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        classItems.forEach(btn => {
+          const name = btn.dataset.className?.toLowerCase() || '';
+          if (name.includes(query)) {
+            btn.style.display = '';
+          } else {
+            btn.style.display = 'none';
+          }
+        });
+      });
+
+      // Mobile sidebar toggle
+      const btnToggleSidebar = document.getElementById('btn-toggle-sidebar');
+      const btnCloseSidebar = document.getElementById('btn-close-sidebar');
+      const classSidebar = document.getElementById('class-sidebar');
+      const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+
+      function openMobileSidebar() {
+        classSidebar?.classList.remove('-translate-x-full');
+        sidebarBackdrop?.classList.remove('hidden');
+      }
+
+      function closeMobileSidebar() {
+        classSidebar?.classList.add('-translate-x-full');
+        sidebarBackdrop?.classList.add('hidden');
+      }
+
+      btnToggleSidebar?.addEventListener('click', openMobileSidebar);
+      btnCloseSidebar?.addEventListener('click', closeMobileSidebar);
+      sidebarBackdrop?.addEventListener('click', closeMobileSidebar);
+
+      // ============================================================
+      // SUBMIT ACTION (LƯU VÀO SUPABASE & ĐẾM LƯỢT NỘP)
+      // ============================================================
+      btnSubmit?.addEventListener('click', async () => {
+        const studentName = studentNameInput?.value?.trim();
+        const className = classNameInput?.value?.trim();
+        const content = contentTextarea?.value?.trim();
+
+        if (!studentName) {
+          showToast('Vui lòng điền Họ và tên học sinh', 'warn');
+          studentNameInput?.focus();
+          return;
+        }
+
+        if (!className) {
+          showToast('Vui lòng chọn hoặc điền Lớp học (ví dụ: 12A4)', 'warn');
+          classNameInput?.focus();
+          return;
+        }
+
+        if (!content && pendingImages.length === 0) {
+          showToast('Vui lòng viết nội dung hoặc dán ảnh bài làm', 'warn');
+          contentTextarea?.focus();
+          return;
+        }
+
+        // Start loading
+        btnSubmit.disabled = true;
+        submitSpinner?.classList.remove('hidden');
+        submitIcon?.classList.add('hidden');
+        submitText.textContent = 'Đang tải lên Supabase...';
+
+        try {
+          const formData = new FormData();
+          formData.append('studentName', studentName);
+          formData.append('className', className);
+          formData.append('content', content);
+
+          // Append image files
+          pendingImages.forEach((img) => {
+            formData.append('images', img.file, img.name);
+          });
+
+          const res = await fetch('/api/nop-bai/submit', {
+            method: 'POST',
+            body: formData,
+          });
+
+          const data = await res.json();
+
+          if (!res.ok || data.error) {
+            throw new Error(data.error || 'Nộp bài thất bại. Vui lòng thử lại!');
+          }
+
+          // Hiển thị modal thành công & ghi nhận số lần nộp
+          modalSubmissionCount.textContent = data.submissionCount || 1;
+          modalStudentName.textContent = data.studentName || studentName;
+          modalClassName.textContent = data.className || className;
+          modalTimestamp.textContent = new Date(data.createdAt || Date.now()).toLocaleString('vi-VN');
+          modalImageCount.textContent = `${(data.images || []).length} ảnh`;
+
+          successModal?.classList.remove('hidden');
+
+          // Reset content & images
+          contentTextarea.value = '';
+          contentTextarea.dispatchEvent(new Event('input'));
+          pendingImages.length = 0;
+          renderPreviews();
+
+          // Refresh live count
+          checkSubmissionCount();
+
+        } catch (err) {
+          console.error(err);
+          showToast(err.message || 'Lỗi gửi bài', 'error');
+        } finally {
+          btnSubmit.disabled = false;
+          submitSpinner?.classList.add('hidden');
+          submitIcon?.classList.remove('hidden');
+          submitText.textContent = 'Nộp Bài Ngay';
+        }
+      });
+
+      // Modal continue
+      btnModalContinue?.addEventListener('click', () => {
+        successModal?.classList.add('hidden');
+      });
+
+      // Initial check
+      checkSubmissionCount();
+    })();
+  </script>
+
+  <style>
+    /* Custom thin scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.2);
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 0.4);
+    }
+  </style>
+</Layout>

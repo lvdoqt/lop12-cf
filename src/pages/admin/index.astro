@@ -4,6 +4,7 @@ import DashboardCard from '../../components/DashboardCard.astro';
 import { db } from '../../services/db';
 
 import { getCollection } from 'astro:content';
+import { getNopBaiAdminClient } from '../../services/nopBai';
 
 export const prerender = false;
 
@@ -27,11 +28,18 @@ const myCourseLessonsCount = myCourses.reduce((sum, c) => sum + (c.lessonCount ?
 const myQuestions = await db.getQuestions(undefined, user.id);
 const myQuestionsCount = myQuestions.length;
 
+// Classes count
+const nopClient = getNopBaiAdminClient(Astro.locals.runtimeEnv);
+const { count: classesCount } = await nopClient
+  .from('chat_groups')
+  .select('*', { count: 'exact', head: true });
+
 const studentsCount = isAdmin ? users.filter(u => u.role === 'student').length : 0;
 const teachersCount = isAdmin ? users.filter(u => u.role === 'teacher').length : 0;
 const lessonsCount = isAdmin ? lessons.length : 0;
 const examsCount = exams.length;
 const attemptsCount = attempts.length;
+
 ---
 
 <Layout title="Quản trị hệ thống">
@@ -80,11 +88,14 @@ const attemptsCount = attempts.length;
             Ngân hàng câu hỏi
           </a>
         )}
+        <a href="/admin/nop-bai" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow shadow-emerald-500/10">
+          Quản lý Nộp bài
+        </a>
       </div>
     </div>
 
     <!-- Stats Cards Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
       <DashboardCard
         title="Tổng số đề thi"
         value={examsCount}
@@ -106,6 +117,14 @@ const attemptsCount = attempts.length;
         icon="lessons"
         color="purple"
       />
+      <DashboardCard
+        title="Lớp nộp bài"
+        value={classesCount ?? 0}
+        description="Lớp học nhận bài nộp"
+        icon="progress"
+        color="emerald"
+      />
+
       {isAdmin && (
       <DashboardCard
         title="Tổng học sinh"

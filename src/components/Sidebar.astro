@@ -3,12 +3,15 @@ const user = Astro.locals.user;
 const base = import.meta.env.BASE_URL;
 const pathname = new URL(Astro.request.url).pathname.replace(base, '') || '/';
 
+const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
+
 const menuItems = [
-  { href: '/nhom', label: 'Nhóm lớp học', icon: 'groups' },
+  ...(!isStaff ? [{ href: '/nop-bai', label: 'Nộp bài tập', icon: 'nop-bai' }] : []),
   { href: '/dashboard', label: 'Bảng điều khiển', icon: 'dashboard' },
-  ...(user && (user.role === 'admin' || user.role === 'teacher') 
+  ...(isStaff 
     ? [
         { href: '/admin', label: 'Bảng điều hành', icon: 'admin' },
+        { href: '/admin/nop-bai', label: 'Quản lý nộp bài', icon: 'exam' },
         { href: '/admin/exams', label: 'Quản lý đề thi', icon: 'exam' },
         { href: '/admin/v-sat/new', label: 'Tạo đề V-SAT', icon: 'exam' },
         { href: '/admin/courses', label: 'Quản lý khóa học', icon: 'course' },
@@ -62,6 +65,11 @@ const menuItems = [
               : 'text-slate-400 hover:bg-slate-800/60 hover:text-slate-100'
           }`}
         >
+          {item.icon === 'nop-bai' && (
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          )}
           {item.icon === 'dashboard' && (
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z" />

@@ -1,0 +1,873 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {
+  getNopBaiAdminClient,
+  getClasses,
+  listSubmissions,
+  type NopBaiClass,
+  type NopBaiSubmission,
+} from '../../services/nopBai';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'admin' && user.role !== 'teacher')) {
+  return Astro.redirect('/dashboard');
+}
+
+const runtimeEnv = Astro.locals.runtimeEnv;
+const client = getNopBaiAdminClient(runtimeEnv);
+
+// Lấy danh sách lớp và bài nộp
+const classes: NopBaiClass[] = await getClasses(client);
+const submissions: NopBaiSubmission[] = await listSubmissions(client);
+
+// Thống kê nhanh
+const totalSubmissions = submissions.length;
+const totalClasses = classes.length;
+const uniqueStudents = new Set(submissions.map(s => `${s.studentName}-${s.className}`.toLowerCase())).size;
+
+// Đếm bài nộp theo lớp
+const classSubmissionCountMap: Record<string, number> = {};
+submissions.forEach(s => {
+  const c = s.className || 'Khác';
+  classSubmissionCountMap[c] = (classSubmissionCountMap[c] || 0) + 1;
+});
+---
+
+<Layout title="Quản Lý Nộp Bài & Lớp Học - Admin" description="Quản lý danh sách lớp học và theo dõi bài nộp của học sinh">
+  <div class="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur-md sticky top-0 z-30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <a href="/admin" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+          </a>
+          <div>
+            <h1 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+              <span>Quản Lý Nộp Bài & Lớp Học</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30">
+                {user.role === 'admin' ? 'Admin' : 'Giáo viên'}
+              </span>
+            </h1>
+            <p class="text-[11px] text-slate-400">Tạo lớp học, kiểm tra bài làm, theo dõi số lần nộp và ảnh chụp</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a
+            href="/nop-bai"
+            target="_blank"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition shadow-sm"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span>Mở trang /nop-bai</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 flex-1">
+      
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 shadow-sm flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-xs text-slate-400 font-medium">Tổng bài nộp</p>
+            <p class="text-xl sm:text-2xl font-black text-white">{totalSubmissions}</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 shadow-sm flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-xs text-slate-400 font-medium">Lớp học quản lý</p>
+            <p class="text-xl sm:text-2xl font-black text-white">{totalClasses}</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 shadow-sm flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-xs text-slate-400 font-medium">Học sinh đã nộp</p>
+            <p class="text-xl sm:text-2xl font-black text-white">{uniqueStudents}</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 shadow-sm flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-xs text-slate-400 font-medium">Supabase Storage</p>
+            <p class="text-xs font-bold text-amber-300 mt-1">Bucket: nop-bai</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            id="tab-btn-submissions"
+            class="px-4 py-2 rounded-xl text-sm font-bold bg-indigo-600 text-white shadow-sm transition"
+          >
+            📋 Danh Sách Bài Nộp ({totalSubmissions})
+          </button>
+          <button
+            type="button"
+            id="tab-btn-classes"
+            class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition"
+          >
+            🏫 Quản Lý Lớp Học ({totalClasses})
+          </button>
+        </div>
+
+        <!-- Add class button -->
+        <button
+          type="button"
+          id="btn-open-create-class-modal"
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-emerald-600 hover:bg-emerald-500 text-white transition shadow-sm"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+          </svg>
+          <span>Tạo lớp mới</span>
+        </button>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- TAB 1: DANH SÁCH BÀI NỘP -->
+      <!-- ============================================================ -->
+      <section id="tab-section-submissions" class="space-y-4">
+        <!-- Filter bar -->
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 flex flex-col sm:flex-row gap-3 items-center justify-between">
+          <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+            <!-- Filter by class -->
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-slate-400 font-medium">Lớp:</span>
+              <select
+                id="filter-class-select"
+                class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-indigo-500"
+              >
+                <option value="all">Tất cả các lớp ({totalSubmissions})</option>
+                {classes.map(c => (
+                  <option value={c.name}>
+                    Lớp {c.name} ({classSubmissionCountMap[c.name] || 0} bài)
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <!-- Search student name -->
+            <div class="relative flex-1 sm:w-64">
+              <input
+                id="filter-search-input"
+                type="text"
+                placeholder="Tìm tên học sinh hoặc nội dung..."
+                class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-1.5 pl-8 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+              />
+              <svg class="w-4 h-4 text-slate-500 absolute left-2.5 top-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="text-xs text-slate-400 self-end sm:self-center">
+            Hiển thị <span id="visible-submission-count" class="font-bold text-white">{totalSubmissions}</span> bài
+          </div>
+        </div>
+
+        <!-- Submissions Table / Cards -->
+        {submissions.length === 0 ? (
+          <div class="p-12 text-center rounded-2xl bg-slate-900/40 border border-slate-800 text-slate-400 space-y-3">
+            <div class="w-16 h-16 rounded-full bg-slate-800 mx-auto flex items-center justify-center text-slate-500">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <p class="font-semibold text-slate-300">Chưa có bài nộp nào</p>
+            <p class="text-xs max-w-sm mx-auto">Học sinh có thể truy cập trang <code>/nop-bai</code> để bắt đầu nộp bài tập.</p>
+          </div>
+        ) : (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="submissions-grid">
+            {submissions.map((sub) => (
+              <div
+                class="submission-card p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between shadow-sm relative group"
+                data-class-name={sub.className}
+                data-student-name={sub.studentName}
+                data-content={sub.content}
+              >
+                <!-- Card Header -->
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-2">
+                    <div>
+                      <h3 class="font-bold text-base text-white flex items-center gap-1.5">
+                        <span>{sub.studentName}</span>
+                      </h3>
+                      <div class="flex items-center gap-2 mt-1">
+                        <span class="text-xs px-2 py-0.5 rounded-md font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                          Lớp {sub.className}
+                        </span>
+                        <!-- Submission count badge -->
+                        <span class="text-xs px-2 py-0.5 rounded-md font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                          Lần {sub.submissionCount}
+                        </span>
+                      </div>
+                    </div>
+
+                    <!-- Delete button -->
+                    <button
+                      type="button"
+                      data-id={sub.id}
+                      class="btn-delete-sub p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition"
+                      title="Xóa bài nộp này"
+                    >
+                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <!-- Content Preview -->
+                  {sub.content && (
+                    <div class="text-xs text-slate-300 bg-slate-950/60 p-3 rounded-xl border border-slate-800/80 mb-3 whitespace-pre-wrap line-clamp-4 leading-relaxed font-sans">
+                      {sub.content}
+                    </div>
+                  )}
+
+                  <!-- Image Attachments -->
+                  {sub.images && sub.images.length > 0 && (
+                    <div class="space-y-1.5 mb-3">
+                      <p class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                        Ảnh đính kèm ({sub.images.length})
+                      </p>
+                      <div class="grid grid-cols-3 gap-2">
+                        {sub.images.map((img, idx) => (
+                          <div class="aspect-square rounded-lg overflow-hidden border border-slate-800 bg-slate-950 cursor-pointer hover:opacity-90 transition relative group/img">
+                            <img
+                              src={img.url}
+                              alt={`Ảnh ${idx + 1}`}
+                              loading="lazy"
+                              class="w-full h-full object-cover admin-zoom-img"
+                              data-full-url={img.url}
+                            />
+                            <span class="absolute bottom-1 right-1 text-[9px] px-1 rounded bg-black/70 text-white font-mono">
+                              #{idx + 1}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <!-- Card Footer -->
+                <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+                  <span title={sub.createdAt}>
+                    🕒 {new Date(sub.createdAt).toLocaleString('vi-VN')}
+                  </span>
+                  <button
+                    type="button"
+                    class="btn-view-full text-indigo-400 hover:text-indigo-300 font-semibold"
+                    data-json={JSON.stringify(sub)}
+                  >
+                    Xem chi tiết →
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- TAB 2: QUẢN LÝ LỚP HỌC (12A4, 11A8, ...) -->
+      <!-- ============================================================ -->
+      <section id="tab-section-classes" class="space-y-4 hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {classes.map((cls) => {
+            const count = classSubmissionCountMap[cls.name] || 0;
+            return (
+              <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between shadow-sm">
+                <div>
+                  <div class="flex items-start justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-12 h-12 rounded-2xl flex items-center justify-center font-black text-white text-base shadow-sm"
+                        style={`background: ${cls.color || '#4f46e5'};`}
+                      >
+                        {cls.initials || cls.name}
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-lg text-white">Lớp {cls.name}</h3>
+                        <p class="text-xs text-slate-400">Khối {cls.grade || '12'} • {cls.speciality || 'Chung'}</p>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center gap-1">
+                      <!-- Edit class button -->
+                      <button
+                        type="button"
+                        data-id={cls.id}
+                        data-json={JSON.stringify(cls)}
+                        class="btn-edit-class p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-indigo-500/10 transition"
+                        title="Sửa thông tin lớp này"
+                      >
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                        </svg>
+                      </button>
+
+                      <!-- Delete class button -->
+                      <button
+                        type="button"
+                        data-id={cls.id}
+                        data-name={cls.name}
+                        class="btn-delete-class p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition"
+                        title="Xóa lớp này"
+                      >
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Pinned notice -->
+                  <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80 mb-3">
+                    <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Lời dặn / Yêu cầu nộp bài:</p>
+                    <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed">
+                      {cls.pinnedNotice || 'Chưa có lời dặn riêng cho lớp này.'}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                  <span class="text-xs text-indigo-400 font-semibold">
+                    📊 {count} bài đã nộp
+                  </span>
+
+                  <a
+                    href={`/nop-bai?lop=${cls.name}`}
+                    target="_blank"
+                    class="text-xs font-semibold text-slate-300 hover:text-white hover:underline flex items-center gap-1"
+                  >
+                    <span>Vào trang nộp</span>
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MODAL: TẠO LỚP HỌC MỚI -->
+    <!-- ============================================================ -->
+    <div id="create-class-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden">
+      <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+          <h3 class="font-bold text-lg text-white">Tạo Lớp Học Mới</h3>
+          <button type="button" id="btn-close-create-modal" class="text-slate-400 hover:text-white">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <form id="form-create-class" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Tên lớp <span class="text-rose-400">*</span></label>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Ví dụ: 12A4, 11A8, 10A1..."
+              class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-indigo-500"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Khối</label>
+              <select
+                name="grade"
+                class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500"
+              >
+                <option value="12">Khối 12</option>
+                <option value="11">Khối 11</option>
+                <option value="10">Khối 10</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Màu sắc</label>
+              <input
+                type="color"
+                name="color"
+                value="#4f46e5"
+                class="w-full h-10 bg-slate-950 border border-slate-700 rounded-xl px-1 py-1 cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Chuyên môn / Ban</label>
+            <input
+              type="text"
+              name="speciality"
+              placeholder="Ví dụ: KHTN & Tin Học, Toán Lí..."
+              class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-indigo-500"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Lời dặn / Yêu cầu nộp bài</label>
+            <textarea
+              name="pinnedNotice"
+              rows="3"
+              placeholder="Nhập yêu cầu bài tập cho học sinh lớp này..."
+              class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-indigo-500"
+            ></textarea>
+          </div>
+
+          <div class="pt-2 flex gap-2">
+            <button
+              type="button"
+              id="btn-cancel-create"
+              class="flex-1 py-2.5 rounded-xl font-semibold text-sm bg-slate-800 hover:bg-slate-700 text-slate-300 transition"
+            >
+              Hủy
+            </button>
+            <button
+              type="submit"
+              class="flex-1 py-2.5 rounded-xl font-semibold text-sm bg-emerald-600 hover:bg-emerald-500 text-white transition shadow-sm"
+            >
+              Lưu lớp học
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- MODAL: SỬA LỚP HỌC (EDIT CLASS) -->
+    <!-- ============================================================ -->
+    <div id="edit-class-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden">
+      <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+          <h3 class="font-bold text-lg text-white flex items-center gap-2">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            <span>Sửa Thông Tin Lớp Học</span>
+          </h3>
+          <button type="button" id="btn-close-edit-modal" class="text-slate-400 hover:text-white">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <form id="form-edit-class" class="space-y-4">
+          <input type="hidden" id="edit-class-id" name="id" />
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Tên lớp <span class="text-rose-400">*</span></label>
+            <input
+              type="text"
+              id="edit-class-name"
+              name="name"
+              required
+              placeholder="Ví dụ: 12A4, 11A8, 10A1..."
+              class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-indigo-500"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Khối</label>
+              <select
+                id="edit-class-grade"
+                name="grade"
+                class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500"
+              >
+                <option value="12">Khối 12</option>
+                <option value="11">Khối 11</option>
+                <option value="10">Khối 10</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Màu sắc</label>
+              <input
+                type="color"
+                id="edit-class-color"
+                name="color"
+                class="w-full h-10 bg-slate-950 border border-slate-700 rounded-xl px-1 py-1 cursor-pointer"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Chuyên môn / Ban</label>
+            <input
+              type="text"
+              id="edit-class-speciality"
+              name="speciality"
+              placeholder="Ví dụ: KHTN & Tin Học, Toán Lí..."
+              class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-indigo-500"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Lời dặn / Yêu cầu nộp bài</label>
+            <textarea
+              id="edit-class-notice"
+              name="pinnedNotice"
+              rows="3"
+              placeholder="Nhập yêu cầu bài tập cho học sinh lớp này..."
+              class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-indigo-500"
+            ></textarea>
+          </div>
+
+          <div class="pt-2 flex gap-2">
+            <button
+              type="button"
+              id="btn-cancel-edit"
+              class="flex-1 py-2.5 rounded-xl font-semibold text-sm bg-slate-800 hover:bg-slate-700 text-slate-300 transition"
+            >
+              Hủy
+            </button>
+            <button
+              type="submit"
+              class="flex-1 py-2.5 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-500 text-white transition shadow-sm"
+            >
+              Lưu thay đổi
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal Xem Chi Tiết Bài Nộp -->
+    <div id="view-submission-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden">
+      <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-2xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+          <div>
+            <h3 id="view-student-name" class="font-bold text-lg text-white">Chi tiết bài nộp</h3>
+            <p id="view-sub-meta" class="text-xs text-slate-400">...</p>
+          </div>
+          <button type="button" id="btn-close-view-modal" class="text-slate-400 hover:text-white">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <h4 class="text-xs uppercase font-bold text-slate-400 mb-1">Nội dung bài làm:</h4>
+            <div id="view-content" class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-sm text-slate-200 whitespace-pre-wrap leading-relaxed">
+              ...
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xs uppercase font-bold text-slate-400 mb-2">Hình ảnh nộp:</h4>
+            <div id="view-images-grid" class="grid grid-cols-2 gap-3">
+              <!-- Images injected via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Zoom Lightbox -->
+    <div id="admin-lightbox" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md hidden">
+      <button id="btn-close-admin-lightbox" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-white rounded-full bg-slate-800">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="admin-lightbox-img" src="" alt="Full view" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl" />
+    </div>
+
+  </div>
+
+  <script is:inline>
+    (function() {
+      // Tabs switching
+      const tabBtnSubmissions = document.getElementById('tab-btn-submissions');
+      const tabBtnClasses = document.getElementById('tab-btn-classes');
+      const tabSectionSubmissions = document.getElementById('tab-section-submissions');
+      const tabSectionClasses = document.getElementById('tab-section-classes');
+
+      tabBtnSubmissions?.addEventListener('click', () => {
+        tabBtnSubmissions.className = 'px-4 py-2 rounded-xl text-sm font-bold bg-indigo-600 text-white shadow-sm transition';
+        tabBtnClasses.className = 'px-4 py-2 rounded-xl text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition';
+        tabSectionSubmissions?.classList.remove('hidden');
+        tabSectionClasses?.classList.add('hidden');
+      });
+
+      tabBtnClasses?.addEventListener('click', () => {
+        tabBtnClasses.className = 'px-4 py-2 rounded-xl text-sm font-bold bg-indigo-600 text-white shadow-sm transition';
+        tabBtnSubmissions.className = 'px-4 py-2 rounded-xl text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition';
+        tabSectionClasses?.classList.remove('hidden');
+        tabSectionSubmissions?.classList.add('hidden');
+      });
+
+      // Filtering submissions
+      const filterClassSelect = document.getElementById('filter-class-select');
+      const filterSearchInput = document.getElementById('filter-search-input');
+      const visibleSubmissionCount = document.getElementById('visible-submission-count');
+      const submissionCards = document.querySelectorAll('.submission-card');
+
+      function filterSubmissions() {
+        const selectedClass = filterClassSelect?.value || 'all';
+        const query = (filterSearchInput?.value || '').toLowerCase().trim();
+        let visible = 0;
+
+        submissionCards.forEach((card) => {
+          const cName = card.dataset.className || '';
+          const sName = (card.dataset.studentName || '').toLowerCase();
+          const content = (card.dataset.content || '').toLowerCase();
+
+          const matchClass = selectedClass === 'all' || cName.toLowerCase() === selectedClass.toLowerCase();
+          const matchQuery = !query || sName.includes(query) || content.includes(query);
+
+          if (matchClass && matchQuery) {
+            card.style.display = '';
+            visible++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (visibleSubmissionCount) visibleSubmissionCount.textContent = visible;
+      }
+
+      filterClassSelect?.addEventListener('change', filterSubmissions);
+      filterSearchInput?.addEventListener('input', filterSubmissions);
+
+      // Create Class Modal
+      const createClassModal = document.getElementById('create-class-modal');
+      const btnOpenCreate = document.getElementById('btn-open-create-class-modal');
+      const btnCloseCreate = document.getElementById('btn-close-create-modal');
+      const btnCancelCreate = document.getElementById('btn-cancel-create');
+      const formCreateClass = document.getElementById('form-create-class');
+
+      btnOpenCreate?.addEventListener('click', () => createClassModal?.classList.remove('hidden'));
+      btnCloseCreate?.addEventListener('click', () => createClassModal?.classList.add('hidden'));
+      btnCancelCreate?.addEventListener('click', () => createClassModal?.classList.add('hidden'));
+
+      formCreateClass?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(formCreateClass);
+        const payload = {
+          name: formData.get('name'),
+          grade: formData.get('grade'),
+          color: formData.get('color'),
+          speciality: formData.get('speciality'),
+          pinnedNotice: formData.get('pinnedNotice'),
+        };
+
+        try {
+          const res = await fetch('/api/nop-bai/classes', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const data = await res.json();
+          if (!res.ok || data.error) throw new Error(data.error || 'Lỗi tạo lớp');
+          alert('Tạo lớp thành công!');
+          window.location.reload();
+        } catch (err) {
+          alert(err.message);
+        }
+      });
+
+      // Edit Class Modal & Form
+      const editClassModal = document.getElementById('edit-class-modal');
+      const btnCloseEditModal = document.getElementById('btn-close-edit-modal');
+      const btnCancelEdit = document.getElementById('btn-cancel-edit');
+      const formEditClass = document.getElementById('form-edit-class');
+
+      document.querySelectorAll('.btn-edit-class').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          try {
+            const cls = JSON.parse(btn.dataset.json || '{}');
+            const idInput = document.getElementById('edit-class-id');
+            const nameInput = document.getElementById('edit-class-name');
+            const gradeSelect = document.getElementById('edit-class-grade');
+            const colorInput = document.getElementById('edit-class-color');
+            const specInput = document.getElementById('edit-class-speciality');
+            const noticeInput = document.getElementById('edit-class-notice');
+
+            if (idInput) idInput.value = cls.id || '';
+            if (nameInput) nameInput.value = cls.name || '';
+            if (gradeSelect) gradeSelect.value = cls.grade || '12';
+            if (colorInput) colorInput.value = cls.color || '#4f46e5';
+            if (specInput) specInput.value = cls.speciality || '';
+            if (noticeInput) noticeInput.value = cls.pinnedNotice || '';
+
+            editClassModal?.classList.remove('hidden');
+          } catch (err) {
+            console.error('Error opening edit class modal:', err);
+          }
+        });
+      });
+
+      btnCloseEditModal?.addEventListener('click', () => editClassModal?.classList.add('hidden'));
+      btnCancelEdit?.addEventListener('click', () => editClassModal?.classList.add('hidden'));
+
+      formEditClass?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(formEditClass);
+        const payload = {
+          id: formData.get('id'),
+          name: formData.get('name'),
+          grade: formData.get('grade'),
+          color: formData.get('color'),
+          speciality: formData.get('speciality'),
+          pinnedNotice: formData.get('pinnedNotice'),
+        };
+
+        try {
+          const res = await fetch('/api/nop-bai/classes', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const data = await res.json();
+          if (!res.ok || data.error) throw new Error(data.error || 'Lỗi cập nhật lớp');
+          alert('Đã cập nhật thông tin lớp thành công!');
+          window.location.reload();
+        } catch (err) {
+          alert(err.message);
+        }
+      });
+
+      // Delete Class
+      document.querySelectorAll('.btn-delete-class').forEach((btn) => {
+        btn.addEventListener('click', async () => {
+          const id = btn.dataset.id;
+          const name = btn.dataset.name;
+          if (confirm(`Bạn có chắc muốn xóa lớp "${name}"?`)) {
+            try {
+              const res = await fetch(`/api/nop-bai/classes?id=${id}`, { method: 'DELETE' });
+              const data = await res.json();
+              if (!res.ok || data.error) throw new Error(data.error || 'Lỗi xóa lớp');
+              alert('Đã xóa lớp!');
+              window.location.reload();
+            } catch (err) {
+              alert(err.message);
+            }
+          }
+        });
+      });
+
+      // Delete Submission
+      document.querySelectorAll('.btn-delete-sub').forEach((btn) => {
+        btn.addEventListener('click', async () => {
+          const id = btn.dataset.id;
+          if (confirm('Bạn có chắc muốn xóa bài nộp này?')) {
+            try {
+              const res = await fetch(`/api/nop-bai/submissions?id=${id}`, { method: 'DELETE' });
+              const data = await res.json();
+              if (!res.ok || data.error) throw new Error(data.error || 'Lỗi xóa bài nộp');
+              alert('Đã xóa bài nộp!');
+              window.location.reload();
+            } catch (err) {
+              alert(err.message);
+            }
+          }
+        });
+      });
+
+      // Lightbox Zoom
+      const adminLightbox = document.getElementById('admin-lightbox');
+      const adminLightboxImg = document.getElementById('admin-lightbox-img');
+      const btnCloseAdminLightbox = document.getElementById('btn-close-admin-lightbox');
+
+      document.querySelectorAll('.admin-zoom-img').forEach((img) => {
+        img.addEventListener('click', () => {
+          const url = img.dataset.fullUrl || img.src;
+          if (adminLightboxImg) adminLightboxImg.src = url;
+          adminLightbox?.classList.remove('hidden');
+        });
+      });
+
+      btnCloseAdminLightbox?.addEventListener('click', () => adminLightbox?.classList.add('hidden'));
+      adminLightbox?.addEventListener('click', (e) => {
+        if (e.target === adminLightbox) adminLightbox.classList.add('hidden');
+      });
+
+      // Full View Modal
+      const viewSubModal = document.getElementById('view-submission-modal');
+      const btnCloseViewModal = document.getElementById('btn-close-view-modal');
+      const viewStudentName = document.getElementById('view-student-name');
+      const viewSubMeta = document.getElementById('view-sub-meta');
+      const viewContent = document.getElementById('view-content');
+      const viewImagesGrid = document.getElementById('view-images-grid');
+
+      document.querySelectorAll('.btn-view-full').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          try {
+            const sub = JSON.parse(btn.dataset.json || '{}');
+            if (viewStudentName) viewStudentName.textContent = sub.studentName;
+            if (viewSubMeta) viewSubMeta.textContent = `Lớp ${sub.className} • Lần nộp thứ ${sub.submissionCount} • ${new Date(sub.createdAt).toLocaleString('vi-VN')}`;
+            if (viewContent) viewContent.textContent = sub.content || '(Không có văn bản viết kèm)';
+            
+            if (viewImagesGrid) {
+              viewImagesGrid.innerHTML = '';
+              if (sub.images && sub.images.length > 0) {
+                sub.images.forEach((img, i) => {
+                  const div = document.createElement('div');
+                  div.className = 'rounded-xl overflow-hidden border border-slate-800 bg-slate-950 aspect-video cursor-pointer';
+                  div.innerHTML = `<img src="${img.url}" alt="Ảnh ${i+1}" class="w-full h-full object-cover hover:scale-105 transition" />`;
+                  div.addEventListener('click', () => {
+                    if (adminLightboxImg) adminLightboxImg.src = img.url;
+                    adminLightbox?.classList.remove('hidden');
+                  });
+                  viewImagesGrid.appendChild(div);
+                });
+              } else {
+                viewImagesGrid.innerHTML = '<p class="text-xs text-slate-500 col-span-2">Không có hình ảnh đính kèm.</p>';
+              }
+            }
+
+            viewSubModal?.classList.remove('hidden');
+          } catch(e) {}
+        });
+      });
+
+      btnCloseViewModal?.addEventListener('click', () => viewSubModal?.classList.add('hidden'));
+    })();
+  </script>
+</Layout>

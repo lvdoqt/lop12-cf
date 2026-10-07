@@ -131,14 +131,18 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const examPathSegments = path.split('/').filter(s => s.length > 0); // ['exams', 'exam-1'] or ['exams','exam-1','take']
   const isExamInfoPage = examPathSegments.length === 2 && examPathSegments[0] === 'exams';
 
+  // Redirect /nhom to /nop-bai
+  if (path === '/nhom' || path.startsWith('/nhom/')) {
+    return context.redirect(withBase('/nop-bai'));
+  }
+
   // LOGIN-REQUIRED pages:
   //   /exams/[id]/take           — Taking an exam (need account to save score)
   //   /exams/[id]/result/[id]    — View exam results
   //   /dashboard, /profile, /ai-chat
   const isProtectedRoute =
     path.startsWith('/dashboard') ||
-    path.startsWith('/profile') ||
-    path === '/nhom' || path.startsWith('/nhom/');
+    path.startsWith('/profile');
 
   const isAdminRoute = path.startsWith('/admin');
   const isTeacherRoute = path.startsWith('/giao-vien');
