@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { getGroupClient, sanitizeClassId } from '../../../../services/groupChat';
+import { getGroupClient, sanitizeClassId } from '../../../services/groupChat';
 import { json, requireMember } from './_shared';
 
 export const prerender = false;
