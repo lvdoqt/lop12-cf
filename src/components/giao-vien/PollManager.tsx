@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { withBase } from '../../lib/base';
 
 export default function PollManager() {
   const [question, setQuestion] = useState('');
@@ -12,7 +13,7 @@ export default function PollManager() {
     if (poll && poll.status === 'active') {
       interval = setInterval(async () => {
         try {
-          const res = await fetch(`/api/giao-vien/polls/${poll.code}`);
+          const res = await fetch(withBase(`/api/giao-vien/polls/${poll.code}`));
           if (res.ok) {
             const data = await res.json();
             setPoll(data);
@@ -47,7 +48,7 @@ export default function PollManager() {
     
     setIsCreating(true);
     try {
-      const res = await fetch('/api/giao-vien/polls', {
+      const res = await fetch(withBase('/api/giao-vien/polls'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: question.trim(), options: validOptions })
@@ -67,7 +68,7 @@ export default function PollManager() {
   const closePoll = async () => {
     if (!poll) return;
     try {
-      await fetch(`/api/giao-vien/polls/${poll.code}`, {
+      await fetch(withBase(`/api/giao-vien/polls/${poll.code}`), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'close' })

@@ -118,6 +118,20 @@ const adsEnabled = showAds && !noindex && !!ADSENSE_CLIENT && allowAdsense(Astro
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#1E1E38" />
 
+    <!-- App Base Path for client scripts & fetch calls -->
+    <script is:inline define:vars={{ globalBaseUrl: base ? base.replace(/\/$/, '') : '' }}>
+      window.__BASE_URL__ = globalBaseUrl;
+      window.withBase = function(path) {
+        if (!path) return path;
+        var b = window.__BASE_URL__ || '';
+        if (!b) return path;
+        if (path.startsWith('/') && !path.startsWith('//') && !path.startsWith(b + '/')) {
+          return b + path;
+        }
+        return path;
+      };
+    </script>
+
     <!-- Title & Description -->
     <title>{fullTitle}</title>
     <meta name="description" content={description} />

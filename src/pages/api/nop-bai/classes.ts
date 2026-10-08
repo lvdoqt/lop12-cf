@@ -21,7 +21,22 @@ export const GET: APIRoute = async (ctx) => {
   try {
     const runtimeEnv = (ctx.locals as any)?.runtimeEnv;
     const client = getNopBaiAdminClient(runtimeEnv);
-    const classes = await getClasses(client);
+    const user = ctx.locals.user;
+    const isManaged = ctx.url.searchParams.get('managed') === 'true';
+
+    let classes;
+    if (isManaged && user) {
+      if (user.role === 'teacher') {
+        classes = await getClasses(client, { teacherId: user.id });
+      } else if (user.role === 'admin') {
+        classes = await getClasses(client, { isAdmin: true });
+      } else {
+        classes = await getClasses(client);
+      }
+    } else {
+      classes = await getClasses(client);
+    }
+
     return json({ classes });
   } catch (error: any) {
     return json({ error: error.message || 'Lỗi lấy danh sách lớp học' }, 500);
@@ -47,6 +62,7 @@ export const POST: APIRoute = async (ctx) => {
       color: body.color,
       pinnedNotice: body.pinnedNotice,
       userId: user.id,
+      userName: user.fullname || user.email || null,
     });
 
     return json({ success: true, class: newClass }, 201);
@@ -69,17 +85,23 @@ export const PUT: APIRoute = async (ctx) => {
     const runtimeEnv = (ctx.locals as any)?.runtimeEnv;
     const client = getNopBaiAdminClient(runtimeEnv);
 
-    await updateClass(client, body.id, {
-      name: body.name,
-      grade: body.grade,
-      speciality: body.speciality,
-      color: body.color,
-      pinnedNotice: body.pinnedNotice,
-    });
+    await updateClass(
+      client,
+      body.id,
+      {
+        name: body.name,
+        grade: body.grade,
+        speciality: body.speciality,
+        color: body.color,
+        pinnedNotice: body.pinnedNotice,
+      },
+      { id: user.id, role: user.role }
+    );
 
     return json({ success: true, message: 'Đã cập nhật lớp thành công' });
   } catch (error: any) {
-    return json({ error: error.message || 'Lỗi cập nhật lớp' }, 400);
+    const status = error.message?.includes('quyền') ? 403 : 400;
+    return json({ error: error.message || 'Lỗi cập nhật lớp' }, status);
   }
 };
 
@@ -97,9 +119,10 @@ export const DELETE: APIRoute = async (ctx) => {
     const runtimeEnv = (ctx.locals as any)?.runtimeEnv;
     const client = getNopBaiAdminClient(runtimeEnv);
 
-    await deleteClass(client, id);
+    await deleteClass(client, id, { id: user.id, role: user.role });
     return json({ success: true, message: 'Đã xóa lớp thành công' });
   } catch (error: any) {
-    return json({ error: error.message || 'Lỗi xóa lớp' }, 400);
+    const status = error.message?.includes('quyền') ? 403 : 400;
+    return json({ error: error.message || 'Lỗi xóa lớp' }, status);
   }
 };

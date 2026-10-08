@@ -18,9 +18,18 @@ if (!user || (user.role !== 'admin' && user.role !== 'teacher')) {
 const runtimeEnv = Astro.locals.runtimeEnv;
 const client = getNopBaiAdminClient(runtimeEnv);
 
-// Lấy danh sách lớp và bài nộp
-const classes: NopBaiClass[] = await getClasses(client);
-const submissions: NopBaiSubmission[] = await listSubmissions(client);
+const isAdmin = user.role === 'admin';
+
+// Lấy danh sách lớp và bài nộp:
+// - Giáo viên: chỉ thấy và quản lý lớp do chính mình tạo (createdBy === user.id) và bài nộp của lớp đó
+// - Admin: thấy và toàn quyền quản lý tất cả các lớp của mọi giáo viên
+const classes: NopBaiClass[] = await getClasses(
+  client,
+  isAdmin ? { isAdmin: true } : { teacherId: user.id }
+);
+
+const allowedClassNames = isAdmin ? undefined : classes.map(c => c.name);
+const submissions: NopBaiSubmission[] = await listSubmissions(client, { allowedClassNames });
 
 // Thống kê nhanh
 const totalSubmissions = submissions.length;
@@ -33,6 +42,7 @@ submissions.forEach(s => {
   const c = s.className || 'Khác';
   classSubmissionCountMap[c] = (classSubmissionCountMap[c] || 0) + 1;
 });
+const pageBaseUrl = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
 ---
 
 <Layout title="Quản Lý Nộp Bài & Lớp Học - Admin" description="Quản lý danh sách lớp học và theo dõi bài nộp của học sinh">
@@ -49,11 +59,19 @@ submissions.forEach(s => {
           <div>
             <h1 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
               <span>Quản Lý Nộp Bài & Lớp Học</span>
-              <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30">
-                {user.role === 'admin' ? 'Admin' : 'Giáo viên'}
+              <span class={`text-xs px-2.5 py-0.5 rounded-full font-semibold border ${
+                isAdmin
+                  ? 'bg-purple-500/20 text-purple-300 border-purple-500/30'
+                  : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+              }`}>
+                {isAdmin ? 'Quản trị viên (Toàn quyền tất cả các lớp)' : `Giáo viên (${classes.length} lớp của bạn)`}
               </span>
             </h1>
-            <p class="text-[11px] text-slate-400">Tạo lớp học, kiểm tra bài làm, theo dõi số lần nộp và ảnh chụp</p>
+            <p class="text-[11px] text-slate-400">
+              {isAdmin
+                ? 'Quyền Quản trị viên: Quản lý toàn bộ các lớp của tất cả giáo viên và xem mọi bài nộp.'
+                : 'Mỗi giáo viên chỉ quản lý các lớp do chính mình tạo; giáo viên khác không thấy và không sửa được.'}
+            </p>
           </div>
         </div>
 
@@ -207,8 +225,16 @@ submissions.forEach(s => {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
-            <p class="font-semibold text-slate-300">Chưa có bài nộp nào</p>
-            <p class="text-xs max-w-sm mx-auto">Học sinh có thể truy cập trang <code>/nop-bai</code> để bắt đầu nộp bài tập.</p>
+            <p class="font-semibold text-slate-300">
+              {classes.length === 0
+                ? 'Bạn chưa có lớp học nào'
+                : 'Chưa có bài nộp nào trong các lớp bạn quản lý'}
+            </p>
+            <p class="text-xs max-w-sm mx-auto">
+              {classes.length === 0
+                ? 'Hãy bấm nút "Tạo lớp mới" ở phía trên để thêm lớp của bạn. Học sinh sẽ chọn lớp đó để nộp bài.'
+                : 'Học sinh có thể truy cập trang /nop-bai để chọn lớp và gửi bài tập.'}
+            </p>
           </div>
         ) : (
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="submissions-grid">
@@ -306,84 +332,117 @@ submissions.forEach(s => {
       <!-- TAB 2: QUẢN LÝ LỚP HỌC (12A4, 11A8, ...) -->
       <!-- ============================================================ -->
       <section id="tab-section-classes" class="space-y-4 hidden">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {classes.map((cls) => {
-            const count = classSubmissionCountMap[cls.name] || 0;
-            return (
-              <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between shadow-sm">
-                <div>
-                  <div class="flex items-start justify-between mb-3">
-                    <div class="flex items-center gap-3">
-                      <div
-                        class="w-12 h-12 rounded-2xl flex items-center justify-center font-black text-white text-base shadow-sm"
-                        style={`background: ${cls.color || '#4f46e5'};`}
-                      >
-                        {cls.initials || cls.name}
+        {classes.length === 0 ? (
+          <div class="p-12 text-center rounded-2xl bg-slate-900/40 border border-slate-800 text-slate-400 space-y-3">
+            <div class="w-16 h-16 rounded-full bg-slate-800 mx-auto flex items-center justify-center text-slate-500">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <p class="font-semibold text-slate-300">
+              {isAdmin ? 'Chưa có lớp học nào trên hệ thống' : 'Bạn chưa tạo lớp học nào'}
+            </p>
+            <p class="text-xs max-w-sm mx-auto">
+              {isAdmin
+                ? 'Bấm nút "Tạo lớp mới" ở góc trên bên phải để khởi tạo lớp học đầu tiên.'
+                : 'Mỗi giáo viên chỉ quản lý các lớp do chính mình tạo. Giáo viên khác không thể xem hoặc sửa lớp của bạn.'}
+            </p>
+            <button
+              type="button"
+              onclick="document.getElementById('create-class-modal')?.classList.remove('hidden')"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white transition shadow-sm"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+              <span>+ Tạo lớp học của tôi</span>
+            </button>
+          </div>
+        ) : (
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {classes.map((cls) => {
+              const count = classSubmissionCountMap[cls.name] || 0;
+              return (
+                <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between shadow-sm">
+                  <div>
+                    <div class="flex items-start justify-between mb-3">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-12 h-12 rounded-2xl flex items-center justify-center font-black text-white text-base shadow-sm"
+                          style={`background: ${cls.color || '#4f46e5'};`}
+                        >
+                          {cls.initials || cls.name}
+                        </div>
+                        <div>
+                          <h3 class="font-bold text-lg text-white">Lớp {cls.name}</h3>
+                          <p class="text-xs text-slate-400">Khối {cls.grade || '12'} • {cls.speciality || 'Chung'}</p>
+                          {isAdmin && (cls.createdByName || cls.createdBy) && (
+                            <span class="inline-block mt-1 text-[10px] font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
+                              Tạo bởi: {cls.createdByName || cls.createdBy?.slice(0, 8)}
+                            </span>
+                          )}
+                        </div>
                       </div>
-                      <div>
-                        <h3 class="font-bold text-lg text-white">Lớp {cls.name}</h3>
-                        <p class="text-xs text-slate-400">Khối {cls.grade || '12'} • {cls.speciality || 'Chung'}</p>
+
+                      <div class="flex items-center gap-1">
+                        <!-- Edit class button -->
+                        <button
+                          type="button"
+                          data-id={cls.id}
+                          data-json={JSON.stringify(cls)}
+                          class="btn-edit-class p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-indigo-500/10 transition"
+                          title="Sửa thông tin lớp này"
+                        >
+                          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                          </svg>
+                        </button>
+
+                        <!-- Delete class button -->
+                        <button
+                          type="button"
+                          data-id={cls.id}
+                          data-name={cls.name}
+                          class="btn-delete-class p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition"
+                          title="Xóa lớp này"
+                        >
+                          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        </button>
                       </div>
                     </div>
 
-                    <div class="flex items-center gap-1">
-                      <!-- Edit class button -->
-                      <button
-                        type="button"
-                        data-id={cls.id}
-                        data-json={JSON.stringify(cls)}
-                        class="btn-edit-class p-1.5 rounded-lg text-slate-400 hover:text-indigo-300 hover:bg-indigo-500/10 transition"
-                        title="Sửa thông tin lớp này"
-                      >
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                        </svg>
-                      </button>
-
-                      <!-- Delete class button -->
-                      <button
-                        type="button"
-                        data-id={cls.id}
-                        data-name={cls.name}
-                        class="btn-delete-class p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition"
-                        title="Xóa lớp này"
-                      >
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                        </svg>
-                      </button>
+                    <!-- Pinned notice -->
+                    <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80 mb-3">
+                      <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Lời dặn / Yêu cầu nộp bài:</p>
+                      <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed">
+                        {cls.pinnedNotice || 'Chưa có lời dặn riêng cho lớp này.'}
+                      </p>
                     </div>
                   </div>
 
-                  <!-- Pinned notice -->
-                  <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80 mb-3">
-                    <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Lời dặn / Yêu cầu nộp bài:</p>
-                    <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed">
-                      {cls.pinnedNotice || 'Chưa có lời dặn riêng cho lớp này.'}
-                    </p>
+                  <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                    <span class="text-xs text-indigo-400 font-semibold">
+                      📊 {count} bài đã nộp
+                    </span>
+
+                    <a
+                      href={`/nop-bai?lop=${cls.name}`}
+                      target="_blank"
+                      class="text-xs font-semibold text-slate-300 hover:text-white hover:underline flex items-center gap-1"
+                    >
+                      <span>Vào trang nộp</span>
+                      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
-
-                <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
-                  <span class="text-xs text-indigo-400 font-semibold">
-                    📊 {count} bài đã nộp
-                  </span>
-
-                  <a
-                    href={`/nop-bai?lop=${cls.name}`}
-                    target="_blank"
-                    class="text-xs font-semibold text-slate-300 hover:text-white hover:underline flex items-center gap-1"
-                  >
-                    <span>Vào trang nộp</span>
-                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </section>
 
     </div>
@@ -620,8 +679,21 @@ submissions.forEach(s => {
 
   </div>
 
-  <script is:inline>
+  <script is:inline define:vars={{ pageBaseUrl }}>
     (function() {
+      // Helper URL với base path
+      function apiUrl(path) {
+        var b = typeof pageBaseUrl !== 'undefined' ? pageBaseUrl : ((window && window.__BASE_URL__) || '');
+        if (!b && typeof window !== 'undefined' && window.location.pathname.startsWith('/lms')) {
+          b = '/lms';
+        }
+        if (!path) return b || '/';
+        if (b && path.startsWith('/') && !path.startsWith('//') && !path.startsWith(b + '/')) {
+          return b + path;
+        }
+        return path;
+      }
+
       // Tabs switching
       const tabBtnSubmissions = document.getElementById('tab-btn-submissions');
       const tabBtnClasses = document.getElementById('tab-btn-classes');
@@ -698,12 +770,17 @@ submissions.forEach(s => {
         };
 
         try {
-          const res = await fetch('/api/nop-bai/classes', {
+          const res = await fetch(apiUrl('/api/nop-bai/classes'), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
           });
-          const data = await res.json();
+          let data;
+          try {
+            data = await res.json();
+          } catch (_) {
+            throw new Error(`Máy chủ phản hồi không đúng định dạng JSON (${res.status})`);
+          }
           if (!res.ok || data.error) throw new Error(data.error || 'Lỗi tạo lớp');
           alert('Tạo lớp thành công!');
           window.location.reload();
@@ -759,12 +836,17 @@ submissions.forEach(s => {
         };
 
         try {
-          const res = await fetch('/api/nop-bai/classes', {
+          const res = await fetch(apiUrl('/api/nop-bai/classes'), {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
           });
-          const data = await res.json();
+          let data;
+          try {
+            data = await res.json();
+          } catch (_) {
+            throw new Error(`Máy chủ phản hồi không đúng định dạng JSON (${res.status})`);
+          }
           if (!res.ok || data.error) throw new Error(data.error || 'Lỗi cập nhật lớp');
           alert('Đã cập nhật thông tin lớp thành công!');
           window.location.reload();
@@ -780,8 +862,13 @@ submissions.forEach(s => {
           const name = btn.dataset.name;
           if (confirm(`Bạn có chắc muốn xóa lớp "${name}"?`)) {
             try {
-              const res = await fetch(`/api/nop-bai/classes?id=${id}`, { method: 'DELETE' });
-              const data = await res.json();
+              const res = await fetch(apiUrl(`/api/nop-bai/classes?id=${id}`), { method: 'DELETE' });
+              let data;
+              try {
+                data = await res.json();
+              } catch (_) {
+                throw new Error(`Máy chủ phản hồi không đúng định dạng JSON (${res.status})`);
+              }
               if (!res.ok || data.error) throw new Error(data.error || 'Lỗi xóa lớp');
               alert('Đã xóa lớp!');
               window.location.reload();
@@ -798,8 +885,13 @@ submissions.forEach(s => {
           const id = btn.dataset.id;
           if (confirm('Bạn có chắc muốn xóa bài nộp này?')) {
             try {
-              const res = await fetch(`/api/nop-bai/submissions?id=${id}`, { method: 'DELETE' });
-              const data = await res.json();
+              const res = await fetch(apiUrl(`/api/nop-bai/submissions?id=${id}`), { method: 'DELETE' });
+              let data;
+              try {
+                data = await res.json();
+              } catch (_) {
+                throw new Error(`Máy chủ phản hồi không đúng định dạng JSON (${res.status})`);
+              }
               if (!res.ok || data.error) throw new Error(data.error || 'Lỗi xóa bài nộp');
               alert('Đã xóa bài nộp!');
               window.location.reload();

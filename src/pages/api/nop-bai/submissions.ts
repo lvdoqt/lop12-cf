@@ -19,11 +19,20 @@ export const GET: APIRoute = async (ctx) => {
   try {
     const runtimeEnv = (ctx.locals as any)?.runtimeEnv;
     const client = getNopBaiAdminClient(runtimeEnv);
+    const user = ctx.locals.user;
+    const isManaged = ctx.url.searchParams.get('managed') === 'true';
 
     const className = ctx.url.searchParams.get('class') || undefined;
     const search = ctx.url.searchParams.get('search') || undefined;
 
-    const submissions = await listSubmissions(client, { className, search });
+    let allowedClassNames: string[] | undefined = undefined;
+    if (isManaged && user && user.role === 'teacher') {
+      const { getClasses } = await import('../../../services/nopBai');
+      const teacherClasses = await getClasses(client, { teacherId: user.id });
+      allowedClassNames = teacherClasses.map(c => c.name);
+    }
+
+    const submissions = await listSubmissions(client, { className, search, allowedClassNames });
     return json({ submissions, total: submissions.length });
   } catch (error: any) {
     return json({ error: error.message || 'Lỗi lấy bài nộp' }, 500);
@@ -44,9 +53,17 @@ export const DELETE: APIRoute = async (ctx) => {
     const runtimeEnv = (ctx.locals as any)?.runtimeEnv;
     const client = getNopBaiAdminClient(runtimeEnv);
 
-    await deleteSubmission(client, id);
+    let allowedClassNames: string[] | undefined = undefined;
+    if (user.role === 'teacher') {
+      const { getClasses } = await import('../../../services/nopBai');
+      const teacherClasses = await getClasses(client, { teacherId: user.id });
+      allowedClassNames = teacherClasses.map(c => c.name);
+    }
+
+    await deleteSubmission(client, id, { id: user.id, role: user.role, allowedClassNames });
     return json({ success: true, message: 'Đã xóa bài nộp thành công' });
   } catch (error: any) {
-    return json({ error: error.message || 'Lỗi xóa bài nộp' }, 400);
+    const status = error.message?.includes('quyền') ? 403 : 400;
+    return json({ error: error.message || 'Lỗi xóa bài nộp' }, status);
   }
 };

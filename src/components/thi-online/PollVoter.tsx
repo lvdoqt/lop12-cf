@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { withBase } from '../../lib/base';
 
 interface PollVoterProps {
   initialPoll: any;
@@ -23,7 +24,7 @@ export default function PollVoter({ initialPoll }: PollVoterProps) {
   const handleVote = async (optionId: string) => {
     setSubmitting(true);
     try {
-      const res = await fetch(`/api/polls/${initialPoll.code}/vote`, {
+      const res = await fetch(withBase(`/api/polls/${initialPoll.code}/vote`), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ optionId })

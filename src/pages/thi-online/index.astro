@@ -125,7 +125,7 @@ const codeParam = Astro.url.searchParams.get('code') || '';
       const code = codeInput.value.trim();
       if (code.length !== 4) return;
       try {
-        const res = await fetch(`/api/rooms/${code}`);
+        const res = await fetch((window.withBase || ((p: string) => p))(`/api/rooms/${code}`));
         const data = await res.json();
         if (res.ok && data.room) {
           roomExamTitle.textContent = data.room.exam_title || 'De thi';
@@ -153,7 +153,7 @@ const codeParam = Astro.url.searchParams.get('code') || '';
       joinBtn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> Dang vao...';
 
       try {
-        const res = await fetch(`/api/rooms/${code}/join`, {
+        const res = await fetch((window.withBase || ((p: string) => p))(`/api/rooms/${code}/join`), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ displayName }),
@@ -167,7 +167,7 @@ const codeParam = Astro.url.searchParams.get('code') || '';
         sessionStorage.setItem('room_participant', JSON.stringify(data.participant));
         sessionStorage.setItem('room_info', JSON.stringify(data.room));
         // Navigate to exam room page
-        window.location.href = `/thi-online/${code}`;
+        window.location.href = (window.withBase || ((p: string) => p))(`/thi-online/${code}`);
       } catch (e: any) {
         showError(e.message || 'Loi ket noi');
       } finally {

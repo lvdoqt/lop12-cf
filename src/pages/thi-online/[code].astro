@@ -191,7 +191,7 @@ const questionsForClient = allQuestions.map(q => ({
           } else if (payload?.status === 'closed') {
             if (pollInterval) clearInterval(pollInterval);
             alert('Giao vien da dong phong thi.');
-            window.location.href = '/thi-online';
+            window.location.href = (window.withBase || ((p: string) => p))('/thi-online');
           }
         })
         .subscribe();
@@ -207,7 +207,7 @@ const questionsForClient = allQuestions.map(q => ({
 
       if (!participant) {
         // Not joined — redirect back
-        window.location.href = `/thi-online?code=${roomCode}`;
+        window.location.href = (window.withBase || ((p: string) => p))(`/thi-online?code=${roomCode}`);
         return;
       }
 
@@ -243,7 +243,7 @@ const questionsForClient = allQuestions.map(q => ({
 
     async function checkRoomStatus() {
       try {
-        const res = await fetch('/api/rooms/' + roomCode);
+        const res = await fetch((window.withBase || ((p: string) => p))('/api/rooms/' + roomCode));
         const data = await res.json();
         if (res.ok && data.room && data.room.status === 'active' && !started) {
           clearInterval(pollInterval);
@@ -255,7 +255,7 @@ const questionsForClient = allQuestions.map(q => ({
         } else if (data.room && data.room.status === 'closed') {
           clearInterval(pollInterval);
           alert('Giao vien da dong phong thi.');
-          window.location.href = '/thi-online';
+          window.location.href = (window.withBase || ((p: string) => p))('/thi-online');
         }
       } catch (_) {}
     }
@@ -361,7 +361,7 @@ const questionsForClient = allQuestions.map(q => ({
     async function reportProgress() {
       if (!participant || !started) return;
       try {
-        await fetch('/api/rooms/' + roomCode + '/progress', {
+        await fetch((window.withBase || ((p: string) => p))('/api/rooms/' + roomCode + '/progress'), {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ participantId: participant.id, answeredCount: Object.keys(answers).length }),
@@ -537,7 +537,7 @@ const questionsForClient = allQuestions.map(q => ({
       await reportProgress();
 
       try {
-        const res = await fetch('/api/rooms/' + roomCode + '/progress', {
+        const res = await fetch((window.withBase || ((p: string) => p))('/api/rooms/' + roomCode + '/progress'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ participantId: participant.id, answers }),

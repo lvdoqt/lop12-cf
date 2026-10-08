@@ -28,6 +28,7 @@ const initialSubmissions: NopBaiSubmission[] = defaultSelectedClass
 
 const initialStudentName = user?.fullname || (user?.email ? user.email.split('@')[0] : '');
 const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
+const pageBaseUrl = (import.meta.env.BASE_URL || '').replace(/\/$/, '');
 ---
 
 <Layout title="Nộp Bài Tập Trực Tuyến - Lớp 12" description="Hệ thống nộp bài tập trực tuyến, hỗ trợ dán ảnh bài làm trực tiếp từ clipboard, theo dõi số lần nộp cho các lớp 12A4, 11A8...">
@@ -578,8 +579,21 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
   <div id="toast-host" class="fixed top-4 right-4 sm:top-auto sm:bottom-5 sm:right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-sm w-full px-4 sm:px-0"></div>
 
   <!-- Custom Client Script -->
-  <script is:inline>
+  <script is:inline define:vars={{ pageBaseUrl }}>
     (function() {
+      // Helper URL với base path
+      function apiUrl(path) {
+        var b = typeof pageBaseUrl !== 'undefined' ? pageBaseUrl : ((window && window.__BASE_URL__) || '');
+        if (!b && typeof window !== 'undefined' && window.location.pathname.startsWith('/lms')) {
+          b = '/lms';
+        }
+        if (!path) return b || '/';
+        if (b && path.startsWith('/') && !path.startsWith('//') && !path.startsWith(b + '/')) {
+          return b + path;
+        }
+        return path;
+      }
+
       // Pending images store: array of { id, file, dataUrl, name, size }
       const pendingImages = [];
       const MAX_IMAGES = 10;
@@ -827,15 +841,23 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
         }
         if (iconRefresh) iconRefresh.classList.add('rotate-180');
         try {
-          const res = await fetch(`/api/nop-bai/submissions?class=${encodeURIComponent(cName)}`);
-          const data = await res.json();
+          const res = await fetch(apiUrl(`/api/nop-bai/submissions?class=${encodeURIComponent(cName)}`));
+          let data;
+          try {
+            data = await res.json();
+          } catch (jsonErr) {
+            throw new Error(`Máy chủ phản hồi không đúng định dạng JSON (${res.status})`);
+          }
+          if (!res.ok) {
+            throw new Error(data?.error || `Lỗi tải bài nộp (${res.status})`);
+          }
           currentSubmissions = Array.isArray(data.submissions) ? data.submissions : [];
           renderSubmissions(currentSubmissions);
           updateSubmissionCountBadge();
         } catch (err) {
-          console.error(err);
+          console.error('[fetchSubmissionsForClass] error:', err);
           if (submissionsListContainer) {
-            submissionsListContainer.innerHTML = `<p class="text-xs text-rose-400 text-center py-4">Lỗi khi tải bài nộp của lớp ${escapeHtml(cName)}.</p>`;
+            submissionsListContainer.innerHTML = `<p class="text-xs text-rose-400 text-center py-4">Lỗi khi tải bài nộp của lớp ${escapeHtml(cName)}: ${escapeHtml(err.message)}</p>`;
           }
         } finally {
           if (iconRefresh) iconRefresh.classList.remove('rotate-180');
@@ -873,7 +895,8 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
             return;
           }
           try {
-            const res = await fetch(`/api/nop-bai/check-count?studentName=${encodeURIComponent(sName)}&className=${encodeURIComponent(cName)}`);
+            const res = await fetch(apiUrl(`/api/nop-bai/check-count?studentName=${encodeURIComponent(sName)}&className=${encodeURIComponent(cName)}`));
+            if (!res.ok) return;
             const data = await res.json();
             if (typeof data.count === 'number') {
               liveCountName.textContent = sName;
@@ -1195,15 +1218,20 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
             formData.append('images', img.file, img.name);
           });
 
-          const res = await fetch('/api/nop-bai/submit', {
+          const res = await fetch(apiUrl('/api/nop-bai/submit'), {
             method: 'POST',
             body: formData,
           });
 
-          const data = await res.json();
+          let data;
+          try {
+            data = await res.json();
+          } catch (jsonErr) {
+            throw new Error(`Máy chủ phản hồi không đúng định dạng JSON (${res.status})`);
+          }
 
           if (!res.ok || data.error) {
-            throw new Error(data.error || 'Nộp bài thất bại. Vui lòng thử lại!');
+            throw new Error(data?.error || 'Nộp bài thất bại. Vui lòng thử lại!');
           }
 
           // 1. THÔNG BÁO NHỎ THÀNH CÔNG (Toast)

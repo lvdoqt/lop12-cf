@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import type { ExamRoom, RoomParticipant } from '../../types';
 import { supabase } from '../../lib/supabase';
+import { withBase } from '../../lib/base';
 
 interface Props {
   roomId: string;
@@ -41,7 +42,7 @@ export default function LiveDashboard({ roomId, initialRoom, initialParticipants
   // ── Sync via API (polling & fallback) ──────────────────────────────────────
   const fetchParticipants = useCallback(async () => {
     try {
-      const res = await fetch(`/api/rooms/${room.code}/participants`);
+      const res = await fetch(withBase(`/api/rooms/${room.code}/participants`));
       if (res.ok) {
         const data = await res.json();
         if (data.participants) {
@@ -139,7 +140,7 @@ export default function LiveDashboard({ roomId, initialRoom, initialParticipants
   async function handleActivateRoom() {
     setActionLoading(true);
     try {
-      const res = await fetch('/api/giao-vien/rooms', {
+      const res = await fetch(withBase('/api/giao-vien/rooms'), {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ roomId: room.id }),
@@ -164,7 +165,7 @@ export default function LiveDashboard({ roomId, initialRoom, initialParticipants
     if (!confirm('Bạn có chắc chắn muốn đóng phòng thi? Học sinh sẽ không thể làm bài tiếp.')) return;
     setActionLoading(true);
     try {
-      const res = await fetch(`/api/giao-vien/rooms?id=${room.id}`, { method: 'DELETE' });
+      const res = await fetch(withBase(`/api/giao-vien/rooms?id=${room.id}`), { method: 'DELETE' });
       if (res.ok) {
         const data = await res.json();
         setRoom(data.room);

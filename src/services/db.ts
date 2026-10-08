@@ -1325,6 +1325,31 @@ export const db = {
     return data;
   },
 
+  async deleteUser(id: string): Promise<boolean> {
+    if (isInMockMode()) {
+      const index = mockUsers.findIndex(u => u.id === id);
+      if (index === -1) return false;
+      mockUsers.splice(index, 1);
+      return true;
+    }
+    const _ac = adminClient();
+    if (_ac) {
+      try {
+        await _ac.auth.admin.deleteUser(id);
+      } catch (authErr) {
+        console.warn('[db.deleteUser] Supabase auth.admin.deleteUser warning:', authErr);
+      }
+      const { error } = await _ac.from('users').delete().eq('id', id);
+      if (error) throw error;
+      return true;
+    }
+    const _anon = anonClient();
+    if (!_anon) throw new Error('No Supabase client available');
+    const { error } = await _anon.from('users').delete().eq('id', id);
+    if (error) throw error;
+    return true;
+  },
+
   // --------------------------------------------------------------------------
   // COMMENTS
   // --------------------------------------------------------------------------

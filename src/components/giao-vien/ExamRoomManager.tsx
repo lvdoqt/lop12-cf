@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { Exam } from '../../types';
+import { withBase } from '../../lib/base';
 
 interface ExamRoom {
   id: string;
@@ -58,7 +59,7 @@ export default function ExamRoomManager({ exams, teacherRooms: initialRooms }: P
   // Poll participants when watching a room
   const pollParticipants = useCallback(async (room: ExamRoom) => {
     try {
-      const res = await fetch(`/api/rooms/${room.code}/participants`);
+      const res = await fetch(withBase(`/api/rooms/${room.code}/participants`));
       if (res.ok) {
         const data = await res.json();
         setParticipants(data.participants || []);
@@ -82,7 +83,7 @@ export default function ExamRoomManager({ exams, teacherRooms: initialRooms }: P
     if (!selectedExamId) { setError('Vui lòng chọn đề thi'); return; }
     setCreating(true); setError('');
     try {
-      const res = await fetch('/api/giao-vien/rooms', {
+      const res = await fetch(withBase('/api/giao-vien/rooms'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ examId: selectedExamId }),
@@ -100,7 +101,7 @@ export default function ExamRoomManager({ exams, teacherRooms: initialRooms }: P
   }
 
   async function activateRoom(room: ExamRoom) {
-    const res = await fetch('/api/giao-vien/rooms', {
+    const res = await fetch(withBase('/api/giao-vien/rooms'), {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ roomId: room.id }),
@@ -114,7 +115,7 @@ export default function ExamRoomManager({ exams, teacherRooms: initialRooms }: P
 
   async function closeRoom(room: ExamRoom) {
     if (!confirm('Đóng phòng thi? Học sinh đang làm bài sẽ không thể tiếp tục.')) return;
-    const res = await fetch(`/api/giao-vien/rooms?id=${room.id}`, { method: 'DELETE' });
+    const res = await fetch(withBase(`/api/giao-vien/rooms?id=${room.id}`), { method: 'DELETE' });
     if (res.ok) {
       const data = await res.json();
       setActiveRoom(data.room);

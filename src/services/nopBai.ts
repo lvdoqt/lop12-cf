@@ -16,6 +16,8 @@ export interface NopBaiClass {
   initials?: string;   // e.g. "12"
   pinnedNotice?: string; // Hướng dẫn / Đề bài nộp
   createdAt?: string;
+  createdBy?: string | null;     // ID giáo viên tạo lớp
+  createdByName?: string | null; // Tên giáo viên tạo lớp
 }
 
 export interface NopBaiImage {
@@ -37,6 +39,9 @@ export interface NopBaiSubmission {
 
 // In-memory fallback cache for submissions in dev/offline mode
 const memorySubmissions: NopBaiSubmission[] = [];
+
+// In-memory fallback cache for classes created in dev/offline mode
+const memoryClasses: NopBaiClass[] = [];
 
 // Seed default classes if database is empty
 export const DEFAULT_CLASSES: NopBaiClass[] = [
@@ -65,16 +70,25 @@ function simpleSlug(text: string): string {
 }
 
 /** Lấy danh sách lớp học từ Supabase `chat_groups` */
-export async function getClasses(client: SupabaseClient): Promise<NopBaiClass[]> {
+export async function getClasses(
+  client: SupabaseClient,
+  options?: { teacherId?: string; isAdmin?: boolean }
+): Promise<NopBaiClass[]> {
   try {
-    const { data, error } = await client
+    let query = client
       .from('chat_groups')
-      .select('id, name, grade, speciality, color, initials, pinned_notice, created_at')
+      .select('id, name, grade, speciality, color, initials, pinned_notice, created_at, created_by')
       .order('grade', { ascending: false })
       .order('name', { ascending: true });
 
-    if (!error && Array.isArray(data) && data.length > 0) {
-      return data.map((g: any) => ({
+    if (options?.teacherId && !options?.isAdmin) {
+      query = query.eq('created_by', options.teacherId);
+    }
+
+    const { data, error } = await query;
+
+    if (!error && Array.isArray(data)) {
+      const dbClasses: NopBaiClass[] = data.map((g: any) => ({
         id: g.id,
         name: g.name,
         grade: g.grade || '',
@@ -83,19 +97,85 @@ export async function getClasses(client: SupabaseClient): Promise<NopBaiClass[]>
         initials: g.initials || g.name,
         pinnedNotice: g.pinned_notice || '',
         createdAt: g.created_at,
+        createdBy: g.created_by || null,
       }));
+
+      // Hợp nhất memoryClasses
+      let combined = [...dbClasses];
+      for (const mc of memoryClasses) {
+        if (!combined.some(c => c.id === mc.id || c.name.toLowerCase() === mc.name.toLowerCase())) {
+          if (options?.teacherId && !options?.isAdmin && mc.createdBy !== options.teacherId) {
+            continue;
+          }
+          combined.push(mc);
+        }
+      }
+
+      // Nếu giáo viên lọc theo teacherId, chỉ trả về đúng các lớp của giáo viên đó
+      if (options?.teacherId && !options?.isAdmin) {
+        return combined.filter(c => c.createdBy === options.teacherId);
+      }
+
+      if (combined.length > 0) {
+        return combined;
+      }
     }
   } catch (err) {
     console.warn('[getClasses] Error fetching chat_groups:', err);
   }
 
-  return DEFAULT_CLASSES;
+  // Fallback memory
+  if (options?.teacherId && !options?.isAdmin) {
+    return memoryClasses.filter(c => c.createdBy === options.teacherId);
+  }
+
+  // Admin hoặc xem chung: kết hợp memoryClasses và DEFAULT_CLASSES
+  const defaultList = [...memoryClasses];
+  for (const d of DEFAULT_CLASSES) {
+    if (!defaultList.some(c => c.id === d.id || c.name.toLowerCase() === d.name.toLowerCase())) {
+      defaultList.push(d);
+    }
+  }
+  return defaultList;
+}
+
+/** Lấy thông tin 1 lớp theo ID */
+export async function getClassById(client: SupabaseClient, id: string): Promise<NopBaiClass | null> {
+  try {
+    const { data, error } = await client
+      .from('chat_groups')
+      .select('id, name, grade, speciality, color, initials, pinned_notice, created_at, created_by')
+      .eq('id', id)
+      .maybeSingle();
+
+    if (!error && data) {
+      return {
+        id: data.id,
+        name: data.name,
+        grade: data.grade || '',
+        speciality: data.speciality || '',
+        color: data.color || '#4f46e5',
+        initials: data.initials || data.name,
+        pinnedNotice: data.pinned_notice || '',
+        createdAt: data.created_at,
+        createdBy: data.created_by || null,
+      };
+    }
+  } catch (e) {}
+
+  const mem = memoryClasses.find(c => c.id === id);
+  if (mem) return mem;
+
+  const def = DEFAULT_CLASSES.find(c => c.id === id);
+  if (def) return def;
+
+  return null;
 }
 
 /** Tạo lớp học mới (Admin/Teacher) */
 export async function createClass(
   client: SupabaseClient,
-  payload: { name: string; grade?: string; speciality?: string; color?: string; pinnedNotice?: string; userId?: string | null }
+  payload: { name: string; grade?: string; speciality?: string; color?: string; pinnedNotice?: string; userId?: string | null; userName?: string | null }
 ): Promise<NopBaiClass> {
   const name = payload.name.trim();
   if (!name) throw new Error('Tên lớp không được để trống');
@@ -105,49 +185,95 @@ export async function createClass(
   const color = (payload.color || '#4f46e5').trim();
   const pinnedNotice = (payload.pinnedNotice || '').trim();
   const initials = name.slice(0, 4).toUpperCase();
+  const nowIso = new Date().toISOString();
+  const newId = crypto.randomUUID();
 
-  const { data, error } = await client
-    .from('chat_groups')
-    .insert({
-      name,
-      grade,
-      speciality,
-      color,
-      initials,
-      pinned_notice: pinnedNotice,
-      is_club: false,
-      created_by: payload.userId || null,
-    })
-    .select('id, name, grade, speciality, color, initials, pinned_notice, created_at')
-    .single();
+  try {
+    const { data, error } = await client
+      .from('chat_groups')
+      .insert({
+        name,
+        grade,
+        speciality,
+        color,
+        initials,
+        pinned_notice: pinnedNotice,
+        is_club: false,
+        created_by: payload.userId || null,
+      })
+      .select('id, name, grade, speciality, color, initials, pinned_notice, created_at, created_by')
+      .single();
 
-  if (error) {
-    throw new Error(`Không thể tạo lớp: ${error.message}`);
+    if (!error && data) {
+      const cls: NopBaiClass = {
+        id: data.id,
+        name: data.name,
+        grade: data.grade,
+        speciality: data.speciality,
+        color: data.color,
+        initials: data.initials,
+        pinnedNotice: data.pinned_notice,
+        createdAt: data.created_at,
+        createdBy: data.created_by || payload.userId || null,
+        createdByName: payload.userName || null,
+      };
+      memoryClasses.push(cls);
+      return cls;
+    }
+  } catch (err) {
+    console.warn('[createClass] DB insert error, using memory fallback:', err);
   }
 
-  return {
-    id: data.id,
-    name: data.name,
-    grade: data.grade,
-    speciality: data.speciality,
-    color: data.color,
-    initials: data.initials,
-    pinnedNotice: data.pinned_notice,
-    createdAt: data.created_at,
+  const memClass: NopBaiClass = {
+    id: newId,
+    name,
+    grade,
+    speciality,
+    color,
+    initials,
+    pinnedNotice,
+    createdAt: nowIso,
+    createdBy: payload.userId || null,
+    createdByName: payload.userName || null,
   };
+  memoryClasses.push(memClass);
+  return memClass;
 }
 
-/** Cập nhật thông tin lớp học */
+/** Cập nhật thông tin lớp học (chỉ người tạo hoặc Admin) */
 export async function updateClass(
   client: SupabaseClient,
   id: string,
-  payload: { name: string; grade?: string; speciality?: string; color?: string; pinnedNotice?: string }
+  payload: { name: string; grade?: string; speciality?: string; color?: string; pinnedNotice?: string },
+  requestingUser?: { id: string; role: string }
 ): Promise<void> {
   const name = payload.name.trim();
   if (!name) throw new Error('Tên lớp không được để trống');
 
+  // Kiểm tra quyền: Giáo viên chỉ được sửa lớp do mình tạo, Admin sửa tất cả
+  if (requestingUser && requestingUser.role !== 'admin') {
+    const targetClass = await getClassById(client, id);
+    if (!targetClass || targetClass.createdBy !== requestingUser.id) {
+      throw new Error('Bạn không có quyền chỉnh sửa lớp của giáo viên khác');
+    }
+  }
+
   const initials = name.slice(0, 4).toUpperCase();
   const grade = (payload.grade || name.replace(/[^0-9]/g, '').slice(0, 2) || '12').trim();
+
+  // Update in memory if present
+  const memIdx = memoryClasses.findIndex(c => c.id === id);
+  if (memIdx !== -1) {
+    memoryClasses[memIdx] = {
+      ...memoryClasses[memIdx],
+      name,
+      grade,
+      initials,
+      speciality: payload.speciality?.trim() || '',
+      color: payload.color?.trim() || '#4f46e5',
+      pinnedNotice: payload.pinnedNotice?.trim() || '',
+    };
+  }
 
   // Nếu id là id mặc định (bắt đầu bằng c-), kiểm tra xem trong database đã có lớp chưa
   if (id.startsWith('c-')) {
@@ -181,13 +307,29 @@ export async function updateClass(
     })
     .eq('id', id);
 
-  if (error) throw new Error(`Lỗi cập nhật lớp: ${error.message}`);
+  if (error && memIdx === -1) throw new Error(`Lỗi cập nhật lớp: ${error.message}`);
 }
 
-/** Xóa lớp học */
-export async function deleteClass(client: SupabaseClient, id: string): Promise<void> {
+/** Xóa lớp học (chỉ người tạo hoặc Admin) */
+export async function deleteClass(
+  client: SupabaseClient,
+  id: string,
+  requestingUser?: { id: string; role: string }
+): Promise<void> {
+  // Kiểm tra quyền: Giáo viên chỉ được xóa lớp do mình tạo, Admin xóa tất cả
+  if (requestingUser && requestingUser.role !== 'admin') {
+    const targetClass = await getClassById(client, id);
+    if (!targetClass || targetClass.createdBy !== requestingUser.id) {
+      throw new Error('Bạn không có quyền xóa lớp của giáo viên khác');
+    }
+  }
+
+  // Xóa khỏi memory
+  const memIdx = memoryClasses.findIndex(c => c.id === id);
+  if (memIdx !== -1) memoryClasses.splice(memIdx, 1);
+
   const { error } = await client.from('chat_groups').delete().eq('id', id);
-  if (error) throw new Error(`Lỗi xóa lớp: ${error.message}`);
+  if (error && memIdx === -1) throw new Error(`Lỗi xóa lớp: ${error.message}`);
 }
 
 /** Upload ảnh lên Supabase Storage bucket `nop-bai` */
@@ -446,8 +588,13 @@ export async function submitAssignment(
 /** Lấy danh sách bài nộp từ Supabase (Admin/Teacher) */
 export async function listSubmissions(
   client: SupabaseClient,
-  filter?: { className?: string; search?: string }
+  filter?: { className?: string; search?: string; allowedClassNames?: string[] }
 ): Promise<NopBaiSubmission[]> {
+  // Nếu giáo viên có allowedClassNames và mảng rỗng (chưa tạo lớp nào)
+  if (filter?.allowedClassNames && filter.allowedClassNames.length === 0) {
+    return [];
+  }
+
   const result: NopBaiSubmission[] = [];
   const filterClass = filter?.className?.trim();
   const search = filter?.search?.trim().toLowerCase();
@@ -461,7 +608,10 @@ export async function listSubmissions(
 
     if (filterClass && filterClass !== 'all') {
       query = query.ilike('class_name', filterClass);
+    } else if (filter?.allowedClassNames && filter.allowedClassNames.length > 0) {
+      query = query.in('class_name', filter.allowedClassNames);
     }
+
     if (search) {
       query = query.or(`student_name.ilike.%${search}%,content.ilike.%${search}%`);
     }
@@ -469,16 +619,24 @@ export async function listSubmissions(
     const { data, error } = await query.limit(200);
 
     if (!error && Array.isArray(data) && data.length > 0) {
-      return data.map((item: any) => ({
-        id: item.id,
-        studentName: item.student_name,
-        className: item.class_name,
-        content: item.content || '',
-        images: Array.isArray(item.images) ? item.images : [],
-        submissionCount: Number(item.submission_count) || 1,
-        createdAt: item.created_at,
-        userId: item.user_id,
-      }));
+      for (const item of data) {
+        if (filter?.allowedClassNames && filter.allowedClassNames.length > 0) {
+          if (!filter.allowedClassNames.some(c => c.toLowerCase() === (item.class_name || '').toLowerCase())) {
+            continue;
+          }
+        }
+        result.push({
+          id: item.id,
+          studentName: item.student_name,
+          className: item.class_name,
+          content: item.content || '',
+          images: Array.isArray(item.images) ? item.images : [],
+          submissionCount: Number(item.submission_count) || 1,
+          createdAt: item.created_at,
+          userId: item.user_id,
+        });
+      }
+      return result;
     }
   } catch (err) {
     // Không có bảng nop_bai_submissions, tiếp tục fallback
@@ -494,6 +652,8 @@ export async function listSubmissions(
 
     if (filterClass && filterClass !== 'all') {
       postQuery = postQuery.eq('class_id', filterClass);
+    } else if (filter?.allowedClassNames && filter.allowedClassNames.length > 0) {
+      postQuery = postQuery.in('class_id', filter.allowedClassNames);
     }
 
     const { data: posts, error: postErr } = await postQuery.limit(200);
@@ -515,6 +675,12 @@ export async function listSubmissions(
           }
         } catch {
           content = p.body;
+        }
+
+        if (filter?.allowedClassNames && filter.allowedClassNames.length > 0) {
+          if (!filter.allowedClassNames.some(c => c.toLowerCase() === className.toLowerCase())) {
+            continue;
+          }
         }
 
         if (search) {
@@ -543,6 +709,11 @@ export async function listSubmissions(
     const existingIds = new Set(result.map((r) => r.id));
     for (const mem of memorySubmissions) {
       if (!existingIds.has(mem.id)) {
+        if (filter?.allowedClassNames && filter.allowedClassNames.length > 0) {
+          if (!filter.allowedClassNames.some(c => c.toLowerCase() === mem.className.toLowerCase())) {
+            continue;
+          }
+        }
         if (filterClass && filterClass !== 'all' && mem.className.toLowerCase() !== filterClass.toLowerCase()) {
           continue;
         }
@@ -559,7 +730,34 @@ export async function listSubmissions(
 }
 
 /** Xóa bài nộp (Admin/Teacher) */
-export async function deleteSubmission(client: SupabaseClient, id: string): Promise<void> {
+export async function deleteSubmission(
+  client: SupabaseClient,
+  id: string,
+  requestingUser?: { id: string; role: string; allowedClassNames?: string[] }
+): Promise<void> {
+  // Giáo viên chỉ được xóa bài nộp của lớp do mình quản lý
+  if (requestingUser && requestingUser.role !== 'admin' && requestingUser.allowedClassNames) {
+    let subClassName: string | null = null;
+    const memSub = memorySubmissions.find(s => s.id === id);
+    if (memSub) {
+      subClassName = memSub.className;
+    } else {
+      try {
+        const { data } = await client.from('nop_bai_submissions').select('class_name').eq('id', id).maybeSingle();
+        if (data) subClassName = data.class_name;
+      } catch (e) {}
+    }
+
+    if (subClassName) {
+      const allowed = requestingUser.allowedClassNames.some(
+        c => c.toLowerCase() === subClassName!.toLowerCase()
+      );
+      if (!allowed) {
+        throw new Error('Bạn không có quyền xóa bài nộp của lớp khác');
+      }
+    }
+  }
+
   // 1. Thử xóa ở `nop_bai_submissions`
   await client.from('nop_bai_submissions').delete().eq('id', id);
 
