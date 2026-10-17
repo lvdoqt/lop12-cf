@@ -159,7 +159,7 @@ const breadcrumbs = [
   </div>
 </Layout>
 
-<script is:inline define:vars={{ subjectSlug: subject.slug, subjectName: subject.name, color }}>
+<script is:inline define:vars={{ baseUrl: (import.meta.env.BASE_URL || '/lms').replace(/\/$/, ''), subjectSlug: subject.slug, subjectName: subject.name, color }}>
   const lessonsBtn = document.getElementById('tab-lessons-btn');
   const examsBtn = document.getElementById('tab-exams-btn');
   const lessonsContent = document.getElementById('tab-lessons-content');
@@ -259,7 +259,7 @@ const breadcrumbs = [
   async function loadExams() {
     if (examsLoaded) return;
     try {
-      const res = await fetch(`${import.meta.env.BASE_URL}/api/exams-by-subject?subject_slug=${subjectSlug}`);
+      const res = await fetch(`${baseUrl}/api/exams-by-subject?subject_slug=${subjectSlug}`);
       if (!res.ok) throw new Error('Failed to load exams');
       const data = await res.json();
       const exams = data.exams || [];

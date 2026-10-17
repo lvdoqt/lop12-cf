@@ -420,17 +420,18 @@ export const db = {
     if (examError) { console.error('[db.createExam] error:', examError); throw examError; }
 
     if (questionIds.length > 0) {
-      // Verify all IDs exist in the bank
+      // Deduplicate IDs
+      const uniqueIds = Array.from(new Set(questionIds));
+      // Verify all IDs exist in questions table
       const { data: bankQs, error: verifyError } = await _adminCl
         .from('questions')
         .select('id')
-        .in('id', questionIds)
-        .eq('de_id', 'bank');
-      if (verifyError) { console.error('[db.createExam] verify bank questions error:', verifyError); throw verifyError; }
+        .in('id', uniqueIds);
+      if (verifyError) { console.error('[db.createExam] verify questions error:', verifyError); throw verifyError; }
 
       const validIds = new Set((bankQs || []).map((r: any) => r.id));
 
-      const junctionRows = questionIds
+      const junctionRows = uniqueIds
         .filter(qId => validIds.has(qId))
         .map((qId, index) => ({
           exam_id: newExam.id,

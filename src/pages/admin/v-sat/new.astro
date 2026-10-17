@@ -4,6 +4,7 @@ import { db } from '../../../services/db';
 export const prerender = false;
 const user = Astro.locals.user;
 if (!user || !['admin','teacher'].includes(user.role)) return Astro.redirect('/dashboard');
+const baseUrl = (import.meta.env.BASE_URL || '/lms').replace(/\/$/, '');
 let error = '';
 
 if (Astro.request.method === 'POST') {
@@ -114,11 +115,11 @@ const sample = JSON.stringify({ questions: [
       <div class="flex justify-end"><button class="rounded-xl bg-[#075985] px-6 py-3 text-sm font-bold text-white">Tạo đề và xem trước →</button></div>
     </form>
   </div>
-  <script is:inline define:vars={{ sample }}>
+  <script is:inline define:vars={{ sample, baseUrl }}>
     const area = document.getElementById('json'); const feedback = document.getElementById('feedback');
     document.getElementById('sample')?.addEventListener('click', () => { area.value = sample; area.dispatchEvent(new Event('input')); });
     async function loadSample(url) {
-      const response = await fetch(import.meta.env.BASE_URL + url.replace(/^\//, ''));
+      const response = await fetch(baseUrl + '/' + url.replace(/^\//, ''));
       if (!response.ok) throw new Error('Không tải được file mẫu.');
       area.value = await response.text();
       area.dispatchEvent(new Event('input'));
