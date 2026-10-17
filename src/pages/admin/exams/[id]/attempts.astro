@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from "../../../../layouts/Layout.astro";
 import { db } from "../../../../services/db";
 
@@ -108,12 +108,13 @@ const avgScore = attempts.length > 0
             <thead class="bg-slate-50/80 dark:bg-slate-800/30">
               <tr class="text-left text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
                 <th class="px-6 py-3 text-center w-12">STT</th>
-                <th class="px-4 py-3">Hoc sinh</th>
-                <th class="px-4 py-3">Email</th>
-                <th class="px-4 py-3 text-center">{isVsat ? 'Diem tho / 150' : 'Diem'}</th>
-                <th class="px-4 py-3 text-center">{isVsat ? 'Diem nang luc IRT' : 'Cau dung / Tong'}</th>
-                <th class="px-4 py-3">Ngay nop</th>
-                <th class="px-4 py-3">Thoi gian lam</th>
+                <th class="px-4 py-3">Học sinh</th>
+                <th class="px-4 py-3">Lớp</th>
+                <th class="px-4 py-3">Tài khoản / Email</th>
+                <th class="px-4 py-3 text-center">{isVsat ? 'Điểm thô / 150' : 'Điểm'}</th>
+                <th class="px-4 py-3 text-center">{isVsat ? 'Điểm năng lực IRT' : 'Câu đúng / Tổng'}</th>
+                <th class="px-4 py-3">Ngày nộp</th>
+                <th class="px-4 py-3">Thời gian làm</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60">
@@ -130,24 +131,31 @@ const avgScore = attempts.length > 0
                   scoreNum >= (isVsat ? 75 : 5) ? "text-amber-600 dark:text-amber-400" :
                   "text-rose-600 dark:text-rose-400";
                 const userObj = attempt.user as any;
+                const studentName = attempt.student_name || userObj?.fullname || "Học sinh";
+                const studentClass = attempt.student_class || "—";
                 return (
                   <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/20 transition-colors text-sm">
                     <td class="px-6 py-4 text-center text-xs text-slate-400 font-semibold">{idx + 1}</td>
                     <td class="px-4 py-4">
                       <div class="flex items-center gap-2.5">
                         <div class="w-7 h-7 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center text-xs font-bold text-violet-600 dark:text-violet-400 shrink-0">
-                          {(userObj?.fullname || userObj?.email || "K").charAt(0).toUpperCase()}
+                          {studentName.charAt(0).toUpperCase()}
                         </div>
-                        <span class="font-semibold text-ink dark:text-[#E8E0D0] text-sm">{userObj?.fullname || "Hoc sinh"}</span>
+                        <span class="font-semibold text-ink dark:text-[#E8E0D0] text-sm">{studentName}</span>
                       </div>
                     </td>
-                    <td class="px-4 py-4 text-sm text-slate-500 dark:text-slate-400">{userObj?.email || "—"}</td>
+                    <td class="px-4 py-4">
+                      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-400 border border-amber-200/50 dark:border-amber-900/30">
+                        {studentClass}
+                      </span>
+                    </td>
+                    <td class="px-4 py-4 text-sm text-slate-500 dark:text-slate-400">{userObj?.email || (attempt.user_id ? "Đã đăng nhập" : "Tự do")}</td>
                     <td class="px-4 py-4 text-center">
                       <span class={`text-base font-extrabold ${scoreColor}`}>{formatScore(attempt.score)}</span>
                     </td>
                     <td class="px-4 py-4 text-center">
                       {isVsat ? (
-                        <span class="text-xs font-bold text-violet-700 dark:text-violet-400">{attempt.ability_score ?? 'Chua hieu chinh'}</span>
+                        <span class="text-xs font-bold text-violet-700 dark:text-violet-400">{attempt.ability_score ?? 'Chưa hiệu chỉnh'}</span>
                       ) : correctCount !== null ? (
                         <span class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
                           {correctCount}{totalQuestions > 0 ? `/${totalQuestions}` : ""}

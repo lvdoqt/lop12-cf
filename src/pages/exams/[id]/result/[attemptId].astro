@@ -309,7 +309,16 @@ if (themeScore < 5.0) {
       >
         Kết quả làm bài thi
       </h1>
-      <p class="text-sm text-gray-500 dark:text-slate-400 mt-1">{exam.title}</p>
+      <div class="flex flex-wrap items-center gap-2 mt-1">
+        <p class="text-sm text-gray-500 dark:text-slate-400">{exam.title}</p>
+        {attempt.student_name && (
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 dark:bg-blue-950/30 dark:text-blue-400 border border-blue-200/50 dark:border-blue-900/30">
+            <span>👤</span>
+            <span>{attempt.student_name}</span>
+            {attempt.student_class && <span class="text-blue-500 font-semibold">· Lớp {attempt.student_class}</span>}
+          </span>
+        )}
+      </div>
     </div>
 
     <!-- Score Visual Card -->

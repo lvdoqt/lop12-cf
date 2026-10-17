@@ -27,10 +27,6 @@ if (attempt.user_id && attempt.user_id !== user?.id) {
   return Astro.redirect('/dashboard');
 }
 
-if (exam.password && !user) {
-  return Astro.redirect(`/login?redirect=/exams/${exam.slug}`);
-}
-
 if (attempt.score !== null) {
   return Astro.redirect(`/exams/${exam.slug}/result/${attempt.id}`);
 }

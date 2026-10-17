@@ -1148,8 +1148,11 @@ export const db = {
       if (!att) return null;
       const exam = mockExams.find(e => e.id === att.exam_id);
       const subject = exam ? mockSubjects.find(s => s.id === exam.subject_id) : undefined;
+      const ans = (att.answers_submitted || {}) as Record<string, any>;
       return {
         ...att,
+        student_name: ans._student_name || att.student_name || null,
+        student_class: ans._student_class || att.student_class || null,
         exam: exam ? { ...exam, subject } : undefined
       };
     }
@@ -1161,20 +1164,36 @@ export const db = {
       .select('*, exam:exams(*, subject:subjects(*))')
       .eq('id', id)
       .single();
-    if (error) return null;
-    return data;
+    if (error || !data) return null;
+    const ans = (data.answers_submitted || {}) as Record<string, any>;
+    return {
+      ...data,
+      student_name: ans._student_name || null,
+      student_class: ans._student_class || null
+    };
   },
 
-  async createAttempt(userId: string | null | undefined, examId: string): Promise<Attempt> {
+  async createAttempt(userId: string | null | undefined, examId: string, studentInfo?: { fullname?: string; class_name?: string }): Promise<Attempt> {
+    const initialAnswers: Record<string, any> = {};
+    if (studentInfo?.fullname?.trim()) {
+      initialAnswers._student_name = studentInfo.fullname.trim();
+    }
+    if (studentInfo?.class_name?.trim()) {
+      initialAnswers._student_class = studentInfo.class_name.trim();
+    }
+    const hasStudentInfo = Object.keys(initialAnswers).length > 0;
+
     if (isInMockMode()) {
       const newAttempt: Attempt = {
         id: `att-${Date.now()}`,
         user_id: userId || `guest-${Date.now()}`,
         exam_id: examId,
         score: null,
-        answers_submitted: null,
+        answers_submitted: hasStudentInfo ? initialAnswers : null,
         started_at: new Date().toISOString(),
-        finished_at: null
+        finished_at: null,
+        student_name: initialAnswers._student_name || null,
+        student_class: initialAnswers._student_class || null
       };
       mockAttempts.push(newAttempt);
       return newAttempt;
@@ -1182,24 +1201,42 @@ export const db = {
 
     // Use admin client to bypass RLS — user_id is explicitly set so data is still scoped correctly
     const _adminCl = adminClient();
+    const insertPayload: Record<string, any> = {
+      user_id: userId || null,
+      exam_id: examId
+    };
+    if (hasStudentInfo) {
+      insertPayload.answers_submitted = initialAnswers;
+    }
+
     const { data, error } = await _adminCl!
       .from('attempts')
-      .insert([{ user_id: userId || null, exam_id: examId }])
+      .insert([insertPayload])
       .select()
       .single();
     if (error) throw error;
-    return data;
+    return {
+      ...data,
+      student_name: initialAnswers._student_name || null,
+      student_class: initialAnswers._student_class || null
+    };
   },
 
   async submitAttempt(attemptId: string, score: number, answersSubmitted: Record<string, any>, scoring?: { raw_score?: number | null; ability_score?: number | null }): Promise<Attempt> {
     if (isInMockMode()) {
       const index = mockAttempts.findIndex(a => a.id === attemptId);
       if (index === -1) throw new Error('Attempt not found');
+      const oldAns = (mockAttempts[index].answers_submitted || {}) as Record<string, any>;
+      const mergedAnswers = {
+        ...answersSubmitted,
+        ...(oldAns._student_name ? { _student_name: oldAns._student_name } : {}),
+        ...(oldAns._student_class ? { _student_class: oldAns._student_class } : {})
+      };
       mockAttempts[index] = {
         ...mockAttempts[index],
         score,
         ...(scoring || {}),
-        answers_submitted: answersSubmitted,
+        answers_submitted: mergedAnswers,
         finished_at: new Date().toISOString()
       };
       return mockAttempts[index];
@@ -1207,12 +1244,32 @@ export const db = {
 
     // Use admin client to bypass RLS for server-side updates
     const _adminCl = adminClient();
+    let oldAnswers: Record<string, any> = {};
+    try {
+      const { data: existing } = await _adminCl!
+        .from('attempts')
+        .select('answers_submitted')
+        .eq('id', attemptId)
+        .single();
+      if (existing?.answers_submitted && typeof existing.answers_submitted === 'object') {
+        oldAnswers = existing.answers_submitted as Record<string, any>;
+      }
+    } catch (e) {
+      console.warn('[db.submitAttempt] Could not fetch existing answers_submitted:', e);
+    }
+
+    const mergedAnswers = {
+      ...answersSubmitted,
+      ...(oldAnswers._student_name ? { _student_name: oldAnswers._student_name } : {}),
+      ...(oldAnswers._student_class ? { _student_class: oldAnswers._student_class } : {})
+    };
+
     const { data, error } = await _adminCl!
       .from('attempts')
       .update({
         score,
         ...(scoring || {}),
-        answers_submitted: answersSubmitted,
+        answers_submitted: mergedAnswers,
         finished_at: new Date().toISOString()
       })
       .eq('id', attemptId)
@@ -1241,14 +1298,20 @@ export const db = {
     return data || [];
   },
 
-  async getAttemptsByExamId(examId: string): Promise<(Attempt & { user?: User })[]> {
+  async getAttemptsByExamId(examId: string): Promise<(Attempt & { user?: User; student_name?: string; student_class?: string })[]> {
     if (isInMockMode()) {
       return mockAttempts
         .filter(a => a.exam_id === examId && a.finished_at !== null)
-        .map(att => ({
-          ...att,
-          user: mockUsers.find(u => u.id === att.user_id)
-        }))
+        .map(att => {
+          const u = mockUsers.find(u => u.id === att.user_id);
+          const ans = (att.answers_submitted || {}) as Record<string, any>;
+          return {
+            ...att,
+            user: u,
+            student_name: ans._student_name || u?.fullname || 'Học sinh',
+            student_class: ans._student_class || '—'
+          };
+        })
         .sort((a, b) => new Date(b.started_at).getTime() - new Date(a.started_at).getTime());
     }
     const client = adminClient();
@@ -1259,7 +1322,14 @@ export const db = {
       .not('finished_at', 'is', null)
       .order('started_at', { ascending: false });
     if (error) { console.error('[db.getAttemptsByExamId]', error); return []; }
-    return data || [];
+    return (data || []).map((att: any) => {
+      const ans = (att.answers_submitted || {}) as Record<string, any>;
+      return {
+        ...att,
+        student_name: ans._student_name || att.user?.fullname || 'Học sinh',
+        student_class: ans._student_class || '—'
+      };
+    });
   },
 
 

@@ -25,12 +25,13 @@ export const GET: APIRoute = async ({ params, locals }) => {
 
   const isVsat = exam.exam_type === 'vsat';
   const header = isVsat
-    ? 'STT,Ho ten,Email,Diem tho (150),Diem nang luc IRT,Thoi gian lam (phut),Ngay nop\r\n'
-    : 'STT,Ho ten,Email,Diem,So cau dung,Tong cau,Thoi gian lam (phut),Ngay nop\r\n';
+    ? 'STT,Ho ten,Lop,Email,Diem tho (150),Diem nang luc IRT,Thoi gian lam (phut),Ngay nop\r\n'
+    : 'STT,Ho ten,Lop,Email,Diem,So cau dung,Tong cau,Thoi gian lam (phut),Ngay nop\r\n';
 
   const rows = attempts.map((attempt, idx) => {
     const userObj = attempt.user as any;
-    const name = (userObj?.fullname || '').replace(/,/g, ' ');
+    const name = (attempt.student_name || userObj?.fullname || 'Học sinh').replace(/,/g, ' ');
+    const studentClass = (attempt.student_class || '').replace(/,/g, ' ');
     const email = (userObj?.email || '').replace(/,/g, ' ');
     const score = attempt.score !== null && attempt.score !== undefined ? attempt.score.toFixed(2) : '';
     // score = so_cau_dung × 0.25, nen so_cau_dung = score × 4
@@ -48,8 +49,8 @@ export const GET: APIRoute = async ({ params, locals }) => {
       ? new Date(attempt.finished_at).toLocaleString('vi-VN')
       : '';
     return isVsat
-      ? `${idx + 1},"${name}","${email}",${score},${attempt.ability_score ?? ''},${durationMin},"${finishedAt}"`
-      : `${idx + 1},"${name}","${email}",${score},${correct},${totalQuestions},${durationMin},"${finishedAt}"`;
+      ? `${idx + 1},"${name}","${studentClass}","${email}",${score},${attempt.ability_score ?? ''},${durationMin},"${finishedAt}"`
+      : `${idx + 1},"${name}","${studentClass}","${email}",${score},${correct},${totalQuestions},${durationMin},"${finishedAt}"`;
   });
 
   const examTitle = exam.title.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').slice(0, 40);

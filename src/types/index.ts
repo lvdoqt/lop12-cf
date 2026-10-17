@@ -99,9 +99,11 @@ export interface Attempt {
   raw_score?: number | null;
   /** IRT scaled score (mean 500, SD 100); null until calibrated externally. */
   ability_score?: number | null;
-  answers_submitted: Record<string, string | string[] | boolean> | null; // question_id -> answer choice
+  answers_submitted: Record<string, any> | null; // question_id -> answer choice & metadata
   started_at: string;
   finished_at: string | null;
+  student_name?: string | null;
+  student_class?: string | null;
 }
 
 export interface ChatMessage {
