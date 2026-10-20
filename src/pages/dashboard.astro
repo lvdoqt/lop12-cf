@@ -4,7 +4,6 @@ import DashboardCard from '../components/DashboardCard.astro';
 import ChartComponent from '../components/ChartComponent.astro';
 import { getCollection } from 'astro:content';
 import { db } from '../services/db';
-import { getNopBaiAdminClient, getClasses } from '../services/nopBai';
 
 export const prerender = false;
 
@@ -21,12 +20,15 @@ const enrollments = await db.getUserEnrollments(user.id);
 
 // Teacher: fetch courses they created
 const isTeacher = user.role === 'teacher' || user.role === 'admin';
+
+// Student: fetch assigned homework from teachers
+const studentAssignments = !isTeacher ? await db.getStudentAssignments(user.id) : [];
+const assignedExams = studentAssignments.filter(a => a.type === 'exam');
+const assignedCourses = studentAssignments.filter(a => a.type === 'course');
+const assignedMaterials = studentAssignments.filter(a => a.type === 'material');
+
 const myCourses = isTeacher ? await db.getCourses({ createdBy: user.id }) : [];
 
-// Fetch classes for dashboard
-const nopBaiClient = getNopBaiAdminClient(Astro.locals.runtimeEnv);
-const groupsList = await getClasses(nopBaiClient);
-const groupsCount = groupsList.length;
 
 
 const lessonsCount = allLessons.length;
@@ -153,26 +155,15 @@ if (isTeacher) {
       
       <div class="flex items-center space-x-3">
         {isTeacher ? (
-          <div class="flex items-center gap-2">
-            <a
-              href="/admin/nop-bai"
-              class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2.5 rounded-xl shadow-md shadow-blue-500/15 transition text-sm gap-1.5"
-            >
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Quản lý Nộp bài (/admin/nop-bai/)
-            </a>
-            <a
-              href="/nop-bai"
-              class="inline-flex items-center justify-center bg-white dark:bg-slate-800 text-gray-700 dark:text-slate-200 border border-gray-250 dark:border-slate-700 hover:border-blue-500 font-semibold px-4 py-2.5 rounded-xl shadow-sm transition text-sm gap-1.5"
-            >
-              <svg class="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-              </svg>
-              Trang nộp bài (/nop-bai)
-            </a>
-          </div>
+          <a
+            href="/admin"
+            class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2.5 rounded-xl shadow-md shadow-blue-500/15 transition text-sm gap-1.5"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            Bảng điều hành
+          </a>
         ) : (
           <a
             href="/ly-thuyet"
@@ -219,6 +210,95 @@ if (isTeacher) {
         color={isTeacher ? 'blue' : (passRate >= 80 ? 'emerald' : passRate >= 50 ? 'amber' : completedAttempts.length > 0 ? 'rose' : 'blue')}
       />
     </div>
+
+    <!-- Bài tập được giao (Student only) -->
+    {!isTeacher && studentAssignments.length > 0 && (
+      <div>
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+          Bài tập được giao
+          <span class="ml-1 text-xs px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 font-bold">{studentAssignments.length}</span>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {assignedExams.map(a => (
+            <a
+              href={`/exams/${a.ref_id}`}
+              class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800/80 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group"
+            >
+              <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="font-bold text-gray-800 dark:text-slate-200 text-sm truncate">{a.ref_title || 'Đề thi'}</p>
+                <p class="text-xs text-gray-400 dark:text-slate-500 mt-0.5">
+                  📝 Đề thi được giao
+                  {a.deadline && ` · Hạn: ${new Date(a.deadline).toLocaleDateString('vi-VN')}`}
+                </p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-300 group-hover:text-indigo-500 transition shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          ))}
+          {assignedCourses.map(a => (
+            <a
+              href={`/khoa-hoc/${a.ref_id}`}
+              class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800/80 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group"
+            >
+              <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="font-bold text-gray-800 dark:text-slate-200 text-sm truncate">{a.ref_title || 'Khóa học'}</p>
+                <p class="text-xs text-gray-400 dark:text-slate-500 mt-0.5">
+                  📘 Khóa học được giao
+                  {a.deadline && ` · Hạn: ${new Date(a.deadline).toLocaleDateString('vi-VN')}`}
+                </p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-300 group-hover:text-indigo-500 transition shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          ))}
+          {assignedMaterials.map(a => (
+            <a
+              href={`/bai-tap/${a.id}`}
+              class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800/80 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group border-l-4 border-l-emerald-500"
+            >
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="font-bold text-gray-800 dark:text-slate-200 text-sm truncate">{a.ref_title || 'Tài liệu & Video'}</p>
+                <div class="flex items-center gap-2 text-xs text-gray-400 dark:text-slate-500 mt-0.5 flex-wrap">
+                  <span class="font-semibold text-emerald-600 dark:text-emerald-400">📄 Tài liệu / Video</span>
+                  {a.attachment_url && (
+                    <span class="px-1.5 py-0.2 rounded bg-gray-100 dark:bg-slate-800 text-[10px] uppercase font-bold text-gray-500">
+                      {a.attachment_type || 'File'}
+                    </span>
+                  )}
+                  {a.youtube_url && (
+                    <span class="px-1.5 py-0.2 rounded bg-rose-50 dark:bg-rose-950/30 text-[10px] font-bold text-rose-500">
+                      YouTube
+                    </span>
+                  )}
+                  {a.deadline && <span>· Hạn: {new Date(a.deadline).toLocaleDateString('vi-VN')}</span>}
+                </div>
+              </div>
+              <span class="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white transition shrink-0">
+                Xem bài →
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
 
     <!-- Charts Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -427,152 +507,6 @@ if (isTeacher) {
     </div>
     )}
 
-    <!-- Teacher & Admin: Class Management & Submissions -->
-    {isTeacher && (
-    <div class="bg-gradient-to-br from-blue-50 via-indigo-50/50 to-purple-50/30 border border-blue-200/70 dark:from-blue-950/20 dark:via-indigo-950/20 dark:to-purple-950/10 dark:border-blue-900/40 rounded-2xl p-6 shadow-sm">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-        <div>
-          <h2 class="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
-            <span class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm font-bold shadow-sm shadow-blue-500/20">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </span>
-            Quản Lý Lớp Học & Nộp Bài Tập
-          </h2>
-          <p class="text-xs text-gray-500 dark:text-slate-400 mt-1">
-            Theo dõi bài nộp của học sinh, dán ảnh bài giải, kiểm tra số lần nộp ({groupsCount} lớp học đang hoạt động).
-          </p>
-        </div>
-
-        <a
-          href="/admin/nop-bai"
-          class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 flex items-center gap-1"
-        >
-          Trang Quản lý Nộp bài (/admin/nop-bai/) →
-        </a>
-      </div>
-
-      <!-- Quick Action Buttons -->
-      <div class="flex flex-wrap items-center gap-3 mb-5">
-        <a
-          href="/admin/nop-bai"
-          class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm shadow-blue-500/20 transition"
-        >
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-          </svg>
-          + Tạo lớp mới (/admin/nop-bai/)
-        </a>
-        <a
-          href="/nop-bai"
-          class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-gray-700 dark:text-slate-200 text-sm font-semibold px-4 py-2.5 rounded-xl border border-gray-250 dark:border-slate-700 hover:border-blue-500 shadow-xs transition"
-        >
-          <svg class="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-          </svg>
-          Mở trang nộp bài (/nop-bai)
-        </a>
-      </div>
-
-      <!-- Recent groups preview grid -->
-      {groupsList.length > 0 ? (
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {groupsList.slice(0, 6).map(g => (
-            <a
-              href={`/nop-bai?lop=${g.name}`}
-              class="flex items-center gap-3 p-3 bg-white/90 dark:bg-slate-900/90 rounded-xl border border-gray-150 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-xs transition group"
-            >
-              <div
-                class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm shrink-0 shadow-xs"
-                style={`background-color: ${g.color || '#4f46e5'};`}
-              >
-                {g.initials || g.name.substring(0, 2).toUpperCase()}
-              </div>
-              <div class="min-w-0 flex-1">
-                <div class="flex items-center justify-between">
-                  <p class="text-sm font-bold text-gray-900 dark:text-white truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
-                    Lớp {g.name}
-                  </p>
-                  <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 shrink-0">
-                    Khối {g.grade || '12'}
-                  </span>
-                </div>
-                <p class="text-xs text-gray-500 dark:text-slate-400 truncate mt-0.5">
-                  {g.speciality || 'Vào nộp bài →'}
-                </p>
-              </div>
-            </a>
-          ))}
-        </div>
-      ) : (
-        <div class="p-4 rounded-xl bg-white/60 dark:bg-slate-900/60 border border-gray-150 dark:border-slate-800 text-center text-xs text-gray-500 dark:text-slate-400">
-          Chưa có lớp nào được tạo. Nhấn "+ Tạo lớp mới" để khởi tạo lớp đầu tiên!
-        </div>
-      )}
-    </div>
-    )}
-
-    <!-- Student: Assignment Submission Card -->
-    {!isTeacher && (
-    <div class="bg-gradient-to-br from-blue-50 to-indigo-50/50 border border-blue-200/60 dark:from-blue-950/20 dark:to-indigo-950/20 dark:border-blue-900/40 rounded-2xl p-6 shadow-sm">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <div>
-          <h2 class="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
-            <span class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm font-bold shadow-sm shadow-blue-500/20">
-              📝
-            </span>
-            Nộp Bài Tập Trực Tuyến
-          </h2>
-          <p class="text-xs text-gray-500 dark:text-slate-400 mt-1">
-            Chọn lớp học (12A4, 11A8...), dán ảnh bài làm trực tiếp từ clipboard (Ctrl + V) và nộp bài cho thầy cô.
-          </p>
-        </div>
-
-        <a
-          href="/nop-bai"
-          class="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-xl shadow-xs transition shrink-0"
-        >
-          Nộp bài ngay (/nop-bai) →
-        </a>
-      </div>
-
-      {groupsList.length > 0 ? (
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {groupsList.slice(0, 6).map(g => (
-            <a
-              href={`/nop-bai?lop=${g.name}`}
-              class="flex items-center gap-3 p-3 bg-white/90 dark:bg-slate-900/90 rounded-xl border border-gray-150 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-xs transition group"
-            >
-              <div
-                class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm shrink-0 shadow-xs"
-                style={`background-color: ${g.color || '#4f46e5'};`}
-              >
-                {g.initials || g.name.substring(0, 2).toUpperCase()}
-              </div>
-              <div class="min-w-0 flex-1">
-                <div class="flex items-center justify-between">
-                  <p class="text-sm font-bold text-gray-900 dark:text-white truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
-                    Lớp {g.name}
-                  </p>
-                  <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 shrink-0">
-                    Khối {g.grade || '12'}
-                  </span>
-                </div>
-                <p class="text-xs text-gray-500 dark:text-slate-400 truncate mt-0.5">
-                  {g.speciality || 'Bấm để nộp bài →'}
-                </p>
-              </div>
-            </a>
-          ))}
-        </div>
-      ) : (
-        <div class="p-4 rounded-xl bg-white/60 dark:bg-slate-900/60 border border-gray-150 dark:border-slate-800 text-center text-xs text-gray-500 dark:text-slate-400">
-          Chưa có lớp nào trong danh sách.
-        </div>
-      )}
-    </div>
-    )}
 
 
     <!-- Recent Exam Attempts Table -->

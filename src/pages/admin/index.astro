@@ -4,7 +4,6 @@ import DashboardCard from '../../components/DashboardCard.astro';
 import { db } from '../../services/db';
 
 import { getCollection } from 'astro:content';
-import { getNopBaiAdminClient } from '../../services/nopBai';
 
 export const prerender = false;
 
@@ -52,11 +51,6 @@ const myCourseLessonsCount = myCourses.reduce((sum, c) => sum + (c.lessonCount ?
 const myQuestions = await db.getQuestions(undefined, user.id);
 const myQuestionsCount = myQuestions.length;
 
-// Classes count
-const nopClient = getNopBaiAdminClient(Astro.locals.runtimeEnv);
-const { count: classesCount } = await nopClient
-  .from('chat_groups')
-  .select('*', { count: 'exact', head: true });
 
 const studentsCount = isAdmin ? users.filter(u => u.role === 'student').length : 0;
 const teachersCount = isAdmin ? users.filter(u => u.role === 'teacher').length : 0;
@@ -122,14 +116,17 @@ const attemptsCount = attempts.length;
         <a href="/admin/courses" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow shadow-indigo-500/10">
           Quản lý Khóa học
         </a>
+        <a href="/admin/hoc-sinh" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow shadow-emerald-500/10 flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Quản lý Học sinh
+        </a>
         {(user.role === 'admin' || user.role === 'teacher') && (
           <a href="/admin/questions" class="bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow shadow-violet-500/10">
             Ngân hàng câu hỏi
           </a>
         )}
-        <a href="/admin/nop-bai" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow shadow-emerald-500/10">
-          Quản lý Nộp bài
-        </a>
       </div>
     </div>
 
@@ -155,13 +152,6 @@ const attemptsCount = attempts.length;
         description={`${myCourseLessonsCount} bài giảng`}
         icon="lessons"
         color="purple"
-      />
-      <DashboardCard
-        title="Lớp nộp bài"
-        value={classesCount ?? 0}
-        description="Lớp học nhận bài nộp"
-        icon="progress"
-        color="emerald"
       />
 
       {isAdmin && (

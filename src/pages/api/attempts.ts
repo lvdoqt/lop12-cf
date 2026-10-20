@@ -9,7 +9,7 @@ import { calculateVsatIRTScore } from '../../lib/irt';
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
-    const { attemptId, answers } = await request.json();
+    const { attemptId, answers, tabSwitches } = await request.json();
     
     if (!attemptId || !answers) {
       return new Response(JSON.stringify({ error: 'Attempt ID and answers are required' }), { status: 400 });
@@ -202,11 +202,16 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
 
     // 5. Save results to database
+    const scoringPayload: { raw_score?: number | null; ability_score?: number | null; tab_switches?: number } = {
+      ...(isVsat ? { raw_score: score, ability_score: abilityScore } : {}),
+      tab_switches: typeof tabSwitches === 'number' ? Math.max(0, Math.floor(tabSwitches)) : 0
+    };
+
     const updatedAttempt = await db.submitAttempt(
       attemptId,
       score,
       answers,
-      isVsat ? { raw_score: score, ability_score: abilityScore } : undefined
+      scoringPayload
     );
 
     return new Response(JSON.stringify({

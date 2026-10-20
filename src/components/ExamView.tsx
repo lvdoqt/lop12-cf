@@ -132,6 +132,11 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [tabSwitches, setTabSwitches] = useState(0);
+  const [warningInfo, setWarningInfo] = useState<{ count: number; autoSubmit: boolean } | null>(null);
+  const tabSwitchesRef = useRef(0);
+  const isAwayRef = useRef(false);
+  const lastAwayTimeRef = useRef(0);
 
   const classified = useMemo(() => {
     let currentIndex = 1;
@@ -252,7 +257,7 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       const res = await fetch(import.meta.env.BASE_URL + '/api/attempts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ attemptId: attempt.id, answers }),
+        body: JSON.stringify({ attemptId: attempt.id, answers, tabSwitches: tabSwitchesRef.current }),
       });
 
       if (res.ok) {
@@ -269,6 +274,64 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
   }, [submitting, attempt.id, exam.slug, answers]);
 
   handleSubmitRef.current = () => handleSubmit(true);
+
+  // Giám sát chuyển tab / rời cửa sổ (Anti-cheat)
+  useEffect(() => {
+    const handleLeave = () => {
+      const now = Date.now();
+      if (now - lastAwayTimeRef.current < 800) return;
+      if (submitting) return;
+
+      if (!isAwayRef.current) {
+        isAwayRef.current = true;
+        lastAwayTimeRef.current = now;
+        const newCount = tabSwitchesRef.current + 1;
+        tabSwitchesRef.current = newCount;
+        setTabSwitches(newCount);
+      }
+    };
+
+    const handleReturn = () => {
+      if (isAwayRef.current) {
+        isAwayRef.current = false;
+        const currentCount = tabSwitchesRef.current;
+        if (currentCount >= 3) {
+          setWarningInfo({ count: currentCount, autoSubmit: true });
+          setTimeout(() => {
+            handleSubmitRef.current();
+          }, 1800);
+        } else {
+          setWarningInfo({ count: currentCount, autoSubmit: false });
+        }
+      }
+    };
+
+    const handleVisibility = () => {
+      if (document.visibilityState === 'hidden') {
+        handleLeave();
+      } else if (document.visibilityState === 'visible') {
+        handleReturn();
+      }
+    };
+
+    const handleWindowBlur = () => {
+      handleLeave();
+    };
+
+    const handleWindowFocus = () => {
+      handleReturn();
+    };
+
+    document.addEventListener('visibilitychange', handleVisibility);
+    window.addEventListener('blur', handleWindowBlur);
+    window.addEventListener('focus', handleWindowFocus);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibility);
+      window.removeEventListener('blur', handleWindowBlur);
+      window.removeEventListener('focus', handleWindowFocus);
+    };
+  }, [submitting]);
 
   // Timer — uses ref to avoid stale closure
   useEffect(() => {
@@ -340,8 +403,21 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
             </span>
             <h1 className="text-lg md:text-xl font-extrabold leading-tight truncate">{exam.title}</h1>
           </div>
-          <div className="hidden sm:flex items-center gap-3 ml-4 shrink-0">
-            <div className="bg-white/15 rounded-xl px-4 py-2 text-center">
+          <div className="flex items-center gap-2 sm:gap-3 ml-4 shrink-0">
+            <div
+              className={`rounded-xl px-3 py-1.5 sm:px-3.5 sm:py-2 text-center text-xs font-bold transition-all ${
+                tabSwitches === 0
+                  ? 'bg-white/15 text-white'
+                  : tabSwitches < 3
+                  ? 'bg-amber-400 text-slate-900 font-extrabold shadow-md'
+                  : 'bg-rose-500 text-white font-black animate-pulse shadow-md'
+              }`}
+              title="Số lần bạn chuyển tab hoặc rời màn hình làm bài (Tối đa 3 lần)"
+            >
+              <div className="text-[10px] uppercase font-bold opacity-80">Rời tab</div>
+              <div className="text-sm font-black">{tabSwitches}/3</div>
+            </div>
+            <div className="bg-white/15 rounded-xl px-3.5 py-2 text-center hidden sm:block">
               <div className="text-xs font-semibold text-white/70">Đã làm</div>
               <div className="text-lg font-black">{answeredItems}/{totalItems}</div>
             </div>
@@ -634,6 +710,61 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
             </div>
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">⏱️ Hết giờ làm bài!</h3>
             <p className="text-sm text-gray-500 dark:text-slate-400">Hệ thống đang tự động nộp bài thi của bạn...</p>
+          </div>
+        </div>
+      )}
+
+      {/* Tab Switch Warning Modal */}
+      {warningInfo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-slate-900 border-2 border-rose-500 rounded-3xl shadow-2xl p-6 md:p-8 max-w-md w-full text-center space-y-4">
+            <div className="w-16 h-16 mx-auto rounded-full bg-rose-100 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-3xl">
+              ⚠️
+            </div>
+
+            <div>
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-rose-100 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300 mb-2">
+                Cảnh báo giám sát thi ({warningInfo.count}/3)
+              </span>
+              <h3 className="text-xl font-black text-gray-900 dark:text-white">
+                {warningInfo.autoSubmit ? 'ĐÃ ĐẠT GIỚI HẠN VI PHẠM!' : 'BẠN VỪA RỜI KHỎI BÀI THI!'}
+              </h3>
+            </div>
+
+            <p className="text-sm text-gray-600 dark:text-slate-300 leading-relaxed font-medium">
+              {warningInfo.autoSubmit ? (
+                <span className="text-rose-600 dark:text-rose-400 font-bold block">
+                  Bạn đã chuyển tab hoặc rời cửa sổ bài thi quá 3 lần quy định. Hệ thống đang tiến hành tự động nộp bài!
+                </span>
+              ) : (
+                <span>
+                  Hệ thống phát hiện bạn vừa <strong>chuyển sang tab khác</strong> hoặc <strong>thu nhỏ cửa sổ</strong>.
+                  Hành vi này đã được ghi nhận vào nhật ký nộp bài của giáo viên.
+                  <br />
+                  <span className="text-rose-600 dark:text-rose-400 font-bold mt-2 block">
+                    Nếu tiếp tục vi phạm quá 3 lần, bài thi sẽ bị tự động thu hồi và nộp ngay lập tức.
+                  </span>
+                </span>
+              )}
+            </p>
+
+            {!warningInfo.autoSubmit ? (
+              <button
+                type="button"
+                onClick={() => setWarningInfo(null)}
+                className="w-full py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-sm shadow-lg shadow-blue-500/25 transition cursor-pointer"
+              >
+                Tôi cam kết quay lại làm bài nghiêm túc
+              </button>
+            ) : (
+              <div className="flex items-center justify-center gap-2 text-sm font-bold text-rose-600">
+                <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+                <span>Đang tự động nộp bài...</span>
+              </div>
+            )}
           </div>
         </div>
       )}

@@ -20,7 +20,8 @@ function rewriteHtmlBase(html: string, base: string): string {
   if (!base) return html;
   // Lookahead so sánh phần sau dấu "/" đã được khớp, nên bỏ dấu "/" đầu.
   const noSlash = base.replace(/^\//, '');
-  const escaped = noSlash.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  // Escape all regex special chars including [ and ] properly
+  const escaped = noSlash.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
   const regex = new RegExp(
     `(href|src|action)="/` + `(?!${escaped}/)(?!@)(?!_)(?!/)`,
     'g'
@@ -64,7 +65,11 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   const mockUserId = allowMock ? context.cookies.get('mock-user-id')?.value : undefined;
   if (mockUserId) {
-    const user = await db.getUserById(mockUserId);
+    // Nếu ID là mock (không phải UUID hợp lệ), tìm trực tiếp trong mock users
+    // thay vì gửi lên Supabase để tránh lỗi "invalid input syntax for type uuid"
+    const user = mockUserId.startsWith('mock-user-')
+      ? await db.getMockUserById(mockUserId)
+      : await db.getUserById(mockUserId);
     if (user) {
       context.locals.user = user;
     }
@@ -131,10 +136,6 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const examPathSegments = path.split('/').filter(s => s.length > 0); // ['exams', 'exam-1'] or ['exams','exam-1','take']
   const isExamInfoPage = examPathSegments.length === 2 && examPathSegments[0] === 'exams';
 
-  // Redirect /nhom to /nop-bai
-  if (path === '/nhom' || path.startsWith('/nhom/')) {
-    return context.redirect(withBase('/nop-bai'));
-  }
 
   // LOGIN-REQUIRED pages:
   //   /exams/[id]/take           — Taking an exam (need account to save score)

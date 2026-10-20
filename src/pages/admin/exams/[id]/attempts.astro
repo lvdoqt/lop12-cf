@@ -113,6 +113,7 @@ const avgScore = attempts.length > 0
                 <th class="px-4 py-3">Tài khoản / Email</th>
                 <th class="px-4 py-3 text-center">{isVsat ? 'Điểm thô / 150' : 'Điểm'}</th>
                 <th class="px-4 py-3 text-center">{isVsat ? 'Điểm năng lực IRT' : 'Câu đúng / Tổng'}</th>
+                <th class="px-4 py-3 text-center">Rời tab</th>
                 <th class="px-4 py-3">Ngày nộp</th>
                 <th class="px-4 py-3">Thời gian làm</th>
               </tr>
@@ -133,6 +134,7 @@ const avgScore = attempts.length > 0
                 const userObj = attempt.user as any;
                 const studentName = attempt.student_name || userObj?.fullname || "Học sinh";
                 const studentClass = attempt.student_class || "—";
+                const tabCount = attempt.tab_switches ?? 0;
                 return (
                   <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/20 transition-colors text-sm">
                     <td class="px-6 py-4 text-center text-xs text-slate-400 font-semibold">{idx + 1}</td>
@@ -161,6 +163,21 @@ const avgScore = attempts.length > 0
                           {correctCount}{totalQuestions > 0 ? `/${totalQuestions}` : ""}
                         </span>
                       ) : <span class="text-slate-400 text-xs">—</span>}
+                    </td>
+                    <td class="px-4 py-4 text-center">
+                      {tabCount === 0 ? (
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400 border border-emerald-200/50">
+                          0 (An toàn)
+                        </span>
+                      ) : tabCount < 3 ? (
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-400 border border-amber-200/50">
+                          ⚠️ {tabCount} lần
+                        </span>
+                      ) : (
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-50 text-rose-700 dark:bg-rose-950/30 dark:text-rose-400 border border-rose-200/50">
+                          ⛔ {tabCount} lần
+                        </span>
+                      )}
                     </td>
                     <td class="px-4 py-4 text-xs text-slate-500 dark:text-slate-400 font-mono">{formatDate(attempt.finished_at)}</td>
                     <td class="px-4 py-4 text-xs text-slate-500 dark:text-slate-400 font-mono">

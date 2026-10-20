@@ -33,6 +33,11 @@ export default function VSatExamView({ exam, attempt, questions, initialSeconds 
   const [submitting, setSubmitting] = useState(false);
   const [confirm, setConfirm] = useState(false);
   const [error, setError] = useState('');
+  const [tabSwitches, setTabSwitches] = useState(0);
+  const [warningInfo, setWarningInfo] = useState<{ count: number; autoSubmit: boolean } | null>(null);
+  const tabSwitchesRef = useRef(0);
+  const isAwayRef = useRef(false);
+  const lastAwayTimeRef = useRef(0);
   const submitRef = useRef<() => void>(() => undefined);
   const indexed = useMemo(() => {
     let current = 1;
@@ -58,13 +63,67 @@ export default function VSatExamView({ exam, attempt, questions, initialSeconds 
     if (submitting) return;
     setSubmitting(true); setConfirm(false); setError('');
     try {
-      const res = await fetch(import.meta.env.BASE_URL + '/api/attempts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ attemptId: attempt.id, answers }) });
+      const res = await fetch(import.meta.env.BASE_URL + '/api/attempts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ attemptId: attempt.id, answers, tabSwitches: tabSwitchesRef.current })
+      });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.message || data.error || 'Không thể nộp bài.');
       location.href = `${import.meta.env.BASE_URL}/exams/${exam.slug}/result/${attempt.id}`;
     } catch (e: any) { setError(e.message); setSubmitting(false); }
   }, [answers, attempt.id, exam.slug, submitting]);
   submitRef.current = submit;
+
+  // Giám sát chuyển tab / rời cửa sổ
+  useEffect(() => {
+    const handleLeave = () => {
+      const now = Date.now();
+      if (now - lastAwayTimeRef.current < 800) return;
+      if (submitting) return;
+
+      if (!isAwayRef.current) {
+        isAwayRef.current = true;
+        lastAwayTimeRef.current = now;
+        const newCount = tabSwitchesRef.current + 1;
+        tabSwitchesRef.current = newCount;
+        setTabSwitches(newCount);
+      }
+    };
+
+    const handleReturn = () => {
+      if (isAwayRef.current) {
+        isAwayRef.current = false;
+        const currentCount = tabSwitchesRef.current;
+        if (currentCount >= 3) {
+          setWarningInfo({ count: currentCount, autoSubmit: true });
+          setTimeout(() => {
+            submitRef.current();
+          }, 1800);
+        } else {
+          setWarningInfo({ count: currentCount, autoSubmit: false });
+        }
+      }
+    };
+
+    const handleVisibility = () => {
+      if (document.visibilityState === 'hidden') handleLeave();
+      else if (document.visibilityState === 'visible') handleReturn();
+    };
+
+    const handleBlur = () => handleLeave();
+    const handleFocus = () => handleReturn();
+
+    document.addEventListener('visibilitychange', handleVisibility);
+    window.addEventListener('blur', handleBlur);
+    window.addEventListener('focus', handleFocus);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibility);
+      window.removeEventListener('blur', handleBlur);
+      window.removeEventListener('focus', handleFocus);
+    };
+  }, [submitting]);
+
   useEffect(() => { const t = setInterval(() => setTime(v => { if (v <= 1) { clearInterval(t); submitRef.current(); return 0; } return v - 1; }), 1000); return () => clearInterval(t); }, []);
 
   const mm = String(Math.floor(time / 60)).padStart(2, '0');
@@ -74,6 +133,10 @@ export default function VSatExamView({ exam, attempt, questions, initialSeconds 
       <div className="mx-auto flex max-w-[1500px] items-center gap-4 px-4 py-3">
         <div className="grid h-10 w-10 place-items-center rounded-lg bg-[#075985] text-sm font-black text-white">V</div>
         <div className="min-w-0 flex-1"><p className="text-[10px] font-bold uppercase tracking-[.18em] text-sky-700">Kỳ thi V-SAT · Mô phỏng trên máy tính</p><h1 className="truncate text-sm font-bold text-slate-800 md:text-base">{exam.title}</h1></div>
+        <div className={`rounded-lg border px-3 py-1.5 text-center ${tabSwitches === 0 ? 'border-slate-200 bg-slate-50 text-slate-700' : tabSwitches < 3 ? 'border-amber-300 bg-amber-50 text-amber-800 font-bold' : 'border-red-300 bg-red-100 text-red-700 font-extrabold animate-pulse'}`}>
+          <small className="block text-[9px] font-bold uppercase">Rời tab</small>
+          <b className="font-mono text-base">{tabSwitches}/3</b>
+        </div>
         <div className={`rounded-lg border px-4 py-2 text-center ${time < 300 ? 'border-red-300 bg-red-50 text-red-700' : 'border-sky-200 bg-sky-50 text-sky-900'}`}><small className="block text-[9px] font-bold uppercase">Thời gian còn lại</small><b className="font-mono text-xl">{mm}:{ss}</b></div>
       </div>
     </header>
@@ -91,5 +154,26 @@ export default function VSatExamView({ exam, attempt, questions, initialSeconds 
       </aside>
     </main>
     {confirm && <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/60 p-4"><div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl"><h2 className="text-lg font-bold">Xác nhận nộp bài?</h2><p className="mt-2 text-sm text-slate-600">Bạn đã hoàn thành {answered}/{totalItems} câu. Sau khi nộp sẽ không thể sửa đáp án.</p><div className="mt-5 flex justify-end gap-3"><button onClick={() => setConfirm(false)} className="rounded-lg border px-4 py-2 text-sm font-bold">Làm tiếp</button><button onClick={submit} className="rounded-lg bg-sky-800 px-4 py-2 text-sm font-bold text-white">Xác nhận nộp</button></div></div></div>}
+    {warningInfo && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+        <div className="bg-white rounded-3xl border-2 border-rose-500 shadow-2xl p-6 md:p-8 max-w-md w-full text-center space-y-4">
+          <div className="w-16 h-16 mx-auto rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-3xl">⚠️</div>
+          <div>
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-rose-100 text-rose-700 mb-2">Cảnh báo giám sát thi ({warningInfo.count}/3)</span>
+            <h3 className="text-xl font-black text-gray-900">{warningInfo.autoSubmit ? 'ĐÃ ĐẠT GIỚI HẠN VI PHẠM!' : 'BẠN VỪA RỜI KHỎI BÀI THI!'}</h3>
+          </div>
+          <p className="text-sm text-gray-600 leading-relaxed font-medium">
+            {warningInfo.autoSubmit
+              ? 'Bạn đã chuyển tab quá 3 lần. Hệ thống đang tiến hành tự động nộp bài!'
+              : 'Hệ thống phát hiện bạn vừa chuyển tab hoặc thu nhỏ cửa sổ. Hành vi này đã được lưu vào nhật ký. Nếu vi phạm quá 3 lần, bài thi sẽ tự động bị thu hồi!'}
+          </p>
+          {!warningInfo.autoSubmit ? (
+            <button type="button" onClick={() => setWarningInfo(null)} className="w-full py-3.5 px-6 rounded-xl bg-sky-800 hover:bg-sky-900 text-white font-bold text-sm shadow-lg transition">Tôi cam kết quay lại làm bài</button>
+          ) : (
+            <div className="text-sm font-bold text-rose-600">Đang nộp bài...</div>
+          )}
+        </div>
+      </div>
+    )}
   </div>;
 }

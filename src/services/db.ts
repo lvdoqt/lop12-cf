@@ -1,5 +1,5 @@
 import { isMockMode, isMockModeForEnv, supabase, createAdminSupabase, createServerSupabase } from '../lib/supabase';
-import type { Subject, Lesson, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress, Category, CourseLessonQuiz, VideoQuizResponse, CourseLessonReviewQuestion, CourseLessonReviewAttempt, CourseLessonReviewAnswer, CourseLearningStatistic, LearnerSkillMastery, UserCourseInsights, TeacherNotice } from '../types';
+import type { Subject, Lesson, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress, Category, CourseLessonQuiz, VideoQuizResponse, CourseLessonReviewQuestion, CourseLessonReviewAttempt, CourseLessonReviewAnswer, CourseLearningStatistic, LearnerSkillMastery, UserCourseInsights, TeacherNotice, Class, ClassMember, ClassAssignment, ClassAssignmentView } from '../types';
 
 // Ã¢â€â‚¬Ã¢â€â‚¬ Cloudflare runtime env injection Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 // Middleware calls setRuntimeEnv() per-request with Cloudflare runtime.env.
@@ -85,6 +85,73 @@ let mockReviewQuestions: CourseLessonReviewQuestion[] = [];
 let mockReviewAttempts: CourseLessonReviewAttempt[] = [];
 let mockReviewAnswers: CourseLessonReviewAnswer[] = [];
 let mockTeacherNotices: TeacherNotice[] = [];
+
+// ── Class management mock data ────────────────────────────────────────────────
+let mockClasses: Class[] = [
+  {
+    id: 'mock-class-1',
+    name: 'Lớp 12A1',
+    grade: '12',
+    subject: 'Toán',
+    color: '#6366f1',
+    teacher_id: 'mock-user-teacher',
+    created_at: new Date().toISOString(),
+    memberCount: 1
+  },
+  {
+    id: 'mock-class-2',
+    name: 'Lớp 12A2',
+    grade: '12',
+    subject: 'Toán',
+    color: '#10b981',
+    teacher_id: 'mock-user-teacher',
+    created_at: new Date().toISOString(),
+    memberCount: 0
+  }
+];
+
+let mockClassMembers: (Omit<ClassMember, 'user'> & { user?: ClassMember['user'] })[] = [
+  {
+    class_id: 'mock-class-1',
+    user_id: 'mock-user-student',
+    joined_at: new Date().toISOString(),
+    user: {
+      id: 'mock-user-student',
+      email: 'student@lop12.vn',
+      fullname: 'Học Sinh Thử Nghiệm',
+      avatar_url: null,
+      role: 'student'
+    }
+  }
+];
+
+let mockClassAssignments: ClassAssignment[] = [
+  {
+    id: 'mock-assign-material-1',
+    class_id: 'mock-class-1',
+    type: 'material',
+    ref_id: 'mat-sample-1',
+    ref_title: 'Chuyên đề: Phương pháp giải nhanh Toán 12 (Tài liệu PDF & Video YouTube)',
+    assigned_by: 'mock-user-teacher',
+    assigned_at: new Date(Date.now() - 86400000).toISOString(),
+    deadline: new Date(Date.now() + 7 * 86400000).toISOString(),
+    note: 'Các em tải/xem tài liệu và theo dõi kỹ video bài giảng để nắm vững phương pháp.',
+    attachment_url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+    attachment_type: 'pdf',
+    youtube_url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+  }
+];
+
+let mockAssignmentViews: ClassAssignmentView[] = [
+  {
+    id: 'view-sample-1',
+    assignment_id: 'mock-assign-material-1',
+    user_id: 'mock-user-student',
+    document_views: 2,
+    youtube_views: 1,
+    last_viewed_at: new Date().toISOString()
+  }
+];
 
 let mockBlogs: Blog[] = [];
 
@@ -1153,6 +1220,7 @@ export const db = {
         ...att,
         student_name: ans._student_name || att.student_name || null,
         student_class: ans._student_class || att.student_class || null,
+        tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0,
         exam: exam ? { ...exam, subject } : undefined
       };
     }
@@ -1169,7 +1237,8 @@ export const db = {
     return {
       ...data,
       student_name: ans._student_name || null,
-      student_class: ans._student_class || null
+      student_class: ans._student_class || null,
+      tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0
     };
   },
 
@@ -1222,21 +1291,24 @@ export const db = {
     };
   },
 
-  async submitAttempt(attemptId: string, score: number, answersSubmitted: Record<string, any>, scoring?: { raw_score?: number | null; ability_score?: number | null }): Promise<Attempt> {
+  async submitAttempt(attemptId: string, score: number, answersSubmitted: Record<string, any>, scoring?: { raw_score?: number | null; ability_score?: number | null; tab_switches?: number }): Promise<Attempt> {
     if (isInMockMode()) {
       const index = mockAttempts.findIndex(a => a.id === attemptId);
       if (index === -1) throw new Error('Attempt not found');
       const oldAns = (mockAttempts[index].answers_submitted || {}) as Record<string, any>;
+      const tabSwitches = scoring?.tab_switches !== undefined ? scoring.tab_switches : (oldAns._tab_switches || 0);
       const mergedAnswers = {
         ...answersSubmitted,
         ...(oldAns._student_name ? { _student_name: oldAns._student_name } : {}),
-        ...(oldAns._student_class ? { _student_class: oldAns._student_class } : {})
+        ...(oldAns._student_class ? { _student_class: oldAns._student_class } : {}),
+        _tab_switches: tabSwitches
       };
       mockAttempts[index] = {
         ...mockAttempts[index],
         score,
-        ...(scoring || {}),
+        ...(scoring ? { raw_score: scoring.raw_score, ability_score: scoring.ability_score } : {}),
         answers_submitted: mergedAnswers,
+        tab_switches: tabSwitches,
         finished_at: new Date().toISOString()
       };
       return mockAttempts[index];
@@ -1258,47 +1330,70 @@ export const db = {
       console.warn('[db.submitAttempt] Could not fetch existing answers_submitted:', e);
     }
 
+    const tabSwitches = scoring?.tab_switches !== undefined ? scoring.tab_switches : (oldAnswers._tab_switches || 0);
     const mergedAnswers = {
       ...answersSubmitted,
       ...(oldAnswers._student_name ? { _student_name: oldAnswers._student_name } : {}),
-      ...(oldAnswers._student_class ? { _student_class: oldAnswers._student_class } : {})
+      ...(oldAnswers._student_class ? { _student_class: oldAnswers._student_class } : {}),
+      _tab_switches: tabSwitches
     };
+
+    const updatePayload: Record<string, any> = {
+      score,
+      answers_submitted: mergedAnswers,
+      finished_at: new Date().toISOString()
+    };
+    if (scoring?.raw_score !== undefined) updatePayload.raw_score = scoring.raw_score;
+    if (scoring?.ability_score !== undefined) updatePayload.ability_score = scoring.ability_score;
 
     const { data, error } = await _adminCl!
       .from('attempts')
-      .update({
-        score,
-        ...(scoring || {}),
-        answers_submitted: mergedAnswers,
-        finished_at: new Date().toISOString()
-      })
+      .update(updatePayload)
       .eq('id', attemptId)
       .select()
       .single();
     if (error) throw error;
-    return data;
+    return {
+      ...data,
+      tab_switches: tabSwitches
+    };
   },
 
-  async getAllAttempts(): Promise<(Attempt & { exam?: Exam, user?: User })[]> {
+  async getAllAttempts(): Promise<(Attempt & { exam?: Exam, user?: User; student_name?: string; student_class?: string; tab_switches?: number })[]> {
     if (isInMockMode()) {
-      return mockAttempts.map(att => ({
-        ...att,
-        exam: mockExams.find(e => e.id === att.exam_id),
-        user: mockUsers.find(u => u.id === att.user_id)
-      })).sort((a, b) => new Date(b.started_at).getTime() - new Date(a.started_at).getTime());
+      return mockAttempts.map(att => {
+        const u = mockUsers.find(u => u.id === att.user_id);
+        const ans = (att.answers_submitted || {}) as Record<string, any>;
+        return {
+          ...att,
+          exam: mockExams.find(e => e.id === att.exam_id),
+          user: u,
+          student_name: ans._student_name || u?.fullname || 'Học sinh',
+          student_class: ans._student_class || '—',
+          tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0
+        };
+      }).sort((a, b) => new Date(b.started_at).getTime() - new Date(a.started_at).getTime());
     }
 
     // Use admin client to bypass RLS for server-side reads
     const client = adminClient();
     const { data, error } = await client
       .from('attempts')
-      .select('*, exam:exams(*), user:users(*)')
+      .select('*, exam:exams(*, subject:subjects(*)), user:users(*)')
       .order('started_at', { ascending: false });
     if (error) throw error;
-    return data || [];
+    return (data || []).map((att: any) => {
+      const ans = (att.answers_submitted || {}) as Record<string, any>;
+      return {
+        ...att,
+        student_name: ans._student_name || att.user?.fullname || 'Học sinh',
+        student_class: ans._student_class || '—',
+        tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0
+      };
+    });
   },
 
-  async getAttemptsByExamId(examId: string): Promise<(Attempt & { user?: User; student_name?: string; student_class?: string })[]> {
+  async getAttemptsByExamId(examId: string): Promise<(Attempt & { user?: User; student_name?: string; student_class?: string; tab_switches?: number })[]> {
     if (isInMockMode()) {
       return mockAttempts
         .filter(a => a.exam_id === examId && a.finished_at !== null)
@@ -1309,7 +1404,8 @@ export const db = {
             ...att,
             user: u,
             student_name: ans._student_name || u?.fullname || 'Học sinh',
-            student_class: ans._student_class || '—'
+            student_class: ans._student_class || '—',
+            tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0
           };
         })
         .sort((a, b) => new Date(b.started_at).getTime() - new Date(a.started_at).getTime());
@@ -1327,7 +1423,8 @@ export const db = {
       return {
         ...att,
         student_name: ans._student_name || att.user?.fullname || 'Học sinh',
-        student_class: ans._student_class || '—'
+        student_class: ans._student_class || '—',
+        tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0
       };
     });
   },
@@ -1346,16 +1443,21 @@ export const db = {
     return data || [];
   },
 
+  /** Trả về mock user từ bộ nhớ — KHÔNG gọi Supabase.
+   *  Dùng khi cookie mock-user-id chứa ID không phải UUID (vd: 'mock-user-admin')
+   *  để tránh lỗi "invalid input syntax for type uuid" trong Supabase. */
+  async getMockUserById(id: string): Promise<User | null> {
+    return mockUsers.find(u => u.id === id) || null;
+  },
+
   async getUserById(id: string): Promise<User | null> {
-    if (isInMockMode()) {
+    // Tránh gọi Supabase với ID không phải UUID hợp lệ
+    if (id.startsWith('mock-user-') || isInMockMode()) {
       return mockUsers.find(u => u.id === id) || null;
     }
     const client = adminClient()!;
     const { data, error } = await client.from('users').select('*').eq('id', id).single();
     if (error) {
-      // Fallback to mock users for mock-user-* IDs in Supabase mode
-      const mockUser = mockUsers.find(u => u.id === id);
-      if (mockUser) return mockUser;
       return null;
     }
     return data;
@@ -2658,6 +2760,384 @@ export const db = {
     const client = adminClient()!;
     const { error } = await client.from('teacher_notices').delete().eq('id', id);
     if (error) throw error;
+  },
+
+  // --------------------------------------------------------------------------
+  // CLASSES — Quản lý lớp học
+  // --------------------------------------------------------------------------
+  async getClasses(teacherId?: string): Promise<Class[]> {
+    if (isInMockMode()) {
+      let cls = mockClasses;
+      if (teacherId) cls = cls.filter(c => c.teacher_id === teacherId);
+      // Attach memberCount
+      return cls.map(c => ({
+        ...c,
+        memberCount: mockClassMembers.filter(m => m.class_id === c.id).length
+      }));
+    }
+    const client = adminClient();
+    if (!client) return [];
+    let query = client.from('classes').select('*, class_members(count)').order('created_at', { ascending: false });
+    if (teacherId) query = query.eq('teacher_id', teacherId);
+    const { data, error } = await query;
+    if (error) { console.error('[db.getClasses] error:', error); return []; }
+    return (data || []).map((row: any) => ({
+      ...row,
+      memberCount: row.class_members?.[0]?.count ?? 0,
+      class_members: undefined
+    }));
+  },
+
+  async getClassById(id: string): Promise<Class | null> {
+    if (isInMockMode()) {
+      const cls = mockClasses.find(c => c.id === id);
+      if (!cls) return null;
+      return { ...cls, memberCount: mockClassMembers.filter(m => m.class_id === id).length };
+    }
+    const client = adminClient();
+    if (!client) return null;
+    const { data, error } = await client.from('classes').select('*').eq('id', id).single();
+    if (error) return null;
+    return data;
+  },
+
+  async createClass(data: Omit<Class, 'id' | 'created_at' | 'memberCount'>): Promise<Class> {
+    if (isInMockMode()) {
+      const newCls: Class = {
+        ...data,
+        id: `class-${Date.now()}`,
+        created_at: new Date().toISOString(),
+        memberCount: 0
+      };
+      mockClasses.push(newCls);
+      return newCls;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.createClass] Admin client unavailable.');
+    const { data: row, error } = await client.from('classes').insert([data]).select().single();
+    if (error) { console.error('[db.createClass] error:', error); throw error; }
+    return row;
+  },
+
+  async updateClass(id: string, data: Partial<Pick<Class, 'name' | 'grade' | 'subject' | 'color'>>): Promise<void> {
+    if (isInMockMode()) {
+      const idx = mockClasses.findIndex(c => c.id === id);
+      if (idx !== -1) mockClasses[idx] = { ...mockClasses[idx], ...data };
+      return;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.updateClass] Admin client unavailable.');
+    const { error } = await client.from('classes').update(data).eq('id', id);
+    if (error) { console.error('[db.updateClass] error:', error); throw error; }
+  },
+
+  async deleteClass(id: string): Promise<void> {
+    if (isInMockMode()) {
+      mockClasses = mockClasses.filter(c => c.id !== id);
+      mockClassMembers = mockClassMembers.filter(m => m.class_id !== id);
+      mockClassAssignments = mockClassAssignments.filter(a => a.class_id !== id);
+      return;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.deleteClass] Admin client unavailable.');
+    const { error } = await client.from('classes').delete().eq('id', id);
+    if (error) { console.error('[db.deleteClass] error:', error); throw error; }
+  },
+
+  // --------------------------------------------------------------------------
+  // CLASS MEMBERS
+  // --------------------------------------------------------------------------
+  async getClassMembers(classId: string): Promise<ClassMember[]> {
+    if (isInMockMode()) {
+      return mockClassMembers
+        .filter(m => m.class_id === classId)
+        .map(m => ({
+          ...m,
+          user: mockUsers.find(u => u.id === m.user_id)
+            ? { ...mockUsers.find(u => u.id === m.user_id)! }
+            : undefined
+        }));
+    }
+    const client = adminClient();
+    if (!client) return [];
+    const { data, error } = await client
+      .from('class_members')
+      .select('*, user:users(id, email, fullname, avatar_url, role)')
+      .eq('class_id', classId)
+      .order('joined_at', { ascending: true });
+    if (error) { console.error('[db.getClassMembers] error:', error); return []; }
+    return (data || []) as ClassMember[];
+  },
+
+  /** Danh sách lớp mà một học sinh tham gia */
+  async getStudentClasses(userId: string): Promise<Class[]> {
+    if (isInMockMode()) {
+      const classIds = mockClassMembers.filter(m => m.user_id === userId).map(m => m.class_id);
+      return mockClasses.filter(c => classIds.includes(c.id)).map(c => ({
+        ...c,
+        memberCount: mockClassMembers.filter(m => m.class_id === c.id).length
+      }));
+    }
+    const client = adminClient();
+    if (!client) return [];
+    const { data, error } = await client
+      .from('class_members')
+      .select('class_id, classes(*)')
+      .eq('user_id', userId);
+    if (error) { console.error('[db.getStudentClasses] error:', error); return []; }
+    return ((data || []).map((row: any) => row.classes).filter(Boolean)) as Class[];
+  },
+
+  async addClassMember(classId: string, userId: string): Promise<void> {
+    if (isInMockMode()) {
+      const exists = mockClassMembers.some(m => m.class_id === classId && m.user_id === userId);
+      if (!exists) {
+        const user = mockUsers.find(u => u.id === userId);
+        mockClassMembers.push({
+          class_id: classId,
+          user_id: userId,
+          joined_at: new Date().toISOString(),
+          user: user ? { id: user.id, email: user.email, fullname: user.fullname, avatar_url: user.avatar_url, role: user.role } : undefined
+        });
+      }
+      return;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.addClassMember] Admin client unavailable.');
+    const { error } = await client.from('class_members').upsert([{ class_id: classId, user_id: userId }], { onConflict: 'class_id,user_id' });
+    if (error) { console.error('[db.addClassMember] error:', error); throw error; }
+  },
+
+  async removeClassMember(classId: string, userId: string): Promise<void> {
+    if (isInMockMode()) {
+      mockClassMembers = mockClassMembers.filter(m => !(m.class_id === classId && m.user_id === userId));
+      return;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.removeClassMember] Admin client unavailable.');
+    const { error } = await client.from('class_members').delete().eq('class_id', classId).eq('user_id', userId);
+    if (error) { console.error('[db.removeClassMember] error:', error); throw error; }
+  },
+
+  /**
+   * Import học sinh từ CSV. Mỗi row: { email, fullname? }
+   * Trả về { added, skipped } — skipped chứa email chưa đăng ký.
+   */
+  async importClassMembersCSV(classId: string, rows: { email: string }[]): Promise<{ added: number; skipped: string[] }> {
+    const skipped: string[] = [];
+    let added = 0;
+    for (const row of rows) {
+      if (!row.email) continue;
+      const email = row.email.trim().toLowerCase();
+      if (isInMockMode()) {
+        const user = mockUsers.find(u => u.email.toLowerCase() === email);
+        if (!user) { skipped.push(email); continue; }
+        const exists = mockClassMembers.some(m => m.class_id === classId && m.user_id === user.id);
+        if (!exists) {
+          mockClassMembers.push({
+            class_id: classId,
+            user_id: user.id,
+            joined_at: new Date().toISOString(),
+            user: { id: user.id, email: user.email, fullname: user.fullname, avatar_url: user.avatar_url, role: user.role }
+          });
+        }
+        added++;
+      } else {
+        const client = adminClient();
+        if (!client) { skipped.push(email); continue; }
+        const { data: userRow } = await client.from('users').select('id').eq('email', email).single();
+        if (!userRow) { skipped.push(email); continue; }
+        await client.from('class_members').upsert([{ class_id: classId, user_id: userRow.id }], { onConflict: 'class_id,user_id' });
+        added++;
+      }
+    }
+    return { added, skipped };
+  },
+
+  // --------------------------------------------------------------------------
+  // CLASS ASSIGNMENTS — Bài tập được giao
+  // --------------------------------------------------------------------------
+  async getClassAssignments(classId: string): Promise<ClassAssignment[]> {
+    if (isInMockMode()) {
+      return mockClassAssignments.filter(a => a.class_id === classId)
+        .sort((a, b) => new Date(b.assigned_at).getTime() - new Date(a.assigned_at).getTime());
+    }
+    const client = adminClient();
+    if (!client) return [];
+    const { data, error } = await client
+      .from('class_assignments')
+      .select('*')
+      .eq('class_id', classId)
+      .order('assigned_at', { ascending: false });
+    if (error) { console.error('[db.getClassAssignments] error:', error); return []; }
+    return (data || []) as ClassAssignment[];
+  },
+
+  /** Tất cả bài được giao cho một học sinh qua các lớp của họ */
+  async getStudentAssignments(userId: string): Promise<ClassAssignment[]> {
+    if (isInMockMode()) {
+      const classIds = mockClassMembers.filter(m => m.user_id === userId).map(m => m.class_id);
+      return mockClassAssignments
+        .filter(a => classIds.includes(a.class_id))
+        .sort((a, b) => new Date(b.assigned_at).getTime() - new Date(a.assigned_at).getTime());
+    }
+    const client = adminClient();
+    if (!client) return [];
+    // Get classes for this student
+    const { data: memberRows } = await client.from('class_members').select('class_id').eq('user_id', userId);
+    const classIds = (memberRows || []).map((r: any) => r.class_id);
+    if (!classIds.length) return [];
+    const { data, error } = await client
+      .from('class_assignments')
+      .select('*')
+      .in('class_id', classIds)
+      .order('assigned_at', { ascending: false });
+    if (error) { console.error('[db.getStudentAssignments] error:', error); return []; }
+    return (data || []) as ClassAssignment[];
+  },
+
+  async getAssignmentById(id: string): Promise<ClassAssignment | null> {
+    if (isInMockMode()) {
+      return mockClassAssignments.find(a => a.id === id) || null;
+    }
+    const client = adminClient();
+    if (!client) return null;
+    const { data, error } = await client.from('class_assignments').select('*').eq('id', id).maybeSingle();
+    if (error) { console.error('[db.getAssignmentById] error:', error); return null; }
+    return data as ClassAssignment | null;
+  },
+
+  async createAssignment(data: Omit<ClassAssignment, 'id' | 'assigned_at'>): Promise<ClassAssignment> {
+    if (isInMockMode()) {
+      const newA: ClassAssignment = {
+        ...data,
+        id: `assign-${Date.now()}`,
+        assigned_at: new Date().toISOString()
+      };
+      mockClassAssignments.push(newA);
+      return newA;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.createAssignment] Admin client unavailable.');
+    const { data: row, error } = await client.from('class_assignments').insert([data]).select().single();
+    if (error) { console.error('[db.createAssignment] error:', error); throw error; }
+    return row as ClassAssignment;
+  },
+
+  async deleteAssignment(id: string): Promise<void> {
+    if (isInMockMode()) {
+      mockClassAssignments = mockClassAssignments.filter(a => a.id !== id);
+      mockAssignmentViews = mockAssignmentViews.filter(v => v.assignment_id !== id);
+      return;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.deleteAssignment] Admin client unavailable.');
+    const { error } = await client.from('class_assignments').delete().eq('id', id);
+    if (error) { console.error('[db.deleteAssignment] error:', error); throw error; }
+  },
+
+  // --------------------------------------------------------------------------
+  // ASSIGNMENT VIEWS — Lượt xem tài liệu & YouTube của học sinh
+  // --------------------------------------------------------------------------
+  async recordAssignmentView(assignmentId: string, userId: string, viewType: 'document' | 'youtube'): Promise<ClassAssignmentView> {
+    if (isInMockMode()) {
+      let record = mockAssignmentViews.find(v => v.assignment_id === assignmentId && v.user_id === userId);
+      const now = new Date().toISOString();
+      if (record) {
+        if (viewType === 'document') record.document_views += 1;
+        if (viewType === 'youtube') record.youtube_views += 1;
+        record.last_viewed_at = now;
+      } else {
+        record = {
+          id: `view-${Date.now()}`,
+          assignment_id: assignmentId,
+          user_id: userId,
+          document_views: viewType === 'document' ? 1 : 0,
+          youtube_views: viewType === 'youtube' ? 1 : 0,
+          last_viewed_at: now,
+          created_at: now
+        };
+        mockAssignmentViews.push(record);
+      }
+      return record;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.recordAssignmentView] Admin client unavailable.');
+
+    const { data: existing } = await client
+      .from('class_assignment_views')
+      .select('*')
+      .eq('assignment_id', assignmentId)
+      .eq('user_id', userId)
+      .maybeSingle();
+
+    const now = new Date().toISOString();
+    if (existing) {
+      const updates = {
+        last_viewed_at: now,
+        document_views: viewType === 'document' ? (existing.document_views || 0) + 1 : existing.document_views,
+        youtube_views: viewType === 'youtube' ? (existing.youtube_views || 0) + 1 : existing.youtube_views,
+      };
+      const { data: updated, error } = await client
+        .from('class_assignment_views')
+        .update(updates)
+        .eq('id', existing.id)
+        .select()
+        .single();
+      if (error) { console.error('[db.recordAssignmentView] update error:', error); throw error; }
+      return updated as ClassAssignmentView;
+    } else {
+      const insertData = {
+        assignment_id: assignmentId,
+        user_id: userId,
+        document_views: viewType === 'document' ? 1 : 0,
+        youtube_views: viewType === 'youtube' ? 1 : 0,
+        last_viewed_at: now,
+      };
+      const { data: inserted, error } = await client
+        .from('class_assignment_views')
+        .insert([insertData])
+        .select()
+        .single();
+      if (error) { console.error('[db.recordAssignmentView] insert error:', error); throw error; }
+      return inserted as ClassAssignmentView;
+    }
+  },
+
+  async getAssignmentViews(assignmentId: string): Promise<ClassAssignmentView[]> {
+    if (isInMockMode()) {
+      return mockAssignmentViews.filter(v => v.assignment_id === assignmentId);
+    }
+    const client = adminClient();
+    if (!client) return [];
+    const { data, error } = await client
+      .from('class_assignment_views')
+      .select('*')
+      .eq('assignment_id', assignmentId);
+    if (error) { console.error('[db.getAssignmentViews] error:', error); return []; }
+    return (data || []) as ClassAssignmentView[];
+  },
+
+  async getClassAssignmentViews(classId: string): Promise<ClassAssignmentView[]> {
+    if (isInMockMode()) {
+      const assignments = mockClassAssignments.filter(a => a.class_id === classId);
+      const assignIds = assignments.map(a => a.id);
+      return mockAssignmentViews.filter(v => assignIds.includes(v.assignment_id));
+    }
+    const client = adminClient();
+    if (!client) return [];
+    const { data: assignments } = await client
+      .from('class_assignments')
+      .select('id')
+      .eq('class_id', classId);
+    if (!assignments || !assignments.length) return [];
+    const assignIds = assignments.map((a: any) => a.id);
+    const { data, error } = await client
+      .from('class_assignment_views')
+      .select('*')
+      .in('assignment_id', assignIds);
+    if (error) { console.error('[db.getClassAssignmentViews] error:', error); return []; }
+    return (data || []) as ClassAssignmentView[];
   },
 };
 

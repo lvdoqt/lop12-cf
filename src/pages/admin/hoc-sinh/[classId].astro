@@ -1,0 +1,896 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { db } from '../../../services/db';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'admin' && user.role !== 'teacher')) {
+  return Astro.redirect('/dashboard');
+}
+
+const classId = Astro.params.classId!;
+const cls = await db.getClassById(classId);
+if (!cls) return Astro.redirect('/admin/hoc-sinh');
+
+// Ownership check
+if (user.role === 'teacher' && cls.teacher_id !== user.id) {
+  return Astro.redirect('/admin/hoc-sinh');
+}
+
+const isAdmin = user.role === 'admin';
+
+// Fetch data
+const [members, assignments, allAttempts, allUsers, allAssignmentViews] = await Promise.all([
+  db.getClassMembers(classId),
+  db.getClassAssignments(classId),
+  db.getAllAttempts(),
+  db.getUsers(),
+  db.getClassAssignmentViews(classId),
+]);
+
+// Courses & Exams of the teacher for the "Giao bài" modal
+const myCourses = await db.getCourses({ createdBy: user.id });
+const myExams = await db.getExams(undefined, user.id);
+
+// Students (users not yet in class)
+const memberIds = new Set(members.map(m => m.user_id));
+const allStudents = allUsers.filter(u => u.role === 'student');
+const availableStudents = allStudents.filter(u => !memberIds.has(u.id));
+
+// Separate assignments
+const examAssignments = assignments.filter(a => a.type === 'exam');
+const courseAssignments = assignments.filter(a => a.type === 'course');
+const materialAssignments = assignments.filter(a => a.type === 'material');
+
+// Assignment views map: userId -> assignmentId -> { document_views, youtube_views, last_viewed_at }
+const assignmentViewsMap = new Map<string, Map<string, { document_views: number; youtube_views: number; last_viewed_at: string }>>();
+for (const v of allAssignmentViews) {
+  if (!assignmentViewsMap.has(v.user_id)) assignmentViewsMap.set(v.user_id, new Map());
+  assignmentViewsMap.get(v.user_id)!.set(v.assignment_id, v);
+}
+
+// Compute stats per member x assignment
+type ExamResult = { score: number | null; finished_at: string | null; attemptId: string } | null;
+type MaterialViewResult = { document_views: number; youtube_views: number; last_viewed_at: string } | null;
+type MemberStats = {
+  member: typeof members[0];
+  examResults: Record<string, ExamResult>; // ref_id -> result
+  courseProgress: Record<string, number | null>; // ref_id -> pct
+  materialViews: Record<string, MaterialViewResult>; // assignment.id -> view
+};
+
+// Attempt map: userId -> examId -> best finished attempt
+const attemptMap = new Map<string, Map<string, ExamResult>>();
+for (const att of allAttempts) {
+  if (!att.finished_at) continue;
+  if (!memberIds.has(att.user_id)) continue;
+  if (!attemptMap.has(att.user_id)) attemptMap.set(att.user_id, new Map());
+  const existing = attemptMap.get(att.user_id)!.get(att.exam_id);
+  if (!existing || (att.score ?? -1) > (existing.score ?? -1)) {
+    attemptMap.get(att.user_id)!.set(att.exam_id, {
+      score: att.score,
+      finished_at: att.finished_at,
+      attemptId: att.id,
+    });
+  }
+}
+
+// Course progress map: userId -> courseId -> pct
+const courseProgressMap = new Map<string, Map<string, number>>();
+for (const ca of courseAssignments) {
+  const stats = await db.getCourseLearningStatistics(ca.ref_id);
+  for (const stat of stats) {
+    const uid = stat.enrollment.user_id;
+    if (!memberIds.has(uid)) continue;
+    if (!courseProgressMap.has(uid)) courseProgressMap.set(uid, new Map());
+    courseProgressMap.get(uid)!.set(ca.ref_id, stat.completionPercent);
+  }
+}
+
+const memberStats: MemberStats[] = members.map(member => ({
+  member,
+  examResults: Object.fromEntries(
+    examAssignments.map(a => [a.ref_id, attemptMap.get(member.user_id)?.get(a.ref_id) ?? null])
+  ),
+  courseProgress: Object.fromEntries(
+    courseAssignments.map(a => [a.ref_id, courseProgressMap.get(member.user_id)?.get(a.ref_id) ?? null])
+  ),
+  materialViews: Object.fromEntries(
+    materialAssignments.map(a => [a.id, assignmentViewsMap.get(member.user_id)?.get(a.id) ?? null])
+  ),
+}));
+
+// Tab from query
+const tab = Astro.url.searchParams.get('tab') || 'members';
+---
+
+<Layout title={`Lớp ${cls.name} — Quản lý Học sinh`}>
+  <div class="space-y-8">
+
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <a href="/admin/hoc-sinh" class="inline-flex items-center text-xs font-bold text-gray-400 hover:text-gray-600 dark:hover:text-slate-350 transition-colors uppercase tracking-wider mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Quản lý Học sinh
+        </a>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center font-black text-white text-xs shadow" style={`background: ${cls.color}`}>
+            {cls.name.slice(0, 2).toUpperCase()}
+          </div>
+          <div>
+            <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">{cls.name}</h1>
+            <p class="text-sm text-gray-400 dark:text-slate-500">Lớp {cls.grade}{cls.subject ? ` · ${cls.subject}` : ''} · {members.length} học sinh</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 flex-wrap">
+        <button
+          id="btn-open-assign"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-500/25 transition-all hover:scale-[1.02]"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          </svg>
+          Giao bài
+        </button>
+        <a
+          href={`/api/classes/${classId}/export-csv`}
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-md shadow-emerald-500/25 transition-all hover:scale-[1.02]"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Xuất CSV
+        </a>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex gap-1 bg-gray-100 dark:bg-slate-800/60 rounded-xl p-1 w-fit">
+      {[
+        { key: 'members', label: '👥 Thành viên', count: members.length },
+        { key: 'assignments', label: '📋 Bài giao', count: assignments.length },
+        { key: 'results', label: '📊 Kết quả', count: null },
+      ].map(t => (
+        <button
+          class={`tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all ${tab === t.key ? 'bg-white dark:bg-slate-700 text-gray-900 dark:text-white shadow-sm' : 'text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-slate-300'}`}
+          data-tab={t.key}
+        >
+          {t.label}
+          {t.count !== null && <span class="ml-1.5 text-xs px-1.5 py-0.5 rounded-full bg-gray-200 dark:bg-slate-600 text-gray-600 dark:text-slate-400">{t.count}</span>}
+        </button>
+      ))}
+    </div>
+
+    <!-- ═══════════ TAB: MEMBERS ═══════════ -->
+    <div id="tab-members" class={tab !== 'members' ? 'hidden' : ''}>
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800/80 rounded-2xl shadow-sm overflow-hidden">
+        <!-- Toolbar -->
+        <div class="p-4 flex flex-col sm:flex-row sm:items-center gap-3 border-b border-gray-100 dark:border-slate-800">
+          <div class="relative flex-1 max-w-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" />
+            </svg>
+            <input id="member-search" type="text" placeholder="Tìm học sinh..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="btn-add-student" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/40 dark:hover:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-900/50 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+              </svg>
+              Thêm học sinh
+            </button>
+            <label class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/40 dark:hover:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-900/50 transition cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+              </svg>
+              Import CSV
+              <input id="csv-upload" type="file" accept=".csv" class="sr-only" />
+            </label>
+          </div>
+        </div>
+
+        <!-- Members table -->
+        {members.length === 0 ? (
+          <div class="py-16 text-center">
+            <p class="text-gray-400 dark:text-slate-500 text-sm">Chưa có học sinh nào trong lớp. Thêm học sinh hoặc import CSV.</p>
+          </div>
+        ) : (
+          <div class="overflow-x-auto">
+            <table class="min-w-full" id="members-table">
+              <thead class="bg-gray-50/70 dark:bg-slate-800/40">
+                <tr class="text-left text-xs font-bold text-gray-400 dark:text-slate-500 uppercase tracking-wider">
+                  <th class="px-4 py-3">#</th>
+                  <th class="px-4 py-3">Họ và tên</th>
+                  <th class="px-4 py-3 hidden md:table-cell">Email</th>
+                  <th class="px-4 py-3 hidden lg:table-cell">Ngày thêm</th>
+                  <th class="px-4 py-3 text-right">Xóa</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100 dark:divide-slate-800/60">
+                {members.map((m, idx) => (
+                  <tr class="member-row text-sm hover:bg-gray-50/50 dark:hover:bg-slate-800/30 transition" data-name={(m.user?.fullname || '').toLowerCase()} data-email={(m.user?.email || '').toLowerCase()}>
+                    <td class="px-4 py-3 text-gray-400 dark:text-slate-500 font-mono text-xs">{idx + 1}</td>
+                    <td class="px-4 py-3">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                          {(m.user?.fullname || m.user?.email || '?')[0].toUpperCase()}
+                        </div>
+                        <span class="font-semibold text-gray-800 dark:text-slate-200">{m.user?.fullname || '—'}</span>
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 hidden md:table-cell text-gray-500 dark:text-slate-400">{m.user?.email || '—'}</td>
+                    <td class="px-4 py-3 hidden lg:table-cell text-gray-400 dark:text-slate-500 text-xs">{new Date(m.joined_at).toLocaleDateString('vi-VN')}</td>
+                    <td class="px-4 py-3 text-right">
+                      <button
+                        class="remove-member-btn p-1.5 rounded-lg text-gray-300 dark:text-slate-600 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/20 transition"
+                        data-user-id={m.user_id}
+                        data-user-name={m.user?.fullname || m.user?.email}
+                        title="Xóa khỏi lớp"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        <!-- CSV result notice -->
+        <div id="csv-result" class="hidden px-4 py-3 border-t border-gray-100 dark:border-slate-800 text-sm font-medium text-emerald-600 dark:text-emerald-400"></div>
+      </div>
+    </div>
+
+    <!-- ═══════════ TAB: ASSIGNMENTS ═══════════ -->
+    <div id="tab-assignments" class={tab !== 'assignments' ? 'hidden' : ''}>
+      {assignments.length === 0 ? (
+        <div class="flex flex-col items-center justify-center py-16 bg-white dark:bg-slate-900 border border-dashed border-gray-250 dark:border-slate-700 rounded-2xl text-center">
+          <p class="text-gray-400 dark:text-slate-500 text-sm mb-3">Chưa có bài nào được giao.</p>
+          <button id="btn-open-assign-2" class="px-4 py-2 rounded-xl text-sm font-bold bg-indigo-600 hover:bg-indigo-700 text-white transition">+ Giao bài ngay</button>
+        </div>
+      ) : (
+        <div class="space-y-3">
+          {assignments.map(a => (
+            <div class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800/80 rounded-2xl shadow-sm hover:shadow-md transition group">
+              <div class={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${a.type === 'exam' ? 'bg-rose-100 dark:bg-rose-950/40 text-rose-600' : a.type === 'material' ? 'bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600' : 'bg-indigo-100 dark:bg-indigo-950/40 text-indigo-600'}`}>
+                {a.type === 'exam' ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                ) : a.type === 'material' ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                )}
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <p class="font-semibold text-gray-800 dark:text-slate-200 text-sm truncate">{a.ref_title || a.ref_id}</p>
+                  {a.type === 'material' && (
+                    <a
+                      href={`/bai-tap/${a.id}`}
+                      target="_blank"
+                      class="px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-100 transition inline-flex items-center gap-1"
+                    >
+                      👁️ Khung xem
+                    </a>
+                  )}
+                </div>
+                <div class="flex items-center gap-2 text-xs text-gray-400 dark:text-slate-500 mt-0.5 flex-wrap">
+                  <span class="font-medium text-gray-600 dark:text-slate-400">
+                    {a.type === 'exam' ? '📝 Đề thi' : a.type === 'material' ? '📄 Tài liệu & Video' : '📘 Khóa học'}
+                  </span>
+                  {a.attachment_url && (
+                    <span class="px-1.5 py-0.2 rounded bg-gray-100 dark:bg-slate-800 text-[10px] uppercase font-bold text-gray-500">
+                      {a.attachment_type || 'Tài liệu'}
+                    </span>
+                  )}
+                  {a.youtube_url && (
+                    <span class="px-1.5 py-0.2 rounded bg-rose-50 dark:bg-rose-950/30 text-[10px] font-bold text-rose-500">
+                      YouTube
+                    </span>
+                  )}
+                  {a.deadline && <span>· Hạn: {new Date(a.deadline).toLocaleDateString('vi-VN')}</span>}
+                  {a.note && <span class="truncate max-w-xs">· {a.note}</span>}
+                </div>
+              </div>
+              <span class="text-xs text-gray-400 dark:text-slate-500 hidden sm:block shrink-0">{new Date(a.assigned_at).toLocaleDateString('vi-VN')}</span>
+              <button
+                class="delete-assign-btn opacity-0 group-hover:opacity-100 p-1.5 rounded-lg text-gray-300 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/20 transition"
+                data-id={a.id}
+                data-title={a.ref_title}
+                title="Xóa bài giao"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <!-- ═══════════ TAB: RESULTS ═══════════ -->
+    <div id="tab-results" class={tab !== 'results' ? 'hidden' : ''}>
+      {memberStats.length === 0 || (examAssignments.length === 0 && courseAssignments.length === 0 && materialAssignments.length === 0) ? (
+        <div class="flex flex-col items-center justify-center py-16 bg-white dark:bg-slate-900 border border-dashed border-gray-250 dark:border-slate-700 rounded-2xl text-center">
+          <p class="text-gray-400 dark:text-slate-500 text-sm">Chưa có dữ liệu kết quả. Hãy giao bài và đợi học sinh làm bài hoặc xem tài liệu.</p>
+        </div>
+      ) : (
+        <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800/80 rounded-2xl shadow-sm overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-sm">
+              <thead class="bg-gray-50/70 dark:bg-slate-800/40">
+                <tr class="text-left text-xs font-bold text-gray-400 dark:text-slate-500 uppercase tracking-wider">
+                  <th class="px-4 py-3 sticky left-0 bg-gray-50/70 dark:bg-slate-800/40 z-10">Học sinh</th>
+                  {examAssignments.map(a => (
+                    <th class="px-4 py-3 whitespace-nowrap text-rose-500/80 dark:text-rose-400/80">
+                      📝 {a.ref_title?.slice(0, 20) || 'Đề thi'}
+                    </th>
+                  ))}
+                  {courseAssignments.map(a => (
+                    <th class="px-4 py-3 whitespace-nowrap text-indigo-500/80 dark:text-indigo-400/80">
+                      📘 {a.ref_title?.slice(0, 20) || 'Khóa học'}
+                    </th>
+                  ))}
+                  {materialAssignments.map(a => (
+                    <th class="px-4 py-3 whitespace-nowrap text-emerald-600 dark:text-emerald-400">
+                      📄 {a.ref_title?.slice(0, 22) || 'Tài liệu / Video'}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100 dark:divide-slate-800/60">
+                {memberStats.map(({ member, examResults, courseProgress, materialViews }) => (
+                  <tr class="hover:bg-gray-50/50 dark:hover:bg-slate-800/30 transition">
+                    <td class="px-4 py-3 sticky left-0 bg-white dark:bg-slate-900">
+                      <div class="flex items-center gap-2.5">
+                        <div class="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                          {(member.user?.fullname || '?')[0].toUpperCase()}
+                        </div>
+                        <div>
+                          <p class="font-semibold text-gray-800 dark:text-slate-200 text-xs">{member.user?.fullname || '—'}</p>
+                          <p class="text-[10px] text-gray-400 dark:text-slate-500">{member.user?.email}</p>
+                        </div>
+                      </div>
+                    </td>
+                    {examAssignments.map(a => {
+                      const res = examResults[a.ref_id];
+                      return (
+                        <td class="px-4 py-3">
+                          {res ? (
+                            <div class="flex flex-col">
+                              <span class={`font-bold text-base ${(res.score ?? 0) >= 5 ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-500 dark:text-rose-400'}`}>
+                                {res.score !== null ? res.score.toFixed(1) : '—'}
+                              </span>
+                              <span class="text-[10px] text-gray-400">{res.finished_at ? new Date(res.finished_at).toLocaleDateString('vi-VN') : ''}</span>
+                            </div>
+                          ) : (
+                            <span class="text-xs text-gray-300 dark:text-slate-600 italic">Chưa làm</span>
+                          )}
+                        </td>
+                      );
+                    })}
+                    {courseAssignments.map(a => {
+                      const pct = courseProgress[a.ref_id];
+                      return (
+                        <td class="px-4 py-3">
+                          {pct !== null && pct !== undefined ? (
+                            <div class="flex items-center gap-2">
+                              <div class="flex-1 bg-gray-100 dark:bg-slate-700 rounded-full h-1.5 min-w-[60px]">
+                                <div class="h-1.5 rounded-full bg-indigo-500 transition-all" style={`width: ${pct}%`}></div>
+                              </div>
+                              <span class="text-xs font-semibold text-gray-600 dark:text-slate-400 w-8">{pct}%</span>
+                            </div>
+                          ) : (
+                            <span class="text-xs text-gray-300 dark:text-slate-600 italic">Chưa học</span>
+                          )}
+                        </td>
+                      );
+                    })}
+                    {materialAssignments.map(a => {
+                      const v = materialViews[a.id];
+                      return (
+                        <td class="px-4 py-3">
+                          {v && (v.document_views > 0 || v.youtube_views > 0) ? (
+                            <div class="flex flex-col gap-1">
+                              <div class="flex items-center gap-1.5 flex-wrap">
+                                {a.attachment_url && (
+                                  <span class={`inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-md ${v.document_views > 0 ? 'bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300' : 'bg-gray-100 dark:bg-slate-800 text-gray-400'}`}>
+                                    📄 {v.document_views > 0 ? `${v.document_views} lượt` : 'Chưa xem'}
+                                  </span>
+                                )}
+                                {a.youtube_url && (
+                                  <span class={`inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-md ${v.youtube_views > 0 ? 'bg-rose-100 dark:bg-rose-950/50 text-rose-700 dark:text-rose-300' : 'bg-gray-100 dark:bg-slate-800 text-gray-400'}`}>
+                                    🎥 {v.youtube_views > 0 ? `${v.youtube_views} lượt` : 'Chưa xem'}
+                                  </span>
+                                )}
+                              </div>
+                              {v.last_viewed_at && (
+                                <span class="text-[10px] text-gray-400 dark:text-slate-500">
+                                  {new Date(v.last_viewed_at).toLocaleDateString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' })}
+                                </span>
+                              )}
+                            </div>
+                          ) : (
+                            <span class="text-xs text-gray-300 dark:text-slate-600 italic">Chưa xem</span>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+
+  <!-- ── Modal: Thêm học sinh ──────────────────────────────────────────────── -->
+  <div id="modal-add-student" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="modal-add-student-backdrop"></div>
+    <div class="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-slate-700 w-full max-w-md p-6 animate-modal-in">
+      <div class="flex items-center justify-between mb-5">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white">Thêm học sinh vào lớp</h2>
+        <button id="btn-close-add-student" class="p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="mb-3">
+        <input id="add-student-search" type="text" placeholder="Tìm tên hoặc email học sinh..." class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+      </div>
+      <div id="student-list" class="max-h-64 overflow-y-auto space-y-1 rounded-xl border border-gray-100 dark:border-slate-800 divide-y divide-gray-50 dark:divide-slate-800/60">
+        {availableStudents.length === 0 ? (
+          <p class="py-8 text-center text-sm text-gray-400 dark:text-slate-500">Tất cả học sinh đã trong lớp rồi.</p>
+        ) : availableStudents.map(s => (
+          <div
+            class="student-item flex items-center justify-between px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-slate-800/50 transition cursor-pointer"
+            data-user-id={s.id}
+            data-name={(s.fullname || '').toLowerCase()}
+            data-email={(s.email).toLowerCase()}
+          >
+            <div class="flex items-center gap-2.5">
+              <div class="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold">
+                {(s.fullname || s.email)[0].toUpperCase()}
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-gray-800 dark:text-slate-200">{s.fullname || '—'}</p>
+                <p class="text-xs text-gray-400 dark:text-slate-500">{s.email}</p>
+              </div>
+            </div>
+            <button class="add-member-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/30 dark:hover:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-900/40 transition">
+              + Thêm
+            </button>
+          </div>
+        ))}
+      </div>
+      <p id="add-member-status" class="mt-3 text-sm text-center font-medium text-emerald-600 dark:text-emerald-400 hidden"></p>
+    </div>
+  </div>
+
+  <!-- ── Modal: Giao bài ──────────────────────────────────────────────────── -->
+  <div id="modal-assign" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="modal-assign-backdrop"></div>
+    <div class="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-slate-700 w-full max-w-lg p-6 animate-modal-in">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white">Giao bài cho lớp <span class="text-indigo-600">{cls.name}</span></h2>
+        <button id="btn-close-assign" class="p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <form id="form-assign" class="space-y-5">
+        <!-- Type -->
+        <div>
+          <label class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-2">Loại bài</label>
+          <div class="grid grid-cols-3 gap-2">
+            <label class="cursor-pointer">
+              <input type="radio" name="assign-type" value="exam" class="sr-only peer" checked />
+              <span class="flex items-center justify-center gap-1.5 py-2.5 rounded-xl border-2 border-gray-200 dark:border-slate-700 peer-checked:border-rose-500 peer-checked:bg-rose-50 dark:peer-checked:bg-rose-950/20 peer-checked:text-rose-600 dark:peer-checked:text-rose-400 font-semibold text-xs sm:text-sm text-gray-500 transition">
+                📝 Đề thi
+              </span>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="assign-type" value="course" class="sr-only peer" />
+              <span class="flex items-center justify-center gap-1.5 py-2.5 rounded-xl border-2 border-gray-200 dark:border-slate-700 peer-checked:border-indigo-500 peer-checked:bg-indigo-50 dark:peer-checked:bg-indigo-950/20 peer-checked:text-indigo-600 dark:peer-checked:text-indigo-400 font-semibold text-xs sm:text-sm text-gray-500 transition">
+                📘 Khóa học
+              </span>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="assign-type" value="material" class="sr-only peer" />
+              <span class="flex items-center justify-center gap-1.5 py-2.5 rounded-xl border-2 border-gray-200 dark:border-slate-700 peer-checked:border-emerald-500 peer-checked:bg-emerald-50 dark:peer-checked:bg-emerald-950/20 peer-checked:text-emerald-600 dark:peer-checked:text-emerald-400 font-semibold text-xs sm:text-sm text-gray-500 transition">
+                📄 Tài liệu & Video
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Exam selector -->
+        <div id="assign-exam-section">
+          <label for="assign-exam" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Chọn đề thi</label>
+          <select id="assign-exam" name="assign-exam" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+            <option value="">— Chọn đề thi —</option>
+            {myExams.map(e => <option value={e.id} data-title={e.title}>{e.title}</option>)}
+          </select>
+          {myExams.length === 0 && <p class="text-xs text-amber-500 mt-1">Bạn chưa có đề thi nào. Tạo đề thi trước tại <a href="/admin/exams" class="underline">Quản lý Đề thi</a>.</p>}
+        </div>
+
+        <!-- Course selector -->
+        <div id="assign-course-section" class="hidden">
+          <label for="assign-course" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Chọn khóa học</label>
+          <select id="assign-course" name="assign-course" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+            <option value="">— Chọn khóa học —</option>
+            {myCourses.map(c => <option value={c.id} data-title={c.title}>{c.title}</option>)}
+          </select>
+          {myCourses.length === 0 && <p class="text-xs text-amber-500 mt-1">Bạn chưa có khóa học nào. Tạo khóa học trước tại <a href="/admin/courses" class="underline">Quản lý Khóa học</a>.</p>}
+        </div>
+
+        <!-- Material selector / inputs -->
+        <div id="assign-material-section" class="hidden space-y-4">
+          <div>
+            <label for="assign-material-title" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Tiêu đề bài giao / Tài liệu *</label>
+            <input id="assign-material-title" name="material-title" type="text" placeholder="VD: Đề cương ôn tập & Video bài giảng..." class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition" />
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-gray-200/80 dark:border-slate-700 space-y-3">
+            <div class="flex items-center gap-2 text-xs font-bold text-emerald-700 dark:text-emerald-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span>Link Tài liệu (Google Drive, Word, PPT, PDF)</span>
+            </div>
+            <div>
+              <input id="assign-doc-url" name="doc-url" type="url" placeholder="https://drive.google.com/... hoặc link file trực tiếp" class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+              <p class="text-[11px] text-gray-400 dark:text-slate-500 mt-1">Hỗ trợ link Google Drive (đặt chế độ xem công khai), link file PDF, Word (.doc, .docx), PowerPoint (.ppt, .pptx).</p>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label for="assign-doc-type" class="block text-[11px] font-semibold text-gray-500 dark:text-slate-400 mb-1">Định dạng file</label>
+                <select id="assign-doc-type" class="w-full px-2.5 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                  <option value="auto">Tự động nhận diện</option>
+                  <option value="drive">Google Drive</option>
+                  <option value="pdf">File PDF (.pdf)</option>
+                  <option value="word">File Word (.doc, .docx)</option>
+                  <option value="ppt">File PowerPoint (.ppt, .pptx)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-gray-200/80 dark:border-slate-700 space-y-2">
+            <div class="flex items-center gap-2 text-xs font-bold text-rose-600 dark:text-rose-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+              </svg>
+              <span>Link Video YouTube (Tùy chọn)</span>
+            </div>
+            <input id="assign-youtube-url" name="youtube-url" type="url" placeholder="https://www.youtube.com/watch?v=... hoặc https://youtu.be/..." class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-rose-500" />
+            <p class="text-[11px] text-gray-400 dark:text-slate-500">Khung xem YouTube sẽ tự động ghi nhận lượt xem khi học sinh bấm phát video.</p>
+          </div>
+        </div>
+
+        <!-- Deadline + Note -->
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="assign-deadline" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Hạn nộp (tuỳ chọn)</label>
+            <input id="assign-deadline" name="deadline" type="date" class="w-full px-3 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+          </div>
+          <div>
+            <label for="assign-note" class="block text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Ghi chú</label>
+            <input id="assign-note" name="note" type="text" placeholder="Tuỳ chọn..." class="w-full px-3 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+          </div>
+        </div>
+
+        <div id="assign-error" class="hidden text-sm text-rose-500 font-medium"></div>
+
+        <div class="flex justify-end gap-3 pt-1">
+          <button type="button" id="btn-cancel-assign" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-600 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-800 transition">Hủy</button>
+          <button type="submit" id="btn-submit-assign" class="px-5 py-2.5 rounded-xl text-sm font-bold bg-indigo-600 hover:bg-indigo-700 text-white transition disabled:opacity-60">
+            Giao bài →
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <style>
+    @keyframes modal-in {
+      from { opacity: 0; transform: translateY(16px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .animate-modal-in { animation: modal-in 0.2s ease-out both; }
+  </style>
+
+  <script define:vars={{ classId }}>
+    // ── Tabs ──────────────────────────────────────────────────────────────────
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        // Update buttons
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.classList.toggle('bg-white', b.dataset.tab === tab);
+          b.classList.toggle('dark:bg-slate-700', b.dataset.tab === tab);
+          b.classList.toggle('text-gray-900', b.dataset.tab === tab);
+          b.classList.toggle('dark:text-white', b.dataset.tab === tab);
+          b.classList.toggle('shadow-sm', b.dataset.tab === tab);
+          b.classList.toggle('text-gray-500', b.dataset.tab !== tab);
+          b.classList.toggle('dark:text-slate-400', b.dataset.tab !== tab);
+        });
+        // Show/hide panels
+        ['members', 'assignments', 'results'].forEach(t => {
+          document.getElementById(`tab-${t}`)?.classList.toggle('hidden', t !== tab);
+        });
+      });
+    });
+
+    // ── Modal helpers ──────────────────────────────────────────────────────────
+    function openModal(id) { document.getElementById(id)?.classList.remove('hidden'); }
+    function closeModal(id) { document.getElementById(id)?.classList.add('hidden'); }
+
+    // ── Add student modal ──────────────────────────────────────────────────────
+    document.getElementById('btn-add-student')?.addEventListener('click', () => openModal('modal-add-student'));
+    document.getElementById('btn-close-add-student')?.addEventListener('click', () => closeModal('modal-add-student'));
+    document.getElementById('modal-add-student-backdrop')?.addEventListener('click', () => closeModal('modal-add-student'));
+
+    // Search inside modal
+    document.getElementById('add-student-search')?.addEventListener('input', e => {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('.student-item').forEach(item => {
+        const match = item.dataset.name.includes(q) || item.dataset.email.includes(q);
+        item.style.display = match ? '' : 'none';
+      });
+    });
+
+    // Add member button inside modal
+    document.querySelectorAll('.add-member-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const item = btn.closest('.student-item');
+        const userId = item.dataset.userId;
+        const statusEl = document.getElementById('add-member-status');
+        btn.disabled = true;
+        btn.textContent = '...';
+        try {
+          const res = await fetch(`/api/classes/${classId}/members`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId }),
+          });
+          if (res.ok) {
+            item.style.opacity = '0.4';
+            btn.textContent = '✓ Đã thêm';
+            statusEl.textContent = 'Thêm thành công! Tải lại trang để cập nhật danh sách.';
+            statusEl.classList.remove('hidden');
+          } else {
+            btn.disabled = false;
+            btn.textContent = '+ Thêm';
+            const err = await res.json();
+            alert(err.error || 'Lỗi thêm thành viên.');
+          }
+        } catch {
+          btn.disabled = false;
+          btn.textContent = '+ Thêm';
+          alert('Lỗi kết nối.');
+        }
+      });
+    });
+
+    // ── Remove member ──────────────────────────────────────────────────────────
+    document.querySelectorAll('.remove-member-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const userId = btn.dataset.userId;
+        const userName = btn.dataset.userName;
+        if (!confirm(`Xóa "${userName}" khỏi lớp?`)) return;
+        try {
+          const res = await fetch(`/api/classes/${classId}/members`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId }),
+          });
+          if (res.ok) { window.location.reload(); }
+          else { alert('Lỗi xóa thành viên.'); }
+        } catch { alert('Lỗi kết nối.'); }
+      });
+    });
+
+    // ── Member search ──────────────────────────────────────────────────────────
+    document.getElementById('member-search')?.addEventListener('input', e => {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('.member-row').forEach(row => {
+        const match = row.dataset.name.includes(q) || row.dataset.email.includes(q);
+        row.style.display = match ? '' : 'none';
+      });
+    });
+
+    // ── CSV Import ─────────────────────────────────────────────────────────────
+    document.getElementById('csv-upload')?.addEventListener('change', async e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const resultEl = document.getElementById('csv-result');
+      resultEl.textContent = 'Đang import...';
+      resultEl.classList.remove('hidden');
+      resultEl.className = resultEl.className.replace('text-rose-500', 'text-blue-500');
+
+      const fd = new FormData();
+      fd.append('file', file);
+      try {
+        const res = await fetch(`/api/classes/${classId}/import-csv`, { method: 'POST', body: fd });
+        const data = await res.json();
+        if (res.ok) {
+          const msg = `✅ Đã thêm ${data.added} học sinh.${data.skipped.length > 0 ? ` Bỏ qua (chưa đăng ký): ${data.skipped.join(', ')}` : ''}`;
+          resultEl.textContent = msg;
+          resultEl.className = 'px-4 py-3 border-t border-gray-100 dark:border-slate-800 text-sm font-medium text-emerald-600 dark:text-emerald-400';
+          setTimeout(() => window.location.reload(), 2000);
+        } else {
+          resultEl.textContent = `❌ ${data.error}`;
+          resultEl.className = 'px-4 py-3 border-t border-gray-100 dark:border-slate-800 text-sm font-medium text-rose-500';
+        }
+      } catch {
+        resultEl.textContent = '❌ Lỗi kết nối.';
+      }
+    });
+
+    // ── Assign modal ────────────────────────────────────────────────────────────
+    ['btn-open-assign', 'btn-open-assign-2'].forEach(id => {
+      document.getElementById(id)?.addEventListener('click', () => openModal('modal-assign'));
+    });
+    document.getElementById('btn-close-assign')?.addEventListener('click', () => closeModal('modal-assign'));
+    document.getElementById('btn-cancel-assign')?.addEventListener('click', () => closeModal('modal-assign'));
+    document.getElementById('modal-assign-backdrop')?.addEventListener('click', () => closeModal('modal-assign'));
+
+    // Toggle exam/course/material section
+    document.querySelectorAll('input[name="assign-type"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const type = radio.value;
+        document.getElementById('assign-exam-section').classList.toggle('hidden', type !== 'exam');
+        document.getElementById('assign-course-section').classList.toggle('hidden', type !== 'course');
+        document.getElementById('assign-material-section').classList.toggle('hidden', type !== 'material');
+      });
+    });
+
+    // Submit assign form
+    document.getElementById('form-assign')?.addEventListener('submit', async e => {
+      e.preventDefault();
+      const errEl = document.getElementById('assign-error');
+      const btn = document.getElementById('btn-submit-assign');
+      errEl.classList.add('hidden');
+      btn.disabled = true;
+      btn.textContent = 'Đang giao...';
+
+      const typeRadio = document.querySelector('input[name="assign-type"]:checked');
+      const type = typeRadio?.value;
+      let ref_id = '', ref_title = '';
+      let attachment_url = null, attachment_type = null, youtube_url = null;
+
+      if (type === 'exam') {
+        const sel = document.getElementById('assign-exam');
+        ref_id = sel.value;
+        ref_title = sel.options[sel.selectedIndex]?.dataset.title || '';
+        if (!ref_id) {
+          errEl.textContent = 'Vui lòng chọn đề thi.';
+          errEl.classList.remove('hidden');
+          btn.disabled = false;
+          btn.textContent = 'Giao bài →';
+          return;
+        }
+      } else if (type === 'course') {
+        const sel = document.getElementById('assign-course');
+        ref_id = sel.value;
+        ref_title = sel.options[sel.selectedIndex]?.dataset.title || '';
+        if (!ref_id) {
+          errEl.textContent = 'Vui lòng chọn khóa học.';
+          errEl.classList.remove('hidden');
+          btn.disabled = false;
+          btn.textContent = 'Giao bài →';
+          return;
+        }
+      } else if (type === 'material') {
+        ref_title = (document.getElementById('assign-material-title')?.value || '').trim();
+        const docUrl = (document.getElementById('assign-doc-url')?.value || '').trim();
+        let docType = document.getElementById('assign-doc-type')?.value;
+        const ytUrl = (document.getElementById('assign-youtube-url')?.value || '').trim();
+
+        if (!ref_title) {
+          errEl.textContent = 'Vui lòng nhập tiêu đề bài giao / tài liệu.';
+          errEl.classList.remove('hidden');
+          btn.disabled = false;
+          btn.textContent = 'Giao bài →';
+          return;
+        }
+
+        if (!docUrl && !ytUrl) {
+          errEl.textContent = 'Vui lòng nhập link tài liệu hoặc link video YouTube.';
+          errEl.classList.remove('hidden');
+          btn.disabled = false;
+          btn.textContent = 'Giao bài →';
+          return;
+        }
+
+        ref_id = 'mat-' + Date.now();
+        attachment_url = docUrl || null;
+        youtube_url = ytUrl || null;
+
+        if (attachment_url) {
+          if (docType === 'auto') {
+            const lower = attachment_url.toLowerCase();
+            if (lower.includes('drive.google.com') || lower.includes('docs.google.com')) docType = 'drive';
+            else if (lower.endsWith('.pdf') || lower.includes('.pdf?')) docType = 'pdf';
+            else if (lower.endsWith('.docx') || lower.endsWith('.doc')) docType = 'word';
+            else if (lower.endsWith('.pptx') || lower.endsWith('.ppt')) docType = 'ppt';
+            else docType = 'drive';
+          }
+          attachment_type = docType;
+        }
+      }
+
+      const deadline = document.getElementById('assign-deadline').value;
+      const note = document.getElementById('assign-note').value;
+
+      try {
+        const res = await fetch(`/api/classes/${classId}/assignments`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type,
+            ref_id,
+            ref_title,
+            deadline: deadline || null,
+            note,
+            attachment_url,
+            attachment_type,
+            youtube_url,
+          }),
+        });
+        if (res.ok) {
+          window.location.reload();
+        } else {
+          const err = await res.json();
+          errEl.textContent = err.error || 'Lỗi giao bài.';
+          errEl.classList.remove('hidden');
+        }
+      } catch {
+        errEl.textContent = 'Lỗi kết nối.';
+        errEl.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Giao bài →';
+      }
+    });
+
+    // ── Delete assignment ─────────────────────────────────────────────────────
+    document.querySelectorAll('.delete-assign-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const id = btn.dataset.id;
+        const title = btn.dataset.title;
+        if (!confirm(`Xóa bài giao "${title}"?`)) return;
+        try {
+          const res = await fetch(`/api/classes/${classId}/assignments`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ assignmentId: id }),
+          });
+          if (res.ok) { window.location.reload(); }
+          else { alert('Lỗi xóa bài giao.'); }
+        } catch { alert('Lỗi kết nối.'); }
+      });
+    });
+  </script>
+</Layout>

@@ -104,6 +104,7 @@ export interface Attempt {
   finished_at: string | null;
   student_name?: string | null;
   student_class?: string | null;
+  tab_switches?: number | null;
 }
 
 export interface ChatMessage {
@@ -346,3 +347,54 @@ export interface RoomParticipant {
   total_questions: number;
   answered_count: number; // how many questions answered so far
 }
+
+// ── Class Management (Quản lý lớp học) ────────────────────────────────────────
+export interface Class {
+  id: string;
+  name: string;
+  grade: string;
+  subject: string;
+  color: string;
+  teacher_id: string | null;
+  created_at: string;
+  /** Denormalized: number of students in this class */
+  memberCount?: number;
+}
+
+export interface ClassMember {
+  class_id: string;
+  user_id: string;
+  joined_at: string;
+  /** Joined user info */
+  user?: Pick<User, 'id' | 'email' | 'fullname' | 'avatar_url' | 'role'>;
+}
+
+export interface ClassAssignment {
+  id: string;
+  class_id: string;
+  type: 'course' | 'exam' | 'material';
+  ref_id: string;
+  ref_title: string;
+  assigned_by: string | null;
+  assigned_at: string;
+  deadline: string | null;
+  note: string;
+  /** Link file tài liệu (Google Drive, hoặc URL file Word, PPT, PDF) */
+  attachment_url?: string | null;
+  /** Loại tài liệu: word, ppt, pdf, drive, link */
+  attachment_type?: 'pdf' | 'word' | 'ppt' | 'drive' | 'link' | null;
+  /** Link video YouTube */
+  youtube_url?: string | null;
+}
+
+export interface ClassAssignmentView {
+  id: string;
+  assignment_id: string;
+  user_id: string;
+  document_views: number;
+  youtube_views: number;
+  last_viewed_at: string;
+  created_at?: string;
+  user?: Pick<User, 'id' | 'email' | 'fullname' | 'avatar_url' | 'role'>;
+}
+
