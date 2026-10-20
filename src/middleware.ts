@@ -7,23 +7,30 @@ import { env } from 'cloudflare:workers';
 
 // Thêm base path (ví dụ '/lms') vào header Location của các redirect
 // (Astro.redirect / redirect không tự thêm base).
-function fixRedirectLocation(headers: Headers): void {
-  const loc = headers.get('location');
-  if (!loc) return;
+function fixRedirectLocation(response: Response): Response {
+  const loc = response.headers.get('location');
+  if (!loc) return response;
   const fixed = withBase(loc);
-  if (fixed !== loc) headers.set('location', fixed);
+  if (fixed === loc) return response;
+  const headers = new Headers(response.headers);
+  headers.set('location', fixed);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 }
 
 // Thêm base path vào các attribute href/src/action trong HTML trả về.
 // Bỏ qua các URL đã có base, asset nội bộ của Astro/Vite (@, _) và protocol-relative (//).
-function rewriteHtmlBase(html: string, base: string): string {
+function rewriteHtmlBase(html: string, rawBase: string): string {
+  if (!rawBase) return html;
+  const base = rawBase.replace(/\/+$/, '');
   if (!base) return html;
-  // Lookahead so sánh phần sau dấu "/" đã được khớp, nên bỏ dấu "/" đầu.
-  const noSlash = base.replace(/^\//, '');
-  // Escape all regex special chars including [ and ] properly
+  const noSlash = base.replace(/^\/+/, '');
   const escaped = noSlash.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
   const regex = new RegExp(
-    `(href|src|action)="/` + `(?!${escaped}/)(?!@)(?!_)(?!/)`,
+    `(href|src|action)="/(?!${escaped}(?:/|"|'|\\?|#))(?!@)(?!_)(?!/)`,
     'g'
   );
   return html.replace(regex, `$1="${base}/`);
@@ -32,13 +39,21 @@ function rewriteHtmlBase(html: string, base: string): string {
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const url = new URL(context.url);
+
+  // Chuẩn hóa nếu URL có nhiều dấu gạch chéo liền nhau (ví dụ /lms//admin -> /lms/admin)
+  if (url.pathname.includes('//')) {
+    const cleanPath = url.pathname.replace(/\/+/g, '/');
+    return context.redirect(cleanPath + url.search, 301);
+  }
+
   // Tách base path (ví dụ '/lms') khỏi pathname để các luật truy cập (auth,
   // cache...) hoạt động với route gốc thay vì đường dẫn có chứa base.
-  const base = import.meta.env.BASE_URL; // '/lms'
+  const rawBase = import.meta.env.BASE_URL; // e.g. '/lms/'
+  const base = (rawBase || '').replace(/\/+$/, ''); // '/lms'
   let path = url.pathname;
-  if (base && path.startsWith(base)) {
+  if (base && (path === base || path.startsWith(base + '/'))) {
     path = path.slice(base.length);
-    if (path === '') path = '/';
+    if (path === '' || !path.startsWith('/')) path = '/' + path;
   }
 
   // Extract Cloudflare Workers runtime env
@@ -193,7 +208,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
       console.warn('Không thể rewrite base trong HTML:', e);
     }
   }
-  fixRedirectLocation(finalResponse.headers);
+  finalResponse = fixRedirectLocation(finalResponse);
 
   // ============================================================
   // CACHE HEADERS (chỉ áp dụng cho GET requests thành công)

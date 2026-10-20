@@ -4,6 +4,7 @@ import QuestionCard from './QuestionCard';
 import ReadListQuestion from './ReadListQuestion';
 import MatchingQuestion from './MatchingQuestion';
 import ClozeTextQuestion from './ClozeTextQuestion';
+import { withBase } from '../lib/base';
 
 type Q = Question & { answers: Answer[] };
 type Props = { exam: { slug: string; title: string; duration: number }; attempt: { id: string }; questions: Q[]; initialSeconds: number };
@@ -63,14 +64,14 @@ export default function VSatExamView({ exam, attempt, questions, initialSeconds 
     if (submitting) return;
     setSubmitting(true); setConfirm(false); setError('');
     try {
-      const res = await fetch(import.meta.env.BASE_URL + '/api/attempts', {
+      const res = await fetch(withBase('/api/attempts'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ attemptId: attempt.id, answers, tabSwitches: tabSwitchesRef.current })
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.message || data.error || 'Không thể nộp bài.');
-      location.href = `${import.meta.env.BASE_URL}/exams/${exam.slug}/result/${attempt.id}`;
+      location.href = withBase(`/exams/${exam.slug}/result/${attempt.id}`);
     } catch (e: any) { setError(e.message); setSubmitting(false); }
   }, [answers, attempt.id, exam.slug, submitting]);
   submitRef.current = submit;

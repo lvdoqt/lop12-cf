@@ -266,7 +266,7 @@ let errMsg = '';
       };
 
       try {
-        const res = await fetch('/api/classes', {
+        const res = await fetch((window.withBase || ((p: string) => p))('/api/classes'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(body),
@@ -294,7 +294,7 @@ let errMsg = '';
         const className = btn.dataset.className!;
         if (!confirm(`Bạn có chắc muốn xóa lớp "${className}"? Toàn bộ thành viên và bài giao sẽ bị xóa.`)) return;
         try {
-          const res = await fetch(`/api/classes/${classId}`, { method: 'DELETE' });
+          const res = await fetch((window.withBase || ((p: string) => p))(`/api/classes/${classId}`), { method: 'DELETE' });
           if (res.ok) { window.location.reload(); }
           else { alert('Lỗi xóa lớp.'); }
         } catch { alert('Lỗi kết nối.'); }

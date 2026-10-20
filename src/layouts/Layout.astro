@@ -119,17 +119,58 @@ const adsEnabled = showAds && !noindex && !!ADSENSE_CLIENT && allowAdsense(Astro
     <meta name="theme-color" content="#1E1E38" />
 
     <!-- App Base Path for client scripts & fetch calls -->
-    <script is:inline define:vars={{ globalBaseUrl: base ? base.replace(/\/$/, '') : '' }}>
+    <script is:inline define:vars={{ globalBaseUrl: base ? base.replace(/\/+$/, '') : '' }}>
       window.__BASE_URL__ = globalBaseUrl;
       window.withBase = function(path) {
         if (!path) return path;
         var b = window.__BASE_URL__ || '';
         if (!b) return path;
-        if (path.startsWith('/') && !path.startsWith('//') && !path.startsWith(b + '/')) {
+
+        // Handle full URL on current origin
+        if (typeof path === 'string' && (path.startsWith('http://') || path.startsWith('https://'))) {
+          try {
+            var u = new URL(path);
+            if (u.origin === window.location.origin) {
+              if (u.pathname === b || u.pathname.startsWith(b + '/')) return path;
+              u.pathname = b + u.pathname;
+              return u.toString();
+            }
+          } catch (e) {}
+          return path;
+        }
+
+        // Already has base
+        if (path === b || path.startsWith(b + '/')) return path;
+
+        // Internal absolute path
+        if (path.startsWith('/') && !path.startsWith('//')) {
           return b + path;
         }
         return path;
       };
+
+      // Auto-prefix fetch for root-relative internal API/page calls
+      (function() {
+        var originalFetch = window.fetch;
+        if (!originalFetch) return;
+        window.fetch = function(input, init) {
+          if (typeof input === 'string') {
+            input = window.withBase(input);
+          } else if (input && typeof input.url === 'string') {
+            try {
+              var u = new URL(input.url, window.location.origin);
+              if (u.origin === window.location.origin) {
+                var fixed = window.withBase(u.pathname);
+                if (fixed !== u.pathname) {
+                  u.pathname = fixed;
+                  input = new Request(u.toString(), input);
+                }
+              }
+            } catch (e) {}
+          }
+          return originalFetch.call(this, input, init);
+        };
+      })();
     </script>
 
     <!-- Title & Description -->

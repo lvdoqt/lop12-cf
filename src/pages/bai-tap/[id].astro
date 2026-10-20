@@ -302,7 +302,7 @@ const hasVideo = Boolean(youtubeId);
 
   async function recordView(viewType) {
     try {
-      const res = await fetch(`/api/assignments/${assignmentId}/view`, {
+      const res = await fetch((window.withBase || (p => p))(`/api/assignments/${assignmentId}/view`), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ viewType }),
