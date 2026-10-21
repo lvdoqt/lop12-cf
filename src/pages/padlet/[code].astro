@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PadletStudentView } from '../../components/giao-vien/padlet/PadletStudentView';
+import { padletStore } from '../../services/mockPadletStore';
+
+export const prerender = false;
+
+const { code } = Astro.params;
+if (!code) {
+  return Astro.redirect('/');
+}
+
+const board = padletStore.getBoardByCode(code);
+if (!board) {
+  return Astro.redirect('/?error=board_not_found');
+}
+---
+
+<Layout
+  title={`${board.title} — Bảng tương tác`}
+  showSidebar={false}
+  showAds={false}
+>
+  <PadletStudentView client:load board={board} />
+</Layout>

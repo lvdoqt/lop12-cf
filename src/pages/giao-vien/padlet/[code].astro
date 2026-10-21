@@ -1,0 +1,34 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { PadletBoard } from '../../../components/giao-vien/padlet/PadletBoard';
+import { PadletStudentView } from '../../../components/giao-vien/padlet/PadletStudentView';
+import { padletStore } from '../../../services/mockPadletStore';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+const isTeacher = user && (user.role === 'teacher' || user.role === 'admin');
+
+const { code } = Astro.params;
+if (!code) {
+  return Astro.redirect('/giao-vien/padlet');
+}
+
+const board = padletStore.getBoardByCode(code);
+if (!board) {
+  return Astro.redirect(isTeacher ? '/giao-vien/padlet?error=notfound' : '/?error=notfound');
+}
+---
+
+<Layout
+  title={`${board.title} — Bảng tương tác Padlet`}
+  showSidebar={false}
+  showAds={false}
+>
+  {isTeacher ? (
+    <PadletBoard client:load board={board} isTeacher={true} />
+  ) : (
+    <PadletStudentView client:load board={board} />
+  )}
+</Layout>
+

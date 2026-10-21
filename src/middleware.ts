@@ -161,7 +161,8 @@ export const onRequest = defineMiddleware(async (context, next) => {
     path.startsWith('/profile');
 
   const isAdminRoute = path.startsWith('/admin');
-  const isTeacherRoute = path.startsWith('/giao-vien');
+  const isPublicPadletBoard = /^\/giao-vien\/padlet\/[A-Za-z0-9_-]+$/.test(path);
+  const isTeacherRoute = path.startsWith('/giao-vien') && !isPublicPadletBoard;
   const isApiRoute = path.startsWith('/api');
 
   // ============================================================
