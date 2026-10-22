@@ -398,3 +398,52 @@ export interface ClassAssignmentView {
   user?: Pick<User, 'id' | 'email' | 'fullname' | 'avatar_url' | 'role'>;
 }
 
+// ---------------------------------------------------------------------------
+// PADLET TYPES
+// ---------------------------------------------------------------------------
+export type PadletColor = 'yellow' | 'blue' | 'green' | 'pink' | 'purple' | 'orange';
+export type PadletTheme = 'chalkboard' | 'corkboard' | 'gradient' | 'minimal' | 'dark' | 'lavender';
+export type PadletLayoutMode = 'wall' | 'columns';
+
+export interface PadletColumn {
+  id: string;
+  title: string;
+}
+
+export interface PadletComment {
+  id: string;
+  author_name: string;
+  content: string;
+  created_at: string;
+}
+
+export interface PadletNote {
+  id: string;
+  board_code: string;
+  author_name: string;
+  title?: string;
+  content: string;
+  color: PadletColor;
+  column_id?: string;
+  likes: number;
+  is_pinned: boolean;
+  comments: PadletComment[];
+  created_at: string;
+}
+
+export interface PadletBoard {
+  id: string;
+  code: string;
+  title: string;
+  description?: string;
+  theme: PadletTheme;
+  layout_mode: PadletLayoutMode;
+  columns?: PadletColumn[];
+  is_locked: boolean;
+  allow_comments: boolean;
+  allow_likes: boolean;
+  created_by: string;
+  created_at: string;
+  notes: PadletNote[];
+}
+

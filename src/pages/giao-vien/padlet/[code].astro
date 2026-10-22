@@ -2,7 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import { PadletBoard } from '../../../components/giao-vien/padlet/PadletBoard';
 import { PadletStudentView } from '../../../components/giao-vien/padlet/PadletStudentView';
-import { padletKV, getPadletKV } from '../../../lib/padletKV';
+import { padletStore } from '../../../services/db';
 
 export const prerender = false;
 
@@ -14,8 +14,7 @@ if (!code) {
   return Astro.redirect('/giao-vien/padlet');
 }
 
-const kv = getPadletKV();
-const board = kv ? await padletKV.getBoardByCode(kv, code) : null;
+const board = await padletStore.getBoardByCode(code);
 if (!board) {
   return Astro.redirect(isTeacher ? '/giao-vien/padlet?error=notfound' : '/?error=notfound');
 }

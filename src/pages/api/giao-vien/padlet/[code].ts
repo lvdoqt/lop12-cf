@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { padletKV, getPadletKV } from '../../../../lib/padletKV';
+import { padletStore } from '../../../../services/db';
 
 export const GET: APIRoute = async ({ params }) => {
   const { code } = params;
@@ -7,12 +7,7 @@ export const GET: APIRoute = async ({ params }) => {
     return new Response(JSON.stringify({ error: 'Missing code' }), { status: 400 });
   }
 
-  const kv = getPadletKV();
-  if (!kv) {
-    return new Response(JSON.stringify({ error: 'KV not available' }), { status: 503 });
-  }
-
-  const board = await padletKV.getBoardByCode(kv, code);
+  const board = await padletStore.getBoardByCode(code);
   if (!board) {
     return new Response(JSON.stringify({ error: 'Không tìm thấy bảng' }), { status: 404 });
   }
@@ -34,14 +29,9 @@ export const PATCH: APIRoute = async ({ params, request, locals }) => {
     return new Response(JSON.stringify({ error: 'Missing code' }), { status: 400 });
   }
 
-  const kv = getPadletKV();
-  if (!kv) {
-    return new Response(JSON.stringify({ error: 'KV not available' }), { status: 503 });
-  }
-
   try {
     const body = await request.json();
-    const updated = await padletKV.updateBoard(kv, code, body, user.role === 'admin' ? undefined : user.id);
+    const updated = await padletStore.updateBoard(code, body, user.role === 'admin' ? undefined : user.id);
     if (!updated) {
       return new Response(JSON.stringify({ error: 'Không tìm thấy bảng hoặc không có quyền' }), { status: 404 });
     }
@@ -66,12 +56,7 @@ export const DELETE: APIRoute = async ({ params, locals }) => {
     return new Response(JSON.stringify({ error: 'Missing code' }), { status: 400 });
   }
 
-  const kv = getPadletKV();
-  if (!kv) {
-    return new Response(JSON.stringify({ error: 'KV not available' }), { status: 503 });
-  }
-
-  const ok = await padletKV.deleteBoard(kv, code, user.role === 'admin' ? undefined : user.id);
+  const ok = await padletStore.deleteBoard(code, user.role === 'admin' ? undefined : user.id);
   if (!ok) {
     return new Response(JSON.stringify({ error: 'Không thể xóa bảng' }), { status: 404 });
   }

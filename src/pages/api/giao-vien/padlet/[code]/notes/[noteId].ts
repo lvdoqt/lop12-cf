@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { padletKV, getPadletKV } from '../../../../../../lib/padletKV';
+import { padletStore } from '../../../../../../services/db';
 
 export const DELETE: APIRoute = async ({ params }) => {
   const { code, noteId } = params;
@@ -7,12 +7,7 @@ export const DELETE: APIRoute = async ({ params }) => {
     return new Response(JSON.stringify({ error: 'Missing parameters' }), { status: 400 });
   }
 
-  const kv = getPadletKV();
-  if (!kv) {
-    return new Response(JSON.stringify({ error: 'KV not available' }), { status: 503 });
-  }
-
-  const ok = await padletKV.deleteNote(kv, code, noteId);
+  const ok = await padletStore.deleteNote(code, noteId);
   if (!ok) {
     return new Response(JSON.stringify({ error: 'Không tìm thấy ghi chú' }), { status: 404 });
   }
@@ -29,14 +24,9 @@ export const PATCH: APIRoute = async ({ params, request }) => {
     return new Response(JSON.stringify({ error: 'Missing parameters' }), { status: 400 });
   }
 
-  const kv = getPadletKV();
-  if (!kv) {
-    return new Response(JSON.stringify({ error: 'KV not available' }), { status: 503 });
-  }
-
   try {
     const body = await request.json();
-    const updated = await padletKV.updateNote(kv, code, noteId, body);
+    const updated = await padletStore.updateNote(code, noteId, body);
     if (!updated) {
       return new Response(JSON.stringify({ error: 'Không tìm thấy ghi chú' }), { status: 404 });
     }

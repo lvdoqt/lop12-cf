@@ -1,5 +1,5 @@
-import { isMockMode, isMockModeForEnv, supabase, createAdminSupabase, createServerSupabase } from '../lib/supabase';
-import type { Subject, Lesson, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress, Category, CourseLessonQuiz, VideoQuizResponse, CourseLessonReviewQuestion, CourseLessonReviewAttempt, CourseLessonReviewAnswer, CourseLearningStatistic, LearnerSkillMastery, UserCourseInsights, TeacherNotice, Class, ClassMember, ClassAssignment, ClassAssignmentView } from '../types';
+import { isMockModeForEnv, supabase, createAdminSupabase, createServerSupabase } from '../lib/supabase';
+import type { Subject, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress, Category, CourseLessonQuiz, VideoQuizResponse, CourseLessonReviewQuestion, CourseLessonReviewAttempt, CourseLessonReviewAnswer, CourseLearningStatistic, LearnerSkillMastery, UserCourseInsights, TeacherNotice, Class, ClassMember, ClassAssignment, ClassAssignmentView, PadletBoard, PadletNote, PadletComment, PadletColor, PadletTheme, PadletLayoutMode, PadletColumn } from '../types';
 
 // Ã¢â€â‚¬Ã¢â€â‚¬ Cloudflare runtime env injection Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 // Middleware calls setRuntimeEnv() per-request with Cloudflare runtime.env.
@@ -3413,5 +3413,737 @@ export const roomStore = {
       .eq('id', participantId).select().single();
     if (error) { console.error('[roomStore.submitParticipant] error:', error); return null; }
     return data as RoomParticipant;
+  },
+};
+
+// ============================================================================
+// PADLET STORE (Supabase-backed with graceful in-memory fallback)
+// ============================================================================
+
+function generatePadletCode(): string {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let result = '';
+  for (let i = 0; i < 6; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
+
+const samplePadletCode = 'LOP12A';
+const _mockPadletBoards = new Map<string, PadletBoard>();
+_mockPadletBoards.set(samplePadletCode, {
+  id: 'board-sample-1',
+  code: samplePadletCode,
+  title: 'Hộp thư Ý kiến & Thảo luận bài học',
+  description: 'Gửi thắc mắc, chia sẻ cảm nghĩ hoặc câu hỏi về bài giảng hôm nay!',
+  theme: 'corkboard',
+  layout_mode: 'columns',
+  columns: [
+    { id: 'col-1', title: '💡 Ý tưởng & Sáng kiến' },
+    { id: 'col-2', title: '❓ Thắc mắc cần giải đáp' },
+    { id: 'col-3', title: '🌟 Cảm nhận sau tiết học' }
+  ],
+  is_locked: false,
+  allow_comments: true,
+  allow_likes: true,
+  created_by: 'teacher-1',
+  created_at: new Date(Date.now() - 3600000).toISOString(),
+  notes: [
+    {
+      id: 'note-1',
+      board_code: samplePadletCode,
+      author_name: 'Thầy Hùng (GV)',
+      title: 'Chào mừng các em!',
+      content: 'Hãy dán các mẩu ghi chú chia sẻ thắc mắc hoặc ý tưởng cho dự án tuần này nhé.',
+      color: 'yellow',
+      column_id: 'col-1',
+      likes: 5,
+      is_pinned: true,
+      comments: [
+        {
+          id: 'cmt-1',
+          author_name: 'Minh Anh',
+          content: 'Dạ vâng thầy ơi!',
+          created_at: new Date(Date.now() - 3000000).toISOString()
+        }
+      ],
+      created_at: new Date(Date.now() - 3500000).toISOString()
+    },
+    {
+      id: 'note-2',
+      board_code: samplePadletCode,
+      author_name: 'Tuấn Khang (Lớp phó)',
+      title: 'Câu hỏi phần Đạo hàm',
+      content: 'Thầy có thể giải thích lại phương pháp tìm tiệm cận xiên khi bậc tử lớn hơn bậc mẫu 1 bậc được không ạ?',
+      color: 'pink',
+      column_id: 'col-2',
+      likes: 3,
+      is_pinned: false,
+      comments: [],
+      created_at: new Date(Date.now() - 2500000).toISOString()
+    },
+    {
+      id: 'note-3',
+      board_code: samplePadletCode,
+      author_name: 'Hải Đăng',
+      title: 'Tiết học thú vị',
+      content: 'Hôm nay học phần ứng dụng thực tế rất hay và dễ hiểu ạ. Cảm ơn thầy nhiều!',
+      color: 'green',
+      column_id: 'col-3',
+      likes: 4,
+      is_pinned: false,
+      comments: [],
+      created_at: new Date(Date.now() - 1800000).toISOString()
+    }
+  ]
+});
+
+async function dbUniquePadletCode(): Promise<string> {
+  const client = adminClient();
+  if (!client) return generatePadletCode();
+  for (let i = 0; i < 20; i++) {
+    const code = generatePadletCode();
+    try {
+      const { data } = await client.from('padlet_boards').select('id').eq('code', code).limit(1);
+      if (!data || data.length === 0) return code;
+    } catch {
+      return code;
+    }
+  }
+  return generatePadletCode();
+}
+
+function parseColumns(cols: any): PadletColumn[] {
+  if (!cols) return [];
+  if (Array.isArray(cols)) return cols;
+  if (typeof cols === 'string') {
+    try {
+      return JSON.parse(cols);
+    } catch {
+      return [];
+    }
+  }
+  return [];
+}
+
+export const padletStore = {
+  // ── 1. GET ALL BOARDS ──────────────────────────────────────────────────────
+  async getAllBoards(userId?: string): Promise<PadletBoard[]> {
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (client) {
+        try {
+          let query = client.from('padlet_boards').select('*, padlet_notes(id)').order('created_at', { ascending: false });
+          if (userId) {
+            query = query.eq('created_by', userId);
+          }
+          const { data, error } = await query;
+          if (!error && data) {
+            return data.map((b: any) => ({
+              id: b.id,
+              code: b.code,
+              title: b.title,
+              description: b.description || undefined,
+              theme: b.theme || 'corkboard',
+              layout_mode: b.layout_mode || 'wall',
+              columns: parseColumns(b.columns),
+              is_locked: Boolean(b.is_locked),
+              allow_comments: b.allow_comments !== false,
+              allow_likes: b.allow_likes !== false,
+              created_by: b.created_by,
+              created_at: b.created_at,
+              notes: (b.padlet_notes || []).map((n: any) => ({ id: n.id } as any))
+            }));
+          }
+          if (error) {
+            console.warn('[padletStore.getAllBoards] Supabase notice (falling back to memory):', error.message);
+          }
+        } catch (err: any) {
+          console.warn('[padletStore.getAllBoards] Exception (falling back to memory):', err?.message);
+        }
+      }
+    }
+
+    // In-memory fallback
+    const list = Array.from(_mockPadletBoards.values());
+    if (userId) {
+      return list.filter(b => b.created_by === userId || b.created_by === 'teacher-1');
+    }
+    return list;
+  },
+
+  // ── 2. GET BOARD BY CODE (includes notes & comments) ───────────────────────
+  async getBoardByCode(code: string): Promise<PadletBoard | null> {
+    if (!code) return null;
+    const upperCode = code.toUpperCase();
+
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (client) {
+        try {
+          const { data: b, error } = await client.from('padlet_boards').select('*').eq('code', upperCode).single();
+          if (!error && b) {
+            // Fetch notes for this board
+            const { data: rawNotes } = await client
+              .from('padlet_notes')
+              .select('*')
+              .eq('board_code', upperCode)
+              .order('is_pinned', { ascending: false })
+              .order('created_at', { ascending: true });
+
+            const notesList = rawNotes || [];
+            const noteIds = notesList.map((n: any) => n.id);
+
+            let commentsList: any[] = [];
+            if (noteIds.length > 0) {
+              const { data: rawComments } = await client
+                .from('padlet_comments')
+                .select('*')
+                .in('note_id', noteIds)
+                .order('created_at', { ascending: true });
+              if (rawComments) {
+                commentsList = rawComments;
+              }
+            }
+
+            const commentsByNote = new Map<string, PadletComment[]>();
+            for (const c of commentsList) {
+              const existing = commentsByNote.get(c.note_id) || [];
+              existing.push({
+                id: c.id,
+                author_name: c.author_name || 'Học sinh',
+                content: c.content,
+                created_at: c.created_at,
+              });
+              commentsByNote.set(c.note_id, existing);
+            }
+
+            const notes: PadletNote[] = notesList.map((n: any) => ({
+              id: n.id,
+              board_code: n.board_code,
+              author_name: n.author_name || 'Học sinh',
+              title: n.title || undefined,
+              content: n.content,
+              color: n.color || 'yellow',
+              column_id: n.column_id || undefined,
+              likes: Number(n.likes) || 0,
+              is_pinned: Boolean(n.is_pinned),
+              comments: commentsByNote.get(n.id) || [],
+              created_at: n.created_at,
+            }));
+
+            const board: PadletBoard = {
+              id: b.id,
+              code: b.code,
+              title: b.title,
+              description: b.description || undefined,
+              theme: b.theme || 'corkboard',
+              layout_mode: b.layout_mode || 'wall',
+              columns: parseColumns(b.columns),
+              is_locked: Boolean(b.is_locked),
+              allow_comments: b.allow_comments !== false,
+              allow_likes: b.allow_likes !== false,
+              created_by: b.created_by,
+              created_at: b.created_at,
+              notes,
+            };
+
+            // Cache in memory for quick subsequent access
+            _mockPadletBoards.set(upperCode, board);
+            return board;
+          }
+        } catch (err: any) {
+          console.warn('[padletStore.getBoardByCode] Exception (falling back to memory):', err?.message);
+        }
+      }
+    }
+
+    return _mockPadletBoards.get(upperCode) || null;
+  },
+
+  // ── 3. CREATE BOARD ────────────────────────────────────────────────────────
+  async createBoard(params: {
+    title: string;
+    description?: string;
+    theme?: PadletTheme;
+    layout_mode?: PadletLayoutMode;
+    columns?: string[];
+    allow_comments?: boolean;
+    allow_likes?: boolean;
+    created_by: string;
+  }): Promise<PadletBoard> {
+    const layout_mode = params.layout_mode || 'wall';
+    const columns: PadletColumn[] | undefined =
+      layout_mode === 'columns' && params.columns && params.columns.length > 0
+        ? params.columns.map((c, idx) => ({ id: `col-${Date.now()}-${idx}`, title: c }))
+        : layout_mode === 'columns'
+        ? [
+            { id: `col-${Date.now()}-1`, title: 'Cột 1' },
+            { id: `col-${Date.now()}-2`, title: 'Cột 2' },
+            { id: `col-${Date.now()}-3`, title: 'Cột 3' },
+          ]
+        : [];
+
+    const boardId = `board-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`;
+    const now = new Date().toISOString();
+    let code = generatePadletCode();
+
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (client) {
+        try {
+          code = await dbUniquePadletCode();
+          const { data, error } = await client.from('padlet_boards').insert([{
+            id: boardId,
+            code,
+            title: params.title.trim(),
+            description: params.description?.trim() || null,
+            theme: params.theme || 'corkboard',
+            layout_mode,
+            columns,
+            is_locked: false,
+            allow_comments: params.allow_comments !== false,
+            allow_likes: params.allow_likes !== false,
+            created_by: params.created_by,
+            created_at: now,
+            updated_at: now,
+          }]).select().single();
+
+          if (!error && data) {
+            const board: PadletBoard = {
+              id: data.id,
+              code: data.code,
+              title: data.title,
+              description: data.description || undefined,
+              theme: data.theme || 'corkboard',
+              layout_mode: data.layout_mode || 'wall',
+              columns: parseColumns(data.columns),
+              is_locked: Boolean(data.is_locked),
+              allow_comments: data.allow_comments !== false,
+              allow_likes: data.allow_likes !== false,
+              created_by: data.created_by,
+              created_at: data.created_at,
+              notes: [],
+            };
+            _mockPadletBoards.set(board.code, board);
+            return board;
+          }
+          if (error) {
+            console.warn('[padletStore.createBoard] Supabase error:', error.message);
+          }
+        } catch (err: any) {
+          console.warn('[padletStore.createBoard] Exception:', err?.message);
+        }
+      }
+    }
+
+    // Fallback to in-memory
+    while (_mockPadletBoards.has(code)) {
+      code = generatePadletCode();
+    }
+    const board: PadletBoard = {
+      id: boardId,
+      code,
+      title: params.title.trim(),
+      description: params.description?.trim(),
+      theme: params.theme || 'corkboard',
+      layout_mode,
+      columns,
+      is_locked: false,
+      allow_comments: params.allow_comments !== false,
+      allow_likes: params.allow_likes !== false,
+      created_by: params.created_by,
+      created_at: now,
+      notes: [],
+    };
+    _mockPadletBoards.set(code, board);
+    return board;
+  },
+
+  // ── 4. UPDATE BOARD ────────────────────────────────────────────────────────
+  async updateBoard(
+    code: string,
+    updates: Partial<PadletBoard>,
+    userId?: string
+  ): Promise<PadletBoard | null> {
+    if (!code) return null;
+    const upperCode = code.toUpperCase();
+
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (client) {
+        try {
+          const { data: existing, error: checkErr } = await client.from('padlet_boards').select('*').eq('code', upperCode).single();
+          if (!checkErr && existing) {
+            if (userId && existing.created_by !== userId && userId !== 'teacher-1') {
+              return null;
+            }
+            const updateData: any = { updated_at: new Date().toISOString() };
+            if (updates.title !== undefined) updateData.title = updates.title;
+            if (updates.description !== undefined) updateData.description = updates.description;
+            if (updates.theme !== undefined) updateData.theme = updates.theme;
+            if (updates.is_locked !== undefined) updateData.is_locked = updates.is_locked;
+            if (updates.allow_comments !== undefined) updateData.allow_comments = updates.allow_comments;
+            if (updates.allow_likes !== undefined) updateData.allow_likes = updates.allow_likes;
+
+            const { error: updErr } = await client.from('padlet_boards').update(updateData).eq('code', upperCode);
+            if (!updErr) {
+              return await padletStore.getBoardByCode(upperCode);
+            }
+          }
+        } catch (err: any) {
+          console.warn('[padletStore.updateBoard] Exception:', err?.message);
+        }
+      }
+    }
+
+    // Fallback to in-memory
+    const board = _mockPadletBoards.get(upperCode);
+    if (!board) return null;
+    if (userId && board.created_by !== userId && board.created_by !== 'teacher-1') {
+      return null;
+    }
+    if (updates.title !== undefined) board.title = updates.title;
+    if (updates.description !== undefined) board.description = updates.description;
+    if (updates.theme !== undefined) board.theme = updates.theme;
+    if (updates.is_locked !== undefined) board.is_locked = updates.is_locked;
+    if (updates.allow_comments !== undefined) board.allow_comments = updates.allow_comments;
+    if (updates.allow_likes !== undefined) board.allow_likes = updates.allow_likes;
+    return board;
+  },
+
+  // ── 5. DELETE BOARD ────────────────────────────────────────────────────────
+  async deleteBoard(code: string, userId?: string): Promise<boolean> {
+    if (!code) return false;
+    const upperCode = code.toUpperCase();
+
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (client) {
+        try {
+          const { data: existing, error: checkErr } = await client.from('padlet_boards').select('created_by').eq('code', upperCode).single();
+          if (!checkErr && existing) {
+            if (userId && existing.created_by !== userId && userId !== 'teacher-1') {
+              return false;
+            }
+            const { error } = await client.from('padlet_boards').delete().eq('code', upperCode);
+            if (!error) {
+              _mockPadletBoards.delete(upperCode);
+              return true;
+            }
+          }
+        } catch (err: any) {
+          console.warn('[padletStore.deleteBoard] Exception:', err?.message);
+        }
+      }
+    }
+
+    const board = _mockPadletBoards.get(upperCode);
+    if (!board) return false;
+    if (userId && board.created_by !== userId && board.created_by !== 'teacher-1') {
+      return false;
+    }
+    return _mockPadletBoards.delete(upperCode);
+  },
+
+  // ── 6. ADD NOTE ────────────────────────────────────────────────────────────
+  async addNote(
+    code: string,
+    data: {
+      author_name: string;
+      title?: string;
+      content: string;
+      color?: PadletColor;
+      column_id?: string;
+    }
+  ): Promise<PadletNote | null> {
+    if (!code || !data.content?.trim()) return null;
+    const upperCode = code.toUpperCase();
+
+    const validColors: PadletColor[] = ['yellow', 'blue', 'green', 'pink', 'purple', 'orange'];
+    const color = validColors.includes(data.color as PadletColor) ? (data.color as PadletColor) : 'yellow';
+    const noteId = `note-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`;
+    const now = new Date().toISOString();
+
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (client) {
+        try {
+          const { data: board, error: bErr } = await client.from('padlet_boards').select('code, is_locked, columns').eq('code', upperCode).single();
+          if (!bErr && board) {
+            if (board.is_locked) return null;
+
+            const cols = parseColumns(board.columns);
+            const column_id = data.column_id || cols[0]?.id || null;
+
+            const { data: newRow, error: insErr } = await client.from('padlet_notes').insert([{
+              id: noteId,
+              board_code: board.code,
+              author_name: data.author_name.trim() || 'Học sinh',
+              title: data.title?.trim() || null,
+              content: data.content.trim(),
+              color,
+              column_id,
+              likes: 0,
+              is_pinned: false,
+              created_at: now,
+              updated_at: now,
+            }]).select().single();
+
+            if (!insErr && newRow) {
+              const note: PadletNote = {
+                id: newRow.id,
+                board_code: newRow.board_code,
+                author_name: newRow.author_name || 'Học sinh',
+                title: newRow.title || undefined,
+                content: newRow.content,
+                color: newRow.color,
+                column_id: newRow.column_id || undefined,
+                likes: 0,
+                is_pinned: false,
+                comments: [],
+                created_at: newRow.created_at,
+              };
+
+              const memBoard = _mockPadletBoards.get(upperCode);
+              if (memBoard) {
+                memBoard.notes.push(note);
+              }
+
+              return note;
+            }
+            if (insErr) {
+              console.warn('[padletStore.addNote] Supabase error:', insErr.message);
+            }
+          }
+        } catch (err: any) {
+          console.warn('[padletStore.addNote] Exception:', err?.message);
+        }
+      }
+    }
+
+    // Fallback to in-memory
+    const board = _mockPadletBoards.get(upperCode);
+    if (!board || board.is_locked) return null;
+
+    const note: PadletNote = {
+      id: noteId,
+      board_code: board.code,
+      author_name: data.author_name.trim() || 'Học sinh',
+      title: data.title?.trim() || undefined,
+      content: data.content.trim(),
+      color,
+      column_id: data.column_id || (board.columns?.[0]?.id),
+      likes: 0,
+      is_pinned: false,
+      comments: [],
+      created_at: now,
+    };
+    board.notes.push(note);
+    return note;
+  },
+
+  // ── 7. UPDATE NOTE ─────────────────────────────────────────────────────────
+  async updateNote(
+    code: string,
+    noteId: string,
+    updates: { is_pinned?: boolean; color?: PadletColor; title?: string; content?: string }
+  ): Promise<PadletNote | null> {
+    if (!code || !noteId) return null;
+    const upperCode = code.toUpperCase();
+
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (client) {
+        try {
+          const updateData: any = { updated_at: new Date().toISOString() };
+          if (updates.is_pinned !== undefined) updateData.is_pinned = updates.is_pinned;
+          if (updates.color !== undefined) updateData.color = updates.color;
+          if (updates.title !== undefined) updateData.title = updates.title;
+          if (updates.content !== undefined) updateData.content = updates.content;
+
+          const { data: row, error } = await client.from('padlet_notes').update(updateData).eq('id', noteId).eq('board_code', upperCode).select().single();
+          if (!error && row) {
+            const { data: cmts } = await client.from('padlet_comments').select('*').eq('note_id', noteId).order('created_at', { ascending: true });
+            const note: PadletNote = {
+              id: row.id,
+              board_code: row.board_code,
+              author_name: row.author_name || 'Học sinh',
+              title: row.title || undefined,
+              content: row.content,
+              color: row.color,
+              column_id: row.column_id || undefined,
+              likes: Number(row.likes) || 0,
+              is_pinned: Boolean(row.is_pinned),
+              comments: (cmts || []).map((c: any) => ({
+                id: c.id,
+                author_name: c.author_name || 'Học sinh',
+                content: c.content,
+                created_at: c.created_at,
+              })),
+              created_at: row.created_at,
+            };
+
+            const memBoard = _mockPadletBoards.get(upperCode);
+            if (memBoard) {
+              const idx = memBoard.notes.findIndex(n => n.id === noteId);
+              if (idx !== -1) memBoard.notes[idx] = note;
+            }
+
+            return note;
+          }
+        } catch (err: any) {
+          console.warn('[padletStore.updateNote] Exception:', err?.message);
+        }
+      }
+    }
+
+    // Fallback to in-memory
+    const board = _mockPadletBoards.get(upperCode);
+    if (!board) return null;
+    const note = board.notes.find(n => n.id === noteId);
+    if (!note) return null;
+
+    if (updates.is_pinned !== undefined) note.is_pinned = updates.is_pinned;
+    if (updates.color !== undefined) note.color = updates.color;
+    if (updates.title !== undefined) note.title = updates.title;
+    if (updates.content !== undefined) note.content = updates.content;
+
+    return note;
+  },
+
+  // ── 8. DELETE NOTE ─────────────────────────────────────────────────────────
+  async deleteNote(code: string, noteId: string): Promise<boolean> {
+    if (!code || !noteId) return false;
+    const upperCode = code.toUpperCase();
+
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (client) {
+        try {
+          const { error } = await client.from('padlet_notes').delete().eq('id', noteId).eq('board_code', upperCode);
+          if (!error) {
+            const memBoard = _mockPadletBoards.get(upperCode);
+            if (memBoard) {
+              const idx = memBoard.notes.findIndex(n => n.id === noteId);
+              if (idx !== -1) memBoard.notes.splice(idx, 1);
+            }
+            return true;
+          }
+        } catch (err: any) {
+          console.warn('[padletStore.deleteNote] Exception:', err?.message);
+        }
+      }
+    }
+
+    const board = _mockPadletBoards.get(upperCode);
+    if (!board) return false;
+    const idx = board.notes.findIndex(n => n.id === noteId);
+    if (idx !== -1) {
+      board.notes.splice(idx, 1);
+      return true;
+    }
+    return false;
+  },
+
+  // ── 9. TOGGLE LIKE NOTE ────────────────────────────────────────────────────
+  async toggleLike(code: string, noteId: string): Promise<{ likes: number } | null> {
+    if (!code || !noteId) return null;
+    const upperCode = code.toUpperCase();
+
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (client) {
+        try {
+          const { data: board, error: bErr } = await client.from('padlet_boards').select('allow_likes').eq('code', upperCode).single();
+          if (!bErr && board && board.allow_likes) {
+            const { data: note, error: nErr } = await client.from('padlet_notes').select('likes').eq('id', noteId).single();
+            if (!nErr && note) {
+              const newLikes = (Number(note.likes) || 0) + 1;
+              const { error: updErr } = await client.from('padlet_notes').update({ likes: newLikes }).eq('id', noteId);
+              if (!updErr) {
+                const memBoard = _mockPadletBoards.get(upperCode);
+                const memNote = memBoard?.notes.find(n => n.id === noteId);
+                if (memNote) memNote.likes = newLikes;
+                return { likes: newLikes };
+              }
+            }
+          }
+        } catch (err: any) {
+          console.warn('[padletStore.toggleLike] Exception:', err?.message);
+        }
+      }
+    }
+
+    const board = _mockPadletBoards.get(upperCode);
+    if (!board || !board.allow_likes) return null;
+    const note = board.notes.find(n => n.id === noteId);
+    if (!note) return null;
+    note.likes += 1;
+    return { likes: note.likes };
+  },
+
+  // ── 10. ADD COMMENT TO NOTE ────────────────────────────────────────────────
+  async addComment(
+    code: string,
+    noteId: string,
+    author_name: string,
+    content: string
+  ): Promise<PadletComment | null> {
+    if (!code || !noteId || !content?.trim()) return null;
+    const upperCode = code.toUpperCase();
+    const cmtId = `cmt-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`;
+    const now = new Date().toISOString();
+
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (client) {
+        try {
+          const { data: board, error: bErr } = await client.from('padlet_boards').select('allow_comments, is_locked').eq('code', upperCode).single();
+          if (!bErr && board) {
+            if (!board.allow_comments || board.is_locked) return null;
+
+            const { data: row, error: insErr } = await client.from('padlet_comments').insert([{
+              id: cmtId,
+              note_id: noteId,
+              author_name: author_name.trim() || 'Học sinh',
+              content: content.trim(),
+              created_at: now,
+            }]).select().single();
+
+            if (!insErr && row) {
+              const comment: PadletComment = {
+                id: row.id,
+                author_name: row.author_name || 'Học sinh',
+                content: row.content,
+                created_at: row.created_at,
+              };
+
+              const memBoard = _mockPadletBoards.get(upperCode);
+              const memNote = memBoard?.notes.find(n => n.id === noteId);
+              if (memNote) memNote.comments.push(comment);
+
+              return comment;
+            }
+          }
+        } catch (err: any) {
+          console.warn('[padletStore.addComment] Exception:', err?.message);
+        }
+      }
+    }
+
+    const board = _mockPadletBoards.get(upperCode);
+    if (!board || !board.allow_comments || board.is_locked) return null;
+    const note = board.notes.find(n => n.id === noteId);
+    if (!note) return null;
+
+    const comment: PadletComment = {
+      id: cmtId,
+      author_name: author_name.trim() || 'Học sinh',
+      content: content.trim(),
+      created_at: now,
+    };
+    note.comments.push(comment);
+    return comment;
   },
 };

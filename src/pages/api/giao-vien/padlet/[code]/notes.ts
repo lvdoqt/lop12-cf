@@ -1,15 +1,10 @@
 import type { APIRoute } from 'astro';
-import { padletKV, getPadletKV } from '../../../../../lib/padletKV';
+import { padletStore } from '../../../../../services/db';
 
 export const POST: APIRoute = async ({ params, request }) => {
   const { code } = params;
   if (!code) {
     return new Response(JSON.stringify({ error: 'Missing code' }), { status: 400 });
-  }
-
-  const kv = getPadletKV();
-  if (!kv) {
-    return new Response(JSON.stringify({ error: 'KV not available' }), { status: 503 });
   }
 
   try {
@@ -18,7 +13,7 @@ export const POST: APIRoute = async ({ params, request }) => {
       return new Response(JSON.stringify({ error: 'Nội dung ghi chú không được để trống' }), { status: 400 });
     }
 
-    const note = await padletKV.addNote(kv, code, {
+    const note = await padletStore.addNote(code, {
       author_name: body.author_name || 'Học sinh',
       title: body.title,
       content: body.content,
