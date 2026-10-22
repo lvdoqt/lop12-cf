@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { padletStore } from '../../../../../../../services/mockPadletStore';
+import { padletKV, getPadletKV } from '../../../../../../../lib/padletKV';
 
 export const POST: APIRoute = async ({ params }) => {
   const { code, noteId } = params;
@@ -7,7 +7,12 @@ export const POST: APIRoute = async ({ params }) => {
     return new Response(JSON.stringify({ error: 'Missing parameters' }), { status: 400 });
   }
 
-  const result = padletStore.toggleLike(code, noteId);
+  const kv = getPadletKV();
+  if (!kv) {
+    return new Response(JSON.stringify({ error: 'KV not available' }), { status: 503 });
+  }
+
+  const result = await padletKV.toggleLike(kv, code, noteId);
   if (!result) {
     return new Response(JSON.stringify({ error: 'Không thể thả tim hoặc tính năng bị tắt' }), { status: 400 });
   }

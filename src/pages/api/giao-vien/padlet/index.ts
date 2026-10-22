@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { padletStore } from '../../../../services/mockPadletStore';
+import { padletKV, getPadletKV } from '../../../../lib/padletKV';
 
 export const GET: APIRoute = async ({ locals }) => {
   const user = locals.user;
@@ -7,7 +7,12 @@ export const GET: APIRoute = async ({ locals }) => {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
   }
 
-  const boards = padletStore.getAllBoards(user.role === 'admin' ? undefined : user.id);
+  const kv = getPadletKV();
+  if (!kv) {
+    return new Response(JSON.stringify({ error: 'KV not available' }), { status: 503 });
+  }
+
+  const boards = await padletKV.getAllBoards(kv, user.role === 'admin' ? undefined : user.id);
   return new Response(JSON.stringify(boards), {
     status: 200,
     headers: { 'Content-Type': 'application/json' }
@@ -20,13 +25,18 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
   }
 
+  const kv = getPadletKV();
+  if (!kv) {
+    return new Response(JSON.stringify({ error: 'KV not available' }), { status: 503 });
+  }
+
   try {
     const body = await request.json();
     if (!body.title || typeof body.title !== 'string' || !body.title.trim()) {
       return new Response(JSON.stringify({ error: 'Tiêu đề bảng không được để trống' }), { status: 400 });
     }
 
-    const board = padletStore.createBoard({
+    const board = await padletKV.createBoard(kv, {
       title: body.title,
       description: body.description,
       theme: body.theme,

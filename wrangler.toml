@@ -14,3 +14,11 @@ PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXB
 # Note: SUPABASE_SERVICE_ROLE_KEY and GEMINI_API_KEY should be added
 # as "Secrets" in the Cloudflare Pages dashboard (NOT here, to avoid
 # committing sensitive keys to GitHub).
+
+# Padlet KV namespace — boards persist across all worker instances.
+# To create: run `wrangler kv namespace create PADLET_KV`
+# then replace the id below with the real namespace id.
+[[kv_namespaces]]
+binding = "PADLET_KV"
+id = "REPLACE_WITH_REAL_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_PREVIEW_KV_NAMESPACE_ID"
