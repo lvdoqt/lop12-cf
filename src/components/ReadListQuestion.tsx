@@ -168,11 +168,16 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
     onAnswer?.(question.id, subIdx, letter);
   };
 
+  // Dùng layout 2 cột khi là bài đọc (không phải audio list)
+  // Bên trái: bài đọc cố định (sticky + scroll riêng), bên phải: câu hỏi scroll
+  const isTwoColumn = !isList && passage.trim().length > 0;
+
   return (
     <div
       id={`question-section-${index}`}
       className={`bg-white dark:bg-slate-900 border ${borderColor} rounded-2xl shadow-sm mb-6 overflow-hidden`}
     >
+      {/* Header */}
       <div className={`flex items-center justify-between px-5 py-3 bg-gradient-to-r ${headerGradient}`}>
         <span className={`inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl text-sm font-extrabold bg-gradient-to-br ${badgeBg} text-white shadow-md`}>
           <span className="text-base md:text-lg leading-none">{isCloze ? 'Nhóm' : 'Câu'} {index}{subQuestions.length > 1 ? ` - ${index + subQuestions.length - 1}` : ''}</span>
@@ -184,99 +189,218 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
         )}
       </div>
 
-      <div className="p-6 space-y-4">
-        <MathContent
-          className="text-base md:text-lg font-semibold text-gray-800 dark:text-slate-100 leading-relaxed whitespace-pre-wrap select-none question-text [&_img]:max-w-full [&_img]:rounded-lg [&_img]:mx-auto [&_img]:my-3 [&_p]:inline"
-          text={passage}
-        />
+      {isTwoColumn ? (
+        /* ── Layout 2 cột: trái = bài đọc sticky, phải = câu hỏi ── */
+        <div className="flex flex-col lg:flex-row min-h-[400px]" style={{ maxHeight: '80vh' }}>
+          {/* Cột trái – bài đọc cố định, cuộn riêng */}
+          <div
+            className={`lg:w-1/2 border-b lg:border-b-0 lg:border-r ${borderColor} overflow-y-auto`}
+            style={{ maxHeight: '80vh' }}
+          >
+            <div className="p-5 lg:p-6">
+              <p className={`text-[10px] font-bold uppercase tracking-wider mb-3 ${labelColor} opacity-70`}>
+                📖 Bài đọc
+              </p>
+              <MathContent
+                className="text-sm md:text-base text-gray-800 dark:text-slate-100 leading-relaxed whitespace-pre-wrap select-text question-text [&_img]:max-w-full [&_img]:rounded-lg [&_img]:mx-auto [&_img]:my-3"
+                text={passage}
+              />
+              {audioUrl && (
+                <audio controls preload="none" className="w-full h-9 mt-4">
+                  <source src={audioUrl} />
+                </audio>
+              )}
+            </div>
+          </div>
 
-        {audioUrl && (
-          <audio controls preload="none" className="w-full h-9 mt-2">
-            <source src={audioUrl} />
-          </audio>
-        )}
+          {/* Cột phải – câu hỏi cuộn */}
+          <div
+            className="lg:w-1/2 overflow-y-auto"
+            style={{ maxHeight: '80vh' }}
+          >
+            <div className="p-5 lg:p-6">
+              <p className={`text-[10px] font-bold uppercase tracking-wider mb-3 ${labelColor} opacity-70`}>
+                ✏️ Câu hỏi ({subQuestions.length} câu)
+              </p>
+              <ol className="space-y-4">
+                {subQuestions.map((sq, i) => {
+                  const correctLetter = (sq.correct_option || '').toUpperCase();
+                  const sel = selection[String(i)];
 
-        <ol className="space-y-4 mt-3">
-          {subQuestions.map((sq, i) => {
-            const correctLetter = (sq.correct_option || '').toUpperCase();
-            const sel = selection[String(i)];
-            
-            let displayQuestion = sq.question || '';
-            if (isCloze) {
-              displayQuestion = displayQuestion.replace(/\((\d+)\)/g, `(${index + i})`);
-            }
+                  let displayQuestion = sq.question || '';
+                  if (isCloze) {
+                    displayQuestion = displayQuestion.replace(/\((\d+)\)/g, `(${index + i})`);
+                  }
 
-            return (
-              <li key={i} className={`border-t ${subDivider} pt-3 first:border-t-0 first:pt-0`}>
-                <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 mb-2 leading-relaxed whitespace-pre-wrap">
-                  <span className={`${subNumColor} mr-1`}>Câu {index + i}.</span>
-                  <MathContent
-                    as="span"
-                    inline
-                    className="inline [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1"
-                    text={displayQuestion}
-                  />
-                </p>
-                <div className="space-y-2">
-                  {optionLetters.filter(l => sq['option_' + l.toLowerCase()]).map(l => {
-                    const text = sq['option_' + l.toLowerCase()] || '';
-                    const isCorrect = l === correctLetter;
-                    const isSel = sel === l;
+                  return (
+                    <li key={i} className={`border-t ${subDivider} pt-3 first:border-t-0 first:pt-0`}>
+                      <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 mb-2 leading-relaxed whitespace-pre-wrap">
+                        <span className={`${subNumColor} mr-1`}>Câu {index + i}.</span>
+                        <MathContent
+                          as="span"
+                          inline
+                          className="inline [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1"
+                          text={displayQuestion}
+                        />
+                      </p>
+                      <div className="space-y-2">
+                        {optionLetters.filter(l => sq['option_' + l.toLowerCase()]).map(l => {
+                          const text = sq['option_' + l.toLowerCase()] || '';
+                          const isCorrect = l === correctLetter;
+                          const isSel = sel === l;
 
-                    let optStyle = 'border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800/40 text-gray-700 dark:text-slate-300';
-                    let letterStyle = 'bg-gray-100 border-gray-300 text-gray-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400';
+                          let optStyle = 'border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800/40 text-gray-700 dark:text-slate-300';
+                          let letterStyle = 'bg-gray-100 border-gray-300 text-gray-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400';
 
-                    if (mode === 'review') {
-                      if (isCorrect) {
-                        optStyle = 'border-emerald-500 bg-emerald-50/60 dark:border-emerald-500/50 dark:bg-emerald-950/20 text-emerald-700 dark:text-emerald-400';
-                        letterStyle = 'bg-emerald-600 border-emerald-600 text-white';
-                      } else if (isSel && !isCorrect) {
-                        optStyle = 'border-rose-500 bg-rose-50/60 dark:border-rose-500/50 dark:bg-rose-950/20 text-rose-700 dark:text-rose-400';
-                        letterStyle = 'bg-rose-600 border-rose-600 text-white';
-                      }
-                    } else if (isSel) {
-                      optStyle = selectedStyle;
-                      letterStyle = selectedLetterStyle;
-                    }
+                          if (mode === 'review') {
+                            if (isCorrect) {
+                              optStyle = 'border-emerald-500 bg-emerald-50/60 dark:border-emerald-500/50 dark:bg-emerald-950/20 text-emerald-700 dark:text-emerald-400';
+                              letterStyle = 'bg-emerald-600 border-emerald-600 text-white';
+                            } else if (isSel && !isCorrect) {
+                              optStyle = 'border-rose-500 bg-rose-50/60 dark:border-rose-500/50 dark:bg-rose-950/20 text-rose-700 dark:text-rose-400';
+                              letterStyle = 'bg-rose-600 border-rose-600 text-white';
+                            }
+                          } else if (isSel) {
+                            optStyle = selectedStyle;
+                            letterStyle = selectedLetterStyle;
+                          }
 
-                    return (
-                      <div
-                        key={l}
-                        onClick={() => handleClick(i, l)}
-                        className={`flex items-center p-3.5 rounded-xl border-2 transition-all duration-150 select-none ${mode === 'take' ? 'cursor-pointer' : ''} ${optStyle}`}
-                      >
-                        <div className={`w-6 h-6 rounded-lg mr-3 flex items-center justify-center font-bold text-xs transition-colors border shrink-0 ${letterStyle}`}>
-                          {l}
-                        </div>
-                        <MathContent className="text-sm md:text-base font-medium flex-1" text={text} inline />
-                        {mode === 'review' && isCorrect && (
-                          <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400 ml-auto shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                        )}
-                        {mode === 'review' && isSel && !isCorrect && (
-                          <svg className="w-5 h-5 text-rose-600 dark:text-rose-400 ml-auto shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 00-1.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                          </svg>
-                        )}
+                          return (
+                            <div
+                              key={l}
+                              onClick={() => handleClick(i, l)}
+                              className={`flex items-center p-3.5 rounded-xl border-2 transition-all duration-150 select-none ${mode === 'take' ? 'cursor-pointer' : ''} ${optStyle}`}
+                            >
+                              <div className={`w-6 h-6 rounded-lg mr-3 flex items-center justify-center font-bold text-xs transition-colors border shrink-0 ${letterStyle}`}>
+                                {l}
+                              </div>
+                              <MathContent className="text-sm md:text-base font-medium flex-1" text={text} inline />
+                              {mode === 'review' && isCorrect && (
+                                <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400 ml-auto shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                </svg>
+                              )}
+                              {mode === 'review' && isSel && !isCorrect && (
+                                <svg className="w-5 h-5 text-rose-600 dark:text-rose-400 ml-auto shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 00-1.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                                </svg>
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
-                    );
-                  })}
-                </div>
-                {mode === 'review' && sq.explanation && (
-                  <div className="mt-2 p-3 rounded-xl bg-blue-50/40 border border-blue-100/30 dark:bg-slate-900/60 dark:border-slate-800/80">
-                    <p className="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">💡 Giải thích:</p>
+                      {mode === 'review' && sq.explanation && (
+                        <div className="mt-2 p-3 rounded-xl bg-blue-50/40 border border-blue-100/30 dark:bg-slate-900/60 dark:border-slate-800/80">
+                          <p className="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">💡 Giải thích:</p>
+                          <MathContent
+                            className="text-sm text-gray-600 dark:text-slate-300 whitespace-pre-wrap leading-relaxed"
+                            text={sq.explanation}
+                          />
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* ── Layout 1 cột (list/audio hoặc không có bài đọc) ── */
+        <div className="p-6 space-y-4">
+          <MathContent
+            className="text-base md:text-lg font-semibold text-gray-800 dark:text-slate-100 leading-relaxed whitespace-pre-wrap select-none question-text [&_img]:max-w-full [&_img]:rounded-lg [&_img]:mx-auto [&_img]:my-3 [&_p]:inline"
+            text={passage}
+          />
+
+          {audioUrl && (
+            <audio controls preload="none" className="w-full h-9 mt-2">
+              <source src={audioUrl} />
+            </audio>
+          )}
+
+          <ol className="space-y-4 mt-3">
+            {subQuestions.map((sq, i) => {
+              const correctLetter = (sq.correct_option || '').toUpperCase();
+              const sel = selection[String(i)];
+
+              let displayQuestion = sq.question || '';
+              if (isCloze) {
+                displayQuestion = displayQuestion.replace(/\((\d+)\)/g, `(${index + i})`);
+              }
+
+              return (
+                <li key={i} className={`border-t ${subDivider} pt-3 first:border-t-0 first:pt-0`}>
+                  <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 mb-2 leading-relaxed whitespace-pre-wrap">
+                    <span className={`${subNumColor} mr-1`}>Câu {index + i}.</span>
                     <MathContent
-                      className="text-sm text-gray-600 dark:text-slate-300 whitespace-pre-wrap leading-relaxed"
-                      text={sq.explanation}
+                      as="span"
+                      inline
+                      className="inline [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1"
+                      text={displayQuestion}
                     />
+                  </p>
+                  <div className="space-y-2">
+                    {optionLetters.filter(l => sq['option_' + l.toLowerCase()]).map(l => {
+                      const text = sq['option_' + l.toLowerCase()] || '';
+                      const isCorrect = l === correctLetter;
+                      const isSel = sel === l;
+
+                      let optStyle = 'border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800/40 text-gray-700 dark:text-slate-300';
+                      let letterStyle = 'bg-gray-100 border-gray-300 text-gray-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400';
+
+                      if (mode === 'review') {
+                        if (isCorrect) {
+                          optStyle = 'border-emerald-500 bg-emerald-50/60 dark:border-emerald-500/50 dark:bg-emerald-950/20 text-emerald-700 dark:text-emerald-400';
+                          letterStyle = 'bg-emerald-600 border-emerald-600 text-white';
+                        } else if (isSel && !isCorrect) {
+                          optStyle = 'border-rose-500 bg-rose-50/60 dark:border-rose-500/50 dark:bg-rose-950/20 text-rose-700 dark:text-rose-400';
+                          letterStyle = 'bg-rose-600 border-rose-600 text-white';
+                        }
+                      } else if (isSel) {
+                        optStyle = selectedStyle;
+                        letterStyle = selectedLetterStyle;
+                      }
+
+                      return (
+                        <div
+                          key={l}
+                          onClick={() => handleClick(i, l)}
+                          className={`flex items-center p-3.5 rounded-xl border-2 transition-all duration-150 select-none ${mode === 'take' ? 'cursor-pointer' : ''} ${optStyle}`}
+                        >
+                          <div className={`w-6 h-6 rounded-lg mr-3 flex items-center justify-center font-bold text-xs transition-colors border shrink-0 ${letterStyle}`}>
+                            {l}
+                          </div>
+                          <MathContent className="text-sm md:text-base font-medium flex-1" text={text} inline />
+                          {mode === 'review' && isCorrect && (
+                            <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400 ml-auto shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                            </svg>
+                          )}
+                          {mode === 'review' && isSel && !isCorrect && (
+                            <svg className="w-5 h-5 text-rose-600 dark:text-rose-400 ml-auto shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 00-1.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                            </svg>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-      </div>
+                  {mode === 'review' && sq.explanation && (
+                    <div className="mt-2 p-3 rounded-xl bg-blue-50/40 border border-blue-100/30 dark:bg-slate-900/60 dark:border-slate-800/80">
+                      <p className="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">💡 Giải thích:</p>
+                      <MathContent
+                        className="text-sm text-gray-600 dark:text-slate-300 whitespace-pre-wrap leading-relaxed"
+                        text={sq.explanation}
+                      />
+                    </div>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      )}
     </div>
   );
 }

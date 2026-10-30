@@ -24,6 +24,23 @@ if (Astro.request.method === 'POST') {
     const category_id = (formData.get('category_id') as string) || null;
     const exam_type   = formData.get('exam_type')  as '15m' | '45m' | 'semester' | 'mock_thpt' | 'vsat';
 
+    // ── pick_per_type settings ──
+    const pickRaw = (formData.get('pick_per_type') as string)?.trim();
+    let settings: any = null;
+    if (pickRaw) {
+      try {
+        const pickObj = JSON.parse(pickRaw);
+        if (typeof pickObj === 'object' && !Array.isArray(pickObj)) {
+          // Validate: all values must be positive integers
+          const valid = Object.entries(pickObj).every(([, v]) => Number.isInteger(v) && (v as number) > 0);
+          if (!valid) throw new Error('Giá trị pick_per_type phải là số nguyên dương.');
+          settings = { pick_per_type: pickObj };
+        }
+      } catch (e: any) {
+        throw new Error(`pick_per_type không hợp lệ: ${e.message}`);
+      }
+    }
+
     if (!title || !duration || !subject_id || !exam_type) {
       throw new Error('Tiêu đề, Thời gian, Môn học và Phân loại đề thi là bắt buộc.');
     }
@@ -197,7 +214,7 @@ if (Astro.request.method === 'POST') {
     questionIds = Array.from(new Set(questionIds));
 
     try {
-      await db.createExam({ title, duration, subject_id, category_id, exam_type, created_by: user.id }, questionIds);
+      await db.createExam({ title, duration, subject_id, category_id, exam_type, created_by: user.id, settings }, questionIds);
     } catch (examErr: any) {
       throw new Error(`Lỗi tạo đề thi: ${examErr?.message || examErr?.details || String(examErr)}`);
     }
@@ -310,6 +327,27 @@ if (preselectedIds.length > 0) {
             <label for="duration" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Thời gian (phút) <span class="text-rose-500">*</span></label>
             <input type="number" name="duration" id="duration" required min="1" max="300" placeholder="15, 45, 90..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] transition-colors placeholder:text-slate-400" />
           </div>
+        </div>
+
+        <!-- pick_per_type: Chọn ngẫu nhiên k câu từ n câu theo loại -->
+        <div class="mt-4 p-4 rounded-xl border border-dashed border-blue-200 dark:border-blue-800/40 bg-blue-50/40 dark:bg-blue-950/10">
+          <label class="block text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-1.5">
+            🎲 Chọn ngẫu nhiên k/n câu theo loại <span class="font-normal normal-case text-slate-400">(tùy chọn)</span>
+          </label>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-2 leading-relaxed">
+            Mỗi học sinh sẽ nhận bộ câu hỏi khác nhau. Để trống = dùng tất cả câu.
+            Nhập JSON dạng: <code class="bg-white dark:bg-slate-800 px-1 py-0.5 rounded text-[11px]">&#123;"read": 2, "cloze_text": 2, "single_choice": 4&#125;</code>
+          </p>
+          <input
+            type="text"
+            name="pick_per_type"
+            id="pick_per_type"
+            placeholder='{"read": 2, "cloze_text": 2, "single_choice": 4}'
+            class="w-full px-4 py-2.5 rounded-xl border border-blue-200 dark:border-blue-700/50 bg-white dark:bg-slate-900 text-sm font-mono focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] placeholder:text-slate-400 placeholder:font-sans"
+          />
+          <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-1.5">
+            Loại hợp lệ: <code class="text-[11px]">single_choice</code>, <code class="text-[11px]">read</code>, <code class="text-[11px]">cloze_text</code>, <code class="text-[11px]">read_cloze</code>, <code class="text-[11px]">msq</code>, <code class="text-[11px]">sa</code>, ...
+          </p>
         </div>
 
         <!-- Tab: Chọn câu hỏi / Soạn ma trận / Nhập JSON -->

@@ -34,7 +34,7 @@ if (attempt.score !== null) {
 const allQuestions = await db.getQuestionsByExamId(exam.id);
 
 const prng = mulberry32(uuidToSeed(attempt.id));
-const questions = buildShuffledExam(allQuestions, prng);
+const questions = buildShuffledExam(allQuestions, prng, exam.settings);
 
 console.log(`[take] exam=${exam.id} slug=${exam.slug} questions=${questions.length}`);
 

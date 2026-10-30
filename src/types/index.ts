@@ -72,6 +72,20 @@ export interface Answer {
   is_correct: boolean;
 }
 
+/** Per-type random question pool config.
+ *  key = question type (e.g. 'read', 'cloze_text', 'mcq', 'single_choice', ...)
+ *  value = how many questions to pick out of the pool for that type.
+ *  Types not listed → include all.
+ */
+export interface ExamPickPerType {
+  [type: string]: number;
+}
+
+export interface ExamSettings {
+  /** Random k-from-n selection per question type */
+  pick_per_type?: ExamPickPerType;
+}
+
 export interface Exam {
   id: string;
   slug: string;           // SEO-friendly URL slug, e.g. 'de-kiem-tra-15-phut-toan-12'
@@ -83,6 +97,8 @@ export interface Exam {
   password?: string | null; // Optional: if set, students must enter password before taking the exam
   created_by?: string | null; // UUID of the creator (teacher/admin)
   created_at: string;
+  /** Optional per-exam configuration (e.g. pick_per_type) */
+  settings?: ExamSettings | null;
 }
 
 export interface ExamQuestion {

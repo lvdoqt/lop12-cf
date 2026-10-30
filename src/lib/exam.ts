@@ -1,9 +1,22 @@
 import { shuffleArrayWithPRNG } from './random';
-import type { Question, Answer } from '../types';
+import type { Question, Answer, ExamSettings } from '../types';
 
 export type ExamQuestion = Question & { answers: Answer[] };
 
-export function buildShuffledExam(allQuestions: ExamQuestion[], prng: () => number): ExamQuestion[] {
+/**
+ * Pick exactly `k` items from a shuffled array.
+ * If k >= array.length, return the full array.
+ */
+function pickK<T>(arr: T[], k: number): T[] {
+  if (k <= 0 || arr.length === 0) return [];
+  return arr.slice(0, Math.min(k, arr.length));
+}
+
+export function buildShuffledExam(
+  allQuestions: ExamQuestion[],
+  prng: () => number,
+  settings?: ExamSettings | null,
+): ExamQuestion[] {
   // Presence of matching identifies a V-SAT paper. Preserve the official section
   // sequence and author-entered group order; candidate randomization can be added
   // later without breaking grouped passages/matching keys.
@@ -29,30 +42,55 @@ export function buildShuffledExam(allQuestions: ExamQuestion[], prng: () => numb
     cloze_text: allQuestions.filter(q => q.type === 'cloze_text'),
   };
 
-  const shuffled = {
-    mcq: shuffleArrayWithPRNG(bySection.mcq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })),
-    multiple_choice: shuffleArrayWithPRNG(bySection.multiple_choice, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })),
-    msq: shuffleArrayWithPRNG(bySection.msq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })),
-    sa: shuffleArrayWithPRNG(bySection.sa, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })),
-    true_false: shuffleArrayWithPRNG(bySection.true_false, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })),
-    tl: shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })),
-    
-    // ordering: shuffle vị trí câu, KHÔNG shuffle đáp án (đáp án là chuỗi thứ tự có nghĩa)
-    ordering: shuffleArrayWithPRNG(bySection.ordering, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })),
-    
-    // list: shuffle nhóm
-    list: shuffleArrayWithPRNG(bySection.list, prng),
-    // V-SAT matching groups keep their prompt/option order, just like the official UI.
-    matching: bySection.matching,
-    cloze_text: bySection.cloze_text,
+  // ── pick_per_type: randomly select k out of n questions per type ──
+  // Uses the PRNG seeded from attempt.id → every student gets a different,
+  // deterministic subset for their attempt.
+  const ppt = settings?.pick_per_type;
+  const applyPick = <T extends ExamQuestion>(pool: T[], typeKey: string): T[] => {
+    if (!ppt) return pool;
+    // Aliases: 'mcq' covers both 'mcq' and 'single_choice'
+    const k = ppt[typeKey] ?? (typeKey === 'mcq' ? ppt['single_choice'] : undefined) ?? (typeKey === 'single_choice' ? ppt['mcq'] : undefined);
+    if (k === undefined) return pool;
+    return pickK(pool, k) as T[];
   };
 
-  // Gộp read + read_cloze thành 1 pool rồi shuffle chung
-  const readPool = [
+  const shuffled = {
+    mcq: applyPick(shuffleArrayWithPRNG(bySection.mcq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })), 'mcq'),
+    multiple_choice: applyPick(shuffleArrayWithPRNG(bySection.multiple_choice, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })), 'multiple_choice'),
+    msq: applyPick(shuffleArrayWithPRNG(bySection.msq, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })), 'msq'),
+    sa: applyPick(shuffleArrayWithPRNG(bySection.sa, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })), 'sa'),
+    true_false: applyPick(shuffleArrayWithPRNG(bySection.true_false, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })), 'true_false'),
+    tl: applyPick(shuffleArrayWithPRNG(bySection.tl, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })), 'tl'),
+
+    // ordering: shuffle vị trí câu, KHÔNG shuffle đáp án (đáp án là chuỗi thứ tự có nghĩa)
+    ordering: applyPick(shuffleArrayWithPRNG(bySection.ordering, prng).map(q => ({ ...q, answers: shuffleArrayWithPRNG(q.answers || [], prng) })), 'ordering'),
+
+    // list: shuffle nhóm
+    list: applyPick(shuffleArrayWithPRNG(bySection.list, prng), 'list'),
+    // V-SAT matching groups keep their prompt/option order, just like the official UI.
+    matching: bySection.matching,
+    cloze_text: applyPick(bySection.cloze_text, 'cloze_text'),
+  };
+
+  // Gộp read + read_cloze thành 1 pool rồi shuffle chung, sau đó pick
+  const readPoolAll = [
     ...bySection.read.map(q => shuffleReadQuestion(q, prng, true)),
     ...bySection.read_cloze.map(q => shuffleReadQuestion(q, prng, false)),
   ];
-  const shuffledReadPool = shuffleArrayWithPRNG(readPool, prng);
+  const shuffledReadPoolAll = shuffleArrayWithPRNG(readPoolAll, prng);
+
+  // Apply pick_per_type separately for read and read_cloze within the combined pool
+  // Strategy: respect individual type picks, then interleave in shuffled order
+  const pickedRead = ppt?.['read'] !== undefined
+    ? pickK(shuffledReadPoolAll.filter(q => q.type === 'read'), ppt['read'])
+    : shuffledReadPoolAll.filter(q => q.type === 'read');
+  const pickedReadCloze = ppt?.['read_cloze'] !== undefined
+    ? pickK(shuffledReadPoolAll.filter(q => q.type === 'read_cloze'), ppt['read_cloze'])
+    : shuffledReadPoolAll.filter(q => q.type === 'read_cloze');
+
+  // Re-merge in original shuffled order to preserve interleaving
+  const pickedReadSet = new Set([...pickedRead, ...pickedReadCloze]);
+  const shuffledReadPool = shuffledReadPoolAll.filter(q => pickedReadSet.has(q));
 
   // Thứ tự sections theo cấu trúc đề:
   // mcq (single_choice) → [read + read_cloze trộn] → msq → sa → tl → multiple_choice → list → ordering → true_false
