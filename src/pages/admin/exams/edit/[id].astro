@@ -406,7 +406,7 @@ const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
             Chon ngau nhien k/n cau theo loai <span class="font-normal normal-case text-slate-400">(tuy chon)</span>
           </label>
           <p class="text-xs text-slate-500 dark:text-slate-400 mb-2 leading-relaxed">
-            De trong = dung tat ca cau. Nhap JSON: <code class="bg-white dark:bg-slate-800 px-1 rounded text-[11px]">{"read": 2, "cloze_text": 2, "single_choice": 4}</code>
+            Mỗi học sinh sẽ nhận bộ câu hỏi khác nhau. Để trống = dùng tất cả câu. Nhập JSON dạng: <code class="bg-white dark:bg-slate-800 px-1 rounded text-[11px]">&#123;"read": 2, "cloze_text": 2, "single_choice": 4&#125;</code>
           </p>
           <input
             type="text"
