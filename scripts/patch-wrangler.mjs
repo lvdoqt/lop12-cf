@@ -19,12 +19,16 @@ try {
     console.log('✓ No ASSETS binding found, skipping rename');
   }
 
-  // Remove auto-injected SESSION KV binding (project uses cookie-based auth, not KV sessions)
+  // Remove auto-injected SESSION KV binding and placeholder KV bindings
   if (config.kv_namespaces && Array.isArray(config.kv_namespaces)) {
     const before = config.kv_namespaces.length;
-    config.kv_namespaces = config.kv_namespaces.filter(kv => kv.binding !== 'SESSION');
+    config.kv_namespaces = config.kv_namespaces.filter(kv => {
+      if (kv.binding === 'SESSION') return false;
+      if (typeof kv.id === 'string' && kv.id.startsWith('REPLACE_')) return false;
+      return true;
+    });
     if (config.kv_namespaces.length < before) {
-      console.log('✓ Removed auto-injected SESSION KV binding (not used)');
+      console.log('✓ Removed unused or placeholder KV bindings');
       changed = true;
     }
     if (config.kv_namespaces.length === 0) {
