@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../../../../layouts/Layout.astro';
 import { db } from '../../../../services/db';
 
@@ -47,6 +47,18 @@ if (Astro.request.method === 'POST') {
         } catch (e: any) {
           throw new Error('pick_per_type khong hop le: ' + e.message);
         }
+      }
+    }
+
+    // ── point_per_question settings ──
+    const ppqRaw = (formData.get('point_per_question') as string)?.trim();
+    if (ppqRaw !== undefined) {
+      const ppqVal = ppqRaw ? parseFloat(ppqRaw) : NaN;
+      if (!isNaN(ppqVal) && ppqVal > 0) {
+        settings = { ...(settings || {}), point_per_question: ppqVal };
+      } else if (!ppqRaw) {
+        // cleared → remove from settings
+        if (settings?.point_per_question) delete settings.point_per_question;
       }
     }
     
@@ -416,6 +428,30 @@ const uniqueStudents = new Set(examAttempts.map(a => a.user_id)).size;
             placeholder='{"read": 2, "cloze_text": 2, "single_choice": 4}'
             class="w-full px-4 py-2.5 rounded-xl border border-blue-200 dark:border-blue-700/50 bg-white dark:bg-slate-900 text-sm font-mono focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] placeholder:text-slate-400 placeholder:font-sans"
           />
+        </div>
+
+        <!-- point_per_question: Diem moi cau -->
+        <div class="mt-3 p-4 rounded-xl border border-dashed border-amber-200 dark:border-amber-800/40 bg-amber-50/40 dark:bg-amber-950/10">
+          <label for="point_per_question" class="block text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-1.5">
+            🏆 Điểm mỗi câu hỏi <span class="font-normal normal-case text-slate-400">(tùy chọn, mặc định 0.25)</span>
+          </label>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-2 leading-relaxed">
+            Số điểm cộng cho mỗi câu trả lời đúng. Ví dụ: <code class="bg-white dark:bg-slate-800 px-1 py-0.5 rounded text-[11px]">0.5</code> → đề 40 câu = 20 điểm. Để trống = dùng mặc định 0.25.
+          </p>
+          <input
+            type="number"
+            name="point_per_question"
+            id="point_per_question"
+            min="0.01"
+            max="100"
+            step="0.01"
+            placeholder="0.25"
+            value={exam.settings?.point_per_question ?? ''}
+            class="w-40 px-4 py-2.5 rounded-xl border border-amber-200 dark:border-amber-700/50 bg-white dark:bg-slate-900 text-sm focus:border-amber-500 outline-none text-ink dark:text-[#E8E0D0] placeholder:text-slate-400"
+          />
+          <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-1.5">
+            Câu tự luận ngắn (sa) = 2× giá trị này. Không áp dụng cho đề V-SAT.
+          </p>
         </div>
         <!-- Assigned Questions -->
         <div class="border-t border-gray-100 dark:border-slate-800/60 pt-6">

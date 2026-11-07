@@ -36,7 +36,7 @@ const allQuestions = await db.getQuestionsByExamId(exam.id);
 import { buildShuffledExam } from "../../../../lib/exam";
 
 const prng = mulberry32(uuidToSeed(attempt.id));
-const rawQuestions = buildShuffledExam(allQuestions, prng);
+const rawQuestions = buildShuffledExam(allQuestions, prng, exam.settings);
 const isVsatExam = exam.exam_type === 'vsat';
 const isEnglishVsat = isVsatExam && exam.subject?.slug === 'tieng-anh-12';
 

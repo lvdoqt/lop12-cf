@@ -190,14 +190,21 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
       </div>
 
       {isTwoColumn ? (
-        /* ── Layout 2 cột: trái = bài đọc sticky, phải = câu hỏi ── */
-        <div className="flex flex-col lg:flex-row min-h-[400px]" style={{ maxHeight: '80vh' }}>
-          {/* Cột trái – bài đọc cố định, cuộn riêng */}
+        /* ── Layout 2 cột: trái = bài đọc, phải = câu hỏi
+             Desktop (lg+): side-by-side, mỗi cột cuộn riêng, tối đa 80vh
+             Mobile: bài đọc chiếm 42vh (nền riêng), câu hỏi bên dưới cuộn riêng ── */
+        <div className="flex flex-col lg:flex-row lg:min-h-[400px]">
+          {/* Cột trái / trên – bài đọc */}
           <div
-            className={`lg:w-1/2 border-b lg:border-b-0 lg:border-r ${borderColor} overflow-y-auto`}
+            className={`lg:w-1/2 border-b lg:border-b-0 lg:border-r ${borderColor} overflow-y-auto
+              h-[42vh] lg:h-auto
+              ${isCloze
+                ? 'bg-teal-50/70 dark:bg-teal-950/25'
+                : 'bg-indigo-50/70 dark:bg-indigo-950/25'
+              }`}
             style={{ maxHeight: '80vh' }}
           >
-            <div className="p-5 lg:p-6">
+            <div className="p-4 lg:p-6">
               <p className={`text-[10px] font-bold uppercase tracking-wider mb-3 ${labelColor} opacity-70`}>
                 📖 Bài đọc
               </p>
@@ -213,9 +220,9 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
             </div>
           </div>
 
-          {/* Cột phải – câu hỏi cuộn */}
+          {/* Cột phải / dưới – câu hỏi cuộn */}
           <div
-            className="lg:w-1/2 overflow-y-auto"
+            className="lg:w-1/2 overflow-y-auto flex-1"
             style={{ maxHeight: '80vh' }}
           >
             <div className="p-5 lg:p-6">

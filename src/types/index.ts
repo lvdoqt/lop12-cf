@@ -84,6 +84,12 @@ export interface ExamPickPerType {
 export interface ExamSettings {
   /** Random k-from-n selection per question type */
   pick_per_type?: ExamPickPerType;
+  /**
+   * Points awarded per correctly answered leaf question (sub-question).
+   * Defaults to 0.25 if not set. Applies to non-VSAT exams only.
+   * Example: 0.5 means each correct answer = 0.5 điểm.
+   */
+  point_per_question?: number;
 }
 
 export interface Exam {

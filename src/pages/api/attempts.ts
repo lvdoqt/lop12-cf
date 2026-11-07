@@ -37,6 +37,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
       return new Response(JSON.stringify({ error: 'Exam not found' }), { status: 404 });
     }
     const isVsat = exam.exam_type === 'vsat';
+    // Points per correct leaf question (non-VSAT). Default = 0.25
+    const ppq = (!isVsat && exam.settings?.point_per_question && exam.settings.point_per_question > 0)
+      ? exam.settings.point_per_question
+      : 0.25;
 
     // 2. Fetch all questions and correct answers for this exam
     const examQuestions = await db.getQuestionsByExamId(attempt.exam_id);
@@ -63,7 +67,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
           subs.forEach((sq: any, i: number) => {
             const sel = (submitted as Record<string, string>)[String(i)];
             if (sel && String(sel).toUpperCase() === String(sq.correct_option || '').toUpperCase()) {
-              totalScore += isVsat ? 6 : 0.25;
+              totalScore += isVsat ? 6 : ppq;
               correctSubs++;
             }
           });
@@ -83,7 +87,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
           correctPairs = subs.filter((sq: any, i: number) =>
             String((submitted as Record<string, string>)[String(i)] || '').toUpperCase() === String(sq.correct_option || '').toUpperCase()
           ).length;
-          totalScore += isVsat ? correctPairs * 1.5 : (correctPairs === subs.length && subs.length > 0 ? 0.25 : 0);
+          totalScore += isVsat ? correctPairs * 1.5 : (correctPairs === subs.length && subs.length > 0 ? ppq : 0);
         }
         irtItems.push({
           question: q,
@@ -103,7 +107,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
             const accepted = (Array.isArray(blank.accepted_answers) ? blank.accepted_answers : [blank.correct_answer])
               .map((x: any) => String(x || '').trim().toLowerCase());
             if (actual && accepted.includes(actual)) {
-              totalScore += isVsat ? 6 : 0.25;
+              totalScore += isVsat ? 6 : ppq;
               correctBlanks++;
             }
           });
@@ -186,9 +190,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
         if (isVsat) {
           totalScore += 6;
         } else if (q.type === 'sa') {
-          totalScore += 0.5;
+          totalScore += ppq * 2; // sa câu trả lời tự luận ngắn → 2× điểm/câu
         } else {
-          totalScore += 0.25;
+          totalScore += ppq;
         }
       }
     });
