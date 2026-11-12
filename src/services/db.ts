@@ -1,4 +1,5 @@
 import { isMockModeForEnv, supabase, createAdminSupabase, createServerSupabase } from '../lib/supabase';
+import { calculateEffectiveQuestionCount } from '../lib/exam';
 import type { Subject, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress, Category, CourseLessonQuiz, VideoQuizResponse, CourseLessonReviewQuestion, CourseLessonReviewAttempt, CourseLessonReviewAnswer, CourseLearningStatistic, LearnerSkillMastery, UserCourseInsights, TeacherNotice, Class, ClassMember, ClassAssignment, ClassAssignmentView, PadletBoard, PadletNote, PadletComment, PadletColor, PadletTheme, PadletLayoutMode, PadletColumn } from '../types';
 
 // Ã¢â€â‚¬Ã¢â€â‚¬ Cloudflare runtime env injection Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
@@ -411,19 +412,19 @@ export const db = {
 
     if (isInMockMode()) {
       // In mock mode, track via mockExamQuestions
+      const questionsByExam: Record<string, any[]> = {};
       for (const eq of mockExamQuestions) {
         if (examIds.includes(eq.exam_id)) {
           const q = mockQuestions.find(mq => mq.id === eq.question_id);
-          let cnt = 1;
           if (q) {
-             const type = (q as any).metadata?.type || (q as any).type;
-             if (type === 'read' || type === 'read_cloze' || type === 'list' || type === 'matching' || type === 'cloze_text') {
-               const subs = q.metadata?.questions || [];
-               if (subs.length > 0) cnt = subs.length;
-             }
+            if (!questionsByExam[eq.exam_id]) questionsByExam[eq.exam_id] = [];
+            questionsByExam[eq.exam_id].push(q);
           }
-          counts[eq.exam_id] = (counts[eq.exam_id] || 0) + cnt;
         }
+      }
+      for (const id of examIds) {
+        const exam = mockExams.find(e => e.id === id);
+        counts[id] = calculateEffectiveQuestionCount(questionsByExam[id] || [], exam?.settings);
       }
       return counts;
     }
@@ -431,27 +432,35 @@ export const db = {
     const client = adminClient()!;
     // NOTE: `type` is NOT a column in the questions table — it is stored inside `metadata` JSONB.
     // Selecting `type` directly causes a Supabase error; use `metadata` only.
-    const { data, error } = await client
-      .from('exam_questions')
-      .select('exam_id, questions!inner(metadata)')
-      .in('exam_id', examIds);
-    if (error) {
-      console.error('[db.getExamQuestionCounts] Supabase error:', error.message);
+    // Fetch both exam_questions and exam settings to accurately calculate effective question count
+    const [eqRes, examsRes] = await Promise.all([
+      client.from('exam_questions').select('exam_id, questions!inner(metadata)').in('exam_id', examIds),
+      client.from('exams').select('id, settings').in('id', examIds),
+    ]);
+
+    if (eqRes.error) {
+      console.error('[db.getExamQuestionCounts] Supabase exam_questions error:', eqRes.error.message);
     }
-    if (data && !error) {
-      for (const row of data) {
-        if (row.exam_id && row.questions) {
-          const q = Array.isArray(row.questions) ? row.questions[0] : row.questions;
-          let cnt = 1;
-          // type is stored inside metadata, not as a top-level column
-          const type = q.metadata?.type;
-          if (type === 'read' || type === 'read_cloze' || type === 'list' || type === 'matching' || type === 'cloze_text') {
-            const subs = q.metadata?.questions || [];
-            if (subs.length > 0) cnt = subs.length;
-          }
-          counts[row.exam_id] = (counts[row.exam_id] || 0) + cnt;
-        }
+    if (examsRes.error) {
+      console.error('[db.getExamQuestionCounts] Supabase exams error:', examsRes.error.message);
+    }
+
+    const questionsByExam: Record<string, any[]> = {};
+    for (const row of (eqRes.data || [])) {
+      if (row.exam_id && row.questions) {
+        if (!questionsByExam[row.exam_id]) questionsByExam[row.exam_id] = [];
+        const q = Array.isArray(row.questions) ? row.questions[0] : row.questions;
+        questionsByExam[row.exam_id].push(q);
       }
+    }
+
+    const settingsByExam: Record<string, any> = {};
+    for (const row of (examsRes.data || [])) {
+      settingsByExam[row.id] = row.settings;
+    }
+
+    for (const id of examIds) {
+      counts[id] = calculateEffectiveQuestionCount(questionsByExam[id] || [], settingsByExam[id]);
     }
     return counts;
   },

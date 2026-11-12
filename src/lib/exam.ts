@@ -166,3 +166,56 @@ function shuffleReadQuestion(q: ExamQuestion, prng: () => number, shuffleSubques
   
   return cloned;
 }
+
+/**
+ * Calculate the effective question count for an exam considering subquestions
+ * in group types (read, read_cloze, list, matching, cloze_text) and any pick_per_type settings.
+ */
+export function calculateEffectiveQuestionCount(
+  questions: Array<{ type?: string; metadata?: any }>,
+  settings?: { pick_per_type?: Record<string, number> } | null
+): number {
+  if (!questions || questions.length === 0) return 0;
+
+  const countSingleOrGroup = (q: { type?: string; metadata?: any }): number => {
+    const rawType = q.metadata?.type || q.type;
+    if (rawType === 'read' || rawType === 'read_cloze' || rawType === 'list' || rawType === 'matching' || rawType === 'cloze_text') {
+      const subs = q.metadata?.questions || (q as any).questions || [];
+      return subs.length > 0 ? subs.length : 1;
+    }
+    return 1;
+  };
+
+  const ppt = settings?.pick_per_type;
+  if (!ppt || Object.keys(ppt).length === 0) {
+    return questions.reduce((sum, q) => sum + countSingleOrGroup(q), 0);
+  }
+
+  // Group questions by normalized type
+  const byType: Record<string, Array<{ type?: string; metadata?: any }>> = {};
+  for (const q of questions) {
+    const rawType = q.metadata?.type || q.type || 'mcq';
+    const t = rawType === 'single_choice' ? 'mcq' : rawType;
+    if (!byType[t]) byType[t] = [];
+    byType[t].push(q);
+  }
+
+  let total = 0;
+  for (const [type, pool] of Object.entries(byType)) {
+    let k = ppt[type];
+    if (k === undefined && type === 'mcq') k = ppt['single_choice'];
+    if (k === undefined && type === 'single_choice') k = ppt['mcq'];
+
+    const countToTake = (k !== undefined && typeof k === 'number')
+      ? Math.min(Math.max(0, k), pool.length)
+      : pool.length;
+
+    const takenItems = pool.slice(0, countToTake);
+    for (const q of takenItems) {
+      total += countSingleOrGroup(q);
+    }
+  }
+
+  return total;
+}
+

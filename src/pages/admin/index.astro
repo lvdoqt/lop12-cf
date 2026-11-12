@@ -227,7 +227,7 @@ const attemptsCount = attempts.length;
                       {attempt.score !== null ? `${attempt.score} / ${isVsatAttempt ? 150 : 10}` : 'Đang làm...'}
                     </td>
                     <td class="py-4 text-gray-500 dark:text-slate-450">
-                      {isFinished ? new Date(attempt.finished_at || '').toLocaleString('vi-VN') : '--:--'}
+                      {isFinished ? new Date(attempt.finished_at || '').toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false }) : '--:--'}
                     </td>
                     <td class="py-4 text-right">
                       {isFinished && (

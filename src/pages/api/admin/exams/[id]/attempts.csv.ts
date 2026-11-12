@@ -55,13 +55,7 @@ export const GET: APIRoute = async ({ params, locals }) => {
     }
 
     if (studentTotalQuestions === 0) {
-      const pickPerType = exam.settings?.pick_per_type;
-      if (pickPerType && typeof pickPerType === 'object') {
-        studentTotalQuestions = Object.values(pickPerType).reduce((sum, v) => sum + (Number(v) || 0), 0);
-      }
-      if (studentTotalQuestions === 0) {
-        studentTotalQuestions = fallbackTotalQuestions;
-      }
+      studentTotalQuestions = fallbackTotalQuestions;
     }
 
     // Điểm/câu từ settings (mặc định 0.25)
@@ -82,8 +76,9 @@ export const GET: APIRoute = async ({ params, locals }) => {
       ? new Date(attempt.finished_at).getTime() - new Date(attempt.started_at).getTime()
       : null;
     const durationMin = durationMs !== null ? (durationMs / 60000).toFixed(1) : '';
-    const finishedAt = attempt.finished_at
-      ? new Date(attempt.finished_at).toLocaleString('vi-VN')
+    const targetDate = attempt.finished_at || attempt.started_at;
+    const finishedAt = targetDate
+      ? new Date(targetDate).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false })
       : '';
     return isVsat
       ? `${idx + 1},"${name}","${studentClass}","${email}",${score},${attempt.ability_score ?? ''},${tabSwitches},${durationMin},"${finishedAt}"`

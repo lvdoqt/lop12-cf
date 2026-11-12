@@ -26,8 +26,8 @@ export const GET: APIRoute = async ({ params, locals }) => {
   const header = ['STT', 'Họ tên', 'Email', 'Ngày đăng ký', 'Bài hoàn thành', 'Tỷ lệ hoàn thành', 'Quiz video đã trả lời', 'Quiz video đúng (lần gần nhất)', 'Tỷ lệ đúng hiện tại', 'Điểm quiz video / 10', 'Tỷ lệ đúng lần đầu', 'Tổng lượt quiz video', 'Lượt sai video', 'Lượt quiz cuối bài', 'Điểm TB quiz cuối bài', 'Điểm cao nhất quiz cuối bài', 'Thời gian học (giây)', 'Video đã xem', 'Kiến thức cần củng cố', 'Hoạt động gần nhất'];
   const rows = statistics.map((item, index) => {
     const student = item.enrollment.user;
-    const enrolledAt = new Date(item.enrollment.enrolled_at).toLocaleString('vi-VN');
-    const lastActivity = item.lastActivityAt ? new Date(item.lastActivityAt).toLocaleString('vi-VN') : '';
+    const enrolledAt = item.enrollment.enrolled_at ? new Date(item.enrollment.enrolled_at).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false }) : '';
+    const lastActivity = item.lastActivityAt ? new Date(item.lastActivityAt).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false }) : '';
     return [
       index + 1,
       student?.fullname || '',

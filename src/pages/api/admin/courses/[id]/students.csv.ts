@@ -1,4 +1,4 @@
-﻿import type { APIRoute } from 'astro';
+import type { APIRoute } from 'astro';
 import { db } from '../../../../../services/db';
 
 export const prerender = false;
@@ -29,7 +29,7 @@ export const GET: APIRoute = async ({ params, locals }) => {
     const email = (userObj?.email || '').replace(/,/g, ' ');
     const role = userObj?.role === 'admin' ? 'Admin' : userObj?.role === 'teacher' ? 'Giao vien' : 'Hoc sinh';
     const enrolledAt = enr.enrolled_at
-      ? new Date(enr.enrolled_at).toLocaleString('vi-VN')
+      ? new Date(enr.enrolled_at).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false })
       : '';
     return `${idx + 1},"${name}","${email}","${role}","${enrolledAt}"`;
   });

@@ -49,15 +49,8 @@ export const GET: APIRoute = async ({ url, locals }) => {
     const rawScore = attempt.raw_score !== null && attempt.raw_score !== undefined ? Number(attempt.raw_score).toFixed(2) : '';
     const abilityScore = attempt.ability_score !== null && attempt.ability_score !== undefined ? String(attempt.ability_score) : '';
 
-    // Số câu hỏi thực tế (nếu có cấu hình rút k/n câu pick_per_type thì lấy theo số câu rút)
-    let effectiveTotalQ = examQuestionCounts[attempt.exam_id] || 0;
-    const pickPerType = examObj?.settings?.pick_per_type;
-    if (pickPerType && typeof pickPerType === 'object') {
-      const pickSum = Object.values(pickPerType).reduce((sum: number, v: any) => sum + (Number(v) || 0), 0);
-      if (pickSum > 0) {
-        effectiveTotalQ = pickSum;
-      }
-    }
+    // Số câu hỏi thực tế (đã tính theo cấu hình rút k/n câu pick_per_type)
+    const effectiveTotalQ = examQuestionCounts[attempt.exam_id] || 0;
 
     // % đúng (dùng point_per_question nếu có, mặc định 0.25)
     const ppq = (examObj?.settings?.point_per_question ?? 0.25) as number;
@@ -75,14 +68,15 @@ export const GET: APIRoute = async ({ url, locals }) => {
       ? new Date(attempt.finished_at).getTime() - new Date(attempt.started_at).getTime()
       : null;
     const durationMin = durationMs !== null ? (durationMs / 60000).toFixed(1) : '';
-    const finishedAt = attempt.finished_at
-      ? new Date(attempt.finished_at).toLocaleString('vi-VN')
+    const targetDate = attempt.finished_at || attempt.started_at;
+    const finishedAt = targetDate
+      ? new Date(targetDate).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false })
       : '';
 
     return `${idx + 1},"${examTitle}","${subjectName}","${studentName}","${studentClass}","${email}",${score},${correct},${effectiveTotalQ},"${pctCorrect}",${rawScore},${abilityScore},${tabSwitches},${durationMin},"${finishedAt}"`;
   });
 
-  const nowStr = new Date().toISOString().slice(0, 10);
+  const nowStr = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Ho_Chi_Minh' }).format(new Date());
   const filename = `danh_sach_hoc_sinh_lam_bai_${nowStr}.csv`;
 
   return new Response('\uFEFF' + header + rows.join('\r\n'), {

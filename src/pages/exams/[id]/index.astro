@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { db } from '../../../services/db';
+import { calculateEffectiveQuestionCount } from '../../../lib/exam';
 
 export const prerender = false;
 
@@ -17,13 +18,7 @@ if (!exam) {
 
 const user = Astro.locals.user;
 const questions = await db.getQuestionsByExamId(exam.id);
-const questionsCount = questions.reduce((acc: number, q: any) => {
-  if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') {
-    const subCount = q.metadata?.questions?.length || 1;
-    return acc + subCount;
-  }
-  return acc + 1;
-}, 0);
+const questionsCount = calculateEffectiveQuestionCount(questions, exam.settings);
 
 let errorMessage = '';
 
