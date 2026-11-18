@@ -1,6 +1,8 @@
 import { isMockModeForEnv, supabase, createAdminSupabase, createServerSupabase } from '../lib/supabase';
 import { calculateEffectiveQuestionCount } from '../lib/exam';
-import type { Subject, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress, Category, CourseLessonQuiz, VideoQuizResponse, CourseLessonReviewQuestion, CourseLessonReviewAttempt, CourseLessonReviewAnswer, CourseLearningStatistic, LearnerSkillMastery, UserCourseInsights, TeacherNotice, Class, ClassMember, ClassAssignment, ClassAssignmentView, PadletBoard, PadletNote, PadletComment, PadletColor, PadletTheme, PadletLayoutMode, PadletColumn } from '../types';
+import { extractMentionedNames as extractMentionNames } from '../lib/forum-security';
+import { toPgVector } from '../lib/forum-embeddings';
+import type { Subject, Question, Answer, Exam, Attempt, User, Blog, Comment, Course, CourseLesson, CourseEnrollment, LessonProgress, Category, CourseLessonQuiz, VideoQuizResponse, CourseLessonReviewQuestion, CourseLessonReviewAttempt, CourseLessonReviewAnswer, CourseLearningStatistic, LearnerSkillMastery, UserCourseInsights, TeacherNotice, Class, ClassMember, ClassAssignment, ClassAssignmentView, PadletBoard, PadletNote, PadletComment, PadletColor, PadletTheme, PadletLayoutMode, PadletColumn, ForumCategory, ForumThread, ForumPost, ForumAuthor, ForumThreadQuery, ForumStats, ForumReaction, ForumReactionKind, ForumInteractionState, ForumNotification, ForumReport, ForumReportReason, ForumReportStatus, ForumUserStat, ForumAnalytics, ForumThreadPage } from '../types';
 
 // Ã¢â€â‚¬Ã¢â€â‚¬ Cloudflare runtime env injection Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 // Middleware calls setRuntimeEnv() per-request with Cloudflare runtime.env.
@@ -47,6 +49,11 @@ export function generateExamSlug(title: string, suffix?: string): string {
   const base = slugify(title);
   const unique = suffix || Date.now().toString(36); // e.g. 'lrqj7k'
   return base ? `${base}-${unique}` : unique;
+}
+
+/** SEO-friendly slug cho thread diễn đàn (dùng chung bộ slugify tiếng Việt). */
+export function generateForumSlug(title: string): string {
+  return generateExamSlug(title);
 }
 
 // ============================================================================
@@ -158,6 +165,114 @@ let mockBlogs: Blog[] = [];
 
 let mockCategories: Category[] = [];
 
+// ── Diễn đàn Học sinh (mock) ─────────────────────────────────────────────────
+// Dùng khi chưa apply migration hoặc đang chạy local mà chưa có bảng forum_*.
+let mockForumCategories: ForumCategory[] = [
+  { id: 'forum-cat-chung', name: 'Học tập chung', slug: 'hoc-tap-chung', description: 'Kinh nghiệm ôn thi, quản lý thời gian, tâm lý trước kỳ thi THPT.', icon: '🎓', subject_id: null, parent_id: null, order_index: 0, is_active: true, created_at: new Date().toISOString() },
+  { id: 'forum-cat-toan', name: 'Toán 12', slug: 'toan-12', description: 'Hỏi đáp công thức, phương pháp giải nhanh và các dạng bài khó.', icon: '∑', subject_id: null, parent_id: null, order_index: 1, is_active: true, created_at: new Date().toISOString() },
+  { id: 'forum-cat-ly', name: 'Vật lý 12', slug: 'vat-ly-12', description: 'Dao động, sóng, điện từ trường và các bài tập nâng cao.', icon: '⚡', subject_id: null, parent_id: null, order_index: 2, is_active: true, created_at: new Date().toISOString() },
+  { id: 'forum-cat-hoa', name: 'Hóa học 12', slug: 'hoa-hoc-12', description: 'Este, lipit, điện giải và kỹ năng giải bài tập hóa.', icon: '⚗️', subject_id: null, parent_id: null, order_index: 3, is_active: true, created_at: new Date().toISOString() },
+  { id: 'forum-cat-sinh', name: 'Sinh học 12', slug: 'sinh-hoc-12', description: 'Di truyền, tiến hóa, sinh thái và các đề thử chuyên sâu.', icon: '🧬', subject_id: null, parent_id: null, order_index: 4, is_active: true, created_at: new Date().toISOString() },
+  { id: 'forum-cat-anh', name: 'Tiếng Anh 12', slug: 'tieng-anh-12', description: 'Ngữ pháp, từ vựng, đọc hiểu và kỹ năng làm bài thi.', icon: '🔤', subject_id: null, parent_id: null, order_index: 5, is_active: true, created_at: new Date().toISOString() },
+];
+
+const forumAgo = (minutes: number) => new Date(Date.now() - minutes * 60_000).toISOString();
+
+let mockForumPosts: ForumPost[] = [
+  {
+    id: 'forum-post-1', thread_id: 'forum-thread-1', author_id: 'mock-user-teacher', parent_id: null,
+    body: 'Chào em! Em áp dụng công thức đạo hàm của $y = \\dfrac{x-1}{x+2}$:\n\n$$y\' = \\dfrac{(x+2) - (x-1)}{(x+2)^2} = \\dfrac{3}{(x+2)^2}$$\n\nVì $(x+2)^2 > 0$ với mọi $x \\ne -2$ nên $y\' > 0$, hàm **đồng biến** trên từng khoảng $(-\\infty; -2)$ và $(-2; +\\infty)$. Em nhớ không được kết luận đồng biến trên $\\mathbb{R}$ nhé.',
+    is_answer: true, created_at: forumAgo(165), updated_at: forumAgo(165),
+  },
+  {
+    id: 'forum-post-2', thread_id: 'forum-thread-1', author_id: 'mock-user-student', parent_id: 'forum-post-1',
+    body: 'Dạ em hiểu rồi ạ, trước em hay quên mất điểm $x=-2$ không có nghĩa là hàm xác định. Cảm ơn thầy! 🙏',
+    is_answer: false, created_at: forumAgo(140), updated_at: forumAgo(140),
+  },
+  {
+    id: 'forum-post-3', thread_id: 'forum-thread-2', author_id: 'mock-user-student', parent_id: null,
+    body: 'Mình dùng cách đặt $u = \\sqrt{x}$ rồi giải phương trình bậc hai, được 2 nghiệm nhưng nghiệm $x=4$ không thỏa điều kiện. Mọi người kiểm tra giúp mình với!',
+    is_answer: false, created_at: forumAgo(300), updated_at: forumAgo(300),
+  },
+  {
+    id: 'forum-post-4', thread_id: 'forum-thread-3', author_id: 'mock-user-teacher', parent_id: null,
+    body: 'Lịch ôn gợi ý cho 2 tuần cuối: **50% thời gian làm đề thử + 30% sửa lỗi sai + 20% ôn lý thuyết**. Quan trọng là sau mỗi đề phải ghi lại "nguyên nhân sai" thành tag để ôn lại sau nhé.',
+    is_answer: false, created_at: forumAgo(1440), updated_at: forumAgo(1440),
+  },
+  {
+    id: 'forum-post-5', thread_id: 'forum-thread-4', author_id: 'mock-user-student', parent_id: null,
+    body: 'Dao động điều hòa: $a = -\\omega^2 x$. Mình hay nhớ bằng cách: gia tốc luôn hướng về vị trí cân bằng và tỉ lệ nghịch với li độ. Công thức từng phần: $x^2 + \\dfrac{v^2}{\\omega^2} = A^2$.',
+    is_answer: false, created_at: forumAgo(40), updated_at: forumAgo(40),
+  },
+];
+
+let mockForumThreads: ForumThread[] = [
+  {
+    id: 'forum-thread-1', category_id: 'forum-cat-toan', author_id: 'mock-user-student',
+    title: 'Cách khảo sát sự biến thiên của y = (x-1)/(x+2)?',
+    slug: 'khao-sat-su-bien-thien-cua-y-bang-phan-thuc', category: mockForumCategories[1],
+    body: 'Em làm đến bước tính đạo hàm thì bối rối phần xác định với tiệm cận đứng ạ.\n\nCho $y = \\dfrac{x-1}{x+2}$. Em tính được $y\' = \\dfrac{3}{(x+2)^2}$ nhưng không biết kết luận đồng biến trên $\\mathbb{R}$ được không. Mong mọi người chỉ giúp ạ!',
+    tags: ['dao-ham', 'khao-sat-ham-so', 'lop-12'], status: 'solved', is_pinned: false, is_anonymous: false,
+    views_count: 128, reply_count: 2, last_activity_at: forumAgo(140), accepted_post_id: 'forum-post-1',
+    created_at: forumAgo(180), updated_at: forumAgo(140),
+  },
+  {
+    id: 'forum-thread-2', category_id: 'forum-cat-toan', author_id: 'mock-user-student',
+    title: 'Giải phương trình chứa căn: nghiệm phụ xuất hiện ở đâu?',
+    slug: 'giai-phuong-trinh-chua-can-nghiem-phu', category: mockForumCategories[1],
+    body: 'Bài toán: $\\sqrt{x+5} = x - 1$. Mình bình phương 2 vế thì ra $x^2 - 3x - 4 = 0$, được $x=4$ và $x=-1$. Thay vào thì chỉ $x=4$ thỏa. Có cách nào nhận ra nghiệm phụ ngay không các bạn?',
+    tags: ['phuong-trinh', 'can-bac-hai'], status: 'open', is_pinned: false, is_anonymous: false,
+    views_count: 64, reply_count: 1, last_activity_at: forumAgo(300), accepted_post_id: null,
+    created_at: forumAgo(320), updated_at: forumAgo(300),
+  },
+  {
+    id: 'forum-thread-3', category_id: 'forum-cat-chung', author_id: 'mock-user-teacher',
+    title: 'Chia lịch ôn 2 tuần cuối trước kỳ thi thử lần 3',
+    slug: 'lich-on-2-tuan-cuoi-truoc-ky-thi-thu', category: mockForumCategories[0],
+    body: 'Các em đang hỏi mình nhiều về cách phân bổ thời gian. Mình gợi ý một khung cơ bản, mỗi người điều chỉnh theo điểm yếu của mình:\n\n- **50%** làm đề thử đúng thời gian\n- **30%** sửa lỗi sai, ghi rõ nguyên nhân\n- **20%** ôn lại lý thuyết chưa chắc\n\nAi có cách hiệu quả hơn thì chia sẻ để cả lớp cùng học tập nhé!',
+    tags: ['on-thi', 'kinh-nghiem'], status: 'open', is_pinned: true, is_anonymous: false,
+    views_count: 342, reply_count: 1, last_activity_at: forumAgo(1440), accepted_post_id: null,
+    created_at: forumAgo(1500), updated_at: forumAgo(1440),
+  },
+  {
+    id: 'forum-thread-4', category_id: 'forum-cat-ly', author_id: 'mock-user-student',
+    title: 'Tóm tắt công thức dao động điều hòa dễ nhớ',
+    slug: 'tom-tat-cong-thuc-dao-dong-dieu-hoa', category: mockForumCategories[2],
+    body: 'Mình vừa gom lại mấy công thức hay dùng, ae kiểm tra giúp:\n\n$$x = A\\cos(\\omega t + \\varphi), \\quad v = -\\omega A\\sin(\\omega t + \\varphi)$$\n$$a = -\\omega^2 x, \\quad A^2 = x^2 + \\frac{v^2}{\\omega^2}$$\n\nNếu có dạng bài nào hay "bẫy" thì comment thêm cho mình với!',
+    tags: ['dao-dong', 'cong-thuc', 'vat-ly-12'], status: 'open', is_pinned: false, is_anonymous: false,
+    views_count: 87, reply_count: 1, last_activity_at: forumAgo(40), accepted_post_id: null,
+    created_at: forumAgo(60), updated_at: forumAgo(40),
+  },
+  {
+    id: 'forum-thread-5', category_id: 'forum-cat-anh', author_id: 'mock-user-student',
+    title: 'Phân biệt relative clause xác định và không xác định',
+    slug: 'phan-biet-relative-clause-xac-dinh', category: mockForumCategories[5],
+    body: 'Mình vẫn hay nhầm dấu phẩy với **that**. Có bạn nào giải thích đơn giản kiểu "nhìn là biết ngay" không? Ví dụ: *The boy who is standing there is my brother.*',
+    tags: ['grammar', 'relative-clause'], status: 'open', is_pinned: false, is_anonymous: true,
+    views_count: 45, reply_count: 0, last_activity_at: forumAgo(15), accepted_post_id: null,
+    created_at: forumAgo(15), updated_at: forumAgo(15),
+  },
+];
+
+// Phase 2–4: trạng thái tương tác/thông báo trong mock mode.
+let mockForumReactions: ForumReaction[] = [
+  { post_id: 'forum-post-1', user_id: 'mock-user-student', kind: 'helpful', created_at: forumAgo(160) },
+  { post_id: 'forum-post-4', user_id: 'mock-user-student', kind: 'like', created_at: forumAgo(1200) },
+];
+let mockForumBookmarks: Array<{ thread_id: string; user_id: string; created_at: string }> = [
+  { thread_id: 'forum-thread-3', user_id: 'mock-user-student', created_at: forumAgo(1000) },
+];
+let mockForumFollows: Array<{ thread_id: string; user_id: string; created_at: string }> = [
+  { thread_id: 'forum-thread-1', user_id: 'mock-user-student', created_at: forumAgo(150) },
+];
+let mockForumNotifications: ForumNotification[] = [
+  {
+    id: 'forum-notif-1', user_id: 'mock-user-student', type: 'answer',
+    payload: { thread_id: 'forum-thread-1', thread_title: 'Cách khảo sát sự biến thiên của y = (x-1)/(x+2)?', actor: 'Giáo viên' },
+    read_at: null, created_at: forumAgo(160),
+  },
+];
+let mockForumReports: ForumReport[] = [];
 
 let mockUsers: User[] = [
   {
@@ -255,6 +370,155 @@ function mapDbQuestionToAppQuestion(dbQ: any): Question & { answers: Answer[], s
     created_by: createdBy,
     category_id: categoryId
   };
+}
+
+// ── Forum helpers ────────────────────────────────────────────────────────────
+/** Trên local, nếu bảng forum_* chưa có hoặc lỗi, dùng dữ liệu mẫu trong memory. */
+function forumDevFallback(): boolean {
+  return import.meta.env.DEV;
+}
+
+function forumWarn(scope: string, error: unknown): void {
+  const message = error instanceof Error ? error.message : String(error);
+  console.warn(`[db.${scope}] Supabase unavailable, dùng forum mock:`, message);
+}
+
+function forumAuthorMap(users: User[]): Map<string, ForumAuthor> {
+  return new Map(users.map(u => [u.id, {
+    id: u.id,
+    fullname: u.fullname,
+    avatar_url: u.avatar_url,
+    role: u.role,
+  }]));
+}
+
+function mockForumAuthorMap(): Map<string, ForumAuthor> {
+  return forumAuthorMap(mockUsers);
+}
+
+function decorateForumThread(
+  thread: ForumThread,
+  categories: ForumCategory[],
+  authors: Map<string, ForumAuthor>,
+): ForumThread {
+  return {
+    ...thread,
+    category: categories.find(c => c.id === thread.category_id) || null,
+    author: thread.is_anonymous ? null : (authors.get(thread.author_id) || null),
+  };
+}
+
+function decorateForumPost(post: ForumPost, authors: Map<string, ForumAuthor>): ForumPost {
+  return { ...post, author: authors.get(post.author_id) || null };
+}
+
+function sortForumThreads(threads: ForumThread[], sort: ForumThreadQuery['sort']): ForumThread[] {
+  const byDate = (a: string, b: string) => new Date(b).getTime() - new Date(a).getTime();
+  return [...threads].sort((a, b) => {
+    if (a.is_pinned !== b.is_pinned) return a.is_pinned ? -1 : 1;
+    if (sort === 'popular') return b.views_count - a.views_count || byDate(a.last_activity_at, b.last_activity_at);
+    if (sort === 'active') return byDate(a.last_activity_at, b.last_activity_at);
+    return byDate(a.created_at, b.created_at);
+  });
+}
+
+const FORUM_REACTION_KINDS: ForumReactionKind[] = ['like', 'helpful', 'heart'];
+
+function forumReactionCounts(reactions: ForumReaction[]): Record<ForumReactionKind, number> {
+  const counts: Record<ForumReactionKind, number> = { like: 0, helpful: 0, heart: 0 };
+  reactions.forEach(r => {
+    if (FORUM_REACTION_KINDS.includes(r.kind)) counts[r.kind] += 1;
+  });
+  return counts;
+}
+
+/** Gắn tổng hợp cảm xúc vào bài trả lời trước khi trả ra page. */
+function decorateForumPostsWithReactions(
+  posts: ForumPost[],
+  reactions: ForumReaction[],
+  viewerId: string | null,
+): ForumPost[] {
+  return posts.map(post => {
+    const own = reactions.filter(r => r.post_id === post.id);
+    return {
+      ...post,
+      reaction_counts: forumReactionCounts(own),
+      viewer_reaction: viewerId ? (own.find(r => r.user_id === viewerId)?.kind ?? null) : null,
+    };
+  });
+}
+
+/** Thông báo trong mock mode (reply cho chủ thread + follower + @mention). */
+function forumNotifyMock(
+  thread: ForumThread,
+  postId: string,
+  authorId: string,
+  body: string,
+  extraType?: ForumNotification['type'],
+): void {
+  const recipients = new Set<string>();
+  if (extraType === 'answer') recipients.add(thread.author_id);
+  mockForumFollows
+    .filter(f => f.thread_id === thread.id && f.user_id !== authorId)
+    .forEach(f => recipients.add(f.user_id));
+  extractMentionNames(body).forEach(name => {
+    mockUsers
+      .filter(u => u.id !== authorId && u.fullname && name.toLowerCase().includes(u.fullname.toLowerCase().split(' ')[0]))
+      .forEach(u => recipients.add(u.id));
+  });
+
+  recipients.forEach(userId => {
+    mockForumNotifications.unshift({
+      id: `forum-notif-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      user_id: userId,
+      type: extraType === 'answer' ? 'answer' : 'reply',
+      payload: { thread_id: thread.id, thread_title: thread.title, post_id: postId, actor: 'Thành viên' },
+      read_at: null,
+      created_at: new Date().toISOString(),
+    });
+  });
+}
+
+/** Fallback tìm kiếm ngữ nghĩa khi không có pgvector/Gemini: tag + từ khoá. */
+function forumTextScore(thread: ForumThread, tokens: string[]): number {
+  if (!tokens.length) return 0;
+  const haystack = `${thread.title} ${thread.body} ${(thread.tags || []).join(' ')}`.toLowerCase();
+  return tokens.reduce((score, token) => score + (haystack.includes(token) ? 1 : 0), 0) / tokens.length;
+}
+
+function forumTokenize(text: string): string[] {
+  return Array.from(new Set(
+    text.toLowerCase()
+      .replace(/[\p{P}\p{S}]+/gu, ' ')
+      .split(/\s+/)
+      .filter(w => w.length >= 3 && !['cach', 'nhung', 'khong', 'mot', 'cac', 'cho', 'voi'].includes(w))
+  ));
+}
+
+function mockForumUserStats(): ForumUserStat[] {
+  return mockUsers.map(u => {
+    const threadsCount = mockForumThreads.filter(t => t.author_id === u.id).length;
+    const answersCount = mockForumPosts.filter(p => p.author_id === u.id).length;
+    const acceptedCount = mockForumPosts.filter(p => p.author_id === u.id && p.is_answer).length;
+    const helpfulCount = mockForumReactions.filter(r =>
+      r.kind !== 'like' && mockForumPosts.some(p => p.id === r.post_id && p.author_id === u.id)).length;
+    const badges = [
+      acceptedCount >= 1 ? 'Chuyên gia giải đáp' : null,
+      threadsCount >= 2 ? 'Người hỏi tích cực' : null,
+      answersCount >= 2 ? 'Thành viên nhiệt tình' : null,
+      u.role === 'teacher' || u.role === 'admin' ? 'Giáo viên xác thực' : null,
+    ].filter(Boolean) as string[];
+    return {
+      user_id: u.id,
+      threads_count: threadsCount,
+      answers_count: answersCount,
+      accepted_count: acceptedCount,
+      helpful_count: helpfulCount,
+      reputation: threadsCount * 5 + answersCount * 2 + acceptedCount * 15 + helpfulCount * 3,
+      badges,
+      user: { id: u.id, fullname: u.fullname, avatar_url: u.avatar_url, role: u.role },
+    };
+  }).filter(s => s.threads_count + s.answers_count > 0 || s.user?.role === 'teacher' || s.user?.role === 'admin');
 }
 
 export const db = {
@@ -3147,6 +3411,888 @@ export const db = {
       .in('assignment_id', assignIds);
     if (error) { console.error('[db.getClassAssignmentViews] error:', error); return []; }
     return (data || []) as ClassAssignmentView[];
+  },
+
+  // --------------------------------------------------------------------------
+  // DIỄN ĐÀN HỌC SINH (/hoc-sinh)
+  // --------------------------------------------------------------------------
+  async getForumCategories(): Promise<(ForumCategory & { thread_count: number })[]> {
+    if (isInMockMode()) {
+      return mockForumCategories.map(c => ({
+        ...c,
+        thread_count: mockForumThreads.filter(t => t.category_id === c.id).length,
+      }));
+    }
+    const client = adminClient();
+    if (!client) return [];
+    const { data, error } = await client
+      .from('forum_categories').select('*').order('order_index');
+    if (error) {
+      forumWarn('getForumCategories', error);
+      if (forumDevFallback()) {
+        return mockForumCategories.map(c => ({
+          ...c,
+          thread_count: mockForumThreads.filter(t => t.category_id === c.id).length,
+        }));
+      }
+      return [];
+    }
+    const categories = (data || []) as ForumCategory[];
+    const { data: threads } = await client.from('forum_threads').select('category_id');
+    const counts = new Map<string, number>();
+    (threads || []).forEach((t: any) => counts.set(t.category_id, (counts.get(t.category_id) || 0) + 1));
+    return categories.map(c => ({ ...c, thread_count: counts.get(c.id) || 0 }));
+  },
+
+  async getForumCategoryBySlug(slug: string): Promise<ForumCategory | null> {
+    const categories = await this.getForumCategories();
+    return categories.find(c => c.slug === slug) || null;
+  },
+
+  async getForumThreads(query: ForumThreadQuery = {}): Promise<ForumThread[]> {
+    const {
+      categoryId, categorySlug, status = 'all', tag, search,
+      sort = 'latest', limit = 30, offset = 0,
+    } = query;
+
+    let threads: ForumThread[] = [];
+    let categories: ForumCategory[] = [];
+    let authors: Map<string, ForumAuthor> = new Map();
+
+    if (isInMockMode()) {
+      threads = mockForumThreads;
+      categories = mockForumCategories;
+      authors = mockForumAuthorMap();
+    } else {
+      const client = adminClient();
+      if (!client) return [];
+      const [threadsRes, categoriesRes, usersRes] = await Promise.all([
+        client.from('forum_threads').select('*').order('created_at', { ascending: false }),
+        client.from('forum_categories').select('*'),
+        client.from('users').select('id, fullname, avatar_url, role'),
+      ]);
+      if (threadsRes.error) {
+        forumWarn('getForumThreads', threadsRes.error);
+        if (!forumDevFallback()) return [];
+        threads = mockForumThreads;
+        categories = mockForumCategories;
+        authors = mockForumAuthorMap();
+      } else {
+        threads = (threadsRes.data || []) as ForumThread[];
+        categories = (categoriesRes.data || []) as ForumCategory[];
+        authors = forumAuthorMap((usersRes.data || []) as User[]);
+      }
+    }
+
+    let category = categoryId;
+    if (!category && categorySlug) {
+      category = categories.find(c => c.slug === categorySlug)?.id;
+    }
+
+    const keyword = (search || '').trim().toLowerCase();
+    const filtered = threads
+      .filter(t => !category || t.category_id === category)
+      .filter(t => status === 'all' || t.status === status)
+      .filter(t => !tag || (t.tags || []).some(x => x.toLowerCase() === tag.toLowerCase()))
+      .filter(t => !keyword ||
+        t.title.toLowerCase().includes(keyword) ||
+        t.body.toLowerCase().includes(keyword) ||
+        (t.tags || []).some(x => x.toLowerCase().includes(keyword)))
+      .map(t => decorateForumThread(t, categories, authors));
+
+    return sortForumThreads(filtered, sort).slice(offset, offset + limit);
+  },
+
+  async getForumThreadById(id: string): Promise<ForumThread | null> {
+    if (isInMockMode()) {
+      const thread = mockForumThreads.find(t => t.id === id);
+      if (!thread) return null;
+      const authors = mockForumAuthorMap();
+      const posts = mockForumPosts
+        .filter(p => p.thread_id === id)
+        .sort((a, b) => a.created_at.localeCompare(b.created_at))
+        .map(p => decorateForumPost(p, authors));
+      return {
+        ...thread,
+        category: mockForumCategories.find(c => c.id === thread.category_id) || null,
+        author: thread.is_anonymous ? null : (authors.get(thread.author_id) || null),
+        posts,
+      };
+    }
+    const client = adminClient();
+    if (!client) return null;
+    const [threadRes, categoriesRes, usersRes] = await Promise.all([
+      client.from('forum_threads').select('*').eq('id', id).maybeSingle(),
+      client.from('forum_categories').select('*'),
+      client.from('users').select('id, fullname, avatar_url, role'),
+    ]);
+    if (threadRes.error || !threadRes.data) {
+      if (threadRes.error) forumWarn('getForumThreadById', threadRes.error);
+      if (forumDevFallback()) {
+        const mock = mockForumThreads.find(t => t.id === id);
+        if (!mock) return null;
+        const posts = mockForumPosts.filter(p => p.thread_id === id).map(p => decorateForumPost(p, mockForumAuthorMap()));
+        return { ...mock, category: mockForumCategories.find(c => c.id === mock.category_id) || null, posts };
+      }
+      return null;
+    }
+    const authors = forumAuthorMap((usersRes.data || []) as User[]);
+    const thread = decorateForumThread(threadRes.data as ForumThread, (categoriesRes.data || []) as ForumCategory[], authors);
+    const { data: posts } = await client
+      .from('forum_posts').select('*').eq('thread_id', id).is('deleted_at', null).order('created_at');
+    return {
+      ...thread,
+      posts: ((posts || []) as ForumPost[]).map(p => decorateForumPost(p, authors)),
+    };
+  },
+
+  async getForumThreadBySlug(slug: string): Promise<ForumThread | null> {
+    if (isInMockMode()) {
+      const thread = mockForumThreads.find(t => t.slug === slug);
+      return thread ? this.getForumThreadById(thread.id) : null;
+    }
+    const client = adminClient();
+    if (!client) return null;
+    const { data } = await client.from('forum_threads').select('id').eq('slug', slug).maybeSingle();
+    if (data?.id) return this.getForumThreadById(data.id);
+    if (forumDevFallback()) {
+      const mock = mockForumThreads.find(t => t.slug === slug);
+      return mock ? this.getForumThreadById(mock.id) : null;
+    }
+    return null;
+  },
+
+  async createForumThread(input: {
+    categoryId: string;
+    authorId: string;
+    title: string;
+    body: string;
+    tags?: string[];
+    isAnonymous?: boolean;
+    /** Phase 4 — vector 768 chiều dạng pgvector literal, do /api/forum/embed tạo. */
+    embedding?: string | null;
+    summary?: string | null;
+  }): Promise<ForumThread> {
+    const payload = {
+      category_id: input.categoryId,
+      author_id: input.authorId,
+      title: input.title.trim(),
+      slug: generateForumSlug(input.title),
+      body: input.body.trim(),
+      tags: input.tags || [],
+      is_anonymous: !!input.isAnonymous,
+      ...(input.summary ? { summary: input.summary } : {}),
+      ...(input.embedding ? { embedding: input.embedding } : {}),
+    };
+
+    const makeMockThread = (): ForumThread => {
+      const now = new Date().toISOString();
+      const thread: ForumThread = {
+        id: `forum-thread-${Date.now()}`,
+        ...payload,
+        status: 'open', is_pinned: false, views_count: 0, reply_count: 0,
+        last_activity_at: now, accepted_post_id: null, created_at: now, updated_at: now,
+      };
+      mockForumThreads.unshift(thread);
+      return { ...thread, category: mockForumCategories.find(c => c.id === thread.category_id) || null };
+    };
+
+    if (isInMockMode()) return makeMockThread();
+
+    const client = adminClient();
+    if (!client) throw new Error('[db.createForumThread] Admin client unavailable.');
+    const { data, error } = await client.from('forum_threads').insert([payload]).select().single();
+    if (error) {
+      forumWarn('createForumThread', error);
+      if (forumDevFallback()) return makeMockThread();
+      throw error;
+    }
+    return this.getForumThreadById(data.id) as Promise<ForumThread>;
+  },
+
+  async createForumPost(input: {
+    threadId: string;
+    authorId: string;
+    body: string;
+    parentId?: string | null;
+    isAnswer?: boolean;
+  }): Promise<ForumPost> {
+    const payload = {
+      thread_id: input.threadId,
+      author_id: input.authorId,
+      parent_id: input.parentId || null,
+      body: input.body.trim(),
+      is_answer: !!input.isAnswer,
+    };
+
+    const makeMockPost = (): ForumPost => {
+      const now = new Date().toISOString();
+      const post: ForumPost = { id: `forum-post-${Date.now()}`, ...payload, created_at: now, updated_at: now };
+      mockForumPosts.push(post);
+      const thread = mockForumThreads.find(t => t.id === input.threadId);
+      if (thread) {
+        thread.reply_count += 1;
+        thread.last_activity_at = now;
+        forumNotifyMock(thread, post.id, input.authorId, input.body);
+      }
+      return decorateForumPost(post, mockForumAuthorMap());
+    };
+
+    if (isInMockMode()) return makeMockPost();
+
+    const client = adminClient();
+    if (!client) throw new Error('[db.createForumPost] Admin client unavailable.');
+    const { data, error } = await client.from('forum_posts').insert([payload]).select().single();
+    if (error) {
+      forumWarn('createForumPost', error);
+      if (forumDevFallback()) return makeMockPost();
+      throw error;
+    }
+
+    // Thông báo follower + @mention + chủ thread trong 1 RPC (best-effort).
+    const { error: notifyError } = await client.rpc('forum_notify_new_post', {
+      p_thread_id: input.threadId,
+      p_post_id: data.id,
+      p_author_id: input.authorId,
+      p_body: input.body,
+    });
+    if (notifyError) {
+      forumWarn('forum_notify_new_post', notifyError);
+      // Fallback tối thiểu nếu RPC chưa được apply: báo cho chủ thread.
+      const thread = await this.getForumThreadById(input.threadId);
+      if (thread && thread.author_id !== input.authorId) {
+        await client.from('forum_notifications').insert([{
+          user_id: thread.author_id,
+          type: 'reply',
+          payload: { thread_id: thread.id, thread_title: thread.title, post_id: data.id },
+        }]);
+      }
+    }
+    const author = await this.getUserById(input.authorId);
+    return decorateForumPost(data as ForumPost, author ? forumAuthorMap([author]) : new Map());
+  },
+
+  async acceptForumPost(threadId: string, postId: string): Promise<ForumThread | null> {
+    const acceptInMock = async (): Promise<ForumThread | null> => {
+      const thread = mockForumThreads.find(t => t.id === threadId);
+      if (!thread) return null;
+      mockForumPosts.forEach(p => { p.is_answer = p.id === postId && p.thread_id === threadId; });
+      thread.accepted_post_id = postId;
+      thread.status = 'solved';
+      const answerAuthor = mockForumPosts.find(p => p.id === postId)?.author_id;
+      if (answerAuthor && answerAuthor !== thread.author_id) {
+        mockForumNotifications.unshift({
+          id: `forum-notif-${Date.now()}`, user_id: answerAuthor, type: 'answer',
+          payload: { thread_id: thread.id, thread_title: thread.title, post_id: postId },
+          read_at: null, created_at: new Date().toISOString(),
+        });
+      }
+      return this.getForumThreadById(threadId);
+    };
+
+    if (isInMockMode()) return acceptInMock();
+
+    const client = adminClient();
+    if (!client) throw new Error('[db.acceptForumPost] Admin client unavailable.');
+    const { error } = await client.rpc('forum_accept_answer', { p_thread_id: threadId, p_post_id: postId });
+    if (error) {
+      forumWarn('acceptForumPost', error);
+      if (forumDevFallback()) return acceptInMock();
+      throw error;
+    }
+    // Báo cho người viết câu trả lời được chọn (best-effort).
+    const { data: post } = await client.from('forum_posts').select('author_id').eq('id', postId).maybeSingle();
+    if (post?.author_id) {
+      const { data: threadInfo } = await client.from('forum_threads').select('author_id, title').eq('id', threadId).maybeSingle();
+      if (threadInfo && threadInfo.author_id !== post.author_id) {
+        await client.from('forum_notifications').insert([{
+          user_id: post.author_id, type: 'answer',
+          payload: { thread_id: threadId, thread_title: threadInfo.title, post_id: postId },
+        }]);
+      }
+    }
+    return this.getForumThreadById(threadId);
+  },
+
+  async incrementForumThreadViews(threadId: string): Promise<void> {
+    if (isInMockMode()) {
+      const thread = mockForumThreads.find(t => t.id === threadId);
+      if (thread) thread.views_count += 1;
+      return;
+    }
+    const client = adminClient();
+    if (!client) return;
+    const { error } = await client.rpc('forum_increment_views', { p_thread_id: threadId });
+    if (error) {
+      forumWarn('incrementForumThreadViews', error);
+      if (forumDevFallback()) {
+        const thread = mockForumThreads.find(t => t.id === threadId);
+        if (thread) thread.views_count += 1;
+      }
+    }
+  },
+
+  async getForumStats(): Promise<ForumStats> {
+    const mockStats = (): ForumStats => ({
+      threads: mockForumThreads.length,
+      replies: mockForumPosts.length,
+      members: mockUsers.length * 137,
+      solved: mockForumThreads.filter(t => t.status === 'solved').length,
+    });
+
+    if (isInMockMode()) return mockStats();
+
+    const client = adminClient();
+    if (!client) return { threads: 0, replies: 0, members: 0, solved: 0 };
+    const [threadsRes, postsRes, usersRes, solvedRes] = await Promise.all([
+      client.from('forum_threads').select('id', { count: 'exact', head: true }),
+      client.from('forum_posts').select('id', { count: 'exact', head: true }).is('deleted_at', null),
+      client.from('users').select('id', { count: 'exact', head: true }),
+      client.from('forum_threads').select('id', { count: 'exact', head: true }).eq('status', 'solved'),
+    ]);
+    if (threadsRes.error) {
+      forumWarn('getForumStats', threadsRes.error);
+      if (forumDevFallback()) return mockStats();
+    }
+    return {
+      threads: threadsRes.count || 0,
+      replies: postsRes.count || 0,
+      members: usersRes.count || 0,
+      solved: solvedRes.count || 0,
+    };
+  },
+
+  // --------------------------------------------------------------------------
+  // PHASE 2 — TƯƠNG TÁC (reaction / bookmark / follow / notification)
+  // --------------------------------------------------------------------------
+  async getForumInteractions(userId: string): Promise<ForumInteractionState> {
+    const empty: ForumInteractionState = { reactions: {}, bookmarks: [], follows: [] };
+    if (!userId) return empty;
+
+    if (isInMockMode()) {
+      const reactions: Record<string, ForumReactionKind> = {};
+      mockForumReactions.filter(r => r.user_id === userId).forEach(r => { reactions[r.post_id] = r.kind; });
+      return {
+        reactions,
+        bookmarks: mockForumBookmarks.filter(b => b.user_id === userId).map(b => b.thread_id),
+        follows: mockForumFollows.filter(f => f.user_id === userId).map(f => f.thread_id),
+      };
+    }
+
+    const client = adminClient();
+    if (!client) return empty;
+    const [reactionsRes, bookmarksRes, followsRes] = await Promise.all([
+      client.from('forum_reactions').select('post_id, kind').eq('user_id', userId),
+      client.from('forum_bookmarks').select('thread_id').eq('user_id', userId),
+      client.from('forum_follows').select('thread_id').eq('user_id', userId),
+    ]);
+    if (reactionsRes.error && forumDevFallback()) {
+      forumWarn('getForumInteractions', reactionsRes.error);
+      const reactions: Record<string, ForumReactionKind> = {};
+      mockForumReactions.filter(r => r.user_id === userId).forEach(r => { reactions[r.post_id] = r.kind; });
+      return {
+        reactions,
+        bookmarks: mockForumBookmarks.filter(b => b.user_id === userId).map(b => b.thread_id),
+        follows: mockForumFollows.filter(f => f.user_id === userId).map(f => f.thread_id),
+      };
+    }
+    const reactions: Record<string, ForumReactionKind> = {};
+    ((reactionsRes.data || []) as Array<{ post_id: string; kind: ForumReactionKind }>)
+      .forEach(r => { reactions[r.post_id] = r.kind; });
+    return {
+      reactions,
+      bookmarks: ((bookmarksRes.data || []) as Array<{ thread_id: string }>).map(b => b.thread_id),
+      follows: ((followsRes.data || []) as Array<{ thread_id: string }>).map(f => f.thread_id),
+    };
+  },
+
+  async getForumThreadReactions(threadId: string): Promise<ForumReaction[]> {
+    if (isInMockMode()) {
+      const postIds = new Set(mockForumPosts.filter(p => p.thread_id === threadId).map(p => p.id));
+      return mockForumReactions.filter(r => postIds.has(r.post_id));
+    }
+    const client = adminClient();
+    if (!client) return [];
+    const { data, error } = await client
+      .from('forum_reactions')
+      .select('post_id, user_id, kind, created_at, forum_posts!inner(thread_id)')
+      .eq('forum_posts.thread_id', threadId);
+    if (error) {
+      forumWarn('getForumThreadReactions', error);
+      if (forumDevFallback()) {
+        const postIds = new Set(mockForumPosts.filter(p => p.thread_id === threadId).map(p => p.id));
+        return mockForumReactions.filter(r => postIds.has(r.post_id));
+      }
+      return [];
+    }
+    return (data || []).map((r: any) => ({
+      post_id: r.post_id, user_id: r.user_id, kind: r.kind, created_at: r.created_at,
+    })) as ForumReaction[];
+  },
+
+  /** Trang chi tiết dùng: posts đã có số lượng cảm xúc + lựa chọn của người xem. */
+  async getDecoratedForumPosts(threadId: string, viewerId: string | null): Promise<ForumPost[]> {
+    const thread = await this.getForumThreadById(threadId);
+    const reactions = await this.getForumThreadReactions(threadId);
+    return decorateForumPostsWithReactions(thread?.posts || [], reactions, viewerId);
+  },
+
+  async toggleForumReaction(input: {
+    postId: string;
+    userId: string;
+    kind: ForumReactionKind;
+  }): Promise<{ active: boolean; kind: ForumReactionKind | null; counts: Record<ForumReactionKind, number> }> {
+    const { postId, userId, kind } = input;
+    const currentCount = () => forumReactionCounts(mockForumReactions.filter(r => r.post_id === postId));
+
+    if (isInMockMode()) {
+      const existing = mockForumReactions.find(r => r.post_id === postId && r.user_id === userId);
+      if (existing?.kind === kind) {
+        mockForumReactions = mockForumReactions.filter(r => r !== existing);
+        return { active: false, kind: null, counts: currentCount() };
+      }
+      if (existing) existing.kind = kind;
+      else mockForumReactions.push({ post_id: postId, user_id: userId, kind, created_at: new Date().toISOString() });
+      return { active: true, kind, counts: currentCount() };
+    }
+
+    const client = adminClient();
+    if (!client) throw new Error('[db.toggleForumReaction] Admin client unavailable.');
+    const { data: existing } = await client
+      .from('forum_reactions').select('kind').eq('post_id', postId).eq('user_id', userId).maybeSingle();
+    if ((existing as { kind?: ForumReactionKind } | null)?.kind === kind) {
+      await client.from('forum_reactions').delete().eq('post_id', postId).eq('user_id', userId);
+    } else {
+      await client.from('forum_reactions').upsert(
+        { post_id: postId, user_id: userId, kind, created_at: new Date().toISOString() },
+        { onConflict: 'post_id,user_id' },
+      );
+    }
+    const { data } = await client.from('forum_reactions').select('user_id, kind').eq('post_id', postId);
+    const mine = (data || []).find((r: any) => r.user_id === userId)?.kind as ForumReactionKind | undefined;
+    return {
+      active: !!mine,
+      kind: mine || null,
+      counts: forumReactionCounts((data || []).map((r: any) => ({ post_id: postId, user_id: r.user_id, kind: r.kind }))),
+    };
+  },
+
+  async toggleForumBookmark(threadId: string, userId: string): Promise<boolean> {
+    if (isInMockMode()) {
+      const index = mockForumBookmarks.findIndex(b => b.thread_id === threadId && b.user_id === userId);
+      if (index >= 0) { mockForumBookmarks.splice(index, 1); return false; }
+      mockForumBookmarks.push({ thread_id: threadId, user_id: userId, created_at: new Date().toISOString() });
+      return true;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.toggleForumBookmark] Admin client unavailable.');
+    const { data: existing } = await client
+      .from('forum_bookmarks').select('thread_id').eq('thread_id', threadId).eq('user_id', userId).maybeSingle();
+    if (existing) {
+      await client.from('forum_bookmarks').delete().eq('thread_id', threadId).eq('user_id', userId);
+      return false;
+    }
+    await client.from('forum_bookmarks').insert([{ thread_id: threadId, user_id: userId }]);
+    return true;
+  },
+
+  async toggleForumFollow(threadId: string, userId: string): Promise<boolean> {
+    if (isInMockMode()) {
+      const index = mockForumFollows.findIndex(f => f.thread_id === threadId && f.user_id === userId);
+      if (index >= 0) { mockForumFollows.splice(index, 1); return false; }
+      mockForumFollows.push({ thread_id: threadId, user_id: userId, created_at: new Date().toISOString() });
+      return true;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.toggleForumFollow] Admin client unavailable.');
+    const { data: existing } = await client
+      .from('forum_follows').select('thread_id').eq('thread_id', threadId).eq('user_id', userId).maybeSingle();
+    if (existing) {
+      await client.from('forum_follows').delete().eq('thread_id', threadId).eq('user_id', userId);
+      return false;
+    }
+    await client.from('forum_follows').insert([{ thread_id: threadId, user_id: userId }]);
+    return true;
+  },
+
+  async getBookmarkedForumThreads(userId: string): Promise<ForumThread[]> {
+    const state = await this.getForumInteractions(userId);
+    if (!state.bookmarks.length) return [];
+    const all = await this.getForumThreads({ limit: 1000 });
+    return all.filter(t => state.bookmarks.includes(t.id));
+  },
+
+  async getFollowedForumThreads(userId: string): Promise<ForumThread[]> {
+    const state = await this.getForumInteractions(userId);
+    if (!state.follows.length) return [];
+    const all = await this.getForumThreads({ limit: 1000 });
+    return all.filter(t => state.follows.includes(t.id));
+  },
+
+  /** Phân trang cho danh sách thread (dùng chung bộ lọc với getForumThreads). */
+  async getForumThreadPage(query: ForumThreadQuery = {}, page = 1, pageSize = 20): Promise<ForumThreadPage> {
+    const safePage = Math.max(1, Math.floor(page));
+    const safeSize = Math.min(100, Math.max(1, Math.floor(pageSize)));
+    const all = await this.getForumThreads({ ...query, limit: 10000, offset: 0 });
+    return {
+      threads: all.slice((safePage - 1) * safeSize, safePage * safeSize),
+      total: all.length,
+      page: safePage,
+      pageSize: safeSize,
+    };
+  },
+
+  async getForumNotifications(userId: string, unreadOnly = false, limit = 20): Promise<ForumNotification[]> {
+    if (isInMockMode()) {
+      return mockForumNotifications
+        .filter(n => n.user_id === userId && (!unreadOnly || !n.read_at))
+        .sort((a, b) => b.created_at.localeCompare(a.created_at))
+        .slice(0, limit);
+    }
+    const client = adminClient();
+    if (!client) return [];
+    let q = client.from('forum_notifications').select('*').eq('user_id', userId).order('created_at', { ascending: false }).limit(limit);
+    if (unreadOnly) q = q.is('read_at', null);
+    const { data, error } = await q;
+    if (error) {
+      forumWarn('getForumNotifications', error);
+      if (forumDevFallback()) {
+        return mockForumNotifications
+          .filter(n => n.user_id === userId && (!unreadOnly || !n.read_at))
+          .sort((a, b) => b.created_at.localeCompare(a.created_at))
+          .slice(0, limit);
+      }
+      return [];
+    }
+    return (data || []) as ForumNotification[];
+  },
+
+  async getUnreadForumNotificationCount(userId: string): Promise<number> {
+    if (!userId) return 0;
+    if (isInMockMode()) return mockForumNotifications.filter(n => n.user_id === userId && !n.read_at).length;
+    const client = adminClient();
+    if (!client) return 0;
+    const { count, error } = await client
+      .from('forum_notifications').select('id', { count: 'exact', head: true })
+      .eq('user_id', userId).is('read_at', null);
+    if (error) { forumWarn('getUnreadForumNotificationCount', error); return 0; }
+    return count || 0;
+  },
+
+  async markForumNotificationRead(notificationId: string, userId: string): Promise<void> {
+    if (isInMockMode()) {
+      const item = mockForumNotifications.find(n => n.id === notificationId && n.user_id === userId);
+      if (item) item.read_at = new Date().toISOString();
+      return;
+    }
+    const client = adminClient();
+    if (!client) return;
+    await client.from('forum_notifications')
+      .update({ read_at: new Date().toISOString() })
+      .eq('id', notificationId).eq('user_id', userId);
+  },
+
+  async markAllForumNotificationsRead(userId: string): Promise<void> {
+    if (isInMockMode()) {
+      mockForumNotifications.filter(n => n.user_id === userId && !n.read_at)
+        .forEach(n => { n.read_at = new Date().toISOString(); });
+      return;
+    }
+    const client = adminClient();
+    if (!client) return;
+    await client.from('forum_notifications')
+      .update({ read_at: new Date().toISOString() })
+      .eq('user_id', userId).is('read_at', null);
+  },
+
+  // --------------------------------------------------------------------------
+  // PHASE 3 — VẬN HÀNH (báo cáo, kiểm duyệt, analytics)
+  // --------------------------------------------------------------------------
+  async createForumReport(input: {
+    threadId?: string | null;
+    postId?: string | null;
+    reporterId: string;
+    reason: ForumReportReason;
+    details?: string;
+  }): Promise<ForumReport> {
+    const payload = {
+      thread_id: input.threadId || null,
+      post_id: input.postId || null,
+      reporter_id: input.reporterId,
+      reason: input.reason,
+      details: (input.details || '').slice(0, 1000) || null,
+      status: 'open' as ForumReportStatus,
+    };
+    if (isInMockMode()) {
+      const report: ForumReport = {
+        ...payload, id: `forum-report-${Date.now()}`,
+        resolved_by: null, resolved_at: null, created_at: new Date().toISOString(),
+      };
+      mockForumReports.unshift(report);
+      return report;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('[db.createForumReport] Admin client unavailable.');
+    const { data, error } = await client.from('forum_reports').insert([payload]).select().single();
+    if (error) {
+      forumWarn('createForumReport', error);
+      if (forumDevFallback()) {
+        const report: ForumReport = {
+          ...payload, id: `forum-report-${Date.now()}`,
+          resolved_by: null, resolved_at: null, created_at: new Date().toISOString(),
+        };
+        mockForumReports.unshift(report);
+        return report;
+      }
+      throw error;
+    }
+    return data as ForumReport;
+  },
+
+  async getForumReports(status: ForumReportStatus | 'all' = 'open'): Promise<ForumReport[]> {
+    if (isInMockMode()) {
+      return mockForumReports
+        .filter(r => status === 'all' || r.status === status)
+        .map(r => ({
+          ...r,
+          thread: mockForumThreads.find(t => t.id === r.thread_id) || null,
+          reporter: mockForumAuthorMap().get(r.reporter_id) || null,
+        }));
+    }
+    const client = adminClient();
+    if (!client) return [];
+    let q = client.from('forum_reports').select('*').order('created_at', { ascending: false }).limit(100);
+    if (status !== 'all') q = q.eq('status', status);
+    const { data, error } = await q;
+    if (error) {
+      forumWarn('getForumReports', error);
+      if (forumDevFallback()) {
+        return mockForumReports
+          .filter(r => status === 'all' || r.status === status)
+          .map(r => ({
+            ...r,
+            thread: mockForumThreads.find(t => t.id === r.thread_id) || null,
+            reporter: mockForumAuthorMap().get(r.reporter_id) || null,
+          }));
+      }
+      return [];
+    }
+    const reports = (data || []) as ForumReport[];
+    const [threadsRes, usersRes] = await Promise.all([
+      client.from('forum_threads').select('*'),
+      client.from('users').select('id, fullname, avatar_url, role'),
+    ]);
+    const threads = (threadsRes.data || []) as ForumThread[];
+    const authors = forumAuthorMap((usersRes.data || []) as User[]);
+    const categories = (await client.from('forum_categories').select('*')).data as ForumCategory[] || [];
+    return reports.map(r => ({
+      ...r,
+      thread: decorateForumThread(threads.find(t => t.id === r.thread_id) || {} as ForumThread, categories, authors),
+      reporter: authors.get(r.reporter_id) || null,
+    }));
+  },
+
+  async resolveForumReport(id: string, status: 'resolved' | 'dismissed', resolvedBy: string): Promise<void> {
+    // Báo cáo tạo bằng fallback DEV nằm trong mock array, không có row trên Supabase.
+    if (id.startsWith('forum-report-')) {
+      const report = mockForumReports.find(r => r.id === id);
+      if (report) {
+        report.status = status;
+        report.resolved_by = resolvedBy;
+        report.resolved_at = new Date().toISOString();
+      }
+      return;
+    }
+    if (isInMockMode()) {
+      const report = mockForumReports.find(r => r.id === id);
+      if (report) {
+        report.status = status;
+        report.resolved_by = resolvedBy;
+        report.resolved_at = new Date().toISOString();
+      }
+      return;
+    }
+    const client = adminClient();
+    if (!client) return;
+    await client.from('forum_reports').update({
+      status, resolved_by: resolvedBy, resolved_at: new Date().toISOString(),
+    }).eq('id', id);
+  },
+
+  async moderateForumThread(
+    threadId: string,
+    action: 'pin' | 'unpin' | 'lock' | 'unlock' | 'archive',
+  ): Promise<ForumThread | null> {
+    const patch: Partial<ForumThread> = action === 'pin' ? { is_pinned: true }
+      : action === 'unpin' ? { is_pinned: false }
+      : action === 'lock' ? { status: 'locked' }
+      : action === 'unlock' ? { status: 'open' }
+      : { status: 'archived' };
+
+    if (isInMockMode()) {
+      const thread = mockForumThreads.find(t => t.id === threadId);
+      if (!thread) return null;
+      Object.assign(thread, patch, { updated_at: new Date().toISOString() });
+      return this.getForumThreadById(threadId);
+    }
+    const client = adminClient();
+    if (!client) return null;
+    const { error } = await client.from('forum_threads').update({
+      ...patch, updated_at: new Date().toISOString(),
+    }).eq('id', threadId);
+    if (error) throw error;
+    return this.getForumThreadById(threadId);
+  },
+
+  async getForumAnalytics(): Promise<ForumAnalytics> {
+    const [categories, stats, reports, threads] = await Promise.all([
+      this.getForumCategories(),
+      this.getForumStats(),
+      this.getForumReports('open'),
+      this.getForumThreads({ limit: 10000 }),
+    ]);
+    const openThreads = threads.filter(t => t.status === 'open').length;
+    const tagCounts = new Map<string, number>();
+    threads.forEach(t => (t.tags || []).forEach(tag => tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1)));
+
+    return {
+      totalThreads: stats.threads,
+      totalReplies: stats.replies,
+      solvedRate: stats.threads ? Math.round((stats.solved / stats.threads) * 100) : 0,
+      openThreads,
+      reportsOpen: reports.length,
+      byCategory: categories.map(c => {
+        const inCategory = threads.filter(t => t.category_id === c.id);
+        return {
+          slug: c.slug, name: c.name, icon: c.icon,
+          threads: inCategory.length,
+          replies: inCategory.reduce((sum, t) => sum + t.reply_count, 0),
+          solved: inCategory.filter(t => t.status === 'solved').length,
+        };
+      }),
+      topTags: Array.from(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 10)
+        .map(([tag, count]) => ({ tag, count })),
+    };
+  },
+
+  async getForumLeaderboard(limit = 20): Promise<ForumUserStat[]> {
+    if (isInMockMode()) {
+      return mockForumUserStats()
+        .sort((a, b) => b.reputation - a.reputation)
+        .slice(0, limit);
+    }
+    const client = adminClient();
+    if (!client) return [];
+    const { data, error } = await client
+      .from('forum_user_stats').select('*').order('reputation', { ascending: false }).limit(limit);
+    if (error) {
+      forumWarn('getForumLeaderboard', error);
+      if (forumDevFallback()) {
+        return mockForumUserStats()
+          .sort((a, b) => b.reputation - a.reputation)
+          .slice(0, limit);
+      }
+      return [];
+    }
+    const usersRes = await client.from('users').select('id, fullname, avatar_url, role');
+    const authors = forumAuthorMap((usersRes.data || []) as User[]);
+    return ((data || []) as ForumUserStat[]).map(s => ({ ...s, user: authors.get(s.user_id) || null }));
+  },
+
+  // --------------------------------------------------------------------------
+  // PHASE 4 — KHÁC BIỆT HOÁ (ngữ nghĩa, AI meta, bridge sang ngân hàng câu hỏi)
+  // --------------------------------------------------------------------------
+  async searchForumThreadsByEmbedding(
+    embedding: number[],
+    query: { limit?: number; categoryId?: string | null; excludeId?: string | null } = {},
+  ): Promise<ForumThread[]> {
+    const client = adminClient();
+    if (!client || isInMockMode()) return [];
+    const { data, error } = await client.rpc('forum_search_similar', {
+      p_embedding: toPgVector(embedding),
+      p_match_count: query.limit || 6,
+      p_category_id: query.categoryId || null,
+      p_exclude_id: query.excludeId || null,
+    });
+    if (error) { forumWarn('searchForumThreadsByEmbedding', error); return []; }
+    const rows = (data || []) as Array<{ id: string; similarity: number }>;
+    const threads = await Promise.all(rows.map(r => this.getForumThreadById(r.id)));
+    return threads.filter((t): t is ForumThread => !!t);
+  },
+
+  /** Fallback khi không có pgvector/Gemini: chấm điểm theo tag + từ khoá. */
+  async searchForumThreadsByText(text: string, query: ForumThreadQuery = {}, limit = 6): Promise<ForumThread[]> {
+    const tokens = forumTokenize(text);
+    const candidates = await this.getForumThreads({ ...query, limit: 10000 });
+    return candidates
+      .map(thread => ({ thread, score: forumTextScore(thread, tokens) + (thread.tags || []).filter(t => tokens.includes(t)).length * 0.5 }))
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, limit)
+      .map(item => item.thread);
+  },
+
+  async getRelatedForumThreads(threadId: string, limit = 5): Promise<ForumThread[]> {
+    const thread = await this.getForumThreadById(threadId);
+    if (!thread) return [];
+    const text = `${thread.title} ${(thread.tags || []).join(' ')}`;
+    const related = await this.searchForumThreadsByText(text, {
+      categoryId: thread.category_id,
+    }, limit + 1);
+    return related.filter(t => t.id !== threadId).slice(0, limit);
+  },
+
+  async setForumThreadSummary(threadId: string, summary: string): Promise<void> {
+    if (isInMockMode()) {
+      const thread = mockForumThreads.find(t => t.id === threadId);
+      if (thread) thread.summary = summary.slice(0, 600);
+      return;
+    }
+    const client = adminClient();
+    if (!client) return;
+    const { error } = await client.from('forum_threads').update({ summary: summary.slice(0, 600) }).eq('id', threadId);
+    if (error) {
+      forumWarn('setForumThreadSummary', error);
+      if (forumDevFallback()) {
+        const thread = mockForumThreads.find(t => t.id === threadId);
+        if (thread) thread.summary = summary.slice(0, 600);
+      }
+    }
+  },
+
+  /** Giáo viên chuyển thread (kèm đáp án được chọn) thành câu hỏi tự luận trong ngân hàng đề. */
+  async convertForumThreadToQuestion(threadId: string, createdBy: string): Promise<{ id: string } | null> {
+    const thread = await this.getForumThreadById(threadId);
+    if (!thread) return null;
+
+    if (!isInMockMode()) {
+      const client = adminClient();
+      if (!client) return null;
+      const { data: existing } = await client
+        .from('questions').select('id').eq('metadata->>forum_thread_id', threadId).maybeSingle();
+      if (existing?.id) return { id: existing.id };
+    }
+
+    let subjectId = thread.category?.subject_id || '';
+    if (!subjectId) subjectId = (await this.getSubjects())[0]?.id || '';
+    const accepted = thread.posts?.find(p => p.id === thread.accepted_post_id || p.is_answer);
+
+    const question = await this.createQuestion({
+      content: `${thread.title}\n\n${thread.body}`.slice(0, 6000),
+      subject_id: subjectId,
+      difficulty: 'medium',
+      type: 'sa',
+      explanation: accepted?.body || thread.summary || null,
+      created_by: createdBy,
+      metadata: {
+        source: 'forum',
+        forum_thread_id: threadId,
+        tags: thread.tags || [],
+        grade: '12',
+      },
+    }, []);
+
+    return { id: question.id };
   },
 };
 

@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { db } from '../../services/db';
+import { forumNumber } from '../../lib/forum-format';
+
+const leaders = await db.getForumLeaderboard(30);
+const medals = ['🥇', '🥈', '🥉'];
+---
+
+<Layout
+  title="Bảng xếp hạng | Diễn đàn Học sinh"
+  description="Những thành viên tích cực nhất trên diễn đàn học sinh Lớp 12."
+  canonical="/hoc-sinh/bang-xep-hang"
+  breadcrumbs={[{ name: 'Diễn đàn Học sinh', url: '/hoc-sinh' }, { name: 'Bảng xếp hạng', url: '/hoc-sinh/bang-xep-hang' }]}
+>
+  <div class="mx-auto max-w-4xl space-y-6">
+    <div class="rounded-2xl bg-gradient-to-br from-amber-500 via-orange-500 to-rose-500 p-7 text-white shadow-xl shadow-orange-500/20">
+      <span class="inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-bold tracking-wide">🏆 CỘNG ĐỒNG HỌC TẬP</span>
+      <h1 class="mt-4 text-3xl font-extrabold">Bảng xếp hạng thành viên</h1>
+      <p class="mt-2 text-sm text-orange-50/90">Điểm uy tín = bài hỏi · câu trả lời · đáp án được chọn · cảm xúc nhận được.</p>
+    </div>
+
+    <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+      <ul class="divide-y divide-slate-100 dark:divide-slate-800">
+        {leaders.map((stat, index) => (
+          <li class="flex flex-wrap items-center gap-4 px-5 py-4">
+            <span class="w-9 shrink-0 text-center text-xl font-black text-slate-400">{medals[index] || index + 1}</span>
+            <img src={stat.user?.avatar_url || 'https://api.dicebear.com/7.x/adventurer/svg?seed=default'} alt="" class="h-10 w-10 shrink-0 rounded-full bg-slate-200" />
+            <div class="min-w-0 flex-1">
+              <p class="flex flex-wrap items-center gap-2 font-bold text-slate-900 dark:text-white">
+                {stat.user?.fullname || 'Thành viên'}
+                {stat.user?.role === 'teacher' && <span class="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold text-emerald-700">Giáo viên</span>}
+              </p>
+              <div class="mt-1 flex flex-wrap gap-1.5">
+                {stat.badges.map(badge => (
+                  <span class="rounded-full bg-violet-50 px-2 py-0.5 text-[10px] font-semibold text-violet-700 dark:bg-violet-950/40 dark:text-violet-300">{badge}</span>
+                ))}
+              </div>
+            </div>
+            <div class="flex shrink-0 gap-4 text-center text-[11px] text-slate-500">
+              <div><div class="text-sm font-bold text-slate-800 dark:text-slate-200">{stat.threads_count}</div>bài hỏi</div>
+              <div><div class="text-sm font-bold text-slate-800 dark:text-slate-200">{stat.answers_count}</div>trả lời</div>
+              <div><div class="text-sm font-bold text-slate-800 dark:text-slate-200">{stat.accepted_count}</div>đáp án đúng</div>
+              <div class="min-w-16"><div class="text-base font-extrabold text-amber-600">{forumNumber(stat.reputation)}</div>điểm</div>
+            </div>
+          </li>
+        ))}
+        {leaders.length === 0 && (
+          <li class="px-5 py-14 text-center text-sm text-slate-500">Chưa có dữ liệu xếp hạng.</li>
+        )}
+      </ul>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,103 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { db } from '../../services/db';
+import { forumRelativeTime } from '../../lib/forum-format';
+
+const user = Astro.locals.user;
+if (!user) return Astro.redirect('/login');
+
+const [notifications, unreadCount, threads] = await Promise.all([
+  db.getForumNotifications(user.id, false, 50),
+  db.getUnreadForumNotificationCount(user.id),
+  db.getForumThreads({ limit: 1000 }),
+]);
+const threadMap = new Map(threads.map(t => [t.id, t]));
+
+const typeMeta: Record<string, { icon: string; label: string }> = {
+  reply: { icon: '💬', label: 'Có trả lời mới' },
+  mention: { icon: '@', label: 'Bạn được nhắc tên' },
+  answer: { icon: '✅', label: 'Câu trả lời được chọn' },
+  follow: { icon: '🔔', label: 'Bài bạn theo dõi có trả lời mới' },
+  report: { icon: '🚩', label: 'Báo cáo' },
+};
+---
+
+<Layout
+  title="Thông báo | Diễn đàn Học sinh"
+  description="Các trả lời mới, lượt nhắc tên và cập nhật từ diễn đàn học sinh."
+  canonical="/hoc-sinh/thong-bao"
+  noindex={true}
+  breadcrumbs={[{ name: 'Diễn đàn Học sinh', url: '/hoc-sinh' }, { name: 'Thông báo', url: '/hoc-sinh/thong-bao' }]}
+>
+  <div class="mx-auto max-w-3xl space-y-5">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white md:text-3xl">🔔 Thông báo</h1>
+        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+          {unreadCount > 0 ? `Bạn có ${unreadCount} thông báo chưa đọc.` : 'Bạn đã đọc hết thông báo.'}
+        </p>
+      </div>
+      <div class="flex gap-2">
+        {unreadCount > 0 && (
+          <button id="forum-read-all" type="button" class="rounded-xl border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800">Đánh dấu đã đọc</button>
+        )}
+        <a href="/hoc-sinh/da-luu" class="rounded-xl border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800">🔖 Đã lưu</a>
+      </div>
+    </div>
+
+    <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+      <ul class="divide-y divide-slate-100 dark:divide-slate-800">
+        {notifications.map(n => {
+          const thread = threadMap.get(n.payload.thread_id || '');
+          const meta = typeMeta[n.type] || { icon: '📢', label: 'Cập nhật' };
+          const href = thread ? `/hoc-sinh/${thread.category?.slug}/${thread.slug}` : '/hoc-sinh/tat-ca';
+          return (
+            <li class={`flex items-start gap-3 px-5 py-4 ${n.read_at ? '' : 'bg-blue-50/40 dark:bg-blue-950/10'}`}>
+              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-lg dark:bg-slate-800">{meta.icon}</div>
+              <div class="min-w-0 flex-1">
+                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">{meta.label}</p>
+                <a href={href} class="mt-1 block text-sm text-blue-700 hover:underline dark:text-blue-300 line-clamp-2">
+                  {n.payload.thread_title || 'Một bài viết trên diễn đàn'}
+                </a>
+                <p class="mt-1 text-[11px] text-slate-400">{forumRelativeTime(n.created_at)}</p>
+              </div>
+              {!n.read_at && (
+                <button type="button" class="forum-read-one shrink-0 rounded-lg px-2 py-1 text-[11px] font-semibold text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30" data-id={n.id}>Đã đọc</button>
+              )}
+            </li>
+          );
+        })}
+        {notifications.length === 0 && (
+          <li class="px-5 py-16 text-center">
+            <div class="text-4xl">📭</div>
+            <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">Chưa có thông báo nào</p>
+            <p class="mt-1 text-xs text-slate-500">Theo dõi bài viết hoặc tham gia thảo luận để nhận cập nhật tại đây.</p>
+          </li>
+        )}
+      </ul>
+    </section>
+  </div>
+</Layout>
+
+<script is:inline>
+  (function () {
+    async function post(path, body) {
+      var response = await fetch(window.withBase(path), {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: body ? JSON.stringify(body) : undefined,
+      });
+      if (!response.ok) throw new Error('Không thể cập nhật thông báo.');
+      return response.json();
+    }
+    document.getElementById('forum-read-all')?.addEventListener('click', async function () {
+      await post('/api/forum/notifications/read-all');
+      window.location.reload();
+    });
+    document.querySelectorAll('.forum-read-one').forEach(function (btn) {
+      btn.addEventListener('click', async function () {
+        await post('/api/forum/notifications/' + encodeURIComponent(btn.getAttribute('data-id')) + '/read');
+        window.location.reload();
+      });
+    });
+  })();
+</script>

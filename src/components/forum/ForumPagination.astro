@@ -1,0 +1,48 @@
+---
+interface Props {
+  page: number;
+  total: number;
+  pageSize: number;
+  baseUrl: string;
+  params?: Record<string, string>;
+}
+
+const { page, total, pageSize, baseUrl, params = {} } = Astro.props;
+const totalPages = Math.max(1, Math.ceil(total / pageSize));
+
+function hrefFor(target: number): string {
+  const query = new URLSearchParams(params);
+  query.set('page', String(target));
+  return `${baseUrl}?${query.toString()}`;
+}
+
+const pages: number[] = [];
+const start = Math.max(1, Math.min(page - 2, totalPages - 4));
+for (let i = start; i <= Math.min(totalPages, start + 4); i++) pages.push(i);
+---
+
+{totalPages > 1 && (
+  <nav class="flex items-center justify-between gap-3 border-t border-slate-100 dark:border-slate-800 px-5 py-4" aria-label="Phân trang">
+    <span class="text-xs text-slate-500 dark:text-slate-400">
+      Trang <strong class="text-slate-700 dark:text-slate-200">{page}</strong> / {totalPages} · {total} bài
+    </span>
+    <div class="flex items-center gap-1.5">
+      {page > 1 ? (
+        <a href={hrefFor(page - 1)} class="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">← Trước</a>
+      ) : (
+        <span class="rounded-lg border border-slate-100 px-3 py-1.5 text-xs text-slate-300 dark:border-slate-800 dark:text-slate-600">← Trước</span>
+      )}
+      {pages.map(p => (
+        <a
+          href={hrefFor(p)}
+          class={`hidden min-w-8 rounded-lg px-2.5 py-1.5 text-center text-xs font-bold sm:block ${p === page ? 'bg-blue-600 text-white' : 'border border-slate-200 text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800'}`}
+        >{p}</a>
+      ))}
+      {page < totalPages ? (
+        <a href={hrefFor(page + 1)} class="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Sau →</a>
+      ) : (
+        <span class="rounded-lg border border-slate-100 px-3 py-1.5 text-xs text-slate-300 dark:border-slate-800 dark:text-slate-600">Sau →</span>
+      )}
+    </div>
+  </nav>
+)}

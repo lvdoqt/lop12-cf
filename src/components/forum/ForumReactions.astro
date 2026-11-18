@@ -1,0 +1,38 @@
+---
+import type { ForumPost, ForumReactionKind } from '../../types';
+
+interface Props {
+  post: ForumPost;
+  canInteract: boolean;
+}
+
+const { post, canInteract } = Astro.props;
+const kinds: ForumReactionKind[] = ['like', 'helpful', 'heart'];
+const emoji: Record<ForumReactionKind, string> = { like: '👍', helpful: '💡', heart: '❤️' };
+const label: Record<ForumReactionKind, string> = { like: 'Hay', helpful: 'Hữu ích', heart: 'Cảm ơn' };
+const counts = post.reaction_counts || { like: 0, helpful: 0, heart: 0 };
+---
+
+<div class="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 dark:border-slate-800 pt-3">
+  {kinds.map(kind => (
+    <button
+      type="button"
+      class={`forum-react-btn inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-[11px] font-semibold transition ${post.viewer_reaction === kind ? 'border-blue-400 bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300' : 'border-slate-200 text-slate-500 hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:text-slate-400'}`}
+      data-post-id={post.id}
+      data-kind={kind}
+      disabled={!canInteract}
+      title={label[kind]}
+    >
+      <span>{emoji[kind]}</span>
+      <span data-reaction-count>{counts[kind]}</span>
+    </button>
+  ))}
+  {canInteract && (
+    <button
+      type="button"
+      class="forum-report-btn ml-auto rounded-lg px-2 py-1 text-[11px] font-medium text-slate-400 hover:text-rose-600 transition"
+      data-thread-id={post.thread_id}
+      data-post-id={post.id}
+    >🚩 Báo cáo</button>
+  )}
+</div>

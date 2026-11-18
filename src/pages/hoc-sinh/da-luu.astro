@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { db } from '../../services/db';
+import { forumExcerpt } from '../../lib/markdown';
+import { forumNumber, forumRelativeTime } from '../../lib/forum-format';
+
+const user = Astro.locals.user;
+if (!user) return Astro.redirect('/login');
+
+const [bookmarked, followed] = await Promise.all([
+  db.getBookmarkedForumThreads(user.id),
+  db.getFollowedForumThreads(user.id),
+]);
+
+const sections = [
+  { title: '🔖 Bài đã lưu', items: bookmarked, empty: 'Bạn chưa lưu bài nào. Nhấn "Lưu bài" trong trang chi tiết để thêm vào đây.' },
+  { title: '🔔 Đang theo dõi', items: followed, empty: 'Bạn chưa theo dõi bài nào. Nhấn "Theo dõi" để nhận thông báo khi có trả lời mới.' },
+];
+---
+
+<Layout
+  title="Bài đã lưu | Diễn đàn Học sinh"
+  description="Những bài viết bạn đã lưu hoặc đang theo dõi trên diễn đàn học sinh."
+  canonical="/hoc-sinh/da-luu"
+  noindex={true}
+  breadcrumbs={[{ name: 'Diễn đàn Học sinh', url: '/hoc-sinh' }, { name: 'Bài đã lưu', url: '/hoc-sinh/da-luu' }]}
+>
+  <div class="grid gap-6 lg:grid-cols-2">
+    {sections.map(section => (
+      <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+        <div class="border-b border-slate-100 px-5 py-4 dark:border-slate-800">
+          <h1 class="text-lg font-extrabold text-slate-900 dark:text-white">{section.title}</h1>
+          <p class="mt-1 text-xs text-slate-500">{section.items.length} bài viết</p>
+        </div>
+        <ul class="divide-y divide-slate-100 dark:divide-slate-800">
+          {section.items.map(thread => (
+            <li class="px-5 py-4 hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
+              <a href={`/hoc-sinh/${thread.category?.slug}/${thread.slug}`} class="font-bold text-slate-900 hover:text-blue-600 dark:text-slate-100 dark:hover:text-blue-400 line-clamp-2">{thread.title}</a>
+              <p class="mt-1 text-xs text-slate-500 line-clamp-2">{forumExcerpt(thread.body, 140)}</p>
+              <p class="mt-2 text-[11px] text-slate-400">
+                {thread.category?.name} · {forumRelativeTime(thread.last_activity_at)} · 💬 {thread.reply_count} · 👁 {forumNumber(thread.views_count)}
+              </p>
+            </li>
+          ))}
+          {section.items.length === 0 && (
+            <li class="px-5 py-12 text-center text-sm text-slate-500">{section.empty}</li>
+          )}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Layout>

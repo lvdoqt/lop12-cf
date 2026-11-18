@@ -1,0 +1,137 @@
+---
+import type { ForumCategory, ForumThread } from '../../types';
+import ForumPagination from './ForumPagination.astro';
+import { forumExcerpt } from '../../lib/markdown';
+import { forumNumber, forumRelativeTime } from '../../lib/forum-format';
+
+interface Props {
+  threads: ForumThread[];
+  category?: ForumCategory | null;
+  actionUrl: string;
+  search?: string;
+  status?: string;
+  sort?: string;
+  showCategory?: boolean;
+  page?: number;
+  total?: number;
+  pageSize?: number;
+  tag?: string;
+}
+
+const {
+  threads,
+  category = null,
+  actionUrl,
+  search = '',
+  status = 'all',
+  sort = 'latest',
+  showCategory = false,
+  page = 1,
+  total,
+  pageSize = 20,
+  tag = '',
+} = Astro.props;
+
+const queryParams: Record<string, string> = {};
+if (search) queryParams.q = search;
+if (status !== 'all') queryParams.status = status;
+if (sort !== 'latest') queryParams.sort = sort;
+if (tag) queryParams.tag = tag;
+
+const user = Astro.locals.user;
+---
+
+<section class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden">
+  <div class="border-b border-slate-100 dark:border-slate-800 px-5 py-4 flex flex-wrap items-center justify-between gap-3">
+    <div>
+      <h1 class="text-lg font-extrabold text-slate-900 dark:text-white">
+        {category ? `${category.icon || '📚'} ${category.name}` : '📝 Tất cả bài viết'}
+      </h1>
+      <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+        {category?.description || 'Mọi câu hỏi và chia sẻ từ cộng đồng học sinh Lớp 12.'}
+      </p>
+    </div>
+    {user && (
+      <a href="/hoc-sinh/dang-bai" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700 transition">
+        ✍️ Đăng bài mới
+      </a>
+    )}
+  </div>
+
+  <!-- Bộ lọc -->
+  <form action={actionUrl} method="get" class="flex flex-col gap-2 border-b border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/30 px-5 py-3 sm:flex-row sm:items-center">
+    <div class="relative flex-1">
+      <svg class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+      </svg>
+      <input
+        type="search"
+        name="q"
+        value={search}
+        placeholder="Tìm kiếm bài viết, tag..."
+        class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-2 pl-9 pr-3 text-sm text-slate-800 dark:text-slate-100 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+      />
+    </div>
+    <select name="status" class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-blue-500">
+      <option value="all" selected={status === 'all'}>Tất cả trạng thái</option>
+      <option value="open" selected={status === 'open'}>Chưa giải</option>
+      <option value="solved" selected={status === 'solved'}>Đã giải</option>
+    </select>
+    <select name="sort" class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-blue-500">
+      <option value="latest" selected={sort === 'latest'}>Mới nhất</option>
+      <option value="active" selected={sort === 'active'}>Đang thảo luận</option>
+      <option value="popular" selected={sort === 'popular'}>Xem nhiều</option>
+    </select>
+    <button type="submit" class="rounded-xl bg-slate-800 dark:bg-slate-700 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-900 transition">Lọc</button>
+  </form>
+
+  <ul class="divide-y divide-slate-100 dark:divide-slate-800">
+    {threads.map(thread => (
+      <li class="px-5 py-4 transition hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
+        <div class="flex items-start gap-3">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-950/40 text-lg">
+            {thread.category?.icon || '💬'}
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <a
+                href={`/hoc-sinh/${thread.category?.slug}/${thread.slug}`}
+                class="font-bold text-slate-900 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                {thread.is_pinned && <span class="mr-1" title="Đã ghép top">📌</span>}{thread.title}
+              </a>
+              {thread.status === 'solved' && (
+                <span class="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">✓ Đã giải</span>
+              )}
+              {thread.is_anonymous && (
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-semibold text-slate-500">Ẩn danh</span>
+              )}
+            </div>
+            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{forumExcerpt(thread.body, 200)}</p>
+            <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-400 dark:text-slate-500">
+              {showCategory && <span class="font-medium text-slate-600 dark:text-slate-300">{thread.category?.name}</span>}
+              <span class="font-medium text-slate-600 dark:text-slate-300">{thread.is_anonymous ? 'Ẩn danh' : (thread.author?.fullname || 'Thành viên')}</span>
+              <span>• {forumRelativeTime(thread.last_activity_at)}</span>
+              <span>• 💬 {thread.reply_count}</span>
+              <span>• 👁 {forumNumber(thread.views_count)}</span>
+              {(thread.tags || []).slice(0, 3).map(tag => (
+                <a href={`/hoc-sinh/tat-ca?tag=${encodeURIComponent(tag)}`} class="rounded-md bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-medium text-slate-500 hover:text-blue-600">#{tag}</a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </li>
+    ))}
+    {threads.length === 0 && (
+      <li class="px-5 py-14 text-center">
+        <div class="text-4xl">🔍</div>
+        <p class="mt-3 font-semibold text-slate-700 dark:text-slate-200">Chưa có bài viết nào khớp</p>
+        <p class="mt-1 text-xs text-slate-500">Thử đổi từ khoá hoặc đăng bài mới để bắt đầu thảo luận.</p>
+      </li>
+    )}
+  </ul>
+
+  {typeof total === 'number' && (
+    <ForumPagination page={page} total={total} pageSize={pageSize} baseUrl={actionUrl} params={queryParams} />
+  )}
+</section>

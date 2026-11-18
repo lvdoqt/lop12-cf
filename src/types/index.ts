@@ -469,3 +469,172 @@ export interface PadletBoard {
   notes: PadletNote[];
 }
 
+// ---------------------------------------------------------------------------
+// DIỄN ĐÀN HỌC SINH (/hoc-sinh)
+// ---------------------------------------------------------------------------
+export type ForumThreadStatus = 'open' | 'solved' | 'locked' | 'archived';
+
+export interface ForumCategory {
+  id: string;
+  name: string;
+  slug: string;
+  description: string | null;
+  icon: string | null;
+  subject_id: string | null;
+  parent_id: string | null;
+  order_index: number;
+  is_active: boolean;
+  created_at: string;
+  /** Denormalized for the category grid. */
+  thread_count?: number;
+  subject?: Subject | null;
+}
+
+export type ForumAuthor = Pick<User, 'id' | 'fullname' | 'avatar_url' | 'role'>;
+
+export type ForumReactionKind = 'like' | 'helpful' | 'heart';
+
+export interface ForumPost {
+  id: string;
+  thread_id: string;
+  author_id: string;
+  parent_id: string | null;
+  body: string;
+  is_answer: boolean;
+  created_at: string;
+  updated_at?: string;
+  author?: ForumAuthor | null;
+  /** Phase 2 — tổng hợp cảm xúc theo loại. */
+  reaction_counts?: Record<ForumReactionKind, number>;
+  /** Phase 2 — cảm xúc của người đang xem (null nếu chưa đăng nhập). */
+  viewer_reaction?: ForumReactionKind | null;
+}
+
+export interface ForumThread {
+  id: string;
+  category_id: string;
+  author_id: string;
+  title: string;
+  slug: string;
+  body: string;
+  tags: string[];
+  /** Phase 4 — tóm tắt do AI tạo (tuỳ chọn). */
+  summary?: string | null;
+  status: ForumThreadStatus;
+  is_pinned: boolean;
+  is_anonymous: boolean;
+  views_count: number;
+  reply_count: number;
+  last_activity_at: string;
+  accepted_post_id: string | null;
+  created_at: string;
+  updated_at?: string;
+  category?: ForumCategory | null;
+  author?: ForumAuthor | null;
+  posts?: ForumPost[];
+}
+
+export interface ForumThreadQuery {
+  categoryId?: string;
+  categorySlug?: string;
+  status?: ForumThreadStatus | 'all';
+  tag?: string;
+  search?: string;
+  sort?: 'latest' | 'active' | 'popular';
+  limit?: number;
+  offset?: number;
+}
+
+export interface ForumStats {
+  threads: number;
+  replies: number;
+  members: number;
+  solved: number;
+}
+
+// ── Phase 2 → 4 ─────────────────────────────────────────────────────────────
+
+export interface ForumReaction {
+  post_id: string;
+  user_id: string;
+  kind: ForumReactionKind;
+  created_at?: string;
+}
+
+/** Trạng thái tương tác của người đang đăng nhập, load 1 lần cho cả trang. */
+export interface ForumInteractionState {
+  reactions: Record<string, ForumReactionKind>;
+  bookmarks: string[];
+  follows: string[];
+}
+
+export type ForumNotificationType = 'reply' | 'mention' | 'answer' | 'follow' | 'report';
+
+export interface ForumNotification {
+  id: string;
+  user_id: string;
+  type: ForumNotificationType;
+  payload: {
+    thread_id?: string;
+    thread_title?: string;
+    post_id?: string;
+    actor?: string;
+    [key: string]: unknown;
+  };
+  read_at: string | null;
+  created_at: string;
+}
+
+export type ForumReportReason = 'spam' | 'offtopic' | 'abuse' | 'wrong' | 'other';
+export type ForumReportStatus = 'open' | 'resolved' | 'dismissed';
+
+export interface ForumReport {
+  id: string;
+  thread_id: string | null;
+  post_id: string | null;
+  reporter_id: string;
+  reason: ForumReportReason;
+  details: string | null;
+  status: ForumReportStatus;
+  resolved_by: string | null;
+  resolved_at: string | null;
+  created_at: string;
+  thread?: ForumThread | null;
+  reporter?: ForumAuthor | null;
+}
+
+export interface ForumUserStat {
+  user_id: string;
+  threads_count: number;
+  answers_count: number;
+  accepted_count: number;
+  helpful_count: number;
+  reputation: number;
+  badges: string[];
+  user?: ForumAuthor | null;
+}
+
+export interface ForumAnalytics {
+  totalThreads: number;
+  totalReplies: number;
+  solvedRate: number;
+  openThreads: number;
+  reportsOpen: number;
+  byCategory: Array<{
+    slug: string;
+    name: string;
+    icon: string | null;
+    threads: number;
+    replies: number;
+    solved: number;
+  }>;
+  topTags: Array<{ tag: string; count: number }>;
+}
+
+export interface ForumThreadPage {
+  threads: ForumThread[];
+  total: number;
+  page: number;
+  pageSize: number;
+}
+

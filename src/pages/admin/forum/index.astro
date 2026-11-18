@@ -1,0 +1,164 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { db } from '../../../services/db';
+import { forumNumber, forumRelativeTime } from '../../../lib/forum-format';
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user || (user.role !== 'admin' && user.role !== 'teacher')) {
+  return Astro.redirect('/dashboard');
+}
+
+const [analytics, reports, leaders] = await Promise.all([
+  db.getForumAnalytics(),
+  db.getForumReports('all'),
+  db.getForumLeaderboard(10),
+]);
+
+const reasonLabel: Record<string, string> = {
+  spam: 'Spam', offtopic: 'Lạc đề', abuse: 'Quấy rối', wrong: 'Thông tin sai', other: 'Khác',
+};
+---
+
+<Layout
+  title="Quản lý diễn đàn | Quản trị"
+  description="Thống kê, báo cáo vi phạm và kiểm duyệt diễn đàn học sinh."
+  canonical="/admin/forum"
+  noindex={true}
+  breadcrumbs={[{ name: 'Quản trị', url: '/admin' }, { name: 'Diễn đàn', url: '/admin/forum' }]}
+>
+  <div class="space-y-6">
+    <div class="flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <a href="/admin" class="text-xs font-semibold text-blue-600 hover:underline">← Về quản trị</a>
+        <h1 class="mt-3 text-2xl font-extrabold text-slate-900 dark:text-white md:text-3xl">🛡️ Quản lý diễn đàn Học sinh</h1>
+        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Tổng quan hoạt động, báo cáo vi phạm và các công cụ kiểm duyệt.</p>
+      </div>
+      <a href="/hoc-sinh" class="rounded-xl border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800">Xem diễn đàn ↗</a>
+    </div>
+
+    <!-- Stats -->
+    <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {[
+        { label: 'Bài viết', value: analytics.totalThreads, icon: '📝', tone: 'blue' },
+        { label: 'Trả lời', value: analytics.totalReplies, icon: '💬', tone: 'indigo' },
+        { label: 'Tỷ lệ đã giải', value: `${analytics.solvedRate}%`, icon: '✅', tone: 'emerald' },
+        { label: 'Chưa giải', value: analytics.openThreads, icon: '🙋', tone: 'amber' },
+        { label: 'Báo cáo chờ', value: analytics.reportsOpen, icon: '🚩', tone: 'rose' },
+      ].map(item => (
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+          <div class="text-xl">{item.icon}</div>
+          <div class="mt-1 text-2xl font-extrabold text-slate-900 dark:text-white">{item.value}</div>
+          <div class="text-[11px] font-medium text-slate-500">{item.label}</div>
+        </div>
+      ))}
+    </section>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      <!-- Theo chuyên mục -->
+      <section class="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="text-sm font-extrabold text-slate-900 dark:text-white">📂 Hoạt động theo chuyên mục</h2>
+        <div class="mt-4 space-y-3">
+          {analytics.byCategory.map(cat => {
+            const max = Math.max(1, ...analytics.byCategory.map(c => c.threads));
+            return (
+              <div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-semibold text-slate-700 dark:text-slate-200">{cat.icon} {cat.name}</span>
+                  <span class="text-slate-500">{cat.threads} bài · {cat.replies} trả lời · {cat.solved} giải</span>
+                </div>
+                <div class="mt-1 h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+                  <div class="h-full rounded-full bg-blue-500" style={`width:${Math.round((cat.threads / max) * 100)}%`}></div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div class="mt-5 flex flex-wrap gap-2">
+          {analytics.topTags.map(item => (
+            <span class="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">#{item.tag} ({item.count})</span>
+          ))}
+        </div>
+      </section>
+
+      <!-- Top thành viên -->
+      <section class="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="text-sm font-extrabold text-slate-900 dark:text-white">🏆 Thành viên tích cực</h2>
+        <ul class="mt-4 space-y-3">
+          {leaders.map((stat, i) => (
+            <li class="flex items-center justify-between gap-3 text-xs">
+              <span class="flex min-w-0 items-center gap-2">
+                <span class="w-4 text-slate-400">{i + 1}</span>
+                <span class="truncate font-semibold text-slate-700 dark:text-slate-200">{stat.user?.fullname || 'Thành viên'}</span>
+                <span class="hidden text-[10px] text-violet-600 sm:inline dark:text-violet-300">{stat.badges[0] || ''}</span>
+              </span>
+              <span class="shrink-0 font-extrabold text-amber-600">{forumNumber(stat.reputation)}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/hoc-sinh/bang-xep-hang" class="mt-4 inline-block text-xs font-semibold text-blue-600 hover:underline">Xem bảng xếp hạng đầy đủ →</a>
+      </section>
+    </div>
+
+    <!-- Báo cáo -->
+    <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+      <div class="border-b border-slate-100 px-5 py-4 dark:border-slate-800">
+        <h2 class="text-sm font-extrabold text-slate-900 dark:text-white">🚩 Báo cáo vi phạm ({reports.length})</h2>
+      </div>
+      <ul class="divide-y divide-slate-100 dark:divide-slate-800">
+        {reports.map(report => (
+          <li class="px-5 py-4">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div class="min-w-0">
+                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                  <span class="rounded bg-rose-50 px-2 py-0.5 text-[10px] font-bold text-rose-600 dark:bg-rose-950/40">{reasonLabel[report.reason] || report.reason}</span>
+                  {report.thread?.title || 'Bài viết đã bị xoá'}
+                </p>
+                <p class="mt-1 text-xs text-slate-500">
+                  Bởi {report.reporter?.fullname || 'Thành viên'} · {forumRelativeTime(report.created_at)} · Trạng thái: <strong>{report.status}</strong>
+                </p>
+                {report.details && <p class="mt-1 text-xs italic text-slate-400">“{report.details}”</p>}
+              </div>
+              <div class="flex flex-wrap items-center gap-2">
+                {report.thread && (
+                  <a href={`/hoc-sinh/${report.thread.category?.slug}/${report.thread.slug}`} class="rounded-lg border border-slate-200 px-2.5 py-1 text-[11px] font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300">Xem bài</a>
+                )}
+                {report.status === 'open' ? (
+                  <>
+                    <button type="button" class="forum-report-action rounded-lg bg-rose-600 px-2.5 py-1 text-[11px] font-bold text-white hover:bg-rose-700" data-id={report.id} data-status="resolved">Xử lý</button>
+                    <button type="button" class="forum-report-action rounded-lg border border-slate-200 px-2.5 py-1 text-[11px] font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300" data-id={report.id} data-status="dismissed">Bỏ qua</button>
+                  </>
+                ) : null}
+              </div>
+            </div>
+          </li>
+        ))}
+        {reports.length === 0 && (
+          <li class="px-5 py-12 text-center text-sm text-slate-500">Không có báo cáo nào. 🎉</li>
+        )}
+      </ul>
+    </section>
+  </div>
+</Layout>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll('.forum-report-action').forEach(function (btn) {
+      btn.addEventListener('click', async function () {
+        btn.disabled = true;
+        try {
+          var response = await fetch(window.withBase('/api/forum/reports/' + encodeURIComponent(btn.getAttribute('data-id')) + '/resolve'), {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: btn.getAttribute('data-status') }),
+          });
+          if (!response.ok) throw new Error('Không thể cập nhật báo cáo.');
+          window.location.reload();
+        } catch (error) {
+          window.alert(error.message);
+          btn.disabled = false;
+        }
+      });
+    });
+  })();
+</script>

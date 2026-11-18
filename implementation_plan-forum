@@ -1,0 +1,113 @@
+# Kế hoạch Diễn đàn Học sinh (/hoc-sinh)
+
+Mục tiêu: biến khu vực "Học sinh" thành một **diễn đàn nội bộ trong LMS** — có chuyên mục, thành viên đăng thread như forum truyền thống, nhưng gắn chặt với bài giảng/đề thi/ngân hàng câu hỏi và có AI hỗ trợ. Không nhúng phpBB/vBulletin; tái sử dụng hạ tầng Supabase + Astro có sẵn.
+
+> [!NOTE]
+> Tài liệu này là bản kế hoạch công nghệ + trạng thái triển khai. Phần "Quyết định đã chốt" là lựa chọn của bạn; các Phase được tick ✅ là đã code xong trong repo.
+
+## Quyết định đã chốt
+
+1. **Quyền truy cập**: đọc công khai (khách xem được thread để SEO), đăng bài/trả lời bắt buộc đăng nhập.
+2. **Phạm vi triển khai**: Phase 1 → 4 đều đã code xong (xem trạng thái bên dưới). Migration Phase 2–4 cần apply lên Supabase để dùng đầy đủ tính năng production.
+3. **AI**: dùng endpoint `/api/ai` có sẵn ngay từ Phase 1 (gợi ý nháp bài hỏi, gợi ý câu trả lời), không chờ Phase 4.
+
+## Kiến trúc & tài sản tái sử dụng
+
+| Có sẵn trong repo | Dùng cho forum |
+|---|---|
+| `users`, `subjects`, `categories`, `group_posts/comments/reactions` | Mẫu RLS, reactions, storage, quyền giáo viên/admin |
+| `marked` + KaTeX trong `Layout.astro` | Render nội dung Markdown + công thức `$...$`, `$$...$$` |
+| Script `is:inline` + endpoint `activity` | Polling 20s báo reply mới, không cần island React/Realtime |
+| `createAdminSupabase()` | SSR đọc/ghi, bypass RLS như các service khác |
+| Middleware `/api` → `no-store`, route auth | Bảo vế composer, cache ngắn cho trang đọc public |
+| `/api/ai` (Gemini + fallback mock) | Soạn nháp, gợi ý trả lời |
+| Chế độ cookie `mock-user-id` | Test luồng đăng bài không cần production auth |
+
+## Data model (Supabase/Postgres)
+
+Migration: `supabase/migrations/20261118000000_forum.sql` (Phase 1) + `supabase/migrations/20261118010000_forum_phase234.sql` (Phase 2–4, chạy sau file Phase 1, idempotent).
+
+- `forum_categories`: `id, name, slug unique, description, icon, subject_id, parent_id, order_index, is_active`. Seed 6 chuyên mục (Học tập chung + 5 môn).
+- `forum_threads`: `id, category_id, author_id, title, slug unique, body, tags text[], status(open|solved|locked|archived), is_pinned, is_anonymous, views_count, reply_count, last_activity_at, accepted_post_id`. Index `(category_id, last_activity_at DESC)` và GIN trên `tags`.
+- `forum_posts`: `id, thread_id, author_id, parent_id, body, is_answer, deleted_at`. Trigger `forum_sync_thread_stats()` tự cập nhật `reply_count`/`last_activity_at`.
+- `forum_reactions`, `forum_bookmarks`, `forum_follows`, `forum_notifications`.
+- Phase 2–4 bổ sung: `forum_threads.summary`, `forum_threads.embedding vector(768)` + index HNSW (khi có pgvector), `forum_reports`, view `forum_user_stats`, bucket Storage `forum-files`, RPC `forum_notify_new_post` (gộp follower + @mention) và `forum_search_similar`.
+- RPC: `forum_accept_answer(thread, post)` — chỉ chủ thread hoặc giáo viên/admin; `forum_increment_views(thread)`.
+- RLS: `SELECT` cho anon (forums là public); `INSERT` bắt `auth.uid() = author_id`; `UPDATE/DELETE` cho tác giả hoặc staff.
+
+## Routes & API
+
+| Route | Chức năng | Trạng thái |
+|---|---|---|
+| `/hoc-sinh` | Trang chủ: stats, chuyên mục, bài mới, hot, cần giải đáp + link bảng xếp hạng | ✅ |
+| `/hoc-sinh/[chuyen-muc]` | Danh sách thread + search/status/sort/tag + phân trang | ✅ |
+| `/hoc-sinh/tat-ca` | Mọi bài + tìm kiếm ngữ nghĩa/từ khoá + phân trang | ✅ |
+| `/hoc-sinh/[chuyen-muc]/[thread]` | Chi tiết + trả lời + đáp án được chấp nhận + reaction/bookmark/follow/@mention/upload/AI summary/kiểm duyệt/polling | ✅ |
+| `/hoc-sinh/dang-bai` | Composer (ẩn danh, tags, AI draft, AI tag/summary, upload), protected | ✅ |
+| `/hoc-sinh/thong-bao` | Thông báo in-app + đánh dấu đã đọc, protected | ✅ |
+| `/hoc-sinh/da-luu` | Bài đã lưu + bài đang theo dõi, protected | ✅ |
+| `/hoc-sinh/bang-xep-hang` | Bảng xếp hạng điểm uy tín/huy hiệu | ✅ |
+| `/admin/forum` | Analytics, báo cáo vi phạm, xử lý báo cáo (teacher/admin) | ✅ |
+| `POST /api/forum/threads`, `/api/forum/posts` | Tạo thread / trả lời (+ honeypot, rate-limit, embedding) | ✅ |
+| `POST /api/forum/threads/[id]/accept`, `/view` | Chọn đáp án / tăng lượt xem | ✅ |
+| `GET /api/forum/interactions` | Trạng thái reaction/bookmark/follow của người xem | ✅ |
+| `POST /api/forum/posts/[id]/react` | Like / helpful / heart | ✅ |
+| `POST /api/forum/threads/[id]/bookmark`, `/follow` | Lưu bài / theo dõi | ✅ |
+| `POST /api/forum/threads/[id]/moderate`, `/summary`, `/to-question` | Kiểm duyệt / lưu tóm tắt / chuyển thành câu hỏi (staff) | ✅ |
+| `GET /api/forum/threads/[id]/activity` | Polling "có trả lời mới" (nhẹ) | ✅ |
+| `GET /api/forum/notifications`, `POST /notifications/[id]/read`, `/read-all` | Thông báo in-app | ✅ |
+| `POST /api/forum/reports`, `/reports/[id]/resolve` | Báo cáo vi phạm / xử lý (staff) | ✅ |
+| `GET /api/forum/search` | Tìm kiếm ngữ nghĩa (pgvector) hoặc fallback tag/từ khoá | ✅ |
+| `POST /api/forum/upload` | Upload ảnh/PDF lên bucket `forum-files` (≤5 MB) | ✅ |
+
+Navbar + Sidebar có link "Học sinh / Diễn đàn Học sinh", badge thông báo và mục "Quản lý diễn đàn" cho staff.
+
+## Có gì hơn forum ngày xưa
+
+| Forum truyền thống | Phiên bản LMS này |
+|---|---|
+| Chuyên mục tĩnh, rời kiến thức | Thread gắn `subject_id` + `tags`, đặt cạnh bài học/đề thi/knowledge tag |
+| Trả lời không biết đúng/sai | **Đáp án được chấp nhận**, badge "Giáo viên xác thực", lọc "Đã giải / Chưa giải" |
+| Chỉ search từ khóa (tiếng Việt kém) | pgvector + gợi ý câu hỏi trùng lặp (fallback tag/từ khoá khi chưa có embedding) |
+| Text/attachment | Markdown + **KaTeX**, link, code block, ảnh/PDF đính kèm |
+| Thụ động | @mention, follow, bookmark, notification in-app + badge, polling báo trả lời mới |
+| Kiểm duyệt thủ công | rate-limit, honeypot, báo cáo → `/admin/forum` + AI gợi ý tag/tóm tắt cho staff |
+| Kiến thức chết trong thread | Phase 4: giáo viên bấm "Chuyển thành câu hỏi" → insert vào `questions` (nuôi ngân hàng đề) |
+| Không có AI | Đã có: `/api/ai` soạn nháp bài hỏi + gợi ý trả lời ngay khi đăng |
+
+## Lộ trình
+
+- [x] **Phase 0 — Chốt phương án**: public read/login post, Phase 1 trước, AI dùng ngay.
+- [x] **Phase 1 — Nền tảng** (đã xong): migration + RLS + types + db service (mock/live) + 5 route trang + 4 API + composer Markdown/KaTeX + AI draft + navbar/sidebar + cache rule.
+- [x] **Phase 2 — Tương tác**: reaction (like/helpful/heart), bookmark, follow thread, polling báo reply mới (thay Realtime để giảm tải), @mention + chip nhắc tên, phân trang nâng cao.
+- [x] **Phase 3 — Vận hành**: bucket `forum-files`, upload ảnh/PDF, thông báo in-app + badge Navbar, rate-limit/honeypot, `forum_reports` + `/admin/forum`, điểm uy tín/huy hiệu.
+- [x] **Phase 4 — Khác biệt hoá**: pgvector semantic search (Gemini embedding 768 chiều), AI auto-tag/tóm tắt, analytics cho giáo viên, bridge thread → `questions`, leaderboard.
+
+## Trạng thái triển khai & kiểm chứng
+
+File liên quan:
+- SQL: `supabase/migrations/20261118000000_forum.sql`, `supabase/migrations/20261118010000_forum_phase234.sql`.
+- Service/lib: `src/services/db.ts`, `src/types/index.ts`, `src/lib/markdown.ts`, `src/lib/forum-auth.ts`, `src/lib/forum-format.ts`, `src/lib/forum-security.ts`, `src/lib/forum-embeddings.ts`.
+- UI: `src/components/forum/{ForumThreadList,ForumPagination,ForumReactions}.astro`, `src/pages/hoc-sinh/**`, `src/pages/admin/forum/index.astro`, `src/components/{Navbar,Sidebar}.astro`, `src/middleware.ts`.
+- API: `src/pages/api/forum/**` (19 endpoint).
+
+Đã chạy:
+- `npx tsc --noEmit` → sạch.
+- `npx @astrojs/check` → không lỗi trong file forum (repo còn lỗi cũ ở `admin/hoc-sinh`, `thi-online`,… không liên quan).
+- `npm run build` → thành công.
+- Runtime test Phase 1: tạo thread → trả lời → accept → `status=solved`; render KaTeX + badge "Đã giải".
+- Runtime E2E Phase 2–4 (Supabase thật, 4 luồng lặp lại): tạo thread → trả lời → react bật/tắt → bookmark/follow → activity polling → report → honeypot bị chặn 400 → staff pin + lưu tóm tắt + chuyển thành câu hỏi + xử lý báo cáo → `/admin/forum` 200 → trang chi tiết 200. Dữ liệu test đã xoá sạch (`forum_threads` về 0).
+- Phát hiện và sửa trong lúc test: 2 fallback DEV bị đệ vô hạn (`getForumReports`, `getForumLeaderboard`) khi bảng/view chưa apply — đã đổi trả mock trực tiếp.
+
+## Cách chạy / lưu ý
+
+1. Apply **cả 2** migration SQL lên Supabase: `20261118000000_forum.sql` rồi `20261118010000_forum_phase234.sql`. Chưa apply vẫn chạy được nhờ fallback mock trong `DEV` (report, leaderboard, summary), nhưng `forum_notify_new_post`/`forum_search_similar`/embedding sẽ inactive.
+2. Đăng nhập mock tại `/login` (`student@lop12.vn`, `teacher@lop12.vn`) rồi vào menu "Học sinh".
+3. `/hoc-sinh/dang-bai` bị middleware chặn với khách; client script dùng `window.withBase()` để hoạt động với base path `/lms`.
+4. `renderForumMarkdown()` escape HTML thô và chặn scheme `javascript:`/`data:` — không dùng `set:html` với markdown chưa sanitize ở chỗ khác.
+5. Cache: trang đọc public `max-age=60, s-maxage=300`; user đã đăng nhập → `no-store` theo logic hiện tại của middleware.
+6. `/api/ai` chưa có `GEMINI_API_KEY` thì trả lời mock theo chủ đề Toán/Lý/Hóa/Sinh/Anh — vẫn đủ để test UI.
+7. `GEMINI_API_KEY` cũng dùng cho embedding (`text-embedding-004`, 768 chiều). Không có key → `/api/forum/search` tự fallback tag/từ khoá.
+8. Realtime đã chọn **polling 20s** trên trang chi tiết thay vì Supabase Realtime island — đủ báo "có trả lời mới", không cần thêm phụ thuộc React.
+9. Mỗi user dùng **1 cảm xúc/user/post** (`like|helpful|heart`), bấm lại để bỏ; đổi loại thì ghi đè.
+10. Học sinh hiện chưa tự sửa/xoá bài — để giáo viên/admin kiểm duyệt (`pin/lock/archive` + báo cáo). Có thể mở thêm cửa sổ 5–10 phút ở Phase sau nếu cần.
