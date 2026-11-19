@@ -39,7 +39,14 @@ export const POST: APIRoute = async (context) => {
       upsert: false,
     });
     if (error) {
-      console.error('[api.forum.upload]', error);
+      console.warn('[api.forum.upload] Storage upload failed, fallback to Data URL:', error);
+      if (file.type.startsWith('image/')) {
+        const base64 = Buffer.from(bytes).toString('base64');
+        const dataUrl = `data:${file.type};base64,${base64}`;
+        return new Response(JSON.stringify({ success: true, url: dataUrl, name: file.name }), {
+          status: 201, headers: { 'Content-Type': 'application/json' },
+        });
+      }
       return jsonError('Không thể upload. Kiểm tra bucket `forum-files` đã được tạo chưa.', 500);
     }
     const { data: publicUrl } = supabase.storage.from('forum-files').getPublicUrl(path);

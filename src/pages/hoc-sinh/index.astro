@@ -20,17 +20,17 @@ const [categories, latestThreads, activeThreads, unsolvedThreads, stats] = await
   description="Nơi học sinh lớp 12 hỏi đáp, chia sẻ kinh nghiệm học tập và giải đáp thắc mắc theo từng môn học."
   canonical="/hoc-sinh"
 >
-  <div class="space-y-8">
+  <div class="flex flex-col space-y-8">
     <!-- Hero -->
-    <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 p-7 md:p-10 text-white shadow-xl shadow-blue-600/20">
+    <section class="order-1 relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 p-5 sm:p-7 md:p-10 text-white shadow-xl shadow-blue-600/20">
       <div class="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-white/10 blur-2xl"></div>
       <div class="absolute -bottom-24 right-32 h-56 w-56 rounded-full bg-cyan-300/20 blur-3xl"></div>
-      <div class="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+      <div class="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 sm:gap-8">
         <div class="max-w-2xl">
           <span class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-bold tracking-wide">
             💬 CỘNG ĐỒNG HỌC TẬP LỚP 12
           </span>
-          <h1 class="mt-4 text-3xl md:text-4xl font-extrabold leading-tight">Diễn đàn Học sinh</h1>
+          <h1 class="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">Diễn đàn Học sinh</h1>
           <p class="mt-3 text-blue-50/90 text-sm md:text-base leading-relaxed">
             Hỏi bài khó, chia sẻ cách học, tìm người cùng ôn thi. Mọi thắc mắc đều có chỗ ở đây —
             và câu trả lời hay sẽ được giáo viên xác nhận.
@@ -51,25 +51,25 @@ const [categories, latestThreads, activeThreads, unsolvedThreads, stats] = await
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-3 w-full lg:w-80 shrink-0">
+        <div class="grid grid-cols-4 lg:grid-cols-2 gap-2 sm:gap-3 w-full lg:w-80 shrink-0">
           {[
             { label: 'Bài viết', value: stats.threads, icon: '📝' },
             { label: 'Trả lời', value: stats.replies, icon: '💬' },
             { label: 'Đã giải', value: stats.solved, icon: '✅' },
             { label: 'Thành viên', value: stats.members, icon: '👥' },
           ].map(item => (
-            <div class="rounded-2xl bg-white/10 border border-white/15 p-4 backdrop-blur-sm">
-              <div class="text-xl">{item.icon}</div>
-              <div class="mt-1 text-2xl font-extrabold">{forumNumber(item.value)}</div>
-              <div class="text-[11px] text-blue-100/80 font-medium">{item.label}</div>
+            <div class="rounded-xl sm:rounded-2xl bg-white/10 border border-white/15 p-2.5 sm:p-4 backdrop-blur-sm text-center lg:text-left">
+              <div class="text-base sm:text-xl">{item.icon}</div>
+              <div class="mt-0.5 sm:mt-1 text-base sm:text-2xl font-extrabold">{forumNumber(item.value)}</div>
+              <div class="text-[10px] sm:text-[11px] text-blue-100/80 font-medium truncate">{item.label}</div>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- Chuyên mục -->
-    <section id="chuyen-muc">
+    <!-- Chuyên mục (thứ 3 trên mobile, thứ 2 trên desktop) -->
+    <section id="chuyen-muc" class="order-3 lg:order-2">
       <div class="flex items-end justify-between mb-4">
         <div>
           <h2 class="text-xl font-extrabold text-slate-900 dark:text-white">Chuyên mục</h2>
@@ -102,8 +102,8 @@ const [categories, latestThreads, activeThreads, unsolvedThreads, stats] = await
       </div>
     </section>
 
-    <!-- Threads -->
-    <section class="grid gap-6 lg:grid-cols-3">
+    <!-- Threads (thứ 2 trên mobile, thứ 3 trên desktop) -->
+    <section class="order-2 lg:order-3 grid gap-6 lg:grid-cols-3">
       <div class="lg:col-span-2 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden">
         <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-5 py-4">
           <h2 class="font-extrabold text-slate-900 dark:text-white">🆕 Bài viết mới nhất</h2>

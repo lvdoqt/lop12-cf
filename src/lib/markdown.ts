@@ -16,7 +16,7 @@ export function parseMarkdownWithMath(text: string = '', isInline = false): stri
   let html = (isInline ? marked.parseInline(textWithoutMath) : marked.parse(textWithoutMath)) as string;
 
   mathBlocks.forEach((block, i) => {
-    html = html.replace(`@@MATH_BLOCK_${i}@@`, block);
+    html = html.replace(`@@MATH_BLOCK_${i}@@`, () => block);
   });
 
   return html;
@@ -71,7 +71,7 @@ export function renderForumMarkdown(source: string): string {
 
   mathBlocks.forEach((block, index) => {
     const safe = block.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    html = html.replace(`@@FORUMMATH${index}@@`, safe);
+    html = html.replace(`@@FORUMMATH${index}@@`, () => safe);
   });
 
   return html;

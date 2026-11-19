@@ -7,7 +7,7 @@ const isStaff = user && (user.role === 'admin' || user.role === 'teacher');
 
 const menuItems = [
   { href: '/dashboard', label: 'Bảng điều khiển', icon: 'dashboard' },
-  { href: '/hoc-sinh', label: 'Diễn đàn Học sinh', icon: 'forum' },
+  ...(!isStaff ? [{ href: '/hoc-sinh', label: 'Diễn đàn Học sinh', icon: 'forum' }] : []),
   ...(isStaff 
     ? [
         { href: '/admin', label: 'Bảng điều hành', icon: 'admin' },

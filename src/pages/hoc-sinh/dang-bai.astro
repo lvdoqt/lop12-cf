@@ -82,7 +82,7 @@ const presetSlug = Astro.url.searchParams.get('chuyen-muc') || '';
           class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-3 text-sm leading-relaxed text-slate-800 dark:text-slate-100 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
         ></textarea>
         <div class="mt-2 flex flex-wrap items-center gap-3">
-          <p class="text-[11px] text-slate-400">Hỗ trợ: **đậm**, `code`, $latex$, $$block math$$, [link](...), - danh sách.</p>
+          <p class="text-[11px] text-slate-400">Hỗ trợ: **đậm**, `code`, $latex$, $$block math$$, dán ảnh (Ctrl+V) trực tiếp từ web khác.</p>
           <label class="cursor-pointer rounded-lg border border-slate-200 px-2.5 py-1 text-[11px] font-semibold text-slate-500 hover:border-blue-300 hover:text-blue-600 dark:border-slate-700">
             📎 Ảnh / PDF (tối đa 5 MB)
             <input id="forum-upload-file" type="file" accept="image/png,image/jpeg,image/gif,image/webp,application/pdf" class="hidden" />
@@ -242,6 +242,91 @@ const presetSlug = Astro.url.searchParams.get('chuyen-muc') || '';
           setStatus(error.message || 'AI tạm thời không khả dụng.', true);
         } finally {
           metaBtn.disabled = false;
+        }
+      });
+    }
+
+    function insertAtCursor(textarea, text) {
+      var start = textarea.selectionStart || 0;
+      var end = textarea.selectionEnd || 0;
+      var val = textarea.value;
+      textarea.value = val.substring(0, start) + text + val.substring(end);
+      textarea.selectionStart = textarea.selectionEnd = start + text.length;
+      textarea.focus();
+    }
+
+    // Hỗ trợ dán (paste) trực tiếp hình ảnh đã copy từ trang web khác hoặc ảnh chụp màn hình
+    if (bodyInput) {
+      bodyInput.addEventListener('paste', async function (event) {
+        var clipboardData = event.clipboardData || window.clipboardData;
+        if (!clipboardData) return;
+
+        var items = clipboardData.items;
+        var imageFile = null;
+        if (items) {
+          for (var i = 0; i < items.length; i++) {
+            if (items[i].type && items[i].type.indexOf('image/') !== -1) {
+              imageFile = items[i].getAsFile();
+              break;
+            }
+          }
+        }
+        if (!imageFile && clipboardData.files && clipboardData.files.length > 0) {
+          for (var j = 0; j < clipboardData.files.length; j++) {
+            if (clipboardData.files[j].type && clipboardData.files[j].type.indexOf('image/') !== -1) {
+              imageFile = clipboardData.files[j];
+              break;
+            }
+          }
+        }
+
+        if (imageFile) {
+          event.preventDefault();
+          var placeholder = '\n![Đang tải ảnh lên...](' + Date.now() + ')\n';
+          insertAtCursor(bodyInput, placeholder);
+          setStatus('Đang tải ảnh dán lên...', false);
+
+          try {
+            var form = new FormData();
+            var fileName = imageFile.name || ('pasted-image-' + Date.now() + '.png');
+            form.append('file', imageFile, fileName);
+
+            var response = await fetch(window.withBase('/api/forum/upload'), { method: 'POST', body: form });
+            var data = await response.json();
+            if (response.ok && data.url) {
+              bodyInput.value = bodyInput.value.replace(placeholder, '\n![' + (data.name || 'Hình ảnh') + '](' + data.url + ')\n');
+              setStatus('Đã dán ảnh thành công!', false);
+            } else {
+              throw new Error(data.error || 'Upload thất bại.');
+            }
+          } catch (err) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              var dataUrl = e.target && e.target.result;
+              if (dataUrl) {
+                bodyInput.value = bodyInput.value.replace(placeholder, '\n![Hình ảnh](' + dataUrl + ')\n');
+                setStatus('Đã dán ảnh!', false);
+              } else {
+                bodyInput.value = bodyInput.value.replace(placeholder, '');
+                setStatus('Không thể dán ảnh: ' + (err.message || 'Lỗi'), true);
+              }
+            };
+            reader.readAsDataURL(imageFile);
+          }
+          return;
+        }
+
+        var html = clipboardData.getData('text/html');
+        if (html && !clipboardData.getData('text/plain').includes('http')) {
+          var match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+          if (match && match[1]) {
+            var imgSrc = match[1];
+            if (imgSrc.startsWith('http://') || imgSrc.startsWith('https://') || imgSrc.startsWith('data:image/')) {
+              event.preventDefault();
+              insertAtCursor(bodyInput, '\n![Hình ảnh](' + imgSrc + ')\n');
+              setStatus('Đã chèn ảnh từ trang web!', false);
+            }
+          }
         }
       });
     }

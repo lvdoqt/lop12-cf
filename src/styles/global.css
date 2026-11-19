@@ -74,7 +74,7 @@
 }
 
 .katex-display {
-  @apply my-4 p-4 bg-[#F5F0E8]/50 dark:bg-[#252538]/50 rounded-xl overflow-x-auto border border-[#E8DDD0]/50 dark:border-[#3A3A5C]/50 text-center;
+  @apply my-3 py-2 px-1 overflow-x-auto text-center;
 }
 
 .ink-text {

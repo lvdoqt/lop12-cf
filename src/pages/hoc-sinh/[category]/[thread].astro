@@ -218,7 +218,7 @@ const structuredData = {
               ✨ Gợi ý từ AI
             </button>
           </div>
-          <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Hỗ trợ Markdown, công thức LaTeX ($...$, $$...$$), @nhắc tên và đính kèm ảnh/PDF.</p>
+          <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Hỗ trợ Markdown, công thức LaTeX ($...$, $$...$$), dán ảnh trực tiếp (Ctrl+V), @nhắc tên và đính kèm ảnh/PDF.</p>
           {mentionCandidates.length > 0 && (
             <div class="mt-3 flex flex-wrap items-center gap-1.5">
               <span class="text-[11px] font-semibold text-slate-400">@ Nhắc tên:</span>
@@ -309,7 +309,11 @@ const structuredData = {
     overflow-x: auto;
     overflow-y: hidden;
     max-width: 100%;
-    padding: 2px 0;
+    padding: 0.5rem 0 !important;
+    margin: 0.75rem 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
   .forum-content pre {
     overflow-x: auto;
@@ -519,6 +523,91 @@ const structuredData = {
         bodyInput.focus();
       });
     });
+
+    function insertAtCursor(textarea, text) {
+      var start = textarea.selectionStart || 0;
+      var end = textarea.selectionEnd || 0;
+      var val = textarea.value;
+      textarea.value = val.substring(0, start) + text + val.substring(end);
+      textarea.selectionStart = textarea.selectionEnd = start + text.length;
+      textarea.focus();
+    }
+
+    // Hỗ trợ dán (paste) trực tiếp hình ảnh đã copy từ trang web khác hoặc ảnh chụp màn hình
+    if (bodyInput) {
+      bodyInput.addEventListener('paste', async function (event) {
+        var clipboardData = event.clipboardData || window.clipboardData;
+        if (!clipboardData) return;
+
+        var items = clipboardData.items;
+        var imageFile = null;
+        if (items) {
+          for (var i = 0; i < items.length; i++) {
+            if (items[i].type && items[i].type.indexOf('image/') !== -1) {
+              imageFile = items[i].getAsFile();
+              break;
+            }
+          }
+        }
+        if (!imageFile && clipboardData.files && clipboardData.files.length > 0) {
+          for (var j = 0; j < clipboardData.files.length; j++) {
+            if (clipboardData.files[j].type && clipboardData.files[j].type.indexOf('image/') !== -1) {
+              imageFile = clipboardData.files[j];
+              break;
+            }
+          }
+        }
+
+        if (imageFile) {
+          event.preventDefault();
+          var placeholder = '\n![Đang tải ảnh lên...](' + Date.now() + ')\n';
+          insertAtCursor(bodyInput, placeholder);
+          setStatus('Đang tải ảnh dán lên...', false);
+
+          try {
+            var form = new FormData();
+            var fileName = imageFile.name || ('pasted-image-' + Date.now() + '.png');
+            form.append('file', imageFile, fileName);
+
+            var response = await fetch(window.withBase('/api/forum/upload'), { method: 'POST', body: form });
+            var data = await response.json();
+            if (response.ok && data.url) {
+              bodyInput.value = bodyInput.value.replace(placeholder, '\n![' + (data.name || 'Hình ảnh') + '](' + data.url + ')\n');
+              setStatus('Đã dán ảnh thành công!', false);
+            } else {
+              throw new Error(data.error || 'Upload thất bại.');
+            }
+          } catch (err) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              var dataUrl = e.target && e.target.result;
+              if (dataUrl) {
+                bodyInput.value = bodyInput.value.replace(placeholder, '\n![Hình ảnh](' + dataUrl + ')\n');
+                setStatus('Đã dán ảnh!', false);
+              } else {
+                bodyInput.value = bodyInput.value.replace(placeholder, '');
+                setStatus('Không thể dán ảnh: ' + (err.message || 'Lỗi'), true);
+              }
+            };
+            reader.readAsDataURL(imageFile);
+          }
+          return;
+        }
+
+        var html = clipboardData.getData('text/html');
+        if (html && !clipboardData.getData('text/plain').includes('http')) {
+          var match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+          if (match && match[1]) {
+            var imgSrc = match[1];
+            if (imgSrc.startsWith('http://') || imgSrc.startsWith('https://') || imgSrc.startsWith('data:image/')) {
+              event.preventDefault();
+              insertAtCursor(bodyInput, '\n![Hình ảnh](' + imgSrc + ')\n');
+              setStatus('Đã chèn ảnh từ trang web!', false);
+            }
+          }
+        }
+      });
+    }
 
     var fileInput = document.getElementById('forum-reply-file');
     if (fileInput && bodyInput) {

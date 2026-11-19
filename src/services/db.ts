@@ -3449,6 +3449,69 @@ export const db = {
     return categories.find(c => c.slug === slug) || null;
   },
 
+  async createForumCategory(data: {
+    name: string; slug: string; description?: string; icon?: string;
+    subject_id?: string | null; parent_id?: string | null; order_index?: number; is_active?: boolean;
+  }): Promise<ForumCategory> {
+    const now = new Date().toISOString();
+    const newCat: ForumCategory = {
+      id: `forum-cat-${Date.now()}`,
+      name: data.name,
+      slug: data.slug,
+      description: data.description ?? null,
+      icon: data.icon ?? null,
+      subject_id: data.subject_id ?? null,
+      parent_id: data.parent_id ?? null,
+      order_index: data.order_index ?? mockForumCategories.length,
+      is_active: data.is_active ?? true,
+      created_at: now,
+    };
+    if (isInMockMode()) {
+      mockForumCategories.push(newCat);
+      return newCat;
+    }
+    const client = adminClient();
+    if (!client) { mockForumCategories.push(newCat); return newCat; }
+    const { data: row, error } = await client.from('forum_categories').insert({
+      name: data.name, slug: data.slug, description: data.description ?? null,
+      icon: data.icon ?? null, subject_id: data.subject_id ?? null,
+      parent_id: data.parent_id ?? null,
+      order_index: data.order_index ?? 0,
+      is_active: data.is_active ?? true,
+    }).select().single();
+    if (error) throw new Error(error.message);
+    return row as ForumCategory;
+  },
+
+  async updateForumCategory(id: string, data: Partial<{
+    name: string; slug: string; description: string | null; icon: string | null;
+    subject_id: string | null; parent_id: string | null; order_index: number; is_active: boolean;
+  }>): Promise<ForumCategory> {
+    if (isInMockMode()) {
+      const idx = mockForumCategories.findIndex(c => c.id === id);
+      if (idx === -1) throw new Error('Không tìm thấy chuyên mục.');
+      mockForumCategories[idx] = { ...mockForumCategories[idx], ...data };
+      return mockForumCategories[idx];
+    }
+    const client = adminClient();
+    if (!client) throw new Error('Không có kết nối DB.');
+    const { data: row, error } = await client.from('forum_categories').update(data).eq('id', id).select().single();
+    if (error) throw new Error(error.message);
+    return row as ForumCategory;
+  },
+
+  async deleteForumCategory(id: string): Promise<void> {
+    if (isInMockMode()) {
+      const idx = mockForumCategories.findIndex(c => c.id === id);
+      if (idx !== -1) mockForumCategories.splice(idx, 1);
+      return;
+    }
+    const client = adminClient();
+    if (!client) throw new Error('Không có kết nối DB.');
+    const { error } = await client.from('forum_categories').delete().eq('id', id);
+    if (error) throw new Error(error.message);
+  },
+
   async getForumThreads(query: ForumThreadQuery = {}): Promise<ForumThread[]> {
     const {
       categoryId, categorySlug, status = 'all', tag, search,
