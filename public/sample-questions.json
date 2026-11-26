@@ -14,6 +14,18 @@
       "is_dynamic": false
     },
     {
+      "type": "mcq",
+      "question": "Cho phương trình bậc nhất $!a#0!x + !b:1:20! = 0$ (với $a = !a!$ là số iff(!a!>0, dương, âm)). Giá trị biểu thức $S = !a! + !b!$ bằng bao nhiêu?",
+      "option_a": "{tinh: !a! + !b!}",
+      "option_b": "{tinh: !a! - !b!}",
+      "option_c": "{tinh: !a! + !b! + 2}",
+      "option_d": "{tinh: !a! + !b! - 2}",
+      "correct_option": "A",
+      "explanation": "Thay $a = !a!$ và $b = !b!$, ta có $S = !a! + !b! = {tinh: !a! + !b!}$.",
+      "difficulty_level": "medium",
+      "is_dynamic": true
+    },
+    {
       "type": "multiple_choice",
       "question": "Trong các số sau, những số nào là số nguyên tố?",
       "option_a": "2",

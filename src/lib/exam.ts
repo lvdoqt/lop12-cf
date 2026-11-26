@@ -1,4 +1,5 @@
 import { shuffleArrayWithPRNG } from './random';
+import { instantiateDynamicQuestion } from './dynamic-quiz';
 import type { Question, Answer, ExamSettings } from '../types';
 
 export type ExamQuestion = Question & { answers: Answer[] };
@@ -17,29 +18,33 @@ export function buildShuffledExam(
   prng: () => number,
   settings?: ExamSettings | null,
 ): ExamQuestion[] {
+  // Instantiate dynamic questions (is_dynamic: true) using deterministic per-attempt PRNG
+  // so every new attempt generates fresh numbers while keeping take / grade / result in sync.
+  const resolvedQuestions = allQuestions.map(q => instantiateDynamicQuestion(q, prng));
+
   // Presence of matching identifies a V-SAT paper. Preserve the official section
   // sequence and author-entered group order; candidate randomization can be added
   // later without breaking grouped passages/matching keys.
-  if (allQuestions.some(q => q.type === 'matching')) {
+  if (resolvedQuestions.some(q => q.type === 'matching')) {
     const order: Record<string, number> = { msq: 0, mcq: 1, single_choice: 1, read: 1, matching: 2, sa: 3, cloze_text: 3 };
-    return allQuestions
+    return resolvedQuestions
       .map((q, index) => ({ q, index }))
       .sort((a, b) => (order[a.q.type] ?? 9) - (order[b.q.type] ?? 9) || a.index - b.index)
       .map(x => x.q);
   }
   const bySection = {
-    mcq: allQuestions.filter(q => !q.type || q.type === 'mcq' || q.type === 'single_choice'), // fallback for legacy data
-    multiple_choice: allQuestions.filter(q => q.type === 'multiple_choice'),
-    msq: allQuestions.filter(q => q.type === 'msq'),
-    sa: allQuestions.filter(q => q.type === 'sa'),
-    true_false: allQuestions.filter(q => q.type === 'true_false'),
-    tl: allQuestions.filter(q => q.type === 'tl'),
-    read: allQuestions.filter(q => q.type === 'read'),
-    read_cloze: allQuestions.filter(q => q.type === 'read_cloze'),
-    ordering: allQuestions.filter(q => q.type === 'ordering'),
-    list: allQuestions.filter(q => q.type === 'list'),
-    matching: allQuestions.filter(q => q.type === 'matching'),
-    cloze_text: allQuestions.filter(q => q.type === 'cloze_text'),
+    mcq: resolvedQuestions.filter(q => !q.type || q.type === 'mcq' || q.type === 'single_choice'), // fallback for legacy data
+    multiple_choice: resolvedQuestions.filter(q => q.type === 'multiple_choice'),
+    msq: resolvedQuestions.filter(q => q.type === 'msq'),
+    sa: resolvedQuestions.filter(q => q.type === 'sa'),
+    true_false: resolvedQuestions.filter(q => q.type === 'true_false'),
+    tl: resolvedQuestions.filter(q => q.type === 'tl'),
+    read: resolvedQuestions.filter(q => q.type === 'read'),
+    read_cloze: resolvedQuestions.filter(q => q.type === 'read_cloze'),
+    ordering: resolvedQuestions.filter(q => q.type === 'ordering'),
+    list: resolvedQuestions.filter(q => q.type === 'list'),
+    matching: resolvedQuestions.filter(q => q.type === 'matching'),
+    cloze_text: resolvedQuestions.filter(q => q.type === 'cloze_text'),
   };
 
   // ── pick_per_type: randomly select k out of n questions per type ──

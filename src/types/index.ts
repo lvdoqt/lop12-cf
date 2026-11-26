@@ -51,6 +51,8 @@ export interface Question {
     explanation?: string | null;
     subject_id?: string;
     category_id?: string | null;
+    is_dynamic?: boolean;
+    question_type_id?: string;
     [key: string]: any;
   } | null;
   created_at?: string;
@@ -90,6 +92,11 @@ export interface ExamSettings {
    * Example: 0.5 means each correct answer = 0.5 điểm.
    */
   point_per_question?: number;
+  /**
+   * Points awarded per correctly answered short-answer (sa) question.
+   * Defaults to 0.5 if not set. Applies to non-VSAT exams only.
+   */
+  point_per_sa?: number;
 }
 
 export interface Exam {

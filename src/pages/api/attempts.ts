@@ -41,6 +41,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const ppq = (!isVsat && exam.settings?.point_per_question && exam.settings.point_per_question > 0)
       ? exam.settings.point_per_question
       : 0.25;
+    // Points per correct short-answer (sa) question (non-VSAT). Default = 0.5
+    const ppSa = (!isVsat && exam.settings?.point_per_sa && exam.settings.point_per_sa > 0)
+      ? exam.settings.point_per_sa
+      : 0.5;
 
     // 2. Fetch all questions and correct answers for this exam
     const examQuestions = await db.getQuestionsByExamId(attempt.exam_id);
@@ -50,7 +54,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
     // 3. Shuffle exactly as the client saw it
     const prng = mulberry32(uuidToSeed(attemptId));
-    const shuffledExamQuestions = buildShuffledExam(examQuestions, prng);
+    const shuffledExamQuestions = buildShuffledExam(examQuestions, prng, exam.settings);
 
     let totalScore = 0;
     const irtItems: Array<{ question: any; scoreFraction: number }> = [];
@@ -162,8 +166,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
           if (isVsat) {
             const vsatTrueFalsePoints = [0, 1, 2, 3, 6];
             totalScore += vsatTrueFalsePoints[Math.min(correctSubItems, 4)] || 0;
-          } else if (correctSubItems === q.answers.length && q.answers.length > 0) {
-            isCorrect = true;
+          } else {
+            // Chấm theo quy chế Bộ GD&ĐT: đúng 1 ý = 0.1đ, 2 ý = 0.25đ, 3 ý = 0.5đ, 4 ý = 1đ
+            const moEdTrueFalsePoints = [0, 0.1, 0.25, 0.5, 1];
+            totalScore += moEdTrueFalsePoints[Math.min(correctSubItems, 4)] || 0;
           }
         }
         irtItems.push({ question: q, scoreFraction: fraction });
@@ -190,14 +196,15 @@ export const POST: APIRoute = async ({ request, locals }) => {
         if (isVsat) {
           totalScore += 6;
         } else if (q.type === 'sa') {
-          totalScore += ppq * 2; // sa câu trả lời tự luận ngắn → 2× điểm/câu
+          totalScore += ppSa; // sa trả lời ngắn: mặc định 0.5đ (hoặc theo cấu hình đề)
         } else {
           totalScore += ppq;
         }
       }
     });
 
-    const score = totalScore; // V-SAT: raw /150; legacy exams: existing points
+    // Làm tròn 2 chữ số thập phân để tránh sai số dấu phẩy động (vd: 0.1 + 0.25)
+    const score = Math.round(totalScore * 100) / 100; // V-SAT: raw /150; standard exams: điểm theo cấu hình
 
     let abilityScore: number | null = null;
     if (isVsat) {

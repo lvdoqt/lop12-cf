@@ -23,6 +23,10 @@ if (Astro.request.method === 'POST') {
       const categoryIdJson = (formData.get('category_id_json') as string) || null;
       if (!jsonData?.trim()) throw new Error('Dữ liệu JSON trống.');
       const parsed = JSON.parse(jsonData);
+      const rootQuestionTypeId =
+        !Array.isArray(parsed) && typeof parsed?.question_type_id === 'string'
+          ? parsed.question_type_id.trim()
+          : undefined;
       const questions: any[] = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.questions) ? parsed.questions : [parsed]);
       
       const batchItems: Array<{
@@ -114,6 +118,10 @@ if (Astro.request.method === 'POST') {
         }
 
         const existingMeta = q.metadata || {};
+        const isDynamic = Boolean(q.is_dynamic || existingMeta.is_dynamic);
+        const qTypeId =
+          (typeof q.question_type_id === 'string' ? q.question_type_id.trim() : undefined) ||
+          rootQuestionTypeId;
         batchItems.push({
           question: {
             subject_id,
@@ -125,7 +133,9 @@ if (Astro.request.method === 'POST') {
             created_by: user.id,
             metadata: {
               ...existingMeta,
-              ...(category_id ? { category_id } : {})
+              ...(category_id ? { category_id } : {}),
+              ...(isDynamic ? { is_dynamic: true } : {}),
+              ...(qTypeId ? { question_type_id: qTypeId } : {})
             }
           },
           answers
