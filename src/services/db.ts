@@ -1493,6 +1493,7 @@ export const db = {
         ...att,
         student_name: ans._student_name || att.student_name || null,
         student_class: ans._student_class || att.student_class || null,
+        student_sbd: ans._student_sbd || att.student_sbd || null,
         tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0,
         exam: exam ? { ...exam, subject } : undefined
       };
@@ -1511,17 +1512,21 @@ export const db = {
       ...data,
       student_name: ans._student_name || null,
       student_class: ans._student_class || null,
+      student_sbd: ans._student_sbd || null,
       tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0
     };
   },
 
-  async createAttempt(userId: string | null | undefined, examId: string, studentInfo?: { fullname?: string; class_name?: string }): Promise<Attempt> {
+  async createAttempt(userId: string | null | undefined, examId: string, studentInfo?: { fullname?: string; class_name?: string; sbd?: string }): Promise<Attempt> {
     const initialAnswers: Record<string, any> = {};
     if (studentInfo?.fullname?.trim()) {
       initialAnswers._student_name = studentInfo.fullname.trim();
     }
     if (studentInfo?.class_name?.trim()) {
       initialAnswers._student_class = studentInfo.class_name.trim();
+    }
+    if (studentInfo?.sbd?.trim()) {
+      initialAnswers._student_sbd = studentInfo.sbd.trim();
     }
     const hasStudentInfo = Object.keys(initialAnswers).length > 0;
 
@@ -1535,7 +1540,8 @@ export const db = {
         started_at: new Date().toISOString(),
         finished_at: null,
         student_name: initialAnswers._student_name || null,
-        student_class: initialAnswers._student_class || null
+        student_class: initialAnswers._student_class || null,
+        student_sbd: initialAnswers._student_sbd || null
       };
       mockAttempts.push(newAttempt);
       return newAttempt;
@@ -1560,7 +1566,8 @@ export const db = {
     return {
       ...data,
       student_name: initialAnswers._student_name || null,
-      student_class: initialAnswers._student_class || null
+      student_class: initialAnswers._student_class || null,
+      student_sbd: initialAnswers._student_sbd || null
     };
   },
 
@@ -1574,6 +1581,7 @@ export const db = {
         ...answersSubmitted,
         ...(oldAns._student_name ? { _student_name: oldAns._student_name } : {}),
         ...(oldAns._student_class ? { _student_class: oldAns._student_class } : {}),
+        ...(oldAns._student_sbd ? { _student_sbd: oldAns._student_sbd } : {}),
         _tab_switches: tabSwitches
       };
       mockAttempts[index] = {
@@ -1608,6 +1616,7 @@ export const db = {
       ...answersSubmitted,
       ...(oldAnswers._student_name ? { _student_name: oldAnswers._student_name } : {}),
       ...(oldAnswers._student_class ? { _student_class: oldAnswers._student_class } : {}),
+      ...(oldAnswers._student_sbd ? { _student_sbd: oldAnswers._student_sbd } : {}),
       _tab_switches: tabSwitches
     };
 
@@ -1632,7 +1641,7 @@ export const db = {
     };
   },
 
-  async getAllAttempts(): Promise<(Attempt & { exam?: Exam, user?: User; student_name?: string; student_class?: string; tab_switches?: number })[]> {
+  async getAllAttempts(): Promise<(Attempt & { exam?: Exam, user?: User; student_name?: string; student_class?: string; student_sbd?: string; tab_switches?: number })[]> {
     if (isInMockMode()) {
       return mockAttempts.map(att => {
         const u = mockUsers.find(u => u.id === att.user_id);
@@ -1643,6 +1652,7 @@ export const db = {
           user: u,
           student_name: ans._student_name || u?.fullname || 'Học sinh',
           student_class: ans._student_class || '—',
+          student_sbd: ans._student_sbd || '',
           tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0
         };
       }).sort((a, b) => new Date(b.started_at).getTime() - new Date(a.started_at).getTime());
@@ -1661,12 +1671,13 @@ export const db = {
         ...att,
         student_name: ans._student_name || att.user?.fullname || 'Học sinh',
         student_class: ans._student_class || '—',
+        student_sbd: ans._student_sbd || '',
         tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0
       };
     });
   },
 
-  async getAttemptsByExamId(examId: string): Promise<(Attempt & { user?: User; student_name?: string; student_class?: string; tab_switches?: number })[]> {
+  async getAttemptsByExamId(examId: string): Promise<(Attempt & { user?: User; student_name?: string; student_class?: string; student_sbd?: string; tab_switches?: number })[]> {
     if (isInMockMode()) {
       return mockAttempts
         .filter(a => a.exam_id === examId && a.finished_at !== null)
@@ -1678,6 +1689,7 @@ export const db = {
             user: u,
             student_name: ans._student_name || u?.fullname || 'Học sinh',
             student_class: ans._student_class || '—',
+            student_sbd: ans._student_sbd || '',
             tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0
           };
         })
@@ -1697,6 +1709,7 @@ export const db = {
         ...att,
         student_name: ans._student_name || att.user?.fullname || 'Học sinh',
         student_class: ans._student_class || '—',
+        student_sbd: ans._student_sbd || '',
         tab_switches: typeof ans._tab_switches === 'number' ? ans._tab_switches : 0
       };
     });

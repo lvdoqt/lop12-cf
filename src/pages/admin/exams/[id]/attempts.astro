@@ -111,7 +111,7 @@ const avgScore = attempts.length > 0
           <table class="min-w-full">
             <thead class="bg-slate-50/80 dark:bg-slate-800/30">
               <tr class="text-left text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                <th class="px-6 py-3 text-center w-12">STT</th>
+                <th class="px-6 py-3 text-center w-24">SBD (STT)</th>
                 <th class="px-4 py-3">Học sinh</th>
                 <th class="px-4 py-3">Lớp</th>
                 <th class="px-4 py-3">Tài khoản / Email</th>
@@ -141,7 +141,7 @@ const avgScore = attempts.length > 0
                 const tabCount = attempt.tab_switches ?? 0;
                 return (
                   <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/20 transition-colors text-sm">
-                    <td class="px-6 py-4 text-center text-xs text-slate-400 font-semibold">{idx + 1}</td>
+                    <td class="px-6 py-4 text-center text-xs text-slate-600 dark:text-slate-300 font-semibold font-mono">{attempt.student_sbd || idx + 1}</td>
                     <td class="px-4 py-4">
                       <div class="flex items-center gap-2.5">
                         <div class="w-7 h-7 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center text-xs font-bold text-violet-600 dark:text-violet-400 shrink-0">

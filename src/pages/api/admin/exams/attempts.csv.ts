@@ -34,11 +34,12 @@ export const GET: APIRoute = async ({ url, locals }) => {
     ? await db.getExamQuestionCounts(uniqueExamIds)
     : {};
 
-  const header = 'STT,Ten de thi,Mon hoc,Ho ten,Lop,Email,Diem,So cau dung,Tong cau,% dung,Diem tho (150),Diem nang luc IRT,So lan roi tab,Thoi gian lam (phut),Ngay nop\r\n';
+  const header = 'So bao danh (STT),Ten de thi,Mon hoc,Ho ten,Lop,Email,Diem,So cau dung,Tong cau,% dung,Diem tho (150),Diem nang luc IRT,So lan roi tab,Thoi gian lam (phut),Ngay nop\r\n';
 
   const rows = allAttempts.map((attempt, idx) => {
     const examObj = attempt.exam as any;
     const userObj = attempt.user as any;
+    const sbd = (attempt.student_sbd || String(idx + 1)).replace(/"/g, '""').replace(/,/g, ' ');
     const examTitle = (examObj?.title || 'Đề thi').replace(/,/g, ' ');
     const subjectName = (examObj?.subject?.name || '—').replace(/,/g, ' ');
     const studentName = (attempt.student_name || userObj?.fullname || 'Học sinh').replace(/,/g, ' ');
@@ -73,7 +74,7 @@ export const GET: APIRoute = async ({ url, locals }) => {
       ? new Date(targetDate).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false })
       : '';
 
-    return `${idx + 1},"${examTitle}","${subjectName}","${studentName}","${studentClass}","${email}",${score},${correct},${effectiveTotalQ},"${pctCorrect}",${rawScore},${abilityScore},${tabSwitches},${durationMin},"${finishedAt}"`;
+    return `"${sbd}","${examTitle}","${subjectName}","${studentName}","${studentClass}","${email}",${score},${correct},${effectiveTotalQ},"${pctCorrect}",${rawScore},${abilityScore},${tabSwitches},${durationMin},"${finishedAt}"`;
   });
 
   const nowStr = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Ho_Chi_Minh' }).format(new Date());

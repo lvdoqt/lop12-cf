@@ -126,6 +126,7 @@ export interface Attempt {
   finished_at: string | null;
   student_name?: string | null;
   student_class?: string | null;
+  student_sbd?: string | null;
   tab_switches?: number | null;
 }
 

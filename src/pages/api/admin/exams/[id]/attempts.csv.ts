@@ -28,11 +28,12 @@ export const GET: APIRoute = async ({ params, locals }) => {
 
   const isVsat = exam.exam_type === 'vsat';
   const header = isVsat
-    ? 'STT,Ho ten,Lop,Email,Diem tho (150),Diem nang luc IRT,So lan roi tab,Thoi gian lam (phut),Ngay nop\r\n'
-    : 'STT,Ho ten,Lop,Email,Diem,So cau dung,Tong cau,% dung,So lan roi tab,Thoi gian lam (phut),Ngay nop\r\n';
+    ? 'So bao danh (STT),Ho ten,Lop,Email,Diem tho (150),Diem nang luc IRT,So lan roi tab,Thoi gian lam (phut),Ngay nop\r\n'
+    : 'So bao danh (STT),Ho ten,Lop,Email,Diem,So cau dung,Tong cau,% dung,So lan roi tab,Thoi gian lam (phut),Ngay nop\r\n';
 
   const rows = attempts.map((attempt, idx) => {
     const userObj = attempt.user as any;
+    const sbd = (attempt.student_sbd || String(idx + 1)).replace(/"/g, '""').replace(/,/g, ' ');
     const name = (attempt.student_name || userObj?.fullname || 'Học sinh').replace(/,/g, ' ');
     const studentClass = (attempt.student_class || '').replace(/,/g, ' ');
     const email = (userObj?.email || '').replace(/,/g, ' ');
@@ -81,8 +82,8 @@ export const GET: APIRoute = async ({ params, locals }) => {
       ? new Date(targetDate).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour12: false })
       : '';
     return isVsat
-      ? `${idx + 1},"${name}","${studentClass}","${email}",${score},${attempt.ability_score ?? ''},${tabSwitches},${durationMin},"${finishedAt}"`
-      : `${idx + 1},"${name}","${studentClass}","${email}",${score},${correct},${studentTotalQuestions},"${pctCorrect}",${tabSwitches},${durationMin},"${finishedAt}"`;
+      ? `"${sbd}","${name}","${studentClass}","${email}",${score},${attempt.ability_score ?? ''},${tabSwitches},${durationMin},"${finishedAt}"`
+      : `"${sbd}","${name}","${studentClass}","${email}",${score},${correct},${studentTotalQuestions},"${pctCorrect}",${tabSwitches},${durationMin},"${finishedAt}"`;
   });
 
   const examTitle = exam.title.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').slice(0, 40);
