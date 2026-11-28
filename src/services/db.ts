@@ -1070,6 +1070,87 @@ export const db = {
     }).filter((x): x is NonNullable<typeof x> => x != null);
   },
 
+  async getQuestionsPaginated(params: {
+    subjectId?: string;
+    categoryId?: string;
+    type?: string;
+    difficulty?: string;
+    search?: string;
+    createdBy?: string;
+    excludeIds?: string[];
+    page?: number;
+    limit?: number;
+  }): Promise<{
+    items: (Question & { answers: Answer[]; subject?: Subject })[];
+    total: number;
+    page: number;
+    limit: number;
+  }> {
+    const page = Math.max(1, params.page || 1);
+    const limit = Math.min(100, Math.max(1, params.limit || 25));
+    const offset = (page - 1) * limit;
+    const excludeSet = new Set(params.excludeIds || []);
+    const qNorm = (params.search || '').trim().toLowerCase();
+
+    if (isInMockMode()) {
+      let list = mockQuestions.filter(q => !excludeSet.has(q.id));
+      if (params.subjectId) list = list.filter(q => q.subject_id === params.subjectId);
+      if (params.categoryId) list = list.filter(q => (q.category_id || q.metadata?.category_id) === params.categoryId);
+      if (params.createdBy) list = list.filter(q => q.metadata?.created_by === params.createdBy);
+      if (params.type) {
+        const t = params.type === 'mcq' ? 'single_choice' : params.type;
+        list = list.filter(q => (q.type === 'mcq' ? 'single_choice' : q.type) === t);
+      }
+      if (params.difficulty) list = list.filter(q => q.difficulty === params.difficulty);
+      if (qNorm) list = list.filter(q => (q.content || '').toLowerCase().includes(qNorm));
+
+      const total = list.length;
+      const sliced = list.slice(offset, offset + limit).map(q => ({
+        ...q,
+        answers: mockAnswers.filter(a => a.question_id === q.id),
+        subject: mockSubjects.find(s => s.id === q.subject_id),
+      }));
+      return { items: sliced, total, page, limit };
+    }
+
+    const client = adminClient()!;
+    let query = client.from('questions').select('*', { count: 'exact' }).eq('de_id', 'bank');
+    if (params.subjectId) query = query.eq('metadata->>subject_id', params.subjectId);
+    if (params.categoryId) query = query.eq('metadata->>category_id', params.categoryId);
+    if (params.createdBy) query = query.eq('metadata->>created_by', params.createdBy);
+    if (params.difficulty) query = query.eq('metadata->>difficulty', params.difficulty);
+    if (params.type) {
+      if (params.type === 'mcq' || params.type === 'single_choice') {
+        query = query.in('metadata->>type', ['mcq', 'single_choice']);
+      } else {
+        query = query.eq('metadata->>type', params.type);
+      }
+    }
+    if (qNorm) {
+      query = query.ilike('content', `%${params.search!.trim()}%`);
+    }
+
+    const { data, count, error } = await query
+      .order('so_cau', { ascending: false })
+      .range(offset, offset + limit - 1);
+
+    if (error) {
+      console.error('[db.getQuestionsPaginated] error:', error);
+      return { items: [], total: 0, page, limit };
+    }
+
+    const subjects = await this.getSubjects();
+    const mapped = (data || [])
+      .map(q => {
+        const m = mapDbQuestionToAppQuestion(q);
+        m.subject = subjects.find(s => s.id === m.subject_id);
+        return m;
+      })
+      .filter(q => !excludeSet.has(q.id));
+
+    return { items: mapped, total: count ?? mapped.length, page, limit };
+  },
+
   async getQuestionsByMatrix(criteria: {
     subjectId: string;
     categoryId?: string | null;
@@ -1083,9 +1164,15 @@ export const db = {
     };
     types?: {
       single_choice?: number;
+      mcq?: number;
       msq?: number;
       sa?: number;
+      tl?: number;
+      read?: number;
+      read_cloze?: number;
+      ordering?: number;
     };
+    matrix2d?: Record<string, { nb?: number; th?: number; vd?: number; vdc?: number }>;
   }): Promise<{
     questions: (Question & { answers: Answer[]; subject?: Subject })[];
     breakdown: { nb: number; th: number; vd: number; vdc: number };
@@ -1093,7 +1180,6 @@ export const db = {
   }> {
     const allBankQuestions = await this.getQuestions(criteria.subjectId);
 
-    // Filter candidate questions
     let candidates = allBankQuestions;
     if (criteria.categoryId) {
       candidates = candidates.filter(q => q.category_id === criteria.categoryId || q.metadata?.category_id === criteria.categoryId);
@@ -1109,9 +1195,13 @@ export const db = {
       });
     }
 
-    // Helper to extract cognitive level
+    const normalizeQType = (q: Question): string => {
+      const raw = (q.metadata?.type || q.type || 'single_choice').toLowerCase();
+      return raw === 'mcq' ? 'single_choice' : raw;
+    };
+
     const getCognitiveLevel = (q: Question): 'nb' | 'th' | 'vd' | 'vdc' => {
-      const metaLevel = q.metadata?.cognitive_level || q.metadata?.level;
+      const metaLevel = (q.metadata?.cognitive_level || q.metadata?.level || '').toLowerCase();
       if (metaLevel === 'nb' || metaLevel === 'th' || metaLevel === 'vd' || metaLevel === 'vdc') {
         return metaLevel;
       }
@@ -1124,20 +1214,6 @@ export const db = {
       return 'th';
     };
 
-    // Partition into buckets
-    const buckets: Record<'nb' | 'th' | 'vd' | 'vdc', typeof candidates> = {
-      nb: [],
-      th: [],
-      vd: [],
-      vdc: []
-    };
-
-    candidates.forEach(q => {
-      const lvl = getCognitiveLevel(q);
-      buckets[lvl].push(q);
-    });
-
-    // Shuffle helper
     const shuffle = <T>(arr: T[]): T[] => {
       const copy = [...arr];
       for (let i = copy.length - 1; i > 0; i--) {
@@ -1149,28 +1225,93 @@ export const db = {
 
     const warnings: string[] = [];
     const selected: (Question & { answers: Answer[]; subject?: Subject })[] = [];
+    const usedIds = new Set<string>();
     const breakdown = { nb: 0, th: 0, vd: 0, vdc: 0 };
 
     const levelNames: Record<'nb' | 'th' | 'vd' | 'vdc', string> = {
       nb: 'Nhận biết',
       th: 'Thông hiểu',
       vd: 'Vận dụng',
-      vdc: 'Vận dụng cao'
+      vdc: 'Vận dụng cao',
     };
-
     const targetLevels: ('nb' | 'th' | 'vd' | 'vdc')[] = ['nb', 'th', 'vd', 'vdc'];
 
-    for (const lvl of targetLevels) {
-      const needed = criteria.levels[lvl] || 0;
-      if (needed <= 0) continue;
+    // 1. If 2D matrix (type × cognitive level) is provided, pick exact intersections first
+    if (criteria.matrix2d && Object.keys(criteria.matrix2d).length > 0) {
+      for (const [rawTypeKey, cellLevels] of Object.entries(criteria.matrix2d)) {
+        const normType = rawTypeKey === 'mcq' ? 'single_choice' : rawTypeKey;
+        const typeCandidates = candidates.filter(q => normalizeQType(q) === normType);
+        for (const lvl of targetLevels) {
+          const needed = Number(cellLevels?.[lvl] || 0);
+          if (needed <= 0) continue;
+          const exactPool = shuffle(typeCandidates.filter(q => !usedIds.has(q.id) && getCognitiveLevel(q) === lvl));
+          let taken = exactPool.slice(0, needed);
+          // Fallback within the same question type if exact cognitive level is short
+          if (taken.length < needed) {
+            const fallbackPool = shuffle(typeCandidates.filter(q => !usedIds.has(q.id) && !taken.includes(q)));
+            taken = [...taken, ...fallbackPool.slice(0, needed - taken.length)];
+          }
+          taken.forEach(q => {
+            usedIds.add(q.id);
+            selected.push(q);
+            breakdown[getCognitiveLevel(q)]++;
+          });
+          if (taken.length < needed) {
+            warnings.push(`Dạng "${rawTypeKey}" mức "${levelNames[lvl]}" chỉ có ${taken.length}/${needed} câu.`);
+          }
+        }
+      }
+    } else if (criteria.types && Object.values(criteria.types).some(v => (v || 0) > 0)) {
+      // 2. If per-type counts + overall level targets are provided, allocate proportionally per type
+      const totalRequestedByType = Object.values(criteria.types).reduce((s, v) => s + (v || 0), 0);
+      const totalLevels = targetLevels.reduce((s, l) => s + (criteria.levels[l] || 0), 0) || 1;
 
-      const pool = shuffle(buckets[lvl]);
-      const taken = pool.slice(0, needed);
-      selected.push(...taken);
-      breakdown[lvl] = taken.length;
+      for (const [rawTypeKey, typeCountRaw] of Object.entries(criteria.types)) {
+        const typeNeeded = Number(typeCountRaw || 0);
+        if (typeNeeded <= 0) continue;
+        const normType = rawTypeKey === 'mcq' ? 'single_choice' : rawTypeKey;
+        const typePool = candidates.filter(q => !usedIds.has(q.id) && normalizeQType(q) === normType);
 
-      if (taken.length < needed) {
-        warnings.push(`Ngân hàng chỉ có ${taken.length}/${needed} câu hỏi mức độ "${levelNames[lvl]}".`);
+        let pickedForType = 0;
+        for (const lvl of targetLevels) {
+          const share = Math.round(((criteria.levels[lvl] || 0) / totalLevels) * typeNeeded);
+          const toPick = Math.min(share, typeNeeded - pickedForType);
+          if (toPick <= 0) continue;
+          const lvlMatches = shuffle(typePool.filter(q => !usedIds.has(q.id) && getCognitiveLevel(q) === lvl));
+          const taken = lvlMatches.slice(0, toPick);
+          taken.forEach(q => {
+            usedIds.add(q.id);
+            selected.push(q);
+            breakdown[lvl]++;
+            pickedForType++;
+          });
+        }
+        if (pickedForType < typeNeeded) {
+          const remainder = shuffle(typePool.filter(q => !usedIds.has(q.id))).slice(0, typeNeeded - pickedForType);
+          remainder.forEach(q => {
+            usedIds.add(q.id);
+            selected.push(q);
+            breakdown[getCognitiveLevel(q)]++;
+            pickedForType++;
+          });
+        }
+        if (pickedForType < typeNeeded && totalRequestedByType > 0) {
+          warnings.push(`Ngân hàng chỉ có ${pickedForType}/${typeNeeded} câu dạng "${rawTypeKey}".`);
+        }
+      }
+    } else {
+      // 3. Classic cognitive-level-only selection
+      for (const lvl of targetLevels) {
+        const needed = criteria.levels[lvl] || 0;
+        if (needed <= 0) continue;
+        const pool = shuffle(candidates.filter(q => !usedIds.has(q.id) && getCognitiveLevel(q) === lvl));
+        const taken = pool.slice(0, needed);
+        taken.forEach(q => usedIds.add(q.id));
+        selected.push(...taken);
+        breakdown[lvl] = taken.length;
+        if (taken.length < needed) {
+          warnings.push(`Ngân hàng chỉ có ${taken.length}/${needed} câu hỏi mức độ "${levelNames[lvl]}".`);
+        }
       }
     }
 
@@ -1189,7 +1330,7 @@ export const db = {
     return {
       questions: selected,
       breakdown,
-      warnings
+      warnings,
     };
   },
 
@@ -1351,7 +1492,7 @@ export const db = {
         options,
         answer: answerStr,
         metadata,
-        image_url: null
+        image_url: question.image_url || null
       };
     });
 

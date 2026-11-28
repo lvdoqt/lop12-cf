@@ -1,7 +1,12 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { db } from '../../../services/db';
-import { calculateEffectiveQuestionCount } from '../../../lib/exam';
+import {
+  calculateEffectiveQuestionCount,
+  getExamProgramMeta,
+  checkExamSessionWindow,
+  getEffectiveExamScoring,
+} from '../../../lib/exam';
 
 export const prerender = false;
 
@@ -10,300 +15,310 @@ if (!id) {
   return Astro.redirect('/ly-thuyet');
 }
 
-// Accept both slug and UUID (backward compat)
 const exam = await db.getExamBySlug(id);
 if (!exam) {
   return Astro.redirect('/de-thi');
 }
 
 const user = Astro.locals.user;
+const isStaff = Boolean(user && (user.role === 'admin' || user.role === 'teacher'));
 const questions = await db.getQuestionsByExamId(exam.id);
 const questionsCount = calculateEffectiveQuestionCount(questions, exam.settings);
 const isGraded = Boolean(exam.settings?.is_graded);
+const hasPassword = Boolean(exam.password && exam.password.trim().length > 0);
+const maxAttempts = exam.settings?.max_attempts && exam.settings.max_attempts > 0 ? exam.settings.max_attempts : null;
+
+const programMeta = getExamProgramMeta(exam);
+const scoringMeta = getEffectiveExamScoring(exam);
+const sessionWindow = checkExamSessionWindow(exam.settings);
+const isBlockedBySchedule = !isStaff && sessionWindow.state !== 'open';
 
 let errorMessage = '';
 let submittedName = user?.fullname || '';
 let submittedClass = '';
 let submittedSbd = '';
 
-// Handle Start exam action (POST)
 if (Astro.request.method === 'POST') {
-  if (!isGraded) {
-    return Astro.redirect(`/exams/${exam.slug}/take?mode=practice`);
-  }
   try {
     const formData = await Astro.request.formData();
-    const studentName = (formData.get('student_name') as string)?.trim() || '';
-    const studentClass = (formData.get('student_class') as string)?.trim() || '';
-    const studentSbd = (formData.get('student_sbd') as string)?.trim() || '';
-    submittedName = studentName;
-    submittedClass = studentClass;
-    submittedSbd = studentSbd;
+    const enteredPw = ((formData.get('exam_password') as string) || '').trim();
 
-    if (!studentName || !studentClass || !studentSbd) {
-      errorMessage = 'Vui lòng nhập đầy đủ Họ và tên, Số báo danh (STT) và Lớp để bắt đầu làm bài thi.';
+    if (isBlockedBySchedule) {
+      errorMessage =
+        sessionWindow.state === 'not_open'
+          ? `Ca thi chưa bắt đầu. Đề thi sẽ mở vào lúc ${sessionWindow.openAtFormatted}.`
+          : `Ca thi đã kết thúc vào lúc ${sessionWindow.closeAtFormatted}.`;
+    } else if (hasPassword && enteredPw !== exam.password!.trim()) {
+      errorMessage = 'Mật khẩu đề thi không chính xác. Vui lòng kiểm tra lại với giáo viên.';
+    } else if (!isGraded) {
+      if (hasPassword) {
+        Astro.cookies.set(`exam_pw_${exam.id}`, '1', {
+          path: '/',
+          httpOnly: true,
+          sameSite: 'lax',
+          maxAge: 60 * 60 * 6,
+        });
+      }
+      return Astro.redirect(`/exams/${exam.slug}/take?mode=practice`);
     } else {
-      const attempt = await db.createAttempt(user?.id, exam.id, {
-        fullname: studentName,
-        class_name: studentClass,
-        sbd: studentSbd
-      });
-      return Astro.redirect(`/exams/${exam.slug}/take?attemptId=${attempt.id}`);
+      const studentName = (formData.get('student_name') as string)?.trim() || '';
+      const studentClass = (formData.get('student_class') as string)?.trim() || '';
+      const studentSbd = (formData.get('student_sbd') as string)?.trim() || '';
+      submittedName = studentName;
+      submittedClass = studentClass;
+      submittedSbd = studentSbd;
+
+      if (!studentName || !studentClass || !studentSbd) {
+        errorMessage = 'Vui lòng nhập đầy đủ Họ và tên, Số báo danh (STT) và Lớp để bắt đầu làm bài thi.';
+      } else {
+        // Check max_attempts per student / SBD if configured
+        if (maxAttempts !== null && !isStaff) {
+          const finishedAttempts = await db.getAttemptsByExamId(exam.id);
+          const normSbd = studentSbd.toLowerCase();
+          const normName = studentName.toLowerCase();
+          const normClass = studentClass.toLowerCase();
+
+          const usedCount = finishedAttempts.filter(att => {
+            if (user?.id && att.user_id === user.id) return true;
+            const aSbd = (att.student_sbd || '').trim().toLowerCase();
+            const aClass = (att.student_class || '').trim().toLowerCase();
+            const aName = (att.student_name || '').trim().toLowerCase();
+            if (aSbd && aClass && aSbd === normSbd && aClass === normClass) return true;
+            if (aName && aClass && aName === normName && aClass === normClass) return true;
+            return false;
+          }).length;
+
+          if (usedCount >= maxAttempts) {
+            errorMessage = `Bạn đã hoàn thành đủ số lượt làm bài cho phép của đề thi này (${usedCount}/${maxAttempts} lượt).`;
+          }
+        }
+
+        if (!errorMessage) {
+          const attempt = await db.createAttempt(user?.id, exam.id, {
+            fullname: studentName,
+            class_name: studentClass,
+            sbd: studentSbd,
+          });
+          return Astro.redirect(`/exams/${exam.slug}/take?attemptId=${attempt.id}`);
+        }
+      }
     }
   } catch (err: any) {
     console.error('Failed to create exam attempt:', err);
     errorMessage = `Lỗi khởi tạo bài thi: ${err.message || 'Vui lòng thử lại.'}`;
   }
 }
-
-const examTypeNames: Record<string, string> = {
-  '15m': 'Kiểm tra 15 phút',
-  '45m': 'Kiểm tra 1 tiết (45 phút)',
-  'semester': 'Thi Học Kỳ',
-  'mock_thpt': 'Thi Thử THPT Quốc Gia',
-  'vsat': 'Thi Đánh Giá Năng Lực V-SAT'
-};
-
-const examTypeColors: Record<string, string> = {
-  '15m': 'bg-emerald-50 text-emerald-700 border-emerald-200/60 dark:bg-emerald-950/20 dark:text-emerald-400 dark:border-emerald-900/30',
-  '45m': 'bg-blue-50 text-blue-700 border-blue-200/60 dark:bg-blue-950/20 dark:text-blue-400 dark:border-blue-900/30',
-  'semester': 'bg-purple-50 text-purple-700 border-purple-200/60 dark:bg-purple-950/20 dark:text-purple-400 dark:border-purple-900/30',
-  'mock_thpt': 'bg-rose-50 text-rose-700 border-rose-200/60 dark:bg-rose-950/20 dark:text-rose-400 dark:border-rose-900/30',
-  'vsat': 'bg-teal-50 text-teal-700 border-teal-200/60 dark:bg-teal-950/20 dark:text-teal-400 dark:border-teal-900/30'
-};
 ---
 
 <Layout title={exam.title}>
   <div class="max-w-2xl mx-auto space-y-6">
-    <!-- Back breadcrumb -->
     <div>
-      <a href={exam.subject ? `/ly-thuyet/${exam.subject.slug}` : '/ly-thuyet'}
-        class="inline-flex items-center text-xs font-bold text-gray-400 hover:text-gray-600 dark:hover:text-slate-350 transition-colors uppercase tracking-wider mb-2">
+      <a
+        href={exam.subject ? `/ly-thuyet/${exam.subject.slug}` : '/de-thi'}
+        class="inline-flex items-center text-xs font-bold text-gray-400 hover:text-gray-600 dark:hover:text-slate-350 transition-colors uppercase tracking-wider mb-2"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
-        Quay lại môn học
+        Quay lại danh sách
       </a>
     </div>
 
-    <!-- Main Exam Card -->
     <div class="bg-white dark:bg-slate-900 border border-gray-200/70 dark:border-slate-800/80 rounded-2xl p-6 md:p-8 shadow-sm">
-      
       <!-- Badge Row -->
       <div class="flex flex-wrap items-center gap-2 mb-5">
-        <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border ${examTypeColors[exam.exam_type] || examTypeColors['45m']}`}>
-          {exam.subject?.name} · {examTypeNames[exam.exam_type]}
+        <span class={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold border ${programMeta.badgeClass}`}>
+          <span>{programMeta.icon}</span>
+          <span>{exam.subject?.name ? `${exam.subject.name} · ` : ''}{programMeta.label}</span>
         </span>
         {isGraded ? (
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200/60 dark:bg-emerald-950/20 dark:text-emerald-400 dark:border-emerald-900/30">
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Đề thi lấy điểm
+            📝 Đề thi lấy điểm
           </span>
         ) : (
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sky-50 text-sky-700 border border-sky-200/60 dark:bg-sky-950/20 dark:text-sky-400 dark:border-sky-900/30">
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-            Chế độ luyện tập
+            📖 Chế độ luyện tập
+          </span>
+        )}
+        {hasPassword && (
+          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200 dark:bg-amber-950/30 dark:text-amber-300 dark:border-amber-800/40">
+            🔒 Có mật khẩu
           </span>
         )}
       </div>
 
-      <!-- Exam Title -->
       <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6">
         {exam.title}
       </h1>
 
       <!-- Stats Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
-        <div class="p-4 bg-gray-50 dark:bg-slate-800/50 rounded-xl border border-gray-150/40 dark:border-slate-850/40 text-center">
-          <p class="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wider mb-1">Thời gian</p>
-          <p class="text-xl font-black text-gray-900 dark:text-white">{exam.duration}<span class="text-sm font-semibold text-gray-400 ml-1">phút</span></p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+        <div class="p-3.5 bg-gray-50 dark:bg-slate-800/50 rounded-xl border border-gray-200/50 dark:border-slate-800 text-center">
+          <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Thời gian</p>
+          <p class="text-lg font-black text-gray-900 dark:text-white">{exam.duration}<span class="text-xs font-semibold text-gray-400 ml-1">phút</span></p>
         </div>
-        <div class="p-4 bg-gray-50 dark:bg-slate-800/50 rounded-xl border border-gray-150/40 dark:border-slate-850/40 text-center">
-          <p class="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wider mb-1">Số câu</p>
-          <p class="text-xl font-black text-gray-900 dark:text-white">{questionsCount}<span class="text-sm font-semibold text-gray-400 ml-1">câu</span></p>
+        <div class="p-3.5 bg-gray-50 dark:bg-slate-800/50 rounded-xl border border-gray-200/50 dark:border-slate-800 text-center">
+          <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Số câu</p>
+          <p class="text-lg font-black text-gray-900 dark:text-white">{questionsCount}<span class="text-xs font-semibold text-gray-400 ml-1">câu</span></p>
         </div>
-        <div class="p-4 bg-gray-50 dark:bg-slate-800/50 rounded-xl border border-gray-150/40 dark:border-slate-850/40 text-center col-span-2 sm:col-span-1">
-          <p class="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wider mb-1">Hình thức</p>
-          <p class="text-base font-bold text-gray-900 dark:text-white">Trực tuyến</p>
+        <div class="p-3.5 bg-gray-50 dark:bg-slate-800/50 rounded-xl border border-gray-200/50 dark:border-slate-800 text-center">
+          <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Thang điểm</p>
+          <p class="text-lg font-black text-gray-900 dark:text-white">{scoringMeta.maxScore}<span class="text-xs font-semibold text-gray-400 ml-1">điểm</span></p>
+        </div>
+        <div class="p-3.5 bg-gray-50 dark:bg-slate-800/50 rounded-xl border border-gray-200/50 dark:border-slate-800 text-center">
+          <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Số lượt thi</p>
+          <p class="text-sm font-bold text-gray-900 dark:text-white">{maxAttempts ? `Tối đa ${maxAttempts}` : 'Tự do'}</p>
         </div>
       </div>
 
+      <!-- Session Schedule Notice -->
+      {(sessionWindow.openAtFormatted || sessionWindow.closeAtFormatted) && (
+        <div class={`p-4 rounded-xl border text-xs font-semibold mb-6 flex flex-wrap items-center justify-between gap-2 ${
+          sessionWindow.state === 'open'
+            ? 'bg-emerald-50/60 border-emerald-200 text-emerald-800 dark:bg-emerald-950/20 dark:border-emerald-800/50 dark:text-emerald-300'
+            : 'bg-amber-50 border-amber-200 text-amber-800 dark:bg-amber-950/25 dark:border-amber-800/50 dark:text-amber-300'
+        }`}>
+          <div class="space-y-0.5">
+            {sessionWindow.openAtFormatted && <p>🟢 Mở ca thi: <strong>{sessionWindow.openAtFormatted}</strong></p>}
+            {sessionWindow.closeAtFormatted && <p>🔴 Đóng ca thi: <strong>{sessionWindow.closeAtFormatted}</strong></p>}
+          </div>
+          {isStaff && sessionWindow.state !== 'open' && (
+            <span class="px-2.5 py-1 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-bold">
+              Quyền Giáo viên: Được phép vào kiểm tra trước giờ
+            </span>
+          )}
+        </div>
+      )}
+
       <!-- Exam Rules -->
-      <div class="text-left bg-blue-50/40 border border-blue-100/60 dark:bg-slate-800/40 dark:border-slate-700/50 p-5 rounded-2xl mb-8 space-y-3">
-        <h4 class="font-bold text-sm text-gray-900 dark:text-white flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4.5 w-4.5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          Hướng dẫn & Quy định làm bài:
-        </h4>
-        <ul class="text-xs text-gray-600 dark:text-slate-350 space-y-2 list-decimal pl-5 leading-relaxed font-medium">
+      <div class="text-left bg-blue-50/40 border border-blue-100/60 dark:bg-slate-800/40 dark:border-slate-700/50 p-5 rounded-2xl mb-6 space-y-3">
+        <h4 class="font-bold text-sm text-gray-900 dark:text-white">Hướng dẫn &amp; Quy định làm bài:</h4>
+        <ul class="text-xs text-gray-600 dark:text-slate-300 space-y-1.5 list-decimal pl-5 leading-relaxed font-medium">
           {isGraded ? (
             <>
-              <li>Vui lòng nhập chính xác <strong>Họ tên</strong>, <strong>Lớp</strong> và <strong>Số báo danh (STT)</strong> để hệ thống ghi nhận kết quả cho giáo viên.</li>
-              <li>Đồng hồ đếm ngược bắt đầu ngay khi bạn nhấn <strong>Bắt đầu làm bài</strong>.</li>
-              <li>Khi hết thời gian quy định, bài thi sẽ <strong>tự động nộp</strong>.</li>
-              <li>Sau khi nộp bài, hệ thống <strong>chấm điểm tự động</strong> và lưu kết quả vào danh sách của lớp.</li>
+              <li>Nhập chính xác <strong>Họ tên</strong>, <strong>Lớp</strong> và <strong>Số báo danh (STT)</strong> để lưu điểm cho giáo viên.</li>
+              <li>Đồng hồ đếm ngược chạy ngay khi bắt đầu và tự động nộp khi hết giờ. Hệ thống cảnh báo nếu rời tab quá 3 lần.</li>
+              {maxAttempts && <li>Mỗi học sinh chỉ được phép thực hiện tối đa <strong>{maxAttempts} lượt thi</strong>.</li>}
             </>
           ) : (
             <>
-              <li>Đây là bài <strong>luyện tập tự do</strong>: không cần nhập Họ tên, SBD hay Lớp.</li>
-              <li>Kết quả luyện tập <strong>không lưu vào hệ thống</strong>, bạn có thể làm đi làm lại nhiều lần.</li>
-              <li>Sau khi nộp bài, hệ thống vẫn <strong>chấm điểm tự động từng câu</strong> và hiển thị đáp án, lời giải chi tiết.</li>
+              <li>Chế độ <strong>luyện tập tự do</strong>: không lưu điểm vào hệ thống, có thể luyện tập nhiều lần.</li>
+              <li>Hỗ trợ viết đáp số câu trả lời ngắn bằng cả dấu phẩy (<code>12,5</code>) hoặc dấu chấm (<code>12.5</code>).</li>
             </>
           )}
         </ul>
       </div>
 
-      {!isGraded ? (
+      {isBlockedBySchedule ? (
+        <div class="p-5 rounded-2xl bg-rose-50 dark:bg-rose-950/25 border border-rose-200 dark:border-rose-800/50 text-center space-y-1.5">
+          <p class="text-base font-extrabold text-rose-700 dark:text-rose-300">
+            {sessionWindow.state === 'not_open' ? '⏳ Ca thi chưa đến giờ mở' : '🔒 Ca thi này đã kết thúc'}
+          </p>
+          <p class="text-xs text-rose-600 dark:text-rose-400">
+            {sessionWindow.state === 'not_open'
+              ? `Vui lòng quay lại vào lúc ${sessionWindow.openAtFormatted}.`
+              : `Đề thi đã đóng lúc ${sessionWindow.closeAtFormatted}.`}
+          </p>
+        </div>
+      ) : !isGraded && !hasPassword ? (
         <a
           href={`/exams/${exam.slug}/take?mode=practice`}
           class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-xl transition-all duration-150 text-base flex items-center justify-center gap-2"
         >
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          Bắt đầu luyện tập
+          <span>▶ Bắt đầu luyện tập ngay</span>
         </a>
       ) : (
-      <form method="POST" id="start-exam-form" class="space-y-5">
-        <!-- Form nhập Họ tên & Lớp -->
-        {errorMessage && (
-          <div class="p-4 rounded-xl bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/40 flex items-center gap-3">
-            <svg class="w-5 h-5 text-rose-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <p class="text-sm font-semibold text-rose-700 dark:text-rose-400">{errorMessage}</p>
-          </div>
-        )}
-
-        <div class="p-5 md:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-4">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-lg">✍️</span>
-            <h3 class="text-sm font-bold text-gray-800 dark:text-slate-200 uppercase tracking-wider">
-              Thông tin học sinh làm bài
-            </h3>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <!-- Student Name -->
-            <div class="sm:col-span-2">
-              <label for="student_name" class="block text-xs font-bold text-gray-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
-                Họ và tên <span class="text-rose-500">*</span>
-              </label>
-              <div class="relative">
-                <input
-                  type="text"
-                  name="student_name"
-                  id="student_name"
-                  required
-                  value={submittedName}
-                  placeholder="Ví dụ: Nguyễn Văn An"
-                  class="w-full px-4 py-3 pl-10 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-sm font-medium text-gray-900 dark:text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
-                />
-                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm">👤</span>
-              </div>
+        <form method="POST" id="start-exam-form" class="space-y-5">
+          {errorMessage && (
+            <div class="p-4 rounded-xl bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/40 flex items-center gap-3">
+              <p class="text-sm font-semibold text-rose-700 dark:text-rose-400">⚠️ {errorMessage}</p>
             </div>
+          )}
 
-            <!-- Student SBD / STT -->
-            <div>
-              <label for="student_sbd" class="block text-xs font-bold text-gray-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
-                Số báo danh (STT) <span class="text-rose-500">*</span>
-              </label>
-              <div class="relative">
-                <input
-                  type="text"
-                  name="student_sbd"
-                  id="student_sbd"
-                  required
-                  value={submittedSbd}
-                  placeholder="Ví dụ: 01, 12005..."
-                  class="w-full px-4 py-3 pl-10 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-sm font-medium text-gray-900 dark:text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
-                />
-                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔢</span>
-              </div>
-            </div>
+          <div class="p-5 md:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-4">
+            {isGraded && (
+              <>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-lg">✍️</span>
+                  <h3 class="text-sm font-bold text-gray-800 dark:text-slate-200 uppercase tracking-wider">
+                    Thông tin thí sinh
+                  </h3>
+                </div>
 
-            <!-- Student Class -->
-            <div>
-              <label for="student_class" class="block text-xs font-bold text-gray-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
-                Lớp <span class="text-rose-500">*</span>
-              </label>
-              <div class="relative">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="sm:col-span-2">
+                    <label for="student_name" class="block text-xs font-bold text-gray-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                      Họ và tên <span class="text-rose-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="student_name"
+                      id="student_name"
+                      required
+                      value={submittedName}
+                      placeholder="Ví dụ: Nguyễn Văn An"
+                      class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-sm font-medium text-gray-900 dark:text-white outline-none focus:border-blue-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="student_sbd" class="block text-xs font-bold text-gray-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                      Số báo danh (STT) <span class="text-rose-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="student_sbd"
+                      id="student_sbd"
+                      required
+                      value={submittedSbd}
+                      placeholder="Ví dụ: 01, 12005..."
+                      class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-sm font-medium text-gray-900 dark:text-white outline-none focus:border-blue-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="student_class" class="block text-xs font-bold text-gray-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+                      Lớp <span class="text-rose-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="student_class"
+                      id="student_class"
+                      required
+                      value={submittedClass}
+                      placeholder="Ví dụ: 12A1"
+                      class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-sm font-medium text-gray-900 dark:text-white outline-none focus:border-blue-500"
+                    />
+                  </div>
+                </div>
+              </>
+            )}
+
+            {hasPassword && (
+              <div class={isGraded ? 'pt-3 border-t border-slate-200 dark:border-slate-700' : ''}>
+                <label for="exam_password" class="block text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider mb-1.5">
+                  🔒 Mật khẩu phòng thi <span class="text-rose-500">*</span>
+                </label>
                 <input
-                  type="text"
-                  name="student_class"
-                  id="student_class"
+                  type="password"
+                  name="exam_password"
+                  id="exam_password"
                   required
-                  value={submittedClass}
-                  placeholder="Ví dụ: 12A1, 12A2..."
-                  class="w-full px-4 py-3 pl-10 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-sm font-medium text-gray-900 dark:text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                  placeholder="Nhập mật khẩu giáo viên cung cấp..."
+                  class="w-full px-4 py-3 rounded-xl border border-amber-300 dark:border-amber-700 bg-white dark:bg-slate-900 text-sm font-semibold text-gray-900 dark:text-white outline-none focus:border-amber-500"
                 />
-                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🏫</span>
               </div>
-            </div>
+            )}
           </div>
 
-          <p class="text-[11px] text-gray-500 dark:text-slate-400 leading-relaxed italic">
-            * Kết quả bài làm của bạn sẽ được lưu trực tiếp vào cơ sở dữ liệu để giáo viên bộ môn tổng hợp và đánh giá.
-          </p>
-        </div>
-
-        <button
-          type="submit"
-          class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-xl transition-all duration-150 text-base flex items-center justify-center gap-2 cursor-pointer"
-        >
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          Bắt đầu làm bài thi
-        </button>
-      </form>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-xl transition-all duration-150 text-base flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>▶ {isGraded ? 'Bắt đầu làm bài thi' : 'Xác nhận mật khẩu & Vào luyện tập'}</span>
+          </button>
+        </form>
       )}
     </div>
-
-    <!-- Info note -->
-    {user ? (
-      <p class="text-center text-xs text-gray-400 dark:text-slate-500">
-        Tài khoản đăng nhập: <strong class="text-gray-600 dark:text-slate-300">{user.fullname || user.email}</strong>
-        · <a href="/dashboard" class="underline hover:text-indigo-500 transition-colors">Dashboard</a>
-      </p>
-    ) : (
-      <p class="text-center text-xs text-gray-400 dark:text-slate-500">
-        Bạn có thể làm bài trực tiếp hoặc <a href={`/login?redirect=/exams/${id}`} class="text-indigo-500 hover:text-indigo-600 font-semibold underline">đăng nhập</a> tài khoản của bạn.
-      </p>
-    )}
   </div>
 </Layout>
-
-<script>
-  // Prevent double-click submit & provide instant visual feedback
-  const form = document.getElementById('start-exam-form') as HTMLFormElement | null;
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      const nameInput = document.getElementById('student_name') as HTMLInputElement | null;
-      const sbdInput = document.getElementById('student_sbd') as HTMLInputElement | null;
-      const classInput = document.getElementById('student_class') as HTMLInputElement | null;
-
-      if (!nameInput?.value.trim() || !sbdInput?.value.trim() || !classInput?.value.trim()) {
-        return; // Let browser HTML5 validation fire
-      }
-
-      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `
-          <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="white" stroke-width="4"></circle>
-            <path class="opacity-75" fill="white" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-          </svg>
-          <span>Đang vào phòng thi...</span>`;
-      }
-    });
-  }
-</script>

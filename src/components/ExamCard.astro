@@ -1,102 +1,242 @@
 ---
-import type { Exam, Subject } from '../types';
+import type { Exam, Subject } from "../types";
+import { getExamProgramMeta } from "../lib/exam";
 
 interface Props {
   exam: Exam & { subject?: Subject; teacherName?: string };
-  color?: 'blue' | 'amber' | 'emerald' | 'purple' | 'vermillion';
+  color?: "blue" | "amber" | "emerald" | "purple" | "vermillion";
   examIndex?: number;
   questionCount?: number;
   attemptCount?: number;
 }
 
-const { exam, color = 'vermillion', examIndex = 0, questionCount = 0, attemptCount = 0 } = Astro.props;
+const {
+  exam,
+  color = "vermillion",
+  examIndex = 0,
+  questionCount = 0,
+  attemptCount = 0,
+} = Astro.props;
+const progMeta = getExamProgramMeta(exam);
 
-const examTypeNames = {
-  '15m': 'Kiểm tra 15p',
-  '45m': 'Kiểm tra 1 tiết',
-  'semester': 'Thi học kỳ',
-  'mock_thpt': 'Thi thử THPT',
-  'vsat': 'Thi thử V-SAT'
-};
-
-const subjectMap: Record<string, { icon: string; bgGrad: string; textAccent: string; hoverBorder: string; hoverShadow: string; baseColor: string }> = {
-  'toan-12': { icon: '📐', baseColor: 'blue', textAccent: 'text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300', bgGrad: 'from-blue-50/80 via-white to-cyan-50/80 dark:from-[#0A1628] dark:via-[#111827] dark:to-[#0A1628]', hoverBorder: 'hover:border-blue-300 dark:hover:border-blue-700', hoverShadow: 'hover:shadow-blue-500/10' },
-  'vat-ly-12': { icon: '⚡', baseColor: 'purple', textAccent: 'text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300', bgGrad: 'from-purple-50/80 via-white to-fuchsia-50/80 dark:from-[#1A0A2E] dark:via-[#1E1235] dark:to-[#251535]', hoverBorder: 'hover:border-purple-300 dark:hover:border-purple-700', hoverShadow: 'hover:shadow-purple-500/10' },
-  'hoa-hoc-12': { icon: '🧪', baseColor: 'emerald', textAccent: 'text-emerald-600 dark:text-emerald-400 group-hover:text-emerald-700 dark:group-hover:text-emerald-300', bgGrad: 'from-emerald-50/80 via-white to-teal-50/80 dark:from-[#051510] dark:via-[#0A1E1C] dark:to-[#051820]', hoverBorder: 'hover:border-emerald-300 dark:hover:border-emerald-700', hoverShadow: 'hover:shadow-emerald-500/10' },
-  'sinh-hoc-12': { icon: '🧬', baseColor: 'emerald', textAccent: 'text-teal-600 dark:text-teal-400 group-hover:text-teal-700 dark:group-hover:text-teal-300', bgGrad: 'from-teal-50/80 via-white to-cyan-50/80 dark:from-[#051820] dark:via-[#0A1E1C] dark:to-[#051510]', hoverBorder: 'hover:border-teal-300 dark:hover:border-teal-700', hoverShadow: 'hover:shadow-teal-500/10' },
-  'ngu-van-12': { icon: '📖', baseColor: 'vermillion', textAccent: 'text-rose-600 dark:text-rose-400 group-hover:text-rose-700 dark:group-hover:text-rose-300', bgGrad: 'from-rose-50/80 via-white to-pink-50/80 dark:from-[#251010] dark:via-[#1E0A0A] dark:to-[#251010]', hoverBorder: 'hover:border-rose-300 dark:hover:border-rose-700', hoverShadow: 'hover:shadow-rose-500/10' },
-  'lich-su-12': { icon: '🏛️', baseColor: 'amber', textAccent: 'text-orange-600 dark:text-orange-400 group-hover:text-orange-700 dark:group-hover:text-orange-300', bgGrad: 'from-orange-50/80 via-white to-amber-50/80 dark:from-[#251A08] dark:via-[#1F1405] dark:to-[#251A08]', hoverBorder: 'hover:border-orange-300 dark:hover:border-orange-700', hoverShadow: 'hover:shadow-orange-500/10' },
-  'dia-ly-12': { icon: '🌏', baseColor: 'blue', textAccent: 'text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300', bgGrad: 'from-cyan-50/80 via-white to-blue-50/80 dark:from-[#051520] dark:via-[#0A1E2C] dark:to-[#051520]', hoverBorder: 'hover:border-cyan-300 dark:hover:border-cyan-700', hoverShadow: 'hover:shadow-cyan-500/10' },
-  'ktpl-12': { icon: '⚖️', baseColor: 'amber', textAccent: 'text-yellow-600 dark:text-yellow-400 group-hover:text-yellow-700 dark:group-hover:text-yellow-300', bgGrad: 'from-yellow-50/80 via-white to-amber-50/80 dark:from-[#251A08] dark:via-[#1F1805] dark:to-[#251A08]', hoverBorder: 'hover:border-yellow-300 dark:hover:border-yellow-700', hoverShadow: 'hover:shadow-yellow-500/10' },
-  'tieng-anh-12': { icon: '🌐', baseColor: 'amber', textAccent: 'text-amber-600 dark:text-amber-400 group-hover:text-amber-700 dark:group-hover:text-amber-300', bgGrad: 'from-amber-50/80 via-white to-orange-50/80 dark:from-[#251A08] dark:via-[#1F1805] dark:to-[#251A08]', hoverBorder: 'hover:border-amber-300 dark:hover:border-amber-700', hoverShadow: 'hover:shadow-amber-500/10' },
-  'tin-hoc-12': { icon: '💻', baseColor: 'purple', textAccent: 'text-violet-600 dark:text-violet-400 group-hover:text-violet-700 dark:group-hover:text-violet-300', bgGrad: 'from-violet-50/80 via-white to-purple-50/80 dark:from-[#1A0A2E] dark:via-[#1E1235] dark:to-[#1A0A2E]', hoverBorder: 'hover:border-violet-300 dark:hover:border-violet-700', hoverShadow: 'hover:shadow-violet-500/10' },
-  'cong-nghe-12': { icon: '⚙️', baseColor: 'blue', textAccent: 'text-slate-600 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-300', bgGrad: 'from-slate-50/80 via-white to-gray-50/80 dark:from-[#1A1A2E] dark:via-[#22223A] dark:to-[#1A1A2E]', hoverBorder: 'hover:border-slate-300 dark:hover:border-slate-700', hoverShadow: 'hover:shadow-slate-500/10' },
+const subjectMap: Record<
+  string,
+  {
+    icon: string;
+    bgGrad: string;
+    textAccent: string;
+    hoverBorder: string;
+    hoverShadow: string;
+    baseColor: string;
+  }
+> = {
+  "toan-12": {
+    icon: "📐",
+    baseColor: "blue",
+    textAccent:
+      "text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300",
+    bgGrad:
+      "from-blue-50/80 via-white to-cyan-50/80 dark:from-[#0A1628] dark:via-[#111827] dark:to-[#0A1628]",
+    hoverBorder: "hover:border-blue-300 dark:hover:border-blue-700",
+    hoverShadow: "hover:shadow-blue-500/10",
+  },
+  "vat-ly-12": {
+    icon: "⚡",
+    baseColor: "purple",
+    textAccent:
+      "text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300",
+    bgGrad:
+      "from-purple-50/80 via-white to-fuchsia-50/80 dark:from-[#1A0A2E] dark:via-[#1E1235] dark:to-[#251535]",
+    hoverBorder: "hover:border-purple-300 dark:hover:border-purple-700",
+    hoverShadow: "hover:shadow-purple-500/10",
+  },
+  "hoa-hoc-12": {
+    icon: "🧪",
+    baseColor: "emerald",
+    textAccent:
+      "text-emerald-600 dark:text-emerald-400 group-hover:text-emerald-700 dark:group-hover:text-emerald-300",
+    bgGrad:
+      "from-emerald-50/80 via-white to-teal-50/80 dark:from-[#051510] dark:via-[#0A1E1C] dark:to-[#051820]",
+    hoverBorder: "hover:border-emerald-300 dark:hover:border-emerald-700",
+    hoverShadow: "hover:shadow-emerald-500/10",
+  },
+  "sinh-hoc-12": {
+    icon: "🧬",
+    baseColor: "emerald",
+    textAccent:
+      "text-teal-600 dark:text-teal-400 group-hover:text-teal-700 dark:group-hover:text-teal-300",
+    bgGrad:
+      "from-teal-50/80 via-white to-cyan-50/80 dark:from-[#051820] dark:via-[#0A1E1C] dark:to-[#051510]",
+    hoverBorder: "hover:border-teal-300 dark:hover:border-teal-700",
+    hoverShadow: "hover:shadow-teal-500/10",
+  },
+  "ngu-van-12": {
+    icon: "📖",
+    baseColor: "vermillion",
+    textAccent:
+      "text-rose-600 dark:text-rose-400 group-hover:text-rose-700 dark:group-hover:text-rose-300",
+    bgGrad:
+      "from-rose-50/80 via-white to-pink-50/80 dark:from-[#251010] dark:via-[#1E0A0A] dark:to-[#251010]",
+    hoverBorder: "hover:border-rose-300 dark:hover:border-rose-700",
+    hoverShadow: "hover:shadow-rose-500/10",
+  },
+  "lich-su-12": {
+    icon: "🏛️",
+    baseColor: "amber",
+    textAccent:
+      "text-orange-600 dark:text-orange-400 group-hover:text-orange-700 dark:group-hover:text-orange-300",
+    bgGrad:
+      "from-orange-50/80 via-white to-amber-50/80 dark:from-[#251A08] dark:via-[#1F1405] dark:to-[#251A08]",
+    hoverBorder: "hover:border-orange-300 dark:hover:border-orange-700",
+    hoverShadow: "hover:shadow-orange-500/10",
+  },
+  "dia-ly-12": {
+    icon: "🌏",
+    baseColor: "blue",
+    textAccent:
+      "text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300",
+    bgGrad:
+      "from-cyan-50/80 via-white to-blue-50/80 dark:from-[#051520] dark:via-[#0A1E2C] dark:to-[#051520]",
+    hoverBorder: "hover:border-cyan-300 dark:hover:border-cyan-700",
+    hoverShadow: "hover:shadow-cyan-500/10",
+  },
+  "ktpl-12": {
+    icon: "⚖️",
+    baseColor: "amber",
+    textAccent:
+      "text-yellow-600 dark:text-yellow-400 group-hover:text-yellow-700 dark:group-hover:text-yellow-300",
+    bgGrad:
+      "from-yellow-50/80 via-white to-amber-50/80 dark:from-[#251A08] dark:via-[#1F1805] dark:to-[#251A08]",
+    hoverBorder: "hover:border-yellow-300 dark:hover:border-yellow-700",
+    hoverShadow: "hover:shadow-yellow-500/10",
+  },
+  "tieng-anh-12": {
+    icon: "🌐",
+    baseColor: "amber",
+    textAccent:
+      "text-amber-600 dark:text-amber-400 group-hover:text-amber-700 dark:group-hover:text-amber-300",
+    bgGrad:
+      "from-amber-50/80 via-white to-orange-50/80 dark:from-[#251A08] dark:via-[#1F1805] dark:to-[#251A08]",
+    hoverBorder: "hover:border-amber-300 dark:hover:border-amber-700",
+    hoverShadow: "hover:shadow-amber-500/10",
+  },
+  "tin-hoc-12": {
+    icon: "💻",
+    baseColor: "purple",
+    textAccent:
+      "text-violet-600 dark:text-violet-400 group-hover:text-violet-700 dark:group-hover:text-violet-300",
+    bgGrad:
+      "from-violet-50/80 via-white to-purple-50/80 dark:from-[#1A0A2E] dark:via-[#1E1235] dark:to-[#1A0A2E]",
+    hoverBorder: "hover:border-violet-300 dark:hover:border-violet-700",
+    hoverShadow: "hover:shadow-violet-500/10",
+  },
+  "cong-nghe-12": {
+    icon: "⚙️",
+    baseColor: "blue",
+    textAccent:
+      "text-slate-600 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-300",
+    bgGrad:
+      "from-slate-50/80 via-white to-gray-50/80 dark:from-[#1A1A2E] dark:via-[#22223A] dark:to-[#1A1A2E]",
+    hoverBorder: "hover:border-slate-300 dark:hover:border-slate-700",
+    hoverShadow: "hover:shadow-slate-500/10",
+  },
 };
 
 const examTypeColors: Record<string, Record<string, string>> = {
   blue: {
-    '15m': 'bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400 border-blue-100/50',
-    '45m': 'bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400 border-blue-100/50',
-    'semester': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50',
-    'mock_thpt': 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50'
+    "15m":
+      "bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400 border-blue-100/50",
+    "45m":
+      "bg-blue-50 text-blue-600 dark:bg-blue-950/20 dark:text-blue-400 border-blue-100/50",
+    semester:
+      "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50",
+    mock_thpt:
+      "bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50",
   },
   amber: {
-    '15m': 'bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50',
-    '45m': 'bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50',
-    'semester': 'bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50',
-    'mock_thpt': 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50'
+    "15m":
+      "bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50",
+    "45m":
+      "bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50",
+    semester:
+      "bg-amber-50 text-amber-600 dark:bg-amber-950/20 dark:text-amber-400 border-amber-100/50",
+    mock_thpt:
+      "bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50",
   },
   emerald: {
-    '15m': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50',
-    '45m': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50',
-    'semester': 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50',
-    'mock_thpt': 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50'
+    "15m":
+      "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50",
+    "45m":
+      "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50",
+    semester:
+      "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/20 dark:text-emerald-400 border-emerald-100/50",
+    mock_thpt:
+      "bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50",
   },
   purple: {
-    '15m': 'bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400 border-purple-100/50',
-    '45m': 'bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400 border-purple-100/50',
-    'semester': 'bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400 border-purple-100/50',
-    'mock_thpt': 'bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50'
+    "15m":
+      "bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400 border-purple-100/50",
+    "45m":
+      "bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400 border-purple-100/50",
+    semester:
+      "bg-purple-50 text-purple-600 dark:bg-purple-950/20 dark:text-purple-400 border-purple-100/50",
+    mock_thpt:
+      "bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 border-rose-100/50",
   },
   vermillion: {
-    '15m': 'bg-vermillion-50 text-vermillion-600 dark:bg-vermillion-900/20 dark:text-vermillion-400 border-vermillion-100/50 dark:border-vermillion-900/35',
-    '45m': 'bg-[#F5F0E8] text-gold-600 dark:bg-gold-900/20 dark:text-gold-400 border-[#E8DDD0]/50 dark:border-gold-900/35',
-    'semester': 'bg-[#F0F5F0] text-jade dark:bg-jade/10 dark:text-jade border-[#D0E0D0]/50 dark:border-jade/20',
-    'mock_thpt': 'bg-vermillion-50 text-vermillion-600 dark:bg-vermillion-900/20 dark:text-vermillion-400 border-vermillion-100/50 dark:border-vermillion-900/35'
-  }
+    "15m":
+      "bg-vermillion-50 text-vermillion-600 dark:bg-vermillion-900/20 dark:text-vermillion-400 border-vermillion-100/50 dark:border-vermillion-900/35",
+    "45m":
+      "bg-[#F5F0E8] text-gold-600 dark:bg-gold-900/20 dark:text-gold-400 border-[#E8DDD0]/50 dark:border-gold-900/35",
+    semester:
+      "bg-[#F0F5F0] text-jade dark:bg-jade/10 dark:text-jade border-[#D0E0D0]/50 dark:border-jade/20",
+    mock_thpt:
+      "bg-vermillion-50 text-vermillion-600 dark:bg-vermillion-900/20 dark:text-vermillion-400 border-vermillion-100/50 dark:border-vermillion-900/35",
+  },
 };
 
 const buttonColors: Record<string, string> = {
-  blue: 'bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 hover:shadow-blue-500/20',
-  amber: 'bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700 hover:shadow-amber-500/20',
-  emerald: 'bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-700 hover:shadow-emerald-500/20',
-  purple: 'bg-purple-500 hover:bg-purple-600 dark:bg-purple-600 dark:hover:bg-purple-700 hover:shadow-purple-500/20',
-  vermillion: 'bg-vermillion-500 hover:bg-vermillion-600 dark:bg-vermillion-600 dark:hover:bg-vermillion-700 hover:shadow-vermillion-500/20',
+  blue: "bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 hover:shadow-blue-500/20",
+  amber:
+    "bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700 hover:shadow-amber-500/20",
+  emerald:
+    "bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-700 hover:shadow-emerald-500/20",
+  purple:
+    "bg-purple-500 hover:bg-purple-600 dark:bg-purple-600 dark:hover:bg-purple-700 hover:shadow-purple-500/20",
+  vermillion:
+    "bg-vermillion-500 hover:bg-vermillion-600 dark:bg-vermillion-600 dark:hover:bg-vermillion-700 hover:shadow-vermillion-500/20",
 };
 
 const cardGradients = [
-  'from-blue-50 via-white to-cyan-50 dark:from-[#0A1628] dark:via-[#111827] dark:to-[#0A1628]',
-  'from-purple-50 via-fuchsia-50 to-pink-50 dark:from-[#1A0A2E] dark:via-[#1E1235] dark:to-[#251535]',
-  'from-amber-50 via-orange-50 to-yellow-50 dark:from-[#1A1408] dark:via-[#1F1808] dark:to-[#251C08]',
+  "from-blue-50 via-white to-cyan-50 dark:from-[#0A1628] dark:via-[#111827] dark:to-[#0A1628]",
+  "from-purple-50 via-fuchsia-50 to-pink-50 dark:from-[#1A0A2E] dark:via-[#1E1235] dark:to-[#251535]",
+  "from-amber-50 via-orange-50 to-yellow-50 dark:from-[#1A1408] dark:via-[#1F1808] dark:to-[#251C08]",
 ];
 
 const subjectTheme = exam.subject?.slug ? subjectMap[exam.subject.slug] : null;
 
 const activeBaseColor = subjectTheme ? subjectTheme.baseColor : color;
-const activeBgGrad = subjectTheme ? subjectTheme.bgGrad : cardGradients[examIndex % cardGradients.length];
-const activeTextAccent = subjectTheme ? subjectTheme.textAccent : 'text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300';
-const activeHoverBorder = subjectTheme ? subjectTheme.hoverBorder : 'hover:border-blue-300 dark:hover:border-blue-700';
-const activeHoverShadow = subjectTheme ? subjectTheme.hoverShadow : 'hover:shadow-blue-500/10';
+const activeBgGrad = subjectTheme
+  ? subjectTheme.bgGrad
+  : cardGradients[examIndex % cardGradients.length];
+const activeTextAccent = subjectTheme
+  ? subjectTheme.textAccent
+  : "text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300";
+const activeHoverBorder = subjectTheme
+  ? subjectTheme.hoverBorder
+  : "hover:border-blue-300 dark:hover:border-blue-700";
+const activeHoverShadow = subjectTheme
+  ? subjectTheme.hoverShadow
+  : "hover:shadow-blue-500/10";
 const activeWatermark = subjectTheme ? subjectTheme.icon : null;
-
-const etc = examTypeColors[activeBaseColor] || examTypeColors.vermillion;
 const btnClass = buttonColors[activeBaseColor] || buttonColors.vermillion;
-
 ---
 
-<div class={`bg-gradient-to-br ${activeBgGrad} group flex flex-col justify-between p-6 rounded-2xl relative border border-slate-200/60 dark:border-slate-700/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden ${activeHoverBorder} ${activeHoverShadow}`}>
+<div
+  class={`bg-gradient-to-br ${activeBgGrad} group flex flex-col justify-between p-6 rounded-2xl relative border border-slate-200/60 dark:border-slate-700/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden ${activeHoverBorder} ${activeHoverShadow}`}
+>
   {activeWatermark && (
-    <div 
+    <div
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[160px] md:text-[200px] pointer-events-none select-none transform group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500"
       style="color: transparent; text-shadow: 0 0 0 rgba(167, 243, 208, 0.4);"
     >
@@ -110,32 +250,55 @@ const btnClass = buttonColors[activeBaseColor] || buttonColors.vermillion;
     <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
       {exam.subject && (
         <span class="text-xs font-bold text-[#8A7E72] dark:text-[#8A8A9E] flex items-center gap-1">
-          {subjectTheme && <span class="text-sm mr-0.5">{subjectTheme.icon}</span>}
+          {subjectTheme && (
+            <span class="text-sm mr-0.5">{subjectTheme.icon}</span>
+          )}
           Môn {exam.subject.name}
         </span>
       )}
 
       <div class="flex items-center gap-1.5">
         {exam.password && (
-          <span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-bold bg-white/60 dark:bg-black/20 text-slate-500 dark:text-slate-400 border border-slate-200/50 dark:border-slate-700/50 shadow-sm" title="Có mật khẩu">
+          <span
+            class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-bold bg-white/60 dark:bg-black/20 text-slate-500 dark:text-slate-400 border border-slate-200/50 dark:border-slate-700/50 shadow-sm"
+            title="Có mật khẩu"
+          >
             🔒
           </span>
         )}
-        <span class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold border ${etc[exam.exam_type] || etc['mock_thpt']}`}>
-          {examTypeNames[exam.exam_type]}
+        <span
+          class={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold border ${progMeta.badgeClass}`}
+        >
+          <span>{progMeta.icon}</span>
+          <span>{progMeta.shortLabel}</span>
         </span>
       </div>
     </div>
 
-    <h3 class={`text-xl font-extrabold text-slate-900 dark:text-white line-clamp-2 leading-snug transition-colors font-serif ${activeTextAccent.split(' ').filter(c => c.includes('hover:')).join(' ')}`}>
+    <h3
+      class={`text-xl font-extrabold text-slate-900 dark:text-white line-clamp-2 leading-snug transition-colors font-serif ${activeTextAccent
+        .split(" ")
+        .filter((c) => c.includes("hover:"))
+        .join(" ")}`}
+    >
       {exam.title}
     </h3>
 
     {exam.teacherName && (
       <div class="mt-3 flex items-center gap-2">
         <div class="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center border border-slate-200 dark:border-slate-700">
-          <svg class="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          <svg
+            class="w-3.5 h-3.5 text-slate-500 dark:text-slate-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            />
           </svg>
         </div>
         <span class="text-xs font-medium text-[#8A7E72] dark:text-[#8A8A9E]">
@@ -148,19 +311,60 @@ const btnClass = buttonColors[activeBaseColor] || buttonColors.vermillion;
   <div class="mt-6 pt-4 border-t border-slate-200/60 dark:border-slate-700/40 flex items-center justify-between relative z-10">
     <div class="flex flex-wrap items-center gap-3 text-xs text-[#A89888] dark:text-[#6A6A8A]">
       <span class="flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 mr-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
         </svg>
         {exam.duration} phút
       </span>
       {questionCount > 0 && (
         <span class="flex items-center">
-          <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <svg
+            class="h-4 w-4 mr-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
           {questionCount} câu
         </span>
       )}
       <span class="flex items-center" title="Lượt thi">
-        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+        <svg
+          class="h-4 w-4 mr-1"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+          />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+          />
+        </svg>
         {attemptCount}
       </span>
     </div>

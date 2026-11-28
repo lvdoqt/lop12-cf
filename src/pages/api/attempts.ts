@@ -4,7 +4,7 @@ export const prerender = false;
 import { db } from '../../services/db';
 
 import { uuidToSeed, mulberry32 } from '../../lib/random';
-import { buildShuffledExam } from '../../lib/exam';
+import { buildShuffledExam, getEffectiveExamScoring, isShortAnswerMatch } from '../../lib/exam';
 import { calculateVsatIRTScore } from '../../lib/irt';
 
 export const POST: APIRoute = async ({ request, locals }) => {
@@ -36,15 +36,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
     if (!exam) {
       return new Response(JSON.stringify({ error: 'Exam not found' }), { status: 404 });
     }
-    const isVsat = exam.exam_type === 'vsat';
-    // Points per correct leaf question (non-VSAT). Default = 0.25
-    const ppq = (!isVsat && exam.settings?.point_per_question && exam.settings.point_per_question > 0)
-      ? exam.settings.point_per_question
-      : 0.25;
-    // Points per correct short-answer (sa) question (non-VSAT). Default = 0.5
-    const ppSa = (!isVsat && exam.settings?.point_per_sa && exam.settings.point_per_sa > 0)
-      ? exam.settings.point_per_sa
-      : 0.5;
+    const scoringCfg = getEffectiveExamScoring(exam);
+    const isVsat = scoringCfg.isVsat;
+    const ppq = scoringCfg.pointPerQuestion;
+    const ppSa = scoringCfg.pointPerSa;
 
     // 2. Fetch all questions and correct answers for this exam
     const examQuestions = await db.getQuestionsByExamId(attempt.exam_id);
@@ -174,20 +169,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
         }
         irtItems.push({ question: q, scoreFraction: fraction });
       } else if (q.type === 'sa') {
-        // Submitted is a string answer
         if (typeof submitted === 'string' && q.answer) {
-          const normSubmitted = submitted.trim().toLowerCase().replace(/\s+/g, ' ').replace(',', '.');
-          const normCorrect = q.answer.trim().toLowerCase().replace(/\s+/g, ' ').replace(',', '.');
-          
-          if (normSubmitted === normCorrect) {
-            isCorrect = true;
-          } else {
-            const numSubmitted = Number(normSubmitted);
-            const numCorrect = Number(normCorrect);
-            if (!isNaN(numSubmitted) && !isNaN(numCorrect) && numSubmitted === numCorrect) {
-              isCorrect = true;
-            }
-          }
+          isCorrect = isShortAnswerMatch(submitted, q.answer);
         }
         irtItems.push({ question: q, scoreFraction: isCorrect ? 1.0 : 0.0 });
       }

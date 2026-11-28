@@ -83,25 +83,54 @@ export interface ExamPickPerType {
   [type: string]: number;
 }
 
+export type ExamProgram =
+  | '15m'
+  | 'midterm'
+  | '45m'
+  | 'semester'
+  | 'mock_thpt'
+  | 'dgnl_hsa'
+  | 'dgnl_vact'
+  | 'dgtd_tsa'
+  | 'vsat'
+  | 'hsg';
+
+export type ShowAnswersMode = 'always' | 'after_close' | 'never';
+
 export interface ExamSettings {
   /** Random k-from-n selection per question type */
   pick_per_type?: ExamPickPerType;
   /**
    * Points awarded per correctly answered leaf question (sub-question).
    * Defaults to 0.25 if not set. Applies to non-VSAT exams only.
-   * Example: 0.5 means each correct answer = 0.5 điểm.
    */
   point_per_question?: number;
   /**
    * Points awarded per correctly answered short-answer (sa) question.
-   * Defaults to 0.5 if not set. Applies to non-VSAT exams only.
+   * Defaults to 0.5 for Math and 0.25 for other subjects if not set.
    */
   point_per_sa?: number;
+  /**
+   * Maximum scale score for display (e.g. 10 for standard exams, 20 for HSG, 100 for TSA/HSA).
+   */
+  max_score?: number;
+  /**
+   * Specific Vietnamese exam program (stored in JSONB so existing DB check constraints stay compatible).
+   */
+  exam_program?: ExamProgram;
   /**
    * When true, this exam is a graded exam (requires student info & saves attempts to Supabase).
    * When false or omitted, it runs in practice mode (no student info, no DB writes).
    */
   is_graded?: boolean;
+  /** Optional ISO datetime when the exam session opens for students */
+  open_at?: string | null;
+  /** Optional ISO datetime when the exam session closes for students */
+  close_at?: string | null;
+  /** Optional limit on number of graded attempts per student / SBD */
+  max_attempts?: number | null;
+  /** Controls when students can view correct answers and explanations after submitting */
+  show_answers_mode?: ShowAnswersMode;
 }
 
 export interface Exam {

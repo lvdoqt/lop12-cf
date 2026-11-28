@@ -1,7 +1,9 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { db } from '../../../services/db';
-import ReadListPreview from '../../../components/ReadListPreview.astro';
+import { parseAiExamJson, MATRIX_ROW_KEYS, MATRIX_ROW_META } from '../../../lib/ai-exam-prompts';
+import { mapProgramToDbExamType } from '../../../lib/exam';
+import type { ExamProgram, ShowAnswersMode, ExamSettings } from '../../../types';
 
 export const prerender = false;
 
@@ -13,247 +15,341 @@ if (!user || (user.role !== 'admin' && user.role !== 'teacher')) {
 const baseUrl = (import.meta.env.BASE_URL || '/lms').replace(/\/$/, '');
 
 let errMsg = '';
+let submittedValues = {
+  mode: 'ai',
+  title: '',
+  duration: '90',
+  subject_id: '',
+  category_id: '',
+  exam_program: 'mock_thpt' as ExamProgram,
+  is_graded: false,
+  password: '',
+  open_at: '',
+  close_at: '',
+  max_attempts: '',
+  show_answers_mode: 'always' as ShowAnswersMode,
+  pick_per_type: '',
+  point_per_question: '0.25',
+  point_per_sa: '0.5',
+  max_score: '10',
+  json_data: '',
+};
 
 if (Astro.request.method === 'POST') {
   try {
-    const formData    = await Astro.request.formData();
-    const mode        = (formData.get('mode') as string) || 'manual';
-    const title       = (formData.get('title') as string)?.trim();
-    const duration    = Number(formData.get('duration'));
-    const subject_id  = formData.get('subject_id') as string;
+    const formData = await Astro.request.formData();
+    const mode = (formData.get('mode') as string) || 'ai';
+    const title = (formData.get('title') as string)?.trim() || '';
+    const durationRaw = (formData.get('duration') as string)?.trim() || '';
+    const duration = Number(durationRaw);
+    const subject_id = (formData.get('subject_id') as string) || '';
     const category_id = (formData.get('category_id') as string) || null;
-    const exam_type   = formData.get('exam_type')  as '15m' | '45m' | 'semester' | 'mock_thpt' | 'vsat';
+    const exam_program = ((formData.get('exam_program') as string) || 'mock_thpt') as ExamProgram;
+    const exam_type = mapProgramToDbExamType(exam_program);
 
-    // ── pick_per_type settings ──
-    const pickRaw = (formData.get('pick_per_type') as string)?.trim();
-    let settings: any = null;
+    const passwordRaw = (formData.get('password') as string)?.trim() || '';
+    const openAtRaw = (formData.get('open_at') as string)?.trim() || '';
+    const closeAtRaw = (formData.get('close_at') as string)?.trim() || '';
+    const maxAttemptsRaw = (formData.get('max_attempts') as string)?.trim() || '';
+    const showAnswersMode = ((formData.get('show_answers_mode') as string) || 'always') as ShowAnswersMode;
+
+    const pickRaw = (formData.get('pick_per_type') as string)?.trim() || '';
+    const ppqRaw = (formData.get('point_per_question') as string)?.trim() || '';
+    const ppSaRaw = (formData.get('point_per_sa') as string)?.trim() || '';
+    const maxScoreRaw = (formData.get('max_score') as string)?.trim() || '';
+    const isGraded = formData.get('is_graded') === '1';
+    const jsonRaw = (formData.get('json_data') as string) || '';
+
+    submittedValues = {
+      mode,
+      title,
+      duration: durationRaw,
+      subject_id,
+      category_id: category_id || '',
+      exam_program,
+      is_graded: isGraded,
+      password: passwordRaw,
+      open_at: openAtRaw,
+      close_at: closeAtRaw,
+      max_attempts: maxAttemptsRaw,
+      show_answers_mode: showAnswersMode,
+      pick_per_type: pickRaw,
+      point_per_question: ppqRaw,
+      point_per_sa: ppSaRaw,
+      max_score: maxScoreRaw,
+      json_data: jsonRaw,
+    };
+
+    const settings: ExamSettings = {
+      exam_program,
+    };
+
     if (pickRaw) {
       try {
         const pickObj = JSON.parse(pickRaw);
         if (typeof pickObj === 'object' && !Array.isArray(pickObj)) {
-          // Validate: all values must be positive integers
-          const valid = Object.entries(pickObj).every(([, v]) => Number.isInteger(v) && (v as number) > 0);
-          if (!valid) throw new Error('Giá trị pick_per_type phải là số nguyên dương.');
-          settings = { pick_per_type: pickObj };
+          const cleanedPick: Record<string, number> = {};
+          for (const [k, v] of Object.entries(pickObj)) {
+            const num = Number(v);
+            if (Number.isInteger(num) && num > 0) {
+              cleanedPick[k] = num;
+            }
+          }
+          if (Object.keys(cleanedPick).length > 0) {
+            settings.pick_per_type = cleanedPick;
+          }
         }
       } catch (e: any) {
-        throw new Error(`pick_per_type không hợp lệ: ${e.message}`);
+        throw new Error(`Cấu hình bốc câu ngẫu nhiên không hợp lệ: ${e.message}`);
       }
     }
 
-    // ── point_per_question & point_per_sa settings ──
-    const ppqRaw = (formData.get('point_per_question') as string)?.trim();
     if (ppqRaw) {
       const ppqVal = parseFloat(ppqRaw);
-      if (!isNaN(ppqVal) && ppqVal > 0) {
-        settings = { ...(settings || {}), point_per_question: ppqVal };
-      }
+      if (!Number.isNaN(ppqVal) && ppqVal > 0) settings.point_per_question = ppqVal;
     }
-    const ppSaRaw = (formData.get('point_per_sa') as string)?.trim();
     if (ppSaRaw) {
       const ppSaVal = parseFloat(ppSaRaw);
-      if (!isNaN(ppSaVal) && ppSaVal > 0) {
-        settings = { ...(settings || {}), point_per_sa: ppSaVal };
-      }
+      if (!Number.isNaN(ppSaVal) && ppSaVal > 0) settings.point_per_sa = ppSaVal;
     }
-
-    // ── is_graded: false/omitted = Luyện tập (không lưu DB), true = Đề thi lấy điểm ──
-    const isGraded = formData.get('is_graded') === '1';
+    if (maxScoreRaw) {
+      const msVal = parseFloat(maxScoreRaw);
+      if (!Number.isNaN(msVal) && msVal > 0) settings.max_score = msVal;
+    }
     if (isGraded) {
-      settings = { ...(settings || {}), is_graded: true };
+      settings.is_graded = true;
     }
 
-    if (!title || !duration || !subject_id || !exam_type) {
-      throw new Error('Tiêu đề, Thời gian, Môn học và Phân loại đề thi là bắt buộc.');
+    if (openAtRaw) {
+      const d = new Date(openAtRaw);
+      if (Number.isNaN(d.getTime())) throw new Error('Thời điểm mở đề không hợp lệ.');
+      settings.open_at = d.toISOString();
+    }
+    if (closeAtRaw) {
+      const d = new Date(closeAtRaw);
+      if (Number.isNaN(d.getTime())) throw new Error('Thời điểm đóng đề không hợp lệ.');
+      settings.close_at = d.toISOString();
+    }
+    if (settings.open_at && settings.close_at && new Date(settings.close_at) <= new Date(settings.open_at)) {
+      throw new Error('Thời điểm đóng ca thi phải sau thời điểm mở ca thi.');
+    }
+    if (maxAttemptsRaw) {
+      const ma = parseInt(maxAttemptsRaw, 10);
+      if (!Number.isNaN(ma) && ma > 0) settings.max_attempts = ma;
+    }
+    if (showAnswersMode && showAnswersMode !== 'always') {
+      settings.show_answers_mode = showAnswersMode;
     }
 
-    let questionIds: string[] = [];
+    if (!title || !duration || !subject_id) {
+      throw new Error('Tiêu đề, Thời gian và Môn học là bắt buộc.');
+    }
 
-    if (mode === 'json') {
-      const jsonRaw = formData.get('json_data') as string;
-      if (!jsonRaw?.trim()) throw new Error('Vui lòng nhập dữ liệu JSON.');
-      let parsed: any;
-      try { 
-        parsed = JSON.parse(jsonRaw); 
-      } catch {
-        throw new Error('JSON không hợp lệ. Vui lòng kiểm tra cú pháp.');
+    if (!jsonRaw.trim()) {
+      if (mode === 'ai') {
+        throw new Error('Chưa có câu hỏi nào được sinh ra. Vui lòng nhấn "✨ Tạo câu hỏi bằng Gemini AI" trước khi lưu đề thi.');
       }
-      const qs = Array.isArray(parsed) ? parsed : (parsed.questions || []);
-      if (!Array.isArray(qs) || qs.length === 0)
-        throw new Error('JSON phải chứa mảng "questions" với ít nhất 1 câu hỏi.');
+      if (mode === 'file') {
+        throw new Error('Chưa có câu hỏi được bóc tách từ tệp. Vui lòng tải file Word/PDF và nhấn bóc tách trước khi lưu.');
+      }
+      throw new Error('Vui lòng nhập dữ liệu JSON đề thi.');
+    }
 
-      const rootQuestionTypeId =
-        !Array.isArray(parsed) && typeof parsed?.question_type_id === 'string'
-          ? parsed.question_type_id.trim()
-          : undefined;
+    let parsedPayload: { title?: string; questions: any[] };
+    try {
+      parsedPayload = parseAiExamJson(jsonRaw);
+    } catch (e: any) {
+      throw new Error(`JSON không hợp lệ: ${e?.message || 'Vui lòng kiểm tra cú pháp.'}`);
+    }
 
-      const difficultyMap: Record<string, 'easy' | 'medium' | 'hard'> = {
-        easy: 'easy', medium: 'medium', hard: 'hard',
-        dễ: 'easy', 'trung bình': 'medium', khó: 'hard',
-      };
-      const typeMap: Record<string, string> = {
-        mcq: 'single_choice',
-        single_choice: 'single_choice',
-        msq: 'msq',
-        multiple_choice: 'multiple_choice',
-        tf_cluster: 'msq',
-        tf: 'true_false',
-        true_false: 'true_false',
-        sa: 'sa',
-        tl: 'tl',
-        read: 'read',
-        reading: 'read',
-        list: 'list',
-        read_cloze: 'read_cloze',
-        ordering: 'ordering'
-      };
+    const qs = parsedPayload.questions;
+    let rawRootObj: any = null;
+    try {
+      rawRootObj = JSON.parse(jsonRaw);
+    } catch {
+      rawRootObj = null;
+    }
 
-      const batchItems: Array<{
-        question: any;
-        answers: { content: string; is_correct: boolean }[];
-      }> = [];
+    const rootQuestionTypeId =
+      rawRootObj && !Array.isArray(rawRootObj) && typeof rawRootObj?.question_type_id === 'string'
+        ? rawRootObj.question_type_id.trim()
+        : undefined;
 
-      for (const q of qs) {
-        const qType = typeMap[q.type] || 'single_choice';
-        const qDiff = difficultyMap[q.difficulty_level?.toLowerCase() || q.difficulty?.toLowerCase()] || 'medium';
-        const qContent = q.question || q.content || '';
-        const qExpl = q.explanation || '';
-        const correctStr = (q.correct_option || q.correct_answer || q.answer || '').trim();
-        const isDynamic = Boolean(q.is_dynamic || q.metadata?.is_dynamic);
-        const qTypeId =
-          (typeof q.question_type_id === 'string' ? q.question_type_id.trim() : undefined) ||
-          rootQuestionTypeId;
+    const difficultyMap: Record<string, 'easy' | 'medium' | 'hard'> = {
+      easy: 'easy', medium: 'medium', hard: 'hard', very_hard: 'hard',
+      dễ: 'easy', 'trung bình': 'medium', khó: 'hard',
+      nb: 'easy', th: 'medium', vd: 'hard', vdc: 'hard',
+    };
+    const typeMap: Record<string, string> = {
+      mcq: 'single_choice',
+      single_choice: 'single_choice',
+      msq: 'msq',
+      multiple_choice: 'multiple_choice',
+      tf_cluster: 'msq',
+      tf: 'true_false',
+      true_false: 'true_false',
+      sa: 'sa',
+      tl: 'tl',
+      read: 'read',
+      reading: 'read',
+      list: 'list',
+      read_cloze: 'read_cloze',
+      ordering: 'ordering',
+      matching: 'matching',
+      cloze_text: 'cloze_text',
+    };
 
-        let answers: { content: string; is_correct: boolean }[] = [];
-        let metadata: any = undefined;
+    const batchItems: Array<{
+      question: any;
+      answers: { content: string; is_correct: boolean }[];
+    }> = [];
 
-        if (qType === 'read' || qType === 'list' || qType === 'read_cloze') {
-          const metaQuestions = Array.isArray(q.metadata?.questions) ? q.metadata.questions : (Array.isArray(q.questions) ? q.questions : []);
-          if (metaQuestions.length === 0) {
-            throw new Error('Câu hỏi dạng read/list thiếu metadata.questions.');
-          }
-          const mappedQuestions = metaQuestions.map((sq: any) => {
-            const out: any = {
-              question: sq.question || sq.content || '',
-              option_a: sq.option_a || '',
-              option_b: sq.option_b || '',
-              option_c: sq.option_c || '',
-              option_d: sq.option_d || '',
-              correct_option: (sq.correct_option || '').toUpperCase(),
-              ...(sq.explanation ? { explanation: sq.explanation } : {})
-            };
-            if (sq.option_e) out.option_e = sq.option_e;
-            if (sq.option_f) out.option_f = sq.option_f;
-            return out;
-          });
-          const audioUrl = q.metadata?.audio_url ? q.metadata.audio_url : undefined;
-          metadata = {
-            questions: mappedQuestions,
-            ...(audioUrl ? { audio_url: audioUrl } : {}),
-            ...(category_id ? { category_id } : {})
-          };
-        } else if (Array.isArray(q.answers)) {
-          answers = q.answers.map((a: any) => ({
-            content: a.content || String(a),
-            is_correct: Boolean(a.is_correct || a.isCorrect || false)
-          }));
-        } else if (Array.isArray(q.options)) {
-          const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-          const correctKeys = correctStr.split(',').map((k: string) => k.trim().toUpperCase());
-          answers = q.options.map((opt: string, idx: number) => ({
-            content: opt,
-            is_correct: correctKeys.includes(alphabet[idx]) || correctStr.toUpperCase() === alphabet[idx]
-          }));
-        } else if (qType === 'single_choice' || qType === 'multiple_choice' || qType === 'msq') {
-          const options = [
-            { key: 'A', text: q.option_a },
-            { key: 'B', text: q.option_b },
-            { key: 'C', text: q.option_c },
-            { key: 'D', text: q.option_d },
-            { key: 'E', text: q.option_e },
-            { key: 'F', text: q.option_f },
-          ].filter(o => o.text?.trim());
-          const correctKeys = correctStr.split(',').map((k: string) => k.trim().toUpperCase());
+    for (const q of qs) {
+      const qType = typeMap[String(q.type || '').toLowerCase()] || 'single_choice';
+      const rawDiffKey = String(q.difficulty_level || q.difficulty || q.cognitive_level || 'medium').toLowerCase();
+      const qDiff = difficultyMap[rawDiffKey] || 'medium';
+      const qContent = q.question || q.content || '';
+      const qExpl = q.explanation || '';
+      const correctStr = String(q.correct_option ?? q.correct_answer ?? q.answer ?? '').trim();
+      const qImageUrl = typeof q.image_url === 'string' && q.image_url.trim() ? q.image_url.trim() : null;
+      const isDynamic = Boolean(q.is_dynamic || q.metadata?.is_dynamic);
+      const qTypeId =
+        (typeof q.question_type_id === 'string' ? q.question_type_id.trim() : undefined) ||
+        rootQuestionTypeId;
+      const cognitiveLevel =
+        typeof q.cognitive_level === 'string' ? q.cognitive_level.toLowerCase().trim() : undefined;
 
-          answers = options.map(o => ({
-            content: o.text,
-            is_correct: correctKeys.includes(o.key),
-          }));
-        } else if (qType === 'true_false') {
-          answers = [
-            { content: 'Đúng', is_correct: correctStr.toUpperCase() === 'TRUE' || correctStr.toUpperCase() === 'Đ' || correctStr.toUpperCase() === 'ĐÚNG' || correctStr.toUpperCase() === 'A' },
-            { content: 'Sai', is_correct: correctStr.toUpperCase() === 'FALSE' || correctStr.toUpperCase() === 'S' || correctStr.toUpperCase() === 'SAI' || correctStr.toUpperCase() === 'B' },
-          ];
+      let answers: { content: string; is_correct: boolean }[] = [];
+      let metadata: any = undefined;
+
+      if (qType === 'read' || qType === 'list' || qType === 'read_cloze') {
+        const metaQuestions = Array.isArray(q.metadata?.questions)
+          ? q.metadata.questions
+          : (Array.isArray(q.questions) ? q.questions : []);
+        if (metaQuestions.length === 0) {
+          throw new Error(`Câu hỏi dạng ${qType} thiếu mảng metadata.questions.`);
         }
-
-        const extraMeta: Record<string, any> = {
-          ...(q.metadata && typeof q.metadata === 'object' ? q.metadata : {}),
-          ...(metadata ? metadata : {}),
-          ...(category_id ? { category_id } : {}),
-          ...(isDynamic ? { is_dynamic: true } : {}),
-          ...(qTypeId ? { question_type_id: qTypeId } : {}),
-        };
-
-        batchItems.push({
-          question: {
-            subject_id,
-            content: qContent,
-            explanation: qExpl,
-            difficulty: qDiff,
-            type: qType as any,
-            answer: (qType === 'sa' || qType === 'tl') ? correctStr : null,
-            created_by: user.id,
-            metadata: Object.keys(extraMeta).length > 0 ? extraMeta : undefined
-          },
-          answers
+        const mappedQuestions = metaQuestions.map((sq: any) => {
+          const out: any = {
+            question: sq.question || sq.content || '',
+            option_a: sq.option_a || '',
+            option_b: sq.option_b || '',
+            option_c: sq.option_c || '',
+            option_d: sq.option_d || '',
+            correct_option: String(sq.correct_option || '').toUpperCase(),
+            ...(sq.explanation ? { explanation: sq.explanation } : {})
+          };
+          if (sq.option_e) out.option_e = sq.option_e;
+          if (sq.option_f) out.option_f = sq.option_f;
+          return out;
         });
+        const audioUrl = q.metadata?.audio_url ? q.metadata.audio_url : undefined;
+        metadata = {
+          questions: mappedQuestions,
+          ...(audioUrl ? { audio_url: audioUrl } : {}),
+          ...(category_id ? { category_id } : {})
+        };
+      } else if (qType === 'matching') {
+        const metaQuestions = Array.isArray(q.metadata?.questions) ? q.metadata.questions : (Array.isArray(q.questions) ? q.questions : []);
+        const metaOptions = Array.isArray(q.metadata?.options) ? q.metadata.options : (Array.isArray(q.options) ? q.options : []);
+        metadata = {
+          questions: metaQuestions,
+          options: metaOptions,
+          ...(category_id ? { category_id } : {}),
+        };
+      } else if (qType === 'cloze_text') {
+        const metaQuestions = Array.isArray(q.metadata?.questions) ? q.metadata.questions : (Array.isArray(q.questions) ? q.questions : []);
+        metadata = {
+          questions: metaQuestions,
+          ...(category_id ? { category_id } : {}),
+        };
+      } else if (Array.isArray(q.answers)) {
+        answers = q.answers.map((a: any) => ({
+          content: a.content || String(a),
+          is_correct: Boolean(a.is_correct || a.isCorrect || false)
+        }));
+      } else if (Array.isArray(q.options)) {
+        const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+        const correctKeys = correctStr
+          ? correctStr.split(',').map((k: string) => k.trim().toUpperCase()).filter(Boolean)
+          : [];
+        answers = q.options.map((opt: string, idx: number) => ({
+          content: opt,
+          is_correct: correctKeys.includes(alphabet[idx]) || correctStr.toUpperCase() === alphabet[idx]
+        }));
+      } else if (qType === 'single_choice' || qType === 'multiple_choice' || qType === 'msq' || qType === 'ordering') {
+        const options = [
+          { key: 'A', text: q.option_a },
+          { key: 'B', text: q.option_b },
+          { key: 'C', text: q.option_c },
+          { key: 'D', text: q.option_d },
+          { key: 'E', text: q.option_e },
+          { key: 'F', text: q.option_f },
+        ].filter(o => typeof o.text === 'string' && o.text.trim().length > 0);
+        const correctKeys = correctStr
+          ? correctStr.split(',').map((k: string) => k.trim().toUpperCase()).filter(Boolean)
+          : [];
+
+        answers = options.map(o => ({
+          content: o.text,
+          is_correct: correctKeys.includes(o.key),
+        }));
+      } else if (qType === 'true_false') {
+        const upper = correctStr.toUpperCase();
+        answers = [
+          { content: 'Đúng', is_correct: upper === 'TRUE' || upper === 'Đ' || upper === 'ĐÚNG' || upper === 'A' },
+          { content: 'Sai', is_correct: upper === 'FALSE' || upper === 'S' || upper === 'SAI' || upper === 'B' },
+        ];
       }
 
-      let createdQs: any[];
-      try {
-        createdQs = await db.createQuestionsBatch(batchItems);
-      } catch (qErr: any) {
-        throw new Error(`Lỗi tạo câu hỏi (batch): ${qErr?.message || qErr?.details || String(qErr)}`);
-      }
-      questionIds = createdQs.map((q: any) => q.id);
+      const extraMeta: Record<string, any> = {
+        ...(q.metadata && typeof q.metadata === 'object' ? q.metadata : {}),
+        ...(metadata ? metadata : {}),
+        ...(category_id ? { category_id } : {}),
+        ...(isDynamic ? { is_dynamic: true } : {}),
+        ...(qTypeId ? { question_type_id: qTypeId } : {}),
+        ...(cognitiveLevel ? { cognitive_level: cognitiveLevel } : {}),
+      };
 
-    } else if (mode === 'matrix') {
-      const nb = Number(formData.get('matrix_nb')) || 0;
-      const th = Number(formData.get('matrix_th')) || 0;
-      const vd = Number(formData.get('matrix_vd')) || 0;
-      const vdc = Number(formData.get('matrix_vdc')) || 0;
-      const chapter = (formData.get('matrix_chapter') as string)?.trim() || undefined;
-      const textbook = (formData.get('matrix_textbook') as string)?.trim() || undefined;
-
-      if (nb + th + vd + vdc <= 0) {
-        throw new Error('Vui lòng chỉ định số lượng câu hỏi cho ít nhất 1 cấp độ nhận thức.');
-      }
-
-      const matrixRes = await db.getQuestionsByMatrix({
-        subjectId: subject_id,
-        categoryId: category_id,
-        chapter,
-        textbook,
-        levels: { nb, th, vd, vdc },
+      batchItems.push({
+        question: {
+          subject_id,
+          content: qContent,
+          explanation: qExpl,
+          difficulty: qDiff,
+          type: qType as any,
+          answer: (qType === 'sa' || qType === 'tl') ? correctStr : null,
+          image_url: qImageUrl,
+          created_by: user.id,
+          metadata: Object.keys(extraMeta).length > 0 ? extraMeta : undefined
+        },
+        answers
       });
-
-      if (matrixRes.questions.length === 0) {
-        throw new Error('Không tìm thấy câu hỏi phù hợp với ma trận đã chọn trong ngân hàng đề.');
-      }
-
-      questionIds = matrixRes.questions.map(q => q.id);
-
-    } else {
-      questionIds = formData.getAll('question_ids') as string[];
-      if (questionIds.length === 0)
-        throw new Error('Cần chọn ít nhất một câu hỏi từ ngân hàng để tạo đề thi này.');
     }
 
-    // Deduplicate question IDs
-    questionIds = Array.from(new Set(questionIds));
+    let createdQs: any[];
+    try {
+      createdQs = await db.createQuestionsBatch(batchItems);
+    } catch (qErr: any) {
+      throw new Error(`Lỗi tạo câu hỏi (batch): ${qErr?.message || qErr?.details || String(qErr)}`);
+    }
+
+    const questionIds = Array.from(new Set(createdQs.map((q: any) => q.id)));
 
     try {
-      await db.createExam({ title, duration, subject_id, category_id, exam_type, created_by: user.id, settings }, questionIds);
+      await db.createExam(
+        {
+          title,
+          duration,
+          subject_id,
+          category_id,
+          exam_type,
+          password: passwordRaw || null,
+          created_by: user.id,
+          settings,
+        },
+        questionIds
+      );
     } catch (examErr: any) {
       throw new Error(`Lỗi tạo đề thi: ${examErr?.message || examErr?.details || String(examErr)}`);
     }
@@ -265,28 +361,24 @@ if (Astro.request.method === 'POST') {
 }
 
 let subjects: any[] = [];
-let questions: any[] = [];
 let allCategories: any[] = [];
 try { subjects = await db.getSubjects(); } catch { /* fallback to empty */ }
-try { questions = await db.getQuestions(); } catch { /* fallback to empty */ }
 try { allCategories = await db.getCategories(); } catch { /* fallback to empty */ }
 
-// Handle pre-selected questions via GET ?q=id1,id2
-const url = new URL(Astro.request.url);
-const preselectedQ = url.searchParams.get('q');
-const preselectedIds = preselectedQ ? preselectedQ.split(',') : [];
-
-let preselectedSubjectId = '';
-if (preselectedIds.length > 0) {
-  const firstSelectedQ = questions.find(q => preselectedIds.includes(q.id));
-  if (firstSelectedQ) {
-    preselectedSubjectId = firstSelectedQ.subject_id;
-  }
-}
+const PICK_TYPE_ITEMS = [
+  { key: 'mcq', label: 'TN 4 lựa chọn (mcq)' },
+  { key: 'msq', label: 'Đúng/Sai 4 ý (msq)' },
+  { key: 'sa', label: 'Trả lời ngắn (sa)' },
+  { key: 'tl', label: 'Tự luận (tl)' },
+  { key: 'read_cloze', label: 'Bài đọc điền (read_cloze)' },
+  { key: 'ordering', label: 'Sắp xếp câu (ordering)' },
+  { key: 'read', label: 'Bài đọc hiểu (read)' },
+  { key: 'matching', label: 'Ghép cặp (matching)' },
+];
 ---
 
 <Layout title="Tạo đề thi mới">
-  <div class="max-w-4xl mx-auto space-y-6">
+  <div class="max-w-6xl mx-auto space-y-6">
 
     <!-- Breadcrumb -->
     <div>
@@ -301,7 +393,7 @@ if (preselectedIds.length > 0) {
         Tạo đề thi mới
       </h1>
       <p class="text-sm text-[#8A7E72] dark:text-[#8A8A9E] mt-1">
-        Chọn câu hỏi từ ngân hàng, soạn đề tự động theo ma trận hoặc dán mã JSON.
+        Biên soạn đề mới bằng Gemini AI theo Ma trận 2 chiều, số hóa trực tiếp từ file Word (<code>.docx</code>) / PDF (<code>.pdf</code>), hoặc nhập mã JSON.
       </p>
     </div>
 
@@ -316,9 +408,9 @@ if (preselectedIds.length > 0) {
     <!-- Form Card -->
     <div class="bg-white dark:bg-[#22223A]/80 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl shadow-sm overflow-hidden">
 
-      <form method="POST" class="p-6 md:p-8 space-y-6">
+      <form id="exam-create-form" method="POST" class="p-6 md:p-8 space-y-6">
 
-        <!-- Meta grid -->
+        <!-- 1. Thông tin chung -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
           <!-- Title -->
@@ -326,15 +418,29 @@ if (preselectedIds.length > 0) {
             <label for="title" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
               Tiêu đề đề thi <span class="text-rose-500">*</span>
             </label>
-            <input type="text" name="title" id="title" required placeholder="VD: Đề thi thử THPT Quốc gia môn Toán..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] transition-colors placeholder:text-slate-400" />
+            <input
+              type="text"
+              name="title"
+              id="title"
+              required
+              value={submittedValues.title}
+              placeholder="VD: Đề thi thử Tốt nghiệp THPT 2025 môn Toán - Lần 1..."
+              class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] transition-colors placeholder:text-slate-400"
+            />
           </div>
 
           <!-- Subject -->
           <div>
-            <label for="subject_id" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Môn học <span class="text-rose-500">*</span></label>
+            <label for="subject_id" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+              Môn học chính <span class="text-rose-500">*</span>
+            </label>
             <select name="subject_id" id="subject_id" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] cursor-pointer">
-              <option value="" disabled selected={!preselectedSubjectId}>-- Chọn môn học --</option>
-              {subjects.map(s => (<option value={s.id} selected={s.id === preselectedSubjectId}>{s.name}</option>))}
+              <option value="" disabled selected={!submittedValues.subject_id}>-- Chọn môn học --</option>
+              {subjects.map(s => (
+                <option value={s.id} data-name={s.name} data-slug={s.slug} selected={s.id === submittedValues.subject_id}>
+                  {s.name}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -344,358 +450,606 @@ if (preselectedIds.length > 0) {
               Chuyên mục
               <a href="/admin/categories" target="_blank" class="ml-2 text-blue-500 hover:text-blue-700 normal-case font-semibold">➕ Quản lý</a>
             </label>
-            <select name="category_id" id="exam_category_id" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] cursor-pointer">
+            <select name="category_id" id="exam_category_id" data-initial={submittedValues.category_id} class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] cursor-pointer">
               <option value="">-- Tất cả / Không phân chuyên mục --</option>
             </select>
           </div>
 
-          <!-- Exam type -->
+          <!-- Expanded Exam Program -->
           <div>
-            <label for="exam_type" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Phân loại đề thi <span class="text-rose-500">*</span></label>
-            <select name="exam_type" id="exam_type" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] cursor-pointer">
-              <option value="15m">⏱️ Kiểm tra 15 phút</option>
-              <option value="45m">📝 Kiểm tra 1 tiết</option>
-              <option value="semester">🎓 Thi học kỳ</option>
-              <option value="mock_thpt" selected>🏆 Thi thử THPT</option>
-              <option value="vsat">🎯 Thi đánh giá năng lực V-SAT</option>
+            <label for="exam_program" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+              Phân loại kỳ thi tại Việt Nam <span class="text-rose-500">*</span>
+            </label>
+            <select name="exam_program" id="exam_program" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] cursor-pointer">
+              <optgroup label="Kiểm tra phổ thông (GDPT 2018 & CV 7991)">
+                <option value="15m" selected={submittedValues.exam_program === '15m'}>⏱️ Đánh giá thường xuyên (15 phút)</option>
+                <option value="midterm" selected={submittedValues.exam_program === 'midterm' || submittedValues.exam_program === '45m'}>📝 Kiểm tra Giữa học kỳ (CV 7991)</option>
+                <option value="semester" selected={submittedValues.exam_program === 'semester'}>🎓 Kiểm tra Cuối học kỳ (CV 7991)</option>
+                <option value="hsg" selected={submittedValues.exam_program === 'hsg'}>🥇 Thi chọn Học sinh giỏi (Thang điểm 20)</option>
+              </optgroup>
+              <optgroup label="Thi Tốt nghiệp & Tuyển sinh Đại học">
+                <option value="mock_thpt" selected={submittedValues.exam_program === 'mock_thpt'}>🏆 Thi thử Tốt nghiệp THPT (Chuẩn 2025)</option>
+                <option value="dgnl_hsa" selected={submittedValues.exam_program === 'dgnl_hsa'}>🧠 ĐGNL ĐHQG Hà Nội (HSA - Liên môn)</option>
+                <option value="dgnl_vact" selected={submittedValues.exam_program === 'dgnl_vact'}>🎯 ĐGNL ĐHQG TP.HCM (V-ACT - Liên môn)</option>
+                <option value="dgtd_tsa" selected={submittedValues.exam_program === 'dgtd_tsa'}>🔬 ĐGTD ĐH Bách Khoa (TSA)</option>
+                <option value="vsat" selected={submittedValues.exam_program === 'vsat'}>🎯 Đánh giá năng lực đại học V-SAT</option>
+              </optgroup>
             </select>
           </div>
 
           <!-- Duration -->
           <div>
-            <label for="duration" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Thời gian (phút) <span class="text-rose-500">*</span></label>
-            <input type="number" name="duration" id="duration" required min="1" max="300" placeholder="15, 45, 90..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] transition-colors placeholder:text-slate-400" />
+            <label for="duration" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
+              Thời gian làm bài (phút) <span class="text-rose-500">*</span>
+            </label>
+            <input
+              type="number"
+              name="duration"
+              id="duration"
+              required
+              min="1"
+              max="300"
+              value={submittedValues.duration}
+              placeholder="15, 45, 50, 90..."
+              class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-sm focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] transition-colors placeholder:text-slate-400"
+            />
+          </div>
+
+          <!-- Cross-subject selector for HSA / V-ACT / TSA -->
+          <div id="cross-subjects-box" class="sm:col-span-2 hidden p-4 rounded-xl border border-indigo-200 dark:border-indigo-800/50 bg-indigo-50/40 dark:bg-indigo-950/20 space-y-2">
+            <span class="block text-xs font-bold text-indigo-700 dark:text-indigo-300 uppercase tracking-wider">
+              🧩 Chọn các lĩnh vực liên môn tích hợp trong đề ĐGNL / ĐGTD:
+            </span>
+            <div class="flex flex-wrap gap-2">
+              {['Toán học & Xử lý số liệu', 'Ngữ văn / Đọc hiểu tiếng Việt', 'Tiếng Anh', 'Vật lí', 'Hóa học', 'Sinh học', 'Lịch sử', 'Địa lí'].map(item => (
+                <label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-indigo-200 dark:border-indigo-700/60 text-xs font-semibold text-slate-700 dark:text-slate-200 cursor-pointer select-none">
+                  <input type="checkbox" value={item} class="cross-subject-cb rounded text-indigo-600 focus:ring-indigo-500 h-3.5 w-3.5" checked={item.includes('Toán') || item.includes('Đọc hiểu')} />
+                  <span>{item}</span>
+                </label>
+              ))}
+            </div>
           </div>
         </div>
 
-        <!-- is_graded: Chế độ Luyện tập vs Đề thi lấy điểm -->
-        <div class="mt-4 p-4 rounded-xl border border-emerald-200 dark:border-emerald-800/50 bg-emerald-50/40 dark:bg-emerald-950/15">
+        <!-- 2. Quản lý Ca thi chính thức & Bảo mật -->
+        <div class="p-4 md:p-5 rounded-2xl border border-emerald-200 dark:border-emerald-800/50 bg-emerald-50/40 dark:bg-emerald-950/15 space-y-4">
           <label for="is_graded" class="flex items-start gap-3 cursor-pointer select-none">
             <input
               type="checkbox"
               name="is_graded"
               id="is_graded"
               value="1"
+              checked={submittedValues.is_graded}
               class="mt-0.5 h-5 w-5 rounded border-emerald-300 text-emerald-600 focus:ring-emerald-500 cursor-pointer shrink-0"
             />
             <div>
               <span class="block text-sm font-bold text-emerald-800 dark:text-emerald-300">
-                📝 Đề thi (lấy điểm &amp; lưu kết quả vào hệ thống)
+                📝 Tổ chức Ca thi chính thức (Lấy điểm, điền SBD/Lớp, lưu kết quả &amp; giám sát chuyển tab)
               </span>
               <span class="block text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">
-                <strong>Mặc định (bỏ chọn):</strong> Chế độ <strong>Luyện tập</strong> — học sinh làm bài ngay không cần điền Họ tên / SBD / Lớp và không ghi kết quả vào Supabase.<br />
-                <strong>Khi chọn:</strong> Yêu cầu điền Họ tên, Số báo danh (STT), Lớp và lưu điểm để thống kê, xuất file CSV.
+                Bỏ chọn = <strong>Chế độ Luyện tập tự do</strong> (không lưu DB). Khi bật = yêu cầu Họ tên, SBD, Lớp và lưu bảng điểm CSV.
               </span>
             </div>
           </label>
-        </div>
 
-        <!-- pick_per_type: Chọn ngẫu nhiên k câu từ n câu theo loại -->
-        <div class="mt-4 p-4 rounded-xl border border-dashed border-blue-200 dark:border-blue-800/40 bg-blue-50/40 dark:bg-blue-950/10">
-          <label class="block text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-1.5">
-            🎲 Chọn ngẫu nhiên k/n câu theo loại <span class="font-normal normal-case text-slate-400">(tùy chọn)</span>
-          </label>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mb-2 leading-relaxed">
-            Mỗi học sinh sẽ nhận bộ câu hỏi khác nhau. Để trống = dùng tất cả câu.
-            Nhập JSON dạng: <code class="bg-white dark:bg-slate-800 px-1 py-0.5 rounded text-[11px]">&#123;"read": 2, "cloze_text": 2, "mcq": 4&#125;</code>
-          </p>
-          <input
-            type="text"
-            name="pick_per_type"
-            id="pick_per_type"
-            placeholder='{"read": 2, "cloze_text": 2, "mcq": 4}'
-            class="w-full px-4 py-2.5 rounded-xl border border-blue-200 dark:border-blue-700/50 bg-white dark:bg-slate-900 text-sm font-mono focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] placeholder:text-slate-400 placeholder:font-sans"
-          />
-          <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-1.5">
-            Loại hợp lệ: <code class="text-[11px]">mcq</code> (TN 1 đáp án), <code class="text-[11px]">msq</code> (Đúng/Sai), <code class="text-[11px]">sa</code> (Trả lời ngắn), <code class="text-[11px]">tl</code> (Tự luận), <code class="text-[11px]">read</code>, <code class="text-[11px]">read_cloze</code>, <code class="text-[11px]">cloze_text</code>, <code class="text-[11px]">multiple_choice</code>, <code class="text-[11px]">ordering</code>, <code class="text-[11px]">list</code>, <code class="text-[11px]">true_false</code>.
-          </p>
-        </div>
-
-        <!-- point_per_question & point_per_sa: Cấu hình thang điểm -->
-        <div class="mt-3 p-4 rounded-xl border border-dashed border-amber-200 dark:border-amber-800/40 bg-amber-50/40 dark:bg-amber-950/10 space-y-3">
-          <div>
-            <p class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
-              🏆 Cấu hình điểm số <span class="font-normal normal-case text-slate-400">(tùy chọn, không áp dụng cho V-SAT)</span>
-            </p>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-              Để trống để dùng mặc định. Câu Đúng/Sai 4 ý (<code class="bg-white dark:bg-slate-800 px-1 py-0.5 rounded text-[11px]">msq</code>) tự động chấm theo Bộ GD&amp;ĐT: đúng 1 ý = <strong>0.1đ</strong>, 2 ý = <strong>0.25đ</strong>, 3 ý = <strong>0.5đ</strong>, 4 ý = <strong>1đ</strong>.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-3 border-t border-emerald-200/60 dark:border-emerald-800/40">
             <div>
-              <label for="point_per_question" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">
-                Điểm mỗi câu trắc nghiệm (mặc định 0.25)
+              <label for="password" class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">
+                🔒 Mật khẩu đề thi <span class="font-normal text-slate-400">(tùy chọn)</span>
               </label>
-              <input
-                type="number"
-                name="point_per_question"
-                id="point_per_question"
-                min="0.01"
-                max="100"
-                step="0.01"
-                placeholder="0.25"
-                class="w-full sm:w-44 px-4 py-2.5 rounded-xl border border-amber-200 dark:border-amber-700/50 bg-white dark:bg-slate-900 text-sm focus:border-amber-500 outline-none text-ink dark:text-[#E8E0D0] placeholder:text-slate-400"
-              />
+              <input type="text" name="password" id="password" value={submittedValues.password} placeholder="Để trống = không khóa" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs font-semibold text-ink dark:text-[#E8E0D0] outline-none focus:border-emerald-500" />
             </div>
+
             <div>
-              <label for="point_per_sa" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">
-                Điểm mỗi câu trả lời ngắn <code>sa</code> (mặc định 0.5)
+              <label for="open_at" class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">
+                🟢 Giờ mở ca thi <span class="font-normal text-slate-400">(tùy chọn)</span>
               </label>
-              <input
-                type="number"
-                name="point_per_sa"
-                id="point_per_sa"
-                min="0.01"
-                max="100"
-                step="0.01"
-                placeholder="0.5"
-                class="w-full sm:w-44 px-4 py-2.5 rounded-xl border border-amber-200 dark:border-amber-700/50 bg-white dark:bg-slate-900 text-sm focus:border-amber-500 outline-none text-ink dark:text-[#E8E0D0] placeholder:text-slate-400"
-              />
+              <input type="datetime-local" name="open_at" id="open_at" value={submittedValues.open_at} class="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-ink dark:text-[#E8E0D0] outline-none focus:border-emerald-500" />
+            </div>
+
+            <div>
+              <label for="close_at" class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">
+                🔴 Giờ đóng ca thi <span class="font-normal text-slate-400">(tùy chọn)</span>
+              </label>
+              <input type="datetime-local" name="close_at" id="close_at" value={submittedValues.close_at} class="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-ink dark:text-[#E8E0D0] outline-none focus:border-emerald-500" />
+            </div>
+
+            <div>
+              <label for="max_attempts" class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">
+                🔁 Giới hạn lượt thi / HS
+              </label>
+              <input type="number" name="max_attempts" id="max_attempts" min="1" max="50" value={submittedValues.max_attempts} placeholder="Không giới hạn" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs font-semibold text-ink dark:text-[#E8E0D0] outline-none focus:border-emerald-500" />
+            </div>
+
+            <div class="sm:col-span-2 lg:col-span-4">
+              <label for="show_answers_mode" class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">
+                👁️ Chế độ công bố đáp án &amp; lời giải sau khi học sinh nộp bài
+              </label>
+              <select name="show_answers_mode" id="show_answers_mode" class="w-full sm:w-auto min-w-[320px] px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs font-semibold text-ink dark:text-[#E8E0D0] outline-none focus:border-emerald-500 cursor-pointer">
+                <option value="always" selected={submittedValues.show_answers_mode === 'always'}>✅ Xem đáp án &amp; lời giải chi tiết ngay sau khi nộp bài (Mặc định)</option>
+                <option value="after_close" selected={submittedValues.show_answers_mode === 'after_close'}>⏳ Chỉ hiện điểm số — Mở đáp án sau khi kết thúc Giờ đóng ca thi</option>
+                <option value="never" selected={submittedValues.show_answers_mode === 'never'}>🔒 Chỉ hiện điểm tổng — Không công bố đáp án &amp; lời giải</option>
+              </select>
             </div>
           </div>
         </div>
 
-        <!-- Tab: Chọn câu hỏi / Soạn ma trận / Nhập JSON -->
-        <div class="border-t border-slate-100 dark:border-slate-800/60 pt-6">
-          <div class="flex flex-wrap gap-1 mb-5 bg-slate-100 dark:bg-slate-800/50 rounded-xl p-1 w-fit">
-            <button type="button" id="tab-manual" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg transition-all" data-target="manual-section">📋 Chọn từ ngân hàng</button>
-            <button type="button" id="tab-matrix" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg transition-all" data-target="matrix-section">🎯 Soạn theo Ma trận đề</button>
-            <button type="button" id="tab-json" class="tab-btn px-4 py-2 text-xs font-bold rounded-lg transition-all" data-target="json-section">📄 Nhập JSON</button>
-          </div>
-
-          <!-- Hidden input for mode -->
-          <input type="hidden" name="mode" id="input-mode" value="manual" />
-
-          <!-- Tab: Manual select -->
-          <div id="manual-section" class="space-y-4">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-2">
-              <div>
-                <h3 class="text-sm font-bold text-ink dark:text-[#E8E0D0]">Chọn câu hỏi từ ngân hàng đề</h3>
-                <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">Chọn môn học ở trên để hiển thị và chọn câu hỏi.</p>
+        <!-- 3. Cấu hình Thang điểm & Bốc ngẫu nhiên trực quan -->
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50/50 dark:bg-slate-900/30 overflow-hidden">
+          <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider hover:bg-slate-100/70 dark:hover:bg-slate-800/40 transition">
+            <span>⚙️ Cấu hình Thang điểm (Tự động theo Môn) &amp; Bốc ngẫu nhiên câu hỏi</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="p-4 pt-3 space-y-4 border-t border-slate-200/60 dark:border-slate-800/60">
+            <div class="p-3.5 rounded-xl border border-amber-200 dark:border-amber-800/40 bg-amber-50/40 dark:bg-amber-950/10 space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <p class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider">
+                  🏆 Cấu hình điểm số
+                </p>
+                <span class="text-[11px] text-amber-700 dark:text-amber-300 font-semibold">
+                  Đúng/Sai 4 ý: 1 ý = 0.1đ · 2 ý = 0.25đ · 3 ý = 0.5đ · 4 ý = 1.0đ
+                </span>
               </div>
-              <div class="flex items-center gap-2">
-                <span id="selected-count" class="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/30 hidden">0 câu đã chọn</span>
-                <button type="button" id="btn-select-all" class="text-xs font-semibold px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 hidden">
-                  Chọn tất cả đang hiện
-                </button>
-                <button type="button" id="btn-deselect-all" class="text-xs font-semibold px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 hidden">
-                  Bỏ chọn
-                </button>
-              </div>
-            </div>
-
-            <!-- Search box within question bank -->
-            <div id="bank-search-bar" class="hidden">
-              <div class="relative">
-                <input type="text" id="bank-search-input" placeholder="🔍 Tìm kiếm nhanh câu hỏi trong môn học này..." class="w-full px-4 py-2.5 pl-9 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-xs outline-none focus:border-blue-500 text-ink dark:text-[#E8E0D0] placeholder:text-slate-400" />
-                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">🔎</span>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label for="point_per_question" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Điểm mỗi câu MCQ / câu con</label>
+                  <input type="number" name="point_per_question" id="point_per_question" min="0.01" max="100" step="0.01" value={submittedValues.point_per_question} class="w-full px-3.5 py-2 rounded-xl border border-amber-200 dark:border-amber-700/50 bg-white dark:bg-slate-900 text-sm font-bold text-ink dark:text-[#E8E0D0] outline-none focus:border-amber-500" />
+                </div>
+                <div>
+                  <label for="point_per_sa" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Điểm mỗi câu Trả lời ngắn (<code>sa</code>)</label>
+                  <input type="number" name="point_per_sa" id="point_per_sa" min="0.01" max="100" step="0.01" value={submittedValues.point_per_sa} class="w-full px-3.5 py-2 rounded-xl border border-amber-200 dark:border-amber-700/50 bg-white dark:bg-slate-900 text-sm font-bold text-ink dark:text-[#E8E0D0] outline-none focus:border-amber-500" />
+                </div>
+                <div>
+                  <label for="max_score" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Thang điểm tối đa toàn bài</label>
+                  <input type="number" name="max_score" id="max_score" min="1" max="1500" step="1" value={submittedValues.max_score} class="w-full px-3.5 py-2 rounded-xl border border-amber-200 dark:border-amber-700/50 bg-white dark:bg-slate-900 text-sm font-bold text-ink dark:text-[#E8E0D0] outline-none focus:border-amber-500" />
+                </div>
               </div>
             </div>
 
-            <div id="no-subject-warning" class="text-center p-8 bg-slate-50 dark:bg-slate-900/40 rounded-xl text-sm text-slate-400 border border-dashed border-slate-200 dark:border-slate-700">
-              <div class="text-3xl mb-2">📚</div>
-              Hãy chọn môn học ở trên để hiển thị danh sách câu hỏi trong ngân hàng.
-            </div>
-
-            <div id="no-questions-warning" class="text-center p-8 bg-amber-50 dark:bg-amber-900/10 rounded-xl text-sm text-amber-600 dark:text-amber-400 border border-dashed border-amber-200 dark:border-amber-800/30 hidden">
-              <div class="text-3xl mb-2">📭</div>
-              Môn học này chưa có câu hỏi nào trong ngân hàng.
-              <div class="mt-3">
-                <a href="/admin/questions/new" class="inline-flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">Tạo câu hỏi mới →</a>
+            <div class="p-3.5 rounded-xl border border-blue-200 dark:border-blue-800/40 bg-blue-50/40 dark:bg-blue-950/10 space-y-2.5">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-xs font-bold text-blue-700 dark:text-blue-400 uppercase tracking-wider">
+                  🎲 Bốc ngẫu nhiên k câu từ kho câu hỏi của đề cho mỗi lượt làm bài
+                </span>
+                <button type="button" id="btn-clear-pick" class="text-[11px] font-bold text-blue-600 hover:underline">Xóa trắng</button>
               </div>
-            </div>
-
-            <div id="questions-list" class="space-y-2.5 max-h-[420px] overflow-y-auto hidden pr-1">
-              {questions.map(q => (
-                <label
-                  data-subject-id={q.subject_id}
-                  data-category-id={q.category_id || q.metadata?.category_id || ''}
-                  data-search-text={(q.content || '').replace(/\$/g, '')}
-                  class="question-checkbox-item flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-blue-700 hover:bg-blue-50/30 dark:hover:bg-blue-900/10 cursor-pointer select-none transition-all duration-150"
-                >
-                  <input type="checkbox" name="question_ids" value={q.id} checked={preselectedIds.includes(q.id)} class="rounded text-blue-600 focus:ring-blue-500 h-4 w-4 mt-0.5 shrink-0" />
-                  <div class="flex-1 min-w-0">
-                    {q.type === 'read' || q.type === 'list' || q.type === 'read_cloze' ? (
-                      <ReadListPreview question={q} />
-                    ) : (
-                      <p class="text-sm font-semibold text-ink dark:text-[#E8E0D0] leading-snug line-clamp-2">{(q.content || '').replace(/\$/g, '')}</p>
-                    )}
-                    <div class="flex items-center gap-2 mt-1.5">
-                      <span class={`inline-block text-[10px] font-bold uppercase px-2 py-0.5 rounded-full ${q.difficulty === 'easy' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400' : q.difficulty === 'medium' ? 'bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400' : 'bg-rose-50 text-rose-600 dark:bg-rose-900/20 dark:text-rose-400'}`}>
-                        {q.difficulty === 'easy' ? 'Dễ' : q.difficulty === 'medium' ? 'Trung bình' : 'Khó'}
-                      </span>
-                      <span class="text-[10px] text-slate-400 uppercase font-semibold">{q.type === 'read' ? 'Đọc hiểu' : q.type === 'read_cloze' ? 'Điền vào chỗ trống' : q.type === 'ordering' ? 'Sắp xếp câu' : q.type === 'list' ? 'Kỹ năng nghe' : q.type === 'single_choice' ? 'Chọn 1' : q.type === 'multiple_choice' ? 'Chọn nhiều' : 'Đúng/Sai'}</span>
-                      {q.metadata?.is_dynamic && (
-                        <span class="inline-block text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-violet-50 text-violet-600 dark:bg-violet-900/30 dark:text-violet-300 border border-violet-200/60 dark:border-violet-800/40">⚡ Động</span>
-                      )}
-                    </div>
+              <input type="hidden" name="pick_per_type" id="pick_per_type" value={submittedValues.pick_per_type} />
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                {PICK_TYPE_ITEMS.map(item => (
+                  <div class="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800 flex items-center justify-between gap-2">
+                    <label for={`pick-${item.key}`} class="text-[11px] font-semibold text-slate-600 dark:text-slate-300 leading-tight">{item.label}</label>
+                    <input type="number" id={`pick-${item.key}`} data-pick-key={item.key} min="1" max="100" placeholder="Tất cả" class="visual-pick-input w-16 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-center text-ink dark:text-white outline-none focus:border-blue-500" />
                   </div>
-                </label>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
+        </details>
 
-          <!-- Tab: Matrix Auto Generation -->
-          <div id="matrix-section" class="space-y-5 hidden">
+        <!-- 4. Ba Tab Phương Thức Tạo Đề -->
+        <div class="border-t border-slate-100 dark:border-slate-800/60 pt-6 space-y-6">
+          <div class="flex flex-wrap gap-1.5 bg-slate-100 dark:bg-slate-800/60 rounded-xl p-1 w-fit">
+            <button type="button" id="tab-ai" class="tab-btn px-4 py-2.5 text-xs font-bold rounded-lg transition-all cursor-pointer" data-target="ai-section">
+              ✨ Tạo đề AI (Ma trận &amp; Prompt)
+            </button>
+            <button type="button" id="tab-file" class="tab-btn px-4 py-2.5 text-xs font-bold rounded-lg transition-all cursor-pointer" data-target="file-section">
+              📄 Tạo đề từ Word / PDF
+            </button>
+            <button type="button" id="tab-json" class="tab-btn px-4 py-2.5 text-xs font-bold rounded-lg transition-all cursor-pointer" data-target="json-section">
+              🧩 Nhập / Sửa JSON
+            </button>
+          </div>
+
+          <input type="hidden" name="mode" id="input-mode" value={submittedValues.mode || 'ai'} />
+
+          <!-- Khung dùng chung Gemini API Key cho cả Tab Tạo đề AI & Tab Word/PDF -->
+          <div id="shared-gemini-box" class="p-4 md:p-5 rounded-2xl border border-indigo-200/80 dark:border-indigo-800/50 bg-gradient-to-br from-indigo-50/70 via-violet-50/40 to-white dark:from-indigo-950/25 dark:via-violet-950/15 dark:to-[#1E1E38] space-y-3.5">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
-                <h3 class="text-sm font-bold text-ink dark:text-[#E8E0D0]">Soạn đề tự động theo Ma trận nhận thức</h3>
-                <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">Tự động chọn ngẫu nhiên từ ngân hàng đề theo cấu trúc đề thi Bộ GD&ĐT 2025.</p>
+                <h3 class="text-sm font-extrabold text-indigo-900 dark:text-indigo-300 flex items-center gap-1.5">
+                  <span>🔑</span> Kết nối Google Gemini API (Dùng chung cho Tạo đề AI &amp; Đọc Word/PDF)
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  API Key lưu cục bộ trên trình duyệt của bạn và gọi trực tiếp tới Google AI, không gửi lưu lên máy chủ.
+                </p>
               </div>
-              <span id="matrix-total-badge" class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/40 w-fit">
-                Tổng: 40 câu
+              <a
+                href="https://aistudio.google.com/apikey"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-indigo-200 dark:border-indigo-700 text-xs font-bold text-indigo-600 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-slate-700 transition w-fit shrink-0"
+              >
+                ⚡ Lấy API Key miễn phí →
+              </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div class="md:col-span-2">
+                <label for="gemini-api-key" class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">
+                  Gemini API Key <span class="text-rose-500">*</span>
+                </label>
+                <div class="relative flex items-center">
+                  <input
+                    type="password"
+                    id="gemini-api-key"
+                    autocomplete="off"
+                    placeholder="AIzaSy... (Nhập khóa API Gemini của bạn)"
+                    class="w-full pl-3.5 pr-20 py-2.5 rounded-xl border border-indigo-200 dark:border-indigo-700/60 bg-white dark:bg-slate-900 text-sm font-mono text-ink dark:text-[#E8E0D0] focus:border-indigo-500 outline-none placeholder:font-sans placeholder:text-slate-400"
+                  />
+                  <div class="absolute right-2 flex items-center gap-1">
+                    <button type="button" id="btn-toggle-key" class="px-2 py-1 rounded-md text-[11px] font-semibold text-slate-500 hover:text-indigo-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Hiện</button>
+                    <button type="button" id="btn-clear-key" class="px-1.5 py-1 rounded-md text-[11px] font-semibold text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition">✕</button>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label for="gemini-model" class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">
+                  Mô hình AI
+                </label>
+                <select id="gemini-model" class="w-full px-3.5 py-2.5 rounded-xl border border-indigo-200 dark:border-indigo-700/60 bg-white dark:bg-slate-900 text-sm text-ink dark:text-[#E8E0D0] focus:border-indigo-500 outline-none cursor-pointer">
+                  <option value="gemini-2.5-flash" selected>⚡ Gemini 2.5 Flash (Nhanh &amp; Đọc PDF chuẩn)</option>
+                  <option value="gemini-2.5-pro">🧠 Gemini 2.5 Pro (Chuyên sâu / Đề khó)</option>
+                  <option value="gemini-2.0-flash">🚀 Gemini 2.0 Flash (Tốc độ cao)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-2 pt-0.5">
+              <label class="inline-flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300 cursor-pointer select-none">
+                <input type="checkbox" id="remember-api-key" checked class="rounded border-indigo-300 text-indigo-600 focus:ring-indigo-500 h-3.5 w-3.5" />
+                <span>Ghi nhớ API Key trên trình duyệt này cho lần sau</span>
+              </label>
+              <span id="key-saved-badge" class="hidden text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                ✓ Đã nạp API Key từ trình duyệt
               </span>
             </div>
+          </div>
 
-            <!-- Quick Presets -->
-            <div class="p-3.5 bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-xl space-y-2">
-              <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">⚡ Mẫu phân phối nhanh:</span>
-              <div class="flex flex-wrap gap-2">
-                <button type="button" id="preset-thpt" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 text-xs font-semibold text-slate-700 dark:text-slate-200 transition">
-                  🏆 Chuẩn THPT 2025 (40 câu: 16 NB - 12 TH - 8 VD - 4 VDC)
-                </button>
-                <button type="button" id="preset-1tiet" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 text-xs font-semibold text-slate-700 dark:text-slate-200 transition">
-                  📝 Kiểm tra 1 tiết (25 câu: 10 NB - 8 TH - 5 VD - 2 VDC)
-                </button>
-                <button type="button" id="preset-15p" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 text-xs font-semibold text-slate-700 dark:text-slate-200 transition">
-                  ⏱️ Kiểm tra 15 phút (10 câu: 5 NB - 3 TH - 2 VD - 0 VDC)
-                </button>
-              </div>
-            </div>
-
-            <!-- 4 Cognitive Levels Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              <!-- Nhận biết -->
-              <div class="p-4 rounded-xl border border-emerald-200 dark:border-emerald-900/40 bg-emerald-50/40 dark:bg-emerald-950/20 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-bold uppercase text-emerald-700 dark:text-emerald-400">1. Nhận biết (NB)</span>
-                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-300 font-bold">Cơ bản</span>
+          <!-- ============================================================ -->
+          <!-- TAB 1: TẠO ĐỀ AI THEO MA TRẬN 2 CHIỀU & PROMPT               -->
+          <!-- ============================================================ -->
+          <div id="ai-section" class="space-y-6">
+            <div class="p-4 md:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/35 space-y-4">
+              <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+                <div>
+                  <h3 class="text-sm font-extrabold text-ink dark:text-[#E8E0D0]">
+                    🎯 Bảng Ma trận đề thi 2 chiều (Dạng câu hỏi × Mức độ năng lực)
+                  </h3>
+                  <p id="ai-preset-note" class="text-xs text-emerald-700 dark:text-emerald-400 font-medium mt-0.5">
+                    Chọn Môn học và Kỳ thi ở trên để hệ thống tự động điền chuẩn cấu trúc &amp; thang điểm.
+                  </p>
                 </div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">Công thức, định nghĩa, nhận dạng kiến thức</p>
-                <div class="pt-1">
-                  <label class="block text-[11px] font-semibold text-slate-600 dark:text-slate-300 mb-1">Số lượng câu:</label>
-                  <input type="number" name="matrix_nb" id="matrix_nb" min="0" max="100" value="16" class="matrix-input w-full px-3 py-2 rounded-lg border border-emerald-300 dark:border-emerald-700 bg-white dark:bg-slate-900 text-sm font-bold text-slate-900 dark:text-white text-center focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+                <div class="flex flex-wrap items-center gap-2 shrink-0">
+                  <button type="button" id="btn-apply-subject-preset" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs transition cursor-pointer">
+                    ⚡ Nạp lại chuẩn theo Môn &amp; Kỳ thi
+                  </button>
+                  <span id="ai-total-badge" class="text-xs font-extrabold px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50">22 câu</span>
+                  <span id="ai-score-badge" class="text-xs font-extrabold px-3 py-1.5 rounded-full bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800/50">TN: 10.0đ</span>
                 </div>
               </div>
 
-              <!-- Thông hiểu -->
-              <div class="p-4 rounded-xl border border-blue-200 dark:border-blue-900/40 bg-blue-50/40 dark:bg-blue-950/20 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-bold uppercase text-blue-700 dark:text-blue-400">2. Thông hiểu (TH)</span>
-                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 font-bold">Hiểu sâu</span>
-                </div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">Giải thích, suy luận đơn giản, biến đổi quen thuộc</p>
-                <div class="pt-1">
-                  <label class="block text-[11px] font-semibold text-slate-600 dark:text-slate-300 mb-1">Số lượng câu:</label>
-                  <input type="number" name="matrix_th" id="matrix_th" min="0" max="100" value="12" class="matrix-input w-full px-3 py-2 rounded-lg border border-blue-300 dark:border-blue-700 bg-white dark:bg-slate-900 text-sm font-bold text-slate-900 dark:text-white text-center focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                </div>
-              </div>
-
-              <!-- Vận dụng -->
-              <div class="p-4 rounded-xl border border-amber-200 dark:border-amber-900/40 bg-amber-50/40 dark:bg-amber-950/20 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-bold uppercase text-amber-700 dark:text-amber-400">3. Vận dụng (VD)</span>
-                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 font-bold">Thực hành</span>
-                </div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">Vận dụng quy trình, phương pháp giải toán chuẩn</p>
-                <div class="pt-1">
-                  <label class="block text-[11px] font-semibold text-slate-600 dark:text-slate-300 mb-1">Số lượng câu:</label>
-                  <input type="number" name="matrix_vd" id="matrix_vd" min="0" max="100" value="8" class="matrix-input w-full px-3 py-2 rounded-lg border border-amber-300 dark:border-amber-700 bg-white dark:bg-slate-900 text-sm font-bold text-slate-900 dark:text-white text-center focus:outline-none focus:ring-2 focus:ring-amber-500" />
-                </div>
-              </div>
-
-              <!-- Vận dụng cao -->
-              <div class="p-4 rounded-xl border border-rose-200 dark:border-rose-900/40 bg-rose-50/40 dark:bg-rose-950/20 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-bold uppercase text-rose-700 dark:text-rose-400">4. Vận dụng cao (VDC)</span>
-                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-100 dark:bg-rose-900/50 text-rose-800 dark:text-rose-300 font-bold">Phân loại</span>
-                </div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">Tổng hợp kiến thức phức hợp, liên hệ thực tế</p>
-                <div class="pt-1">
-                  <label class="block text-[11px] font-semibold text-slate-600 dark:text-slate-300 mb-1">Số lượng câu:</label>
-                  <input type="number" name="matrix_vdc" id="matrix_vdc" min="0" max="100" value="4" class="matrix-input w-full px-3 py-2 rounded-lg border border-rose-300 dark:border-rose-700 bg-white dark:bg-slate-900 text-sm font-bold text-slate-900 dark:text-white text-center focus:outline-none focus:ring-2 focus:ring-rose-500" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Optional Textbook & Chapter filters -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-              <div>
-                <label for="matrix_textbook" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
-                  Bộ sách giáo khoa (tùy chọn)
+              <div class="flex flex-wrap items-center justify-between gap-3 p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+                <label class="inline-flex items-center gap-2 text-xs font-bold text-indigo-700 dark:text-indigo-300 cursor-pointer select-none">
+                  <input type="checkbox" id="toggle-three-level" class="rounded border-indigo-300 text-indigo-600 focus:ring-indigo-500 h-4 w-4" />
+                  <span>📐 Chế độ 3 mức năng lực Công văn 7991 (Biết – Hiểu – Vận dụng)</span>
                 </label>
-                <select name="matrix_textbook" id="matrix_textbook" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm text-ink dark:text-[#E8E0D0] cursor-pointer">
-                  <option value="all">📚 Tất cả các bộ sách (Chung)</option>
-                  <option value="kntt">📖 Kết nối tri thức với cuộc sống</option>
-                  <option value="ctst">🌅 Chân trời sáng tạo</option>
-                  <option value="cd">🪁 Cánh diều</option>
+
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="text-[11px] font-semibold text-slate-400 mr-1">Phân bổ nhanh:</span>
+                  <button type="button" data-dist="40,30,30,0" data-3lvl="1" class="dist-preset-btn px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 text-[11px] font-bold text-slate-700 dark:text-slate-300 transition">📌 CV 7991 (40-30-30)</button>
+                  <button type="button" data-dist="35,30,20,15" data-3lvl="0" class="dist-preset-btn px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 text-[11px] font-bold text-slate-700 dark:text-slate-300 transition">🏆 THPT 2025 (35-30-20-15)</button>
+                  <button type="button" data-dist="50,30,20,0" data-3lvl="1" class="dist-preset-btn px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 text-[11px] font-bold text-slate-700 dark:text-slate-300 transition">⏱️ 15p (50-30-20)</button>
+                  <button type="button" data-dist="10,25,40,25" data-3lvl="0" class="dist-preset-btn px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 text-[11px] font-bold text-slate-700 dark:text-slate-300 transition">🥇 HSG (10-25-40-25)</button>
+                </div>
+              </div>
+
+              <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+                <table class="w-full text-xs text-left border-collapse">
+                  <thead>
+                    <tr class="bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
+                      <th class="py-2.5 px-3 font-extrabold">Phần thi / Dạng câu hỏi</th>
+                      <th class="py-2.5 px-2 text-center font-extrabold text-emerald-700 dark:text-emerald-400 w-24">Biết (NB)</th>
+                      <th class="py-2.5 px-2 text-center font-extrabold text-blue-700 dark:text-blue-400 w-24">Hiểu (TH)</th>
+                      <th class="py-2.5 px-2 text-center font-extrabold text-amber-700 dark:text-amber-400 w-24">Vận dụng (VD)</th>
+                      <th id="th-col-vdc" class="py-2.5 px-2 text-center font-extrabold text-rose-700 dark:text-rose-400 w-24">VD Cao (VDC)</th>
+                      <th class="py-2.5 px-3 text-center font-extrabold text-slate-800 dark:text-white w-24">Tổng mục</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                    {MATRIX_ROW_KEYS.map(rKey => {
+                      const info = MATRIX_ROW_META[rKey];
+                      return (
+                        <tr data-row-key={rKey} class="hover:bg-slate-50/70 dark:hover:bg-slate-800/30 transition">
+                          <td class="py-2 px-3">
+                            <span class="font-bold text-slate-800 dark:text-slate-200 block">{info.label}</span>
+                            <span class="text-[10px] text-slate-400 font-mono">{info.sub} · đơn vị: {info.unitLabel}</span>
+                          </td>
+                          <td class="py-2 px-2 text-center">
+                            <input type="number" min="0" max="50" value="0" data-m2d-row={rKey} data-m2d-lvl="nb" class="m2d-cell w-16 px-2 py-1 rounded-lg border border-emerald-200 dark:border-emerald-800/60 bg-emerald-50/30 dark:bg-slate-800 text-center font-bold text-ink dark:text-white outline-none focus:border-emerald-500" />
+                          </td>
+                          <td class="py-2 px-2 text-center">
+                            <input type="number" min="0" max="50" value="0" data-m2d-row={rKey} data-m2d-lvl="th" class="m2d-cell w-16 px-2 py-1 rounded-lg border border-blue-200 dark:border-blue-800/60 bg-blue-50/30 dark:bg-slate-800 text-center font-bold text-ink dark:text-white outline-none focus:border-blue-500" />
+                          </td>
+                          <td class="py-2 px-2 text-center">
+                            <input type="number" min="0" max="50" value="0" data-m2d-row={rKey} data-m2d-lvl="vd" class="m2d-cell w-16 px-2 py-1 rounded-lg border border-amber-200 dark:border-amber-800/60 bg-amber-50/30 dark:bg-slate-800 text-center font-bold text-ink dark:text-white outline-none focus:border-amber-500" />
+                          </td>
+                          <td class="py-2 px-2 text-center td-col-vdc">
+                            <input type="number" min="0" max="50" value="0" data-m2d-row={rKey} data-m2d-lvl="vdc" class="m2d-cell w-16 px-2 py-1 rounded-lg border border-rose-200 dark:border-rose-800/60 bg-rose-50/30 dark:bg-slate-800 text-center font-bold text-ink dark:text-white outline-none focus:border-rose-500" />
+                          </td>
+                          <td class="py-2 px-3 text-center">
+                            <span id={`row-sum-${rKey}`} class="inline-block min-w-[2.5rem] px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 font-extrabold text-slate-700 dark:text-slate-200">0</span>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                  <tfoot>
+                    <tr class="bg-slate-100/90 dark:bg-slate-800/90 font-extrabold border-t border-slate-200 dark:border-slate-700">
+                      <td class="py-2.5 px-3 text-slate-700 dark:text-slate-200">Tổng theo cấp độ nhận thức</td>
+                      <td id="col-sum-nb" class="py-2.5 px-2 text-center text-emerald-700 dark:text-emerald-400">0</td>
+                      <td id="col-sum-th" class="py-2.5 px-2 text-center text-blue-700 dark:text-blue-400">0</td>
+                      <td id="col-sum-vd" class="py-2.5 px-2 text-center text-amber-700 dark:text-amber-400">0</td>
+                      <td id="col-sum-vdc" class="py-2.5 px-2 text-center text-rose-700 dark:text-rose-400">0</td>
+                      <td id="matrix-grand-total" class="py-2.5 px-3 text-center text-indigo-700 dark:text-indigo-300">0</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                <div>
+                  <label for="ai-textbook" class="block text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-1.5">Bộ sách giáo khoa</label>
+                  <select id="ai-textbook" class="ai-meta-input w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm text-ink dark:text-[#E8E0D0] cursor-pointer">
+                    <option value="all">📚 Chung 3 bộ sách (Chuẩn GDPT 2018)</option>
+                    <option value="kntt">📖 Kết nối tri thức với cuộc sống</option>
+                    <option value="ctst">🌅 Chân trời sáng tạo</option>
+                    <option value="cd">🪁 Cánh diều</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="ai-topics" class="block text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-1.5">Chương / Bài học / Chủ đề trọng tâm</label>
+                  <input type="text" id="ai-topics" placeholder="VD: Khảo sát hàm số, Nguyên hàm - Tích phân, Oxyz..." class="ai-meta-input w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm text-ink dark:text-[#E8E0D0] placeholder:text-slate-400 outline-none focus:border-blue-500" />
+                </div>
+                <div class="sm:col-span-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <input type="text" id="ai-extra-notes" placeholder="Yêu cầu riêng cho AI (tùy chọn): VD tăng bài toán thực tế, có bảng số liệu thống kê..." class="ai-meta-input flex-1 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-xs text-ink dark:text-[#E8E0D0] placeholder:text-slate-400 outline-none focus:border-blue-500" />
+                  <label class="inline-flex items-center gap-2 text-xs font-semibold text-violet-700 dark:text-violet-300 cursor-pointer select-none shrink-0">
+                    <input type="checkbox" id="ai-include-dynamic" class="ai-meta-input rounded border-violet-300 text-violet-600 focus:ring-violet-500 h-4 w-4" />
+                    <span>⚡ Kèm 2–3 câu hỏi biến số động</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2.5">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <label for="ai-prompt-editor" class="block text-sm font-extrabold text-ink dark:text-[#E8E0D0]">
+                    📝 Prompt tạo đề chuyên biệt (Tự động sinh từ Ma trận 2 chiều — có thể sửa trực tiếp)
+                  </label>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span id="prompt-edited-badge" class="hidden text-[11px] font-semibold px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300">Đã chỉnh sửa tay</span>
+                  <button type="button" id="btn-reset-prompt" class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 text-xs font-semibold text-slate-600 dark:text-slate-300 transition">🔄 Đồng bộ lại từ Ma trận</button>
+                  <button type="button" id="btn-copy-prompt" class="px-3 py-1.5 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/30 hover:bg-blue-100 text-xs font-bold text-blue-700 dark:text-blue-300 transition">📋 Sao chép Prompt</button>
+                </div>
+              </div>
+              <textarea id="ai-prompt-editor" rows="9" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-xs leading-relaxed font-mono text-ink dark:text-[#E8E0D0] focus:border-indigo-500 outline-none resize-y"></textarea>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl bg-indigo-50/70 dark:bg-indigo-950/20 border border-indigo-200/70 dark:border-indigo-800/40">
+              <div class="flex items-center gap-3">
+                <button type="button" id="btn-generate-ai" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white text-sm font-extrabold shadow-md shadow-indigo-500/20 transition cursor-pointer disabled:opacity-60">
+                  <span id="ai-btn-icon">✨</span>
+                  <span id="ai-btn-label">Tạo câu hỏi bằng Gemini AI</span>
+                </button>
+                <button type="button" id="btn-cancel-ai" class="hidden px-3.5 py-2.5 rounded-xl border border-rose-200 dark:border-rose-800 bg-white dark:bg-slate-900 text-xs font-bold text-rose-600 dark:text-rose-400 hover:bg-rose-50 transition">Hủy</button>
+              </div>
+              <div id="ai-status-msg" class="text-xs font-semibold text-slate-600 dark:text-slate-300">
+                Sau khi AI sinh câu hỏi xong, kiểm tra bên dưới rồi nhấn <strong>"Tạo đề thi"</strong> để lưu.
+              </div>
+            </div>
+
+            <div id="ai-sa-warnings" class="hidden p-4 rounded-xl border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950/30 text-xs text-amber-800 dark:text-amber-300 space-y-1"></div>
+
+            <div id="ai-result-panel" class="hidden rounded-2xl border border-emerald-200 dark:border-emerald-800/50 bg-emerald-50/25 dark:bg-emerald-950/10 p-4 md:p-5 space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h4 id="ai-result-summary" class="text-sm font-extrabold text-emerald-800 dark:text-emerald-300">✅ Đã sinh đề thi thành công!</h4>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">Nhấn <strong>"Tạo đề thi"</strong> ở cuối trang để lưu hoặc mở tab JSON để sửa chi tiết.</p>
+                </div>
+                <button type="button" id="btn-edit-in-json-tab" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-emerald-300 dark:border-emerald-700 text-xs font-bold text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 transition">📄 Xem / Sửa mã JSON →</button>
+              </div>
+              <div id="ai-result-list" class="space-y-3 max-h-[460px] overflow-y-auto pr-1"></div>
+            </div>
+          </div>
+
+          <!-- ============================================================ -->
+          <!-- TAB 2: TẠO ĐỀ TỪ FILE WORD (.DOCX) & PDF (.PDF)              -->
+          <!-- ============================================================ -->
+          <div id="file-section" class="space-y-6 hidden">
+
+            <!-- Khu vực tải File Đề + File Đáp án rời -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Tệp Đề thi chính -->
+              <label
+                for="exam-main-file"
+                id="dropzone-main-file"
+                class="flex flex-col items-center justify-center p-6 rounded-2xl border-2 border-dashed border-blue-300 dark:border-blue-700/70 bg-blue-50/40 dark:bg-blue-950/15 hover:bg-blue-50/80 dark:hover:bg-blue-950/30 transition cursor-pointer text-center space-y-2"
+              >
+                <div class="text-3xl">📄</div>
+                <div class="text-sm font-extrabold text-blue-900 dark:text-blue-200">
+                  1. Chọn hoặc kéo thả Tệp Đề Thi (<span class="text-rose-500">*</span>)
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  Hỗ trợ <strong>.pdf</strong> (kể cả bản scan, MathType, TikZ) và <strong>.docx</strong> (Word 2010+) · Tối đa 20 MB
+                </p>
+                <input type="file" id="exam-main-file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="hidden" />
+                <span id="main-file-badge" class="hidden mt-1 px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold max-w-full truncate"></span>
+              </label>
+
+              <!-- Tệp Đáp án / Hướng dẫn chấm rời (Tùy chọn) -->
+              <label
+                for="exam-answer-file"
+                id="dropzone-answer-file"
+                class="flex flex-col items-center justify-center p-6 rounded-2xl border-2 border-dashed border-emerald-300 dark:border-emerald-800/70 bg-emerald-50/30 dark:bg-emerald-950/10 hover:bg-emerald-50/70 dark:hover:bg-emerald-950/25 transition cursor-pointer text-center space-y-2"
+              >
+                <div class="text-3xl">✅</div>
+                <div class="text-sm font-extrabold text-emerald-900 dark:text-emerald-300">
+                  2. Đính kèm Tệp Đáp án / HDC rời <span class="font-normal text-xs text-slate-400">(Tùy chọn)</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  Dùng khi Bảng đáp án &amp; Lời giải lưu ở một file <strong>.pdf / .docx</strong> riêng biệt với file đề
+                </p>
+                <input type="file" id="exam-answer-file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="hidden" />
+                <div class="flex items-center gap-2">
+                  <span id="answer-file-badge" class="hidden mt-1 px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold max-w-[240px] truncate"></span>
+                  <button type="button" id="btn-clear-answer-file" class="hidden mt-1 px-2 py-0.5 rounded bg-rose-100 text-rose-600 text-[11px] font-bold">Xóa</button>
+                </div>
+              </label>
+            </div>
+
+            <!-- Tùy chọn bóc tách thông minh -->
+            <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/40 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+              <div>
+                <label for="file-answer-strategy" class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">
+                  Chế độ nhận diện Đáp án đúng
+                </label>
+                <select id="file-answer-strategy" class="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs font-semibold text-ink dark:text-[#E8E0D0] outline-none">
+                  <option value="extract_or_solve" selected>🔍 Lấy từ gạch chân / tô đỏ / bảng đáp án (thiếu thì AI giải)</option>
+                  <option value="solve_all">🧠 Nhờ Gemini AI tự giải mới 100% toàn bộ đề</option>
                 </select>
               </div>
 
-              <div>
-                <label for="matrix_chapter" class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">
-                  Chương / Chuyên đề (tùy chọn)
-                </label>
-                <input type="text" name="matrix_chapter" id="matrix_chapter" placeholder="Ví dụ: Đạo hàm, Mũ và Logarit, Oxyz..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-transparent text-sm text-ink dark:text-[#E8E0D0] placeholder:text-slate-400" />
+              <label class="inline-flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300 cursor-pointer select-none">
+                <input type="checkbox" id="file-gen-explanation" checked class="mt-0.5 rounded border-slate-300 text-indigo-600 h-4 w-4 shrink-0" />
+                <span><strong>Tự động viết lời giải LaTeX</strong> cho những câu chưa có hướng dẫn giải trong file</span>
+              </label>
+
+              <label class="inline-flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300 cursor-pointer select-none">
+                <input type="checkbox" id="file-auto-crop" checked class="mt-0.5 rounded border-slate-300 text-indigo-600 h-4 w-4 shrink-0" />
+                <span><strong>Tự động cắt hình vẽ / đồ thị / BBT</strong> từ mặt trang PDF gắn vào câu hỏi</span>
+              </label>
+            </div>
+
+            <!-- Nút Bóc tách & Thanh tiến trình 3 bước -->
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-950/25 dark:to-indigo-950/25 border border-blue-200/70 dark:border-blue-800/40 space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <button
+                    type="button"
+                    id="btn-extract-file"
+                    class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-sm font-extrabold shadow-md shadow-blue-500/20 transition cursor-pointer disabled:opacity-60"
+                  >
+                    <span id="file-btn-icon">📄</span>
+                    <span id="file-btn-label">Bóc tách Đề thi từ File bằng Gemini AI</span>
+                  </button>
+                  <button type="button" id="btn-cancel-file" class="hidden px-3.5 py-2.5 rounded-xl border border-rose-200 bg-white dark:bg-slate-900 text-xs font-bold text-rose-600 hover:bg-rose-50 transition">Hủy</button>
+                </div>
+                <span id="file-status-text" class="text-xs font-semibold text-slate-600 dark:text-slate-300">
+                  Mẹo: Đề Toán/Lý có công thức MathType cũ nên lưu sang <strong>.PDF</strong> để đọc chính xác 100%.
+                </span>
+              </div>
+
+              <div id="file-progress-bar-wrap" class="hidden w-full bg-white/70 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+                <div id="file-progress-bar" class="h-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-300" style="width: 15%"></div>
+              </div>
+            </div>
+
+            <!-- Cảnh báo MathType OLE / SA 4 ký tự -->
+            <div id="file-warnings-banner" class="hidden p-4 rounded-xl border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950/30 text-xs text-amber-800 dark:text-amber-300 space-y-1.5"></div>
+
+            <!-- MÀN HÌNH ĐỐI CHIẾU & CẮT HÌNH 2 CỘT (SPLIT-SCREEN REVIEW) -->
+            <div id="file-split-review" class="hidden space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-xl bg-emerald-50/70 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/50">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span id="file-summary-title" class="text-sm font-extrabold text-emerald-800 dark:text-emerald-300">✅ Đã bóc tách câu hỏi</span>
+                  <div class="flex items-center gap-1.5 ml-2">
+                    <button type="button" data-f-filter="all" class="file-filter-btn px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-[11px] font-bold">Tất cả</button>
+                    <button type="button" data-f-filter="missing" class="file-filter-btn px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-[11px] font-bold">⚠️ Thiếu đáp án</button>
+                    <button type="button" data-f-filter="figure" class="file-filter-btn px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-[11px] font-bold">🖼️ Có hình vẽ</button>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  id="btn-sync-file-to-json"
+                  class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-emerald-300 dark:border-emerald-700 text-xs font-bold text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 transition cursor-pointer"
+                >
+                  🧩 Mở xem trên Tab JSON →
+                </button>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+                <!-- Cột trái (5/12): Trình xem trang gốc PDF & Kéo chuột cắt hình thủ công -->
+                <div class="lg:col-span-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-100/70 dark:bg-slate-900/80 p-3.5 space-y-3 lg:sticky lg:top-4">
+                  <div class="flex flex-wrap items-center justify-between gap-2">
+                    <span class="text-xs font-extrabold text-slate-700 dark:text-slate-200 uppercase tracking-wider">
+                      👁️ Tài liệu gốc
+                    </span>
+                    <div id="pdf-page-controls" class="hidden flex items-center gap-1.5 text-xs">
+                      <button type="button" id="btn-pdf-prev" class="px-2 py-1 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 font-bold">◀</button>
+                      <span id="pdf-page-label" class="font-bold text-slate-700 dark:text-slate-300 px-1">Trang 1/1</span>
+                      <button type="button" id="btn-pdf-next" class="px-2 py-1 rounded bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 font-bold">▶</button>
+                    </div>
+                  </div>
+
+                  <div id="pdf-crop-hint" class="hidden p-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-between gap-2">
+                    <span id="pdf-crop-target-label">✂️ Giữ chuột kéo khung hình trên trang PDF cho Câu #1</span>
+                    <button type="button" id="btn-cancel-crop-mode" class="px-2 py-0.5 rounded bg-white/20 hover:bg-white/30 text-[11px]">Thoát cắt</button>
+                  </div>
+
+                  <!-- PDF Canvas Container with Interactive Selection Overlay -->
+                  <div id="pdf-viewer-wrap" class="hidden relative overflow-auto max-h-[560px] rounded-xl border border-slate-300 dark:border-slate-700 bg-white select-none">
+                    <div id="pdf-canvas-stage" class="relative inline-block">
+                      <canvas id="pdf-review-canvas" class="block max-w-full h-auto"></canvas>
+                      <div id="pdf-crop-rect" class="hidden absolute border-2 border-indigo-600 bg-indigo-500/20 pointer-events-none"></div>
+                    </div>
+                  </div>
+
+                  <!-- DOCX Text Preview Fallback -->
+                  <pre id="docx-viewer-wrap" class="hidden whitespace-pre-wrap text-[11px] leading-relaxed font-mono p-3 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 max-h-[520px] overflow-y-auto text-slate-700 dark:text-slate-300"></pre>
+                </div>
+
+                <!-- Cột phải (7/12): Danh sách thẻ câu hỏi bóc tách & sửa nhanh -->
+                <div id="file-questions-list" class="lg:col-span-7 space-y-3 max-h-[640px] overflow-y-auto pr-1"></div>
               </div>
             </div>
           </div>
 
-          <!-- Tab: JSON import -->
+          <!-- ============================================================ -->
+          <!-- TAB 3: NHẬP / SỬA JSON                                       -->
+          <!-- ============================================================ -->
           <div id="json-section" class="space-y-4 hidden">
             <div class="flex items-center justify-between">
               <div>
-                <h3 class="text-sm font-bold text-ink dark:text-[#E8E0D0]">Nhập JSON đề thi</h3>
-                <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">Dán nội dung JSON theo mẫu bên dưới. Câu hỏi sẽ được tạo tự động.</p>
+                <h3 class="text-sm font-bold text-ink dark:text-[#E8E0D0]">Nhập hoặc chỉnh sửa trực tiếp JSON đề thi</h3>
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">Dữ liệu từ Tab AI và Tab Word/PDF đều tự động đồng bộ về đây trước khi lưu.</p>
               </div>
               <a href="/sample-questions.json" target="_blank" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">📄 Xem file mẫu</a>
             </div>
 
-            <div class="bg-amber-50/50 dark:bg-amber-950/10 border border-amber-200/50 dark:border-amber-900/30 rounded-xl p-4 text-xs text-amber-700 dark:text-amber-400 space-y-1.5">
-              <p class="font-semibold">📌 Hỗ trợ các loại câu hỏi:</p>
-              <p><code class="bg-amber-100 dark:bg-amber-900/30 px-1 rounded">mcq</code> Trắc nghiệm 1 đáp án · <code class="bg-amber-100 dark:bg-amber-900/30 px-1 rounded">msq</code> Đúng/Sai 4 ý · <code class="bg-amber-100 dark:bg-amber-900/30 px-1 rounded">tf</code> Đúng/Sai đơn · <code class="bg-amber-100 dark:bg-amber-900/30 px-1 rounded">sa</code> Trả lời ngắn · <code class="bg-amber-100 dark:bg-amber-900/30 px-1 rounded">tl</code> Tự luận</p>
-              <p>Hỗ trợ LaTeX: dùng <code class="bg-amber-100 dark:bg-amber-900/30 px-1 rounded">$...$</code> cho công thức toán.</p>
-            </div>
-
-            <div class="bg-violet-50/60 dark:bg-violet-950/15 border border-violet-200/60 dark:border-violet-900/40 rounded-xl p-4 text-xs text-violet-800 dark:text-violet-300 space-y-1.5">
-              <p class="font-semibold">⚡ Hỗ trợ câu hỏi động (<code class="bg-violet-100 dark:bg-violet-900/40 px-1 rounded">"is_dynamic": true</code>):</p>
-              <p class="leading-relaxed">Mỗi lần học sinh bắt đầu làm bài, hệ thống tự động sinh bộ số mới cho câu hỏi động (và đảm bảo 4 đáp án MCQ A, B, C, D không trùng nhau):</p>
-              <ul class="list-disc pl-4 space-y-0.5 text-[11px]">
-                <li><code class="bg-violet-100 dark:bg-violet-900/40 px-1 rounded">!a!</code>: số nguyên ngẫu nhiên từ -10 đến 10 · <code class="bg-violet-100 dark:bg-violet-900/40 px-1 rounded">!a:1:23!</code>: số nguyên từ 1 đến 23</li>
-                <li><code class="bg-violet-100 dark:bg-violet-900/40 px-1 rounded">!a#0!</code>: số nguyên khác 0 · <code class="bg-violet-100 dark:bg-violet-900/40 px-1 rounded">!b#!a!!</code>: số nguyên b khác a · <code class="bg-violet-100 dark:bg-violet-900/40 px-1 rounded">!b(2,4,6)!</code>: chọn ngẫu nhiên trong nhóm</li>
-                <li><code class="bg-violet-100 dark:bg-violet-900/40 px-1 rounded">&#123;tinh: !a! + !b!&#125;</code>: tính biểu thức · <code class="bg-violet-100 dark:bg-violet-900/40 px-1 rounded">iff(!a!&gt;0, dương, âm)</code>: điều kiện rẽ nhánh</li>
-              </ul>
-            </div>
-
-            <div class="bg-blue-50/50 dark:bg-blue-950/10 border border-blue-200/50 dark:border-blue-900/30 rounded-xl p-4 text-xs text-blue-700 dark:text-blue-400 space-y-1">
-              <p class="font-semibold">💡 Hướng dẫn tạo JSON:</p>
-              <ul class="list-disc pl-4 space-y-1 mt-1">
-                <li>Đề thi Môn Toán, Lý, Hóa,... có công thức mathtype và hình ảnh thì vào link này để <a href="https://json.lop12.com/" target="_blank" class="font-bold underline hover:text-blue-800 dark:hover:text-blue-300">chuyển word to json</a>.</li>
-                <li>Nếu bạn có file word Đề thi môn Anh, Sử, Địa, GDCD,... vào <a href="https://gemini.google.com/gem/1ITi5zYUCUaz0Qx9mAUIkeLU0Vy8oz0tk?usp=sharing" target="_blank" class="font-bold underline hover:text-blue-800 dark:hover:text-blue-300">Gemini này</a> tạo JSON.</li>
-                <li>Các link mở ra tab mới; khi các bạn có code JSON đem lại đây dán vào để tạo đề thi.</li>
-              </ul>
-            </div>
-
-            <textarea name="json_data" id="json-data" rows="12" placeholder='{"title":"...","questions":[{...}]}' class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm font-mono focus:border-blue-500 dark:focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] transition-colors placeholder:text-slate-400 resize-y"></textarea>
+            <textarea
+              name="json_data"
+              id="json-data"
+              rows="13"
+              placeholder='{"title":"...","questions":[{...}]}'
+              class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1E1E38] text-sm font-mono focus:border-blue-500 outline-none text-ink dark:text-[#E8E0D0] resize-y"
+            >{submittedValues.json_data}</textarea>
 
             <div class="flex flex-wrap gap-2.5 text-xs">
-              <button type="button" id="btn-paste-sample" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-semibold transition">📋 Dán mẫu</button>
-              <button type="button" id="btn-paste-dynamic-sample" class="px-3 py-1.5 rounded-lg bg-violet-50 dark:bg-violet-900/25 text-violet-700 dark:text-violet-300 hover:bg-violet-100 dark:hover:bg-violet-900/40 font-semibold transition">🎲 Dán mẫu Toán động</button>
-              <button type="button" id="btn-validate-json" class="px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 font-semibold transition">✓ Kiểm tra JSON</button>
-              <button type="button" id="btn-preview-dynamic" class="px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/30 font-semibold transition">👁️ Xem thử sinh số động</button>
+              <button type="button" id="btn-paste-sample" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 font-semibold transition">📋 Dán mẫu</button>
+              <button type="button" id="btn-paste-dynamic-sample" class="px-3 py-1.5 rounded-lg bg-violet-50 dark:bg-violet-900/25 text-violet-700 dark:text-violet-300 hover:bg-violet-100 font-semibold transition">🎲 Dán mẫu Toán động</button>
+              <button type="button" id="btn-validate-json" class="px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-100 font-semibold transition">✓ Kiểm tra JSON &amp; Chuẩn SA</button>
+              <button type="button" id="btn-preview-dynamic" class="px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100 font-semibold transition">👁️ Xem thử sinh số động</button>
             </div>
-            <div id="json-feedback" class="hidden text-xs font-semibold"></div>
+            <div id="json-feedback" class="hidden text-xs font-semibold space-y-1"></div>
 
-            <!-- Dynamic Quiz Live Preview Panel -->
             <div id="dynamic-preview-panel" class="hidden rounded-xl border border-violet-200 dark:border-violet-800/50 bg-violet-50/30 dark:bg-violet-950/15 p-4 space-y-3">
               <div class="flex flex-wrap items-center justify-between gap-2">
-                <div>
-                  <h4 class="text-xs font-bold uppercase tracking-wider text-violet-700 dark:text-violet-300">⚡ Xem thử kết quả sinh số ngẫu nhiên</h4>
-                  <p class="text-[11px] text-slate-500 dark:text-slate-400">Mỗi lần nhấn "Sinh lại số mới" mô phỏng một lượt làm bài mới của học sinh.</p>
-                </div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-violet-700 dark:text-violet-300">⚡ Xem thử kết quả sinh số ngẫu nhiên</h4>
                 <div class="flex items-center gap-2">
                   <button type="button" id="btn-reroll-dynamic" class="px-3 py-1.5 rounded-lg bg-violet-600 hover:bg-violet-700 text-white text-xs font-bold transition">🔄 Sinh lại số mới</button>
-                  <button type="button" id="btn-close-preview" class="px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold transition">Đóng</button>
+                  <button type="button" id="btn-close-preview" class="px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 text-xs font-semibold transition">Đóng</button>
                 </div>
               </div>
               <div id="dynamic-preview-list" class="space-y-3 max-h-[380px] overflow-y-auto pr-1"></div>
@@ -704,544 +1058,1188 @@ if (preselectedIds.length > 0) {
         </div>
 
         <!-- Actions -->
-        <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-800/60">
-          <a href="/admin/exams" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Hủy bỏ</a>
-          <button type="submit" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow-md shadow-blue-500/15 hover:shadow-xl transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            Tạo đề thi
-          </button>
+        <div class="flex flex-wrap justify-between items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800/60">
+          <a href="/admin/exams" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+            Hủy bỏ
+          </a>
+          <div class="flex items-center gap-3">
+            <span id="ready-questions-indicator" class="hidden text-xs font-bold text-emerald-600 dark:text-emerald-400"></span>
+            <button type="submit" id="btn-submit-exam" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow-md shadow-blue-500/15 hover:shadow-xl transition-all cursor-pointer disabled:opacity-60">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span id="submit-exam-label">Tạo đề thi</span>
+            </button>
+          </div>
         </div>
 
       </form>
     </div>
   </div>
+
+  <script is:inline type="application/json" id="exam-new-init-data" set:html={JSON.stringify({ baseUrl, allCategories })} />
 </Layout>
-
-<script is:inline define:vars={{ baseUrl, allCategories }}>
-  // Tab switching
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const manualSection = document.getElementById('manual-section');
-  const matrixSection = document.getElementById('matrix-section');
-  const jsonSection = document.getElementById('json-section');
-  const inputMode = document.getElementById('input-mode');
-
-  function switchTab(target) {
-    tabBtns.forEach(b => {
-      b.classList.remove('bg-white', 'dark:bg-slate-700', 'text-blue-700', 'dark:text-white', 'shadow-sm');
-      b.classList.add('text-slate-500', 'dark:text-slate-400');
-    });
-
-    if (target === 'manual-section') {
-      manualSection?.classList.remove('hidden');
-      matrixSection?.classList.add('hidden');
-      jsonSection?.classList.add('hidden');
-      if (inputMode) inputMode.value = 'manual';
-      document.getElementById('tab-manual')?.classList.add('bg-white', 'dark:bg-slate-700', 'text-blue-700', 'dark:text-white', 'shadow-sm');
-      document.getElementById('tab-manual')?.classList.remove('text-slate-500', 'dark:text-slate-400');
-    } else if (target === 'matrix-section') {
-      manualSection?.classList.add('hidden');
-      matrixSection?.classList.remove('hidden');
-      jsonSection?.classList.add('hidden');
-      if (inputMode) inputMode.value = 'matrix';
-      document.getElementById('tab-matrix')?.classList.add('bg-white', 'dark:bg-slate-700', 'text-blue-700', 'dark:text-white', 'shadow-sm');
-      document.getElementById('tab-matrix')?.classList.remove('text-slate-500', 'dark:text-slate-400');
-    } else {
-      manualSection?.classList.add('hidden');
-      matrixSection?.classList.add('hidden');
-      jsonSection?.classList.remove('hidden');
-      if (inputMode) inputMode.value = 'json';
-      document.getElementById('tab-json')?.classList.add('bg-white', 'dark:bg-slate-700', 'text-blue-700', 'dark:text-white', 'shadow-sm');
-      document.getElementById('tab-json')?.classList.remove('text-slate-500', 'dark:text-slate-400');
-    }
-  }
-
-  // Attach tab switching events
-  if (tabBtns.length) {
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => switchTab(btn.dataset.target));
-    });
-    // Default active tab
-    switchTab('manual-section');
-  }
-
-  // Matrix live counter and presets
-  const inputNb = document.getElementById('matrix_nb');
-  const inputTh = document.getElementById('matrix_th');
-  const inputVd = document.getElementById('matrix_vd');
-  const inputVdc = document.getElementById('matrix_vdc');
-  const matrixBadge = document.getElementById('matrix-total-badge');
-  const inputDuration = document.getElementById('duration');
-  const selectExamType = document.getElementById('exam_type');
-
-  function updateMatrixTotal() {
-    const nb = parseInt(inputNb?.value || '0', 10) || 0;
-    const th = parseInt(inputTh?.value || '0', 10) || 0;
-    const vd = parseInt(inputVd?.value || '0', 10) || 0;
-    const vdc = parseInt(inputVdc?.value || '0', 10) || 0;
-    const total = nb + th + vd + vdc;
-    if (matrixBadge) {
-      matrixBadge.textContent = `Tổng: ${total} câu`;
-    }
-  }
-
-  [inputNb, inputTh, inputVd, inputVdc].forEach(el => {
-    el?.addEventListener('input', updateMatrixTotal);
-  });
-
-  document.getElementById('preset-thpt')?.addEventListener('click', () => {
-    if (inputNb) inputNb.value = '16';
-    if (inputTh) inputTh.value = '12';
-    if (inputVd) inputVd.value = '8';
-    if (inputVdc) inputVdc.value = '4';
-    if (inputDuration && (!inputDuration.value || inputDuration.value === '15' || inputDuration.value === '45')) inputDuration.value = '50';
-    if (selectExamType) selectExamType.value = 'mock_thpt';
-    updateMatrixTotal();
-  });
-
-  document.getElementById('preset-1tiet')?.addEventListener('click', () => {
-    if (inputNb) inputNb.value = '10';
-    if (inputTh) inputTh.value = '8';
-    if (inputVd) inputVd.value = '5';
-    if (inputVdc) inputVdc.value = '2';
-    if (inputDuration && (!inputDuration.value || inputDuration.value === '15' || inputDuration.value === '50')) inputDuration.value = '45';
-    if (selectExamType) selectExamType.value = '45m';
-    updateMatrixTotal();
-  });
-
-  document.getElementById('preset-15p')?.addEventListener('click', () => {
-    if (inputNb) inputNb.value = '5';
-    if (inputTh) inputTh.value = '3';
-    if (inputVd) inputVd.value = '2';
-    if (inputVdc) inputVdc.value = '0';
-    if (inputDuration && (!inputDuration.value || inputDuration.value === '45' || inputDuration.value === '50')) inputDuration.value = '15';
-    if (selectExamType) selectExamType.value = '15m';
-    updateMatrixTotal();
-  });
-
-  // Category dropdown dynamic filter
-  function updateCategoryDropdown(subjectId, dropdownId) {
-    const sel = document.getElementById(dropdownId);
-    if (!sel) return;
-    const currentVal = sel.value;
-    const cats = Array.isArray(allCategories) ? allCategories : [];
-    const filtered = subjectId ? cats.filter(c => c.subject_id === subjectId) : [];
-    sel.innerHTML = '<option value="">-- Tất cả / Không phân chuyên mục --</option>';
-    filtered.forEach(c => {
-      const opt = document.createElement('option');
-      opt.value = c.id;
-      opt.textContent = c.name;
-      if (c.id === currentVal) opt.selected = true;
-      sel.appendChild(opt);
-    });
-  }
-
-  // Manual select: filter by subject, category, and search text
-  const subjectSelect = document.getElementById('subject_id');
-  const categorySelect = document.getElementById('exam_category_id');
-  const noSubjectWarning = document.getElementById('no-subject-warning');
-  const noQuestionsWarning = document.getElementById('no-questions-warning');
-  const questionsList = document.getElementById('questions-list');
-  const questionItems = document.querySelectorAll('.question-checkbox-item');
-  const selectedCount = document.getElementById('selected-count');
-  const bankSearchBar = document.getElementById('bank-search-bar');
-  const bankSearchInput = document.getElementById('bank-search-input');
-  const btnSelectAll = document.getElementById('btn-select-all');
-  const btnDeselectAll = document.getElementById('btn-deselect-all');
-
-  function updateSelectedCount() {
-    const checked = document.querySelectorAll('input[name="question_ids"]:checked').length;
-    if (selectedCount) {
-      selectedCount.textContent = `${checked} câu đã chọn`;
-      selectedCount.classList.toggle('hidden', checked === 0);
-    }
-  }
-
-  function filterQuestions() {
-    const selectedId = subjectSelect?.value;
-    const catId = categorySelect?.value;
-    const query = (bankSearchInput?.value || '').toLowerCase().trim();
-    
-    if (noSubjectWarning && noQuestionsWarning && questionsList) {
-      if (!selectedId) {
-        noSubjectWarning.classList.remove('hidden');
-        noQuestionsWarning.classList.add('hidden');
-        questionsList.classList.add('hidden');
-        bankSearchBar?.classList.add('hidden');
-        btnSelectAll?.classList.add('hidden');
-        btnDeselectAll?.classList.add('hidden');
-        return;
-      }
-
-      noSubjectWarning.classList.add('hidden');
-      bankSearchBar?.classList.remove('hidden');
-      btnSelectAll?.classList.remove('hidden');
-      btnDeselectAll?.classList.remove('hidden');
-
-      let visibleCount = 0;
-      questionItems.forEach(item => {
-        const itemSubId = item.getAttribute('data-subject-id');
-        const itemCatId = item.getAttribute('data-category-id');
-        const contentText = (item.getAttribute('data-search-text') || item.textContent || '').toLowerCase();
-        
-        let matches = itemSubId === selectedId;
-        if (matches && catId) {
-          matches = (itemCatId === catId);
-        }
-        if (matches && query) {
-          matches = contentText.includes(query);
-        }
-        
-        item.classList.toggle('hidden', !matches);
-        if (matches) visibleCount++;
-      });
-      noQuestionsWarning.classList.toggle('hidden', visibleCount > 0);
-      questionsList.classList.toggle('hidden', visibleCount === 0);
-      updateSelectedCount();
-    }
-  }
-
-  let lastSubjectId = subjectSelect?.value || '';
-
-  if (subjectSelect) {
-    subjectSelect.addEventListener('change', () => {
-      const newSubjectId = subjectSelect.value;
-      if (newSubjectId !== lastSubjectId) {
-        lastSubjectId = newSubjectId;
-        // Uncheck all questions only when switching subjects
-        document.querySelectorAll('input[name="question_ids"]').forEach(cb => {
-          cb.checked = false;
-        });
-      }
-      updateCategoryDropdown(newSubjectId, 'exam_category_id');
-      filterQuestions();
-    });
-  }
-
-  if (categorySelect) {
-    categorySelect.addEventListener('change', filterQuestions);
-  }
-
-  bankSearchInput?.addEventListener('input', filterQuestions);
-
-  btnSelectAll?.addEventListener('click', () => {
-    questionItems.forEach(item => {
-      if (!item.classList.contains('hidden')) {
-        const cb = item.querySelector('input[type="checkbox"]');
-        if (cb) cb.checked = true;
-      }
-    });
-    updateSelectedCount();
-  });
-
-  btnDeselectAll?.addEventListener('click', () => {
-    questionItems.forEach(item => {
-      const cb = item.querySelector('input[type="checkbox"]');
-      if (cb) cb.checked = false;
-    });
-    updateSelectedCount();
-  });
-
-  document.querySelectorAll('input[name="question_ids"]').forEach(cb => {
-    cb.addEventListener('change', updateSelectedCount);
-  });
-
-  // JSON validate
-  const jsonData = document.getElementById('json-data');
-  const btnValidate = document.getElementById('btn-validate-json');
-  const jsonFeedback = document.getElementById('json-feedback');
-
-  if (btnValidate && jsonData && jsonFeedback) {
-    btnValidate.addEventListener('click', () => {
-      const raw = jsonData.value.trim();
-      if (!raw) {
-        jsonFeedback.textContent = '⚠️ Vui lòng nhập JSON.';
-        jsonFeedback.className = 'text-xs font-semibold text-amber-600 dark:text-amber-400';
-        jsonFeedback.classList.remove('hidden');
-        return;
-      }
-      try {
-        const parsed = JSON.parse(raw);
-        const qs = Array.isArray(parsed) ? parsed : (parsed.questions || []);
-        if (!Array.isArray(qs) || qs.length === 0) throw new Error('Thiếu mảng "questions" với ít nhất 1 câu hỏi.');
-        const dynamicCount = qs.filter(q => Boolean(q?.is_dynamic || q?.metadata?.is_dynamic)).length;
-        const dynamicInfo = dynamicCount > 0 ? ` — gồm ${dynamicCount} câu hỏi động ⚡` : '';
-        jsonFeedback.textContent = `✅ JSON hợp lệ (${qs.length} câu hỏi${dynamicInfo})`;
-        jsonFeedback.className = 'text-xs font-semibold text-emerald-600 dark:text-emerald-400';
-        jsonFeedback.classList.remove('hidden');
-      } catch (e) {
-        jsonFeedback.textContent = `❌ Lỗi: ${e.message}`;
-        jsonFeedback.className = 'text-xs font-semibold text-rose-600 dark:text-rose-400';
-        jsonFeedback.classList.remove('hidden');
-      }
-    });
-  }
-
-  // Paste sample
-  const btnSample = document.getElementById('btn-paste-sample');
-  if (btnSample && jsonData) {
-    btnSample.addEventListener('click', async () => {
-      try {
-        const sampleUrl = (baseUrl ? baseUrl : '') + '/sample-questions.json';
-        const res = await fetch(sampleUrl);
-        if (!res.ok) throw new Error('Fetch failed');
-        const text = await res.text();
-        jsonData.value = text;
-        jsonData.dispatchEvent(new Event('input'));
-      } catch {
-        jsonData.value = JSON.stringify({
-          title: "Đề thi mẫu",
-          questions: [
-            {
-              type: "mcq",
-              question: "Câu hỏi trắc nghiệm 1: Trong không gian Oxyz, phương trình mặt phẳng đi qua gốc tọa độ O(0,0,0) có dạng gì?",
-              option_a: "Ax + By + Cz = 0",
-              option_b: "Ax + By + Cz + 1 = 0",
-              option_c: "Ax + By = 1",
-              option_d: "x + y + z = 10",
-              correct_option: "A",
-              explanation: "Mặt phẳng đi qua gốc tọa độ có hệ số tự do D = 0.",
-              difficulty_level: "easy"
-            },
-            {
-              type: "tf",
-              question: "Hàm số y = x^3 - 3x có 2 điểm cực trị đúng hay sai?",
-              correct_option: "Đúng",
-              explanation: "Đạo hàm y' = 3x^2 - 3 = 0 có hai nghiệm phân biệt x = ±1.",
-              difficulty_level: "medium"
-            },
-            {
-              type: "sa",
-              question: "Cho cấp số cộng (un) có u1 = 2 và công sai d = 3. Giá trị của u5 bằng bao nhiêu?",
-              correct_option: "14",
-              explanation: "u5 = u1 + 4d = 2 + 4*3 = 14.",
-              difficulty_level: "easy"
-            }
-          ]
-        }, null, 2);
-        jsonData.dispatchEvent(new Event('input'));
-      }
-    });
-  }
-
-  // Init dropdown and questions if subject preselected
-  if (subjectSelect && subjectSelect.value) {
-    updateCategoryDropdown(subjectSelect.value, 'exam_category_id');
-    filterQuestions();
-  }
-  updateSelectedCount();
-</script>
 
 <script>
   import { instantiateDynamicTemplate } from '../../../lib/dynamic-quiz';
+  import { getQuestionTypeLabelVi } from '../../../lib/exam';
+  import {
+    MATRIX_ROW_KEYS,
+    createEmptyMatrix2D,
+    distributeCountsTo2DMatrix,
+    summarize2DMatrix,
+    getRecommendedPreset,
+    buildExamPrompt,
+    callGeminiGenerateExam,
+    parseAiExamJson,
+    type ExamTypeKey,
+    type ExamMatrix2D,
+    type MatrixRowKey,
+  } from '../../../lib/ai-exam-prompts';
+  import {
+    extractExamFromFilesWithGemini,
+    uploadPendingImagesAndSerialize,
+    type ImportedExamQuestion,
+    type AnswerImportStrategy,
+  } from '../../../lib/ai-file-import';
+  import type { PdfDocumentController } from '../../../lib/pdf-exam-parser';
 
+  const STORAGE_KEY_GEMINI = 'lop12_admin_gemini_api_key';
+  const STORAGE_KEY_MODEL = 'lop12_admin_gemini_model';
+
+  const initDataEl = document.getElementById('exam-new-init-data');
+  const initData = initDataEl ? JSON.parse(initDataEl.textContent || '{}') : { baseUrl: '', allCategories: [] };
+  const baseUrl: string = initData.baseUrl || '';
+  const allCategories: Array<{ id: string; subject_id: string; name: string }> = initData.allCategories || [];
+
+  const formEl = document.getElementById('exam-create-form') as HTMLFormElement | null;
+  const titleInput = document.getElementById('title') as HTMLInputElement | null;
+  const subjectSelect = document.getElementById('subject_id') as HTMLSelectElement | null;
+  const categorySelect = document.getElementById('exam_category_id') as HTMLSelectElement | null;
+  const examProgramSelect = document.getElementById('exam_program') as HTMLSelectElement | null;
+  const durationInput = document.getElementById('duration') as HTMLInputElement | null;
+  const crossSubjectsBox = document.getElementById('cross-subjects-box');
+
+  const ppqInput = document.getElementById('point_per_question') as HTMLInputElement | null;
+  const ppSaInput = document.getElementById('point_per_sa') as HTMLInputElement | null;
+  const maxScoreInput = document.getElementById('max_score') as HTMLInputElement | null;
+  const pickHiddenInput = document.getElementById('pick_per_type') as HTMLInputElement | null;
+  const btnClearPick = document.getElementById('btn-clear-pick');
+
+  const inputMode = document.getElementById('input-mode') as HTMLInputElement | null;
+  const readyIndicator = document.getElementById('ready-questions-indicator');
+  const btnSubmitExam = document.getElementById('btn-submit-exam') as HTMLButtonElement | null;
+  const submitExamLabel = document.getElementById('submit-exam-label');
+
+  // Tabs & Shared Gemini Box
+  const tabBtns = document.querySelectorAll<HTMLButtonElement>('.tab-btn');
+  const sharedGeminiBox = document.getElementById('shared-gemini-box');
+  const aiSection = document.getElementById('ai-section');
+  const fileSection = document.getElementById('file-section');
+  const jsonSection = document.getElementById('json-section');
+
+  const apiKeyInput = document.getElementById('gemini-api-key') as HTMLInputElement | null;
+  const modelSelect = document.getElementById('gemini-model') as HTMLSelectElement | null;
+  const rememberCheckbox = document.getElementById('remember-api-key') as HTMLInputElement | null;
+  const keySavedBadge = document.getElementById('key-saved-badge');
+  const btnToggleKey = document.getElementById('btn-toggle-key');
+  const btnClearKey = document.getElementById('btn-clear-key');
+
+  // AI Matrix elements
+  const toggleThreeLevel = document.getElementById('toggle-three-level') as HTMLInputElement | null;
+  const thColVdc = document.getElementById('th-col-vdc');
+  const colSumVdcEl = document.getElementById('col-sum-vdc');
+  const presetNoteEl = document.getElementById('ai-preset-note');
+  const totalBadgeEl = document.getElementById('ai-total-badge');
+  const scoreBadgeEl = document.getElementById('ai-score-badge');
+  const btnApplyPreset = document.getElementById('btn-apply-subject-preset');
+
+  const textbookSelect = document.getElementById('ai-textbook') as HTMLSelectElement | null;
+  const topicsInput = document.getElementById('ai-topics') as HTMLInputElement | null;
+  const extraNotesInput = document.getElementById('ai-extra-notes') as HTMLInputElement | null;
+  const includeDynamicCb = document.getElementById('ai-include-dynamic') as HTMLInputElement | null;
+
+  const promptEditor = document.getElementById('ai-prompt-editor') as HTMLTextAreaElement | null;
+  const promptEditedBadge = document.getElementById('prompt-edited-badge');
+  const btnResetPrompt = document.getElementById('btn-reset-prompt');
+  const btnCopyPrompt = document.getElementById('btn-copy-prompt');
+  const btnGenerateAi = document.getElementById('btn-generate-ai') as HTMLButtonElement | null;
+  const btnCancelAi = document.getElementById('btn-cancel-ai') as HTMLButtonElement | null;
+  const aiBtnIcon = document.getElementById('ai-btn-icon');
+  const aiBtnLabel = document.getElementById('ai-btn-label');
+  const aiStatusMsg = document.getElementById('ai-status-msg');
+  const aiSaWarnings = document.getElementById('ai-sa-warnings');
+  const aiResultPanel = document.getElementById('ai-result-panel');
+  const aiResultSummary = document.getElementById('ai-result-summary');
+  const aiResultList = document.getElementById('ai-result-list');
+  const btnEditInJsonTab = document.getElementById('btn-edit-in-json-tab');
+
+  // Word / PDF Import elements
+  const mainFileInput = document.getElementById('exam-main-file') as HTMLInputElement | null;
+  const answerFileInput = document.getElementById('exam-answer-file') as HTMLInputElement | null;
+  const dropzoneMain = document.getElementById('dropzone-main-file');
+  const dropzoneAnswer = document.getElementById('dropzone-answer-file');
+  const mainFileBadge = document.getElementById('main-file-badge');
+  const answerFileBadge = document.getElementById('answer-file-badge');
+  const btnClearAnswerFile = document.getElementById('btn-clear-answer-file');
+  const fileAnswerStrategy = document.getElementById('file-answer-strategy') as HTMLSelectElement | null;
+  const fileGenExplanation = document.getElementById('file-gen-explanation') as HTMLInputElement | null;
+  const fileAutoCrop = document.getElementById('file-auto-crop') as HTMLInputElement | null;
+  const btnExtractFile = document.getElementById('btn-extract-file') as HTMLButtonElement | null;
+  const btnCancelFile = document.getElementById('btn-cancel-file') as HTMLButtonElement | null;
+  const fileBtnIcon = document.getElementById('file-btn-icon');
+  const fileBtnLabel = document.getElementById('file-btn-label');
+  const fileStatusText = document.getElementById('file-status-text');
+  const fileProgressBarWrap = document.getElementById('file-progress-bar-wrap');
+  const fileProgressBar = document.getElementById('file-progress-bar');
+  const fileWarningsBanner = document.getElementById('file-warnings-banner');
+  const fileSplitReview = document.getElementById('file-split-review');
+  const fileSummaryTitle = document.getElementById('file-summary-title');
+  const fileQuestionsList = document.getElementById('file-questions-list');
+  const btnSyncFileToJson = document.getElementById('btn-sync-file-to-json');
+
+  // PDF Viewer & Manual Cropper
+  const pdfPageControls = document.getElementById('pdf-page-controls');
+  const btnPdfPrev = document.getElementById('btn-pdf-prev') as HTMLButtonElement | null;
+  const btnPdfNext = document.getElementById('btn-pdf-next') as HTMLButtonElement | null;
+  const pdfPageLabel = document.getElementById('pdf-page-label');
+  const pdfViewerWrap = document.getElementById('pdf-viewer-wrap');
+  const pdfCanvasStage = document.getElementById('pdf-canvas-stage');
+  const pdfReviewCanvas = document.getElementById('pdf-review-canvas') as HTMLCanvasElement | null;
+  const pdfCropRect = document.getElementById('pdf-crop-rect');
+  const pdfCropHint = document.getElementById('pdf-crop-hint');
+  const pdfCropTargetLabel = document.getElementById('pdf-crop-target-label');
+  const btnCancelCropMode = document.getElementById('btn-cancel-crop-mode');
+  const docxViewerWrap = document.getElementById('docx-viewer-wrap');
+
+  // JSON Tab
   const jsonDataEl = document.getElementById('json-data') as HTMLTextAreaElement | null;
   const jsonFeedbackEl = document.getElementById('json-feedback');
+  const btnPasteSample = document.getElementById('btn-paste-sample');
   const btnPasteDynamic = document.getElementById('btn-paste-dynamic-sample');
+  const btnValidateJson = document.getElementById('btn-validate-json');
   const btnPreviewDynamic = document.getElementById('btn-preview-dynamic');
   const btnRerollDynamic = document.getElementById('btn-reroll-dynamic');
   const btnClosePreview = document.getElementById('btn-close-preview');
   const previewPanel = document.getElementById('dynamic-preview-panel');
   const previewList = document.getElementById('dynamic-preview-list');
 
-  const DYNAMIC_MATH_SAMPLE = {
-    question_type_id: 'Math-10-11-12',
-    questions: [
-      {
-        type: 'mcq',
-        question: 'Giải phương trình bậc hai $x^2 - x - 2 = 0$',
-        option_a: '$x = -1$ hoặc $x = 2$',
-        option_b: '$x = 1$ hoặc $x = -2$',
-        option_c: '$x = 1$ hoặc $x = 2$',
-        option_d: '$x = -1$ hoặc $x = -2$',
-        correct_option: 'A',
-        explanation: 'Ta có $(x+1)(x-2)=0 \\Rightarrow x=-1$ hoặc $x=2$.',
-        difficulty_level: 'easy',
-        is_dynamic: false,
-      },
-      {
-        type: 'mcq',
-        question: 'Cho hàm số $y = !a#0!x^2 + !b:1:15!x - !c(2,4,6)!$ (với $a = !a!$ là số iff(!a!>0, dương, âm)). Tính giá trị $y(1) = !a! + !b! - !c!$.',
-        option_a: '{tinh: !a! + !b! - !c!}',
-        option_b: '{tinh: !a! + !b! + !c!}',
-        option_c: '{tinh: !a! - !b! - !c!}',
-        option_d: '{tinh: !a! + !b! - !c! + 3}',
-        correct_option: 'A',
-        explanation: 'Thay $x = 1$ ta được $y(1) = !a! + !b! - !c! = {tinh: !a! + !b! - !c!}$.',
-        difficulty_level: 'medium',
-        is_dynamic: true,
-      },
-      {
-        type: 'msq',
-        question: 'Cho hai số nguyên $a = !a:1:10!$ và $b = !b:1:10#!a!!$. Xét tính đúng sai của các khẳng định sau:',
-        option_a: 'Tổng $a + b = {tinh: !a! + !b!}$',
-        option_b: 'Hiệu $a - b = {tinh: !a! - !b! + 1}$',
-        option_c: 'Tích $a \\cdot b = {tinh: !a! * !b!}$',
-        option_d: '$a$ và $b$ bằng nhau',
-        correct_option: 'A,C',
-        explanation: 'Vì $a = !a!$ và $b = !b!$ ($b \\neq a$) nên $a+b = {tinh: !a! + !b!}$ và $a \\cdot b = {tinh: !a! * !b!}$.',
-        difficulty_level: 'medium',
-        is_dynamic: true,
-      },
-      {
-        type: 'sa',
-        question: 'Tính giá trị biểu thức $P = 2 \\cdot !a:1:23! + !b(2,4,6)!$',
-        correct_option: '{tinh: 2 * !a! + !b!}',
-        explanation: 'Thay $a = !a!, b = !b!$, ta có $P = 2 \\cdot !a! + !b! = {tinh: 2 * !a! + !b!}$.',
-        difficulty_level: 'hard',
-        is_dynamic: true,
-      },
-      {
-        type: 'tl',
-        question: 'Trình bày cách tìm tập xác định của hàm số $y = \\sqrt{x - !a:1:10!}$.',
-        correct_option: '',
-        explanation: 'Điều kiện $x - !a! \\ge 0 \\Leftrightarrow x \\ge !a!$.',
-        difficulty_level: 'hard',
-        is_dynamic: true,
-      },
-    ],
-  };
+  let isPromptManuallyEdited = false;
+  let activeAbortController: AbortController | null = null;
+  let timerInterval: number | null = null;
+
+  // File Import Runtime State
+  let selectedMainFile: File | null = null;
+  let selectedAnswerFile: File | null = null;
+  let importedQuestionsState: ImportedExamQuestion[] = [];
+  let importedTitleState: string | undefined;
+  let activePdfController: PdfDocumentController | null = null;
+  let currentPdfPage = 1;
+  let currentFileFilter: 'all' | 'missing' | 'figure' = 'all';
+  let activeCropQuestionIdx: number | null = null;
+  let isUploadingPendingImages = false;
 
   function escapeHtml(str: string): string {
-    return str
+    return String(str || '')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
   }
 
-  function renderDynamicPreview() {
-    if (!jsonDataEl || !previewPanel || !previewList) return;
-    const raw = jsonDataEl.value.trim();
-    if (!raw) {
-      if (jsonFeedbackEl) {
-        jsonFeedbackEl.textContent = '⚠️ Vui lòng nhập JSON trước khi xem thử.';
-        jsonFeedbackEl.className = 'text-xs font-semibold text-amber-600 dark:text-amber-400';
-        jsonFeedbackEl.classList.remove('hidden');
-      }
-      return;
+  function renderMath(container: HTMLElement | null) {
+    if (!container) return;
+    const renderMathInElement = (window as any).renderMathInElement;
+    if (typeof renderMathInElement === 'function') {
+      try {
+        renderMathInElement(container, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\(', right: '\\)', display: false },
+            { left: '\\[', right: '\\]', display: true },
+          ],
+          throwOnError: false,
+        });
+      } catch { /* ignore */ }
     }
+  }
 
-    let parsed: any;
+  // ── 1. Visual pick_per_type Sync ──────────────────────────────────────────
+  function hydrateVisualPickFromHidden() {
+    if (!pickHiddenInput?.value.trim()) return;
     try {
-      parsed = JSON.parse(raw);
-    } catch (e: any) {
-      if (jsonFeedbackEl) {
-        jsonFeedbackEl.textContent = `❌ JSON không hợp lệ: ${e.message}`;
-        jsonFeedbackEl.className = 'text-xs font-semibold text-rose-600 dark:text-rose-400';
-        jsonFeedbackEl.classList.remove('hidden');
+      const obj = JSON.parse(pickHiddenInput.value);
+      document.querySelectorAll<HTMLInputElement>('.visual-pick-input').forEach(inp => {
+        const k = inp.dataset.pickKey || '';
+        if (obj && typeof obj[k] === 'number' && obj[k] > 0) inp.value = String(obj[k]);
+      });
+    } catch { /* ignore */ }
+  }
+
+  function syncVisualPickToHidden() {
+    if (!pickHiddenInput) return;
+    const out: Record<string, number> = {};
+    document.querySelectorAll<HTMLInputElement>('.visual-pick-input').forEach(inp => {
+      const k = inp.dataset.pickKey || '';
+      const v = parseInt(inp.value || '', 10);
+      if (k && !Number.isNaN(v) && v > 0) out[k] = v;
+    });
+    pickHiddenInput.value = Object.keys(out).length > 0 ? JSON.stringify(out) : '';
+  }
+
+  document.querySelectorAll('.visual-pick-input').forEach(inp => inp.addEventListener('input', syncVisualPickToHidden));
+  btnClearPick?.addEventListener('click', () => {
+    document.querySelectorAll<HTMLInputElement>('.visual-pick-input').forEach(inp => { inp.value = ''; });
+    syncVisualPickToHidden();
+  });
+  hydrateVisualPickFromHidden();
+
+  // ── 2. Tabs (3 Modes: ai | file | json) ───────────────────────────────────
+  function switchTab(target: 'ai-section' | 'file-section' | 'json-section') {
+    tabBtns.forEach(b => {
+      b.classList.remove('bg-white', 'dark:bg-slate-700', 'text-indigo-700', 'dark:text-white', 'shadow-sm');
+      b.classList.add('text-slate-500', 'dark:text-slate-400');
+    });
+
+    aiSection?.classList.toggle('hidden', target !== 'ai-section');
+    fileSection?.classList.toggle('hidden', target !== 'file-section');
+    jsonSection?.classList.toggle('hidden', target !== 'json-section');
+    sharedGeminiBox?.classList.toggle('hidden', target === 'json-section');
+
+    const modeVal = target === 'file-section' ? 'file' : target === 'json-section' ? 'json' : 'ai';
+    if (inputMode) inputMode.value = modeVal;
+
+    const btnId = target === 'file-section' ? 'tab-file' : target === 'json-section' ? 'tab-json' : 'tab-ai';
+    const activeBtn = document.getElementById(btnId);
+    activeBtn?.classList.add('bg-white', 'dark:bg-slate-700', 'text-indigo-700', 'dark:text-white', 'shadow-sm');
+    activeBtn?.classList.remove('text-slate-500', 'dark:text-slate-400');
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const t = btn.dataset.target;
+      if (t === 'file-section' || t === 'json-section') switchTab(t);
+      else switchTab('ai-section');
+    });
+  });
+
+  switchTab(
+    inputMode?.value === 'file'
+      ? 'file-section'
+      : inputMode?.value === 'json'
+        ? 'json-section'
+        : 'ai-section'
+  );
+
+  // ── 3. Gemini API Key LocalStorage ────────────────────────────────────────
+  try {
+    const savedKey = localStorage.getItem(STORAGE_KEY_GEMINI);
+    if (savedKey && apiKeyInput) {
+      apiKeyInput.value = savedKey;
+      keySavedBadge?.classList.remove('hidden');
+    }
+    const savedModel = localStorage.getItem(STORAGE_KEY_MODEL);
+    if (savedModel && modelSelect) modelSelect.value = savedModel;
+  } catch { /* ignore */ }
+
+  function syncApiKeyStorage() {
+    try {
+      if (rememberCheckbox?.checked && apiKeyInput?.value.trim()) {
+        localStorage.setItem(STORAGE_KEY_GEMINI, apiKeyInput.value.trim());
+      } else if (!rememberCheckbox?.checked) {
+        localStorage.removeItem(STORAGE_KEY_GEMINI);
       }
-      return;
+      if (modelSelect?.value) localStorage.setItem(STORAGE_KEY_MODEL, modelSelect.value);
+    } catch { /* ignore */ }
+  }
+
+  apiKeyInput?.addEventListener('change', syncApiKeyStorage);
+  rememberCheckbox?.addEventListener('change', syncApiKeyStorage);
+  modelSelect?.addEventListener('change', syncApiKeyStorage);
+
+  btnToggleKey?.addEventListener('click', () => {
+    if (!apiKeyInput || !btnToggleKey) return;
+    const isHidden = apiKeyInput.type === 'password';
+    apiKeyInput.type = isHidden ? 'text' : 'password';
+    btnToggleKey.textContent = isHidden ? 'Ẩn' : 'Hiện';
+  });
+
+  btnClearKey?.addEventListener('click', () => {
+    if (apiKeyInput) apiKeyInput.value = '';
+    keySavedBadge?.classList.add('hidden');
+    try { localStorage.removeItem(STORAGE_KEY_GEMINI); } catch { /* ignore */ }
+  });
+
+  // ── 4. Category & Cross-Subject UI ────────────────────────────────────────
+  function updateCategoryDropdown(subjectId: string) {
+    if (!categorySelect) return;
+    const currentVal = categorySelect.value || categorySelect.dataset.initial || '';
+    const filtered = subjectId ? allCategories.filter(c => c.subject_id === subjectId) : [];
+    categorySelect.innerHTML = '<option value="">-- Tất cả / Không phân chuyên mục --</option>';
+    filtered.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c.id;
+      opt.textContent = c.name;
+      if (c.id === currentVal) opt.selected = true;
+      categorySelect.appendChild(opt);
+    });
+    categorySelect.dataset.initial = '';
+  }
+
+  function updateCrossSubjectsVisibility() {
+    const prog = examProgramSelect?.value || 'mock_thpt';
+    const isCross = prog === 'dgnl_hsa' || prog === 'dgnl_vact' || prog === 'dgtd_tsa';
+    crossSubjectsBox?.classList.toggle('hidden', !isCross);
+  }
+
+  function getSelectedCrossSubjects(): string[] {
+    const prog = examProgramSelect?.value || 'mock_thpt';
+    if (prog !== 'dgnl_hsa' && prog !== 'dgnl_vact' && prog !== 'dgtd_tsa') return [];
+    const checked: string[] = [];
+    document.querySelectorAll<HTMLInputElement>('.cross-subject-cb:checked').forEach(cb => checked.push(cb.value));
+    return checked;
+  }
+
+  function getSelectedSubjectName(): string {
+    if (!subjectSelect) return '';
+    const opt = subjectSelect.options[subjectSelect.selectedIndex];
+    if (!opt || !opt.value) return '';
+    return opt.dataset.name || opt.textContent?.trim() || '';
+  }
+
+  // ── 5. 2D Matrix & AI Generation (Tab 1) ──────────────────────────────────
+  function getCellInput(row: MatrixRowKey, lvl: 'nb' | 'th' | 'vd' | 'vdc'): HTMLInputElement | null {
+    return document.querySelector<HTMLInputElement>(`input.m2d-cell[data-m2d-row="${row}"][data-m2d-lvl="${lvl}"]`);
+  }
+
+  function readMatrix2DFromDom(): ExamMatrix2D {
+    const m = createEmptyMatrix2D();
+    const is3Lvl = Boolean(toggleThreeLevel?.checked);
+    for (const rKey of MATRIX_ROW_KEYS) {
+      const nb = Math.max(0, parseInt(getCellInput(rKey, 'nb')?.value || '0', 10) || 0);
+      const th = Math.max(0, parseInt(getCellInput(rKey, 'th')?.value || '0', 10) || 0);
+      const vd = Math.max(0, parseInt(getCellInput(rKey, 'vd')?.value || '0', 10) || 0);
+      const vdc = is3Lvl ? 0 : Math.max(0, parseInt(getCellInput(rKey, 'vdc')?.value || '0', 10) || 0);
+      m[rKey] = { nb, th, vd, vdc };
+    }
+    return m;
+  }
+
+  function writeMatrix2DToDom(m: ExamMatrix2D) {
+    for (const rKey of MATRIX_ROW_KEYS) {
+      const cell = m[rKey] || { nb: 0, th: 0, vd: 0, vdc: 0 };
+      const iNb = getCellInput(rKey, 'nb');
+      const iTh = getCellInput(rKey, 'th');
+      const iVd = getCellInput(rKey, 'vd');
+      const iVdc = getCellInput(rKey, 'vdc');
+      if (iNb) iNb.value = String(cell.nb || 0);
+      if (iTh) iTh.value = String(cell.th || 0);
+      if (iVd) iVd.value = String(cell.vd || 0);
+      if (iVdc) iVdc.value = String(cell.vdc || 0);
+    }
+  }
+
+  function applyThreeLevelColumnToggle() {
+    const is3Lvl = Boolean(toggleThreeLevel?.checked);
+    thColVdc?.classList.toggle('hidden', is3Lvl);
+    colSumVdcEl?.classList.toggle('hidden', is3Lvl);
+    document.querySelectorAll('.td-col-vdc').forEach(td => td.classList.toggle('hidden', is3Lvl));
+    if (is3Lvl) {
+      for (const rKey of MATRIX_ROW_KEYS) {
+        const iVd = getCellInput(rKey, 'vd');
+        const iVdc = getCellInput(rKey, 'vdc');
+        const vdcVal = parseInt(iVdc?.value || '0', 10) || 0;
+        if (vdcVal > 0 && iVd && iVdc) {
+          iVd.value = String((parseInt(iVd.value || '0', 10) || 0) + vdcVal);
+          iVdc.value = '0';
+        }
+      }
+    }
+  }
+
+  function refreshMatrixSummaryAndPrompt(forcePrompt = false) {
+    const m2d = readMatrix2DFromDom();
+    const prog = (examProgramSelect?.value || 'mock_thpt') as ExamTypeKey;
+    const ppq = parseFloat(ppqInput?.value || '0.25') || 0.25;
+    const ppSa = parseFloat(ppSaInput?.value || '0.5') || 0.5;
+    const maxSc = parseFloat(maxScoreInput?.value || '10') || 10;
+
+    const sum = summarize2DMatrix(m2d, { pointPerQuestion: ppq, pointPerSa: ppSa, isVsat: prog === 'vsat' });
+    for (const rKey of MATRIX_ROW_KEYS) {
+      const el = document.getElementById(`row-sum-${rKey}`);
+      if (el) el.textContent = String(sum.rowTotals[rKey]);
+    }
+    const cNb = document.getElementById('col-sum-nb');
+    const cTh = document.getElementById('col-sum-th');
+    const cVd = document.getElementById('col-sum-vd');
+    const cVdc = document.getElementById('col-sum-vdc');
+    const cGrand = document.getElementById('matrix-grand-total');
+    if (cNb) cNb.textContent = String(sum.colTotals.nb);
+    if (cTh) cTh.textContent = String(sum.colTotals.th);
+    if (cVd) cVd.textContent = String(sum.colTotals.vd);
+    if (cVdc) cVdc.textContent = String(sum.colTotals.vdc);
+    if (cGrand) cGrand.textContent = String(sum.totalBlocks);
+
+    if (totalBadgeEl) {
+      totalBadgeEl.textContent = sum.totalEffectiveItems !== sum.totalBlocks
+        ? `${sum.totalBlocks} mục (~${sum.totalEffectiveItems} câu)`
+        : `${sum.totalBlocks} câu`;
+    }
+    if (scoreBadgeEl) {
+      const tlNote = sum.rowTotals.tl > 0 ? ` + ${sum.rowTotals.tl} câu TL` : '';
+      scoreBadgeEl.textContent = `TN: ${sum.estimatedObjectiveScore}đ${tlNote}`;
     }
 
-    const qs = Array.isArray(parsed) ? parsed : (parsed.questions || []);
-    const dynamicQs = qs
-      .map((q: any, idx: number) => ({ q, idx }))
-      .filter(({ q }: any) => Boolean(q?.is_dynamic || q?.metadata?.is_dynamic));
-
-    if (dynamicQs.length === 0) {
-      if (jsonFeedbackEl) {
-        jsonFeedbackEl.textContent = 'ℹ️ JSON không có câu hỏi nào đặt "is_dynamic": true.';
-        jsonFeedbackEl.className = 'text-xs font-semibold text-blue-600 dark:text-blue-400';
-        jsonFeedbackEl.classList.remove('hidden');
+    if ((forcePrompt || !isPromptManuallyEdited) && promptEditor) {
+      promptEditor.value = buildExamPrompt({
+        subjectName: getSelectedSubjectName(),
+        crossSubjects: getSelectedCrossSubjects(),
+        examType: prog,
+        duration: parseInt(durationInput?.value || '50', 10) || 50,
+        textbook: textbookSelect?.value || 'all',
+        topics: topicsInput?.value || '',
+        threeLevelMode: Boolean(toggleThreeLevel?.checked),
+        matrix2d: m2d,
+        pointPerQuestion: ppq,
+        pointPerSa: ppSa,
+        maxScore: maxSc,
+        includeDynamicMath: Boolean(includeDynamicCb?.checked),
+        extraNotes: extraNotesInput?.value || '',
+      });
+      if (forcePrompt) {
+        isPromptManuallyEdited = false;
+        promptEditedBadge?.classList.add('hidden');
       }
-      previewPanel.classList.add('hidden');
+    }
+  }
+
+  function applyRecommendedSubjectPreset() {
+    updateCrossSubjectsVisibility();
+    const preset = getRecommendedPreset(getSelectedSubjectName(), (examProgramSelect?.value || 'mock_thpt') as ExamTypeKey);
+    if (toggleThreeLevel) toggleThreeLevel.checked = preset.threeLevelMode;
+    writeMatrix2DToDom(preset.matrix2d);
+    applyThreeLevelColumnToggle();
+    if (durationInput) durationInput.value = String(preset.duration);
+    if (ppqInput) ppqInput.value = String(preset.pointPerQuestion);
+    if (ppSaInput) ppSaInput.value = String(preset.pointPerSa);
+    if (maxScoreInput) maxScoreInput.value = String(preset.maxScore);
+    if (presetNoteEl) presetNoteEl.textContent = `💡 ${preset.note}`;
+    refreshMatrixSummaryAndPrompt(true);
+  }
+
+  subjectSelect?.addEventListener('change', () => {
+    updateCategoryDropdown(subjectSelect.value);
+    applyRecommendedSubjectPreset();
+  });
+  examProgramSelect?.addEventListener('change', applyRecommendedSubjectPreset);
+  btnApplyPreset?.addEventListener('click', applyRecommendedSubjectPreset);
+  toggleThreeLevel?.addEventListener('change', () => {
+    applyThreeLevelColumnToggle();
+    refreshMatrixSummaryAndPrompt(false);
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('.dist-preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parts = (btn.dataset.dist || '').split(',').map(v => parseInt(v, 10) || 0);
+      const use3Lvl = btn.dataset['3lvl'] === '1';
+      if (parts.length === 4) {
+        const currentSummary = summarize2DMatrix(readMatrix2DFromDom());
+        if (toggleThreeLevel) toggleThreeLevel.checked = use3Lvl;
+        writeMatrix2DToDom(distributeCountsTo2DMatrix(currentSummary.rowTotals, { nb: parts[0], th: parts[1], vd: parts[2], vdc: parts[3] }, use3Lvl));
+        applyThreeLevelColumnToggle();
+        refreshMatrixSummaryAndPrompt(false);
+      }
+    });
+  });
+
+  document.querySelectorAll('.m2d-cell, .ai-meta-input, .cross-subject-cb').forEach(el => {
+    el.addEventListener('input', () => refreshMatrixSummaryAndPrompt(false));
+    el.addEventListener('change', () => refreshMatrixSummaryAndPrompt(false));
+  });
+  [durationInput, ppqInput, ppSaInput, maxScoreInput].forEach(el => el?.addEventListener('input', () => refreshMatrixSummaryAndPrompt(false)));
+
+  promptEditor?.addEventListener('input', () => {
+    isPromptManuallyEdited = true;
+    promptEditedBadge?.classList.remove('hidden');
+  });
+  btnResetPrompt?.addEventListener('click', () => refreshMatrixSummaryAndPrompt(true));
+  btnCopyPrompt?.addEventListener('click', async () => {
+    if (!promptEditor || !btnCopyPrompt) return;
+    try {
+      await navigator.clipboard.writeText(promptEditor.value);
+      const oldText = btnCopyPrompt.textContent;
+      btnCopyPrompt.textContent = '✅ Đã sao chép!';
+      setTimeout(() => { btnCopyPrompt.textContent = oldText; }, 1800);
+    } catch {
+      promptEditor.focus();
+      promptEditor.select();
+    }
+  });
+
+  function updateReadyQuestionsIndicator() {
+    if (!readyIndicator || !jsonDataEl) return;
+    const raw = jsonDataEl.value.trim();
+    if (!raw && importedQuestionsState.length === 0) {
+      readyIndicator.classList.add('hidden');
+      return;
+    }
+    if (importedQuestionsState.length > 0 && inputMode?.value === 'file') {
+      const pendingImgCount = importedQuestionsState.filter(q => Boolean(q._pendingBlob)).length;
+      const imgNote = pendingImgCount > 0 ? ` · ${pendingImgCount} ảnh sẵn sàng tải lên` : '';
+      readyIndicator.textContent = `✓ Sẵn sàng lưu (${importedQuestionsState.length} câu từ file${imgNote})`;
+      readyIndicator.classList.remove('hidden');
+      return;
+    }
+    try {
+      const parsed = parseAiExamJson(raw);
+      readyIndicator.textContent = `✓ Sẵn sàng lưu (${parsed.questions.length} mục câu hỏi)`;
+      readyIndicator.classList.remove('hidden');
+    } catch {
+      readyIndicator.classList.add('hidden');
+    }
+  }
+
+  function renderAiGeneratedPreview(questions: any[], saWarnings: string[]) {
+    if (aiSaWarnings) {
+      if (saWarnings.length > 0) {
+        aiSaWarnings.innerHTML = `<p class="font-extrabold">⚠️ Lưu ý quy chuẩn phiếu tô Trả lời ngắn (≤ 4 ký tự):</p><ul class="list-disc pl-4">${saWarnings.map(w => `<li>${escapeHtml(w)}</li>`).join('')}</ul>`;
+        aiSaWarnings.classList.remove('hidden');
+      } else {
+        aiSaWarnings.classList.add('hidden');
+      }
+    }
+    if (!aiResultPanel || !aiResultList || !aiResultSummary) return;
+
+    const countsByType: Record<string, number> = {};
+    questions.forEach(q => {
+      const t = String(q.type || 'mcq').toLowerCase();
+      countsByType[t] = (countsByType[t] || 0) + 1;
+    });
+    aiResultSummary.textContent = `✅ Đã sinh ${questions.length} mục câu hỏi (${Object.entries(countsByType).map(([t, c]) => `${c} ${getQuestionTypeLabelVi(t)}`).join(' · ')})`;
+
+    const alphabet = ['A', 'B', 'C', 'D', 'E', 'F'];
+    aiResultList.innerHTML = questions.map((q: any, idx: number) => {
+      const qType = String(q.type || 'mcq').toLowerCase();
+      const correctStr = String(q.correct_option ?? q.correct_answer ?? q.answer ?? '').trim();
+      const correctKeys = correctStr ? correctStr.split(',').map((k: string) => k.trim().toUpperCase()).filter(Boolean) : [];
+      const opts = [q.option_a, q.option_b, q.option_c, q.option_d, q.option_e, q.option_f].filter((v: any) => typeof v === 'string' && v.trim());
+
+      const bodyHtml = (qType === 'sa' || qType === 'tl')
+        ? (correctStr ? `<p class="mt-2 text-xs font-bold text-emerald-700 dark:text-emerald-400">Đáp án: <code>${escapeHtml(correctStr)}</code></p>` : '')
+        : opts.length > 0
+          ? `<div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mt-2">${opts.map((opt: string, oi: number) => {
+              const letter = alphabet[oi] || String(oi + 1);
+              const isRight = correctKeys.includes(letter);
+              return `<div class="px-2.5 py-1.5 rounded-lg border text-xs ${isRight ? 'border-emerald-300 bg-emerald-50/80 dark:border-emerald-700 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 font-semibold' : 'border-slate-200 dark:border-slate-700 bg-slate-50/60 dark:bg-slate-900 text-slate-700 dark:text-slate-300'}"><strong>${letter}.</strong> ${escapeHtml(opt)}${qType === 'msq' ? (isRight ? ' [Đ]' : ' [S]') : (isRight ? ' ✓' : '')}</div>`;
+            }).join('')}</div>`
+          : '';
+
+      return `<div class="p-3.5 rounded-xl bg-white dark:bg-[#1E1E38] border border-slate-200 dark:border-slate-700/80">
+        <div class="flex items-center justify-between mb-1"><span class="text-xs font-extrabold text-indigo-700 dark:text-indigo-300">Câu ${idx + 1} · ${escapeHtml(getQuestionTypeLabelVi(qType))}</span></div>
+        <div class="text-xs text-slate-800 dark:text-slate-100 whitespace-pre-line">${escapeHtml(q.question || q.content || '')}</div>
+        ${bodyHtml}
+      </div>`;
+    }).join('');
+
+    aiResultPanel.classList.remove('hidden');
+    renderMath(aiResultList);
+  }
+
+  btnGenerateAi?.addEventListener('click', async () => {
+    if (!subjectSelect?.value) { alert('Vui lòng chọn Môn học chính ở trên.'); subjectSelect?.focus(); return; }
+    const apiKey = apiKeyInput?.value.trim() || '';
+    if (!apiKey) { alert('Vui lòng nhập Gemini API Key.'); apiKeyInput?.focus(); return; }
+    syncApiKeyStorage();
+
+    activeAbortController = new AbortController();
+    if (btnGenerateAi) btnGenerateAi.disabled = true;
+    btnCancelAi?.classList.remove('hidden');
+    if (aiBtnIcon) aiBtnIcon.textContent = '⏳';
+    if (aiBtnLabel) aiBtnLabel.textContent = 'Đang biên soạn đề thi...';
+
+    let elapsed = 0;
+    timerInterval = window.setInterval(() => {
+      elapsed += 1;
+      if (aiStatusMsg) aiStatusMsg.textContent = `🤖 Gemini AI đang biên soạn đề thi (${elapsed}s)...`;
+    }, 1000);
+
+    try {
+      const result = await callGeminiGenerateExam({
+        apiKey,
+        model: modelSelect?.value || 'gemini-2.5-flash',
+        prompt: promptEditor?.value || '',
+        signal: activeAbortController.signal,
+      });
+      if (jsonDataEl) jsonDataEl.value = result.rawJson;
+      if (titleInput && !titleInput.value.trim() && result.title) titleInput.value = result.title;
+      renderAiGeneratedPreview(result.questions, result.saWarnings);
+      updateReadyQuestionsIndicator();
+      if (aiStatusMsg) aiStatusMsg.textContent = `✅ Hoàn tất trong ${elapsed}s!`;
+    } catch (err: any) {
+      if (aiStatusMsg) aiStatusMsg.textContent = err?.name === 'AbortError' ? '⚠️ Đã hủy.' : `❌ ${err?.message}`;
+    } finally {
+      if (timerInterval !== null) { clearInterval(timerInterval); timerInterval = null; }
+      activeAbortController = null;
+      if (btnGenerateAi) btnGenerateAi.disabled = false;
+      btnCancelAi?.classList.add('hidden');
+      if (aiBtnIcon) aiBtnIcon.textContent = '✨';
+      if (aiBtnLabel) aiBtnLabel.textContent = 'Tạo lại câu hỏi bằng Gemini AI';
+    }
+  });
+
+  btnCancelAi?.addEventListener('click', () => activeAbortController?.abort());
+  btnEditInJsonTab?.addEventListener('click', () => switchTab('json-section'));
+
+  // ── 6. TAB 2: WORD (.DOCX) & PDF (.PDF) IMPORTER & SPLIT-SCREEN CROPPER ───
+  function formatFileSize(bytes: number): string {
+    return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
+  }
+
+  function updateSelectedFilesUi() {
+    if (mainFileBadge) {
+      if (selectedMainFile) {
+        mainFileBadge.textContent = `📎 ${selectedMainFile.name} (${formatFileSize(selectedMainFile.size)})`;
+        mainFileBadge.classList.remove('hidden');
+      } else {
+        mainFileBadge.classList.add('hidden');
+      }
+    }
+    if (answerFileBadge && btnClearAnswerFile) {
+      if (selectedAnswerFile) {
+        answerFileBadge.textContent = `✅ ${selectedAnswerFile.name} (${formatFileSize(selectedAnswerFile.size)})`;
+        answerFileBadge.classList.remove('hidden');
+        btnClearAnswerFile.classList.remove('hidden');
+      } else {
+        answerFileBadge.classList.add('hidden');
+        btnClearAnswerFile.classList.add('hidden');
+      }
+    }
+  }
+
+  mainFileInput?.addEventListener('change', () => {
+    selectedMainFile = mainFileInput.files?.[0] || null;
+    updateSelectedFilesUi();
+  });
+
+  answerFileInput?.addEventListener('change', () => {
+    selectedAnswerFile = answerFileInput.files?.[0] || null;
+    updateSelectedFilesUi();
+  });
+
+  btnClearAnswerFile?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    selectedAnswerFile = null;
+    if (answerFileInput) answerFileInput.value = '';
+    updateSelectedFilesUi();
+  });
+
+  // Drag & drop bindings
+  function setupDropzone(zone: HTMLElement | null, onFile: (f: File) => void) {
+    if (!zone) return;
+    zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('ring-2', 'ring-indigo-500'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('ring-2', 'ring-indigo-500'));
+    zone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      zone.classList.remove('ring-2', 'ring-indigo-500');
+      const f = e.dataTransfer?.files?.[0];
+      if (f) onFile(f);
+    });
+  }
+  setupDropzone(dropzoneMain, (f) => { selectedMainFile = f; updateSelectedFilesUi(); });
+  setupDropzone(dropzoneAnswer, (f) => { selectedAnswerFile = f; updateSelectedFilesUi(); });
+
+  async function renderCurrentPdfPage() {
+    if (!activePdfController || !pdfReviewCanvas) return;
+    await activePdfController.renderPageToCanvas(currentPdfPage, pdfReviewCanvas, 1.35);
+    if (pdfPageLabel) pdfPageLabel.textContent = `Trang ${currentPdfPage} / ${activePdfController.pageCount}`;
+    if (btnPdfPrev) btnPdfPrev.disabled = currentPdfPage <= 1;
+    if (btnPdfNext) btnPdfNext.disabled = currentPdfPage >= activePdfController.pageCount;
+  }
+
+  btnPdfPrev?.addEventListener('click', () => {
+    if (activePdfController && currentPdfPage > 1) {
+      currentPdfPage--;
+      renderCurrentPdfPage();
+    }
+  });
+  btnPdfNext?.addEventListener('click', () => {
+    if (activePdfController && currentPdfPage < activePdfController.pageCount) {
+      currentPdfPage++;
+      renderCurrentPdfPage();
+    }
+  });
+
+  // Manual Drag-to-Crop on PDF Canvas
+  let cropStart: { x: number; y: number } | null = null;
+
+  function enterPdfCropMode(qIdx: number) {
+    if (!activePdfController) {
+      alert('Công cụ kéo cắt vùng trực tiếp chỉ áp dụng khi tệp đề gốc là PDF.');
+      return;
+    }
+    activeCropQuestionIdx = qIdx;
+    const suggestedPage = importedQuestionsState[qIdx]?.image_region?.page;
+    if (suggestedPage && suggestedPage >= 1 && suggestedPage <= activePdfController.pageCount && suggestedPage !== currentPdfPage) {
+      currentPdfPage = suggestedPage;
+      renderCurrentPdfPage();
+    }
+    if (pdfCropTargetLabel) pdfCropTargetLabel.textContent = `✂️ Giữ chuột kéo vùng hình vẽ trên trang PDF cho Câu #${qIdx + 1}`;
+    pdfCropHint?.classList.remove('hidden');
+    if (pdfCanvasStage) pdfCanvasStage.style.cursor = 'crosshair';
+  }
+
+  function exitPdfCropMode() {
+    activeCropQuestionIdx = null;
+    cropStart = null;
+    pdfCropHint?.classList.add('hidden');
+    pdfCropRect?.classList.add('hidden');
+    if (pdfCanvasStage) pdfCanvasStage.style.cursor = 'default';
+  }
+
+  btnCancelCropMode?.addEventListener('click', exitPdfCropMode);
+
+  pdfCanvasStage?.addEventListener('mousedown', (e) => {
+    if (activeCropQuestionIdx === null || !pdfReviewCanvas || !pdfCropRect) return;
+    const rect = pdfReviewCanvas.getBoundingClientRect();
+    cropStart = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    pdfCropRect.style.left = `${cropStart.x}px`;
+    pdfCropRect.style.top = `${cropStart.y}px`;
+    pdfCropRect.style.width = '0px';
+    pdfCropRect.style.height = '0px';
+    pdfCropRect.classList.remove('hidden');
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!cropStart || activeCropQuestionIdx === null || !pdfReviewCanvas || !pdfCropRect) return;
+    const rect = pdfReviewCanvas.getBoundingClientRect();
+    const curX = Math.min(Math.max(0, e.clientX - rect.left), rect.width);
+    const curY = Math.min(Math.max(0, e.clientY - rect.top), rect.height);
+    const left = Math.min(cropStart.x, curX);
+    const top = Math.min(cropStart.y, curY);
+    pdfCropRect.style.left = `${left}px`;
+    pdfCropRect.style.top = `${top}px`;
+    pdfCropRect.style.width = `${Math.abs(curX - cropStart.x)}px`;
+    pdfCropRect.style.height = `${Math.abs(curY - cropStart.y)}px`;
+  });
+
+  window.addEventListener('mouseup', async (e) => {
+    if (!cropStart || activeCropQuestionIdx === null || !pdfReviewCanvas || !activePdfController) return;
+    const targetIdx = activeCropQuestionIdx;
+    const rect = pdfReviewCanvas.getBoundingClientRect();
+    const endX = Math.min(Math.max(0, e.clientX - rect.left), rect.width);
+    const endY = Math.min(Math.max(0, e.clientY - rect.top), rect.height);
+
+    const x1 = Math.min(cropStart.x, endX);
+    const y1 = Math.min(cropStart.y, endY);
+    const x2 = Math.max(cropStart.x, endX);
+    const y2 = Math.max(cropStart.y, endY);
+    exitPdfCropMode();
+
+    if (x2 - x1 < 15 || y2 - y1 < 15) return;
+
+    const box2d: [number, number, number, number] = [
+      Math.round((y1 / rect.height) * 1000),
+      Math.round((x1 / rect.width) * 1000),
+      Math.round((y2 / rect.height) * 1000),
+      Math.round((x2 / rect.width) * 1000),
+    ];
+
+    try {
+      const cropped = await activePdfController.cropNormalizedBox(currentPdfPage, box2d);
+      if (importedQuestionsState[targetIdx]) {
+        importedQuestionsState[targetIdx]._pendingBlob = cropped.blob;
+        importedQuestionsState[targetIdx]._previewUrl = cropped.previewUrl;
+        delete importedQuestionsState[targetIdx].image_url;
+        syncDraftImportedJson();
+        renderFileSplitQuestionsList();
+      }
+    } catch (err: any) {
+      alert(`Không thể cắt ảnh: ${err?.message}`);
+    }
+  });
+
+  function isQuestionMissingAnswer(q: ImportedExamQuestion): boolean {
+    const t = String(q.type || 'mcq').toLowerCase();
+    if (t === 'tl' || t === 'msq') return false;
+    if (t === 'read' || t === 'read_cloze' || t === 'list' || t === 'matching') {
+      const subs = q.metadata?.questions || [];
+      return subs.length === 0 || subs.some((sq: any) => !String(sq.correct_option || sq.correct_answer || '').trim());
+    }
+    return !String(q.correct_option || '').trim();
+  }
+
+  function syncDraftImportedJson() {
+    if (!jsonDataEl) return;
+    const cleanForPreview = importedQuestionsState.map(q => {
+      const copy: Record<string, any> = { ...q };
+      delete copy._pendingBlob;
+      delete copy._previewUrl;
+      delete copy.image_region;
+      return copy;
+    });
+    jsonDataEl.value = JSON.stringify(
+      { ...(importedTitleState ? { title: importedTitleState } : {}), questions: cleanForPreview },
+      null,
+      2
+    );
+    updateReadyQuestionsIndicator();
+  }
+
+  function renderFileSplitQuestionsList() {
+    if (!fileQuestionsList || !fileSummaryTitle) return;
+
+    const missingCount = importedQuestionsState.filter(isQuestionMissingAnswer).length;
+    const figCount = importedQuestionsState.filter(q => Boolean(q._previewUrl || q.image_url)).length;
+
+    fileSummaryTitle.textContent = `✅ Đã nhận diện ${importedQuestionsState.length} mục câu hỏi · ${figCount} hình vẽ · ${missingCount} thiếu đáp án`;
+
+    const visibleItems = importedQuestionsState
+      .map((q, idx) => ({ q, idx }))
+      .filter(({ q }) => {
+        if (currentFileFilter === 'missing') return isQuestionMissingAnswer(q);
+        if (currentFileFilter === 'figure') return Boolean(q._previewUrl || q.image_url);
+        return true;
+      });
+
+    if (visibleItems.length === 0) {
+      fileQuestionsList.innerHTML = `<div class="p-8 text-center rounded-xl bg-slate-50 dark:bg-slate-900 border border-dashed border-slate-200 dark:border-slate-800 text-xs text-slate-500">Không có câu hỏi nào thuộc bộ lọc này.</div>`;
       return;
     }
 
     const alphabet = ['A', 'B', 'C', 'D', 'E', 'F'];
-    const cardsHtml = dynamicQs
-      .map(({ q, idx }: { q: any; idx: number }) => {
-        const opts = [q.option_a, q.option_b, q.option_c, q.option_d, q.option_e, q.option_f]
-          .filter((v: any) => typeof v === 'string' && v.trim().length > 0);
-        const correctStr = (q.correct_option || q.correct_answer || q.answer || '').trim();
-        const correctKeys = correctStr.split(',').map((k: string) => k.trim().toUpperCase());
+    fileQuestionsList.innerHTML = visibleItems
+      .map(({ q, idx }) => {
+        const qType = String(q.type || 'mcq').toLowerCase();
+        const imgSrc = q._previewUrl || q.image_url || '';
+        const missing = isQuestionMissingAnswer(q);
+        const opts = [q.option_a, q.option_b, q.option_c, q.option_d, q.option_e, q.option_f].filter((v: any) => typeof v === 'string' && v.trim());
 
-        const res = instantiateDynamicTemplate(
-          {
-            type: q.type || 'mcq',
-            content: q.question || q.content || '',
-            options: opts,
-            answer: q.type === 'sa' || q.type === 'tl' ? correctStr : null,
-            explanation: q.explanation || null,
-          },
-          () => Math.random(),
-        );
-
-        const varsEntries = Object.entries(res.variables)
-          .map(([k, v]) => `<span class="px-1.5 py-0.5 rounded bg-violet-100 dark:bg-violet-900/40 font-mono text-[11px]">${escapeHtml(k)} = ${escapeHtml(String(v))}</span>`)
-          .join(' ');
-
-        const optsHtml = res.options.length > 0
-          ? `<div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mt-2">${res.options
-              .map((opt, oi) => {
-                const letter = alphabet[oi] || String(oi + 1);
-                const isRight = correctKeys.includes(letter);
-                return `<div class="px-2.5 py-1.5 rounded-lg border text-xs ${
-                  isRight
-                    ? 'border-emerald-300 bg-emerald-50/70 dark:border-emerald-700 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 font-semibold'
-                    : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300'
-                }"><span class="font-bold mr-1">${letter}.</span> ${escapeHtml(opt)}${isRight ? ' ✓' : ''}</div>`;
-              })
-              .join('')}</div>`
-          : '';
-
-        const saHtml =
-          (q.type === 'sa' || q.type === 'tl') && res.answer
-            ? `<p class="text-xs mt-2 text-emerald-700 dark:text-emerald-400 font-semibold">Đáp án: <code class="px-1.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40">${escapeHtml(res.answer)}</code></p>`
+        const imgBlock = imgSrc
+          ? `<div class="my-2.5 p-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-between gap-3">
+              <img src="${escapeHtml(imgSrc)}" alt="Hình câu ${idx + 1}" class="max-h-40 rounded-lg object-contain bg-white p-1 border border-slate-200" />
+              <div class="flex flex-col gap-1.5 shrink-0">
+                ${activePdfController ? `<button type="button" data-crop-idx="${idx}" class="btn-recrop-fig px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 text-[11px] font-bold hover:bg-indigo-100">✂️ Cắt lại từ PDF</button>` : ''}
+                <button type="button" data-del-img="${idx}" class="btn-remove-fig px-2.5 py-1 rounded-lg bg-rose-50 text-rose-600 text-[11px] font-bold hover:bg-rose-100">🗑️ Xóa hình</button>
+              </div>
+            </div>`
+          : activePdfController
+            ? `<div class="mt-1.5"><button type="button" data-crop-idx="${idx}" class="btn-recrop-fig text-[11px] font-bold text-indigo-600 dark:text-indigo-400 hover:underline">✂️ + Kéo cắt hình từ trang PDF gắn vào câu này</button></div>`
             : '';
 
-        const dupWarn = res.hasDuplicateOptions
-          ? `<p class="text-[11px] font-semibold text-rose-600 dark:text-rose-400 mt-1.5">⚠️ Cảnh báo: Các đáp án MCQ bị trùng nhau sau 50 lần thử sinh số. Hãy mở rộng khoảng biến hoặc sửa công thức đáp án.</p>`
+        const optsBlock = opts.length > 0
+          ? `<div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mt-2">${opts.map((opt, oi) => `<div class="px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900 text-xs text-slate-700 dark:text-slate-300"><strong>${alphabet[oi]}.</strong> ${escapeHtml(opt || '')}</div>`).join('')}</div>`
           : '';
 
-        const explHtml = res.explanation
-          ? `<p class="text-[11px] text-slate-500 dark:text-slate-400 mt-2 pt-2 border-t border-slate-100 dark:border-slate-800"><strong>Lời giải:</strong> ${escapeHtml(res.explanation)}</p>`
+        const subsBlock = (qType === 'read' || qType === 'read_cloze') && Array.isArray(q.metadata?.questions)
+          ? `<div class="mt-2 pl-3 border-l-2 border-indigo-200 space-y-1 text-xs">${q.metadata.questions.map((sq: any, sIdx: number) => `<div><strong>(${sIdx + 1})</strong> ${escapeHtml(sq.question || '')} → <strong class="text-emerald-600">${escapeHtml(sq.correct_option || '?')}</strong></div>`).join('')}</div>`
           : '';
 
-        return `
-          <div class="p-3.5 rounded-xl bg-white dark:bg-[#1E1E38] border border-slate-200 dark:border-slate-700/80 shadow-xs">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-              <span class="text-xs font-bold text-violet-700 dark:text-violet-300">Câu #${idx + 1} (${escapeHtml(q.type || 'mcq')})</span>
-              <div class="flex flex-wrap gap-1">${varsEntries}</div>
+        return `<div class="p-4 rounded-2xl bg-white dark:bg-[#1E1E38] border ${missing ? 'border-amber-400' : 'border-slate-200 dark:border-slate-700/80'} shadow-2xs space-y-2">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-lg bg-indigo-600 text-white text-xs font-extrabold">Câu ${idx + 1}</span>
+              <span class="text-xs font-bold text-slate-600 dark:text-slate-300">${escapeHtml(getQuestionTypeLabelVi(qType))}</span>
+              ${missing ? '<span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-extrabold">⚠️ Cần điền đáp án</span>' : ''}
             </div>
-            <p class="text-xs text-slate-800 dark:text-slate-100 leading-relaxed">${escapeHtml(res.content)}</p>
-            ${optsHtml}
-            ${saHtml}
-            ${dupWarn}
-            ${explHtml}
+            ${qType !== 'read' && qType !== 'read_cloze' ? `
+              <div class="flex items-center gap-1.5 text-xs">
+                <span class="text-slate-400 font-semibold">Đáp án đúng:</span>
+                <input type="text" value="${escapeHtml(q.correct_option || '')}" data-ans-idx="${idx}" placeholder="${qType === 'msq' ? 'VD: A,C' : qType === 'sa' ? 'VD: 12,5' : 'A/B/C/D'}" class="quick-ans-input w-24 px-2 py-1 rounded-lg border border-emerald-300 dark:border-emerald-700 bg-emerald-50/50 dark:bg-slate-900 font-bold text-center text-emerald-800 dark:text-emerald-300 outline-none" />
+              </div>
+            ` : ''}
           </div>
-        `;
+          <div class="text-xs text-slate-800 dark:text-slate-100 leading-relaxed whitespace-pre-line">${escapeHtml(q.question || q.content || '')}</div>
+          ${imgBlock}
+          ${optsBlock}
+          ${subsBlock}
+        </div>`;
       })
       .join('');
 
-    previewList.innerHTML = cardsHtml;
-    previewPanel.classList.remove('hidden');
+    fileQuestionsList.querySelectorAll<HTMLInputElement>('.quick-ans-input').forEach(inp => {
+      inp.addEventListener('change', () => {
+        const i = parseInt(inp.dataset.ansIdx || '-1', 10);
+        if (importedQuestionsState[i]) {
+          importedQuestionsState[i].correct_option = inp.value.trim();
+          syncDraftImportedJson();
+          renderFileSplitQuestionsList();
+        }
+      });
+    });
 
-    // Render KaTeX in preview if available globally
-    const renderMathInElement = (window as any).renderMathInElement;
-    if (typeof renderMathInElement === 'function') {
-      try {
-        renderMathInElement(previewList, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false },
-          ],
-          throwOnError: false,
-        });
-      } catch { /* ignore KaTeX errors in preview */ }
+    fileQuestionsList.querySelectorAll<HTMLButtonElement>('.btn-recrop-fig').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const i = parseInt(btn.dataset.cropIdx || '-1', 10);
+        if (i >= 0) enterPdfCropMode(i);
+      });
+    });
+
+    fileQuestionsList.querySelectorAll<HTMLButtonElement>('.btn-remove-fig').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const i = parseInt(btn.dataset.delImg || '-1', 10);
+        if (importedQuestionsState[i]) {
+          delete importedQuestionsState[i]._pendingBlob;
+          delete importedQuestionsState[i]._previewUrl;
+          delete importedQuestionsState[i].image_url;
+          syncDraftImportedJson();
+          renderFileSplitQuestionsList();
+        }
+      });
+    });
+
+    renderMath(fileQuestionsList);
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.file-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentFileFilter = (btn.dataset.fFilter as 'all' | 'missing' | 'figure') || 'all';
+      document.querySelectorAll<HTMLButtonElement>('.file-filter-btn').forEach(b => {
+        const active = b === btn;
+        b.className = active
+          ? 'file-filter-btn px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-[11px] font-bold'
+          : 'file-filter-btn px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-[11px] font-bold';
+      });
+      renderFileSplitQuestionsList();
+    });
+  });
+
+  btnExtractFile?.addEventListener('click', async () => {
+    if (!subjectSelect?.value) {
+      alert('Vui lòng chọn Môn học chính ở trên trước khi bóc tách đề.');
+      subjectSelect?.focus();
+      return;
     }
+    if (!selectedMainFile) {
+      alert('Vui lòng chọn tệp Đề thi (.pdf hoặc .docx).');
+      return;
+    }
+    const apiKey = apiKeyInput?.value.trim() || '';
+    if (!apiKey) {
+      alert('Vui lòng nhập Gemini API Key ở khung Kết nối Google Gemini API phía trên.');
+      apiKeyInput?.focus();
+      return;
+    }
+    syncApiKeyStorage();
+
+    if (activePdfController) {
+      activePdfController.destroy();
+      activePdfController = null;
+    }
+
+    activeAbortController = new AbortController();
+    if (btnExtractFile) btnExtractFile.disabled = true;
+    btnCancelFile?.classList.remove('hidden');
+    fileProgressBarWrap?.classList.remove('hidden');
+    if (fileBtnIcon) fileBtnIcon.textContent = '⏳';
+    if (fileBtnLabel) fileBtnLabel.textContent = 'Đang đọc & số hóa đề thi...';
+
+    try {
+      const res = await extractExamFromFilesWithGemini({
+        apiKey,
+        model: modelSelect?.value || 'gemini-2.5-flash',
+        mainFile: selectedMainFile,
+        answerFile: selectedAnswerFile,
+        subjectName: getSelectedSubjectName(),
+        answerStrategy: ((fileAnswerStrategy?.value || 'extract_or_solve') as AnswerImportStrategy),
+        generateExplanations: Boolean(fileGenExplanation?.checked),
+        autoCropPdfFigures: Boolean(fileAutoCrop?.checked),
+        signal: activeAbortController.signal,
+        onProgress: (p) => {
+          if (fileStatusText) fileStatusText.textContent = p.message;
+          if (fileProgressBar) fileProgressBar.style.width = p.step === 1 ? '30%' : p.step === 2 ? '72%' : '95%';
+        },
+      });
+
+      importedQuestionsState = res.questions;
+      importedTitleState = res.title;
+      if (titleInput && !titleInput.value.trim() && res.title) {
+        titleInput.value = res.title;
+      }
+
+      const allWarns = [...res.warnings, ...res.saWarnings];
+      if (fileWarningsBanner) {
+        if (allWarns.length > 0) {
+          fileWarningsBanner.innerHTML = `<p class="font-extrabold">⚠️ Lưu ý khi đọc tài liệu:</p><ul class="list-disc pl-4 space-y-0.5">${allWarns.map(w => `<li>${escapeHtml(w)}</li>`).join('')}</ul>`;
+          fileWarningsBanner.classList.remove('hidden');
+        } else {
+          fileWarningsBanner.classList.add('hidden');
+        }
+      }
+
+      if (res.pdfController) {
+        activePdfController = res.pdfController;
+        currentPdfPage = 1;
+        pdfViewerWrap?.classList.remove('hidden');
+        pdfPageControls?.classList.remove('hidden');
+        docxViewerWrap?.classList.add('hidden');
+        await renderCurrentPdfPage();
+      } else {
+        pdfViewerWrap?.classList.add('hidden');
+        pdfPageControls?.classList.add('hidden');
+        if (docxViewerWrap) {
+          docxViewerWrap.textContent = res.docxRawPreview || '';
+          docxViewerWrap.classList.remove('hidden');
+        }
+      }
+
+      syncDraftImportedJson();
+      fileSplitReview?.classList.remove('hidden');
+      renderFileSplitQuestionsList();
+
+      if (fileProgressBar) fileProgressBar.style.width = '100%';
+      if (fileStatusText) fileStatusText.textContent = `✅ Đã bóc tách thành công ${res.questions.length} mục câu hỏi! Đối chiếu bên dưới rồi bấm "Tạo đề thi".`;
+    } catch (err: any) {
+      if (fileStatusText) {
+        fileStatusText.textContent = err?.name === 'AbortError' ? '⚠️ Đã hủy bóc tách tệp.' : `❌ ${err?.message}`;
+      }
+    } finally {
+      activeAbortController = null;
+      if (btnExtractFile) btnExtractFile.disabled = false;
+      btnCancelFile?.classList.add('hidden');
+      if (fileBtnIcon) fileBtnIcon.textContent = '📄';
+      if (fileBtnLabel) fileBtnLabel.textContent = 'Bóc tách lại từ File';
+    }
+  });
+
+  btnCancelFile?.addEventListener('click', () => activeAbortController?.abort());
+
+  btnSyncFileToJson?.addEventListener('click', async () => {
+    if (importedQuestionsState.length > 0) {
+      btnSyncFileToJson.textContent = '⏳ Đang tải ảnh & chuyển sang JSON...';
+      const finalJson = await uploadPendingImagesAndSerialize(importedQuestionsState, baseUrl, importedTitleState);
+      if (jsonDataEl) jsonDataEl.value = finalJson;
+      btnSyncFileToJson.textContent = '🧩 Mở xem trên Tab JSON →';
+    }
+    switchTab('json-section');
+  });
+
+  // ── 7. Form Submit Handler (Uploads pending cropped figures before POST) ──
+  formEl?.addEventListener('submit', async (e) => {
+    syncVisualPickToHidden();
+
+    const hasPendingBlobs = importedQuestionsState.some(q => Boolean(q._pendingBlob));
+    if (hasPendingBlobs && !isUploadingPendingImages) {
+      e.preventDefault();
+      isUploadingPendingImages = true;
+      if (btnSubmitExam) btnSubmitExam.disabled = true;
+      if (submitExamLabel) submitExamLabel.textContent = '☁️ Đang tải hình vẽ lên máy chủ...';
+
+      try {
+        const finalJson = await uploadPendingImagesAndSerialize(importedQuestionsState, baseUrl, importedTitleState);
+        if (jsonDataEl) jsonDataEl.value = finalJson;
+        formEl.submit();
+      } catch (err: any) {
+        isUploadingPendingImages = false;
+        if (btnSubmitExam) btnSubmitExam.disabled = false;
+        if (submitExamLabel) submitExamLabel.textContent = 'Tạo đề thi';
+        alert(`Lỗi tải ảnh minh họa: ${err?.message}`);
+      }
+      return;
+    }
+
+    const rawJson = jsonDataEl?.value.trim() || '';
+    if (!rawJson) {
+      e.preventDefault();
+      if (inputMode?.value === 'file') {
+        alert('Vui lòng chọn file Word/PDF và nhấn "📄 Bóc tách Đề thi từ File" trước khi lưu.');
+        btnExtractFile?.focus();
+      } else if (inputMode?.value === 'ai') {
+        alert('Vui lòng nhấn "✨ Tạo câu hỏi bằng Gemini AI" trước khi lưu đề thi.');
+        btnGenerateAi?.focus();
+      } else {
+        alert('Vui lòng dán dữ liệu JSON câu hỏi trước khi tạo đề thi.');
+        jsonDataEl?.focus();
+      }
+    }
+  });
+
+  // ── 8. JSON Tab Utilities ─────────────────────────────────────────────────
+  const DYNAMIC_MATH_SAMPLE = {
+    question_type_id: 'Math-10-11-12',
+    questions: [
+      {
+        type: 'mcq',
+        question: 'Cho hàm số $y = !a#0!x^2 + !b:1:15!x - !c(2,4,6)!$. Tính $y(1) = !a! + !b! - !c!$.',
+        option_a: '{tinh: !a! + !b! - !c!}',
+        option_b: '{tinh: !a! + !b! + !c!}',
+        option_c: '{tinh: !a! - !b! - !c!}',
+        option_d: '{tinh: !a! + !b! - !c! + 3}',
+        correct_option: 'A',
+        explanation: 'Thay $x = 1$ được $y(1) = {tinh: !a! + !b! - !c!}$.',
+        difficulty_level: 'medium',
+        is_dynamic: true,
+      },
+    ],
+  };
+
+  jsonDataEl?.addEventListener('input', updateReadyQuestionsIndicator);
+
+  btnValidateJson?.addEventListener('click', () => {
+    if (!jsonDataEl || !jsonFeedbackEl) return;
+    const raw = jsonDataEl.value.trim();
+    if (!raw) return;
+    try {
+      const parsed = parseAiExamJson(raw);
+      const warnHtml = parsed.saWarnings.length > 0
+        ? `<div class="mt-1 text-amber-600">⚠️ ${parsed.saWarnings.map(escapeHtml).join(' | ')}</div>`
+        : '';
+      jsonFeedbackEl.innerHTML = `<div class="text-emerald-600">✅ JSON hợp lệ (${parsed.questions.length} mục câu hỏi)</div>${warnHtml}`;
+      jsonFeedbackEl.classList.remove('hidden');
+      updateReadyQuestionsIndicator();
+    } catch (e: any) {
+      jsonFeedbackEl.textContent = `❌ Lỗi: ${e.message}`;
+      jsonFeedbackEl.className = 'text-xs font-semibold text-rose-600';
+      jsonFeedbackEl.classList.remove('hidden');
+    }
+  });
+
+  btnPasteSample?.addEventListener('click', async () => {
+    if (!jsonDataEl) return;
+    try {
+      const res = await fetch(`${baseUrl}/sample-questions.json`);
+      jsonDataEl.value = res.ok ? await res.text() : JSON.stringify(DYNAMIC_MATH_SAMPLE, null, 2);
+    } catch {
+      jsonDataEl.value = JSON.stringify(DYNAMIC_MATH_SAMPLE, null, 2);
+    }
+    updateReadyQuestionsIndicator();
+  });
+
+  function renderDynamicPreview() {
+    if (!jsonDataEl || !previewPanel || !previewList) return;
+    try {
+      const qs = parseAiExamJson(jsonDataEl.value).questions;
+      const dynamicQs = qs.filter((q: any) => Boolean(q?.is_dynamic || q?.metadata?.is_dynamic));
+      if (dynamicQs.length === 0) {
+        previewPanel.classList.add('hidden');
+        return;
+      }
+      previewList.innerHTML = dynamicQs.map((q: any, idx: number) => {
+        const opts = [q.option_a, q.option_b, q.option_c, q.option_d].filter(Boolean);
+        const res = instantiateDynamicTemplate(
+          { type: q.type || 'mcq', content: q.question || q.content || '', options: opts, answer: q.correct_option || null, explanation: q.explanation || null },
+          () => Math.random()
+        );
+        return `<div class="p-3 rounded-xl bg-white dark:bg-[#1E1E38] border border-slate-200 dark:border-slate-700 text-xs">
+          <strong>#${idx + 1}:</strong> ${escapeHtml(res.content)}
+        </div>`;
+      }).join('');
+      previewPanel.classList.remove('hidden');
+      renderMath(previewList);
+    } catch { /* ignore */ }
   }
 
   btnPasteDynamic?.addEventListener('click', () => {
     if (!jsonDataEl) return;
     jsonDataEl.value = JSON.stringify(DYNAMIC_MATH_SAMPLE, null, 2);
-    jsonDataEl.dispatchEvent(new Event('input'));
+    updateReadyQuestionsIndicator();
     renderDynamicPreview();
   });
-
   btnPreviewDynamic?.addEventListener('click', renderDynamicPreview);
   btnRerollDynamic?.addEventListener('click', renderDynamicPreview);
-  btnClosePreview?.addEventListener('click', () => {
-    previewPanel?.classList.add('hidden');
-  });
+  btnClosePreview?.addEventListener('click', () => previewPanel?.classList.add('hidden'));
+
+  // ── Boot ──────────────────────────────────────────────────────────────────
+  if (subjectSelect?.value) updateCategoryDropdown(subjectSelect.value);
+  applyRecommendedSubjectPreset();
+  updateReadyQuestionsIndicator();
 </script>

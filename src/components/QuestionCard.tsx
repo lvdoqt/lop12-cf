@@ -235,9 +235,19 @@ export default function QuestionCard({ question, index, selectedAnswer, onAnswer
 
       <div className="p-6">
       <div 
-        className="text-base md:text-lg font-semibold text-gray-800 dark:text-slate-100 mb-6 leading-relaxed whitespace-pre-wrap select-none question-text [&_img]:max-w-full [&_img]:rounded-lg [&_img]:mx-auto [&_img]:my-3 [&_p]:inline"
+        className="text-base md:text-lg font-semibold text-gray-800 dark:text-slate-100 mb-4 leading-relaxed whitespace-pre-wrap select-none question-text [&_img]:max-w-full [&_img]:rounded-lg [&_img]:mx-auto [&_img]:my-3 [&_p]:inline"
         dangerouslySetInnerHTML={contentHtml}
       />
+      {question.image_url && !(question.content || '').includes(question.image_url) && (
+        <div className="mb-5 flex justify-center">
+          <img
+            src={question.image_url}
+            alt={`Hình minh họa câu ${index}`}
+            className="max-h-72 max-w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-2 shadow-xs object-contain"
+            loading="lazy"
+          />
+        </div>
+      )}
 
       {/* Standard options: single_choice, multiple_choice, true_false */}
       {(question.type === 'mcq' || question.type === 'single_choice' || question.type === 'multiple_choice' || question.type === 'true_false') && (

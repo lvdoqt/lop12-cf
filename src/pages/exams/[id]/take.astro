@@ -3,8 +3,8 @@ import Layout from '../../../layouts/Layout.astro';
 import ExamView from '../../../components/ExamView';
 import VSatExamView from '../../../components/VSatExamView';
 import { db } from '../../../services/db';
-import { uuidToSeed, mulberry32, shuffleArrayWithPRNG } from '../../../lib/random';
-import { buildShuffledExam } from '../../../lib/exam';
+import { uuidToSeed, mulberry32 } from '../../../lib/random';
+import { buildShuffledExam, checkExamSessionWindow } from '../../../lib/exam';
 
 export const prerender = false;
 
@@ -17,9 +17,16 @@ if (!id) {
 }
 
 const user = Astro.locals.user;
+const isStaff = Boolean(user && (user.role === 'admin' || user.role === 'teacher'));
 const exam = await db.getExamBySlug(id);
 if (!exam) {
   return Astro.redirect('/de-thi');
+}
+
+// Enforce schedule window for non-staff
+const sessionWin = checkExamSessionWindow(exam.settings);
+if (!isStaff && sessionWin.state === 'not_open') {
+  return Astro.redirect(`/exams/${exam.slug}`);
 }
 
 const isPractice = modeParam === 'practice' && !exam.settings?.is_graded;
@@ -29,6 +36,12 @@ let remainingSeconds = exam.duration * 60;
 let startedAt = new Date().toISOString();
 
 if (isPractice) {
+  if (exam.password && exam.password.trim() && !isStaff) {
+    const unlocked = Astro.cookies.get(`exam_pw_${exam.id}`)?.value === '1';
+    if (!unlocked) {
+      return Astro.redirect(`/exams/${exam.slug}`);
+    }
+  }
   seedId = Astro.url.searchParams.get('seed') || crypto.randomUUID();
 } else {
   if (!attemptId) {
@@ -56,8 +69,6 @@ const allQuestions = await db.getQuestionsByExamId(exam.id);
 
 const prng = mulberry32(uuidToSeed(seedId));
 const questions = buildShuffledExam(allQuestions, prng, exam.settings);
-
-console.log(`[take] exam=${exam.id} slug=${exam.slug} practice=${isPractice} questions=${questions.length}`);
 ---
 
 <Layout title={`${isPractice ? 'Luyện tập' : 'Đang làm bài'}: ${exam.title}`} showSidebar={false}>

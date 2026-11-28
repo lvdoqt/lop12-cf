@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { db } from '../../../services/db';
+import { EXAM_PROGRAM_META, getExamProgramKey, getExamProgramMeta } from '../../../lib/exam';
 
 export const prerender = false;
 
@@ -52,26 +53,31 @@ const usersMap = Object.fromEntries(allUsers.map(u => [u.id, u]));
 const filterCat = url.searchParams.get('category_id') || '';
 
 const filteredExams = exams.filter(exam => {
+  const progKey   = getExamProgramKey(exam);
   const matchSub  = !filterSub  || exam.subject_id === filterSub;
-  const matchType = !filterType || exam.exam_type  === filterType;
+  const matchType = !filterType || progKey === filterType || exam.exam_type === filterType;
   const matchCat  = !filterCat  || exam.category_id === filterCat;
   return matchSub && matchType && matchCat;
 });
 
 const examTypeMeta: Record<string, { label: string; badge: string }> = {
-  '15m':       { label: 'KT 15 phút',  badge: 'bg-sky-50    text-sky-600    dark:bg-sky-900/20    dark:text-sky-400    border-sky-100    dark:border-sky-900/30' },
-  '45m':       { label: 'KT 1 tiết',   badge: 'bg-amber-50  text-amber-600  dark:bg-amber-900/20  dark:text-amber-400  border-amber-100  dark:border-amber-900/30' },
-  'semester':  { label: 'Học kỳ',       badge: 'bg-violet-50 text-violet-600 dark:bg-violet-900/20 dark:text-violet-400 border-violet-100 dark:border-violet-900/30' },
-  'mock_thpt': { label: 'Thi thử THPT', badge: 'bg-rose-50   text-rose-600   dark:bg-rose-900/20   dark:text-rose-400   border-rose-100   dark:border-rose-900/30' },
-  'vsat':      { label: 'Thi V-SAT',   badge: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/20 dark:text-emerald-400 border-emerald-100 dark:border-emerald-900/30' },
+  '15m':       { label: EXAM_PROGRAM_META['15m'].shortLabel,       badge: EXAM_PROGRAM_META['15m'].badgeClass },
+  'midterm':   { label: EXAM_PROGRAM_META['midterm'].shortLabel,   badge: EXAM_PROGRAM_META['midterm'].badgeClass },
+  'semester':  { label: EXAM_PROGRAM_META['semester'].shortLabel,  badge: EXAM_PROGRAM_META['semester'].badgeClass },
+  'mock_thpt': { label: EXAM_PROGRAM_META['mock_thpt'].shortLabel, badge: EXAM_PROGRAM_META['mock_thpt'].badgeClass },
+  'dgnl_hsa':  { label: EXAM_PROGRAM_META['dgnl_hsa'].shortLabel,  badge: EXAM_PROGRAM_META['dgnl_hsa'].badgeClass },
+  'dgnl_vact': { label: EXAM_PROGRAM_META['dgnl_vact'].shortLabel, badge: EXAM_PROGRAM_META['dgnl_vact'].badgeClass },
+  'dgtd_tsa':  { label: EXAM_PROGRAM_META['dgtd_tsa'].shortLabel,  badge: EXAM_PROGRAM_META['dgtd_tsa'].badgeClass },
+  'vsat':      { label: EXAM_PROGRAM_META['vsat'].shortLabel,      badge: EXAM_PROGRAM_META['vsat'].badgeClass },
+  'hsg':       { label: EXAM_PROGRAM_META['hsg'].shortLabel,       badge: EXAM_PROGRAM_META['hsg'].badgeClass },
 };
 
-// Stats per type
+// Stats per type (show active or main 5+)
 const typeCounts = Object.keys(examTypeMeta).map(t => ({
   type: t,
-  count: exams.filter(e => e.exam_type === t).length,
+  count: exams.filter(e => getExamProgramKey(e) === t).length,
   ...examTypeMeta[t]
-}));
+})).filter(t => t.count > 0 || ['15m', 'midterm', 'semester', 'mock_thpt', 'vsat'].includes(t.type));
 ---
 
 <Layout title="Quản lý Đề thi">
@@ -235,12 +241,13 @@ const typeCounts = Object.keys(examTypeMeta).map(t => ({
             </thead>
             <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60">
               {filteredExams.map(exam => {
-                const typeMeta = examTypeMeta[exam.exam_type] || examTypeMeta['mock_thpt'];
+                const progMeta = getExamProgramMeta(exam);
+                const typeMeta = { label: `${progMeta.icon} ${progMeta.shortLabel}`, badge: progMeta.badgeClass };
                 return (
                   <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/20 transition-colors text-sm">
                     <td class="px-6 py-4">
                       <span class="font-bold text-ink dark:text-[#E8E0D0] line-clamp-1 max-w-xs block">
-                        {exam.title}
+                        {exam.password ? '🔒 ' : ''}{exam.title}
                       </span>
                     </td>
                     {isAdmin && (
