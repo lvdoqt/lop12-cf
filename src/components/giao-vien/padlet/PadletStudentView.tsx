@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import type { PadletBoard, PadletColor, PadletTheme } from '../../../services/mockPadletStore';
 import { PadletCard } from './PadletCard';
+import { PadletRichContent } from './PadletRichContent';
 import { withBase } from '../../../lib/base';
 
 interface PadletStudentViewProps {
@@ -51,6 +52,72 @@ export const PadletStudentView: React.FC<PadletStudentViewProps> = ({ board: ini
   const [noteContent, setNoteContent] = useState('');
   const [noteColor, setNoteColor] = useState<PadletColor>('yellow');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+
+  const noteTextareaRef = useRef<HTMLTextAreaElement>(null);
+  const noteFileInputRef = useRef<HTMLInputElement>(null);
+
+  const insertAtCursor = (snippet: string) => {
+    const textarea = noteTextareaRef.current;
+    if (!textarea) {
+      setNoteContent((prev) => (prev ? `${prev}\n${snippet}` : snippet));
+      return;
+    }
+    const start = textarea.selectionStart ?? noteContent.length;
+    const end = textarea.selectionEnd ?? noteContent.length;
+    setNoteContent((prev) => prev.slice(0, start) + snippet + prev.slice(end));
+    requestAnimationFrame(() => {
+      textarea.focus();
+      const pos = start + snippet.length;
+      textarea.setSelectionRange(pos, pos);
+    });
+  };
+
+  const uploadAndInsertImage = async (file: File) => {
+    if (!file.type.startsWith('image/')) {
+      setUploadError('Vui lòng chỉ chọn hoặc dán tệp hình ảnh (PNG, JPG, GIF, WebP).');
+      return;
+    }
+    setUploadError(null);
+    setIsUploadingImage(true);
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      const res = await fetch(withBase(`/api/giao-vien/padlet/${board.code}/upload`), {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json().catch(() => null);
+      if (!res.ok || !data?.url) {
+        setUploadError(data?.error || 'Không thể tải ảnh lên.');
+        return;
+      }
+      insertAtCursor(`\n![Ảnh đính kèm](${data.url})\n`);
+    } catch (err) {
+      console.error(err);
+      setUploadError('Lỗi kết nối khi tải ảnh lên.');
+    } finally {
+      setIsUploadingImage(false);
+    }
+  };
+
+  const handleNotePaste = async (e: React.ClipboardEvent) => {
+    const items = e.clipboardData?.items;
+    if (!items || isUploadingImage) return;
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.type && item.type.startsWith('image/')) {
+        const file = item.getAsFile();
+        if (file) {
+          e.preventDefault();
+          e.stopPropagation();
+          await uploadAndInsertImage(file);
+          return;
+        }
+      }
+    }
+  };
 
   // Load saved name from localStorage
   useEffect(() => {
@@ -144,11 +211,13 @@ export const PadletStudentView: React.FC<PadletStudentViewProps> = ({ board: ini
                 P
               </span>
               <h1 className={`text-base sm:text-lg font-black tracking-tight ${currentTheme.title}`}>
-                {board.title}
+                <PadletRichContent content={board.title} inline />
               </h1>
             </div>
             {board.description && (
-              <p className="text-xs opacity-75 mt-0.5 line-clamp-1">{board.description}</p>
+              <p className="text-xs opacity-75 mt-0.5 line-clamp-1">
+                <PadletRichContent content={board.description} inline />
+              </p>
             )}
           </div>
 
@@ -311,8 +380,11 @@ export const PadletStudentView: React.FC<PadletStudentViewProps> = ({ board: ini
 
       {/* New Note Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 max-w-md w-full shadow-2xl relative">
+        <div
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+          onPaste={handleNotePaste}
+        >
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-400 hover:text-gray-600 dark:hover:text-white transition"
@@ -372,17 +444,69 @@ export const PadletStudentView: React.FC<PadletStudentViewProps> = ({ board: ini
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-700 dark:text-slate-300 mb-1">
-                  Nội dung ghi chú <span className="text-rose-500">*</span>
-                </label>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <label className="block text-xs font-bold text-gray-700 dark:text-slate-300">
+                    Nội dung ghi chú <span className="text-rose-500">*</span>
+                  </label>
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={() => insertAtCursor('$x^2 + 1$')}
+                      className="px-2 py-0.5 text-[11px] font-bold rounded-lg bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 transition"
+                      title="Chèn công thức LaTeX"
+                    >
+                      ∑ LaTeX
+                    </button>
+                    <button
+                      type="button"
+                      disabled={isUploadingImage}
+                      onClick={() => noteFileInputRef.current?.click()}
+                      className="px-2 py-0.5 text-[11px] font-bold rounded-lg bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 disabled:opacity-50 transition"
+                      title="Chọn ảnh từ máy hoặc nhấn Ctrl+V để dán ảnh đã copy"
+                    >
+                      {isUploadingImage ? '⏳ Đang tải ảnh...' : '🖼️ Thêm ảnh'}
+                    </button>
+                    <input
+                      ref={noteFileInputRef}
+                      type="file"
+                      accept="image/png,image/jpeg,image/gif,image/webp"
+                      className="hidden"
+                      onChange={async (e) => {
+                        const file = e.target.files?.[0];
+                        e.target.value = '';
+                        if (file) await uploadAndInsertImage(file);
+                      }}
+                    />
+                  </div>
+                </div>
                 <textarea
+                  ref={noteTextareaRef}
                   required
                   rows={4}
                   value={noteContent}
                   onChange={(e) => setNoteContent(e.target.value)}
-                  placeholder="Nhập nội dung ý kiến, câu trả lời hoặc thảo luận..."
+                  placeholder="Nhập nội dung, công thức LaTeX ($x^2+1$, $$\int_0^1 x\,dx$$) hoặc nhấn Ctrl+V để dán ảnh đã copy..."
                   className="w-full px-3.5 py-2 text-sm rounded-xl bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 focus:ring-2 focus:ring-orange-500 focus:outline-none"
                 ></textarea>
+                <p className="mt-1 text-[11px] text-gray-500 dark:text-slate-400">
+                  Hỗ trợ LaTeX (<code className="px-1 rounded bg-gray-100 dark:bg-slate-800">$...$</code>, <code className="px-1 rounded bg-gray-100 dark:bg-slate-800">$$...$$</code>) và dán ảnh trực tiếp bằng <strong>Ctrl+V</strong>.
+                </p>
+                {uploadError && (
+                  <p className="mt-1 text-xs font-semibold text-rose-600 dark:text-rose-400">
+                    ⚠️ {uploadError}
+                  </p>
+                )}
+                {noteContent.trim() && /(\$|\\\(|\\\[|!\[)/.test(noteContent) && (
+                  <div className="mt-2 p-3 rounded-xl bg-amber-50/70 dark:bg-slate-800/70 border border-amber-200/80 dark:border-slate-700">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300 mb-1">
+                      Xem trước LaTeX &amp; Hình ảnh
+                    </div>
+                    <PadletRichContent
+                      content={noteContent}
+                      className="text-sm text-gray-900 dark:text-slate-100 leading-relaxed"
+                    />
+                  </div>
+                )}
               </div>
 
               {/* Color picker */}
@@ -429,7 +553,7 @@ export const PadletStudentView: React.FC<PadletStudentViewProps> = ({ board: ini
                 </button>
                 <button
                   type="submit"
-                  disabled={isSubmitting || !noteContent.trim()}
+                  disabled={isSubmitting || isUploadingImage || !noteContent.trim()}
                   className="px-5 py-2 text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 disabled:opacity-50 rounded-xl shadow transition"
                 >
                   {isSubmitting ? 'Đang dán...' : 'Dán ghi chú'}

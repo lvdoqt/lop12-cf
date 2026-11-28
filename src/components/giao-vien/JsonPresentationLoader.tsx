@@ -25,7 +25,7 @@ function parseJsonToQuestions(raw: string): { title: string, questions: (Questio
     let type = q.type || 'single_choice';
     let options: string[] = [];
     let answers: Answer[] = [];
-    let answerStr = q.correct_option ?? q.answer ?? '';
+    let answerStr = String(q.correct_option ?? q.correct_answer ?? q.answer ?? '');
 
     if (type === 'true_false_multi') {
       // Dạng Phần II — Đúng/Sai 4 ý (chuẩn THPT 2025)
@@ -65,15 +65,19 @@ function parseJsonToQuestions(raw: string): { title: string, questions: (Questio
       });
     }
 
+    const isDynamic = Boolean(q.is_dynamic || q.metadata?.is_dynamic);
+
     const metadata: any = {
       type,
       difficulty: q.difficulty_level ?? q.metadata?.difficulty ?? q.difficulty ?? 'medium',
       explanation: q.explanation ?? q.metadata?.explanation ?? null,
+      ...(isDynamic ? { is_dynamic: true } : {}),
       ...(q.metadata || {}),
     };
 
-    if (q.metadata?.questions && Array.isArray(q.metadata.questions)) {
-      metadata.questions = q.metadata.questions.map((subQ: any) => {
+    const rawSubQuestions = q.metadata?.questions ?? q.questions ?? q.blanks;
+    if (Array.isArray(rawSubQuestions)) {
+      metadata.questions = rawSubQuestions.map((subQ: any) => {
         let subOptions: string[] = [];
         if (Array.isArray(subQ.options)) {
           subOptions = subQ.options;
@@ -82,7 +86,11 @@ function parseJsonToQuestions(raw: string): { title: string, questions: (Questio
             if (subQ[`option_${letter}`]) subOptions.push(subQ[`option_${letter}`]);
           });
         }
-        return { ...subQ, options: subOptions, answer: subQ.correct_option ?? subQ.answer ?? '' };
+        return {
+          ...subQ,
+          options: subOptions,
+          answer: subQ.correct_option ?? subQ.correct_answer ?? subQ.answer ?? '',
+        };
       });
     }
 
@@ -194,10 +202,10 @@ export default function JsonPresentationLoader() {
 }`;
 
   const exampleJson = `{
-  "title": "Bài tập Đạo hàm cơ bản",
+  "title": "Đề minh họa đủ dạng MCQ, MSQ, SA & Câu hỏi động",
   "questions": [
     {
-      "type": "single_choice",
+      "type": "mcq",
       "question": "Tìm đạo hàm của hàm số $f(x) = x^3 - 3x^2 + 2x - 1$",
       "option_a": "$f'(x) = 3x^2 - 6x + 2$",
       "option_b": "$f'(x) = x^3 - 3x^2 + 2$",
@@ -205,15 +213,40 @@ export default function JsonPresentationLoader() {
       "option_d": "$f'(x) = 3x^2 - 3x + 2$",
       "correct_option": "A",
       "explanation": "Áp dụng quy tắc đạo hàm: $(x^n)' = nx^{n-1}$. Ta có:\\n$f'(x) = 3x^2 - 6x + 2$",
-      "difficulty_level": "easy"
+      "difficulty_level": "easy",
+      "is_dynamic": false
     },
     {
-      "type": "true_false",
-      "question": "Đạo hàm của hằng số luôn bằng 0.",
+      "type": "mcq",
+      "question": "Cho hàm số $y = !a#0!x^2 + !b:1:15!x - !c(2,4,6)!$ (với $a = !a!$ là số iff(!a!>0, dương, âm)). Tính giá trị $y(1)$.",
+      "option_a": "{tinh: !a! + !b! - !c!}",
+      "option_b": "{tinh: !a! + !b! + !c!}",
+      "option_c": "{tinh: !a! - !b! - !c!}",
+      "option_d": "{tinh: !a! + !b! - !c! + 3}",
       "correct_option": "A",
-      "option_a": "Đúng",
-      "option_b": "Sai",
-      "difficulty_level": "easy"
+      "explanation": "Thay $x = 1$ ta được $y(1) = !a! + !b! - !c! = {tinh: !a! + !b! - !c!}$.",
+      "difficulty_level": "medium",
+      "is_dynamic": true
+    },
+    {
+      "type": "msq",
+      "question": "Cho hai số nguyên $a = !a:1:10!$ và $b = !b:1:10#!a!!$. Xét tính đúng sai của các khẳng định sau:",
+      "option_a": "Tổng $a + b = {tinh: !a! + !b!}$",
+      "option_b": "Hiệu $a - b = {tinh: !a! - !b! + 1}$",
+      "option_c": "Tích $a \\\\cdot b = {tinh: !a! * !b!}$",
+      "option_d": "$a$ và $b$ bằng nhau",
+      "correct_option": "A,C",
+      "explanation": "Vì $a = !a!$ và $b = !b!$ ($b \\\\neq a$) nên $a + b = {tinh: !a! + !b!}$ và $a \\\\cdot b = {tinh: !a! * !b!}$.",
+      "difficulty_level": "medium",
+      "is_dynamic": true
+    },
+    {
+      "type": "sa",
+      "question": "Tính giá trị biểu thức $P = 2 \\\\cdot !a:1:20! + !b(2,4,6)!$",
+      "correct_option": "{tinh: 2 * !a! + !b!}",
+      "explanation": "Thay $a = !a!, b = !b!$, ta có $P = 2 \\\\cdot !a! + !b! = {tinh: 2 * !a! + !b!}$.",
+      "difficulty_level": "hard",
+      "is_dynamic": true
     }
   ]
 }`;
@@ -290,16 +323,28 @@ export default function JsonPresentationLoader() {
 
           {/* Example toggle */}
           <div>
-            <button
-              type="button"
-              onClick={() => setShowExample(!showExample)}
-              className="text-xs font-semibold text-gray-500 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 transition flex items-center gap-1"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" style={{ width: 14, height: 14, transition: 'transform 0.15s', transform: showExample ? 'rotate(90deg)' : 'none' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-              Xem ví dụ cấu trúc JSON hợp lệ
-            </button>
+            <div className="flex items-center justify-between gap-2">
+              <button
+                type="button"
+                onClick={() => setShowExample(!showExample)}
+                className="text-xs font-semibold text-gray-500 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 transition flex items-center gap-1"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" style={{ width: 14, height: 14, transition: 'transform 0.15s', transform: showExample ? 'rotate(90deg)' : 'none' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+                Xem ví dụ JSON đủ dạng (mcq, msq, sa &amp; câu hỏi động)
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setJsonText(exampleJson);
+                  setError('');
+                }}
+                className="text-xs font-semibold text-violet-600 dark:text-violet-400 hover:underline"
+              >
+                Dán ví dụ mẫu
+              </button>
+            </div>
             {showExample && (
               <div className="mt-3 rounded-xl bg-gray-900 dark:bg-slate-950 p-4 overflow-x-auto">
                 <pre className="text-[11px] text-green-400 font-mono leading-relaxed">{exampleJson}</pre>

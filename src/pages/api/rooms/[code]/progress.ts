@@ -38,9 +38,17 @@ export const POST: APIRoute = async ({ params, request }) => {
     if (!participant) return new Response(JSON.stringify({ error: 'Participant not found' }), { status: 404 });
 
     // Grade: reuse same scoring logic as attempts.ts
+    const exam = await db.getExamById(room.exam_id);
     const examQuestions = await db.getQuestionsByExamId(room.exam_id);
     const prng = mulberry32(uuidToSeed(participantId));
-    const shuffled = buildShuffledExam(examQuestions, prng);
+    const shuffled = buildShuffledExam(examQuestions, prng, exam?.settings);
+
+    const ppq = (exam?.settings?.point_per_question && exam.settings.point_per_question > 0)
+      ? exam.settings.point_per_question
+      : 0.25;
+    const ppSa = (exam?.settings?.point_per_sa && exam.settings.point_per_sa > 0)
+      ? exam.settings.point_per_sa
+      : 0.5;
 
     let totalScore = 0;
     const answeredCount = Object.keys(answers).length;
@@ -55,7 +63,7 @@ export const POST: APIRoute = async ({ params, request }) => {
           subs.forEach((sq: any, i: number) => {
             const sel = (submitted as Record<string, string>)[String(i)];
             if (sel && String(sel).toUpperCase() === String(sq.correct_option || '').toUpperCase()) {
-              totalScore += 0.25;
+              totalScore += ppq;
             }
           });
         }
@@ -65,7 +73,7 @@ export const POST: APIRoute = async ({ params, request }) => {
       const correctAnswers = q.answers.filter(a => a.is_correct).map(a => a.id);
       let isCorrect = false;
 
-      if (q.type === 'single_choice' || q.type === 'true_false' || q.type === 'ordering') {
+      if (!q.type || q.type === 'mcq' || q.type === 'single_choice' || q.type === 'true_false' || q.type === 'ordering') {
         const selectedId = typeof submitted === 'string' ? submitted : (submitted as any)[0];
         if (correctAnswers.includes(selectedId)) isCorrect = true;
       } else if (q.type === 'multiple_choice') {
@@ -95,8 +103,10 @@ export const POST: APIRoute = async ({ params, request }) => {
         }
       }
 
-      if (isCorrect) totalScore += q.type === 'sa' ? 0.5 : 0.25;
+      if (isCorrect) totalScore += q.type === 'sa' ? ppSa : ppq;
     });
+
+    totalScore = Math.round(totalScore * 100) / 100;
 
     const updated = await roomStore.submitParticipant(participantId, totalScore, answeredCount);
     return new Response(JSON.stringify({ participant: updated, score: totalScore }), { status: 200 });

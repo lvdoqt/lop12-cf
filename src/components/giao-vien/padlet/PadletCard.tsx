@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { PadletNote, PadletColor } from '../../../services/mockPadletStore';
 import { withBase } from '../../../lib/base';
+import { PadletRichContent } from './PadletRichContent';
 
 interface PadletCardProps {
   note: PadletNote;
@@ -190,12 +191,13 @@ export const PadletCard: React.FC<PadletCardProps> = ({
       <div className="space-y-1.5 flex-1">
         {note.title && (
           <h4 className="font-extrabold text-base leading-snug tracking-tight">
-            {note.title}
+            <PadletRichContent content={note.title} inline />
           </h4>
         )}
-        <p className="text-sm whitespace-pre-line leading-relaxed break-words font-medium opacity-90">
-          {note.content}
-        </p>
+        <PadletRichContent
+          content={note.content}
+          className="text-sm leading-relaxed break-words font-medium opacity-95"
+        />
       </div>
 
       {/* Bottom Bar: Like & Comment toggles */}
@@ -249,7 +251,7 @@ export const PadletCard: React.FC<PadletCardProps> = ({
                       })}
                     </span>
                   </div>
-                  <p className="opacity-90">{cmt.content}</p>
+                  <PadletRichContent content={cmt.content} className="opacity-90 text-xs" />
                 </div>
               ))}
             </div>

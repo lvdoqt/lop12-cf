@@ -4,7 +4,7 @@ import { roomStore, db } from '../../../../services/db';
 export const prerender = false;
 
 // POST /api/rooms/[code]/join — Student joins a room
-export const POST: APIRoute = async ({ params, request }) => {
+export const POST: APIRoute = async ({ params, request, cookies }) => {
   const code = (params.code || '').toUpperCase();
   const room = await roomStore.getRoomByCode(code);
 
@@ -25,6 +25,13 @@ export const POST: APIRoute = async ({ params, request }) => {
     } catch (_) {}
 
     const participant = await roomStore.joinRoom(room.id, displayName.trim(), totalQuestions);
+
+    cookies.set(`room_participant_${code}`, participant.id, {
+      path: '/',
+      sameSite: 'lax',
+      maxAge: 60 * 60 * 24,
+      httpOnly: true,
+    });
 
     return new Response(JSON.stringify({
       participant,

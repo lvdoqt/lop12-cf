@@ -6,6 +6,7 @@ import { db } from '../services/db';
 const STATIC_PAGES = [
   { url: '/',         changefreq: 'daily',   priority: '1.0' },
   { url: '/ly-thuyet', changefreq: 'weekly',  priority: '0.8' },
+  { url: '/forum',    changefreq: 'daily',   priority: '0.8' },
   { url: '/about',    changefreq: 'monthly', priority: '0.6' },
   { url: '/guide',    changefreq: 'monthly', priority: '0.6' },
   { url: '/contact',  changefreq: 'monthly', priority: '0.5' },

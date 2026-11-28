@@ -130,7 +130,7 @@ export default function ExamRoomManager({ exams, teacherRooms: initialRooms }: P
   }
 
   function copyLink(code: string) {
-    const link = `${window.location.origin}/thi-online?code=${code}`;
+    const link = `${window.location.origin}${withBase(`/thi-online?code=${code}`)}`;
     navigator.clipboard.writeText(link);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -187,14 +187,14 @@ export default function ExamRoomManager({ exams, teacherRooms: initialRooms }: P
           {/* Student join URL hint */}
           <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800/40 rounded-xl text-sm text-blue-700 dark:text-blue-400">
             <span className="font-semibold">Học sinh vào:</span>{' '}
-            <code className="bg-blue-100 dark:bg-blue-900/30 px-1.5 py-0.5 rounded text-xs">{typeof window !== 'undefined' ? window.location.origin : ''}/thi-online</code>
+            <code className="bg-blue-100 dark:bg-blue-900/30 px-1.5 py-0.5 rounded text-xs">{typeof window !== 'undefined' ? window.location.origin : ''}{withBase('/thi-online')}</code>
             {' '}→ nhập mã <strong>{activeRoom.code}</strong>
           </div>
 
           {/* Action buttons */}
           <div className="flex flex-wrap items-center gap-3 mt-4">
             <a
-              href={`/giao-vien/phong-thi/${activeRoom.id}`}
+              href={withBase(`/giao-vien/phong-thi/${activeRoom.id}`)}
               className="flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 text-sm font-bold rounded-xl shadow-sm transition"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

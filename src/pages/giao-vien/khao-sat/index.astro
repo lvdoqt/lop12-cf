@@ -1,12 +1,13 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import PollManager from '../../../components/giao-vien/PollManager';
+import { withBase } from '../../../lib/base';
 
 export const prerender = false;
 
 const user = Astro.locals.user;
 if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
-  return Astro.redirect('/dashboard');
+  return Astro.redirect(withBase('/dashboard'));
 }
 ---
 
@@ -16,7 +17,7 @@ if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
       <div>
         <div class="flex items-center gap-3">
-          <a href="/giao-vien" class="text-gray-400 hover:text-gray-600 dark:hover:text-slate-300 transition">
+          <a href={withBase('/giao-vien')} class="text-gray-400 hover:text-gray-600 dark:hover:text-slate-300 transition">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
             </svg>

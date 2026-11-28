@@ -189,7 +189,7 @@ export default function LiveDashboard({ roomId, initialRoom, initialParticipants
   }
 
   function handleCopyLink() {
-    const link = `${window.location.origin}/thi-online?code=${room.code}`;
+    const link = `${window.location.origin}${withBase(`/thi-online?code=${room.code}`)}`;
     navigator.clipboard.writeText(link);
     setCopiedLink(true);
     setTimeout(() => setCopiedLink(false), 2000);
@@ -302,7 +302,7 @@ export default function LiveDashboard({ roomId, initialRoom, initialParticipants
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2.5">
               <a
-                href="/giao-vien/phong-thi"
+                href={withBase('/giao-vien/phong-thi')}
                 className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition"
               >
                 ← Quản lý phòng

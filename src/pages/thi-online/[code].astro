@@ -3,19 +3,37 @@ import Layout from '../../layouts/Layout.astro';
 import { roomStore, db } from '../../services/db';
 import { uuidToSeed, mulberry32 } from '../../lib/random';
 import { buildShuffledExam } from '../../lib/exam';
+import { withBase } from '../../lib/base';
 
 export const prerender = false;
 
 const { code } = Astro.params;
-if (!code) return Astro.redirect('/thi-online');
+if (!code) return Astro.redirect(withBase('/thi-online'));
 
 const room = await roomStore.getRoomByCode(code.toUpperCase());
-if (!room) return Astro.redirect('/thi-online?error=notfound');
-if (room.status === 'closed') return Astro.redirect('/thi-online?error=closed');
+if (!room) return Astro.redirect(withBase('/thi-online?error=notfound'));
+if (room.status === 'closed') return Astro.redirect(withBase('/thi-online?error=closed'));
 
-const allQuestions = await db.getQuestionsByExamId(room.exam_id);
+const [exam, allQuestions] = await Promise.all([
+  db.getExamById(room.exam_id),
+  db.getQuestionsByExamId(room.exam_id),
+]);
+
+const cookieParticipantId =
+  Astro.cookies.get(`room_participant_${room.code}`)?.value ||
+  Astro.url.searchParams.get('pid') ||
+  '';
+
+let preparedQuestions = allQuestions;
+let preShuffled = false;
+if (cookieParticipantId) {
+  const prng = mulberry32(uuidToSeed(cookieParticipantId));
+  preparedQuestions = buildShuffledExam(allQuestions, prng, exam?.settings);
+  preShuffled = true;
+}
+
 // Serialize questions for client (without correct answers exposed)
-const questionsForClient = allQuestions.map(q => ({
+const questionsForClient = preparedQuestions.map(q => ({
   id: q.id,
   content: q.content,
   type: q.type,
@@ -129,7 +147,7 @@ const questionsForClient = allQuestions.map(q => ({
           <p id="final-score" class="text-5xl font-black text-emerald-600 dark:text-emerald-400">—</p>
           <p id="score-detail" class="text-sm text-gray-500 dark:text-slate-400 mt-1"></p>
         </div>
-        <a href="/thi-online" class="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition">
+        <a href={withBase('/thi-online')} class="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition">
           Vao phong khac
         </a>
       </div>
@@ -141,10 +159,15 @@ const questionsForClient = allQuestions.map(q => ({
     roomCode: room.code,
     roomDuration: room.exam_duration ?? 90,
     roomStatus: room.status,
+    preShuffled,
+    preShuffledParticipantId: cookieParticipantId,
+    examSettings: exam?.settings ?? null,
   })} />
 
   <script>
     import { supabase } from '../../lib/supabase';
+    import { uuidToSeed, mulberry32 } from '../../lib/random';
+    import { buildShuffledExam } from '../../lib/exam';
 
     // ── Parse room config ──────────────────────────────────────────────────────
     const configEl = document.getElementById('exam-room-config');
@@ -265,10 +288,23 @@ const questionsForClient = allQuestions.map(q => ({
       if (started) return;
       started = true;
 
-      // Shuffle questions by section and shuffle answers using participant ID as seed
-      const shuffled = shuffleAndSortWithSeed(questions, participant.id);
+      // Use server pre-instantiated & shuffled questions when participant matches cookie,
+      // otherwise instantiate dynamic questions + shuffle deterministically on the client
+      // using the exact same buildShuffledExam + mulberry32(uuidToSeed(participant.id)) as progress.ts.
+      const usePreShuffled =
+        Boolean(config.preShuffled) &&
+        Boolean(config.preShuffledParticipantId) &&
+        config.preShuffledParticipantId === participant.id;
 
-      renderQuestions(shuffled);
+      const shuffled = usePreShuffled
+        ? questions
+        : buildShuffledExam(questions, mulberry32(uuidToSeed(participant.id)), config.examSettings);
+
+      questions = shuffled;
+      if (totalQEl) totalQEl.textContent = String(questions.length);
+      if (totalCountEl) totalCountEl.textContent = String(questions.length);
+
+      renderQuestions(questions);
 
       examArea.classList.remove('hidden');
 
@@ -292,61 +328,6 @@ const questionsForClient = allQuestions.map(q => ({
         }
         submitExam();
       });
-    }
-
-    // ── Simple shuffle & sort (same seed → same order) ────────────────────────
-    function shuffleAndSortWithSeed(arr, seed) {
-      // mulberry32-like from seed string
-      let h = 0;
-      for (let i = 0; i < seed.length; i++) h = Math.imul(31, h) + seed.charCodeAt(i) | 0;
-      function rand() {
-        h ^= h << 13; h ^= h >> 17; h ^= h << 5;
-        return ((h >>> 0) / 4294967296);
-      }
-      function shuffleArray(a, shuffleAns = true) {
-        const copy = [...a];
-        for (let i = copy.length - 1; i > 0; i--) {
-          const j = Math.floor(rand() * (i + 1));
-          [copy[i], copy[j]] = [copy[j], copy[i]];
-        }
-        if (shuffleAns) {
-          copy.forEach(q => {
-            if (q.answers && Array.isArray(q.answers)) {
-              const ansCopy = [...q.answers];
-              for (let i = ansCopy.length - 1; i > 0; i--) {
-                const j = Math.floor(rand() * (i + 1));
-                [ansCopy[i], ansCopy[j]] = [ansCopy[j], ansCopy[i]];
-              }
-              q.answers = ansCopy;
-            }
-          });
-        }
-        return copy;
-      }
-      
-      const byType = {
-        mcq: arr.filter(q => !q.type || q.type === 'single_choice'),
-        read: arr.filter(q => q.type === 'read' || q.type === 'read_cloze'),
-        msq: arr.filter(q => q.type === 'msq'),
-        sa: arr.filter(q => q.type === 'sa'),
-        tl: arr.filter(q => q.type === 'tl'),
-        multiple_choice: arr.filter(q => q.type === 'multiple_choice'),
-        list: arr.filter(q => q.type === 'list'),
-        ordering: arr.filter(q => q.type === 'ordering'),
-        true_false: arr.filter(q => q.type === 'true_false'),
-      };
-      
-      return [
-        ...shuffleArray(byType.mcq),
-        ...shuffleArray(byType.read, false), // don't shuffle read answers deeply here for simplicity
-        ...shuffleArray(byType.msq),
-        ...shuffleArray(byType.sa),
-        ...shuffleArray(byType.tl),
-        ...shuffleArray(byType.multiple_choice),
-        ...shuffleArray(byType.list, false),
-        ...shuffleArray(byType.ordering),
-        ...shuffleArray(byType.true_false),
-      ];
     }
 
     // ── Timer ──────────────────────────────────────────────────────────────────
@@ -411,26 +392,79 @@ const questionsForClient = allQuestions.map(q => ({
         }
 
         // Render options
-        if (q.type === 'single_choice' || q.type === 'true_false') {
-          (q.answers || []).forEach(a => {
+        if (!q.type || q.type === 'mcq' || q.type === 'single_choice' || q.type === 'true_false' || q.type === 'ordering') {
+          (q.answers || []).forEach((a, optIdx) => {
+            const letter = String.fromCharCode(65 + optIdx);
             const label = document.createElement('label');
             label.className = 'flex items-start gap-3 p-3 rounded-xl border border-gray-200 dark:border-slate-700 hover:bg-emerald-50 dark:hover:bg-emerald-950/20 cursor-pointer transition mb-2 group';
             const input = document.createElement('input');
             input.type = 'radio';
             input.name = 'q_' + q.id;
             input.value = a.id;
-            input.className = 'mt-0.5 accent-emerald-500 shrink-0';
+            input.className = 'mt-1 accent-emerald-500 shrink-0';
+            const badge = document.createElement('span');
+            badge.className = 'option-letter w-7 h-7 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-300 flex items-center justify-center font-bold text-xs shrink-0 transition-colors';
+            badge.textContent = letter;
             input.addEventListener('change', () => {
               answers[q.id] = a.id;
               updateAnsweredUI();
               // Highlight selected
-              card.querySelectorAll('label').forEach(l => l.classList.remove('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'dark:border-emerald-600'));
+              card.querySelectorAll('label').forEach(l => {
+                l.classList.remove('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'dark:border-emerald-600');
+                const b = l.querySelector('.option-letter');
+                if (b) {
+                  b.classList.remove('bg-emerald-600', 'text-white');
+                  b.classList.add('bg-gray-100', 'dark:bg-slate-800', 'text-gray-700', 'dark:text-slate-300');
+                }
+              });
               label.classList.add('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'dark:border-emerald-600');
+              badge.classList.remove('bg-gray-100', 'dark:bg-slate-800', 'text-gray-700', 'dark:text-slate-300');
+              badge.classList.add('bg-emerald-600', 'text-white');
             });
             const span = document.createElement('span');
-            span.className = 'text-sm text-gray-700 dark:text-slate-300';
+            span.className = 'text-sm text-gray-700 dark:text-slate-300 pt-0.5 leading-relaxed';
             span.innerHTML = a.content;
             label.appendChild(input);
+            label.appendChild(badge);
+            label.appendChild(span);
+            card.appendChild(label);
+          });
+        } else if (q.type === 'multiple_choice') {
+          (q.answers || []).forEach((a, optIdx) => {
+            const letter = String.fromCharCode(65 + optIdx);
+            const label = document.createElement('label');
+            label.className = 'flex items-start gap-3 p-3 rounded-xl border border-gray-200 dark:border-slate-700 hover:bg-emerald-50 dark:hover:bg-emerald-950/20 cursor-pointer transition mb-2 group';
+            const input = document.createElement('input');
+            input.type = 'checkbox';
+            input.name = 'q_' + q.id;
+            input.value = a.id;
+            input.className = 'mt-1 accent-emerald-500 shrink-0';
+            const badge = document.createElement('span');
+            badge.className = 'option-letter w-7 h-7 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-300 flex items-center justify-center font-bold text-xs shrink-0 transition-colors';
+            badge.textContent = letter;
+            input.addEventListener('change', () => {
+              const current: string[] = Array.isArray(answers[q.id]) ? [...answers[q.id]] : [];
+              if (input.checked) {
+                if (!current.includes(a.id)) current.push(a.id);
+                label.classList.add('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'dark:border-emerald-600');
+                badge.classList.remove('bg-gray-100', 'dark:bg-slate-800', 'text-gray-700', 'dark:text-slate-300');
+                badge.classList.add('bg-emerald-600', 'text-white');
+              } else {
+                const idxToRemove = current.indexOf(a.id);
+                if (idxToRemove > -1) current.splice(idxToRemove, 1);
+                label.classList.remove('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'dark:border-emerald-600');
+                badge.classList.remove('bg-emerald-600', 'text-white');
+                badge.classList.add('bg-gray-100', 'dark:bg-slate-800', 'text-gray-700', 'dark:text-slate-300');
+              }
+              if (current.length > 0) answers[q.id] = current;
+              else delete answers[q.id];
+              updateAnsweredUI();
+            });
+            const span = document.createElement('span');
+            span.className = 'text-sm text-gray-700 dark:text-slate-300 pt-0.5 leading-relaxed';
+            span.innerHTML = a.content;
+            label.appendChild(input);
+            label.appendChild(badge);
             label.appendChild(span);
             card.appendChild(label);
           });
@@ -513,6 +547,20 @@ const questionsForClient = allQuestions.map(q => ({
             msqContainer.appendChild(row);
           });
           card.appendChild(msqContainer);
+        } else if (q.type === 'tl') {
+          const textarea = document.createElement('textarea');
+          textarea.rows = 4;
+          textarea.placeholder = 'Nhap cau tra loi tu luan...';
+          textarea.className = 'w-full px-4 py-2.5 border border-gray-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500';
+          textarea.addEventListener('input', () => {
+            if (textarea.value.trim()) {
+              answers[q.id] = textarea.value.trim();
+            } else {
+              delete answers[q.id];
+            }
+            updateAnsweredUI();
+          });
+          card.appendChild(textarea);
         } else {
           // Fallback: text for unsupported types
           const p = document.createElement('p');
@@ -523,6 +571,19 @@ const questionsForClient = allQuestions.map(q => ({
 
         questionsContainer.appendChild(card);
       });
+
+      // Render LaTeX math formulas (including dynamic quiz expressions)
+      if (typeof (window as any).renderMathInElement === 'function' && questionsContainer) {
+        (window as any).renderMathInElement(questionsContainer, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\(', right: '\\)', display: false },
+            { left: '\\[', right: '\\]', display: true },
+          ],
+          throwOnError: false,
+        });
+      }
     }
 
     // ── Submit ─────────────────────────────────────────────────────────────────

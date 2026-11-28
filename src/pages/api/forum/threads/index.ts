@@ -56,7 +56,7 @@ export const POST: APIRoute = async (context) => {
     return new Response(JSON.stringify({
       success: true,
       thread,
-      url: `/hoc-sinh/${category.slug}/${thread.slug}`,
+      url: `/forum/${category.slug}/${thread.slug}`,
     }), { status: 201, headers: { 'Content-Type': 'application/json' } });
   } catch (err: any) {
     console.error('[api.forum.threads.POST]', err);

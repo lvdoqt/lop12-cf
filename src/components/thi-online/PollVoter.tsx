@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { withBase } from '../../lib/base';
+import { PadletRichContent } from '../giao-vien/padlet/PadletRichContent';
 
 interface PollVoterProps {
   initialPoll: any;
@@ -60,9 +61,9 @@ export default function PollVoter({ initialPoll }: PollVoterProps) {
         <span className="text-sm font-bold text-pink-500 uppercase tracking-widest">Khảo sát trực tiếp</span>
       </div>
       
-      <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-8 leading-snug">
-        {initialPoll.question}
-      </h2>
+      <div className="text-xl md:text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-8 leading-snug [&_img]:mx-auto">
+        <PadletRichContent content={initialPoll.question} />
+      </div>
 
       <div className="space-y-3">
         {initialPoll.options.map((opt: any, i: number) => {
@@ -74,12 +75,12 @@ export default function PollVoter({ initialPoll }: PollVoterProps) {
               disabled={submitting}
               className="w-full text-left p-4 md:p-5 rounded-2xl border-2 border-gray-100 dark:border-slate-800 hover:border-pink-500 hover:bg-pink-50 dark:hover:bg-pink-900/20 active:scale-[0.98] transition-all group flex items-center gap-4"
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gray-100 dark:bg-slate-800 group-hover:bg-pink-500 group-hover:text-white flex items-center justify-center font-bold text-lg text-gray-500 transition-colors">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gray-100 dark:bg-slate-800 group-hover:bg-pink-500 group-hover:text-white flex items-center justify-center font-bold text-lg text-gray-500 transition-colors shrink-0">
                 {letter}
               </div>
-              <span className="flex-1 font-bold text-gray-700 dark:text-gray-200 text-lg md:text-xl">
-                {opt.text}
-              </span>
+              <div className="flex-1 min-w-0 font-bold text-gray-700 dark:text-gray-200 text-lg md:text-xl">
+                <PadletRichContent content={opt.text} className="[&_img]:max-h-40" />
+              </div>
             </button>
           );
         })}

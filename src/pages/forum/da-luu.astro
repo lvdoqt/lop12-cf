@@ -21,9 +21,9 @@ const sections = [
 <Layout
   title="Bài đã lưu | Diễn đàn Học sinh"
   description="Những bài viết bạn đã lưu hoặc đang theo dõi trên diễn đàn học sinh."
-  canonical="/hoc-sinh/da-luu"
+  canonical="/forum/da-luu"
   noindex={true}
-  breadcrumbs={[{ name: 'Diễn đàn Học sinh', url: '/hoc-sinh' }, { name: 'Bài đã lưu', url: '/hoc-sinh/da-luu' }]}
+  breadcrumbs={[{ name: 'Diễn đàn Học sinh', url: '/forum' }, { name: 'Bài đã lưu', url: '/forum/da-luu' }]}
 >
   <div class="grid gap-6 lg:grid-cols-2">
     {sections.map(section => (
@@ -35,7 +35,7 @@ const sections = [
         <ul class="divide-y divide-slate-100 dark:divide-slate-800">
           {section.items.map(thread => (
             <li class="px-5 py-4 hover:bg-slate-50/70 dark:hover:bg-slate-800/40">
-              <a href={`/hoc-sinh/${thread.category?.slug}/${thread.slug}`} class="font-bold text-slate-900 hover:text-blue-600 dark:text-slate-100 dark:hover:text-blue-400 line-clamp-2">{thread.title}</a>
+              <a href={`/forum/${thread.category?.slug}/${thread.slug}`} class="font-bold text-slate-900 hover:text-blue-600 dark:text-slate-100 dark:hover:text-blue-400 line-clamp-2">{thread.title}</a>
               <p class="mt-1 text-xs text-slate-500 line-clamp-2">{forumExcerpt(thread.body, 140)}</p>
               <p class="mt-2 text-[11px] text-slate-400">
                 {thread.category?.name} · {forumRelativeTime(thread.last_activity_at)} · 💬 {thread.reply_count} · 👁 {forumNumber(thread.views_count)}

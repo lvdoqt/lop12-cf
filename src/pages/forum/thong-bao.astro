@@ -25,9 +25,9 @@ const typeMeta: Record<string, { icon: string; label: string }> = {
 <Layout
   title="Thông báo | Diễn đàn Học sinh"
   description="Các trả lời mới, lượt nhắc tên và cập nhật từ diễn đàn học sinh."
-  canonical="/hoc-sinh/thong-bao"
+  canonical="/forum/thong-bao"
   noindex={true}
-  breadcrumbs={[{ name: 'Diễn đàn Học sinh', url: '/hoc-sinh' }, { name: 'Thông báo', url: '/hoc-sinh/thong-bao' }]}
+  breadcrumbs={[{ name: 'Diễn đàn Học sinh', url: '/forum' }, { name: 'Thông báo', url: '/forum/thong-bao' }]}
 >
   <div class="mx-auto max-w-3xl space-y-5">
     <div class="flex items-end justify-between gap-4">
@@ -41,7 +41,7 @@ const typeMeta: Record<string, { icon: string; label: string }> = {
         {unreadCount > 0 && (
           <button id="forum-read-all" type="button" class="rounded-xl border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800">Đánh dấu đã đọc</button>
         )}
-        <a href="/hoc-sinh/da-luu" class="rounded-xl border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800">🔖 Đã lưu</a>
+        <a href="/forum/da-luu" class="rounded-xl border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800">🔖 Đã lưu</a>
       </div>
     </div>
 
@@ -50,7 +50,7 @@ const typeMeta: Record<string, { icon: string; label: string }> = {
         {notifications.map(n => {
           const thread = threadMap.get(n.payload.thread_id || '');
           const meta = typeMeta[n.type] || { icon: '📢', label: 'Cập nhật' };
-          const href = thread ? `/hoc-sinh/${thread.category?.slug}/${thread.slug}` : '/hoc-sinh/tat-ca';
+          const href = thread ? `/forum/${thread.category?.slug}/${thread.slug}` : '/forum/tat-ca';
           return (
             <li class={`flex items-start gap-3 px-5 py-4 ${n.read_at ? '' : 'bg-blue-50/40 dark:bg-blue-950/10'}`}>
               <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-lg dark:bg-slate-800">{meta.icon}</div>

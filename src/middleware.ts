@@ -158,10 +158,12 @@ export const onRequest = defineMiddleware(async (context, next) => {
   //   /dashboard, /profile, /ai-chat
   const isProtectedRoute =
     path.startsWith('/dashboard') ||
+    path === '/hoc-sinh' ||
+    path.startsWith('/hoc-sinh/') ||
     path.startsWith('/profile') ||
-    path.startsWith('/hoc-sinh/dang-bai') ||       // diễn đàn: đọc public, đăng bài cần login
-    path.startsWith('/hoc-sinh/thong-bao') ||
-    path.startsWith('/hoc-sinh/da-luu');
+    path.startsWith('/forum/dang-bai') ||       // diễn đàn: đọc public, đăng bài cần login
+    path.startsWith('/forum/thong-bao') ||
+    path.startsWith('/forum/da-luu');
 
   const isAdminRoute = path.startsWith('/admin');
   const isPublicPadletBoard = /^\/giao-vien\/padlet\/[A-Za-z0-9_-]+$/.test(path);
@@ -258,8 +260,8 @@ export const onRequest = defineMiddleware(async (context, next) => {
       finalResponse.headers.set('Cache-Control', 'public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400');
     }
     // Diễn đàn Học sinh (public): cache ngắn để thread mới nhanh xuất hiện.
-    // Trang /hoc-sinh/dang-bai đã bị chặn ở isProtectedRoute ở trên.
-    else if (path.startsWith('/hoc-sinh')) {
+    // Trang /forum/dang-bai đã bị chặn ở isProtectedRoute ở trên.
+    else if (path.startsWith('/forum')) {
       finalResponse.headers.set('Cache-Control', 'public, max-age=60, s-maxage=300, stale-while-revalidate=86400');
     }
     // Trang tĩnh: about, guide, privacy, contact, sitemap — 24h browser, 7 ngày CDN

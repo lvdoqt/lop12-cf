@@ -4,14 +4,21 @@ import Layout from '../layouts/Layout.astro';
 import ExamCard from '../components/ExamCard.astro';
 import { db } from '../services/db';
 import { isMockMode } from '../lib/supabase';
+import { forumExcerpt } from '../lib/markdown';
+import { forumNumber, forumRelativeTime } from '../lib/forum-format';
 
 export const prerender = false;
 
-const subjects = await db.getSubjects();
-const rawLessons = await getCollection('lessons');
-const exams = await db.getExams();
-const courses = await db.getCourses({ publishedOnly: true });
-const users = await db.getUsers();
+const [subjects, rawLessons, exams, courses, users, forumCategories, latestForumThreads, forumStats] = await Promise.all([
+  db.getSubjects(),
+  getCollection('lessons'),
+  db.getExams(),
+  db.getCourses({ publishedOnly: true }),
+  db.getUsers(),
+  db.getForumCategories(),
+  db.getForumThreads({ sort: 'latest', limit: 6 }),
+  db.getForumStats(),
+]);
 const teacherMap: Record<string, string> = {};
 users.forEach(u => { if (u.fullname) teacherMap[u.id] = u.fullname; });
 if (isMockMode) {
@@ -253,6 +260,98 @@ const subjectRows = [
             attemptCount={examAttemptCounts[exam.id] || 0}
           />
         ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION: FORUM (Indigo / Sky) ===== -->
+  <div class="bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 dark:from-[#0C1428] dark:via-[#111B33] dark:to-[#131836] mb-12 rounded-3xl p-6 md:p-10 border border-blue-200/50 dark:border-indigo-900/40 shadow-sm">
+    <div class="space-y-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20 mb-2">
+            💬 CỘNG ĐỒNG HỎI ĐÁP
+          </span>
+          <h2 class="section-title text-indigo-700 dark:text-indigo-300">Diễn đàn Học sinh</h2>
+          <p class="section-subtitle">Hỏi bài khó, chia sẻ kinh nghiệm ôn thi và nhận giải đáp nhanh từ bạn bè &amp; giáo viên.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 shrink-0">
+          <a href="/forum/dang-bai" class="inline-flex items-center gap-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2.5 shadow-sm transition-colors">
+            ✍️ Đăng bài hỏi đáp
+          </a>
+          <a href="/forum" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 flex items-center gap-1 transition-colors">
+            Vào diễn đàn <span class="text-lg leading-none">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick stats & category chips -->
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-2">
+          {forumCategories.slice(0, 6).map(cat => (
+            <a
+              href={`/forum/${cat.slug}`}
+              class="inline-flex items-center gap-1.5 rounded-full bg-white/85 dark:bg-slate-900/70 border border-blue-200/60 dark:border-slate-700/60 px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <span>{cat.icon || '📚'}</span>
+              <span>{cat.name}</span>
+              <span class="text-[10px] text-slate-400">({forumNumber(cat.thread_count || 0)})</span>
+            </a>
+          ))}
+        </div>
+        <div class="flex items-center gap-4 text-xs font-semibold text-slate-500 dark:text-slate-400">
+          <span>📝 {forumNumber(forumStats.threads)} bài viết</span>
+          <span>💬 {forumNumber(forumStats.replies)} trả lời</span>
+          <span>✅ {forumNumber(forumStats.solved)} đã giải</span>
+        </div>
+      </div>
+
+      <!-- Latest forum threads -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {latestForumThreads.map(thread => (
+          <a
+            href={`/forum/${thread.category?.slug}/${thread.slug}`}
+            class="group bg-white/95 dark:bg-slate-900/80 border border-blue-100/80 dark:border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-700 hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <span class="inline-flex items-center gap-1 text-[11px] font-bold text-blue-600 dark:text-blue-400 truncate">
+                  <span>{thread.category?.icon || '💬'}</span>
+                  <span class="truncate">{thread.category?.name || 'Diễn đàn'}</span>
+                </span>
+                {thread.status === 'solved' && (
+                  <span class="shrink-0 rounded-full bg-emerald-100 dark:bg-emerald-950/60 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">
+                    ✓ Đã giải
+                  </span>
+                )}
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
+                {thread.is_pinned && <span class="mr-1">📌</span>}{thread.title}
+              </h3>
+              <p class="mt-1.5 text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
+                {forumExcerpt(thread.body, 130)}
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-400 dark:text-slate-500">
+              <span class="truncate font-medium text-slate-600 dark:text-slate-300">
+                {thread.is_anonymous ? 'Ẩn danh' : (thread.author?.fullname || 'Thành viên')}
+              </span>
+              <div class="flex items-center gap-2.5 shrink-0">
+                <span>💬 {thread.reply_count}</span>
+                <span>👁 {forumNumber(thread.views_count)}</span>
+                <span>• {forumRelativeTime(thread.created_at)}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+        {latestForumThreads.length === 0 && (
+          <div class="md:col-span-2 lg:col-span-3 rounded-2xl bg-white/80 dark:bg-slate-900/60 border border-dashed border-blue-200 dark:border-slate-700 p-8 text-center">
+            <p class="text-sm font-semibold text-slate-600 dark:text-slate-300">Chưa có bài viết nào trên diễn đàn.</p>
+            <a href="/forum/dang-bai" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:underline">
+              Hãy là người đầu tiên đặt câu hỏi →
+            </a>
+          </div>
+        )}
       </div>
     </div>
   </div>

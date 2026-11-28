@@ -9,7 +9,7 @@ const categorySlug = Astro.params.category || '';
 const threadSlug = Astro.params.thread || '';
 const thread = await db.getForumThreadBySlug(threadSlug);
 if (!thread || thread.category?.slug !== categorySlug) {
-  return Astro.redirect('/hoc-sinh');
+  return Astro.redirect('/forum');
 }
 
 const user = Astro.locals.user;
@@ -45,15 +45,15 @@ const structuredData = {
 <Layout
   title={`${thread.title} | Diễn đàn Học sinh`}
   description={thread.body.slice(0, 160)}
-  canonical={`/hoc-sinh/${categorySlug}/${thread.slug}`}
+  canonical={`/forum/${categorySlug}/${thread.slug}`}
   ogType="article"
   publishedTime={thread.created_at}
   modifiedTime={thread.updated_at || thread.created_at}
   structuredData={structuredData}
   breadcrumbs={[
-    { name: 'Diễn đàn Học sinh', url: '/hoc-sinh' },
-    { name: thread.category?.name || categorySlug, url: `/hoc-sinh/${categorySlug}` },
-    { name: thread.title, url: `/hoc-sinh/${categorySlug}/${thread.slug}` },
+    { name: 'Diễn đàn Học sinh', url: '/forum' },
+    { name: thread.category?.name || categorySlug, url: `/forum/${categorySlug}` },
+    { name: thread.title, url: `/forum/${categorySlug}/${thread.slug}` },
   ]}
 >
   <div class="grid gap-6 lg:grid-cols-[1fr_280px]">
@@ -68,7 +68,7 @@ const structuredData = {
       <article class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden">
         <div class="border-b border-slate-100 dark:border-slate-800 px-5 py-5 sm:px-7">
           <div class="flex flex-wrap items-center gap-2 text-xs">
-            <a href={`/hoc-sinh/${categorySlug}`} class="rounded-full bg-blue-50 dark:bg-blue-950/40 px-3 py-1 font-bold text-blue-700 dark:text-blue-300 hover:bg-blue-100">
+            <a href={`/forum/${categorySlug}`} class="rounded-full bg-blue-50 dark:bg-blue-950/40 px-3 py-1 font-bold text-blue-700 dark:text-blue-300 hover:bg-blue-100">
               {thread.category?.icon} {thread.category?.name}
             </a>
             {thread.status === 'solved' && (
@@ -147,7 +147,7 @@ const structuredData = {
           <div class="flex flex-wrap gap-2 border-t border-slate-100 dark:border-slate-800 px-5 py-4 sm:px-7">
             {thread.tags.map(tag => (
               <a
-                href={`/hoc-sinh/tat-ca?tag=${encodeURIComponent(tag)}`}
+                href={`/forum/tat-ca?tag=${encodeURIComponent(tag)}`}
                 class="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-950/50"
               >#{tag}</a>
             ))}
@@ -283,7 +283,7 @@ const structuredData = {
           <ul class="mt-3 space-y-3">
             {related.map(item => (
               <li>
-                <a href={`/hoc-sinh/${item.category?.slug}/${item.slug}`} class="block text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 hover:underline line-clamp-2">{item.title}</a>
+                <a href={`/forum/${item.category?.slug}/${item.slug}`} class="block text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 hover:underline line-clamp-2">{item.title}</a>
                 <span class="mt-0.5 block text-[10px] text-slate-400">{item.reply_count} trả lời · {forumNumber(item.views_count)} xem</span>
               </li>
             ))}
