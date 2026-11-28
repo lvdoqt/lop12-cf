@@ -67,16 +67,34 @@ type Props = {
   selected?: Record<string, string>;
   onAnswer?: (questionId: string, subIndex: number, letter: string) => void;
   mode?: 'take' | 'review';
+  earnedScore?: number | null;
+  maxScore?: number | null;
 };
 
-export default function MatchingQuestion({ question, index, selected = {}, onAnswer, mode = 'take' }: Props) {
+const formatPts = (val: number) => String(Math.round(val * 100) / 100);
+
+export default function MatchingQuestion({ question, index, selected = {}, onAnswer, mode = 'take', earnedScore = null, maxScore = null }: Props) {
   const prompts = (question.metadata as any)?.questions || [];
   const options = (question.metadata as any)?.options || [];
 
   return <section id={`question-section-${index}`} className="overflow-hidden rounded-2xl border border-cyan-200 bg-white shadow-sm">
-    <header className="flex items-center justify-between bg-cyan-50 px-5 py-3">
-      <strong className="rounded-lg bg-cyan-700 px-3 py-1.5 text-sm text-white">Câu {index}</strong>
-      <span className="text-xs font-bold uppercase tracking-wider text-cyan-800">Ghép cặp</span>
+    <header className="flex flex-wrap items-center justify-between gap-2 bg-cyan-50 px-5 py-3">
+      <strong className="rounded-xl bg-blue-600 px-3.5 py-1.5 text-sm font-extrabold text-white shadow-sm">Câu {index}</strong>
+      <div className="flex items-center gap-2">
+        {mode === 'review' && earnedScore !== null && maxScore !== null ? (
+          <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-extrabold border font-mono ${
+            earnedScore >= maxScore && maxScore > 0
+              ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+              : earnedScore > 0
+                ? 'bg-amber-50 text-amber-700 border-amber-200'
+                : 'bg-rose-50 text-rose-700 border-rose-200'
+          }`}>
+            {earnedScore > 0 ? `+${formatPts(earnedScore)}` : '0'} / {formatPts(maxScore)} điểm
+          </span>
+        ) : (
+          <span className="text-xs font-bold uppercase tracking-wider text-cyan-800">Ghép cặp</span>
+        )}
+      </div>
     </header>
     <div className="space-y-5 p-5 md:p-6">
       <MathContent className="prose prose-sm max-w-none font-medium text-slate-800" text={question.content || ''} />

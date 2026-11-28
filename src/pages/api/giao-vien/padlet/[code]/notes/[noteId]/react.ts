@@ -7,13 +7,20 @@ export const POST: APIRoute = async ({ params }) => {
     return new Response(JSON.stringify({ error: 'Missing parameters' }), { status: 400 });
   }
 
-  const result = await padletStore.toggleLike(code, noteId);
-  if (!result) {
-    return new Response(JSON.stringify({ error: 'Không thể thả tim hoặc tính năng bị tắt' }), { status: 400 });
-  }
+  try {
+    const result = await padletStore.toggleLike(code, noteId);
+    if (!result) {
+      return new Response(JSON.stringify({ error: 'Không thể thả tim hoặc tính năng bị tắt' }), { status: 400 });
+    }
 
-  return new Response(JSON.stringify(result), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' }
-  });
+    return new Response(JSON.stringify(result), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err?.message || 'Server error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 };

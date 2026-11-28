@@ -97,6 +97,11 @@ export interface ExamSettings {
    * Defaults to 0.5 if not set. Applies to non-VSAT exams only.
    */
   point_per_sa?: number;
+  /**
+   * When true, this exam is a graded exam (requires student info & saves attempts to Supabase).
+   * When false or omitted, it runs in practice mode (no student info, no DB writes).
+   */
+  is_graded?: boolean;
 }
 
 export interface Exam {

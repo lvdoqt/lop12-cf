@@ -150,14 +150,23 @@ export const PadletBoard: React.FC<PadletBoardProps> = ({ board: initialBoard, i
       });
 
       if (res.ok) {
+        const createdNote = await res.json();
         setNoteTitle('');
         setNoteContent('');
         setShowNewNoteModal(false);
-        // Refresh board
-        const latest = await (await fetch(withBase(`/api/giao-vien/padlet/${board.code}`))).json();
-        setBoard(latest);
+        // Optimistically update and refresh board
+        setBoard((prev) => ({
+          ...prev,
+          notes: prev.notes.some((n) => n.id === createdNote.id) ? prev.notes : [...prev.notes, createdNote]
+        }));
+        const latestRes = await fetch(withBase(`/api/giao-vien/padlet/${board.code}`));
+        if (latestRes.ok) {
+          const latest = await latestRes.json();
+          setBoard(latest);
+        }
       } else {
-        alert('Không thể đăng ghi chú (bảng có thể đang bị khóa)');
+        const errData = await res.json().catch(() => null);
+        alert(errData?.error || 'Không thể đăng ghi chú (bảng có thể đang bị khóa)');
       }
     } catch (e) {
       console.error(e);
@@ -404,8 +413,10 @@ export const PadletBoard: React.FC<PadletBoardProps> = ({ board: initialBoard, i
                         allowComments={board.allow_comments}
                         onRefresh={() => {
                           fetch(withBase(`/api/giao-vien/padlet/${board.code}`))
-                            .then((r) => r.json())
-                            .then((d) => setBoard(d));
+                            .then((r) => (r.ok ? r.json() : null))
+                            .then((d) => {
+                              if (d) setBoard(d);
+                            });
                         }}
                       />
                     ))}
@@ -427,8 +438,10 @@ export const PadletBoard: React.FC<PadletBoardProps> = ({ board: initialBoard, i
                 allowComments={board.allow_comments}
                 onRefresh={() => {
                   fetch(withBase(`/api/giao-vien/padlet/${board.code}`))
-                    .then((r) => r.json())
-                    .then((d) => setBoard(d));
+                    .then((r) => (r.ok ? r.json() : null))
+                    .then((d) => {
+                      if (d) setBoard(d);
+                    });
                 }}
               />
             ))}

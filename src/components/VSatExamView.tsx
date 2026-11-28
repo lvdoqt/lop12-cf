@@ -7,7 +7,7 @@ import ClozeTextQuestion from './ClozeTextQuestion';
 import { withBase } from '../lib/base';
 
 type Q = Question & { answers: Answer[] };
-type Props = { exam: { slug: string; title: string; duration: number }; attempt: { id: string }; questions: Q[]; initialSeconds: number };
+type Props = { exam: { slug: string; title: string; duration: number }; attempt: { id: string }; questions: Q[]; initialSeconds: number; practiceMode?: boolean; startedAt?: string };
 type AnswerMap = Record<string, string | string[] | Record<string, string>>;
 
 const labels: Record<string, string> = { mcq: 'Chọn đáp án', msq: 'Đúng / Sai', read: 'Chọn đáp án', single_choice: 'Chọn đáp án', matching: 'Ghép cặp', sa: 'Trả lời ngắn', cloze_text: 'Điền một từ' };
@@ -28,7 +28,7 @@ const typeColors: Record<string, { done: string, todo: string }> = {
   default: { done: 'border-sky-700 bg-sky-700 text-white', todo: 'border-slate-300 bg-white text-slate-600' }
 };
 
-export default function VSatExamView({ exam, attempt, questions, initialSeconds }: Props) {
+export default function VSatExamView({ exam, attempt, questions, initialSeconds, practiceMode = false, startedAt }: Props) {
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [time, setTime] = useState(initialSeconds);
   const [submitting, setSubmitting] = useState(false);
@@ -63,6 +63,26 @@ export default function VSatExamView({ exam, attempt, questions, initialSeconds 
   const submit = useCallback(async () => {
     if (submitting) return;
     setSubmitting(true); setConfirm(false); setError('');
+    if (practiceMode) {
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = withBase(`/exams/${exam.slug}/result/practice`);
+      const fields: Record<string, string> = {
+        seed: attempt.id,
+        started_at: startedAt || new Date().toISOString(),
+        answers: JSON.stringify(answers),
+      };
+      Object.entries(fields).forEach(([k, v]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = k;
+        input.value = v;
+        form.appendChild(input);
+      });
+      document.body.appendChild(form);
+      form.submit();
+      return;
+    }
     try {
       const res = await fetch(withBase('/api/attempts'), {
         method: 'POST',
@@ -73,11 +93,12 @@ export default function VSatExamView({ exam, attempt, questions, initialSeconds 
       if (!res.ok) throw new Error(data.message || data.error || 'Không thể nộp bài.');
       location.href = withBase(`/exams/${exam.slug}/result/${attempt.id}`);
     } catch (e: any) { setError(e.message); setSubmitting(false); }
-  }, [answers, attempt.id, exam.slug, submitting]);
+  }, [answers, attempt.id, exam.slug, submitting, practiceMode, startedAt]);
   submitRef.current = submit;
 
-  // Giám sát chuyển tab / rời cửa sổ
+  // Giám sát chuyển tab / rời cửa sổ (chỉ bật ở chế độ Đề thi lấy điểm)
   useEffect(() => {
+    if (practiceMode) return;
     const handleLeave = () => {
       const now = Date.now();
       if (now - lastAwayTimeRef.current < 800) return;
@@ -134,10 +155,12 @@ export default function VSatExamView({ exam, attempt, questions, initialSeconds 
       <div className="mx-auto flex max-w-[1500px] items-center gap-4 px-4 py-3">
         <div className="grid h-10 w-10 place-items-center rounded-lg bg-[#075985] text-sm font-black text-white">V</div>
         <div className="min-w-0 flex-1"><p className="text-[10px] font-bold uppercase tracking-[.18em] text-sky-700">Kỳ thi V-SAT · Mô phỏng trên máy tính</p><h1 className="truncate text-sm font-bold text-slate-800 md:text-base">{exam.title}</h1></div>
-        <div className={`rounded-lg border px-3 py-1.5 text-center ${tabSwitches === 0 ? 'border-slate-200 bg-slate-50 text-slate-700' : tabSwitches < 3 ? 'border-amber-300 bg-amber-50 text-amber-800 font-bold' : 'border-red-300 bg-red-100 text-red-700 font-extrabold animate-pulse'}`}>
-          <small className="block text-[9px] font-bold uppercase">Rời tab</small>
-          <b className="font-mono text-base">{tabSwitches}/3</b>
-        </div>
+        {!practiceMode && (
+          <div className={`rounded-lg border px-3 py-1.5 text-center ${tabSwitches === 0 ? 'border-slate-200 bg-slate-50 text-slate-700' : tabSwitches < 3 ? 'border-amber-300 bg-amber-50 text-amber-800 font-bold' : 'border-red-300 bg-red-100 text-red-700 font-extrabold animate-pulse'}`}>
+            <small className="block text-[9px] font-bold uppercase">Rời tab</small>
+            <b className="font-mono text-base">{tabSwitches}/3</b>
+          </div>
+        )}
         <div className={`rounded-lg border px-4 py-2 text-center ${time < 300 ? 'border-red-300 bg-red-50 text-red-700' : 'border-sky-200 bg-sky-50 text-sky-900'}`}><small className="block text-[9px] font-bold uppercase">Thời gian còn lại</small><b className="font-mono text-xl">{mm}:{ss}</b></div>
       </div>
     </header>

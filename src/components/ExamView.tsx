@@ -16,6 +16,8 @@ interface ExamViewProps {
   };
   questions: (Question & { answers: Answer[] })[];
   initialSeconds: number;
+  practiceMode?: boolean;
+  startedAt?: string;
 }
 
 type AnswersMap = Record<string, string | string[] | Record<string, string>>;
@@ -127,7 +129,7 @@ const SECTION_COLORS = {
 
 type SectionKey = keyof typeof SECTION_COLORS;
 
-export default function ExamView({ exam, attempt, questions, initialSeconds }: ExamViewProps) {
+export default function ExamView({ exam, attempt, questions, initialSeconds, practiceMode = false, startedAt }: ExamViewProps) {
   const [answers, setAnswers] = useState<AnswersMap>({});
   const [timeLeft, setTimeLeft] = useState(initialSeconds);
   const [submitting, setSubmitting] = useState(false);
@@ -254,6 +256,27 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       setConfirmOpen(false);
     }
 
+    if (practiceMode) {
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = withBase(`/exams/${exam.slug}/result/practice`);
+      const fields: Record<string, string> = {
+        seed: attempt.id,
+        started_at: startedAt || new Date().toISOString(),
+        answers: JSON.stringify(answers),
+      };
+      Object.entries(fields).forEach(([k, v]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = k;
+        input.value = v;
+        form.appendChild(input);
+      });
+      document.body.appendChild(form);
+      form.submit();
+      return;
+    }
+
     try {
       const res = await fetch(withBase('/api/attempts'), {
         method: 'POST',
@@ -272,12 +295,13 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
       setError('Lỗi kết nối mạng, vui lòng thử lại.');
       setSubmitting(false);
     }
-  }, [submitting, attempt.id, exam.slug, answers]);
+  }, [submitting, attempt.id, exam.slug, answers, practiceMode, startedAt]);
 
   handleSubmitRef.current = () => handleSubmit(true);
 
-  // Giám sát chuyển tab / rời cửa sổ (Anti-cheat)
+  // Giám sát chuyển tab / rời cửa sổ (Anti-cheat — chỉ bật ở chế độ Đề thi lấy điểm)
   useEffect(() => {
+    if (practiceMode) return;
     const handleLeave = () => {
       const now = Date.now();
       if (now - lastAwayTimeRef.current < 800) return;
@@ -400,24 +424,26 @@ export default function ExamView({ exam, attempt, questions, initialSeconds }: E
           } text-white`}>
           <div className="flex-1 min-w-0">
             <span className="text-xs font-bold uppercase tracking-wider text-white/80">
-              {isLowTime ? '⚠️ Sắp hết giờ' : 'Đang thi trực tuyến'}
+              {isLowTime ? '⚠️ Sắp hết giờ' : practiceMode ? 'Chế độ luyện tập' : 'Đang thi trực tuyến'}
             </span>
             <h1 className="text-lg md:text-xl font-extrabold leading-tight truncate">{exam.title}</h1>
           </div>
           <div className="flex items-center gap-2 sm:gap-3 ml-4 shrink-0">
-            <div
-              className={`rounded-xl px-3 py-1.5 sm:px-3.5 sm:py-2 text-center text-xs font-bold transition-all ${
-                tabSwitches === 0
-                  ? 'bg-white/15 text-white'
-                  : tabSwitches < 3
-                  ? 'bg-amber-400 text-slate-900 font-extrabold shadow-md'
-                  : 'bg-rose-500 text-white font-black animate-pulse shadow-md'
-              }`}
-              title="Số lần bạn chuyển tab hoặc rời màn hình làm bài (Tối đa 3 lần)"
-            >
-              <div className="text-[10px] uppercase font-bold opacity-80">Rời tab</div>
-              <div className="text-sm font-black">{tabSwitches}/3</div>
-            </div>
+            {!practiceMode && (
+              <div
+                className={`rounded-xl px-3 py-1.5 sm:px-3.5 sm:py-2 text-center text-xs font-bold transition-all ${
+                  tabSwitches === 0
+                    ? 'bg-white/15 text-white'
+                    : tabSwitches < 3
+                    ? 'bg-amber-400 text-slate-900 font-extrabold shadow-md'
+                    : 'bg-rose-500 text-white font-black animate-pulse shadow-md'
+                }`}
+                title="Số lần bạn chuyển tab hoặc rời màn hình làm bài (Tối đa 3 lần)"
+              >
+                <div className="text-[10px] uppercase font-bold opacity-80">Rời tab</div>
+                <div className="text-sm font-black">{tabSwitches}/3</div>
+              </div>
+            )}
             <div className="bg-white/15 rounded-xl px-3.5 py-2 text-center hidden sm:block">
               <div className="text-xs font-semibold text-white/70">Đã làm</div>
               <div className="text-lg font-black">{answeredItems}/{totalItems}</div>

@@ -4757,45 +4757,49 @@ function parseColumns(cols: any): PadletColumn[] {
   return [];
 }
 
+function formatPadletSupabaseError(context: string, error: any): Error {
+  const code = error?.code || '';
+  const message = error?.message || String(error || 'Unknown Supabase error');
+  console.error(`[padletStore.${context}] Supabase error:`, code, message);
+  if (code === 'PGRST205' || message.includes('Could not find the table') || message.includes('does not exist')) {
+    return new Error(
+      'Chưa khởi tạo bảng Padlet trên Supabase (padlet_boards / padlet_notes / padlet_comments). Vui lòng chạy file supabase/migrations/20261022000000_padlet.sql trong Supabase SQL Editor.'
+    );
+  }
+  return new Error(`Lỗi Supabase (${context}): ${message}`);
+}
+
 export const padletStore = {
   // ── 1. GET ALL BOARDS ──────────────────────────────────────────────────────
   async getAllBoards(userId?: string): Promise<PadletBoard[]> {
     if (!isInMockMode()) {
       const client = adminClient();
-      if (client) {
-        try {
-          let query = client.from('padlet_boards').select('*, padlet_notes(id)').order('created_at', { ascending: false });
-          if (userId) {
-            query = query.eq('created_by', userId);
-          }
-          const { data, error } = await query;
-          if (!error && data) {
-            return data.map((b: any) => ({
-              id: b.id,
-              code: b.code,
-              title: b.title,
-              description: b.description || undefined,
-              theme: b.theme || 'corkboard',
-              layout_mode: b.layout_mode || 'wall',
-              columns: parseColumns(b.columns),
-              is_locked: Boolean(b.is_locked),
-              allow_comments: b.allow_comments !== false,
-              allow_likes: b.allow_likes !== false,
-              created_by: b.created_by,
-              created_at: b.created_at,
-              notes: (b.padlet_notes || []).map((n: any) => ({ id: n.id } as any))
-            }));
-          }
-          if (error) {
-            console.warn('[padletStore.getAllBoards] Supabase notice (falling back to memory):', error.message);
-          }
-        } catch (err: any) {
-          console.warn('[padletStore.getAllBoards] Exception (falling back to memory):', err?.message);
-        }
+      let query = client.from('padlet_boards').select('*, padlet_notes(id)').order('created_at', { ascending: false });
+      if (userId) {
+        query = query.eq('created_by', userId);
       }
+      const { data, error } = await query;
+      if (error) {
+        throw formatPadletSupabaseError('getAllBoards', error);
+      }
+      return (data || []).map((b: any) => ({
+        id: b.id,
+        code: b.code,
+        title: b.title,
+        description: b.description || undefined,
+        theme: b.theme || 'corkboard',
+        layout_mode: b.layout_mode || 'wall',
+        columns: parseColumns(b.columns),
+        is_locked: Boolean(b.is_locked),
+        allow_comments: b.allow_comments !== false,
+        allow_likes: b.allow_likes !== false,
+        created_by: b.created_by,
+        created_at: b.created_at,
+        notes: (b.padlet_notes || []).map((n: any) => ({ id: n.id } as any))
+      }));
     }
 
-    // In-memory fallback
+    // In-memory mock mode only
     const list = Array.from(_mockPadletBoards.values());
     if (userId) {
       return list.filter(b => b.created_by === userId || b.created_by === 'teacher-1');
@@ -4810,83 +4814,83 @@ export const padletStore = {
 
     if (!isInMockMode()) {
       const client = adminClient();
-      if (client) {
-        try {
-          const { data: b, error } = await client.from('padlet_boards').select('*').eq('code', upperCode).single();
-          if (!error && b) {
-            // Fetch notes for this board
-            const { data: rawNotes } = await client
-              .from('padlet_notes')
-              .select('*')
-              .eq('board_code', upperCode)
-              .order('is_pinned', { ascending: false })
-              .order('created_at', { ascending: true });
+      const { data: b, error } = await client.from('padlet_boards').select('*').eq('code', upperCode).single();
+      if (error) {
+        if (error.code === 'PGRST116') return null;
+        throw formatPadletSupabaseError('getBoardByCode', error);
+      }
+      if (!b) return null;
 
-            const notesList = rawNotes || [];
-            const noteIds = notesList.map((n: any) => n.id);
+      // Fetch notes for this board
+      const { data: rawNotes, error: notesErr } = await client
+        .from('padlet_notes')
+        .select('*')
+        .eq('board_code', upperCode)
+        .order('is_pinned', { ascending: false })
+        .order('created_at', { ascending: true });
+      if (notesErr) {
+        throw formatPadletSupabaseError('getBoardByCode.notes', notesErr);
+      }
 
-            let commentsList: any[] = [];
-            if (noteIds.length > 0) {
-              const { data: rawComments } = await client
-                .from('padlet_comments')
-                .select('*')
-                .in('note_id', noteIds)
-                .order('created_at', { ascending: true });
-              if (rawComments) {
-                commentsList = rawComments;
-              }
-            }
+      const notesList = rawNotes || [];
+      const noteIds = notesList.map((n: any) => n.id);
 
-            const commentsByNote = new Map<string, PadletComment[]>();
-            for (const c of commentsList) {
-              const existing = commentsByNote.get(c.note_id) || [];
-              existing.push({
-                id: c.id,
-                author_name: c.author_name || 'Học sinh',
-                content: c.content,
-                created_at: c.created_at,
-              });
-              commentsByNote.set(c.note_id, existing);
-            }
-
-            const notes: PadletNote[] = notesList.map((n: any) => ({
-              id: n.id,
-              board_code: n.board_code,
-              author_name: n.author_name || 'Học sinh',
-              title: n.title || undefined,
-              content: n.content,
-              color: n.color || 'yellow',
-              column_id: n.column_id || undefined,
-              likes: Number(n.likes) || 0,
-              is_pinned: Boolean(n.is_pinned),
-              comments: commentsByNote.get(n.id) || [],
-              created_at: n.created_at,
-            }));
-
-            const board: PadletBoard = {
-              id: b.id,
-              code: b.code,
-              title: b.title,
-              description: b.description || undefined,
-              theme: b.theme || 'corkboard',
-              layout_mode: b.layout_mode || 'wall',
-              columns: parseColumns(b.columns),
-              is_locked: Boolean(b.is_locked),
-              allow_comments: b.allow_comments !== false,
-              allow_likes: b.allow_likes !== false,
-              created_by: b.created_by,
-              created_at: b.created_at,
-              notes,
-            };
-
-            // Cache in memory for quick subsequent access
-            _mockPadletBoards.set(upperCode, board);
-            return board;
-          }
-        } catch (err: any) {
-          console.warn('[padletStore.getBoardByCode] Exception (falling back to memory):', err?.message);
+      let commentsList: any[] = [];
+      if (noteIds.length > 0) {
+        const { data: rawComments, error: cmtsErr } = await client
+          .from('padlet_comments')
+          .select('*')
+          .in('note_id', noteIds)
+          .order('created_at', { ascending: true });
+        if (cmtsErr) {
+          throw formatPadletSupabaseError('getBoardByCode.comments', cmtsErr);
+        }
+        if (rawComments) {
+          commentsList = rawComments;
         }
       }
+
+      const commentsByNote = new Map<string, PadletComment[]>();
+      for (const c of commentsList) {
+        const existing = commentsByNote.get(c.note_id) || [];
+        existing.push({
+          id: c.id,
+          author_name: c.author_name || 'Học sinh',
+          content: c.content,
+          created_at: c.created_at,
+        });
+        commentsByNote.set(c.note_id, existing);
+      }
+
+      const notes: PadletNote[] = notesList.map((n: any) => ({
+        id: n.id,
+        board_code: n.board_code,
+        author_name: n.author_name || 'Học sinh',
+        title: n.title || undefined,
+        content: n.content,
+        color: n.color || 'yellow',
+        column_id: n.column_id || undefined,
+        likes: Number(n.likes) || 0,
+        is_pinned: Boolean(n.is_pinned),
+        comments: commentsByNote.get(n.id) || [],
+        created_at: n.created_at,
+      }));
+
+      return {
+        id: b.id,
+        code: b.code,
+        title: b.title,
+        description: b.description || undefined,
+        theme: b.theme || 'corkboard',
+        layout_mode: b.layout_mode || 'wall',
+        columns: parseColumns(b.columns),
+        is_locked: Boolean(b.is_locked),
+        allow_comments: b.allow_comments !== false,
+        allow_likes: b.allow_likes !== false,
+        created_by: b.created_by,
+        created_at: b.created_at,
+        notes,
+      };
     }
 
     return _mockPadletBoards.get(upperCode) || null;
@@ -4921,54 +4925,45 @@ export const padletStore = {
 
     if (!isInMockMode()) {
       const client = adminClient();
-      if (client) {
-        try {
-          code = await dbUniquePadletCode();
-          const { data, error } = await client.from('padlet_boards').insert([{
-            id: boardId,
-            code,
-            title: params.title.trim(),
-            description: params.description?.trim() || null,
-            theme: params.theme || 'corkboard',
-            layout_mode,
-            columns,
-            is_locked: false,
-            allow_comments: params.allow_comments !== false,
-            allow_likes: params.allow_likes !== false,
-            created_by: params.created_by,
-            created_at: now,
-            updated_at: now,
-          }]).select().single();
+      code = await dbUniquePadletCode();
+      const { data, error } = await client.from('padlet_boards').insert([{
+        id: boardId,
+        code,
+        title: params.title.trim(),
+        description: params.description?.trim() || null,
+        theme: params.theme || 'corkboard',
+        layout_mode,
+        columns,
+        is_locked: false,
+        allow_comments: params.allow_comments !== false,
+        allow_likes: params.allow_likes !== false,
+        created_by: params.created_by,
+        created_at: now,
+        updated_at: now,
+      }]).select().single();
 
-          if (!error && data) {
-            const board: PadletBoard = {
-              id: data.id,
-              code: data.code,
-              title: data.title,
-              description: data.description || undefined,
-              theme: data.theme || 'corkboard',
-              layout_mode: data.layout_mode || 'wall',
-              columns: parseColumns(data.columns),
-              is_locked: Boolean(data.is_locked),
-              allow_comments: data.allow_comments !== false,
-              allow_likes: data.allow_likes !== false,
-              created_by: data.created_by,
-              created_at: data.created_at,
-              notes: [],
-            };
-            _mockPadletBoards.set(board.code, board);
-            return board;
-          }
-          if (error) {
-            console.warn('[padletStore.createBoard] Supabase error:', error.message);
-          }
-        } catch (err: any) {
-          console.warn('[padletStore.createBoard] Exception:', err?.message);
-        }
+      if (error || !data) {
+        throw formatPadletSupabaseError('createBoard', error || 'No row returned');
       }
+
+      return {
+        id: data.id,
+        code: data.code,
+        title: data.title,
+        description: data.description || undefined,
+        theme: data.theme || 'corkboard',
+        layout_mode: data.layout_mode || 'wall',
+        columns: parseColumns(data.columns),
+        is_locked: Boolean(data.is_locked),
+        allow_comments: data.allow_comments !== false,
+        allow_likes: data.allow_likes !== false,
+        created_by: data.created_by,
+        created_at: data.created_at,
+        notes: [],
+      };
     }
 
-    // Fallback to in-memory
+    // In-memory mock mode only
     while (_mockPadletBoards.has(code)) {
       code = generatePadletCode();
     }
@@ -5002,33 +4997,32 @@ export const padletStore = {
 
     if (!isInMockMode()) {
       const client = adminClient();
-      if (client) {
-        try {
-          const { data: existing, error: checkErr } = await client.from('padlet_boards').select('*').eq('code', upperCode).single();
-          if (!checkErr && existing) {
-            if (userId && existing.created_by !== userId && userId !== 'teacher-1') {
-              return null;
-            }
-            const updateData: any = { updated_at: new Date().toISOString() };
-            if (updates.title !== undefined) updateData.title = updates.title;
-            if (updates.description !== undefined) updateData.description = updates.description;
-            if (updates.theme !== undefined) updateData.theme = updates.theme;
-            if (updates.is_locked !== undefined) updateData.is_locked = updates.is_locked;
-            if (updates.allow_comments !== undefined) updateData.allow_comments = updates.allow_comments;
-            if (updates.allow_likes !== undefined) updateData.allow_likes = updates.allow_likes;
-
-            const { error: updErr } = await client.from('padlet_boards').update(updateData).eq('code', upperCode);
-            if (!updErr) {
-              return await padletStore.getBoardByCode(upperCode);
-            }
-          }
-        } catch (err: any) {
-          console.warn('[padletStore.updateBoard] Exception:', err?.message);
-        }
+      const { data: existing, error: checkErr } = await client.from('padlet_boards').select('*').eq('code', upperCode).single();
+      if (checkErr) {
+        if (checkErr.code === 'PGRST116') return null;
+        throw formatPadletSupabaseError('updateBoard.check', checkErr);
       }
+      if (!existing) return null;
+      if (userId && existing.created_by !== userId && userId !== 'teacher-1') {
+        return null;
+      }
+
+      const updateData: any = { updated_at: new Date().toISOString() };
+      if (updates.title !== undefined) updateData.title = updates.title;
+      if (updates.description !== undefined) updateData.description = updates.description;
+      if (updates.theme !== undefined) updateData.theme = updates.theme;
+      if (updates.is_locked !== undefined) updateData.is_locked = updates.is_locked;
+      if (updates.allow_comments !== undefined) updateData.allow_comments = updates.allow_comments;
+      if (updates.allow_likes !== undefined) updateData.allow_likes = updates.allow_likes;
+
+      const { error: updErr } = await client.from('padlet_boards').update(updateData).eq('code', upperCode);
+      if (updErr) {
+        throw formatPadletSupabaseError('updateBoard', updErr);
+      }
+      return await padletStore.getBoardByCode(upperCode);
     }
 
-    // Fallback to in-memory
+    // In-memory mock mode only
     const board = _mockPadletBoards.get(upperCode);
     if (!board) return null;
     if (userId && board.created_by !== userId && board.created_by !== 'teacher-1') {
@@ -5050,23 +5044,20 @@ export const padletStore = {
 
     if (!isInMockMode()) {
       const client = adminClient();
-      if (client) {
-        try {
-          const { data: existing, error: checkErr } = await client.from('padlet_boards').select('created_by').eq('code', upperCode).single();
-          if (!checkErr && existing) {
-            if (userId && existing.created_by !== userId && userId !== 'teacher-1') {
-              return false;
-            }
-            const { error } = await client.from('padlet_boards').delete().eq('code', upperCode);
-            if (!error) {
-              _mockPadletBoards.delete(upperCode);
-              return true;
-            }
-          }
-        } catch (err: any) {
-          console.warn('[padletStore.deleteBoard] Exception:', err?.message);
-        }
+      const { data: existing, error: checkErr } = await client.from('padlet_boards').select('created_by').eq('code', upperCode).single();
+      if (checkErr) {
+        if (checkErr.code === 'PGRST116') return false;
+        throw formatPadletSupabaseError('deleteBoard.check', checkErr);
       }
+      if (!existing) return false;
+      if (userId && existing.created_by !== userId && userId !== 'teacher-1') {
+        return false;
+      }
+      const { error } = await client.from('padlet_boards').delete().eq('code', upperCode);
+      if (error) {
+        throw formatPadletSupabaseError('deleteBoard', error);
+      }
+      return true;
     }
 
     const board = _mockPadletBoards.get(upperCode);
@@ -5098,62 +5089,55 @@ export const padletStore = {
 
     if (!isInMockMode()) {
       const client = adminClient();
-      if (client) {
-        try {
-          const { data: board, error: bErr } = await client.from('padlet_boards').select('code, is_locked, columns').eq('code', upperCode).single();
-          if (!bErr && board) {
-            if (board.is_locked) return null;
+      const { data: board, error: bErr } = await client
+        .from('padlet_boards')
+        .select('code, is_locked, columns')
+        .eq('code', upperCode)
+        .single();
 
-            const cols = parseColumns(board.columns);
-            const column_id = data.column_id || cols[0]?.id || null;
-
-            const { data: newRow, error: insErr } = await client.from('padlet_notes').insert([{
-              id: noteId,
-              board_code: board.code,
-              author_name: data.author_name.trim() || 'Học sinh',
-              title: data.title?.trim() || null,
-              content: data.content.trim(),
-              color,
-              column_id,
-              likes: 0,
-              is_pinned: false,
-              created_at: now,
-              updated_at: now,
-            }]).select().single();
-
-            if (!insErr && newRow) {
-              const note: PadletNote = {
-                id: newRow.id,
-                board_code: newRow.board_code,
-                author_name: newRow.author_name || 'Học sinh',
-                title: newRow.title || undefined,
-                content: newRow.content,
-                color: newRow.color,
-                column_id: newRow.column_id || undefined,
-                likes: 0,
-                is_pinned: false,
-                comments: [],
-                created_at: newRow.created_at,
-              };
-
-              const memBoard = _mockPadletBoards.get(upperCode);
-              if (memBoard) {
-                memBoard.notes.push(note);
-              }
-
-              return note;
-            }
-            if (insErr) {
-              console.warn('[padletStore.addNote] Supabase error:', insErr.message);
-            }
-          }
-        } catch (err: any) {
-          console.warn('[padletStore.addNote] Exception:', err?.message);
-        }
+      if (bErr) {
+        if (bErr.code === 'PGRST116') return null;
+        throw formatPadletSupabaseError('addNote.board', bErr);
       }
+      if (!board || board.is_locked) return null;
+
+      const cols = parseColumns(board.columns);
+      const column_id = data.column_id || cols[0]?.id || null;
+
+      const { data: newRow, error: insErr } = await client.from('padlet_notes').insert([{
+        id: noteId,
+        board_code: board.code,
+        author_name: data.author_name.trim() || 'Học sinh',
+        title: data.title?.trim() || null,
+        content: data.content.trim(),
+        color,
+        column_id,
+        likes: 0,
+        is_pinned: false,
+        created_at: now,
+        updated_at: now,
+      }]).select().single();
+
+      if (insErr || !newRow) {
+        throw formatPadletSupabaseError('addNote.insert', insErr || 'No row returned');
+      }
+
+      return {
+        id: newRow.id,
+        board_code: newRow.board_code,
+        author_name: newRow.author_name || 'Học sinh',
+        title: newRow.title || undefined,
+        content: newRow.content,
+        color: newRow.color,
+        column_id: newRow.column_id || undefined,
+        likes: 0,
+        is_pinned: false,
+        comments: [],
+        created_at: newRow.created_at,
+      };
     }
 
-    // Fallback to in-memory
+    // In-memory mock mode only
     const board = _mockPadletBoards.get(upperCode);
     if (!board || board.is_locked) return null;
 
@@ -5185,51 +5169,53 @@ export const padletStore = {
 
     if (!isInMockMode()) {
       const client = adminClient();
-      if (client) {
-        try {
-          const updateData: any = { updated_at: new Date().toISOString() };
-          if (updates.is_pinned !== undefined) updateData.is_pinned = updates.is_pinned;
-          if (updates.color !== undefined) updateData.color = updates.color;
-          if (updates.title !== undefined) updateData.title = updates.title;
-          if (updates.content !== undefined) updateData.content = updates.content;
+      const updateData: any = { updated_at: new Date().toISOString() };
+      if (updates.is_pinned !== undefined) updateData.is_pinned = updates.is_pinned;
+      if (updates.color !== undefined) updateData.color = updates.color;
+      if (updates.title !== undefined) updateData.title = updates.title;
+      if (updates.content !== undefined) updateData.content = updates.content;
 
-          const { data: row, error } = await client.from('padlet_notes').update(updateData).eq('id', noteId).eq('board_code', upperCode).select().single();
-          if (!error && row) {
-            const { data: cmts } = await client.from('padlet_comments').select('*').eq('note_id', noteId).order('created_at', { ascending: true });
-            const note: PadletNote = {
-              id: row.id,
-              board_code: row.board_code,
-              author_name: row.author_name || 'Học sinh',
-              title: row.title || undefined,
-              content: row.content,
-              color: row.color,
-              column_id: row.column_id || undefined,
-              likes: Number(row.likes) || 0,
-              is_pinned: Boolean(row.is_pinned),
-              comments: (cmts || []).map((c: any) => ({
-                id: c.id,
-                author_name: c.author_name || 'Học sinh',
-                content: c.content,
-                created_at: c.created_at,
-              })),
-              created_at: row.created_at,
-            };
+      const { data: row, error } = await client
+        .from('padlet_notes')
+        .update(updateData)
+        .eq('id', noteId)
+        .eq('board_code', upperCode)
+        .select()
+        .single();
 
-            const memBoard = _mockPadletBoards.get(upperCode);
-            if (memBoard) {
-              const idx = memBoard.notes.findIndex(n => n.id === noteId);
-              if (idx !== -1) memBoard.notes[idx] = note;
-            }
-
-            return note;
-          }
-        } catch (err: any) {
-          console.warn('[padletStore.updateNote] Exception:', err?.message);
-        }
+      if (error) {
+        if (error.code === 'PGRST116') return null;
+        throw formatPadletSupabaseError('updateNote', error);
       }
+      if (!row) return null;
+
+      const { data: cmts } = await client
+        .from('padlet_comments')
+        .select('*')
+        .eq('note_id', noteId)
+        .order('created_at', { ascending: true });
+
+      return {
+        id: row.id,
+        board_code: row.board_code,
+        author_name: row.author_name || 'Học sinh',
+        title: row.title || undefined,
+        content: row.content,
+        color: row.color,
+        column_id: row.column_id || undefined,
+        likes: Number(row.likes) || 0,
+        is_pinned: Boolean(row.is_pinned),
+        comments: (cmts || []).map((c: any) => ({
+          id: c.id,
+          author_name: c.author_name || 'Học sinh',
+          content: c.content,
+          created_at: c.created_at,
+        })),
+        created_at: row.created_at,
+      };
     }
 
-    // Fallback to in-memory
+    // In-memory mock mode only
     const board = _mockPadletBoards.get(upperCode);
     if (!board) return null;
     const note = board.notes.find(n => n.id === noteId);
@@ -5250,21 +5236,15 @@ export const padletStore = {
 
     if (!isInMockMode()) {
       const client = adminClient();
-      if (client) {
-        try {
-          const { error } = await client.from('padlet_notes').delete().eq('id', noteId).eq('board_code', upperCode);
-          if (!error) {
-            const memBoard = _mockPadletBoards.get(upperCode);
-            if (memBoard) {
-              const idx = memBoard.notes.findIndex(n => n.id === noteId);
-              if (idx !== -1) memBoard.notes.splice(idx, 1);
-            }
-            return true;
-          }
-        } catch (err: any) {
-          console.warn('[padletStore.deleteNote] Exception:', err?.message);
-        }
+      const { error } = await client
+        .from('padlet_notes')
+        .delete()
+        .eq('id', noteId)
+        .eq('board_code', upperCode);
+      if (error) {
+        throw formatPadletSupabaseError('deleteNote', error);
       }
+      return true;
     }
 
     const board = _mockPadletBoards.get(upperCode);
@@ -5284,26 +5264,39 @@ export const padletStore = {
 
     if (!isInMockMode()) {
       const client = adminClient();
-      if (client) {
-        try {
-          const { data: board, error: bErr } = await client.from('padlet_boards').select('allow_likes').eq('code', upperCode).single();
-          if (!bErr && board && board.allow_likes) {
-            const { data: note, error: nErr } = await client.from('padlet_notes').select('likes').eq('id', noteId).single();
-            if (!nErr && note) {
-              const newLikes = (Number(note.likes) || 0) + 1;
-              const { error: updErr } = await client.from('padlet_notes').update({ likes: newLikes }).eq('id', noteId);
-              if (!updErr) {
-                const memBoard = _mockPadletBoards.get(upperCode);
-                const memNote = memBoard?.notes.find(n => n.id === noteId);
-                if (memNote) memNote.likes = newLikes;
-                return { likes: newLikes };
-              }
-            }
-          }
-        } catch (err: any) {
-          console.warn('[padletStore.toggleLike] Exception:', err?.message);
-        }
+      const { data: board, error: bErr } = await client
+        .from('padlet_boards')
+        .select('allow_likes')
+        .eq('code', upperCode)
+        .single();
+      if (bErr) {
+        if (bErr.code === 'PGRST116') return null;
+        throw formatPadletSupabaseError('toggleLike.board', bErr);
       }
+      if (!board || !board.allow_likes) return null;
+
+      const { data: note, error: nErr } = await client
+        .from('padlet_notes')
+        .select('likes')
+        .eq('id', noteId)
+        .eq('board_code', upperCode)
+        .single();
+      if (nErr) {
+        if (nErr.code === 'PGRST116') return null;
+        throw formatPadletSupabaseError('toggleLike.note', nErr);
+      }
+      if (!note) return null;
+
+      const newLikes = (Number(note.likes) || 0) + 1;
+      const { error: updErr } = await client
+        .from('padlet_notes')
+        .update({ likes: newLikes })
+        .eq('id', noteId)
+        .eq('board_code', upperCode);
+      if (updErr) {
+        throw formatPadletSupabaseError('toggleLike.update', updErr);
+      }
+      return { likes: newLikes };
     }
 
     const board = _mockPadletBoards.get(upperCode);
@@ -5328,39 +5321,35 @@ export const padletStore = {
 
     if (!isInMockMode()) {
       const client = adminClient();
-      if (client) {
-        try {
-          const { data: board, error: bErr } = await client.from('padlet_boards').select('allow_comments, is_locked').eq('code', upperCode).single();
-          if (!bErr && board) {
-            if (!board.allow_comments || board.is_locked) return null;
-
-            const { data: row, error: insErr } = await client.from('padlet_comments').insert([{
-              id: cmtId,
-              note_id: noteId,
-              author_name: author_name.trim() || 'Học sinh',
-              content: content.trim(),
-              created_at: now,
-            }]).select().single();
-
-            if (!insErr && row) {
-              const comment: PadletComment = {
-                id: row.id,
-                author_name: row.author_name || 'Học sinh',
-                content: row.content,
-                created_at: row.created_at,
-              };
-
-              const memBoard = _mockPadletBoards.get(upperCode);
-              const memNote = memBoard?.notes.find(n => n.id === noteId);
-              if (memNote) memNote.comments.push(comment);
-
-              return comment;
-            }
-          }
-        } catch (err: any) {
-          console.warn('[padletStore.addComment] Exception:', err?.message);
-        }
+      const { data: board, error: bErr } = await client
+        .from('padlet_boards')
+        .select('allow_comments, is_locked')
+        .eq('code', upperCode)
+        .single();
+      if (bErr) {
+        if (bErr.code === 'PGRST116') return null;
+        throw formatPadletSupabaseError('addComment.board', bErr);
       }
+      if (!board || !board.allow_comments || board.is_locked) return null;
+
+      const { data: row, error: insErr } = await client.from('padlet_comments').insert([{
+        id: cmtId,
+        note_id: noteId,
+        author_name: author_name.trim() || 'Học sinh',
+        content: content.trim(),
+        created_at: now,
+      }]).select().single();
+
+      if (insErr || !row) {
+        throw formatPadletSupabaseError('addComment.insert', insErr || 'No row returned');
+      }
+
+      return {
+        id: row.id,
+        author_name: row.author_name || 'Học sinh',
+        content: row.content,
+        created_at: row.created_at,
+      };
     }
 
     const board = _mockPadletBoards.get(upperCode);

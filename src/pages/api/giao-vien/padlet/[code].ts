@@ -7,15 +7,22 @@ export const GET: APIRoute = async ({ params }) => {
     return new Response(JSON.stringify({ error: 'Missing code' }), { status: 400 });
   }
 
-  const board = await padletStore.getBoardByCode(code);
-  if (!board) {
-    return new Response(JSON.stringify({ error: 'Không tìm thấy bảng' }), { status: 404 });
-  }
+  try {
+    const board = await padletStore.getBoardByCode(code);
+    if (!board) {
+      return new Response(JSON.stringify({ error: 'Không tìm thấy bảng' }), { status: 404 });
+    }
 
-  return new Response(JSON.stringify(board), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' }
-  });
+    return new Response(JSON.stringify(board), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err?.message || 'Server error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 };
 
 export const PATCH: APIRoute = async ({ params, request, locals }) => {
@@ -40,8 +47,11 @@ export const PATCH: APIRoute = async ({ params, request, locals }) => {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
     });
-  } catch (err) {
-    return new Response(JSON.stringify({ error: 'Server error' }), { status: 500 });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err?.message || 'Server error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 };
 
@@ -56,13 +66,20 @@ export const DELETE: APIRoute = async ({ params, locals }) => {
     return new Response(JSON.stringify({ error: 'Missing code' }), { status: 400 });
   }
 
-  const ok = await padletStore.deleteBoard(code, user.role === 'admin' ? undefined : user.id);
-  if (!ok) {
-    return new Response(JSON.stringify({ error: 'Không thể xóa bảng' }), { status: 404 });
-  }
+  try {
+    const ok = await padletStore.deleteBoard(code, user.role === 'admin' ? undefined : user.id);
+    if (!ok) {
+      return new Response(JSON.stringify({ error: 'Không thể xóa bảng' }), { status: 404 });
+    }
 
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' }
-  });
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err?.message || 'Server error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 };

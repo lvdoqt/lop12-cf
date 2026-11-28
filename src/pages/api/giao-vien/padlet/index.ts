@@ -7,11 +7,18 @@ export const GET: APIRoute = async ({ locals }) => {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
   }
 
-  const boards = await padletStore.getAllBoards(user.role === 'admin' ? undefined : user.id);
-  return new Response(JSON.stringify(boards), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' }
-  });
+  try {
+    const boards = await padletStore.getAllBoards(user.role === 'admin' ? undefined : user.id);
+    return new Response(JSON.stringify(boards), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err?.message || 'Lỗi tải danh sách bảng Padlet' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 };
 
 export const POST: APIRoute = async ({ request, locals }) => {
@@ -41,7 +48,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
       status: 201,
       headers: { 'Content-Type': 'application/json' }
     });
-  } catch (err) {
-    return new Response(JSON.stringify({ error: 'Server error' }), { status: 500 });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err?.message || 'Server error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 };

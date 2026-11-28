@@ -49,6 +49,9 @@ const forumUnread = user ? await db.getUnreadForumNotificationCount(user.id) : 0
       <a href="/hoc-sinh" class="text-sm font-medium text-white/75 hover:text-white transition-colors relative after:absolute after:bottom-[-18px] after:left-0 after:right-0 after:h-0.5 after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200">
         Học sinh
       </a>
+      <a href="/giao-vien" class="text-sm font-medium text-white/75 hover:text-white transition-colors relative after:absolute after:bottom-[-18px] after:left-0 after:right-0 after:h-0.5 after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200">
+        Giáo viên
+      </a>
       <a href="/v-sat" class="text-sm font-medium text-cyan-200 hover:text-white transition-colors">V-SAT</a>
     </nav>
 
@@ -166,6 +169,9 @@ const forumUnread = user ? await db.getUnreadForumNotificationCount(user.id) : 0
       </a>
       <a href="/hoc-sinh" class="text-sm font-medium text-white/75 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/10">
         Học sinh
+      </a>
+      <a href="/giao-vien" class="text-sm font-medium text-white/75 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/10">
+        Giáo viên
       </a>
       <a href="/v-sat" class="text-sm font-medium text-cyan-200 hover:text-white px-3 py-2 rounded-lg hover:bg-white/10">V-SAT</a>
     {!user && (

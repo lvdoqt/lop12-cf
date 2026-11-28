@@ -8,7 +8,10 @@ interface ReadListQuestionProps {
   mode: 'take' | 'review';
   selectedAnswers?: Record<string, string> | null;
   onAnswer?: (parentId: string, subIndex: number, letter: string) => void;
+  pointPerSub?: number;
 }
+
+const formatPts = (val: number) => String(Math.round(val * 100) / 100);
 
 const optionLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
 
@@ -74,7 +77,7 @@ const MathContent = memo(function MathContent({ text, inline = false, as = 'div'
   return <Tag ref={rootRef} className={className} dangerouslySetInnerHTML={html} />;
 });
 
-export default function ReadListQuestion({ question, index, mode, selectedAnswers, onAnswer }: ReadListQuestionProps) {
+export default function ReadListQuestion({ question, index, mode, selectedAnswers, onAnswer, pointPerSub }: ReadListQuestionProps) {
   const subQuestions: any[] = (question.metadata as any)?.questions || [];
   const audioUrl = (question.metadata as any)?.audio_url;
   const isList = question.type === 'list';
@@ -172,21 +175,39 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
   // Bên trái: bài đọc cố định (sticky + scroll riêng), bên phải: câu hỏi scroll
   const isTwoColumn = !isList && passage.trim().length > 0;
 
+  const correctSubCount = subQuestions.reduce((acc, sq, i) => {
+    const correctLetter = (sq.correct_option || '').toUpperCase();
+    const sel = (selection[String(i)] || '').toUpperCase();
+    return acc + (sel && sel === correctLetter ? 1 : 0);
+  }, 0);
+  const groupEarnedScore = pointPerSub !== undefined ? correctSubCount * pointPerSub : null;
+  const groupMaxScore = pointPerSub !== undefined ? subQuestions.length * pointPerSub : null;
+
   return (
     <div
       id={`question-section-${index}`}
       className={`bg-white dark:bg-slate-900 border ${borderColor} rounded-2xl shadow-sm mb-6 overflow-hidden`}
     >
       {/* Header */}
-      <div className={`flex items-center justify-between px-5 py-3 bg-gradient-to-r ${headerGradient}`}>
-        <span className={`inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl text-sm font-extrabold bg-gradient-to-br ${badgeBg} text-white shadow-md`}>
-          <span className="text-base md:text-lg leading-none">{isCloze ? 'Nhóm' : 'Câu'} {index}{subQuestions.length > 1 ? ` - ${index + subQuestions.length - 1}` : ''}</span>
+      <div className={`flex flex-wrap items-center justify-between gap-2 px-5 py-3 bg-gradient-to-r ${headerGradient}`}>
+        <span className={`inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl text-sm font-extrabold ${mode === 'review' ? 'bg-blue-600' : `bg-gradient-to-br ${badgeBg}`} text-white shadow-sm`}>
+          <span className="leading-none">{isCloze ? 'Nhóm' : 'Câu'} {index}{subQuestions.length > 1 ? ` – ${index + subQuestions.length - 1}` : ''}</span>
         </span>
-        {!isCloze && (
+        {mode === 'review' && groupEarnedScore !== null && groupMaxScore !== null ? (
+          <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-extrabold border font-mono ${
+            groupEarnedScore >= groupMaxScore && groupMaxScore > 0
+              ? 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800/60'
+              : groupEarnedScore > 0
+                ? 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-800/60'
+                : 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800/60'
+          }`}>
+            {groupEarnedScore > 0 ? `+${formatPts(groupEarnedScore)}` : '0'} / {formatPts(groupMaxScore)} điểm
+          </span>
+        ) : !isCloze ? (
           <div className="flex items-center gap-2">
             <span className={`text-xs font-semibold ${labelColor}`}>{typeLabel}</span>
           </div>
-        )}
+        ) : null}
       </div>
 
       {isTwoColumn ? (
@@ -241,15 +262,26 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
 
                   return (
                     <li key={i} className={`border-t ${subDivider} pt-3 first:border-t-0 first:pt-0`}>
-                      <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 mb-2 leading-relaxed whitespace-pre-wrap">
-                        <span className={`${subNumColor} mr-1`}>Câu {index + i}.</span>
-                        <MathContent
-                          as="span"
-                          inline
-                          className="inline [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1"
-                          text={displayQuestion}
-                        />
-                      </p>
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 leading-relaxed whitespace-pre-wrap">
+                          <span className={`${mode === 'review' ? 'text-blue-600 dark:text-blue-400 font-extrabold' : subNumColor} mr-1`}>Câu {index + i}.</span>
+                          <MathContent
+                            as="span"
+                            inline
+                            className="inline [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1"
+                            text={displayQuestion}
+                          />
+                        </p>
+                        {mode === 'review' && pointPerSub !== undefined && (
+                          <span className={`shrink-0 px-2 py-0.5 rounded-md text-xs font-extrabold font-mono border ${
+                            sel && sel.toUpperCase() === correctLetter
+                              ? 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800/60'
+                              : 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800/60'
+                          }`}>
+                            {sel && sel.toUpperCase() === correctLetter ? `+${formatPts(pointPerSub)}đ` : '0đ'}
+                          </span>
+                        )}
+                      </div>
                       <div className="space-y-2">
                         {optionLetters.filter(l => sq['option_' + l.toLowerCase()]).map(l => {
                           const text = sq['option_' + l.toLowerCase()] || '';
@@ -338,15 +370,26 @@ export default function ReadListQuestion({ question, index, mode, selectedAnswer
 
               return (
                 <li key={i} className={`border-t ${subDivider} pt-3 first:border-t-0 first:pt-0`}>
-                  <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 mb-2 leading-relaxed whitespace-pre-wrap">
-                    <span className={`${subNumColor} mr-1`}>Câu {index + i}.</span>
-                    <MathContent
-                      as="span"
-                      inline
-                      className="inline [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1"
-                      text={displayQuestion}
-                    />
-                  </p>
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <p className="text-sm md:text-base font-semibold text-gray-800 dark:text-slate-100 leading-relaxed whitespace-pre-wrap">
+                      <span className={`${mode === 'review' ? 'text-blue-600 dark:text-blue-400 font-extrabold' : subNumColor} mr-1`}>Câu {index + i}.</span>
+                      <MathContent
+                        as="span"
+                        inline
+                        className="inline [&_img]:max-w-full [&_img]:rounded-md [&_img]:my-1"
+                        text={displayQuestion}
+                      />
+                    </p>
+                    {mode === 'review' && pointPerSub !== undefined && (
+                      <span className={`shrink-0 px-2 py-0.5 rounded-md text-xs font-extrabold font-mono border ${
+                        sel && sel.toUpperCase() === correctLetter
+                          ? 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800/60'
+                          : 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800/60'
+                      }`}>
+                        {sel && sel.toUpperCase() === correctLetter ? `+${formatPts(pointPerSub)}đ` : '0đ'}
+                      </span>
+                    )}
+                  </div>
                   <div className="space-y-2">
                     {optionLetters.filter(l => sq['option_' + l.toLowerCase()]).map(l => {
                       const text = sq['option_' + l.toLowerCase()] || '';

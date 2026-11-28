@@ -7,15 +7,22 @@ export const DELETE: APIRoute = async ({ params }) => {
     return new Response(JSON.stringify({ error: 'Missing parameters' }), { status: 400 });
   }
 
-  const ok = await padletStore.deleteNote(code, noteId);
-  if (!ok) {
-    return new Response(JSON.stringify({ error: 'Không tìm thấy ghi chú' }), { status: 404 });
-  }
+  try {
+    const ok = await padletStore.deleteNote(code, noteId);
+    if (!ok) {
+      return new Response(JSON.stringify({ error: 'Không tìm thấy ghi chú' }), { status: 404 });
+    }
 
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' }
-  });
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err?.message || 'Server error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 };
 
 export const PATCH: APIRoute = async ({ params, request }) => {
@@ -35,7 +42,10 @@ export const PATCH: APIRoute = async ({ params, request }) => {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
     });
-  } catch (err) {
-    return new Response(JSON.stringify({ error: 'Server error' }), { status: 500 });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err?.message || 'Server error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 };

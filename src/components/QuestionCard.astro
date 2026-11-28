@@ -7,9 +7,27 @@ interface Props {
   index: number;
   mode?: 'take' | 'review';
   selectedAnswers?: any[];
+  earnedScore?: number | null;
+  maxScore?: number | null;
+  scoreNote?: string | null;
+  isSkipped?: boolean;
 }
 
-const { question, index, mode = 'take', selectedAnswers = [] } = Astro.props;
+const {
+  question,
+  index,
+  mode = 'take',
+  selectedAnswers = [],
+  earnedScore = null,
+  maxScore = null,
+  scoreNote = null,
+  isSkipped = false,
+} = Astro.props;
+
+const formatPoints = (val: number) => {
+  const rounded = Math.round(val * 100) / 100;
+  return Number.isInteger(rounded) ? String(rounded) : String(rounded);
+};
 
 const submittedMsqMap: Record<string, string> = (selectedAnswers && typeof selectedAnswers[0] === 'object' && selectedAnswers[0] !== null)
   ? selectedAnswers[0]
@@ -37,27 +55,52 @@ const parseMarkdownWithMath = (text: string = '', isInline = false) => {
 ---
 
 <div class="bg-white border border-gray-250 dark:bg-slate-900 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm mb-6 transition-colors duration-200">
-  <!-- Header: Question Number and Difficulty -->
-  <div class="flex items-center justify-between mb-4">
-    <span class="inline-flex items-center px-3 py-1 rounded-xl text-xs font-bold bg-gray-100 text-gray-700 dark:bg-slate-800 dark:text-slate-300">
+  <!-- Header: Question Number, Score (review) and Difficulty -->
+  <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+    <span class="inline-flex items-center px-3.5 py-1.5 rounded-xl text-sm font-extrabold bg-blue-600 text-white shadow-sm">
       Câu {index}
     </span>
     
-    <div class="flex items-center space-x-2">
-      <!-- Question Type -->
-      <span class="text-xs font-semibold text-gray-400 dark:text-slate-500">
-        {question.type === 'mcq' || question.type === 'single_choice' 
-          ? 'Trắc nghiệm đơn' 
-          : question.type === 'multiple_choice' 
-            ? 'Nhiều lựa chọn' 
-            : question.type === 'msq'
-              ? 'Đúng / Sai'
-              : question.type === 'sa'
-                ? 'Trả lời ngắn'
-                : question.type === 'tl'
-                  ? 'Tự luận'
-                  : 'Đúng / Sai đơn'}
-      </span>
+    <div class="flex items-center flex-wrap gap-2">
+      {mode === 'review' ? (
+        question.type === 'tl' ? (
+          <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+            Tự luận · Chấm tay
+          </span>
+        ) : earnedScore !== null && maxScore !== null ? (
+          <span class={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-extrabold border font-mono ${
+            earnedScore >= maxScore && maxScore > 0
+              ? 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800/60'
+              : earnedScore > 0
+                ? 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-800/60'
+                : isSkipped && (question.type === 'mcq' || question.type === 'single_choice')
+                  ? 'bg-slate-100 text-slate-600 border-slate-300 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700'
+                  : 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800/60'
+          }`}>
+            {isSkipped && (question.type === 'mcq' || question.type === 'single_choice') && (
+              <span class="font-sans font-bold">Bỏ ·</span>
+            )}
+            <span>{earnedScore > 0 ? `+${formatPoints(earnedScore)}` : '0'} / {formatPoints(maxScore)} điểm</span>
+            {scoreNote && <span class="font-sans font-semibold opacity-85">({scoreNote})</span>}
+          </span>
+        ) : null
+      ) : (
+        <span class="text-xs font-semibold text-gray-400 dark:text-slate-500">
+          {question.type === 'mcq' || question.type === 'single_choice'
+            ? 'Trắc nghiệm đơn'
+            : question.type === 'multiple_choice'
+              ? 'Nhiều lựa chọn'
+              : question.type === 'msq'
+                ? 'Đúng / Sai'
+                : question.type === 'sa'
+                  ? 'Trả lời ngắn'
+                  : question.type === 'tl'
+                    ? 'Tự luận'
+                    : question.type === 'ordering'
+                      ? 'Sắp xếp'
+                      : 'Đúng / Sai đơn'}
+        </span>
+      )}
       
       <!-- Difficulty Badge -->
       <span class={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-extrabold uppercase ${

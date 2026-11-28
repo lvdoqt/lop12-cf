@@ -5,11 +5,14 @@ import ReadListQuestion from "../../../../components/ReadListQuestion";
 import MatchingQuestion from "../../../../components/MatchingQuestion";
 import ClozeTextQuestion from "../../../../components/ClozeTextQuestion";
 import { db } from "../../../../services/db";
+import type { Attempt } from "../../../../types";
 import {
   uuidToSeed,
   mulberry32,
   shuffleArrayWithPRNG,
 } from "../../../../lib/random";
+import { buildShuffledExam } from "../../../../lib/exam";
+import { calculateVsatIRTScore } from "../../../../lib/irt";
 
 export const prerender = false;
 
@@ -21,19 +24,52 @@ if (!id || !attemptId) {
 const user = Astro.locals.user;
 // Accept both slug and UUID
 const exam = await db.getExamBySlug(id);
-const attempt = await db.getAttemptById(attemptId);
-
-if (!exam || !attempt) {
+if (!exam) {
   return Astro.redirect("/de-thi");
 }
 
-if (attempt.user_id && attempt.user_id !== user?.id) {
-  return Astro.redirect("/dashboard");
+const isPracticeResult = attemptId === "practice";
+let attempt: (Attempt & { exam?: any }) | null = null;
+
+if (isPracticeResult) {
+  if (Astro.request.method !== "POST") {
+    return Astro.redirect(`/exams/${exam.slug}`);
+  }
+  const formData = await Astro.request.formData();
+  const seed = ((formData.get("seed") as string) || "").trim() || crypto.randomUUID();
+  const startedAt = ((formData.get("started_at") as string) || "").trim() || new Date().toISOString();
+  const answersRaw = (formData.get("answers") as string) || "{}";
+  let parsedAnswers: Record<string, any> = {};
+  try {
+    const obj = JSON.parse(answersRaw);
+    if (obj && typeof obj === "object" && !Array.isArray(obj)) {
+      parsedAnswers = obj;
+    }
+  } catch {
+    parsedAnswers = {};
+  }
+  attempt = {
+    id: seed,
+    user_id: user?.id || "",
+    exam_id: exam.id,
+    score: null,
+    raw_score: null,
+    ability_score: null,
+    answers_submitted: parsedAnswers,
+    started_at: startedAt,
+    finished_at: new Date().toISOString(),
+  };
+} else {
+  attempt = await db.getAttemptById(attemptId);
+  if (!attempt) {
+    return Astro.redirect("/de-thi");
+  }
+  if (attempt.user_id && attempt.user_id !== user?.id) {
+    return Astro.redirect("/dashboard");
+  }
 }
 
 const allQuestions = await db.getQuestionsByExamId(exam.id);
-
-import { buildShuffledExam } from "../../../../lib/exam";
 
 const prng = mulberry32(uuidToSeed(attempt.id));
 const rawQuestions = buildShuffledExam(allQuestions, prng, exam.settings);
@@ -129,130 +165,213 @@ const timeSpentStr =
     ? `${timeSpentMin} phút ${timeSpentSec} giây`
     : `${timeSpentSec} giây`;
 
-// 2. Calculate correct answers count
-let correctCount = 0;
-let totalCount = 0;
-questions.forEach((q) => {
+// 2. Per-question grading (mirrors src/pages/api/attempts.ts)
+const isVsat = isVsatExam;
+const ppq = (!isVsat && exam.settings?.point_per_question && exam.settings.point_per_question > 0)
+  ? exam.settings.point_per_question
+  : 0.25;
+const ppSa = (!isVsat && exam.settings?.point_per_sa && exam.settings.point_per_sa > 0)
+  ? exam.settings.point_per_sa
+  : 0.5;
+const pointPerSub = isVsat ? 6 : ppq;
+
+interface QuestionGrade {
+  earned: number;
+  max: number;
+  correctUnits: number;
+  totalUnits: number;
+  status: 'correct' | 'wrong' | 'skipped';
+  note?: string | null;
+}
+
+function gradeQuestion(q: (typeof questions)[number]): QuestionGrade {
+  const submitted = attempt?.answers_submitted?.[q.id];
+
   if (q.type === "cloze_text") {
     const blanks = (q.metadata as any)?.questions || [];
-    totalCount += blanks.length;
-    const submitted = attempt.answers_submitted?.[q.id];
+    let correctBlanks = 0;
     if (submitted && typeof submitted === "object" && !Array.isArray(submitted)) {
       blanks.forEach((blank: any, i: number) => {
-        const actual = String((submitted as Record<string, string>)[String(i)] || '').trim().toLowerCase();
-        const accepted = (Array.isArray(blank.accepted_answers) ? blank.accepted_answers : [blank.correct_answer]).map((x: any) => String(x || '').trim().toLowerCase());
-        if (actual && accepted.includes(actual)) correctCount++;
+        const actual = String((submitted as Record<string, string>)[String(i)] || "").trim().toLowerCase();
+        const accepted = (Array.isArray(blank.accepted_answers) ? blank.accepted_answers : [blank.correct_answer])
+          .map((x: any) => String(x || "").trim().toLowerCase());
+        if (actual && accepted.includes(actual)) correctBlanks++;
       });
     }
-    return;
+    const max = blanks.length * pointPerSub;
+    const earned = Math.round(correctBlanks * pointPerSub * 100) / 100;
+    return {
+      earned,
+      max,
+      correctUnits: correctBlanks,
+      totalUnits: blanks.length,
+      status: !submitted ? 'skipped' : (blanks.length > 0 && correctBlanks === blanks.length ? 'correct' : 'wrong'),
+    };
   }
+
   if (q.type === "matching") {
-    totalCount += 1;
     const pairs = (q.metadata as any)?.questions || [];
-    const submitted = attempt.answers_submitted?.[q.id];
-    if (submitted && typeof submitted === "object" && !Array.isArray(submitted) && pairs.length && pairs.every((p: any, i: number) => String((submitted as Record<string,string>)[String(i)] || '').toUpperCase() === String(p.correct_option || '').toUpperCase())) correctCount++;
-    return;
+    let correctPairs = 0;
+    if (submitted && typeof submitted === "object" && !Array.isArray(submitted)) {
+      correctPairs = pairs.filter((p: any, i: number) =>
+        String((submitted as Record<string, string>)[String(i)] || "").toUpperCase() ===
+        String(p.correct_option || "").toUpperCase()
+      ).length;
+    }
+    const allRight = pairs.length > 0 && correctPairs === pairs.length;
+    const max = isVsat ? pairs.length * 1.5 : ppq;
+    const earned = isVsat ? Math.round(correctPairs * 1.5 * 100) / 100 : (allRight ? ppq : 0);
+    return {
+      earned,
+      max,
+      correctUnits: allRight ? 1 : 0,
+      totalUnits: 1,
+      status: !submitted ? 'skipped' : (allRight ? 'correct' : 'wrong'),
+    };
   }
+
   if (q.type === "read" || q.type === "list" || q.type === "read_cloze") {
     const subs = (q.metadata && (q.metadata as any).questions) || [];
-    totalCount += subs.length;
-    const submitted = attempt.answers_submitted?.[q.id];
-    if (
-      submitted &&
-      typeof submitted === "object" &&
-      !Array.isArray(submitted)
-    ) {
+    let correctSubs = 0;
+    if (submitted && typeof submitted === "object" && !Array.isArray(submitted)) {
       subs.forEach((sq: any, i: number) => {
         const sel = (submitted as Record<string, string>)[String(i)];
-        if (
-          sel &&
-          String(sel).toUpperCase() ===
-            String(sq.correct_option || "").toUpperCase()
-        ) {
-          correctCount++;
+        if (sel && String(sel).toUpperCase() === String(sq.correct_option || "").toUpperCase()) {
+          correctSubs++;
         }
       });
     }
-    return;
+    const max = subs.length * pointPerSub;
+    const earned = Math.round(correctSubs * pointPerSub * 100) / 100;
+    return {
+      earned,
+      max,
+      correctUnits: correctSubs,
+      totalUnits: subs.length,
+      status: !submitted ? 'skipped' : (subs.length > 0 && correctSubs === subs.length ? 'correct' : 'wrong'),
+    };
   }
 
-  totalCount += 1;
-  const submitted = attempt.answers_submitted?.[q.id];
+  if (q.type === "tl") {
+    return {
+      earned: 0,
+      max: 0,
+      correctUnits: 0,
+      totalUnits: 1,
+      status: submitted ? 'wrong' : 'skipped',
+    };
+  }
+
   const correctAnswers = q.answers.filter((a) => a.is_correct).map((a) => a.id);
 
-  if (!submitted) return;
-
-  if (q.type === "mcq" || q.type === "single_choice" || q.type === "true_false") {
-    const selectedId =
-      typeof submitted === "string" ? submitted : (submitted as string[])[0];
-    if (correctAnswers.includes(selectedId)) {
-      correctCount++;
-    }
-  } else if (q.type === "multiple_choice") {
-    const selectedIds = Array.isArray(submitted)
-      ? (submitted as string[])
-      : [submitted as string];
-    const allCorrectSelected = correctAnswers.every((id) =>
-      selectedIds.includes(id),
-    );
-    const noIncorrectSelected = selectedIds.every((id) =>
-      correctAnswers.includes(id),
-    );
-    if (
-      allCorrectSelected &&
-      noIncorrectSelected &&
-      correctAnswers.length === selectedIds.length
-    ) {
-      correctCount++;
-    }
-  } else if (q.type === "msq") {
-    if (typeof submitted === "object" && submitted !== null) {
-      let allCorrect = true;
+  if (q.type === "msq") {
+    const totalSub = q.answers.length;
+    let correctSubItems = 0;
+    if (submitted && typeof submitted === "object" && !Array.isArray(submitted)) {
       q.answers.forEach((a) => {
         const studentChoice = (submitted as any)[a.id];
         const correctChoice = a.is_correct ? "Đúng" : "Sai";
-        if (studentChoice !== correctChoice) {
-          allCorrect = false;
-        }
+        if (studentChoice === correctChoice) correctSubItems++;
       });
-      if (allCorrect && q.answers.length > 0) {
-        correctCount++;
-      }
     }
-  } else if (q.type === "sa") {
-    if (typeof submitted === "string" && q.answer) {
-      const normSubmitted = submitted
-        .trim()
-        .toLowerCase()
-        .replace(/\s+/g, " ")
-        .replace(",", ".");
-      const normCorrect = q.answer
-        .trim()
-        .toLowerCase()
-        .replace(/\s+/g, " ")
-        .replace(",", ".");
+    const vsatPts = [0, 1, 2, 3, 6];
+    const moEdPts = [0, 0.1, 0.25, 0.5, 1];
+    const max = isVsat ? 6 : 1;
+    const earned = (isVsat ? vsatPts : moEdPts)[Math.min(correctSubItems, 4)] || 0;
+    const allCorrect = totalSub > 0 && correctSubItems === totalSub;
+    return {
+      earned,
+      max,
+      correctUnits: allCorrect ? 1 : 0,
+      totalUnits: 1,
+      status: !submitted ? 'skipped' : (allCorrect ? 'correct' : 'wrong'),
+      note: `${correctSubItems}/${totalSub} ý đúng`,
+    };
+  }
 
+  if (q.type === "sa") {
+    const max = isVsat ? 6 : ppSa;
+    let isCorrect = false;
+    if (typeof submitted === "string" && submitted.trim() && q.answer) {
+      const normSubmitted = submitted.trim().toLowerCase().replace(/\s+/g, " ").replace(",", ".");
+      const normCorrect = q.answer.trim().toLowerCase().replace(/\s+/g, " ").replace(",", ".");
       if (normSubmitted === normCorrect) {
-        correctCount++;
+        isCorrect = true;
       } else {
         const numSubmitted = Number(normSubmitted);
         const numCorrect = Number(normCorrect);
-        if (
-          !isNaN(numSubmitted) &&
-          !isNaN(numCorrect) &&
-          numSubmitted === numCorrect
-        ) {
-          correctCount++;
+        if (!isNaN(numSubmitted) && !isNaN(numCorrect) && numSubmitted === numCorrect) {
+          isCorrect = true;
         }
       }
     }
+    return {
+      earned: isCorrect ? max : 0,
+      max,
+      correctUnits: isCorrect ? 1 : 0,
+      totalUnits: 1,
+      status: !submitted ? 'skipped' : (isCorrect ? 'correct' : 'wrong'),
+    };
+  }
+
+  // mcq, single_choice, true_false, ordering, multiple_choice
+  const max = isVsat ? 6 : ppq;
+  if (!submitted) {
+    return { earned: 0, max, correctUnits: 0, totalUnits: 1, status: 'skipped' };
+  }
+
+  let isCorrect = false;
+  if (q.type === "multiple_choice") {
+    const selectedIds = Array.isArray(submitted) ? (submitted as string[]) : [submitted as string];
+    const allCorrectSelected = correctAnswers.every((cid) => selectedIds.includes(cid));
+    const noIncorrectSelected = selectedIds.every((sid) => correctAnswers.includes(sid));
+    if (allCorrectSelected && noIncorrectSelected && correctAnswers.length === selectedIds.length) {
+      isCorrect = true;
+    }
+  } else {
+    const selectedId = typeof submitted === "string" ? submitted : (submitted as string[])[0];
+    if (correctAnswers.includes(selectedId)) {
+      isCorrect = true;
+    }
+  }
+
+  return {
+    earned: isCorrect ? max : 0,
+    max,
+    correctUnits: isCorrect ? 1 : 0,
+    totalUnits: 1,
+    status: isCorrect ? 'correct' : 'wrong',
+  };
+}
+
+const gradesById = new Map<string, QuestionGrade>();
+let correctCount = 0;
+let totalCount = 0;
+let computedTotalScore = 0;
+const practiceIrtItems: Array<{ question: any; scoreFraction: number }> = [];
+questions.forEach((q) => {
+  const g = gradeQuestion(q);
+  gradesById.set(q.id, g);
+  correctCount += g.correctUnits;
+  totalCount += g.totalUnits;
+  computedTotalScore += g.earned;
+  if (isPracticeResult && isVsat) {
+    practiceIrtItems.push({
+      question: q,
+      scoreFraction: g.max > 0 ? g.earned / g.max : 0,
+    });
   }
 });
+computedTotalScore = Math.round(computedTotalScore * 100) / 100;
 
-const score = attempt.score !== null ? Number(attempt.score) : 0;
-const isVsat = isVsatExam;
-const rawScore = Number(attempt.raw_score ?? score);
-const abilityScore = attempt.ability_score == null ? null : Number(attempt.ability_score);
+const score = isPracticeResult
+  ? computedTotalScore
+  : (attempt.score !== null ? Number(attempt.score) : 0);
+const formatPts = (val: number) => String(Math.round(val * 100) / 100);
+const rawScore = isPracticeResult ? score : Number(attempt.raw_score ?? score);
+const abilityScore = isPracticeResult
+  ? (isVsat ? calculateVsatIRTScore(practiceIrtItems).abilityScore : null)
+  : (attempt.ability_score == null ? null : Number(attempt.ability_score));
 const themeScore = isVsat ? rawScore / 15 : score;
 
 // 3. Theme color according to score
@@ -307,10 +426,15 @@ if (themeScore < 5.0) {
       <h1
         class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-snug"
       >
-        Kết quả làm bài thi
+        {isPracticeResult ? "Kết quả luyện tập" : "Kết quả làm bài thi"}
       </h1>
       <div class="flex flex-wrap items-center gap-2 mt-1">
         <p class="text-sm text-gray-500 dark:text-slate-400">{exam.title}</p>
+        {isPracticeResult && (
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-sky-50 text-sky-700 dark:bg-sky-950/30 dark:text-sky-400 border border-sky-200/60 dark:border-sky-900/40">
+            Chế độ luyện tập · Không lưu điểm
+          </span>
+        )}
         {attempt.student_name && (
           <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 dark:bg-blue-950/30 dark:text-blue-400 border border-blue-200/50 dark:border-blue-900/30">
             <span>👤</span>
@@ -429,30 +553,27 @@ if (themeScore < 5.0) {
               <th class="text-left pb-2">Phần thi</th>
               <th class="text-center pb-2">Đúng</th>
               <th class="text-center pb-2">Tổng</th>
+              <th class="text-center pb-2">Điểm</th>
               <th class="text-center pb-2">Tỷ lệ</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-50 dark:divide-slate-800/60">
             {activeSections.map(section => {
-              // Count correct for this section (simplified - only for standard MCQ types)
-              const sectionCorrect = section.items.reduce((acc, q) => {
-                if (q.type === 'read' || q.type === 'list' || q.type === 'read_cloze') return acc;
-                const sub = attempt.answers_submitted?.[q.id];
-                if (!sub) return acc;
-                const correctIds = q.answers.filter((a: any) => a.is_correct).map((a: any) => a.id);
-                if (q.type === 'mcq' || q.type === 'single_choice' || q.type === 'true_false') {
-                  const sel = typeof sub === 'string' ? sub : (sub as any[])[0];
-                  return acc + (correctIds.includes(sel) ? 1 : 0);
-                }
-                return acc;
-              }, 0);
-              const sectionTotal = section.items.filter(q => q.type !== 'read' && q.type !== 'list' && q.type !== 'read_cloze').length || section.items.length;
-              const pct = sectionTotal > 0 ? Math.round((sectionCorrect / sectionTotal) * 100) : 0;
+              const sectionCorrect = section.items.reduce((acc, q) => acc + (gradesById.get(q.id)?.correctUnits ?? 0), 0);
+              const sectionTotal = section.items.reduce((acc, q) => acc + (gradesById.get(q.id)?.totalUnits ?? 1), 0);
+              const sectionEarned = section.items.reduce((acc, q) => acc + (gradesById.get(q.id)?.earned ?? 0), 0);
+              const sectionMax = section.items.reduce((acc, q) => acc + (gradesById.get(q.id)?.max ?? 0), 0);
+              const pct = sectionMax > 0
+                ? Math.round((sectionEarned / sectionMax) * 100)
+                : (sectionTotal > 0 ? Math.round((sectionCorrect / sectionTotal) * 100) : 0);
               return (
               <tr class="text-gray-700 dark:text-slate-300">
                 <td class="py-2.5 font-medium">{section.label}</td>
                 <td class="py-2.5 text-center font-bold text-emerald-600 dark:text-emerald-400">{sectionCorrect}</td>
                 <td class="py-2.5 text-center text-gray-500">{sectionTotal}</td>
+                <td class="py-2.5 text-center font-bold font-mono text-blue-600 dark:text-blue-400">
+                  {sectionMax > 0 ? `${formatPts(sectionEarned)} / ${formatPts(sectionMax)}` : 'Chấm tay'}
+                </td>
                 <td class="py-2.5 text-center">
                   <span class={`inline-block px-2 py-0.5 rounded text-xs font-bold ${
                     pct >= 80 ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
@@ -528,18 +649,21 @@ if (themeScore < 5.0) {
                 return (
                   <div class="space-y-4">
                     {section.items.map((question) => (
-                      <ReadListQuestion
-                        client:load
-                        question={question}
-                        index={question.globalIndex}
-                        mode="review"
-                        selectedAnswers={
-                          (attempt.answers_submitted?.[question.id] as unknown as Record<
-                            string,
-                            string
-                          >) || {}
-                        }
-                      />
+                      <div data-question-status={gradesById.get(question.id)?.status || 'skipped'}>
+                        <ReadListQuestion
+                          client:load
+                          question={question}
+                          index={question.globalIndex}
+                          mode="review"
+                          pointPerSub={pointPerSub}
+                          selectedAnswers={
+                            (attempt.answers_submitted?.[question.id] as unknown as Record<
+                              string,
+                              string
+                            >) || {}
+                          }
+                        />
+                      </div>
                     ))}
                   </div>
                 );
@@ -552,25 +676,52 @@ if (themeScore < 5.0) {
                   </h3>
                   {section.key === "read" || section.key === "list"
                     ? section.items.map((question) => (
-                        <ReadListQuestion
-                          client:load
-                          question={question}
-                          index={question.globalIndex}
-                          mode="review"
-                          selectedAnswers={
-                            (attempt.answers_submitted?.[question.id] as unknown as Record<
-                              string,
-                              string
-                            >) || {}
-                          }
-                        />
+                        <div data-question-status={gradesById.get(question.id)?.status || 'skipped'}>
+                          <ReadListQuestion
+                            client:load
+                            question={question}
+                            index={question.globalIndex}
+                            mode="review"
+                            pointPerSub={pointPerSub}
+                            selectedAnswers={
+                              (attempt.answers_submitted?.[question.id] as unknown as Record<
+                                string,
+                                string
+                              >) || {}
+                            }
+                          />
+                        </div>
                       ))
                     : section.items.map((question) => {
+                        const qGrade = gradesById.get(question.id);
                         if (question.type === "matching") {
-                          return <MatchingQuestion client:load question={question} index={question.globalIndex} mode="review" selected={(attempt.answers_submitted?.[question.id] as unknown as Record<string, string>) || {}} />;
+                          return (
+                            <div data-question-status={qGrade?.status || 'skipped'}>
+                              <MatchingQuestion
+                                client:load
+                                question={question}
+                                index={question.globalIndex}
+                                mode="review"
+                                earnedScore={qGrade?.earned ?? 0}
+                                maxScore={qGrade?.max ?? ppq}
+                                selected={(attempt.answers_submitted?.[question.id] as unknown as Record<string, string>) || {}}
+                              />
+                            </div>
+                          );
                         }
                         if (question.type === "cloze_text") {
-                          return <ClozeTextQuestion client:load question={question} index={question.globalIndex} mode="review" selected={(attempt.answers_submitted?.[question.id] as unknown as Record<string, string>) || {}} />;
+                          return (
+                            <div data-question-status={qGrade?.status || 'skipped'}>
+                              <ClozeTextQuestion
+                                client:load
+                                question={question}
+                                index={question.globalIndex}
+                                mode="review"
+                                pointPerBlank={pointPerSub}
+                                selected={(attempt.answers_submitted?.[question.id] as unknown as Record<string, string>) || {}}
+                              />
+                            </div>
+                          );
                         }
                         if (
                           question.type === "read" ||
@@ -578,17 +729,20 @@ if (themeScore < 5.0) {
                           question.type === "list"
                         ) {
                           return (
-                            <ReadListQuestion
-                              client:load
-                              question={question}
-                              index={question.globalIndex}
-                              mode="review"
-                              selectedAnswers={
-                                (attempt.answers_submitted?.[
-                                  question.id
-                                ] as unknown as Record<string, string>) || {}
-                              }
-                            />
+                            <div data-question-status={qGrade?.status || 'skipped'}>
+                              <ReadListQuestion
+                                client:load
+                                question={question}
+                                index={question.globalIndex}
+                                mode="review"
+                                pointPerSub={pointPerSub}
+                                selectedAnswers={
+                                  (attempt.answers_submitted?.[
+                                    question.id
+                                  ] as unknown as Record<string, string>) || {}
+                                }
+                              />
+                            </div>
                           );
                         }
                         const submittedRaw =
@@ -600,28 +754,17 @@ if (themeScore < 5.0) {
                               ? [submittedRaw]
                               : []
                         ) as string[];
-                        // Determine if this question was answered correctly for data attribute
-                        const correctAnswerIds = question.answers.filter((a: any) => a.is_correct).map((a: any) => a.id);
-                        let questionStatus = 'skipped';
-                        if (submittedRaw) {
-                          if (question.type === 'mcq' || question.type === 'single_choice' || question.type === 'true_false') {
-                            const sel = typeof submittedRaw === 'string' ? submittedRaw : (submittedRaw as any[])[0];
-                            questionStatus = correctAnswerIds.includes(sel) ? 'correct' : 'wrong';
-                          } else if (question.type === 'multiple_choice') {
-                            const sels = Array.isArray(submittedRaw) ? submittedRaw : [submittedRaw];
-                            questionStatus = (correctAnswerIds.length === sels.length && correctAnswerIds.every((id: string) => sels.includes(id))) ? 'correct' : 'wrong';
-                          } else {
-                            // msq, sa, tl — mark as answered
-                            questionStatus = 'answered';
-                          }
-                        }
                         return (
-                          <div data-question-status={questionStatus}>
+                          <div data-question-status={qGrade?.status || 'skipped'}>
                             <QuestionCard
                               question={question}
                               index={question.globalIndex}
                               mode="review"
                               selectedAnswers={selectedAnswers}
+                              earnedScore={qGrade?.earned ?? 0}
+                              maxScore={qGrade?.max ?? ppq}
+                              scoreNote={qGrade?.note ?? null}
+                              isSkipped={qGrade?.status === 'skipped'}
                             />
                           </div>
                         );

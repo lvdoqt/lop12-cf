@@ -109,3 +109,9 @@ CREATE POLICY "Public update padlet comments" ON public.padlet_comments
 DROP POLICY IF EXISTS "Public delete padlet comments" ON public.padlet_comments;
 CREATE POLICY "Public delete padlet comments" ON public.padlet_comments
   FOR DELETE USING (true);
+
+GRANT ALL ON TABLE public.padlet_boards TO anon, authenticated, service_role;
+GRANT ALL ON TABLE public.padlet_notes TO anon, authenticated, service_role;
+GRANT ALL ON TABLE public.padlet_comments TO anon, authenticated, service_role;
+
+NOTIFY pgrst, 'reload schema';

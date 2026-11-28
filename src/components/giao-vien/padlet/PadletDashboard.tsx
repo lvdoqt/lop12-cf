@@ -5,6 +5,7 @@ import { withBase } from '../../../lib/base';
 export const PadletDashboard: React.FC = () => {
   const [boards, setBoards] = useState<PadletBoard[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
@@ -20,13 +21,18 @@ export const PadletDashboard: React.FC = () => {
 
   const fetchBoards = async () => {
     try {
+      setLoadError(null);
       const res = await fetch(withBase('/api/giao-vien/padlet'));
       if (res.ok) {
         const data = await res.json();
         setBoards(data);
+      } else {
+        const errData = await res.json().catch(() => null);
+        setLoadError(errData?.error || 'Không thể tải danh sách bảng Padlet từ Supabase.');
       }
     } catch (err) {
       console.error(err);
+      setLoadError('Lỗi kết nối máy chủ khi tải danh sách bảng Padlet.');
     } finally {
       setLoading(false);
     }
@@ -68,7 +74,8 @@ export const PadletDashboard: React.FC = () => {
         // Redirect to new board
         window.location.href = withBase(`/giao-vien/padlet/${created.code}`);
       } else {
-        alert('Có lỗi xảy ra khi tạo bảng');
+        const errData = await res.json().catch(() => null);
+        alert(errData?.error || 'Có lỗi xảy ra khi tạo bảng');
       }
     } catch (err) {
       console.error(err);
@@ -123,6 +130,13 @@ export const PadletDashboard: React.FC = () => {
           <span>Tạo bảng mới</span>
         </button>
       </div>
+
+      {/* Error Banner */}
+      {loadError && (
+        <div className="bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800 text-rose-700 dark:text-rose-300 rounded-2xl p-4 text-sm font-medium">
+          ⚠️ {loadError}
+        </div>
+      )}
 
       {/* Boards Grid */}
       {loading ? (

@@ -106,14 +106,23 @@ export const PadletStudentView: React.FC<PadletStudentViewProps> = ({ board: ini
       });
 
       if (res.ok) {
+        const createdNote = await res.json();
         setNoteTitle('');
         setNoteContent('');
         setShowModal(false);
+        setBoard((prev) => ({
+          ...prev,
+          notes: prev.notes.some((n) => n.id === createdNote.id) ? prev.notes : [...prev.notes, createdNote]
+        }));
         // Refresh
-        const latest = await (await fetch(withBase(`/api/giao-vien/padlet/${board.code}`))).json();
-        setBoard(latest);
+        const latestRes = await fetch(withBase(`/api/giao-vien/padlet/${board.code}`));
+        if (latestRes.ok) {
+          const latest = await latestRes.json();
+          setBoard(latest);
+        }
       } else {
-        alert('Không thể đăng bài (bảng có thể đang bị khóa)');
+        const errData = await res.json().catch(() => null);
+        alert(errData?.error || 'Không thể đăng bài (bảng có thể đang bị khóa)');
       }
     } catch (err) {
       alert('Có lỗi mạng xảy ra');
@@ -251,8 +260,10 @@ export const PadletStudentView: React.FC<PadletStudentViewProps> = ({ board: ini
                         allowComments={board.allow_comments}
                         onRefresh={() => {
                           fetch(withBase(`/api/giao-vien/padlet/${board.code}`))
-                            .then((r) => r.json())
-                            .then((d) => setBoard(d));
+                            .then((r) => (r.ok ? r.json() : null))
+                            .then((d) => {
+                              if (d) setBoard(d);
+                            });
                         }}
                       />
                     ))}
@@ -273,8 +284,10 @@ export const PadletStudentView: React.FC<PadletStudentViewProps> = ({ board: ini
                 allowComments={board.allow_comments}
                 onRefresh={() => {
                   fetch(withBase(`/api/giao-vien/padlet/${board.code}`))
-                    .then((r) => r.json())
-                    .then((d) => setBoard(d));
+                    .then((r) => (r.ok ? r.json() : null))
+                    .then((d) => {
+                      if (d) setBoard(d);
+                    });
                 }}
               />
             ))}

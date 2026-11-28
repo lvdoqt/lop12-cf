@@ -10,44 +10,60 @@ export const prerender = false;
 
 const { id } = Astro.params;
 const attemptId = Astro.url.searchParams.get('attemptId');
+const modeParam = Astro.url.searchParams.get('mode');
 
-if (!id || !attemptId) {
-  return Astro.redirect('/dashboard');
+if (!id) {
+  return Astro.redirect('/de-thi');
 }
 
 const user = Astro.locals.user;
 const exam = await db.getExamBySlug(id);
-const attempt = await db.getAttemptById(attemptId);
-
-if (!exam || !attempt) {
+if (!exam) {
   return Astro.redirect('/de-thi');
 }
 
-if (attempt.user_id && attempt.user_id !== user?.id) {
-  return Astro.redirect('/dashboard');
-}
+const isPractice = modeParam === 'practice' && !exam.settings?.is_graded;
 
-if (attempt.score !== null) {
-  return Astro.redirect(`/exams/${exam.slug}/result/${attempt.id}`);
+let seedId = '';
+let remainingSeconds = exam.duration * 60;
+let startedAt = new Date().toISOString();
+
+if (isPractice) {
+  seedId = Astro.url.searchParams.get('seed') || crypto.randomUUID();
+} else {
+  if (!attemptId) {
+    return Astro.redirect(`/exams/${exam.slug}`);
+  }
+  const attempt = await db.getAttemptById(attemptId);
+  if (!attempt) {
+    return Astro.redirect('/de-thi');
+  }
+  if (attempt.user_id && attempt.user_id !== user?.id) {
+    return Astro.redirect('/dashboard');
+  }
+  if (attempt.score !== null) {
+    return Astro.redirect(`/exams/${exam.slug}/result/${attempt.id}`);
+  }
+  seedId = attempt.id;
+  startedAt = attempt.started_at;
+  const startTime = new Date(attempt.started_at).getTime();
+  const durationMs = exam.duration * 60 * 1000;
+  const elapsedMs = Date.now() - startTime;
+  remainingSeconds = Math.max(0, Math.floor((durationMs - elapsedMs) / 1000));
 }
 
 const allQuestions = await db.getQuestionsByExamId(exam.id);
 
-const prng = mulberry32(uuidToSeed(attempt.id));
+const prng = mulberry32(uuidToSeed(seedId));
 const questions = buildShuffledExam(allQuestions, prng, exam.settings);
 
-console.log(`[take] exam=${exam.id} slug=${exam.slug} questions=${questions.length}`);
-
-const startTime = new Date(attempt.started_at).getTime();
-const durationMs = exam.duration * 60 * 1000;
-const elapsedMs = Date.now() - startTime;
-const remainingSeconds = Math.max(0, Math.floor((durationMs - elapsedMs) / 1000));
+console.log(`[take] exam=${exam.id} slug=${exam.slug} practice=${isPractice} questions=${questions.length}`);
 ---
 
-<Layout title={`Đang làm bài: ${exam.title}`} showSidebar={false}>
+<Layout title={`${isPractice ? 'Luyện tập' : 'Đang làm bài'}: ${exam.title}`} showSidebar={false}>
   {exam.exam_type === 'vsat' ? (
-    <VSatExamView client:load exam={{ slug: exam.slug, title: exam.title, duration: exam.duration }} attempt={{ id: attempt.id }} questions={questions} initialSeconds={remainingSeconds} />
+    <VSatExamView client:load exam={{ slug: exam.slug, title: exam.title, duration: exam.duration }} attempt={{ id: seedId }} questions={questions} initialSeconds={remainingSeconds} practiceMode={isPractice} startedAt={startedAt} />
   ) : (
-    <ExamView client:load exam={{ id: exam.id, slug: exam.slug, title: exam.title, duration: exam.duration }} attempt={{ id: attempt.id }} questions={questions} initialSeconds={remainingSeconds} />
+    <ExamView client:load exam={{ id: exam.id, slug: exam.slug, title: exam.title, duration: exam.duration }} attempt={{ id: seedId }} questions={questions} initialSeconds={remainingSeconds} practiceMode={isPractice} startedAt={startedAt} />
   )}
 </Layout>

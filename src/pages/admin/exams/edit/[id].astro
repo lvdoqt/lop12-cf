@@ -70,6 +70,12 @@ if (Astro.request.method === 'POST') {
         if (settings?.point_per_sa) delete settings.point_per_sa;
       }
     }
+    const isGraded = formData.get('is_graded') === '1';
+    if (isGraded) {
+      settings = { ...(settings || {}), is_graded: true };
+    } else if (settings?.is_graded) {
+      delete settings.is_graded;
+    }
     
     const questionsJson = formData.get('questions_json') as string;
     let questionsData: any[] = [];
@@ -256,6 +262,29 @@ const availableQuestions = bankQuestions.filter(q => !assignedQuestionIds.includ
           </div>
         </div>
 
+
+        <!-- is_graded: Chế độ Luyện tập vs Đề thi lấy điểm -->
+        <div class="mt-4 p-4 rounded-xl border border-emerald-200 dark:border-emerald-800/50 bg-emerald-50/40 dark:bg-emerald-950/15">
+          <label for="is_graded" class="flex items-start gap-3 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              name="is_graded"
+              id="is_graded"
+              value="1"
+              checked={Boolean(exam.settings?.is_graded)}
+              class="mt-0.5 h-5 w-5 rounded border-emerald-300 text-emerald-600 focus:ring-emerald-500 cursor-pointer shrink-0"
+            />
+            <div>
+              <span class="block text-sm font-bold text-emerald-800 dark:text-emerald-300">
+                📝 Đề thi (lấy điểm &amp; lưu kết quả vào hệ thống)
+              </span>
+              <span class="block text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">
+                <strong>Mặc định (bỏ chọn):</strong> Chế độ <strong>Luyện tập</strong> — học sinh làm bài ngay không cần điền Họ tên / SBD / Lớp và không ghi kết quả vào Supabase.<br />
+                <strong>Khi chọn:</strong> Yêu cầu điền Họ tên, Số báo danh (STT), Lớp và lưu điểm để thống kê, xuất file CSV.
+              </span>
+            </div>
+          </label>
+        </div>
 
         <!-- pick_per_type: Chon ngau nhien k/n cau theo loai -->
         <div class="mt-4 p-4 rounded-xl border border-dashed border-blue-200 dark:border-blue-800/40 bg-blue-50/40 dark:bg-blue-950/10">
